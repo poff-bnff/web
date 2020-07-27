@@ -1,90 +1,649 @@
+*
+    font-size 16px
+    line-height 1.618rem
+    box-sizing border-box
+
+*::before,
+*::after
+    box-sizing border-box
+
 html
-body
+    scroll-behavior smooth
     height 100%
 
 body
-    color rgb(255, 255, 255)
-    background rgb(77, 77, 77)
-    font-family 'Montserrat', sans-serif
-    font-style normal
-    font-weight 400
+    font-size 16px
+    line-height 1.618rem
+    color var(--white_96)
+    background var(--bg_dark_1)
+    font-family var(--font_h)
+    margin 0
+    padding-left 0
+    padding-right 0
+    padding-bottom 0
 
-h1
-h2
-h3
-    font-family 'Montserrat', sans-serif
-    font-style normal
-    font-weight 700
-    text-shadow 0 0 16px rgba(77, 77, 79, .4)
-    text-transform uppercase
+:root
+    --blue #007bff
+    --breakpoint-lg 992px
+    --breakpoint-md 768px
+    --breakpoint-sm 576px
+    --breakpoint-xl 1200px
+    --breakpoint-xs 0
+    --cyan #17a2b8
+    --danger #dc3545
+    --dark #343a40
+    --font-family-monospace SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    --font-family-sans-serif -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    --gray #6c757d
+    --gray-dark #343a40
+    --green #28a745
+    --indigo #6610f2
+    --info #17a2b8
+    --light #f8f9fa
+    --orange #fd7e14
+    --pink #e83e8c
+    --primary #007bff
+    --purple #6f42c1
+    --red #dc3545
+    --secondary #6c757d
+    --success #28a745
+    --teal #20c997
+    --warning #ffc107
+    --white #fff
+    --yellow #ffc107
+    --hoff_red #ED1C24
+    --white_96 rgba(255, 255, 255, 0.96)
+    --white_semi rgba(255, 255, 255, 0.5)
+    --poff_orange #F39133
+    --poff_orange_2 #F36C3F
+    --orange_strong #F67625
+    --ghost_blue #3EADEF
+    --elisa_blue #0019af
+    --tartuff_violet #ec008c
+    --bg_dark_1 #0E1417
+    --bg_dark_2 #192024
+    --bg_dark_3 #1C272E
+    --bg_dark_4 #29333A
+    --clr_popover #192024
+    --clr_primary #ec008c
+    --clr_pimary_semi rgba(236,0,140,.2)
+    --clr_pimary_light rgba(170, 64, 131, 0.6)
+    --clr_secondary #F67625
+    --clr_keyword #3EADEF
+    --clr_header_bg #0E1417
+    --font_h 'Barlow Condensed', sans-serif
+    --font_p 'EB Garamond', serif
 
+.bg_dark_1
+    background-color var(--bg_dark_1)
+
+.bg_dark_2
+    background-color var(--bg_dark_2)
+
+.bg_dark_3
+    background-color var(--bg_dark_3)
+
+.bg_dark_4
+    background-color var(--bg_dark_4)
+
+header
+    background-color var(--clr_header_bg)
+    width 100%
+    text-align center
+    position fixed
+    z-index 900
+    display flex
+    justify-content flex-start
+    grid-area header
+
+.main_menu
+    position absolute
+    text-align left
+    left 0
+    background-color var(--clr_header_bg)
+    width 100%
+    padding-top 1rem
+    padding-bottom 1rem
+    display none
+
+footer
+    display grid
+    grid-template-columns 1fr 1fr 1fr
+    grid-template-rows auto
+    grid-gap 2rem
+    justify-items center
+    align-items center
+    border-top 1px solid rgba(255,255,255,.1)
+    padding 2rem
+    grid-area footer
+
+nav
+    ul
+        padding 0
+        margin 0
+        list-style none
+    li
+        margin-top .5rem
+        margin-bottom .5rem
+        margin-left 1rem
     a
-    a:active
-    a:hover
-    a:visited
+        color var(--white_96)
+        font-size 1rem
         text-decoration none
+        text-transform uppercase
+        &:hover
+            color var(--clr_primary)
+            text-decoration none
 
-h1
-    font-size 62pt
-    line-height 64pt
+.main_menu_toggle
+    display none
+    &:checked
+        & ~ main_menu
+            display block
+        & ~ .main_menu
+            display flex
 
-    @media (max-width: 992px)
-        font-size 40pt
-        line-height 48pt
+.main_menu_toggle_label
+    position absolute
+    top 0
+    right 0
+    margin-right 1rem
+    height 100%
+    display flex
+    align-items center
+    span
+        &::before
+            bottom 7px
+        &::after
+            top 7px
 
-    @media (max-width: 768px)
-        font-size 30pt
-        line-height 36pt
+.main_menu_toggle_label span,
+.main_menu_toggle_label span::before,
+.main_menu_toggle_label span::after
+    display block
+    background var(--white_96)
+    height 1px
+    width 1.6rem
+    border-radius 2px
+    position relative
 
-    @media (max-width: 576px)
-        font-size 20pt
-        line-height 22pt
+.main_menu_toggle_label span::before,
+.main_menu_toggle_label span::after
+    content ""
+    position absolute
 
-h2
-    font-style normal
-    font-weight 700
-    font-size 20pt
-    line-height 22pt
+.logo
+    margin 1rem
+    padding 0
+    width 170px
 
-    @media (max-width: 768px)
-        font-size 13pt
-        line-height 15pt
+.logo_img:hover,
+.logo_img:focus
+    opacity 0.7
+    transform scale(2.4, 2.4)
+    transform-origin left top
+
+.dir_img
+    width 100%
+    object-fit cover
+
+.img_dir
+    width 100%
+    object-fit cover
+
+.grid_film
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    grid-template-areas "f_img_slider_box"
+  "f_title_box"
+  "f_synopsis_box"
+  "f_runtime_box"
+  "f_screenings_box"
+  "f_cred_box"
+  "f_dir_bio_box"
+  "f_trailer_box"
+  "f_extra_box"
+  "f_imgs_box"
+
+.f_img_slider_box
+    grid-area f_img_slider_box
+    background var(--bg_dark_1)
+    margin-top 100px
+
+.f_title_box
+    grid-area f_title_box
+    background-color var(--bg_dark_1)
+    padding-left calc(2rem + 1vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+    display grid
+    grid-template-columns 1fr
+
+.f_synopsis_box
+    grid-area f_synopsis_box
+    background-color var(--bg_dark_2)
+    padding-left calc(1rem + 1vw)
+    padding-right calc(1rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+    display grid
+    grid-template-columns 1
+    grid-gap 2rem
+
+.f_cred_box
+    grid-area f_cred_box
+    background-color var(--bg_dark_3)
+    padding-left calc(2rem + 1vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+    display grid
+    grid-template-columns 1fr
+
+.f_runtime_box
+    grid-area f_runtime_box
+    background-color var(--bg_dark_4)
+    padding-left calc(2rem + 1vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+
+.f_screenings_box
+    grid-area f_screenings_box
+    background var(--bg_dark_1)
+    padding-top 2rem
+    padding-bottom 3rem
+    padding-left 1rem
+    padding-right 1rem
+
+.f_dir_bio_box
+    grid-area f_dir_bio_box
+    background-color var(--bg_dark_1)
+    padding-left calc(2rem + 1vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+    display grid
+    grid-template-columns 1
+    grid-gap 2rem
+
+.f_extra_box
+    grid-area f_extra_box
+    padding-left calc(2rem + 1vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+
+.f_trailer_box
+    grid-area f_trailer_box
+
+.f_imgs_box
+    grid-area f_imgs_box
+
+}
+    .card-deck
+        justify-content center
+
+.container_frame_16_9
+    position relative
+    height 0
+    overflow hidden
+    padding-top 56.25%
+    background var(--bg_dark_4)
+
+.container_contents_16_9
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
+.svg_icon_prev_next
+    height calc(1.5rem + 0.1vw)
+    width calc(1.5rem + 0.1vw)
+    margin-right .5rem
+    margin-top -.7rem
+    color rgba(200, 200, 200, 0.5)
+
+.svg_icon_footer
+    height calc(1.5rem + 0.1vw)
+    width calc(1.5rem + 0.1vw)
+    margin-right 1rem
+    margin-left 1rem
+    stroke var(--white_96)
+    &:hover
+        height calc(1.5rem + 0.1vw)
+        width calc(1.5rem + 0.1vw)
+        margin-right 1rem
+        margin-left 1rem
+        stroke var(--clr_primary)
+        stroke-width 1
+        transform scale(1.2,1.2)
+
+.font_h
+    font-family var(--font_h)
+
+.font_p
+    font-family var(--font_p)
+
+.font_light
+    font-weight 300
 
 p
-li
-    margin-bottom .5rem
+    font-size 16px
+    line-height 1.618
+    font-family var(--font_p)
+    color var(--white_96)
+    font-weight 300
+    margin-bottom calc((1rem * 1.618) / 2)
 
-a
-a:active
-a:hover
-a:visited
-    color rgb(255, 255, 255)
+.section_headline_back
+    font-family var(--font_h)
+    font-size calc(4rem + 5vw)
+    line-height 1.2
+    font-weight 500
+    color var(--clr_pimary_light)
+    letter-spacing 0.04em
+    text-align center
+    padding-left calc(1rem + 1vw)
+    padding-right calc(1rem + 1vw)
+    margin-bottom -.7em
 
-input
-textarea
-button
-    border none
-    border-radius 0
-    outline none
-
-    &:focus
-    &:active
-        outline none
-
-input
-    color rgb(0, 0, 0)
-    background rgb(218, 56, 50)
-
-    &::placeholder
-        color rgb(0, 0, 0)
-        opacity 1 /* Firefox */
-
-    &:-ms-input-placeholder /* Internet Explorer 10-11 */
-       color rgb(0, 0, 0)
-
-    &::-ms-input-placeholder /* Microsoft Edge */
-       color rgb(0, 0, 0)
-
-button
+.premiere_type
+    font-family var(--font_h)
     text-transform uppercase
-    border 1px solid rgb(218, 56, 50)
+    text-align left
+    color var(--white_semi)
+    align-self start
+
+.film_title_detailed
+    font-family var(--font_h)
+    font-size calc(1rem + 2.4vw)
+    text-align left
+    font-weight 600
+    line-height 1.3
+    padding-top 1rem
+    padding-bottom 1rem
+    align-self center
+
+.str_info_blokk_1
+    align-self end
+
+.str_info_grid_3
+    display grid
+    grid-template-columns 1fr 2fr
+    grid-gap 2rem
+
+.str_info_label,
+.str_info_meta_label
+    font-family var(--font_h)
+    color var(--white_semi)
+    font-size 1rem
+    text-align right
+    line-height 1.618
+
+.str_info_value
+    font-family var(--font_h)
+    color var(--white_96)
+    font-size 1rem
+    text-align left
+    line-height 1.618
+
+.str_info_meta_gi
+    font-family var(--font_h)
+    color var(--white_96)
+    font-size 1rem
+    text-align right
+    line-height 1.618
+
+.synopsis_gi, .dir_bio
+    font-family var(--font_p)
+    color var(--white_96)
+    font-size 1rem
+    text-align left
+    line-height 1.618
+    max-width 65ch
+
+.str_info_meta_item
+    display grid
+    grid-template-columns 1fr 2fr
+    grid-gap 2rem
+
+.str_info_meta_festival
+    font-family var(--font_h)
+    color var(--clr_primary)
+    font-size 1rem
+    text-align left
+    line-height 1.618
+
+.str_info_meta_program,
+.str_info_meta_genre
+    font-family var(--font_h)
+    color var(--white_96)
+    font-size 1rem
+    text-align left
+    line-height 1.618
+
+.str_info_meta_keywords
+    font-family var(--font_h)
+    color var(--ghost_blue)
+    font-size 1rem
+    text-align left
+    line-height 1.618
+
+.card_screening
+    max-width 100%
+    margin-left 0
+    margin-right 0
+    margin-top calc(3rem + 1vw)
+
+.grid_container_screening_time
+    display grid
+    grid-template-columns 2fr 1fr
+    margin-top .6rem
+
+.container_screening_location
+    margin-top 1rem
+    margin-bottom .2rem
+
+.screening_date
+    text-align left
+    font-size calc(1.25rem + 0.1vw)
+    font-weight 500
+    color var(--white_96)
+    letter-spacing 0.04em
+
+.screening_weekday
+    text-align left
+    font-size calc(1.25rem + 0.1vw)
+    font-weight 200
+    color var(--white_96)
+    letter-spacing 0.04em
+
+.screening_time
+    text-align right
+    font-size calc(1.25rem + 0.1vw)
+    font-weight 500
+    color var(--ghost_blue)
+    letter-spacing 0.04em
+
+.screening_hall
+    text-align left
+    font-size calc(1.25rem + 0.1vw)
+    font-weight 500
+    color var(--white_96)
+    letter-spacing 0.04em
+
+.screening_venue
+    text-align left
+    font-size calc(1.25rem + 0.1vw)
+    font-weight 200
+    color var(--white_96)
+    letter-spacing 0.04em
+
+.city
+    text-align left
+    font-size calc(1.25rem + 0.1vw)
+    font-weight 200
+    color var(--white_semi)
+    letter-spacing 0.04em
+
+.screening_info_blokk
+    align-self start
+
+.screening_info_label
+    text-align right
+    color var(--white_semi)
+
+.screening_info_value
+    text-align left
+    color var(--white_96)
+
+.btn_secondary
+    background-color var(--bg_dark_4)
+    color var(--clr_pimary_semi)
+    border-radius 0
+    text-transform uppercase
+    display none
+
+.btn_primary
+    background-color var(--clr_primary)
+    color var(--white_96)
+    border-radius 0
+    text-transform uppercase
+
+.svg_icon
+    height calc(1.5rem + 0.1vw)
+    width calc(1.5rem + 0.1vw)
+    margin-right .5rem
+    margin-top -.7rem
+    stroke rgba(255, 255, 255, .5)
+
+.svg_icon_white
+    margin-right .5rem
+    margin-top -.3rem
+    stroke rgba(255, 255, 255, 1) !important
+    stroke-width 1
+
+.clr_primary
+    color var(--clr_primary)
+
+.clr_secondary
+    color var(--clr_secondary)
+
+.str_info_blokk_cred
+    align-self start
+
+@media screen and (min-width: 800px)
+    .grid_film
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_img_slider_box  f_img_slider_box  f_title_box"
+    "f_synopsis_box    f_synopsis_box    f_cred_box"
+    "f_synopsis_box    f_synopsis_box    f_runtime_box"
+    "f_screenings_box  f_screenings_box  f_screenings_box"
+    "f_dir_bio_box     f_dir_bio_box     f_extra_box"
+    "f_trailer_box     f_trailer_box     f_trailer_box"
+    "f_imgs_box        f_imgs_box        f_imgs_box"
+    .main_menu_toggle_label
+        display none
+    header
+        display grid
+        grid-template-columns auto 1fr
+        height 100px
+    .main_menu
+        grid-column 2 / 3
+        display flex
+        justify-content flex-end
+        align-items flex-end
+        position static
+        border 1px white
+        margin 0
+        padding 0
+        padding-right 1.2rem
+        ul
+            display flex
+            justify-content flex-end
+            align-items flex-end
+            li
+                &.dropdown
+                    ul
+                        background-color var(--bg_dark_2)
+                        position absolute
+                        left 0
+                        padding-left 0
+                        width max-content
+                        display none
+                        li
+                            a
+                                text-transform none
+                    &:hover
+                        ul
+                            display block
+    nav
+        li
+            height 100%
+            margin 0
+            padding-left 1.2rem
+            padding-right 1.2rem
+            padding-top 1rem
+            padding-bottom 1rem
+            border 1px solid rgba(255, 255, 255, 0)
+            &:hover
+                background-color var(--bg_dark_2)
+                border-top 1px solid var(--clr_primary)
+            a
+                &:hover
+                    color var(--white_96)
+    .logo
+        grid-column 1 / 2
+        justify-content flex-start
+        align-items flex-end
+        width 210px
+        padding-left 1.2rem
+        padding-bottom .4rem
+        padding-top .4rem
+    .film
+        display grid
+        grid-template-columns repeat(3, 1fr)
+        grid-template-rows auto
+        grid-gap 0px
+        background-color var(--bg_dark_1)
+    .f_title_box
+        margin-top 100px
+    .str_info_meta_item
+        display block
+    .card_screening
+        min-width 300px
+        max-width 400px
+        margin-left 1vw
+        margin-right 1vw
+
+@media screen and (min-width: 800px)   .f_synopsis_box, .f_dir_bio_box
+    background-color var(--bg_dark_2)
+    padding-left calc(1rem + 1vw)
+    padding-right calc(1rem + 1vw)
+    display grid
+    grid-template-columns minmax(214px, 1fr) 2fr
+    grid-gap 4rem
+
+@media screen and (min-width: 800px)   .f_title_box, .f_synopsis_box, .f_dir_bio_box, .f_cred_box, .f_runtime_box, .f_screenings_box, .f_extra_box
+    padding-top calc(2rem + 1vw)
+    padding-bottom calc(2rem + 1vw)
+
+.str_info_meta_festival,
+  .str_info_meta_program,
+  .str_info_meta_genre,
+@media screen and (min-width: 800px)   .str_info_meta_keywords
+    text-align right
+    padding-bottom 1rem
+
+.text_left
+    text-align left
+
+.text_right
+    text-align right
