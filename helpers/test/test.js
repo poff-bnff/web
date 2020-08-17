@@ -25,12 +25,47 @@ function getData(callback) {
 function getDataCB(data) {
 
     data.forEach(element => {
-        console.log(element.slug_en);
+        // console.log(element.slug_en);
         fs.mkdir(`helpers/test/${element.slug_en}`, bla);
 
+        let elementEt = element;
+        // delete elementEt
+
+
+        // Object.keys(elementEt).forEach(item => {
+        //     console.log(item.substring(item.length - 3, item.length));
+        //     let lastThree = item.substrin(item.length - 3, item.length);
+        //     if (lastThree === '_en' || lastThree === '_ru') {
+        //         delete elementEt[item];
+        //     }
+        //   });
+        let i = 0;
+
+        let keys = [];
+        for (key in elementEt) {
+        // for (i = 0; i < Object.keys(elementEt).length; i++) {
+            // let item = elementEt[0];
+            // let item2 = item[Object.keys(item)];
+
+            // console.log('aaaaaaaaaaaa' + key);
+            // console.log('aaaaaaaaaaaa' + Object.keys(item));
+            // console.log(item.substring(item.length - 3, item.length));
+            let lastThree = key.substring(key.length - 3, key.length);
+            if (lastThree === '_en' || lastThree === '_ru') {
+                // delete elementEt[item];
+                keys.push(key);
+            }
+        }
+        for (values in keys) {
+            if(keys[values]) {
+                console.log(keys[values]);
+                delete elementEt[keys[values]];
+            }
+        }
+
+          console.log(elementEt);
         let yamlStr = yaml.safeDump(element, {'indent':'4'});
         fs.writeFileSync(`helpers/test/${element.slug_en}/data.yaml`, yamlStr, 'utf8', {space: 2});
-
     // YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAML END
 
     });
