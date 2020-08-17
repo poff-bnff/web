@@ -5,6 +5,8 @@ process.chdir(__dirname);
 
 let spreadsheetId = '1J_cYJnZI41V8TGuOa8GVDjnHSD9qRmgKTJR3sd9Ff7Y'
 let range = 'Filmid'
-Fetcher.Fetch(spreadsheetId, range)
+Fetcher.Fetch(spreadsheetId, range, ProcessDataCB)
 
-//Fetch('1J_cYJnZI41V8TGuOa8GVDjnHSD9qRmgKTJR3sd9Ff7Y', 'Filmid')
+function ProcessDataCB(data){
+    console.log(data);
+}

@@ -84,7 +84,7 @@ function Connect(FetchDataCB) {
 
 // Fetch(FetchDataFromSheet);
 
-function Fetch(spreadsheetId, range){
+function Fetch(spreadsheetId, range, callback){
     Connect(function FetchDataFromSheet(auth) {
         const sheets = google.sheets({version: 'v4', auth});
         sheets.spreadsheets.values.get({
@@ -92,20 +92,11 @@ function Fetch(spreadsheetId, range){
           range: range,
         }, (err, res) => {
           if (err) return console.log('The API returned an error: ' + err);
-          const rows = res.data.values;
-          if (rows.length) {
-          //   console.log('id, Filmid:');
-            // Print columns A and E, which correspond to indices 0 and 4.
-            rows.map((row) => {
-              console.log(`${row[0]}, ${row[4]}`);
-            });
-          } else {
-            console.log('No data found.');
-          }
+          callback(res.data)
         });
       });
 }
 
-Fetch('1J_cYJnZI41V8TGuOa8GVDjnHSD9qRmgKTJR3sd9Ff7Y', 'Filmid')
+// Fetch('1J_cYJnZI41V8TGuOa8GVDjnHSD9qRmgKTJR3sd9Ff7Y', 'Filmid')
 
 module.exports.Fetch = Fetch;
