@@ -2,6 +2,7 @@ const fs = require('fs');
 var request = require('request');
 const yaml = require('js-yaml');
 
+const allLanguages = ["en", "et", "ru"];
 
 var options = {
   'method': 'GET',
@@ -12,27 +13,27 @@ var options = {
 };
 
 
-function getData(callback, lang, copyFile) {
+function getData(callback, dirPath, lang, copyFile) {
     request(options, function (error, response) {
         if (error)
             throw new Error(error);
         let data = new Object();
         data = JSON.parse(response.body);
-        callback(data, lang, copyFile);
+        callback(data, dirPath, lang, copyFile);
     });
 }
 
-function getDataCB(data, lang, copyFile) {
+function getDataCB(data, dirPath, lang, copyFile) {
 
     data.forEach(element => {
-        fs.mkdir(`helpers/test/${element.slug_en}`, bla);
+        fs.mkdir(`${dirPath}${element.slug_en}`, bla);
 
         let elementEt = JSON.parse(JSON.stringify(element));
 
         for (key in elementEt) {
             let lastThree = key.substring(key.length - 3, key.length);
             let findHyphen = key.substring(key.length - 3, key.length -2);
-            if (lastThree !== `_${lang}` && findHyphen === '_' && lastThree !== '_by' && lastThree !== '_at') {
+            if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
                 delete elementEt[key];
             }
             if(lastThree === `_${lang}`) {
@@ -46,11 +47,11 @@ function getDataCB(data, lang, copyFile) {
 
         let yamlStr = yaml.safeDump(elementEt, {'indent':'4'});
 
-        fs.writeFileSync(`helpers/test/${element.slug_en}/data.${lang}.yaml`, yamlStr, 'utf8');
+        fs.writeFileSync(`${dirPath}${element.slug_en}/data.${lang}.yaml`, yamlStr, 'utf8');
         if (copyFile) {
-            fs.copyFile(`helpers/test/film_index_template.pug`, `helpers/test/${element.slug_en}/index.pug`, (err) => {
+            fs.copyFile(`${dirPath}film_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
                 if (err) throw err;
-                console.log(`File was copied to folder ${element.slug_en}`);
+                console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
                 })
         }
     });
@@ -60,11 +61,10 @@ function getDataCB(data, lang, copyFile) {
 function bla() {
 }
 
-getData(getDataCB, "en", 1);
-getData(getDataCB, "et", 0);
-getData(getDataCB, "ru", 0);
-
-
+// getData(function, new directory path, language, copy file)
+getData(getDataCB, "helpers/test/", "en", 1);
+getData(getDataCB, "helpers/test/", "et", 0);
+getData(getDataCB, "helpers/test/", "ru", 0);
 
 // for (x in data) {
 //     console.log('bla: ' + x.id);
