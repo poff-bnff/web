@@ -1,0 +1,55 @@
+header
+            //- nav.lang-menu
+            //-     each p, locale in self.otherLocalePaths
+            //-         a(href=(p !== '/' ? p + '/' : '/'))= locale.toUpperCase()
+            .logo
+                //- Defining locale path for multilingual support
+                - var lang_path = self.locale === 'et' ? '' : `${self.locale}/`
+                a(href=`/${lang_path}`)
+                    img.logo_img(alt='PÖFF' data-src='/assets/img/global/tartuff_logo_white.svg' src='/assets/img/global/tartuff_logo_white_red.svg')
+            input#main_menu_toggle.main_menu_toggle(type='checkbox')
+
+            nav.main_menu
+                ul
+                    li
+                        a(href=`/${lang_path}articles`)= self.label.menu.mainNews
+                    //- li.dropdown
+                    //-     a(href='/films') Filmid
+                    //-     if self.films
+                    //-         ul
+                    //-             each val in self.films
+                    //-                 li: a(href= val.filmEventivalId)= val.filmTitle_et
+
+                    li
+                        a(href=`/${lang_path}films`)= self.label.menu.mainFilms
+                    li
+                        a(href=`/${lang_path}schedule`)= self.label.menu.mainSchedule
+                    li
+                        a(href=`/${lang_path}info`)= self.label.menu.mainInfo
+                    li
+                        a(href=`/${lang_path}covid`)= self.label.menu.mainCovid
+                    li
+                        a(href=`/${lang_path}festival`)= self.label.menu.mainFestival
+                    //- li
+                    //-     a(href='#') Piletid
+                    //- li
+                    //-     a(href='#') Press
+                    //- li
+                    //-     a(href='#') Festivalist
+                    //- li
+                    //-     p.select_locale_label= self.label.selectLocale
+                    //-     a(href='#') Toetajad
+                    li
+                        nav.lang_menu
+                            //- | prefiks&nbsp;
+                            //- .clr_primary= self.label.film.languageSelect + 'rr'
+                            each p, locale in self.otherLocalePaths
+                                //- span.clr_white_semi= self.label.film.languageSelect + ':  '
+                                a(href=(p !== '/' ? p + '/' : '/'))= locale
+
+                                //- a(href=(p !== '/' ? p + '/' : '/'))= locale.toUpperCase()
+
+            label.main_menu_toggle_label(for='main_menu_toggle')
+                span
+
+

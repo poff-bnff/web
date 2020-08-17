@@ -1,0 +1,31 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+
+    //- section.grid_article
+    //-     section.article_hero_head
+    //-         img(src=`/assets/img/global/tartuff_2019_ohust_1.jpg`).article_hero_image
+    //-         .article_hero_headline_box
+    //-             .article_title_detailed
+    //-                 | Tartuffi külastaja meelespea 2020
+
+
+    section.festival
+        h1.section_headline= self.label.all.festivalTeam
+
+    section.team
+        each val in self.data.persons
+            .person
+                .person_head
+                    img.person_img(src= val.personPhoto alt= val.personName)
+
+                    //- if val.personName
+                    .person_body.text_center
+                        h4.text_center= val.personName + ' '
+                        p.premiere_type.text_center= val.personOrganisation
+                        +format(val.personJobTitle)
+                //- else
+                //-     .person_body
+                //-         h4= val.personOrganisation
+

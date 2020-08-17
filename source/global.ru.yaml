@@ -3,7 +3,7 @@ root: /ru/
 language:
     et: eesti
     en: english
-    ru: русский
+    # ru: русский
 navigation:
     -
         url: /riigid/
@@ -11,9 +11,26 @@ navigation:
     -
         url: /keeled/
         title: Keeled
+
 search:
     url: /ru/poisk/
     text: |
         ### Поиск
     placeholder: введите →
     button: Искать
+
+label:
+    all:
+        presenters: Esitlejad
+        thanksTo: Täname
+    film:
+        title: Название
+    screening:
+        screeningSubtitles: Subtiitrid
+    buttons:
+        filmTicketBuy: Osta pilet
+        filmTicketFree: Tasuta
+        newsButton: Uudised
+        filmsButton: Filmid
+
+eFilmInfo: ''

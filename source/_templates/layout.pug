@@ -1,40 +1,15 @@
-block vars
-
-
-mixin markdown(text)
-    | !{ self.md(text) }
-
-
 doctype html
-html(lang=self.locale)
-    head
-        meta(charset='utf-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1')
-        meta(property='og:url', content='https://www.memoriaal.ee' + self.path)
-        meta(property='og:title', content=self.title ? self.title + ' · ' + self.siteTitle : self.siteTitle)
-        meta(property='og:image', content=self.pictures[0])
+html(lang='en')
 
-        title= self.title && self.title !== self.siteTitle ? self.title + ' · ' + self.siteTitle : self.siteTitle
+    include ../_templates/head.pug
 
-        link(href='https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i,800,800i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext', rel='stylesheet', type='text/css')
-        link(href='/assets/css/bootstrap.min.css', rel='stylesheet')
-        link(href='/style.css', rel='stylesheet')
-
-        block style
-
-        script(async, src='https://www.googletagmanager.com/gtag/js?id=UA-260765-40')
-        script.
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-260765-40');
     body
-        include text.pug
-        include navigation.pug
-        if self.popup
-            include popup.pug
+        // HEADER
 
-        script(src='/assets/js/jquery-3.3.1.min.js')
-        script(src='/script.js')
+        include ../_templates/header.pug
 
-        block script
+        // Sisu
+
+        block content
+
+        include ../_templates/footer.pug

@@ -1,0 +1,127 @@
+//- lisab õige youtube video treileriks, kasutab film.layout.pug
+mixin youtube(videoId)
+    iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}`
+        frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
+        gyroscope;='' picture-in-picture”='' allowfullscreen='')
+
+//- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
+//- sisend kujul (2020-08-10T22:45:00+0300)
+
+mixin localdatetime(dateString)
+    - var dom_id = Math.random()
+    div(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var NowMoment1 = moment('#{dateString}').format('L LT');
+            var weekDay= moment('#{dateString}').format('ddd');
+            eDisplayMoment1.innerHTML = weekDay + ' ' +  NowMoment1;
+
+        })();
+
+//- tekitab formaadis (nt 15. nov) kohaliku kuupäeva, kasutuses film.layout.pug (section.f_screenings_box)
+//- sisend kujul ('2020-08-10')
+mixin screeningDate(dateString)
+    - var dom_id = Math.random()
+    span(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
+            var NowMoment1 = moment('#{dateString}').format('Do MMM');
+            var weekDay= moment('#{dateString}').format('dddd');
+            eDisplayMoment1.innerHTML = NowMoment1 + ', ' + weekDay;
+
+        })();
+
+//- tekitab formaadis (nt 12:00) kohaliku kellaaja, kasutuses film.layout.pug (section.f_screenings_box)
+//- sisend kujul (2020-08-10T22:45:00+0300)
+mixin screeningTime(dateString)
+    - var dom_id = Math.random()
+    span(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+
+            moment.lang('en', {
+                longDateFormat : {
+                    LT: "hh:mm A",
+                    L: "MM/DD/YYYY",
+                    l: "M/D/YYYY",
+                    LL: "MMMM Do YYYY",
+                    ll: "MMM D YYYY",
+                    LLL: "MMMM Do YYYY LT",
+                    lll: "MMM D YYYY LT",
+                    LLLL: "dddd, MMMM Do YYYY LT",
+                    llll: "ddd, MMM D YYYY LT"
+                }
+            });
+
+            moment.lang('et', {
+                longDateFormat: {
+                    LT: 'HH:mm',
+                    LTS: 'H:mm:ss',
+                    L: 'DD.MM.YYYY',
+                    LL: 'D. MMMM YYYY',
+                    LLL: 'D. MMMM YYYY H:mm',
+                    LLLL: 'dddd, D. MMMM YYYY H:mm'
+                }
+            });
+
+
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
+            var NowMoment1 = moment('#{dateString}').format('LT');
+            eDisplayMoment1.innerHTML = NowMoment1;
+
+        })();
+
+//- tekitab formaadis (nt esmaspaev, 10 august) kohaliku kuupäeva, kasutuses home.layout.pug (section.calendar)
+//- sisend kujul ('2020-08-10')
+mixin calendarDate(dateString)
+    - var dom_id = Math.random()
+    span(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
+            var NowMoment1 = moment('#{dateString}').format('dddd, D MMMM');
+            eDisplayMoment1.innerHTML = NowMoment1;
+
+        })();
+
+//- tekitab formaadis (nt 2h 19m) kohaliku kestvuse, kasutuses festival.index.pug (section.team)
+//- sisend kujul ('139') minutid
+mixin dur(mins)
+    - var dom_id = Math.random()
+    span(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            var mins = '#{mins}'
+            var minutes = mins % 60;
+            var hours = (mins - minutes) / 60;
+            var t = hours + 'h&nbsp;' + minutes + 'm'
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
+            eDisplayMoment1.innerHTML = t;
+        })();
+
+//- otsib dokumendist pealkirja, õige filmi kuvamiseks
+mixin tabname(currenttitle)
+    script.
+        document.title= '#{currenttitle}';
+        //document.title= 'Tartuff 2020: ' + ('#{currenttitle}');
+
+//- kuvab teksti õiges formaadis, reavahed
+mixin format(text)
+    | !{ self.md(text) }
+

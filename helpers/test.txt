@@ -1,0 +1,123 @@
+alist = [
+{"Athena Keskus": [1,3,5]},
+{"Elisa Stage": [1,3,5]},
+{"Raekoja plats"}
+]
+sortorder={"Athena Keskus":0, "Raekoja plats":1, "Elisa Stage":2}
+alist.sort(key=lambda x: sortorder[x["day"]])
+sorted_list=sorted(alist, key=lambda x: sortorder[x["day"]])
+print(sorted_list)
+
+screening={'screeningEventivalId': '2001', 'filmEventivalId': '1001', 'filmTitle': 'Invisible Life of Eurídice Gusmão', 'filmPath': 'invisible-life-of-eurdice-gusmo', 'screeningSubtitles': 'Estonian, English, Russian', 'screeningDate': '2020-08-10', 'screeningTime': '22:45:00', 'screeningDatetime': '2020-08-10T22:45:00+0300', 'calendarDateTime': '2020-08-10T18:45:00+0300', 'screeningTown': 'Tartu', 'screeningCinema': 'Raekoja plats', 'screeningHall': '', 'screeningIntro': '', 'screeningIntroPresenter': '', 'screeningIntroGuests': '', 'screeningQa': '1', 'screeningQaPresenter': 'Liisi Rohumäe', 'screeningQaGuests': 'Karim Ainouz', 'screeningQaDuration': '20', 'screeningTotalDuration': '159'}
+
+days = [{'calendarDate': '2020-08-10'}, {'calendarDate': '2020-08-11'}, {'calendarDate': '2020-08-12'}, {'calendarDate': '2020-08-13'}, {'calendarDate': '2020-08-14'}, {'calendarDate': '2020-08-15'}]
+
+[{'calendarDate': '2020-08-10'}, {'calendarDate': '2020-08-11'}, {'calendarDate': '2020-08-12'}, {'calendarDate': '2020-08-13'}, {'calendarDate': '2020-08-14'}, {'calendarDate': '2020-08-15'}]
+
+[{'screeningCinema': 'Raekoja plats'}, {'screeningCinema': 'Elisa Stage'}, {'screeningCinema': 'Athena Keskus'}]
+
+
+[{'screeningTime': '22:45:00'}, {'screeningTime': '22:00:00'}, {'screeningTime': '23:59:00'}, {'screeningTime': '00:10:00'}, {'screeningTime': '00:45:00'}, {'screeningTime': '16:00:00'}, {'screeningTime': '18:00:00'}, {'screeningTime': '20:00:00'}, {'screeningTime': '00:15:00'}, {'screeningTime': '02:15:00'}, {'screeningTime': '19:00:00'}, {'screeningTime': '21:00:00'}, {'screeningTime': '01:59:00'}, {'screeningTime': '23:45:00'}]
+
+[{'filmTitle': 'Viimane portree', 'calendarDateTime': '2020-08-15T18:00:00+0300'},
+{'filmTitle': 'Maudie', 'calendarDateTime': '2020-08-15T19:45:00+0300'},
+{'filmTitle': 'Viimane portree', 'calendarDateTime': '2020-08-15T18:00:00+0300'},
+{'filmTitle': 'Maudie', 'calendarDateTime': '2020-08-15T19:45:00+0300'}]
+
+
+    allCinemas = []
+    for screening in screeningsData:
+        oneCinema = []
+        for item in allCinemas:
+            if item['screeningCinema'] == screening['screeningCinema']:
+                oneCinema = item
+        if oneCinema == []:
+            allCinemas.append({'screeningCinema': screening['screeningCinema']})
+
+    allTimes = []
+    for screening in screeningsData:
+        oneTime = []
+        for item in allTimes:
+            if item['screeningTime'] == screening['screeningTime']:
+                oneTime = item
+        if oneTime == []:
+            allTimes.append({'screeningTime': screening['screeningTime']})
+            #allTimes.append({'filmTitle': screening['filmTitle']} )
+
+
+
+from __future__ import print_function
+from datetime import datetime, timedelta
+import yaml
+import os
+
+os.chdir(os.path.dirname(__file__))
+
+#data = sorted(parsed_yaml_file, key = lambda i: (i['screeningDate'], i['screeningCinema'], i['screeningTime']))
+sortorder={"Athena Keskus":0, "Raekoja plats":1, "Elisa Stage":2}
+
+
+
+def formatDateTime(dateTime):
+    return str(datetime.strptime(dateTime, '%Y-%m-%dT%H:%M:%S%z'))
+
+def formatedDate(dateTime):
+    return str((datetime.strptime(dateTime, '%Y-%m-%dT%H:%M:%S%z')).date())
+
+
+
+def compileScreeningsCalendar (source, output):
+
+    yaml_file = open("../source/film/"+source, encoding='utf-8')
+    screeningsData = yaml.load(yaml_file, Loader=yaml.FullLoader)
+
+    calendarDays = []
+    for screening in screeningsData:
+        oneDay = []
+        for item in calendarDays:
+            if item['calendarDate'] == formatedDate(screening['calendarDateTime']):
+                oneDay = item
+                print(item)
+            allCinemas = []
+            for screening in screeningsData:
+                oneCinema = []
+                for item in allCinemas:
+                    if item['screeningCinema'] == screening['screeningCinema']:
+                        oneCinema = item
+                if oneCinema == []:
+                    allCinemas.append({'screeningCinema': screening['screeningCinema']})
+        if oneDay == []:
+            calendarDays.append({'calendarDate': formatedDate(screening['calendarDateTime'])})
+
+
+            allTimes = []
+    for screening in screeningsData:
+        oneTime = []
+        for item in allTimes:
+            if item['screeningTime'] == screening['screeningTime']:
+                oneTime = item
+        if oneTime == []:
+            allTimes.append({'screeningTime': screening['screeningTime']})
+            #allTimes.append({'filmTitle': screening['filmTitle']} )
+
+    print(calendarDays)
+    print(allCinemas)
+    print(allTimes)
+
+    with open(r'TESTbetter.yaml', 'w', encoding='utf-8') as file:
+        yaml.dump(calendarDays, file, default_flow_style=False, sort_keys=True, indent=4, allow_unicode=True)
+
+compileScreeningsCalendar('screenings.et.yaml', 'TESTbetter.yaml')
+#thisdict["color"] = "red"
+
+        each val, key in self.data.screeningsCalendar
+            p
+                +calendarDate(key.substr(1, 11))
+            each val2, key in val
+                p= key
+                each val3 in val2
+                    p
+                        +screeningTime(val3.screeningDatetime)
+                        |   - #{val3.filmTitle}
+
+
