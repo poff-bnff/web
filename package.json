@@ -4,7 +4,8 @@
   "description": "poff",
   "private": true,
   "dependencies": {
-    "entu-ssg": "^5.2.6"
+    "entu-ssg": "^5.2.6",
+    "googleapis": "^59.0.0"
   },
   "scripts": {
     "fetch": "python ./helpers/fetch_data.py",
