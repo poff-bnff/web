@@ -12,36 +12,33 @@ var options = {
 };
 
 
-function getData(callback) {
+function getData(callback, lang) {
     request(options, function (error, response) {
         if (error)
             throw new Error(error);
         let data = new Object();
         data = JSON.parse(response.body);
-        callback(data);
+        callback(data, lang);
     });
 }
 
-function getDataCB(data) {
+function getDataCB(data, lang) {
 
     data.forEach(element => {
         // console.log(element.slug_en);
         fs.mkdir(`helpers/test/${element.slug_en}`, bla);
 
-        let elementEt = element;
-        // delete elementEt
-
+        let elementEt = JSON.parse(JSON.stringify(element));
 
         // Object.keys(elementEt).forEach(item => {
         //     console.log(item.substring(item.length - 3, item.length));
-        //     let lastThree = item.substrin(item.length - 3, item.length);
+        //     let lastThree = item.substring(item.length - 3, item.length);
         //     if (lastThree === '_en' || lastThree === '_ru') {
-        //         delete elementEt[item];
+        //         // delete elementEt[item];
         //     }
         //   });
-        let i = 0;
 
-        let keys = [];
+
         for (key in elementEt) {
         // for (i = 0; i < Object.keys(elementEt).length; i++) {
             // let item = elementEt[0];
@@ -51,21 +48,27 @@ function getDataCB(data) {
             // console.log('aaaaaaaaaaaa' + Object.keys(item));
             // console.log(item.substring(item.length - 3, item.length));
             let lastThree = key.substring(key.length - 3, key.length);
-            if (lastThree === '_en' || lastThree === '_ru') {
-                // delete elementEt[item];
-                keys.push(key);
+            let findHyphen = key.substring(key.length - 3, key.length -2);
+            if (lastThree !== `_${lang}` && findHyphen === '_' && lastThree !== '_by' && lastThree !== '_at') {
+                delete elementEt[key];
             }
-        }
-        for (values in keys) {
-            if(keys[values]) {
-                console.log(keys[values]);
-                delete elementEt[keys[values]];
+            if(lastThree === `_${lang}`) {
+                if(key.substring(0, key.length -3) == 'slug') {
+                    elementEt.path = elementEt[key];
+                }
+                elementEt[key.substring(0, key.length -3)] = elementEt[key];
+                delete elementEt[key];
             }
         }
 
-          console.log(elementEt);
-        let yamlStr = yaml.safeDump(element, {'indent':'4'});
-        fs.writeFileSync(`helpers/test/${element.slug_en}/data.yaml`, yamlStr, 'utf8', {space: 2});
+
+        //   console.log(elementEt);
+        let yamlStr = yaml.safeDump(elementEt, {'indent':'4'});
+        console.log(elementEt);
+        console.log('LANGUAAAAAG: ' + lang);
+
+        fs.writeFileSync(`helpers/test/${element.slug_en}/data.${lang}.yaml`, yamlStr, 'utf8', {space: 2});
+
     // YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAML END
 
     });
@@ -73,10 +76,13 @@ function getDataCB(data) {
 }
 
 function bla() {
-    console.log('tere')
+    console.log('tere');
 }
 
-getData(getDataCB)
+getData(getDataCB, "en");
+getData(getDataCB, "et");
+getData(getDataCB, "ru");
+
 
 
 // for (x in data) {
