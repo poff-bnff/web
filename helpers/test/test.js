@@ -15,9 +15,11 @@ function getData() {
     //   console.log(response.body);
         let data = JSON.parse(response.body);
     //   console.log(data);
+        return data;
     });
+
 }
-console.log(bla);
+console.log(getData());
 // for (x in data) {
 //     console.log('bla: ' + x.id);
 // }
