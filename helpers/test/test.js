@@ -1,5 +1,7 @@
-
+const fs = require('fs');
 var request = require('request');
+
+
 var options = {
   'method': 'GET',
   'url': 'http://139.59.130.149/films',
@@ -23,9 +25,15 @@ function getData(callback) {
 
 function getDataCB(data) {
 
+    data.forEach(element => {
+        console.log(element.slug_en);
+        fs.mkdir(`helpers/test/${element.slug_en}`, bla);
+    });
 
+}
 
-    console.log(data[1]);
+function bla() {
+    console.log('tere')
 }
 
 getData(getDataCB)
