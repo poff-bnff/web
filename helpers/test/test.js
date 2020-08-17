@@ -9,17 +9,28 @@ var options = {
 };
 
 
-function getData() {
+function getData(callback) {
     request(options, function (error, response) {
-    if (error) throw new Error(error);
-    //   console.log(response.body);
-        let data = JSON.parse(response.body);
-    //   console.log(data);
-        return data;
+        if (error)
+            throw new Error(error);
+        //   console.log(response.body);
+        let data = new Object();
+        data = JSON.parse(response.body);
+        // console.log(data) + ' bla';
+        callback(data);
     });
-
 }
-console.log(getData());
+
+function getDataCB(data) {
+
+
+
+    console.log(data[1]);
+}
+
+getData(getDataCB)
+
+
 // for (x in data) {
 //     console.log('bla: ' + x.id);
 // }
