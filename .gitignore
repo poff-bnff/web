@@ -1,3 +1,9 @@
 build
 node_modules
 .DS_Store
+
+# sanity
+*.pickle
+credentials.json
+token.json
+helpers/test.txt
