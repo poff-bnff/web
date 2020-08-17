@@ -10,3 +10,8 @@ Fetcher.Fetch(spreadsheetId, range, ProcessDataCB)
 function ProcessDataCB(data){
     console.log(data);
 }
+
+function createJSON(){
+
+
+}
