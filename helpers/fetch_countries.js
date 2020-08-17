@@ -1,5 +1,5 @@
-let fs = require('fs');
-
+const fs = require('fs');
+const request = require('request');
 const Fetcher = require('./fetch_spreadsheet_data');
 
 // t88kataloogiks skripti kataloog
@@ -27,11 +27,12 @@ function ProcessDataCB(source){
         target.push(language_o);
     });
     console.log(target);
-    let countriesTarget = JSON.stringify(target);
-    fs.writeFile('ISOCountries.json', countriesTarget);
+    let countriesTarget = JSON.stringify(target, null, 4);
+    fs.writeFileSync('ISOCountries.json', countriesTarget);
 }
 
-function createJSON(){
 
 
-}
+
+
+

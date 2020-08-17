@@ -75,15 +75,7 @@ function Connect(FetchDataCB) {
     }
 }
 
-/**
- * Prints the names and majors of students in a sample spreadsheet:
- * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
- */
-
-
-// Fetch(FetchDataFromSheet);
-
+//fetch kutsub välja Connecti, mis loob ühenduse googleSheetsiga ja siis küsib vastavalt spreadsheetId-le ja rang-ile vajaliku data
 function Fetch(spreadsheetId, range, callback){
     Connect(function FetchDataFromSheet(auth) {
         const sheets = google.sheets({version: 'v4', auth});
@@ -97,6 +89,9 @@ function Fetch(spreadsheetId, range, callback){
       });
 }
 
-// Fetch('1J_cYJnZI41V8TGuOa8GVDjnHSD9qRmgKTJR3sd9Ff7Y', 'Filmid')
 
 module.exports.Fetch = Fetch;
+
+// MUJAL KASUTAMISEKS TEEN
+//const Fetcher = require('./fetch_spreadsheet_data');
+//Fetcher.Fetch(spreadsheetId, range, ProcessDataCB)
