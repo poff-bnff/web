@@ -6,10 +6,10 @@ const http = require('http');
 const allLanguages = ["en", "et", "ru"];
 
 function fetchAllData(options){
-    // getData(new directory path, language, copy file, connectionOptions CallBackFunction)
-    getData("helpers/fetch_films_from_strapi/", "en", 1, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "et", 0, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "ru", 0, options, getDataCB);
+    // getData(new directory path, language, copy file, show error when slug_en missing, connectionOptions, CallBackFunction)
+    getData("helpers/fetch_films_from_strapi/", "en", 1, 1, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "et", 0, 0, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "ru", 0, 0, options, getDataCB);
 }
 
 function getToken() {
@@ -64,7 +64,7 @@ function fetchAll(token) {
 }
 
 
-function getData(dirPath, lang, copyFile, options, callback) {
+function getData(dirPath, lang, copyFile, showErrors, options, callback) {
     let req = http.request(options, function(response) {
         let data = '';
         response.on('data', function (chunk) {
@@ -72,18 +72,18 @@ function getData(dirPath, lang, copyFile, options, callback) {
         });
         response.on('end', function () {
             data = JSON.parse(data);
-            callback(data, dirPath, lang, copyFile);
+            callback(data, dirPath, lang, copyFile, showErrors);
         });
     }).end();
 }
 
-function getDataCB(data, dirPath, lang, copyFile) {
+function getDataCB(data, dirPath, lang, copyFile, showErrors) {
     data.forEach(element => {
         if(element.slug_en) {
             fs.mkdir(`${dirPath}${element.slug_en}`, err => {
                 if (err) {
                 }
-                });
+            });
 
             let elementEt = JSON.parse(JSON.stringify(element));
 
@@ -102,6 +102,10 @@ function getDataCB(data, dirPath, lang, copyFile) {
                 }
             }
             generateYaml(element, elementEt, dirPath, lang, copyFile)
+        }else{
+            if(showErrors) {
+                console.log(`Film ID ${element.id} slug_en value missing`);
+            }
         }
     });
 
@@ -118,7 +122,6 @@ function generateYaml(element, elementEt, dirPath, lang, copyFile){
         })
     }
 }
-
 
 getToken();
 
