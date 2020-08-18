@@ -48,10 +48,11 @@ function getToken() {
             method: 'GET',
             headers: {'Authorization': 'Bearer ' + token}
         }
+
         // getData(function, new directory path, language, copy file)
-        getData("helpers/test/", "en", 1, getDataCB);
-        getData("helpers/test/", "et", 0, getDataCB);
-        getData("helpers/test/", "ru", 0, getDataCB);
+        getData("helpers/fetch_films_from_strapi/", "en", 1, getDataCB);
+        getData("helpers/fetch_films_from_strapi/", "et", 0, getDataCB);
+        getData("helpers/fetch_films_from_strapi/", "ru", 0, getDataCB);
 
         function getData(dirPath, lang, copyFile, callback) {
             let req = http.request(options, function(response) {
