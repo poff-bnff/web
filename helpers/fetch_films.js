@@ -4,7 +4,7 @@ const Fetcher = require('./fetch_spreadsheet_data');
 // t88kataloogiks skripti kataloog
 process.chdir(__dirname);
 
-let spreadsheetId = '1J_cYJnZI41V8TGuOa8GVDjnHSD9qRmgKTJR3sd9Ff7Y'
+let spreadsheetId = '1lFeU3M4tbm_2TvpPHReRVtUovmRKxQ2Xmv7ouQvwA3o'
 let range = 'Filmid'
 Fetcher.Fetch(spreadsheetId, range, ProcessDataCB)
 
@@ -27,6 +27,41 @@ function splitMultibleCompanies(txt){
     return cast;
 }
 
+function ProcessCountries(txt){
+    let countryNames = txt.split(', ');
+    let countryCodes = [];
+    let countryFromISOcountries = JSON.parse(fs.readFileSync('ISOCountriesFromStrapi.json', 'utf-8'));
+    countryNames.forEach(name => {
+        let found = {'name': name};
+        countryFromISOcountries.forEach(value => {
+            // console.log(value);
+            if (name == value['name_en']){
+                found['id'] = value['id']
+            }
+        } )
+        countryCodes.push(found);
+    })
+    console.log(countryCodes);
+    return countryCodes;
+}
+
+function ProcessLanguages(txt){
+    let languageNames = txt.split(', ');
+    let languageCodes = [];
+    let languageFromISOcountries = JSON.parse(fs.readFileSync('ISOLanguagesFromStrapi.json', 'utf-8'));
+    languageNames.forEach(name => {
+        let found = {'name': name};
+        languageFromISOcountries.forEach(value => {
+            // console.log(value);
+            if (name == value['name_en']){
+                found['id'] = value['id']
+            }
+        } )
+        languageCodes.push(found);
+    })
+    console.log(languageCodes);
+    return languageCodes;
+}
 
 function ProcessDataCB(source){
     let headers = source.values[0];
@@ -65,28 +100,27 @@ function ProcessDataCB(source){
                             'coProducer': [],
                             'productionCompany':splitMultibleCompanies(element['filmProduction']),
                             },
-            'synopsis': {'et': element['filmSynopsis_et'],
-                         'en': element['filmSynopsis_en'],
+            'synopsis': {'et': element['filmSynopsis_et'] || '',
+                         'en': element['filmSynopsis_en'] || '',
                          'ru': '',
                         },
             'media': {'Stills': [],
                       'Posters': [],
-                      'Trailer': {'Url': '',
-                                  'Source': '',
-                                },
-                      'QaClip': {'Url': '',
+                      'Trailer': [{'Url': '',
+                                    'Source': '',
+                                }],
+                      'QaClip': [{'Url': '',
                                  'Source': '',
-                                },
+                                }],
                     },
-            'tags': {'tag_premiere_types': '',
-                     'tag_programmes': element[''],
-                     'tag_genres': element[''],
-                     'tag_keywords': element[''],
+            'tags': {'tag_premiere_types': [],
+                     'tag_programmes': element['tagProgramme'] || [],
+                     'tag_genres': element['tagGenre'] || [],
+                     'tag_keywords': element['tagKeyword'] || [],
                     },
-            'slug_et': element['path_et'],
-            'slug_en': element['path_en'],
-            'slug_ru': '',
-            'countries': ,
+            'countriesAndLanguages': {'countries': ProcessCountries(element['filmCountries_en']),
+                                      'languages': ProcessLanguages(element['filmLanguages_en']),
+                                    },
             'screenings': '',
 
         };
@@ -96,7 +130,7 @@ function ProcessDataCB(source){
     });
 
 
-    console.log(filmList[0]);
+    // console.log(filmList[0]);
 
     let filmsTarget = JSON.stringify(filmList, null, 4);
     fs.writeFileSync('Films.json', filmsTarget);
@@ -107,7 +141,7 @@ function ProcessDataCB(source){
     //     'method': 'POST',
     //     'url': 'http://139.59.130.149/films',
     //     'headers': {
-    //         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk3MjQwNDA2LCJleHAiOjE1OTk4MzI0MDZ9.ZddzcDSe7O130sr4dtxr2XOSP7j-BTmlOI8TGxWgKdM',
+    //         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk3MjQwODk2LCJleHAiOjE1OTk4MzI4OTZ9.KKt5IQQTx1KyHwQ_h3yCbcE9S_zi5x8ZvDqzcP87tN0',
     //         'Content-Type': 'application/json'
     //     },
     //     body: JSON.stringify(film)
