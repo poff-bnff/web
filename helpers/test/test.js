@@ -1,8 +1,29 @@
+
 const fs = require('fs');
 var request = require('request');
 const yaml = require('js-yaml');
 
 const allLanguages = ["en", "et", "ru"];
+
+console.log(process.env.StrapiPassword);
+console.log(process.env.StrapiUserName);
+
+let token = '';
+
+    var optionsAuth = {
+        'method': 'POST',
+        'url': 'http://139.59.130.149/auth/local',
+        'headers': {
+        'Content-Type': 'application/json'
+    },
+        body: JSON.stringify({"identifier":process.env.StrapiUserName,"password":process.env.StrapiPassword})
+
+    };
+    request(optionsAuth, function (error, response) {
+      if (error) throw new Error(error);
+      console.log(JSON.parse(response.body).jwt);
+      token = JSON.parse(response.body).jwt;
+    });
 
 var options = {
   'method': 'GET',
@@ -12,6 +33,7 @@ var options = {
   }
 };
 
+console.log(token + 'bla');
 
 function getData(callback, dirPath, lang, copyFile) {
     request(options, function (error, response) {
