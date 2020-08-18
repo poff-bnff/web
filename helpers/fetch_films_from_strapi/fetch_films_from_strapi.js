@@ -5,6 +5,13 @@ const http = require('http');
 
 const allLanguages = ["en", "et", "ru"];
 
+function fetchAllData(options){
+    // getData(new directory path, language, copy file, connectionOptions CallBackFunction)
+    getData("helpers/fetch_films_from_strapi/", "en", 1, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "et", 0, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "ru", 0, options, getDataCB);
+}
+
 function getToken() {
     let token = '';
 
@@ -53,8 +60,6 @@ function fetchAll(token) {
         headers: {'Authorization': 'Bearer ' + token}
     }
 
-    // getData(function, new directory path, language, copy file)
-
     fetchAllData(options);
 }
 
@@ -100,13 +105,6 @@ function getDataCB(data, dirPath, lang, copyFile) {
     });
 
 }
-
-function fetchAllData(options){
-    getData("helpers/fetch_films_from_strapi/", "en", 1, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "et", 0, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "ru", 0, options, getDataCB);
-}
-
 
 function generateYaml(element, elementEt, dirPath, lang, copyFile){
     let yamlStr = yaml.safeDump(elementEt, { 'indent': '4' });
