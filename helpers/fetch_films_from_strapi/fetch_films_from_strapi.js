@@ -39,38 +39,41 @@ function getToken() {
     })
     requesting.end(function () {
     })
-    function fetchAll(token) {
-        token = token.jwt;
-
-        let options = {
-            host: '139.59.130.149',
-            path: '/films',
-            method: 'GET',
-            headers: {'Authorization': 'Bearer ' + token}
-        }
-
-        // getData(function, new directory path, language, copy file)
-        getData("helpers/fetch_films_from_strapi/", "en", 1, getDataCB);
-        getData("helpers/fetch_films_from_strapi/", "et", 0, getDataCB);
-        getData("helpers/fetch_films_from_strapi/", "ru", 0, getDataCB);
-
-        function getData(dirPath, lang, copyFile, callback) {
-            let req = http.request(options, function(response) {
-                let data = '';
-                response.on('data', function (chunk) {
-                    data += chunk;
-                });
-                response.on('end', function () {
-                    data = JSON.parse(data);
-                    callback(data, dirPath, lang, copyFile);
-                });
-            }).end();
-        }
 
 
+}
 
+function fetchAll(token) {
+    token = token.jwt;
 
+    let options = {
+        host: '139.59.130.149',
+        path: '/films',
+        method: 'GET',
+        headers: {'Authorization': 'Bearer ' + token}
     }
+
+    // getData(function, new directory path, language, copy file)
+
+    getData("helpers/fetch_films_from_strapi/", "en", 1, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "et", 0, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "ru", 0, getDataCB);
+
+    function getData(dirPath, lang, copyFile, callback) {
+        let req = http.request(options, function(response) {
+            let data = '';
+            response.on('data', function (chunk) {
+                data += chunk;
+            });
+            response.on('end', function () {
+                data = JSON.parse(data);
+                callback(data, dirPath, lang, copyFile);
+            });
+        }).end();
+    }
+
+
+
 
 }
 
