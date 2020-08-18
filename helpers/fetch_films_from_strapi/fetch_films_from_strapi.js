@@ -55,28 +55,24 @@ function fetchAll(token) {
 
     // getData(function, new directory path, language, copy file)
 
-    getData("helpers/fetch_films_from_strapi/", "en", 1, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "et", 0, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "ru", 0, getDataCB);
-
-    function getData(dirPath, lang, copyFile, callback) {
-        let req = http.request(options, function(response) {
-            let data = '';
-            response.on('data', function (chunk) {
-                data += chunk;
-            });
-            response.on('end', function () {
-                data = JSON.parse(data);
-                callback(data, dirPath, lang, copyFile);
-            });
-        }).end();
-    }
-
-
-
-
+    getData("helpers/fetch_films_from_strapi/", "en", 1, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "et", 0, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "ru", 0, options, getDataCB);
 }
 
+
+function getData(dirPath, lang, copyFile, options, callback) {
+    let req = http.request(options, function(response) {
+        let data = '';
+        response.on('data', function (chunk) {
+            data += chunk;
+        });
+        response.on('end', function () {
+            data = JSON.parse(data);
+            callback(data, dirPath, lang, copyFile);
+        });
+    }).end();
+}
 
 function getDataCB(data, dirPath, lang, copyFile) {
     data.forEach(element => {
