@@ -97,19 +97,25 @@ function getDataCB(data, dirPath, lang, copyFile) {
                 delete elementEt[key];
             }
         }
+        generateYaml(element, elementEt, dirPath, lang, copyFile)
 
-        let yamlStr = yaml.safeDump(elementEt, { 'indent': '4' });
-
-        fs.writeFileSync(`${dirPath}${element.slug_en}/data.${lang}.yaml`, yamlStr, 'utf8');
-        if (copyFile) {
-            fs.copyFile(`${dirPath}film_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
-                if (err) throw err;
-                console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
-            })
-        }
     });
 
 }
+
+
+function generateYaml(element, elementEt, dirPath, lang, copyFile){
+    let yamlStr = yaml.safeDump(elementEt, { 'indent': '4' });
+
+    fs.writeFileSync(`${dirPath}${element.slug_en}/data.${lang}.yaml`, yamlStr, 'utf8');
+    if (copyFile) {
+        fs.copyFile(`${dirPath}film_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
+            if (err) throw err;
+            console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
+        })
+    }
+}
+
 
 getToken();
 
