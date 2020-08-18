@@ -76,7 +76,7 @@ function Connect(FetchDataCB) {
 }
 
 //fetch kutsub välja Connecti, mis loob ühenduse googleSheetsiga ja siis küsib vastavalt spreadsheetId-le ja rang-ile vajaliku data
-function Fetch(spreadsheetId, range, callback){
+function Fetch(spreadsheetId, range, callback, token){
     Connect(function FetchDataFromSheet(auth) {
         const sheets = google.sheets({version: 'v4', auth});
         sheets.spreadsheets.values.get({
@@ -84,7 +84,7 @@ function Fetch(spreadsheetId, range, callback){
           range: range,
         }, (err, res) => {
           if (err) return console.log('The API returned an error: ' + err);
-          callback(res.data)
+          callback(res.data, token)
         });
       });
 }

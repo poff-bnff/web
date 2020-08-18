@@ -1,5 +1,4 @@
 const fs = require('fs');
-const request = require('request');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi');
 
@@ -14,7 +13,7 @@ function GetDataFromStrapi(targetname, callbackfunction, token){
     // };
     let options = {
         host: '139.59.130.149',
-        path: targetname,
+        path: targetname +'?_limit=-1',
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -43,8 +42,7 @@ function GetDataFromStrapi(targetname, callbackfunction, token){
         console.log(error);
     })
 
-    req.end(function () {
-    })
+    req.end()
 
 };
 
@@ -67,12 +65,12 @@ function ConsoleLogData(strapiData){
 }
 
 //kasutan saadud tokenit ja kutsun välja pärnigu funktsiooni
-function AuthAll(token) {
+function FetchData(token) {
     GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
     GetDataFromStrapi('/languages', WriteLanguagesDataToJSON, token);
 }
 //autoriseerimine, annan kaasa callback funktsiooni ja saan vastu tokeni
-AuthStrapi.Auth(AuthAll)
+AuthStrapi.Auth(FetchData)
 
 
 

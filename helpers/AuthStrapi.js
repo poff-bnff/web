@@ -43,8 +43,7 @@ let options = {
         console.log(error);
     })
 
-    req.end(function () {
-    })
+    req.end()
 }
 
 // function fetchAll(token) {
@@ -55,5 +54,13 @@ let options = {
 
 module.exports.Auth = AuthStrapi
 
+//MUJAL KASUTAMISEKS
+// const AuthStrapi = require('./AuthStrapi')
+// //kasutan saadud tokenit ja kutsun välja pärnigu funktsiooni
+// function AuthAll(token) {
+//     GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
 
+// }
+// //autoriseerimine, annan kaasa callback funktsiooni ja saan vastu tokeni
+// AuthStrapi.Auth(AuthAll)
 
