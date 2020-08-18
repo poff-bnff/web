@@ -79,29 +79,30 @@ function getData(dirPath, lang, copyFile, options, callback) {
 
 function getDataCB(data, dirPath, lang, copyFile) {
     data.forEach(element => {
-        fs.mkdir(`${dirPath}${element.slug_en}`, err => {
-            if (err) {
-            }
-            });
-
-        let elementEt = JSON.parse(JSON.stringify(element));
-
-        for (key in elementEt) {
-            let lastThree = key.substring(key.length - 3, key.length);
-            let findHyphen = key.substring(key.length - 3, key.length - 2);
-            if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
-                delete elementEt[key];
-            }
-            if (lastThree === `_${lang}`) {
-                if (key.substring(0, key.length - 3) == 'slug') {
-                    elementEt.path = elementEt[key];
+        if(element.slug_en) {
+            fs.mkdir(`${dirPath}${element.slug_en}`, err => {
+                if (err) {
                 }
-                elementEt[key.substring(0, key.length - 3)] = elementEt[key];
-                delete elementEt[key];
-            }
-        }
-        generateYaml(element, elementEt, dirPath, lang, copyFile)
+                });
 
+            let elementEt = JSON.parse(JSON.stringify(element));
+
+            for (key in elementEt) {
+                let lastThree = key.substring(key.length - 3, key.length);
+                let findHyphen = key.substring(key.length - 3, key.length - 2);
+                if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
+                    delete elementEt[key];
+                }
+                if (lastThree === `_${lang}`) {
+                    if (key.substring(0, key.length - 3) == 'slug') {
+                        elementEt.path = elementEt[key];
+                    }
+                    elementEt[key.substring(0, key.length - 3)] = elementEt[key];
+                    delete elementEt[key];
+                }
+            }
+            generateYaml(element, elementEt, dirPath, lang, copyFile)
+        }
     });
 
 }
