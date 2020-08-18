@@ -55,9 +55,7 @@ function fetchAll(token) {
 
     // getData(function, new directory path, language, copy file)
 
-    getData("helpers/fetch_films_from_strapi/", "en", 1, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "et", 0, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "ru", 0, options, getDataCB);
+    fetchAllData(options);
 }
 
 
@@ -101,6 +99,12 @@ function getDataCB(data, dirPath, lang, copyFile) {
 
     });
 
+}
+
+function fetchAllData(options){
+    getData("helpers/fetch_films_from_strapi/", "en", 1, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "et", 0, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "ru", 0, options, getDataCB);
 }
 
 
