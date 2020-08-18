@@ -2,6 +2,8 @@ const fs = require('fs');
 const request = require('request');
 const Fetcher = require('./fetch_spreadsheet_data');
 
+
+
 // t88kataloogiks skripti kataloog
 process.chdir(__dirname);
 

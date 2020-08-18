@@ -1,41 +1,71 @@
 const fs = require('fs');
 const request = require('request');
+const http = require('http');
+const AuthStrapi = require('./AuthStrapi');
 
-// get data from Strapi
-function GetDataFromStrapi(targetname, callbackfunction){
+
+function GetDataFromStrapi(targetname, callbackfunction, token){
+    // let options = {
+    //     'method': 'GET',
+    //     'url': 'http://139.59.130.149/' + targetname,
+    //     'headers': {
+    //     'Authorization': 'Bearer ' + token
+    //     }
+    // };
     let options = {
-        'method': 'GET',
-        'url': 'http://139.59.130.149/' + targetname,
-        'headers': {
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk3MzAxNjA3LCJleHAiOjE1OTk4OTM2MDd9.h4lJbXMuALxrbXa39Xkq5bqOEbC-lzln14RAlDxPWhI'
-        }
-    };
+        host: '139.59.130.149',
+        path: targetname,
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token}
+    }
 
-    request(options, function (error, response, callback) {
-        if (error) throw new Error(error);
-        callbackfunction(response.body);
+    // request(options, function (error, response, callback) {
+    //     if (error) throw new Error(error);
+    //     callbackfunction(response.body);
+    // });
+    let req = http.request(options, function (response) {
+        let allData = '';
+        response.on('data', function (chunk) {
+            allData += chunk;
+        });
+        response.on('end', function () {
+            let data = JSON.parse(allData)
+            callbackfunction(data)
+            //console.log(data);
+        });
+        response.on('error', function (error) {
+            console.log(error);
+        });
     });
+    req.on('error', function (error) {
+        console.log(error);
+    })
+
+    req.end(function () {
+    })
+
 };
-
-
 
 
 //siin teen midagi saadud dataga
 function WriteCountriesDataToJSON(strapiData){
     process.chdir(__dirname);
     console.log(strapiData);
-    fs.writeFileSync('ISOCountriesFromStrapi.json', JSON.stringify(JSON.parse(strapiData), null, 4));
+    fs.writeFileSync('ISOCountriesFromStrapi.json', JSON.stringify(strapiData, null, 4));
 }
 
-// function WriteFilmsDataToJSON(strapiData){
-//     process.chdir(__dirname);
-//     console.log(strapiData);
-//     fs.writeFileSync('FilmsFromStrapi.json', JSON.stringify(JSON.parse(strapiData), null, 4));
-// }
+function ConsoleLogData(strapiData){
+    console.log(strapiData);
+}
 
-
-GetDataFromStrapi('countries', WriteCountriesDataToJSON);
-////GetDataFromStrapi('films', WriteFilmsDataToJSON);
+//kasutan saadud tokenit ja kutsun välja pärnigu funktsiooni
+function AuthAll(token) {
+    GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
+}
+//autoriseerimine, annan kaasa callback funktsiooni ja saan vastu tokeni
+AuthStrapi.Auth(AuthAll)
 
 
 
