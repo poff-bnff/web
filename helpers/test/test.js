@@ -1,52 +1,77 @@
 
 const fs = require('fs');
-let request = require('request');
 const yaml = require('js-yaml');
+const http = require('http');
 
 const allLanguages = ["en", "et", "ru"];
 
 function getToken() {
     let token = '';
 
-    let optionsAuth = {
-        'method': 'POST',
-        'url': 'http://139.59.130.149/auth/local',
-        'headers': {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ "identifier": process.env.StrapiUserName, "password": process.env.StrapiPassword })
-    };
-
-    request(optionsAuth, function (error, response) {
-        if (error) throw new Error(error);
-        token = JSON.parse(response.body).jwt;
+    let requestOptions = {
+        host: '139.59.130.149',
+        path: '/auth/local',
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+    }
+    let requesting = http.request(requestOptions, function(response) {
+        let tokenStr = '';
+        //another chunk of data has been received, so append it to `token`
+        response.on('data', function (chunk) {
+          tokenStr += chunk;
+        });
+        //the whole response has been received, so we just print it out here
+        response.on('end', function () {
+            let token = JSON.parse(tokenStr)
+            fetchAll(token)
+        });
+        response.on('error', function (error) {
+            console.log(error);
+        })
+    })
+    requesting.write(JSON.stringify({
+            "identifier":process.env['StrapiUserName'],
+            "password":process.env['StrapiPassword']
+        })
+    )
+    requesting.on('error', function (error) {
+        console.log(error);
+    })
+    requesting.end(function () {
+    })
+    function fetchAll(token) {
+        token = token.jwt;
 
         let options = {
-            'method': 'GET',
-            'url': 'http://139.59.130.149/films',
-            'headers': {
-                'Authorization': 'Bearer ' + token
-            }
-        };
-
+            host: '139.59.130.149',
+            path: '/films',
+            method: 'GET',
+            headers: {'Authorization': 'Bearer ' + token}
+        }
         // getData(function, new directory path, language, copy file)
         getData("helpers/test/", "en", 1, getDataCB);
         getData("helpers/test/", "et", 0, getDataCB);
         getData("helpers/test/", "ru", 0, getDataCB);
 
         function getData(dirPath, lang, copyFile, callback) {
-            request(options, function (error, response) {
-                if (error)
-                    throw new Error(error);
-                let data = new Object();
-                data = JSON.parse(response.body);
-                callback(data, dirPath, lang, copyFile);
-            });
+            let req = http.request(options, function(response) {
+                let data = '';
+                response.on('data', function (chunk) {
+                    data += chunk;
+                });
+                response.on('end', function () {
+                    data = JSON.parse(data);
+                    callback(data, dirPath, lang, copyFile);
+                });
+            }).end();
         }
 
         function getDataCB(data, dirPath, lang, copyFile) {
             data.forEach(element => {
-                fs.mkdir(`${dirPath}${element.slug_en}`, bla);
+                fs.mkdir(`${dirPath}${element.slug_en}`, err => {
+                    if (err) {
+                    }
+                  });
 
                 let elementEt = JSON.parse(JSON.stringify(element));
 
@@ -78,10 +103,8 @@ function getToken() {
 
         }
 
-        function bla() {
-        }
-    });
 
+    }
 
 }
 
