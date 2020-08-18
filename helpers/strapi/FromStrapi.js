@@ -11,6 +11,7 @@ function GetDataFromStrapi(targetname, callbackfunction, token){
     //     'Authorization': 'Bearer ' + token
     //     }
     // };
+    //
     let options = {
         host: '139.59.130.149',
         path: targetname +'?_limit=-1',
