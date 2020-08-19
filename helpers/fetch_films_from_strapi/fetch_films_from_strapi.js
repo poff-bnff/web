@@ -107,10 +107,10 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
                 if (hasLanguageKeys.includes(key)){
                     for (subkey1 in elementEt[key]){
                         if (subkey1 === lang && (subkey1 === 'et' || subkey1 === 'en' || subkey1 === 'ru')){
-                            synopsis = elementEt[key][lang];
-                            console.log(synopsis);
-                            delete elementEt[key];
-                            elementEt[key] = synopsis;
+
+                            modifyData(elementEt, key, lang);
+
+
                         }
                     }
                 }
@@ -137,6 +137,12 @@ function generateYaml(element, elementEt, dirPath, lang, copyFile){
             // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
     }
+}
+
+function modifyData(elementEt, key, lang){
+    finalData = elementEt[key][lang];
+    delete elementEt[key];
+    elementEt[key] = finalData;
 }
 
 getToken();
