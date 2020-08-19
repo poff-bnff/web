@@ -1,5 +1,5 @@
 const fs = require('fs');
-const Fetcher = require('./fetch_spreadsheet_data');
+const Fetcher = require('./GoogleSheets/FromSheets');
 
 // t88kataloogiks skripti kataloog
 process.chdir(__dirname);
