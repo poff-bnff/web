@@ -120,9 +120,9 @@ function ProcessDataCB(source){
                                       'languages': ProcessLanguages(element['filmLanguages_en']),
                                     },
             'screenings': '',
-            'slug_et': slugify(element['filmTitle_et']),
-            'slug_en': slugify(element['filmTitle_en']),
-            'slug_ru': '',
+            'slug_et': slugify((element['filmTitle_et']), {lower:true}),
+            'slug_en': slugify((element['filmTitle_en']), {lower:true}),
+            'slug_ru': slugify('', {lower:true}),
 
         };
         // console.log(slugify(element['filmTitle_et']));
