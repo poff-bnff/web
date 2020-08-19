@@ -7,9 +7,9 @@ const allLanguages = ["en", "et", "ru"];
 
 function fetchAllData(options){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/film/", "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.en.yaml'}, options, getDataCB);
-    getData("source/film/", "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.et.yaml'}, options, getDataCB);
-    getData("source/film/", "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.ru.yaml'}, options, getDataCB);
+    getData("source/film/", "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
+    getData("source/film/", "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
+    getData("source/film/", "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
@@ -91,7 +91,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
                 let lastThree = key.substring(key.length - 3, key.length);
                 let findHyphen = key.substring(key.length - 3, key.length - 2);
                 if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
-                    if (key.substring(0, key.length - 3) == 'slug') {
+                    if (key.substring(0, key.length - 3) == 'slug' && elementEt[key]) {
                         aliases.push(elementEt[key]);
                     }
                     delete elementEt[key];
