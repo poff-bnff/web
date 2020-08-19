@@ -4,14 +4,6 @@ const AuthStrapi = require('./AuthStrapi');
 
 
 function GetDataFromStrapi(targetname, callbackfunction, token){
-    // let options = {
-    //     'method': 'GET',
-    //     'url': 'http://139.59.130.149/' + targetname,
-    //     'headers': {
-    //     'Authorization': 'Bearer ' + token
-    //     }
-    // };
-    //
     let options = {
         host: '139.59.130.149',
         path: targetname +'?_limit=-1',
@@ -20,11 +12,6 @@ function GetDataFromStrapi(targetname, callbackfunction, token){
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token}
     }
-
-    // request(options, function (error, response, callback) {
-    //     if (error) throw new Error(error);
-    //     callbackfunction(response.body);
-    // });
     let req = http.request(options, function (response) {
         let allData = '';
         response.on('data', function (chunk) {
@@ -52,7 +39,17 @@ function GetDataFromStrapi(targetname, callbackfunction, token){
 function WriteCountriesDataToJSON(strapiData){
     process.chdir(__dirname);
     console.log(strapiData);
-    fs.writeFileSync('ISOCountriesFromStrapi.json', JSON.stringify(strapiData, null, 4));
+    fs.writeFileSync('../data/ISOCountriesFromStrapi.json', JSON.stringify(strapiData, null, 4));
+}
+function WriteFilmsDataToJSON(strapiData){
+    process.chdir(__dirname);
+    console.log(strapiData);
+    fs.writeFileSync('../data/FilmsFromStrapi.json', JSON.stringify(strapiData, null, 4));
+}
+function WriteLangsDataToJSON(strapiData){
+    process.chdir(__dirname);
+    console.log(strapiData);
+    fs.writeFileSync('../data/ISOlanguages.json', JSON.stringify(strapiData, null, 4));
 }
 
 function ConsoleLogData(strapiData){
@@ -62,6 +59,9 @@ function ConsoleLogData(strapiData){
 //kasutan saadud tokenit ja kutsun välja pärnigu funktsiooni
 function FetchData(token) {
     GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
+    GetDataFromStrapi('/films', WriteFilmsDataToJSON, token);
+    GetDataFromStrapi('/languages', WriteLangsDataToJSON, token);
+
 };
 //autoriseerimine, annan kaasa callback funktsiooni ja saan vastu tokeni
 AuthStrapi.Auth(FetchData)

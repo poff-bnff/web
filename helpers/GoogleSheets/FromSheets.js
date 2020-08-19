@@ -23,13 +23,6 @@ function Connect(FetchDataCB) {
         authorize(JSON.parse(content), FetchDataCB);
     });
 
-    /**
-     * Create an OAuth2 client with the given credentials, and then execute the
-     * given callback function.
-     * @param {Object} credentials The authorization client credentials.
-     * @param {function} callback The callback to call with the authorized client.
-     */
-
     function authorize(credentials, FetchDataCB) {
         const {client_secret, client_id, redirect_uris} = credentials.installed;
         const oAuth2Client = new google.auth.OAuth2(
@@ -92,6 +85,6 @@ function Fetch(spreadsheetId, range, callback, token){
 
 module.exports.Fetch = Fetch;
 
-// MUJAL KASUTAMISEKS TEEN
-//const Fetcher = require('./fetch_spreadsheet_data');
+// MUJAL KASUTAMISEKS TEEN, kus ProcessdataCB teeb midagi tagasi saadud dataga
+//const Fetcher = require('./GoogleSheets/FromSheets');
 //Fetcher.Fetch(spreadsheetId, range, ProcessDataCB)
