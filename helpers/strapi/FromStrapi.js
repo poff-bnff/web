@@ -52,6 +52,12 @@ function WriteLangsDataToJSON(strapiData){
     fs.writeFileSync('../data/ISOlanguages.json', JSON.stringify(strapiData, null, 4));
 }
 
+function WriteLanguagesDataToJSON(strapiData){
+    process.chdir(__dirname);
+    console.log(strapiData);
+    fs.writeFileSync('ISOLanguagesFromStrapi.json', JSON.stringify(strapiData, null, 4));
+}
+
 function ConsoleLogData(strapiData){
     console.log(strapiData);
 }
@@ -63,6 +69,7 @@ function FetchData(token) {
     GetDataFromStrapi('/languages', WriteLangsDataToJSON, token);
 
 };
+
 //autoriseerimine, annan kaasa callback funktsiooni ja saan vastu tokeni
 AuthStrapi.Auth(FetchData)
 
