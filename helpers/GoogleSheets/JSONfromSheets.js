@@ -32,17 +32,16 @@ function ProcessDataCB(source, CBfunction){
 function WriteLangsJSON (sheetsData){
     ProcessDataCB(sheetsData, function WriteLangs(sheetsData){
         console.log(sheetsData);
-        fs.writeFileSync('../data/ISOCountries.json', sheetsData);
+        fs.writeFileSync('../data/ISOLanguages.json', sheetsData);
     });
 }
 
 function WriteCountriesJSON (sheetsData){
     ProcessDataCB(sheetsData, function WriteLangs(sheetsData){
         console.log(sheetsData);
-        fs.writeFileSync('../data/ISOLanguages.json', sheetsData);
+        fs.writeFileSync('../data/ISOCountries.json', sheetsData);
     });
 }
-
 
 Fetcher.Fetch('1tgM7Pgc1FzmNavWiZ_9uk3gJI97s0pkewVqHzqHo13c', 'ISOcountries', WriteCountriesJSON)
 Fetcher.Fetch('1rZaQfVqVgdnJRLHwp02deUoISndpprC8ZQtxfK6zK-E', 'ISOlanguages', WriteLangsJSON)
