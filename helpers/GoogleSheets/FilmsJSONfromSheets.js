@@ -1,13 +1,10 @@
 const fs = require('fs');
-const Fetcher = require('./GoogleSheets/FromSheets');
+const request = require('request');
+const Fetcher = require('./FromSheets');
+
 
 // t88kataloogiks skripti kataloog
 process.chdir(__dirname);
-
-let spreadsheetId = '1lFeU3M4tbm_2TvpPHReRVtUovmRKxQ2Xmv7ouQvwA3o'
-let range = 'Filmid'
-Fetcher.Fetch(spreadsheetId, range, ProcessDataCB)
-
 
 function splitMultibleNames(txt){
     let names = txt.split(',');
@@ -30,7 +27,7 @@ function splitMultibleCompanies(txt){
 function ProcessCountries(txt){
     let countryNames = txt.split(', ');
     let countryCodes = [];
-    let countryFromISOcountries = JSON.parse(fs.readFileSync('ISOCountriesFromStrapi.json', 'utf-8'));
+    let countryFromISOcountries = JSON.parse(fs.readFileSync('../data/ISOCountriesFromStrapi.json', 'utf-8'));
     countryNames.forEach(name => {
         let found = {'name': name};
         countryFromISOcountries.forEach(value => {
@@ -48,7 +45,7 @@ function ProcessCountries(txt){
 function ProcessLanguages(txt){
     let languageNames = txt.split(', ');
     let languageCodes = [];
-    let languageFromISOcountries = JSON.parse(fs.readFileSync('ISOLanguagesFromStrapi.json', 'utf-8'));
+    let languageFromISOcountries = JSON.parse(fs.readFileSync('../data/ISOLanguagesFromStrapi.json', 'utf-8'));
     languageNames.forEach(name => {
         let found = {'name': name};
         languageFromISOcountries.forEach(value => {
@@ -127,30 +124,11 @@ function ProcessDataCB(source){
         // console.log(splitMultibleNames(element['filmDirector']));
 
         filmList.push(film_object);
+
+
     });
-
-
-    console.log(filmList[0]);
-
     let filmsTarget = JSON.stringify(filmList, null, 4);
-    fs.writeFileSync('Films.json', filmsTarget);
-
-    // target.forEach (film => {
-    //     let request = require('request');
-    //     options = {
-    //     'method': 'POST',
-    //     'url': 'http://139.59.130.149/films',
-    //     'headers': {
-    //         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk3MjQwODk2LCJleHAiOjE1OTk4MzI4OTZ9.KKt5IQQTx1KyHwQ_h3yCbcE9S_zi5x8ZvDqzcP87tN0',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(film)
-
-    //     };
-    //     request(options, function (error, response) {
-    //     if (error) throw new Error(error);
-    //     console.log(response.body);
-    // });
-    // })
-    // console.log(film)
+    fs.writeFileSync('../data/Films.json', filmsTarget);
 }
+
+    Fetcher.Fetch('1lFeU3M4tbm_2TvpPHReRVtUovmRKxQ2Xmv7ouQvwA3o', 'Filmid', ProcessDataCB);
