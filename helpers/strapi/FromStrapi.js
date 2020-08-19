@@ -60,7 +60,7 @@ function ConsoleLogData(strapiData){
 //kasutan saadud tokenit ja kutsun välja pärnigu funktsiooni
 function FetchData(token) {
     GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
-    //GetDataFromStrapi('/films', WriteFilmsDataToJSON, token);
+    GetDataFromStrapi('/films', WriteFilmsDataToJSON, token);
     GetDataFromStrapi('/languages', WriteLanguagesDataToJSON, token);
 
 };

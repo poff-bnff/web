@@ -8,8 +8,8 @@ function PostDataToStrapi(targetname, token, dataToPost){
     dataToPost.forEach (dataObject =>{
         let options = {
             host: '139.59.130.149',
-            path: targetname,
-            method: 'POST',
+            path: targetname, //siia on vaja id-d kaasa anda
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token
@@ -36,11 +36,9 @@ function PostDataToStrapi(targetname, token, dataToPost){
 
             res.on("error", function (error) {
                 console.error(error);
-
             });
 
         });
-        //console.log(dataObject)
         req.write(JSON.stringify(dataObject));
 
         req.end();
@@ -54,8 +52,6 @@ AuthStrapi.Auth(PostData)
 
 //Postdata kutsub välja PostDataToStrapi ja annab sellele kaasa tokeni
 // lisaks tuleb talle anda info, mis objekti saadad (nt:'/countries') ja array saadetavatest objektidest
-
-
 function PostData(token) {
     // //siin panen kokku objekti, mida strapisse kirjutada
     // let countryObjects = JSON.parse(fs.readFileSync('../ISOCountries.json', 'utf-8'))
@@ -66,7 +62,6 @@ function PostData(token) {
 
      let filmObjects = JSON.parse(fs.readFileSync('../data/Films.json', 'utf-8'))
      PostDataToStrapi('/films', token, filmObjects);
-
 };
 
 
