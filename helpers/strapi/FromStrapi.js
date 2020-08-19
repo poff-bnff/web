@@ -46,16 +46,11 @@ function WriteFilmsDataToJSON(strapiData){
     console.log(strapiData);
     fs.writeFileSync('../data/FilmsFromStrapi.json', JSON.stringify(strapiData, null, 4));
 }
-function WriteLangsDataToJSON(strapiData){
-    process.chdir(__dirname);
-    console.log(strapiData);
-    fs.writeFileSync('../data/ISOlanguages.json', JSON.stringify(strapiData, null, 4));
-}
 
 function WriteLanguagesDataToJSON(strapiData){
     process.chdir(__dirname);
     console.log(strapiData);
-    fs.writeFileSync('ISOLanguagesFromStrapi.json', JSON.stringify(strapiData, null, 4));
+    fs.writeFileSync('../ISOLanguagesFromStrapi.json', JSON.stringify(strapiData, null, 4));
 }
 
 function ConsoleLogData(strapiData){
@@ -65,8 +60,8 @@ function ConsoleLogData(strapiData){
 //kasutan saadud tokenit ja kutsun välja pärnigu funktsiooni
 function FetchData(token) {
     GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
-    GetDataFromStrapi('/films', WriteFilmsDataToJSON, token);
-    GetDataFromStrapi('/languages', WriteLangsDataToJSON, token);
+    // GetDataFromStrapi('/films', WriteFilmsDataToJSON, token);
+    GetDataFromStrapi('/languages', WriteLanguagesDataToJSON, token);
 
 };
 
