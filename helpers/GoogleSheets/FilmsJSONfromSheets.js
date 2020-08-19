@@ -1,6 +1,7 @@
 const fs = require('fs');
 const request = require('request');
 const Fetcher = require('./FromSheets');
+const slugify = require('slugify');
 
 
 // t88kataloogiks skripti kataloog
@@ -119,9 +120,12 @@ function ProcessDataCB(source){
                                       'languages': ProcessLanguages(element['filmLanguages_en']),
                                     },
             'screenings': '',
+            'slug_et': slugify(element['filmTitle_et']),
+            'slug_en': slugify(element['filmTitle_en']),
+            'slug_ru': '',
 
         };
-        // console.log(splitMultibleNames(element['filmDirector']));
+        // console.log(slugify(element['filmTitle_et']));
 
         filmList.push(film_object);
 
