@@ -6,10 +6,10 @@ const http = require('http');
 const allLanguages = ["en", "et", "ru"];
 
 function fetchAllData(options){
-    // getData(new directory path, language, copy file, show error when slug_en missing, connectionOptions, CallBackFunction)
-    getData("helpers/fetch_films_from_strapi/", "en", 1, 1, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "et", 0, 0, options, getDataCB);
-    getData("helpers/fetch_films_from_strapi/", "ru", 0, 0, options, getDataCB);
+    // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
+    getData("helpers/fetch_films_from_strapi/", "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.en.yaml'}, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.et.yaml'}, options, getDataCB);
+    getData("helpers/fetch_films_from_strapi/", "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
@@ -64,7 +64,7 @@ function fetchAll(token) {
 }
 
 
-function getData(dirPath, lang, copyFile, showErrors, options, callback) {
+function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callback) {
     let req = http.request(options, function(response) {
         let data = '';
         response.on('data', function (chunk) {
@@ -72,12 +72,12 @@ function getData(dirPath, lang, copyFile, showErrors, options, callback) {
         });
         response.on('end', function () {
             data = JSON.parse(data);
-            callback(data, dirPath, lang, copyFile, showErrors);
+            callback(data, dirPath, lang, copyFile, dataFrom, showErrors);
         });
     }).end();
 }
 
-function getDataCB(data, dirPath, lang, copyFile, showErrors) {
+function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
     data.forEach(element => {
         if(element.slug_en) {
             fs.mkdir(`${dirPath}${element.slug_en}`, err => {
@@ -86,11 +86,14 @@ function getDataCB(data, dirPath, lang, copyFile, showErrors) {
             });
 
             let elementEt = JSON.parse(JSON.stringify(element));
-
+            let aliases = []
             for (key in elementEt) {
                 let lastThree = key.substring(key.length - 3, key.length);
                 let findHyphen = key.substring(key.length - 3, key.length - 2);
                 if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
+                    if (key.substring(0, key.length - 3) == 'slug') {
+                        aliases.push(elementEt[key]);
+                    }
                     delete elementEt[key];
                 }
                 if (lastThree === `_${lang}`) {
@@ -101,6 +104,8 @@ function getDataCB(data, dirPath, lang, copyFile, showErrors) {
                     delete elementEt[key];
                 }
             }
+            elementEt.aliases = aliases;
+            elementEt.data = dataFrom;
             generateYaml(element, elementEt, dirPath, lang, copyFile)
         }else{
             if(showErrors) {
