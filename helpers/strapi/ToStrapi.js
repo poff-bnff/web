@@ -57,10 +57,15 @@ AuthStrapi.Auth(PostData)
 
 
 function PostData(token) {
+    // //siin panen kokku objekti, mida strapisse kirjutada
+    // let countryObjects = JSON.parse(fs.readFileSync('../ISOCountries.json', 'utf-8'))
+    // //console.log(dataObjects);
+    // PostDataToStrapi('/countries', token, countryObjects);
     //siin panen kokku objekti, mida strapisse kirjutada
-    let dataObjects = JSON.parse(fs.readFileSync('../ISOCountries.json', 'utf-8'))
+    let langObjects = JSON.parse(fs.readFileSync('../data/ISOlanguages.json', 'utf-8'))
     //console.log(dataObjects);
-    PostDataToStrapi('/countries', token, dataObjects);
+    PostDataToStrapi('/languages', token, langObjects);
+
 };
 
 module.exports.POST = PostDataToStrapi
