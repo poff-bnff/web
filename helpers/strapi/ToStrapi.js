@@ -1,7 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi')
-const Fetcher = require('./fetch_spreadsheet_data');
+const Fetcher = require('../fetch_spreadsheet_data');
 
 let postData =[{
     "code": "AD",
@@ -56,8 +56,6 @@ function PostDataToStrapi(targetname, token){
         });
 
     });
-    console.log(token);
-    console.log(JSON.stringify(oneCountry))
     req.write(JSON.stringify(oneCountry));
 
     req.end();
