@@ -130,7 +130,7 @@ function ProcessDataCB(source){
     });
 
 
-    // console.log(filmList[0]);
+    console.log(filmList[0]);
 
     let filmsTarget = JSON.stringify(filmList, null, 4);
     fs.writeFileSync('Films.json', filmsTarget);
