@@ -1,0 +1,183 @@
+id: 513
+EventivalId: null
+TitleOriginal: null
+Year: null
+RuntimeMinutes: null
+Director: null
+Producer: null
+CoProducer: null
+Screenwriter: null
+DoP: null
+Editor: null
+Composer: null
+Cast: null
+Production: null
+Synopsis: null
+SynopsisAuthor: null
+PresenterText: null
+Runtime: null
+FilmId: null
+titleOriginal: ''
+year: 2016
+runtime: 115
+filmId: '1011'
+credentials:
+    id: 151
+    ProductionCompany: null
+    director:
+        -
+            id: 1787
+            et: Aisling Walsh
+            en: Aisling Walsh
+            ru: Aisling Walsh
+    screenwriter:
+        -
+            id: 1799
+            et: Sherry White
+            en: Sherry White
+            ru: Sherry White
+    doP:
+        -
+            id: 1808
+            et: Guy Godfree
+            en: Guy Godfree
+            ru: Guy Godfree
+    cast:
+        -
+            id: 1832
+            et: Sally Hawkins
+            en: Sally Hawkins
+            ru: Sally Hawkins
+        -
+            id: 1834
+            et: ' Ethan Hawke'
+            en: ' Ethan Hawke'
+            ru: ' Ethan Hawke'
+        -
+            id: 1835
+            et: ' Kari Matchett'
+            en: ' Kari Matchett'
+            ru: ' Kari Matchett'
+    composer:
+        -
+            id: 1847
+            et: Michael Timmins
+            en: Michael Timmins
+            ru: Michael Timmins
+    editor: []
+    producer: []
+    coProducer: []
+    productionCompany:
+        -
+            id: 321
+            organisation: null
+        -
+            id: 322
+            organisation: null
+        -
+            id: 323
+            organisation: null
+        -
+            id: 324
+            organisation: null
+        -
+            id: 325
+            organisation: null
+        -
+            id: 326
+            organisation: null
+        -
+            id: 327
+            organisation: null
+        -
+            id: 328
+            organisation: null
+media:
+    id: 89
+    Trailer:
+        -
+            id: 74
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 70
+            Url: ''
+            Type: null
+    Stills: []
+    Posters: []
+tags:
+    id: 75
+    tag_premiere_types: []
+    tag_programmes: []
+    tag_genres: []
+    tag_keywords: []
+countriesAndLanguages:
+    id: 63
+    countries:
+        -
+            id: 952
+            Code: null
+            created_by: null
+            updated_by: null
+            created_at: '2020-08-17T14:20:50.882Z'
+            updated_at: '2020-08-17T14:20:50.882Z'
+            Value_et: null
+            Value_en: null
+            Value_ru: null
+            Name_et: null
+            Name_en: null
+            Name_ru: null
+            code: IE
+            name_et: Iirimaa
+            name_en: Ireland
+            name_ru: Ирландия
+        -
+            id: 864
+            Code: null
+            created_by: null
+            updated_by: null
+            created_at: '2020-08-17T14:20:41.574Z'
+            updated_at: '2020-08-17T14:20:41.574Z'
+            Value_et: null
+            Value_en: null
+            Value_ru: null
+            Name_et: null
+            Name_en: null
+            Name_ru: null
+            code: CA
+            name_et: Kanada
+            name_en: Canada
+            name_ru: Канада
+    languages:
+        -
+            id: 1514
+            Code: null
+            created_by: null
+            updated_by: null
+            created_at: '2020-08-19T07:18:23.998Z'
+            updated_at: '2020-08-19T07:18:23.998Z'
+            Value_et: null
+            Value_en: null
+            Value_ru: null
+            Name_et: null
+            Name_en: null
+            Name_ru: null
+            name_et: Inglise
+            name_en: English
+            name_ru: Английский
+            code: en
+screenings: []
+Title: null
+Slug: null
+Slur: null
+title: ''
+path: ''
+slug: ''
+synopsis: ''
+aliases:
+    - maudie
+    - maudie
+data:
+    pictures: /film_pictures.yaml
+    screenings: screenings.ru.yaml
