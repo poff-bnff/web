@@ -1,0 +1,156 @@
+id: 511
+EventivalId: null
+TitleOriginal: null
+Year: null
+RuntimeMinutes: null
+Director: null
+Producer: null
+CoProducer: null
+Screenwriter: null
+DoP: null
+Editor: null
+Composer: null
+Cast: null
+Production: null
+Synopsis: null
+SynopsisAuthor: null
+PresenterText: null
+Runtime: null
+FilmId: null
+titleOriginal: Kislota
+year: 2018
+runtime: 97
+filmId: '1009'
+credentials:
+    id: 149
+    ProductionCompany: null
+    director:
+        -
+            id: 1775
+            et: Aleksandr Gorchilin
+            en: Aleksandr Gorchilin
+            ru: Aleksandr Gorchilin
+    screenwriter:
+        -
+            id: 1796
+            et: Valery Pecheykin
+            en: Valery Pecheykin
+            ru: Valery Pecheykin
+    doP:
+        -
+            id: 1805
+            et: Kseniya Sereda
+            en: Kseniya Sereda
+            ru: Kseniya Sereda
+    cast:
+        -
+            id: 1824
+            et: Filipp Avdeev
+            en: Filipp Avdeev
+            ru: Filipp Avdeev
+        -
+            id: 1826
+            et: ' Aleksandr Kuznetsov'
+            en: ' Aleksandr Kuznetsov'
+            ru: ' Aleksandr Kuznetsov'
+        -
+            id: 1829
+            et: ' Aleksandra Rebenok'
+            en: ' Aleksandra Rebenok'
+            ru: ' Aleksandra Rebenok'
+    composer:
+        -
+            id: 1844
+            et: ''
+            en: ''
+            ru: ''
+    editor: []
+    producer: []
+    coProducer: []
+    productionCompany:
+        -
+            id: 311
+            organisation: null
+        -
+            id: 314
+            organisation: null
+media:
+    id: 83
+    Trailer:
+        -
+            id: 68
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 64
+            Url: ''
+            Type: null
+    Stills: []
+    Posters: []
+tags:
+    id: 69
+    tag_premiere_types: []
+    tag_programmes: []
+    tag_genres: []
+    tag_keywords: []
+countriesAndLanguages:
+    id: 57
+    countries:
+        -
+            id: 1030
+            Code: null
+            created_by: null
+            updated_by: null
+            created_at: '2020-08-17T14:20:54.589Z'
+            updated_at: '2020-08-17T14:20:54.589Z'
+            Value_et: null
+            Value_en: null
+            Value_ru: null
+            Name_et: null
+            Name_en: null
+            Name_ru: null
+            code: RU
+            name_et: Venemaa
+            name_en: Russian Federation
+            name_ru: Российская Федерация
+    languages:
+        -
+            id: 1618
+            Code: null
+            created_by: null
+            updated_by: null
+            created_at: '2020-08-19T07:18:28.947Z'
+            updated_at: '2020-08-19T07:18:28.947Z'
+            Value_et: null
+            Value_en: null
+            Value_ru: null
+            Name_et: null
+            Name_en: null
+            Name_ru: null
+            name_et: Vene
+            name_en: Russian
+            name_ru: Русский
+            code: ru
+screenings: []
+Title: null
+Slug: null
+title: Acid
+path: acid
+slug: acid
+synopsis: >-
+    "Acid” is an ode to youth, a film about today’s 20-year-olds who are
+    entering the real world for the first time, and becoming conscious of their
+    role within it.  The film is a portrait of a generation for whom ambition is
+    devoid of meaning.  They lament the fact that everything has already been
+    invented before their appearance, already done for them.  The main
+    characters justify their irresponsibility and infantile behaviour by the
+    lack of communication with their parents.   But their principal agony is
+    that they grew up without fathers, and now the time is ripe for them to do
+    things and achieve the status of adult males.
+aliases:
+    - hape
+    - ''
+data:
+    pictures: /film_pictures.yaml
+    screenings: screenings.en.yaml

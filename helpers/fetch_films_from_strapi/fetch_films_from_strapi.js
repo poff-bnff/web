@@ -77,8 +77,33 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callbac
     }).end();
 }
 
+function rueten(obj, lang) {
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            const element = obj[key];
+        }
+
+        if (obj[key] === null) {
+            continue
+        } else if (key === lang) {
+            return obj[key]
+        } else if (typeof(obj[key]) === 'list') {
+            obj[key].forEach(element => {
+                element = rueten(element, lang)
+            })
+        } else if (typeof(obj[key]) === 'object') {
+            obj[key] = rueten(obj[key], lang)
+        }
+    }
+    return obj
+}
+
+
 function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
     data.forEach(element => {
+        element = rueten(element, lang);
+        console.log(element);
+
         if(element.slug_en) {
             fs.mkdir(`${dirPath}${element.slug_en}`, err => {
                 if (err) {
@@ -87,6 +112,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
 
             let elementEt = JSON.parse(JSON.stringify(element));
             let aliases = []
+            let languageKeys = ['en', 'et', 'ru'];
             for (key in elementEt) {
                 let lastThree = key.substring(key.length - 3, key.length);
                 let findHyphen = key.substring(key.length - 3, key.length - 2);
@@ -103,7 +129,13 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
                     elementEt[key.substring(0, key.length - 3)] = elementEt[key];
                     delete elementEt[key];
                 }
+
+
+
             }
+
+
+
             elementEt.aliases = aliases;
             elementEt.data = dataFrom;
             generateYaml(element, elementEt, dirPath, lang, copyFile)
@@ -123,9 +155,15 @@ function generateYaml(element, elementEt, dirPath, lang, copyFile){
     if (copyFile) {
         fs.copyFile(`${dirPath}film_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
             if (err) throw err;
-            console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
+            // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
     }
+}
+
+function modifyData(elementEt, key, lang){
+    finalData = elementEt[key][lang];
+    delete elementEt[key];
+    elementEt[key] = finalData;
 }
 
 getToken();
