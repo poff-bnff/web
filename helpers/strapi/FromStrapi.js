@@ -35,39 +35,62 @@ function GetDataFromStrapi(targetname, callbackfunction, token){
 };
 
 
-//siin teen midagi saadud dataga
+//RIIGID
 function WriteCountriesDataToJSON(strapiData){
     process.chdir(__dirname);
     console.log(strapiData);
     fs.writeFileSync('../data/ISOCountriesFromStrapi.json', JSON.stringify(strapiData, null, 4));
 }
+
+function FetchCountriesData(token) {
+    GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
+};
+
+function UpdateCountriesFromStrapi( ){
+    AuthStrapi.Auth(FetchCountriesData)
+}
+
+//KEELED
+
+function WriteLangsDataToJSON(strapiData){
+    process.chdir(__dirname);
+    console.log(strapiData);
+    fs.writeFileSync('../data/ISOLanguagesFromStrapi.json', JSON.stringify(strapiData, null, 4));
+}
+
+function FetchLangsData(token) {
+    GetDataFromStrapi('/countries', WriteLangsDataToJSON, token);
+};
+
+function UpdateLangsFromStrapi(){
+    AuthStrapi.Auth(FetchLangsData)
+}
+
+
+//FILMID
 function WriteFilmsDataToJSON(strapiData){
     process.chdir(__dirname);
     console.log(strapiData);
     fs.writeFileSync('../data/FilmsFromStrapi.json', JSON.stringify(strapiData, null, 4));
 }
 
-function WriteLanguagesDataToJSON(strapiData){
-    process.chdir(__dirname);
-    console.log(strapiData);
-    fs.writeFileSync('../data/ISOLanguagesFromStrapi.json', JSON.stringify(strapiData, null, 4));
-}
-
-function ConsoleLogData(strapiData){
-    console.log(strapiData);
-}
-
-//kasutan saadud tokenit ja kutsun välja pärnigu funktsiooni
-function FetchData(token) {
-    GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
+function FetchFilmData(token) {
     GetDataFromStrapi('/films', WriteFilmsDataToJSON, token);
-    GetDataFromStrapi('/languages', WriteLanguagesDataToJSON, token);
-
 };
 
-//autoriseerimine, annan kaasa callback funktsiooni ja saan vastu tokeni
-AuthStrapi.Auth(FetchData)
+function UpdateFilmsFromStrapi(){
+    AuthStrapi.Auth(FetchFilmData)
+}
 
+module.exports.GetFilms = UpdateFilmsFromStrapi
+module.exports.GetCountries = UpdateCountriesFromStrapi
+module.exports.GetLanguages = UpdateLangsFromStrapi
 
+//moodulite importimiseks
+//const Get = require('./strapi/FromStrapi')
+//nende välja kutsumine teisest failist loob uue vastava JSON-i või kirjutab vana üle
+// Get.GetFilms();
+// Get.GetCountries();
+// Get.GetLanguages();
 
 

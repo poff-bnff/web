@@ -32,14 +32,14 @@ function ProcessDataCB(source, CBfunction){
 function WriteLangsJSON (sheetsData){
     ProcessDataCB(sheetsData, function WriteLangs(sheetsData){
         console.log(sheetsData);
-        fs.writeFileSync('../data/ISOCountries.json', sheetsData);
+        fs.writeFileSync('../data/ISOLanguages.json', sheetsData);
     });
 }
 
 function WriteCountriesJSON (sheetsData){
     ProcessDataCB(sheetsData, function WriteLangs(sheetsData){
         console.log(sheetsData);
-        fs.writeFileSync('../data/ISOLanguages.json', sheetsData);
+        fs.writeFileSync('../data/ISOCountries.json', sheetsData);
     });
 }
 
