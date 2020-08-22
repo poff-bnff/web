@@ -79,8 +79,32 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callbac
     }).end();
 }
 
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            const element = obj[key];
+        }
+
+        if (obj[key] === null) {
+            continue
+        } else if (key === lang) {
+            return obj[key]
+        } else if (typeof(obj[key]) === 'list') {
+            obj[key].forEach(element => {
+                element = rueten(element, lang)
+            })
+        } else if (typeof(obj[key]) === 'object') {
+            obj[key] = rueten(obj[key], lang)
+        }
+    }
+    return obj
+}
+
+
 function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
     data.forEach(element => {
+        element = rueten(element, lang);
+        //console.log(element);
+
         if(element.slug_en) {
             fs.mkdir(`${dirPath}${element.slug_en}`, err => {
                 if (err) {
@@ -89,12 +113,13 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
 
             let elementEt = JSON.parse(JSON.stringify(element));
             // let aliases = []
+            let languageKeys = ['en', 'et', 'ru'];
             for (key in elementEt) {
                 let lastThree = key.substring(key.length - 3, key.length);
                 let findHyphen = key.substring(key.length - 3, key.length - 2);
                 // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
-                //     if (key.substring(0, key.length - 3) == 'slug' && elementEt[key]) {
-                //         aliases.push(`/film/${elementEt[key]}`);
+                //     if (key.substring(0, key.length - 3) == 'slug') {
+                //         aliases.push(elementEt[key]);
                 //     }
                 //     delete elementEt[key];
                 // }
@@ -103,9 +128,27 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
                         elementEt.path = `film/${elementEt[key]}`;
                     }
                     elementEt[key.substring(0, key.length - 3)] = elementEt[key];
+
+
                     delete elementEt[key];
                 }
+
+                // Make separate CSV with key
+                if (typeof(elementEt[key]) === 'object' && elementEt[key] !== null) {
+                    var nameOfObject = elementEt[key]
+                    for (const [key, value] of Object.entries(nameOfObject)) {
+                        if (value && value != '' && !value.toString().includes('[object Object]')) {
+                            console.log('das VALUE: ' + typeof(value));
+                            elementEt[`${key}CSV`] = value.toString();
+                        }
+                        console.log(`${key}: ${value}`);
+                    }
+                }
+
             }
+
+
+
             // elementEt.aliases = aliases;
             allData.push(elementEt);
             elementEt.data = dataFrom;
@@ -126,13 +169,19 @@ function generateYaml(element, elementEt, dirPath, lang, copyFile){
     if (copyFile) {
         fs.copyFile(`${dirPath}film_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
             if (err) throw err;
-            console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
+            // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
     }
 
     let allDataYAML = yaml.safeDump(allData, { 'indent': '4' });
     // fs.writeFileSync(`source/films/data.${lang}.yaml`, allDataYAML, 'utf8');
 
+}
+
+function modifyData(elementEt, key, lang){
+    finalData = elementEt[key][lang];
+    delete elementEt[key];
+    elementEt[key] = finalData;
 }
 
 getToken();

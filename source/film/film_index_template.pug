@@ -1,43 +1,40 @@
 extends /film/layout.pug
 
 
-//- block film
-//-     p= self.filmLocalTitle
+block film
 
-//-     +tabname(self.filmTitle)
+    +tabname(self.title)
 
-//- block titleBox
-//-     - var pathParts = self.path.split('/')
-//-     - var filmPath = pathParts[pathParts.length - 1]
-//-     section.f_title_box
+block titleBox
+    - var pathParts = self.path.split('/')
+    - var filmPath = pathParts[pathParts.length - 1]
+    section.f_title_box
 
-//-         .premiere_type &nbsp;
-//-         h1.film_title_detailed= self.filmTitle
-//-         .str_info_blokk_1
-//-             .str_info_grid_3
-//-                 .str_info_value= self.filmLocalTitle
+        .premiere_type &nbsp;
+        h1.film_title_detailed= self.title
+        .str_info_blokk_1
 
-//-             if self.filmTitleSec
-//-                 .str_info_grid_3
-//-                     .str_info_label= self.label.film.filmTitleSec
-//-                     .str_info_value= self.filmTitleSec
+            if self.filmTitleSec
+                .str_info_grid_3
+                    .str_info_label= self.label.film.filmTitleSec
+                    .str_info_value= self.filmTitleSec
 
-//-             if self.filmTitleOriginal
-//-                 .str_info_grid_3
-//-                     .str_info_label= self.label.film.filmTitleOriginal
-//-                     .str_info_value= self.filmTitleOriginal
+            if self.titleOriginal
+                .str_info_grid_3
+                    .str_info_label= self.label.film.filmTitleOriginal
+                    .str_info_value= self.titleOriginal
 
-//-             if self.filmDirector
-//-                 .str_info_grid_3
-//-                     .str_info_label= self.label.film.filmDirector
-//-                     .str_info_value.clr_primary= self.filmDirector
+            if self.directorCSV
+                .str_info_grid_3
+                    .str_info_label= self.label.film.filmDirector
+                    .str_info_value.clr_primary= self.directorCSV
 
-//-             if self.filmCountries
-//-                 .str_info_grid_3
-//-                     .str_info_label= self.label.film.filmCountries
-//-                     .str_info_value= self.filmCountries
+            if self.countriesAndLanguages.countries
+                .str_info_grid_3
+                    .str_info_label= self.label.film.filmCountries
+                    .str_info_value= `${self.countriesAndLanguages.countries[0][`name_${self.locale}`]} (need correct CSV in YAML to display all)`
 
-//-             if self.filmYear
-//-                 .str_info_grid_3
-//-                     .str_info_label= self.label.film.filmYear
-//-                     .str_info_value= self.filmYear
+            if self.year
+                .str_info_grid_3
+                    .str_info_label= self.label.film.filmYear
+                    .str_info_value= self.year
