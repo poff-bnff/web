@@ -9,9 +9,9 @@ let allData = [];
 
 function fetchAllData(options){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/film/", "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
-    getData("source/film/", "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
-    getData("source/film/", "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
+    getData("source/article/", "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
+    getData("source/article/", "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
+    getData("source/article/", "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
@@ -57,7 +57,7 @@ function fetchAll(token) {
 
     let options = {
         host: '139.59.130.149',
-        path: '/films',
+        path: '/articles',
         method: 'GET',
         headers: {'Authorization': 'Bearer ' + token}
     }
@@ -126,7 +126,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
                 // }
                 if (lastThree === `_${lang}`) {
                     if (key.substring(0, key.length - 3) == 'slug') {
-                        elementEt.path = `film/${elementEt[key]}`;
+                        elementEt.path = `article/${elementEt[key]}`;
                     }
                     elementEt[key.substring(0, key.length - 3)] = elementEt[key];
 
@@ -134,16 +134,16 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
                     delete elementEt[key];
                 }
 
-                // Make separate CSV with key
-                if (typeof(elementEt[key]) === 'object' && elementEt[key] !== null) {
-                    var nameOfObject = elementEt[key]
-                    for (const [key, value] of Object.entries(nameOfObject)) {
-                        if (value && value != '' && !value.toString().includes('[object Object]')) {
-                            elementEt[`${key}CSV`] = value.toString();
-                        }
-                        console.log(`${key}: ${value}`);
-                    }
-                }
+                // // Make separate CSV with key
+                // if (typeof(elementEt[key]) === 'object' && elementEt[key] !== null) {
+                //     var nameOfObject = elementEt[key]
+                //     for (const [key, value] of Object.entries(nameOfObject)) {
+                //         if (value && value != '' && !value.toString().includes('[object Object]')) {
+                //             elementEt[`${key}CSV`] = value.toString();
+                //         }
+                //         console.log(`${key}: ${value}`);
+                //     }
+                // }
 
             }
 
@@ -155,7 +155,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
             generateYaml(element, elementEt, dirPath, lang, copyFile)
         }else{
             if(showErrors) {
-                console.log(`Film ID ${element.id} slug_en value missing`);
+                console.log(`Article ID ${element.id} slug_en value missing`);
             }
         }
     });
@@ -167,7 +167,7 @@ function generateYaml(element, elementEt, dirPath, lang, copyFile){
 
     fs.writeFileSync(`${dirPath}${element.slug_en}/data.${lang}.yaml`, yamlStr, 'utf8');
     if (copyFile) {
-        fs.copyFile(`${dirPath}film_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
+        fs.copyFile(`${dirPath}article_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
             if (err) throw err;
             // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
