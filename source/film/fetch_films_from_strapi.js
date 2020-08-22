@@ -79,6 +79,7 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callbac
     }).end();
 }
 
+function rueten(obj, lang) {
     for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
             const element = obj[key];
