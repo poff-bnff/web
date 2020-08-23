@@ -17,18 +17,18 @@ block content
                         else
                             img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
                     .card_film_title
-                        h3.film_title_locale= val.filmTitle
+                        h3.film_title_locale= val.title
                     .card_film_info
                         if val.filmTitleSec
                             .str_info_grid_3
                                 .str_info_label= self.label.film.filmTitleSec
                                 .str_info_value= val.filmTitleSec
-                        if val.filmDirector
+                        if val.directorCSV
                             .str_info_grid_3
                                 .str_info_label= self.label.film.filmDirector
-                                .str_info_value= val.filmDirector
-                        if val.filmCast
+                                .str_info_value= val.directorCSV
+                        if val.castCSV
                             .str_info_grid_3
                                 .str_info_label= self.label.film.filmCast
-                                .str_info_value= val.filmCast
+                                .str_info_value= val.castCSV
 

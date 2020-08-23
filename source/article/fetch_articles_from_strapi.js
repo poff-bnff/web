@@ -5,7 +5,7 @@ const http = require('http');
 
 const allLanguages = ["en", "et", "ru"];
 
-let allData = [];
+let allData = []; // for articles view
 
 function fetchAllData(options){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
@@ -67,6 +67,7 @@ function fetchAll(token) {
 
 
 function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callback) {
+    allData = [];
     let req = http.request(options, function(response) {
         let data = '';
         response.on('data', function (chunk) {
@@ -102,6 +103,7 @@ function rueten(obj, lang) {
 
 
 function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
+    allData = [];
     data.forEach(element => {
         element = rueten(element, lang);
         //console.log(element);
@@ -174,7 +176,7 @@ function generateYaml(element, elementEt, dirPath, lang, copyFile){
     }
 
     let allDataYAML = yaml.safeDump(allData, { 'indent': '4' });
-    // fs.writeFileSync(`source/films/data.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`source/articles.${lang}.yaml`, allDataYAML, 'utf8');
 
 }
 
