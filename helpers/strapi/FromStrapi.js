@@ -46,7 +46,6 @@ function WriteToJson(dataPath, filePath, CBfunction){
         fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
         CBfunction(token);
     })
-
 }
 
 
@@ -59,8 +58,9 @@ function WriteToJson(dataPath, filePath, CBfunction){
 
 module.exports.Fetch = FromStrapi
 
-//WriteToJson('/films', '../data/Test88.json');
+// WriteToJson('/countries', '../data/Test88.json', updateDataCB);
 module.exports.WriteJSON = WriteToJson
+
 
 
 

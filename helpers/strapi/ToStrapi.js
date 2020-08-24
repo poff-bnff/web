@@ -7,10 +7,10 @@ process.chdir(__dirname);
 
 //see saadab ühe uue objekti Strapisse
 function PostOneToStrapi
-(path, token, dataObject){
+(dataPath, token, dataObject){
     let options = {
         host: '139.59.130.149',
-        path: path,
+        path: dataPath,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -32,6 +32,7 @@ function PostOneToStrapi
                 console.log(body.error, body.message, body.data);
                 console.log(dataObject);
             }else{
+                console.log('seda pole strapis saadan kohe....')
                 console.log(bodyAsString);
             }
         });
@@ -73,6 +74,7 @@ function PutOneToStrapi (path, token, dataObject, id){
             console.log(body.error, body.message, body.data);
             console.log(dataObject);
         }else{
+            console.log('updating....')
             console.log(bodyAsString);
         }
     });
@@ -88,73 +90,36 @@ req.end();
 
 }
 
-
-//sellega saab Listi objektidest strapisse lisada, ise otsutab, kas peab lisama või muutma
-
-// function UpdateOrAddCountry() {
-//     let updateDataCB = function (token) {
-//         let objectsToSEND = JSON.parse(fs.readFileSync('../data/ISOCountries.json', 'utf-8'))
-//         let objectsInStrapi = JSON.parse(fs.readFileSync('../data/ISOCountriesFromStrapi.json', 'utf-8'))
-//         let UpdateOrAddToStrapi = function(path, token, dataToSend, dataInStrapi){
-//             dataToSend.forEach (dataObject =>{
-//                 id = 'pole';
-//                 //console.log('dataObejct:' + dataObject.code.toLowerCase())
-//                 dataInStrapi.forEach(starpiObject => {
-//                     //console.log(starpiObject.code.toLowerCase())
-//                     if (starpiObject.code.toLowerCase() == dataObject.code.toLowerCase()){
-//                         id = starpiObject.id;
-//                         PutOneToStrapi (path, token, dataObject, id)
-//                     }
-//                 })
-//                 if (id === 'pole'){
-//                     console.log('seda pole strapis saadan kohe....')
-//                     PostOneToStrapi
-//                     (path, token, dataObject)
-//                 }
-//             })
-//         };
-
-//         UpdateOrAddToStrapi('/countries', token, objectsToSEND, objectsInStrapi);
-//     }
-//     FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json', updateDataCB)
-
-// };
-
-// UpdateOrAddCountry();
-
-// UpdateOrAdd(dataToSend, datapath)
-
-
-function ToStrapi(JSONdataToSend, dataFromStrapi, dataPath, strapiKeyToCompare, JSONdataToSendKey) {
+//USAGE ToStrapi('../data/ISOCountries.json', '../data/ISOCountriesFromStrapi.json', '/countries', 'code');
+function ToStrapi(JSONdataToSend, strapiDataFile, dataPath, keysToCompareforId) {
     let updateDataCB = function (token) {
         let objectsToSEND = JSON.parse(fs.readFileSync(JSONdataToSend, 'utf-8'))
-        let objectsInStrapi = JSON.parse(fs.readFileSync(dataFromStrapi, 'utf-8'))
+        let objectsInStrapi = JSON.parse(fs.readFileSync(strapiDataFile, 'utf-8'))
         let UpdateOrAddToStrapi = function(path, token, dataToSend, dataInStrapi){
             dataToSend.forEach (dataObject =>{
                 id = 'pole';
-                //console.log('dataObejct:' + dataObject.code.toLowerCase())
-                dataInStrapi.forEach(starpiObject => {
-                    //console.log(starpiObject.code.toLowerCase())
-                    if (starpiObject[strapiKeyToCompare].toLowerCase() == dataObject[JSONdataToSendKey].toLowerCase()){
-                        id = starpiObject.id;
+                dataInStrapi.forEach(strapiObject => {
+                    if (strapiObject[keysToCompareforId] == dataObject[keysToCompareforId]){
+                        id = strapiObject.id;
                         PutOneToStrapi (path, token, dataObject, id)
                     }
                 })
                 if (id === 'pole'){
-                    console.log('seda pole strapis saadan kohe....')
-                    PostOneToStrapi
-                    (path, token, dataObject)
+                    PostOneToStrapi(path, token, dataObject)
                 }
             })
         };
-
         UpdateOrAddToStrapi(dataPath, token, objectsToSEND, objectsInStrapi);
     }
-    FromStrapi.WriteJSON(dataPath, dataFromStrapi, updateDataCB)
-
+    FromStrapi.WriteJSON(dataPath, strapiDataFile, updateDataCB)
 };
 
-// ToStrapi('../data/ISOCountries.json', '../data/ISOCountriesFromStrapi.json', '/countries', 'code', 'code');
-// ToStrapi('../data/Films.json', '../data/test11.json', '/films', 'filmId', 'filmId');
-ToStrapi('../data/ISOlanguages.json', '../data/test11.json', '/languages', 'code', 'code');
 
+//ToStrapi('../data/ISOlanguages.json', '../data/ISOLanguagesFromStrapi.json', '/languages', 'code');
+//ToStrapi('../data/ISOCountries.json', '../data/ISOCountriesFromStrapi.json', '/countries', 'code');
+
+
+
+//ToStrapi('../data/Films.json', '../data/test11.json', '/films', 'filmId');
+
+module.exports.ToStrapi = ToStrapi;
