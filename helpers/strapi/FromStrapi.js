@@ -36,7 +36,6 @@ function FromStrapi(datapath, CBfunction){
             req.end()
         };
         GetDataFromStrapi(datapath, token, CBfunction);
-
     };
     AuthStrapi.Auth(FetchData)
 }
@@ -44,7 +43,6 @@ function FromStrapi(datapath, CBfunction){
 function WriteToJson(dataPath, filePath, CBfunction){
     FromStrapi(dataPath, function WriteJSON (strapiData, token){
         process.chdir(__dirname);
-        console.log('Olgu');
         fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
         CBfunction(token);
     })

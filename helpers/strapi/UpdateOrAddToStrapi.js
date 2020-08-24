@@ -113,7 +113,6 @@ function UpdateOrAddCountry() {
     let updateDataCB = function (token) {
         let objectsToSEND = JSON.parse(fs.readFileSync('../data/ISOCountries.json', 'utf-8'))
         let objectsInStrapi = JSON.parse(fs.readFileSync('../data/ISOCountriesFromStrapi.json', 'utf-8'))
-        console.log('Tere');
         UpdateOrAddToStrapi('/countries', token, objectsToSEND, objectsInStrapi);
     }
     FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json', updateDataCB)
@@ -121,6 +120,8 @@ function UpdateOrAddCountry() {
 };
 
 UpdateOrAddCountry();
+
+// UpdateOrAdd(dataToSend, datapath)
 
 
 module.exports.ADDorUPDATE = UpdateOrAddToStrapi
