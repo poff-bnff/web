@@ -109,8 +109,7 @@ function UpdateOrAddToStrapi(path, token, dataToSend, dataInStrapi){
     })
 };
 
-
-function UpdateOrAddCountry(token) {
+function UpdateOrAddCountry() {
     let updateDataCB = function (token) {
         let objectsToSEND = JSON.parse(fs.readFileSync('../data/ISOCountries.json', 'utf-8'))
         let objectsInStrapi = JSON.parse(fs.readFileSync('../data/ISOCountriesFromStrapi.json', 'utf-8'))
@@ -121,8 +120,7 @@ function UpdateOrAddCountry(token) {
 
 };
 
-
-AuthStrapi.Auth(UpdateOrAddCountry)
+UpdateOrAddCountry();
 
 
 module.exports.ADDorUPDATE = UpdateOrAddToStrapi

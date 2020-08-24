@@ -23,7 +23,7 @@ function FromStrapi(datapath, CBfunction){
                 });
                 response.on('end', function () {
                     let data = JSON.parse(allData)
-                    CBfunction(data)
+                    CBfunction(data, token)
                     //console.log(data);
                 });
                 response.on('error', function (error) {
@@ -42,11 +42,11 @@ function FromStrapi(datapath, CBfunction){
 }
 
 function WriteToJson(dataPath, filePath, CBfunction){
-    FromStrapi(dataPath, function WriteJSON (strapiData){
+    FromStrapi(dataPath, function WriteJSON (strapiData, token){
         process.chdir(__dirname);
         console.log('Olgu');
         fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
-        CBfunction();
+        CBfunction(token);
     })
 
 }
