@@ -12,8 +12,6 @@ let options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'}
 }
-
-
     let req = http.request(options, function(response) {
         let tokenStr = '';
 
