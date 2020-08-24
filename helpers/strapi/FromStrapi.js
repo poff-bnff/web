@@ -41,14 +41,15 @@ function FromStrapi(datapath, CBfunction){
     AuthStrapi.Auth(FetchData)
 }
 
-function WriteToJson(dataPath, filePath){
+function WriteToJson(dataPath, filePath, CBfunction){
     FromStrapi(dataPath, function WriteJSON (strapiData){
         process.chdir(__dirname);
-        //console.log(strapiData);
+        console.log('Olgu');
         fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
+        CBfunction();
     })
-}
 
+}
 
 
 // USAGE: pead defineerima, kasutad seda funktsiooni

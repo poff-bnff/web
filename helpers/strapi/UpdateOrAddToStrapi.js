@@ -1,8 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi')
-const PostToStrapi = require('./PostToStrapi.js')
-const Get = require('./FromStrapi')
+const FromStrapi = require('./FromStrapi')
 
 process.chdir(__dirname);
 
@@ -115,9 +114,11 @@ function UpdateOrAddCountry(token) {
     let updateDataCB = function (token) {
         let objectsToSEND = JSON.parse(fs.readFileSync('../data/ISOCountries.json', 'utf-8'))
         let objectsInStrapi = JSON.parse(fs.readFileSync('../data/ISOCountriesFromStrapi.json', 'utf-8'))
+        console.log('Tere');
         UpdateOrAddToStrapi('/countries', token, objectsToSEND, objectsInStrapi);
     }
-    FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json')
+    FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json', updateDataCB)
+
 };
 
 
