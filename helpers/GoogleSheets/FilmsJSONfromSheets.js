@@ -120,9 +120,9 @@ function ProcessDataCB(source){
                                       'languages': ProcessLanguages(element['filmLanguages_en']),
                                     },
             'screenings': '',
-            'slug_et': slugify((element['filmTitle_et']), {lower:true, remove: /[*+~.()'"!:@]/g}),
-            'slug_en': slugify((element['filmTitle_en']), {lower:true, remove: /[*+~.()'"!:@]/g}),
-            'slug_ru': slugify('', {lower:true, remove: /[*+~.()'"!:@]/g}),
+            'slug_et': slugify((element['filmTitle_et']), {lower:true, remove: /[*+~.,()'"!:@]/g}),
+            'slug_en': slugify((element['filmTitle_en']), {lower:true, remove: /[*+~.,()'"!:@]/g}),
+            'slug_ru': slugify('', {lower:true, remove: /[*+~.,()'"!:@]/g}),
 
         };
         console.log(slugify(element['filmTitle_et']));
