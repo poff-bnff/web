@@ -1,587 +1,7 @@
 -
-    id: 504
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.024Z'
-    updated_at: '2020-08-19T08:36:37.024Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: Invisible Life of Eurídice Gusmão
-    title_ru: ''
-    titleOriginal: A Vida Invisivel
-    year: 2019
-    runtime: 139
-    slug_en: invisible-life-of-euridice-gusmao
-    slug_ru: ''
-    filmId: '1001'
-    credentials:
-        id: 142
-        ProductionCompany: null
-        director:
-            - Karim Aïnouz
-        screenwriter:
-            - Murilo Hauser
-            - ' Inés Bortagaray'
-            - ' Karim Aïnouz'
-        doP:
-            - Hélène Louvart
-        cast:
-            - Julia Stockler
-            - ' Carol Duarte'
-            - ' Flávia Gusmão'
-        composer:
-            - Benedikt Schiefer
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 298
-                organisation: null
-            -
-                id: 300
-                organisation: null
-            -
-                id: 303
-                organisation: null
-            -
-                id: 305
-                organisation: null
-    synopsis: >-
-        Filmi tegevus toimub 1950. aastatel Rio de Janeiros. Gusmãode perekonnas
-        sirgub kaks erineva iseloomuga õde: Guida naudib kogu hingest elu,
-        Eurídice on pühendunud klaverimängule. Ühel heal päeval armub Guida
-        kreeka meremehesse ja lahkub koos temaga omavoliliselt kodust. Abielu ei
-        lähe aga roosiliselt ja ta on sunnitud tagasi pöörduma. Paraku on noorte
-        naiste isa nagu kogu ühiskondki konservatiivne ja et perekonnale mitte
-        häbi teha, suleb ta Guida ees ukse. Kui Guida küsib oma õe järele,
-        valetab isa, et ta õpib välismaal. Guida ja Eurídice kaotavad kontakti,
-        kuid ei jäta lootust jälle kohtuda. Nad elavad, nagu oskavad ja võtavad
-        vastu selle, mida saatus neile pakub. Lugu põhineb Martha Batalha
-        romaanil "Eurídice Gusmão nähtamatu elu". Film linastus 2019. aastal
-        mainekal Cannes’i filmifestivalil programmis "Un Certain Regard" ja
-        võitis seal peaauhinna.
-    media:
-        id: 85
-        Trailer:
-            -
-                id: 70
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 66
-                Url: ''
-                Type: null
-        Stills: []
-        Posters: []
-    tags:
-        id: 71
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 59
-        countries:
-            -
-                id: 877
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: DE
-                name_et: Saksamaa
-                name_en: Germany
-                name_ru: Германия
-            -
-                id: 859
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:40.521Z'
-                updated_at: '2020-08-17T14:20:40.521Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: BR
-                name_et: Brasiilia
-                name_en: Brazil
-                name_ru: Бразилия
-        languages:
-            -
-                id: 1516
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:24.188Z'
-                updated_at: '2020-08-19T07:18:24.188Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Kreeka
-                name_en: Greek
-                name_ru: Греческий
-                code: el
-            -
-                id: 1612
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:28.816Z'
-                updated_at: '2020-08-19T07:18:28.816Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Portugali
-                name_en: Portuguese
-                name_ru: Португальский
-                code: pt
-    screenings: []
-    Title: null
-    Slug: null
-    title: Nähtamatu elu
-    path: film/nahtamatu-elu
-    slug: nahtamatu-elu
-    idCSV: '59'
-    directorCSV: Karim Aïnouz
-    screenwriterCSV: 'Murilo Hauser, Inés Bortagaray, Karim Aïnouz'
-    doPCSV: Hélène Louvart
-    castCSV: 'Julia Stockler, Carol Duarte, Flávia Gusmão'
-    composerCSV: Benedikt Schiefer
-    data: &ref_0
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
-    id: 505
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.043Z'
-    updated_at: '2020-08-19T08:36:37.043Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: Flawless
-    title_ru: ''
-    titleOriginal: HaNeshef
-    year: 2018
-    runtime: 97
-    slug_en: flawless
-    slug_ru: ''
-    filmId: '1002'
-    credentials:
-        id: 143
-        ProductionCompany: null
-        director:
-            - Tal Granit
-            - ' Sharon Maymon'
-        screenwriter:
-            - Tal Granit
-            - ' Sharon Maymon'
-        doP:
-            - Giora Bejach
-        cast:
-            - Stav Strashko
-            - ' Netsanet Mekonen'
-            - ' Noam Lugasy'
-        composer:
-            - Ivri Lider
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 295
-                organisation: null
-            -
-                id: 296
-                organisation: null
-    synopsis: >-
-        Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid
-        selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige
-        suurema unistuse?
-
-        17-aastane Eden (Stav Strashko) avastab, et just seda plaanivadki tema
-        kaks parimat sõpra. Tüdrukutele on see väike ohverdus, et saada endale
-        rinnakam büst ja uus uhke keskkooli lõpupeo kleit. Edenile tehakse
-        samuti ettepanek osaleda illegaalses doonorluses. Tüdrukud ei tea, et
-        Eden on transsooline ja talle tähendaks operatsioon midagi hoopis
-        olulisemat.
-
-        Veneetsias, Karlovy Varys ja mitmetel teistel festivalidel auhinnatud
-        režissöörid Sharon Maymon ja Tal Granit toovad meieni inimliku ja
-        liigutava loo sõprusest, aktsepteerimisest ja iseendale otsa
-        vaatamisest.
-    media:
-        id: 80
-        Trailer:
-            -
-                id: 65
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 61
-                Url: ''
-                Type: null
-        Stills: []
-        Posters: []
-    tags:
-        id: 66
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 54
-        countries:
-            -
-                id: 877
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: DE
-                name_et: Saksamaa
-                name_en: Germany
-                name_ru: Германия
-            -
-                id: 951
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:50.795Z'
-                updated_at: '2020-08-17T14:20:50.795Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: IL
-                name_et: Iisrael
-                name_en: Israel
-                name_ru: Израиль
-        languages:
-            -
-                id: 1514
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:23.998Z'
-                updated_at: '2020-08-19T07:18:23.998Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Inglise
-                name_en: English
-                name_ru: Английский
-                code: en
-            -
-                id: 1533
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:25.401Z'
-                updated_at: '2020-08-19T07:18:25.401Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Heebrea
-                name_en: Hebrew
-                name_ru: Иврит
-                code: he
-            -
-                id: 1618
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:28.947Z'
-                updated_at: '2020-08-19T07:18:28.947Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Vene
-                name_en: Russian
-                name_ru: Русский
-                code: ru
-    screenings: []
-    Title: null
-    Slug: null
-    title: Täiuslik
-    path: film/taiuslik
-    slug: taiuslik
-    idCSV: '54'
-    directorCSV: 'Tal Granit, Sharon Maymon'
-    screenwriterCSV: 'Tal Granit, Sharon Maymon'
-    doPCSV: Giora Bejach
-    castCSV: 'Stav Strashko, Netsanet Mekonen, Noam Lugasy'
-    composerCSV: Ivri Lider
-    data: *ref_0
--
-    id: 506
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.102Z'
-    updated_at: '2020-08-19T08:36:37.102Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: The Goddess of Fortune
-    title_ru: ''
-    titleOriginal: La dea fortuna
-    year: 2019
-    runtime: 114
-    slug_en: the-goddess-of-fortune
-    slug_ru: ''
-    filmId: '1004'
-    credentials:
-        id: 144
-        ProductionCompany: null
-        director:
-            - Ferzan Özpetek
-        screenwriter:
-            - Ferzan Özpetek
-            - ' Silvia Ranfagni'
-            - ' Gianni Romoli'
-        doP:
-            - Gian Filippo Corticelli
-        cast:
-            - Stefano Accorsi
-            - ' Jasmine Trinca'
-            - ' Edoardo Leo'
-        composer:
-            - Pasquale Catalano
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 308
-                organisation: null
-            -
-                id: 310
-                organisation: null
-            -
-                id: 313
-                organisation: null
-    synopsis: >-
-        Ferzan Özpeteki filmid kannavad nüüdisaegse itaalia filmi pitserit:
-        tempokad, südamlikud, satiirilised, pisarateni liigutavad. Nii ka
-        seekord.
-
-        "Õnnejumalanna" on film kolmest lapsepõlvesõbrast Arturost, Annamariast
-        ja Alessandrost, kes kõik kordamööda ja vaheldumisi on olnud üksteisesse
-        armunud. Nüüd, varajasse keskikka jõudnuna, külastab Annamaria oma
-        nooruspõlve sõpru, et usaldada nende kätte kõige kallim, mis tal siin
-        elus on.
-
-        Sõbrad, kelle suhted on just jõudnud kriitilisse punkti, on sunnitud oma
-        elu revideerima ja võtma vastutuse, milleks nad veel valmis pole.
-        Viieteistaastase kooselu vältel tekkinud rutiin ja pettumused vajuvad
-        tagaplaanile, uus situatsioon toob nende ellu aga väheke maagiat,
-        ettearvamatust ja irratsionaalsust, mis silmad uuesti särama panevad.
-    media:
-        id: 84
-        Trailer:
-            -
-                id: 69
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 65
-                Url: ''
-                Type: null
-        Stills: []
-        Posters: []
-    tags:
-        id: 70
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 58
-        countries:
-            -
-                id: 936
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:49.557Z'
-                updated_at: '2020-08-17T14:20:49.557Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: IT
-                name_et: Itaalia
-                name_en: Italy
-                name_ru: Италия
-        languages:
-            -
-                id: 1551
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:26.294Z'
-                updated_at: '2020-08-19T07:18:26.294Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Itaalia
-                name_en: Italian
-                name_ru: Итальянский
-                code: it
-    screenings: []
-    Title: null
-    Slug: null
-    title: Õnnejumalanna
-    path: film/onnejumalanna
-    slug: onnejumalanna
-    idCSV: '58'
-    directorCSV: Ferzan Özpetek
-    screenwriterCSV: 'Ferzan Özpetek, Silvia Ranfagni, Gianni Romoli'
-    doPCSV: Gian Filippo Corticelli
-    castCSV: 'Stefano Accorsi, Jasmine Trinca, Edoardo Leo'
-    composerCSV: Pasquale Catalano
-    data: *ref_0
--
     id: 507
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
     created_at: '2020-08-19T08:36:37.152Z'
     updated_at: '2020-08-19T08:36:37.152Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
     title_en: Schemers
     title_ru: ''
     titleOriginal: ''
@@ -591,8 +11,7 @@
     slug_ru: ''
     filmId: '1005'
     credentials:
-        id: 145
-        ProductionCompany: null
+        id: 346
         director:
             - Dave McLean
         screenwriter:
@@ -611,8 +30,7 @@
         coProducer: []
         productionCompany:
             -
-                id: 297
-                organisation: null
+                id: 861
     synopsis: >-
         Kultusfilmi "Trainspotting" vaibiga komöödia režissöör Dave McLeani
         noorpõlveajast, mis viib vaataja varajastesse kaheksakümnendatesse, kui
@@ -634,298 +52,85 @@
         tähelennust. McLean seisab ka 1990. aastate ühe edukama Briti bändi
         Placebo edu taga.
     media:
-        id: 81
+        id: 281
         Trailer:
             -
-                id: 66
+                id: 266
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 62
+                id: 262
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 67
+        id: 268
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 55
+        id: 253
         countries:
             -
                 id: 893
-                Code: null
-                created_by: null
-                updated_by: null
                 created_at: '2020-08-17T14:20:46.574Z'
                 updated_at: '2020-08-17T14:20:46.574Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
                 code: GB
-                name_et: Suurbritannia
                 name_en: Great Britain
                 name_ru: Великобритания
+                name: Suurbritannia
         languages:
             -
-                id: 1514
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:23.998Z'
-                updated_at: '2020-08-19T07:18:23.998Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Inglise
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
                 name_en: English
                 name_ru: Английский
                 code: en
+                name: Inglise
     screenings: []
-    Title: null
-    Slug: null
     title: Skeemitajad
-    path: film/skeemitajad
     slug: skeemitajad
-    idCSV: '55'
+    directory: source/film/schemers
+    idCSV: '1744'
     directorCSV: Dave McLean
     screenwriterCSV: "Dave McLean, Kyle Titterton\r"
     doPCSV: Alan C. McLaughlin
     castCSV: 'Conor Berry, Sean Connor, Grant Robert Keelan'
-    data: *ref_0
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
+    data: &ref_0
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.et.yaml
 -
-    id: 508
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.191Z'
-    updated_at: '2020-08-19T08:36:37.191Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: Champions
+    id: 546
+    created_at: '2020-08-24T13:33:29.309Z'
+    updated_at: '2020-08-24T13:33:29.309Z'
+    title_en: Banksy Most Wanted
     title_ru: ''
-    titleOriginal: Campeones
-    year: 2018
-    runtime: 124
-    slug_en: champions
+    titleOriginal: ''
+    year: 2020
+    runtime: 90
+    slug_en: banksy-most-wanted
     slug_ru: ''
-    filmId: '1006'
+    filmId: '1012'
     credentials:
-        id: 146
-        ProductionCompany: null
+        id: 345
         director:
-            - Javier Fesser
+            - Aurélia Rouvier
+            - ' Seamus Haley'
         screenwriter:
-            - David Marqués
-            - ' Javier Fesser'
+            - ''
         doP:
-            - Chechu Graf
+            - ''
         cast:
-            - Javier Gutiérrez
-            - ' Athenea Mata'
-            - " Juan Margallo\r"
-        composer:
-            - Rafael Arnau
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 299
-                organisation: null
-            -
-                id: 301
-                organisation: null
-            -
-                id: 304
-                organisation: null
-            -
-                id: 306
-                organisation: null
-            -
-                id: 307
-                organisation: null
-            -
-                id: 309
-                organisation: null
-            -
-                id: 312
-                organisation: null
-            -
-                id: 315
-                organisation: null
-            -
-                id: 317
-                organisation: null
-    synopsis: >-
-        Hispaania režissöör Javier Fesser on ka oma varasemates filmides
-        käsitlenud tõsiseid teemasid läbi kergendustunnet tekitava
-        huumoriprisma, mis vaataja meelt ühest küljest lõbustab, teisalt elus
-        mitte just loterii peavõitu tõmmanud inimestele kaasa elama paneb.
-
-        Endine nimekas korvpallitreener saadetakse purjuspäi autojuhtimise eest
-        ühiskondlikult kasulikule tööle, mille käigus on tema ülesandeks
-        treenida kergete puuetega innukad sportlased võistlusvalmis meeskonnaks.
-        Protsessi käigus õpitakse vastakuti nii elust, spordist kui iseendast.
-        Elukogemuste ja reaalsuse tajumise erinevused loovad ridamisi
-        hirmnaljakaid, kuid ka südamlikke situatsioone. Vaatajale on oluline
-        teada, et film põhineb paljuski tõestisündinud lool ning "meeskonna”
-        moodustavad näitlejad, kellele see on esimene ülesastumine kinolinal.
-    media:
-        id: 88
-        Trailer:
-            -
-                id: 73
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 69
-                Url: ''
-                Type: null
-        Stills: []
-        Posters: []
-    tags:
-        id: 74
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 62
-        countries:
-            -
-                id: 906
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:47.692Z'
-                updated_at: '2020-08-17T14:20:47.692Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: ES
-                name_et: Hispaania
-                name_en: Spain
-                name_ru: Испания
-        languages:
-            -
-                id: 1517
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:24.312Z'
-                updated_at: '2020-08-19T07:18:24.312Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Hispaania
-                name_en: Spanish
-                name_ru: Испанский
-                code: es
-    screenings: []
-    Title: null
-    Slug: null
-    title: Tšempionid
-    path: film/tsempionid
-    slug: tsempionid
-    idCSV: '62'
-    directorCSV: Javier Fesser
-    screenwriterCSV: 'David Marqués, Javier Fesser'
-    doPCSV: Chechu Graf
-    castCSV: "Javier Gutiérrez, Athenea Mata, Juan Margallo\r"
-    composerCSV: Rafael Arnau
-    data: *ref_0
--
-    id: 509
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.245Z'
-    updated_at: '2020-08-19T08:36:37.245Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: 'Yalda, a Night for Forgiveness'
-    title_ru: ''
-    titleOriginal: Yalda
-    year: 2019
-    runtime: 89
-    slug_en: yalda-a-night-for-forgiveness
-    slug_ru: ''
-    filmId: '1007'
-    credentials:
-        id: 147
-        ProductionCompany: null
-        director:
-            - Massoud Bakhshi
-        screenwriter:
-            - Massoud Bakhshi
-        doP:
-            - Julian Atanassov
-        cast:
-            - Sadaf Asgari
-            - ' Behnaz Jafari'
-            - " Babak Karimi\r"
+            - ''
         composer:
             - ''
         editor: []
@@ -933,214 +138,341 @@
         coProducer: []
         productionCompany:
             -
-                id: 302
-                organisation: null
+                id: 860
     synopsis: >-
-        Kas te kujutaksite ette telesõud, kus otsustatakse inimese elu ja surma
-        üle? Iraanis on see võimalik.
+        Kunstimaailma tagaotsituim mees tegutseb nagu moodne Robin Hood.
 
-        22-aastane Maryam tapab tüli käigus kogemata oma 65-aastase abikaasa
-        Nasseri, kellega ta on ajutises abielus. (Lepinguline kooseluvorm, mis
-        võib kesta mõnest päevast aastateni.) Ta mõistetakse surma. Ainus, kes
-        ta šariaadi järgi päästa võib, on Mona, Nasseri tütar pärisabielust.
-        Selleks peab ta Maryamile andestama. (Ja saama vereraha.) Andestada pole
-        aga niisama lihtne, seda enam, et teha tuleb seda populaarse telesõu
-        otse-eetris, mis leiab aset üldrahvalikul Yalda õhtul, kui Iraani
-        kodudes tähistatakse aasta kõige pikemat ööd.
 
-        Tõsielust tõukuv üllatuslik melodraama käsitleb kaasahaaravalt Iraani
-        ühiskonnas aktuaalseid teemasid naiste allasurutusest sotsiaalse
-        ebavõrdsuseni. See on harvanähtav sissevaade maailma, millest enamikul
-        meist aimugi ei ole.
+        Aastal 2014 kogunesid Bristoli noortekeskuse kohale murepilved.
+        Huviharidust ei rahastatud enam endises mahus. Äkki ilmus keskuse ette
+        seinale maaling, mille autoris ei olnud kahtlust – Banksy! Järgnes kiri:
+        "Tere, mina olen Banksy. See töö kuulub teile. Võite sellega teha, mis
+        iganes.” Noortekeskus müüs töö maha ja jätkab tegevust siiani. Tänu
+        Banksyle.
 
-        Linateos võitis mainekal Sundance´i festivalil maailmafilmi
-        võistlusprogrammi peaauhinna.
+
+        See pole ainus näide, mis annab tunnistust selle maailmakuulsa
+        tänavakunstniku vastutustundlikust tegevusest. Tema kunst edastab
+        aktuaalseid sotsiaalseid ja poliitilisi sõnumeid. Iga Banksy teose
+        ilmumine avalikku ruumi tekitab kõneainet üle terve maailma. Kes aga
+        peidab ennast selle nime taga? Aurélia Rouvieri ja Seamus Haley linateos
+        uurib, kes on Banksy ja miks ta ei taha paljastada oma identiteeti, kui
+        kogu maailm muutub üha egotsentrilisemaks.
+
+        Teravmeelne film kunstnikust, kes usub, et tänapäeval tuleb kanda maski,
+        kui sa tahad, et sind kuulataks.
     media:
-        id: 82
+        id: 280
         Trailer:
             -
-                id: 67
+                id: 265
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 63
+                id: 261
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 68
+        id: 267
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 56
+        id: 252
         countries:
             -
-                id: 1001
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:53.469Z'
-                updated_at: '2020-08-17T14:20:53.469Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: LB
-                name_et: Liibanon
-                name_en: Lebanon
-                name_ru: Ливан
-            -
-                id: 909
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:47.971Z'
-                updated_at: '2020-08-17T14:20:47.971Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: CH
-                name_et: Šveits
-                name_en: Switzerland
-                name_ru: Швейцария
+                id: 1076
+                created_at: '2020-08-17T14:20:56.062Z'
+                updated_at: '2020-08-17T14:20:56.062Z'
+                code: US
+                name_en: USA
+                name_ru: США
+                name: USA
             -
                 id: 890
-                Code: null
-                created_by: null
-                updated_by: null
                 created_at: '2020-08-17T14:20:46.374Z'
                 updated_at: '2020-08-17T14:20:46.374Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
                 code: FR
-                name_et: Prantsusmaa
                 name_en: France
                 name_ru: Франция
-            -
-                id: 1004
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:53.641Z'
-                updated_at: '2020-08-17T14:20:53.641Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: LU
-                name_et: Luksemburg
-                name_en: Luxembourg
-                name_ru: Люксембург
-            -
-                id: 877
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: DE
-                name_et: Saksamaa
-                name_en: Germany
-                name_ru: Германия
-            -
-                id: 970
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:51.857Z'
-                updated_at: '2020-08-17T14:20:51.857Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: IR
-                name_et: Iraan
-                name_en: Iran
-                name_ru: Иран
+                name: Prantsusmaa
         languages:
             -
-                id: 1520
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:24.556Z'
-                updated_at: '2020-08-19T07:18:24.556Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Pärsia
-                name_en: Persian
-                name_ru: Персидский
-                code: fa
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_en: English
+                name_ru: Английский
+                code: en
+                name: Inglise
     screenings: []
-    Title: null
-    Slug: null
-    title: 'Yalda, andestuse öö'
-    path: film/yalda-andestuse-oo
-    slug: yalda-andestuse-oo
-    idCSV: '56'
-    directorCSV: Massoud Bakhshi
-    screenwriterCSV: Massoud Bakhshi
-    doPCSV: Julian Atanassov
-    castCSV: "Sadaf Asgari, Behnaz Jafari, Babak Karimi\r"
+    title: 'Tagaotsitav: Banksy!'
+    slug: tagaotsitav-banksy
+    directory: source/film/banksy-most-wanted
+    idCSV: '1744'
+    directorCSV: 'Aurélia Rouvier, Seamus Haley'
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
+    data: *ref_0
+-
+    id: 545
+    created_at: '2020-08-24T13:33:28.644Z'
+    updated_at: '2020-08-24T13:33:28.644Z'
+    title_en: 'Marcel Duchamp: Art of the Possible'
+    title_ru: ''
+    titleOriginal: ''
+    year: 2019
+    runtime: 86
+    slug_en: marcel-duchamp-art-of-the-possible
+    slug_ru: ''
+    filmId: '1016'
+    credentials:
+        id: 347
+        director:
+            - Matthew Taylor
+        screenwriter:
+            - ''
+        doP:
+            - ''
+        cast:
+            - Marina Abramovic
+            - ' William Anastasi'
+            - ' Michel Gondry'
+        composer:
+            - ''
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 862
+            -
+                id: 863
+            -
+                id: 864
+    synopsis: >-
+        Pole kahtlustki, kes on 20. sajandi tähtsaim kunstnik. Marcel Duchamp
+        muidugi!
+
+
+        Vähemalt ei kahtle selles filmi autor Matthew Taylor. See on enam kui
+        põhjalik portree, mis ei tutvusta üksnes selle pissuaari ja lumelabida
+        kunstisaali tassinud ja Mona Lisale vuntsid ette joonistanud
+        kunstirevolutsionääri elulugu ja loomingut, vaid näitab ka, kuidas tema
+        ideed muutsid ühiskonda, arusaamist esteetikast ja kunstist. Veel enam:
+        kuidas need meid jätkuvalt mõjutavad.
+
+
+        Jeff Koons, David Bowie, Marina Abramović, Paul Matisse, Robert
+        Rauschenberg... - kõigil on siin midagi öelda mehe kohta, kes pööras
+        kunsti definitsiooni pea peale, lõhkus hierarhiaid, demokratiseeris
+        seda, väites, et igaüks võib olla kunstnik. Duchamp ei mõjutanud mitte
+        ainult kujutavat kunsti, vaid ka etenduskunste, muusikat, koguni
+        arhitektuuri ja luulet.
+
+
+        „Ma olen sundinud ennast kogu aeg enesele vastu rääkima, et vältida
+        mugandumist,” armastas korrata Duchamp ise. Kohustuslik vaatamine
+        kõigile kunstihuvilistele.
+    media:
+        id: 282
+        Trailer:
+            -
+                id: 267
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 263
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 269
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 254
+        countries:
+            -
+                id: 1076
+                created_at: '2020-08-17T14:20:56.062Z'
+                updated_at: '2020-08-17T14:20:56.062Z'
+                code: US
+                name_en: USA
+                name_ru: США
+                name: USA
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_en: Germany
+                name_ru: Германия
+                name: Saksamaa
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_en: English
+                name_ru: Английский
+                code: en
+                name: Inglise
+    screenings: []
+    title: Marcel Duchamp ja võimalikkuse kunst
+    slug: marcel-duchamp-ja-voimalikkuse-kunst
+    directory: source/film/marcel-duchamp-art-of-the-possible
+    idCSV: '1744'
+    directorCSV: Matthew Taylor
+    castCSV: 'Marina Abramovic, William Anastasi, Michel Gondry'
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
+    data: *ref_0
+-
+    id: 512
+    created_at: '2020-08-19T08:36:37.357Z'
+    updated_at: '2020-08-19T08:36:37.357Z'
+    title_en: Final Portrait
+    title_ru: ''
+    titleOriginal: ''
+    year: 2017
+    runtime: 90
+    slug_en: final-portrait
+    slug_ru: ''
+    filmId: '1010'
+    credentials:
+        id: 348
+        director:
+            - Stanley Tucci
+        screenwriter:
+            - Stanley Tucci
+        doP:
+            - Danny Cohen
+        cast:
+            - Geoffrey Rush
+            - ' Armie Hammer'
+            - ' Tony Shalhoub'
+        composer:
+            - Evan Lurie
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 865
+            -
+                id: 866
+            -
+                id: 868
+            -
+                id: 869
+    synopsis: >-
+        Rohkem näitlejana tuntud Stanley Tucci viies film režissöörina kujutab
+        maailmakuulsa šveitsi skulptori Alberto Giacometti ja jõuka
+        kunstiarmastajast kirjaniku James Lordi eriskummalist kunstniku ja
+        modelli suhet. Film põhineb Lordi mälestusteraamatul "Giacometti
+        portree" ning nii nagu Stanley Tucci eelnevateski töödes huvitab
+        režissööri kõige enam loomisprotsess, selle kulg, inspiratsiooniallikad
+        ja kunstniku valmisolek oma tööd lõplikuks nimetada.
+
+        Peaosas näeme Geoffrey Rushi, kellele geeniuste mängimine on juba üsna
+        rutiinne tegevus. Režissööri sõnul ei olnud aga võimalik kedagi teist
+        valida, sest Rush sarnaneb Giacomettiga nagu kaks tilka vett. James
+        Lordi rollis üles astuv, väliselt Rushile vastanduv sile ja nägus Arnie
+        Hammer moodustab oma ekraanipartneriga huvitava koosluse, mille osapooli
+        kõigile erinevustele vaatamata siiski üksteise poole kisub.
+
+        Film nagu lõuend, mis tasapisi värvidega kattub.
+    media:
+        id: 284
+        Trailer:
+            -
+                id: 269
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 265
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 271
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 256
+        countries:
+            -
+                id: 893
+                created_at: '2020-08-17T14:20:46.574Z'
+                updated_at: '2020-08-17T14:20:46.574Z'
+                code: GB
+                name_en: Great Britain
+                name_ru: Великобритания
+                name: Suurbritannia
+        languages:
+            -
+                id: 1845
+                created_at: '2020-08-24T12:28:31.466Z'
+                updated_at: '2020-08-24T12:28:31.466Z'
+                name_en: French
+                name_ru: Французский
+                code: fr
+                name: Prantsuse
+            -
+                id: 1709
+                created_at: '2020-08-24T12:28:26.804Z'
+                updated_at: '2020-08-24T12:28:26.804Z'
+                name_en: Italian
+                name_ru: Итальянский
+                code: it
+                name: Itaalia
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_en: English
+                name_ru: Английский
+                code: en
+                name: Inglise
+    screenings: []
+    title: Viimane portree
+    slug: viimane-portree
+    directory: source/film/final-portrait
+    idCSV: '1744'
+    directorCSV: Stanley Tucci
+    screenwriterCSV: Stanley Tucci
+    doPCSV: Danny Cohen
+    castCSV: 'Geoffrey Rush, Armie Hammer, Tony Shalhoub'
+    composerCSV: Evan Lurie
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
     data: *ref_0
 -
     id: 510
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
     created_at: '2020-08-19T08:36:37.284Z'
     updated_at: '2020-08-19T08:36:37.284Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
     title_en: Force of Habit
     title_ru: ''
     titleOriginal: Tottumiskysymys
@@ -1150,8 +482,7 @@
     slug_ru: ''
     filmId: '1008'
     credentials:
-        id: 148
-        ProductionCompany: null
+        id: 350
         director:
             - Reetta Aalto
             - ' Alli Haapasalo'
@@ -1175,8 +506,7 @@
         coProducer: []
         productionCompany:
             -
-                id: 329
-                organisation: null
+                id: 874
     synopsis: >-
         Viimastel aastatel on aina enam jõudnud avalikkuseni #MeToo juhtumeid.
         Vaprad naised räägivad oma loo sellest, kuidas neid on tööl, peol,
@@ -1198,145 +528,93 @@
         Film põhineb kuuel lühifilmil erakordselt populaarsest sarjast
         "Yksittäistapaus”, mille on lavastanud Soome parimad naisrežissöörid.
     media:
-        id: 87
+        id: 287
         Trailer:
             -
-                id: 72
+                id: 272
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 68
+                id: 268
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 73
+        id: 274
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 61
+        id: 259
         countries:
             -
                 id: 908
-                Code: null
-                created_by: null
-                updated_by: null
                 created_at: '2020-08-17T14:20:47.900Z'
                 updated_at: '2020-08-17T14:20:47.900Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
                 code: FI
-                name_et: Soome
                 name_en: Finland
                 name_ru: Финляндия
+                name: Soome
         languages:
             -
-                id: 1514
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:23.998Z'
-                updated_at: '2020-08-19T07:18:23.998Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Inglise
-                name_en: English
-                name_ru: Английский
-                code: en
-            -
-                id: 1521
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:24.659Z'
-                updated_at: '2020-08-19T07:18:24.659Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Soome
+                id: 1745
+                created_at: '2020-08-24T12:28:28.842Z'
+                updated_at: '2020-08-24T12:28:28.842Z'
                 name_en: Finnish
                 name_ru: Финский
                 code: fi
+                name: Soome
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_en: English
+                name_ru: Английский
+                code: en
+                name: Inglise
     screenings: []
-    Title: null
-    Slug: null
     title: Harjumuse jõud
-    path: film/harjumuse-joud
     slug: harjumuse-joud
-    idCSV: '61'
+    directory: source/film/force-of-habit
+    idCSV: '1744'
     directorCSV: >-
         Reetta Aalto, Alli Haapasalo, Anna Paavilainen, Kirsikka Saari, Miia
         Tervo, Elli Toivoniemi, Jenni Toivoniemi
     doPCSV: 'Kerttu Hakkarainen, Päivi Kettunen, Jarmo Kiuru'
     composerCSV: Joona Jaakkola
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
     data: *ref_0
 -
-    id: 511
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.316Z'
-    updated_at: '2020-08-19T08:36:37.316Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: Acid
+    id: 509
+    created_at: '2020-08-19T08:36:37.245Z'
+    updated_at: '2020-08-19T08:36:37.245Z'
+    title_en: 'Yalda, a Night for Forgiveness'
     title_ru: ''
-    titleOriginal: Kislota
-    year: 2018
-    runtime: 97
-    slug_en: acid
+    titleOriginal: Yalda
+    year: 2019
+    runtime: 89
+    slug_en: yalda-a-night-for-forgiveness
     slug_ru: ''
-    filmId: '1009'
+    filmId: '1007'
     credentials:
-        id: 149
-        ProductionCompany: null
+        id: 349
         director:
-            - Aleksandr Gorchilin
+            - Massoud Bakhshi
         screenwriter:
-            - Valery Pecheykin
+            - Massoud Bakhshi
         doP:
-            - Kseniya Sereda
+            - Julian Atanassov
         cast:
-            - Filipp Avdeev
-            - ' Aleksandr Kuznetsov'
-            - ' Aleksandra Rebenok'
+            - Sadaf Asgari
+            - ' Behnaz Jafari'
+            - " Babak Karimi\r"
         composer:
             - ''
         editor: []
@@ -1344,503 +622,130 @@
         coProducer: []
         productionCompany:
             -
-                id: 311
-                organisation: null
-            -
-                id: 314
-                organisation: null
+                id: 867
     synopsis: >-
-        Noore vene näitleja Aleksandr Gortšilini režiidebüüti "Hape" kirjeldab
-        lavastaja ise kui vaikivat manifesti. See räägib 21-aastaste vene noorte
-        tühjusetundest ühiskonnas, mis on hüljanud põhilised alustalad, millele
-        noor inimene võiks toetuda: perekond, armastus, sõbrad ja võimalused.
-        Nad hävitavad iseennast ja üksteist nagu hape, mis söövitab maailma
-        nende ümber. Gortšilinile on oluline, et inimesed kuuleks, mitte
-        kuulaks, näeks, mitte vaataks - ja leiaks oma tee.
+        Kas te kujutaksite ette telesõud, kus otsustatakse inimese elu ja surma
+        üle? Iraanis on see võimalik.
 
-        Tänase päeva andekad ja tuntud vene nätlejad Aleksandr Kuznetsov ja
-        Filipp Avdejev sooritavad oma rollid kompromissitu ehedusega ning ei ole
-        kahtlust, et probleemid, millega elluastujad filmis silmitsi seisavad,
-        ei ole võõrad ka meie noorele vaatajale.
+        22-aastane Maryam tapab tüli käigus kogemata oma 65-aastase abikaasa
+        Nasseri, kellega ta on ajutises abielus. (Lepinguline kooseluvorm, mis
+        võib kesta mõnest päevast aastateni.) Ta mõistetakse surma. Ainus, kes
+        ta šariaadi järgi päästa võib, on Mona, Nasseri tütar pärisabielust.
+        Selleks peab ta Maryamile andestama. (Ja saama vereraha.) Andestada pole
+        aga niisama lihtne, seda enam, et teha tuleb seda populaarse telesõu
+        otse-eetris, mis leiab aset üldrahvalikul Yalda õhtul, kui Iraani
+        kodudes tähistatakse aasta kõige pikemat ööd.
+
+        Tõsielust tõukuv üllatuslik melodraama käsitleb kaasahaaravalt Iraani
+        ühiskonnas aktuaalseid teemasid naiste allasurutusest sotsiaalse
+        ebavõrdsuseni. See on harvanähtav sissevaade maailma, millest enamikul
+        meist aimugi ei ole.
+
+        Linateos võitis mainekal Sundance´i festivalil maailmafilmi
+        võistlusprogrammi peaauhinna.
     media:
-        id: 83
+        id: 283
         Trailer:
             -
-                id: 68
+                id: 268
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 64
+                id: 264
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 69
+        id: 270
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 57
+        id: 255
         countries:
             -
-                id: 1030
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:54.589Z'
-                updated_at: '2020-08-17T14:20:54.589Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: RU
-                name_et: Venemaa
-                name_en: Russian Federation
-                name_ru: Российская Федерация
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_en: Germany
+                name_ru: Германия
+                name: Saksamaa
+            -
+                id: 1004
+                created_at: '2020-08-17T14:20:53.641Z'
+                updated_at: '2020-08-17T14:20:53.641Z'
+                code: LU
+                name_en: Luxembourg
+                name_ru: Люксембург
+                name: Luksemburg
+            -
+                id: 890
+                created_at: '2020-08-17T14:20:46.374Z'
+                updated_at: '2020-08-17T14:20:46.374Z'
+                code: FR
+                name_en: France
+                name_ru: Франция
+                name: Prantsusmaa
+            -
+                id: 970
+                created_at: '2020-08-17T14:20:51.857Z'
+                updated_at: '2020-08-17T14:20:51.857Z'
+                code: IR
+                name_en: Iran
+                name_ru: Иран
+                name: Iraan
+            -
+                id: 1001
+                created_at: '2020-08-17T14:20:53.469Z'
+                updated_at: '2020-08-17T14:20:53.469Z'
+                code: LB
+                name_en: Lebanon
+                name_ru: Ливан
+                name: Liibanon
+            -
+                id: 909
+                created_at: '2020-08-17T14:20:47.971Z'
+                updated_at: '2020-08-17T14:20:47.971Z'
+                code: CH
+                name_en: Switzerland
+                name_ru: Швейцария
+                name: Šveits
         languages:
             -
-                id: 1618
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:28.947Z'
-                updated_at: '2020-08-19T07:18:28.947Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Vene
-                name_en: Russian
-                name_ru: Русский
-                code: ru
+                id: 1730
+                created_at: '2020-08-24T12:28:28.092Z'
+                updated_at: '2020-08-24T12:28:28.092Z'
+                name_en: Persian
+                name_ru: Персидский
+                code: fa
+                name: Pärsia
     screenings: []
-    Title: null
-    Slug: null
-    title: Hape
-    path: film/hape
-    slug: hape
-    idCSV: '57'
-    directorCSV: Aleksandr Gorchilin
-    screenwriterCSV: Valery Pecheykin
-    doPCSV: Kseniya Sereda
-    castCSV: 'Filipp Avdeev, Aleksandr Kuznetsov, Aleksandra Rebenok'
-    data: *ref_0
--
-    id: 512
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.357Z'
-    updated_at: '2020-08-19T08:36:37.357Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: Final Portrait
-    title_ru: ''
-    titleOriginal: ''
-    year: 2017
-    runtime: 90
-    slug_en: final-portrait
-    slug_ru: ''
-    filmId: '1010'
-    credentials:
-        id: 150
-        ProductionCompany: null
-        director:
-            - Stanley Tucci
-        screenwriter:
-            - Stanley Tucci
-        doP:
-            - Danny Cohen
-        cast:
-            - Geoffrey Rush
-            - ' Armie Hammer'
-            - ' Tony Shalhoub'
-        composer:
-            - Evan Lurie
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 316
-                organisation: null
-            -
-                id: 318
-                organisation: null
-            -
-                id: 319
-                organisation: null
-            -
-                id: 320
-                organisation: null
-    synopsis: >-
-        Rohkem näitlejana tuntud Stanley Tucci viies film režissöörina kujutab
-        maailmakuulsa šveitsi skulptori Alberto Giacometti ja jõuka
-        kunstiarmastajast kirjaniku James Lordi eriskummalist kunstniku ja
-        modelli suhet. Film põhineb Lordi mälestusteraamatul "Giacometti
-        portree" ning nii nagu Stanley Tucci eelnevateski töödes huvitab
-        režissööri kõige enam loomisprotsess, selle kulg, inspiratsiooniallikad
-        ja kunstniku valmisolek oma tööd lõplikuks nimetada.
-
-        Peaosas näeme Geoffrey Rushi, kellele geeniuste mängimine on juba üsna
-        rutiinne tegevus. Režissööri sõnul ei olnud aga võimalik kedagi teist
-        valida, sest Rush sarnaneb Giacomettiga nagu kaks tilka vett. James
-        Lordi rollis üles astuv, väliselt Rushile vastanduv sile ja nägus Arnie
-        Hammer moodustab oma ekraanipartneriga huvitava koosluse, mille osapooli
-        kõigile erinevustele vaatamata siiski üksteise poole kisub.
-
-        Film nagu lõuend, mis tasapisi värvidega kattub.
-    media:
-        id: 86
-        Trailer:
-            -
-                id: 71
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 67
-                Url: ''
-                Type: null
-        Stills: []
-        Posters: []
-    tags:
-        id: 72
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 60
-        countries:
-            -
-                id: 893
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:46.574Z'
-                updated_at: '2020-08-17T14:20:46.574Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: GB
-                name_et: Suurbritannia
-                name_en: Great Britain
-                name_ru: Великобритания
-        languages:
-            -
-                id: 1514
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:23.998Z'
-                updated_at: '2020-08-19T07:18:23.998Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Inglise
-                name_en: English
-                name_ru: Английский
-                code: en
-            -
-                id: 1525
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:24.918Z'
-                updated_at: '2020-08-19T07:18:24.918Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Prantsuse
-                name_en: French
-                name_ru: Французский
-                code: fr
-            -
-                id: 1551
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:26.294Z'
-                updated_at: '2020-08-19T07:18:26.294Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Itaalia
-                name_en: Italian
-                name_ru: Итальянский
-                code: it
-    screenings: []
-    Title: null
-    Slug: null
-    title: Viimane portree
-    path: film/viimane-portree
-    slug: viimane-portree
-    idCSV: '60'
-    directorCSV: Stanley Tucci
-    screenwriterCSV: Stanley Tucci
-    doPCSV: Danny Cohen
-    castCSV: 'Geoffrey Rush, Armie Hammer, Tony Shalhoub'
-    composerCSV: Evan Lurie
-    data: *ref_0
--
-    id: 513
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
-    created_at: '2020-08-19T08:36:37.436Z'
-    updated_at: '2020-08-19T08:36:37.436Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
-    title_en: Maudie
-    title_ru: ''
-    titleOriginal: ''
-    year: 2016
-    runtime: 115
-    slug_en: maudie
-    slug_ru: ''
-    filmId: '1011'
-    credentials:
-        id: 151
-        ProductionCompany: null
-        director:
-            - Aisling Walsh
-        screenwriter:
-            - Sherry White
-        doP:
-            - Guy Godfree
-        cast:
-            - Sally Hawkins
-            - ' Ethan Hawke'
-            - ' Kari Matchett'
-        composer:
-            - Michael Timmins
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 321
-                organisation: null
-            -
-                id: 322
-                organisation: null
-            -
-                id: 323
-                organisation: null
-            -
-                id: 324
-                organisation: null
-            -
-                id: 325
-                organisation: null
-            -
-                id: 326
-                organisation: null
-            -
-                id: 327
-                organisation: null
-            -
-                id: 328
-                organisation: null
-    synopsis: >-
-        "Maudie" on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
-        ennast kunsti kaudu, jäädes meeleheitlikule olukorrale vaatamata alati
-        heatahtlikuks, usaldavaks ja optimistlikuks. Film on saanud
-        inspiratsiooni Nova Scotia (Kanada) naivistliku kunstniku Maud Lewise
-        eluloost. Tema hingejõud leidis väljenduse lihtsates värvikates
-        piltides, mis kujunesid vaatamata tehnilistele puudujääkidele paljude
-        lemmikuteks. Ta alustas täppide maalimisest oma viletsa hüti akendele ja
-        hiljem juba lõuenditele, mida tuldi ostma üle kogu Kanada. Maudie on
-        naivistliku kunstniku ehe näide, kelle peaaegu sõnakuulmatud käed lõid
-        teoseid, mis jõuavad siirusega otse vaataja hinge.
-
-
-        Sally Hawkins on võitnud selle tundliku rolli eest auhindu paljudelt
-        festivalidelt, nagu ka Ethan Hawke Maudie´ rämedavõitu ja asotsiaalse
-        elukaaslase Everettina.
-    media:
-        id: 89
-        Trailer:
-            -
-                id: 74
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 70
-                Url: ''
-                Type: null
-        Stills: []
-        Posters: []
-    tags:
-        id: 75
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 63
-        countries:
-            -
-                id: 952
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:50.882Z'
-                updated_at: '2020-08-17T14:20:50.882Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: IE
-                name_et: Iirimaa
-                name_en: Ireland
-                name_ru: Ирландия
-            -
-                id: 864
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:41.574Z'
-                updated_at: '2020-08-17T14:20:41.574Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: CA
-                name_et: Kanada
-                name_en: Canada
-                name_ru: Канада
-        languages:
-            -
-                id: 1514
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:23.998Z'
-                updated_at: '2020-08-19T07:18:23.998Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Inglise
-                name_en: English
-                name_ru: Английский
-                code: en
-    screenings: []
-    Title: null
-    Slug: null
-    title: Maudie
-    path: film/maudie
-    slug: maudie
-    idCSV: '63'
-    directorCSV: Aisling Walsh
-    screenwriterCSV: Sherry White
-    doPCSV: Guy Godfree
-    castCSV: 'Sally Hawkins, Ethan Hawke, Kari Matchett'
-    composerCSV: Michael Timmins
+    title: 'Yalda, andestuse öö'
+    slug: yalda-andestuse-oo
+    directory: source/film/yalda-a-night-for-forgiveness
+    idCSV: '1730'
+    directorCSV: Massoud Bakhshi
+    screenwriterCSV: Massoud Bakhshi
+    doPCSV: Julian Atanassov
+    castCSV: "Sadaf Asgari, Behnaz Jafari, Babak Karimi\r"
+    created_atCSV: '2020-08-24T12:28:28.092Z'
+    updated_atCSV: '2020-08-24T12:28:28.092Z'
+    codeCSV: fa
+    name_enCSV: Persian
+    name_ruCSV: Персидский
+    nameCSV: Pärsia
     data: *ref_0
 -
     id: 514
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
     created_at: '2020-08-19T08:36:46.957Z'
-    updated_at: '2020-08-19T08:36:46.957Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
+    updated_at: '2020-08-24T13:33:52.229Z'
     title_en: 'Acasă, My Home'
     title_ru: ''
     titleOriginal: Acasă
@@ -1850,8 +755,7 @@
     slug_ru: ''
     filmId: '1013'
     credentials:
-        id: 152
-        ProductionCompany: null
+        id: 351
         director:
             - Radu Ciorniciuc
         screenwriter:
@@ -1869,14 +773,11 @@
         coProducer: []
         productionCompany:
             -
-                id: 330
-                organisation: null
+                id: 870
             -
-                id: 331
-                organisation: null
+                id: 871
             -
-                id: 333
-                organisation: null
+                id: 872
     synopsis: >-
         9-lapseline roma perekond peab oma poolmetsiku eluviisiga hüvasti jätma,
         kui nende elupaigast, Bukarestis laiuvast hiiglaslikust märgalast
@@ -1901,155 +802,88 @@
         Mitmekihiline film on võitnud juba hulk auhindu mainekatelt
         festivalidelt.
     media:
-        id: 91
+        id: 285
         Trailer:
             -
-                id: 76
+                id: 270
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 72
+                id: 266
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 77
+        id: 272
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 65
+        id: 258
         countries:
             -
-                id: 877
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: DE
-                name_et: Saksamaa
-                name_en: Germany
-                name_ru: Германия
-            -
-                id: 908
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-17T14:20:47.900Z'
-                updated_at: '2020-08-17T14:20:47.900Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                code: FI
-                name_et: Soome
-                name_en: Finland
-                name_ru: Финляндия
-            -
                 id: 1036
-                Code: null
-                created_by: null
-                updated_by: null
                 created_at: '2020-08-17T14:20:54.863Z'
                 updated_at: '2020-08-17T14:20:54.863Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
                 code: RO
-                name_et: Rumeenia
                 name_en: Romania
                 name_ru: Румыния
+                name: Rumeenia
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_en: Germany
+                name_ru: Германия
+                name: Saksamaa
+            -
+                id: 908
+                created_at: '2020-08-17T14:20:47.900Z'
+                updated_at: '2020-08-17T14:20:47.900Z'
+                code: FI
+                name_en: Finland
+                name_ru: Финляндия
+                name: Soome
         languages:
             -
-                id: 1514
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:23.998Z'
-                updated_at: '2020-08-19T07:18:23.998Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Inglise
-                name_en: English
-                name_ru: Английский
-                code: en
-            -
-                id: 1616
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:28.873Z'
-                updated_at: '2020-08-19T07:18:28.873Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Romanian
+                id: 1693
+                created_at: '2020-08-24T12:28:25.023Z'
+                updated_at: '2020-08-24T12:28:25.023Z'
                 name_en: Romanian
                 name_ru: Румынский
                 code: ro
+                name: Romanian
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_en: English
+                name_ru: Английский
+                code: en
+                name: Inglise
     screenings: []
-    Title: null
-    Slug: null
     title: 'Acasă, mu kodu'
-    path: film/acasa-mu-kodu
     slug: acasa-mu-kodu
-    idCSV: '65'
+    directory: source/film/acasa-my-home
+    idCSV: '1744'
+    firstnameCSV: Mihkel
+    lastnameCSV: Putrinš
     directorCSV: Radu Ciorniciuc
     castCSV: 'Corina Enache, Duca Enache, Georgiana Enache'
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
     data: *ref_0
 -
     id: 515
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
     created_at: '2020-08-19T08:36:46.969Z'
     updated_at: '2020-08-19T08:36:46.969Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
     title_en: Storm Boy
     title_ru: ''
     titleOriginal: ''
@@ -2059,8 +893,7 @@
     slug_ru: ''
     filmId: '1014'
     credentials:
-        id: 153
-        ProductionCompany: null
+        id: 352
         director:
             - Shawn Seet
         screenwriter:
@@ -2078,8 +911,7 @@
         coProducer: []
         productionCompany:
             -
-                id: 332
-                organisation: null
+                id: 873
     synopsis: >-
         Eelmise aasta suurimaid perefilme on saanud paljudel mainekatel
         festivalidel publiku sooja vastuvõtu osaliseks.
@@ -2095,107 +927,442 @@
 
         Uskumatud ja ennekuulmatud seiklused võivad kinolinal alata!
     media:
-        id: 90
+        id: 286
         Trailer:
             -
-                id: 75
+                id: 271
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 71
+                id: 267
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 76
+        id: 273
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 64
+        id: 257
         countries:
             -
                 id: 892
-                Code: null
-                created_by: null
-                updated_by: null
                 created_at: '2020-08-17T14:20:46.514Z'
                 updated_at: '2020-08-17T14:20:46.514Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
                 code: AU
-                name_et: Austraalia
                 name_en: Australia
                 name_ru: Австралия
+                name: Austraalia
         languages:
             -
-                id: 1514
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:23.998Z'
-                updated_at: '2020-08-19T07:18:23.998Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Inglise
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
                 name_en: English
                 name_ru: Английский
                 code: en
+                name: Inglise
     screenings: []
-    Title: null
-    Slug: null
     title: Tormipoiss
-    path: film/tormipoiss
     slug: tormipoiss
-    idCSV: '64'
+    directory: source/film/storm-boy
+    idCSV: '1744'
     directorCSV: Shawn Seet
     screenwriterCSV: Justin Monjo
     doPCSV: Bruce Young
     castCSV: 'Finn Little, Jai Courtney, Geoffrey Rush'
     composerCSV: Alan John
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
+    data: *ref_0
+-
+    id: 508
+    created_at: '2020-08-19T08:36:37.191Z'
+    updated_at: '2020-08-19T08:36:37.191Z'
+    title_en: Champions
+    title_ru: ''
+    titleOriginal: Campeones
+    year: 2018
+    runtime: 124
+    slug_en: champions
+    slug_ru: ''
+    filmId: '1006'
+    credentials:
+        id: 354
+        director:
+            - Javier Fesser
+        screenwriter:
+            - David Marqués
+            - ' Javier Fesser'
+        doP:
+            - Chechu Graf
+        cast:
+            - Javier Gutiérrez
+            - ' Athenea Mata'
+            - " Juan Margallo\r"
+        composer:
+            - Rafael Arnau
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 879
+            -
+                id: 880
+            -
+                id: 881
+            -
+                id: 882
+            -
+                id: 883
+            -
+                id: 884
+            -
+                id: 885
+            -
+                id: 886
+            -
+                id: 887
+    synopsis: >-
+        Hispaania režissöör Javier Fesser on ka oma varasemates filmides
+        käsitlenud tõsiseid teemasid läbi kergendustunnet tekitava
+        huumoriprisma, mis vaataja meelt ühest küljest lõbustab, teisalt elus
+        mitte just loterii peavõitu tõmmanud inimestele kaasa elama paneb.
+
+        Endine nimekas korvpallitreener saadetakse purjuspäi autojuhtimise eest
+        ühiskondlikult kasulikule tööle, mille käigus on tema ülesandeks
+        treenida kergete puuetega innukad sportlased võistlusvalmis meeskonnaks.
+        Protsessi käigus õpitakse vastakuti nii elust, spordist kui iseendast.
+        Elukogemuste ja reaalsuse tajumise erinevused loovad ridamisi
+        hirmnaljakaid, kuid ka südamlikke situatsioone. Vaatajale on oluline
+        teada, et film põhineb paljuski tõestisündinud lool ning "meeskonna”
+        moodustavad näitlejad, kellele see on esimene ülesastumine kinolinal.
+    media:
+        id: 289
+        Trailer:
+            -
+                id: 274
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 270
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 276
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 261
+        countries:
+            -
+                id: 906
+                created_at: '2020-08-17T14:20:47.692Z'
+                updated_at: '2020-08-17T14:20:47.692Z'
+                code: ES
+                name_en: Spain
+                name_ru: Испания
+                name: Hispaania
+        languages:
+            -
+                id: 1742
+                created_at: '2020-08-24T12:28:28.680Z'
+                updated_at: '2020-08-24T12:28:28.680Z'
+                name_en: Spanish
+                name_ru: Испанский
+                code: es
+                name: Hispaania
+    screenings: []
+    title: Tšempionid
+    slug: tsempionid
+    directory: source/film/champions
+    idCSV: '1742'
+    directorCSV: Javier Fesser
+    screenwriterCSV: 'David Marqués, Javier Fesser'
+    doPCSV: Chechu Graf
+    castCSV: "Javier Gutiérrez, Athenea Mata, Juan Margallo\r"
+    composerCSV: Rafael Arnau
+    created_atCSV: '2020-08-24T12:28:28.680Z'
+    updated_atCSV: '2020-08-24T12:28:28.680Z'
+    codeCSV: es
+    name_enCSV: Spanish
+    name_ruCSV: Испанский
+    nameCSV: Hispaania
+    data: *ref_0
+-
+    id: 504
+    created_at: '2020-08-19T08:36:37.024Z'
+    updated_at: '2020-08-19T08:36:37.024Z'
+    title_en: Invisible Life of Eurídice Gusmão
+    title_ru: ''
+    titleOriginal: A Vida Invisivel
+    year: 2019
+    runtime: 139
+    slug_en: invisible-life-of-euridice-gusmao
+    slug_ru: ''
+    filmId: '1001'
+    credentials:
+        id: 353
+        director:
+            - Karim Aïnouz
+        screenwriter:
+            - Murilo Hauser
+            - ' Inés Bortagaray'
+            - ' Karim Aïnouz'
+        doP:
+            - Hélène Louvart
+        cast:
+            - Julia Stockler
+            - ' Carol Duarte'
+            - ' Flávia Gusmão'
+        composer:
+            - Benedikt Schiefer
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 875
+            -
+                id: 876
+            -
+                id: 877
+            -
+                id: 878
+    synopsis: >-
+        Filmi tegevus toimub 1950. aastatel Rio de Janeiros. Gusmãode perekonnas
+        sirgub kaks erineva iseloomuga õde: Guida naudib kogu hingest elu,
+        Eurídice on pühendunud klaverimängule. Ühel heal päeval armub Guida
+        kreeka meremehesse ja lahkub koos temaga omavoliliselt kodust. Abielu ei
+        lähe aga roosiliselt ja ta on sunnitud tagasi pöörduma. Paraku on noorte
+        naiste isa nagu kogu ühiskondki konservatiivne ja et perekonnale mitte
+        häbi teha, suleb ta Guida ees ukse. Kui Guida küsib oma õe järele,
+        valetab isa, et ta õpib välismaal. Guida ja Eurídice kaotavad kontakti,
+        kuid ei jäta lootust jälle kohtuda. Nad elavad, nagu oskavad ja võtavad
+        vastu selle, mida saatus neile pakub. Lugu põhineb Martha Batalha
+        romaanil "Eurídice Gusmão nähtamatu elu". Film linastus 2019. aastal
+        mainekal Cannes’i filmifestivalil programmis "Un Certain Regard" ja
+        võitis seal peaauhinna.
+    media:
+        id: 288
+        Trailer:
+            -
+                id: 273
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 269
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 275
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 260
+        countries:
+            -
+                id: 859
+                created_at: '2020-08-17T14:20:40.521Z'
+                updated_at: '2020-08-17T14:20:40.521Z'
+                code: BR
+                name_en: Brazil
+                name_ru: Бразилия
+                name: Brasiilia
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_en: Germany
+                name_ru: Германия
+                name: Saksamaa
+        languages:
+            -
+                id: 1680
+                created_at: '2020-08-24T12:28:23.296Z'
+                updated_at: '2020-08-24T12:28:23.296Z'
+                name_en: Greek
+                name_ru: Греческий
+                code: el
+                name: Kreeka
+            -
+                id: 1805
+                created_at: '2020-08-24T12:28:30.796Z'
+                updated_at: '2020-08-24T12:28:30.796Z'
+                name_en: Portuguese
+                name_ru: Португальский
+                code: pt
+                name: Portugali
+    screenings: []
+    title: Nähtamatu elu
+    slug: nahtamatu-elu
+    directory: source/film/invisible-life-of-euridice-gusmao
+    idCSV: '1805'
+    directorCSV: Karim Aïnouz
+    screenwriterCSV: 'Murilo Hauser, Inés Bortagaray, Karim Aïnouz'
+    doPCSV: Hélène Louvart
+    castCSV: 'Julia Stockler, Carol Duarte, Flávia Gusmão'
+    composerCSV: Benedikt Schiefer
+    created_atCSV: '2020-08-24T12:28:30.796Z'
+    updated_atCSV: '2020-08-24T12:28:30.796Z'
+    codeCSV: pt
+    name_enCSV: Portuguese
+    name_ruCSV: Португальский
+    nameCSV: Portugali
+    data: *ref_0
+-
+    id: 505
+    created_at: '2020-08-19T08:36:37.043Z'
+    updated_at: '2020-08-19T08:36:37.043Z'
+    title_en: Flawless
+    title_ru: ''
+    titleOriginal: HaNeshef
+    year: 2018
+    runtime: 97
+    slug_en: flawless
+    slug_ru: ''
+    filmId: '1002'
+    credentials:
+        id: 355
+        director:
+            - Tal Granit
+            - ' Sharon Maymon'
+        screenwriter:
+            - Tal Granit
+            - ' Sharon Maymon'
+        doP:
+            - Giora Bejach
+        cast:
+            - Stav Strashko
+            - ' Netsanet Mekonen'
+            - ' Noam Lugasy'
+        composer:
+            - Ivri Lider
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 888
+            -
+                id: 889
+    synopsis: >-
+        Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid
+        selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige
+        suurema unistuse?
+
+        17-aastane Eden (Stav Strashko) avastab, et just seda plaanivadki tema
+        kaks parimat sõpra. Tüdrukutele on see väike ohverdus, et saada endale
+        rinnakam büst ja uus uhke keskkooli lõpupeo kleit. Edenile tehakse
+        samuti ettepanek osaleda illegaalses doonorluses. Tüdrukud ei tea, et
+        Eden on transsooline ja talle tähendaks operatsioon midagi hoopis
+        olulisemat.
+
+        Veneetsias, Karlovy Varys ja mitmetel teistel festivalidel auhinnatud
+        režissöörid Sharon Maymon ja Tal Granit toovad meieni inimliku ja
+        liigutava loo sõprusest, aktsepteerimisest ja iseendale otsa
+        vaatamisest.
+    media:
+        id: 290
+        Trailer:
+            -
+                id: 275
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 271
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 277
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 262
+        countries:
+            -
+                id: 951
+                created_at: '2020-08-17T14:20:50.795Z'
+                updated_at: '2020-08-17T14:20:50.795Z'
+                code: IL
+                name_en: Israel
+                name_ru: Израиль
+                name: Iisrael
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_en: Germany
+                name_ru: Германия
+                name: Saksamaa
+        languages:
+            -
+                id: 1796
+                created_at: '2020-08-24T12:28:30.605Z'
+                updated_at: '2020-08-24T12:28:30.605Z'
+                name_en: Russian
+                name_ru: Русский
+                code: ru
+                name: Vene
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_en: English
+                name_ru: Английский
+                code: en
+                name: Inglise
+            -
+                id: 1727
+                created_at: '2020-08-24T12:28:27.872Z'
+                updated_at: '2020-08-24T12:28:27.872Z'
+                name_en: Hebrew
+                name_ru: Иврит
+                code: he
+                name: Heebrea
+    screenings: []
+    title: Täiuslik
+    slug: taiuslik
+    directory: source/film/flawless
+    idCSV: '1727'
+    directorCSV: 'Tal Granit, Sharon Maymon'
+    screenwriterCSV: 'Tal Granit, Sharon Maymon'
+    doPCSV: Giora Bejach
+    castCSV: 'Stav Strashko, Netsanet Mekonen, Noam Lugasy'
+    composerCSV: Ivri Lider
+    created_atCSV: '2020-08-24T12:28:27.872Z'
+    updated_atCSV: '2020-08-24T12:28:27.872Z'
+    codeCSV: he
+    name_enCSV: Hebrew
+    name_ruCSV: Иврит
+    nameCSV: Heebrea
     data: *ref_0
 -
     id: 516
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
     created_at: '2020-08-19T08:36:46.969Z'
     updated_at: '2020-08-19T08:36:46.969Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
     title_en: The Secret Lamb
     title_ru: ''
     titleOriginal: ''
@@ -2205,8 +1372,7 @@
     slug_ru: ''
     filmId: '1015'
     credentials:
-        id: 154
-        ProductionCompany: null
+        id: 356
         director:
             - Lembit Ulfsak
         screenwriter:
@@ -2227,8 +1393,7 @@
         coProducer: []
         productionCompany:
             -
-                id: 335
-                organisation: null
+                id: 890
     synopsis: >-
         Teadushuvilise Tomi (Margus Alver) tutvus tulnukahuvilise Ahvenaga (Tõnu
         Kark) algab siis, kui Tomi raketikatsetus jõe ääres on lõppenud paugu ja
@@ -2245,107 +1410,520 @@
         Taasiseseisvusaja populaarsemaid koguperefilme taastati ja
         digitaliseeriti 2013. aastal.
     media:
-        id: 93
+        id: 291
         Trailer:
             -
-                id: 78
+                id: 276
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 74
+                id: 272
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 79
+        id: 278
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 67
+        id: 263
         countries:
             -
                 id: 899
-                Code: null
-                created_by: null
-                updated_by: null
                 created_at: '2020-08-17T14:20:47.018Z'
                 updated_at: '2020-08-17T14:20:47.018Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
                 code: EE
-                name_et: Eesti
                 name_en: Estonia
                 name_ru: Эстония
+                name: Eesti
         languages:
             -
-                id: 1518
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:24.397Z'
-                updated_at: '2020-08-19T07:18:24.397Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Eesti
+                id: 1686
+                created_at: '2020-08-24T12:28:24.026Z'
+                updated_at: '2020-08-24T12:28:24.026Z'
                 name_en: Estonian
                 name_ru: Эстонский
                 code: et
+                name: Eesti
     screenings: []
-    Title: null
-    Slug: null
     title: Lammas all paremas nurgas
-    path: film/lammas-all-paremas-nurgas
     slug: lammas-all-paremas-nurgas
-    idCSV: '67'
+    directory: source/film/the-secret-lamb
+    idCSV: '1686'
     directorCSV: Lembit Ulfsak
     screenwriterCSV: 'Janno Põldma, Lembit Ulsak'
     doPCSV: Ago Ruus
     castCSV: 'Tõnu Kark, Margus Alver, Kaur Sinissaar, Dan Põldroos, Ain Lutsepp'
     composerCSV: Tõnu Naissoo
+    created_atCSV: '2020-08-24T12:28:24.026Z'
+    updated_atCSV: '2020-08-24T12:28:24.026Z'
+    codeCSV: et
+    name_enCSV: Estonian
+    name_ruCSV: Эстонский
+    nameCSV: Eesti
+    data: *ref_0
+-
+    id: 544
+    created_at: '2020-08-24T13:33:28.023Z'
+    updated_at: '2020-08-24T13:33:28.023Z'
+    title_en: House of Hummingbird
+    title_ru: ''
+    titleOriginal: Beol-sae
+    year: 2018
+    runtime: 138
+    slug_en: house-of-hummingbird
+    slug_ru: ''
+    filmId: '1003'
+    credentials:
+        id: 357
+        director:
+            - Bora Kim
+        screenwriter:
+            - Bora Kim
+        doP:
+            - Guk-hyun Kang
+        cast:
+            - Ji-hu Park
+            - ' Sae-byeok Kim'
+            - ' Seung-Yun Lee'
+        composer:
+            - Matija Strnisa
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 891
+            -
+                id: 892
+    synopsis: >+
+        Seouli 8-klassi õpilase Eun-hee isiklikud läbielamised, esimene armastus
+        ja tulevikuväljavaated ristuvad selles auhinnatud tippdraamas
+        Lõuna-Korea ühiskonnas aset leidvate sündmustega, mis kulmineeruvad
+        Seongsu silla kokkuvarisemisega 1994. aasta sügisel.
+
+        Nagu kogu ülejäänud maailm elavad ka lõunakorealased palavalt kaasa
+        1994. aasta jalgpalli maailmameistrivõistlustele ja ootavad uudiseid
+        põhjanaabrite juurest, kus on äsja surnud „Suur Juht“ Kim Il-sung.
+        Täiskasvanute maailm ja selle tegemised, isegi kool ja kaasõpilased
+        jätavad aga Eun-hee külmaks. Tema vanemad närivad päevast päeva üksteise
+        kõri kallal. Ka esimene armastus ei sisenda erilist usku paremasse
+        tulevikku. Kui uudistesse jõuavad ärevad teated Seongsu silla
+        kokkuvarisemisest ja inimohvritest, saab Eun-hee aru, et möödunud suvi
+        ja algav sügis toovad tema ellu pöörde, mida kutsutakse täiskasvanuks
+        saamiseks.
+
+    media:
+        id: 292
+        Trailer:
+            -
+                id: 277
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 273
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 279
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 264
+        countries:
+            -
+                id: 971
+                created_at: '2020-08-17T14:20:51.857Z'
+                updated_at: '2020-08-17T14:20:51.857Z'
+                code: KR
+                name_en: South Korea
+                name_ru: Республика Корея
+                name: Lõuna-Korea
+        languages:
+            -
+                id: 1788
+                created_at: '2020-08-24T12:28:30.341Z'
+                updated_at: '2020-08-24T12:28:30.341Z'
+                name_en: Korean
+                name_ru: Корейский
+                code: ko
+                name: Korea
+    screenings: []
+    title: Hüvasti!
+    slug: huvasti
+    directory: source/film/house-of-hummingbird
+    idCSV: '1788'
+    directorCSV: Bora Kim
+    screenwriterCSV: Bora Kim
+    doPCSV: Guk-hyun Kang
+    castCSV: 'Ji-hu Park, Sae-byeok Kim, Seung-Yun Lee'
+    composerCSV: Matija Strnisa
+    created_atCSV: '2020-08-24T12:28:30.341Z'
+    updated_atCSV: '2020-08-24T12:28:30.341Z'
+    codeCSV: ko
+    name_enCSV: Korean
+    name_ruCSV: Корейский
+    nameCSV: Korea
+    data: *ref_0
+-
+    id: 513
+    created_at: '2020-08-19T08:36:37.436Z'
+    updated_at: '2020-08-19T08:36:37.436Z'
+    title_en: Maudie
+    title_ru: ''
+    titleOriginal: ''
+    year: 2016
+    runtime: 115
+    slug_en: maudie
+    slug_ru: ''
+    filmId: '1011'
+    credentials:
+        id: 361
+        director:
+            - Aisling Walsh
+        screenwriter:
+            - Sherry White
+        doP:
+            - Guy Godfree
+        cast:
+            - Sally Hawkins
+            - ' Ethan Hawke'
+            - ' Kari Matchett'
+        composer:
+            - Michael Timmins
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 899
+            -
+                id: 900
+            -
+                id: 901
+            -
+                id: 902
+            -
+                id: 903
+            -
+                id: 904
+            -
+                id: 905
+            -
+                id: 906
+    synopsis: >-
+        "Maudie" on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
+        ennast kunsti kaudu, jäädes meeleheitlikule olukorrale vaatamata alati
+        heatahtlikuks, usaldavaks ja optimistlikuks. Film on saanud
+        inspiratsiooni Nova Scotia (Kanada) naivistliku kunstniku Maud Lewise
+        eluloost. Tema hingejõud leidis väljenduse lihtsates värvikates
+        piltides, mis kujunesid vaatamata tehnilistele puudujääkidele paljude
+        lemmikuteks. Ta alustas täppide maalimisest oma viletsa hüti akendele ja
+        hiljem juba lõuenditele, mida tuldi ostma üle kogu Kanada. Maudie on
+        naivistliku kunstniku ehe näide, kelle peaaegu sõnakuulmatud käed lõid
+        teoseid, mis jõuavad siirusega otse vaataja hinge.
+
+
+        Sally Hawkins on võitnud selle tundliku rolli eest auhindu paljudelt
+        festivalidelt, nagu ka Ethan Hawke Maudie´ rämedavõitu ja asotsiaalse
+        elukaaslase Everettina.
+    media:
+        id: 296
+        Trailer:
+            -
+                id: 281
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 277
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 283
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 268
+        countries:
+            -
+                id: 864
+                created_at: '2020-08-17T14:20:41.574Z'
+                updated_at: '2020-08-17T14:20:41.574Z'
+                code: CA
+                name_en: Canada
+                name_ru: Канада
+                name: Kanada
+            -
+                id: 952
+                created_at: '2020-08-17T14:20:50.882Z'
+                updated_at: '2020-08-17T14:20:50.882Z'
+                code: IE
+                name_en: Ireland
+                name_ru: Ирландия
+                name: Iirimaa
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_en: English
+                name_ru: Английский
+                code: en
+                name: Inglise
+    screenings: []
+    title: Maudie
+    slug: maudie
+    directory: source/film/maudie
+    idCSV: '1744'
+    directorCSV: Aisling Walsh
+    screenwriterCSV: Sherry White
+    doPCSV: Guy Godfree
+    castCSV: 'Sally Hawkins, Ethan Hawke, Kari Matchett'
+    composerCSV: Michael Timmins
+    created_atCSV: '2020-08-24T12:28:28.778Z'
+    updated_atCSV: '2020-08-24T12:28:28.778Z'
+    codeCSV: en
+    name_enCSV: English
+    name_ruCSV: Английский
+    nameCSV: Inglise
+    data: *ref_0
+-
+    id: 506
+    created_at: '2020-08-19T08:36:37.102Z'
+    updated_at: '2020-08-19T08:36:37.102Z'
+    title_en: The Goddess of Fortune
+    title_ru: ''
+    titleOriginal: La dea fortuna
+    year: 2019
+    runtime: 114
+    slug_en: the-goddess-of-fortune
+    slug_ru: ''
+    filmId: '1004'
+    credentials:
+        id: 359
+        director:
+            - Ferzan Özpetek
+        screenwriter:
+            - Ferzan Özpetek
+            - ' Silvia Ranfagni'
+            - ' Gianni Romoli'
+        doP:
+            - Gian Filippo Corticelli
+        cast:
+            - Stefano Accorsi
+            - ' Jasmine Trinca'
+            - ' Edoardo Leo'
+        composer:
+            - Pasquale Catalano
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 895
+            -
+                id: 896
+            -
+                id: 897
+    synopsis: >-
+        Ferzan Özpeteki filmid kannavad nüüdisaegse itaalia filmi pitserit:
+        tempokad, südamlikud, satiirilised, pisarateni liigutavad. Nii ka
+        seekord.
+
+        "Õnnejumalanna" on film kolmest lapsepõlvesõbrast Arturost, Annamariast
+        ja Alessandrost, kes kõik kordamööda ja vaheldumisi on olnud üksteisesse
+        armunud. Nüüd, varajasse keskikka jõudnuna, külastab Annamaria oma
+        nooruspõlve sõpru, et usaldada nende kätte kõige kallim, mis tal siin
+        elus on.
+
+        Sõbrad, kelle suhted on just jõudnud kriitilisse punkti, on sunnitud oma
+        elu revideerima ja võtma vastutuse, milleks nad veel valmis pole.
+        Viieteistaastase kooselu vältel tekkinud rutiin ja pettumused vajuvad
+        tagaplaanile, uus situatsioon toob nende ellu aga väheke maagiat,
+        ettearvamatust ja irratsionaalsust, mis silmad uuesti särama panevad.
+    media:
+        id: 294
+        Trailer:
+            -
+                id: 279
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 275
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 281
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 266
+        countries:
+            -
+                id: 936
+                created_at: '2020-08-17T14:20:49.557Z'
+                updated_at: '2020-08-17T14:20:49.557Z'
+                code: IT
+                name_en: Italy
+                name_ru: Италия
+                name: Itaalia
+        languages:
+            -
+                id: 1709
+                created_at: '2020-08-24T12:28:26.804Z'
+                updated_at: '2020-08-24T12:28:26.804Z'
+                name_en: Italian
+                name_ru: Итальянский
+                code: it
+                name: Itaalia
+    screenings: []
+    title: Õnnejumalanna
+    slug: onnejumalanna
+    directory: source/film/the-goddess-of-fortune
+    idCSV: '1709'
+    directorCSV: Ferzan Özpetek
+    screenwriterCSV: 'Ferzan Özpetek, Silvia Ranfagni, Gianni Romoli'
+    doPCSV: Gian Filippo Corticelli
+    castCSV: 'Stefano Accorsi, Jasmine Trinca, Edoardo Leo'
+    composerCSV: Pasquale Catalano
+    created_atCSV: '2020-08-24T12:28:26.804Z'
+    updated_atCSV: '2020-08-24T12:28:26.804Z'
+    codeCSV: it
+    name_enCSV: Italian
+    name_ruCSV: Итальянский
+    nameCSV: Itaalia
+    data: *ref_0
+-
+    id: 511
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.316Z'
+    updated_at: '2020-08-24T13:33:32.991Z'
+    title_en: Acid
+    title_ru: ''
+    titleOriginal: Kislota
+    year: 2018
+    runtime: 97
+    slug_en: acid
+    slug_ru: ''
+    filmId: '1009'
+    credentials:
+        id: 358
+        director:
+            - Aleksandr Gorchilin
+        screenwriter:
+            - Valery Pecheykin
+        doP:
+            - Kseniya Sereda
+        cast:
+            - Filipp Avdeev
+            - ' Aleksandr Kuznetsov'
+            - ' Aleksandra Rebenok'
+        composer:
+            - ''
+        editor: []
+        producer: []
+        coProducer: []
+        productionCompany:
+            -
+                id: 893
+            -
+                id: 894
+    synopsis: >-
+        Noore vene näitleja Aleksandr Gortšilini režiidebüüti "Hape" kirjeldab
+        lavastaja ise kui vaikivat manifesti. See räägib 21-aastaste vene noorte
+        tühjusetundest ühiskonnas, mis on hüljanud põhilised alustalad, millele
+        noor inimene võiks toetuda: perekond, armastus, sõbrad ja võimalused.
+        Nad hävitavad iseennast ja üksteist nagu hape, mis söövitab maailma
+        nende ümber. Gortšilinile on oluline, et inimesed kuuleks, mitte
+        kuulaks, näeks, mitte vaataks - ja leiaks oma tee.
+
+        Tänase päeva andekad ja tuntud vene nätlejad Aleksandr Kuznetsov ja
+        Filipp Avdejev sooritavad oma rollid kompromissitu ehedusega ning ei ole
+        kahtlust, et probleemid, millega elluastujad filmis silmitsi seisavad,
+        ei ole võõrad ka meie noorele vaatajale.
+    media:
+        id: 293
+        Trailer:
+            -
+                id: 278
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 274
+                Url: ''
+        Stills: []
+        Posters: []
+    tags:
+        id: 280
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+    countriesAndLanguages:
+        id: 265
+        countries:
+            -
+                id: 1030
+                created_at: '2020-08-17T14:20:54.589Z'
+                updated_at: '2020-08-17T14:20:54.589Z'
+                code: RU
+                name_en: Russian Federation
+                name_ru: Российская Федерация
+                name: Venemaa
+        languages:
+            -
+                id: 1796
+                created_at: '2020-08-24T12:28:30.605Z'
+                updated_at: '2020-08-24T12:28:30.605Z'
+                name_en: Russian
+                name_ru: Русский
+                code: ru
+                name: Vene
+    screenings: []
+    title: Hape
+    slug: hape
+    directory: source/film/acid
+    idCSV: '1796'
+    firstnameCSV: Mihkel
+    lastnameCSV: Putrinš
+    directorCSV: Aleksandr Gorchilin
+    screenwriterCSV: Valery Pecheykin
+    doPCSV: Kseniya Sereda
+    castCSV: 'Filipp Avdeev, Aleksandr Kuznetsov, Aleksandra Rebenok'
+    created_atCSV: '2020-08-24T12:28:30.605Z'
+    updated_atCSV: '2020-08-24T12:28:30.605Z'
+    codeCSV: ru
+    name_enCSV: Russian
+    name_ruCSV: Русский
+    nameCSV: Vene
     data: *ref_0
 -
     id: 517
-    EventivalId: null
-    TitleOriginal: null
-    Title_en: null
-    Title_ru: null
-    Slug_en: null
-    Slug_ru: null
-    Year: null
-    RuntimeMinutes: null
-    Director: null
-    Producer: null
-    CoProducer: null
-    Screenwriter: null
-    created_by: null
-    updated_by: null
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
     created_at: '2020-08-19T08:36:47.029Z'
-    updated_at: '2020-08-19T08:36:47.029Z'
-    DoP: null
-    Editor: null
-    Composer: null
-    Cast: null
-    Production: null
-    Synopsis: null
-    SynopsisAuthor: null
-    PresenterText: null
-    Synopsis_en: null
-    Synopsis_ru: null
-    Runtime: null
-    FilmId: null
-    Slur_ru: null
+    updated_at: '2020-08-24T13:33:36.812Z'
     title_en: Self Portrait
     title_ru: ''
     titleOriginal: Selvportrett
@@ -2355,8 +1933,7 @@
     slug_ru: ''
     filmId: '1017'
     credentials:
-        id: 155
-        ProductionCompany: null
+        id: 360
         director:
             - Katja Høgset
             - ' Margreth Olin'
@@ -2376,8 +1953,7 @@
         coProducer: []
         productionCompany:
             -
-                id: 334
-                organisation: null
+                id: 898
     synopsis: >-
         Kurbilus lugu tüdrukust, kes ei tahtnud suureks saada.
 
@@ -2399,70 +1975,57 @@
         rahvusvahelistelt festivalidelt ja kandideerib ühtlasi aasta parima
         Norra filmi preemiale – koos mängufilmidega!
     media:
-        id: 92
+        id: 295
         Trailer:
             -
-                id: 77
+                id: 280
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 73
+                id: 276
                 Url: ''
-                Type: null
         Stills: []
         Posters: []
     tags:
-        id: 78
+        id: 282
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
     countriesAndLanguages:
-        id: 66
+        id: 267
         countries:
             -
                 id: 996
-                Code: null
-                created_by: null
-                updated_by: null
                 created_at: '2020-08-17T14:20:53.242Z'
                 updated_at: '2020-08-17T14:20:53.242Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
                 code: 'NO'
-                name_et: Norra
                 name_en: Norway
                 name_ru: Норвегия
+                name: Norra
         languages:
             -
-                id: 1599
-                Code: null
-                created_by: null
-                updated_by: null
-                created_at: '2020-08-19T07:18:28.349Z'
-                updated_at: '2020-08-19T07:18:28.349Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                Name_et: null
-                Name_en: null
-                Name_ru: null
-                name_et: Norra
+                id: 1750
+                created_at: '2020-08-24T12:28:29.070Z'
+                updated_at: '2020-08-24T12:28:29.070Z'
                 name_en: Norwegian
-                name_ru: Норвежский
-                code: 'no'
+                name_ru: Нюнорск (новонорвежский)
+                code: nn
+                name: Norwegian
     screenings: []
-    Title: null
-    Slug: null
     title: Autoportree
-    path: film/autoportree
     slug: autoportree
-    idCSV: '66'
+    directory: source/film/self-portrait
+    idCSV: '1750'
+    firstnameCSV: Mihkel
+    lastnameCSV: Putrinš
     directorCSV: 'Katja Høgset, Margreth Olin, Espen Wallin'
     castCSV: 'Geir Fossen, Lene Marie Fossen, Torill Fossen'
+    created_atCSV: '2020-08-24T12:28:29.070Z'
+    updated_atCSV: '2020-08-24T12:28:29.070Z'
+    codeCSV: nn
+    name_enCSV: Norwegian
+    name_ruCSV: Нюнорск (новонорвежский)
+    nameCSV: Norwegian
     data: *ref_0

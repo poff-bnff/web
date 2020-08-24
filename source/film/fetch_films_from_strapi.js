@@ -81,21 +81,36 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callbac
 }
 
 function rueten(obj, lang) {
+    const regex = new RegExp(`.*_${lang}$`, 'g');
+
     for (const key in obj) {
+        // console.log(obj[key] + ' - ' + Array.isArray(obj[key]));
         if (obj.hasOwnProperty(key)) {
             const element = obj[key];
         }
 
         if (obj[key] === null) {
+            delete obj[key];
             continue
-        } else if (key === lang) {
+        }
+        else if (key === lang) {
+            console.log(key, obj[key]);
             return obj[key]
-        } else if (typeof(obj[key]) === 'list') {
-            obj[key].forEach(element => {
-                element = rueten(element, lang)
-            })
+        } else if (key.match(regex) !== null) {
+            // console.log(regex, key, key.match(regex));
+            obj[key.substring(0, key.length-3)] = obj[key];
+            delete obj[key];
+        // } else if (Array.isArray(obj[key])) {
+        //     obj[key].forEach(element => {
+        //         element = rueten(element, lang)
+        //     })
         } else if (typeof(obj[key]) === 'object') {
             obj[key] = rueten(obj[key], lang)
+            // if (Array.isArray(obj[key])) {
+            //     if (typeof(obj[key][0]) === 'string') {
+            //         obj[key] = obj[key].join(', ');
+            //     }
+            // }
         }
     }
     return obj
@@ -104,57 +119,58 @@ function rueten(obj, lang) {
 
 function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
     allData = [];
+    data = rueten(data, lang);
     data.forEach(element => {
-        element = rueten(element, lang);
-        //console.log(element);
+        let slugEn = element.slug_en;
+        // element = rueten(element, lang);
 
-        if(element.slug_en) {
-            fs.mkdir(`${dirPath}${element.slug_en}`, err => {
+
+        element.directory = dirPath + slugEn;
+        // element = rueten(element, `_${lang}`);
+
+        if(element.directory) {
+            fs.mkdir(element.directory, err => {
                 if (err) {
                 }
             });
 
-            let elementEt = JSON.parse(JSON.stringify(element));
+            // let element = JSON.parse(JSON.stringify(element));
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru'];
-            for (key in elementEt) {
+            for (key in element) {
                 let lastThree = key.substring(key.length - 3, key.length);
                 let findHyphen = key.substring(key.length - 3, key.length - 2);
                 // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
                 //     if (key.substring(0, key.length - 3) == 'slug') {
-                //         aliases.push(elementEt[key]);
+                //         aliases.push(element[key]);
                 //     }
-                //     delete elementEt[key];
+                //     delete element[key];
                 // }
                 if (lastThree === `_${lang}`) {
                     if (key.substring(0, key.length - 3) == 'slug') {
-                        elementEt.path = `film/${elementEt[key]}`;
+                        element.path = `film/${element[key]}`;
                     }
-                    elementEt[key.substring(0, key.length - 3)] = elementEt[key];
+                    element[key.substring(0, key.length - 3)] = element[key];
 
 
-                    delete elementEt[key];
+                    delete element[key];
                 }
 
                 // Make separate CSV with key
-                if (typeof(elementEt[key]) === 'object' && elementEt[key] !== null) {
-                    var nameOfObject = elementEt[key]
-                    for (const [key, value] of Object.entries(nameOfObject)) {
-                        if (value && value != '' && !value.toString().includes('[object Object]')) {
-                            elementEt[`${key}CSV`] = value.toString();
-                        }
-                        console.log(`${key}: ${value}`);
-                    }
+
+                if (typeof(element[key]) === 'object' && element[key] != null) {
+                    makeCSV(element[key], element, lang);
                 }
 
             }
 
 
 
-            // elementEt.aliases = aliases;
-            allData.push(elementEt);
-            elementEt.data = dataFrom;
-            generateYaml(element, elementEt, dirPath, lang, copyFile)
+            // element.aliases = aliases;
+            // rueten(element, `_${lang}`);
+            allData.push(element);
+            element.data = dataFrom;
+            generateYaml(element, element, dirPath, lang, copyFile)
         }else{
             if(showErrors) {
                 console.log(`Film ID ${element.id} slug_en value missing`);
@@ -164,12 +180,25 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
 
 }
 
-function generateYaml(element, elementEt, dirPath, lang, copyFile){
-    let yamlStr = yaml.safeDump(elementEt, { 'indent': '4' });
+function makeCSV(obj, element, lang) {
+    // console.log(obj);
+    for (const [key, value] of Object.entries(obj)) {
+        if (value && value != '' && !value.toString().includes('[object Object]')) {
+            element[`${key}CSV`] = value.toString();
+        }else if (value && value != '') {
+            // rueten(value, `_${lang}`);
+            makeCSV(value, element, lang)
+        }
+        // console.log(`${key}: ${value}`);
+    }
+}
 
-    fs.writeFileSync(`${dirPath}${element.slug_en}/data.${lang}.yaml`, yamlStr, 'utf8');
+function generateYaml(element, element, dirPath, lang, copyFile){
+    let yamlStr = yaml.safeDump(element, { 'indent': '4' });
+
+    fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
     if (copyFile) {
-        fs.copyFile(`${dirPath}film_index_template.pug`, `${dirPath}${element.slug_en}/index.pug`, (err) => {
+        fs.copyFile(`${dirPath}film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
             if (err) throw err;
             // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
@@ -179,10 +208,10 @@ function generateYaml(element, elementEt, dirPath, lang, copyFile){
     fs.writeFileSync(`source/films.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
-function modifyData(elementEt, key, lang){
-    finalData = elementEt[key][lang];
-    delete elementEt[key];
-    elementEt[key] = finalData;
+function modifyData(element, key, lang){
+    finalData = element[key][lang];
+    delete element[key];
+    element[key] = finalData;
 }
 
 getToken();
