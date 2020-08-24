@@ -1,7 +1,6 @@
 const fs = require('fs');
 const http = require('http');
-const AuthStrapi = require('./AuthStrapi')
-const FromStrapi = require('./FromStrapi')
+const FromStrapi = require('./')
 
 process.chdir(__dirname);
 
