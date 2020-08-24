@@ -43,7 +43,6 @@ function WriteCountriesJSON (sheetsData){
     });
 }
 
-
 Fetcher.Fetch('1tgM7Pgc1FzmNavWiZ_9uk3gJI97s0pkewVqHzqHo13c', 'ISOcountries', WriteCountriesJSON)
 Fetcher.Fetch('1rZaQfVqVgdnJRLHwp02deUoISndpprC8ZQtxfK6zK-E', 'ISOlanguages', WriteLangsJSON)
 
