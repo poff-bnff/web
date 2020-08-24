@@ -59,20 +59,7 @@ function PostAllToStrapi(path, token, dataToPost){
 //Postdata kutsub välja PostAllToStrapi ja annab sellele kaasa tokeni
 // lisaks tuleb talle anda info, mis objekti saadad (nt:'/countries') ja array saadetavatest objektidest
 
-function PostData(token) {
-    // //siin panen kokku objekti, mida strapisse kirjutada
-    // let countryObjects = JSON.parse(fs.readFileSync('../ISOCountries.json', 'utf-8'))
-    // PostAllToStrapi('/countries', token, countryObjects);
 
-    // let langObjects = JSON.parse(fs.readFileSync('../data/ISOlanguages.json', 'utf-8'))
-    // PostAllToStrapi('/languages', token, langObjects);
-
-    //  let filmObjects = JSON.parse(fs.readFileSync('../data/Films.json', 'utf-8'))
-    //  PostAllToStrapi('/films', token, filmObjects);
-};
-
-//autoriseerib ja kutsub välja PostData, millele annab kaasa tokeni
-AuthStrapi.Auth(PostData)
 
 module.exports.POST = PostItemToStrapi
 

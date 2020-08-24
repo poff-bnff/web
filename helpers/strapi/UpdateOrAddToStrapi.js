@@ -6,6 +6,49 @@ const Get = require('./FromStrapi')
 
 process.chdir(__dirname);
 
+//see saadab ühe uue objekti Strapisse
+function PostOneToStrapi
+(path, token, dataObject){
+    let options = {
+        host: '139.59.130.149',
+        path: path,
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        },
+    };
+    let req = http.request(options, function (res) {
+        let chunks = [];
+
+        res.on("data", function (chunk) {
+            chunks.push(chunk);
+        });
+
+        res.on("end", function () {
+            var body = Buffer.concat(chunks);
+            bodyAsString = body.toString()
+            body = JSON.parse(body)
+            if (body.message == 'ValidationError'){
+                console.log(body.error, body.message, body.data);
+                console.log(dataObject);
+            }else{
+                console.log(bodyAsString);
+            }
+        });
+
+        res.on("error", function (error) {
+            console.error(error);
+
+        });
+
+    });
+    //console.log(dataObject)
+    req.write(JSON.stringify(dataObject));
+
+    req.end();
+}
+ //Update data-t, mis on juba Strapis
 function PutOneToStrapi (path, token, dataObject, id){
     let options = {
         host: '139.59.130.149',
@@ -61,19 +104,20 @@ function UpdateOrAddToStrapi(path, token, dataToSend, dataInStrapi){
         })
         if (id === 'pole'){
             console.log('seda pole strapis saadan kohe....')
-            PostToStrapi.POST(path, token, dataObject)
+            PostOneToStrapi
+            (path, token, dataObject)
         }
     })
 };
 
 
-
-;
 function UpdateOrAddCountry(token) {
-    let objectsToSEND = JSON.parse(fs.readFileSync('../data/ISOCountries.json', 'utf-8'))
-    Get.GetCountries()//aga see ei lõpeta enne kui järgmist rida alustatakse
-    let objectsInStrapi = JSON.parse(fs.readFileSync('../data/ISOCountriesFromStrapi.json', 'utf-8'))
-    UpdateOrAddToStrapi('/countries', token, objectsToSEND, objectsInStrapi);
+    let updateDataCB = function (token) {
+        let objectsToSEND = JSON.parse(fs.readFileSync('../data/ISOCountries.json', 'utf-8'))
+        let objectsInStrapi = JSON.parse(fs.readFileSync('../data/ISOCountriesFromStrapi.json', 'utf-8'))
+        UpdateOrAddToStrapi('/countries', token, objectsToSEND, objectsInStrapi);
+    }
+    FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json')
 };
 
 

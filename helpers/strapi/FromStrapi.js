@@ -3,94 +3,66 @@ const http = require('http');
 const AuthStrapi = require('./AuthStrapi');
 
 
-function GetDataFromStrapi(targetname, callbackfunction, token){
-    let options = {
-        host: '139.59.130.149',
-        path: targetname +'?_limit=-1',
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token}
-    }
-    let req = http.request(options, function (response) {
-        let allData = '';
-        response.on('data', function (chunk) {
-            allData += chunk;
-        });
-        response.on('end', function () {
-            let data = JSON.parse(allData)
-            callbackfunction(data)
-            //console.log(data);
-        });
-        response.on('error', function (error) {
-            console.log(error);
-        });
-    });
-    req.on('error', function (error) {
-        console.log(error);
+function FromStrapi(datapath, CBfunction){
+    let FetchData = function(token) {
+        let GetDataFromStrapi = function(datapath, token, CBfunction){
+            let options = {
+                //see võiks tulla muutujast
+                host: '139.59.130.149',
+                // ?_limit=-1 see tagab, et strapi tagastab kogu data, mitte 100 esimest nagu on vaikimisi säte
+                path: datapath +'?_limit=-1',
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token}
+            }
+            let req = http.request(options, function (response) {
+                let allData = '';
+                response.on('data', function (chunk) {
+                    allData += chunk;
+                });
+                response.on('end', function () {
+                    let data = JSON.parse(allData)
+                    CBfunction(data)
+                    //console.log(data);
+                });
+                response.on('error', function (error) {
+                    console.log(error);
+                });
+            });
+            req.on('error', function (error) {
+                console.log(error);
+            })
+            req.end()
+        };
+        GetDataFromStrapi(datapath, token, CBfunction);
+
+    };
+    AuthStrapi.Auth(FetchData)
+}
+
+function WriteToJson(dataPath, filePath){
+    FromStrapi(dataPath, function WriteJSON (strapiData){
+        process.chdir(__dirname);
+        //console.log(strapiData);
+        fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
     })
-
-    req.end()
-
-};
-
-
-//RIIGID
-function WriteCountriesDataToJSON(strapiData){
-    process.chdir(__dirname);
-    console.log(strapiData);
-    fs.writeFileSync('../data/ISOCountriesFromStrapi.json', JSON.stringify(strapiData, null, 4));
-}
-
-function FetchCountriesData(token) {
-    GetDataFromStrapi('/countries', WriteCountriesDataToJSON, token);
-};
-
-function UpdateCountriesFromStrapi( ){
-    AuthStrapi.Auth(FetchCountriesData)
-}
-
-//KEELED
-
-function WriteLangsDataToJSON(strapiData){
-    process.chdir(__dirname);
-    console.log(strapiData);
-    fs.writeFileSync('../data/ISOLanguagesFromStrapi.json', JSON.stringify(strapiData, null, 4));
-}
-
-function FetchLangsData(token) {
-    GetDataFromStrapi('/countries', WriteLangsDataToJSON, token);
-};
-
-function UpdateLangsFromStrapi(){
-    AuthStrapi.Auth(FetchLangsData)
 }
 
 
-//FILMID
-function WriteFilmsDataToJSON(strapiData){
-    process.chdir(__dirname);
-    console.log(strapiData);
-    fs.writeFileSync('../data/FilmsFromStrapi.json', JSON.stringify(strapiData, null, 4));
-}
 
-function FetchFilmData(token) {
-    GetDataFromStrapi('/films', WriteFilmsDataToJSON, token);
-};
+// USAGE: pead defineerima, kasutad seda funktsiooni
+// const FromStrapi = require('./strapi/FromStrapi')
+// function ConsoleLogData(strapiData){
+//     console.log(strapiData);
+// }
+// FromStrapi.Fetch('/languages', ConsoleLogData)
 
-function UpdateFilmsFromStrapi(){
-    AuthStrapi.Auth(FetchFilmData)
-}
+module.exports.Fetch = FromStrapi
 
-module.exports.GetFilms = UpdateFilmsFromStrapi
-module.exports.GetCountries = UpdateCountriesFromStrapi
-module.exports.GetLanguages = UpdateLangsFromStrapi
+//WriteToJson('/films', '../data/Test88.json');
+module.exports.WriteJSON = WriteToJson
 
-//moodulite importimiseks
-//const Get = require('./strapi/FromStrapi')
-//nende välja kutsumine teisest failist loob uue vastava JSON-i või kirjutab vana üle
-// Get.GetFilms();
-// Get.GetCountries();
-// Get.GetLanguages();
+
 
 
