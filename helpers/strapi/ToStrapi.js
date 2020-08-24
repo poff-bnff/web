@@ -118,8 +118,6 @@ function ToStrapi(JSONdataToSend, strapiDataFile, dataPath, keysToCompareforId) 
 //ToStrapi('../data/ISOlanguages.json', '../data/ISOLanguagesFromStrapi.json', '/languages', 'code');
 //ToStrapi('../data/ISOCountries.json', '../data/ISOCountriesFromStrapi.json', '/countries', 'code');
 
-
-
-//ToStrapi('../data/Films.json', '../data/test11.json', '/films', 'filmId');
+// ToStrapi('../data/Films.json', '../data/test11.json', '/films', 'filmId');
 
 module.exports.ToStrapi = ToStrapi;
