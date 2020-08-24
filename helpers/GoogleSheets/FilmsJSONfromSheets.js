@@ -39,7 +39,7 @@ function ProcessCountries(txt){
         } )
         countryCodes.push(found);
     })
-    console.log(countryCodes);
+    // console.log(countryCodes);
     return countryCodes;
 }
 
@@ -57,7 +57,7 @@ function ProcessLanguages(txt){
         } )
         languageCodes.push(found);
     })
-    console.log(languageCodes);
+    // console.log(languageCodes);
     return languageCodes;
 }
 
@@ -120,12 +120,12 @@ function ProcessDataCB(source){
                                       'languages': ProcessLanguages(element['filmLanguages_en']),
                                     },
             'screenings': '',
-            'slug_et': slugify((element['filmTitle_et']), {lower:true}),
-            'slug_en': slugify((element['filmTitle_en']), {lower:true}),
-            'slug_ru': slugify('', {lower:true}),
+            'slug_et': slugify((element['filmTitle_et']), {lower:true, remove: /[*+~.()'"!:@]/g}),
+            'slug_en': slugify((element['filmTitle_en']), {lower:true, remove: /[*+~.()'"!:@]/g}),
+            'slug_ru': slugify('', {lower:true, remove: /[*+~.()'"!:@]/g}),
 
         };
-        // console.log(slugify(element['filmTitle_et']));
+        console.log(slugify(element['filmTitle_et']));
 
         filmList.push(film_object);
 
