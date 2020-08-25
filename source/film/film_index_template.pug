@@ -14,10 +14,11 @@ block titleBox
         h1.film_title_detailed= self.title
         .str_info_blokk_1
 
-            if self.filmTitleSec
-                .str_info_grid_3
-                    .str_info_label= self.label.film.filmTitleSec
-                    .str_info_value= self.filmTitleSec
+            each p, locale in self.otherLocalePaths
+                if self[`title_${locale}`]
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.filmTitleSec
+                        .str_info_value= self[`title_${locale}`]
 
             if self.titleOriginal
                 .str_info_grid_3
