@@ -23,11 +23,6 @@
             - Conor Berry
             - ' Sean Connor'
             - ' Grant Robert Keelan'
-        composer:
-            - ''
-        editor: []
-        producer: []
-        coProducer: []
         productionCompany:
             -
                 id: 861
@@ -43,14 +38,8 @@
             -
                 id: 262
                 Url: ''
-        Stills: []
-        Posters: []
     tags:
         id: 268
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
     countriesAndLanguages:
         id: 253
         countries:
@@ -71,11 +60,11 @@
                 name_en: English
                 code: en
                 name: Английский
-    screenings: []
     title: ''
     slug: ''
     directory: source/film/schemers
-    data: &ref_0
+    path: film/
+    data:
         pictures: /film_pictures.yaml
         screenings: /film/screenings.ru.yaml
 -
@@ -95,17 +84,6 @@
         director:
             - Aurélia Rouvier
             - ' Seamus Haley'
-        screenwriter:
-            - ''
-        doP:
-            - ''
-        cast:
-            - ''
-        composer:
-            - ''
-        editor: []
-        producer: []
-        coProducer: []
         productionCompany:
             -
                 id: 860
@@ -121,14 +99,8 @@
             -
                 id: 261
                 Url: ''
-        Stills: []
-        Posters: []
     tags:
         id: 267
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
     countriesAndLanguages:
         id: 252
         countries:
@@ -157,11 +129,13 @@
                 name_en: English
                 code: en
                 name: Английский
-    screenings: []
     title: ''
     slug: ''
     directory: source/film/banksy-most-wanted
-    data: *ref_0
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 545
     created_at: '2020-08-24T13:33:28.644Z'
@@ -178,19 +152,10 @@
         id: 347
         director:
             - Matthew Taylor
-        screenwriter:
-            - ''
-        doP:
-            - ''
         cast:
             - Marina Abramovic
             - ' William Anastasi'
             - ' Michel Gondry'
-        composer:
-            - ''
-        editor: []
-        producer: []
-        coProducer: []
         productionCompany:
             -
                 id: 862
@@ -210,14 +175,8 @@
             -
                 id: 263
                 Url: ''
-        Stills: []
-        Posters: []
     tags:
         id: 269
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
     countriesAndLanguages:
         id: 254
         countries:
@@ -246,11 +205,13 @@
                 name_en: English
                 code: en
                 name: Английский
-    screenings: []
     title: ''
     slug: ''
     directory: source/film/marcel-duchamp-art-of-the-possible
-    data: *ref_0
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 512
     created_at: '2020-08-19T08:36:37.357Z'
@@ -277,9 +238,6 @@
             - ' Tony Shalhoub'
         composer:
             - Evan Lurie
-        editor: []
-        producer: []
-        coProducer: []
         productionCompany:
             -
                 id: 865
@@ -301,14 +259,8 @@
             -
                 id: 265
                 Url: ''
-        Stills: []
-        Posters: []
     tags:
         id: 271
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
     countriesAndLanguages:
         id: 256
         countries:
@@ -345,11 +297,13 @@
                 name_en: English
                 code: en
                 name: Английский
-    screenings: []
     title: ''
     slug: ''
     directory: source/film/final-portrait
-    data: *ref_0
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 510
     created_at: '2020-08-19T08:36:37.284Z'
@@ -372,19 +326,12 @@
             - ' Miia Tervo'
             - ' Elli Toivoniemi'
             - ' Jenni Toivoniemi'
-        screenwriter:
-            - ''
         doP:
             - Kerttu Hakkarainen
             - ' Päivi Kettunen'
             - ' Jarmo Kiuru'
-        cast:
-            - ''
         composer:
             - Joona Jaakkola
-        editor: []
-        producer: []
-        coProducer: []
         productionCompany:
             -
                 id: 874
@@ -400,14 +347,8 @@
             -
                 id: 268
                 Url: ''
-        Stills: []
-        Posters: []
     tags:
         id: 274
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
     countriesAndLanguages:
         id: 259
         countries:
@@ -436,15 +377,928 @@
                 name_en: English
                 code: en
                 name: Английский
-    screenings: []
     title: ''
     slug: ''
     directory: source/film/force-of-habit
-    data: *ref_0
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 515
+    created_at: '2020-08-19T08:36:46.969Z'
+    updated_at: '2020-08-19T08:36:46.969Z'
+    title_et: Tormipoiss
+    title_en: Storm Boy
+    titleOriginal: ''
+    year: 2019
+    runtime: 99
+    slug_et: tormipoiss
+    slug_en: storm-boy
+    filmId: '1014'
+    credentials:
+        id: 352
+        director:
+            - Shawn Seet
+        screenwriter:
+            - Justin Monjo
+        doP:
+            - Bruce Young
+        cast:
+            - Finn Little
+            - ' Jai Courtney'
+            - ' Geoffrey Rush'
+        composer:
+            - Alan John
+        productionCompany:
+            -
+                id: 873
+    synopsis: ''
+    media:
+        id: 286
+        Trailer:
+            -
+                id: 271
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 267
+                Url: ''
+    tags:
+        id: 273
+    countriesAndLanguages:
+        id: 257
+        countries:
+            -
+                id: 892
+                created_at: '2020-08-17T14:20:46.514Z'
+                updated_at: '2020-08-17T14:20:46.514Z'
+                code: AU
+                name_et: Austraalia
+                name_en: Australia
+                name: Австралия
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_en: English
+                code: en
+                name: Английский
+    title: ''
+    slug: ''
+    directory: source/film/storm-boy
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 508
+    created_at: '2020-08-19T08:36:37.191Z'
+    updated_at: '2020-08-19T08:36:37.191Z'
+    title_et: Tšempionid
+    title_en: Champions
+    titleOriginal: Campeones
+    year: 2018
+    runtime: 124
+    slug_et: tsempionid
+    slug_en: champions
+    filmId: '1006'
+    credentials:
+        id: 354
+        director:
+            - Javier Fesser
+        screenwriter:
+            - David Marqués
+            - ' Javier Fesser'
+        doP:
+            - Chechu Graf
+        cast:
+            - Javier Gutiérrez
+            - ' Athenea Mata'
+            - " Juan Margallo\r"
+        composer:
+            - Rafael Arnau
+        productionCompany:
+            -
+                id: 879
+            -
+                id: 880
+            -
+                id: 881
+            -
+                id: 882
+            -
+                id: 883
+            -
+                id: 884
+            -
+                id: 885
+            -
+                id: 886
+            -
+                id: 887
+    synopsis: ''
+    media:
+        id: 289
+        Trailer:
+            -
+                id: 274
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 270
+                Url: ''
+    tags:
+        id: 276
+    countriesAndLanguages:
+        id: 261
+        countries:
+            -
+                id: 906
+                created_at: '2020-08-17T14:20:47.692Z'
+                updated_at: '2020-08-17T14:20:47.692Z'
+                code: ES
+                name_et: Hispaania
+                name_en: Spain
+                name: Испания
+        languages:
+            -
+                id: 1742
+                created_at: '2020-08-24T12:28:28.680Z'
+                updated_at: '2020-08-24T12:28:28.680Z'
+                name_et: Hispaania
+                name_en: Spanish
+                code: es
+                name: Испанский
+    title: ''
+    slug: ''
+    directory: source/film/champions
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 504
+    created_at: '2020-08-19T08:36:37.024Z'
+    updated_at: '2020-08-19T08:36:37.024Z'
+    title_et: Nähtamatu elu
+    title_en: Invisible Life of Eurídice Gusmão
+    titleOriginal: A Vida Invisivel
+    year: 2019
+    runtime: 139
+    slug_et: nahtamatu-elu
+    slug_en: invisible-life-of-euridice-gusmao
+    filmId: '1001'
+    credentials:
+        id: 353
+        director:
+            - Karim Aïnouz
+        screenwriter:
+            - Murilo Hauser
+            - ' Inés Bortagaray'
+            - ' Karim Aïnouz'
+        doP:
+            - Hélène Louvart
+        cast:
+            - Julia Stockler
+            - ' Carol Duarte'
+            - ' Flávia Gusmão'
+        composer:
+            - Benedikt Schiefer
+        productionCompany:
+            -
+                id: 875
+            -
+                id: 876
+            -
+                id: 877
+            -
+                id: 878
+    synopsis: ''
+    media:
+        id: 288
+        Trailer:
+            -
+                id: 273
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 269
+                Url: ''
+    tags:
+        id: 275
+    countriesAndLanguages:
+        id: 260
+        countries:
+            -
+                id: 859
+                created_at: '2020-08-17T14:20:40.521Z'
+                updated_at: '2020-08-17T14:20:40.521Z'
+                code: BR
+                name_et: Brasiilia
+                name_en: Brazil
+                name: Бразилия
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_et: Saksamaa
+                name_en: Germany
+                name: Германия
+        languages:
+            -
+                id: 1680
+                created_at: '2020-08-24T12:28:23.296Z'
+                updated_at: '2020-08-24T12:28:23.296Z'
+                name_et: Kreeka
+                name_en: Greek
+                code: el
+                name: Греческий
+            -
+                id: 1805
+                created_at: '2020-08-24T12:28:30.796Z'
+                updated_at: '2020-08-24T12:28:30.796Z'
+                name_et: Portugali
+                name_en: Portuguese
+                code: pt
+                name: Португальский
+    title: ''
+    slug: ''
+    directory: source/film/invisible-life-of-euridice-gusmao
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 505
+    created_at: '2020-08-19T08:36:37.043Z'
+    updated_at: '2020-08-19T08:36:37.043Z'
+    title_et: Täiuslik
+    title_en: Flawless
+    titleOriginal: HaNeshef
+    year: 2018
+    runtime: 97
+    slug_et: taiuslik
+    slug_en: flawless
+    filmId: '1002'
+    credentials:
+        id: 355
+        director:
+            - Tal Granit
+            - ' Sharon Maymon'
+        screenwriter:
+            - Tal Granit
+            - ' Sharon Maymon'
+        doP:
+            - Giora Bejach
+        cast:
+            - Stav Strashko
+            - ' Netsanet Mekonen'
+            - ' Noam Lugasy'
+        composer:
+            - Ivri Lider
+        productionCompany:
+            -
+                id: 888
+            -
+                id: 889
+    synopsis: ''
+    media:
+        id: 290
+        Trailer:
+            -
+                id: 275
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 271
+                Url: ''
+    tags:
+        id: 277
+    countriesAndLanguages:
+        id: 262
+        countries:
+            -
+                id: 951
+                created_at: '2020-08-17T14:20:50.795Z'
+                updated_at: '2020-08-17T14:20:50.795Z'
+                code: IL
+                name_et: Iisrael
+                name_en: Israel
+                name: Израиль
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_et: Saksamaa
+                name_en: Germany
+                name: Германия
+        languages:
+            -
+                id: 1796
+                created_at: '2020-08-24T12:28:30.605Z'
+                updated_at: '2020-08-24T12:28:30.605Z'
+                name_et: Vene
+                name_en: Russian
+                code: ru
+                name: Русский
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_en: English
+                code: en
+                name: Английский
+            -
+                id: 1727
+                created_at: '2020-08-24T12:28:27.872Z'
+                updated_at: '2020-08-24T12:28:27.872Z'
+                name_et: Heebrea
+                name_en: Hebrew
+                code: he
+                name: Иврит
+    title: ''
+    slug: ''
+    directory: source/film/flawless
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 516
+    created_at: '2020-08-19T08:36:46.969Z'
+    updated_at: '2020-08-19T08:36:46.969Z'
+    title_et: Lammas all paremas nurgas
+    title_en: The Secret Lamb
+    titleOriginal: ''
+    year: 1992
+    runtime: 10000
+    slug_et: lammas-all-paremas-nurgas
+    slug_en: the-secret-lamb
+    filmId: '1015'
+    credentials:
+        id: 356
+        director:
+            - Lembit Ulfsak
+        screenwriter:
+            - Janno Põldma
+            - ' Lembit Ulsak'
+        doP:
+            - Ago Ruus
+        cast:
+            - Tõnu Kark
+            - ' Margus Alver'
+            - ' Kaur Sinissaar'
+            - ' Dan Põldroos'
+            - ' Ain Lutsepp'
+        composer:
+            - Tõnu Naissoo
+        productionCompany:
+            -
+                id: 890
+    synopsis: ''
+    media:
+        id: 291
+        Trailer:
+            -
+                id: 276
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 272
+                Url: ''
+    tags:
+        id: 278
+    countriesAndLanguages:
+        id: 263
+        countries:
+            -
+                id: 899
+                created_at: '2020-08-17T14:20:47.018Z'
+                updated_at: '2020-08-17T14:20:47.018Z'
+                code: EE
+                name_et: Eesti
+                name_en: Estonia
+                name: Эстония
+        languages:
+            -
+                id: 1686
+                created_at: '2020-08-24T12:28:24.026Z'
+                updated_at: '2020-08-24T12:28:24.026Z'
+                name_et: Eesti
+                name_en: Estonian
+                code: et
+                name: Эстонский
+    title: ''
+    slug: ''
+    directory: source/film/the-secret-lamb
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 544
+    created_at: '2020-08-24T13:33:28.023Z'
+    updated_at: '2020-08-24T13:33:28.023Z'
+    title_et: Hüvasti!
+    title_en: House of Hummingbird
+    titleOriginal: Beol-sae
+    year: 2018
+    runtime: 138
+    slug_et: huvasti
+    slug_en: house-of-hummingbird
+    filmId: '1003'
+    credentials:
+        id: 357
+        director:
+            - Bora Kim
+        screenwriter:
+            - Bora Kim
+        doP:
+            - Guk-hyun Kang
+        cast:
+            - Ji-hu Park
+            - ' Sae-byeok Kim'
+            - ' Seung-Yun Lee'
+        composer:
+            - Matija Strnisa
+        productionCompany:
+            -
+                id: 891
+            -
+                id: 892
+    synopsis: ''
+    media:
+        id: 292
+        Trailer:
+            -
+                id: 277
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 273
+                Url: ''
+    tags:
+        id: 279
+    countriesAndLanguages:
+        id: 264
+        countries:
+            -
+                id: 971
+                created_at: '2020-08-17T14:20:51.857Z'
+                updated_at: '2020-08-17T14:20:51.857Z'
+                code: KR
+                name_et: Lõuna-Korea
+                name_en: South Korea
+                name: Республика Корея
+        languages:
+            -
+                id: 1788
+                created_at: '2020-08-24T12:28:30.341Z'
+                updated_at: '2020-08-24T12:28:30.341Z'
+                name_et: Korea
+                name_en: Korean
+                code: ko
+                name: Корейский
+    title: ''
+    slug: ''
+    directory: source/film/house-of-hummingbird
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 513
+    created_at: '2020-08-19T08:36:37.436Z'
+    updated_at: '2020-08-19T08:36:37.436Z'
+    title_et: Maudie
+    title_en: Maudie
+    titleOriginal: ''
+    year: 2016
+    runtime: 115
+    slug_et: maudie
+    slug_en: maudie
+    filmId: '1011'
+    credentials:
+        id: 361
+        director:
+            - Aisling Walsh
+        screenwriter:
+            - Sherry White
+        doP:
+            - Guy Godfree
+        cast:
+            - Sally Hawkins
+            - ' Ethan Hawke'
+            - ' Kari Matchett'
+        composer:
+            - Michael Timmins
+        productionCompany:
+            -
+                id: 899
+            -
+                id: 900
+            -
+                id: 901
+            -
+                id: 902
+            -
+                id: 903
+            -
+                id: 904
+            -
+                id: 905
+            -
+                id: 906
+    synopsis: ''
+    media:
+        id: 296
+        Trailer:
+            -
+                id: 281
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 277
+                Url: ''
+    tags:
+        id: 283
+    countriesAndLanguages:
+        id: 268
+        countries:
+            -
+                id: 864
+                created_at: '2020-08-17T14:20:41.574Z'
+                updated_at: '2020-08-17T14:20:41.574Z'
+                code: CA
+                name_et: Kanada
+                name_en: Canada
+                name: Канада
+            -
+                id: 952
+                created_at: '2020-08-17T14:20:50.882Z'
+                updated_at: '2020-08-17T14:20:50.882Z'
+                code: IE
+                name_et: Iirimaa
+                name_en: Ireland
+                name: Ирландия
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_en: English
+                code: en
+                name: Английский
+    title: ''
+    slug: ''
+    directory: source/film/maudie
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 506
+    created_at: '2020-08-19T08:36:37.102Z'
+    updated_at: '2020-08-19T08:36:37.102Z'
+    title_et: Õnnejumalanna
+    title_en: The Goddess of Fortune
+    titleOriginal: La dea fortuna
+    year: 2019
+    runtime: 114
+    slug_et: onnejumalanna
+    slug_en: the-goddess-of-fortune
+    filmId: '1004'
+    credentials:
+        id: 359
+        director:
+            - Ferzan Özpetek
+        screenwriter:
+            - Ferzan Özpetek
+            - ' Silvia Ranfagni'
+            - ' Gianni Romoli'
+        doP:
+            - Gian Filippo Corticelli
+        cast:
+            - Stefano Accorsi
+            - ' Jasmine Trinca'
+            - ' Edoardo Leo'
+        composer:
+            - Pasquale Catalano
+        productionCompany:
+            -
+                id: 895
+            -
+                id: 896
+            -
+                id: 897
+    synopsis: ''
+    media:
+        id: 294
+        Trailer:
+            -
+                id: 279
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 275
+                Url: ''
+    tags:
+        id: 281
+    countriesAndLanguages:
+        id: 266
+        countries:
+            -
+                id: 936
+                created_at: '2020-08-17T14:20:49.557Z'
+                updated_at: '2020-08-17T14:20:49.557Z'
+                code: IT
+                name_et: Itaalia
+                name_en: Italy
+                name: Италия
+        languages:
+            -
+                id: 1709
+                created_at: '2020-08-24T12:28:26.804Z'
+                updated_at: '2020-08-24T12:28:26.804Z'
+                name_et: Itaalia
+                name_en: Italian
+                code: it
+                name: Итальянский
+    title: ''
+    slug: ''
+    directory: source/film/the-goddess-of-fortune
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 511
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.316Z'
+    updated_at: '2020-08-24T13:33:32.991Z'
+    title_et: Hape
+    title_en: Acid
+    titleOriginal: Kislota
+    year: 2018
+    runtime: 97
+    slug_et: hape
+    slug_en: acid
+    filmId: '1009'
+    credentials:
+        id: 358
+        director:
+            - Aleksandr Gorchilin
+        screenwriter:
+            - Valery Pecheykin
+        doP:
+            - Kseniya Sereda
+        cast:
+            - Filipp Avdeev
+            - ' Aleksandr Kuznetsov'
+            - ' Aleksandra Rebenok'
+        productionCompany:
+            -
+                id: 893
+            -
+                id: 894
+    synopsis: ''
+    media:
+        id: 293
+        Trailer:
+            -
+                id: 278
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 274
+                Url: ''
+    tags:
+        id: 280
+    countriesAndLanguages:
+        id: 265
+        countries:
+            -
+                id: 1030
+                created_at: '2020-08-17T14:20:54.589Z'
+                updated_at: '2020-08-17T14:20:54.589Z'
+                code: RU
+                name_et: Venemaa
+                name_en: Russian Federation
+                name: Российская Федерация
+        languages:
+            -
+                id: 1796
+                created_at: '2020-08-24T12:28:30.605Z'
+                updated_at: '2020-08-24T12:28:30.605Z'
+                name_et: Vene
+                name_en: Russian
+                code: ru
+                name: Русский
+    title: ''
+    slug: ''
+    directory: source/film/acid
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 517
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:47.029Z'
+    updated_at: '2020-08-24T13:33:36.812Z'
+    title_et: Autoportree
+    title_en: Self Portrait
+    titleOriginal: Selvportrett
+    year: 2020
+    runtime: 80
+    slug_et: autoportree
+    slug_en: self-portrait
+    filmId: '1017'
+    credentials:
+        id: 360
+        director:
+            - Katja Høgset
+            - ' Margreth Olin'
+            - ' Espen Wallin'
+        cast:
+            - Geir Fossen
+            - ' Lene Marie Fossen'
+            - ' Torill Fossen'
+        productionCompany:
+            -
+                id: 898
+    synopsis: ''
+    media:
+        id: 295
+        Trailer:
+            -
+                id: 280
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 276
+                Url: ''
+    tags:
+        id: 282
+    countriesAndLanguages:
+        id: 267
+        countries:
+            -
+                id: 996
+                created_at: '2020-08-17T14:20:53.242Z'
+                updated_at: '2020-08-17T14:20:53.242Z'
+                code: 'NO'
+                name_et: Norra
+                name_en: Norway
+                name: Норвегия
+        languages:
+            -
+                id: 1750
+                created_at: '2020-08-24T12:28:29.070Z'
+                updated_at: '2020-08-24T12:28:29.070Z'
+                name_et: Norwegian
+                name_en: Norwegian
+                code: nn
+                name: Нюнорск (новонорвежский)
+    title: ''
+    slug: ''
+    directory: source/film/self-portrait
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 514
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-19T08:36:46.957Z'
+    updated_at: '2020-08-25T08:16:52.343Z'
+    title_et: 'Acasă, mu kodu'
+    title_en: 'Acasă, My Home'
+    titleOriginal: Acasă
+    year: 2020
+    runtime: 86
+    slug_et: acasa-mu-kodu
+    slug_en: acasa-my-home
+    filmId: '1013'
+    credentials:
+        id: 351
+        director:
+            - Radu Ciorniciuc
+        cast:
+            - Corina Enache
+            - ' Duca Enache'
+            - ' Georgiana Enache'
+        editor:
+            -
+                id: 3540
+            -
+                id: 3541
+        productionCompany:
+            -
+                id: 870
+            -
+                id: 871
+            -
+                id: 872
+    synopsis: ''
+    media:
+        id: 285
+        Trailer:
+            -
+                id: 270
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 266
+                Url: ''
+    tags:
+        id: 272
+    countriesAndLanguages:
+        id: 258
+        countries:
+            -
+                id: 1036
+                created_at: '2020-08-17T14:20:54.863Z'
+                updated_at: '2020-08-17T14:20:54.863Z'
+                code: RO
+                name_et: Rumeenia
+                name_en: Romania
+                name: Румыния
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_et: Saksamaa
+                name_en: Germany
+                name: Германия
+            -
+                id: 908
+                created_at: '2020-08-17T14:20:47.900Z'
+                updated_at: '2020-08-17T14:20:47.900Z'
+                code: FI
+                name_et: Soome
+                name_en: Finland
+                name: Финляндия
+        languages:
+            -
+                id: 1693
+                created_at: '2020-08-24T12:28:25.023Z'
+                updated_at: '2020-08-24T12:28:25.023Z'
+                name_et: Romanian
+                name_en: Romanian
+                code: ro
+                name: Румынский
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_en: English
+                code: en
+                name: Английский
+    title: ''
+    slug: ''
+    directory: source/film/acasa-my-home
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 509
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
     created_at: '2020-08-19T08:36:37.245Z'
-    updated_at: '2020-08-19T08:36:37.245Z'
+    updated_at: '2020-08-25T09:50:54.670Z'
     title_et: 'Yalda, andestuse öö'
     title_en: 'Yalda, a Night for Forgiveness'
     titleOriginal: Yalda
@@ -465,11 +1319,6 @@
             - Sadaf Asgari
             - ' Behnaz Jafari'
             - " Babak Karimi\r"
-        composer:
-            - ''
-        editor: []
-        producer: []
-        coProducer: []
         productionCompany:
             -
                 id: 867
@@ -485,14 +1334,8 @@
             -
                 id: 264
                 Url: ''
-        Stills: []
-        Posters: []
     tags:
         id: 270
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
     countriesAndLanguages:
         id: 255
         countries:
@@ -553,1001 +1396,10 @@
                 name_en: Persian
                 code: fa
                 name: Персидский
-    screenings: []
     title: ''
     slug: ''
     directory: source/film/yalda-a-night-for-forgiveness
-    data: *ref_0
--
-    id: 514
-    updated_by:
-        id: 1
-        firstname: Mihkel
-        lastname: Putrinš
-    created_at: '2020-08-19T08:36:46.957Z'
-    updated_at: '2020-08-24T13:33:52.229Z'
-    title_et: 'Acasă, mu kodu'
-    title_en: 'Acasă, My Home'
-    titleOriginal: Acasă
-    year: 2020
-    runtime: 86
-    slug_et: acasa-mu-kodu
-    slug_en: acasa-my-home
-    filmId: '1013'
-    credentials:
-        id: 351
-        director:
-            - Radu Ciorniciuc
-        screenwriter:
-            - ''
-        doP:
-            - ''
-        cast:
-            - Corina Enache
-            - ' Duca Enache'
-            - ' Georgiana Enache'
-        composer:
-            - ''
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 870
-            -
-                id: 871
-            -
-                id: 872
-    synopsis: ''
-    media:
-        id: 285
-        Trailer:
-            -
-                id: 270
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 266
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 272
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 258
-        countries:
-            -
-                id: 1036
-                created_at: '2020-08-17T14:20:54.863Z'
-                updated_at: '2020-08-17T14:20:54.863Z'
-                code: RO
-                name_et: Rumeenia
-                name_en: Romania
-                name: Румыния
-            -
-                id: 877
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                code: DE
-                name_et: Saksamaa
-                name_en: Germany
-                name: Германия
-            -
-                id: 908
-                created_at: '2020-08-17T14:20:47.900Z'
-                updated_at: '2020-08-17T14:20:47.900Z'
-                code: FI
-                name_et: Soome
-                name_en: Finland
-                name: Финляндия
-        languages:
-            -
-                id: 1693
-                created_at: '2020-08-24T12:28:25.023Z'
-                updated_at: '2020-08-24T12:28:25.023Z'
-                name_et: Romanian
-                name_en: Romanian
-                code: ro
-                name: Румынский
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_en: English
-                code: en
-                name: Английский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/acasa-my-home
-    data: *ref_0
--
-    id: 515
-    created_at: '2020-08-19T08:36:46.969Z'
-    updated_at: '2020-08-19T08:36:46.969Z'
-    title_et: Tormipoiss
-    title_en: Storm Boy
-    titleOriginal: ''
-    year: 2019
-    runtime: 99
-    slug_et: tormipoiss
-    slug_en: storm-boy
-    filmId: '1014'
-    credentials:
-        id: 352
-        director:
-            - Shawn Seet
-        screenwriter:
-            - Justin Monjo
-        doP:
-            - Bruce Young
-        cast:
-            - Finn Little
-            - ' Jai Courtney'
-            - ' Geoffrey Rush'
-        composer:
-            - Alan John
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 873
-    synopsis: ''
-    media:
-        id: 286
-        Trailer:
-            -
-                id: 271
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 267
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 273
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 257
-        countries:
-            -
-                id: 892
-                created_at: '2020-08-17T14:20:46.514Z'
-                updated_at: '2020-08-17T14:20:46.514Z'
-                code: AU
-                name_et: Austraalia
-                name_en: Australia
-                name: Австралия
-        languages:
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_en: English
-                code: en
-                name: Английский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/storm-boy
-    data: *ref_0
--
-    id: 508
-    created_at: '2020-08-19T08:36:37.191Z'
-    updated_at: '2020-08-19T08:36:37.191Z'
-    title_et: Tšempionid
-    title_en: Champions
-    titleOriginal: Campeones
-    year: 2018
-    runtime: 124
-    slug_et: tsempionid
-    slug_en: champions
-    filmId: '1006'
-    credentials:
-        id: 354
-        director:
-            - Javier Fesser
-        screenwriter:
-            - David Marqués
-            - ' Javier Fesser'
-        doP:
-            - Chechu Graf
-        cast:
-            - Javier Gutiérrez
-            - ' Athenea Mata'
-            - " Juan Margallo\r"
-        composer:
-            - Rafael Arnau
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 879
-            -
-                id: 880
-            -
-                id: 881
-            -
-                id: 882
-            -
-                id: 883
-            -
-                id: 884
-            -
-                id: 885
-            -
-                id: 886
-            -
-                id: 887
-    synopsis: ''
-    media:
-        id: 289
-        Trailer:
-            -
-                id: 274
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 270
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 276
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 261
-        countries:
-            -
-                id: 906
-                created_at: '2020-08-17T14:20:47.692Z'
-                updated_at: '2020-08-17T14:20:47.692Z'
-                code: ES
-                name_et: Hispaania
-                name_en: Spain
-                name: Испания
-        languages:
-            -
-                id: 1742
-                created_at: '2020-08-24T12:28:28.680Z'
-                updated_at: '2020-08-24T12:28:28.680Z'
-                name_et: Hispaania
-                name_en: Spanish
-                code: es
-                name: Испанский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/champions
-    data: *ref_0
--
-    id: 504
-    created_at: '2020-08-19T08:36:37.024Z'
-    updated_at: '2020-08-19T08:36:37.024Z'
-    title_et: Nähtamatu elu
-    title_en: Invisible Life of Eurídice Gusmão
-    titleOriginal: A Vida Invisivel
-    year: 2019
-    runtime: 139
-    slug_et: nahtamatu-elu
-    slug_en: invisible-life-of-euridice-gusmao
-    filmId: '1001'
-    credentials:
-        id: 353
-        director:
-            - Karim Aïnouz
-        screenwriter:
-            - Murilo Hauser
-            - ' Inés Bortagaray'
-            - ' Karim Aïnouz'
-        doP:
-            - Hélène Louvart
-        cast:
-            - Julia Stockler
-            - ' Carol Duarte'
-            - ' Flávia Gusmão'
-        composer:
-            - Benedikt Schiefer
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 875
-            -
-                id: 876
-            -
-                id: 877
-            -
-                id: 878
-    synopsis: ''
-    media:
-        id: 288
-        Trailer:
-            -
-                id: 273
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 269
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 275
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 260
-        countries:
-            -
-                id: 859
-                created_at: '2020-08-17T14:20:40.521Z'
-                updated_at: '2020-08-17T14:20:40.521Z'
-                code: BR
-                name_et: Brasiilia
-                name_en: Brazil
-                name: Бразилия
-            -
-                id: 877
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                code: DE
-                name_et: Saksamaa
-                name_en: Germany
-                name: Германия
-        languages:
-            -
-                id: 1680
-                created_at: '2020-08-24T12:28:23.296Z'
-                updated_at: '2020-08-24T12:28:23.296Z'
-                name_et: Kreeka
-                name_en: Greek
-                code: el
-                name: Греческий
-            -
-                id: 1805
-                created_at: '2020-08-24T12:28:30.796Z'
-                updated_at: '2020-08-24T12:28:30.796Z'
-                name_et: Portugali
-                name_en: Portuguese
-                code: pt
-                name: Португальский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/invisible-life-of-euridice-gusmao
-    data: *ref_0
--
-    id: 505
-    created_at: '2020-08-19T08:36:37.043Z'
-    updated_at: '2020-08-19T08:36:37.043Z'
-    title_et: Täiuslik
-    title_en: Flawless
-    titleOriginal: HaNeshef
-    year: 2018
-    runtime: 97
-    slug_et: taiuslik
-    slug_en: flawless
-    filmId: '1002'
-    credentials:
-        id: 355
-        director:
-            - Tal Granit
-            - ' Sharon Maymon'
-        screenwriter:
-            - Tal Granit
-            - ' Sharon Maymon'
-        doP:
-            - Giora Bejach
-        cast:
-            - Stav Strashko
-            - ' Netsanet Mekonen'
-            - ' Noam Lugasy'
-        composer:
-            - Ivri Lider
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 888
-            -
-                id: 889
-    synopsis: ''
-    media:
-        id: 290
-        Trailer:
-            -
-                id: 275
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 271
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 277
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 262
-        countries:
-            -
-                id: 951
-                created_at: '2020-08-17T14:20:50.795Z'
-                updated_at: '2020-08-17T14:20:50.795Z'
-                code: IL
-                name_et: Iisrael
-                name_en: Israel
-                name: Израиль
-            -
-                id: 877
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                code: DE
-                name_et: Saksamaa
-                name_en: Germany
-                name: Германия
-        languages:
-            -
-                id: 1796
-                created_at: '2020-08-24T12:28:30.605Z'
-                updated_at: '2020-08-24T12:28:30.605Z'
-                name_et: Vene
-                name_en: Russian
-                code: ru
-                name: Русский
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_en: English
-                code: en
-                name: Английский
-            -
-                id: 1727
-                created_at: '2020-08-24T12:28:27.872Z'
-                updated_at: '2020-08-24T12:28:27.872Z'
-                name_et: Heebrea
-                name_en: Hebrew
-                code: he
-                name: Иврит
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/flawless
-    data: *ref_0
--
-    id: 516
-    created_at: '2020-08-19T08:36:46.969Z'
-    updated_at: '2020-08-19T08:36:46.969Z'
-    title_et: Lammas all paremas nurgas
-    title_en: The Secret Lamb
-    titleOriginal: ''
-    year: 1992
-    runtime: 10000
-    slug_et: lammas-all-paremas-nurgas
-    slug_en: the-secret-lamb
-    filmId: '1015'
-    credentials:
-        id: 356
-        director:
-            - Lembit Ulfsak
-        screenwriter:
-            - Janno Põldma
-            - ' Lembit Ulsak'
-        doP:
-            - Ago Ruus
-        cast:
-            - Tõnu Kark
-            - ' Margus Alver'
-            - ' Kaur Sinissaar'
-            - ' Dan Põldroos'
-            - ' Ain Lutsepp'
-        composer:
-            - Tõnu Naissoo
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 890
-    synopsis: ''
-    media:
-        id: 291
-        Trailer:
-            -
-                id: 276
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 272
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 278
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 263
-        countries:
-            -
-                id: 899
-                created_at: '2020-08-17T14:20:47.018Z'
-                updated_at: '2020-08-17T14:20:47.018Z'
-                code: EE
-                name_et: Eesti
-                name_en: Estonia
-                name: Эстония
-        languages:
-            -
-                id: 1686
-                created_at: '2020-08-24T12:28:24.026Z'
-                updated_at: '2020-08-24T12:28:24.026Z'
-                name_et: Eesti
-                name_en: Estonian
-                code: et
-                name: Эстонский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/the-secret-lamb
-    data: *ref_0
--
-    id: 544
-    created_at: '2020-08-24T13:33:28.023Z'
-    updated_at: '2020-08-24T13:33:28.023Z'
-    title_et: Hüvasti!
-    title_en: House of Hummingbird
-    titleOriginal: Beol-sae
-    year: 2018
-    runtime: 138
-    slug_et: huvasti
-    slug_en: house-of-hummingbird
-    filmId: '1003'
-    credentials:
-        id: 357
-        director:
-            - Bora Kim
-        screenwriter:
-            - Bora Kim
-        doP:
-            - Guk-hyun Kang
-        cast:
-            - Ji-hu Park
-            - ' Sae-byeok Kim'
-            - ' Seung-Yun Lee'
-        composer:
-            - Matija Strnisa
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 891
-            -
-                id: 892
-    synopsis: ''
-    media:
-        id: 292
-        Trailer:
-            -
-                id: 277
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 273
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 279
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 264
-        countries:
-            -
-                id: 971
-                created_at: '2020-08-17T14:20:51.857Z'
-                updated_at: '2020-08-17T14:20:51.857Z'
-                code: KR
-                name_et: Lõuna-Korea
-                name_en: South Korea
-                name: Республика Корея
-        languages:
-            -
-                id: 1788
-                created_at: '2020-08-24T12:28:30.341Z'
-                updated_at: '2020-08-24T12:28:30.341Z'
-                name_et: Korea
-                name_en: Korean
-                code: ko
-                name: Корейский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/house-of-hummingbird
-    data: *ref_0
--
-    id: 513
-    created_at: '2020-08-19T08:36:37.436Z'
-    updated_at: '2020-08-19T08:36:37.436Z'
-    title_et: Maudie
-    title_en: Maudie
-    titleOriginal: ''
-    year: 2016
-    runtime: 115
-    slug_et: maudie
-    slug_en: maudie
-    filmId: '1011'
-    credentials:
-        id: 361
-        director:
-            - Aisling Walsh
-        screenwriter:
-            - Sherry White
-        doP:
-            - Guy Godfree
-        cast:
-            - Sally Hawkins
-            - ' Ethan Hawke'
-            - ' Kari Matchett'
-        composer:
-            - Michael Timmins
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 899
-            -
-                id: 900
-            -
-                id: 901
-            -
-                id: 902
-            -
-                id: 903
-            -
-                id: 904
-            -
-                id: 905
-            -
-                id: 906
-    synopsis: ''
-    media:
-        id: 296
-        Trailer:
-            -
-                id: 281
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 277
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 283
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 268
-        countries:
-            -
-                id: 864
-                created_at: '2020-08-17T14:20:41.574Z'
-                updated_at: '2020-08-17T14:20:41.574Z'
-                code: CA
-                name_et: Kanada
-                name_en: Canada
-                name: Канада
-            -
-                id: 952
-                created_at: '2020-08-17T14:20:50.882Z'
-                updated_at: '2020-08-17T14:20:50.882Z'
-                code: IE
-                name_et: Iirimaa
-                name_en: Ireland
-                name: Ирландия
-        languages:
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_en: English
-                code: en
-                name: Английский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/maudie
-    data: *ref_0
--
-    id: 506
-    created_at: '2020-08-19T08:36:37.102Z'
-    updated_at: '2020-08-19T08:36:37.102Z'
-    title_et: Õnnejumalanna
-    title_en: The Goddess of Fortune
-    titleOriginal: La dea fortuna
-    year: 2019
-    runtime: 114
-    slug_et: onnejumalanna
-    slug_en: the-goddess-of-fortune
-    filmId: '1004'
-    credentials:
-        id: 359
-        director:
-            - Ferzan Özpetek
-        screenwriter:
-            - Ferzan Özpetek
-            - ' Silvia Ranfagni'
-            - ' Gianni Romoli'
-        doP:
-            - Gian Filippo Corticelli
-        cast:
-            - Stefano Accorsi
-            - ' Jasmine Trinca'
-            - ' Edoardo Leo'
-        composer:
-            - Pasquale Catalano
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 895
-            -
-                id: 896
-            -
-                id: 897
-    synopsis: ''
-    media:
-        id: 294
-        Trailer:
-            -
-                id: 279
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 275
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 281
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 266
-        countries:
-            -
-                id: 936
-                created_at: '2020-08-17T14:20:49.557Z'
-                updated_at: '2020-08-17T14:20:49.557Z'
-                code: IT
-                name_et: Itaalia
-                name_en: Italy
-                name: Италия
-        languages:
-            -
-                id: 1709
-                created_at: '2020-08-24T12:28:26.804Z'
-                updated_at: '2020-08-24T12:28:26.804Z'
-                name_et: Itaalia
-                name_en: Italian
-                code: it
-                name: Итальянский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/the-goddess-of-fortune
-    data: *ref_0
--
-    id: 511
-    updated_by:
-        id: 1
-        firstname: Mihkel
-        lastname: Putrinš
-    created_at: '2020-08-19T08:36:37.316Z'
-    updated_at: '2020-08-24T13:33:32.991Z'
-    title_et: Hape
-    title_en: Acid
-    titleOriginal: Kislota
-    year: 2018
-    runtime: 97
-    slug_et: hape
-    slug_en: acid
-    filmId: '1009'
-    credentials:
-        id: 358
-        director:
-            - Aleksandr Gorchilin
-        screenwriter:
-            - Valery Pecheykin
-        doP:
-            - Kseniya Sereda
-        cast:
-            - Filipp Avdeev
-            - ' Aleksandr Kuznetsov'
-            - ' Aleksandra Rebenok'
-        composer:
-            - ''
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 893
-            -
-                id: 894
-    synopsis: ''
-    media:
-        id: 293
-        Trailer:
-            -
-                id: 278
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 274
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 280
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 265
-        countries:
-            -
-                id: 1030
-                created_at: '2020-08-17T14:20:54.589Z'
-                updated_at: '2020-08-17T14:20:54.589Z'
-                code: RU
-                name_et: Venemaa
-                name_en: Russian Federation
-                name: Российская Федерация
-        languages:
-            -
-                id: 1796
-                created_at: '2020-08-24T12:28:30.605Z'
-                updated_at: '2020-08-24T12:28:30.605Z'
-                name_et: Vene
-                name_en: Russian
-                code: ru
-                name: Русский
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/acid
-    data: *ref_0
--
-    id: 517
-    updated_by:
-        id: 1
-        firstname: Mihkel
-        lastname: Putrinš
-    created_at: '2020-08-19T08:36:47.029Z'
-    updated_at: '2020-08-24T13:33:36.812Z'
-    title_et: Autoportree
-    title_en: Self Portrait
-    titleOriginal: Selvportrett
-    year: 2020
-    runtime: 80
-    slug_et: autoportree
-    slug_en: self-portrait
-    filmId: '1017'
-    credentials:
-        id: 360
-        director:
-            - Katja Høgset
-            - ' Margreth Olin'
-            - ' Espen Wallin'
-        screenwriter:
-            - ''
-        doP:
-            - ''
-        cast:
-            - Geir Fossen
-            - ' Lene Marie Fossen'
-            - ' Torill Fossen'
-        composer:
-            - ''
-        editor: []
-        producer: []
-        coProducer: []
-        productionCompany:
-            -
-                id: 898
-    synopsis: ''
-    media:
-        id: 295
-        Trailer:
-            -
-                id: 280
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 276
-                Url: ''
-        Stills: []
-        Posters: []
-    tags:
-        id: 282
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-    countriesAndLanguages:
-        id: 267
-        countries:
-            -
-                id: 996
-                created_at: '2020-08-17T14:20:53.242Z'
-                updated_at: '2020-08-17T14:20:53.242Z'
-                code: 'NO'
-                name_et: Norra
-                name_en: Norway
-                name: Норвегия
-        languages:
-            -
-                id: 1750
-                created_at: '2020-08-24T12:28:29.070Z'
-                updated_at: '2020-08-24T12:28:29.070Z'
-                name_et: Norwegian
-                name_en: Norwegian
-                code: nn
-                name: Нюнорск (новонорвежский)
-    screenings: []
-    title: ''
-    slug: ''
-    directory: source/film/self-portrait
-    data: *ref_0
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml

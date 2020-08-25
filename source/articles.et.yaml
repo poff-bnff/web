@@ -1,22 +1,103 @@
 -
-    id: 2
-    namePrivate: null
+    id: 3
     created_by:
         id: 6
         firstname: Jaan
         lastname: Leppik
-        username: null
     updated_by:
         id: 6
         firstname: Jaan
         lastname: Leppik
-        username: null
+    created_at: '2020-08-19T11:04:34.597Z'
+    updated_at: '2020-08-19T14:17:13.569Z'
+    Button:
+        -
+            id: 3
+            buttonText_en: English button
+            buttonUrl_en: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
+    domains:
+        -
+            id: 1
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-19T10:43:32.378Z'
+            updated_at: '2020-08-19T10:43:32.395Z'
+            url: 'https://poff.ee'
+    title: Pealkiri
+    contents: >-
+        Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid
+        selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige
+        suurema unistuse?17-aastane Eden (Stav Strashko) avastab, et just seda
+        plaanivadki tema kaks parimat sõpra. Tüdrukutele on see väike ohverdus,
+        et saada endale rinnakam büst ja uus uhke keskkooli lõpupeo kleit.
+        Edenile tehakse samuti ettepanek osaleda illegaalses doonorluses.
+        Tüdrukud ei tea, et Eden on transsooline ja talle tähendaks operatsioon
+        midagi hoopis olulisemat.Veneetsias, Karlovy Varys ja mitmetel teistel
+        festivalidel auhinnatud režissöörid Sharon Maymon ja Tal Granit toovad
+        meieni inimliku ja liigutava loo sõprusest, aktsepteerimisest ja
+        iseendale otsa vaatamisest.
+    lead: >-
+        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead
+        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead 
+    slug: pealkiri
+    image:
+        id: 1
+        name: Elektriteater_logo.png
+        alternativeText: ''
+        caption: ''
+        width: 507
+        height: 281
+        formats:
+            small:
+                ext: .png
+                url: /uploads/small_Elektriteater_logo_e9454b3185.png
+                hash: small_Elektriteater_logo_e9454b3185
+                mime: image/png
+                name: small_Elektriteater_logo.png
+                path: null
+                size: 35.39
+                width: 500
+                height: 277
+            thumbnail:
+                ext: .png
+                url: /uploads/thumbnail_Elektriteater_logo_e9454b3185.png
+                hash: thumbnail_Elektriteater_logo_e9454b3185
+                mime: image/png
+                name: thumbnail_Elektriteater_logo.png
+                path: null
+                size: 11.33
+                width: 245
+                height: 136
+        hash: Elektriteater_logo_e9454b3185
+        ext: .png
+        mime: image/png
+        size: 8.97
+        url: /uploads/Elektriteater_logo_e9454b3185.png
+        previewUrl: null
+        provider: local
+        provider_metadata: null
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-08-13T14:00:41.491Z'
+        updated_at: '2020-08-13T14:00:41.586Z'
+    directory: source/article/pealkiri
+    path: article/pealkiri
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 2
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
     created_at: '2020-08-19T11:02:19.545Z'
     updated_at: '2020-08-19T14:17:19.496Z'
-    Publish_en: null
-    Publish_ru: null
     title_en: Tartuff sets focus on art
-    title_ru: null
     contents_en: >-
         The Robin Hood of the art world aka Banksy, Marcel Duchamp, Alberto
         Giacometti, Maud Lewis – these are the heroes of the features and
@@ -79,27 +160,15 @@
         excursions. The programme is organised in cooperation with Tartu Art
         Museum, Tartu Art College, Estonian National Museum, Voronja Gallery,
         street art festival Stencibility and many others.
-    contents_ru: null
     lead_en: >-
         This year's edition sets a special focus on art, screening films on
         Banksy, Marchel Duchamp, Alberto Giacometti, Maud Lewis. The festival
         will be available online throughout Estonia
-    lead_ru: null
     slug_en: tartuff-sets-focus-on-art
-    slug_ru: null
     clipUrl_en: 'https://www.youtube.com/watch?v=s6ZgBnq7Tt4'
-    clipUrl_ru: null
-    clipUrlDefault: null
     PUBLISHING:
         id: 1
-        publish_et: true
-        from: null
-        until: null
         publish_en: true
-        publish_ru: null
-        hero_et: null
-        hero_en: null
-        hero_ru: null
         article_types:
             -
                 id: 2
@@ -108,37 +177,22 @@
                 updated_by: 6
                 created_at: '2020-08-18T13:49:51.616Z'
                 updated_at: '2020-08-18T13:53:18.424Z'
-                article: null
-    TAGS: null
+        publish: true
     Button:
         -
             id: 2
-            buttonText: null
-            buttonUrl: null
-            buttonText_et: Vaata filmi
-            buttonUrl_et: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
             buttonText_en: See the film
             buttonUrl_en: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
-            buttonText_ru: null
-            buttonUrl_ru: null
-    imageDefault: null
-    image_en: null
-    image_ru: null
+            buttonText: Vaata filmi
+            buttonUrl: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
     domains:
         -
             id: 1
-            Url: null
-            IpAdress: null
-            Server: null
             created_by: 6
             updated_by: 6
             created_at: '2020-08-19T10:43:32.378Z'
             updated_at: '2020-08-19T10:43:32.395Z'
             url: 'https://poff.ee'
-            ipAdress: null
-            server: null
-            festival_edition: null
-    Publish: null
     title: Tartuff on pühendatud kunstile
     contents: >-
         Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
@@ -222,7 +276,6 @@
     lead: >-
         PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu
         kunstile.
-    path: article/tartuff-on-puehendatud-kunstile
     slug: tartuff-on-puehendatud-kunstile
     clipUrl: 'https://www.youtube.com/watch?v=s6ZgBnq7Tt4'
     image:
@@ -285,6 +338,220 @@
         updated_by: 6
         created_at: '2020-08-13T19:16:16.284Z'
         updated_at: '2020-08-13T19:16:16.529Z'
+    directory: source/article/tartuff-sets-focus-on-art
+    path: article/tartuff-on-puehendatud-kunstile
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 1
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-08-19T10:43:13.085Z'
+    updated_at: '2020-08-19T14:17:52.093Z'
+    clipUrlDefault: 'https://www.youtube.com/watch?v=NRF-Pba3QrE'
+    PUBLISHING:
+        id: 2
+        from: '2020-08-19T09:00:00.000Z'
+        until: '2020-12-23T10:00:00.000Z'
+        publish_en: false
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-18T13:53:18.424Z'
+        publish: true
+    TAGS:
+        id: 80
+        tag_premiere_types:
+            -
+                id: 4
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-19T10:50:40.749Z'
+                updated_at: '2020-08-19T10:50:40.762Z'
+                value_en: World Premiere
+                value_ru: Мировая премьера
+                value: Maailma esilinastus
+        tag_programmes:
+            -
+                id: 3
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-19T10:54:54.776Z'
+                updated_at: '2020-08-19T10:54:54.793Z'
+                value_en: Official Selection
+                value_ru: Основная конкурсная программа
+                value: Põhivõistlusprogramm
+        tag_genres:
+            -
+                id: 7
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-19T10:45:43.087Z'
+                updated_at: '2020-08-19T10:45:43.096Z'
+                value_en: Comedy
+                value_ru: Комедия
+                value: Komöödia
+            -
+                id: 8
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-19T10:48:21.708Z'
+                updated_at: '2020-08-19T10:48:21.730Z'
+                value_en: Animation
+                value_ru: Анимация
+                value: Joonisfilm
+        tag_keywords:
+            -
+                id: 6
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-19T10:48:40.233Z'
+                updated_at: '2020-08-19T10:48:40.245Z'
+                value_en: MeToo
+                value_ru: MeToo
+                value: MeToo
+            -
+                id: 7
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-19T10:49:52.991Z'
+                updated_at: '2020-08-19T10:49:53.008Z'
+                value_en: Society
+                value_ru: Общество
+                value: Ühiskond
+    Button:
+        -
+            id: 1
+            buttonText: Vaata filmi
+            buttonUrl: 'https://tartuff.elisastage.ee'
+    imageDefault:
+        id: 4
+        name: F_1_invisible_life.jpg
+        alternativeText: ''
+        caption: ''
+        width: 1920
+        height: 1080
+        formats:
+            large:
+                ext: .jpg
+                url: /uploads/large_F_1_invisible_life_745fc8df60.jpg
+                hash: large_F_1_invisible_life_745fc8df60
+                mime: image/jpeg
+                name: large_F_1_invisible_life.jpg
+                size: 81.71
+                width: 1000
+                height: 563
+            small:
+                ext: .jpg
+                url: /uploads/small_F_1_invisible_life_745fc8df60.jpg
+                hash: small_F_1_invisible_life_745fc8df60
+                mime: image/jpeg
+                name: small_F_1_invisible_life.jpg
+                size: 24.04
+                width: 500
+                height: 281
+            medium:
+                ext: .jpg
+                url: /uploads/medium_F_1_invisible_life_745fc8df60.jpg
+                hash: medium_F_1_invisible_life_745fc8df60
+                mime: image/jpeg
+                name: medium_F_1_invisible_life.jpg
+                size: 46.72
+                width: 750
+                height: 422
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_F_1_invisible_life_745fc8df60.jpg
+                hash: thumbnail_F_1_invisible_life_745fc8df60
+                mime: image/jpeg
+                name: thumbnail_F_1_invisible_life.jpg
+                size: 8.1
+                width: 245
+                height: 138
+        hash: F_1_invisible_life_745fc8df60
+        ext: .jpg
+        mime: image/jpeg
+        size: 194.74
+        url: /uploads/F_1_invisible_life_745fc8df60.jpg
+        provider: local
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-08-13T19:16:16.414Z'
+        updated_at: '2020-08-13T19:16:16.648Z'
+    domains:
+        -
+            id: 1
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-19T10:43:32.378Z'
+            updated_at: '2020-08-19T10:43:32.395Z'
+            url: 'https://poff.ee'
+    title: Tartu armastusfilmide festivali avab troopiline melodraama
+    contents: >-
+        End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
+        kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne
+        isa ja patriarhaalne ühiskond kisuvad nad lahku ega luba täita oma
+        unistusi, kuid nad ei kaota kõigele vaatamata lootust.
+
+
+        Režissöör pühendab oma filmi kõigile neile naistele, kellest Brasiilia
+        ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.
+
+
+        "See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
+        tõeline pärl," kirjutab USA juhtivaid meelelahutustööstuse väljaandeid
+        The Wrap.
+
+
+        Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi "Un
+        Certain Regard" ja Brasiilia esitas selle mitteingliskeelsete filmide
+        Oscarile. USA filmiorganisatsiooni The National Board of Review
+        hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse
+        mängufilmiga.
+
+
+        ![F_2_invisible_life.jpg](http://139.59.130.149/uploads/F_2_invisible_life_feb5451063.jpg)
+
+
+        Linateos põhineb Martha Batalha romaanil "Eurídice Gusmão nähtamatu
+        elu". Peaosades Carol Duarte ja Julia Stockler.
+
+
+        "Nähtamatu elu" jõuab ekraanile 10. augustil Tartu Raekoja platsil,
+        samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.
+
+
+        ```<iframe width="560" height="315"
+        src="https://www.youtube.com/embed/NRF-Pba3QrE" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope;
+        picture-in-picture" allowfullscreen></iframe>```
+
+
+        Kogu kava avalikustab festival juuli lõpus.
+
+
+        15. [PÖFFi armastusfilmide festival Tartuff](https://tartuff.ee) leiab
+        tänavu aset 10.-15. augustini Tartus ja virtuaalselt üle kogu Eesti.
+        Festivali korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
+        Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    lead: >-
+        PÖFFi armastusfilmide festival Tartuff kuulutas välja tänavuse avafilmi,
+        milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud "Nähtamatu elu”.
+    slug: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    directory: >-
+        source/article/tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    path: article/tartu-armastusfilmide-festivali-avab-troopiline-melodraama
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml

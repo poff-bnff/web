@@ -24,15 +24,20 @@ block titleBox
                     .str_info_label= self.label.film.filmTitleOriginal
                     .str_info_value= self.titleOriginal
 
-            if self.directorCSV
+            if self.credentials.director
                 .str_info_grid_3
                     .str_info_label= self.label.film.filmDirector
-                    .str_info_value.clr_primary= self.directorCSV
+                    .str_info_value.clr_primary= self.credentials.director.join(', ')
 
             if self.countriesAndLanguages.countries
+                - var countriesNames = function(item) {
+                -   var itemNames = item.name
+                -   return itemNames
+                - }
+
                 .str_info_grid_3
                     .str_info_label= self.label.film.filmCountries
-                    .str_info_value= `${self.countriesAndLanguages.countries[0][`name_${self.locale}`]} (need correct CSV in YAML to display all)`
+                    .str_info_value= self.countriesAndLanguages.countries.map(countriesNames).join(', ')
 
             if self.year
                 .str_info_grid_3

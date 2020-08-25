@@ -7,9 +7,9 @@ block content
         main.grid_articles
             each val in self.data.articles.sort(function(a, b){ return (a.articlePublishStart > b.articlePublishStart) ? -1 : ((b.articlePublishStart > a.articlePublishStart) ? 1 : 0); })
                 if val.title
-                    - var article_slug = val.path
+                    - var article_slug = val.slug
                     - var article_pictures = self.data.article_pictures.articles[article_slug]
-                    a(href= `/${lang_path}${article_slug}`).card_article
+                    a(href= `/${lang_path}article/${article_slug}`).card_article
                         .container_frame_16_9
                             if article_pictures
                                 img.container_contents_16_9(src=`/assets/img/img_articles/${article_slug}/${article_pictures.heroImage}`)
