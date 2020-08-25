@@ -26,17 +26,17 @@ block content
             .str_info_meta_gi
                     .str_info_meta_item
                         .str_info_meta_value= self.label.menu.mainNews
-                if self.created_by.firstname
-                    .str_info_meta_item
-                        .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
-                if self.articlePublishStart
-                    .str_info_meta_item
-                        //- .str_info_meta_value= self.kuupäev + '  ' + self.kell
-                        .str_info_meta_value
-                            +localdatetime(self.articlePublishStart)
-                if self.TAGS
-                    .str_info_meta_item
-                        .str_info_meta_keywords= self.TAGS
+                    if self.created_by.firstname
+                        .str_info_meta_item
+                            .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
+                    if self.articlePublishStart
+                        .str_info_meta_item
+                            //- .str_info_meta_value= self.kuupäev + '  ' + self.kell
+                            .str_info_meta_value
+                                +localdatetime(self.articlePublishStart)
+                    if self.TAGS
+                        .str_info_meta_item
+                            .str_info_meta_keywords= self.TAGS
 
 
         section.article_contents
