@@ -9,9 +9,8 @@
     "slugify": "^1.4.5"
   },
   "scripts": {
-    "fetch": "python ./helpers/fetch_data.py",
-    "dev": ". ./build.sh",
-    "build": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full"
+    "dev": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml full",
+    "build": ". ./build.sh"
   },
   "repository": {
     "type": "git",

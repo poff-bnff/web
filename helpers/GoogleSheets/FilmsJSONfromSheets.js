@@ -2,7 +2,7 @@ const fs = require('fs');
 const request = require('request');
 const Fetcher = require('./FromSheets');
 const slugify = require('slugify');
-
+const send= require('../strapi/ToStrapi');
 
 // t88kataloogiks skripti kataloog
 process.chdir(__dirname);
@@ -39,17 +39,17 @@ function ProcessCountries(txt){
         } )
         countryCodes.push(found);
     })
-    console.log(countryCodes);
+    // console.log(countryCodes);
     return countryCodes;
 }
 
 function ProcessLanguages(txt){
     let languageNames = txt.split(', ');
     let languageCodes = [];
-    let languageFromISOcountries = JSON.parse(fs.readFileSync('../data/ISOLanguagesFromStrapi.json', 'utf-8'));
+    let languageFromISOlanguages = JSON.parse(fs.readFileSync('../data/ISOLanguagesFromStrapi.json', 'utf-8'));
     languageNames.forEach(name => {
         let found = {'name': name};
-        languageFromISOcountries.forEach(value => {
+        languageFromISOlanguages.forEach(value => {
             // console.log(value);
             if (name == value['name_en']){
                 found['id'] = value['id']
@@ -57,7 +57,7 @@ function ProcessLanguages(txt){
         } )
         languageCodes.push(found);
     })
-    console.log(languageCodes);
+    // console.log(languageCodes);
     return languageCodes;
 }
 
@@ -120,12 +120,11 @@ function ProcessDataCB(source){
                                       'languages': ProcessLanguages(element['filmLanguages_en']),
                                     },
             'screenings': '',
-            'slug_et': slugify((element['filmTitle_et']), {lower:true}),
-            'slug_en': slugify((element['filmTitle_en']), {lower:true}),
-            'slug_ru': slugify('', {lower:true}),
+            'slug_et': slugify((element['filmTitle_et']), {lower:true, remove: /[*+~.,()'"!:@]/g}),
+            'slug_en': slugify((element['filmTitle_en']), {lower:true, remove: /[*+~.,()'"!:@]/g}),
+            'slug_ru': slugify('', {lower:true, remove: /[*+~.,()'"!:@]/g}),
 
         };
-        // console.log(slugify(element['filmTitle_et']));
 
         filmList.push(film_object);
 
@@ -135,4 +134,6 @@ function ProcessDataCB(source){
     fs.writeFileSync('../data/Films.json', filmsTarget);
 }
 
-    Fetcher.Fetch('1lFeU3M4tbm_2TvpPHReRVtUovmRKxQ2Xmv7ouQvwA3o', 'Filmid', ProcessDataCB);
+Fetcher.Fetch('1lFeU3M4tbm_2TvpPHReRVtUovmRKxQ2Xmv7ouQvwA3o', 'Filmid', ProcessDataCB);
+
+send.ToStrapi('../data/Films.json', '../data/FilmsFromStrapi.json', '/films', 'filmId')
