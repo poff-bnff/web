@@ -94,7 +94,7 @@ function rueten(obj, lang) {
             continue
         }
         else if (key === lang) {
-            console.log(key, obj[key]);
+            // console.log(key, obj[key]);
             return obj[key]
         } else if (key.match(regex) !== null) {
             // console.log(regex, key, key.match(regex));
@@ -119,13 +119,17 @@ function rueten(obj, lang) {
 
 function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
     allData = [];
-    data = rueten(data, lang);
+    // data = rueten(data, lang);
+    // console.log(data);
     data.forEach(element => {
         let slugEn = element.slug_en;
-        // element = rueten(element, lang);
 
+        // rueten func. is run for each element separately instead of whole data, that is
+        // for the purpose of saving slug_en before it will be removed by rueten func.
+        element = rueten(element, lang);
 
         element.directory = dirPath + slugEn;
+        // console.log(element.directory);
         // element = rueten(element, `_${lang}`);
 
         if(element.directory) {
@@ -159,7 +163,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
                 // Make separate CSV with key
 
                 if (typeof(element[key]) === 'object' && element[key] != null) {
-                    makeCSV(element[key], element, lang);
+                    // makeCSV(element[key], element, lang);
                 }
 
             }
@@ -197,6 +201,8 @@ function generateYaml(element, element, dirPath, lang, copyFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
+    // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
+    // console.log(element);
     if (copyFile) {
         fs.copyFile(`${dirPath}film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
             if (err) throw err;
