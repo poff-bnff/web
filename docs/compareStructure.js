@@ -1,14 +1,18 @@
 const yaml = require('js-yaml');
 const fs   = require('fs');
-const util = require('util')
+const util = require('util');
 
 const datamodel = yaml.safeLoad(fs.readFileSync(__dirname + '\\datamodel.yaml', 'utf8'));
-const strapiObject = require(__dirname + '\\filmStrapi.json');
+
+// const strapiObject = require('../helpers/data/ISOCountriesFromStrapi.json');
+// const strapiObject = require('../helpers/data/ISOLanguagesFromStrapi.json');
+// const strapiObject = yaml.safeLoad(fs.readFileSync(__dirname + '\\articleEXstrapi.json', 'utf8'));
+// const strapiObject = yaml.safeLoad(fs.readFileSync(__dirname + '\\filmEXstrapi.json', 'utf8'));
 
 // console.log('datamodel', util.inspect(datamodel))
 // console.log('strapiObject', util.inspect(strapiObject))
 
-const PATH = 'FILM';
+const PATH = 'ARTICLES';
 let lhs = datamodel[PATH];
 let rhs = strapiObject;
 
@@ -19,24 +23,29 @@ const compare = function (lhs, rhs, path) {
     if (Array.isArray(lhs)) {
         if (Array.isArray(rhs)) {
             for (const ix in rhs) {
-                compare(lhs[0], rhs[ix], path + '[' + ix + ']')
+                compare(lhs[0], rhs[ix], path + '[' + ix + ']');
             }
         } else {
-            console.log('- Not an array:', path)
+            console.log('- Not an array:', path);
         }
 
     } else {
         for (const key in lhs) {
+            if (rhs === null) {
+                console.log(key, rhs, 'is null')
+                return
+            }
             const lh_element = lhs[key]
             if (key in rhs) {
                 if (lh_element !== null && typeof(lh_element) === 'object' ) {
-                    compare(lh_element, rhs[key], path + '.' + key)
+                    compare(lh_element, rhs[key], path + '.' + key);
                 }
             } else {
                 console.log('- Missing key:', path + '.' + key);
             }
         }
     }
+    console.log('Good to go :)');
 }
 
-compare(lhs, rhs, path=PATH)
+compare(lhs, rhs, path=PATH);

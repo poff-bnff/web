@@ -1,0 +1,137 @@
+{
+    "id": 3,
+    "namePrivate": null,
+    "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+    },
+    "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+    },
+    "created_at": "2020-08-19T11:04:34.597Z",
+    "updated_at": "2020-08-26T06:31:27.720Z",
+    "Publish_et": null,
+    "Publish_en": null,
+    "Publish_ru": null,
+    "titlePrivate": "Ainult eestikeelne, aga publish mujale kah",
+    "title_et": "Pealkiri eestikeelne",
+    "title_en": null,
+    "title_ru": null,
+    "contents_et": "Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige suurema unistuse?17-aastane Eden (Stav Strashko) avastab, et just seda plaanivadki tema kaks parimat sõpra. Tüdrukutele on see väike ohverdus, et saada endale rinnakam büst ja uus uhke keskkooli lõpupeo kleit. Edenile tehakse samuti ettepanek osaleda illegaalses doonorluses. Tüdrukud ei tea, et Eden on transsooline ja talle tähendaks operatsioon midagi hoopis olulisemat.Veneetsias, Karlovy Varys ja mitmetel teistel festivalidel auhinnatud režissöörid Sharon Maymon ja Tal Granit toovad meieni inimliku ja liigutava loo sõprusest, aktsepteerimisest ja iseendale otsa vaatamisest.",
+    "contents_en": null,
+    "contents_ru": null,
+    "lead_et": "Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead ",
+    "lead_en": null,
+    "lead_ru": null,
+    "slug_et": "pealkiri",
+    "slug_en": null,
+    "slug_ru": null,
+    "clipUrl_et": null,
+    "clipUrl_en": null,
+    "clipUrl_ru": null,
+    "clipUrlDefault": null,
+    "PUBLISHING": {
+        "id": 3,
+        "publish_et": true,
+        "from": "2020-08-26T06:00:00.000Z",
+        "until": "2020-12-23T10:00:00.000Z",
+        "publish_en": null,
+        "publish_ru": null,
+        "hero_et": null,
+        "hero_en": null,
+        "hero_ru": null,
+        "article_types": [
+            {
+                "id": 2,
+                "name": "Uudis",
+                "created_by": 6,
+                "updated_by": 6,
+                "created_at": "2020-08-18T13:49:51.616Z",
+                "updated_at": "2020-08-18T13:53:18.424Z",
+                "article": null
+            }
+        ]
+    },
+    "tags": null,
+    "Button": [
+        {
+            "id": 3,
+            "buttonText": null,
+            "buttonUrl": null,
+            "buttonText_et": null,
+            "buttonUrl_et": null,
+            "buttonText_en": "English button",
+            "buttonUrl_en": "https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0",
+            "buttonText_ru": null,
+            "buttonUrl_ru": null
+        }
+    ],
+    "imageDefault": null,
+    "image_et": {
+        "id": 1,
+        "name": "Elektriteater_logo.png",
+        "alternativeText": "",
+        "caption": "",
+        "width": 507,
+        "height": 281,
+        "formats": {
+            "small": {
+                "ext": ".png",
+                "url": "/uploads/small_Elektriteater_logo_e9454b3185.png",
+                "hash": "small_Elektriteater_logo_e9454b3185",
+                "mime": "image/png",
+                "name": "small_Elektriteater_logo.png",
+                "path": null,
+                "size": 35.39,
+                "width": 500,
+                "height": 277
+            },
+            "thumbnail": {
+                "ext": ".png",
+                "url": "/uploads/thumbnail_Elektriteater_logo_e9454b3185.png",
+                "hash": "thumbnail_Elektriteater_logo_e9454b3185",
+                "mime": "image/png",
+                "name": "thumbnail_Elektriteater_logo.png",
+                "path": null,
+                "size": 11.33,
+                "width": 245,
+                "height": 136
+            }
+        },
+        "hash": "Elektriteater_logo_e9454b3185",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 8.97,
+        "url": "/uploads/Elektriteater_logo_e9454b3185.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-08-13T14:00:41.491Z",
+        "updated_at": "2020-08-13T14:00:41.586Z"
+    },
+    "image_en": null,
+    "image_ru": null,
+    "domains": [
+        {
+            "id": 1,
+            "Url": null,
+            "IpAdress": null,
+            "Server": null,
+            "created_by": 6,
+            "updated_by": 6,
+            "created_at": "2020-08-19T10:43:32.378Z",
+            "updated_at": "2020-08-19T10:43:32.395Z",
+            "url": "https://poff.ee",
+            "ipAdress": null,
+            "server": null,
+            "festival_edition": null
+        }
+    ]
+}
