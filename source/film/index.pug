@@ -1,44 +1,42 @@
-extends layout.pug
+extends /layout.pug
 
+//- block film
+//-     p= self.filmLocalTitle
 
+//-     +tabname(self.filmTitle)
 
-block film
-    p= self.filmLocalTitle
+//- block titleBox
+//-     - var pathParts = self.path.split('/')
+//-     - var filmPath = pathParts[pathParts.length - 1]
+//-     section.f_title_box
 
-    +tabname(self.filmTitle)
+//-         .premiere_type &nbsp;
+//-         h1.film_title_detailed= self.filmTitle
+//-         .str_info_blokk_1
+//-             .str_info_grid_3
+//-                 .str_info_value= self.filmLocalTitle
 
-block titleBox
-    - var pathParts = self.path.split('/')
-    - var filmPath = pathParts[pathParts.length - 1]
-    section.f_title_box
+//-             if self.filmTitleSec
+//-                 .str_info_grid_3
+//-                     .str_info_label= self.label.film.filmTitleSec
+//-                     .str_info_value= self.filmTitleSec
 
-        .premiere_type &nbsp;
-        h1.film_title_detailed= self.filmTitle
-        .str_info_blokk_1
-            .str_info_grid_3
-                .str_info_value= self.filmLocalTitle
+//-             if self.filmTitleOriginal
+//-                 .str_info_grid_3
+//-                     .str_info_label= self.label.film.filmTitleOriginal
+//-                     .str_info_value= self.filmTitleOriginal
 
-            if self.filmTitleSec
-                .str_info_grid_3
-                    .str_info_label= self.label.film.filmTitleSec
-                    .str_info_value= self.filmTitleSec
+//-             if self.filmDirector
+//-                 .str_info_grid_3
+//-                     .str_info_label= self.label.film.filmDirector
+//-                     .str_info_value.clr_primary= self.filmDirector
 
-            if self.filmTitleOriginal
-                .str_info_grid_3
-                    .str_info_label= self.label.film.filmTitleOriginal
-                    .str_info_value= self.filmTitleOriginal
+//-             if self.filmCountries
+//-                 .str_info_grid_3
+//-                     .str_info_label= self.label.film.filmCountries
+//-                     .str_info_value= self.filmCountries
 
-            if self.filmDirector
-                .str_info_grid_3
-                    .str_info_label= self.label.film.filmDirector
-                    .str_info_value.clr_primary= self.filmDirector
-
-            if self.filmCountries
-                .str_info_grid_3
-                    .str_info_label= self.label.film.filmCountries
-                    .str_info_value= self.filmCountries
-
-            if self.filmYear
-                .str_info_grid_3
-                    .str_info_label= self.label.film.filmYear
-                    .str_info_value= self.filmYear
+//-             if self.filmYear
+//-                 .str_info_grid_3
+//-                     .str_info_label= self.label.film.filmYear
+//-                     .str_info_value= self.filmYear
