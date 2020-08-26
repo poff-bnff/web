@@ -7,7 +7,7 @@ block content
     if self.data.films
         main.grid_films
             each val in self.data.films
-                a.card_film(href= `/${lang_path}${val.path}`)
+                a.card_film(href= `/${lang_path}film/${val.slug}`)
                     .container_frame_16_9
                         if self.data.pictures.filmslugs[val.path]
                             if self.data.pictures.filmslugs[val.path].poster
@@ -17,18 +17,19 @@ block content
                         else
                             img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
                     .card_film_title
-                        h3.film_title_locale= val.filmTitle
+                        h3.film_title_locale= val.title
                     .card_film_info
-                        if val.filmTitleSec
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.filmTitleSec
-                                .str_info_value= val.filmTitleSec
-                        if val.filmDirector
+                        each p, locale in self.otherLocalePaths
+                            if val[`title_${locale}`]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.filmTitleSec
+                                    .str_info_value= val[`title_${locale}`]
+                        if val.credentials.director
                             .str_info_grid_3
                                 .str_info_label= self.label.film.filmDirector
-                                .str_info_value= val.filmDirector
-                        if val.filmCast
+                                .str_info_value= val.credentials.director.join(', ')
+                        if val.credentials.cast
                             .str_info_grid_3
                                 .str_info_label= self.label.film.filmCast
-                                .str_info_value= val.filmCast
+                                .str_info_value= val.credentials.cast.join(', ')
 

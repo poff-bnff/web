@@ -2,7 +2,6 @@ extends ../_templates/layout.pug
 include ../_templates/mixins.pug
 
 
-
 block content
 
     main.grid_film
@@ -60,55 +59,81 @@ block content
                 //-         | Programm
                 //-     .str_info_meta_program
                 //-         | Foorum, Põhjusega mässajad
-            - synopsis_md = self.filmSynopsis
+            - synopsis_md = self.synopsis
             .synopsis_gi
                 +format(synopsis_md)
 
         section.f_cred_box
             .str_info_blokk_cred
-                if self.filmDirector
+
+                if self.credentials.director
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmDirector
-                        .str_info_value= self.filmDirector
-                if self.filmScreenwriter
+                        .str_info_value= self.credentials.director.join(', ')
+
+                if self.credentials.screenwriter
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmScreenwriter
-                        .str_info_value= self.filmScreenwriter
-                if self.filmCast
+                        .str_info_value= self.credentials.screenwriter.join(', ')
+
+                //- //- For each as below if links needed for each person etc
+                //- if self.credentials.cast
+                //-     .str_info_grid_3
+                //-         .str_info_label= self.label.film.filmCast
+                //-         - var cast = ''
+                //-         each val in self.credentials.cast
+                //-             if !cast
+                //-                 - cast = val[self.locale]
+                //-             else
+                //-                 - cast = `${cast}, ${val[self.locale]}`
+                //-         .str_info_value= cast
+
+                if self.credentials.cast
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmCast
-                        .str_info_value= self.filmCast
-                if self.filmProducer
+                        .str_info_value= self.credentials.cast.join(', ')
+
+                if self.credentials.producer
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmProducer
-                        .str_info_value= self.filmProducer
-                if self.filmDop
+                        .str_info_value= self.credentials.producer.join(', ')
+
+                if self.credentials.doP
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmDop
-                        .str_info_value= self.filmDop
-                if self.filmComposer
+                        .str_info_value= self.credentials.doP.join(', ')
+
+                if self.credentials.composer
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmComposer
-                        .str_info_value= self.filmComposer
-                if self.filmEditor
+                        .str_info_value= self.credentials.composer.join(', ')
+
+                if self.credentials.editor
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmEditor
-                        .str_info_value= self.filmEditor
-                if self.filmProduction
+                        .str_info_value= self.credentials.editor.join(', ')
+
+                //- Below datamodel needs to be updated and then code amended to be correct
+                if self.credentials.productionCompany
                     .str_info_grid_3
                         .str_info_label= self.label.film.filmProduction
-                        .str_info_value= self.filmProduction
+                        .str_info_value= self.ProductionCompanyCSV
 
         section.f_runtime_box
-            if self.filmLanguages
+            if self.countriesAndLanguages.languages
+                - var languagesNames = function(item) {
+                -   var itemNames = item.name
+                -   return itemNames
+                - }
                 .str_info_grid_3
                     .str_info_label= self.label.film.filmLanguages
-                    .str_info_value= self.filmLanguages
-            if self.filmDuration
+                    .str_info_value= self.countriesAndLanguages.languages.map(languagesNames).join(', ')
+
+            if self.runtime
                 .str_info_grid_3
                     .str_info_label= self.label.film.filmDuration
                     .str_info_value
-                        +dur(self.filmDuration)
+                        +dur(self.runtime)
 
         section.f_interactive_box
             div.f_interactive_item

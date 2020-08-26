@@ -1,0 +1,82 @@
+id: 511
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:37.316Z'
+updated_at: '2020-08-24T13:33:32.991Z'
+title_et: Hape
+title_ru: ''
+titleOriginal: Kislota
+year: 2018
+runtime: 97
+slug_et: hape
+slug_ru: ''
+filmId: '1009'
+credentials:
+    id: 358
+    director:
+        - Aleksandr Gorchilin
+    screenwriter:
+        - Valery Pecheykin
+    doP:
+        - Kseniya Sereda
+    cast:
+        - Filipp Avdeev
+        - ' Aleksandr Kuznetsov'
+        - ' Aleksandra Rebenok'
+    productionCompany:
+        -
+            id: 893
+        -
+            id: 894
+synopsis: >-
+    "Acid” is an ode to youth, a film about today’s 20-year-olds who are
+    entering the real world for the first time, and becoming conscious of their
+    role within it.  The film is a portrait of a generation for whom ambition is
+    devoid of meaning.  They lament the fact that everything has already been
+    invented before their appearance, already done for them.  The main
+    characters justify their irresponsibility and infantile behaviour by the
+    lack of communication with their parents.   But their principal agony is
+    that they grew up without fathers, and now the time is ripe for them to do
+    things and achieve the status of adult males.
+media:
+    id: 293
+    Trailer:
+        -
+            id: 278
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 274
+            Url: ''
+tags:
+    id: 280
+countriesAndLanguages:
+    id: 265
+    countries:
+        -
+            id: 1030
+            created_at: '2020-08-17T14:20:54.589Z'
+            updated_at: '2020-08-17T14:20:54.589Z'
+            code: RU
+            name_et: Venemaa
+            name_ru: Российская Федерация
+            name: Russian Federation
+    languages:
+        -
+            id: 1796
+            created_at: '2020-08-24T12:28:30.605Z'
+            updated_at: '2020-08-24T12:28:30.605Z'
+            name_et: Vene
+            name_ru: Русский
+            code: ru
+            name: Russian
+title: Acid
+slug: acid
+directory: source/film/acid
+path: film/acid
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.en.yaml
