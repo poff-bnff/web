@@ -4,11 +4,12 @@ created_by:
     firstname: Jaan
     lastname: Leppik
 updated_by:
-    id: 6
-    firstname: Jaan
-    lastname: Leppik
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
 created_at: '2020-08-19T10:43:13.085Z'
-updated_at: '2020-08-19T14:17:52.093Z'
+updated_at: '2020-08-26T06:43:03.895Z'
+titlePrivate: 'Tartuff troopiline melodraama: EST ja default meedia'
 title_et: Tartu armastusfilmide festivali avab troopiline melodraama
 contents_et: >-
     End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
@@ -74,66 +75,6 @@ PUBLISHING:
             created_at: '2020-08-18T13:49:51.616Z'
             updated_at: '2020-08-18T13:53:18.424Z'
     publish: false
-TAGS:
-    id: 80
-    tag_premiere_types:
-        -
-            id: 4
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:50:40.749Z'
-            updated_at: '2020-08-19T10:50:40.762Z'
-            value_et: Maailma esilinastus
-            value_ru: Мировая премьера
-            value: World Premiere
-    tag_programmes:
-        -
-            id: 3
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:54:54.776Z'
-            updated_at: '2020-08-19T10:54:54.793Z'
-            value_et: Põhivõistlusprogramm
-            value_ru: Основная конкурсная программа
-            value: Official Selection
-    tag_genres:
-        -
-            id: 7
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:45:43.087Z'
-            updated_at: '2020-08-19T10:45:43.096Z'
-            value_et: Komöödia
-            value_ru: Комедия
-            value: Comedy
-        -
-            id: 8
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:48:21.708Z'
-            updated_at: '2020-08-19T10:48:21.730Z'
-            value_et: Joonisfilm
-            value_ru: Анимация
-            value: Animation
-    tag_keywords:
-        -
-            id: 6
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:48:40.233Z'
-            updated_at: '2020-08-19T10:48:40.245Z'
-            value_et: MeToo
-            value_ru: MeToo
-            value: MeToo
-        -
-            id: 7
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:49:52.991Z'
-            updated_at: '2020-08-19T10:49:53.008Z'
-            value_et: Ühiskond
-            value_ru: Общество
-            value: Society
 Button:
     -
         id: 1

@@ -1,97 +1,16 @@
 -
-    id: 3
-    created_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-08-19T11:04:34.597Z'
-    updated_at: '2020-08-19T14:17:13.569Z'
-    title_et: Pealkiri
-    contents_et: >-
-        Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid
-        selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige
-        suurema unistuse?17-aastane Eden (Stav Strashko) avastab, et just seda
-        plaanivadki tema kaks parimat sõpra. Tüdrukutele on see väike ohverdus,
-        et saada endale rinnakam büst ja uus uhke keskkooli lõpupeo kleit.
-        Edenile tehakse samuti ettepanek osaleda illegaalses doonorluses.
-        Tüdrukud ei tea, et Eden on transsooline ja talle tähendaks operatsioon
-        midagi hoopis olulisemat.Veneetsias, Karlovy Varys ja mitmetel teistel
-        festivalidel auhinnatud režissöörid Sharon Maymon ja Tal Granit toovad
-        meieni inimliku ja liigutava loo sõprusest, aktsepteerimisest ja
-        iseendale otsa vaatamisest.
-    lead_et: >-
-        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead
-        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead 
-    slug_et: pealkiri
-    Button:
-        -
-            id: 3
-            buttonText_en: English button
-            buttonUrl_en: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
-    image_et:
-        id: 1
-        name: Elektriteater_logo.png
-        alternativeText: ''
-        caption: ''
-        width: 507
-        height: 281
-        formats:
-            small:
-                ext: .png
-                url: /uploads/small_Elektriteater_logo_e9454b3185.png
-                hash: small_Elektriteater_logo_e9454b3185
-                mime: image/png
-                name: small_Elektriteater_logo.png
-                size: 35.39
-                width: 500
-                height: 277
-            thumbnail:
-                ext: .png
-                url: /uploads/thumbnail_Elektriteater_logo_e9454b3185.png
-                hash: thumbnail_Elektriteater_logo_e9454b3185
-                mime: image/png
-                name: thumbnail_Elektriteater_logo.png
-                size: 11.33
-                width: 245
-                height: 136
-        hash: Elektriteater_logo_e9454b3185
-        ext: .png
-        mime: image/png
-        size: 8.97
-        url: /uploads/Elektriteater_logo_e9454b3185.png
-        provider: local
-        created_by: 6
-        updated_by: 6
-        created_at: '2020-08-13T14:00:41.491Z'
-        updated_at: '2020-08-13T14:00:41.586Z'
-    domains:
-        -
-            id: 1
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:43:32.378Z'
-            updated_at: '2020-08-19T10:43:32.395Z'
-            url: 'https://poff.ee'
-    directory: source/article/pealkiri
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.ru.yaml
--
     id: 2
     created_by:
         id: 6
         firstname: Jaan
         lastname: Leppik
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
     created_at: '2020-08-19T11:02:19.545Z'
-    updated_at: '2020-08-19T14:17:19.496Z'
+    updated_at: '2020-08-26T06:38:36.719Z'
+    titlePrivate: Tartuff on pühendatud kunstile
     title_et: Tartuff on pühendatud kunstile
     title_en: Tartuff sets focus on art
     contents_et: >-
@@ -173,6 +92,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+
+
+        iframe(width='560' height='315' src=`https://www.youtube.com/embed/`
+                frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
+                gyroscope;='' picture-in-picture”='' allowfullscreen='')
     contents_en: >-
         The Robin Hood of the art world aka Banksy, Marcel Duchamp, Alberto
         Giacometti, Maud Lewis – these are the heroes of the features and
@@ -249,6 +173,8 @@
     PUBLISHING:
         id: 1
         publish_et: true
+        from: '2020-08-27T09:00:00.000Z'
+        until: '2021-01-19T10:00:00.000Z'
         publish_en: true
         article_types:
             -
@@ -265,6 +191,60 @@
             buttonUrl_et: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
             buttonText_en: See the film
             buttonUrl_en: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
+    imageDefault:
+        id: 3
+        name: F_2_invisible_life.jpg
+        alternativeText: ''
+        caption: ''
+        width: 1920
+        height: 1080
+        formats:
+            large:
+                ext: .jpg
+                url: /uploads/large_F_2_invisible_life_feb5451063.jpg
+                hash: large_F_2_invisible_life_feb5451063
+                mime: image/jpeg
+                name: large_F_2_invisible_life.jpg
+                size: 89.02
+                width: 1000
+                height: 563
+            small:
+                ext: .jpg
+                url: /uploads/small_F_2_invisible_life_feb5451063.jpg
+                hash: small_F_2_invisible_life_feb5451063
+                mime: image/jpeg
+                name: small_F_2_invisible_life.jpg
+                size: 28.41
+                width: 500
+                height: 281
+            medium:
+                ext: .jpg
+                url: /uploads/medium_F_2_invisible_life_feb5451063.jpg
+                hash: medium_F_2_invisible_life_feb5451063
+                mime: image/jpeg
+                name: medium_F_2_invisible_life.jpg
+                size: 53.8
+                width: 750
+                height: 422
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_F_2_invisible_life_feb5451063.jpg
+                hash: thumbnail_F_2_invisible_life_feb5451063
+                mime: image/jpeg
+                name: thumbnail_F_2_invisible_life.jpg
+                size: 9.4
+                width: 245
+                height: 138
+        hash: F_2_invisible_life_feb5451063
+        ext: .jpg
+        mime: image/jpeg
+        size: 195.11
+        url: /uploads/F_2_invisible_life_feb5451063.jpg
+        provider: local
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-08-13T19:16:16.310Z'
+        updated_at: '2020-08-13T19:16:16.552Z'
     image_et:
         id: 2
         name: F_3_invisible_life.jpg
@@ -338,11 +318,12 @@
         firstname: Jaan
         lastname: Leppik
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
     created_at: '2020-08-19T10:43:13.085Z'
-    updated_at: '2020-08-19T14:17:52.093Z'
+    updated_at: '2020-08-26T06:43:03.895Z'
+    titlePrivate: 'Tartuff troopiline melodraama: EST ja default meedia'
     title_et: Tartu armastusfilmide festivali avab troopiline melodraama
     contents_et: >-
         End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
@@ -410,66 +391,6 @@
                 updated_by: 6
                 created_at: '2020-08-18T13:49:51.616Z'
                 updated_at: '2020-08-18T13:53:18.424Z'
-    TAGS:
-        id: 80
-        tag_premiere_types:
-            -
-                id: 4
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-19T10:50:40.749Z'
-                updated_at: '2020-08-19T10:50:40.762Z'
-                value_et: Maailma esilinastus
-                value_en: World Premiere
-                value: Мировая премьера
-        tag_programmes:
-            -
-                id: 3
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-19T10:54:54.776Z'
-                updated_at: '2020-08-19T10:54:54.793Z'
-                value_et: Põhivõistlusprogramm
-                value_en: Official Selection
-                value: Основная конкурсная программа
-        tag_genres:
-            -
-                id: 7
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-19T10:45:43.087Z'
-                updated_at: '2020-08-19T10:45:43.096Z'
-                value_et: Komöödia
-                value_en: Comedy
-                value: Комедия
-            -
-                id: 8
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-19T10:48:21.708Z'
-                updated_at: '2020-08-19T10:48:21.730Z'
-                value_et: Joonisfilm
-                value_en: Animation
-                value: Анимация
-        tag_keywords:
-            -
-                id: 6
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-19T10:48:40.233Z'
-                updated_at: '2020-08-19T10:48:40.245Z'
-                value_et: MeToo
-                value_en: MeToo
-                value: MeToo
-            -
-                id: 7
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-19T10:49:52.991Z'
-                updated_at: '2020-08-19T10:49:53.008Z'
-                value_et: Ühiskond
-                value_en: Society
-                value: Общество
     Button:
         -
             id: 1
@@ -539,6 +460,102 @@
             url: 'https://poff.ee'
     directory: >-
         source/article/tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 3
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-08-19T11:04:34.597Z'
+    updated_at: '2020-08-26T06:31:27.720Z'
+    titlePrivate: 'Ainult eestikeelne, aga publish mujale kah'
+    title_et: Pealkiri eestikeelne
+    contents_et: >-
+        Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid
+        selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige
+        suurema unistuse?17-aastane Eden (Stav Strashko) avastab, et just seda
+        plaanivadki tema kaks parimat sõpra. Tüdrukutele on see väike ohverdus,
+        et saada endale rinnakam büst ja uus uhke keskkooli lõpupeo kleit.
+        Edenile tehakse samuti ettepanek osaleda illegaalses doonorluses.
+        Tüdrukud ei tea, et Eden on transsooline ja talle tähendaks operatsioon
+        midagi hoopis olulisemat.Veneetsias, Karlovy Varys ja mitmetel teistel
+        festivalidel auhinnatud režissöörid Sharon Maymon ja Tal Granit toovad
+        meieni inimliku ja liigutava loo sõprusest, aktsepteerimisest ja
+        iseendale otsa vaatamisest.
+    lead_et: >-
+        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead
+        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead 
+    slug_et: pealkiri
+    PUBLISHING:
+        id: 3
+        publish_et: true
+        from: '2020-08-26T06:00:00.000Z'
+        until: '2020-12-23T10:00:00.000Z'
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-18T13:53:18.424Z'
+    Button:
+        -
+            id: 3
+            buttonText_en: English button
+            buttonUrl_en: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
+    image_et:
+        id: 1
+        name: Elektriteater_logo.png
+        alternativeText: ''
+        caption: ''
+        width: 507
+        height: 281
+        formats:
+            small:
+                ext: .png
+                url: /uploads/small_Elektriteater_logo_e9454b3185.png
+                hash: small_Elektriteater_logo_e9454b3185
+                mime: image/png
+                name: small_Elektriteater_logo.png
+                size: 35.39
+                width: 500
+                height: 277
+            thumbnail:
+                ext: .png
+                url: /uploads/thumbnail_Elektriteater_logo_e9454b3185.png
+                hash: thumbnail_Elektriteater_logo_e9454b3185
+                mime: image/png
+                name: thumbnail_Elektriteater_logo.png
+                size: 11.33
+                width: 245
+                height: 136
+        hash: Elektriteater_logo_e9454b3185
+        ext: .png
+        mime: image/png
+        size: 8.97
+        url: /uploads/Elektriteater_logo_e9454b3185.png
+        provider: local
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-08-13T14:00:41.491Z'
+        updated_at: '2020-08-13T14:00:41.586Z'
+    domains:
+        -
+            id: 1
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-19T10:43:32.378Z'
+            updated_at: '2020-08-19T10:43:32.395Z'
+            url: 'https://poff.ee'
+    directory: source/article/pealkiri
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml

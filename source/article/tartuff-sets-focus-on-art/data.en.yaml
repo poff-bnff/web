@@ -4,11 +4,12 @@ created_by:
     firstname: Jaan
     lastname: Leppik
 updated_by:
-    id: 6
-    firstname: Jaan
-    lastname: Leppik
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
 created_at: '2020-08-19T11:02:19.545Z'
-updated_at: '2020-08-19T14:17:19.496Z'
+updated_at: '2020-08-26T06:38:36.719Z'
+titlePrivate: Tartuff on pühendatud kunstile
 title_et: Tartuff on pühendatud kunstile
 contents_et: >-
     Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
@@ -87,6 +88,11 @@ contents_et: >-
 
     Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
     filmifondi ja Tartu loomemajanduskeskusega.
+
+
+    iframe(width='560' height='315' src=`https://www.youtube.com/embed/`
+            frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
+            gyroscope;='' picture-in-picture”='' allowfullscreen='')
 lead_et: >-
     PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu
     kunstile.
@@ -95,6 +101,8 @@ clipUrl_et: 'https://www.youtube.com/watch?v=s6ZgBnq7Tt4'
 PUBLISHING:
     id: 1
     publish_et: true
+    from: '2020-08-27T09:00:00.000Z'
+    until: '2021-01-19T10:00:00.000Z'
     article_types:
         -
             id: 2
@@ -111,6 +119,60 @@ Button:
         buttonUrl_et: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
         buttonText: See the film
         buttonUrl: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
+imageDefault:
+    id: 3
+    name: F_2_invisible_life.jpg
+    alternativeText: ''
+    caption: ''
+    width: 1920
+    height: 1080
+    formats:
+        large:
+            ext: .jpg
+            url: /uploads/large_F_2_invisible_life_feb5451063.jpg
+            hash: large_F_2_invisible_life_feb5451063
+            mime: image/jpeg
+            name: large_F_2_invisible_life.jpg
+            size: 89.02
+            width: 1000
+            height: 563
+        small:
+            ext: .jpg
+            url: /uploads/small_F_2_invisible_life_feb5451063.jpg
+            hash: small_F_2_invisible_life_feb5451063
+            mime: image/jpeg
+            name: small_F_2_invisible_life.jpg
+            size: 28.41
+            width: 500
+            height: 281
+        medium:
+            ext: .jpg
+            url: /uploads/medium_F_2_invisible_life_feb5451063.jpg
+            hash: medium_F_2_invisible_life_feb5451063
+            mime: image/jpeg
+            name: medium_F_2_invisible_life.jpg
+            size: 53.8
+            width: 750
+            height: 422
+        thumbnail:
+            ext: .jpg
+            url: /uploads/thumbnail_F_2_invisible_life_feb5451063.jpg
+            hash: thumbnail_F_2_invisible_life_feb5451063
+            mime: image/jpeg
+            name: thumbnail_F_2_invisible_life.jpg
+            size: 9.4
+            width: 245
+            height: 138
+    hash: F_2_invisible_life_feb5451063
+    ext: .jpg
+    mime: image/jpeg
+    size: 195.11
+    url: /uploads/F_2_invisible_life_feb5451063.jpg
+    provider: local
+    created_by: 6
+    updated_by: 6
+    created_at: '2020-08-13T19:16:16.310Z'
+    updated_at: '2020-08-13T19:16:16.552Z'
 image_et:
     id: 2
     name: F_3_invisible_life.jpg
