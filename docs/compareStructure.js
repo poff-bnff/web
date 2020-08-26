@@ -6,13 +6,15 @@ const datamodel = yaml.safeLoad(fs.readFileSync(__dirname + '\\datamodel.yaml', 
 
 // const strapiObject = require('../helpers/data/ISOCountriesFromStrapi.json');
 // const strapiObject = require('../helpers/data/ISOLanguagesFromStrapi.json');
-// const strapiObject = yaml.safeLoad(fs.readFileSync(__dirname + '\\articleEXstrapi.json', 'utf8'));
-// const strapiObject = yaml.safeLoad(fs.readFileSync(__dirname + '\\filmEXstrapi.json', 'utf8'));
+// const strapiObject = require('../helpers/data/FilmsFromStrapi.json');
+const strapiObject = require(__dirname + '\\EXarticlestrapi.json');
+// const strapiObject = require(__dirname + '\\EXhallsStrapi.json');
+// const strapiObject = require(__dirname + '\\EXorgStrapi.json');
 
 // console.log('datamodel', util.inspect(datamodel))
 // console.log('strapiObject', util.inspect(strapiObject))
 
-const PATH = 'ARTICLES';
+const PATH = 'Article';
 let lhs = datamodel[PATH];
 let rhs = strapiObject;
 
@@ -32,7 +34,7 @@ const compare = function (lhs, rhs, path) {
     } else {
         for (const key in lhs) {
             if (rhs === null) {
-                console.log(key, rhs, 'is null')
+                console.log(path + '.' + key, rhs, 'is null')
                 return
             }
             const lh_element = lhs[key]
@@ -48,4 +50,4 @@ const compare = function (lhs, rhs, path) {
     console.log('Good to go :)');
 }
 
-compare(lhs, rhs, path=PATH);
+// compare(lhs, rhs, path=PATH);

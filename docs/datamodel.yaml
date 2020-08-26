@@ -1,12 +1,14 @@
-ARTICLES:
-    titlePrivate: Tartuff on pühendatud kunstile (text)
-    PUBLISHING: #(Component)
-        publish_et: (Boolean)
-        from: (Datetime)
-        until: (Datetime)
-        publish_en: (Boolean)
-        publish_ru: (Boolean)
-        article_types: (Relation with ArticleType)
+PUBLISHING: &PUBLISHING
+    publish_et: (Boolean)
+    from: (Datetime)
+    until: (Datetime)
+    publish_en: (Boolean)
+    publish_ru: (Boolean)
+    article_types: (Relation with ArticleType)
+
+
+Article:
+    PUBLISHING: *PUBLISHING
     imageDefault: (Media)
     title_et: Tartuff on pühendatud kunstile (text)
     title_en: Tartuff sets focus on art (text)
@@ -41,34 +43,34 @@ ARTICLES:
           buttonText_ru: (text)
           buttonUrl_ru: (text)
 
-ArticleTypes:
+ArticleType:
     name: (text)
     nameTranslated: #(Component)
         et: (text)
         en: (text)
         ru: (text)
 
-Cinemas:
+Cinema:
     town: (Relation with Town)
     name_et: (text)
     name_en: (text)
     name_ru: (text)
 
-COUNTRIES:
+Country:
     - id: 1 (number)
       code: EE (short text, min len 2, max len 3, uppercase)
       name_et: Eesti (short text)
       name_en: Estonia (short text)
       name_ru: Эстония (short text)
 
-Domains:
+Domain:
     url: (text)
     ipAdress: (text)
     server: (text)
     festival_edition: (Relation with FestivalEdition)
     articles: (Relation with ARTICLE)
 
-Festivals:
+Festival:
     name_et: (text)
     name_en: (text)
     name_ru: (text)
@@ -80,7 +82,7 @@ Festivals:
     clipUrl: (text)
     festival_edition: (Relation with FestivalEdition)
 
-FestivalEditions:
+FestivalEdition:
     festival: (Relation with Festival)
     number: (Number)
     year: (Number)
@@ -94,8 +96,8 @@ FestivalEditions:
     endDate: (Datetime)
     domain: (Relation with Domain)
 
-FILMS:
-    id: 1 (number)
+Film:
+  - id: 1 (number)
     title_et: Nähtamatu elu (short text)
     title_en: Invisible Life of Eurídice Gusmãos (short text)
     title_ru: Департамент здоровьяs (short text)
@@ -165,11 +167,13 @@ FILMS:
         countries: #(Component (repeatable), Relation with COUNTRY)
         languages: #(Component (repeatable), Relation with LANGUAGE)
 
-Genders:
-    Name_et: (text)
-
-Halls:
+Gender:
     name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+
+Hall:
+  - name_et: (text)
     number: (Number)
     numberOfSeats: (Number)
     cinema: (Relation with Cinema)
@@ -177,9 +181,38 @@ Halls:
     name_en: (text)
     name_ru: (text)
 
-LANGUAGES:
+Language:
     - id: 8 (number)
       code: et (short text, min len 2, max len 3, lowercase)
       name_et: Eesti (short text)
       name_en: Estonian (short text)
       name_ru: Эстонский (short text)
+
+Location:
+    country: (Relation with COUNTRY)
+    town: (Relation with Town)
+    cinema: (Relation with Cinema)
+    hall: (Relation with Hall)
+    name: (text)
+
+Organisation:
+    name: (text)
+    nameTranslated: # (Component (repeatable))
+        - et: (text)
+          en: (text)
+          ru: (text)
+    description: # (Component)
+        et: (Rich text)
+        en: (Rich text)
+        ru: (Rich text)
+    images: (Media)
+    type: (Enumeration)
+    gender: (Relation with Gender)
+    logo: (Media)
+    person: (Relation with PERSON)
+
+Person:
+    firstName: (text)
+    lastName: (text)
+    picture: (Media)
+
