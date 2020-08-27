@@ -1,154 +1,116 @@
 film:
     filmTitleOriginal:
-        id: 1
         name: filmTitleOriginal
         value: Original title
     filmTitle_en:
-        id: 122
         name: filmTitle_en
         value: Title in English
     filmTitle_ru:
-        id: 123
         name: filmTitle_ru
         value: Title in Russian
     filmTitle_et:
-        id: 124
         name: filmTitle_et
         value: Local title
     filmTitleSec:
-        id: 125
         name: filmTitleSec
         value: Title in Estonian
     filmCountries:
-        id: 126
         name: filmCountries
         value: Country
     filmLanguages:
-        id: 127
         name: filmLanguages
         value: Language
     filmYear:
-        id: 128
         name: filmYear
         value: Year
     filmRuntime:
-        id: 129
         name: filmRuntime
         value: Tuntime
     filmDirector:
-        id: 130
         name: filmDirector
         value: Director
     filmProducer:
-        id: 131
         name: filmProducer
         value: Producer
     filmCoProducer:
-        id: 132
         name: filmCoProducer
         value: Coproducer
     filmScreenwriter:
-        id: 133
         name: filmScreenwriter
         value: Screenwriter
     filmDop:
-        id: 134
         name: filmDop
         value: DoP
     filmEditor:
-        id: 135
         name: filmEditor
         value: Editor
     filmComposer:
-        id: 136
         name: filmComposer
         value: Composer
     filmCast:
-        id: 137
         name: filmCast
         value: Cast
     filmProduction:
-        id: 138
         name: filmProduction
         value: Production
     filmSynopsis:
-        id: 139
         name: filmSynopsis
         value: Synopsis
     filmTrailer:
-        id: 155
         name: filmTrailer
         value: Trailer
     filmFestival:
-        id: 156
         name: filmFestival
         value: Festival
     filmPremiereType:
-        id: 157
         name: filmPremiereType
         value: Premiere
     filmProgramme:
-        id: 158
         name: filmProgramme
         value: Programme
     filmGenre:
-        id: 159
         name: filmGenre
         value: Genre
     filmKeyword:
-        id: 160
         name: filmKeyword
         value: Keywords
     filmOtherFestivals:
-        id: 161
         name: filmOtherFestivals
         value: Other festivals
     filmAwards:
-        id: 162
         name: filmAwards
         value: Awards
     filmScreenings:
-        id: 163
         name: filmScreenings
         value: Screenings
     filmQaClip:
-        id: 164
         name: filmQaClip
         value: Q&A with filmmaker
 screening:
     screeningSubtitles:
-        id: 172
         name: screeningSubtitles
         value: Subtitles
     screeningIntroPresenter:
-        id: 173
         name: screeningIntroPresenter
         value: Intro by
     screeningIntroGuests:
-        id: 174
         name: screeningIntroGuests
         value: Intro guests
     screeningQaPresenter:
-        id: 175
         name: screeningQaPresenter
         value: Q&A presenter
     screeningQaGuests:
-        id: 176
         name: screeningQaGuests
         value: Q&A guests
     screeningQaDuration:
-        id: 177
         name: screeningQaDuration
         value: Q&A duration
     screeningTotalDuration:
-        id: 178
         name: screeningTotalDuration
         value: Screening duration
     screeningName:
-        id: 179
         name: screeningName
         value: Screening
     screeningAdditionalInfo:
-        id: 180
         name: screeningAdditionalInfo
         value: Additional info

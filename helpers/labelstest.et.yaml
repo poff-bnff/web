@@ -1,192 +1,154 @@
 film:
     filmTitleOriginal:
-        id: 1
         value_en: Original title
         name: filmTitleOriginal
         value: Originaalpealkiri
     filmTitle_en:
-        id: 122
         value_en: Title in English
         name: filmTitle_en
         value: Pealkiri inglise keeles
     filmTitle_ru:
-        id: 123
         value_en: Title in Russian
         name: filmTitle_ru
         value: Pealkiri vene keeles
     filmTitle_et:
-        id: 124
         value_en: Local title
         name: filmTitle_et
         value: Pealkiri
     filmTitleSec:
-        id: 125
         value_en: Title in Estonian
         name: filmTitleSec
         value: Pealkiri inglise keeles
     filmCountries:
-        id: 126
         value_en: Country
         name: filmCountries
         value: Riik
     filmLanguages:
-        id: 127
         value_en: Language
         name: filmLanguages
         value: Keel
     filmYear:
-        id: 128
         value_en: Year
         name: filmYear
         value: Aasta
     filmRuntime:
-        id: 129
         value_en: Tuntime
         name: filmRuntime
         value: Kestus
     filmDirector:
-        id: 130
         value_en: Director
         name: filmDirector
         value: Režissöör
     filmProducer:
-        id: 131
         value_en: Producer
         name: filmProducer
         value: Produtsent
     filmCoProducer:
-        id: 132
         value_en: Coproducer
         name: filmCoProducer
         value: Kaasprodutsent
     filmScreenwriter:
-        id: 133
         value_en: Screenwriter
         name: filmScreenwriter
         value: Stsenarist
     filmDop:
-        id: 134
         value_en: DoP
         name: filmDop
         value: Operaator
     filmEditor:
-        id: 135
         value_en: Editor
         name: filmEditor
         value: Monteerija
     filmComposer:
-        id: 136
         value_en: Composer
         name: filmComposer
         value: Helilooja
     filmCast:
-        id: 137
         value_en: Cast
         name: filmCast
         value: Osades
     filmProduction:
-        id: 138
         value_en: Production
         name: filmProduction
         value: Produktsioon
     filmSynopsis:
-        id: 139
         value_en: Synopsis
         name: filmSynopsis
         value: Sünopsis
     filmTrailer:
-        id: 155
         value_en: Trailer
         name: filmTrailer
         value: Treiler
     filmFestival:
-        id: 156
         value_en: Festival
         name: filmFestival
         value: Festival
     filmPremiereType:
-        id: 157
         value_en: Premiere
         name: filmPremiereType
         value: Esilinastus
     filmProgramme:
-        id: 158
         value_en: Programme
         name: filmProgramme
         value: Programm
     filmGenre:
-        id: 159
         value_en: Genre
         name: filmGenre
         value: Žanr
     filmKeyword:
-        id: 160
         value_en: Keywords
         name: filmKeyword
         value: Märksõnad
     filmOtherFestivals:
-        id: 161
         value_en: Other festivals
         name: filmOtherFestivals
         value: Teised festivalid
     filmAwards:
-        id: 162
         value_en: Awards
         name: filmAwards
         value: Auhinnad
     filmScreenings:
-        id: 163
         value_en: Screenings
         name: filmScreenings
         value: Seansid
     filmQaClip:
-        id: 164
         value_en: Q&A with filmmaker
         name: filmQaClip
         value: Q&A ehk vestlus filmitegijaga
 screening:
     screeningSubtitles:
-        id: 172
         value_en: Subtitles
         name: screeningSubtitles
         value: Subtiitrid
     screeningIntroPresenter:
-        id: 173
         value_en: Intro by
         name: screeningIntroPresenter
         value: Sissejuhataja
     screeningIntroGuests:
-        id: 174
         value_en: Intro guests
         name: screeningIntroGuests
         value: Sissejuhatuse külalised
     screeningQaPresenter:
-        id: 175
         value_en: Q&A presenter
         name: screeningQaPresenter
         value: Q&A küsitleja
     screeningQaGuests:
-        id: 176
         value_en: Q&A guests
         name: screeningQaGuests
         value: Q&A külalised
     screeningQaDuration:
-        id: 177
         value_en: Q&A duration
         name: screeningQaDuration
         value: Q&A kestus
     screeningTotalDuration:
-        id: 178
         value_en: Screening duration
         name: screeningTotalDuration
         value: Seansi kestus
     screeningName:
-        id: 179
         value_en: Screening
         name: screeningName
         value: Seanss
     screeningAdditionalInfo:
-        id: 180
         value_en: Additional info
         name: screeningAdditionalInfo
         value: Lisainfo
