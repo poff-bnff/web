@@ -35,7 +35,7 @@ function ProcessDataCB(source){
         let request = require('request');
         options = {
         'method': 'POST',
-        'url': 'http://139.59.130.149/languages',
+        'url': 'http://'+ process.env['StrapiHost'] +'/languages',
         'headers': {
             'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk3MjQwODk2LCJleHAiOjE1OTk4MzI4OTZ9.KKt5IQQTx1KyHwQ_h3yCbcE9S_zi5x8ZvDqzcP87tN0',
             'Content-Type': 'application/json'

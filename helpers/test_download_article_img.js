@@ -6,7 +6,7 @@ const yaml = require('js-yaml');
 
 // var blob = null;
 // var xhr = new XMLHttpRequest();
-// xhr.open("GET", "http://139.59.130.149/uploads/F_3_invisible_life_fb118ee4f7.jpg");
+// xhr.open("GET", "http://'+ process.env['StrapiHost']+'/uploads/F_3_invisible_life_fb118ee4f7.jpg");
 // xhr.responseType = "blob";//force the HTTP response, response-type header to be blob
 // xhr.onload = function()
 // {
@@ -16,7 +16,7 @@ const yaml = require('js-yaml');
 
 // console.log(blob);
 
-var strapiPath = 'http://139.59.130.149';
+var strapiPath = 'http://' + process.env['StrapiHost'];
 var savePath = 'assets/img/img_articles/';
 
 loadYaml('et', readYaml);
