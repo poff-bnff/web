@@ -1,154 +1,59 @@
-film:
-    filmTitleOriginal:
-        value_en: Original title
-        name: filmTitleOriginal
-        value: Originaalpealkiri
-    filmTitle_en:
-        value_en: Title in English
-        name: filmTitle_en
-        value: Pealkiri inglise keeles
-    filmTitle_ru:
-        value_en: Title in Russian
-        name: filmTitle_ru
-        value: Pealkiri vene keeles
-    filmTitle_et:
-        value_en: Local title
-        name: filmTitle_et
-        value: Pealkiri
-    filmTitleSec:
-        value_en: Title in Estonian
-        name: filmTitleSec
-        value: Pealkiri inglise keeles
-    filmCountries:
-        value_en: Country
-        name: filmCountries
-        value: Riik
-    filmLanguages:
-        value_en: Language
-        name: filmLanguages
-        value: Keel
-    filmYear:
-        value_en: Year
-        name: filmYear
-        value: Aasta
-    filmRuntime:
-        value_en: Tuntime
-        name: filmRuntime
-        value: Kestus
-    filmDirector:
-        value_en: Director
-        name: filmDirector
-        value: Režissöör
-    filmProducer:
-        value_en: Producer
-        name: filmProducer
-        value: Produtsent
-    filmCoProducer:
-        value_en: Coproducer
-        name: filmCoProducer
-        value: Kaasprodutsent
-    filmScreenwriter:
-        value_en: Screenwriter
-        name: filmScreenwriter
-        value: Stsenarist
-    filmDop:
-        value_en: DoP
-        name: filmDop
-        value: Operaator
-    filmEditor:
-        value_en: Editor
-        name: filmEditor
-        value: Monteerija
-    filmComposer:
-        value_en: Composer
-        name: filmComposer
-        value: Helilooja
-    filmCast:
-        value_en: Cast
-        name: filmCast
-        value: Osades
-    filmProduction:
-        value_en: Production
-        name: filmProduction
-        value: Produktsioon
-    filmSynopsis:
-        value_en: Synopsis
-        name: filmSynopsis
-        value: Sünopsis
-    filmTrailer:
-        value_en: Trailer
-        name: filmTrailer
-        value: Treiler
-    filmFestival:
-        value_en: Festival
-        name: filmFestival
-        value: Festival
-    filmPremiereType:
-        value_en: Premiere
-        name: filmPremiereType
-        value: Esilinastus
-    filmProgramme:
-        value_en: Programme
-        name: filmProgramme
-        value: Programm
-    filmGenre:
-        value_en: Genre
-        name: filmGenre
-        value: Žanr
-    filmKeyword:
-        value_en: Keywords
-        name: filmKeyword
-        value: Märksõnad
-    filmOtherFestivals:
-        value_en: Other festivals
-        name: filmOtherFestivals
-        value: Teised festivalid
-    filmAwards:
-        value_en: Awards
-        name: filmAwards
-        value: Auhinnad
-    filmScreenings:
-        value_en: Screenings
-        name: filmScreenings
-        value: Seansid
-    filmQaClip:
-        value_en: Q&A with filmmaker
-        name: filmQaClip
-        value: Q&A ehk vestlus filmitegijaga
-screening:
-    screeningSubtitles:
-        value_en: Subtitles
-        name: screeningSubtitles
-        value: Subtiitrid
-    screeningIntroPresenter:
-        value_en: Intro by
-        name: screeningIntroPresenter
-        value: Sissejuhataja
-    screeningIntroGuests:
-        value_en: Intro guests
-        name: screeningIntroGuests
-        value: Sissejuhatuse külalised
-    screeningQaPresenter:
-        value_en: Q&A presenter
-        name: screeningQaPresenter
-        value: Q&A küsitleja
-    screeningQaGuests:
-        value_en: Q&A guests
-        name: screeningQaGuests
-        value: Q&A külalised
-    screeningQaDuration:
-        value_en: Q&A duration
-        name: screeningQaDuration
-        value: Q&A kestus
-    screeningTotalDuration:
-        value_en: Screening duration
-        name: screeningTotalDuration
-        value: Seansi kestus
-    screeningName:
-        value_en: Screening
-        name: screeningName
-        value: Seanss
-    screeningAdditionalInfo:
-        value_en: Additional info
-        name: screeningAdditionalInfo
-        value: Lisainfo
+label:
+    film:
+        filmTitleOriginal: Originaalpealkiri
+        filmTitle_en: Pealkiri inglise keeles
+        filmTitle_ru: Pealkiri vene keeles
+        filmTitle_et: Pealkiri
+        filmTitleSec: Pealkiri inglise keeles
+        filmCountries: Riik
+        filmLanguages: Keel
+        filmYear: Aasta
+        filmRuntime: Kestus
+        filmDirector: Režissöör
+        filmProducer: Produtsent
+        filmCoProducer: Kaasprodutsent
+        filmScreenwriter: Stsenarist
+        filmDop: Operaator
+        filmEditor: Monteerija
+        filmComposer: Helilooja
+        filmCast: Osades
+        filmProduction: Produktsioon
+        filmSynopsis: Sünopsis
+        filmTrailer: Treiler
+        filmFestival: Festival
+        filmPremiereType: Esilinastus
+        filmProgramme: Programm
+        filmGenre: Žanr
+        filmKeyword: Märksõnad
+        filmOtherFestivals: Teised festivalid
+        filmAwards: Auhinnad
+        filmScreenings: Seansid
+        filmQaClip: Q&A ehk vestlus filmitegijaga
+    screening:
+        screeningSubtitles: Subtiitrid
+        screeningIntroPresenter: Sissejuhataja
+        screeningIntroGuests: Sissejuhatuse külalised
+        screeningQaPresenter: Q&A küsitleja
+        screeningQaGuests: Q&A külalised
+        screeningQaDuration: Q&A kestus
+        screeningTotalDuration: Seansi kestus
+        screeningName: Seanss
+        screeningAdditionalInfo: Lisainfo
+    button:
+        screeningTicketBuy: Osta pilet
+        screeningTicketFree: Tasuta
+        filmAudienceVote: Anna filmile oma hääl
+    footer:
+        presenters: Esitlejad
+        sponsors: Sponsorid
+        supporters: Toetajad
+        officialPartners: Ametlikud partnerid
+        partners: Partnerid
+        thanksTo: Täname
+    menu:
+        mainNews: Uudised
+        mainFilms: Filmid
+        mainInfo: Info
+        mainCovid: Covid
+        mainFestival: Festivalist
+        mainSchedule: Ajakava

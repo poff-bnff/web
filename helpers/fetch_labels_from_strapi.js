@@ -80,26 +80,17 @@ function processData(data, lang, CreateYAML) {
         var data2 = data.film[key];
         var name = data.film[key].name;
         for (key2 in data2.label) {
-            // console.log(data2.label[key]);
-            // smallBuffer[data2.label[key2].name] = {
-            //     'value' : data2.label[key2].value,
-            //     'value_en' : data2.label[key2].value_en
-            //     }
-            let tinyBuffer = {};
-            for(key3 in data2.label[key2]) {
-                tinyBuffer[key3] = data2.label[key2][key3];
-            }
-            smallBuffer[data2.label[key2].name] = tinyBuffer;
+            smallBuffer[data2.label[key2].name] = data2.label[key2].value;
         }
         buffer[name] = smallBuffer;
     }
-
-    CreateYAML(buffer, lang);
+    var labels = {'label':buffer}
+    CreateYAML(labels, lang);
 }
 
-function CreateYAML(buffer, lang) {
+function CreateYAML(labels, lang) {
     // console.log(buffer);
-    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
+    let allDataYAML = yaml.safeDump(labels, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`helpers/labelstest.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
