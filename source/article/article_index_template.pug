@@ -13,7 +13,9 @@ block content
 
     section.grid_article
         section.article_hero_head
-            if self.imageDefault
+            if self.image
+                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.image.hash}${self.image.ext}`).article_hero_image
+            else if self.imageDefault
                 img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.imageDefault.hash}${self.imageDefault.ext}`).article_hero_image
             else
                 img(src='/assets/img/global/placeholder_hd_1.jpg').article_hero_image

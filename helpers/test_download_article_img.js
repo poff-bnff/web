@@ -42,16 +42,22 @@ function readYaml(lang, doc) {
     for (values of doc) {
         if (!values.slug) {
             continue;
+        }else{
+            fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
+            });
         }
+
         if (values.imageDefault) {
             var imgPath = values.imageDefault.url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
             fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
-                if (err) {
-                }
             });
             download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
-            console.log(`AAAAADRESS: ${strapiPath}${imgPath}`);
+        }
+        if (values.image) {
+            var imgPath = values.image.url;
+            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
         }
     }
 }
