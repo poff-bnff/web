@@ -8,7 +8,7 @@ function FromStrapi(datapath, CBfunction){
         let GetDataFromStrapi = function(datapath, token, CBfunction){
             let options = {
                 //see võiks tulla muutujast
-                host: '139.59.130.149',
+                host: process.env['StrapiHost'],
                 // ?_limit=-1 see tagab, et strapi tagastab kogu data, mitte 100 esimest nagu on vaikimisi säte
                 path: datapath +'?_limit=-1',
                 method: 'GET',
