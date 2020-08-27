@@ -9,8 +9,8 @@ const FromStrapi = require('./strapi/FromStrapi')
 
 const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
 
-FromStrapi.Fetch('/label-groups', function(strapiObject){
-    const data_path = 'LabelGroups'
+FromStrapi.Fetch('/articles', function(strapiObject){
+    const data_path = 'Article'
     let lhs = datamodel[data_path]
     let rhs = strapiObject
     fs.writeFileSync('test.json', JSON.stringify(strapiObject, null, 4));

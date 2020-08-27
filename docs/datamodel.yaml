@@ -5,7 +5,10 @@ Translated: &Translated
 
 ArticleType: &ArticleType
     name: (text)
-    nameTranslated: *Translated
+    et: (text)
+    en: (text)
+    ru: (text)
+
 
 Domain: &Domain
     url: (text)
@@ -174,9 +177,6 @@ Film: &Film
             - *Translated
         coProducer:
             - *Translated
-        productionCompany:
-            - id: 865
-              organisation: *Organisation
     synopsis: *Translated
     media: #(Component)
         Stills: (Media)
@@ -255,12 +255,14 @@ Team: &Team
 
 LabelGroups:
     group: #(Component (repeatable))
-      - name: (text)
-        label: #(Component (repeatable))
-          - *Translated
-            name: (text)
+        - name: (text)
+          label: #(Component (repeatable))
+            - name: (text)
+              value_et: (text)
+              value_en: (text)
+              value_ru: (text)
 
-HEROARTICLEPÖFF:
+HeroArticlePoff:
     article_et: *Article
     article_en: *Article
     article_ru: *Article
