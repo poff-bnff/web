@@ -7,7 +7,7 @@ const { error } = require('console');
 
 function AuthStrapi (CBfunction){
 let options = {
-    host: '139.59.130.149',
+    host: process.env['StrapiHost'],
     path: '/auth/local',
     method: 'POST',
     headers: {'Content-Type': 'application/json'}
@@ -32,8 +32,8 @@ let options = {
     })
     //sellega kirjutan midagi requesti bodysse
     req.write(JSON.stringify({
-            "identifier":process.env['StrapiUserName'],
-            "password":process.env['StrapiPassword']
+            "identifier": process.env['StrapiUserName'],
+            "password": process.env['StrapiPassword']
         })
     )
 
