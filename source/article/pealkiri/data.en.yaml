@@ -8,7 +8,11 @@ updated_by:
     firstname: Jaan
     lastname: Leppik
 created_at: '2020-08-19T11:04:34.597Z'
+<<<<<<< HEAD
 updated_at: '2020-08-26T06:31:27.720Z'
+=======
+updated_at: '2020-08-27T06:51:56.972Z'
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
 titlePrivate: 'Ainult eestikeelne, aga publish mujale kah'
 title_et: Pealkiri eestikeelne
 contents_et: >-
@@ -26,11 +30,16 @@ lead_et: >-
     Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead
     Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead 
 slug_et: pealkiri
+<<<<<<< HEAD
 PUBLISHING:
     id: 3
     publish_et: true
     from: '2020-08-26T06:00:00.000Z'
     until: '2020-12-23T10:00:00.000Z'
+=======
+publishing:
+    id: 4
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
     article_types:
         -
             id: 2
@@ -39,11 +48,14 @@ PUBLISHING:
             updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
             updated_at: '2020-08-18T13:53:18.424Z'
+<<<<<<< HEAD
 Button:
     -
         id: 3
         buttonText: English button
         buttonUrl: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
+=======
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
 image_et:
     id: 1
     name: Elektriteater_logo.png

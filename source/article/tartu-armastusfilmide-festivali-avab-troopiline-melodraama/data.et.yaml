@@ -8,16 +8,18 @@ updated_by:
     firstname: Martin
     lastname: Pennaste
 created_at: '2020-08-19T10:43:13.085Z'
+<<<<<<< HEAD
 updated_at: '2020-08-26T06:43:03.895Z'
+=======
+updated_at: '2020-08-27T07:05:25.819Z'
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
 titlePrivate: 'Tartuff troopiline melodraama: EST ja default meedia'
 clipUrlDefault: 'https://www.youtube.com/watch?v=NRF-Pba3QrE'
-PUBLISHING:
-    id: 2
-    from: '2020-08-19T09:00:00.000Z'
-    until: '2020-12-23T10:00:00.000Z'
-    publish_en: false
+publishing:
+    id: 6
     article_types:
         -
+<<<<<<< HEAD
             id: 2
             name: Uudis
             created_by: 6
@@ -30,6 +32,14 @@ Button:
         id: 1
         buttonText: Vaata filmi
         buttonUrl: 'https://tartuff.elisastage.ee'
+=======
+            id: 4
+            name: ToetajaLugu
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-18T13:51:35.072Z'
+            updated_at: '2020-08-18T13:51:35.128Z'
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
 imageDefault:
     id: 4
     name: F_1_invisible_life.jpg

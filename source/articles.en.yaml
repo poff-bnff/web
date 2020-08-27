@@ -1,4 +1,95 @@
 -
+<<<<<<< HEAD
+=======
+    id: 3
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-08-19T11:04:34.597Z'
+    updated_at: '2020-08-27T06:51:56.972Z'
+    titlePrivate: 'Ainult eestikeelne, aga publish mujale kah'
+    title_et: Pealkiri eestikeelne
+    contents_et: >-
+        Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid
+        selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige
+        suurema unistuse?17-aastane Eden (Stav Strashko) avastab, et just seda
+        plaanivadki tema kaks parimat sõpra. Tüdrukutele on see väike ohverdus,
+        et saada endale rinnakam büst ja uus uhke keskkooli lõpupeo kleit.
+        Edenile tehakse samuti ettepanek osaleda illegaalses doonorluses.
+        Tüdrukud ei tea, et Eden on transsooline ja talle tähendaks operatsioon
+        midagi hoopis olulisemat.Veneetsias, Karlovy Varys ja mitmetel teistel
+        festivalidel auhinnatud režissöörid Sharon Maymon ja Tal Granit toovad
+        meieni inimliku ja liigutava loo sõprusest, aktsepteerimisest ja
+        iseendale otsa vaatamisest.
+    lead_et: >-
+        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead
+        Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead 
+    slug_et: pealkiri
+    publishing:
+        id: 4
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-18T13:53:18.424Z'
+    image_et:
+        id: 1
+        name: Elektriteater_logo.png
+        alternativeText: ''
+        caption: ''
+        width: 507
+        height: 281
+        formats:
+            small:
+                ext: .png
+                url: /uploads/small_Elektriteater_logo_e9454b3185.png
+                hash: small_Elektriteater_logo_e9454b3185
+                mime: image/png
+                name: small_Elektriteater_logo.png
+                size: 35.39
+                width: 500
+                height: 277
+            thumbnail:
+                ext: .png
+                url: /uploads/thumbnail_Elektriteater_logo_e9454b3185.png
+                hash: thumbnail_Elektriteater_logo_e9454b3185
+                mime: image/png
+                name: thumbnail_Elektriteater_logo.png
+                size: 11.33
+                width: 245
+                height: 136
+        hash: Elektriteater_logo_e9454b3185
+        ext: .png
+        mime: image/png
+        size: 8.97
+        url: /uploads/Elektriteater_logo_e9454b3185.png
+        provider: local
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-08-13T14:00:41.491Z'
+        updated_at: '2020-08-13T14:00:41.586Z'
+    domains:
+        -
+            id: 1
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-19T10:43:32.378Z'
+            updated_at: '2020-08-19T10:43:32.395Z'
+            url: 'https://poff.ee'
+    directory: source/article/pealkiri
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
     id: 2
     created_by:
         id: 6
@@ -9,7 +100,11 @@
         firstname: Martin
         lastname: Pennaste
     created_at: '2020-08-19T11:02:19.545Z'
+<<<<<<< HEAD
     updated_at: '2020-08-26T06:38:36.719Z'
+=======
+    updated_at: '2020-08-27T07:05:10.015Z'
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
     titlePrivate: Tartuff on pühendatud kunstile
     title_et: Tartuff on pühendatud kunstile
     contents_et: >-
@@ -101,17 +196,23 @@
         kunstile.
     slug_et: tartuff-on-puehendatud-kunstile
     clipUrl_et: 'https://www.youtube.com/watch?v=s6ZgBnq7Tt4'
+<<<<<<< HEAD
     PUBLISHING:
         id: 1
         publish_et: true
         from: '2020-08-27T09:00:00.000Z'
         until: '2021-01-19T10:00:00.000Z'
+=======
+    publishing:
+        id: 5
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
         article_types:
             -
-                id: 2
-                name: Uudis
+                id: 3
+                name: Intervjuu
                 created_by: 6
                 updated_by: 6
+<<<<<<< HEAD
                 created_at: '2020-08-18T13:49:51.616Z'
                 updated_at: '2020-08-18T13:53:18.424Z'
         publish: true
@@ -122,6 +223,10 @@
             buttonUrl_et: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
             buttonText: See the film
             buttonUrl: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
+=======
+                created_at: '2020-08-18T13:50:35.561Z'
+                updated_at: '2020-08-18T13:53:10.013Z'
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
     imageDefault:
         id: 3
         name: F_2_invisible_life.jpg
@@ -323,7 +428,11 @@
         firstname: Martin
         lastname: Pennaste
     created_at: '2020-08-19T10:43:13.085Z'
+<<<<<<< HEAD
     updated_at: '2020-08-26T06:43:03.895Z'
+=======
+    updated_at: '2020-08-27T07:05:25.819Z'
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
     titlePrivate: 'Tartuff troopiline melodraama: EST ja default meedia'
     title_et: Tartu armastusfilmide festivali avab troopiline melodraama
     contents_et: >-
@@ -378,13 +487,11 @@
         milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud "Nähtamatu elu”.
     slug_et: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
     clipUrlDefault: 'https://www.youtube.com/watch?v=NRF-Pba3QrE'
-    PUBLISHING:
-        id: 2
-        publish_et: true
-        from: '2020-08-19T09:00:00.000Z'
-        until: '2020-12-23T10:00:00.000Z'
+    publishing:
+        id: 6
         article_types:
             -
+<<<<<<< HEAD
                 id: 2
                 name: Uudis
                 created_by: 6
@@ -397,6 +504,14 @@
             id: 1
             buttonText_et: Vaata filmi
             buttonUrl_et: 'https://tartuff.elisastage.ee'
+=======
+                id: 4
+                name: ToetajaLugu
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:51:35.072Z'
+                updated_at: '2020-08-18T13:51:35.128Z'
+>>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
     imageDefault:
         id: 4
         name: F_1_invisible_life.jpg

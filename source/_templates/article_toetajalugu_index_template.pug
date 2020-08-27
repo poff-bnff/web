@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 extends /_templates/layout.pug
 include /_templates/mixins.pug
 
@@ -6,27 +5,28 @@ include /_templates/mixins.pug
 
 block content
 
-    //- - var articlePics = self.data.pictures.articles
-    //- - var splitSelfPath = self.path.split("/")[self.path.split("/").length-1]
-    //- - var articlePic = articlePics[splitSelfPath]
+    - var articlePics = self.data.pictures.articles
+    - var splitSelfPath = self.path.split("/")[self.path.split("/").length-1]
+    - var articlePic = articlePics[splitSelfPath]
 
     +tabname self.title
 
     section.grid_article
         section.article_hero_head
-            if self.imageDefault
-                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.imageDefault.hash}${self.imageDefault.ext}`).article_hero_image
+            if articlePic
+                img(src=`/assets/img/img_articles/${splitSelfPath}/${articlePic.heroImage}`).article_hero_image
             else
                 img(src='/assets/img/global/placeholder_hd_1.jpg').article_hero_image
         if self.title
             .article_hero_headline_box
-                .article_title_detailed= self.title
+                .article_title_detailed= self.title + '!!! TOETAJALUGU !!!'
 
     section.grid_article
         section.article_meta
             .str_info_meta_gi
-                    .str_info_meta_item
-                        .str_info_meta_value= self.label.menu.mainNews
+                    if self.publishing.article_types
+                        .str_info_meta_item
+                            .str_info_meta_value= self.publishing.article_types[0].name
                     if self.created_by.firstname
                         .str_info_meta_item
                             .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
@@ -49,6 +49,3 @@ block content
 
 
         section.article_extra
-=======
-include /_templates/article_toetajalugu_index_template.pug
->>>>>>> d8eac953d486f39c456f85b0882c12efbba49f5c
