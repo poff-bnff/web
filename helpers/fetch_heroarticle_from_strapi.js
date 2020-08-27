@@ -102,7 +102,7 @@ function processData(data, lang, CreateYAML) {
 function CreateYAML(buffer, lang) {
     // console.log(buffer);
     let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`helpers/heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`source/heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 
