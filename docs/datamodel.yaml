@@ -1,14 +1,80 @@
-PUBLISHING: &PUBLISHING
+Translated: &Translated
+    et: (text)
+    en: (text)
+    ru: (text)
+
+ArticleType: &ArticleType
+    name: (text)
+    nameTranslated: *Translated
+
+Domain: &Domain
+    url: (text)
+    ipAdress: (text)
+    server: (text)
+
+publishing: &Publishing
     publish_et: (Boolean)
     from: (Datetime)
     until: (Datetime)
     publish_en: (Boolean)
     publish_ru: (Boolean)
-    article_types: (Relation with ArticleType)
+    article_types:
+        - *ArticleType
 
+Tags: &Tags
+    premiere_types:
+      - *Translated
+    programmes:
+      - *Translated
+    genres:
+      - *Translated
+    keywords:
+      - *Translated
 
-Article:
-    PUBLISHING: *PUBLISHING
+Language: &Language
+    id: 8 (number)
+    code: et (short text, min len 2, max len 3, lowercase)
+    name_et: Eesti (short text)
+    name_en: Estonian (short text)
+    name_ru: Эстонский (short text)
+
+Country: &Country
+    id: 1 (number)
+    code: EE (short text, min len 2, max len 3, uppercase)
+    name_et: Eesti (short text)
+    name_en: Estonia (short text)
+    name_ru: Эстония (short text)
+
+Town: &Town
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    country: *Country
+
+Cinema: &Cinema
+    town: *Town
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+
+Hall: &Hall
+    name_et: (text)
+    number: (Number)
+    numberOfSeats: (Number)
+    cinema: *Cinema
+    floor: (Enumeration)
+    name_en: (text)
+    name_ru: (text)
+
+Location: &Location
+    country: *Country
+    town: *Town
+    cinema: *Cinema
+    hall: *Hall
+    name: (text)
+
+Article: &Article
+    publishing: *Publishing
     imageDefault: (Media)
     title_et: Tartuff on pühendatud kunstile (text)
     title_en: Tartuff sets focus on art (text)
@@ -19,12 +85,9 @@ Article:
     lead_et: PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu kunstile. (rich text)
     lead_en: This year's edition sets a special focus on art, screening films on Banksy, Marchel Duchamp, Alberto Giacometti, Maud Lewis. The festival will be available online throughout Estonia (rich text)
     lead_ru: (rich text)
-    tags: #(Component)
-        tag_premiere_types: (Relation with TagPremiereType)
-        tag_programmes: (Relation with TagProgramme)
-        tag_genres: (Relation with TagGenre)
-        tag_keywords: (Relation with TagKeyword)
-    domains: (Relation with Domain)
+    tags: *Tags
+    domains:
+        - *Domain
     image_et: (Media)
     image_en: (Media)
     image_ru: (Media)
@@ -35,42 +98,15 @@ Article:
     clipUrl_en: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
     clipUrl_ru: (text)
     clipUrlDefault: (text)
-    Button: #(Component (repeatable))
-        - buttonText_et: (text)
-          buttonUrl_et: (text)
-          buttonText_en: (text)
-          buttonUrl_en: (text)
-          buttonText_ru: (text)
-          buttonUrl_ru: (text)
+    button: #(Component (repeatable))
+        - text_et: (text)
+          url_et: (text)
+          text_en: (text)
+          url_en: (text)
+          text_ru: (text)
+          url_ru: (text)
 
-ArticleType:
-    name: (text)
-    nameTranslated: #(Component)
-        et: (text)
-        en: (text)
-        ru: (text)
-
-Cinema:
-    town: (Relation with Town)
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
-
-Country:
-    - id: 1 (number)
-      code: EE (short text, min len 2, max len 3, uppercase)
-      name_et: Eesti (short text)
-      name_en: Estonia (short text)
-      name_ru: Эстония (short text)
-
-Domain:
-    url: (text)
-    ipAdress: (text)
-    server: (text)
-    festival_edition: (Relation with FestivalEdition)
-    articles: (Relation with ARTICLE)
-
-Festival:
+Festival: &Festival
     name_et: (text)
     name_en: (text)
     name_ru: (text)
@@ -80,10 +116,8 @@ Festival:
     logo: (Media)
     images: (Media)
     clipUrl: (text)
-    festival_edition: (Relation with FestivalEdition)
 
-FestivalEdition:
-    festival: (Relation with Festival)
+FestivalEdition: &FestivalEdition
     number: (Number)
     year: (Number)
     name_et: (text)
@@ -94,10 +128,29 @@ FestivalEdition:
     description_ru: (Rich text)
     startDate: (Datetime)
     endDate: (Datetime)
-    domain: (Relation with Domain)
+    domain: *Domain
+    festival: *Festival
 
-Film:
-  - id: 1 (number)
+Organisation: &Organisation
+    name: (text)
+    nameTranslated: # (Component (repeatable))
+        - *Translated
+    description: # (Component)
+        *Translated
+    images: (Media)
+    type: (Enumeration)
+    logo: (Media)
+
+ScreeningMode: &ScreeningMode
+    name: (text)
+
+ScreeningType: &ScreeningType
+    name: (text)
+    validFrom: (Datetime)
+    validTo: (Datetime)
+
+Film: &Film
+    id: 1 (number)
     title_et: Nähtamatu elu (short text)
     title_en: Invisible Life of Eurídice Gusmãos (short text)
     title_ru: Департамент здоровьяs (short text)
@@ -105,45 +158,26 @@ Film:
     year: 2019 (number)
     runtime: 139 (number)
     credentials: #(Component)
-        director: #(Component (repeatable))
-            - et: Karim Aïnouz (text)
-              en: Karim Aïnouz (text)
-              ru: Karim Aïnouz (text)
-        screenwriter: #(Component (repeatable))
-            - et: Murilo Hauser (text)
-              en: Murilo Hauser (text)
-              ru: Murilo Hauser (text)
-        doP: #(Component (repeatable))
-            - et: Hélène Louvart (text)
-              en: (text)
-              ru: (text)
-        cast: #(Component (repeatable))
-            - et: Carol Duarte (text)
-              en: (text)
-              ru: (text)
-        composer: #(Component (repeatable))
-            - et: Benedikt Schiefer (text)
-              en: (text)
-              ru: (text)
-        editor: #(Component (repeatable))
-            - et: Hélène Louvart (text)
-              en: (text)
-              ru: (text)
-        producer: #(Component (repeatable))
-            - et: (text)
-              en: (text)
-              ru: (text)
-        coProducer: #(Component (repeatable))
-            - et: (text)
-              en: (text)
-              ru: (text)
-        productionCompany: #(Component (repeatable), Relation with organisation )
+        director:
+            - *Translated
+        screenwriter:
+            - *Translated
+        doP:
+            - *Translated
+        cast:
+            - *Translated
+        composer:
+            - *Translated
+        editor:
+            - *Translated
+        producer:
+            - *Translated
+        coProducer:
+            - *Translated
+        productionCompany:
             - id: 865
-              organisation: #(ORGANISATION)
-    synopsis: #(Component)
-        et: Filmi tegevus toimub 1950. aastatel Rio de Janeiros. Gusmãode perekonnas sirgub kaks erineva iseloomuga õde Guida naudib kogu hingest elu, Eurídice on pühendunud klaverimängule. Ühel heal päeval armub Guida kreeka meremehesse ja lahkub koos temaga omavoliliselt kodust. Abielu ei lähe aga roosiliselt ja ta on sunnitud tagasi pöörduma. Paraku on noorte naiste isa nagu kogu ühiskondki konservatiivne ja et perekonnale mitte häbi teha, suleb ta Guida ees ukse. Kui Guida küsib oma õe järele, valetab isa, et ta õpib välismaal. Guida ja Eurídice kaotavad kontakti, kuid ei jäta lootust jälle kohtuda. Nad elavad, nagu oskavad ja võtavad vastu selle, mida saatus neile pakub. Lugu põhineb Martha Batalha romaanil "Eurídice Gusmão nähtamatu elu". Film linastus 2019. aastal mainekal Cannes’i filmifestivalil programmis "Un Certain Regard" ja võitis seal peaauhinna. (rich text)'
-        en: Rio de Janeiro, 1950. Eurídice, 18, and Guida, 20, are two inseparable sisters living at home with their conservative parents. Although immersed in a traditional life, each one nourishes a dream Eurídice of becoming a renowned pianist, Guida of finding true love. In a dramatic turn, they are separated by their father and forced to live apart. They take control of their separate destinies, while never giving up hope of finding each other. (rich text)'
-        ru: (rich text)
+              organisation: *Organisation
+    synopsis: *Translated
     media: #(Component)
         Stills: (Media)
         Posters: (Media)
@@ -153,66 +187,81 @@ Film:
         QaClip: #(Component (repeatable))
             - Url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
               Type: Conversation (Enumeration)
-    tags: #(Component)
-        tag_premiere_types: (Relation with TagPremiereType)
-        tag_programmes: (Relation with TagProgramme)
-        tag_genres: (Relation with TagGenre)
-        tag_keywords: (Relation with TagKeyword)
+    tags: *Tags #(Component)
     slug_et: naehtamatu-elu (UID, No spaces)
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
     filmId: 2020 (UID)
-    screenings: (Relation with SCREENING)
     countriesAndLanguages: #(Component)
-        countries: #(Component (repeatable), Relation with COUNTRY)
-        languages: #(Component (repeatable), Relation with LANGUAGE)
+        countries: *Country
+        languages: *Language
 
-Gender:
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
+Screening: &Screening
+    screeningId: (Number)
+    films:
+      - *Film
+    code: (Number)
+    codeAndFilmTitle: (text)
+    ticketingId: (Number)
+    ticketingUrl: (text)
+    dateTime: (Datetime)
+    introQaConversation:
+      - yesNo: (Boolean)
+        type: (Enumeration)
+        mode: (Enumeration)
+        presenter:
+           - *Translated
+        guest:
+           - *Translated
+        duration: (Number)
+        clipUrl: (text)
+    durationTotal: (Number)
+    location: *Location
+    subtitles:
+      - language: *Language
+    extraInfo: (text)
+    screening_types:
+      - *ScreeningType
+    screening_mode: *ScreeningMode
 
-Hall:
-  - name_et: (text)
-    number: (Number)
-    numberOfSeats: (Number)
-    cinema: (Relation with Cinema)
-    floor: (Enumeration)
-    name_en: (text)
-    name_ru: (text)
-
-Language:
-    - id: 8 (number)
-      code: et (short text, min len 2, max len 3, lowercase)
-      name_et: Eesti (short text)
-      name_en: Estonian (short text)
-      name_ru: Эстонский (short text)
-
-Location:
-    country: (Relation with COUNTRY)
-    town: (Relation with Town)
-    cinema: (Relation with Cinema)
-    hall: (Relation with Hall)
-    name: (text)
-
-Organisation:
-    name: (text)
-    nameTranslated: # (Component (repeatable))
-        - et: (text)
-          en: (text)
-          ru: (text)
-    description: # (Component)
-        et: (Rich text)
-        en: (Rich text)
-        ru: (Rich text)
-    images: (Media)
-    type: (Enumeration)
-    gender: (Relation with Gender)
-    logo: (Media)
-    person: (Relation with PERSON)
-
-Person:
+Person: &Person
     firstName: (text)
     lastName: (text)
     picture: (Media)
+    gender: *Translated
+    phoneNr: (text)
+    eMail: (text)
+    dateOfBirth: (Date)
+    countries:
+        - *Country
+    organisations:
+        - *Organisation
+    biography: (Rich text)
+    filmography: (Rich text)
+    profession: (text)
+
+Team: &Team
+    subTeam: #(component (repeatable))
+      - name: #(component (repeatable))
+          - *Translated
+        teamMember: #(component (repeatable))
+          - person: *Person
+            pictureAtTeam: (Media)
+            roleAtTeam_et: (text)
+            roleAtTeam_en: (text)
+            roleAtTeam_ru: (text)
+            emaliAtTeam: (text)
+            phoneAtTeam: (text)
+
+LabelGroups:
+    group: #(Component (repeatable))
+      - name: (text)
+        label: #(Component (repeatable))
+          - *Translated
+            name: (text)
+
+HEROARTICLEPÖFF:
+    article_et: *Article
+    article_en: *Article
+    article_ru: *Article
 

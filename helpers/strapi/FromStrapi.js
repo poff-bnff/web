@@ -41,8 +41,9 @@ function FromStrapi(datapath, CBfunction){
 }
 
 function WriteToJson(dataPath, filePath, CBfunction){
+    console.log(process.cwd());
+    console.log(dataPath, filePath, CBfunction);
     FromStrapi(dataPath, function WriteJSON (strapiData, token){
-        process.chdir(__dirname);
         fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
         CBfunction(token);
     })
