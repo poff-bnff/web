@@ -36,7 +36,6 @@ function rueten(obj, lang) {
             // console.log(key, obj[key]);
             return obj[key]
         } else if (key.match(regex) !== null) {
-            console.log(regex, key, key.match(regex));
             obj[key.substring(0, key.length-3)] = obj[key];
             delete obj[key];
         // } else if (Array.isArray(obj[key])) {
