@@ -44,21 +44,23 @@ function WriteToJson(dataPath, filePath, CBfunction){
     FromStrapi(dataPath, function WriteJSON (strapiData, token){
         process.chdir(__dirname);
         fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
-        CBfunction(token);
+        CBfunction(token, dataPath);
     })
 }
 
-
-// USAGE: pead defineerima, kasutad seda funktsiooni
-// const FromStrapi = require('./strapi/FromStrapi')
-// function ConsoleLogData(strapiData){
+// USAGE: näiteks nii
+// function LogData(strapiData, token){
 //     console.log(strapiData);
 // }
-// FromStrapi.Fetch('/languages', ConsoleLogData)
-
+// FromStrapi.Fetch('/languages', LogData)
+// callback funktsioon saab kaasa strapiData ja tokeni
 module.exports.Fetch = FromStrapi
 
-// WriteToJson('/countries', '../data/Test88.json', updateDataCB);
+//USAGE: näiteks nii
+// function LogProcess(token, dataPath){
+//     console.log("updating " + dataPath.slice(1) + " from Strapi");
+// }
+// FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json', LogProcess)
 module.exports.WriteJSON = WriteToJson
 
 
