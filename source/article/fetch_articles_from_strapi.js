@@ -18,7 +18,7 @@ function getToken() {
     let token = '';
 
     let requestOptions = {
-        host: '139.59.130.149',
+        host: process.env['StrapiHost'],
         path: '/auth/local',
         method: 'POST',
         headers: {'Content-Type': 'application/json'}
@@ -56,7 +56,7 @@ function fetchAll(token) {
     token = token.jwt;
 
     let options = {
-        host: '139.59.130.149',
+        host: process.env['StrapiHost'],
         path: '/articles',
         method: 'GET',
         headers: {'Authorization': 'Bearer ' + token}
@@ -66,7 +66,7 @@ function fetchAll(token) {
 }
 
 
-function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callback) {
+function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, callback) {
     allData = [];
     let req = http.request(options, function(response) {
         let data = '';
@@ -75,7 +75,7 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, callbac
         });
         response.on('end', function () {
             data = JSON.parse(data);
-            callback(data, dirPath, lang, copyFile, dataFrom, showErrors);
+            callback(data, dirPath, lang, writeIndexFile, dataFrom, showErrors);
         });
     }).end();
 }
@@ -135,7 +135,7 @@ function rueten(obj, lang) {
 }
 
 
-function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
+function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors) {
     allData = [];
     // data = rueten(data, lang);
     // console.log(data);
@@ -196,7 +196,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
             // rueten(element, `_${lang}`);
             allData.push(element);
             element.data = dataFrom;
-            generateYaml(element, element, dirPath, lang, copyFile)
+            generateYaml(element, element, dirPath, lang, writeIndexFile)
         }else{
             if(showErrors) {
                 console.log(`Film ID ${element.id} slug_en value missing`);
@@ -219,17 +219,25 @@ function makeCSV(obj, element, lang) {
     }
 }
 
-function generateYaml(element, element, dirPath, lang, copyFile){
+function generateYaml(element, element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
-    if (copyFile) {
-        fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
-            if (err) throw err;
-            // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
-        })
+    if (writeIndexFile) {
+
+        fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${element.publishing.article_types[0].name.toLowerCase()}_index_template.pug`, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        });
+
+        // fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
+        //     if (err) throw err;
+        //     // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
+        // })
     }
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });

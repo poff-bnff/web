@@ -8,7 +8,7 @@ process.chdir(__dirname);
 function PostOneToStrapi
 (dataPath, token, dataObject){
     let options = {
-        host: '139.59.130.149',
+        host: process.env['StrapiHost'],
         path: dataPath,
         method: 'POST',
         headers: {
@@ -50,7 +50,7 @@ function PostOneToStrapi
  //Update data-t, mis on juba Strapis
 function PutOneToStrapi (path, token, dataObject, id){
     let options = {
-        host: '139.59.130.149',
+        host: process.env['StrapiHost'],
         path: path + '/' + id, //siia on vaja id-d kaasa anda
         method: 'PUT',
         headers: {

@@ -8,8 +8,9 @@ updated_by:
     firstname: Jaan
     lastname: Leppik
 created_at: '2020-08-19T11:04:34.597Z'
-updated_at: '2020-08-19T14:17:13.569Z'
-title_et: Pealkiri
+updated_at: '2020-08-27T06:51:56.972Z'
+titlePrivate: 'Ainult eestikeelne, aga publish mujale kah'
+title_et: Pealkiri eestikeelne
 contents_et: >-
     Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid selle
     eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige suurema
@@ -25,11 +26,16 @@ lead_et: >-
     Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead
     Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead 
 slug_et: pealkiri
-Button:
-    -
-        id: 3
-        buttonText: English button
-        buttonUrl: 'https://tartuff.elisastage.ee/landing/bc/1itBCSEM-O/fqwmeUfVAY0'
+publishing:
+    id: 4
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-18T13:53:18.424Z'
 image_et:
     id: 1
     name: Elektriteater_logo.png
