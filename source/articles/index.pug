@@ -8,11 +8,13 @@ block content
             each val in self.data.articles.sort(function(a, b){ return (a.articlePublishStart > b.articlePublishStart) ? -1 : ((b.articlePublishStart > a.articlePublishStart) ? 1 : 0); })
                 if val.title
                     - var article_slug = val.slug
-                    - var article_pictures = self.data.article_pictures.articles[article_slug]
+                    //- - var article_pictures = self.data.article_pictures.articles[article_slug]
                     a(href= `/${lang_path}article/${article_slug}`).card_article
                         .container_frame_16_9
-                            if article_pictures
-                                img.container_contents_16_9(src=`/assets/img/img_articles/${article_slug}/${article_pictures.heroImage}`)
+                            if val.image
+                                img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.image.hash}${val.image.ext}`)
+                            else if val.imageDefault
+                                img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.imageDefault.hash}${val.imageDefault.ext}`)
                             else
                                 img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg')
 
