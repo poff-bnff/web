@@ -15,7 +15,7 @@ block content
         h1.section_headline= self.label.all.festivalTeam
 
     section.team
-        each team in self.data.persons
+        each team in self.data.teams
             - var teamId = team.id
             each subTeam in team.subTeam
                 p= `Team ${teamId}: ${subTeam.name}`

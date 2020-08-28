@@ -168,7 +168,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`source/festival/persons.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`source/festival/teams.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){

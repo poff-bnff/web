@@ -9,11 +9,11 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-08-28T06:32:26.755Z'
-    updated_at: '2020-08-28T06:37:09.676Z'
+    updated_at: '2020-08-28T08:45:28.689Z'
     subTeam:
         -
             id: 1
-            name: 'Mаркетинг и коммуникация, Партнерские отношения'
+            name: 'Marketing and Communication Department, Partners Relations'
             teamMember:
                 -
                     id: 1
@@ -65,10 +65,10 @@
                             created_at: '2020-08-28T06:22:02.967Z'
                             updated_at: '2020-08-28T06:22:03.216Z'
                     roleAtTeam_et: Turundusjuht
-                    roleAtTeam_en: Head of Marketing
+                    roleAtTeam_ru: Директор по маркетингу
                     emailAtTeam: maria.plees@poff.ee
                     phoneAtTeam: +372 5660 6236
-                    roleAtTeam: Директор по маркетингу
+                    roleAtTeam: Head of Marketing
                 -
                     id: 2
                     person:
@@ -118,7 +118,7 @@
                             created_at: '2020-08-28T06:22:02.883Z'
                             updated_at: '2020-08-28T06:22:03.153Z'
                     roleAtTeam_et: Pressi- ja kommunikatsioonijuht
-                    roleAtTeam_en: 'Head of Communications and Press '
+                    roleAtTeam_ru: Директор по связям с общественностью
                     emailAtTeam: hannes.aava@poff.ee
                     phoneAtTeam: +372 5552 9211
                     pictureAtTeam:
@@ -160,7 +160,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:02.883Z'
                             updated_at: '2020-08-28T06:22:03.153Z'
-                    roleAtTeam: Директор по связям с общественностью
+                    roleAtTeam: 'Head of Communications and Press '
                 -
                     id: 3
                     person:
@@ -210,7 +210,7 @@
                             created_at: '2020-08-28T06:34:20.215Z'
                             updated_at: '2020-08-28T06:34:20.285Z'
                     roleAtTeam_et: PÖFFi kodulehe toimetaja & koordinator
-                    roleAtTeam_en: poff.ee Editor
+                    roleAtTeam_ru: Редактор и координатор сайта PÖFF
                     emailAtTeam: elise.eimre@poff.ee
                     phoneAtTeam: '+37258414828'
                     pictureAtTeam:
@@ -252,5 +252,5 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.399Z'
                             updated_at: '2020-08-28T06:22:02.264Z'
-                    roleAtTeam: Редактор и координатор сайта PÖFF
+                    roleAtTeam: poff.ee Editor
     data: {}
