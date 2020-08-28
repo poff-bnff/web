@@ -26,11 +26,11 @@ block content
                     | !{self.data.heroArticle.title}
                     | !{self.data.heroArticle.lead}
                     if self.data.heroArticle.image
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.image.hash}${self.data.heroArticle.image.ext}`)
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.image.hash}${self.data.heroArticle.image.ext}` style='width:30%; height:30%;')
                     else if self.data.heroArticle.imageDefault
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.imageDefault.hash}${self.data.heroArticle.imageDefault.ext}`)
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.imageDefault.hash}${self.data.heroArticle.imageDefault.ext}` style='width:30%; height:30%;')
                     else
-                        img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg')
+                        img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
 
         section.grid_covid
             .covid_rules

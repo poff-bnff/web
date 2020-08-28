@@ -35,8 +35,8 @@ function rueten(obj, lang) {
             // console.log(key, obj[key]);
             return obj[key]
         } else if (key.match(regex) !== null) {
-            // obj[key.substring(0, key.length-3)] = obj[key];
-            // delete obj[key];
+            obj[key.substring(0, key.length-3)] = obj[key];
+            delete obj[key];
         // } else if (Array.isArray(obj[key])) {
         //     obj[key].forEach(element => {
         //         element = rueten(element, lang)
@@ -75,7 +75,6 @@ function processData(data, lang, CreateYAML) {
     var buffer = {}
     for (key in data) {
         let smallBuffer = {}
-        console.log(data[key]);
         var data2 = data[key];
         // console.log(data2);
         // var name = data[key].name;
@@ -91,9 +90,9 @@ function processData(data, lang, CreateYAML) {
         //     }
         //     smallBuffer[data2.label[key2].name] = tinyBuffer;
         // }
-        buffer = rueten(data2, lang);
+        buffer = rueten(data[`article_${lang}`], lang);
     }
-
+    console.log(buffer);
     CreateYAML(buffer, lang);
 }
 
