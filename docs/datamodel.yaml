@@ -3,12 +3,6 @@ Translated: &Translated
     en: (text)
     ru: (text)
 
-Block: &Block
-    title: *Translated
-    lead: *Translated
-    article: *Article
-    customUrl: (text)
-
 ArticleType: &ArticleType
     name: (text)
     et: (text)
@@ -199,8 +193,10 @@ Film: &Film
     slug_ru: departament-zdorovya (UID, No spaces)
     filmId: 2020 (UID)
     countriesAndLanguages: #(Component)
-        countries: *Country
-        languages: *Language
+        countries:
+            - *Country
+        languages:
+            - *Language
 
 Screening: &Screening
     screeningId: (Number)
@@ -248,8 +244,7 @@ Person: &Person
 
 Team: &Team
     subTeam: #(component (repeatable))
-      - name: #(component (repeatable))
-          - *Translated
+      - name: *Translated
         teamMember: #(component (repeatable))
           - person: *Person
             pictureAtTeam: (Media)
@@ -268,12 +263,19 @@ LabelGroups:
               value_en: (text)
               value_ru: (text)
 
-HeroArticlePoff:
+HeroArticlePöff:
     article_et: *Article
     article_en: *Article
     article_ru: *Article
 
-TrioBlockPoff:
+Block: &Block
+    title: *Translated
+    lead: *Translated
+    article: *Article
+    customUrl: (text)
+    order: (Number)
+
+TrioBlockPöff:
     blockName: *Translated
     block1: *Block
     block2: *Block
