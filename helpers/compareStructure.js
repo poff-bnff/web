@@ -6,49 +6,31 @@ const path = require('path')
 process.chdir(path.dirname(__filename))
 
 const findModelName= function(dataPath){
-    let modelName = ''
-    switch(dataPath){
-        case '/articles':
-            modelName= 'Article'
-            break
-        case '/films':
-            modelName= 'Film'
-            break
-        case '/countries':
-            modelName= 'Country'
-            break
-        case '/languages':
-            modelName= 'Language'
-            break
-        case 'festival-editions':
-            modelName= 'FestivalEdition'
-            break
-        case 'locations':
-            modelName= 'Location'
-            break
-        case 'people':
-            modelName= 'Person'
-            break
-        case 'screenings':
-            modelName= 'Screening'
-            break
-        case 'teams':
-            modelName= 'Team'
-        default:
-            console.log('Not Found')
+    if (dataPath == '/people'){
+        return modelName= "Person"
+    }else {
+        let modelName = dataPath.slice(1, dataPath.length-1)
+        return modelName = modelName[0].toUpperCase() + modelName.substring(1)
     }
-    return modelName
+
 }
 
 const Validate= function(strapiData, dataPath){
     // console.log(dataPath)
     const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
     const modelName= findModelName(dataPath)
-    // console.log(modelName)
+
+    console.log(modelName)
     let lhs = datamodel[modelName]
-    let rhs = strapiData
-    for (const ix in rhs) {
-        Compare(lhs, rhs[ix], modelName + '[' + ix + ']')
+    // console.log(lhs)
+    console.log(lhs[modelName])
+    if (lhs = 'undefined'){
+        console.log('Model name not found in datamodel.yaml')
+    }else{
+        let rhs = strapiData
+        for (const ix in rhs) {
+            Compare(lhs, rhs[ix], modelName + '[' + ix + ']')
+        }
     }
 }
 

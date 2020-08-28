@@ -61,7 +61,7 @@ function ValitateAndReturnData(dataPath, CBfunction){
     })
 }
 
-ValitateAndReturnData('/people', LogData)
+ValitateAndReturnData('/articles', LogData)
 
 
 
@@ -71,7 +71,7 @@ ValitateAndReturnData('/people', LogData)
 // }
 // ValitateAndReturnData('/articles', LogData)
 // callback funktsioon saab kaasa strapiData ja tokeni
-module.exports.ValidateAndFetch = ValidateAndReturnData
+// module.exports.ValidateAndFetch = ValidateAndReturnData
 
 //USAGE: näiteks nii
 // function LogProcess(token, dataPath){
