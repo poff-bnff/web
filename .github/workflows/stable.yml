@@ -32,7 +32,7 @@ jobs:
         #   run: ls
 
         - name: rsync deployments
-          uses: bur01/rsync-deployments@4.1
+          uses: burnett01/rsync-deployments@4.1
           with:
             switches: -avzr --delete
             path: build/
