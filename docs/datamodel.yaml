@@ -3,6 +3,37 @@ Translated: &Translated
     en: (text)
     ru: (text)
 
+Gender: &Gender
+    _path: /genders
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagGenre: &TagGenre
+    _path: /tag-genres
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagKeyword: &TagKeyword
+    _path: /tag-keywords
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagPremiereType: &TagPremiereType
+    _path: /tag-premiere-types
+    et: (text)
+    en: (text)
+    ru: (text)
+
+
+TagProgramme: &TagProgramme
+    _path: /tag-programmes
+    et: (text)
+    en: (text)
+    ru: (text)
+
 
 ArticleType: &ArticleType
     _path: /article-types
@@ -28,14 +59,14 @@ publishing: &Publishing
         - *ArticleType
 
 Tags: &Tags
-    premiere_types:
-      - *Translated
-    programmes:
-      - *Translated
     genres:
-      - *Translated
+      - *TagGenre
     keywords:
-      - *Translated
+      - *TagKeyword
+    premiere_types:
+      - *TagPremiereType
+    programmes:
+      - *TagProgramme
 
 Language: &Language
     _path: /languages
@@ -246,7 +277,7 @@ Person: &Person
     firstName: (text)
     lastName: (text)
     picture: (Media)
-    gender: *Translated
+    gender: *Gender
     phoneNr: (text)
     eMail: (text)
     dateOfBirth: (Date)
