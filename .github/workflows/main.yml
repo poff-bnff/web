@@ -49,8 +49,8 @@ jobs:
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}
 
-        - name: Workflow Webhook Action
+        - name: Github->Slack notification Webhook action
           uses: craftech-io/slack-action@v1
           with:
-            slack_webhook_url: ${{ secrets.WEBHOOK_URL }}
+            slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
           if: always()
