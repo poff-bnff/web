@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.ValidateAndFetch('/article-hero', DataToYAMLData)
+FromStrapi.ValidateAndFetch('/trio-block-poeff', DataToYAMLData);
 
 function DataToYAMLData(strapiData){
     // console.log(strapiData);
@@ -90,16 +90,16 @@ function processData(data, lang, CreateYAML) {
         //     }
         //     smallBuffer[data2.label[key2].name] = tinyBuffer;
         // }
-        buffer = rueten(data[`article_${lang}`], lang);
+        buffer = rueten(data[`left`], lang);
     }
     // console.log(buffer);
     CreateYAML(buffer, lang);
 }
 
 function CreateYAML(buffer, lang) {
-    // console.log(buffer);
+    console.log(buffer);
     let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`../source/articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

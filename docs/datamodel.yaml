@@ -3,12 +3,6 @@ Translated: &Translated
     en: (text)
     ru: (text)
 
-Block: &Block
-    title: *Translated
-    lead: *Translated
-    article: *Article
-    customUrl: (text)
-
 ArticleType: &ArticleType
     name: (text)
     et: (text)
@@ -272,6 +266,12 @@ HeroArticlePoff:
     article_et: *Article
     article_en: *Article
     article_ru: *Article
+
+Block: &Block
+    title: *Translated
+    lead: *Translated
+    article: *Article
+    customUrl: (text)
 
 TrioBlockPoff:
     blockName: *Translated
