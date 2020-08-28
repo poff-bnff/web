@@ -10,3 +10,6 @@ FromStrapi.WriteJSON('/countries', './data/ISOCountriesFromStrapi.json', LogProc
 FromStrapi.WriteJSON('/languages', './data/ISOLanguages.json', LogProcess)
 FromStrapi.WriteJSON('/films', './data/FilmsFromStrapi.json', LogProcess)
 FromStrapi.WriteJSON('/articles', './data/articlesFromStrapi.json', LogProcess)
+
+FromStrapi.WriteJSON('/article-hero', './data/TEST.json', LogProcess)
+

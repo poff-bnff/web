@@ -3,13 +3,9 @@ Translated: &Translated
     en: (text)
     ru: (text)
 
-Block: &Block
-    title: *Translated
-    lead: *Translated
-    article: *Article
-    customUrl: (text)
 
 ArticleType: &ArticleType
+    _path: /article-types
     name: (text)
     et: (text)
     en: (text)
@@ -17,6 +13,7 @@ ArticleType: &ArticleType
 
 
 Domain: &Domain
+    _path: /domains
     url: (text)
     ipAdress: (text)
     server: (text)
@@ -41,6 +38,7 @@ Tags: &Tags
       - *Translated
 
 Language: &Language
+    _path: /languages
     id: 8 (number)
     code: et (short text, min len 2, max len 3, lowercase)
     name_et: Eesti (short text)
@@ -48,6 +46,7 @@ Language: &Language
     name_ru: Эстонский (short text)
 
 Country: &Country
+    _path: /countries
     id: 1 (number)
     code: EE (short text, min len 2, max len 3, uppercase)
     name_et: Eesti (short text)
@@ -55,18 +54,21 @@ Country: &Country
     name_ru: Эстония (short text)
 
 Town: &Town
+    _path: /towns
     name_et: (text)
     name_en: (text)
     name_ru: (text)
     country: *Country
 
 Cinema: &Cinema
+    _path: /cinemas
     town: *Town
     name_et: (text)
     name_en: (text)
     name_ru: (text)
 
 Hall: &Hall
+    _path: /halls
     name_et: (text)
     number: (Number)
     numberOfSeats: (Number)
@@ -76,6 +78,7 @@ Hall: &Hall
     name_ru: (text)
 
 Location: &Location
+    _path: /locations
     country: *Country
     town: *Town
     cinema: *Cinema
@@ -83,6 +86,7 @@ Location: &Location
     name: (text)
 
 Article: &Article
+    _path: /articles
     publishing: *Publishing
     imageDefault: (Media)
     title_et: Tartuff on pühendatud kunstile (text)
@@ -116,6 +120,7 @@ Article: &Article
           url_ru: (text)
 
 Festival: &Festival
+    _path: /festivals
     name_et: (text)
     name_en: (text)
     name_ru: (text)
@@ -127,6 +132,7 @@ Festival: &Festival
     clipUrl: (text)
 
 FestivalEdition: &FestivalEdition
+    _path: /festival-editions
     number: (Number)
     year: (Number)
     name_et: (text)
@@ -141,6 +147,7 @@ FestivalEdition: &FestivalEdition
     festival: *Festival
 
 Organisation: &Organisation
+    _path: /organisations
     name: (text)
     nameTranslated: # (Component (repeatable))
         - *Translated
@@ -151,14 +158,17 @@ Organisation: &Organisation
     logo: (Media)
 
 ScreeningMode: &ScreeningMode
+    _path: /screening-modes
     name: (text)
 
 ScreeningType: &ScreeningType
+    _path: /screening-types
     name: (text)
     validFrom: (Datetime)
     validTo: (Datetime)
 
 Film: &Film
+    _path: /films
     id: 1 (number)
     title_et: Nähtamatu elu (short text)
     title_en: Invisible Life of Eurídice Gusmãos (short text)
@@ -203,6 +213,7 @@ Film: &Film
         languages: *Language
 
 Screening: &Screening
+    _path: /screenings
     screeningId: (Number)
     films:
       - *Film
@@ -231,6 +242,7 @@ Screening: &Screening
     screening_mode: *ScreeningMode
 
 Person: &Person
+    _path: /people
     firstName: (text)
     lastName: (text)
     picture: (Media)
@@ -247,6 +259,7 @@ Person: &Person
     profession: (text)
 
 Team: &Team
+    _path: /teams
     subTeam: #(component (repeatable))
       - name: #(component (repeatable))
           - *Translated
@@ -260,6 +273,7 @@ Team: &Team
             phoneAtTeam: (text)
 
 LabelGroups:
+    _path: /labels
     group: #(Component (repeatable))
         - name: (text)
           label: #(Component (repeatable))
@@ -269,11 +283,19 @@ LabelGroups:
               value_ru: (text)
 
 HeroArticlePoff:
+    _path: /article-hero
     article_et: *Article
     article_en: *Article
     article_ru: *Article
 
+Block: &Block
+    title: *Translated
+    lead: *Translated
+    article: *Article
+    customUrl: (text)
+
 TrioBlockPoff:
+    _path: /trio-block-poeff
     blockName: *Translated
     block1: *Block
     block2: *Block

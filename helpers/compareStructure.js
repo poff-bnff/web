@@ -8,9 +8,14 @@ process.chdir(path.dirname(__filename))
 const findModelName= function(dataPath){
     if (dataPath == '/people'){
         return modelName= "Person"
-    }else if(dataPath == '/countries'){
+    }
+    else if(dataPath == '/countries'){
         return modelName= "Country"
-    }else {
+    }
+    else if(dataPath == '/countries'){
+        return modelName= "Country"
+    }
+    else {
         let modelName = dataPath.slice(1, dataPath.length-1)
         return modelName = modelName[0].toUpperCase() + modelName.substring(1)
     }
