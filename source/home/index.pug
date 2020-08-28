@@ -25,6 +25,12 @@ block content
                     //- HERO ARTICLE EXAMPLE BELOW
                     | !{self.data.heroArticle.title}
                     | !{self.data.heroArticle.lead}
+                    if self.data.heroArticle.image
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.image.hash}${self.data.heroArticle.image.ext}`)
+                    else if self.data.heroArticle.imageDefault
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.imageDefault.hash}${self.data.heroArticle.imageDefault.ext}`)
+                    else
+                        img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg')
 
         section.grid_covid
             .covid_rules

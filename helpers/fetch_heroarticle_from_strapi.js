@@ -11,8 +11,7 @@ function LabelsToYAMLData(strapiData){
 }
 
 function LangSelect(strapiData, lang) {
-    let data = rueten(strapiData, lang);
-    processData(data, lang, CreateYAML);
+    processData(strapiData, lang, CreateYAML);
 }
 
 function rueten(obj, lang) {
@@ -36,8 +35,8 @@ function rueten(obj, lang) {
             // console.log(key, obj[key]);
             return obj[key]
         } else if (key.match(regex) !== null) {
-            obj[key.substring(0, key.length-3)] = obj[key];
-            delete obj[key];
+            // obj[key.substring(0, key.length-3)] = obj[key];
+            // delete obj[key];
         // } else if (Array.isArray(obj[key])) {
         //     obj[key].forEach(element => {
         //         element = rueten(element, lang)
@@ -76,7 +75,7 @@ function processData(data, lang, CreateYAML) {
     var buffer = {}
     for (key in data) {
         let smallBuffer = {}
-        // console.log(data[key]);
+        console.log(data[key]);
         var data2 = data[key];
         // console.log(data2);
         // var name = data[key].name;
