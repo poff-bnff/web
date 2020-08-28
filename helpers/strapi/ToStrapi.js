@@ -1,8 +1,8 @@
 const fs = require('fs');
 const http = require('http');
-const FromStrapi = require('./')
+const FromStrapi = require('./FromStrapi')
 
-process.chdir(__dirname);
+
 
 //see saadab ühe uue objekti Strapisse
 function PostOneToStrapi
@@ -114,9 +114,8 @@ function ToStrapi(JSONdataToSend, strapiDataFile, dataPath, keysToCompareforId) 
 };
 
 
-//ToStrapi('../data/ISOlanguages.json', '../data/ISOLanguagesFromStrapi.json', '/languages', 'code');
-//ToStrapi('../data/ISOCountries.json', '../data/ISOCountriesFromStrapi.json', '/countries', 'code');
-
-// ToStrapi('../data/Films.json', '../data/test11.json', '/films', 'filmId');
 
 module.exports.ToStrapi = ToStrapi;
+
+// USAGE:
+// ToStrapi('./data/Films.json', './data/test11.json', '/films', 'filmId');
