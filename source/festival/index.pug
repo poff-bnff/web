@@ -15,17 +15,28 @@ block content
         h1.section_headline= self.label.all.festivalTeam
 
     section.team
-        each val in self.data.persons
-            .person
-                .person_head
-                    img.person_img(src= val.personPhoto alt= val.personName)
+        each team in self.data.teams
+            - var teamId = team.id
+            each subTeam in team.subTeam
+                p= `Team ${teamId}: ${subTeam.name}`
+                each teamMember in subTeam.teamMember
+                    .person
+                        .person_head
+                            - var assetsDir = '/assets/img/img_persons/'
+                            if teamMember.pictureAtTeam
+                                - var personPic = assetsDir + teamMember.pictureAtTeam[0].hash + teamMember.pictureAtTeam[0].ext
+                            else if teamMember.person.picture
+                                - var personPic = assetsDir + teamMember.person.picture.hash + teamMember.person.picture.ext
+                            else
+                                - var personPic ='/assets/img/img_persons/hunt_person.png'
+                            img.person_img(src= personPic alt= `${teamMember.person.firstName} ${teamMember.person.lastName}`)
 
-                    //- if val.personName
-                    .person_body.text_center
-                        h4.text_center= val.personName + ' '
-                        p.premiere_type.text_center= val.personOrganisation
-                        +format(val.personJobTitle)
-                //- else
-                //-     .person_body
-                //-         h4= val.personOrganisation
+                            //- if val.personName
+                            .person_body.text_center
+                                h4.text_center= `${teamMember.person.firstName} ${teamMember.person.lastName}`
+                                //- p.premiere_type.text_center= val.personOrganisation
+                                +format(teamMember.roleAtTeam)
+                        //- else
+                        //-     .person_body
+                        //-         h4= val.personOrganisation
 
