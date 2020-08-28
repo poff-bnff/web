@@ -6,7 +6,7 @@ function LogProcess(token, dataPath){
 }
 
 
-FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json', LogProcess)
-FromStrapi.WriteJSON('/languages', '../data/ISOLanguages.json', LogProcess)
-FromStrapi.WriteJSON('/films', '../data/FilmsFromStrapi.json', LogProcess)
-FromStrapi.WriteJSON('/articles', '../data/articlesFromStrapi.json', LogProcess)
+FromStrapi.WriteJSON('/countries', './data/ISOCountriesFromStrapi.json', LogProcess)
+FromStrapi.WriteJSON('/languages', './data/ISOLanguages.json', LogProcess)
+FromStrapi.WriteJSON('/films', './data/FilmsFromStrapi.json', LogProcess)
+FromStrapi.WriteJSON('/articles', './data/articlesFromStrapi.json', LogProcess)

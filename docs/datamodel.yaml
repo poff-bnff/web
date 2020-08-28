@@ -1,0 +1,281 @@
+Translated: &Translated
+    et: (text)
+    en: (text)
+    ru: (text)
+
+Block: &Block
+    title: *Translated
+    lead: *Translated
+    article: *Article
+    customUrl: (text)
+
+ArticleType: &ArticleType
+    name: (text)
+    et: (text)
+    en: (text)
+    ru: (text)
+
+
+Domain: &Domain
+    url: (text)
+    ipAdress: (text)
+    server: (text)
+
+publishing: &Publishing
+    publish_et: (Boolean)
+    from: (Datetime)
+    until: (Datetime)
+    publish_en: (Boolean)
+    publish_ru: (Boolean)
+    article_types:
+        - *ArticleType
+
+Tags: &Tags
+    premiere_types:
+      - *Translated
+    programmes:
+      - *Translated
+    genres:
+      - *Translated
+    keywords:
+      - *Translated
+
+Language: &Language
+    id: 8 (number)
+    code: et (short text, min len 2, max len 3, lowercase)
+    name_et: Eesti (short text)
+    name_en: Estonian (short text)
+    name_ru: Эстонский (short text)
+
+Country: &Country
+    id: 1 (number)
+    code: EE (short text, min len 2, max len 3, uppercase)
+    name_et: Eesti (short text)
+    name_en: Estonia (short text)
+    name_ru: Эстония (short text)
+
+Town: &Town
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    country: *Country
+
+Cinema: &Cinema
+    town: *Town
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+
+Hall: &Hall
+    name_et: (text)
+    number: (Number)
+    numberOfSeats: (Number)
+    cinema: *Cinema
+    floor: (Enumeration)
+    name_en: (text)
+    name_ru: (text)
+
+Location: &Location
+    country: *Country
+    town: *Town
+    cinema: *Cinema
+    hall: *Hall
+    name: (text)
+
+Article: &Article
+    publishing: *Publishing
+    imageDefault: (Media)
+    title_et: Tartuff on pühendatud kunstile (text)
+    title_en: Tartuff sets focus on art (text)
+    title_ru: (text)
+    contents_et: Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti, Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15. augustini Tartus. (rich text)
+    contents_en: The Robin Hood of the art world aka Banksy, Marcel Duchamp, Alberto Giacometti, Maud Lewis – these are the heroes of the features and documentary films on art topics, that will reach audiences in Tartu at the physical event taking place from the 10th until the 15th of August and also available online throughout Estonia. The full programme of the 15th Tartu Love Film Festival will be announced on the 30th of July. (rich text)
+    contents_ru: (rich text)
+    lead_et: PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu kunstile. (rich text)
+    lead_en: This year's edition sets a special focus on art, screening films on Banksy, Marchel Duchamp, Alberto Giacometti, Maud Lewis. The festival will be available online throughout Estonia (rich text)
+    lead_ru: (rich text)
+    tags: *Tags
+    domains:
+        - *Domain
+    image_et: (Media)
+    image_en: (Media)
+    image_ru: (Media)
+    slug_et: tartuff-on-puehendatud-kunstile (UID, No spaces)
+    slug_en: tartuff-sets-focus-on-art (UID, No spaces)
+    slug_ru: (UID, No spaces)
+    clipUrl_et: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
+    clipUrl_en: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
+    clipUrl_ru: (text)
+    clipUrlDefault: (text)
+    button: #(Component (repeatable))
+        - text_et: (text)
+          url_et: (text)
+          text_en: (text)
+          url_en: (text)
+          text_ru: (text)
+          url_ru: (text)
+
+Festival: &Festival
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    description_et: (Rich text)
+    description_en: (Rich text)
+    description_ru: (Rich text)
+    logo: (Media)
+    images: (Media)
+    clipUrl: (text)
+
+FestivalEdition: &FestivalEdition
+    number: (Number)
+    year: (Number)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    description_et: (Rich text)
+    description_en: (Rich text)
+    description_ru: (Rich text)
+    startDate: (Datetime)
+    endDate: (Datetime)
+    domain: *Domain
+    festival: *Festival
+
+Organisation: &Organisation
+    name: (text)
+    nameTranslated: # (Component (repeatable))
+        - *Translated
+    description: # (Component)
+        *Translated
+    images: (Media)
+    type: (Enumeration)
+    logo: (Media)
+
+ScreeningMode: &ScreeningMode
+    name: (text)
+
+ScreeningType: &ScreeningType
+    name: (text)
+    validFrom: (Datetime)
+    validTo: (Datetime)
+
+Film: &Film
+    id: 1 (number)
+    title_et: Nähtamatu elu (short text)
+    title_en: Invisible Life of Eurídice Gusmãos (short text)
+    title_ru: Департамент здоровьяs (short text)
+    titleOriginal: A Vida Invisivel (short text)
+    year: 2019 (number)
+    runtime: 139 (number)
+    credentials: #(Component)
+        director:
+            - *Translated
+        screenwriter:
+            - *Translated
+        doP:
+            - *Translated
+        cast:
+            - *Translated
+        composer:
+            - *Translated
+        editor:
+            - *Translated
+        producer:
+            - *Translated
+        coProducer:
+            - *Translated
+    synopsis: *Translated
+    media: #(Component)
+        Stills: (Media)
+        Posters: (Media)
+        Trailer: #(Component (repeatable))
+            - Url: https://www.youtube.com/watch?v=NRF-Pba3QrE (Text)
+              Source: YouTube (Enumeration)
+        QaClip: #(Component (repeatable))
+            - Url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
+              Type: Conversation (Enumeration)
+    tags: *Tags #(Component)
+    slug_et: naehtamatu-elu (UID, No spaces)
+    slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
+    slug_ru: departament-zdorovya (UID, No spaces)
+    filmId: 2020 (UID)
+    countriesAndLanguages: #(Component)
+        countries: *Country
+        languages: *Language
+
+Screening: &Screening
+    screeningId: (Number)
+    films:
+      - *Film
+    code: (Number)
+    codeAndFilmTitle: (text)
+    ticketingId: (Number)
+    ticketingUrl: (text)
+    dateTime: (Datetime)
+    introQaConversation:
+      - yesNo: (Boolean)
+        type: (Enumeration)
+        mode: (Enumeration)
+        presenter:
+           - *Translated
+        guest:
+           - *Translated
+        duration: (Number)
+        clipUrl: (text)
+    durationTotal: (Number)
+    location: *Location
+    subtitles:
+      - language: *Language
+    extraInfo: (text)
+    screening_types:
+      - *ScreeningType
+    screening_mode: *ScreeningMode
+
+Person: &Person
+    firstName: (text)
+    lastName: (text)
+    picture: (Media)
+    gender: *Translated
+    phoneNr: (text)
+    eMail: (text)
+    dateOfBirth: (Date)
+    countries:
+        - *Country
+    organisations:
+        - *Organisation
+    biography: (Rich text)
+    filmography: (Rich text)
+    profession: (text)
+
+Team: &Team
+    subTeam: #(component (repeatable))
+      - name: #(component (repeatable))
+          - *Translated
+        teamMember: #(component (repeatable))
+          - person: *Person
+            pictureAtTeam: (Media)
+            roleAtTeam_et: (text)
+            roleAtTeam_en: (text)
+            roleAtTeam_ru: (text)
+            emaliAtTeam: (text)
+            phoneAtTeam: (text)
+
+LabelGroups:
+    group: #(Component (repeatable))
+        - name: (text)
+          label: #(Component (repeatable))
+            - name: (text)
+              value_et: (text)
+              value_en: (text)
+              value_ru: (text)
+
+HeroArticlePoff:
+    article_et: *Article
+    article_en: *Article
+    article_ru: *Article
+
+TrioBlockPoff:
+    blockName: *Translated
+    block1: *Block
+    block2: *Block
+    block3: *Block
+

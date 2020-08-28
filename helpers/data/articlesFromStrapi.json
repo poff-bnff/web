@@ -9,13 +9,13 @@
             "username": null
         },
         "updated_by": {
-            "id": 6,
-            "firstname": "Jaan",
-            "lastname": "Leppik",
+            "id": 1,
+            "firstname": "Mihkel",
+            "lastname": "Putrinš",
             "username": null
         },
         "created_at": "2020-08-19T11:04:34.597Z",
-        "updated_at": "2020-08-27T06:51:56.972Z",
+        "updated_at": "2020-08-27T13:30:54.942Z",
         "Publish_et": null,
         "Publish_en": null,
         "Publish_ru": null,
@@ -51,14 +51,92 @@
                     "id": 2,
                     "name": "Uudis",
                     "created_by": 6,
-                    "updated_by": 6,
+                    "updated_by": 1,
                     "created_at": "2020-08-18T13:49:51.616Z",
-                    "updated_at": "2020-08-18T13:53:18.424Z",
-                    "article": null
+                    "updated_at": "2020-08-27T13:27:26.065Z",
+                    "article": null,
+                    "et": "Uudised",
+                    "en": "News",
+                    "ru": "Новости"
+                },
+                {
+                    "id": 3,
+                    "name": "Intervjuu",
+                    "created_by": 6,
+                    "updated_by": 1,
+                    "created_at": "2020-08-18T13:50:35.561Z",
+                    "updated_at": "2020-08-27T13:26:22.977Z",
+                    "article": null,
+                    "et": "Intervjuu",
+                    "en": "Interview",
+                    "ru": "Интервю"
                 }
             ]
         },
-        "tags": null,
+        "tags": {
+            "id": 284,
+            "premiere_types": [
+                {
+                    "id": 4,
+                    "PremiereType_et": null,
+                    "PremiereType_en": null,
+                    "PremiereType_ru": null,
+                    "created_by": 6,
+                    "updated_by": 3,
+                    "created_at": "2020-08-19T10:50:40.749Z",
+                    "updated_at": "2020-08-27T10:10:15.255Z",
+                    "Value_et": null,
+                    "Value_en": null,
+                    "Value_ru": null,
+                    "value_et": "Maailma esilinastus",
+                    "value_en": "World Premiere",
+                    "value_ru": "Мировая премьера",
+                    "et": "Maailma esilinastus",
+                    "en": "World Premiere",
+                    "ru": "Мир��вая премьера"
+                }
+            ],
+            "programmes": [
+                {
+                    "id": 3,
+                    "TagProgramme_et": null,
+                    "TagProgramme_en": null,
+                    "TagProgramme_ru": null,
+                    "created_by": 6,
+                    "updated_by": 3,
+                    "created_at": "2020-08-19T10:54:54.776Z",
+                    "updated_at": "2020-08-27T10:16:02.833Z",
+                    "Value_et": null,
+                    "Value_en": null,
+                    "Value_ru": null,
+                    "value_et": "Põhivõistlusprogramm",
+                    "value_en": "Official Selection",
+                    "value_ru": "Основная конкурсная программа",
+                    "et": "Põhivõistlusprogramm",
+                    "en": "Official Selection",
+                    "ru": "Основная конкурсная программа"
+                }
+            ],
+            "genres": [],
+            "keywords": [
+                {
+                    "id": 7,
+                    "Value_et": null,
+                    "Value_en": null,
+                    "Value_ru": null,
+                    "created_by": 6,
+                    "updated_by": 3,
+                    "created_at": "2020-08-19T10:49:52.991Z",
+                    "updated_at": "2020-08-27T10:07:40.422Z",
+                    "value_et": "Ühiskond",
+                    "value_en": "Society",
+                    "value_ru": "Общество",
+                    "et": "Ühiskond",
+                    "en": "Society",
+                    "ru": "Общество"
+                }
+            ]
+        },
         "button": [],
         "imageDefault": null,
         "image_et": {
@@ -161,10 +239,13 @@
                     "id": 3,
                     "name": "Intervjuu",
                     "created_by": 6,
-                    "updated_by": 6,
+                    "updated_by": 1,
                     "created_at": "2020-08-18T13:50:35.561Z",
-                    "updated_at": "2020-08-18T13:53:10.013Z",
-                    "article": null
+                    "updated_at": "2020-08-27T13:26:22.977Z",
+                    "article": null,
+                    "et": "Intervjuu",
+                    "en": "Interview",
+                    "ru": "Интервю"
                 }
             ]
         },
@@ -358,10 +439,13 @@
                     "id": 4,
                     "name": "ToetajaLugu",
                     "created_by": 6,
-                    "updated_by": 6,
+                    "updated_by": 1,
                     "created_at": "2020-08-18T13:51:35.072Z",
-                    "updated_at": "2020-08-18T13:51:35.128Z",
-                    "article": null
+                    "updated_at": "2020-08-27T13:27:09.344Z",
+                    "article": null,
+                    "et": "Toetaja lugu",
+                    "en": "Supporter Story",
+                    "ru": "Toetaja lugu rus"
                 }
             ]
         },
