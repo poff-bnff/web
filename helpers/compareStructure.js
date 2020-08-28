@@ -67,7 +67,7 @@ const Compare = function (lhs, rhs, path) {
             }
         }
     }
-    // console.log('-->', path)
+    console.log('-->', path)
 }
 
 module.exports.Validate = Validate

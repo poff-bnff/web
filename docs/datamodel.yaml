@@ -240,8 +240,10 @@ Film: &Film
     slug_ru: departament-zdorovya (UID, No spaces)
     filmId: 2020 (UID)
     countriesAndLanguages: #(Component)
-        countries: *Country
-        languages: *Language
+        countries:
+            - *Country
+        languages:
+            - *Language
 
 Screening: &Screening
     _path: /screenings
@@ -292,8 +294,7 @@ Person: &Person
 Team: &Team
     _path: /teams
     subTeam: #(component (repeatable))
-      - name: #(component (repeatable))
-          - *Translated
+      - name: *Translated
         teamMember: #(component (repeatable))
           - person: *Person
             pictureAtTeam: (Media)
