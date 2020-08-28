@@ -5,29 +5,59 @@ const path = require('path')
 
 process.chdir(path.dirname(__filename))
 
-const FromStrapi = require('./strapi/FromStrapi')
-
-const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
-
-FromStrapi.Fetch('/articles', function(strapiObject){
-    const data_path = 'Article'
-    let lhs = datamodel[data_path]
-    let rhs = strapiObject
-    fs.writeFileSync('test.json', JSON.stringify(strapiObject, null, 4));
-
-    // console.log('lhs', util.inspect(lhs))
-    // console.log('rhs', util.inspect(rhs))
-    for (const ix in rhs) {
-        compare(lhs, rhs[ix], data_path + '[' + ix + ']')
+const findModelName= function(dataPath){
+    let modelName = ''
+    switch(dataPath){
+        case '/articles':
+            modelName= 'Article'
+            break
+        case '/films':
+            modelName= 'Film'
+            break
+        case '/countries':
+            modelName= 'Country'
+            break
+        case '/languages':
+            modelName= 'Language'
+            break
+        case 'festival-editions':
+            modelName= 'FestivalEdition'
+            break
+        case 'locations':
+            modelName= 'Location'
+            break
+        case 'people':
+            modelName= 'Person'
+            break
+        case 'screenings':
+            modelName= 'Screening'
+            break
+        case 'teams':
+            modelName= 'Team'
+        default:
+            console.log('Not Found')
     }
-})
+    return modelName
+}
 
-const compare = function (lhs, rhs, path) {
+const Validate= function(strapiData, dataPath){
+    // console.log(dataPath)
+    const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
+    const modelName= findModelName(dataPath)
+    // console.log(modelName)
+    let lhs = datamodel[modelName]
+    let rhs = strapiData
+    for (const ix in rhs) {
+        Compare(lhs, rhs[ix], modelName + '[' + ix + ']')
+    }
+}
+
+const Compare = function (lhs, rhs, path) {
     // console.log('<--', path)
     if (Array.isArray(lhs)) {
         if (Array.isArray(rhs)) {
             for (const ix in rhs) {
-                compare(lhs[0], rhs[ix], path + '[' + ix + ']')
+                Compare(lhs[0], rhs[ix], path + '[' + ix + ']')
             }
         } else {
             console.log('- Not an array:', path)
@@ -42,7 +72,7 @@ const compare = function (lhs, rhs, path) {
             const lh_element = lhs[key]
             if (key in rhs) {
                 if (lh_element !== null && typeof(lh_element) === 'object' ) {
-                    compare(lh_element, rhs[key], next_path)
+                    Compare(lh_element, rhs[key], next_path)
                 }
             } else {
                 console.log('- Missing key:', next_path)
@@ -52,3 +82,4 @@ const compare = function (lhs, rhs, path) {
     // console.log('-->', path)
 }
 
+module.exports.Validate = Validate
