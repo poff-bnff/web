@@ -9,16 +9,16 @@ modelName = modelName[0].toUpperCase() + modelName.substring(1)
 //console.log(modelName)
 
 function LogData(strapiData, token){
-    console.log(strapiData);
+    //console.log(strapiData);
 }
 
-// FromStrapi.ValidateAndFetch('/articles', LogData)
+FromStrapi.ValidateAndFetch('/articles', LogData)
 
 function LogProcess(token, dataPath){
     console.log("updating " + dataPath.slice(1) + " from Strapi");
 }
 
-FromStrapi.WriteJSON('/countries', '../helpers/data/ISOCountriesFromStrapi.json', LogProcess)
+//FromStrapi.WriteJSON('/countries', '../helpers/data/ISOCountriesFromStrapi.json', LogProcess)
 
 
 

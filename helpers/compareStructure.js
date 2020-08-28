@@ -20,12 +20,11 @@ const Validate= function(strapiData, dataPath){
     const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
     const modelName= findModelName(dataPath)
 
-    console.log(modelName)
     let lhs = datamodel[modelName]
-    // console.log(lhs)
-    console.log(lhs[modelName])
-    if (lhs = 'undefined'){
-        console.log('Model name not found in datamodel.yaml')
+    //console.log(lhs)
+
+    if (lhs === undefined){
+        console.log('Model name ' + modelName +' not found in datamodel.yaml')
     }else{
         let rhs = strapiData
         for (const ix in rhs) {
