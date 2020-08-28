@@ -12,7 +12,7 @@ function LogData(strapiData, token){
     //console.log(strapiData);
 }
 
-FromStrapi.ValidateAndFetch('/articles', LogData)
+FromStrapi.ValidateAndFetch('/films', LogData)
 
 function LogProcess(token, dataPath){
     console.log("updating " + dataPath.slice(1) + " from Strapi");
