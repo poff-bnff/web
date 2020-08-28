@@ -9,11 +9,16 @@ block content
             .home_1
                 .article_title_detailed.m_center_d_right
                     span.article_title_detailed.clr_primary= self.festivalDates
+
+                    //- //SIIN ON NÄIDE
+                    span= self.data.articleTrioBlock.left.article.title
+                    //- //KUNI SIIN
                     br
                     | !{self.festivalLocations.outdoors}
                     br
                     | !{self.festivalLocations.indoors}
                     br
+                    p= self.data.articleTrioBlock.contents
                     a.article_title_detailed.clr_primary(href='https://tartuff.elisastage.ee')= self.festivalLocations.virtual
             .home_2
                 img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')

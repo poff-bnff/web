@@ -90,9 +90,10 @@ function processData(data, lang, CreateYAML) {
         //     }
         //     smallBuffer[data2.label[key2].name] = tinyBuffer;
         // }
-        buffer = rueten(data[`left`], lang);
+        buffer = rueten(data, lang);
     }
     // console.log(buffer);
+
     CreateYAML(buffer, lang);
 }
 
