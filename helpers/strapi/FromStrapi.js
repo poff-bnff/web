@@ -54,7 +54,7 @@ function ValitateAndReturnData(dataPath, CBfunction){
     })
 }
 
-ValitateAndReturnData('/articles', LogData)
+//ValitateAndReturnData('/articles', LogData)
 
 
 
