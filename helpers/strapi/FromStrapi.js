@@ -2,7 +2,6 @@ const fs = require('fs');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi');
 const Validate= require('../compareStructure')
-const yaml = require('js-yaml')
 
 function FromStrapi(datapath, CBfunction){
     let FetchData = function(token) {
@@ -41,17 +40,11 @@ function FromStrapi(datapath, CBfunction){
     AuthStrapi.Auth(FetchData)
 }
 
-// function WriteToJson(dataPath, filePath, CBfunction){
-//     console.log(process.cwd());
-//     console.log(dataPath, filePath, CBfunction);
-//     FromStrapi(dataPath, function WriteJSON (strapiData, token){
-//         fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
-//         CBfunction(token, dataPath);
-//     })
-// }
-
-function LogData(strapiData, token){
-    //  console.log(strapiData);
+function WriteToJson(dataPath, filePath, CBfunction){
+    ValitateAndReturnData(dataPath, function WriteJSON (strapiData, token){
+        fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4));
+        CBfunction(token, dataPath);
+    })
 }
 
 function ValitateAndReturnData(dataPath, CBfunction){
@@ -65,20 +58,20 @@ ValitateAndReturnData('/articles', LogData)
 
 
 
-// USAGE: näiteks nii
+// USAGE: tagastab CBfunktsioonile strapist saadud data ja võrdleb seda data mudeliga
 // function LogData(strapiData, token){
 //     console.log(strapiData);
 // }
 // ValitateAndReturnData('/articles', LogData)
 // callback funktsioon saab kaasa strapiData ja tokeni
-// module.exports.ValidateAndFetch = ValidateAndReturnData
+module.exports.ValidateAndFetch = ValitateAndReturnData
 
-//USAGE: näiteks nii
+//USAGE: kirjutab strapist saadud data JSON faili ja võrdleb seda data mudeliga
 // function LogProcess(token, dataPath){
 //     console.log("updating " + dataPath.slice(1) + " from Strapi");
 // }
 // FromStrapi.WriteJSON('/countries', '../data/ISOCountriesFromStrapi.json', LogProcess)
-// module.exports.WriteJSON = WriteToJson
+module.exports.WriteJSON = WriteToJson
 
 
 
