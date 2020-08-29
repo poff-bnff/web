@@ -11,8 +11,9 @@ block content
                     span.article_title_detailed.clr_primary= self.festivalDates
 
                     //- //SIIN ON NÄIDE
-                    span= self.data.articleTrioBlock.left.article.title
-                    span= self.data.articleTrioBlock.center.article.title
+                    for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                        span= values.title
+
                     //- //KUNI SIIN
                     br
                     | !{self.festivalLocations.outdoors}

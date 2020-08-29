@@ -72,10 +72,11 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
-    var buffer = {}
-    for (key in data) {
+    let copyData = JSON.parse(JSON.stringify(data));
+    let buffer = [];
+    for (key in copyData) {
         let smallBuffer = {}
-        var data2 = data[key];
+        var data2 = copyData[key];
         // console.log(data2);
         // var name = data[key].name;
         // for (key2 in data2.label) {
@@ -90,16 +91,27 @@ function processData(data, lang, CreateYAML) {
         //     }
         //     smallBuffer[data2.label[key2].name] = tinyBuffer;
         // }
-        buffer = rueten(data, lang);
-    }
-    // console.log(buffer);
 
-    CreateYAML(buffer, lang);
+        // console.log(key);
+        if(key === 'left' || key === 'center' || key === 'right' ) {
+            buffer.push(copyData[key]);
+            delete copyData[key]
+        }
+
+    }
+    // buffer = rueten(buffer, lang);
+    // data.blocks = JSON.parse(buffer);
+    // console.log(data);
+    // buffer = rueten(data, lang);
+    // console.log(buffer);
+    copyData.blocks = buffer
+    copyData = rueten(copyData, lang);
+    CreateYAML(copyData, lang);
 }
 
-function CreateYAML(buffer, lang) {
-    console.log(buffer);
-    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
+function CreateYAML(copyData, lang) {
+    console.log(copyData);
+    let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`../source/articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
