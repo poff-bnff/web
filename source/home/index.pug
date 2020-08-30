@@ -48,7 +48,7 @@ block content
 
                     //- VIIEKAS START
                     - var counter = 0
-                    each news in self.data.articles
+                    each news in self.data.articles.sort(function(a, b){ return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0); })
                         if heroPlusTrioNews.includes(news.id) || (news.publishing.article_types[0].et !== 'Uudised')
                             - continue
                         if counter >= 5
