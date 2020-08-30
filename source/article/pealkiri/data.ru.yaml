@@ -4,11 +4,11 @@ created_by:
     firstname: Jaan
     lastname: Leppik
 updated_by:
-    id: 6
-    firstname: Jaan
-    lastname: Leppik
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
 created_at: '2020-08-19T11:04:34.597Z'
-updated_at: '2020-08-27T06:51:56.972Z'
+updated_at: '2020-08-27T13:30:54.942Z'
 titlePrivate: 'Ainult eestikeelne, aga publish mujale kah'
 title_et: Pealkiri eestikeelne
 contents_et: >-
@@ -33,9 +33,32 @@ publishing:
             id: 2
             name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-18T13:53:18.424Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+        -
+            id: 3
+            name: Intervjuu
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:50:35.561Z'
+            updated_at: '2020-08-27T13:26:22.977Z'
+            article: null
+            et: Intervjuu
+            en: Interview
+            ru: Интервю
+tags:
+    id: 284
+    premiere_types:
+        - Мировая премьера
+    programmes:
+        - Основная конкурсная программа
+    keywords:
+        - Общество
 image_et:
     id: 1
     name: Elektriteater_logo.png
@@ -72,14 +95,6 @@ image_et:
     updated_by: 6
     created_at: '2020-08-13T14:00:41.491Z'
     updated_at: '2020-08-13T14:00:41.586Z'
-domains:
-    -
-        id: 1
-        created_by: 6
-        updated_by: 6
-        created_at: '2020-08-19T10:43:32.378Z'
-        updated_at: '2020-08-19T10:43:32.395Z'
-        url: 'https://poff.ee'
 directory: source/article/pealkiri
 data:
     pictures: /article_pictures.yaml

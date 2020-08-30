@@ -5,11 +5,11 @@
         firstname: Jaan
         lastname: Leppik
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
     created_at: '2020-08-19T11:04:34.597Z'
-    updated_at: '2020-08-27T06:51:56.972Z'
+    updated_at: '2020-08-27T13:30:54.942Z'
     titlePrivate: 'Ainult eestikeelne, aga publish mujale kah'
     publishing:
         id: 4
@@ -18,17 +18,32 @@
                 id: 2
                 name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-08-18T13:53:18.424Z'
-    domains:
-        -
-            id: 1
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:43:32.378Z'
-            updated_at: '2020-08-19T10:43:32.395Z'
-            url: 'https://poff.ee'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+            -
+                id: 3
+                name: Intervjuu
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:50:35.561Z'
+                updated_at: '2020-08-27T13:26:22.977Z'
+                article: null
+                et: Intervjuu
+                en: Interview
+                ru: Интервю
+    tags:
+        id: 284
+        premiere_types:
+            - Maailma esilinastus
+        programmes:
+            - Põhivõistlusprogramm
+        keywords:
+            - Ühiskond
     title: Pealkiri eestikeelne
     contents: >-
         Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid
@@ -88,6 +103,224 @@
         updated_at: '2020-08-13T14:00:41.586Z'
     directory: source/article/pealkiri
     path: article/pealkiri
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 4
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-29T22:34:40.830Z'
+    updated_at: '2020-08-29T22:34:40.978Z'
+    titlePrivate: artikkel filmist kass
+    title_en: Cat movie
+    title_ru: Koshka film RU
+    contents_en: >-
+        Cat cont EN Cat cont EN Cat cont EN Cat cont EN Cat cont EN Cat cont EN
+        Cat cont EN 
+    contents_ru: 'Rus cont Rus cont Rus cont Rus cont Rus cont Rus cont Rus cont '
+    lead_en: 'Cat lead EN Cat lead EN Cat lead EN Cat lead EN Cat lead EN Cat lead EN '
+    lead_ru: 'Rus lead Rus lead Rus lead Rus lead Rus lead Rus lead Rus lead Rus lead '
+    slug_en: cat-movie
+    slug_ru: koshka-film-ru
+    publishing:
+        id: 7
+        from: '2020-08-01T09:00:00.000Z'
+        until: '2020-11-12T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: true
+    imageDefault:
+        id: 16
+        name: _DSC6299 - Copy.jpg
+        alternativeText: ''
+        caption: ''
+        width: 1844
+        height: 1229
+        formats:
+            large:
+                ext: .jpg
+                url: /uploads/large_DSC_6299_Copy_a204b4699c.jpg
+                hash: large_DSC_6299_Copy_a204b4699c
+                mime: image/jpeg
+                name: large__DSC6299 - Copy.jpg
+                size: 115.96
+                width: 1000
+                height: 666
+            small:
+                ext: .jpg
+                url: /uploads/small_DSC_6299_Copy_a204b4699c.jpg
+                hash: small_DSC_6299_Copy_a204b4699c
+                mime: image/jpeg
+                name: small__DSC6299 - Copy.jpg
+                size: 36.83
+                width: 500
+                height: 333
+            medium:
+                ext: .jpg
+                url: /uploads/medium_DSC_6299_Copy_a204b4699c.jpg
+                hash: medium_DSC_6299_Copy_a204b4699c
+                mime: image/jpeg
+                name: medium__DSC6299 - Copy.jpg
+                size: 70.81
+                width: 750
+                height: 500
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_DSC_6299_Copy_a204b4699c.jpg
+                hash: thumbnail_DSC_6299_Copy_a204b4699c
+                mime: image/jpeg
+                name: thumbnail__DSC6299 - Copy.jpg
+                size: 10.92
+                width: 234
+                height: 156
+        hash: DSC_6299_Copy_a204b4699c
+        ext: .jpg
+        mime: image/jpeg
+        size: 351.31
+        url: /uploads/DSC_6299_Copy_a204b4699c.jpg
+        provider: local
+        created_by: 5
+        updated_by: 5
+        created_at: '2020-08-29T22:32:43.114Z'
+        updated_at: '2020-08-29T22:32:43.190Z'
+    title: Kassifilm
+    contents: >-
+        Kass cont ET Kass cont ET Kass cont ET Kass cont ET Kass cont ET Kass
+        cont ET Kass cont ET 
+    lead: >-
+        Kass lead ET Kass lead ET Kass lead ET Kass lead ET Kass lead ET Kass
+        lead ET 
+    slug: kassifilm
+    directory: source/article/cat-movie
+    path: article/kassifilm
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 5
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-29T22:36:35.206Z'
+    updated_at: '2020-08-29T22:40:55.784Z'
+    titlePrivate: Lill - st suvaline artikkel
+    title_en: Uudis flower
+    title_ru: Lill RU
+    contents_en: 'Cont EN Cont EN Cont EN Cont EN Cont EN Cont EN '
+    contents_ru: >-
+        Cont RU Cont RU Cont RU Cont RU Cont RU Cont RU Cont RU Cont RU Cont RU
+        Cont RU Cont RU Cont RU 
+    lead_en: 'Lead EN Lead EN Lead EN Lead EN Lead EN Lead EN '
+    lead_ru: >-
+        Lead RU Lead RU Lead RU Lead RU Lead RU Lead RU Lead RU Lead RU Lead RU
+        Lead RU Lead RU Lead RU 
+    slug_en: uudis-flower
+    slug_ru: lill-ru
+    publishing:
+        id: 8
+        from: '2020-08-01T09:00:00.000Z'
+        until: '2021-01-13T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: true
+    imageDefault:
+        id: 17
+        name: _DSC0505 - Copy.jpg
+        alternativeText: ''
+        caption: ''
+        width: 1056
+        height: 1221
+        formats:
+            large:
+                ext: .jpg
+                url: /uploads/large_DSC_0505_Copy_7df16d7c95.jpg
+                hash: large_DSC_0505_Copy_7df16d7c95
+                mime: image/jpeg
+                name: large__DSC0505 - Copy.jpg
+                size: 99.65
+                width: 865
+                height: 1000
+            small:
+                ext: .jpg
+                url: /uploads/small_DSC_0505_Copy_7df16d7c95.jpg
+                hash: small_DSC_0505_Copy_7df16d7c95
+                mime: image/jpeg
+                name: small__DSC0505 - Copy.jpg
+                size: 33.16
+                width: 432
+                height: 500
+            medium:
+                ext: .jpg
+                url: /uploads/medium_DSC_0505_Copy_7df16d7c95.jpg
+                hash: medium_DSC_0505_Copy_7df16d7c95
+                mime: image/jpeg
+                name: medium__DSC0505 - Copy.jpg
+                size: 62.78
+                width: 649
+                height: 750
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_DSC_0505_Copy_7df16d7c95.jpg
+                hash: thumbnail_DSC_0505_Copy_7df16d7c95
+                mime: image/jpeg
+                name: thumbnail__DSC0505 - Copy.jpg
+                size: 5.8
+                width: 135
+                height: 156
+        hash: DSC_0505_Copy_7df16d7c95
+        ext: .jpg
+        mime: image/jpeg
+        size: 143.88
+        url: /uploads/DSC_0505_Copy_7df16d7c95.jpg
+        provider: local
+        created_by: 5
+        updated_by: 5
+        created_at: '2020-08-29T22:35:25.960Z'
+        updated_at: '2020-08-29T22:35:26.013Z'
+    title: Uudis lill
+    contents: 'ET cont ET cont ET cont ET cont ET cont ET cont ET cont ET cont ET cont '
+    lead: >-
+        ET Lead ET Lead ET Lead ET Lead ET Lead ET Lead ET Lead ET Lead ET Lead
+        ET Lead ET Lead ET Lead ET Lead 
+    slug: uudis-lill
+    directory: source/article/uudis-flower
+    path: article/uudis-lill
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
@@ -180,9 +413,13 @@
                 id: 3
                 name: Intervjuu
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:50:35.561Z'
-                updated_at: '2020-08-18T13:53:10.013Z'
+                updated_at: '2020-08-27T13:26:22.977Z'
+                article: null
+                et: Intervjuu
+                en: Interview
+                ru: Интервю
     imageDefault:
         id: 3
         name: F_2_invisible_life.jpg
@@ -237,14 +474,6 @@
         updated_by: 6
         created_at: '2020-08-13T19:16:16.310Z'
         updated_at: '2020-08-13T19:16:16.552Z'
-    domains:
-        -
-            id: 1
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:43:32.378Z'
-            updated_at: '2020-08-19T10:43:32.395Z'
-            url: 'https://poff.ee'
     title: Tartuff on pühendatud kunstile
     contents: >-
         Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
@@ -401,6 +630,230 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
 -
+    id: 9
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-29T22:47:08.733Z'
+    updated_at: '2020-08-29T22:47:08.853Z'
+    titlePrivate: Känd uudis
+    title_en: 'Stomp news '
+    title_ru: Känd RU
+    contents_en: 'Stomp cont Stomp cont Stomp cont Stomp cont Stomp cont Stomp cont '
+    contents_ru: 'Känd RU cont Känd RU cont Känd RU cont Känd RU cont '
+    lead_en: >-
+        Stomp news Stomp news Stomp news Stomp news Stomp news Stomp news Stomp
+        news 
+    lead_ru: 'Känd RU lead Känd RU lead Känd RU lead Känd RU lead '
+    slug_en: stomp-news
+    slug_ru: kaend-ru
+    publishing:
+        id: 12
+        from: '2020-08-02T09:00:00.000Z'
+        until: '2021-02-11T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: true
+    imageDefault:
+        id: 22
+        name: 73f705104436c3a2688b75d888c72707.jpg
+        alternativeText: ''
+        caption: ''
+        width: 400
+        height: 400
+        formats:
+            thumbnail:
+                ext: .jpg
+                url: >-
+                    /uploads/thumbnail_73f705104436c3a2688b75d888c72707_aa6b86ca60.jpg
+                hash: thumbnail_73f705104436c3a2688b75d888c72707_aa6b86ca60
+                mime: image/jpeg
+                name: thumbnail_73f705104436c3a2688b75d888c72707.jpg
+                size: 8.48
+                width: 156
+                height: 156
+        hash: 73f705104436c3a2688b75d888c72707_aa6b86ca60
+        ext: .jpg
+        mime: image/jpeg
+        size: 56.87
+        url: /uploads/73f705104436c3a2688b75d888c72707_aa6b86ca60.jpg
+        provider: local
+        created_by: 5
+        updated_by: 5
+        created_at: '2020-08-29T22:46:09.066Z'
+        updated_at: '2020-08-29T22:46:09.147Z'
+    title: 'Känd uudis '
+    contents: >-
+        Känd uudis lead Känd uudis lead Känd uudis lead Känd uudis lead Känd
+        uudis lead 
+    lead: >-
+        Känd uudis lead Känd uudis lead Känd uudis lead Känd uudis lead Känd
+        uudis lead 
+    slug: kaend-uudis
+    directory: source/article/stomp-news
+    path: article/kaend-uudis
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 7
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-29T22:42:52.739Z'
+    updated_at: '2020-08-29T22:42:52.848Z'
+    titlePrivate: Uudis tool
+    title_en: Chair news
+    title_ru: Taburet
+    contents_en: 'Chair cont Chair cont Chair cont Chair cont Chair cont Chair cont '
+    contents_ru: 'Taburet cont Taburet cont Taburet cont Taburet cont Taburet cont '
+    lead_en: >-
+        Chair news lead Chair news lead Chair news lead Chair news lead Chair
+        news lead 
+    lead_ru: 'Taburet lead Taburet lead Taburet lead Taburet lead Taburet lead '
+    slug_en: chair-news
+    slug_ru: taburet
+    publishing:
+        id: 10
+        from: '2020-05-06T09:00:00.000Z'
+        until: '2021-02-20T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: true
+    imageDefault:
+        id: 19
+        name: h47888.jpg
+        alternativeText: ''
+        caption: ''
+        width: 797
+        height: 900
+        formats:
+            small:
+                ext: .jpg
+                url: /uploads/small_h47888_552909796a.jpg
+                hash: small_h47888_552909796a
+                mime: image/jpeg
+                name: small_h47888.jpg
+                size: 56.87
+                width: 443
+                height: 500
+            medium:
+                ext: .jpg
+                url: /uploads/medium_h47888_552909796a.jpg
+                hash: medium_h47888_552909796a
+                mime: image/jpeg
+                name: medium_h47888.jpg
+                size: 123.31
+                width: 664
+                height: 750
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_h47888_552909796a.jpg
+                hash: thumbnail_h47888_552909796a
+                mime: image/jpeg
+                name: thumbnail_h47888.jpg
+                size: 5.73
+                width: 138
+                height: 156
+        hash: h47888_552909796a
+        ext: .jpg
+        mime: image/jpeg
+        size: 174.44
+        url: /uploads/h47888_552909796a.jpg
+        provider: local
+        created_by: 5
+        updated_by: 5
+        created_at: '2020-08-29T22:41:35.901Z'
+        updated_at: '2020-08-29T22:41:35.965Z'
+    image_ru:
+        id: 20
+        name: h47888a.jpg
+        alternativeText: ''
+        caption: ''
+        width: 900
+        height: 826
+        formats:
+            small:
+                ext: .jpg
+                url: /uploads/small_h47888a_65a921b3e4.jpg
+                hash: small_h47888a_65a921b3e4
+                mime: image/jpeg
+                name: small_h47888a.jpg
+                size: 61.22
+                width: 500
+                height: 459
+            medium:
+                ext: .jpg
+                url: /uploads/medium_h47888a_65a921b3e4.jpg
+                hash: medium_h47888a_65a921b3e4
+                mime: image/jpeg
+                name: medium_h47888a.jpg
+                size: 132.03
+                width: 750
+                height: 688
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_h47888a_65a921b3e4.jpg
+                hash: thumbnail_h47888a_65a921b3e4
+                mime: image/jpeg
+                name: thumbnail_h47888a.jpg
+                size: 7.09
+                width: 170
+                height: 156
+        hash: h47888a_65a921b3e4
+        ext: .jpg
+        mime: image/jpeg
+        size: 187.23
+        url: /uploads/h47888a_65a921b3e4.jpg
+        provider: local
+        created_by: 5
+        updated_by: 5
+        created_at: '2020-08-29T22:42:35.647Z'
+        updated_at: '2020-08-29T22:42:35.840Z'
+    title: Tooliuudis
+    contents: 'Tooliuudis cont Tooliuudis cont Tooliuudis cont Tooliuudis cont '
+    lead: 'Tooliuudis lead Tooliuudis lead Tooliuudis lead Tooliuudis lead '
+    slug: tooliuudis
+    directory: source/article/chair-news
+    path: article/tooliuudis
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
     id: 1
     created_by:
         id: 6
@@ -421,9 +874,13 @@
                 id: 4
                 name: ToetajaLugu
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:51:35.072Z'
-                updated_at: '2020-08-18T13:51:35.128Z'
+                updated_at: '2020-08-27T13:27:09.344Z'
+                article: null
+                et: Toetaja lugu
+                en: Supporter Story
+                ru: Toetaja lugu rus
     imageDefault:
         id: 4
         name: F_1_invisible_life.jpg
@@ -478,14 +935,6 @@
         updated_by: 6
         created_at: '2020-08-13T19:16:16.414Z'
         updated_at: '2020-08-13T19:16:16.648Z'
-    domains:
-        -
-            id: 1
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-19T10:43:32.378Z'
-            updated_at: '2020-08-19T10:43:32.395Z'
-            url: 'https://poff.ee'
     title: Tartu armastusfilmide festivali avab troopiline melodraama
     contents: >-
         End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
@@ -541,6 +990,263 @@
     directory: >-
         source/article/tartu-armastusfilmide-festivali-avab-troopiline-melodraama
     path: article/tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 6
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-29T22:39:05.935Z'
+    updated_at: '2020-08-29T22:40:45.037Z'
+    titlePrivate: Artikkel tänav
+    title_en: Street
+    title_ru: Uulitsa
+    contents_en: 'Street cont Street cont Street cont Street cont Street cont Street cont '
+    contents_ru: 'Uulitsa cont Uulitsa cont Uulitsa cont Uulitsa cont Uulitsa cont '
+    lead_en: 'Street lead Street lead Street lead Street lead Street lead '
+    lead_ru: 'Uulitsa lead Uulitsa lead Uulitsa lead Uulitsa lead Uulitsa lead '
+    slug_en: street
+    slug_ru: uulitsa
+    publishing:
+        id: 9
+        from: '2020-08-01T09:00:00.000Z'
+        until: '2021-01-14T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: true
+    imageDefault:
+        id: 18
+        name: _DSC7896 - Copy.jpg
+        alternativeText: ''
+        caption: ''
+        width: 1702
+        height: 1197
+        formats:
+            large:
+                ext: .jpg
+                url: /uploads/large_DSC_7896_Copy_8b74eb07d2.jpg
+                hash: large_DSC_7896_Copy_8b74eb07d2
+                mime: image/jpeg
+                name: large__DSC7896 - Copy.jpg
+                size: 112.15
+                width: 1000
+                height: 703
+            small:
+                ext: .jpg
+                url: /uploads/small_DSC_7896_Copy_8b74eb07d2.jpg
+                hash: small_DSC_7896_Copy_8b74eb07d2
+                mime: image/jpeg
+                name: small__DSC7896 - Copy.jpg
+                size: 30.05
+                width: 500
+                height: 352
+            medium:
+                ext: .jpg
+                url: /uploads/medium_DSC_7896_Copy_8b74eb07d2.jpg
+                hash: medium_DSC_7896_Copy_8b74eb07d2
+                mime: image/jpeg
+                name: medium__DSC7896 - Copy.jpg
+                size: 63.39
+                width: 750
+                height: 527
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_DSC_7896_Copy_8b74eb07d2.jpg
+                hash: thumbnail_DSC_7896_Copy_8b74eb07d2
+                mime: image/jpeg
+                name: thumbnail__DSC7896 - Copy.jpg
+                size: 7.28
+                width: 222
+                height: 156
+        hash: DSC_7896_Copy_8b74eb07d2
+        ext: .jpg
+        mime: image/jpeg
+        size: 327.87
+        url: /uploads/DSC_7896_Copy_8b74eb07d2.jpg
+        provider: local
+        created_by: 5
+        updated_by: 5
+        created_at: '2020-08-29T22:37:52.317Z'
+        updated_at: '2020-08-29T22:37:52.399Z'
+    title: Tänav
+    contents: 'Tänav cont Tänav cont Tänav cont Tänav cont Tänav cont Tänav cont '
+    lead: 'Tänav lead Tänav lead Tänav lead Tänav lead Tänav lead Tänav lead '
+    slug: taenav
+    directory: source/article/street
+    path: article/taenav
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 8
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-29T22:45:27.749Z'
+    updated_at: '2020-08-29T22:45:27.879Z'
+    titlePrivate: Trees news
+    title_en: Trees news
+    title_ru: Puud RU
+    contents_en: 'Trees cont Trees cont Trees cont Trees cont Trees cont '
+    contents_ru: >-
+        Puud RU cont Puud RU cont Puud RU cont Puud RU cont Puud RU cont Puud RU
+        cont 
+    lead_en: 'Trees news Trees news Trees news Trees news Trees news Trees news '
+    lead_ru: 'Puud RU lead Puud RU lead Puud RU lead Puud RU lead Puud RU lead '
+    slug_en: trees-news
+    slug_ru: puud-ru
+    publishing:
+        id: 11
+        from: '2020-06-17T09:00:00.000Z'
+        until: '2021-06-08T09:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: true
+    imageDefault:
+        id: 21
+        name: _DSC5402 - Copy.jpg
+        alternativeText: ''
+        caption: ''
+        width: 1737
+        height: 1009
+        formats:
+            large:
+                ext: .jpg
+                url: /uploads/large_DSC_5402_Copy_644cc1bec0.jpg
+                hash: large_DSC_5402_Copy_644cc1bec0
+                mime: image/jpeg
+                name: large__DSC5402 - Copy.jpg
+                size: 132.99
+                width: 1000
+                height: 581
+            small:
+                ext: .jpg
+                url: /uploads/small_DSC_5402_Copy_644cc1bec0.jpg
+                hash: small_DSC_5402_Copy_644cc1bec0
+                mime: image/jpeg
+                name: small__DSC5402 - Copy.jpg
+                size: 35.16
+                width: 500
+                height: 290
+            medium:
+                ext: .jpg
+                url: /uploads/medium_DSC_5402_Copy_644cc1bec0.jpg
+                hash: medium_DSC_5402_Copy_644cc1bec0
+                mime: image/jpeg
+                name: medium__DSC5402 - Copy.jpg
+                size: 74.27
+                width: 750
+                height: 436
+            thumbnail:
+                ext: .jpg
+                url: /uploads/thumbnail_DSC_5402_Copy_644cc1bec0.jpg
+                hash: thumbnail_DSC_5402_Copy_644cc1bec0
+                mime: image/jpeg
+                name: thumbnail__DSC5402 - Copy.jpg
+                size: 9.71
+                width: 245
+                height: 142
+        hash: DSC_5402_Copy_644cc1bec0
+        ext: .jpg
+        mime: image/jpeg
+        size: 406.35
+        url: /uploads/DSC_5402_Copy_644cc1bec0.jpg
+        provider: local
+        created_by: 5
+        updated_by: 5
+        created_at: '2020-08-29T22:44:11.792Z'
+        updated_at: '2020-08-29T22:44:11.850Z'
+    title: Puud uudis
+    contents: 'Puud cont Puud cont Puud cont Puud cont '
+    lead: 'Puud lead Puud lead Puud lead Puud lead Puud lead Puud lead '
+    slug: puud-uudis
+    directory: source/article/trees-news
+    path: article/puud-uudis
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 10
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-08-29T22:49:23.636Z'
+    updated_at: '2020-08-29T23:23:49.897Z'
+    titlePrivate: Pink uudis
+    title_en: Stool news
+    title_ru: 'Stool news RU '
+    contents_en: 'Stool news cont Stool news cont Stool news cont '
+    contents_ru: Stool news RU cont
+    lead_en: 'Stool news lead Stool news lead Stool news lead Stool news lead '
+    lead_ru: 'Stool news RU lead '
+    slug_en: stool-news
+    slug_ru: stool-news-ru
+    publishing:
+        id: 13
+        from: '2020-08-01T09:00:00.000Z'
+        until: '2020-12-18T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: true
+    title: Pink uudis
+    contents: 'Ping cont Ping cont Ping cont Ping cont '
+    lead: 'Pink lead Pink lead Pink lead Pink lead '
+    slug: pink-uudis
+    directory: source/article/stool-news
+    path: article/pink-uudis
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
