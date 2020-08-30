@@ -11,9 +11,13 @@ block content
                     span.article_title_detailed.clr_primary= self.festivalDates
 
                     //- //SIIN ON NÄIDE
-                    for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        span= values.title
 
+                    - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+                    for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                        if values.article
+                            - heroPlusTrioNews.push(values.article.id)
+
+                        span= values.title
                     //- //KUNI SIIN
                     br
                     | !{self.festivalLocations.outdoors}
@@ -32,12 +36,28 @@ block content
                     //- HERO ARTICLE EXAMPLE BELOW
                     | !{self.data.heroArticle.title}
                     | !{self.data.heroArticle.lead}
+                    - heroPlusTrioNews.push(self.data.heroArticle.id)
+                    //- HERO ARTICLE EXAMPLE END
+
                     if self.data.heroArticle.image
                         img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.image.hash}${self.data.heroArticle.image.ext}` style='width:30%; height:30%;')
                     else if self.data.heroArticle.imageDefault
                         img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.imageDefault.hash}${self.data.heroArticle.imageDefault.ext}` style='width:30%; height:30%;')
                     else
                         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+
+                    //- VIIEKAS START
+                    - var counter = 0
+                    each news in self.data.articles.sort(function(a, b){ return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0); })
+                        if heroPlusTrioNews.includes(news.id) || (news.publishing.article_types[0].et !== 'Uudised')
+                            - continue
+                        if counter >= 5
+                            - break
+                        -counter++
+
+                        p= news.title
+                    //- VIIEKAS LÕPP
+
 
         section.grid_covid
             .covid_rules

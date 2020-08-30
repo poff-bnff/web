@@ -93,6 +93,9 @@ function rueten(obj, lang) {
             delete obj[key];
             continue
         }
+        if (key === 'article_types') {
+            continue
+        }
         else if (key === lang) {
             // console.log(key, obj[key]);
             return obj[key]
@@ -226,7 +229,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (writeIndexFile) {
-
+        console.log(element.publishing.article_types[0].name);
         fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${element.publishing.article_types[0].name.toLowerCase()}_index_template.pug`, function(err) {
             if(err) {
                 return console.log(err);

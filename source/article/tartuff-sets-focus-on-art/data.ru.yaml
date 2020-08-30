@@ -172,9 +172,13 @@ publishing:
             id: 3
             name: Intervjuu
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-18T13:53:10.013Z'
+            updated_at: '2020-08-27T13:26:22.977Z'
+            article: null
+            et: Intervjuu
+            en: Interview
+            ru: Интервю
 imageDefault:
     id: 3
     name: F_2_invisible_life.jpg
@@ -283,14 +287,6 @@ image_et:
     updated_by: 6
     created_at: '2020-08-13T19:16:16.284Z'
     updated_at: '2020-08-13T19:16:16.529Z'
-domains:
-    -
-        id: 1
-        created_by: 6
-        updated_by: 6
-        created_at: '2020-08-19T10:43:32.378Z'
-        updated_at: '2020-08-19T10:43:32.395Z'
-        url: 'https://poff.ee'
 directory: source/article/tartuff-sets-focus-on-art
 data:
     pictures: /article_pictures.yaml

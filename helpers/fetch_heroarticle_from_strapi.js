@@ -27,10 +27,10 @@ function rueten(obj, lang) {
             delete obj[key];
             continue
         }
-        if (key === 'id') {
-            delete obj[key];
-            continue
-        }
+        // if (key === 'id') {
+        //     delete obj[key];
+        //     continue
+        // }
         else if (key === lang) {
             // console.log(key, obj[key]);
             return obj[key]
