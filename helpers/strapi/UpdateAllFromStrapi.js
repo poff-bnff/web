@@ -1,14 +1,17 @@
 const FromStrapi = require('./FromStrapi')
 
 
-function LogProcess(token, dataPath){
-    console.log("updating " + dataPath.slice(1) + " from Strapi");
+function LogProcess(token, modelName){
+    console.log("updating " + modelName + " from Strapi");
 }
 
 
-// FromStrapi.WriteJSON('/countries', './data/ISOCountriesFromStrapi.json', LogProcess)
-// FromStrapi.WriteJSON('/languages', './data/ISOLanguages.json', LogProcess)
-// FromStrapi.WriteJSON('/films', './data/FilmsFromStrapi.json', LogProcess)
-// FromStrapi.WriteJSON('/articles', './data/articlesFromStrapi.json', LogProcess)
+
+FromStrapi.WriteJSON('Country', './data/ISOCountriesFromStrapi.json', LogProcess)
+FromStrapi.WriteJSON('Language', './data/ISOLanguages.json', LogProcess)
+FromStrapi.WriteJSON('Film', './data/FilmsFromStrapi.json', LogProcess)
+FromStrapi.WriteJSON('Article', './data/articlesFromStrapi.json', LogProcess)
+
+FromStrapi.WriteJSON('HeroArticlePoff', './data/TEST.json', LogProcess)
 
 FromStrapi.WriteJSON('/trio-block-poeff', './data/TEST.json', LogProcess)
