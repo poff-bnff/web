@@ -320,7 +320,7 @@ HeroArticlePoff:
     article_en: *Article
     article_ru: *Article
 
-Block: &Block
+TrioBlockItem: &TrioBlockItem
     title: *Translated
     lead: *Translated
     article: *Article
@@ -329,7 +329,8 @@ Block: &Block
 TrioBlockPoff:
     _path: /trio-block-poeff
     blockName: *Translated
-    block1: *Block
-    block2: *Block
-    block3: *Block
+    trioBlockItem_1: *TrioBlockItem
+    trioBlockItem_2: *TrioBlockItem
+    trioBlockItem_3: *TrioBlockItem
+
 

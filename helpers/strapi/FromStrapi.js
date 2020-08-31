@@ -5,18 +5,24 @@ const Validate= require('../compareStructure')
 const yaml= require('js-yaml')
 
 const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
-// console.log(datamodel['Film'])
-console.log(datamodel['Film']['_path'])
-
+const DOMAIN = 'poff.ee'
 
 function FromStrapi(modelName, CBfunction){
     console.log('validate model', modelName)
     if (datamodel[modelName] === undefined){
         throw new Error('Model ' + modelName + ' not in data model.')
     }
-
     let dataPath = datamodel[modelName]['_path']
+
     let FetchData = function(token) {
+
+        let checkDomain = function(element){
+            if (element['domain'] === undefined) {
+                return true
+            } else{
+                return element['domain']['url'] === DOMAIN
+            }
+        }
         let GetDataFromStrapi = function(dataPath, token, CBfunction){
             let options = {
                 //see võiks tulla muutujast
@@ -34,9 +40,15 @@ function FromStrapi(modelName, CBfunction){
                     allData += chunk;
                 });
                 response.on('end', function () {
-                    let data = JSON.parse(allData)
-                    CBfunction(data, token)
-                    //console.log(data);
+                    let strapiData = JSON.parse(allData)
+                    if (!Array.isArray(strapiData)){
+                        strapiData = [strapiData]
+                    }
+
+                    let filteredData = strapiData.filter(checkDomain)
+                    CBfunction(strapiData, token)
+                    // console.log(filteredData);
+
                 });
                 response.on('error', function (error) {
                     console.log(error);
