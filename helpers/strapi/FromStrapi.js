@@ -2,7 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi');
 const Validate= require('../compareStructure')
-const yaml= require('js-yaml')
+const yaml= require('js-yaml');
 
 const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
 const DOMAIN = 'poff.ee'
@@ -17,11 +17,26 @@ function FromStrapi(modelName, CBfunction){
     let FetchData = function(token) {
 
         let checkDomain = function(element){
-            if (element['domain'] === undefined) {
-                return true
-            } else{
-                return element['domain']['url'] === DOMAIN
+            // kui on domain, siis element['domains'] = [domain]
+            if (element['domain']){
+                element['domains'] = [element['domain']]
             }
+
+            if (element['domains'] === undefined) {
+                console.log(3);
+                return true
+            }
+
+            for(let ix in element['domains']){
+                let el = element['domains'][ix]
+                console.log(ix, el)
+                if (el['url'] === DOMAIN){
+                    console.log('domain !');
+                    return true
+                }
+            }
+
+            return false
         }
         let GetDataFromStrapi = function(dataPath, token, CBfunction){
             let options = {
@@ -45,9 +60,9 @@ function FromStrapi(modelName, CBfunction){
                         strapiData = [strapiData]
                     }
 
-                    let filteredData = strapiData.filter(checkDomain)
+                    strapiData = strapiData.filter(checkDomain)
                     CBfunction(strapiData, token)
-                    // console.log(filteredData);
+                    // console.log(strapiData);
 
                 });
                 response.on('error', function (error) {
