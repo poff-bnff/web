@@ -5,7 +5,8 @@ const path = require('path')
 
 process.chdir(path.dirname(__filename))
 
-const findModelName= function(dataPath){
+
+const findModelName= function(dataPath){ // Film
     if (dataPath == '/people'){
         return modelName= "Person"
     }
@@ -21,6 +22,7 @@ const findModelName= function(dataPath){
     }
 
 }
+
 
 const Validate= function(strapiData, dataPath){
     // console.log(dataPath)
@@ -41,7 +43,8 @@ const Validate= function(strapiData, dataPath){
 }
 
 const Compare = function (lhs, rhs, path) {
-    // console.log('<--', path)
+    console.log('<--', path)
+    delete lhs._path
     if (Array.isArray(lhs)) {
         if (Array.isArray(rhs)) {
             for (const ix in rhs) {
@@ -59,6 +62,7 @@ const Compare = function (lhs, rhs, path) {
             }
             const lh_element = lhs[key]
             if (key in rhs) {
+                // console.log(key)
                 if (lh_element !== null && typeof(lh_element) === 'object' ) {
                     Compare(lh_element, rhs[key], next_path)
                 }
@@ -67,7 +71,7 @@ const Compare = function (lhs, rhs, path) {
             }
         }
     }
-    console.log('-->', path)
+    // console.log('-->', path)
 }
 
 module.exports.Validate = Validate
