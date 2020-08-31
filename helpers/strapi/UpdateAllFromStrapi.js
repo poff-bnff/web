@@ -6,6 +6,7 @@ function LogProcess(token, modelName){
 }
 
 
+
 FromStrapi.WriteJSON('Country', './data/ISOCountriesFromStrapi.json', LogProcess)
 FromStrapi.WriteJSON('Language', './data/ISOLanguages.json', LogProcess)
 FromStrapi.WriteJSON('Film', './data/FilmsFromStrapi.json', LogProcess)
@@ -13,3 +14,4 @@ FromStrapi.WriteJSON('Article', './data/articlesFromStrapi.json', LogProcess)
 
 FromStrapi.WriteJSON('HeroArticlePoff', './data/TEST.json', LogProcess)
 
+FromStrapi.WriteJSON('/trio-block-poeff', './data/TEST.json', LogProcess)

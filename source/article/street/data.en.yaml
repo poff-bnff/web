@@ -1,0 +1,102 @@
+id: 6
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-08-29T22:39:05.935Z'
+updated_at: '2020-08-29T22:40:45.037Z'
+titlePrivate: Artikkel tänav
+title_et: Tänav
+title_ru: Uulitsa
+contents_et: 'Tänav cont Tänav cont Tänav cont Tänav cont Tänav cont Tänav cont '
+contents_ru: 'Uulitsa cont Uulitsa cont Uulitsa cont Uulitsa cont Uulitsa cont '
+lead_et: 'Tänav lead Tänav lead Tänav lead Tänav lead Tänav lead Tänav lead '
+lead_ru: 'Uulitsa lead Uulitsa lead Uulitsa lead Uulitsa lead Uulitsa lead '
+slug_et: taenav
+slug_ru: uulitsa
+publishing:
+    id: 9
+    publish_et: true
+    from: '2020-08-01T09:00:00.000Z'
+    until: '2021-01-14T10:00:00.000Z'
+    publish_ru: true
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    publish: true
+imageDefault:
+    id: 18
+    name: _DSC7896 - Copy.jpg
+    alternativeText: ''
+    caption: ''
+    width: 1702
+    height: 1197
+    formats:
+        large:
+            ext: .jpg
+            url: /uploads/large_DSC_7896_Copy_8b74eb07d2.jpg
+            hash: large_DSC_7896_Copy_8b74eb07d2
+            mime: image/jpeg
+            name: large__DSC7896 - Copy.jpg
+            size: 112.15
+            width: 1000
+            height: 703
+        small:
+            ext: .jpg
+            url: /uploads/small_DSC_7896_Copy_8b74eb07d2.jpg
+            hash: small_DSC_7896_Copy_8b74eb07d2
+            mime: image/jpeg
+            name: small__DSC7896 - Copy.jpg
+            size: 30.05
+            width: 500
+            height: 352
+        medium:
+            ext: .jpg
+            url: /uploads/medium_DSC_7896_Copy_8b74eb07d2.jpg
+            hash: medium_DSC_7896_Copy_8b74eb07d2
+            mime: image/jpeg
+            name: medium__DSC7896 - Copy.jpg
+            size: 63.39
+            width: 750
+            height: 527
+        thumbnail:
+            ext: .jpg
+            url: /uploads/thumbnail_DSC_7896_Copy_8b74eb07d2.jpg
+            hash: thumbnail_DSC_7896_Copy_8b74eb07d2
+            mime: image/jpeg
+            name: thumbnail__DSC7896 - Copy.jpg
+            size: 7.28
+            width: 222
+            height: 156
+    hash: DSC_7896_Copy_8b74eb07d2
+    ext: .jpg
+    mime: image/jpeg
+    size: 327.87
+    url: /uploads/DSC_7896_Copy_8b74eb07d2.jpg
+    provider: local
+    created_by: 5
+    updated_by: 5
+    created_at: '2020-08-29T22:37:52.317Z'
+    updated_at: '2020-08-29T22:37:52.399Z'
+title: Street
+contents: 'Street cont Street cont Street cont Street cont Street cont Street cont '
+lead: 'Street lead Street lead Street lead Street lead Street lead '
+slug: street
+directory: source/article/street
+path: article/street
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.en.yaml

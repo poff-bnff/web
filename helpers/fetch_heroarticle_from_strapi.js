@@ -2,10 +2,10 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.Fetch('/article-hero', LabelsToYAMLData)
+FromStrapi.ValidateAndFetch('/article-hero', DataToYAMLData)
 
-
-function LabelsToYAMLData(strapiData){
+function DataToYAMLData(strapiData){
+    // console.log(strapiData);
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
 }
@@ -27,10 +27,10 @@ function rueten(obj, lang) {
             delete obj[key];
             continue
         }
-        if (key === 'id') {
-            delete obj[key];
-            continue
-        }
+        // if (key === 'id') {
+        //     delete obj[key];
+        //     continue
+        // }
         else if (key === lang) {
             // console.log(key, obj[key]);
             return obj[key]
@@ -92,14 +92,14 @@ function processData(data, lang, CreateYAML) {
         // }
         buffer = rueten(data[`article_${lang}`], lang);
     }
-    console.log(buffer);
+    // console.log(buffer);
     CreateYAML(buffer, lang);
 }
 
 function CreateYAML(buffer, lang) {
     // console.log(buffer);
     let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`source/heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`../source/heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

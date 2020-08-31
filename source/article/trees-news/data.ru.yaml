@@ -1,0 +1,104 @@
+id: 8
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-08-29T22:45:27.749Z'
+updated_at: '2020-08-29T22:45:27.879Z'
+titlePrivate: Trees news
+title_et: Puud uudis
+title_en: Trees news
+contents_et: 'Puud cont Puud cont Puud cont Puud cont '
+contents_en: 'Trees cont Trees cont Trees cont Trees cont Trees cont '
+lead_et: 'Puud lead Puud lead Puud lead Puud lead Puud lead Puud lead '
+lead_en: 'Trees news Trees news Trees news Trees news Trees news Trees news '
+slug_et: puud-uudis
+slug_en: trees-news
+publishing:
+    id: 11
+    publish_et: true
+    from: '2020-06-17T09:00:00.000Z'
+    until: '2021-06-08T09:00:00.000Z'
+    publish_en: true
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    publish: true
+imageDefault:
+    id: 21
+    name: _DSC5402 - Copy.jpg
+    alternativeText: ''
+    caption: ''
+    width: 1737
+    height: 1009
+    formats:
+        large:
+            ext: .jpg
+            url: /uploads/large_DSC_5402_Copy_644cc1bec0.jpg
+            hash: large_DSC_5402_Copy_644cc1bec0
+            mime: image/jpeg
+            name: large__DSC5402 - Copy.jpg
+            size: 132.99
+            width: 1000
+            height: 581
+        small:
+            ext: .jpg
+            url: /uploads/small_DSC_5402_Copy_644cc1bec0.jpg
+            hash: small_DSC_5402_Copy_644cc1bec0
+            mime: image/jpeg
+            name: small__DSC5402 - Copy.jpg
+            size: 35.16
+            width: 500
+            height: 290
+        medium:
+            ext: .jpg
+            url: /uploads/medium_DSC_5402_Copy_644cc1bec0.jpg
+            hash: medium_DSC_5402_Copy_644cc1bec0
+            mime: image/jpeg
+            name: medium__DSC5402 - Copy.jpg
+            size: 74.27
+            width: 750
+            height: 436
+        thumbnail:
+            ext: .jpg
+            url: /uploads/thumbnail_DSC_5402_Copy_644cc1bec0.jpg
+            hash: thumbnail_DSC_5402_Copy_644cc1bec0
+            mime: image/jpeg
+            name: thumbnail__DSC5402 - Copy.jpg
+            size: 9.71
+            width: 245
+            height: 142
+    hash: DSC_5402_Copy_644cc1bec0
+    ext: .jpg
+    mime: image/jpeg
+    size: 406.35
+    url: /uploads/DSC_5402_Copy_644cc1bec0.jpg
+    provider: local
+    created_by: 5
+    updated_by: 5
+    created_at: '2020-08-29T22:44:11.792Z'
+    updated_at: '2020-08-29T22:44:11.850Z'
+title: Puud RU
+contents: >-
+    Puud RU cont Puud RU cont Puud RU cont Puud RU cont Puud RU cont Puud RU
+    cont 
+lead: 'Puud RU lead Puud RU lead Puud RU lead Puud RU lead Puud RU lead '
+slug: puud-ru
+directory: source/article/trees-news
+path: article/puud-ru
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.ru.yaml

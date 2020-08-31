@@ -1,0 +1,108 @@
+id: 4
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-08-29T22:34:40.830Z'
+updated_at: '2020-08-29T22:34:40.978Z'
+titlePrivate: artikkel filmist kass
+title_et: Kassifilm
+title_ru: Koshka film RU
+contents_et: >-
+    Kass cont ET Kass cont ET Kass cont ET Kass cont ET Kass cont ET Kass cont
+    ET Kass cont ET 
+contents_ru: 'Rus cont Rus cont Rus cont Rus cont Rus cont Rus cont Rus cont '
+lead_et: >-
+    Kass lead ET Kass lead ET Kass lead ET Kass lead ET Kass lead ET Kass lead
+    ET 
+lead_ru: 'Rus lead Rus lead Rus lead Rus lead Rus lead Rus lead Rus lead Rus lead '
+slug_et: kassifilm
+slug_ru: koshka-film-ru
+publishing:
+    id: 7
+    publish_et: true
+    from: '2020-08-01T09:00:00.000Z'
+    until: '2020-11-12T10:00:00.000Z'
+    publish_ru: true
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    publish: true
+imageDefault:
+    id: 16
+    name: _DSC6299 - Copy.jpg
+    alternativeText: ''
+    caption: ''
+    width: 1844
+    height: 1229
+    formats:
+        large:
+            ext: .jpg
+            url: /uploads/large_DSC_6299_Copy_a204b4699c.jpg
+            hash: large_DSC_6299_Copy_a204b4699c
+            mime: image/jpeg
+            name: large__DSC6299 - Copy.jpg
+            size: 115.96
+            width: 1000
+            height: 666
+        small:
+            ext: .jpg
+            url: /uploads/small_DSC_6299_Copy_a204b4699c.jpg
+            hash: small_DSC_6299_Copy_a204b4699c
+            mime: image/jpeg
+            name: small__DSC6299 - Copy.jpg
+            size: 36.83
+            width: 500
+            height: 333
+        medium:
+            ext: .jpg
+            url: /uploads/medium_DSC_6299_Copy_a204b4699c.jpg
+            hash: medium_DSC_6299_Copy_a204b4699c
+            mime: image/jpeg
+            name: medium__DSC6299 - Copy.jpg
+            size: 70.81
+            width: 750
+            height: 500
+        thumbnail:
+            ext: .jpg
+            url: /uploads/thumbnail_DSC_6299_Copy_a204b4699c.jpg
+            hash: thumbnail_DSC_6299_Copy_a204b4699c
+            mime: image/jpeg
+            name: thumbnail__DSC6299 - Copy.jpg
+            size: 10.92
+            width: 234
+            height: 156
+    hash: DSC_6299_Copy_a204b4699c
+    ext: .jpg
+    mime: image/jpeg
+    size: 351.31
+    url: /uploads/DSC_6299_Copy_a204b4699c.jpg
+    provider: local
+    created_by: 5
+    updated_by: 5
+    created_at: '2020-08-29T22:32:43.114Z'
+    updated_at: '2020-08-29T22:32:43.190Z'
+title: Cat movie
+contents: >-
+    Cat cont EN Cat cont EN Cat cont EN Cat cont EN Cat cont EN Cat cont EN Cat
+    cont EN 
+lead: 'Cat lead EN Cat lead EN Cat lead EN Cat lead EN Cat lead EN Cat lead EN '
+slug: cat-movie
+directory: source/article/cat-movie
+path: article/cat-movie
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.en.yaml

@@ -1,0 +1,82 @@
+id: 9
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-08-29T22:47:08.733Z'
+updated_at: '2020-08-29T22:47:08.853Z'
+titlePrivate: Känd uudis
+title_en: 'Stomp news '
+title_ru: Känd RU
+contents_en: 'Stomp cont Stomp cont Stomp cont Stomp cont Stomp cont Stomp cont '
+contents_ru: 'Känd RU cont Känd RU cont Känd RU cont Känd RU cont '
+lead_en: >-
+    Stomp news Stomp news Stomp news Stomp news Stomp news Stomp news Stomp
+    news 
+lead_ru: 'Känd RU lead Känd RU lead Känd RU lead Känd RU lead '
+slug_en: stomp-news
+slug_ru: kaend-ru
+publishing:
+    id: 12
+    from: '2020-08-02T09:00:00.000Z'
+    until: '2021-02-11T10:00:00.000Z'
+    publish_en: true
+    publish_ru: true
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    publish: true
+imageDefault:
+    id: 22
+    name: 73f705104436c3a2688b75d888c72707.jpg
+    alternativeText: ''
+    caption: ''
+    width: 400
+    height: 400
+    formats:
+        thumbnail:
+            ext: .jpg
+            url: >-
+                /uploads/thumbnail_73f705104436c3a2688b75d888c72707_aa6b86ca60.jpg
+            hash: thumbnail_73f705104436c3a2688b75d888c72707_aa6b86ca60
+            mime: image/jpeg
+            name: thumbnail_73f705104436c3a2688b75d888c72707.jpg
+            size: 8.48
+            width: 156
+            height: 156
+    hash: 73f705104436c3a2688b75d888c72707_aa6b86ca60
+    ext: .jpg
+    mime: image/jpeg
+    size: 56.87
+    url: /uploads/73f705104436c3a2688b75d888c72707_aa6b86ca60.jpg
+    provider: local
+    created_by: 5
+    updated_by: 5
+    created_at: '2020-08-29T22:46:09.066Z'
+    updated_at: '2020-08-29T22:46:09.147Z'
+title: 'Känd uudis '
+contents: >-
+    Känd uudis lead Känd uudis lead Känd uudis lead Känd uudis lead Känd uudis
+    lead 
+lead: >-
+    Känd uudis lead Känd uudis lead Känd uudis lead Känd uudis lead Känd uudis
+    lead 
+slug: kaend-uudis
+directory: source/article/stomp-news
+path: article/kaend-uudis
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.et.yaml
