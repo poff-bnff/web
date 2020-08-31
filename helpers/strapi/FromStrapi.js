@@ -2,15 +2,27 @@ const fs = require('fs');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi');
 const Validate= require('../compareStructure')
+const yaml= require('js-yaml')
 
-function FromStrapi(datapath, CBfunction){
+const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
+// console.log(datamodel['Film'])
+console.log(datamodel['Film']['_path'])
+
+
+function FromStrapi(modelName, CBfunction){
+    console.log('validate model', modelName)
+    if (datamodel[modelName] === undefined){
+        throw new Error('Model ' + modelName + ' not in data model.')
+    }
+
+    let dataPath = datamodel[modelName]['_path']
     let FetchData = function(token) {
-        let GetDataFromStrapi = function(datapath, token, CBfunction){
+        let GetDataFromStrapi = function(dataPath, token, CBfunction){
             let options = {
                 //see võiks tulla muutujast
                 host: process.env['StrapiHost'],
                 // ?_limit=-1 see tagab, et strapi tagastab kogu data, mitte 100 esimest nagu on vaikimisi säte
-                path: datapath +'?_limit=-1',
+                path: dataPath +'?_limit=-1',
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -35,7 +47,7 @@ function FromStrapi(datapath, CBfunction){
             })
             req.end()
         };
-        GetDataFromStrapi(datapath, token, CBfunction);
+        GetDataFromStrapi(dataPath, token, CBfunction);
     };
     AuthStrapi.Auth(FetchData)
 }
@@ -54,7 +66,7 @@ function ValitateAndReturnData(dataPath, CBfunction){
     })
 }
 
-//ValitateAndReturnData('/articles', LogData)
+//ValitateAndReturnData('Article', LogData)
 
 
 
