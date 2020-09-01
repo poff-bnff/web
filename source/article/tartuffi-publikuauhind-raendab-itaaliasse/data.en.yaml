@@ -1,0 +1,122 @@
+id: 5
+titleForEditor: Tartuffi publikuauhind rändab Itaaliasse
+title_et: Tartuffi publikuauhind rändab Itaaliasse
+slug_et: tartuffi-publikuauhind-raendab-itaaliasse
+title_ru: ''
+slug_ru: ''
+created_by:
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-09-01T07:24:35.542Z'
+updated_at: '2020-09-01T09:27:56.533Z'
+lead: ''
+contents: dfv
+media:
+    id: 2
+    clipUrlDefault: ''
+    imageDefault:
+        -
+            id: 5
+            name: tartuff_2019_ohust_1.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1920
+            height: 1080
+            formats:
+                large:
+                    ext: .jpg
+                    url: /uploads/large_tartuff_2019_ohust_1_778c8d54c2.jpg
+                    hash: large_tartuff_2019_ohust_1_778c8d54c2
+                    mime: image/jpeg
+                    name: large_tartuff_2019_ohust_1.jpg
+                    size: 120.83
+                    width: 1000
+                    height: 563
+                small:
+                    ext: .jpg
+                    url: /uploads/small_tartuff_2019_ohust_1_778c8d54c2.jpg
+                    hash: small_tartuff_2019_ohust_1_778c8d54c2
+                    mime: image/jpeg
+                    name: small_tartuff_2019_ohust_1.jpg
+                    size: 32.61
+                    width: 500
+                    height: 281
+                medium:
+                    ext: .jpg
+                    url: /uploads/medium_tartuff_2019_ohust_1_778c8d54c2.jpg
+                    hash: medium_tartuff_2019_ohust_1_778c8d54c2
+                    mime: image/jpeg
+                    name: medium_tartuff_2019_ohust_1.jpg
+                    size: 68.02
+                    width: 750
+                    height: 422
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_tartuff_2019_ohust_1_778c8d54c2.jpg
+                    hash: thumbnail_tartuff_2019_ohust_1_778c8d54c2
+                    mime: image/jpeg
+                    name: thumbnail_tartuff_2019_ohust_1.jpg
+                    size: 8.98
+                    width: 245
+                    height: 138
+            hash: tartuff_2019_ohust_1_778c8d54c2
+            ext: .jpg
+            mime: image/jpeg
+            size: 323.02
+            url: /uploads/tartuff_2019_ohust_1_778c8d54c2.jpg
+            provider: local
+            created_by: 3
+            updated_by: 3
+            created_at: '2020-08-26T13:51:45.254Z'
+            updated_at: '2020-08-26T13:51:45.327Z'
+    image: []
+tags:
+    -
+        id: 321
+        premiere_types:
+            - International Premiere
+        programmes:
+            - Official Selection
+        keywords:
+            - MeToo
+            - Society
+publishSettings:
+    -
+        id: 15
+        publish_et: true
+        from: '2020-09-10T09:00:00.000Z'
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        publish: false
+button:
+    -
+        id: 5
+        text_et: asd
+        text_ru: adscasd
+        text: adsca
+    -
+        id: 7
+        text_et: Button test 2
+        url_et: postimees.ee
+title: ''
+slug: ''
+directory: source/article/tartuffi-publikuauhind-raendab-itaaliasse
+path: article/
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.en.yaml

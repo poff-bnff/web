@@ -10,15 +10,15 @@ block content
                 .article_title_detailed.m_center_d_right
                     span.article_title_detailed.clr_primary= self.festivalDates
 
-                    //- //SIIN ON NÄIDE
+                    //- //- //SIIN ON NÄIDE
 
-                    - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
-                    for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        if values.article
-                            - heroPlusTrioNews.push(values.article.id)
+                    //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+                    //- for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                    //-     if values.article
+                    //-         - heroPlusTrioNews.push(values.article.id)
 
-                        span= values.title
-                    //- //KUNI SIIN
+                    //-     span= values.title
+                    //- //- //KUNI SIIN
                     br
                     | !{self.festivalLocations.outdoors}
                     br
@@ -33,11 +33,11 @@ block content
                     - var frontpageText = self.frontpageText
                     | !{ self.md(frontpageText)}
                     a.btn.btn_primary.active.font_h(href='https://tartuff.elisastage.ee' role='button')= self.frontPageButton
-                    //- HERO ARTICLE EXAMPLE BELOW
-                    | !{self.data.heroArticle.title}
-                    | !{self.data.heroArticle.lead}
-                    - heroPlusTrioNews.push(self.data.heroArticle.id)
-                    //- HERO ARTICLE EXAMPLE END
+                    //- //- HERO ARTICLE EXAMPLE BELOW
+                    //- | !{self.data.heroArticle.title}
+                    //- | !{self.data.heroArticle.lead}
+                    //- - heroPlusTrioNews.push(self.data.heroArticle.id)
+                    //- //- HERO ARTICLE EXAMPLE END
 
                     if self.data.heroArticle.image
                         img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.image.hash}${self.data.heroArticle.image.ext}` style='width:30%; height:30%;')
@@ -46,17 +46,17 @@ block content
                     else
                         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
 
-                    //- VIIEKAS START
-                    - var counter = 0
-                    each news in self.data.articles.sort(function(a, b){ return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0); })
-                        if heroPlusTrioNews.includes(news.id) || (news.publishing.article_types[0].et !== 'Uudised')
-                            - continue
-                        if counter >= 5
-                            - break
-                        -counter++
+                    //- //- VIIEKAS START
+                    //- - var counter = 0
+                    //- each news in self.data.articles.sort(function(a, b){ return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0); })
+                    //-     if heroPlusTrioNews.includes(news.id) || (news.publishing.article_types[0].et !== 'Uudised')
+                    //-         - continue
+                    //-     if counter >= 5
+                    //-         - break
+                    //-     -counter++
 
-                        p= news.title
-                    //- VIIEKAS LÕPP
+                    //-     p= news.title
+                    //- //- VIIEKAS LÕPP
 
 
         section.grid_covid

@@ -57,7 +57,7 @@ function fetchAll(token) {
 
     let options = {
         host: process.env['StrapiHost'],
-        path: '/articles',
+        path: '/poff-articles',
         method: 'GET',
         headers: {'Authorization': 'Bearer ' + token}
     }
@@ -229,12 +229,15 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (writeIndexFile) {
-        console.log(element.publishing.article_types[0].name);
-        fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${element.publishing.article_types[0].name.toLowerCase()}_index_template.pug`, function(err) {
+        if (element.publishSettings[0].article_types[0] != null) {
+            var templateName = element.publishSettings[0].article_types[0].name.toLowerCase();
+        }else{
+            var templateName = 'uudis';
+        }
+        fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
             if(err) {
                 return console.log(err);
             }
-            console.log("The file was saved!");
         });
 
         // fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
