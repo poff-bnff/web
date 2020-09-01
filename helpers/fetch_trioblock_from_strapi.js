@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.ValidateAndFetch('/trio-block-poeff', DataToYAMLData);
+FromStrapi.ValidateAndFetch('TrioBlockPoff', DataToYAMLData);
 
 function DataToYAMLData(strapiData){
     // console.log(strapiData);
@@ -73,7 +73,7 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
-    let copyData = JSON.parse(JSON.stringify(data));
+    let copyData = JSON.parse(JSON.stringify(data[0]));
     let buffer = [];
     for (key in copyData) {
         let smallBuffer = {}
@@ -94,7 +94,7 @@ function processData(data, lang, CreateYAML) {
         // }
 
         // console.log(key);
-        if(key === 'left' || key === 'center' || key === 'right' ) {
+        if(key.substr(0, key.length-2) === 'trioBlockItem') {
             buffer.push(copyData[key]);
             delete copyData[key]
         }
@@ -111,7 +111,7 @@ function processData(data, lang, CreateYAML) {
 }
 
 function CreateYAML(copyData, lang) {
-    console.log(copyData);
+    // console.log(copyData);
     let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`../source/articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
 }

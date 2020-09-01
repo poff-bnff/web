@@ -2,11 +2,24 @@ id: 1
 titleForEditor: 'Tartuff troopiline melodraama: EST ja default meedia'
 title_et: Tartu armastusfilmide festivali avab troopiline melodraama
 slug_et: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
-created_by: 6
-updated_by: 5
+title_en: adsfeE
+slug_en: adsfe-e
+created_by:
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
 created_at: '2020-09-01T07:15:40.893Z'
 updated_at: '2020-09-01T09:48:16.382Z'
-lead: ''
+lead:
+    id: 3834
+    et: >-
+        PÖFFi armastusfilmide festival Tartuff kuulutas välja tänavuse avafilmi,
+        milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud "Nähtamatu elu”.
+    en: ''
 contents:
     id: 359
     et: >-
@@ -119,24 +132,36 @@ tags:
     -
         id: 322
         premiere_types:
-            - International Premiere
+            - Международная премьера
         programmes:
-            - Official Selection
+            - Основная конкурсная программа
         genres:
-            - Drama
+            - Драма
         keywords:
-            - Society
+            - Общество
 publishSettings:
     -
         id: 16
         publish_et: true
         from: '2020-09-01T06:30:00.000Z'
         article_types:
-            - News
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
 button:
     -
         id: 6
         text_et: test nupp
         url_et: 'https://www.delfi.ee'
-title: adsfeE
-slug: adsfe-e
+directory: source/article/adsfe-e
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.ru.yaml

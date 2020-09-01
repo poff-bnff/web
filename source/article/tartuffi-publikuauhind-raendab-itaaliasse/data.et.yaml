@@ -4,8 +4,14 @@ title_en: ''
 slug_en: ''
 title_ru: ''
 slug_ru: ''
-created_by: 6
-updated_by: 5
+created_by:
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
 created_at: '2020-09-01T07:24:35.542Z'
 updated_at: '2020-09-01T09:27:56.533Z'
 lead: >-
@@ -122,7 +128,17 @@ publishSettings:
         from: '2020-09-10T09:00:00.000Z'
         publish_en: false
         article_types:
-            - Uudised
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
         publish: true
 button:
     -
@@ -136,3 +152,8 @@ button:
         url: postimees.ee
 title: Tartuffi publikuauhind rändab Itaaliasse
 slug: tartuffi-publikuauhind-raendab-itaaliasse
+directory: source/article/tartuffi-publikuauhind-raendab-itaaliasse
+path: article/tartuffi-publikuauhind-raendab-itaaliasse
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.et.yaml

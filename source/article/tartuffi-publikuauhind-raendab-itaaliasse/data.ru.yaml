@@ -1,52 +1,26 @@
 id: 5
 titleForEditor: Tartuffi publikuauhind rändab Itaaliasse
+title_et: Tartuffi publikuauhind rändab Itaaliasse
+slug_et: tartuffi-publikuauhind-raendab-itaaliasse
 title_en: ''
 slug_en: ''
-title_ru: ''
-slug_ru: ''
-created_by: 6
-updated_by: 5
+created_by:
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
 created_at: '2020-09-01T07:24:35.542Z'
 updated_at: '2020-09-01T09:27:56.533Z'
-lead: >-
-    PÖFFi armastusfilmide festivali Tartuff publik valis oma lemmikuks Itaalia
-    draamakomöödia „Õnnejumalanna”.
-contents: >-
-    Ferzan Özpeteki filmis peavad kaks lastekauget, oma suhtega kriisi jõudnud
-    meest kantseldama lapsi, kes neile hoida jäetakse.
-
-
-    Filmi režissöör saab auhinnaks Mati Karmini skulptuuri „Suudlevad tudengid”.
-
-
-    Ööl vastu pühapäeva lõppenud festivali populaarseim film oli Soome draama
-    „Harjumuse jõud”, mida vaatas Raekoja platsi vabaõhukinos 700 inimest.
-    Festivali virtuaalses kinos Elisa Stage kogus enim vaatamisi – ligemale 300
-    – Norra dokumentaalfilm „Autoportree”.
-
-
-    “Õnnejumalanna”, publiku lemmik. Foto: kaader filmist
-
-    Koos üritustega sai Tartus festivalist osa ligemale 6300 inimest,
-    virtuaalset kino külastati üle Eesti 1200 korda.
-
-
-    „Me oleme väga tänulikud publikule, kes käitus äreval ajal
-    vastutustundlikult ja täitis kõiki reegleid,” ütles festivali juht Kristiina
-    Reidolv Tartu hiljutisele koroonapuhangule viidates. Samuti tõstis ta esile
-    Tartu kunstiorganisatsioonide koostööd, mille tulemusena toimus ligemale 30
-    üritust.
-
-
-    15. PÖFFi armastusfilmide festival Tartuff leidis aset 10.–15. augustini.
-    Festivali fookuses oli kunst. Koroonaviiruse tõttu toimus festival piiratud
-    publikuhulgaga, samuti rakendati teisi ettevaatusabinõusid. Esimest korda
-    sai kümmet filmi vaadata virtuaalselt üle kogu Eesti. Festivali filme saab
-    näha veel 19.–22. augustini Tallinnas Filmimuuseumis.
-
-
-    Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
-    filmifondi ja Tartu loomemajanduskeskusega.
+lead:
+    id: 3839
+    et: >-
+        PÖFFi armastusfilmide festivali Tartuff publik valis oma lemmikuks
+        Itaalia draamakomöödia „Õnnejumalanna”.
+    en: ''
+contents: dfg
 media:
     id: 2
     clipUrlDefault: ''
@@ -110,29 +84,44 @@ tags:
     -
         id: 321
         premiere_types:
-            - Rahvusvaheline esilinastus
+            - Международная премьера
         programmes:
-            - Põhivõistlusprogramm
+            - Основная конкурсная программа
         keywords:
             - MeToo
-            - Ühiskond
+            - Общество
 publishSettings:
     -
         id: 15
+        publish_et: true
         from: '2020-09-10T09:00:00.000Z'
         publish_en: false
         article_types:
-            - Uudised
-        publish: true
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
 button:
     -
         id: 5
+        text_et: asd
         text_en: adsca
-        text_ru: adscasd
-        text: asd
+        text: adscasd
     -
         id: 7
-        text: Button test 2
-        url: postimees.ee
-title: Tartuffi publikuauhind rändab Itaaliasse
-slug: tartuffi-publikuauhind-raendab-itaaliasse
+        text_et: Button test 2
+        url_et: postimees.ee
+title: ''
+slug: ''
+directory: source/article/tartuffi-publikuauhind-raendab-itaaliasse
+path: article/
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.ru.yaml
