@@ -1,193 +1,5 @@
 [
     {
-        "id": 3,
-        "namePrivate": null,
-        "created_by": {
-            "id": 6,
-            "firstname": "Jaan",
-            "lastname": "Leppik",
-            "username": null
-        },
-        "updated_by": {
-            "id": 1,
-            "firstname": "Mihkel",
-            "lastname": "Putrinš",
-            "username": null
-        },
-        "created_at": "2020-08-19T11:04:34.597Z",
-        "updated_at": "2020-08-27T13:30:54.942Z",
-        "Publish_et": null,
-        "Publish_en": null,
-        "Publish_ru": null,
-        "titlePrivate": "Ainult eestikeelne, aga publish mujale kah",
-        "title_et": "Pealkiri eestikeelne",
-        "title_en": null,
-        "title_ru": null,
-        "contents_et": "Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige suurema unistuse?17-aastane Eden (Stav Strashko) avastab, et just seda plaanivadki tema kaks parimat sõpra. Tüdrukutele on see väike ohverdus, et saada endale rinnakam büst ja uus uhke keskkooli lõpupeo kleit. Edenile tehakse samuti ettepanek osaleda illegaalses doonorluses. Tüdrukud ei tea, et Eden on transsooline ja talle tähendaks operatsioon midagi hoopis olulisemat.Veneetsias, Karlovy Varys ja mitmetel teistel festivalidel auhinnatud režissöörid Sharon Maymon ja Tal Granit toovad meieni inimliku ja liigutava loo sõprusest, aktsepteerimisest ja iseendale otsa vaatamisest.",
-        "contents_en": null,
-        "contents_ru": null,
-        "lead_et": "Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead ",
-        "lead_en": null,
-        "lead_ru": null,
-        "slug_et": "pealkiri",
-        "slug_en": null,
-        "slug_ru": null,
-        "clipUrl_et": null,
-        "clipUrl_en": null,
-        "clipUrl_ru": null,
-        "clipUrlDefault": null,
-        "publishing": {
-            "id": 4,
-            "publish_et": null,
-            "from": null,
-            "until": null,
-            "publish_en": null,
-            "publish_ru": null,
-            "hero_et": null,
-            "hero_en": null,
-            "hero_ru": null,
-            "article_types": [
-                {
-                    "id": 2,
-                    "name": "Uudis",
-                    "created_by": 6,
-                    "updated_by": 1,
-                    "created_at": "2020-08-18T13:49:51.616Z",
-                    "updated_at": "2020-08-27T13:27:26.065Z",
-                    "article": null,
-                    "et": "Uudised",
-                    "en": "News",
-                    "ru": "Новости"
-                },
-                {
-                    "id": 3,
-                    "name": "Intervjuu",
-                    "created_by": 6,
-                    "updated_by": 1,
-                    "created_at": "2020-08-18T13:50:35.561Z",
-                    "updated_at": "2020-08-27T13:26:22.977Z",
-                    "article": null,
-                    "et": "Intervjuu",
-                    "en": "Interview",
-                    "ru": "Интервю"
-                }
-            ]
-        },
-        "tags": {
-            "id": 284,
-            "premiere_types": [
-                {
-                    "id": 4,
-                    "PremiereType_et": null,
-                    "PremiereType_en": null,
-                    "PremiereType_ru": null,
-                    "created_by": 6,
-                    "updated_by": 3,
-                    "created_at": "2020-08-19T10:50:40.749Z",
-                    "updated_at": "2020-08-27T10:10:15.255Z",
-                    "Value_et": null,
-                    "Value_en": null,
-                    "Value_ru": null,
-                    "value_et": "Maailma esilinastus",
-                    "value_en": "World Premiere",
-                    "value_ru": "Мировая премьера",
-                    "et": "Maailma esilinastus",
-                    "en": "World Premiere",
-                    "ru": "Мировая премьера"
-                }
-            ],
-            "programmes": [
-                {
-                    "id": 3,
-                    "TagProgramme_et": null,
-                    "TagProgramme_en": null,
-                    "TagProgramme_ru": null,
-                    "created_by": 6,
-                    "updated_by": 3,
-                    "created_at": "2020-08-19T10:54:54.776Z",
-                    "updated_at": "2020-08-27T10:16:02.833Z",
-                    "Value_et": null,
-                    "Value_en": null,
-                    "Value_ru": null,
-                    "value_et": "Põhivõistlusprogramm",
-                    "value_en": "Official Selection",
-                    "value_ru": "Основная конкурсная программа",
-                    "et": "Põhivõistlusprogramm",
-                    "en": "Official Selection",
-                    "ru": "Основная конкурсная программа"
-                }
-            ],
-            "genres": [],
-            "keywords": [
-                {
-                    "id": 7,
-                    "Value_et": null,
-                    "Value_en": null,
-                    "Value_ru": null,
-                    "created_by": 6,
-                    "updated_by": 3,
-                    "created_at": "2020-08-19T10:49:52.991Z",
-                    "updated_at": "2020-08-27T10:07:40.422Z",
-                    "value_et": "Ühiskond",
-                    "value_en": "Society",
-                    "value_ru": "Общество",
-                    "et": "Ühiskond",
-                    "en": "Society",
-                    "ru": "Общество"
-                }
-            ]
-        },
-        "button": [],
-        "imageDefault": null,
-        "image_et": {
-            "id": 1,
-            "name": "Elektriteater_logo.png",
-            "alternativeText": "",
-            "caption": "",
-            "width": 507,
-            "height": 281,
-            "formats": {
-                "small": {
-                    "ext": ".png",
-                    "url": "/uploads/small_Elektriteater_logo_e9454b3185.png",
-                    "hash": "small_Elektriteater_logo_e9454b3185",
-                    "mime": "image/png",
-                    "name": "small_Elektriteater_logo.png",
-                    "path": null,
-                    "size": 35.39,
-                    "width": 500,
-                    "height": 277
-                },
-                "thumbnail": {
-                    "ext": ".png",
-                    "url": "/uploads/thumbnail_Elektriteater_logo_e9454b3185.png",
-                    "hash": "thumbnail_Elektriteater_logo_e9454b3185",
-                    "mime": "image/png",
-                    "name": "thumbnail_Elektriteater_logo.png",
-                    "path": null,
-                    "size": 11.33,
-                    "width": 245,
-                    "height": 136
-                }
-            },
-            "hash": "Elektriteater_logo_e9454b3185",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 8.97,
-            "url": "/uploads/Elektriteater_logo_e9454b3185.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "created_by": 6,
-            "updated_by": 6,
-            "created_at": "2020-08-13T14:00:41.491Z",
-            "updated_at": "2020-08-13T14:00:41.586Z"
-        },
-        "image_en": null,
-        "image_ru": null,
-        "domains": []
-    },
-    {
         "id": 4,
         "namePrivate": null,
         "created_by": {
@@ -224,6 +36,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 7,
             "publish_et": true,
@@ -359,6 +172,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 8,
             "publish_et": true,
@@ -494,6 +308,7 @@
         "clipUrl_en": "https://www.youtube.com/watch?v=s6ZgBnq7Tt4",
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 5,
             "publish_et": null,
@@ -694,6 +509,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 12,
             "publish_et": true,
@@ -796,6 +612,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 10,
             "publish_et": true,
@@ -938,7 +755,7 @@
         "domains": []
     },
     {
-        "id": 1,
+        "id": 3,
         "namePrivate": null,
         "created_by": {
             "id": 6,
@@ -947,35 +764,36 @@
             "username": null
         },
         "updated_by": {
-            "id": 5,
-            "firstname": "Martin",
-            "lastname": "Pennaste",
+            "id": 6,
+            "firstname": "Jaan",
+            "lastname": "Leppik",
             "username": null
         },
-        "created_at": "2020-08-19T10:43:13.085Z",
-        "updated_at": "2020-08-27T07:05:25.819Z",
+        "created_at": "2020-08-19T11:04:34.597Z",
+        "updated_at": "2020-08-31T12:37:37.217Z",
         "Publish_et": null,
         "Publish_en": null,
         "Publish_ru": null,
-        "titlePrivate": "Tartuff troopiline melodraama: EST ja default meedia",
-        "title_et": "Tartu armastusfilmide festivali avab troopiline melodraama",
+        "titlePrivate": "Ainult eestikeelne, aga publish mujale kah",
+        "title_et": "Pealkiri eestikeelne",
         "title_en": null,
         "title_ru": null,
-        "contents_et": "End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne isa ja patriarhaalne ühiskond kisuvad nad lahku ega luba täita oma unistusi, kuid nad ei kaota kõigele vaatamata lootust.\n\nRežissöör pühendab oma filmi kõigile neile naistele, kellest Brasiilia ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.\n\n\"See on sedasorti armastuslugu, mida saab harva kinoekraanil näha – tõeline pärl,\" kirjutab USA juhtivaid meelelahutustööstuse väljaandeid The Wrap.\n\nFilm võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi \"Un Certain Regard\" ja Brasiilia esitas selle mitteingliskeelsete filmide Oscarile. USA filmiorganisatsiooni The National Board of Review hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse mängufilmiga.\n\n![F_2_invisible_life.jpg](http://139.59.130.149/uploads/F_2_invisible_life_feb5451063.jpg)\n\nLinateos põhineb Martha Batalha romaanil \"Eurídice Gusmão nähtamatu elu\". Peaosades Carol Duarte ja Julia Stockler.\n\n\"Nähtamatu elu\" jõuab ekraanile 10. augustil Tartu Raekoja platsil, samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.\n\n```<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/NRF-Pba3QrE\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>```\n\nKogu kava avalikustab festival juuli lõpus.\n\n15. [PÖFFi armastusfilmide festival Tartuff](https://tartuff.ee) leiab tänavu aset 10.-15. augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja Tartu loomemajanduskeskusega.",
+        "contents_et": "Kas sina loovutaksid kellelegi oma neeru? Aga mis siis, kui sa saaksid selle eest vastutasuks kopsaka summa raha? Ja teeksid teoks oma kõige suurema unistuse?17-aastane Eden (Stav Strashko) avastab, et just seda plaanivadki tema kaks parimat sõpra. Tüdrukutele on see väike ohverdus, et saada endale rinnakam büst ja uus uhke keskkooli lõpupeo kleit. Edenile tehakse samuti ettepanek osaleda illegaalses doonorluses. Tüdrukud ei tea, et Eden on transsooline ja talle tähendaks operatsioon midagi hoopis olulisemat.Veneetsias, Karlovy Varys ja mitmetel teistel festivalidel auhinnatud režissöörid Sharon Maymon ja Tal Granit toovad meieni inimliku ja liigutava loo sõprusest, aktsepteerimisest ja iseendale otsa vaatamisest.",
         "contents_en": null,
         "contents_ru": null,
-        "lead_et": "PÖFFi armastusfilmide festival Tartuff kuulutas välja tänavuse avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud \"Nähtamatu elu”.",
+        "lead_et": "Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead Lead ",
         "lead_en": null,
         "lead_ru": null,
-        "slug_et": "tartu-armastusfilmide-festivali-avab-troopiline-melodraama",
+        "slug_et": "pealkiri",
         "slug_en": null,
         "slug_ru": null,
         "clipUrl_et": null,
         "clipUrl_en": null,
         "clipUrl_ru": null,
-        "clipUrlDefault": "https://www.youtube.com/watch?v=NRF-Pba3QrE",
+        "clipUrlDefault": null,
+        "domeen": "poff",
         "publishing": {
-            "id": 6,
+            "id": 4,
             "publish_et": null,
             "from": null,
             "until": null,
@@ -986,91 +804,175 @@
             "hero_ru": null,
             "article_types": [
                 {
-                    "id": 4,
-                    "name": "ToetajaLugu",
+                    "id": 2,
+                    "name": "Uudis",
                     "created_by": 6,
                     "updated_by": 1,
-                    "created_at": "2020-08-18T13:51:35.072Z",
-                    "updated_at": "2020-08-27T13:27:09.344Z",
+                    "created_at": "2020-08-18T13:49:51.616Z",
+                    "updated_at": "2020-08-27T13:27:26.065Z",
                     "article": null,
-                    "et": "Toetaja lugu",
-                    "en": "Supporter Story",
-                    "ru": "Toetaja lugu rus"
+                    "et": "Uudised",
+                    "en": "News",
+                    "ru": "Новости"
+                },
+                {
+                    "id": 3,
+                    "name": "Intervjuu",
+                    "created_by": 6,
+                    "updated_by": 1,
+                    "created_at": "2020-08-18T13:50:35.561Z",
+                    "updated_at": "2020-08-27T13:26:22.977Z",
+                    "article": null,
+                    "et": "Intervjuu",
+                    "en": "Interview",
+                    "ru": "Интервю"
                 }
             ]
         },
-        "tags": null,
+        "tags": {
+            "id": 284,
+            "premiere_types": [
+                {
+                    "id": 4,
+                    "PremiereType_et": null,
+                    "PremiereType_en": null,
+                    "PremiereType_ru": null,
+                    "created_by": 6,
+                    "updated_by": 3,
+                    "created_at": "2020-08-19T10:50:40.749Z",
+                    "updated_at": "2020-08-27T10:10:15.255Z",
+                    "Value_et": null,
+                    "Value_en": null,
+                    "Value_ru": null,
+                    "value_et": "Maailma esilinastus",
+                    "value_en": "World Premiere",
+                    "value_ru": "Мировая премьера",
+                    "et": "Maailma esilinastus",
+                    "en": "World Premiere",
+                    "ru": "Мировая премьера"
+                }
+            ],
+            "programmes": [
+                {
+                    "id": 3,
+                    "TagProgramme_et": null,
+                    "TagProgramme_en": null,
+                    "TagProgramme_ru": null,
+                    "created_by": 6,
+                    "updated_by": 3,
+                    "created_at": "2020-08-19T10:54:54.776Z",
+                    "updated_at": "2020-08-27T10:16:02.833Z",
+                    "Value_et": null,
+                    "Value_en": null,
+                    "Value_ru": null,
+                    "value_et": "Põhivõistlusprogramm",
+                    "value_en": "Official Selection",
+                    "value_ru": "Основная конкурсная программа",
+                    "et": "Põhivõistlusprogramm",
+                    "en": "Official Selection",
+                    "ru": "Основная конкурсная программа"
+                }
+            ],
+            "genres": [],
+            "keywords": [
+                {
+                    "id": 7,
+                    "Value_et": null,
+                    "Value_en": null,
+                    "Value_ru": null,
+                    "created_by": 6,
+                    "updated_by": 3,
+                    "created_at": "2020-08-19T10:49:52.991Z",
+                    "updated_at": "2020-08-27T10:07:40.422Z",
+                    "value_et": "Ühiskond",
+                    "value_en": "Society",
+                    "value_ru": "Общество",
+                    "et": "Ühiskond",
+                    "en": "Society",
+                    "ru": "Общество"
+                }
+            ]
+        },
         "button": [],
-        "imageDefault": {
-            "id": 4,
-            "name": "F_1_invisible_life.jpg",
+        "imageDefault": null,
+        "image_et": {
+            "id": 1,
+            "name": "Elektriteater_logo.png",
             "alternativeText": "",
             "caption": "",
-            "width": 1920,
-            "height": 1080,
+            "width": 507,
+            "height": 281,
             "formats": {
-                "large": {
-                    "ext": ".jpg",
-                    "url": "/uploads/large_F_1_invisible_life_745fc8df60.jpg",
-                    "hash": "large_F_1_invisible_life_745fc8df60",
-                    "mime": "image/jpeg",
-                    "name": "large_F_1_invisible_life.jpg",
-                    "path": null,
-                    "size": 81.71,
-                    "width": 1000,
-                    "height": 563
-                },
                 "small": {
-                    "ext": ".jpg",
-                    "url": "/uploads/small_F_1_invisible_life_745fc8df60.jpg",
-                    "hash": "small_F_1_invisible_life_745fc8df60",
-                    "mime": "image/jpeg",
-                    "name": "small_F_1_invisible_life.jpg",
+                    "ext": ".png",
+                    "url": "/uploads/small_Elektriteater_logo_e9454b3185.png",
+                    "hash": "small_Elektriteater_logo_e9454b3185",
+                    "mime": "image/png",
+                    "name": "small_Elektriteater_logo.png",
                     "path": null,
-                    "size": 24.04,
+                    "size": 35.39,
                     "width": 500,
-                    "height": 281
-                },
-                "medium": {
-                    "ext": ".jpg",
-                    "url": "/uploads/medium_F_1_invisible_life_745fc8df60.jpg",
-                    "hash": "medium_F_1_invisible_life_745fc8df60",
-                    "mime": "image/jpeg",
-                    "name": "medium_F_1_invisible_life.jpg",
-                    "path": null,
-                    "size": 46.72,
-                    "width": 750,
-                    "height": 422
+                    "height": 277
                 },
                 "thumbnail": {
-                    "ext": ".jpg",
-                    "url": "/uploads/thumbnail_F_1_invisible_life_745fc8df60.jpg",
-                    "hash": "thumbnail_F_1_invisible_life_745fc8df60",
-                    "mime": "image/jpeg",
-                    "name": "thumbnail_F_1_invisible_life.jpg",
+                    "ext": ".png",
+                    "url": "/uploads/thumbnail_Elektriteater_logo_e9454b3185.png",
+                    "hash": "thumbnail_Elektriteater_logo_e9454b3185",
+                    "mime": "image/png",
+                    "name": "thumbnail_Elektriteater_logo.png",
                     "path": null,
-                    "size": 8.1,
+                    "size": 11.33,
                     "width": 245,
-                    "height": 138
+                    "height": 136
                 }
             },
-            "hash": "F_1_invisible_life_745fc8df60",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "size": 194.74,
-            "url": "/uploads/F_1_invisible_life_745fc8df60.jpg",
+            "hash": "Elektriteater_logo_e9454b3185",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 8.97,
+            "url": "/uploads/Elektriteater_logo_e9454b3185.png",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
             "created_by": 6,
             "updated_by": 6,
-            "created_at": "2020-08-13T19:16:16.414Z",
-            "updated_at": "2020-08-13T19:16:16.648Z"
+            "created_at": "2020-08-13T14:00:41.491Z",
+            "updated_at": "2020-08-13T14:00:41.586Z"
         },
-        "image_et": null,
         "image_en": null,
         "image_ru": null,
-        "domains": []
+        "domains": [
+            {
+                "id": 1,
+                "Url": null,
+                "IpAdress": null,
+                "Server": null,
+                "created_by": 6,
+                "updated_by": 6,
+                "created_at": "2020-08-19T10:43:32.378Z",
+                "updated_at": "2020-08-31T09:02:41.695Z",
+                "url": "https://poff.ee",
+                "ipAdress": null,
+                "server": null,
+                "festival_edition": null,
+                "name": "PÖFF"
+            },
+            {
+                "id": 3,
+                "Url": null,
+                "IpAdress": null,
+                "Server": null,
+                "created_by": 6,
+                "updated_by": 6,
+                "created_at": "2020-08-31T08:50:27.138Z",
+                "updated_at": "2020-08-31T09:02:49.522Z",
+                "url": "https://shorts.poff.ee",
+                "ipAdress": null,
+                "server": null,
+                "festival_edition": null,
+                "name": "Shorts"
+            }
+        ]
     },
     {
         "id": 6,
@@ -1109,6 +1011,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 9,
             "publish_et": true,
@@ -1244,6 +1147,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 11,
             "publish_et": true,
@@ -1379,6 +1283,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": null,
         "tags": null,
         "button": [],
@@ -1403,6 +1308,148 @@
                 "name": "PÖFF"
             }
         ]
+    },
+    {
+        "id": 1,
+        "namePrivate": null,
+        "created_by": {
+            "id": 6,
+            "firstname": "Jaan",
+            "lastname": "Leppik",
+            "username": null
+        },
+        "updated_by": {
+            "id": 11,
+            "firstname": "Hannes",
+            "lastname": "Aava",
+            "username": null
+        },
+        "created_at": "2020-08-19T10:43:13.085Z",
+        "updated_at": "2020-08-31T11:30:55.911Z",
+        "Publish_et": null,
+        "Publish_en": null,
+        "Publish_ru": null,
+        "titlePrivate": "Tartuff troopiline melodraama: EST ja default meedia",
+        "title_et": "Tartu armastusfilmide festivali avab troopiline melodraama",
+        "title_en": null,
+        "title_ru": null,
+        "contents_et": "End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne isa ja patriarhaalne ühiskond kisuvad nad lahku ega luba täita oma unistusi, kuid nad ei kaota kõigele vaatamata lootust.\n\nRežissöör pühendab oma filmi kõigile neile naistele, kellest Brasiilia ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.\n\n\"See on sedasorti armastuslugu, mida saab harva kinoekraanil näha – tõeline pärl,\" kirjutab USA juhtivaid meelelahutustööstuse väljaandeid The Wrap.\n\nFilm võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi \"Un Certain Regard\" ja Brasiilia esitas selle mitteingliskeelsete filmide Oscarile. USA filmiorganisatsiooni The National Board of Review hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse mängufilmiga.\n\n![F_2_invisible_life.jpg](http://139.59.130.149/uploads/F_2_invisible_life_feb5451063.jpg)\n\nLinateos põhineb Martha Batalha romaanil \"Eurídice Gusmão nähtamatu elu\". Peaosades Carol Duarte ja Julia Stockler.\n\n\"Nähtamatu elu\" jõuab ekraanile 10. augustil Tartu Raekoja platsil, samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.\n\n```<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/NRF-Pba3QrE\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>```\n\nKogu kava avalikustab festival juuli lõpus.\n\n15. [PÖFFi armastusfilmide festival Tartuff](https://tartuff.ee) leiab tänavu aset 10.-15. augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja Tartu loomemajanduskeskusega.",
+        "contents_en": null,
+        "contents_ru": null,
+        "lead_et": "PÖFFi armastusfilmide festival Tartuff kuulutas välja tänavuse avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud \"Nähtamatu elu”.",
+        "lead_en": null,
+        "lead_ru": null,
+        "slug_et": "tartu-armastusfilmide-festivali-avab-troopiline-melodraama",
+        "slug_en": null,
+        "slug_ru": null,
+        "clipUrl_et": null,
+        "clipUrl_en": null,
+        "clipUrl_ru": null,
+        "clipUrlDefault": "https://www.youtube.com/watch?v=NRF-Pba3QrE",
+        "domeen": null,
+        "publishing": {
+            "id": 6,
+            "publish_et": null,
+            "from": null,
+            "until": null,
+            "publish_en": false,
+            "publish_ru": null,
+            "hero_et": null,
+            "hero_en": null,
+            "hero_ru": null,
+            "article_types": [
+                {
+                    "id": 4,
+                    "name": "ToetajaLugu",
+                    "created_by": 6,
+                    "updated_by": 1,
+                    "created_at": "2020-08-18T13:51:35.072Z",
+                    "updated_at": "2020-08-27T13:27:09.344Z",
+                    "article": null,
+                    "et": "Toetaja lugu",
+                    "en": "Supporter Story",
+                    "ru": "Toetaja lugu rus"
+                }
+            ]
+        },
+        "tags": {
+            "id": 319,
+            "premiere_types": [],
+            "programmes": [],
+            "genres": [],
+            "keywords": []
+        },
+        "button": [],
+        "imageDefault": {
+            "id": 4,
+            "name": "F_1_invisible_life.jpg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 1920,
+            "height": 1080,
+            "formats": {
+                "large": {
+                    "ext": ".jpg",
+                    "url": "/uploads/large_F_1_invisible_life_745fc8df60.jpg",
+                    "hash": "large_F_1_invisible_life_745fc8df60",
+                    "mime": "image/jpeg",
+                    "name": "large_F_1_invisible_life.jpg",
+                    "path": null,
+                    "size": 81.71,
+                    "width": 1000,
+                    "height": 563
+                },
+                "small": {
+                    "ext": ".jpg",
+                    "url": "/uploads/small_F_1_invisible_life_745fc8df60.jpg",
+                    "hash": "small_F_1_invisible_life_745fc8df60",
+                    "mime": "image/jpeg",
+                    "name": "small_F_1_invisible_life.jpg",
+                    "path": null,
+                    "size": 24.04,
+                    "width": 500,
+                    "height": 281
+                },
+                "medium": {
+                    "ext": ".jpg",
+                    "url": "/uploads/medium_F_1_invisible_life_745fc8df60.jpg",
+                    "hash": "medium_F_1_invisible_life_745fc8df60",
+                    "mime": "image/jpeg",
+                    "name": "medium_F_1_invisible_life.jpg",
+                    "path": null,
+                    "size": 46.72,
+                    "width": 750,
+                    "height": 422
+                },
+                "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_F_1_invisible_life_745fc8df60.jpg",
+                    "hash": "thumbnail_F_1_invisible_life_745fc8df60",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_F_1_invisible_life.jpg",
+                    "path": null,
+                    "size": 8.1,
+                    "width": 245,
+                    "height": 138
+                }
+            },
+            "hash": "F_1_invisible_life_745fc8df60",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 194.74,
+            "url": "/uploads/F_1_invisible_life_745fc8df60.jpg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_by": 6,
+            "updated_by": 6,
+            "created_at": "2020-08-13T19:16:16.414Z",
+            "updated_at": "2020-08-13T19:16:16.648Z"
+        },
+        "image_et": null,
+        "image_en": null,
+        "image_ru": null,
+        "domains": []
     },
     {
         "id": 10,
@@ -1441,6 +1488,7 @@
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "clipUrlDefault": null,
+        "domeen": null,
         "publishing": {
             "id": 13,
             "publish_et": true,
