@@ -23,7 +23,7 @@ function FromStrapi(modelName, CBfunction){
             }
 
             if (element['domains'] === undefined) {
-                console.log(3);
+                // console.log(3);
                 return true
             }
 
