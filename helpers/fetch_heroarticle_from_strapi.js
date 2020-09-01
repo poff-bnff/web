@@ -2,12 +2,12 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.ValidateAndFetch('/article-hero', DataToYAMLData)
+FromStrapi.ValidateAndFetch('HeroArticlePoff', DataToYAMLData)
 
 function DataToYAMLData(strapiData){
-    // console.log(strapiData);
-    LangSelect(strapiData, 'et');
-    LangSelect(strapiData, 'en');
+    console.log(strapiData);
+    // LangSelect(strapiData, 'et');
+    // LangSelect(strapiData, 'en');
 }
 
 function LangSelect(strapiData, lang) {
@@ -91,9 +91,16 @@ function processData(data, lang, CreateYAML) {
         //     smallBuffer[data2.label[key2].name] = tinyBuffer;
         // }
         buffer = rueten(data[`article_${lang}`], lang);
+        if(key === `article_${lang}`) {
+            console.log(key);
+        }
     }
-    // console.log(buffer);
-    CreateYAML(buffer, lang);
+    // console.log(data[0].article_en);
+    if(buffer != null) {
+        CreateYAML(data, lang);
+    }else{
+
+    }
 }
 
 function CreateYAML(buffer, lang) {

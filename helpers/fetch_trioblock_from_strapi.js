@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.ValidateAndFetch('/trio-block-poeff', DataToYAMLData);
+FromStrapi.ValidateAndFetch('TrioBlockPoff', DataToYAMLData);
 
 function DataToYAMLData(strapiData){
     // console.log(strapiData);
