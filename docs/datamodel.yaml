@@ -49,7 +49,7 @@ Domain: &Domain
     ipAdress: (text)
     server: (text)
 
-publishing: &Publishing
+Publishing: &Publishing
     publish_et: (Boolean)
     from: (Datetime)
     until: (Datetime)
@@ -116,32 +116,30 @@ Location: &Location
     hall: *Hall
     name: (text)
 
-Article: &Article
-    _path: /articles
-    publishing: *Publishing
-    imageDefault: (Media)
-    title_et: Tartuff on pühendatud kunstile (text)
-    title_en: Tartuff sets focus on art (text)
+POFFArticle: &POFFArticle
+    _path: /poff-articles
+    titleForEditor: (text)
+    title_et: (text)
+    title_en: (text)
     title_ru: (text)
-    contents_et: Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti, Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15. augustini Tartus. (rich text)
-    contents_en: The Robin Hood of the art world aka Banksy, Marcel Duchamp, Alberto Giacometti, Maud Lewis – these are the heroes of the features and documentary films on art topics, that will reach audiences in Tartu at the physical event taking place from the 10th until the 15th of August and also available online throughout Estonia. The full programme of the 15th Tartu Love Film Festival will be announced on the 30th of July. (rich text)
-    contents_ru: (rich text)
-    lead_et: PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu kunstile. (rich text)
-    lead_en: This year's edition sets a special focus on art, screening films on Banksy, Marchel Duchamp, Alberto Giacometti, Maud Lewis. The festival will be available online throughout Estonia (rich text)
-    lead_ru: (rich text)
-    tags: *Tags
-    domains:
-        - *Domain
-    image_et: (Media)
-    image_en: (Media)
-    image_ru: (Media)
-    slug_et: tartuff-on-puehendatud-kunstile (UID, No spaces)
-    slug_en: tartuff-sets-focus-on-art (UID, No spaces)
-    slug_ru: (UID, No spaces)
-    clipUrl_et: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
-    clipUrl_en: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
-    clipUrl_ru: (text)
-    clipUrlDefault: (text)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+    lead: *Translated
+    contents: *Translated
+    media: #(Component)
+        imageDefault: (Media)
+        image_et: (Media)
+        image_en: (Media)
+        image_ru: (Media)
+        clipUrlDefault: (text)
+        clipUrl_et: (text)
+        clipUrl_en: (text)
+        clipUrl_ru: (text)
+    tags: #(Component (repeatable))
+        - *Tags
+    publishSettings: #(Component (repeatable))
+        - *Publishing
     button: #(Component (repeatable))
         - text_et: (text)
           url_et: (text)
@@ -149,6 +147,40 @@ Article: &Article
           url_en: (text)
           text_ru: (text)
           url_ru: (text)
+
+# Article: &Article
+#     _path: /articles
+#     publishing: *Publishing
+#     imageDefault: (Media)
+#     title_et: Tartuff on pühendatud kunstile (text)
+#     title_en: Tartuff sets focus on art (text)
+#     title_ru: (text)
+#     contents_et: Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti, Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15. augustini Tartus. (rich text)
+#     contents_en: The Robin Hood of the art world aka Banksy, Marcel Duchamp, Alberto Giacometti, Maud Lewis – these are the heroes of the features and documentary films on art topics, that will reach audiences in Tartu at the physical event taking place from the 10th until the 15th of August and also available online throughout Estonia. The full programme of the 15th Tartu Love Film Festival will be announced on the 30th of July. (rich text)
+#     contents_ru: (rich text)
+#     lead_et: PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu kunstile. (rich text)
+#     lead_en: This year's edition sets a special focus on art, screening films on Banksy, Marchel Duchamp, Alberto Giacometti, Maud Lewis. The festival will be available online throughout Estonia (rich text)
+#     lead_ru: (rich text)
+#     tags: *Tags
+#     domains:
+#         - *Domain
+#     image_et: (Media)
+#     image_en: (Media)
+#     image_ru: (Media)
+#     slug_et: tartuff-on-puehendatud-kunstile (UID, No spaces)
+#     slug_en: tartuff-sets-focus-on-art (UID, No spaces)
+#     slug_ru: (UID, No spaces)
+#     clipUrl_et: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
+#     clipUrl_en: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
+#     clipUrl_ru: (text)
+#     clipUrlDefault: (text)
+#     button: #(Component (repeatable))
+#         - text_et: (text)
+#           url_et: (text)
+#           text_en: (text)
+#           url_en: (text)
+#           text_ru: (text)
+#           url_ru: (text)
 
 Festival: &Festival
     _path: /festivals
@@ -301,8 +333,12 @@ Team: &Team
             roleAtTeam_et: (text)
             roleAtTeam_en: (text)
             roleAtTeam_ru: (text)
-            emaliAtTeam: (text)
+            emailAtTeam: (text)
             phoneAtTeam: (text)
+        order: (Number)
+    name: #(Component (repeatable))
+        - *Translated
+    domain: *Domain
 
 LabelGroups:
     _path: /labels
@@ -316,20 +352,21 @@ LabelGroups:
 
 HeroArticlePoff:
     _path: /article-hero
-    article_et: *Article
-    article_en: *Article
-    article_ru: *Article
+    article_et: *POFFArticle
+    article_en: *POFFArticle
+    article_ru: *POFFArticle
 
-Block: &Block
+TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated
     lead: *Translated
-    article: *Article
+    article: *POFFArticle
     customUrl: (text)
 
 TrioBlockPoff:
     _path: /trio-block-poeff
     blockName: *Translated
-    block1: *Block
-    block2: *Block
-    block3: *Block
+    trioBlockItem_1: *TrioBlockItemPoff
+    trioBlockItem_2: *TrioBlockItemPoff
+    trioBlockItem_3: *TrioBlockItemPoff
+
 
