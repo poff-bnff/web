@@ -2,7 +2,6 @@ const yaml = require('js-yaml')
 const fs   = require('fs')
 const util = require('util')
 const path = require('path')
-const { throws } = require('assert')
 
 process.chdir(path.dirname(__filename))
 

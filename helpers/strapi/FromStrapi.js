@@ -29,7 +29,7 @@ function FromStrapi(modelName, CBfunction){
 
             for(let ix in element['domains']){
                 let el = element['domains'][ix]
-                console.log(ix, el)
+                // console.log(ix, el)
                 if (el['url'] === DOMAIN){
                     console.log('domain !');
                     return true
