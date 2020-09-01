@@ -17,6 +17,29 @@ function FromStrapi(modelName, CBfunction){
 
     let dataPath = datamodel[modelName]['_path']
     let FetchData = function(token) {
+
+        let checkDomain = function(element){
+            // kui on domain, siis element['domains'] = [domain]
+            if (element['domain']){
+                element['domains'] = [element['domain']]
+            }
+
+            if (element['domains'] === undefined) {
+                // console.log(3);
+                return true
+            }
+
+            for(let ix in element['domains']){
+                let el = element['domains'][ix]
+                console.log(ix, el)
+                if (el['url'] === DOMAIN){
+                    console.log('domain !');
+                    return true
+                }
+            }
+
+            return false
+        }
         let GetDataFromStrapi = function(dataPath, token, CBfunction){
             let options = {
                 //see võiks tulla muutujast
