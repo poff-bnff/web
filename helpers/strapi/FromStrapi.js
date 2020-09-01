@@ -2,20 +2,18 @@ const fs = require('fs');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi');
 const Validate= require('../compareStructure')
-const yaml= require('js-yaml')
+const yaml= require('js-yaml');
 
 const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
-// console.log(datamodel['Film'])
-console.log(datamodel['Film']['_path'])
-
+const DOMAIN = 'poff.ee'
 
 function FromStrapi(modelName, CBfunction){
     console.log('validate model', modelName)
     if (datamodel[modelName] === undefined){
         throw new Error('Model ' + modelName + ' not in data model.')
     }
-
     let dataPath = datamodel[modelName]['_path']
+
     let FetchData = function(token) {
 
         let checkDomain = function(element){
@@ -31,7 +29,7 @@ function FromStrapi(modelName, CBfunction){
 
             for(let ix in element['domains']){
                 let el = element['domains'][ix]
-                console.log(ix, el)
+                // console.log(ix, el)
                 if (el['url'] === DOMAIN){
                     console.log('domain !');
                     return true
@@ -57,9 +55,15 @@ function FromStrapi(modelName, CBfunction){
                     allData += chunk;
                 });
                 response.on('end', function () {
-                    let data = JSON.parse(allData)
-                    CBfunction(data, token)
-                    //console.log(data);
+                    let strapiData = JSON.parse(allData)
+                    if (!Array.isArray(strapiData)){
+                        strapiData = [strapiData]
+                    }
+
+                    strapiData = strapiData.filter(checkDomain)
+                    CBfunction(strapiData, token)
+                    // console.log(strapiData);
+
                 });
                 response.on('error', function (error) {
                     console.log(error);

@@ -11,9 +11,9 @@ function LogProcess(token, modelName){
 // FromStrapi.WriteJSON('Film', './data/FilmsFromStrapi.json', LogProcess)
 
 // FromStrapi.WriteJSON('POFFArticle', './data/POFFarticlesFromStrapi.json', LogProcess)
-// FromStrapi.WriteJSON('FestivalEdition', './data/FestivalEFromStrapi.json', LogProcess)
-//FromStrapi.WriteJSON('Team', './data/TeamsFromStrapi.json', LogProcess)
 
-FromStrapi.WriteJSON('HeroArticlePoff', './data/TEST.json', LogProcess)
-
-FromStrapi.WriteJSON('/trio-block-poeff', './data/TEST.json', LogProcess)
+// FromStrapi.WriteJSON('FestivalEdition', './data/TEST.json', LogProcess)
+// FromStrapi.WriteJSON('Team', './data/TEST.json', LogProcess)
+// FromStrapi.WriteJSON('HeroArticlePoff', './data/TEST.json', LogProcess)
+// FromStrapi.WriteJSON('TrioBlockPoff', './data/TEST.json', LogProcess)
+ FromStrapi.WriteJSON('Footer', './data/TEST.json', LogProcess)

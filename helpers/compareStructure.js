@@ -2,46 +2,22 @@ const yaml = require('js-yaml')
 const fs   = require('fs')
 const util = require('util')
 const path = require('path')
-const { throws } = require('assert')
 
 process.chdir(path.dirname(__filename))
 
-
-const findModelName= function(dataPath){ // Film
-    if (dataPath == '/people'){
-        return modelName= "Person"
-    }
-    else if(dataPath == '/countries'){
-        return modelName= "Country"
-    }
-    else if(dataPath == '/countries'){
-        return modelName= "Country"
-    }
-    else {
-        let modelName = dataPath.slice(1, dataPath.length-1)
-        return modelName = modelName[0].toUpperCase() + modelName.substring(1)
-    }
-}
-
 const Validate= function(strapiData, modelName){
     if (!Array.isArray(strapiData)){
-        strapiData = [strapiData]
+        throw new Error('Data has to be a list.')
     }
-    // console.log(dataPath)
+
     const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
 
     if (datamodel[modelName] === undefined){
         throw new Error('Model ' + modelName + ' not in data model.')
     }
-    let lhs = datamodel[modelName]
-    //console.log(lhs)
 
-    if (lhs === undefined){
-        console.log('Model name ' + modelName +' not found in datamodel.yaml')
-    }else{
-        for (const ix in strapiData) {
-            Compare(lhs, strapiData[ix], modelName + '[' + ix + ']')
-        }
+    for (const ix in strapiData) {
+        Compare(datamodel[modelName], strapiData[ix], modelName + '[' + ix + ']')
     }
 }
 
