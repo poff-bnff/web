@@ -17,7 +17,7 @@ block content
     section.team
         each team in self.data.teams
             - var teamId = team.id
-            each subTeam in team.subTeam
+            each subTeam in team.subTeam.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                 p= `Team ${teamId}: ${subTeam.name}`
                 each teamMember in subTeam.teamMember
                     .person
