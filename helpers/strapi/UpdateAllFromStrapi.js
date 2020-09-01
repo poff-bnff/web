@@ -16,3 +16,4 @@ function LogProcess(token, modelName){
 // FromStrapi.WriteJSON('Team', './data/TEST.json', LogProcess)
 // FromStrapi.WriteJSON('HeroArticlePoff', './data/TEST.json', LogProcess)
 // FromStrapi.WriteJSON('TrioBlockPoff', './data/TEST.json', LogProcess)
+ FromStrapi.WriteJSON('Footer', './data/TEST.json', LogProcess)

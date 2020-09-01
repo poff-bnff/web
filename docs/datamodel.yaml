@@ -116,6 +116,14 @@ Location: &Location
     hall: *Hall
     name: (text)
 
+Button: &Button
+    text_et: (text)
+    text_en: (text)
+    text_ru: (text)
+    url_et: (text)
+    url_en: (text)
+    url_ru: (text)
+
 POFFArticle: &POFFArticle
     _path: /poff-articles
     titleForEditor: (text)
@@ -141,12 +149,7 @@ POFFArticle: &POFFArticle
     publishSettings: #(Component (repeatable))
         - *Publishing
     button: #(Component (repeatable))
-        - text_et: (text)
-          url_et: (text)
-          text_en: (text)
-          url_en: (text)
-          text_ru: (text)
-          url_ru: (text)
+        - *Button
 
 # Article: &Article
 #     _path: /articles
@@ -342,13 +345,49 @@ Team: &Team
 
 LabelGroups:
     _path: /labels
-    group: #(Component (repeatable))
+    name: (text)
+    label: #(Component (repeatable))
         - name: (text)
-          label: #(Component (repeatable))
-            - name: (text)
-              value_et: (text)
-              value_en: (text)
-              value_ru: (text)
+          value_et: (text)
+          value_en: (text)
+          value_ru: (text)
+
+SocialItem: &SocialItem
+    name: (text)
+    url: (text)
+    svgCode: (text)
+    svgMedia: (Media)
+
+Logo: &Logo
+    url: (text)
+    imgWhite: (Media)
+    imgColour: (Media)
+    imgBlack: (Media)
+
+Footer:
+    _path: /footers
+    socialGroup: #(Component (repeatable))
+        - namePrivate: (text)
+          name: *Translated
+          items: #(Component (repeatable))
+            - *SocialItem
+    item: #(Component (repeatable))
+        - namePrivate: (text)
+          name: *Translated
+          button:
+            - *Button
+          text:
+            - *Translated
+          image: (Media)
+          svgItem:
+            - *SocialItem
+    logosSections: #(Component (repeatable))
+        - name: *Translated
+          order: (Number)
+          logo:
+            - *Logo
+    namePrivate: (text)
+
 
 HeroArticlePoff:
     _path: /article-hero
