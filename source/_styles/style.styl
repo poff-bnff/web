@@ -328,6 +328,14 @@ nav
     padding 1rem
     padding-top 78px
 
+.hero_image
+        width 100vw
+        // min-height calc(100vh - 78px)
+        // max-height 200px
+        height 300px
+        object-fit cover
+        z-index -1
+
 .footer_logos_1
     display grid
     grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
@@ -1247,10 +1255,19 @@ a.btn_popover
 
     .grid_hero
         display grid
-        grid-template-columns 2fr 3fr 2fr
+        grid-template-columns auto
+        grid-template-rows auto
         margin 0
-        padding 2rem
+        padding 0
         padding-top 78px
+
+    .hero_image
+        width 100vw
+        height calc(100vh - 78px)
+        max-height 60vw
+        // height 300px
+        object-fit cover
+        z-index -1
 
     .calendar
         display grid

@@ -4,11 +4,36 @@ include /_templates/mixins.pug
 block content
 
 
-    main
+
         section.grid_hero
             - var heroPlusTrioNews = []
-            .home_1
 
+                //- HERO ARTICLE EXAMPLE BELOW
+                if self.data.heroArticle.media.image[0]
+                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
+                else if self.data.heroArticle.media.imageDefault[0]
+                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
+                else
+                    img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
+                h4
+                    | !{self.data.heroArticle.title}
+                    | !{self.data.heroArticle.lead}
+                    - heroPlusTrioNews.push(self.data.heroArticle.id)
+
+                //- if self.data.heroArticle.media.image[0]
+                //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                //- else if self.data.heroArticle.media.imageDefault[0]
+                //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                //- else
+                //-     img(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                    //- HERO ARTICLE EXAMPLE END
+
+                //- if self.data.heroArticle.media.image[0]
+                //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                //- else if self.data.heroArticle.media.imageDefault[0]
+                //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                //- else
+                //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
 
                 .article_title_detailed.m_center_d_right
                     //- span.article_title_detailed.clr_primary= self.festivalDates
@@ -29,18 +54,7 @@ block content
             .home_3
                 .hero_p
 
-                    //- HERO ARTICLE EXAMPLE BELOW
-                    | !{self.data.heroArticle.title}
-                    | !{self.data.heroArticle.lead}
-                    - heroPlusTrioNews.push(self.data.heroArticle.id)
 
-                    if self.data.heroArticle.media.image[0]
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
-                    else if self.data.heroArticle.media.imageDefault[0]
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
-                    else
-                        img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
-                    //- HERO ARTICLE EXAMPLE END
 
                     //- VIIEKAS START
                     - var counter = 0
