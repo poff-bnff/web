@@ -36,6 +36,7 @@ bg_dark_2 = #192024
 bg_dark_3 = #1C272E
 bg_dark_4 = #29333A
 clr_popover = #192024
+bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
 clr_primary = #ef0f20 // tartuff red
 clr_primary_semi = rgba(236,0,140,.2)
@@ -327,6 +328,61 @@ nav
     margin 0
     padding 1rem
     padding-top 78px
+
+.hero_head
+    position relative
+
+.hero_headline_box
+        position absolute
+        left 2rem
+        bottom 2rem
+        width 100vw
+        background rgba(10,0,3,.0)
+        // background rgba(236,0,140,.6)
+        // background rgba(90,0,60,.7)
+        // background-color clr_primary
+        text-align left
+        padding 2rem 2rem 2rem 2rem
+
+.hero_headline
+    display inline
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 500
+    line-height 1.4
+    letter-spacing 0.04rem
+    // padding-top 1rem
+    // padding-bottom 1rem
+    background-color bg_dark_2
+    padding 1rem
+    box-decoration-break clone
+
+    a
+        text-decoration: none
+        // color white_96
+
+.hero_p
+    // display inline
+    font-family font_p
+    font-size 1rem
+    text-decoration none
+    color bg_dark_2
+    text-align left
+    // font-weight 400
+    line-height 1.618
+    // letter-spacing 0.04rem
+    // padding-top 1rem
+    // padding-bottom 1rem
+    margin-top 2rem
+    background-color white
+    padding 1.618rem
+    box-decoration-break clone
+
+// .hero_headline span
+//     background-color blue
+//     font-size calc(1.9rem + 1.5vw)
 
 .hero_image
         width 100vw
@@ -1261,6 +1317,9 @@ a.btn_popover
         padding 0
         padding-top 78px
 
+    .hero_head
+        position relative
+
     .hero_image
         width 100vw
         height calc(100vh - 78px)
@@ -1268,6 +1327,18 @@ a.btn_popover
         // height 300px
         object-fit cover
         z-index -1
+
+    .hero_headline_box
+        position absolute
+        left 2rem
+        bottom 2rem
+        width 33vw
+        background rgba(10,0,3,.0)
+        // background rgba(236,0,140,.6)
+        // background rgba(90,0,60,.7)
+        // background-color clr_primary
+        text-align left
+        // padding 2rem 4rem 2rem 4rem
 
     .calendar
         display grid
