@@ -47,7 +47,7 @@ function readYaml(lang, doc) {
             });
         }
 
-        if (values.media.imageDefault[0]) {
+        if (values.media.imageDefault) {
             var imgPath = values.media.imageDefault[0].url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
             fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {

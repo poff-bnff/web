@@ -1,0 +1,88 @@
+id: 6
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-09-02T07:02:01.637Z'
+updated_at: '2020-09-02T07:02:01.811Z'
+title_en: test 6 en
+slug_en: test-6-en
+lead_en: lead 6 en
+contents_en: cont 6 en
+publishFrom: '2020-09-01T09:00:00.000Z'
+publishUntil: '2021-01-06T10:00:00.000Z'
+publish_en: true
+publish_ru: true
+media:
+    id: 13
+    imageDefault:
+        -
+            id: 16
+            name: _DSC6299 - Copy.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1844
+            height: 1229
+            formats:
+                large:
+                    ext: .jpg
+                    url: /uploads/large_DSC_6299_Copy_a204b4699c.jpg
+                    hash: large_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: large__DSC6299 - Copy.jpg
+                    size: 115.96
+                    width: 1000
+                    height: 666
+                small:
+                    ext: .jpg
+                    url: /uploads/small_DSC_6299_Copy_a204b4699c.jpg
+                    hash: small_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: small__DSC6299 - Copy.jpg
+                    size: 36.83
+                    width: 500
+                    height: 333
+                medium:
+                    ext: .jpg
+                    url: /uploads/medium_DSC_6299_Copy_a204b4699c.jpg
+                    hash: medium_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: medium__DSC6299 - Copy.jpg
+                    size: 70.81
+                    width: 750
+                    height: 500
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_DSC_6299_Copy_a204b4699c.jpg
+                    hash: thumbnail_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: thumbnail__DSC6299 - Copy.jpg
+                    size: 10.92
+                    width: 234
+                    height: 156
+            hash: DSC_6299_Copy_a204b4699c
+            ext: .jpg
+            mime: image/jpeg
+            size: 351.31
+            url: /uploads/DSC_6299_Copy_a204b4699c.jpg
+            provider: local
+            created_by: 5
+            updated_by: 5
+            created_at: '2020-08-29T22:32:43.114Z'
+            updated_at: '2020-08-29T22:32:43.190Z'
+    image: []
+article_types: []
+title: test 6 et
+slug: test-6-et
+lead: 'test 6 et test 6 et test 6 et test 6 et test 6 et test 6 et '
+contents: 'cont et cont et cont et cont et cont et '
+publish: true
+directory: source/article/test-6-en
+path: article/test-6-et
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.et.yaml

@@ -1,0 +1,108 @@
+id: 1
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-09-02T06:20:22.339Z'
+updated_at: '2020-09-02T06:34:29.185Z'
+title_et: Test ET
+slug_et: test-et
+lead_et: Lead ET
+contents_et: Cont ET
+publishFrom: '2020-07-01T09:00:00.000Z'
+publishUntil: '2021-01-14T10:00:00.000Z'
+publish_et: true
+publish_ru: true
+media:
+    id: 8
+    imageDefault:
+        -
+            id: 21
+            name: _DSC5402 - Copy.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1737
+            height: 1009
+            formats:
+                large:
+                    ext: .jpg
+                    url: /uploads/large_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: large_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: large__DSC5402 - Copy.jpg
+                    size: 132.99
+                    width: 1000
+                    height: 581
+                small:
+                    ext: .jpg
+                    url: /uploads/small_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: small_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: small__DSC5402 - Copy.jpg
+                    size: 35.16
+                    width: 500
+                    height: 290
+                medium:
+                    ext: .jpg
+                    url: /uploads/medium_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: medium_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: medium__DSC5402 - Copy.jpg
+                    size: 74.27
+                    width: 750
+                    height: 436
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: thumbnail_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: thumbnail__DSC5402 - Copy.jpg
+                    size: 9.71
+                    width: 245
+                    height: 142
+            hash: DSC_5402_Copy_644cc1bec0
+            ext: .jpg
+            mime: image/jpeg
+            size: 406.35
+            url: /uploads/DSC_5402_Copy_644cc1bec0.jpg
+            provider: local
+            created_by: 5
+            updated_by: 5
+            created_at: '2020-08-29T22:44:11.792Z'
+            updated_at: '2020-08-29T22:44:11.850Z'
+    image: []
+article_types:
+    -
+        id: 2
+        name: Uudis
+        created_by: 6
+        updated_by: 1
+        created_at: '2020-08-18T13:49:51.616Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
+        article: null
+        et: Uudised
+        en: News
+        ru: Новости
+tag_premiere_types:
+    - International Premiere
+tag_programmes:
+    - Official Selection
+tag_genres:
+    - Drama
+tag_keywords:
+    - MeToo
+    - Society
+title: Test EN
+slug: test-en
+lead: Lead EN
+contents: Cont EN
+publish: true
+directory: source/article/test-en
+path: article/test-en
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.en.yaml

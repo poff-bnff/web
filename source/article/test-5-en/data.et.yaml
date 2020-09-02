@@ -1,0 +1,97 @@
+id: 5
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-09-02T07:00:57.082Z'
+updated_at: '2020-09-02T07:00:57.230Z'
+title_en: test 5 en
+slug_en: test-5-en
+lead_en: Lead 5 en
+contents_en: >-
+    cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont
+    5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+    encont 5  encont 5  encont 5  encont 5  encont 5  en
+publishFrom: '2020-09-01T09:00:00.000Z'
+publishUntil: '2021-01-07T10:00:00.000Z'
+publish_en: true
+publish_ru: true
+media:
+    id: 12
+    imageDefault:
+        -
+            id: 32
+            name: F_1_maudie.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1920
+            height: 1080
+            formats:
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_F_1_maudie_8754a1bf4d.jpg
+                    hash: thumbnail_F_1_maudie_8754a1bf4d
+                    mime: image/jpeg
+                    name: thumbnail_F_1_maudie.jpg
+                    size: 8.44
+                    width: 245
+                    height: 138
+            hash: F_1_maudie_8754a1bf4d
+            ext: .jpg
+            mime: image/jpeg
+            size: 182.99
+            url: /uploads/F_1_maudie_8754a1bf4d.jpg
+            provider: local
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:30:02.744Z'
+            updated_at: '2020-09-01T12:30:02.829Z'
+    image:
+        -
+            id: 31
+            name: Industry_2020_online_news.jpeg
+            alternativeText: ''
+            caption: ''
+            width: 900
+            height: 600
+            formats:
+                thumbnail:
+                    ext: .jpeg
+                    url: >-
+                        /uploads/thumbnail_Industry_2020_online_news_b73f02f092.jpeg
+                    hash: thumbnail_Industry_2020_online_news_b73f02f092
+                    mime: image/jpeg
+                    name: thumbnail_Industry_2020_online_news.jpeg
+                    path: null
+                    size: 15.09
+                    width: 234
+                    height: 156
+            hash: Industry_2020_online_news_b73f02f092
+            ext: .jpeg
+            mime: image/jpeg
+            size: 136.1
+            url: /uploads/Industry_2020_online_news_b73f02f092.jpeg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:27:06.584Z'
+            updated_at: '2020-09-01T12:27:06.648Z'
+article_types: []
+title: test 5 et
+slug: test-5-et
+lead: >-
+    lead 5 etlead 5 etlead 5 etlead 5 etlead 5 etlead 5 etlead 5 etlead 5 etlead
+    5 etlead 5 etlead 5 etlead 5 etlead 5 etlead 5 etlead 5 etlead 5 etlead 5
+    etlead 5 etlead 5 etlead 5 etlead 5 et
+publish: true
+directory: source/article/test-5-en
+path: article/test-5-et
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.et.yaml

@@ -1,0 +1,122 @@
+id: 4
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-09-02T06:24:45.587Z'
+updated_at: '2020-09-02T06:24:45.748Z'
+title_en: test 4 en
+slug_en: test-4-en
+lead_en: lead 4 en
+contents_en: cont 4 en
+publishFrom: '2020-05-05T09:00:00.000Z'
+publishUntil: '2021-01-06T10:00:00.000Z'
+publish_en: true
+publish_ru: true
+media:
+    id: 11
+    imageDefault:
+        -
+            id: 33
+            name: maarjanuut-scaled-2020.jpeg
+            alternativeText: ''
+            caption: ''
+            width: 1067
+            height: 600
+            formats:
+                thumbnail:
+                    ext: .jpeg
+                    url: >-
+                        /uploads/thumbnail_maarjanuut_scaled_2020_63516cc8aa.jpeg
+                    hash: thumbnail_maarjanuut_scaled_2020_63516cc8aa
+                    mime: image/jpeg
+                    name: thumbnail_maarjanuut-scaled-2020.jpeg
+                    size: 7.51
+                    width: 245
+                    height: 138
+            hash: maarjanuut_scaled_2020_63516cc8aa
+            ext: .jpeg
+            mime: image/jpeg
+            size: 75.64
+            url: /uploads/maarjanuut_scaled_2020_63516cc8aa.jpeg
+            provider: local
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:44:38.655Z'
+            updated_at: '2020-09-01T12:44:38.738Z'
+    image:
+        -
+            id: 16
+            name: _DSC6299 - Copy.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1844
+            height: 1229
+            formats:
+                large:
+                    ext: .jpg
+                    url: /uploads/large_DSC_6299_Copy_a204b4699c.jpg
+                    hash: large_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: large__DSC6299 - Copy.jpg
+                    path: null
+                    size: 115.96
+                    width: 1000
+                    height: 666
+                small:
+                    ext: .jpg
+                    url: /uploads/small_DSC_6299_Copy_a204b4699c.jpg
+                    hash: small_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: small__DSC6299 - Copy.jpg
+                    path: null
+                    size: 36.83
+                    width: 500
+                    height: 333
+                medium:
+                    ext: .jpg
+                    url: /uploads/medium_DSC_6299_Copy_a204b4699c.jpg
+                    hash: medium_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: medium__DSC6299 - Copy.jpg
+                    path: null
+                    size: 70.81
+                    width: 750
+                    height: 500
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_DSC_6299_Copy_a204b4699c.jpg
+                    hash: thumbnail_DSC_6299_Copy_a204b4699c
+                    mime: image/jpeg
+                    name: thumbnail__DSC6299 - Copy.jpg
+                    path: null
+                    size: 10.92
+                    width: 234
+                    height: 156
+            hash: DSC_6299_Copy_a204b4699c
+            ext: .jpg
+            mime: image/jpeg
+            size: 351.31
+            url: /uploads/DSC_6299_Copy_a204b4699c.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 5
+            updated_by: 5
+            created_at: '2020-08-29T22:32:43.114Z'
+            updated_at: '2020-08-29T22:32:43.190Z'
+article_types: []
+title: test 4 et
+slug: test-4-et
+lead: lead 4 et
+contents: cont 4 et
+publish: true
+directory: source/article/test-4-en
+path: article/test-4-et
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.et.yaml

@@ -5,15 +5,16 @@ block content
 
     if self.data.articles
         main.grid_articles
-            each val in self.data.articles.sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
+            each val in self.data.articles
+                //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
                 if val.title
                     - var article_slug = val.slug
                     //- - var article_pictures = self.data.article_pictures.articles[article_slug]
                     a(href= `/${lang_path}article/${article_slug}`).card_article
                         .container_frame_16_9
-                            if val.media.image[0]
+                            if val.media && val.media.image && val.media.image[0]
                                 img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.image[0].hash}${val.media.image[0].ext}`)
-                            else if val.media.imageDefault[0]
+                            else if val.media && val.media.imageDefault && val.media.imageDefault[0]
                                 img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.imageDefault[0].hash}${val.media.imageDefault[0].ext}`)
                             else
                                 img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg')
@@ -27,16 +28,16 @@ block content
                             if val.lead
                                 .article_lead=val.lead
                             else
-                                if val.articleContents
+                                if val.contents
                                     .article_lead=val.contents
 
                         .card_article_footer
                             if val.created_by.firstname && val.created_by.lastname
                                 .article_author= `${val.created_by.firstname} ${val.created_by.lastname}`
                             span &nbsp;&nbsp;
-                            if val.publishSettings[0].from
+                            if val.publishFrom
                                 .article_publish_start
-                                    +localdatetime(val.publishSettings[0].from)
+                                    +localdatetime(val.publishFrom)
 
 
 
