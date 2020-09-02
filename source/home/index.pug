@@ -43,22 +43,23 @@ block content
 
                     //- VIIEKAS START
                     - var counter = 0
-                    each news in self.data.articles
-                        //- script.
-                        //-     .sort(
-                        //-     function(a, b){
-                        //-         if(a.publishSettings[0]) {
-                        //-             var aSortSource = a.publishSettings[0].from
-                        //-         }else{
-                        //-             var aSortSource = a.created_at
-                        //-         }
-                        //-         if(b.publishSettings[0]) {
-                        //-             var bSortSource = b.publishSettings[0].from
-                        //-         }else{
-                        //-             var bSortSource = b.created_at
-                        //-         }
-                        //-         return (aSortSource.from > bSortSource) ? 1 : ((bSortSource > aSortSource.from) ? -1 : 0);
-                        //-     })
+
+                    - var sortFunction = function(a, b) {
+                    -   if(a.publishFrom) {
+                    -       var aSortSource = a.publishFrom
+                    -   } else {
+                    -       var aSortSource = a.created_at
+                    -   }
+                    -   if (b.publishFrom) {
+                    -       var bSortSource = b.publishFrom
+                    -   } else {
+                    -       var bSortSource = b.created_at
+                    -   }
+                    -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
+                    - }
+
+                    each news in self.data.articles.sort(sortFunction)
+
                         if news.article_types && news.article_types && news.article_types[0]
                             - var articleType = news.article_types[0].et
 
@@ -69,7 +70,7 @@ block content
                             - break
                         -counter++
 
-                        p= news.title + ' - ' + news.article_types
+                        p= news.title + ' - ' + (news.publishFrom ? news.publishFrom : news.created_at)
 
                     //- VIIEKAS LÕPP
 
