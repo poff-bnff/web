@@ -2,15 +2,48 @@ const fs = require('fs');
 const http = require('http');
 const AuthStrapi = require('./AuthStrapi');
 const Validate= require('../compareStructure')
+const yaml= require('js-yaml');
 
-function FromStrapi(datapath, CBfunction){
+const datamodel = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
+const DOMAIN = 'poff.ee'
+
+function FromStrapi(modelName, CBfunction){
+    console.log('validate model', modelName)
+    if (datamodel[modelName] === undefined){
+        throw new Error('Model ' + modelName + ' not in data model.')
+    }
+    let dataPath = datamodel[modelName]['_path']
+
     let FetchData = function(token) {
-        let GetDataFromStrapi = function(datapath, token, CBfunction){
+
+        let checkDomain = function(element){
+            // kui on domain, siis element['domains'] = [domain]
+            if (element['domain']){
+                element['domains'] = [element['domain']]
+            }
+
+            if (element['domains'] === undefined) {
+                // console.log(3);
+                return true
+            }
+
+            for(let ix in element['domains']){
+                let el = element['domains'][ix]
+                // console.log(ix, el)
+                if (el['url'] === DOMAIN){
+                    console.log('domain !');
+                    return true
+                }
+            }
+
+            return false
+        }
+        let GetDataFromStrapi = function(dataPath, token, CBfunction){
             let options = {
                 //see võiks tulla muutujast
                 host: process.env['StrapiHost'],
                 // ?_limit=-1 see tagab, et strapi tagastab kogu data, mitte 100 esimest nagu on vaikimisi säte
-                path: datapath +'?_limit=-1',
+                path: dataPath +'?_limit=-1',
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -22,9 +55,15 @@ function FromStrapi(datapath, CBfunction){
                     allData += chunk;
                 });
                 response.on('end', function () {
-                    let data = JSON.parse(allData)
-                    CBfunction(data, token)
-                    //console.log(data);
+                    let strapiData = JSON.parse(allData)
+                    if (!Array.isArray(strapiData)){
+                        strapiData = [strapiData]
+                    }
+
+                    strapiData = strapiData.filter(checkDomain)
+                    CBfunction(strapiData, token)
+                    // console.log(strapiData);
+
                 });
                 response.on('error', function (error) {
                     console.log(error);
@@ -35,7 +74,7 @@ function FromStrapi(datapath, CBfunction){
             })
             req.end()
         };
-        GetDataFromStrapi(datapath, token, CBfunction);
+        GetDataFromStrapi(dataPath, token, CBfunction);
     };
     AuthStrapi.Auth(FetchData)
 }
@@ -54,7 +93,7 @@ function ValitateAndReturnData(dataPath, CBfunction){
     })
 }
 
-//ValitateAndReturnData('/articles', LogData)
+//ValitateAndReturnData('Article', LogData)
 
 
 

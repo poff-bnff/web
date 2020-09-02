@@ -8,13 +8,17 @@ block content
         section.grid_hero
             .home_1
 
-                    //- //SIIN ON NÄIDE
+
+                .article_title_detailed.m_center_d_right
+                    span.article_title_detailed.clr_primary= self.festivalDates
+                    //- //SIIN ON TRIO NÄIDE
+
 
                     - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
                     //- self.data.articleTrioBlock sisaldab mida?
                     for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        if values.article
-                            - heroPlusTrioNews.push(values.article.id)
+                        if values.poff_article
+                            - heroPlusTrioNews.push(values.poff_article.id)
 
                         span= values.title
                     //- //KUNI SIIN
@@ -28,26 +32,32 @@ block content
                     | !{self.data.heroArticle.title}
                     | !{self.data.heroArticle.lead}
                     - heroPlusTrioNews.push(self.data.heroArticle.id)
-                    //- HERO ARTICLE EXAMPLE END
 
-                    if self.data.heroArticle.image
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.image.hash}${self.data.heroArticle.image.ext}` style='width:30%; height:30%;')
-                    else if self.data.heroArticle.imageDefault
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.imageDefault.hash}${self.data.heroArticle.imageDefault.ext}` style='width:30%; height:30%;')
+                    if self.data.heroArticle.media.image[0]
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    else if self.data.heroArticle.media.imageDefault[0]
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
                     else
                         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                    //- HERO ARTICLE EXAMPLE END
 
                     //- VIIEKAS START
                     - var counter = 0
-                    each news in self.data.articles.sort(function(a, b){ return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0); })
-                        //- Viie uudise sekka sobivad vaid Uudised, mis ei figureeri Trios ega Heros
-                        if heroPlusTrioNews.includes(news.id) || (news.publishing.article_types[0].et !== 'Uudised')
+
+
+                    each news in self.data.articles.sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? 1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? -1 : 0); })
+                        if news.publishSettings[0].article_types[0]
+                            - var articleType = news.publishSettings[0].article_types[0].et
+
+                        if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
+
                             - continue
                         if counter >= 5
                             - break
                         -counter++
 
                         p= news.title
+
                     //- VIIEKAS LÕPP
 
 

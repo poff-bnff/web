@@ -17,20 +17,20 @@ block content
             //- section.sub_team
         each team in self.data.teams
             - var teamId = team.id
-            each subTeam in team.subTeam
-                h1.sub_section_headline= `${subTeam.name}`
-                section.sub_team
-                    each teamMember in subTeam.teamMember
-                        .person
-                            .person_head
-                                - var assetsDir = '/assets/img/img_persons/'
-                                if teamMember.pictureAtTeam
-                                    - var personPic = assetsDir + teamMember.pictureAtTeam[0].hash + teamMember.pictureAtTeam[0].ext
-                                else if teamMember.person.picture
-                                    - var personPic = assetsDir + teamMember.person.picture.hash + teamMember.person.picture.ext
-                                else
-                                    - var personPic ='/assets/img/img_persons/hunt_person.png'
-                                img.person_img(src= personPic alt= `${teamMember.person.firstName} ${teamMember.person.lastName}`)
+            each subTeam in team.subTeam.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                p= `Team ${teamId}: ${subTeam.name}`
+                each teamMember in subTeam.teamMember
+                    .person
+                        .person_head
+                            - var assetsDir = '/assets/img/img_persons/'
+                            if teamMember.pictureAtTeam
+                                - var personPic = assetsDir + teamMember.pictureAtTeam[0].hash + teamMember.pictureAtTeam[0].ext
+                            else if teamMember.person.picture
+                                - var personPic = assetsDir + teamMember.person.picture.hash + teamMember.person.picture.ext
+                            else
+                                - var personPic ='/assets/img/img_persons/hunt_person.png'
+                            img.person_img(src= personPic alt= `${teamMember.person.firstName} ${teamMember.person.lastName}`)
+
 
                                 //- if val.personName
                                 .person_body.text_center

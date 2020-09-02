@@ -13,40 +13,51 @@ block content
 
     section.grid_article
         section.article_hero_head
-            if self.image
-                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.image.hash}${self.image.ext}`).article_hero_image
-            else if self.imageDefault
-                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.imageDefault.hash}${self.imageDefault.ext}`).article_hero_image
+            if self.media.image[0]
+                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`).article_hero_image
+            else if self.media.imageDefault[0]
+                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`).article_hero_image
             else
                 img(src='/assets/img/global/placeholder_hd_1.jpg').article_hero_image
         if self.title
             .article_hero_headline_box
-                .article_title_detailed= self.title + '!!! UUUUDIS !!!'
+                .article_title_detailed= self.title + '!!! UUDIS !!!'
 
     section.grid_article
         section.article_meta
             .str_info_meta_gi
-                    if self.publishing.article_types
+                    if self.publishSettings[0].article_types[0]
                         .str_info_meta_item
-                            .str_info_meta_value= self.publishing.article_types[0].name
+                            .str_info_meta_value= self.publishSettings[0].article_types[0].name
                     if self.created_by.firstname
                         .str_info_meta_item
                             .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
-                    if self.articlePublishStart
+                    if self.publishSettings[0].from
                         .str_info_meta_item
                             //- .str_info_meta_value= self.kuupäev + '  ' + self.kell
                             .str_info_meta_value
-                                +localdatetime(self.articlePublishStart)
-                    if self.TAGS
+                                +localdatetime(self.publishSettings[0].from)
+                    if self.tags
                         .str_info_meta_item
-                            .str_info_meta_keywords= self.TAGS
+                            - var tagsList = []
+                            for tagsCategory in self.tags
+                                if tagsCategory.premiere_types
+                                    - tagsCategory.premiere_types.forEach(element => tagsList.push(element));
+                                if tagsCategory.programmes
+                                    - tagsCategory.programmes.forEach(element => tagsList.push(element));
+                                if tagsCategory.genres
+                                    - tagsCategory.genres.forEach(element => tagsList.push(element));
+                                if tagsCategory.keywords
+                                    - tagsCategory.keywords.forEach(element => tagsList.push(element));
+
+                            .str_info_meta_keywords= '#' + tagsList.join(' #')
 
 
         section.article_contents
             if self.lead
                 p.font_weight_600= self.lead
             //- p= self.articleContents_et
-            if self.contents
+            if typeof(self.contents) !== 'object'
                 +format(self.contents)
 
 
