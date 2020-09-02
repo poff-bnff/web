@@ -17,8 +17,8 @@ block content
                     - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
                     //- self.data.articleTrioBlock sisaldab mida?
                     for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        if values.poff_article
-                            - heroPlusTrioNews.push(values.poff_article.id)
+                        if values.poffi_article
+                            - heroPlusTrioNews.push(values.poffi_article.id)
 
                         span= values.title
                     //- //KUNI SIIN
@@ -59,8 +59,8 @@ block content
                         //-         }
                         //-         return (aSortSource.from > bSortSource) ? 1 : ((bSortSource > aSortSource.from) ? -1 : 0);
                         //-     })
-                        if news.publishSettings && news.publishSettings[0].article_types && news.publishSettings[0].article_types[0]
-                            - var articleType = news.publishSettings[0].article_types[0].et
+                        if news.article_types && news.article_types && news.article_types[0]
+                            - var articleType = news.article_types[0].et
 
                         if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
 
@@ -69,7 +69,7 @@ block content
                             - break
                         -counter++
 
-                        p= news.title + ' - ' + news.publishSettings
+                        p= news.title + ' - ' + news.article_types
 
                     //- VIIEKAS LÕPP
 
