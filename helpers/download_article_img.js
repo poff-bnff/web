@@ -47,14 +47,14 @@ function readYaml(lang, doc) {
             });
         }
 
-        if (values.media.imageDefault) {
+        if (values.media && values.media.imageDefault) {
             var imgPath = values.media.imageDefault[0].url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
             fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
             });
             download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
         }
-        if (values.media.image[0]) {
+        if (values.media && values.media.image[0]) {
             var imgPath = values.media.image[0].url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
             download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);

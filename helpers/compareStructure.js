@@ -5,7 +5,7 @@ const path = require('path')
 
 process.chdir(path.dirname(__filename))
 
-const Validate= function(strapiData, modelName){
+const Validate= function(modelName, strapiData, AfterFetchCB){
     if (!Array.isArray(strapiData)){
         throw new Error('Data has to be a list.')
     }
@@ -19,6 +19,8 @@ const Validate= function(strapiData, modelName){
     for (const ix in strapiData) {
         Compare(datamodel[modelName], strapiData[ix], modelName + '[' + ix + ']')
     }
+
+    AfterFetchCB(modelName, strapiData)
 }
 
 const Compare = function (lhs, rhs, path) {
