@@ -229,8 +229,8 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (writeIndexFile) {
-        if (element.publishSettings != null && element.publishSettings[0].article_types[0] != null) {
-                var templateName = element.publishSettings[0].article_types[0].name.toLowerCase();
+        if (element.article_types != null && element.article_types[0] != null) {
+                var templateName = element.article_types[0].name.toLowerCase();
         }else{
             var templateName = 'uudis';
         }

@@ -17,8 +17,8 @@ block content
                     - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
                     //- self.data.articleTrioBlock sisaldab mida?
                     for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        if values.poff_article
-                            - heroPlusTrioNews.push(values.poff_article.id)
+                        if values.poffi_article
+                            - heroPlusTrioNews.push(values.poffi_article.id)
 
                         span= values.title
                     //- //KUNI SIIN
@@ -43,21 +43,33 @@ block content
 
                     //- VIIEKAS START
                     - var counter = 0
+                    each news in self.data.articles
+                        //- script.
+                        //-     .sort(
+                        //-     function(a, b){
+                        //-         if(a.publishSettings[0]) {
+                        //-             var aSortSource = a.publishSettings[0].from
+                        //-         }else{
+                        //-             var aSortSource = a.created_at
+                        //-         }
+                        //-         if(b.publishSettings[0]) {
+                        //-             var bSortSource = b.publishSettings[0].from
+                        //-         }else{
+                        //-             var bSortSource = b.created_at
+                        //-         }
+                        //-         return (aSortSource.from > bSortSource) ? 1 : ((bSortSource > aSortSource.from) ? -1 : 0);
+                        //-     })
+                        if news.article_types && news.article_types && news.article_types[0]
+                            - var articleType = news.article_types[0].et
 
+                        if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
 
-                    //- each news in self.data.articles
-                    //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? 1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? -1 : 0); })
-                    if news.article_types[0]
-                        - var articleType = news.article_types[0].et
+                            - continue
+                        if counter >= 5
+                            - break
+                        -counter++
 
-                    if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
-
-                        - continue
-                    if counter >= 5
-                        - break
-                    -counter++
-
-                    p= news.title
+                        p= news.title + ' - ' + news.article_types
 
                     //- VIIEKAS LÕPP
 

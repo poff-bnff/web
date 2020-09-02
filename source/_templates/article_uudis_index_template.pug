@@ -26,9 +26,9 @@ block content
     section.grid_article
         section.article_meta
             .str_info_meta_gi
-                    if self.publishSettings && self.publishSettings[0].article_types[0]
+                    if self.article_types && self.article_types[0]
                         .str_info_meta_item
-                            .str_info_meta_value= self.publishSettings[0].article_types[0].name
+                            .str_info_meta_value= self.article_types[0].name
                     if self.created_by.firstname
                         .str_info_meta_item
                             .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
