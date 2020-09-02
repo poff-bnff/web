@@ -29,14 +29,25 @@ block content
                     if self.article_types && self.article_types[0]
                         .str_info_meta_item
                             .str_info_meta_value= self.article_types[0].name
-                    if self.created_by.firstname
+
+                    if self.web_authors
+                        .str_info_meta_item
+                            - var authors = []
+                            each author in self.web_authors
+                                - authors.push(author.name)
+                            .str_info_meta_value= authors.join(', ')
+                    else
                         .str_info_meta_item
                             .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
+
                     if self.publishFrom
                         .str_info_meta_item
-                            //- .str_info_meta_value= self.kuupäev + '  ' + self.kell
                             .str_info_meta_value
                                 +localdatetime(self.publishFrom)
+                    else
+                        .str_info_meta_item
+                            .str_info_meta_value
+                                +localdatetime(self.created_at)
 
                     .str_info_meta_item
                         - var tagsList = []

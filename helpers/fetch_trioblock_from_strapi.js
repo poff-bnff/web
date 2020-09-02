@@ -95,8 +95,9 @@ function processData(data, lang, CreateYAML) {
 
         // console.log(key);
         if(key.substr(0, key.length-2) === 'trioBlockItem') {
+            console.log(copyData[key].poffi_article.publishFrom);
             buffer.push(copyData[key]);
-            console.log(copyData[key]);
+            // console.log(copyData[key]);
             delete copyData[key]
         }
 
