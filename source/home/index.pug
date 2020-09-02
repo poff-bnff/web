@@ -7,31 +7,27 @@ block content
     main.home
         section.grid_hero
             .home_1
+
+
                 .article_title_detailed.m_center_d_right
                     span.article_title_detailed.clr_primary= self.festivalDates
                     //- //SIIN ON TRIO NÄIDE
 
+
                     - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+                    //- self.data.articleTrioBlock sisaldab mida?
                     for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                         if values.poff_article
                             - heroPlusTrioNews.push(values.poff_article.id)
 
                         span= values.title
                     //- //KUNI SIIN
-                    br
-                    | !{self.festivalLocations.outdoors}
-                    br
-                    | !{self.festivalLocations.indoors}
-                    br
-                    p= self.data.articleTrioBlock.contents
-                    a.article_title_detailed.clr_primary(href='https://tartuff.elisastage.ee')= self.festivalLocations.virtual
+
             .home_2
                 img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
             .home_3
                 .hero_p
-                    - var frontpageText = self.frontpageText
-                    | !{ self.md(frontpageText)}
-                    a.btn.btn_primary.active.font_h(href='https://tartuff.elisastage.ee' role='button')= self.frontPageButton
+
                     //- HERO ARTICLE EXAMPLE BELOW
                     | !{self.data.heroArticle.title}
                     | !{self.data.heroArticle.lead}
@@ -67,6 +63,7 @@ block content
                             - var articleType = news.publishSettings[0].article_types[0].et
 
                         if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
+
                             - continue
                         if counter >= 5
                             - break
@@ -77,48 +74,7 @@ block content
                     //- VIIEKAS LÕPP
 
 
-        section.grid_covid
-            .covid_rules
-                h1.article_title_detailed.clr_primary
-                    | Ohutusreeglid Tartuffil
-                ul
-                    li.hero_p
-                        | Kui tunned, et oled tõbine, siis vaata filme hoopis kodus Elisa Stage´il
-                    li.hero_p
-                        | Tartu Raekoja platsil järgi 2 + 2 reeglit ja hoia teiste vaatajatega distantsi.
-                    li.hero_p
-                        | Raekoja platsil on 500 istekohta varasema 1200 asemel. Istekohti ei reserveerita.
-                    li.hero_p
-                        | Kui oled kaasa võtnud oma tooli, siis palun järgi seda paigaldades 2 + 2 reeglit.
-                    li.hero_p
-                        | Kui istekohad on võetud, siis palun ära jää Raekoja platsile, vaid vaata filme hoopis Tartuffi kodulehel virtuaalses kinosaalis Elisa Stage´il.
-                    li.hero_p
-                        | Raekoja platsil tagab korda turvafirma USS.
-                    li.hero_p
-                        | Athena kinos ja teistes festivali siseruumides kehtib 50% täituvuse reegel. Hoia siseruumides piisavat distantsi teiste külastajatega.
-                    li.hero_p
-                        | Ühele seansile Athena kinos pääseb kuni 120 inimest, kes istuvad hajutatult kinosaali parteris ja rõdul.
-                    li.hero_p
-                        | Athena kinos jagatakse filmivaatajatele tasuta meditsiinilisi kaitsemaske (3ply). Kaitsemaski maksimaalne kandmise aeg on 4 tundi. Maski paigaldamisel ja äravõtmisel on oluline käte hügieen. Palun hoidke mask ees kuni kinost lahkumiseni.
-                    li.hero_p
-                        | Tartuffi vabatahtlikud puhastavad Athena kinos seansside vahel desinfitseerimisvahendiga ukselinke, trepikäsipuid ja toolide käetugesid. Samuti tuulutatakse seansside vahel kinosaali.
-                    li.hero_p
-                        | Festivalialadel on olemas desinfitseerimisvahendid.
-                    li.hero_p
-                        | Palume osalejatel festivalialadel mitte tihedalt koguneda ega järjekordades lähestikku üksteise selja taga seista – hoidke piisavat vahet teiste külastajatega.
-                    li.hero_p
-                        | Kui märkad haigustunnustega külastajat festivalil, siis palun informeeri sellest Tartuffi publikuteenindajaid.
-                    li.hero_p
-                        | Küsimuste ja probleemide korral palun pöördu festivali publikuteenindajate poole.
-                    li.hero_p
-                        | Hoia enda ja teiste tervist ning järgi palun ohutusreegleid!
-                p.hero_p
-                    | Tänulikult,
-                    br
-                    | Tartuffi meeskond
-            .covid_rules
-                section.f_trailer_box.embed-responsive.embed-responsive-16by9.m-0.p-0
-                    iframe(width="560" height="315" src="https://www.youtube.com/embed/hnex6ImCk7s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
 
         //- FILMS / SCREENINGS calendar
         div

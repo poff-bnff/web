@@ -11,10 +11,10 @@ block content
     //-                 | Tartuffi külastaja meelespea 2020
 
 
-    section.festival
+    section.team
         h1.section_headline= self.label.all.festivalTeam
 
-    section.team
+            //- section.sub_team
         each team in self.data.teams
             - var teamId = team.id
             each subTeam in team.subTeam.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
@@ -31,12 +31,13 @@ block content
                                 - var personPic ='/assets/img/img_persons/hunt_person.png'
                             img.person_img(src= personPic alt= `${teamMember.person.firstName} ${teamMember.person.lastName}`)
 
-                            //- if val.personName
-                            .person_body.text_center
-                                h4.text_center= `${teamMember.person.firstName} ${teamMember.person.lastName}`
-                                //- p.premiere_type.text_center= val.personOrganisation
-                                +format(teamMember.roleAtTeam)
-                        //- else
-                        //-     .person_body
-                        //-         h4= val.personOrganisation
+
+                                //- if val.personName
+                                .person_body.text_center
+                                    h4.text_center= `${teamMember.person.firstName} ${teamMember.person.lastName}`
+                                    //- p.premiere_type.text_center= val.personOrganisation
+                                    +format(teamMember.roleAtTeam)
+                            //- else
+                            //-     .person_body
+                            //-         h4= val.personOrganisation
 
