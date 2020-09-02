@@ -13,9 +13,9 @@ block content
 
     section.grid_article
         section.article_hero_head
-            if self.media.image[0]
+            if self.media && self.media.image && self.media.image[0]
                 img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`).article_hero_image
-            else if self.media.imageDefault[0]
+            else if self.media && self.media.imageDefault && self.media.imageDefault[0]
                 img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`).article_hero_image
             else
                 img(src='/assets/img/global/placeholder_hd_1.jpg').article_hero_image
@@ -26,30 +26,30 @@ block content
     section.grid_article
         section.article_meta
             .str_info_meta_gi
-                    if self.publishSettings[0].article_types[0]
+                    if self.publishSettings && self.publishSettings[0].article_types[0]
                         .str_info_meta_item
                             .str_info_meta_value= self.publishSettings[0].article_types[0].name
                     if self.created_by.firstname
                         .str_info_meta_item
                             .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
-                    if self.publishSettings[0].from
+                    if self.publishFrom
                         .str_info_meta_item
                             //- .str_info_meta_value= self.kuupäev + '  ' + self.kell
                             .str_info_meta_value
-                                +localdatetime(self.publishSettings[0].from)
-                    if self.tags
-                        .str_info_meta_item
-                            - var tagsList = []
-                            for tagsCategory in self.tags
-                                if tagsCategory.premiere_types
-                                    - tagsCategory.premiere_types.forEach(element => tagsList.push(element));
-                                if tagsCategory.programmes
-                                    - tagsCategory.programmes.forEach(element => tagsList.push(element));
-                                if tagsCategory.genres
-                                    - tagsCategory.genres.forEach(element => tagsList.push(element));
-                                if tagsCategory.keywords
-                                    - tagsCategory.keywords.forEach(element => tagsList.push(element));
+                                +localdatetime(self.publishFrom)
 
+                    .str_info_meta_item
+                        - var tagsList = []
+                        if self.tag_premiere_types
+                            - self.tag_premiere_types.forEach(element => tagsList.push(element));
+                        if self.tag_programmes
+                            - self.tag_programmes.forEach(element => tagsList.push(element));
+                        if self.tag_genres
+                            - self.tag_genres.forEach(element => tagsList.push(element));
+                        if self.tag_keywords
+                            - self.tag_keywords.forEach(element => tagsList.push(element));
+
+                        if tagsList.length > 0
                             .str_info_meta_keywords= '#' + tagsList.join(' #')
 
 

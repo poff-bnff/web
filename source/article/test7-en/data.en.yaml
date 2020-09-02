@@ -1,0 +1,88 @@
+id: 7
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-09-02T07:03:23.979Z'
+updated_at: '2020-09-02T07:03:24.135Z'
+title_et: test 7 et
+slug_et: test-7-et
+lead_et: test 7 lead et
+contents_et: cont 7 et
+publishFrom: '2020-07-08T09:00:00.000Z'
+publishUntil: '2020-12-17T10:00:00.000Z'
+publish_et: true
+publish_ru: true
+media:
+    id: 14
+    imageDefault:
+        -
+            id: 21
+            name: _DSC5402 - Copy.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1737
+            height: 1009
+            formats:
+                large:
+                    ext: .jpg
+                    url: /uploads/large_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: large_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: large__DSC5402 - Copy.jpg
+                    size: 132.99
+                    width: 1000
+                    height: 581
+                small:
+                    ext: .jpg
+                    url: /uploads/small_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: small_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: small__DSC5402 - Copy.jpg
+                    size: 35.16
+                    width: 500
+                    height: 290
+                medium:
+                    ext: .jpg
+                    url: /uploads/medium_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: medium_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: medium__DSC5402 - Copy.jpg
+                    size: 74.27
+                    width: 750
+                    height: 436
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_DSC_5402_Copy_644cc1bec0.jpg
+                    hash: thumbnail_DSC_5402_Copy_644cc1bec0
+                    mime: image/jpeg
+                    name: thumbnail__DSC5402 - Copy.jpg
+                    size: 9.71
+                    width: 245
+                    height: 142
+            hash: DSC_5402_Copy_644cc1bec0
+            ext: .jpg
+            mime: image/jpeg
+            size: 406.35
+            url: /uploads/DSC_5402_Copy_644cc1bec0.jpg
+            provider: local
+            created_by: 5
+            updated_by: 5
+            created_at: '2020-08-29T22:44:11.792Z'
+            updated_at: '2020-08-29T22:44:11.850Z'
+    image: []
+article_types: []
+title: test7 en
+slug: test7-en
+lead: lead 7 en
+contents: cont 7 en
+publish: true
+directory: source/article/test7-en
+path: article/test7-en
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.en.yaml
