@@ -17,11 +17,11 @@ block content
 
                     //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
                     //- self.data.articleTrioBlock sisaldab mida?
-                    for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        if values.poffi_article
-                            - heroPlusTrioNews.push(values.poffi_article.id)
+                    for blocks in self.data.articleTrioBlock.sort(function(a, b){ return (a.block.order > b.block.order) ? 1 : ((b.block.order > a.block.order) ? -1 : 0); })
+                        if blocks.article
+                            - heroPlusTrioNews.push(blocks.article.id)
 
-                        span= values.title
+                        span= blocks.block.title
                     //- //KUNI SIIN
 
             //- .home_2

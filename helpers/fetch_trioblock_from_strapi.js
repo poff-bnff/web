@@ -111,7 +111,7 @@ function processData(data, lang, CreateYAML) {
     // buffer = rueten(data, lang);
     // console.log(buffer);
     // copyData.blocks = buffer
-    // copyData = rueten(copyData, lang);
+    copyData = rueten(buffer, lang);
     CreateYAML(buffer, lang);
 }
 

@@ -1,41 +1,94 @@
 -
     block:
         id: 10
-        article: null
-        customUrl: null
-        order: 3
+        order: 2
         poff_article: 1
         poffi_article: 4
-        title:
-            id: 3844
-            et: TRIO ET
-            en: TRIO EN
-            ru: TRIO RU
-        lead:
-            id: 360
-            et: 'Trio lead Trio lead Trio lead Trio lead Trio lead '
-            en: Trio lead Trio lead Trio lead Trio lead EN EN EN
-            ru: Trio lead Trio lead Trio lead Trio lead RU RU RU
-        image: null
+        title: TRIO ET
+        lead: 'Trio lead Trio lead Trio lead Trio lead Trio lead '
     article:
         id: 1
         created_by: 5
         updated_by: 6
         created_at: '2020-09-02T06:20:22.339Z'
         updated_at: '2020-09-02T08:12:28.165Z'
-        title_et: Tartu armastusfilmide festival laieneb üle kogu Eesti
-        slug_et: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
         title_en: Test EN
         slug_en: test-en
-        title_ru: null
-        slug_ru: null
-        lead_et: >-
+        lead_en: Lead EN
+        contents_en: Cont EN
+        publishFrom: '2020-06-18T09:00:00.000Z'
+        publishUntil: '2021-01-14T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        media:
+            id: 8
+            imageDefault:
+                -
+                    id: 5
+                    name: tartuff_2019_ohust_1.jpg
+                    alternativeText: ''
+                    caption: ''
+                    width: 1920
+                    height: 1080
+                    formats:
+                        large:
+                            ext: .jpg
+                            url: >-
+                                /uploads/large_tartuff_2019_ohust_1_778c8d54c2.jpg
+                            hash: large_tartuff_2019_ohust_1_778c8d54c2
+                            mime: image/jpeg
+                            name: large_tartuff_2019_ohust_1.jpg
+                            size: 120.83
+                            width: 1000
+                            height: 563
+                        small:
+                            ext: .jpg
+                            url: >-
+                                /uploads/small_tartuff_2019_ohust_1_778c8d54c2.jpg
+                            hash: small_tartuff_2019_ohust_1_778c8d54c2
+                            mime: image/jpeg
+                            name: small_tartuff_2019_ohust_1.jpg
+                            size: 32.61
+                            width: 500
+                            height: 281
+                        medium:
+                            ext: .jpg
+                            url: >-
+                                /uploads/medium_tartuff_2019_ohust_1_778c8d54c2.jpg
+                            hash: medium_tartuff_2019_ohust_1_778c8d54c2
+                            mime: image/jpeg
+                            name: medium_tartuff_2019_ohust_1.jpg
+                            size: 68.02
+                            width: 750
+                            height: 422
+                        thumbnail:
+                            ext: .jpg
+                            url: >-
+                                /uploads/thumbnail_tartuff_2019_ohust_1_778c8d54c2.jpg
+                            hash: thumbnail_tartuff_2019_ohust_1_778c8d54c2
+                            mime: image/jpeg
+                            name: thumbnail_tartuff_2019_ohust_1.jpg
+                            size: 8.98
+                            width: 245
+                            height: 138
+                    hash: tartuff_2019_ohust_1_778c8d54c2
+                    ext: .jpg
+                    mime: image/jpeg
+                    size: 323.02
+                    url: /uploads/tartuff_2019_ohust_1_778c8d54c2.jpg
+                    provider: local
+                    created_by: 3
+                    updated_by: 3
+                    created_at: '2020-08-26T13:51:45.254Z'
+                    updated_at: '2020-08-26T13:51:45.327Z'
+            image: []
+        title: Tartu armastusfilmide festival laieneb üle kogu Eesti
+        slug: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
+        lead: >-
             Juba 15. korda muutub Tartu Raekoja plats Eesti suurimaks
             vabaõhukinoks, kui augusti teisel nädalal jõuab sealsele
             väliekraanile 11 armastusest kõnelevat filmi.
-        lead_ru: null
-        lead_en: Lead EN
-        contents_et: >-
+        contents: >-
             Peale selle avab PÖFFi armastusfilmide festival Tartuff esimest
             korda ka virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
 
@@ -79,125 +132,66 @@
 
             Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
             Tartu filmifondi ja Tartu loomemajanduskeskusega.
-        contents_en: Cont EN
-        contents_ru: null
-        publishFrom: '2020-06-18T09:00:00.000Z'
-        publishUntil: '2021-01-14T10:00:00.000Z'
-        publish_et: true
-        publish_en: true
-        publish_ru: true
-        media:
-            id: 8
-            clipUrlDefault: null
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
-            imageDefault:
-                -
-                    id: 5
-                    name: tartuff_2019_ohust_1.jpg
-                    alternativeText: ''
-                    caption: ''
-                    width: 1920
-                    height: 1080
-                    formats:
-                        large:
-                            ext: .jpg
-                            url: >-
-                                /uploads/large_tartuff_2019_ohust_1_778c8d54c2.jpg
-                            hash: large_tartuff_2019_ohust_1_778c8d54c2
-                            mime: image/jpeg
-                            name: large_tartuff_2019_ohust_1.jpg
-                            path: null
-                            size: 120.83
-                            width: 1000
-                            height: 563
-                        small:
-                            ext: .jpg
-                            url: >-
-                                /uploads/small_tartuff_2019_ohust_1_778c8d54c2.jpg
-                            hash: small_tartuff_2019_ohust_1_778c8d54c2
-                            mime: image/jpeg
-                            name: small_tartuff_2019_ohust_1.jpg
-                            path: null
-                            size: 32.61
-                            width: 500
-                            height: 281
-                        medium:
-                            ext: .jpg
-                            url: >-
-                                /uploads/medium_tartuff_2019_ohust_1_778c8d54c2.jpg
-                            hash: medium_tartuff_2019_ohust_1_778c8d54c2
-                            mime: image/jpeg
-                            name: medium_tartuff_2019_ohust_1.jpg
-                            path: null
-                            size: 68.02
-                            width: 750
-                            height: 422
-                        thumbnail:
-                            ext: .jpg
-                            url: >-
-                                /uploads/thumbnail_tartuff_2019_ohust_1_778c8d54c2.jpg
-                            hash: thumbnail_tartuff_2019_ohust_1_778c8d54c2
-                            mime: image/jpeg
-                            name: thumbnail_tartuff_2019_ohust_1.jpg
-                            path: null
-                            size: 8.98
-                            width: 245
-                            height: 138
-                    hash: tartuff_2019_ohust_1_778c8d54c2
-                    ext: .jpg
-                    mime: image/jpeg
-                    size: 323.02
-                    url: /uploads/tartuff_2019_ohust_1_778c8d54c2.jpg
-                    previewUrl: null
-                    provider: local
-                    provider_metadata: null
-                    created_by: 3
-                    updated_by: 3
-                    created_at: '2020-08-26T13:51:45.254Z'
-                    updated_at: '2020-08-26T13:51:45.327Z'
-            image_et: []
-            image_en: []
-            image_ru: []
-        button: []
+        publish: true
 -
     block:
         id: 11
-        article: null
-        customUrl: null
-        order: 1
+        order: 3
         poff_article: 3
         poffi_article: 9
-        title:
-            id: 3845
-            et: TITLE TRIO ET
-            en: TITLE TRIO EN
-            ru: null
-        lead:
-            id: 361
-            et: LEAD ET
-            en: LEAD EN
-            ru: null
-        image: null
+        title: TITLE TRIO ET
+        lead: LEAD ET
     article:
         id: 3
         created_by: 5
         updated_by: 6
         created_at: '2020-09-02T06:23:30.743Z'
         updated_at: '2020-09-02T08:07:38.360Z'
-        title_et: Tartuff on pühendatud kunstile
-        slug_et: tartuff-on-puehendatud-kunstile
         title_en: test 3 en
         slug_en: test-3-en
-        title_ru: null
-        slug_ru: null
-        lead_et: >-
+        lead_en: lead 3 en
+        contents_en: cont 3 en
+        publishFrom: '2020-07-15T09:00:00.000Z'
+        publishUntil: '2021-01-07T10:00:00.000Z'
+        publish_en: true
+        publish_ru: true
+        media:
+            id: 10
+            imageDefault:
+                -
+                    id: 34
+                    name: banksy_scaled.jpeg
+                    alternativeText: ''
+                    caption: ''
+                    width: 1069
+                    height: 600
+                    formats:
+                        thumbnail:
+                            ext: .jpeg
+                            url: /uploads/thumbnail_banksy_scaled_178b048e4a.jpeg
+                            hash: thumbnail_banksy_scaled_178b048e4a
+                            mime: image/jpeg
+                            name: thumbnail_banksy_scaled.jpeg
+                            size: 6.62
+                            width: 245
+                            height: 138
+                    hash: banksy_scaled_178b048e4a
+                    ext: .jpeg
+                    mime: image/jpeg
+                    size: 68.06
+                    url: /uploads/banksy_scaled_178b048e4a.jpeg
+                    provider: local
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-02T08:07:24.614Z'
+                    updated_at: '2020-09-02T08:07:24.707Z'
+            image: []
+        title: Tartuff on pühendatud kunstile
+        slug: tartuff-on-puehendatud-kunstile
+        lead: >-
             PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist
             tähelepanu kunstile.
-        lead_ru: null
-        lead_en: lead 3 en
-        contents_et: >-
+        contents: >-
             Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto
             Giacometti, Kanada naivist Maud Lewis – neist kõnelevad mängu- ja
             dokumentaalfilmid jõuavad lisaks traditsioonilistele
@@ -290,156 +284,31 @@
 
             Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
             Tartu filmifondi ja Tartu loomemajanduskeskusega.
-        contents_en: cont 3 en
-        contents_ru: null
-        publishFrom: '2020-07-15T09:00:00.000Z'
-        publishUntil: '2021-01-07T10:00:00.000Z'
-        publish_et: true
-        publish_en: true
-        publish_ru: true
-        media:
-            id: 10
-            clipUrlDefault: null
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
-            imageDefault:
-                -
-                    id: 34
-                    name: banksy_scaled.jpeg
-                    alternativeText: ''
-                    caption: ''
-                    width: 1069
-                    height: 600
-                    formats:
-                        thumbnail:
-                            ext: .jpeg
-                            url: /uploads/thumbnail_banksy_scaled_178b048e4a.jpeg
-                            hash: thumbnail_banksy_scaled_178b048e4a
-                            mime: image/jpeg
-                            name: thumbnail_banksy_scaled.jpeg
-                            path: null
-                            size: 6.62
-                            width: 245
-                            height: 138
-                    hash: banksy_scaled_178b048e4a
-                    ext: .jpeg
-                    mime: image/jpeg
-                    size: 68.06
-                    url: /uploads/banksy_scaled_178b048e4a.jpeg
-                    previewUrl: null
-                    provider: local
-                    provider_metadata: null
-                    created_by: 6
-                    updated_by: 6
-                    created_at: '2020-09-02T08:07:24.614Z'
-                    updated_at: '2020-09-02T08:07:24.707Z'
-            image_et: []
-            image_en: []
-            image_ru: []
-        button: []
+        publish: true
 -
     block:
         id: 12
-        article: null
-        customUrl: null
         order: 2
         poff_article: 1
         poffi_article: 8
-        title:
-            id: 3846
-            et: ANOTHER TRIO ET
-            en: ANOTHER TRIO EN
-            ru: null
-        lead:
-            id: 362
-            et: ANOTHER TRIO ET lead
-            en: ANOTHER TRIO EN lead
-            ru: null
-        image: null
+        title: ANOTHER TRIO ET
+        lead: ANOTHER TRIO ET lead
     article:
         id: 4
         created_by: 5
         updated_by: 6
         created_at: '2020-09-02T06:24:45.587Z'
         updated_at: '2020-09-02T08:21:08.339Z'
-        title_et: Tartu armastusfilmide festivali avab troopiline melodraama
-        slug_et: test-4-et
         title_en: test 4 en
         slug_en: test-4-en
-        title_ru: null
-        slug_ru: null
-        lead_et: >-
-            **PÖFFi armastusfilmide festival Tartuff** kuulutas väljatänavuse
-            avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud
-            „Nähtamatu elu”.
-        lead_ru: null
         lead_en: lead 4 en
-        contents_et: >-
-            End troopiliseks melodraamaks nimetav linateos räägib kahest
-            üksteisega kokku kasvanud õest 1950ndate aastate Rio de Janeiros.
-            Konservatiivne isa ja patriarhaalne ühiskond kisuvad nad lahku ega
-            luba täita oma unistusi, kuid nad ei kaota kõigele vaatamata
-            lootust.
-
-
-            Režissöör pühendab oma filmi kõigile neile naistele, kellest
-            Brasiilia ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.
-
-
-            „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
-            tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse
-            väljaandeid The Wrap. 
-
-
-            (<iframe width="500" height="281"
-            src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope;
-            picture-in-picture" allowfullscreen></iframe>)
-
-
-            ```<iframe width="500" height="281"
-            src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope;
-            picture-in-picture" allowfullscreen></iframe>```
-
-
-            Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un
-            Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete
-            filmide Oscarile. USA filmiorganisatsiooni The National Board of
-            Review hinnangul on tegu 2019. aasta ühe kõige huvitavama
-            mitteingliskeelse mängufilmiga. 
-
-
-            Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
-            elu”. Peaosades Carol Duarte ja Julia Stockler. 
-
-
-            „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
-            samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa
-            Stage.
-
-
-            Kogu kava avalikustab festival juuli lõpus.
-
-
-            **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset
-            10.-15. augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali
-            korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
-            filmifondi ja [](https://lmk.ee). 
         contents_en: cont 4 en
-        contents_ru: null
         publishFrom: '2020-07-22T09:00:00.000Z'
         publishUntil: '2021-01-06T10:00:00.000Z'
-        publish_et: true
         publish_en: true
         publish_ru: true
         media:
             id: 11
-            clipUrlDefault: null
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
             imageDefault:
                 -
                     id: 3
@@ -455,7 +324,6 @@
                             hash: large_F_2_invisible_life_feb5451063
                             mime: image/jpeg
                             name: large_F_2_invisible_life.jpg
-                            path: null
                             size: 89.02
                             width: 1000
                             height: 563
@@ -465,7 +333,6 @@
                             hash: small_F_2_invisible_life_feb5451063
                             mime: image/jpeg
                             name: small_F_2_invisible_life.jpg
-                            path: null
                             size: 28.41
                             width: 500
                             height: 281
@@ -476,7 +343,6 @@
                             hash: medium_F_2_invisible_life_feb5451063
                             mime: image/jpeg
                             name: medium_F_2_invisible_life.jpg
-                            path: null
                             size: 53.8
                             width: 750
                             height: 422
@@ -487,7 +353,6 @@
                             hash: thumbnail_F_2_invisible_life_feb5451063
                             mime: image/jpeg
                             name: thumbnail_F_2_invisible_life.jpg
-                            path: null
                             size: 9.4
                             width: 245
                             height: 138
@@ -496,14 +361,12 @@
                     mime: image/jpeg
                     size: 195.11
                     url: /uploads/F_2_invisible_life_feb5451063.jpg
-                    previewUrl: null
                     provider: local
-                    provider_metadata: null
                     created_by: 6
                     updated_by: 6
                     created_at: '2020-08-13T19:16:16.310Z'
                     updated_at: '2020-08-13T19:16:16.552Z'
-            image_et:
+            image:
                 -
                     id: 4
                     name: F_1_invisible_life.jpg
@@ -566,6 +429,62 @@
                     updated_by: 6
                     created_at: '2020-08-13T19:16:16.414Z'
                     updated_at: '2020-08-13T19:16:16.648Z'
-            image_en: []
-            image_ru: []
-        button: []
+        title: Tartu armastusfilmide festivali avab troopiline melodraama
+        slug: test-4-et
+        lead: >-
+            **PÖFFi armastusfilmide festival Tartuff** kuulutas väljatänavuse
+            avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud
+            „Nähtamatu elu”.
+        contents: >-
+            End troopiliseks melodraamaks nimetav linateos räägib kahest
+            üksteisega kokku kasvanud õest 1950ndate aastate Rio de Janeiros.
+            Konservatiivne isa ja patriarhaalne ühiskond kisuvad nad lahku ega
+            luba täita oma unistusi, kuid nad ei kaota kõigele vaatamata
+            lootust.
+
+
+            Režissöör pühendab oma filmi kõigile neile naistele, kellest
+            Brasiilia ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.
+
+
+            „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
+            tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse
+            väljaandeid The Wrap. 
+
+
+            (<iframe width="500" height="281"
+            src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+            picture-in-picture" allowfullscreen></iframe>)
+
+
+            ```<iframe width="500" height="281"
+            src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+            picture-in-picture" allowfullscreen></iframe>```
+
+
+            Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un
+            Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete
+            filmide Oscarile. USA filmiorganisatsiooni The National Board of
+            Review hinnangul on tegu 2019. aasta ühe kõige huvitavama
+            mitteingliskeelse mängufilmiga. 
+
+
+            Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
+            elu”. Peaosades Carol Duarte ja Julia Stockler. 
+
+
+            „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
+            samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa
+            Stage.
+
+
+            Kogu kava avalikustab festival juuli lõpus.
+
+
+            **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset
+            10.-15. augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali
+            korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
+            filmifondi ja [](https://lmk.ee). 
+        publish: true
