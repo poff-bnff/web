@@ -124,17 +124,21 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
-POFFArticle: &POFFArticle
-    _path: /poff-articles
-    titleForEditor: (text)
+POFFiArticle: &POFFArticle
+    _path: /pof-fi-articles
+    #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
     title_ru: (text)
     slug_et: (text)
     slug_en: (text)
     slug_ru: (text)
-    lead: *Translated
-    contents: *Translated
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
     media: #(Component)
         imageDefault: (Media)
         image_et: (Media)
@@ -144,12 +148,24 @@ POFFArticle: &POFFArticle
         clipUrl_et: (text)
         clipUrl_en: (text)
         clipUrl_ru: (text)
-    tags: #(Component (repeatable))
-        - *Tags
-    publishSettings: #(Component (repeatable))
-        - *Publishing
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
     button: #(Component (repeatable))
         - *Button
+    article_types:
+        - *ArticleType
+    tag_premiere_types:
+        - *TagPremiereType
+    tag_programmes:
+        - *TagProgramme
+    tag_genres:
+        - *TagGenre
+    tag_keywords:
+        - *TagKeyword
+
 
 # Article: &Article
 #     _path: /articles
