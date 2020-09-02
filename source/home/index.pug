@@ -6,6 +6,7 @@ block content
 
     main.home
         section.grid_hero
+            - var heroPlusTrioNews = []
             .home_1
 
 
@@ -14,7 +15,7 @@ block content
                     //- //SIIN ON TRIO NÄIDE
 
 
-                    - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+                    //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
                     //- self.data.articleTrioBlock sisaldab mida?
                     for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                         if values.poffi_article
@@ -69,7 +70,7 @@ block content
                             - break
                         -counter++
 
-                        p= news.title + ' - ' + news.article_types
+                        p= news.title
 
                     //- VIIEKAS LÕPP
 
