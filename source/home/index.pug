@@ -6,101 +6,77 @@ block content
 
     main.home
         section.grid_hero
+            - var heroPlusTrioNews = []
             .home_1
+
+
                 .article_title_detailed.m_center_d_right
-                    span.article_title_detailed.clr_primary= self.festivalDates
+                    //- span.article_title_detailed.clr_primary= self.festivalDates
+                    //- //SIIN ON TRIO NÄIDE
 
-                    //- //SIIN ON NÄIDE
 
-                    - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+                    //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+                    //- self.data.articleTrioBlock sisaldab mida?
                     for values in self.data.articleTrioBlock.blocks.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        if values.article
-                            - heroPlusTrioNews.push(values.article.id)
+                        if values.poffi_article
+                            - heroPlusTrioNews.push(values.poffi_article.id)
 
                         span= values.title
                     //- //KUNI SIIN
-                    br
-                    | !{self.festivalLocations.outdoors}
-                    br
-                    | !{self.festivalLocations.indoors}
-                    br
-                    p= self.data.articleTrioBlock.contents
-                    a.article_title_detailed.clr_primary(href='https://tartuff.elisastage.ee')= self.festivalLocations.virtual
-            .home_2
-                img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
+
+            //- .home_2
+            //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
             .home_3
                 .hero_p
-                    - var frontpageText = self.frontpageText
-                    | !{ self.md(frontpageText)}
-                    a.btn.btn_primary.active.font_h(href='https://tartuff.elisastage.ee' role='button')= self.frontPageButton
+
                     //- HERO ARTICLE EXAMPLE BELOW
                     | !{self.data.heroArticle.title}
                     | !{self.data.heroArticle.lead}
                     - heroPlusTrioNews.push(self.data.heroArticle.id)
-                    //- HERO ARTICLE EXAMPLE END
 
-                    if self.data.heroArticle.image
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.image.hash}${self.data.heroArticle.image.ext}` style='width:30%; height:30%;')
-                    else if self.data.heroArticle.imageDefault
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.imageDefault.hash}${self.data.heroArticle.imageDefault.ext}` style='width:30%; height:30%;')
+                    if self.data.heroArticle.media.image[0]
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    else if self.data.heroArticle.media.imageDefault[0]
+                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
                     else
                         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                    //- HERO ARTICLE EXAMPLE END
 
                     //- VIIEKAS START
                     - var counter = 0
-                    each news in self.data.articles.sort(function(a, b){ return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0); })
-                        if heroPlusTrioNews.includes(news.id) || (news.publishing.article_types[0].et !== 'Uudised')
+
+                    - var sortFunction = function(a, b) {
+                    -   if(a.publishFrom) {
+                    -       var aSortSource = a.publishFrom
+                    -   } else {
+                    -       var aSortSource = a.created_at
+                    -   }
+                    -   if (b.publishFrom) {
+                    -       var bSortSource = b.publishFrom
+                    -   } else {
+                    -       var bSortSource = b.created_at
+                    -   }
+                    -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
+                    - }
+
+                    each news in self.data.articles.sort(sortFunction)
+
+                        if news.article_types && news.article_types && news.article_types[0]
+                            - var articleType = news.article_types[0].et
+
+                        if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
+
                             - continue
                         if counter >= 5
                             - break
                         -counter++
 
                         p= news.title
+
                     //- VIIEKAS LÕPP
 
 
-        section.grid_covid
-            .covid_rules
-                h1.article_title_detailed.clr_primary
-                    | Ohutusreeglid Tartuffil
-                ul
-                    li.hero_p
-                        | Kui tunned, et oled tõbine, siis vaata filme hoopis kodus Elisa Stage´il
-                    li.hero_p
-                        | Tartu Raekoja platsil järgi 2 + 2 reeglit ja hoia teiste vaatajatega distantsi.
-                    li.hero_p
-                        | Raekoja platsil on 500 istekohta varasema 1200 asemel. Istekohti ei reserveerita.
-                    li.hero_p
-                        | Kui oled kaasa võtnud oma tooli, siis palun järgi seda paigaldades 2 + 2 reeglit.
-                    li.hero_p
-                        | Kui istekohad on võetud, siis palun ära jää Raekoja platsile, vaid vaata filme hoopis Tartuffi kodulehel virtuaalses kinosaalis Elisa Stage´il.
-                    li.hero_p
-                        | Raekoja platsil tagab korda turvafirma USS.
-                    li.hero_p
-                        | Athena kinos ja teistes festivali siseruumides kehtib 50% täituvuse reegel. Hoia siseruumides piisavat distantsi teiste külastajatega.
-                    li.hero_p
-                        | Ühele seansile Athena kinos pääseb kuni 120 inimest, kes istuvad hajutatult kinosaali parteris ja rõdul.
-                    li.hero_p
-                        | Athena kinos jagatakse filmivaatajatele tasuta meditsiinilisi kaitsemaske (3ply). Kaitsemaski maksimaalne kandmise aeg on 4 tundi. Maski paigaldamisel ja äravõtmisel on oluline käte hügieen. Palun hoidke mask ees kuni kinost lahkumiseni.
-                    li.hero_p
-                        | Tartuffi vabatahtlikud puhastavad Athena kinos seansside vahel desinfitseerimisvahendiga ukselinke, trepikäsipuid ja toolide käetugesid. Samuti tuulutatakse seansside vahel kinosaali.
-                    li.hero_p
-                        | Festivalialadel on olemas desinfitseerimisvahendid.
-                    li.hero_p
-                        | Palume osalejatel festivalialadel mitte tihedalt koguneda ega järjekordades lähestikku üksteise selja taga seista – hoidke piisavat vahet teiste külastajatega.
-                    li.hero_p
-                        | Kui märkad haigustunnustega külastajat festivalil, siis palun informeeri sellest Tartuffi publikuteenindajaid.
-                    li.hero_p
-                        | Küsimuste ja probleemide korral palun pöördu festivali publikuteenindajate poole.
-                    li.hero_p
-                        | Hoia enda ja teiste tervist ning järgi palun ohutusreegleid!
-                p.hero_p
-                    | Tänulikult,
-                    br
-                    | Tartuffi meeskond
-            .covid_rules
-                section.f_trailer_box.embed-responsive.embed-responsive-16by9.m-0.p-0
-                    iframe(width="560" height="315" src="https://www.youtube.com/embed/hnex6ImCk7s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
 
         //- FILMS / SCREENINGS calendar
         div

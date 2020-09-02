@@ -1,0 +1,115 @@
+id: 2
+created_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+updated_by:
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
+created_at: '2020-09-02T06:22:29.284Z'
+updated_at: '2020-09-02T08:11:15.785Z'
+title_et: Tartuffi esimene film on seksuaalsest ahistamisest
+slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
+lead_et: >-
+    PÖFFi armastusfilmide festival Tartuff kuulutas välja esimese linateose,
+    mille teema on hetkel üliaktuaalne – seksuaalne ahistamine.
+contents_et: >-
+    „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb kuuest
+    absurdihuumoriga vürtsitatud loost, mis on inspireeritud igapäevastest
+    naiste avaliku või varjatud diskrimineerimise viisidest.
+
+
+    „Kui te ei ole veel aru saanud, mida taotleb #MeToo, vaadake seda filmi,”
+    soovitab ajaleht Helsingin Sanomat, nimetades „Harjumuse jõudu” eelmise
+    aasta olulisimaks Soome linateoseks.
+
+
+    Patriarhaalse ühiskonna käitumismustreid avav draamakomöödia põhineb
+    populaarsel lühifilmide sarjal „Üksikjuhtum”, mis on Soome veebi-TVs Yle
+    Areena kogunud üle miljoni vaatamiskorra.
+
+
+    Soome noorema ja keskmise põlve naisrežissööride jõudemonstratsiooniks
+    nimetatava filmi on kirjutanud ja lavastanud Kirsikka Saari, Elli
+    Toivoniemi, Anna Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni Toivoniemi
+    ja Miia Tervo. Mängivad Soome tippnäitlejad eesotsas Krista Kosoneni ja
+    Johannes Holopaineniga.
+
+
+    Autorite enda sõnul ei ole filmi ajendiks niivõrd seksuaalne ahistamine,
+    kuivõrd see, kuidas ühiskond seda normaalseks peab.
+
+
+    Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud” parima filmi, režii,
+    stsenaariumi ja meeskõrvalosa kategoorias. Linateose rahvusvaheline
+    esilinastus oli tänavusel Göteborgi filmifestivalil.
+
+
+    Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu Raekoja platsist saab
+    taas Eesti suurim vabaõhukino. Esimest korda avab festival ka virtuaalse
+    kinosaali, mida saab külastada üle kogu Eesti.
+
+
+    Kogu programmi avalikustab festival juuli lõpus.
+
+
+    Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
+    filmifondi ja Tartu loomemajanduskeskusega.
+publishFrom: '2020-07-07T09:00:00.000Z'
+publishUntil: '2021-01-14T10:00:00.000Z'
+publish_et: true
+publish_ru: true
+media:
+    id: 9
+    imageDefault:
+        -
+            id: 35
+            name: F_1_force_of_habit.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1920
+            height: 1080
+            formats:
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_F_1_force_of_habit_9bdbea96b7.jpg
+                    hash: thumbnail_F_1_force_of_habit_9bdbea96b7
+                    mime: image/jpeg
+                    name: thumbnail_F_1_force_of_habit.jpg
+                    size: 9
+                    width: 245
+                    height: 138
+            hash: F_1_force_of_habit_9bdbea96b7
+            ext: .jpg
+            mime: image/jpeg
+            size: 277.58
+            url: /uploads/F_1_force_of_habit_9bdbea96b7.jpg
+            provider: local
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T08:11:05.707Z'
+            updated_at: '2020-09-02T08:11:05.787Z'
+    image: []
+article_types:
+    -
+        id: 2
+        name: Uudis
+        created_by: 6
+        updated_by: 1
+        created_at: '2020-08-18T13:49:51.616Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
+        article: null
+        et: Uudised
+        en: News
+        ru: Новости
+title: test 2 en
+slug: test-2-en
+lead: lead 2 en
+contents: cont 2 en
+publish: true
+directory: source/article/test-2-en
+path: article/test-2-en
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.en.yaml

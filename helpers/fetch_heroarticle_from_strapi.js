@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.ValidateAndFetch('/article-hero', DataToYAMLData)
+FromStrapi.ValidateAndFetch('HeroArticlePoff', DataToYAMLData)
 
 function DataToYAMLData(strapiData){
     // console.log(strapiData);
@@ -73,7 +73,7 @@ function rueten(obj, lang) {
 
 function processData(data, lang, CreateYAML) {
     var buffer = {}
-    for (key in data) {
+    for (key in data[0]) {
         let smallBuffer = {}
         var data2 = data[key];
         // console.log(data2);
@@ -90,9 +90,13 @@ function processData(data, lang, CreateYAML) {
         //     }
         //     smallBuffer[data2.label[key2].name] = tinyBuffer;
         // }
-        buffer = rueten(data[`article_${lang}`], lang);
+
+        if(key === `article_${lang}`) {
+            buffer = rueten(data[0][`article_${lang}`], lang);
+            // console.log(buffer);
+        }
+
     }
-    // console.log(buffer);
     CreateYAML(buffer, lang);
 }
 
