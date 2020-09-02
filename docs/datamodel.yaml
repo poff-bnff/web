@@ -89,8 +89,7 @@ Town: &Town
     name_et: (text)
     name_en: (text)
     name_ru: (text)
-    country: #(Component)
-        *Country
+    country: *Country #(Component)
 
 Cinema: &Cinema
     _path: /cinemas
@@ -111,14 +110,10 @@ Hall: &Hall
 
 Location: &Location
     _path: /locations
-    country: #(Component)
-        *Country
-    town: #(Component)
-        *Town
-    cinema: #(Component)
-        *Cinema
-    hall: #(Component)
-        *Hall
+    country: *Country #(Component)
+    town: *Town #(Component)
+    cinema: *Cinema #(Component)
+    hall: *Hall #(Component)
     name: (text)
 
 Button: &Button
@@ -155,8 +150,7 @@ POFFiArticle: &POFFiArticle
     contents_et: (Rich text)
     contents_en: (Rich text)
     contents_ru: (Rich text)
-    media: #(Component)
-        *Media
+    media: *Media #(Component)
     publishFrom: (Datetime)
     publishUntil: (Datetime)
     publish_et: (boolean)
@@ -234,18 +228,15 @@ FestivalEdition: &FestivalEdition
     description_ru: (Rich text)
     startDate: (Datetime)
     endDate: (Datetime)
-    domain: #(Component)
-        *Domain
-    festival: #(Component)
-        *Festival
+    domain: *Domain #(Component)
+    festival: *Festival #(Component)
 
 Organisation: &Organisation
     _path: /organisations
     name: (text)
     nameTranslated: # (Component (repeatable))
         - *Translated
-    description: # (Component)
-        *Translated
+    description: *Translated # (Component)
     images: (Media)
     type: (Enumeration)
     logo: (Media)
@@ -286,8 +277,7 @@ Film: &Film
             - *Translated
         coProducer: #(Component (repeatable))
             - *Translated
-    synopsis: #(Component)
-        *Translated
+    synopsis: *Translated #(Component)
     media: #(Component)
         Stills: (Media)
         Posters: (Media)
@@ -297,8 +287,7 @@ Film: &Film
         QaClip: #(Component (repeatable))
             - Url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
               Type: Conversation (Enumeration)
-    tags: #(Component)
-        *Tags
+    tags: *Tags #(Component)
     slug_et: naehtamatu-elu (UID, No spaces)
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
@@ -370,8 +359,7 @@ Team: &Team
         order: (Number)
     name: #(Component (repeatable))
         - *Translated
-    domain: #(Component)
-        *Domain
+    domain: *Domain #(Component)
 
 LabelGroups:
     _path: /labels
@@ -412,8 +400,7 @@ Footer:
           svgItem: #(Component (repeatable))
             - *SocialItem
     logosSections: #(Component (repeatable))
-        - name: #(Component)
-            *Translated
+        - name: *Translated #(Component)
           order: (Number)
           logo: #(Component (repeatable))
             - *Logo
@@ -427,19 +414,18 @@ HeroArticlePoff:
     article_ru: *POFFiArticle
 
 TrioBlockItemPoff: &TrioBlockItemPoff
-    title: #(Component)
-        *Translated
-    lead: #(Component)
-        *Translated
-    poffi_article: #(Component)
-        *POFFiArticle
+    title: *Translated #(Component)
+    lead: *Translated #(Component)
     customUrl: (text)
 
 TrioBlockPoff:
     _path: /trio-block-poeff
     blockName: *Translated
+    poffi_article_1: *POFFiArticle #(Component)
     trioBlockItem_1: *TrioBlockItemPoff
+    poffi_article_2: *POFFiArticle #(Component)
     trioBlockItem_2: *TrioBlockItemPoff
+    poffi_article_3: *POFFiArticle #(Component)
     trioBlockItem_3: *TrioBlockItemPoff
 
 

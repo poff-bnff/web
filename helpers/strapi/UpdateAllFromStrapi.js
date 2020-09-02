@@ -13,10 +13,10 @@ function AfterFetch(modelName, strapiData){
 // FromStrapi.Fetch('Language', './data/ISOLanguages.json', LogProcess)
 // FromStrapi.Fetch('Film', './data/FilmsFromStrapi.json', LogProcess)
 
-// FromStrapi.Fetch('POFFiArticle', './data/POFFarticlesFromStrapi.json', LogProcess)
+// FromStrapi.Fetch('POFFiArticle', AfterFetch)
 
-// FromStrapi.Fetch('FestivalEdition', './data/TEST.json', LogProcess)
-// FromStrapi.Fetch('Team', './data/TEST.json', LogProcess)
-// FromStrapi.Fetch('HeroArticlePoff', './data/TEST.json', LogProcess)
-FromStrapi.Fetch('TrioBlockPoff', AfterFetch)
-// FromStrapi.Fetch('Footer', './data/TEST.json', LogProcess)
+// FromStrapi.Fetch('FestivalEdition', AfterFetch)
+// FromStrapi.Fetch('Team', AfterFetch)
+// FromStrapi.Fetch('HeroArticlePoff', AfterFetch)
+// FromStrapi.Fetch('TrioBlockPoff', AfterFetch)
+// FromStrapi.Fetch('Footer', AfterFetch)

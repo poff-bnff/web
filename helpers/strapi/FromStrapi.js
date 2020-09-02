@@ -62,6 +62,7 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
         if (DATAMODEL[modelName] === undefined){
             throw new Error('Model ' + modelName + ' not in data model.')
         }
+        let dataModel = DATAMODEL[modelName]
         if (! '_path' in DATAMODEL[modelName]) {
             throw new Error ('Missing _path in model')
         }
@@ -74,8 +75,7 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
             fetchOne(dataPath, id, token)
         }
 
-
-        CBfunction(strapiData, token)
+        ValidateCB(modelName, strapiData, AfterFetchCB)
     }
 
     let FetchData = function(options) {
@@ -116,8 +116,8 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
 
                 strapiData = strapiData.filter(checkDomain)
 
-                // RefetchIfNeeded(modelName, strapiData, CBfunction)
-                ValidateCB(modelName, strapiData, AfterFetchCB)  //  const Validate = function(modelName, strapiData, AfterFetchCB){
+                RefetchIfNeeded(modelName, strapiData, ValidateCB)
+                // ValidateCB(modelName, strapiData, AfterFetchCB)  //  const Validate = function(modelName, strapiData, AfterFetchCB){
             });
             response.on('error', function (error) {
                 console.log(error);
