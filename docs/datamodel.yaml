@@ -124,7 +124,9 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
-POFFiArticle: &POFFArticle
+
+
+POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
     #titlePrivate: (text, private field)
     title_et: (text)
@@ -407,14 +409,14 @@ Footer:
 
 HeroArticlePoff:
     _path: /article-hero
-    article_et: *POFFArticle
-    article_en: *POFFArticle
-    article_ru: *POFFArticle
+    article_et: *POFFiArticle
+    article_en: *POFFiArticle
+    article_ru: *POFFiArticle
 
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated
     lead: *Translated
-    article: *POFFArticle
+    poffi_article: *POFFiArticle
     customUrl: (text)
 
 TrioBlockPoff:
