@@ -1,19 +1,22 @@
+const fs = require('fs');
 const FromStrapi = require('./FromStrapi')
 
 
-function LogProcess(token, modelName){
-    console.log("updating " + modelName + " from Strapi");
+function AfterFetch(modelName, strapiData){
+    let filePath = './data/test_' + modelName + '.json'
+    fs.writeFileSync(filePath, JSON.stringify(strapiData, null, 4))
+    console.log("updated " + modelName + " from Strapi to " + filePath)
 }
 
 
-// FromStrapi.WriteJSON('Country', './data/ISOCountriesFromStrapi.json', LogProcess)
-// FromStrapi.WriteJSON('Language', './data/ISOLanguages.json', LogProcess)
-// FromStrapi.WriteJSON('Film', './data/FilmsFromStrapi.json', LogProcess)
+// FromStrapi.Fetch('Country', './data/ISOCountriesFromStrapi.json', LogProcess)
+// FromStrapi.Fetch('Language', './data/ISOLanguages.json', LogProcess)
+// FromStrapi.Fetch('Film', './data/FilmsFromStrapi.json', LogProcess)
 
-// FromStrapi.WriteJSON('POFFArticle', './data/POFFarticlesFromStrapi.json', LogProcess)
+// FromStrapi.Fetch('POFFiArticle', AfterFetch)
 
-// FromStrapi.WriteJSON('FestivalEdition', './data/TEST.json', LogProcess)
-// FromStrapi.WriteJSON('Team', './data/TEST.json', LogProcess)
-// FromStrapi.WriteJSON('HeroArticlePoff', './data/TEST.json', LogProcess)
-// FromStrapi.WriteJSON('TrioBlockPoff', './data/TEST.json', LogProcess)
- FromStrapi.WriteJSON('Footer', './data/TEST.json', LogProcess)
+// FromStrapi.Fetch('FestivalEdition', AfterFetch)
+// FromStrapi.Fetch('Team', AfterFetch)
+// FromStrapi.Fetch('HeroArticlePoff', AfterFetch)
+// FromStrapi.Fetch('TrioBlockPoff', AfterFetch)
+// FromStrapi.Fetch('Footer', AfterFetch)
