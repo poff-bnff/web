@@ -5,13 +5,13 @@ const { error } = require('console');
 //console.log(process.env['StrapiUserName']);
 
 
-function AuthStrapi (CBfunction){
-let options = {
-    host: process.env['StrapiHost'],
-    path: '/auth/local',
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'}
-}
+function AuthStrapi (CBOptions, CBfunction){
+    let options = {
+        host: process.env['StrapiHost'],
+        path: '/auth/local',
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+    }
     let req = http.request(options, function(response) {
         let tokenStr = '';
 
@@ -22,7 +22,8 @@ let options = {
         //the whole response has been received, so we just print it out here
         response.on('end', function () {
             let token = JSON.parse(tokenStr).jwt
-            CBfunction(token);
+            CBOptions['headers']['Authorization'] = 'Bearer ' + token
+            CBfunction(CBOptions);
             //fetchAll(token)
         });
 

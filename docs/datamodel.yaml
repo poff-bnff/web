@@ -55,17 +55,17 @@ Publishing: &Publishing
     until: (Datetime)
     publish_en: (Boolean)
     publish_ru: (Boolean)
-    article_types:
+    article_types: #(Component (repeatable))
         - *ArticleType
 
 Tags: &Tags
-    genres:
+    genres: #(Component (repeatable))
       - *TagGenre
-    keywords:
+    keywords: #(Component (repeatable))
       - *TagKeyword
-    premiere_types:
+    premiere_types: #(Component (repeatable))
       - *TagPremiereType
-    programmes:
+    programmes: #(Component (repeatable))
       - *TagProgramme
 
 Language: &Language
@@ -89,7 +89,8 @@ Town: &Town
     name_et: (text)
     name_en: (text)
     name_ru: (text)
-    country: *Country
+    country: #(Component)
+        *Country
 
 Cinema: &Cinema
     _path: /cinemas
@@ -110,10 +111,14 @@ Hall: &Hall
 
 Location: &Location
     _path: /locations
-    country: *Country
-    town: *Town
-    cinema: *Cinema
-    hall: *Hall
+    country: #(Component)
+        *Country
+    town: #(Component)
+        *Town
+    cinema: #(Component)
+        *Cinema
+    hall: #(Component)
+        *Hall
     name: (text)
 
 Button: &Button
@@ -124,9 +129,18 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
-
+Media: &Media
+    imageDefault: (Media)
+    image_et: (Media)
+    image_en: (Media)
+    image_ru: (Media)
+    clipUrlDefault: (text)
+    clipUrl_et: (text)
+    clipUrl_en: (text)
+    clipUrl_ru: (text)
 
 POFFiArticle: &POFFiArticle
+    _refetch: true
     _path: /pof-fi-articles
     #titlePrivate: (text, private field)
     title_et: (text)
@@ -142,14 +156,7 @@ POFFiArticle: &POFFiArticle
     contents_en: (Rich text)
     contents_ru: (Rich text)
     media: #(Component)
-        imageDefault: (Media)
-        image_et: (Media)
-        image_en: (Media)
-        image_ru: (Media)
-        clipUrlDefault: (text)
-        clipUrl_et: (text)
-        clipUrl_en: (text)
-        clipUrl_ru: (text)
+        *Media
     publishFrom: (Datetime)
     publishUntil: (Datetime)
     publish_et: (boolean)
@@ -157,15 +164,15 @@ POFFiArticle: &POFFiArticle
     publish_ru: (boolean)
     button: #(Component (repeatable))
         - *Button
-    article_types:
+    article_types: #(Component (repeatable))
         - *ArticleType
-    tag_premiere_types:
+    tag_premiere_types: #(Component (repeatable))
         - *TagPremiereType
-    tag_programmes:
+    tag_programmes: #(Component (repeatable))
         - *TagProgramme
-    tag_genres:
+    tag_genres: #(Component (repeatable))
         - *TagGenre
-    tag_keywords:
+    tag_keywords: #(Component (repeatable))
         - *TagKeyword
 
 
@@ -227,8 +234,10 @@ FestivalEdition: &FestivalEdition
     description_ru: (Rich text)
     startDate: (Datetime)
     endDate: (Datetime)
-    domain: *Domain
-    festival: *Festival
+    domain: #(Component)
+        *Domain
+    festival: #(Component)
+        *Festival
 
 Organisation: &Organisation
     _path: /organisations
@@ -261,23 +270,24 @@ Film: &Film
     year: 2019 (number)
     runtime: 139 (number)
     credentials: #(Component)
-        director:
+        director: #(Component (repeatable))
             - *Translated
-        screenwriter:
+        screenwriter: #(Component (repeatable))
             - *Translated
-        doP:
+        doP: #(Component (repeatable))
             - *Translated
-        cast:
+        cast: #(Component (repeatable))
             - *Translated
-        composer:
+        composer: #(Component (repeatable))
             - *Translated
-        editor:
+        editor: #(Component (repeatable))
             - *Translated
-        producer:
+        producer: #(Component (repeatable))
             - *Translated
-        coProducer:
+        coProducer: #(Component (repeatable))
             - *Translated
-    synopsis: *Translated
+    synopsis: #(Component)
+        *Translated
     media: #(Component)
         Stills: (Media)
         Posters: (Media)
@@ -287,21 +297,22 @@ Film: &Film
         QaClip: #(Component (repeatable))
             - Url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
               Type: Conversation (Enumeration)
-    tags: *Tags #(Component)
+    tags: #(Component)
+        *Tags
     slug_et: naehtamatu-elu (UID, No spaces)
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
     filmId: 2020 (UID)
     countriesAndLanguages: #(Component)
-        countries:
+        countries: #(Component (repeatable))
             - *Country
-        languages:
+        languages: #(Component (repeatable))
             - *Language
 
 Screening: &Screening
     _path: /screenings
     screeningId: (Number)
-    films:
+    films: #(Component (repeatable))
       - *Film
     code: (Number)
     codeAndFilmTitle: (text)
@@ -312,18 +323,18 @@ Screening: &Screening
       - yesNo: (Boolean)
         type: (Enumeration)
         mode: (Enumeration)
-        presenter:
+        presenter: #(Component (repeatable))
            - *Translated
-        guest:
+        guest: #(Component (repeatable))
            - *Translated
         duration: (Number)
         clipUrl: (text)
     durationTotal: (Number)
     location: *Location
-    subtitles:
+    subtitles: #(Component (repeatable))
       - language: *Language
     extraInfo: (text)
-    screening_types:
+    screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode
 
@@ -336,9 +347,9 @@ Person: &Person
     phoneNr: (text)
     eMail: (text)
     dateOfBirth: (Date)
-    countries:
+    countries: #(Component (repeatable))
         - *Country
-    organisations:
+    organisations: #(Component (repeatable))
         - *Organisation
     biography: (Rich text)
     filmography: (Rich text)
@@ -359,7 +370,8 @@ Team: &Team
         order: (Number)
     name: #(Component (repeatable))
         - *Translated
-    domain: *Domain
+    domain: #(Component)
+        *Domain
 
 LabelGroups:
     _path: /labels
@@ -392,17 +404,18 @@ Footer:
     item: #(Component (repeatable))
         - namePrivate: (text)
           name: *Translated
-          button:
+          button: #(Component (repeatable))
             - *Button
-          text:
+          text: #(Component (repeatable))
             - *Translated
           image: (Media)
-          svgItem:
+          svgItem: #(Component (repeatable))
             - *SocialItem
     logosSections: #(Component (repeatable))
-        - name: *Translated
+        - name: #(Component)
+            *Translated
           order: (Number)
-          logo:
+          logo: #(Component (repeatable))
             - *Logo
     namePrivate: (text)
 
@@ -414,9 +427,12 @@ HeroArticlePoff:
     article_ru: *POFFiArticle
 
 TrioBlockItemPoff: &TrioBlockItemPoff
-    title: *Translated
-    lead: *Translated
-    poffi_article: *POFFiArticle
+    title: #(Component)
+        *Translated
+    lead: #(Component)
+        *Translated
+    poffi_article: #(Component)
+        *POFFiArticle
     customUrl: (text)
 
 TrioBlockPoff:
