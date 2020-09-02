@@ -5,7 +5,20 @@ block content
 
     if self.data.articles
         main.grid_articles
-            each val in self.data.articles
+            - var sortFunction = function(a, b) {
+            -   if(a.publishFrom) {
+            -       var aSortSource = a.publishFrom
+            -   } else {
+            -       var aSortSource = a.created_at
+            -   }
+            -   if (b.publishFrom) {
+            -       var bSortSource = b.publishFrom
+            -   } else {
+            -       var bSortSource = b.created_at
+            -   }
+            -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
+            - }
+            each val in self.data.articles.sort(sortFunction)
                 //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
                 if val.title
                     - var article_slug = val.slug
@@ -32,12 +45,19 @@ block content
                                     .article_lead=val.contents
 
                         .card_article_footer
-                            if val.created_by.firstname && val.created_by.lastname
+                            if val.web_authors
+                                - var authors = []
+                                each author in val.web_authors
+                                    - authors.push(author.name)
+                                .article_author= authors.join(', ')
+                            else
                                 .article_author= `${val.created_by.firstname} ${val.created_by.lastname}`
                             span &nbsp;&nbsp;
-                            if val.publishFrom
                                 .article_publish_start
-                                    +localdatetime(val.publishFrom)
+                                    if val.publishFrom
+                                        +localdatetime(val.publishFrom)
+                                    else
+                                        +localdatetime(val.created_at)
 
 
 
