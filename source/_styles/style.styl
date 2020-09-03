@@ -56,7 +56,7 @@ clr_covid = #bc06c6
 clr_vote = #00aeef
 
 header_height = 97px
-full_height = full_height
+full_height = calc(100vh - header_height)
 
 
 breakpoint-lg = 992px
@@ -501,6 +501,30 @@ a .dark:hover
 //     text-align left
 //     padding 2rem 2rem 2rem 2rem
 //     // height 100%
+
+.viiekas
+    width 100vw
+    display grid
+    grid-template-columns minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr)
+    padding 0
+    margin 0
+    grid-gap calc(1.9rem + 1.5vw)
+    padding-left calc(1.9rem + 1.5vw)
+    padding-right calc(1.9rem + 1.5vw)
+    padding-top calc(1.9rem + 1.5vw)
+    padding-bottom calc(1.9rem + 1.5vw)
+    justify-content center
+    align-content center
+    justify-items stretch
+    align-items stretch
+
+.viieka_item
+    width 100%
+    height 100%
+    background rgba(255,255,255,.96)
+    text-align left
+    padding 2rem 2rem 2rem 2rem
+
 
 .footer_logos_1
     display grid
