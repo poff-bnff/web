@@ -2,7 +2,9 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-function LabelsToYAMLData(strapiData){
+FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
+
+function LabelsToYAMLData(modelName, strapiData){
 LangSelect(strapiData, 'et');
 LangSelect(strapiData, 'en');
 }
@@ -11,8 +13,6 @@ function LangSelect(strapiData, lang) {
     let data = rueten(strapiData, lang);
     processData(data, lang, CreateYAML);
 }
-
-FromStrapi.Fetch('/labels', LabelsToYAMLData)
 
 function rueten(obj, lang) {
     const regex = new RegExp(`.*_${lang}$`, 'g');
@@ -74,24 +74,25 @@ function rueten(obj, lang) {
 
 function processData(data, lang, CreateYAML) {
     var buffer = {}
-    for (key in data.film) {
+    var labels = {'label':{}}
+    for (key in data) {
         let smallBuffer = {}
-        // console.log(data[key]);
-        var data2 = data.film[key];
-        var name = data.film[key].name;
-        for (key2 in data2.label) {
-            smallBuffer[data2.label[key2].name] = data2.label[key2].value;
-        }
-        buffer[name] = smallBuffer;
+        console.log(data[key].name);
+        // var data2 = data.film[key];
+        var name = data[key].name;
+        // for (key2 in data2.label) {
+        //     smallBuffer[data2.label[key2].name] = data2.label[key2].value;
+        // }
+        // buffer[name] = smallBuffer;
     }
-    var labels = {'label':buffer}
+    labels.label[name] = buffer
     CreateYAML(labels, lang);
 }
 
 function CreateYAML(labels, lang) {
-    // console.log(buffer);
+    // console.log(process.cwd());
     let allDataYAML = yaml.safeDump(labels, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`helpers/labelstest.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`labelstest.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 
