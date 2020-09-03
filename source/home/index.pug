@@ -54,11 +54,20 @@ block content
 
                     a(href= `/${lang_path}article/${ blocks.article.slug}`)
                         .trio_block_item
-                            img(src='${blocks.article.media.imageDefault.url}')
+                            if blocks.block.image
+                                img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).hero_image
+                            else if blocks.article.media.image[0]
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).hero_image
+                            else if blocks.article.media.imageDefault[0]
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).hero_image
+                            else
+                                img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
                             h4.dark
                                 | !{blocks.block.title}
                             p.dark
                                 | !{blocks.block.lead}
+
+
                 //- //KUNI SIIN
 
             //- .home_2
