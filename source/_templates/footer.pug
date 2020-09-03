@@ -5,7 +5,7 @@ footer
             each social in val.items
                 p= social.name
                 a(href=social.url target='_blank')
-                    svg.svg_icon_footer #{social.svgCode}
+                    svg.svg_icon_footer !{social.svgCode}
                 //-     svg= social.svgCode
                 //- - var attributes = {};
                 //- - attributes.class = 'svg_icon_footer';

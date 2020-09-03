@@ -19,45 +19,46 @@ block content
             -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
             - }
             each val in self.data.articles.sort(sortFunction)
-                //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
-                if val.title
-                    - var article_slug = val.slug
-                    //- - var article_pictures = self.data.article_pictures.articles[article_slug]
-                    a(href= `/${lang_path}article/${article_slug}`).card_article
-                        .container_frame_16_9
-                            if val.media && val.media.image && val.media.image[0]
-                                img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.image[0].hash}${val.media.image[0].ext}`)
-                            else if val.media && val.media.imageDefault && val.media.imageDefault[0]
-                                img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.imageDefault[0].hash}${val.media.imageDefault[0].ext}`)
-                            else
-                                img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg')
+                if val.publish
+                    //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
+                    if val.title
+                        - var article_slug = val.slug
+                        //- - var article_pictures = self.data.article_pictures.articles[article_slug]
+                        a(href= `/${lang_path}article/${article_slug}`).card_article
+                            .container_frame_16_9
+                                if val.media && val.media.image && val.media.image[0]
+                                    img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.image[0].hash}${val.media.image[0].ext}`)
+                                else if val.media && val.media.imageDefault && val.media.imageDefault[0]
+                                    img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.imageDefault[0].hash}${val.media.imageDefault[0].ext}`)
+                                else
+                                    img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg')
 
-                        if val.title
-                            .card_article_title
-                                p.keywords_left=val.tagKeyword
-                                h3.article_title_locale= val.title
+                            if val.title
+                                .card_article_title
+                                    p.keywords_left=val.tagKeyword
+                                    h3.article_title_locale= val.title
 
-                        .card_article_lead
-                            if val.lead
-                                .article_lead=val.lead
-                            else
-                                if val.contents
-                                    .article_lead=val.contents
+                            .card_article_lead
+                                if val.lead
+                                    .article_lead=val.lead
+                                else
+                                    if val.contents
+                                        .article_lead=val.contents
 
-                        .card_article_footer
-                            if val.web_authors
-                                - var authors = []
-                                each author in val.web_authors
-                                    - authors.push(author.name)
-                                .article_author= authors.join(', ')
-                            else
-                                .article_author= `${val.created_by.firstname} ${val.created_by.lastname}`
-                            span &nbsp;&nbsp;
-                                .article_publish_start
-                                    if val.publishFrom
-                                        +localdatetime(val.publishFrom)
-                                    else
-                                        +localdatetime(val.created_at)
+                            .card_article_footer
+                                if val.web_authors
+                                    - var authors = []
+                                    each author in val.web_authors
+                                        - authors.push(author.name)
+                                    .article_author= authors.join(', ')
+                                else
+                                    .article_author= `${val.created_by.firstname} ${val.created_by.lastname}`
+                                span &nbsp;&nbsp;
+                                    .article_publish_start
+                                        if val.publishFrom
+                                            +localdatetime(val.publishFrom)
+                                        else
+                                            +localdatetime(val.created_at)
 
 
 

@@ -3,11 +3,10 @@ include /_templates/mixins.pug
 
 block content
 
-
-
         section.grid_hero
             - var heroPlusTrioNews = []
             section.hero_head
+
                 a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle.media.image[0]
                         img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
@@ -24,6 +23,7 @@ block content
                                 | !{self.data.heroArticle.lead}
 
                 - heroPlusTrioNews.push(self.data.heroArticle.id)
+
 
                     //- if self.data.heroArticle.media.image[0]
                     //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
@@ -75,6 +75,7 @@ block content
 
 
 
+
                     //- VIIEKAS START
                     - var counter = 0
 
@@ -93,19 +94,20 @@ block content
                     - }
 
                     each news in self.data.articles.sort(sortFunction)
+                        if news.publish
 
-                        if news.article_types && news.article_types && news.article_types[0]
-                            - var articleType = news.article_types[0].et
+                            if news.article_types && news.article_types && news.article_types[0]
+                                - var articleType = news.article_types[0].et
 
-                        if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
+                            if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
 
-                            - continue
-                        if counter >= 5
-                            - break
-                        -counter++
+                                - continue
+                            if counter >= 5
+                                - break
+                            -counter++
 
-                        .viieka_item
-                            p.dark= news.title
+                            .viieka_item
+                                p.dark= news.title
 
                     //- VIIEKAS LÕPP
 
