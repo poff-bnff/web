@@ -8,6 +8,7 @@ function DataToYAMLData(modelName, strapiData){
     // console.log(strapiData);
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
+    LangSelect(strapiData, 'ru');
 }
 
 function LangSelect(strapiData, lang) {
