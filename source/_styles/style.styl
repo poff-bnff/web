@@ -31,11 +31,17 @@ orange_strong = #F67625
 ghost_blue = #3EADEF
 elisa_blue = #0019af
 tartuff_violet = #ec008c
+dark_1 = #0E1417
+dark_2 = #192024
 bg_dark_1 = #0E1417
 bg_dark_2 = #192024
 bg_dark_3 = #1C272E
 bg_dark_4 = #29333A
+bg_light_1 = #eeeeee
+bg_light_2 = #dddddd
+bg_light_3 = #cccccc
 clr_popover = #192024
+bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
 clr_primary = #ef0f20 // tartuff red
 clr_primary_semi = rgba(236,0,140,.2)
@@ -48,6 +54,9 @@ clr_tartuff_red = #c92c33
 clr_popover = #0E1417
 clr_covid = #bc06c6
 clr_vote = #00aeef
+
+header_height = 97px
+full_height = calc(100vh - header_height)
 
 
 breakpoint-lg = 992px
@@ -128,6 +137,9 @@ h4
     font-size 1.4rem
     font-family font_h
     font-weight 400
+
+.dark
+    color dark_1
 
 /* Header & Nav styles */
 
@@ -252,7 +264,7 @@ nav
   display grid
   grid-template-columns 1fr
   grid-template-rows auto
-  padding-top 78px
+  padding-top header_height
   grid-template-areas   "f_img_slider_box"\
                         "f_title_box"\
                         "f_synopsis_box"\
@@ -271,13 +283,13 @@ nav
     grid-template-columns: 1fr
     grid-template-columns: auto
     grid-template-rows: auto
-    padding-top 78px
+    padding-top header_height
 
 .grid_article
   display grid
   grid-template-columns 1fr
   grid-template-rows auto
-  padding-top 78px
+  padding-top header_height
 //   grid-template-areas   "f_img_slider_box"\
 //                         "f_title_box"\
 //                         "f_synopsis_box"\
@@ -294,7 +306,7 @@ nav
     grid-template-columns: 1fr
     grid-template-columns: auto
     grid-template-rows: auto
-    padding-top 78px
+    padding-top header_height
 
 .grid_flickr
     display grid
@@ -308,7 +320,7 @@ nav
     justify-items center
     align-items center
     justify-items center
-    // padding-top 78px
+    // padding-top header_height
     padding-bottom 78px
     padding-left 1rem
     padding-right 1rem
@@ -325,8 +337,176 @@ nav
     display grid
     grid-template-columns 1fr
     margin 0
-    padding 1rem
-    padding-top 78px
+    padding 0
+    padding-top header_height
+
+.hero_head
+    position relative
+    // height full_height
+    height calc(100vh - 97px)
+
+.hero_headline_box
+    position absolute
+    bottom 0
+    left 0
+    width 100vw
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows 2
+    // justify-content center
+    // justify-items center
+    // align-items center
+    // align-content center
+
+.hero_headline_box_1
+    background rgba(10,0,3,.6)
+    text-align left
+    padding 3rem 3rem 3rem 3rem
+
+.hero_headline_box_2
+    background rgba(255,255,255,.8)
+    text-align left
+    vertical-align middle
+    padding 3rem 3rem 3rem 3rem
+    align-self stretch
+    // height 100%
+
+.hero_headline
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 600
+    line-height 1.4
+    letter-spacing 0.04rem
+    // padding-top 1rem
+    // padding-bottom 1rem
+    text-decoration: none
+    a
+        text-decoration: none
+        color white_96
+
+a .hero_headline
+       text-decoration none
+       color white_96
+
+a .dark:hover
+       text-decoration none
+
+// .hero_headline_box
+//         position absolute
+//         left 2rem
+//         bottom 2rem
+//         width 100vw
+//         background rgba(10,0,3,.0)
+//         // background rgba(236,0,140,.6)
+//         // background rgba(90,0,60,.7)
+//         // background-color clr_primary
+//         text-align left
+//         padding 2rem 2rem 2rem 2rem
+
+// .hero_headline
+//     display inline
+//     font-family font_h
+//     font-size calc(1.9rem + 1.5vw)
+//     text-decoration none
+//     text-align left
+//     font-weight 600
+//     line-height 1.4
+//     letter-spacing 0.04rem
+//     // padding-top 1rem
+//     // padding-bottom 1rem
+//     background-color bg_dark_2
+//     padding 1rem
+//     box-decoration-break clone
+
+//     a
+//         text-decoration: none
+//         // color white_96
+
+.hero_p
+    // display inline
+    font-family font_p
+    font-size 1rem
+    text-decoration none
+    color bg_dark_2
+    text-align left
+    // font-weight 400
+    line-height 1.618
+    // letter-spacing 0.04rem
+    // padding-top 1rem
+    // padding-bottom 1rem
+    // background-color white
+    // padding 1.618rem
+    // box-decoration-break clone
+    vertical-align middle
+
+.hero_image
+    width 100vw
+    height calc(100vh - 97px)
+    object-fit cover
+    z-index -1
+
+.trio_block
+    width 100vw
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+    grid-gap calc(1.9rem + 1.5vw)
+    padding-top calc(1.9rem + 1.5vw)
+    padding-bottom calc(1.9rem + 1.5vw)
+    justify-content center
+    align-content center
+    justify-items stretch
+    align-items stretch
+
+.trio_image
+    width 100%
+
+.trio_block_item
+    width 100%
+    height 100%
+    background rgba(255,255,255,.96)
+    text-align left
+    padding 2rem 2rem 2rem 2rem
+
+// .hero_headline_box_2
+//     background rgba(255,255,255,.9)
+//     text-align left
+//     padding 2rem 2rem 2rem 2rem
+//     // height 100%
+
+.viiekas
+    width 100vw
+    display grid
+    grid-template-columns 1fr
+    padding 0
+    margin 0
+    grid-gap calc(1.9rem + 1.5vw)
+    // padding-left calc(1.9rem + 1.5vw)
+    // padding-right calc(1.9rem + 1.5vw)
+    padding-top calc(1.9rem + 1.5vw)
+    padding-bottom calc(1.9rem + 1.5vw)
+    justify-content center
+    align-content center
+    justify-items stretch
+    align-items stretch
+
+.viieka_item
+    width 100%
+    height 100%
+    background rgba(255,255,255,.96)
+    text-align left
+    padding 2rem 2rem 2rem 2rem
+
+// .viieka_item:first-child
+// .viieka_item:nth-child(2)
+//     grid-column span 3
+
+// .viieka_item:nth-child(3)
+// .viieka_item:nth-child(4)
+// .viieka_item:nth-child(5)
+//     grid-column span 2
+
 
 .footer_logos_1
     display grid
@@ -366,7 +546,7 @@ nav
     align-items start
     grid-gap 2rem
     padding 2rem
-    // padding-top 78px
+    // padding-top header_height
 
 .person
     display flex
@@ -408,7 +588,7 @@ nav
         // font-weight 600
 
 .schedule
-    padding-top 78px
+    padding-top header_height
 
 .footer_logo_item_1
     // background-color bg_dark_3
@@ -1012,11 +1192,11 @@ a.btn_popover
 .article_hero_head
     position relative
     grid-column 1 / 4
-    height calc(100vh - 78px)
+    height full_height
 
 .article_hero_image
     width 100vw
-    height calc(100vh - 78px)
+    height full_height
     object-fit cover
     z-index -1
 
@@ -1210,7 +1390,7 @@ a.btn_popover
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
-        padding-top 78px
+        padding-top header_height
 
     .grid_films
         display grid
@@ -1219,7 +1399,7 @@ a.btn_popover
         grid-template-rows auto
         grid-gap 1rem
         padding 1rem
-        padding-top 78px
+        padding-top header_height
 
     .grid_article
         display grid
@@ -1233,7 +1413,7 @@ a.btn_popover
         //                     "f_dir_bio_box     f_dir_bio_box     f_extra_box"\
         //                     "f_trailer_box     f_trailer_box     f_trailer_box"\
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
-        padding-top 78px
+        padding-top header_height
 
     .grid_articles
         display: grid
@@ -1242,15 +1422,93 @@ a.btn_popover
         grid-template-rows auto
         grid-gap 1rem
         padding 1rem
-        padding-top 78px
+        padding-top header_height
         // height 100vh
 
     .grid_hero
         display grid
-        grid-template-columns 2fr 3fr 2fr
+        grid-template-columns auto
+        grid-template-rows auto
         margin 0
-        padding 2rem
-        padding-top 78px
+        padding 0
+        padding-top header_height
+
+    .hero_headline_box
+        position absolute
+        bottom 0
+        left 0
+        width 100vw
+        display grid
+        grid-template-columns minmax(300px, 2fr) minmax(300px, 1fr)
+        grid-template-rows auto
+        // justify-content center
+        // justify-items center
+        // align-items center
+        // align-content center
+
+    .hero_headline_box_1
+        background rgba(10,0,3,.6)
+        text-align left
+        padding 3rem 3rem 3rem 3rem
+
+    .hero_headline_box_2
+        background rgba(255,255,255,.8)
+        text-align left
+        padding 3rem 3rem 3rem 3rem
+        // height 100%
+
+    .hero_head
+        position relative
+        // height full_height
+        height calc(100vh - 97px)
+
+    // .hero_image
+    //     width 100vw
+    //     // height full_height
+    //     height calc(100vh - 97px)
+    //     object-fit cover
+    //     z-index -1
+
+    .trio_block
+        padding-left calc(1.9rem + 1.5vw)
+        padding-right calc(1.9rem + 1.5vw)
+
+    .viiekas
+        width 100vw
+        display grid
+        grid-template-columns minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr)
+        padding 0
+        margin 0
+        grid-gap calc(1.9rem + 1.5vw)
+        padding-left calc(1.9rem + 1.5vw)
+        padding-right calc(1.9rem + 1.5vw)
+        padding-top calc(1.9rem + 1.5vw)
+        padding-bottom calc(1.9rem + 1.5vw)
+        justify-content center
+        align-content center
+        justify-items stretch
+        align-items stretch
+
+    .viieka_item:first-child
+    .viieka_item:nth-child(2)
+        grid-column span 3
+
+    .viieka_item:nth-child(3)
+    .viieka_item:nth-child(4)
+    .viieka_item:nth-child(5)
+        grid-column span 2
+
+    // .hero_headline_box
+    //     position absolute
+    //     bottom 0
+    //     right 0
+    //     width 100vw
+    //     background rgba(10,0,3,.6)
+    //     // background rgba(236,0,140,.6)
+    //     // background rgba(90,0,60,.7)
+    //     // background-color clr_primary
+    //     text-align left
+    //     padding 2rem 2rem 2rem 2rem
 
     .calendar
         display grid
@@ -1444,11 +1702,11 @@ a.btn_popover
     .article_hero_head
         position relative
         grid-column 1 / 4
-        height calc(100vh - 78px)
+        height full_height
 
     .article_hero_image
         width 100vw
-        height calc(100vh - 78px)
+        height full_height
         object-fit cover
         z-index -1
 

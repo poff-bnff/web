@@ -4,8 +4,8 @@
         order: 2
         poff_article: 1
         poffi_article: 4
-        title: TRIO EN
-        lead: Trio lead Trio lead Trio lead Trio lead EN EN EN
+        title: TRIO RU
+        lead: Trio lead Trio lead Trio lead Trio lead RU RU RU
     article:
         id: 1
         created_by: 5
@@ -14,10 +14,13 @@
         updated_at: '2020-09-02T08:12:28.165Z'
         title_et: Tartu armastusfilmide festival laieneb üle kogu Eesti
         slug_et: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
+        title_en: Test EN
+        slug_en: test-en
         lead_et: >-
             Juba 15. korda muutub Tartu Raekoja plats Eesti suurimaks
             vabaõhukinoks, kui augusti teisel nädalal jõuab sealsele
             väliekraanile 11 armastusest kõnelevat filmi.
+        lead_en: Lead EN
         contents_et: >-
             Peale selle avab PÖFFi armastusfilmide festival Tartuff esimest
             korda ka virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
@@ -62,10 +65,11 @@
 
             Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
             Tartu filmifondi ja Tartu loomemajanduskeskusega.
+        contents_en: Cont EN
         publishFrom: '2020-06-18T09:00:00.000Z'
         publishUntil: '2021-01-14T10:00:00.000Z'
         publish_et: true
-        publish_ru: true
+        publish_en: true
         media:
             id: 8
             imageDefault:
@@ -128,10 +132,6 @@
                     created_at: '2020-08-26T13:51:45.254Z'
                     updated_at: '2020-08-26T13:51:45.327Z'
             image: []
-        title: Test EN
-        slug: test-en
-        lead: Lead EN
-        contents: Cont EN
         publish: true
 -
     block:
@@ -139,8 +139,14 @@
         order: 3
         poff_article: 3
         poffi_article: 9
-        title: TITLE TRIO EN
-        lead: LEAD EN
+        title:
+            id: 3845
+            et: Teine pealkiri
+            en: TITLE TRIO EN
+        lead:
+            id: 361
+            et: Teine trion block lead
+            en: LEAD EN
     article:
         id: 3
         created_by: 5
@@ -149,9 +155,12 @@
         updated_at: '2020-09-02T08:07:38.360Z'
         title_et: Tartuff on pühendatud kunstile
         slug_et: tartuff-on-puehendatud-kunstile
+        title_en: test 3 en
+        slug_en: test-3-en
         lead_et: >-
             PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist
             tähelepanu kunstile.
+        lead_en: lead 3 en
         contents_et: >-
             Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto
             Giacometti, Kanada naivist Maud Lewis – neist kõnelevad mängu- ja
@@ -245,10 +254,11 @@
 
             Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
             Tartu filmifondi ja Tartu loomemajanduskeskusega.
+        contents_en: cont 3 en
         publishFrom: '2020-07-15T09:00:00.000Z'
         publishUntil: '2021-01-07T10:00:00.000Z'
         publish_et: true
-        publish_ru: true
+        publish_en: true
         media:
             id: 10
             imageDefault:
@@ -280,10 +290,6 @@
                     created_at: '2020-09-02T08:07:24.614Z'
                     updated_at: '2020-09-02T08:07:24.707Z'
             image: []
-        title: test 3 en
-        slug: test-3-en
-        lead: lead 3 en
-        contents: cont 3 en
         publish: true
 -
     block:
@@ -291,8 +297,14 @@
         order: 2
         poff_article: 1
         poffi_article: 8
-        title: ANOTHER TRIO EN
-        lead: ANOTHER TRIO EN lead
+        title:
+            id: 3846
+            et: ANOTHER TRIO ET
+            en: ANOTHER TRIO EN
+        lead:
+            id: 362
+            et: ANOTHER TRIO ET lead
+            en: ANOTHER TRIO EN lead
         image:
             id: 1
             name: Elektriteater_logo.png
@@ -337,10 +349,13 @@
         updated_at: '2020-09-02T08:21:08.339Z'
         title_et: Tartu armastusfilmide festivali avab troopiline melodraama
         slug_et: test-4-et
+        title_en: test 4 en
+        slug_en: test-4-en
         lead_et: >-
             **PÖFFi armastusfilmide festival Tartuff** kuulutas väljatänavuse
             avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud
             „Nähtamatu elu”.
+        lead_en: lead 4 en
         contents_et: >-
             End troopiliseks melodraamaks nimetav linateos räägib kahest
             üksteisega kokku kasvanud õest 1950ndate aastate Rio de Janeiros.
@@ -393,10 +408,11 @@
             10.-15. augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali
             korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
             filmifondi ja [](https://lmk.ee). 
+        contents_en: cont 4 en
         publishFrom: '2020-07-22T09:00:00.000Z'
         publishUntil: '2021-01-06T10:00:00.000Z'
         publish_et: true
-        publish_ru: true
+        publish_en: true
         media:
             id: 11
             imageDefault:
@@ -514,8 +530,4 @@
                     created_at: '2020-08-13T19:16:16.414Z'
                     updated_at: '2020-08-13T19:16:16.648Z'
             image: []
-        title: test 4 en
-        slug: test-4-en
-        lead: lead 4 en
-        contents: cont 4 en
         publish: true

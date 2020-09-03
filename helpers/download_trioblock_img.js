@@ -17,16 +17,15 @@ const yaml = require('js-yaml');
 // console.log(blob);
 
 var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/img_articles/';
+var savePath = 'assets/img/img_trioblock/';
 
 loadYaml('et', readYaml);
 loadYaml('en', readYaml);
-loadYaml('ru', readYaml);
 
 function loadYaml(lang, readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/articles.${lang}.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/articletrioblock.${lang}.yaml`, 'utf8'));
 
     } catch (e) {
         console.log(e);
@@ -41,24 +40,29 @@ function loadYaml(lang, readYaml) {
 function readYaml(lang, doc) {
 
     for (values of doc) {
-        if (!values.slug) {
+        if (!values.article.slug) {
             continue;
         }else{
-            fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
+            fs.mkdir(`${savePath}${lang}/${values.article.slug}`, err => {
             });
         }
 
-        if (values.media && values.media.imageDefault) {
-            var imgPath = values.media.imageDefault[0].url;
+        // if (values.article.media && values.article.media.imageDefault) {
+        //     var imgPath = values.article.media.imageDefault[0].url;
+        //     var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+        //     fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
+        //     });
+        //     download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`, ifError);
+        // }
+        // if (values.article.media && values.article.media.image[0]) {
+        //     var imgPath = values.article.media.image[0].url;
+        //     var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+        //     download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`, ifError);
+        // }
+        if (values.block.image) {
+            var imgPath = values.block.image.url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
-            });
-            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
-        }
-        if (values.media && values.media.image[0]) {
-            var imgPath = values.media.image[0].url;
-            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
+            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`, ifError);
         }
     }
 }

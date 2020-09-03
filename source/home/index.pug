@@ -4,43 +4,76 @@ include /_templates/mixins.pug
 block content
 
 
-    main
+
         section.grid_hero
             - var heroPlusTrioNews = []
-            .home_1
+            section.hero_head
+                a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
+                    if self.data.heroArticle.media.image[0]
+                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
+                    else if self.data.heroArticle.media.imageDefault[0]
+                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
+                    else
+                        img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
+                    .hero_headline_box
+                        .hero_headline_box_1
+                            .hero_headline
+                                | !{self.data.heroArticle.title}
+                        .hero_headline_box_2
+                            .hero_p
+                                | !{self.data.heroArticle.lead}
+
+                - heroPlusTrioNews.push(self.data.heroArticle.id)
+
+                    //- if self.data.heroArticle.media.image[0]
+                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    //- else if self.data.heroArticle.media.imageDefault[0]
+                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                    //- else
+                    //-     img(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                        //- HERO ARTICLE EXAMPLE END
+
+                    //- if self.data.heroArticle.media.image[0]
+                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    //- else if self.data.heroArticle.media.imageDefault[0]
+                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                    //- else
+                    //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+
+            section.trio_block
+                //- span.article_title_detailed.clr_primary= self.festivalDates
+                //- //SIIN ON TRIO NÄIDE
 
 
-                .article_title_detailed.m_center_d_right
-                    //- span.article_title_detailed.clr_primary= self.festivalDates
-                    //- //SIIN ON TRIO NÄIDE
+                //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+                //- self.data.articleTrioBlock sisaldab mida?
+                for blocks in self.data.articleTrioBlock.sort(function(a, b){ return (a.block.order > b.block.order) ? 1 : ((b.block.order > a.block.order) ? -1 : 0); })
+                    if blocks.article
+                        - heroPlusTrioNews.push(blocks.article.id)
+
+                    a(href= `/${lang_path}article/${ blocks.article.slug}`)
+                        .trio_block_item
+                            if blocks.block.image
+                                img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
+                            else if blocks.article.media.image[0]
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
+                            else if blocks.article.media.imageDefault[0]
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
+                            else
+                                img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
+                            h4.dark
+                                | !{blocks.block.title}
+                            p.dark
+                                | !{blocks.block.lead}
 
 
-                    //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
-                    //- self.data.articleTrioBlock sisaldab mida?
-                    for blocks in self.data.articleTrioBlock.sort(function(a, b){ return (a.block.order > b.block.order) ? 1 : ((b.block.order > a.block.order) ? -1 : 0); })
-                        if blocks.article
-                            - heroPlusTrioNews.push(blocks.article.id)
-
-                        span= blocks.block.title
-                    //- //KUNI SIIN
+                //- //KUNI SIIN
 
             //- .home_2
             //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
-            .home_3
-                .hero_p
+            section.viiekas
 
-                    //- HERO ARTICLE EXAMPLE BELOW
-                    | !{self.data.heroArticle.title}
-                    | !{self.data.heroArticle.lead}
-                    - heroPlusTrioNews.push(self.data.heroArticle.id)
 
-                    if self.data.heroArticle.media.image[0]
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
-                    else if self.data.heroArticle.media.imageDefault[0]
-                        img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
-                    else
-                        img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
-                    //- HERO ARTICLE EXAMPLE END
 
                     //- VIIEKAS START
                     - var counter = 0
@@ -71,7 +104,8 @@ block content
                             - break
                         -counter++
 
-                        p= news.title
+                        .viieka_item
+                            p.dark= news.title
 
                     //- VIIEKAS LÕPP
 
