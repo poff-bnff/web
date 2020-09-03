@@ -16,7 +16,7 @@ function getToken() {
     let token = '';
 
     let requestOptions = {
-        host: '139.59.130.149',
+        host: process.env['StrapiHost'],
         path: '/auth/local',
         method: 'POST',
         headers: {'Content-Type': 'application/json'}
@@ -54,7 +54,7 @@ function fetchAll(token) {
     token = token.jwt;
 
     let options = {
-        host: '139.59.130.149',
+        host: process.env['StrapiHost'],
         path: '/films',
         method: 'GET',
         headers: {'Authorization': 'Bearer ' + token}

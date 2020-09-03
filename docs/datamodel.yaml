@@ -1,0 +1,431 @@
+Translated: &Translated
+    et: (text)
+    en: (text)
+    ru: (text)
+
+Gender: &Gender
+    _path: /genders
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagGenre: &TagGenre
+    _path: /tag-genres
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagKeyword: &TagKeyword
+    _path: /tag-keywords
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagPremiereType: &TagPremiereType
+    _path: /tag-premiere-types
+    et: (text)
+    en: (text)
+    ru: (text)
+
+
+TagProgramme: &TagProgramme
+    _path: /tag-programmes
+    et: (text)
+    en: (text)
+    ru: (text)
+
+
+ArticleType: &ArticleType
+    _path: /article-types
+    name: (text)
+    et: (text)
+    en: (text)
+    ru: (text)
+
+
+Domain: &Domain
+    _path: /domains
+    url: (text)
+    ipAdress: (text)
+    server: (text)
+
+Publishing: &Publishing
+    publish_et: (Boolean)
+    from: (Datetime)
+    until: (Datetime)
+    publish_en: (Boolean)
+    publish_ru: (Boolean)
+    article_types: #(Component (repeatable))
+        - *ArticleType
+
+Tags: &Tags
+    genres: #(Component (repeatable))
+      - *TagGenre
+    keywords: #(Component (repeatable))
+      - *TagKeyword
+    premiere_types: #(Component (repeatable))
+      - *TagPremiereType
+    programmes: #(Component (repeatable))
+      - *TagProgramme
+
+Language: &Language
+    _path: /languages
+    id: 8 (number)
+    code: et (short text, min len 2, max len 3, lowercase)
+    name_et: Eesti (short text)
+    name_en: Estonian (short text)
+    name_ru: Эстонский (short text)
+
+Country: &Country
+    _path: /countries
+    id: 1 (number)
+    code: EE (short text, min len 2, max len 3, uppercase)
+    name_et: Eesti (short text)
+    name_en: Estonia (short text)
+    name_ru: Эстония (short text)
+
+Town: &Town
+    _path: /towns
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    country: *Country #(Component)
+
+Cinema: &Cinema
+    _path: /cinemas
+    town: *Town
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+
+Hall: &Hall
+    _path: /halls
+    name_et: (text)
+    number: (Number)
+    numberOfSeats: (Number)
+    cinema: *Cinema
+    floor: (Enumeration)
+    name_en: (text)
+    name_ru: (text)
+
+Location: &Location
+    _path: /locations
+    country: *Country #(Component)
+    town: *Town #(Component)
+    cinema: *Cinema #(Component)
+    hall: *Hall #(Component)
+    name: (text)
+
+Button: &Button
+    text_et: (text)
+    text_en: (text)
+    text_ru: (text)
+    url_et: (text)
+    url_en: (text)
+    url_ru: (text)
+
+Media: &Media
+    imageDefault: (Media)
+    image_et: (Media)
+    image_en: (Media)
+    image_ru: (Media)
+    clipUrlDefault: (text)
+    clipUrl_et: (text)
+    clipUrl_en: (text)
+    clipUrl_ru: (text)
+
+POFFiArticle: &POFFiArticle
+    _refetch: true
+    _path: /pof-fi-articles
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media #(Component)
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    tag_programmes: #(Component (repeatable))
+        - *TagProgramme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+
+
+# Article: &Article
+#     _path: /articles
+#     publishing: *Publishing
+#     imageDefault: (Media)
+#     title_et: Tartuff on pühendatud kunstile (text)
+#     title_en: Tartuff sets focus on art (text)
+#     title_ru: (text)
+#     contents_et: Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti, Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15. augustini Tartus. (rich text)
+#     contents_en: The Robin Hood of the art world aka Banksy, Marcel Duchamp, Alberto Giacometti, Maud Lewis – these are the heroes of the features and documentary films on art topics, that will reach audiences in Tartu at the physical event taking place from the 10th until the 15th of August and also available online throughout Estonia. The full programme of the 15th Tartu Love Film Festival will be announced on the 30th of July. (rich text)
+#     contents_ru: (rich text)
+#     lead_et: PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu kunstile. (rich text)
+#     lead_en: This year's edition sets a special focus on art, screening films on Banksy, Marchel Duchamp, Alberto Giacometti, Maud Lewis. The festival will be available online throughout Estonia (rich text)
+#     lead_ru: (rich text)
+#     tags: *Tags
+#     domains:
+#         - *Domain
+#     image_et: (Media)
+#     image_en: (Media)
+#     image_ru: (Media)
+#     slug_et: tartuff-on-puehendatud-kunstile (UID, No spaces)
+#     slug_en: tartuff-sets-focus-on-art (UID, No spaces)
+#     slug_ru: (UID, No spaces)
+#     clipUrl_et: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
+#     clipUrl_en: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
+#     clipUrl_ru: (text)
+#     clipUrlDefault: (text)
+#     button: #(Component (repeatable))
+#         - text_et: (text)
+#           url_et: (text)
+#           text_en: (text)
+#           url_en: (text)
+#           text_ru: (text)
+#           url_ru: (text)
+
+Festival: &Festival
+    _path: /festivals
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    description_et: (Rich text)
+    description_en: (Rich text)
+    description_ru: (Rich text)
+    logo: (Media)
+    images: (Media)
+    clipUrl: (text)
+
+FestivalEdition: &FestivalEdition
+    _path: /festival-editions
+    number: (Number)
+    year: (Number)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    description_et: (Rich text)
+    description_en: (Rich text)
+    description_ru: (Rich text)
+    startDate: (Datetime)
+    endDate: (Datetime)
+    domain: *Domain #(Component)
+    festival: *Festival #(Component)
+
+Organisation: &Organisation
+    _path: /organisations
+    name: (text)
+    nameTranslated: # (Component (repeatable))
+        - *Translated
+    description: *Translated # (Component)
+    images: (Media)
+    type: (Enumeration)
+    logo: (Media)
+
+ScreeningMode: &ScreeningMode
+    _path: /screening-modes
+    name: (text)
+
+ScreeningType: &ScreeningType
+    _path: /screening-types
+    name: (text)
+    validFrom: (Datetime)
+    validTo: (Datetime)
+
+Film: &Film
+    _path: /films
+    id: 1 (number)
+    title_et: Nähtamatu elu (short text)
+    title_en: Invisible Life of Eurídice Gusmãos (short text)
+    title_ru: Департамент здоровьяs (short text)
+    titleOriginal: A Vida Invisivel (short text)
+    year: 2019 (number)
+    runtime: 139 (number)
+    credentials: #(Component)
+        director: #(Component (repeatable))
+            - *Translated
+        screenwriter: #(Component (repeatable))
+            - *Translated
+        doP: #(Component (repeatable))
+            - *Translated
+        cast: #(Component (repeatable))
+            - *Translated
+        composer: #(Component (repeatable))
+            - *Translated
+        editor: #(Component (repeatable))
+            - *Translated
+        producer: #(Component (repeatable))
+            - *Translated
+        coProducer: #(Component (repeatable))
+            - *Translated
+    synopsis: *Translated #(Component)
+    media: #(Component)
+        Stills: (Media)
+        Posters: (Media)
+        Trailer: #(Component (repeatable))
+            - Url: https://www.youtube.com/watch?v=NRF-Pba3QrE (Text)
+              Source: YouTube (Enumeration)
+        QaClip: #(Component (repeatable))
+            - Url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
+              Type: Conversation (Enumeration)
+    tags: *Tags #(Component)
+    slug_et: naehtamatu-elu (UID, No spaces)
+    slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
+    slug_ru: departament-zdorovya (UID, No spaces)
+    filmId: 2020 (UID)
+    countriesAndLanguages: #(Component)
+        countries: #(Component (repeatable))
+            - *Country
+        languages: #(Component (repeatable))
+            - *Language
+
+Screening: &Screening
+    _path: /screenings
+    screeningId: (Number)
+    films: #(Component (repeatable))
+      - *Film
+    code: (Number)
+    codeAndFilmTitle: (text)
+    ticketingId: (Number)
+    ticketingUrl: (text)
+    dateTime: (Datetime)
+    introQaConversation:
+      - yesNo: (Boolean)
+        type: (Enumeration)
+        mode: (Enumeration)
+        presenter: #(Component (repeatable))
+           - *Translated
+        guest: #(Component (repeatable))
+           - *Translated
+        duration: (Number)
+        clipUrl: (text)
+    durationTotal: (Number)
+    location: *Location
+    subtitles: #(Component (repeatable))
+      - language: *Language
+    extraInfo: (text)
+    screening_types: #(Component (repeatable))
+      - *ScreeningType
+    screening_mode: *ScreeningMode
+
+Person: &Person
+    _path: /people
+    firstName: (text)
+    lastName: (text)
+    picture: (Media)
+    gender: *Gender
+    phoneNr: (text)
+    eMail: (text)
+    dateOfBirth: (Date)
+    countries: #(Component (repeatable))
+        - *Country
+    organisations: #(Component (repeatable))
+        - *Organisation
+    biography: (Rich text)
+    filmography: (Rich text)
+    profession: (text)
+
+Team: &Team
+    _path: /teams
+    subTeam: #(component (repeatable))
+      - name: *Translated
+        teamMember: #(component (repeatable))
+          - person: *Person
+            pictureAtTeam: (Media)
+            roleAtTeam_et: (text)
+            roleAtTeam_en: (text)
+            roleAtTeam_ru: (text)
+            emailAtTeam: (text)
+            phoneAtTeam: (text)
+        order: (Number)
+    name: #(Component (repeatable))
+        - *Translated
+    domain: *Domain #(Component)
+
+LabelGroups:
+    _path: /labels
+    name: (text)
+    label: #(Component (repeatable))
+        - name: (text)
+          value_et: (text)
+          value_en: (text)
+          value_ru: (text)
+
+SocialItem: &SocialItem
+    name: (text)
+    url: (text)
+    svgCode: (text)
+    svgMedia: (Media)
+
+Logo: &Logo
+    url: (text)
+    imgWhite: (Media)
+    imgColour: (Media)
+    imgBlack: (Media)
+
+Footer:
+    _path: /footers
+    socialGroup: #(Component (repeatable))
+        - namePrivate: (text)
+          name: *Translated
+          items: #(Component (repeatable))
+            - *SocialItem
+    item: #(Component (repeatable))
+        - namePrivate: (text)
+          name: *Translated
+          button: #(Component (repeatable))
+            - *Button
+          text: #(Component (repeatable))
+            - *Translated
+          image: (Media)
+          svgItem: #(Component (repeatable))
+            - *SocialItem
+    logosSections: #(Component (repeatable))
+        - name: *Translated #(Component)
+          order: (Number)
+          logo: #(Component (repeatable))
+            - *Logo
+    namePrivate: (text)
+
+
+HeroArticlePoff:
+    _path: /article-hero
+    article_et: *POFFiArticle
+    article_en: *POFFiArticle
+    article_ru: *POFFiArticle
+
+TrioBlockItemPoff: &TrioBlockItemPoff
+    title: *Translated #(Component)
+    lead: *Translated #(Component)
+    customUrl: (text)
+
+TrioBlockPoff:
+    _path: /trio-block-poeff
+    blockName: *Translated
+    poffi_article_1: *POFFiArticle #(Component)
+    trioBlockItem_1: *TrioBlockItemPoff
+    poffi_article_2: *POFFiArticle #(Component)
+    trioBlockItem_2: *TrioBlockItemPoff
+    poffi_article_3: *POFFiArticle #(Component)
+    trioBlockItem_3: *TrioBlockItemPoff
+
+

@@ -31,11 +31,17 @@ orange_strong = #F67625
 ghost_blue = #3EADEF
 elisa_blue = #0019af
 tartuff_violet = #ec008c
+dark_1 = #0E1417
+dark_2 = #192024
 bg_dark_1 = #0E1417
 bg_dark_2 = #192024
 bg_dark_3 = #1C272E
 bg_dark_4 = #29333A
+bg_light_1 = #eeeeee
+bg_light_2 = #dddddd
+bg_light_3 = #cccccc
 clr_popover = #192024
+bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
 clr_primary = #ef0f20 // tartuff red
 clr_primary_semi = rgba(236,0,140,.2)
@@ -125,9 +131,12 @@ body
     font-weight 700
 
 h4
-    font-size 1.5rem
+    font-size 1.4rem
     font-family font_h
-    font-weight 500
+    font-weight 400
+
+.dark
+    color dark_1
 
 /* Header & Nav styles */
 
@@ -325,8 +334,152 @@ nav
     display grid
     grid-template-columns 1fr
     margin 0
-    padding 1rem
+    padding 0
     padding-top 78px
+
+.hero_head
+    position relative
+
+.hero_headline_box
+    position absolute
+    bottom 0
+    left 0
+    width 100vw
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows 2
+    // justify-content center
+    // justify-items center
+    // align-items center
+    // align-content center
+
+.hero_headline_box_1
+    background rgba(10,0,3,.6)
+    text-align left
+    padding 3rem 3rem 3rem 3rem
+
+.hero_headline_box_2
+    background rgba(255,255,255,.8)
+    text-align left
+    padding 3rem 3rem 3rem 3rem
+    // height 100%
+
+.hero_headline
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 600
+    line-height 1.4
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
+// .hero_headline_box
+//         position absolute
+//         left 2rem
+//         bottom 2rem
+//         width 100vw
+//         background rgba(10,0,3,.0)
+//         // background rgba(236,0,140,.6)
+//         // background rgba(90,0,60,.7)
+//         // background-color clr_primary
+//         text-align left
+//         padding 2rem 2rem 2rem 2rem
+
+// .hero_headline
+//     display inline
+//     font-family font_h
+//     font-size calc(1.9rem + 1.5vw)
+//     text-decoration none
+//     text-align left
+//     font-weight 600
+//     line-height 1.4
+//     letter-spacing 0.04rem
+//     // padding-top 1rem
+//     // padding-bottom 1rem
+//     background-color bg_dark_2
+//     padding 1rem
+//     box-decoration-break clone
+
+//     a
+//         text-decoration: none
+//         // color white_96
+
+.hero_p
+    // display inline
+    font-family font_p
+    font-size 1rem
+    text-decoration none
+    color bg_dark_2
+    text-align left
+    // font-weight 400
+    line-height 1.618
+    // letter-spacing 0.04rem
+    // padding-top 1rem
+    // padding-bottom 1rem
+    // background-color white
+    // padding 1.618rem
+    // box-decoration-break clone
+    vertical-align middle
+
+// .hero_headline span
+//     background-color blue
+//     font-size calc(1.9rem + 1.5vw)
+
+.hero_image
+        width 100vw
+        // min-height calc(100vh - 78px)
+        // max-height 200px
+        height calc(100vh - 78px)
+        object-fit cover
+        z-index -1
+
+// .trio_block
+//     display grid
+//     grid-template-columns repeat(auto-fit, minmax(24rem, 1fr))
+//     grid-gap 2rem
+//     justify-content center
+//     justify-items center
+//     align-items center
+//     align-content center
+//     width 100%
+//     padding 0
+//     margin 0
+//     padding-left 2rem
+//     padding-right 2rem
+//     padding-top 2rem
+//     padding-bottom 2rem
+//     // background-color white
+
+// .trio_block_item
+//     width 100%
+//     // height 30%
+//     padding 1rem
+//     background-color bg_light_1
+
+.trio_block
+    width 100vw
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+    // justify-content center
+    // justify-items center
+    // align-items center
+    // align-content center
+
+.trio_block_item
+    background rgba(255,255,255,.9)
+    text-align left
+    padding 2rem 2rem 2rem 2rem
+
+// .hero_headline_box_2
+//     background rgba(255,255,255,.9)
+//     text-align left
+//     padding 2rem 2rem 2rem 2rem
+//     // height 100%
 
 .footer_logos_1
     display grid
@@ -353,13 +506,13 @@ nav
     align-items center
     grid-gap 5rem
 
-.festival
+.team
     padding-top 98px
 
 
-.team
+.sub_team
     display grid
-    grid-template-columns repeat(auto-fit, minmax(17rem, 1fr))
+    grid-template-columns repeat(auto-fit, minmax(17rem, 17rem))
     justify-content center
     align-content start
     justify-items center
@@ -639,6 +792,19 @@ p
     margin-top .6em
     margin-bottom .2em
 
+.sub_section_headline
+  font-family font_h
+  font-size calc(1rem + 2vw)
+  line-height 1
+  font-weight 700
+  color white_96
+  letter-spacing 0.04em
+  text-align center
+  margin 0
+  padding 0
+  padding-left calc(1rem + 1vw)
+  padding-right calc(1rem + 1vw)
+  margin-top .6em
 
 .main_menu_toggle
   &:checked
@@ -1234,10 +1400,59 @@ a.btn_popover
 
     .grid_hero
         display grid
-        grid-template-columns 2fr 3fr 2fr
+        grid-template-columns auto
+        grid-template-rows auto
         margin 0
-        padding 2rem
+        padding 0
         padding-top 78px
+
+    .hero_headline_box
+        position absolute
+        bottom 0
+        left 0
+        width 100vw
+        display grid
+        grid-template-columns minmax(300px, 2fr) minmax(300px, 1fr)
+        grid-template-rows auto
+        // justify-content center
+        // justify-items center
+        // align-items center
+        // align-content center
+
+    .hero_headline_box_1
+        background rgba(10,0,3,.6)
+        text-align left
+        padding 3rem 3rem 3rem 3rem
+
+    .hero_headline_box_2
+        background rgba(255,255,255,.8)
+        text-align left
+        padding 3rem 3rem 3rem 3rem
+        // height 100%
+
+    .hero_head
+        position relative
+
+    .hero_image
+        width 100vw
+        height calc(100vh - 78px)
+        // max-height 60vw
+        // height 300px
+        object-fit cover
+        z-index -1
+
+
+    // .hero_headline_box
+    //     position absolute
+    //     bottom 0
+    //     right 0
+    //     width 100vw
+    //     background rgba(10,0,3,.6)
+    //     // background rgba(236,0,140,.6)
+    //     // background rgba(90,0,60,.7)
+    //     // background-color clr_primary
+    //     text-align left
+    //     padding 2rem 2rem 2rem 2rem
 
     .calendar
         display grid
@@ -1291,17 +1506,17 @@ a.btn_popover
             padding-top 1rem
             padding-bottom 1rem
             border 1px solid rgba(255, 255, 255, 0)
-            &:hover
-            &:focus
-                background-color bg_dark_3
-                border-top 1px solid clr_primary
-                // opacity 0.99
-                transform scale(1.02, 1.02)
+            // &:hover
+            // &:focus
+            //     background-color bg_dark_3
+            //     border-top 1px solid clr_primary
+            //     // opacity 0.99
+            //     transform scale(1.02, 1.02)
 
             a
                 // color ghost_blue
                 &:hover
-                    color white_96
+                    color poff_orange
 
     // nav
     //     ul

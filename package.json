@@ -4,9 +4,19 @@
   "description": "poff",
   "private": true,
   "dependencies": {
+    "all": "0.0.0",
+    "color": "^3.1.2",
+    "colors": "^1.4.0",
+    "deep-diff": "^1.0.2",
+    "diff": "^4.0.2",
     "entu-ssg": "^5.2.6",
+    "filereader": "^0.10.3",
     "googleapis": "^59.0.0",
-    "slugify": "^1.4.5"
+    "install": "^0.13.0",
+    "slugify": "^1.4.5",
+    "xmlhttprequest": "^1.8.0",
+    "yaml": "^1.10.0",
+    "yaml-diff": "^0.1.1"
   },
   "scripts": {
     "dev": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml full",
@@ -19,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/mitselek/poff-ssg/issues"
   },
-  "homepage": ""
+  "homepage": "",
+  "devDependencies": {
+    "yaml-validator": "^3.0.0"
+  }
 }
