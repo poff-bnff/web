@@ -9,20 +9,22 @@ block content
             - var heroPlusTrioNews = []
             .hero_head
                 //- HERO ARTICLE EXAMPLE BELOW
-                if self.data.heroArticle.media.image[0]
-                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
-                else if self.data.heroArticle.media.imageDefault[0]
-                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
-                else
-                    img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
-                .hero_headline_box
-                    .hero_headline_box_1
-                        .hero_headline
-                            | !{self.data.heroArticle.title}
-                    .hero_headline_box_2
-                        .hero_p
-                            | !{self.data.heroArticle.lead}
-                            - heroPlusTrioNews.push(self.data.heroArticle.id)
+                a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
+                    if self.data.heroArticle.media.image[0]
+                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
+                    else if self.data.heroArticle.media.imageDefault[0]
+                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
+                    else
+                        img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
+                    .hero_headline_box
+                        .hero_headline_box_1
+                            .hero_headline
+                                | !{self.data.heroArticle.title}
+                        .hero_headline_box_2
+                            .hero_p
+                                | !{self.data.heroArticle.lead}
+
+                - heroPlusTrioNews.push(self.data.heroArticle.id)
 
                     //- if self.data.heroArticle.media.image[0]
                     //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
@@ -50,11 +52,12 @@ block content
                     if blocks.article
                         - heroPlusTrioNews.push(blocks.article.id)
 
-                    .trio_block_item
-                        h4.dark
-                            | !{blocks.block.title}
-                        p.dark
-                            | !{blocks.block.lead}
+                    a(href= `/${lang_path}article/${ blocks.article.slug}`)
+                        .trio_block_item
+                            h4.dark
+                                | !{blocks.block.title}
+                            p.dark
+                                | !{blocks.block.lead}
                 //- //KUNI SIIN
 
             //- .home_2
