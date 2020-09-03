@@ -8,7 +8,6 @@ block content
         section.grid_hero
             - var heroPlusTrioNews = []
             section.hero_head
-                //- HERO ARTICLE EXAMPLE BELOW
                 a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle.media.image[0]
                         img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image

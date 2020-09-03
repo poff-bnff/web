@@ -342,6 +342,8 @@ nav
 
 .hero_head
     position relative
+    // height full_height
+    height calc(100vh - 97px)
 
 .hero_headline_box
     position absolute
@@ -439,40 +441,11 @@ a .dark:hover
     // box-decoration-break clone
     vertical-align middle
 
-// .hero_headline span
-//     background-color blue
-//     font-size calc(1.9rem + 1.5vw)
-
 .hero_image
-        width 100vw
-        // min-height full_height
-        // max-height 200px
-        height full_height
-        object-fit cover
-        z-index -1
-
-// .trio_block
-//     display grid
-//     grid-template-columns repeat(auto-fit, minmax(24rem, 1fr))
-//     grid-gap 2rem
-//     justify-content center
-//     justify-items center
-//     align-items center
-//     align-content center
-//     width 100%
-//     padding 0
-//     margin 0
-//     padding-left 2rem
-//     padding-right 2rem
-//     padding-top 2rem
-//     padding-bottom 2rem
-//     // background-color white
-
-// .trio_block_item
-//     width 100%
-//     // height 30%
-//     padding 1rem
-//     background-color bg_light_1
+    width 100vw
+    height calc(100vh - 97px)
+    object-fit cover
+    z-index -1
 
 .trio_block
     width 100vw
@@ -1486,14 +1459,15 @@ a.btn_popover
 
     .hero_head
         position relative
+        // height full_height
+        height calc(100vh - 97px)
 
-    .hero_image
-        width 100vw
-        height full_height
-        // max-height 60vw
-        // height 300px
-        object-fit cover
-        z-index -1
+    // .hero_image
+    //     width 100vw
+    //     // height full_height
+    //     height calc(100vh - 97px)
+    //     object-fit cover
+    //     z-index -1
 
     .trio_block
         padding-left calc(1.9rem + 1.5vw)
