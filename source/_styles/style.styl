@@ -479,8 +479,6 @@ a .dark:hover
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
     grid-gap calc(1.9rem + 1.5vw)
-    padding-left calc(1.9rem + 1.5vw)
-    padding-right calc(1.9rem + 1.5vw)
     padding-top calc(1.9rem + 1.5vw)
     padding-bottom calc(1.9rem + 1.5vw)
     justify-content center
@@ -507,12 +505,12 @@ a .dark:hover
 .viiekas
     width 100vw
     display grid
-    grid-template-columns minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr)
+    grid-template-columns 1fr
     padding 0
     margin 0
     grid-gap calc(1.9rem + 1.5vw)
-    padding-left calc(1.9rem + 1.5vw)
-    padding-right calc(1.9rem + 1.5vw)
+    // padding-left calc(1.9rem + 1.5vw)
+    // padding-right calc(1.9rem + 1.5vw)
     padding-top calc(1.9rem + 1.5vw)
     padding-bottom calc(1.9rem + 1.5vw)
     justify-content center
@@ -527,14 +525,14 @@ a .dark:hover
     text-align left
     padding 2rem 2rem 2rem 2rem
 
-.viieka_item:first-child
-.viieka_item:nth-child(2)
-    grid-column span 3
+// .viieka_item:first-child
+// .viieka_item:nth-child(2)
+//     grid-column span 3
 
-.viieka_item:nth-child(3)
-.viieka_item:nth-child(4)
-.viieka_item:nth-child(5)
-    grid-column span 2
+// .viieka_item:nth-child(3)
+// .viieka_item:nth-child(4)
+// .viieka_item:nth-child(5)
+//     grid-column span 2
 
 
 .footer_logos_1
@@ -1497,6 +1495,34 @@ a.btn_popover
         object-fit cover
         z-index -1
 
+    .trio_block
+        padding-left calc(1.9rem + 1.5vw)
+        padding-right calc(1.9rem + 1.5vw)
+
+    .viiekas
+        width 100vw
+        display grid
+        grid-template-columns minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr)
+        padding 0
+        margin 0
+        grid-gap calc(1.9rem + 1.5vw)
+        padding-left calc(1.9rem + 1.5vw)
+        padding-right calc(1.9rem + 1.5vw)
+        padding-top calc(1.9rem + 1.5vw)
+        padding-bottom calc(1.9rem + 1.5vw)
+        justify-content center
+        align-content center
+        justify-items stretch
+        align-items stretch
+
+    .viieka_item:first-child
+    .viieka_item:nth-child(2)
+        grid-column span 3
+
+    .viieka_item:nth-child(3)
+    .viieka_item:nth-child(4)
+    .viieka_item:nth-child(5)
+        grid-column span 2
 
     // .hero_headline_box
     //     position absolute
