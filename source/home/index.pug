@@ -54,6 +54,7 @@ block content
 
                     a(href= `/${lang_path}article/${ blocks.article.slug}`)
                         .trio_block_item
+                            img(src='${blocks.article.media.imageDefault.url}')
                             h4.dark
                                 | !{blocks.block.title}
                             p.dark
