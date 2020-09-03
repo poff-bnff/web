@@ -1,0 +1,73 @@
+id: 516
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:46.969Z'
+updated_at: '2020-08-28T09:01:51.401Z'
+title_et: Lammas all paremas nurgas
+title_en: The Secret Lamb
+titleOriginal: ''
+year: 1992
+runtime: 10000
+slug_et: lammas-all-paremas-nurgas
+slug_en: the-secret-lamb
+filmId: '1015'
+credentials:
+    id: 388
+    director:
+        - Lembit Ulfsak
+    screenwriter:
+        - Janno Põldma
+        - ' Lembit Ulsak'
+    doP:
+        - Ago Ruus
+    cast:
+        - Tõnu Kark
+        - ' Margus Alver'
+        - ' Kaur Sinissaar'
+        - ' Dan Põldroos'
+        - ' Ain Lutsepp'
+    composer:
+        - Tõnu Naissoo
+synopsis: ''
+media:
+    id: 323
+    Trailer:
+        -
+            id: 308
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 304
+            Url: ''
+tags:
+    id: 311
+countriesAndLanguages:
+    id: 295
+    countries:
+        -
+            id: 899
+            created_at: '2020-08-17T14:20:47.018Z'
+            updated_at: '2020-08-17T14:20:47.018Z'
+            code: EE
+            name_et: Eesti
+            name_en: Estonia
+            name: Эстония
+    languages:
+        -
+            id: 1686
+            created_at: '2020-08-24T12:28:24.026Z'
+            updated_at: '2020-08-24T12:28:24.026Z'
+            name_et: Eesti
+            name_en: Estonian
+            code: et
+            name: Эстонский
+title: ''
+slug: ''
+directory: source/_fetchdir/films_poff//the-secret-lamb
+path: film/
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.ru.yaml

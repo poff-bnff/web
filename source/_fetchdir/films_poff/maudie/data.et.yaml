@@ -1,0 +1,93 @@
+id: 513
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:37.436Z'
+updated_at: '2020-08-28T09:02:04.855Z'
+title_en: Maudie
+title_ru: ''
+titleOriginal: ''
+year: 2016
+runtime: 115
+slug_en: maudie
+slug_ru: ''
+filmId: '1011'
+credentials:
+    id: 380
+    director:
+        - Aisling Walsh
+    screenwriter:
+        - Sherry White
+    doP:
+        - Guy Godfree
+    cast:
+        - Sally Hawkins
+        - ' Ethan Hawke'
+        - ' Kari Matchett'
+    composer:
+        - Michael Timmins
+synopsis: >-
+    "Maudie" on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
+    ennast kunsti kaudu, jäädes meeleheitlikule olukorrale vaatamata alati
+    heatahtlikuks, usaldavaks ja optimistlikuks. Film on saanud inspiratsiooni
+    Nova Scotia (Kanada) naivistliku kunstniku Maud Lewise eluloost. Tema
+    hingejõud leidis väljenduse lihtsates värvikates piltides, mis kujunesid
+    vaatamata tehnilistele puudujääkidele paljude lemmikuteks. Ta alustas
+    täppide maalimisest oma viletsa hüti akendele ja hiljem juba lõuenditele,
+    mida tuldi ostma üle kogu Kanada. Maudie on naivistliku kunstniku ehe näide,
+    kelle peaaegu sõnakuulmatud käed lõid teoseid, mis jõuavad siirusega otse
+    vaataja hinge.
+
+
+    Sally Hawkins on võitnud selle tundliku rolli eest auhindu paljudelt
+    festivalidelt, nagu ka Ethan Hawke Maudie´ rämedavõitu ja asotsiaalse
+    elukaaslase Everettina.
+media:
+    id: 315
+    Trailer:
+        -
+            id: 300
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 296
+            Url: ''
+tags:
+    id: 303
+countriesAndLanguages:
+    id: 287
+    countries:
+        -
+            id: 952
+            created_at: '2020-08-17T14:20:50.882Z'
+            updated_at: '2020-08-17T14:20:50.882Z'
+            code: IE
+            name_en: Ireland
+            name_ru: Ирландия
+            name: Iirimaa
+        -
+            id: 864
+            created_at: '2020-08-17T14:20:41.574Z'
+            updated_at: '2020-08-17T14:20:41.574Z'
+            code: CA
+            name_en: Canada
+            name_ru: Канада
+            name: Kanada
+    languages:
+        -
+            id: 1744
+            created_at: '2020-08-24T12:28:28.778Z'
+            updated_at: '2020-08-24T12:28:28.778Z'
+            name_en: English
+            name_ru: Английский
+            code: en
+            name: Inglise
+title: Maudie
+slug: maudie
+directory: source/_fetchdir/films_poff//maudie
+path: film/maudie
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.et.yaml
