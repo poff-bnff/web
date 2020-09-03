@@ -3,11 +3,10 @@ include /_templates/mixins.pug
 
 block content
 
-
-
         section.grid_hero
             - var heroPlusTrioNews = []
             section.hero_head
+
                 a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle.media.image[0]
                         img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
@@ -24,6 +23,7 @@ block content
                                 | !{self.data.heroArticle.lead}
 
                 - heroPlusTrioNews.push(self.data.heroArticle.id)
+
 
                     //- if self.data.heroArticle.media.image[0]
                     //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
@@ -75,6 +75,7 @@ block content
 
 
 
+
                     //- VIIEKAS START
                     - var counter = 0
 
@@ -115,6 +116,7 @@ block content
         //- FILMS / SCREENINGS calendar
         div
             h1.section_headline= self.label.all.screeningsCalendar
+
                     //- | Seansside kalender
 
 
