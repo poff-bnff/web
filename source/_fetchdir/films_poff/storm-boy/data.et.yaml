@@ -1,0 +1,83 @@
+id: 515
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:46.969Z'
+updated_at: '2020-08-28T09:01:48.991Z'
+title_en: Storm Boy
+title_ru: ''
+titleOriginal: ''
+year: 2019
+runtime: 99
+slug_en: storm-boy
+slug_ru: ''
+filmId: '1014'
+credentials:
+    id: 383
+    director:
+        - Shawn Seet
+    screenwriter:
+        - Justin Monjo
+    doP:
+        - Bruce Young
+    cast:
+        - Finn Little
+        - ' Jai Courtney'
+        - ' Geoffrey Rush'
+    composer:
+        - Alan John
+synopsis: >-
+    Eelmise aasta suurimaid perefilme on saanud paljudel mainekatel festivalidel
+    publiku sooja vastuvõtu osaliseks.
+
+
+    Film põhineb samanimelisel Austraalia muinasjutul. Vanahärra Michael hakkab
+    ühel heal päeval nägema pilte oma elust, mida ta seletada ei oska. Justkui
+    oleks temaga toimumas midagi eriskummalist. Tasapisi hakkab talle meenuma
+    ammu unustuse hõlma vajunud muinasjutuline lapsepõlv. Ta meenutab oma
+    parimat sõpra, kelleks ei olnud keegi muu kui härra Percival, täiesti
+    harilik pelikan.
+
+
+    Uskumatud ja ennekuulmatud seiklused võivad kinolinal alata!
+media:
+    id: 318
+    Trailer:
+        -
+            id: 303
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 299
+            Url: ''
+tags:
+    id: 306
+countriesAndLanguages:
+    id: 289
+    countries:
+        -
+            id: 892
+            created_at: '2020-08-17T14:20:46.514Z'
+            updated_at: '2020-08-17T14:20:46.514Z'
+            code: AU
+            name_en: Australia
+            name_ru: Австралия
+            name: Austraalia
+    languages:
+        -
+            id: 1744
+            created_at: '2020-08-24T12:28:28.778Z'
+            updated_at: '2020-08-24T12:28:28.778Z'
+            name_en: English
+            name_ru: Английский
+            code: en
+            name: Inglise
+title: Tormipoiss
+slug: tormipoiss
+directory: source/_fetchdir/films_poff//storm-boy
+path: film/tormipoiss
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.et.yaml

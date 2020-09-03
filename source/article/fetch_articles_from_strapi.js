@@ -9,9 +9,9 @@ let allData = []; // for articles view
 
 function fetchAllData(options){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/article/", "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
-    getData("source/article/", "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
-    getData("source/article/", "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
+    getData("source/_fetchdir/articles_poff/", "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
+    getData("source/_fetchdir/articles_poff/", "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
+    getData("source/_fetchdir/articles_poff/", "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
