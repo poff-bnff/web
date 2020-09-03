@@ -1,105 +1,72 @@
 footer
     .social
 
-        //- - var attributes = {};
-        //- - var attributes2 = {};
-        //- - attributes = {'viewBox': '0 0 24 24', 'width': '24', 'height': '24', 'stroke': 'white', 'stroke-width': '1', 'fill': 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round'};
-        //- each val, key in attributes
-        //-     - attributes2[key] = val
+        each socialGroups in self.footer.socialGroup
+            p= socialGroups.name
+            each socialGroup in socialGroups.items
+                a(href=socialGroup.url target='_blank') !{socialGroup.svgCode}
+    each item in self.footer.item
+        p= item.name
+        each svgItem in item.svgItem
+            h1.section_headline_footer= self.label.all.presenters
+            .footer_logos_1
+                img.footer_logo_item_1(alt='Elisa' data-src='/assets/img/global/tartuff_f_elisa.svg' src='/assets/img/global/tartuff_f_elisa.svg')
 
-        each val in self.footer.socialGroup
-            each social in val.items
-                p= social.name
-                - var crap = (social.svgCode.substring(1, social.svgCode.length)).split('path')
-                //- - crap[0] = crap[0] + '>'
-                - crap[0] = '<div>Randomdiv</div>'
-                //- viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round') path(d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'
-
-                a(href=social.url target='_blank') !{crap[0]}
-
-                    //- <html>
-                    //-     <svg class='svg_icon_footer' !{crap[0]} !${crap[1]}>
-                    //- </html>
-
-                    //- <html>
-                    //-     <svg class='svg_icon_footer' !{social.svgCode.substring(1, social.svgCode.length)}>
-                    //- </html>
-
-                    //- svg.svg_icon_footer !{social.svgCode}
-                //-     svg= social.svgCode
-                //- - var attributes = {};
-                //- - attributes.class = 'svg_icon_footer';
-                //- div#foo(data-bar="foo")&attributes(attributes)
+    each section in self.footer.logosSections
+        h1.section_headline_footer= section.name
+            each logo in section.logo
+                .footer_logos_1
+                    img.footer_logo_item_1(alt=logo.url data-src='/assets/img/global/tartuff_f_elisa.svg' src='/assets/img/global/tartuff_f_elisa.svg')
 
 
 
-        a(href='https://www.facebook.com/tallinnblacknightsff/' target='_blank')
-            svg.svg_icon_footer(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                rect(x='2' y='2' width='20' height='20' rx='5' ry='5')
-                path(d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z')
-                line(x1='17.5' y1='6.5' x2='17.51' y2='6.5')
-        a(href='https://www.instagram.com/tallinnblacknightsff/' target='_blank')
-            svg.svg_icon_footer(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                rect(x='2' y='2' width='20' height='20' rx='5' ry='5')
-                path(d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z')
-                line(x1='17.5' y1='6.5' x2='17.51' y2='6.5')
-        a(href='https://www.youtube.com/user/Poffihunt' target='_blank')
-            svg.svg_icon_footer(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                path(d='M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z')
-                polygon(points='9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02')
-        a(href='https://twitter.com/tallinnbnff' target='_blank')
-            svg.svg_icon_footer(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                path(d='M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z')
 
-    h1.section_headline_footer= self.label.all.presenters
-    .footer_logos_1
-        img.footer_logo_item_1(alt='Elisa' data-src='/assets/img/global/tartuff_f_elisa.svg' src='/assets/img/global/tartuff_f_elisa.svg')
-        img.footer_logo_item_1(alt='Tartu' data-src='/assets/img/global/tartuff_f_tartu.svg' src='/assets/img/global/tartuff_f_tartu.svg')
+    //-     img.footer_logo_item_1(alt='Tartu' data-src='/assets/img/global/tartuff_f_tartu.svg' src='/assets/img/global/tartuff_f_tartu.svg')
 
-    h1.section_headline_footer= self.label.all.sponsors
-    .footer_logos_1
-        img.footer_logo_item_1(alt='Toyota' data-src='/assets/img/global/tartuff_f_toyota.svg' src='/assets/img/global/tartuff_f_toyota.svg')
+    //- h1.section_headline_footer= self.label.all.sponsors
+    //- .footer_logos_1
+    //-     img.footer_logo_item_1(alt='Toyota' data-src='/assets/img/global/tartuff_f_toyota.svg' src='/assets/img/global/tartuff_f_toyota.svg')
 
-    h1.section_headline_footer= self.label.all.supporters
-    .footer_logos_2
-        img.footer_logo_item_2(alt='Kultuurkapital' data-src='/assets/img/global/tartuff_f_kulka.svg' src='/assets/img/global/tartuff_f_kulka.svg')
-        img.footer_logo_item_2(alt='ERM' data-src='/assets/img/global/tartuff_f_erm.svg' src='/assets/img/global/tartuff_f_erm.svg')
-        img.footer_logo_item_2(alt='Kultuuriministeerium' data-src='/assets/img/global/tartuff_f_kultmin.svg' src='/assets/img/global/tartuff_f_kultmin.svg')
-        img.footer_logo_item_2(alt='Tartu Filmifond' data-src='/assets/img/global/tartuff_f_tartu_filmifond.svg' src='/assets/img/global/tartuff_f_tartu_filmifond.svg')
-        img.footer_logo_item_2(alt='Tartu Loomemajanduskeskus' data-src='/assets/img/global/tartuff_f_lmk.svg' src='/assets/img/global/tartuff_f_lmk.svg')
-        img.footer_logo_item_2(alt='Kvartal' data-src='/assets/img/global/tartuff_f_kvartal.svg' src='/assets/img/global/tartuff_f_kvartal.svg')
-        img.footer_logo_item_2(alt='Tartu 2024' data-src='/assets/img/global/tartuff_f_tartu_2024.svg' src='/assets/img/global/tartuff_f_tartu_2024.svg')
-        img.footer_logo_item_2(alt='Kanada' data-src='/assets/img/global/tartuff_f_canada.svg' src='/assets/img/global/tartuff_f_canada.svg')
+    //- h1.section_headline_footer= self.label.all.supporters
+    //- .footer_logos_2
+    //-     img.footer_logo_item_2(alt='Kultuurkapital' data-src='/assets/img/global/tartuff_f_kulka.svg' src='/assets/img/global/tartuff_f_kulka.svg')
+    //-     img.footer_logo_item_2(alt='ERM' data-src='/assets/img/global/tartuff_f_erm.svg' src='/assets/img/global/tartuff_f_erm.svg')
+    //-     img.footer_logo_item_2(alt='Kultuuriministeerium' data-src='/assets/img/global/tartuff_f_kultmin.svg' src='/assets/img/global/tartuff_f_kultmin.svg')
+    //-     img.footer_logo_item_2(alt='Tartu Filmifond' data-src='/assets/img/global/tartuff_f_tartu_filmifond.svg' src='/assets/img/global/tartuff_f_tartu_filmifond.svg')
+    //-     img.footer_logo_item_2(alt='Tartu Loomemajanduskeskus' data-src='/assets/img/global/tartuff_f_lmk.svg' src='/assets/img/global/tartuff_f_lmk.svg')
+    //-     img.footer_logo_item_2(alt='Kvartal' data-src='/assets/img/global/tartuff_f_kvartal.svg' src='/assets/img/global/tartuff_f_kvartal.svg')
+    //-     img.footer_logo_item_2(alt='Tartu 2024' data-src='/assets/img/global/tartuff_f_tartu_2024.svg' src='/assets/img/global/tartuff_f_tartu_2024.svg')
+    //-     img.footer_logo_item_2(alt='Kanada' data-src='/assets/img/global/tartuff_f_canada.svg' src='/assets/img/global/tartuff_f_canada.svg')
 
-    h1.section_headline_footer= self.label.all.officialPartners
-    .footer_logos_2
-        img.footer_logo_item_2(alt='Lydia' data-src='/assets/img/global/tartuff_f_lydia.svg' src='/assets/img/global/tartuff_f_lydia.svg')
-        img.footer_logo_item_2(alt='Dorpat' data-src='/assets/img/global/tartuff_f_dorpat.svg' src='/assets/img/global/tartuff_f_dorpat.svg')
-        img.footer_logo_item_2(alt='Pepes' data-src='/assets/img/global/tartuff_f_pepes.svg' src='/assets/img/global/tartuff_f_pepes.svg')
-        img.footer_logo_item_2(alt='Medifum' data-src='/assets/img/global/tartuff_f_medifum.svg' src='/assets/img/global/tartuff_f_medifum.svg')
+    //- h1.section_headline_footer= self.label.all.officialPartners
+    //- .footer_logos_2
+    //-     img.footer_logo_item_2(alt='Lydia' data-src='/assets/img/global/tartuff_f_lydia.svg' src='/assets/img/global/tartuff_f_lydia.svg')
+    //-     img.footer_logo_item_2(alt='Dorpat' data-src='/assets/img/global/tartuff_f_dorpat.svg' src='/assets/img/global/tartuff_f_dorpat.svg')
+    //-     img.footer_logo_item_2(alt='Pepes' data-src='/assets/img/global/tartuff_f_pepes.svg' src='/assets/img/global/tartuff_f_pepes.svg')
+    //-     img.footer_logo_item_2(alt='Medifum' data-src='/assets/img/global/tartuff_f_medifum.svg' src='/assets/img/global/tartuff_f_medifum.svg')
 
-    h1.section_headline_footer= self.label.all.partners
-    .footer_logos_3
-        img.footer_logo_item_3(alt='3 tilli' data-src='/assets/img/global/tartuff_f_kolm_tilli.svg' src='/assets/img/global/tartuff_f_kolm_tilli.svg')
-        img.footer_logo_item_3(alt='Ahhaa' data-src='/assets/img/global/tartuff_f_ahhaa.svg' src='/assets/img/global/tartuff_f_ahhaa.svg')
-        img.footer_logo_item_3(alt='Ajaloomuuseum' data-src='/assets/img/global/tartuff_f_ajaloomuuseum.svg' src='/assets/img/global/tartuff_f_ajaloomuuseum.svg')
-        img.footer_logo_item_3(alt='Athena' data-src='/assets/img/global/tartuff_f_athena.svg' src='/assets/img/global/tartuff_f_athena.svg')
-        img.footer_logo_item_3(alt='Draama 2020' data-src='/assets/img/global/tartuff_f_draama_fest.svg' src='/assets/img/global/tartuff_f_draama_fest.svg')
-        img.footer_logo_item_3(alt='Drive In Cinema' data-src='/assets/img/global/tartuff_f_drive_in_cinema.svg' src='/assets/img/global/tartuff_f_drive_in_cinema.svg')
-        img.footer_logo_item_3(alt='Eesti aiad' data-src='/assets/img/global/tartuff_f_eesti_aiad.svg' src='/assets/img/global/tartuff_f_eesti_aiad.svg')
-        img.footer_logo_item_3(alt='Elektriteater' data-src='/assets/img/global/tartuff_f_elektriteater.svg' src='/assets/img/global/tartuff_f_elektriteater.svg')
-        img.footer_logo_item_3(alt='Ellington' data-src='/assets/img/global/tartuff_f_ellington.svg' src='/assets/img/global/tartuff_f_ellington.svg')
-        img.footer_logo_item_3(alt='Gardest' data-src='/assets/img/global/tartuff_f_gardest.svg' src='/assets/img/global/tartuff_f_gardest.svg')
-        img.footer_logo_item_3(alt='Haridus ekraanil' data-src='/assets/img/global/tartuff_f_haridus_ekraanil.svg' src='/assets/img/global/tartuff_f_haridus_ekraanil.svg')
-        img.footer_logo_item_3(alt='Hektor' data-src='/assets/img/global/tartuff_f_hektor.svg' src='/assets/img/global/tartuff_f_hektor.svg')
-        img.footer_logo_item_3(alt='Pallas' data-src='/assets/img/global/tartuff_f_pallas.svg' src='/assets/img/global/tartuff_f_pallas.svg')
-        img.footer_logo_item_3(alt='Pierre' data-src='/assets/img/global/tartuff_f_pierre.svg' src='/assets/img/global/tartuff_f_pierre.svg')
-        img.footer_logo_item_3(alt='Pühaste' data-src='/assets/img/global/tartuff_f_pyhaste.pmg' src='/assets/img/global/tartuff_f_pyhaste.png')
-        img.footer_logo_item_3(alt='Tartmus' data-src='/assets/img/global/tartuff_f_tartmus.svg' src='/assets/img/global/tartuff_f_tartmus.svg')
-        img.footer_logo_item_3(alt='Tartu Uus Teater' data-src='/assets/img/global/tartuff_f_tartu_uus_teater.svg' src='/assets/img/global/tartuff_f_tartu_uus_teater.svg')
-        img.footer_logo_item_3(alt='USS' data-src='/assets/img/global/tartuff_f_uss.svg' src='/assets/img/global/tartuff_f_uss.svg')
-        img.footer_logo_item_3(alt='Vanemuine' data-src='/assets/img/global/tartuff_f_vanemuine.svg' src='/assets/img/global/tartuff_f_vanemuine.svg')
-        img.footer_logo_item_3(alt='Voronja' data-src='/assets/img/global/tartuff_f_voronja.svg' src='/assets/img/global/tartuff_f_voronja.svg')
+    //- h1.section_headline_footer= self.label.all.partners
+    //- .footer_logos_3
+    //-     img.footer_logo_item_3(alt='3 tilli' data-src='/assets/img/global/tartuff_f_kolm_tilli.svg' src='/assets/img/global/tartuff_f_kolm_tilli.svg')
+    //-     img.footer_logo_item_3(alt='Ahhaa' data-src='/assets/img/global/tartuff_f_ahhaa.svg' src='/assets/img/global/tartuff_f_ahhaa.svg')
+    //-     img.footer_logo_item_3(alt='Ajaloomuuseum' data-src='/assets/img/global/tartuff_f_ajaloomuuseum.svg' src='/assets/img/global/tartuff_f_ajaloomuuseum.svg')
+    //-     img.footer_logo_item_3(alt='Athena' data-src='/assets/img/global/tartuff_f_athena.svg' src='/assets/img/global/tartuff_f_athena.svg')
+    //-     img.footer_logo_item_3(alt='Draama 2020' data-src='/assets/img/global/tartuff_f_draama_fest.svg' src='/assets/img/global/tartuff_f_draama_fest.svg')
+    //-     img.footer_logo_item_3(alt='Drive In Cinema' data-src='/assets/img/global/tartuff_f_drive_in_cinema.svg' src='/assets/img/global/tartuff_f_drive_in_cinema.svg')
+    //-     img.footer_logo_item_3(alt='Eesti aiad' data-src='/assets/img/global/tartuff_f_eesti_aiad.svg' src='/assets/img/global/tartuff_f_eesti_aiad.svg')
+    //-     img.footer_logo_item_3(alt='Elektriteater' data-src='/assets/img/global/tartuff_f_elektriteater.svg' src='/assets/img/global/tartuff_f_elektriteater.svg')
+    //-     img.footer_logo_item_3(alt='Ellington' data-src='/assets/img/global/tartuff_f_ellington.svg' src='/assets/img/global/tartuff_f_ellington.svg')
+    //-     img.footer_logo_item_3(alt='Gardest' data-src='/assets/img/global/tartuff_f_gardest.svg' src='/assets/img/global/tartuff_f_gardest.svg')
+    //-     img.footer_logo_item_3(alt='Haridus ekraanil' data-src='/assets/img/global/tartuff_f_haridus_ekraanil.svg' src='/assets/img/global/tartuff_f_haridus_ekraanil.svg')
+    //-     img.footer_logo_item_3(alt='Hektor' data-src='/assets/img/global/tartuff_f_hektor.svg' src='/assets/img/global/tartuff_f_hektor.svg')
+    //-     img.footer_logo_item_3(alt='Pallas' data-src='/assets/img/global/tartuff_f_pallas.svg' src='/assets/img/global/tartuff_f_pallas.svg')
+    //-     img.footer_logo_item_3(alt='Pierre' data-src='/assets/img/global/tartuff_f_pierre.svg' src='/assets/img/global/tartuff_f_pierre.svg')
+    //-     img.footer_logo_item_3(alt='Pühaste' data-src='/assets/img/global/tartuff_f_pyhaste.pmg' src='/assets/img/global/tartuff_f_pyhaste.png')
+    //-     img.footer_logo_item_3(alt='Tartmus' data-src='/assets/img/global/tartuff_f_tartmus.svg' src='/assets/img/global/tartuff_f_tartmus.svg')
+    //-     img.footer_logo_item_3(alt='Tartu Uus Teater' data-src='/assets/img/global/tartuff_f_tartu_uus_teater.svg' src='/assets/img/global/tartuff_f_tartu_uus_teater.svg')
+    //-     img.footer_logo_item_3(alt='USS' data-src='/assets/img/global/tartuff_f_uss.svg' src='/assets/img/global/tartuff_f_uss.svg')
+    //-     img.footer_logo_item_3(alt='Vanemuine' data-src='/assets/img/global/tartuff_f_vanemuine.svg' src='/assets/img/global/tartuff_f_vanemuine.svg')
+    //-     img.footer_logo_item_3(alt='Voronja' data-src='/assets/img/global/tartuff_f_voronja.svg' src='/assets/img/global/tartuff_f_voronja.svg')
 
         //- img.footer_logo_item3(alt='' data-src='/assets/img/global/tartuff_f_.svg' src='/assets/img/global/tartuff_f_.svg')
         //- img.footer_logo_item3(alt='' data-src='/assets/img/global/tartuff_f_.svg' src='/assets/img/global/tartuff_f_.svg')
