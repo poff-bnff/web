@@ -21,6 +21,7 @@ var savePath = 'assets/img/img_articles/';
 
 loadYaml('et', readYaml);
 loadYaml('en', readYaml);
+loadYaml('ru', readYaml);
 
 function loadYaml(lang, readYaml) {
     var doc = '';

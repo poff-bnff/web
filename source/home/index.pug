@@ -7,7 +7,7 @@ block content
 
         section.grid_hero
             - var heroPlusTrioNews = []
-            .hero_head
+            section.hero_head
                 //- HERO ARTICLE EXAMPLE BELOW
                 a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle.media.image[0]
@@ -41,7 +41,7 @@ block content
                     //- else
                     //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
 
-            .trio_block
+            section.trio_block
                 //- span.article_title_detailed.clr_primary= self.festivalDates
                 //- //SIIN ON TRIO NÄIDE
 
@@ -63,7 +63,7 @@ block content
 
             //- .home_2
             //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
-            .home_3
+            section.viiekas
                 .hero_pp
 
 
