@@ -73,41 +73,35 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
-    let copyData = JSON.parse(JSON.stringify(data[0]));
+    let copyData = JSON.parse(JSON.stringify(data));
+    // console.log(copyData);
     let buffer = [];
-    for (key in copyData) {
-        console.log(key)
-        let smallBuffer = {}
-        var data2 = copyData[key];
-        // console.log(data2);
-        // var name = data[key].name;
-        // console.log(name);
-        // for (key2 in data2.label) {
-        //     // console.log(data2.label[key]);
-        //     // smallBuffer[data2.label[key2].name] = {
-        //     //     'value' : data2.label[key2].value,
-        //     //     'value_en' : data2.label[key2].value_en
-        //     //     }
-        //     let tinyBuffer = {};
-        //     for(key3 in data2.label[key2]) {
-        //         tinyBuffer[key3] = data2.label[key2][key3];
-        //     }
-        //     smallBuffer[data2.label[key2].name] = tinyBuffer;
-        // }
+    for (values in copyData) {
+        // console.log(values)
 
-        if(key === `article_${lang}`) {
-            buffer = rueten(data[0][`article_${lang}`], lang);
-            // console.log(buffer);
+        if(copyData[values].namePrivate=== `PÖFF`) {
+            buffer = rueten(copyData[values], lang);
+            // console.log(copyData[values]);
         }
-
     }
     CreateYAML(buffer, lang);
+    // console.log(buffer);
 }
 
 function CreateYAML(buffer, lang) {
     // console.log(buffer);
-    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/footer.${lang}.yaml`, allDataYAML, 'utf8');
+    let globalData= yaml.safeLoad(fs.readFileSync(`../source/global.${lang}.yaml`, 'utf8'))
+    // console.log(globalData);
+    globalData.footer = buffer
+    for (values in globalData){
+        if (values === 'footer'){
+            console.log(values);
+        }
+    }
+    console.log(globalData);
+
+    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
+    fs.writeFileSync(`../source/global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 
