@@ -7,8 +7,7 @@ block content
 
         section.grid_hero
             - var heroPlusTrioNews = []
-            .hero_head
-                //- HERO ARTICLE EXAMPLE BELOW
+            section.hero_head
                 a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle.media.image[0]
                         img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
@@ -41,7 +40,7 @@ block content
                     //- else
                     //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
 
-            .trio_block
+            section.trio_block
                 //- span.article_title_detailed.clr_primary= self.festivalDates
                 //- //SIIN ON TRIO NÄIDE
 
@@ -54,16 +53,25 @@ block content
 
                     a(href= `/${lang_path}article/${ blocks.article.slug}`)
                         .trio_block_item
+                            if blocks.block.image
+                                img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
+                            else if blocks.article.media.image[0]
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
+                            else if blocks.article.media.imageDefault[0]
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
+                            else
+                                img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
                             h4.dark
                                 | !{blocks.block.title}
                             p.dark
                                 | !{blocks.block.lead}
+
+
                 //- //KUNI SIIN
 
             //- .home_2
             //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
-            .home_3
-                .hero_pp
+            section.viiekas
 
 
 
@@ -96,7 +104,8 @@ block content
                             - break
                         -counter++
 
-                        p= news.title
+                        .viieka_item
+                            p.dark= news.title
 
                     //- VIIEKAS LÕPP
 
