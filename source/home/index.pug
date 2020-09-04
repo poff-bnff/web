@@ -95,18 +95,29 @@ block content
 
                     each news in self.data.articles.sort(sortFunction)
                         if news.publish
-                            if news.article_types && news.article_types && news.article_types[0]
-                                - var articleType = news.article_types[0].et
+                            - var currentTime = new Date()
+                            if typeof(news.publishFrom) === 'undefined'
+                                - var publishFrom= new Date(news.created_at)
+                            else
+                                - var publishFrom= new Date(news.publishFrom)
 
-                            if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
+                            if news.publishUntil
+                                - var publishUntil = new Date(news.publishUntil)
 
-                                - continue
-                            if counter >= 5
-                                - break
-                            -counter++
+                            if (currentTime > publishFrom)
+                                if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
 
-                            .viieka_item
-                                p.dark= news.title
+                                    if news.article_types && news.article_types[0]
+                                        - var articleType = news.article_types[0].et
+                                    if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
+                                        - continue
+                                    if counter >= 5
+                                        - break
+                                    - counter++
+
+                                    .viieka_item
+                                        p.dark= news.title
+
 
                     //- VIIEKAS LÕPP
 
