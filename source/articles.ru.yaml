@@ -165,6 +165,125 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
 -
+    id: 7
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-09-02T07:03:23.979Z'
+    updated_at: '2020-09-03T13:13:24.826Z'
+    title_et: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
+    slug_et: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
+    title_en: test7 en
+    slug_en: test7-en
+    lead_et: >-
+        Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
+        professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
+        kolib selleks sügiseks veebi.
+    lead_en: lead 7 en
+    contents_et: >-
+        Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
+        piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
+        siia saabumise liikumisvabaduse kärpimisega.
+
+
+        „Teeme seda raske südamega, aga me ei taha võtta riske,” ütles ürituse
+        juht Marge Liiske. Vastava otsuseni jõuti pärast konsulteerimist
+        terviseametnikega, kelle prognoos ei ennusta sügiseks viiruse vaibumist.
+
+
+        Veebi kolimine annab Liiske sõnul samas võimaluse üritust laiendada ja
+        avab ukse neile, kes ei saaks muidu ajapuudusel või kauguse tõttu
+        Tallinna tulla. Ühtlasi on see hea võimalus katsetada uuenduslikke
+        digitaalseid lahendusi.
+
+
+        Endiselt jätkub valmivate või kavandatavate filmiprojektide vastuvõtt
+        Baltic Evendi kaastootmisturule, filmi- ja telesarjade stsenaariumite
+        võistlusele Script Pool ning Põhja- ja Baltimaade stsenaristide
+        projektitutvustuste foorumile POWR Baltic Stories Exchange. Vastuvõtt
+        lõpeb 21. septembril.
+
+
+        Ürituse delegaatidele ja akrediteeritud välispressile garanteeritakse
+        ligipääs üritustele ja Pimedate Ööde filmifestivali kavas olevatele
+        filmidele.
+
+
+        Industry@Tallinn & Baltic Evendi programmi kuuluvad veel seminarid,
+        õpikojad, meistriklassid ja vestlusringid, mis käsitlevad filmitööstuse
+        ja teleturu aktuaalseid teemasid. Samuti leiab esimest korda aset PÖFFi
+        Akadeemia, kus saavad end täiendada filmindusega seotud erialade
+        esindajad alates näitlejatest ja lõpetades heliloojatega.
+
+
+        Programmi esimesed üritused ja esinejad avalikustab Industry@Tallinn &
+        Baltic Event septembris.
+
+
+        Pimedate Ööde filmifestival leiab tänavu aset 13.–29. novembrini.
+        Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
+        stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
+        juhul tervenisti virtuaalsel kujul.
+    contents_en: cont 7 en
+    publishFrom: '2020-08-17T09:00:00.000Z'
+    publishUntil: '2020-12-17T10:00:00.000Z'
+    publish_et: false
+    publish_en: false
+    media:
+        id: 14
+        imageDefault:
+            -
+                id: 31
+                name: Industry_2020_online_news.jpeg
+                alternativeText: ''
+                caption: ''
+                width: 900
+                height: 600
+                formats:
+                    thumbnail:
+                        ext: .jpeg
+                        url: >-
+                            /uploads/thumbnail_Industry_2020_online_news_b73f02f092.jpeg
+                        hash: thumbnail_Industry_2020_online_news_b73f02f092
+                        mime: image/jpeg
+                        name: thumbnail_Industry_2020_online_news.jpeg
+                        size: 15.09
+                        width: 234
+                        height: 156
+                hash: Industry_2020_online_news_b73f02f092
+                ext: .jpeg
+                mime: image/jpeg
+                size: 136.1
+                url: /uploads/Industry_2020_online_news_b73f02f092.jpeg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-01T12:27:06.584Z'
+                updated_at: '2020-09-01T12:27:06.648Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    publish: false
+    directory: source/article/test7-en
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
     id: 2
     created_by:
         id: 5
@@ -276,154 +395,6 @@
             ru: Новости
     publish: true
     directory: source/article/test-2-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.ru.yaml
--
-    id: 6
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    created_at: '2020-09-02T07:02:01.637Z'
-    updated_at: '2020-09-02T11:08:55.202Z'
-    title_et: Tartuffi filmid jõuavad ekraanile ka Tallinnas
-    slug_et: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
-    title_en: test 6 en
-    slug_en: test-6-en
-    lead_et: >-
-        Tartus jätkuva PÖFFi armastusfilmide festivali Tartuff filme saab
-        vaadata ka järgmisel nädalal Tallinnas, kui Filmimuuseum näitab
-        festivali valikkava.
-    lead_en: lead 6 en
-    contents_et: >-
-        19.–22. augustini linastuvad Maarjamäel asuva Filmimuuseumi kinos
-        Hispaania režissööri Javier Fesseri komöödia „Tšempionid”, Lõuna-Korea
-        režissööri Bora Kimi draama „Hüvasti!”, Iiri režissööri Aisling Walshi
-        biograafiline draama „Maudie” ja Brasiilia režissööri Karim Aïnouzi
-        melodraama „Nähtamatu elu”.
-
-
-        „Valisime Tartuffi programmist näitamiseks filmid, mis tutvustavad
-        erinevaid filmikultuure ja viivad erinevatesse ajastutesse. Kõik filmid
-        on äratanud tähelepanu tippfestivalidel või veel parem – oma maa
-        vaatajate seas,” ütles Filmimuuseumi kuraator Karlo Funk.
-
-
-        „Tšempionid” on südamlik komöödia vaimupuudega inimestest, kes hakkavad
-        professionaalse treeneri käe all korvpalli mängima. Linateos võitis
-        aasta parima Hispaania filmi auhinna ja esindas Hispaaniat ka
-        mitteingliskeelsete filmide Oscari konkurentsis. Seansi juhatab sisse
-        Hispaania Maja juht Neftali Peral Joris.
-
-
-        Brasiilia rohkelt auhinnatud troopilises melodraamas „Nähtamatu elu”
-        surub ühiskonna konservatiivsus alla kahe õe unistused. Brasiilia esitas
-        filmi ka Oscarile. Seansi juhatab sisse režissöör Kadri Kõusaar, kes on
-        ise Lõuna-Ameerikas filminud.
-
-
-        14-aastane üksildane Seouli tüdruk Eun-hee otsib filmis „Hüvasti!”
-        mõistmist, millest ta on ilma jäetud nii kodus kui koolis. Tegu on
-        tänavuse Tartuffi tunnustatuima linateosega, mis on võitnud ligemale 30
-        auhinda. Seansi juhatab sisse Lõuna-Korea kultuuri uurija Maari
-        Hinsberg.
-
-
-        „Maudie” on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
-        ennast kunsti kaudu. Film põhineb Kanada naivistliku kunstniku Maud
-        Lewise (1903-1970) elul. Teda mängib Sally Hawkins, kes on võitnud selle
-        osatäitmise eest ka hulk auhindu.
-
-
-        Seansid algavad kell 19 ja pilet maksab viis eurot. Filmidel on
-        eestikeelsed subtiitrid. Piletid on saadaval Fientas.
-
-
-        PÖFFi armastusfilmide festival Tartuff kestab 10.–15. augustini.
-        Festivali virtuaalses kinos Elisa Stage saab filme vaadata 16.
-        augustini.
-    contents_en: cont 6 en
-    publishFrom: '2020-09-23T21:00:00.000Z'
-    publishUntil: '2019-12-31T22:00:00.000Z'
-    publish_et: true
-    publish_en: false
-    media:
-        id: 13
-        imageDefault:
-            -
-                id: 2
-                name: F_3_invisible_life.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    large:
-                        ext: .jpg
-                        url: /uploads/large_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: large_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: large_F_3_invisible_life.jpg
-                        size: 53.41
-                        width: 1000
-                        height: 563
-                    small:
-                        ext: .jpg
-                        url: /uploads/small_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: small_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: small_F_3_invisible_life.jpg
-                        size: 15.85
-                        width: 500
-                        height: 281
-                    medium:
-                        ext: .jpg
-                        url: /uploads/medium_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: medium_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: medium_F_3_invisible_life.jpg
-                        size: 30.86
-                        width: 750
-                        height: 422
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: thumbnail_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: thumbnail_F_3_invisible_life.jpg
-                        size: 5.62
-                        width: 245
-                        height: 138
-                hash: F_3_invisible_life_fb118ee4f7
-                ext: .jpg
-                mime: image/jpeg
-                size: 122.39
-                url: /uploads/F_3_invisible_life_fb118ee4f7.jpg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-13T19:16:16.284Z'
-                updated_at: '2020-08-13T19:16:16.529Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    publish: false
-    directory: source/article/test-6-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
@@ -590,259 +561,135 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
 -
-    id: 9
+    id: 6
     created_by:
         id: 5
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-02T07:05:15.585Z'
-    updated_at: '2020-09-02T07:14:14.223Z'
-    title_et: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
-    slug_et: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
-    title_en: test 9 en
-    slug_en: test-9-en
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-09-02T07:02:01.637Z'
+    updated_at: '2020-09-03T13:24:37.925Z'
+    title_et: Tartuffi filmid jõuavad ekraanile ka Tallinnas
+    slug_et: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
+    title_en: test 6 en
+    slug_en: test-6-en
     lead_et: >-
-        Kumu kultuuriteemaliste dokumentaalfilmide sügishooaja juhatab sisse
-        kuulsast Tokaj veinist rääkiv linateos.
-    lead_en: test 9 en lead
+        Tartus jätkuva PÖFFi armastusfilmide festivali Tartuff filme saab
+        vaadata ka järgmisel nädalal Tallinnas, kui Filmimuuseum näitab
+        festivali valikkava.
+    lead_en: lead 6 en
     contents_et: >-
-        Ungarlase Tamás Almási „Vedel kuld” (Folyékony arany) on esimene film
-        Ungari veinist, täpsemalt maailmakuulsast Aszú veinist, mille
-        valmistamise sajanditepikkuseid traditsioone kiiresti muutuv maailm üha
-        enam mõjutab.
+        19.–22. augustini linastuvad Maarjamäel asuva Filmimuuseumi kinos
+        Hispaania režissööri Javier Fesseri komöödia „Tšempionid”, Lõuna-Korea
+        režissööri Bora Kimi draama „Hüvasti!”, Iiri režissööri Aisling Walshi
+        biograafiline draama „Maudie” ja Brasiilia režissööri Karim Aïnouzi
+        melodraama „Nähtamatu elu”.
 
 
-        26. augustil kell 18 Kumu auditooriumis linastuvat filmi juhatab sisse
-        Katrin Nabel Ungari Instituudist. 
+        „Valisime Tartuffi programmist näitamiseks filmid, mis tutvustavad
+        erinevaid filmikultuure ja viivad erinevatesse ajastutesse. Kõik filmid
+        on äratanud tähelepanu tippfestivalidel või veel parem – oma maa
+        vaatajate seas,” ütles Filmimuuseumi kuraator Karlo Funk.
 
 
-        Sari jätkub Damian Pettigrew´ klassikalise, 18 aastat tagasi valminud
-        filmiga „Fellini: ma olen sündinud valetaja” (Fellini: Sono un gran
-        bugiardo), mis on pühendatud maailmakuulsa filmirežissööri 100.
-        sünniaastapäevale, sisaldades ka tema viimaseid pihtimusi.
+        „Tšempionid” on südamlik komöödia vaimupuudega inimestest, kes hakkavad
+        professionaalse treeneri käe all korvpalli mängima. Linateos võitis
+        aasta parima Hispaania filmi auhinna ja esindas Hispaaniat ka
+        mitteingliskeelsete filmide Oscari konkurentsis. Seansi juhatab sisse
+        Hispaania Maja juht Neftali Peral Joris.
 
 
-        Kirjanik Tove Jansson ja kunstnik Tuulikki Pietilä veetsid 25 aastat oma
-        suvesid Soome lahes asuval tillukesel Klovharu saarel, kaasas
-        filmikaamera. Soome režissöörid Kanerva Cederström ja Riikka Tanner on
-        toona filmitust kokku pannud poeetilise linateose „Haru, üksildaste
-        saar”.
+        Brasiilia rohkelt auhinnatud troopilises melodraamas „Nähtamatu elu”
+        surub ühiskonna konservatiivsus alla kahe õe unistused. Brasiilia esitas
+        filmi ka Oscarile. Seansi juhatab sisse režissöör Kadri Kõusaar, kes on
+        ise Lõuna-Ameerikas filminud.
 
 
-        Rootsi dokumentalist Fredrik Gertten jälgib filmis „Push. Välja
-        tõrjutud” (Push), kuidas suurtes linnades viimastel aastatel taevasse
-        kerkinud korterihinnad sunnivad oma kodudest lahkuma põliseid elanikke.
+        14-aastane üksildane Seouli tüdruk Eun-hee otsib filmis „Hüvasti!”
+        mõistmist, millest ta on ilma jäetud nii kodus kui koolis. Tegu on
+        tänavuse Tartuffi tunnustatuima linateosega, mis on võitnud ligemale 30
+        auhinda. Seansi juhatab sisse Lõuna-Korea kultuuri uurija Maari
+        Hinsberg.
 
 
-        Austerlaste Florian Weigensameri ja Christian Krönesi „Tere tulemast
-        Soodomasse!” (Welcome to Sodom) viib Ghana pealinnas Accras asuvale
-        maailma suurimale elektroonikaromude prügimäele, kus lõpetab enamasti
-        illegaalselt oma eksistentsi Esimese Maailma sodi. 6000 inimest, kes
-        seal elavad ja töötavad, nimetavad seda elavaks põrguks.
+        „Maudie” on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
+        ennast kunsti kaudu. Film põhineb Kanada naivistliku kunstniku Maud
+        Lewise (1903-1970) elul. Teda mängib Sally Hawkins, kes on võitnud selle
+        osatäitmise eest ka hulk auhindu.
 
 
-        Stanley Nelsoni „Miles Davis: Birth of the Cool” portreteerib üht
-        maailma legendaarsemat džässmuusikut ja Sydney Pollacki „Amazing Grace”
-        jäädvustab Aretha Franklini 1972. aasta kontserdi, mille salvestusest
-        sai üks kõige aegade olulisemaid gospelmuusika plaate.
+        Seansid algavad kell 19 ja pilet maksab viis eurot. Filmidel on
+        eestikeelsed subtiitrid. Piletid on saadaval Fientas.
 
 
-        Briti nimekas režissöör Julien Temple lööb filmis „Habaneros” kuumade
-        kuuba rütmide saatel särama Havanna – haavatud, ent alistamatu linna,
-        mis köidab oma ilu, ajaloo ja elanike lõputu energiaga.
-
-
-        50 aastat tagasi lahkus meie seast rahvusvaheliselt tuntumaid eesti
-        kunstnikke Ülo Sooster. Lilija Vjugina „Ülo Sooster. Mees, kes kuivatas
-        rätikut tuule käes” on esimene nõnda põhjalik ülevaade sellest
-        modernismi suurkujust ja tema pärandist – omamoodi rännak ajas ja
-        ruumis, mille võtab ette kunstniku poeg Tenno.
-
-
-        Eelmise aasta olulisemaid Eesti dokumentaalfilme, Ksenija Ohhapkina
-        „Surematu” vaatleb elu Vene tööstuslinnas, näidates, kuidas ühiskond
-        vormib inimesest riiklikku ressurssi.
-
-
-        Prantsuse režissööri Frédéric Wilneri „Tutanhamoni hauakamber. Tegelik
-        lugu” (The True Story of King Tut’s Treasure) annab ülevaate
-        Vana-Egiptuse superstaari kuningas Tutanhamoni aarete viimastest
-        uuringutest, mille valguses tuleb seni teadaolev üle vaadata.
-
-
-        Hooaeg lõpeb 11. novembril, kui linastub Itaalia režissööri Anna de
-        Manincori „Peaaegu mittemidagi. Eksperimentaallinn CERN” (Almost Nothing
-        – CERN Experimental City), mis jälgib maailma suurima osakestefüüsika
-        labori ehk Euroopa tuumauuringute keskuse ulmelist igapäevaelu.
-
-
-        Kokku jõuab augustis, septembris, oktoobris ja novembris ekraanile 12
-        dokumentaalfilmi. Kõik seansid algavad Kumu auditooriumis kolmapäeviti
-        kell 18 ja on vaatajatele tasuta. Seanssidele eelnevad ekspertide
-        sissejuhatused.
-
-
-        Kultuuriteemaliste filmide sarja „Kumu dokumentaal” korraldavad Kumu ja
-        PÖFF.
-    contents_en: test 9 en cont
-    publishFrom: '2020-08-24T09:00:00.000Z'
-    publish_et: false
-    publish_en: true
-    media:
-        id: 16
-        imageDefault:
-            -
-                id: 28
-                name: Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
-                alternativeText: ''
-                caption: ''
-                width: 1067
-                height: 600
-                formats:
-                    thumbnail:
-                        ext: .jpeg
-                        url: >-
-                            /uploads/thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
-                        hash: >-
-                            thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
-                        mime: image/jpeg
-                        name: thumbnail_Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
-                        size: 5.25
-                        width: 245
-                        height: 138
-                hash: Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
-                ext: .jpeg
-                mime: image/jpeg
-                size: 38.72
-                url: /uploads/Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-01T08:26:38.966Z'
-                updated_at: '2020-09-01T08:26:39.046Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    publish: true
-    directory: source/article/test-9-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.ru.yaml
--
-    id: 7
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-02T07:03:23.979Z'
-    updated_at: '2020-09-02T07:58:45.970Z'
-    title_et: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
-    slug_et: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
-    title_en: test7 en
-    slug_en: test7-en
-    lead_et: >-
-        Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
-        professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
-        kolib selleks sügiseks veebi.
-    lead_en: lead 7 en
-    contents_et: >-
-        Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
-        piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
-        siia saabumise liikumisvabaduse kärpimisega.
-
-
-        „Teeme seda raske südamega, aga me ei taha võtta riske,” ütles ürituse
-        juht Marge Liiske. Vastava otsuseni jõuti pärast konsulteerimist
-        terviseametnikega, kelle prognoos ei ennusta sügiseks viiruse vaibumist.
-
-
-        Veebi kolimine annab Liiske sõnul samas võimaluse üritust laiendada ja
-        avab ukse neile, kes ei saaks muidu ajapuudusel või kauguse tõttu
-        Tallinna tulla. Ühtlasi on see hea võimalus katsetada uuenduslikke
-        digitaalseid lahendusi.
-
-
-        Endiselt jätkub valmivate või kavandatavate filmiprojektide vastuvõtt
-        Baltic Evendi kaastootmisturule, filmi- ja telesarjade stsenaariumite
-        võistlusele Script Pool ning Põhja- ja Baltimaade stsenaristide
-        projektitutvustuste foorumile POWR Baltic Stories Exchange. Vastuvõtt
-        lõpeb 21. septembril.
-
-
-        Ürituse delegaatidele ja akrediteeritud välispressile garanteeritakse
-        ligipääs üritustele ja Pimedate Ööde filmifestivali kavas olevatele
-        filmidele.
-
-
-        Industry@Tallinn & Baltic Evendi programmi kuuluvad veel seminarid,
-        õpikojad, meistriklassid ja vestlusringid, mis käsitlevad filmitööstuse
-        ja teleturu aktuaalseid teemasid. Samuti leiab esimest korda aset PÖFFi
-        Akadeemia, kus saavad end täiendada filmindusega seotud erialade
-        esindajad alates näitlejatest ja lõpetades heliloojatega.
-
-
-        Programmi esimesed üritused ja esinejad avalikustab Industry@Tallinn &
-        Baltic Event septembris.
-
-
-        Pimedate Ööde filmifestival leiab tänavu aset 13.–29. novembrini.
-        Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
-        stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
-        juhul tervenisti virtuaalsel kujul.
-    contents_en: cont 7 en
-    publishFrom: '2020-08-17T09:00:00.000Z'
-    publishUntil: '2020-12-17T10:00:00.000Z'
+        PÖFFi armastusfilmide festival Tartuff kestab 10.–15. augustini.
+        Festivali virtuaalses kinos Elisa Stage saab filme vaadata 16.
+        augustini.
+    contents_en: cont 6 en
+    publishFrom: '2020-09-24T05:30:00.000Z'
+    publishUntil: '2019-12-31T22:00:00.000Z'
     publish_et: true
     publish_en: false
     media:
-        id: 14
+        id: 13
         imageDefault:
             -
-                id: 31
-                name: Industry_2020_online_news.jpeg
+                id: 2
+                name: F_3_invisible_life.jpg
                 alternativeText: ''
                 caption: ''
-                width: 900
-                height: 600
+                width: 1920
+                height: 1080
                 formats:
-                    thumbnail:
-                        ext: .jpeg
-                        url: >-
-                            /uploads/thumbnail_Industry_2020_online_news_b73f02f092.jpeg
-                        hash: thumbnail_Industry_2020_online_news_b73f02f092
+                    large:
+                        ext: .jpg
+                        url: /uploads/large_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: large_F_3_invisible_life_fb118ee4f7
                         mime: image/jpeg
-                        name: thumbnail_Industry_2020_online_news.jpeg
-                        size: 15.09
-                        width: 234
-                        height: 156
-                hash: Industry_2020_online_news_b73f02f092
-                ext: .jpeg
+                        name: large_F_3_invisible_life.jpg
+                        size: 53.41
+                        width: 1000
+                        height: 563
+                    small:
+                        ext: .jpg
+                        url: /uploads/small_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: small_F_3_invisible_life_fb118ee4f7
+                        mime: image/jpeg
+                        name: small_F_3_invisible_life.jpg
+                        size: 15.85
+                        width: 500
+                        height: 281
+                    medium:
+                        ext: .jpg
+                        url: /uploads/medium_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: medium_F_3_invisible_life_fb118ee4f7
+                        mime: image/jpeg
+                        name: medium_F_3_invisible_life.jpg
+                        size: 30.86
+                        width: 750
+                        height: 422
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: thumbnail_F_3_invisible_life_fb118ee4f7
+                        mime: image/jpeg
+                        name: thumbnail_F_3_invisible_life.jpg
+                        size: 5.62
+                        width: 245
+                        height: 138
+                hash: F_3_invisible_life_fb118ee4f7
+                ext: .jpg
                 mime: image/jpeg
-                size: 136.1
-                url: /uploads/Industry_2020_online_news_b73f02f092.jpeg
+                size: 122.39
+                url: /uploads/F_3_invisible_life_fb118ee4f7.jpg
                 provider: local
                 created_by: 6
                 updated_by: 6
-                created_at: '2020-09-01T12:27:06.584Z'
-                updated_at: '2020-09-01T12:27:06.648Z'
+                created_at: '2020-08-13T19:16:16.284Z'
+                updated_at: '2020-08-13T19:16:16.529Z'
         image: []
     article_types:
         -
@@ -856,8 +703,17 @@
             et: Uudised
             en: News
             ru: Новости
+    tag_premiere_types:
+        - Мировая премьера
+    tag_programmes:
+        - Основная конкурсная программа
+    tag_genres:
+        - Анимация
+    tag_keywords:
+        - MeToo
+        - Общество
     publish: false
-    directory: source/article/test7-en
+    directory: source/article/test-6-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
@@ -1068,6 +924,159 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
 -
+    id: 9
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-09-02T07:05:15.585Z'
+    updated_at: '2020-09-03T13:08:15.555Z'
+    title_et: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
+    slug_et: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
+    title_en: test 9 en
+    slug_en: test-9-en
+    lead_et: >-
+        Kumu kultuuriteemaliste dokumentaalfilmide sügishooaja juhatab sisse
+        kuulsast Tokaj veinist rääkiv linateos.
+    lead_en: test 9 en lead
+    contents_et: >-
+        Ungarlase Tamás Almási „Vedel kuld” (Folyékony arany) on esimene film
+        Ungari veinist, täpsemalt maailmakuulsast Aszú veinist, mille
+        valmistamise sajanditepikkuseid traditsioone kiiresti muutuv maailm üha
+        enam mõjutab.
+
+
+        26. augustil kell 18 Kumu auditooriumis linastuvat filmi juhatab sisse
+        Katrin Nabel Ungari Instituudist. 
+
+
+        Sari jätkub Damian Pettigrew´ klassikalise, 18 aastat tagasi valminud
+        filmiga „Fellini: ma olen sündinud valetaja” (Fellini: Sono un gran
+        bugiardo), mis on pühendatud maailmakuulsa filmirežissööri 100.
+        sünniaastapäevale, sisaldades ka tema viimaseid pihtimusi.
+
+
+        Kirjanik Tove Jansson ja kunstnik Tuulikki Pietilä veetsid 25 aastat oma
+        suvesid Soome lahes asuval tillukesel Klovharu saarel, kaasas
+        filmikaamera. Soome režissöörid Kanerva Cederström ja Riikka Tanner on
+        toona filmitust kokku pannud poeetilise linateose „Haru, üksildaste
+        saar”.
+
+
+        Rootsi dokumentalist Fredrik Gertten jälgib filmis „Push. Välja
+        tõrjutud” (Push), kuidas suurtes linnades viimastel aastatel taevasse
+        kerkinud korterihinnad sunnivad oma kodudest lahkuma põliseid elanikke.
+
+
+        Austerlaste Florian Weigensameri ja Christian Krönesi „Tere tulemast
+        Soodomasse!” (Welcome to Sodom) viib Ghana pealinnas Accras asuvale
+        maailma suurimale elektroonikaromude prügimäele, kus lõpetab enamasti
+        illegaalselt oma eksistentsi Esimese Maailma sodi. 6000 inimest, kes
+        seal elavad ja töötavad, nimetavad seda elavaks põrguks.
+
+
+        Stanley Nelsoni „Miles Davis: Birth of the Cool” portreteerib üht
+        maailma legendaarsemat džässmuusikut ja Sydney Pollacki „Amazing Grace”
+        jäädvustab Aretha Franklini 1972. aasta kontserdi, mille salvestusest
+        sai üks kõige aegade olulisemaid gospelmuusika plaate.
+
+
+        Briti nimekas režissöör Julien Temple lööb filmis „Habaneros” kuumade
+        kuuba rütmide saatel särama Havanna – haavatud, ent alistamatu linna,
+        mis köidab oma ilu, ajaloo ja elanike lõputu energiaga.
+
+
+        50 aastat tagasi lahkus meie seast rahvusvaheliselt tuntumaid eesti
+        kunstnikke Ülo Sooster. Lilija Vjugina „Ülo Sooster. Mees, kes kuivatas
+        rätikut tuule käes” on esimene nõnda põhjalik ülevaade sellest
+        modernismi suurkujust ja tema pärandist – omamoodi rännak ajas ja
+        ruumis, mille võtab ette kunstniku poeg Tenno.
+
+
+        Eelmise aasta olulisemaid Eesti dokumentaalfilme, Ksenija Ohhapkina
+        „Surematu” vaatleb elu Vene tööstuslinnas, näidates, kuidas ühiskond
+        vormib inimesest riiklikku ressurssi.
+
+
+        Prantsuse režissööri Frédéric Wilneri „Tutanhamoni hauakamber. Tegelik
+        lugu” (The True Story of King Tut’s Treasure) annab ülevaate
+        Vana-Egiptuse superstaari kuningas Tutanhamoni aarete viimastest
+        uuringutest, mille valguses tuleb seni teadaolev üle vaadata.
+
+
+        Hooaeg lõpeb 11. novembril, kui linastub Itaalia režissööri Anna de
+        Manincori „Peaaegu mittemidagi. Eksperimentaallinn CERN” (Almost Nothing
+        – CERN Experimental City), mis jälgib maailma suurima osakestefüüsika
+        labori ehk Euroopa tuumauuringute keskuse ulmelist igapäevaelu.
+
+
+        Kokku jõuab augustis, septembris, oktoobris ja novembris ekraanile 12
+        dokumentaalfilmi. Kõik seansid algavad Kumu auditooriumis kolmapäeviti
+        kell 18 ja on vaatajatele tasuta. Seanssidele eelnevad ekspertide
+        sissejuhatused.
+
+
+        Kultuuriteemaliste filmide sarja „Kumu dokumentaal” korraldavad Kumu ja
+        PÖFF.
+    contents_en: test 9 en cont
+    publishFrom: '2020-08-24T09:00:00.000Z'
+    publish_et: true
+    publish_en: true
+    media:
+        id: 16
+        imageDefault:
+            -
+                id: 28
+                name: Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
+                alternativeText: ''
+                caption: ''
+                width: 1067
+                height: 600
+                formats:
+                    thumbnail:
+                        ext: .jpeg
+                        url: >-
+                            /uploads/thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
+                        hash: >-
+                            thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
+                        mime: image/jpeg
+                        name: thumbnail_Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
+                        size: 5.25
+                        width: 245
+                        height: 138
+                hash: Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
+                ext: .jpeg
+                mime: image/jpeg
+                size: 38.72
+                url: /uploads/Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-01T08:26:38.966Z'
+                updated_at: '2020-09-01T08:26:39.046Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    publish: true
+    directory: source/article/test-9-en
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
     id: 1
     created_by:
         id: 5
@@ -1217,36 +1226,6 @@
         - Общество
     publish: true
     directory: source/article/test-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.ru.yaml
--
-    id: 10
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    created_at: '2020-09-02T10:45:56.231Z'
-    updated_at: '2020-09-02T11:33:23.871Z'
-    title_et: Test
-    slug_et: test-1test
-    lead_et: test
-    publish_et: true
-    article_types: []
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Волк
-    directory: source/article/test-1test
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
@@ -1410,6 +1389,62 @@
             name: Editor
     publish: true
     directory: source/article/test-8-en
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 11
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-09-03T15:18:01.174Z'
+    updated_at: '2020-09-03T15:18:29.859Z'
+    title_et: TEST ARTIKKEL 2
+    slug_et: test-artikkel-2
+    title_en: TEST ARTIKKEL 2
+    slug_en: test-artikkel-2
+    lead_et: TEST ARTIKKEL 2
+    lead_en: TEST ARTIKKEL 2
+    contents_et: TEST ARTIKKEL 2
+    contents_en: TEST ARTIKKEL 2
+    publishFrom: '2020-09-01T09:00:00.000Z'
+    publish_et: true
+    article_types: []
+    title: TEST ARTIKKEL 2
+    slug: test-artikkel-2
+    lead: TEST ARTIKKEL 2
+    contents: TEST ARTIKKEL 2
+    directory: source/article/test-artikkel-2
+    path: article/test-artikkel-2
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 12
+    created_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    updated_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-09-04T06:41:03.958Z'
+    updated_at: '2020-09-04T07:03:29.902Z'
+    title_et: TEST33
+    slug_et: pof-fi-article
+    slug_en: pof-fi-article
+    publishFrom: '2020-09-01T09:00:00.000Z'
+    publish_et: true
+    article_types: []
+    slug: pof-fi-article
+    directory: source/article/pof-fi-article
+    path: article/pof-fi-article
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
