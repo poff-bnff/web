@@ -3,12 +3,10 @@ include /_templates/mixins.pug
 
 block content
 
-
-
         section.grid_hero
             - var heroPlusTrioNews = []
             section.hero_head
-                //- HERO ARTICLE EXAMPLE BELOW
+
                 a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle.media.image[0]
                         img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
@@ -25,6 +23,7 @@ block content
                                 | !{self.data.heroArticle.lead}
 
                 - heroPlusTrioNews.push(self.data.heroArticle.id)
+
 
                     //- if self.data.heroArticle.media.image[0]
                     //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
@@ -55,11 +54,11 @@ block content
                     a(href= `/${lang_path}article/${ blocks.article.slug}`)
                         .trio_block_item
                             if blocks.block.image
-                                img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).hero_image
+                                img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
                             else if blocks.article.media.image[0]
-                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).hero_image
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
                             else if blocks.article.media.imageDefault[0]
-                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).hero_image
+                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
                             else
                                 img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
                             h4.dark
@@ -73,6 +72,7 @@ block content
             //- .home_2
             //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
             section.viiekas
+
 
 
 
@@ -128,6 +128,7 @@ block content
         //- FILMS / SCREENINGS calendar
         div
             h1.section_headline= self.label.all.screeningsCalendar
+
                     //- | Seansside kalender
 
 

@@ -134,8 +134,11 @@ Media: &Media
     clipUrl_en: (text)
     clipUrl_ru: (text)
 
+WebAuthor: &WebAuthor
+    namePrivate: (text)
+    name: *Translated
+
 POFFiArticle: &POFFiArticle
-    _refetch: true
     _path: /pof-fi-articles
     #titlePrivate: (text, private field)
     title_et: (text)
@@ -168,7 +171,80 @@ POFFiArticle: &POFFiArticle
         - *TagGenre
     tag_keywords: #(Component (repeatable))
         - *TagKeyword
+    web_authors:
+        - *WebAuthor
 
+JustFilmiArticle: &JustFilmiArticle
+    _path: /just-filmi-articles
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media #(Component)
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    tag_programmes: #(Component (repeatable))
+        - *TagProgramme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+    web_authors:
+        - *WebAuthor
+
+ShotsiArticle: &ShotsiArticle
+    _path: /shortsi-articles
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media #(Component)
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    tag_programmes: #(Component (repeatable))
+        - *TagProgramme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+    web_authors:
+        - *WebAuthor
 
 # Article: &Article
 #     _path: /articles

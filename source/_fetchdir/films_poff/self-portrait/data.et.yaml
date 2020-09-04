@@ -1,0 +1,84 @@
+id: 517
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:47.029Z'
+updated_at: '2020-08-28T09:01:50.078Z'
+title_en: Self Portrait
+title_ru: ''
+titleOriginal: Selvportrett
+year: 2020
+runtime: 80
+slug_en: self-portrait
+slug_ru: ''
+filmId: '1017'
+credentials:
+    id: 394
+    director:
+        - Katja Høgset
+        - ' Margreth Olin'
+        - ' Espen Wallin'
+    cast:
+        - Geir Fossen
+        - ' Lene Marie Fossen'
+        - ' Torill Fossen'
+synopsis: >-
+    Kurbilus lugu tüdrukust, kes ei tahtnud suureks saada.
+
+
+    Lene Marie Fossen oli 10-aastane, kui ta otsustas, et peatab aja. Ta hakkas
+    järjest vähem sööma. See aitas ängi, kurbuse ja valu vastu – ta vihkas
+    ennast. Aga tõi kaasa ka haigestumise anoreksiasse, millega Lene Marie
+    võitles kokku üle 20 aasta. Piinav haigus närvutas tema keha ja ka mõtted.
+    Kuni ta avastas fotograafia – see hoidis teda elu küljes kinni. Ka
+    fotograafiaga sai peatada aega. Oma hääbumise jäädvustas Lene Marie väga
+    erilistel piltidel, mida on nüüdseks eksponeeritud mitmel pool maailmas. "Ma
+    ei taha, et mind mäletataks anorektiku, vaid fotograafina,” ütles ta ise.
+
+
+    Šokeeriv, aus ja usalduslik, samas väga ilus film kunsti võimest rahustada
+    vaevatud meelt ja süstida lootust – anda oma elule tagasi mõte. Linateos on
+    võitnud mitu publiku- ja kriitikute auhinda rahvusvahelistelt festivalidelt
+    ja kandideerib ühtlasi aasta parima Norra filmi preemiale – koos
+    mängufilmidega!
+media:
+    id: 329
+    Trailer:
+        -
+            id: 314
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 310
+            Url: ''
+tags:
+    id: 317
+countriesAndLanguages:
+    id: 301
+    countries:
+        -
+            id: 996
+            created_at: '2020-08-17T14:20:53.242Z'
+            updated_at: '2020-08-17T14:20:53.242Z'
+            code: 'NO'
+            name_en: Norway
+            name_ru: Норвегия
+            name: Norra
+    languages:
+        -
+            id: 1750
+            created_at: '2020-08-24T12:28:29.070Z'
+            updated_at: '2020-08-24T12:28:29.070Z'
+            name_en: Norwegian
+            name_ru: Нюнорск (новонорвежский)
+            code: nn
+            name: Norwegian
+title: Autoportree
+slug: autoportree
+directory: source/_fetchdir/films_poff//self-portrait
+path: film/autoportree
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.et.yaml

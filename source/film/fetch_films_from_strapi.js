@@ -9,9 +9,9 @@ let allData = []; // for films view
 
 function fetchAllData(options){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/film/", "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
-    getData("source/film/", "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
-    getData("source/film/", "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
+    getData("source/_fetchdir/films_poff/", "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
+    getData("source/_fetchdir/films_poff//", "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
+    getData("source/_fetchdir/films_poff//", "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
@@ -222,7 +222,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (copyFile) {
-        fs.copyFile(`${dirPath}film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
+        fs.copyFile(`source/_templates/film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
             if (err) throw err;
             // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })

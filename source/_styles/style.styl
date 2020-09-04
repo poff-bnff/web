@@ -342,6 +342,8 @@ nav
 
 .hero_head
     position relative
+    // height full_height
+    height calc(100vh - 97px)
 
 .hero_headline_box
     position absolute
@@ -439,48 +441,17 @@ a .dark:hover
     // box-decoration-break clone
     vertical-align middle
 
-// .hero_headline span
-//     background-color blue
-//     font-size calc(1.9rem + 1.5vw)
-
 .hero_image
-        width 100vw
-        // min-height full_height
-        // max-height 200px
-        height full_height
-        object-fit cover
-        z-index -1
-
-// .trio_block
-//     display grid
-//     grid-template-columns repeat(auto-fit, minmax(24rem, 1fr))
-//     grid-gap 2rem
-//     justify-content center
-//     justify-items center
-//     align-items center
-//     align-content center
-//     width 100%
-//     padding 0
-//     margin 0
-//     padding-left 2rem
-//     padding-right 2rem
-//     padding-top 2rem
-//     padding-bottom 2rem
-//     // background-color white
-
-// .trio_block_item
-//     width 100%
-//     // height 30%
-//     padding 1rem
-//     background-color bg_light_1
+    width 100vw
+    height calc(100vh - 97px)
+    object-fit cover
+    z-index -1
 
 .trio_block
     width 100vw
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
     grid-gap calc(1.9rem + 1.5vw)
-    padding-left calc(1.9rem + 1.5vw)
-    padding-right calc(1.9rem + 1.5vw)
     padding-top calc(1.9rem + 1.5vw)
     padding-bottom calc(1.9rem + 1.5vw)
     justify-content center
@@ -488,6 +459,8 @@ a .dark:hover
     justify-items stretch
     align-items stretch
 
+.trio_image
+    width 100%
 
 .trio_block_item
     width 100%
@@ -505,12 +478,12 @@ a .dark:hover
 .viiekas
     width 100vw
     display grid
-    grid-template-columns minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr)
+    grid-template-columns 1fr
     padding 0
     margin 0
     grid-gap calc(1.9rem + 1.5vw)
-    padding-left calc(1.9rem + 1.5vw)
-    padding-right calc(1.9rem + 1.5vw)
+    // padding-left calc(1.9rem + 1.5vw)
+    // padding-right calc(1.9rem + 1.5vw)
     padding-top calc(1.9rem + 1.5vw)
     padding-bottom calc(1.9rem + 1.5vw)
     justify-content center
@@ -524,6 +497,15 @@ a .dark:hover
     background rgba(255,255,255,.96)
     text-align left
     padding 2rem 2rem 2rem 2rem
+
+// .viieka_item:first-child
+// .viieka_item:nth-child(2)
+//     grid-column span 3
+
+// .viieka_item:nth-child(3)
+// .viieka_item:nth-child(4)
+// .viieka_item:nth-child(5)
+//     grid-column span 2
 
 
 .footer_logos_1
@@ -1477,15 +1459,44 @@ a.btn_popover
 
     .hero_head
         position relative
+        // height full_height
+        height calc(100vh - 97px)
 
-    .hero_image
+    // .hero_image
+    //     width 100vw
+    //     // height full_height
+    //     height calc(100vh - 97px)
+    //     object-fit cover
+    //     z-index -1
+
+    .trio_block
+        padding-left calc(1.9rem + 1.5vw)
+        padding-right calc(1.9rem + 1.5vw)
+
+    .viiekas
         width 100vw
-        height full_height
-        // max-height 60vw
-        // height 300px
-        object-fit cover
-        z-index -1
+        display grid
+        grid-template-columns minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr)
+        padding 0
+        margin 0
+        grid-gap calc(1.9rem + 1.5vw)
+        padding-left calc(1.9rem + 1.5vw)
+        padding-right calc(1.9rem + 1.5vw)
+        padding-top calc(1.9rem + 1.5vw)
+        padding-bottom calc(1.9rem + 1.5vw)
+        justify-content center
+        align-content center
+        justify-items stretch
+        align-items stretch
 
+    .viieka_item:first-child
+    .viieka_item:nth-child(2)
+        grid-column span 3
+
+    .viieka_item:nth-child(3)
+    .viieka_item:nth-child(4)
+    .viieka_item:nth-child(5)
+        grid-column span 2
 
     // .hero_headline_box
     //     position absolute

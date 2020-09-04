@@ -156,11 +156,11 @@
     slug: test-5-en
     lead: Lead 5 en
     contents: >-
-        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
-        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5
+        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5
         encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  en
     publish: true
-    directory: source/article/test-5-en
+    directory: source/_fetchdir/articles_poff/test-5-en
     path: article/test-5-en
     data:
         pictures: /article_pictures.yaml
@@ -280,7 +280,7 @@
     lead: lead 7 en
     contents: cont 7 en
     publish: false
-    directory: source/article/test7-en
+    directory: source/_fetchdir/articles_poff/test7-en
     path: article/test7-en
     data:
         pictures: /article_pictures.yaml
@@ -396,7 +396,7 @@
     lead: lead 2 en
     contents: cont 2 en
     publish: true
-    directory: source/article/test-2-en
+    directory: source/_fetchdir/articles_poff/test-2-en
     path: article/test-2-en
     data:
         pictures: /article_pictures.yaml
@@ -559,7 +559,7 @@
     lead: lead 3 en
     contents: cont 3 en
     publish: true
-    directory: source/article/test-3-en
+    directory: source/_fetchdir/articles_poff/test-3-en
     path: article/test-3-en
     data:
         pictures: /article_pictures.yaml
@@ -717,7 +717,7 @@
     lead: lead 6 en
     contents: cont 6 en
     publish: false
-    directory: source/article/test-6-en
+    directory: source/_fetchdir/articles_poff/test-6-en
     path: article/test-6-en
     data:
         pictures: /article_pictures.yaml
@@ -753,7 +753,7 @@
 
         „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
         tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid
-        The Wrap. 
+        The Wrap.
 
 
         (<iframe width="500" height="281"
@@ -772,11 +772,11 @@
         Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide
         Oscarile. USA filmiorganisatsiooni The National Board of Review
         hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse
-        mängufilmiga. 
+        mängufilmiga.
 
 
         Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
-        elu”. Peaosades Carol Duarte ja Julia Stockler. 
+        elu”. Peaosades Carol Duarte ja Julia Stockler.
 
 
         „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
@@ -789,7 +789,7 @@
         **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
         augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
         Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
-        [](https://lmk.ee). 
+        [](https://lmk.ee).
     publishFrom: '2020-07-22T09:00:00.000Z'
     publishUntil: '2021-01-06T10:00:00.000Z'
     publish_et: true
@@ -924,7 +924,7 @@
     lead: lead 4 en
     contents: cont 4 en
     publish: true
-    directory: source/article/test-4-en
+    directory: source/_fetchdir/articles_poff/test-4-en
     path: article/test-4-en
     data:
         pictures: /article_pictures.yaml
@@ -954,7 +954,7 @@
 
 
         26. augustil kell 18 Kumu auditooriumis linastuvat filmi juhatab sisse
-        Katrin Nabel Ungari Instituudist. 
+        Katrin Nabel Ungari Instituudist.
 
 
         Sari jätkub Damian Pettigrew´ klassikalise, 18 aastat tagasi valminud
@@ -1078,7 +1078,7 @@
     lead: test 9 en lead
     contents: test 9 en cont
     publish: true
-    directory: source/article/test-9-en
+    directory: source/_fetchdir/articles_poff/test-9-en
     path: article/test-9-en
     data:
         pictures: /article_pictures.yaml
@@ -1232,7 +1232,7 @@
     lead: Lead EN
     contents: Cont EN
     publish: true
-    directory: source/article/test-en
+    directory: source/_fetchdir/articles_poff/test-en
     path: article/test-en
     data:
         pictures: /article_pictures.yaml
@@ -1396,7 +1396,7 @@
     lead: test 8 en lead
     contents: test 8 en cont
     publish: true
-    directory: source/article/test-8-en
+    directory: source/_fetchdir/articles_poff/test-8-en
     path: article/test-8-en
     data:
         pictures: /article_pictures.yaml
@@ -1428,7 +1428,7 @@
     slug: test-artikkel-2
     lead: TEST ARTIKKEL 2
     contents: TEST ARTIKKEL 2
-    directory: source/article/test-artikkel-2
+    directory: source/_fetchdir/articles_poff/test-artikkel-2
     path: article/test-artikkel-2
     data:
         pictures: /article_pictures.yaml

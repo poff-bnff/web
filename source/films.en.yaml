@@ -1,64 +1,183 @@
 -
-    id: 507
-    created_at: '2020-08-19T08:36:37.152Z'
-    updated_at: '2020-08-19T08:36:37.152Z'
-    title_et: Skeemitajad
+    id: 509
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.245Z'
+    updated_at: '2020-08-28T09:01:51.167Z'
+    title_et: 'Yalda, andestuse öö'
     title_ru: ''
-    titleOriginal: ''
+    titleOriginal: Yalda
     year: 2019
-    runtime: 91
-    slug_et: skeemitajad
+    runtime: 89
+    slug_et: yalda-andestuse-oo
     slug_ru: ''
-    filmId: '1005'
+    filmId: '1007'
     credentials:
-        id: 346
+        id: 379
         director:
-            - Dave McLean
+            - Massoud Bakhshi
         screenwriter:
-            - Dave McLean
-            - " Kyle Titterton\r"
+            - Massoud Bakhshi
         doP:
-            - Alan C. McLaughlin
+            - Julian Atanassov
         cast:
-            - Conor Berry
-            - ' Sean Connor'
-            - ' Grant Robert Keelan'
-        productionCompany:
-            -
-                id: 861
+            - Sadaf Asgari
+            - ' Behnaz Jafari'
+            - " Babak Karimi\r"
     synopsis: >-
-        Set in Dundee c. 1979, Schemers is based on writer-producer Dave
-        McLean’s early years in the music business. A fledgling promoter, he
-        ambitiously booked bands with his friends John and Scot, all of them
-        from the Dundee schemes. Young Davie (Conor Berry) is determined not to
-        get a ‘real’ job. He starts out running discos and, after a run in with
-        a local gangster, raises his ambitions to booking major bands such as
-        Iron Maiden. Shot in and around Dundee using local talent, Schemers
-        celebrates youthful ambition.
+        In Iran today: Maryam (22) accidentally kills her husband Nasser (65)
+        and is sentenced to death. The only person who can save her is Mona
+        (37), Nasser's daughter. All Mona has to do is appear on a popular live
+        TV show and forgive Maryam. But forgiveness proves difficult when they
+        are forced to relive the past.
     media:
-        id: 281
+        id: 314
         Trailer:
             -
-                id: 266
+                id: 299
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 262
+                id: 295
                 Url: ''
     tags:
-        id: 268
+        id: 302
     countriesAndLanguages:
-        id: 253
+        id: 286
         countries:
             -
-                id: 893
-                created_at: '2020-08-17T14:20:46.574Z'
-                updated_at: '2020-08-17T14:20:46.574Z'
-                code: GB
-                name_et: Suurbritannia
-                name_ru: Великобритания
-                name: Great Britain
+                id: 890
+                created_at: '2020-08-17T14:20:46.374Z'
+                updated_at: '2020-08-17T14:20:46.374Z'
+                code: FR
+                name_et: Prantsusmaa
+                name_ru: Франция
+                name: France
+            -
+                id: 1004
+                created_at: '2020-08-17T14:20:53.641Z'
+                updated_at: '2020-08-17T14:20:53.641Z'
+                code: LU
+                name_et: Luksemburg
+                name_ru: Люксембург
+                name: Luxembourg
+            -
+                id: 970
+                created_at: '2020-08-17T14:20:51.857Z'
+                updated_at: '2020-08-17T14:20:51.857Z'
+                code: IR
+                name_et: Iraan
+                name_ru: Иран
+                name: Iran
+            -
+                id: 909
+                created_at: '2020-08-17T14:20:47.971Z'
+                updated_at: '2020-08-17T14:20:47.971Z'
+                code: CH
+                name_et: Šveits
+                name_ru: Швейцария
+                name: Switzerland
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_et: Saksamaa
+                name_ru: Германия
+                name: Germany
+            -
+                id: 1001
+                created_at: '2020-08-17T14:20:53.469Z'
+                updated_at: '2020-08-17T14:20:53.469Z'
+                code: LB
+                name_et: Liibanon
+                name_ru: Ливан
+                name: Lebanon
+        languages:
+            -
+                id: 1730
+                created_at: '2020-08-24T12:28:28.092Z'
+                updated_at: '2020-08-24T12:28:28.092Z'
+                name_et: Pärsia
+                name_ru: Персидский
+                code: fa
+                name: Persian
+    title: 'Yalda, a Night for Forgiveness'
+    slug: yalda-a-night-for-forgiveness
+    directory: source/_fetchdir/films_poff/yalda-a-night-for-forgiveness
+    path: film/yalda-a-night-for-forgiveness
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 513
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.436Z'
+    updated_at: '2020-08-28T09:02:04.855Z'
+    title_et: Maudie
+    title_ru: ''
+    titleOriginal: ''
+    year: 2016
+    runtime: 115
+    slug_et: maudie
+    slug_ru: ''
+    filmId: '1011'
+    credentials:
+        id: 380
+        director:
+            - Aisling Walsh
+        screenwriter:
+            - Sherry White
+        doP:
+            - Guy Godfree
+        cast:
+            - Sally Hawkins
+            - ' Ethan Hawke'
+            - ' Kari Matchett'
+        composer:
+            - Michael Timmins
+    synopsis: >-
+        "Maudie", is based on the true story of folk artist Maud Lewis (Sally
+        Hawkins) and the unlikely romance between Maud and a hardened reclusive
+        bachelor, Everett Lewis (Ethan Hawke).
+    media:
+        id: 315
+        Trailer:
+            -
+                id: 300
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 296
+                Url: ''
+    tags:
+        id: 303
+    countriesAndLanguages:
+        id: 287
+        countries:
+            -
+                id: 952
+                created_at: '2020-08-17T14:20:50.882Z'
+                updated_at: '2020-08-17T14:20:50.882Z'
+                code: IE
+                name_et: Iirimaa
+                name_ru: Ирландия
+                name: Ireland
+            -
+                id: 864
+                created_at: '2020-08-17T14:20:41.574Z'
+                updated_at: '2020-08-17T14:20:41.574Z'
+                code: CA
+                name_et: Kanada
+                name_ru: Канада
+                name: Canada
         languages:
             -
                 id: 1744
@@ -68,17 +187,21 @@
                 name_ru: Английский
                 code: en
                 name: English
-    title: Schemers
-    slug: schemers
-    directory: source/film/schemers
-    path: film/schemers
+    title: Maudie
+    slug: maudie
+    directory: source/_fetchdir/films_poff/maudie
+    path: film/maudie
     data:
         pictures: /film_pictures.yaml
         screenings: /film/screenings.en.yaml
 -
     id: 546
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
     created_at: '2020-08-24T13:33:29.309Z'
-    updated_at: '2020-08-24T13:33:29.309Z'
+    updated_at: '2020-08-28T09:02:07.605Z'
     title_et: 'Tagaotsitav: Banksy!'
     title_ru: ''
     titleOriginal: ''
@@ -88,13 +211,10 @@
     slug_ru: ''
     filmId: '1012'
     credentials:
-        id: 345
+        id: 381
         director:
             - Aurélia Rouvier
             - ' Seamus Haley'
-        productionCompany:
-            -
-                id: 860
     synopsis: >-
         Banksy is a household name, but behind this name hides a multitude of
         stories, artworks, stunts, political statements and identities, leading
@@ -104,20 +224,20 @@
         to claim his work, either legally or emotionally, and to fantasize about
         who is hiding behind this name.
     media:
-        id: 280
+        id: 316
         Trailer:
             -
-                id: 265
+                id: 301
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 261
+                id: 297
                 Url: ''
     tags:
-        id: 267
+        id: 304
     countriesAndLanguages:
-        id: 252
+        id: 288
         countries:
             -
                 id: 1076
@@ -146,1161 +266,19 @@
                 name: English
     title: Banksy Most Wanted
     slug: banksy-most-wanted
-    directory: source/film/banksy-most-wanted
+    directory: source/_fetchdir/films_poff/banksy-most-wanted
     path: film/banksy-most-wanted
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 545
-    created_at: '2020-08-24T13:33:28.644Z'
-    updated_at: '2020-08-24T13:33:28.644Z'
-    title_et: Marcel Duchamp ja võimalikkuse kunst
-    title_ru: ''
-    titleOriginal: ''
-    year: 2019
-    runtime: 86
-    slug_et: marcel-duchamp-ja-voimalikkuse-kunst
-    slug_ru: ''
-    filmId: '1016'
-    credentials:
-        id: 347
-        director:
-            - Matthew Taylor
-        cast:
-            - Marina Abramovic
-            - ' William Anastasi'
-            - ' Michel Gondry'
-        productionCompany:
-            -
-                id: 862
-            -
-                id: 863
-            -
-                id: 864
-    synopsis: >-
-        Art Of The Possible is broken into three acts that follow the arcs of
-        Duchamp’s life. Each act functions to explain three ideas: who is Marcel
-        Duchamp; what are Duchamp’s most inﬂuential works and why are they
-        important; and what is Duchamp’s lasting legacy from his death to
-        present day and how does his work shape our future.
-    media:
-        id: 282
-        Trailer:
-            -
-                id: 267
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 263
-                Url: ''
-    tags:
-        id: 269
-    countriesAndLanguages:
-        id: 254
-        countries:
-            -
-                id: 1076
-                created_at: '2020-08-17T14:20:56.062Z'
-                updated_at: '2020-08-17T14:20:56.062Z'
-                code: US
-                name_et: USA
-                name_ru: США
-                name: USA
-            -
-                id: 877
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                code: DE
-                name_et: Saksamaa
-                name_ru: Германия
-                name: Germany
-        languages:
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_ru: Английский
-                code: en
-                name: English
-    title: 'Marcel Duchamp: Art of the Possible'
-    slug: marcel-duchamp-art-of-the-possible
-    directory: source/film/marcel-duchamp-art-of-the-possible
-    path: film/marcel-duchamp-art-of-the-possible
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 512
-    created_at: '2020-08-19T08:36:37.357Z'
-    updated_at: '2020-08-19T08:36:37.357Z'
-    title_et: Viimane portree
-    title_ru: ''
-    titleOriginal: ''
-    year: 2017
-    runtime: 90
-    slug_et: viimane-portree
-    slug_ru: ''
-    filmId: '1010'
-    credentials:
-        id: 348
-        director:
-            - Stanley Tucci
-        screenwriter:
-            - Stanley Tucci
-        doP:
-            - Danny Cohen
-        cast:
-            - Geoffrey Rush
-            - ' Armie Hammer'
-            - ' Tony Shalhoub'
-        composer:
-            - Evan Lurie
-        productionCompany:
-            -
-                id: 865
-            -
-                id: 866
-            -
-                id: 868
-            -
-                id: 869
-    synopsis: >-
-        In 1964, while on a short trip to Paris, the American writer and
-        art-lover James Lord is asked by his friend, the world-renowned artist
-        Alberto Giacometti, to sit for a portrait. The process, Giacometti
-        assures Lord, will take only a few days. Flattered and intrigued, Lord
-        agrees.
-
-        "Final Portrait” is a bewitching portrait of a genius, and of a
-        friendship between two men who are utterly different, yet increasingly
-        bonded through a single, ever-evolving act of creativity. It is a film
-        which shines a light on the artistic process itself, by turns
-        exhilarating, exasperating and bewildering, questioning whether the gift
-        of a great artist is a blessing or a curse.
-    media:
-        id: 284
-        Trailer:
-            -
-                id: 269
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 265
-                Url: ''
-    tags:
-        id: 271
-    countriesAndLanguages:
-        id: 256
-        countries:
-            -
-                id: 893
-                created_at: '2020-08-17T14:20:46.574Z'
-                updated_at: '2020-08-17T14:20:46.574Z'
-                code: GB
-                name_et: Suurbritannia
-                name_ru: Великобритания
-                name: Great Britain
-        languages:
-            -
-                id: 1845
-                created_at: '2020-08-24T12:28:31.466Z'
-                updated_at: '2020-08-24T12:28:31.466Z'
-                name_et: Prantsuse
-                name_ru: Фр��нцузский
-                code: fr
-                name: French
-            -
-                id: 1709
-                created_at: '2020-08-24T12:28:26.804Z'
-                updated_at: '2020-08-24T12:28:26.804Z'
-                name_et: Itaalia
-                name_ru: Итальянский
-                code: it
-                name: Italian
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_ru: Английский
-                code: en
-                name: English
-    title: Final Portrait
-    slug: final-portrait
-    directory: source/film/final-portrait
-    path: film/final-portrait
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 510
-    created_at: '2020-08-19T08:36:37.284Z'
-    updated_at: '2020-08-19T08:36:37.284Z'
-    title_et: Harjumuse jõud
-    title_ru: ''
-    titleOriginal: Tottumiskysymys
-    year: 2019
-    runtime: 75
-    slug_et: harjumuse-joud
-    slug_ru: ''
-    filmId: '1008'
-    credentials:
-        id: 350
-        director:
-            - Reetta Aalto
-            - ' Alli Haapasalo'
-            - ' Anna Paavilainen'
-            - ' Kirsikka Saari'
-            - ' Miia Tervo'
-            - ' Elli Toivoniemi'
-            - ' Jenni Toivoniemi'
-        doP:
-            - Kerttu Hakkarainen
-            - ' Päivi Kettunen'
-            - ' Jarmo Kiuru'
-        composer:
-            - Joona Jaakkola
-        productionCompany:
-            -
-                id: 874
-    synopsis: >-
-        Force of Habit follows the lives of various women throughout one day.
-        Hilla is having a romantic vacation, Emmi is throwing a house party, and
-        Milja is on her way to school when they're approached by a stranger and
-        things take an unexpected turn. At the same time, Emppu, a young
-        actress, is conflicted as she rehearses for the biggest role of her
-        life. Elsewhere, Aleksi, an inexperienced prosecutor, is preparing for
-        his first court case in haste; Niina, the victim of the crime, has been
-        waiting years to see her case tried. Miia throws a company party, and
-        the mood dramatically changes when her colleague Katja opens up about
-        their boss coming on to her. Miia and a couple of her closest colleagues
-        try to resolve the situation, but how do the others react?
-    media:
-        id: 287
-        Trailer:
-            -
-                id: 272
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 268
-                Url: ''
-    tags:
-        id: 274
-    countriesAndLanguages:
-        id: 259
-        countries:
-            -
-                id: 908
-                created_at: '2020-08-17T14:20:47.900Z'
-                updated_at: '2020-08-17T14:20:47.900Z'
-                code: FI
-                name_et: Soome
-                name_ru: Финляндия
-                name: Finland
-        languages:
-            -
-                id: 1745
-                created_at: '2020-08-24T12:28:28.842Z'
-                updated_at: '2020-08-24T12:28:28.842Z'
-                name_et: Soome
-                name_ru: Финский
-                code: fi
-                name: Finnish
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_ru: Английский
-                code: en
-                name: English
-    title: Force of Habit
-    slug: force-of-habit
-    directory: source/film/force-of-habit
-    path: film/force-of-habit
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 515
-    created_at: '2020-08-19T08:36:46.969Z'
-    updated_at: '2020-08-19T08:36:46.969Z'
-    title_et: Tormipoiss
-    title_ru: ''
-    titleOriginal: ''
-    year: 2019
-    runtime: 99
-    slug_et: tormipoiss
-    slug_ru: ''
-    filmId: '1014'
-    credentials:
-        id: 352
-        director:
-            - Shawn Seet
-        screenwriter:
-            - Justin Monjo
-        doP:
-            - Bruce Young
-        cast:
-            - Finn Little
-            - ' Jai Courtney'
-            - ' Geoffrey Rush'
-        composer:
-            - Alan John
-        productionCompany:
-            -
-                id: 873
-    synopsis: >-
-        When Michael Kingley, a successful retired businessman starts to see
-        images from his past that he can't explain, he's forced to remember his
-        childhood and how, as a boy, he rescued and raised an extraordinary
-        orphaned pelican, Mr Percival.
-    media:
-        id: 286
-        Trailer:
-            -
-                id: 271
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 267
-                Url: ''
-    tags:
-        id: 273
-    countriesAndLanguages:
-        id: 257
-        countries:
-            -
-                id: 892
-                created_at: '2020-08-17T14:20:46.514Z'
-                updated_at: '2020-08-17T14:20:46.514Z'
-                code: AU
-                name_et: Austraalia
-                name_ru: Австралия
-                name: Australia
-        languages:
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_ru: Английский
-                code: en
-                name: English
-    title: Storm Boy
-    slug: storm-boy
-    directory: source/film/storm-boy
-    path: film/storm-boy
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 508
-    created_at: '2020-08-19T08:36:37.191Z'
-    updated_at: '2020-08-19T08:36:37.191Z'
-    title_et: Tšempionid
-    title_ru: ''
-    titleOriginal: Campeones
-    year: 2018
-    runtime: 124
-    slug_et: tsempionid
-    slug_ru: ''
-    filmId: '1006'
-    credentials:
-        id: 354
-        director:
-            - Javier Fesser
-        screenwriter:
-            - David Marqués
-            - ' Javier Fesser'
-        doP:
-            - Chechu Graf
-        cast:
-            - Javier Gutiérrez
-            - ' Athenea Mata'
-            - " Juan Margallo\r"
-        composer:
-            - Rafael Arnau
-        productionCompany:
-            -
-                id: 879
-            -
-                id: 880
-            -
-                id: 881
-            -
-                id: 882
-            -
-                id: 883
-            -
-                id: 884
-            -
-                id: 885
-            -
-                id: 886
-            -
-                id: 887
-    synopsis: >-
-        The assistant trainer of a professional league side, Marco, is given
-        community service in the form of coaching a very special basketball team
-        of people with intellectual disabilities. Surprisingly even for Marco
-        himself, he’ll be the one to learn a real lesson from the adventure
-        alongside a team where a desire to live and placing importance on the
-        things that matter are what really counts.
-    media:
-        id: 289
-        Trailer:
-            -
-                id: 274
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 270
-                Url: ''
-    tags:
-        id: 276
-    countriesAndLanguages:
-        id: 261
-        countries:
-            -
-                id: 906
-                created_at: '2020-08-17T14:20:47.692Z'
-                updated_at: '2020-08-17T14:20:47.692Z'
-                code: ES
-                name_et: Hispaania
-                name_ru: Испания
-                name: Spain
-        languages:
-            -
-                id: 1742
-                created_at: '2020-08-24T12:28:28.680Z'
-                updated_at: '2020-08-24T12:28:28.680Z'
-                name_et: Hispaania
-                name_ru: Испанский
-                code: es
-                name: Spanish
-    title: Champions
-    slug: champions
-    directory: source/film/champions
-    path: film/champions
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 504
-    created_at: '2020-08-19T08:36:37.024Z'
-    updated_at: '2020-08-19T08:36:37.024Z'
-    title_et: Nähtamatu elu
-    title_ru: ''
-    titleOriginal: A Vida Invisivel
-    year: 2019
-    runtime: 139
-    slug_et: nahtamatu-elu
-    slug_ru: ''
-    filmId: '1001'
-    credentials:
-        id: 353
-        director:
-            - Karim Aïnouz
-        screenwriter:
-            - Murilo Hauser
-            - ' Inés Bortagaray'
-            - ' Karim Aïnouz'
-        doP:
-            - Hélène Louvart
-        cast:
-            - Julia Stockler
-            - ' Carol Duarte'
-            - ' Flávia Gusmão'
-        composer:
-            - Benedikt Schiefer
-        productionCompany:
-            -
-                id: 875
-            -
-                id: 876
-            -
-                id: 877
-            -
-                id: 878
-    synopsis: >-
-        Rio de Janeiro, 1950. Eurídice, 18, and Guida, 20, are two inseparable
-        sisters living at home with their conservative parents. Although
-        immersed in a traditional life, each one nourishes a dream: Eurídice of
-        becoming a renowned pianist, Guida of finding true love. In a dramatic
-        turn, they are separated by their father and forced to live apart. They
-        take control of their separate destinies, while never giving up hope of
-        finding each other.
-    media:
-        id: 288
-        Trailer:
-            -
-                id: 273
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 269
-                Url: ''
-    tags:
-        id: 275
-    countriesAndLanguages:
-        id: 260
-        countries:
-            -
-                id: 859
-                created_at: '2020-08-17T14:20:40.521Z'
-                updated_at: '2020-08-17T14:20:40.521Z'
-                code: BR
-                name_et: Brasiilia
-                name_ru: Бразилия
-                name: Brazil
-            -
-                id: 877
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                code: DE
-                name_et: Saksamaa
-                name_ru: Германия
-                name: Germany
-        languages:
-            -
-                id: 1680
-                created_at: '2020-08-24T12:28:23.296Z'
-                updated_at: '2020-08-24T12:28:23.296Z'
-                name_et: Kreeka
-                name_ru: Греческий
-                code: el
-                name: Greek
-            -
-                id: 1805
-                created_at: '2020-08-24T12:28:30.796Z'
-                updated_at: '2020-08-24T12:28:30.796Z'
-                name_et: Portugali
-                name_ru: Португальский
-                code: pt
-                name: Portuguese
-    title: Invisible Life of Eurídice Gusmão
-    slug: invisible-life-of-euridice-gusmao
-    directory: source/film/invisible-life-of-euridice-gusmao
-    path: film/invisible-life-of-euridice-gusmao
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 505
-    created_at: '2020-08-19T08:36:37.043Z'
-    updated_at: '2020-08-19T08:36:37.043Z'
-    title_et: Täiuslik
-    title_ru: ''
-    titleOriginal: HaNeshef
-    year: 2018
-    runtime: 97
-    slug_et: taiuslik
-    slug_ru: ''
-    filmId: '1002'
-    credentials:
-        id: 355
-        director:
-            - Tal Granit
-            - ' Sharon Maymon'
-        screenwriter:
-            - Tal Granit
-            - ' Sharon Maymon'
-        doP:
-            - Giora Bejach
-        cast:
-            - Stav Strashko
-            - ' Netsanet Mekonen'
-            - ' Noam Lugasy'
-        composer:
-            - Ivri Lider
-        productionCompany:
-            -
-                id: 888
-            -
-                id: 889
-    synopsis: >-
-        Eden a 17-year-old high school student discovers that her two best
-        friends are planning to sell their kidneys to pay for cosmetic surgery
-        and a dress for prom. Eden, who is secretly a trans woman, realizes that
-        this may be the answer to her prayers. She joins the others on their
-        journey to Kiev to exchange their kidneys for the flawless body of their
-        dreams. Their trip does not go as planned and when Eden’s secret is
-        exposed, all three of them need to come to terms with the prejudices
-        they have and redefine who they really want to be in this world.
-    media:
-        id: 290
-        Trailer:
-            -
-                id: 275
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 271
-                Url: ''
-    tags:
-        id: 277
-    countriesAndLanguages:
-        id: 262
-        countries:
-            -
-                id: 951
-                created_at: '2020-08-17T14:20:50.795Z'
-                updated_at: '2020-08-17T14:20:50.795Z'
-                code: IL
-                name_et: Iisrael
-                name_ru: Израиль
-                name: Israel
-            -
-                id: 877
-                created_at: '2020-08-17T14:20:44.692Z'
-                updated_at: '2020-08-17T14:20:44.692Z'
-                code: DE
-                name_et: Saksamaa
-                name_ru: Германия
-                name: Germany
-        languages:
-            -
-                id: 1796
-                created_at: '2020-08-24T12:28:30.605Z'
-                updated_at: '2020-08-24T12:28:30.605Z'
-                name_et: Vene
-                name_ru: Русский
-                code: ru
-                name: Russian
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_ru: Английский
-                code: en
-                name: English
-            -
-                id: 1727
-                created_at: '2020-08-24T12:28:27.872Z'
-                updated_at: '2020-08-24T12:28:27.872Z'
-                name_et: Heebrea
-                name_ru: Иврит
-                code: he
-                name: Hebrew
-    title: Flawless
-    slug: flawless
-    directory: source/film/flawless
-    path: film/flawless
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 516
-    created_at: '2020-08-19T08:36:46.969Z'
-    updated_at: '2020-08-19T08:36:46.969Z'
-    title_et: Lammas all paremas nurgas
-    title_ru: ''
-    titleOriginal: ''
-    year: 1992
-    runtime: 10000
-    slug_et: lammas-all-paremas-nurgas
-    slug_ru: ''
-    filmId: '1015'
-    credentials:
-        id: 356
-        director:
-            - Lembit Ulfsak
-        screenwriter:
-            - Janno Põldma
-            - ' Lembit Ulsak'
-        doP:
-            - Ago Ruus
-        cast:
-            - Tõnu Kark
-            - ' Margus Alver'
-            - ' Kaur Sinissaar'
-            - ' Dan Põldroos'
-            - ' Ain Lutsepp'
-        composer:
-            - Tõnu Naissoo
-        productionCompany:
-            -
-                id: 890
-    synopsis: >-
-        The family film directed by Lembit Ulfsak tells the humorous story about
-        detective adventures that boys undertake during their summer holiday.
-        The film belongs to the classics of Estonian children's films.
-    media:
-        id: 291
-        Trailer:
-            -
-                id: 276
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 272
-                Url: ''
-    tags:
-        id: 278
-    countriesAndLanguages:
-        id: 263
-        countries:
-            -
-                id: 899
-                created_at: '2020-08-17T14:20:47.018Z'
-                updated_at: '2020-08-17T14:20:47.018Z'
-                code: EE
-                name_et: Eesti
-                name_ru: Эстония
-                name: Estonia
-        languages:
-            -
-                id: 1686
-                created_at: '2020-08-24T12:28:24.026Z'
-                updated_at: '2020-08-24T12:28:24.026Z'
-                name_et: Eesti
-                name_ru: Эстонский
-                code: et
-                name: Estonian
-    title: The Secret Lamb
-    slug: the-secret-lamb
-    directory: source/film/the-secret-lamb
-    path: film/the-secret-lamb
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 544
-    created_at: '2020-08-24T13:33:28.023Z'
-    updated_at: '2020-08-24T13:33:28.023Z'
-    title_et: Hüvasti!
-    title_ru: ''
-    titleOriginal: Beol-sae
-    year: 2018
-    runtime: 138
-    slug_et: huvasti
-    slug_ru: ''
-    filmId: '1003'
-    credentials:
-        id: 357
-        director:
-            - Bora Kim
-        screenwriter:
-            - Bora Kim
-        doP:
-            - Guk-hyun Kang
-        cast:
-            - Ji-hu Park
-            - ' Sae-byeok Kim'
-            - ' Seung-Yun Lee'
-        composer:
-            - Matija Strnisa
-        productionCompany:
-            -
-                id: 891
-            -
-                id: 892
-    synopsis: >-
-        Korea, 1994. The South is in the grips of FIFA World Cup fever, while
-        the North mourns its newly deceased dictator. Eun-hee registers all of
-        this only in passing. Drifting through her days in Seoul, the
-        eighth-grader feels like an outsider everywhere: at school, where her
-        classmates bore her even more than the schoolwork, and at home, where
-        her parents are always at each other's throats and her brother beats
-        her.
-
-
-        With visual precision, Kim Bo-ra weaves a dense narrative around a
-        regular summer that leaves nothing unchanged.
-    media:
-        id: 292
-        Trailer:
-            -
-                id: 277
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 273
-                Url: ''
-    tags:
-        id: 279
-    countriesAndLanguages:
-        id: 264
-        countries:
-            -
-                id: 971
-                created_at: '2020-08-17T14:20:51.857Z'
-                updated_at: '2020-08-17T14:20:51.857Z'
-                code: KR
-                name_et: Lõuna-Korea
-                name_ru: Республика Корея
-                name: South Korea
-        languages:
-            -
-                id: 1788
-                created_at: '2020-08-24T12:28:30.341Z'
-                updated_at: '2020-08-24T12:28:30.341Z'
-                name_et: Korea
-                name_ru: Корейский
-                code: ko
-                name: Korean
-    title: House of Hummingbird
-    slug: house-of-hummingbird
-    directory: source/film/house-of-hummingbird
-    path: film/house-of-hummingbird
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 513
-    created_at: '2020-08-19T08:36:37.436Z'
-    updated_at: '2020-08-19T08:36:37.436Z'
-    title_et: Maudie
-    title_ru: ''
-    titleOriginal: ''
-    year: 2016
-    runtime: 115
-    slug_et: maudie
-    slug_ru: ''
-    filmId: '1011'
-    credentials:
-        id: 361
-        director:
-            - Aisling Walsh
-        screenwriter:
-            - Sherry White
-        doP:
-            - Guy Godfree
-        cast:
-            - Sally Hawkins
-            - ' Ethan Hawke'
-            - ' Kari Matchett'
-        composer:
-            - Michael Timmins
-        productionCompany:
-            -
-                id: 899
-            -
-                id: 900
-            -
-                id: 901
-            -
-                id: 902
-            -
-                id: 903
-            -
-                id: 904
-            -
-                id: 905
-            -
-                id: 906
-    synopsis: >-
-        "Maudie", is based on the true story of folk artist Maud Lewis (Sally
-        Hawkins) and the unlikely romance between Maud and a hardened reclusive
-        bachelor, Everett Lewis (Ethan Hawke).
-    media:
-        id: 296
-        Trailer:
-            -
-                id: 281
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 277
-                Url: ''
-    tags:
-        id: 283
-    countriesAndLanguages:
-        id: 268
-        countries:
-            -
-                id: 864
-                created_at: '2020-08-17T14:20:41.574Z'
-                updated_at: '2020-08-17T14:20:41.574Z'
-                code: CA
-                name_et: Kanada
-                name_ru: Канада
-                name: Canada
-            -
-                id: 952
-                created_at: '2020-08-17T14:20:50.882Z'
-                updated_at: '2020-08-17T14:20:50.882Z'
-                code: IE
-                name_et: Iirimaa
-                name_ru: Ирландия
-                name: Ireland
-        languages:
-            -
-                id: 1744
-                created_at: '2020-08-24T12:28:28.778Z'
-                updated_at: '2020-08-24T12:28:28.778Z'
-                name_et: Inglise
-                name_ru: Английский
-                code: en
-                name: English
-    title: Maudie
-    slug: maudie
-    directory: source/film/maudie
-    path: film/maudie
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 506
-    created_at: '2020-08-19T08:36:37.102Z'
-    updated_at: '2020-08-19T08:36:37.102Z'
-    title_et: Õnnejumalanna
-    title_ru: ''
-    titleOriginal: La dea fortuna
-    year: 2019
-    runtime: 114
-    slug_et: onnejumalanna
-    slug_ru: ''
-    filmId: '1004'
-    credentials:
-        id: 359
-        director:
-            - Ferzan Özpetek
-        screenwriter:
-            - Ferzan Özpetek
-            - ' Silvia Ranfagni'
-            - ' Gianni Romoli'
-        doP:
-            - Gian Filippo Corticelli
-        cast:
-            - Stefano Accorsi
-            - ' Jasmine Trinca'
-            - ' Edoardo Leo'
-        composer:
-            - Pasquale Catalano
-        productionCompany:
-            -
-                id: 895
-            -
-                id: 896
-            -
-                id: 897
-    synopsis: >-
-        Alessandro and Arturo have been together for over 15 years and, despite
-        the feeling they still have for each other, their relationship is now at
-        crisis. When Alessandro’s best friend, out of the blue, asks them to
-        take care of her two kids for a few days, something changes in their
-        daily routine and love will drive them to a crazy and unexpected turn in
-        their life.
-    media:
-        id: 294
-        Trailer:
-            -
-                id: 279
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 275
-                Url: ''
-    tags:
-        id: 281
-    countriesAndLanguages:
-        id: 266
-        countries:
-            -
-                id: 936
-                created_at: '2020-08-17T14:20:49.557Z'
-                updated_at: '2020-08-17T14:20:49.557Z'
-                code: IT
-                name_et: Itaalia
-                name_ru: Италия
-                name: Italy
-        languages:
-            -
-                id: 1709
-                created_at: '2020-08-24T12:28:26.804Z'
-                updated_at: '2020-08-24T12:28:26.804Z'
-                name_et: Itaalia
-                name_ru: Итальянский
-                code: it
-                name: Italian
-    title: The Goddess of Fortune
-    slug: the-goddess-of-fortune
-    directory: source/film/the-goddess-of-fortune
-    path: film/the-goddess-of-fortune
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 511
-    updated_by:
-        id: 1
-        firstname: Mihkel
-        lastname: Putrinš
-    created_at: '2020-08-19T08:36:37.316Z'
-    updated_at: '2020-08-24T13:33:32.991Z'
-    title_et: Hape
-    title_ru: ''
-    titleOriginal: Kislota
-    year: 2018
-    runtime: 97
-    slug_et: hape
-    slug_ru: ''
-    filmId: '1009'
-    credentials:
-        id: 358
-        director:
-            - Aleksandr Gorchilin
-        screenwriter:
-            - Valery Pecheykin
-        doP:
-            - Kseniya Sereda
-        cast:
-            - Filipp Avdeev
-            - ' Aleksandr Kuznetsov'
-            - ' Aleksandra Rebenok'
-        productionCompany:
-            -
-                id: 893
-            -
-                id: 894
-    synopsis: >-
-        "Acid” is an ode to youth, a film about today’s 20-year-olds who are
-        entering the real world for the first time, and becoming conscious of
-        their role within it.  The film is a portrait of a generation for whom
-        ambition is devoid of meaning.  They lament the fact that everything has
-        already been invented before their appearance, already done for them. 
-        The main characters justify their irresponsibility and infantile
-        behaviour by the lack of communication with their parents.   But their
-        principal agony is that they grew up without fathers, and now the time
-        is ripe for them to do things and achieve the status of adult males.
-    media:
-        id: 293
-        Trailer:
-            -
-                id: 278
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 274
-                Url: ''
-    tags:
-        id: 280
-    countriesAndLanguages:
-        id: 265
-        countries:
-            -
-                id: 1030
-                created_at: '2020-08-17T14:20:54.589Z'
-                updated_at: '2020-08-17T14:20:54.589Z'
-                code: RU
-                name_et: Venemaa
-                name_ru: Российская Федерация
-                name: Russian Federation
-        languages:
-            -
-                id: 1796
-                created_at: '2020-08-24T12:28:30.605Z'
-                updated_at: '2020-08-24T12:28:30.605Z'
-                name_et: Vene
-                name_ru: Русский
-                code: ru
-                name: Russian
-    title: Acid
-    slug: acid
-    directory: source/film/acid
-    path: film/acid
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 517
-    updated_by:
-        id: 1
-        firstname: Mihkel
-        lastname: Putrinš
-    created_at: '2020-08-19T08:36:47.029Z'
-    updated_at: '2020-08-24T13:33:36.812Z'
-    title_et: Autoportree
-    title_ru: ''
-    titleOriginal: Selvportrett
-    year: 2020
-    runtime: 80
-    slug_et: autoportree
-    slug_ru: ''
-    filmId: '1017'
-    credentials:
-        id: 360
-        director:
-            - Katja Høgset
-            - ' Margreth Olin'
-            - ' Espen Wallin'
-        cast:
-            - Geir Fossen
-            - ' Lene Marie Fossen'
-            - ' Torill Fossen'
-        productionCompany:
-            -
-                id: 898
-    synopsis: >-
-        Lene Marie Fossen is 32-years-old and a unique photographer with an
-        extraordinary talent. But she also suffers from severe anorexia and has
-        done so for ten years.
-    media:
-        id: 295
-        Trailer:
-            -
-                id: 280
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 276
-                Url: ''
-    tags:
-        id: 282
-    countriesAndLanguages:
-        id: 267
-        countries:
-            -
-                id: 996
-                created_at: '2020-08-17T14:20:53.242Z'
-                updated_at: '2020-08-17T14:20:53.242Z'
-                code: 'NO'
-                name_et: Norra
-                name_ru: Норвегия
-                name: Norway
-        languages:
-            -
-                id: 1750
-                created_at: '2020-08-24T12:28:29.070Z'
-                updated_at: '2020-08-24T12:28:29.070Z'
-                name_et: Norwegian
-                name_ru: Нюнорск (новонорвежский)
-                code: nn
-                name: Norwegian
-    title: Self Portrait
-    slug: self-portrait
-    directory: source/film/self-portrait
-    path: film/self-portrait
     data:
         pictures: /film_pictures.yaml
         screenings: /film/screenings.en.yaml
 -
     id: 514
     updated_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
     created_at: '2020-08-19T08:36:46.957Z'
-    updated_at: '2020-08-25T08:16:52.343Z'
+    updated_at: '2020-08-28T09:02:05.133Z'
     title_et: 'Acasă, mu kodu'
     title_ru: ''
     titleOriginal: Acasă
@@ -1310,25 +288,13 @@
     slug_ru: ''
     filmId: '1013'
     credentials:
-        id: 351
+        id: 382
         director:
             - Radu Ciorniciuc
         cast:
             - Corina Enache
             - ' Duca Enache'
             - ' Georgiana Enache'
-        editor:
-            -
-                id: 3540
-            -
-                id: 3541
-        productionCompany:
-            -
-                id: 870
-            -
-                id: 871
-            -
-                id: 872
     synopsis: >-
         Radu Ciorniciuc’s heartbreaking debut is a thoughtful study of
         gentrification, seen through the eyes of a family trying to adapt to the
@@ -1336,20 +302,20 @@
         "paradise lost,” with its life free yet harsh, or to become part of the
         society that offers comforts but comes with pressures and conflict?
     media:
-        id: 285
+        id: 317
         Trailer:
             -
-                id: 270
+                id: 302
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 266
+                id: 298
                 Url: ''
     tags:
-        id: 272
+        id: 305
     countriesAndLanguages:
-        id: 258
+        id: 290
         countries:
             -
                 id: 1036
@@ -1394,63 +360,137 @@
                 name: English
     title: 'Acasă, My Home'
     slug: acasa-my-home
-    directory: source/film/acasa-my-home
+    directory: source/_fetchdir/films_poff/acasa-my-home
     path: film/acasa-my-home
     data:
         pictures: /film_pictures.yaml
         screenings: /film/screenings.en.yaml
 -
-    id: 509
+    id: 515
     updated_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    created_at: '2020-08-19T08:36:37.245Z'
-    updated_at: '2020-08-25T09:50:54.670Z'
-    title_et: 'Yalda, andestuse öö'
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:46.969Z'
+    updated_at: '2020-08-28T09:01:48.991Z'
+    title_et: Tormipoiss
     title_ru: ''
-    titleOriginal: Yalda
+    titleOriginal: ''
     year: 2019
-    runtime: 89
-    slug_et: yalda-andestuse-oo
+    runtime: 99
+    slug_et: tormipoiss
     slug_ru: ''
-    filmId: '1007'
+    filmId: '1014'
     credentials:
-        id: 349
+        id: 383
         director:
-            - Massoud Bakhshi
+            - Shawn Seet
         screenwriter:
-            - Massoud Bakhshi
+            - Justin Monjo
         doP:
-            - Julian Atanassov
+            - Bruce Young
         cast:
-            - Sadaf Asgari
-            - ' Behnaz Jafari'
-            - " Babak Karimi\r"
-        productionCompany:
-            -
-                id: 867
+            - Finn Little
+            - ' Jai Courtney'
+            - ' Geoffrey Rush'
+        composer:
+            - Alan John
     synopsis: >-
-        In Iran today: Maryam (22) accidentally kills her husband Nasser (65)
-        and is sentenced to death. The only person who can save her is Mona
-        (37), Nasser's daughter. All Mona has to do is appear on a popular live
-        TV show and forgive Maryam. But forgiveness proves difficult when they
-        are forced to relive the past.
+        When Michael Kingley, a successful retired businessman starts to see
+        images from his past that he can't explain, he's forced to remember his
+        childhood and how, as a boy, he rescued and raised an extraordinary
+        orphaned pelican, Mr Percival.
     media:
-        id: 283
+        id: 318
         Trailer:
             -
-                id: 268
+                id: 303
                 Url: ''
                 Source: ''
         QaClip:
             -
-                id: 264
+                id: 299
                 Url: ''
     tags:
-        id: 270
+        id: 306
     countriesAndLanguages:
-        id: 255
+        id: 289
+        countries:
+            -
+                id: 892
+                created_at: '2020-08-17T14:20:46.514Z'
+                updated_at: '2020-08-17T14:20:46.514Z'
+                code: AU
+                name_et: Austraalia
+                name_ru: Австралия
+                name: Australia
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_ru: Английский
+                code: en
+                name: English
+    title: Storm Boy
+    slug: storm-boy
+    directory: source/_fetchdir/films_poff/storm-boy
+    path: film/storm-boy
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 504
+    created_at: '2020-08-19T08:36:37.024Z'
+    updated_at: '2020-08-19T08:36:37.024Z'
+    title_et: Nähtamatu elu
+    title_ru: ''
+    titleOriginal: A Vida Invisivel
+    year: 2019
+    runtime: 139
+    slug_et: nahtamatu-elu
+    slug_ru: ''
+    filmId: '1001'
+    credentials:
+        id: 384
+        director:
+            - Karim Aïnouz
+        screenwriter:
+            - Murilo Hauser
+            - ' Inés Bortagaray'
+            - ' Karim Aïnouz'
+        doP:
+            - Hélène Louvart
+        cast:
+            - Julia Stockler
+            - ' Carol Duarte'
+            - ' Flávia Gusmão'
+        composer:
+            - Benedikt Schiefer
+    synopsis: >-
+        Rio de Janeiro, 1950. Eurídice, 18, and Guida, 20, are two inseparable
+        sisters living at home with their conservative parents. Although
+        immersed in a traditional life, each one nourishes a dream: Eurídice of
+        becoming a renowned pianist, Guida of finding true love. In a dramatic
+        turn, they are separated by their father and forced to live apart. They
+        take control of their separate destinies, while never giving up hope of
+        finding each other.
+    media:
+        id: 320
+        Trailer:
+            -
+                id: 305
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 301
+                Url: ''
+    tags:
+        id: 308
+    countriesAndLanguages:
+        id: 292
         countries:
             -
                 id: 877
@@ -1461,58 +501,950 @@
                 name_ru: Германия
                 name: Germany
             -
-                id: 1004
-                created_at: '2020-08-17T14:20:53.641Z'
-                updated_at: '2020-08-17T14:20:53.641Z'
-                code: LU
-                name_et: Luksemburg
-                name_ru: Люксембург
-                name: Luxembourg
-            -
-                id: 890
-                created_at: '2020-08-17T14:20:46.374Z'
-                updated_at: '2020-08-17T14:20:46.374Z'
-                code: FR
-                name_et: Prantsusmaa
-                name_ru: Франция
-                name: France
-            -
-                id: 970
-                created_at: '2020-08-17T14:20:51.857Z'
-                updated_at: '2020-08-17T14:20:51.857Z'
-                code: IR
-                name_et: Iraan
-                name_ru: Иран
-                name: Iran
-            -
-                id: 1001
-                created_at: '2020-08-17T14:20:53.469Z'
-                updated_at: '2020-08-17T14:20:53.469Z'
-                code: LB
-                name_et: Liibanon
-                name_ru: Ливан
-                name: Lebanon
-            -
-                id: 909
-                created_at: '2020-08-17T14:20:47.971Z'
-                updated_at: '2020-08-17T14:20:47.971Z'
-                code: CH
-                name_et: Šveits
-                name_ru: Швейцария
-                name: Switzerland
+                id: 859
+                created_at: '2020-08-17T14:20:40.521Z'
+                updated_at: '2020-08-17T14:20:40.521Z'
+                code: BR
+                name_et: Brasiilia
+                name_ru: Бразилия
+                name: Brazil
         languages:
             -
-                id: 1730
-                created_at: '2020-08-24T12:28:28.092Z'
-                updated_at: '2020-08-24T12:28:28.092Z'
-                name_et: Pärsia
-                name_ru: Персидский
-                code: fa
-                name: Persian
-    title: 'Yalda, a Night for Forgiveness'
-    slug: yalda-a-night-for-forgiveness
-    directory: source/film/yalda-a-night-for-forgiveness
-    path: film/yalda-a-night-for-forgiveness
+                id: 1680
+                created_at: '2020-08-24T12:28:23.296Z'
+                updated_at: '2020-08-24T12:28:23.296Z'
+                name_et: Kreeka
+                name_ru: Греческий
+                code: el
+                name: Greek
+            -
+                id: 1805
+                created_at: '2020-08-24T12:28:30.796Z'
+                updated_at: '2020-08-24T12:28:30.796Z'
+                name_et: Portugali
+                name_ru: Португальский
+                code: pt
+                name: Portuguese
+    title: Invisible Life of Eurídice Gusmão
+    slug: invisible-life-of-euridice-gusmao
+    directory: source/_fetchdir/films_poff/invisible-life-of-euridice-gusmao
+    path: film/invisible-life-of-euridice-gusmao
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 544
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-24T13:33:28.023Z'
+    updated_at: '2020-08-28T09:01:48.952Z'
+    title_et: Hüvasti!
+    title_ru: ''
+    titleOriginal: Beol-sae
+    year: 2018
+    runtime: 138
+    slug_et: huvasti
+    slug_ru: ''
+    filmId: '1003'
+    credentials:
+        id: 385
+        director:
+            - Bora Kim
+        screenwriter:
+            - Bora Kim
+        doP:
+            - Guk-hyun Kang
+        cast:
+            - Ji-hu Park
+            - ' Sae-byeok Kim'
+            - ' Seung-Yun Lee'
+        composer:
+            - Matija Strnisa
+    synopsis: >-
+        Korea, 1994. The South is in the grips of FIFA World Cup fever, while
+        the North mourns its newly deceased dictator. Eun-hee registers all of
+        this only in passing. Drifting through her days in Seoul, the
+        eighth-grader feels like an outsider everywhere: at school, where her
+        classmates bore her even more than the schoolwork, and at home, where
+        her parents are always at each other's throats and her brother beats
+        her.
+
+
+        With visual precision, Kim Bo-ra weaves a dense narrative around a
+        regular summer that leaves nothing unchanged.
+    media:
+        id: 319
+        Trailer:
+            -
+                id: 304
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 300
+                Url: ''
+    tags:
+        id: 307
+    countriesAndLanguages:
+        id: 291
+        countries:
+            -
+                id: 971
+                created_at: '2020-08-17T14:20:51.857Z'
+                updated_at: '2020-08-17T14:20:51.857Z'
+                code: KR
+                name_et: Lõuna-Korea
+                name_ru: Республика Корея
+                name: South Korea
+        languages:
+            -
+                id: 1788
+                created_at: '2020-08-24T12:28:30.341Z'
+                updated_at: '2020-08-24T12:28:30.341Z'
+                name_et: Korea
+                name_ru: Корейский
+                code: ko
+                name: Korean
+    title: House of Hummingbird
+    slug: house-of-hummingbird
+    directory: source/_fetchdir/films_poff/house-of-hummingbird
+    path: film/house-of-hummingbird
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 505
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.043Z'
+    updated_at: '2020-08-28T09:01:48.384Z'
+    title_et: Täiuslik
+    title_ru: ''
+    titleOriginal: HaNeshef
+    year: 2018
+    runtime: 97
+    slug_et: taiuslik
+    slug_ru: ''
+    filmId: '1002'
+    credentials:
+        id: 386
+        director:
+            - Tal Granit
+            - ' Sharon Maymon'
+        screenwriter:
+            - Tal Granit
+            - ' Sharon Maymon'
+        doP:
+            - Giora Bejach
+        cast:
+            - Stav Strashko
+            - ' Netsanet Mekonen'
+            - ' Noam Lugasy'
+        composer:
+            - Ivri Lider
+    synopsis: >-
+        Eden a 17-year-old high school student discovers that her two best
+        friends are planning to sell their kidneys to pay for cosmetic surgery
+        and a dress for prom. Eden, who is secretly a trans woman, realizes that
+        this may be the answer to her prayers. She joins the others on their
+        journey to Kiev to exchange their kidneys for the flawless body of their
+        dreams. Their trip does not go as planned and when Eden’s secret is
+        exposed, all three of them need to come to terms with the prejudices
+        they have and redefine who they really want to be in this world.
+    media:
+        id: 321
+        Trailer:
+            -
+                id: 306
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 302
+                Url: ''
+    tags:
+        id: 309
+    countriesAndLanguages:
+        id: 293
+        countries:
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_et: Saksamaa
+                name_ru: Германия
+                name: Germany
+            -
+                id: 951
+                created_at: '2020-08-17T14:20:50.795Z'
+                updated_at: '2020-08-17T14:20:50.795Z'
+                code: IL
+                name_et: Iisrael
+                name_ru: Израиль
+                name: Israel
+        languages:
+            -
+                id: 1727
+                created_at: '2020-08-24T12:28:27.872Z'
+                updated_at: '2020-08-24T12:28:27.872Z'
+                name_et: Heebrea
+                name_ru: Иврит
+                code: he
+                name: Hebrew
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_ru: Английский
+                code: en
+                name: English
+            -
+                id: 1796
+                created_at: '2020-08-24T12:28:30.605Z'
+                updated_at: '2020-08-24T12:28:30.605Z'
+                name_et: Vene
+                name_ru: Русский
+                code: ru
+                name: Russian
+    title: Flawless
+    slug: flawless
+    directory: source/_fetchdir/films_poff/flawless
+    path: film/flawless
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 506
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.102Z'
+    updated_at: '2020-08-28T09:01:48.953Z'
+    title_et: Õnnejumalanna
+    title_ru: ''
+    titleOriginal: La dea fortuna
+    year: 2019
+    runtime: 114
+    slug_et: onnejumalanna
+    slug_ru: ''
+    filmId: '1004'
+    credentials:
+        id: 387
+        director:
+            - Ferzan Özpetek
+        screenwriter:
+            - Ferzan Özpetek
+            - ' Silvia Ranfagni'
+            - ' Gianni Romoli'
+        doP:
+            - Gian Filippo Corticelli
+        cast:
+            - Stefano Accorsi
+            - ' Jasmine Trinca'
+            - ' Edoardo Leo'
+        composer:
+            - Pasquale Catalano
+    synopsis: >-
+        Alessandro and Arturo have been together for over 15 years and, despite
+        the feeling they still have for each other, their relationship is now at
+        crisis. When Alessandro’s best friend, out of the blue, asks them to
+        take care of her two kids for a few days, something changes in their
+        daily routine and love will drive them to a crazy and unexpected turn in
+        their life.
+    media:
+        id: 322
+        Trailer:
+            -
+                id: 307
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 303
+                Url: ''
+    tags:
+        id: 310
+    countriesAndLanguages:
+        id: 294
+        countries:
+            -
+                id: 936
+                created_at: '2020-08-17T14:20:49.557Z'
+                updated_at: '2020-08-17T14:20:49.557Z'
+                code: IT
+                name_et: Itaalia
+                name_ru: Италия
+                name: Italy
+        languages:
+            -
+                id: 1709
+                created_at: '2020-08-24T12:28:26.804Z'
+                updated_at: '2020-08-24T12:28:26.804Z'
+                name_et: Itaalia
+                name_ru: Итальянский
+                code: it
+                name: Italian
+    title: The Goddess of Fortune
+    slug: the-goddess-of-fortune
+    directory: source/_fetchdir/films_poff/the-goddess-of-fortune
+    path: film/the-goddess-of-fortune
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 516
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:46.969Z'
+    updated_at: '2020-08-28T09:01:51.401Z'
+    title_et: Lammas all paremas nurgas
+    title_ru: ''
+    titleOriginal: ''
+    year: 1992
+    runtime: 10000
+    slug_et: lammas-all-paremas-nurgas
+    slug_ru: ''
+    filmId: '1015'
+    credentials:
+        id: 388
+        director:
+            - Lembit Ulfsak
+        screenwriter:
+            - Janno Põldma
+            - ' Lembit Ulsak'
+        doP:
+            - Ago Ruus
+        cast:
+            - Tõnu Kark
+            - ' Margus Alver'
+            - ' Kaur Sinissaar'
+            - ' Dan Põldroos'
+            - ' Ain Lutsepp'
+        composer:
+            - Tõnu Naissoo
+    synopsis: >-
+        The family film directed by Lembit Ulfsak tells the humorous story about
+        detective adventures that boys undertake during their summer holiday.
+        The film belongs to the classics of Estonian children's films.
+    media:
+        id: 323
+        Trailer:
+            -
+                id: 308
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 304
+                Url: ''
+    tags:
+        id: 311
+    countriesAndLanguages:
+        id: 295
+        countries:
+            -
+                id: 899
+                created_at: '2020-08-17T14:20:47.018Z'
+                updated_at: '2020-08-17T14:20:47.018Z'
+                code: EE
+                name_et: Eesti
+                name_ru: Эстония
+                name: Estonia
+        languages:
+            -
+                id: 1686
+                created_at: '2020-08-24T12:28:24.026Z'
+                updated_at: '2020-08-24T12:28:24.026Z'
+                name_et: Eesti
+                name_ru: Эстонский
+                code: et
+                name: Estonian
+    title: The Secret Lamb
+    slug: the-secret-lamb
+    directory: source/_fetchdir/films_poff/the-secret-lamb
+    path: film/the-secret-lamb
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 508
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.191Z'
+    updated_at: '2020-08-28T09:02:05.132Z'
+    title_et: Tšempionid
+    title_ru: ''
+    titleOriginal: Campeones
+    year: 2018
+    runtime: 124
+    slug_et: tsempionid
+    slug_ru: ''
+    filmId: '1006'
+    credentials:
+        id: 389
+        director:
+            - Javier Fesser
+        screenwriter:
+            - David Marqués
+            - ' Javier Fesser'
+        doP:
+            - Chechu Graf
+        cast:
+            - Javier Gutiérrez
+            - ' Athenea Mata'
+            - " Juan Margallo\r"
+        composer:
+            - Rafael Arnau
+    synopsis: >-
+        The assistant trainer of a professional league side, Marco, is given
+        community service in the form of coaching a very special basketball team
+        of people with intellectual disabilities. Surprisingly even for Marco
+        himself, he’ll be the one to learn a real lesson from the adventure
+        alongside a team where a desire to live and placing importance on the
+        things that matter are what really counts.
+    media:
+        id: 324
+        Trailer:
+            -
+                id: 309
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 305
+                Url: ''
+    tags:
+        id: 312
+    countriesAndLanguages:
+        id: 296
+        countries:
+            -
+                id: 906
+                created_at: '2020-08-17T14:20:47.692Z'
+                updated_at: '2020-08-17T14:20:47.692Z'
+                code: ES
+                name_et: Hispaania
+                name_ru: Испания
+                name: Spain
+        languages:
+            -
+                id: 1742
+                created_at: '2020-08-24T12:28:28.680Z'
+                updated_at: '2020-08-24T12:28:28.680Z'
+                name_et: Hispaania
+                name_ru: Испанский
+                code: es
+                name: Spanish
+    title: Champions
+    slug: champions
+    directory: source/_fetchdir/films_poff/champions
+    path: film/champions
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 507
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.152Z'
+    updated_at: '2020-08-28T09:02:05.068Z'
+    title_et: Skeemitajad
+    title_ru: ''
+    titleOriginal: ''
+    year: 2019
+    runtime: 91
+    slug_et: skeemitajad
+    slug_ru: ''
+    filmId: '1005'
+    credentials:
+        id: 390
+        director:
+            - Dave McLean
+        screenwriter:
+            - Dave McLean
+            - " Kyle Titterton\r"
+        doP:
+            - Alan C. McLaughlin
+        cast:
+            - Conor Berry
+            - ' Sean Connor'
+            - ' Grant Robert Keelan'
+    synopsis: >-
+        Set in Dundee c. 1979, Schemers is based on writer-producer Dave
+        McLean’s early years in the music business. A fledgling promoter, he
+        ambitiously booked bands with his friends John and Scot, all of them
+        from the Dundee schemes. Young Davie (Conor Berry) is determined not to
+        get a ‘real’ job. He starts out running discos and, after a run in with
+        a local gangster, raises his ambitions to booking major bands such as
+        Iron Maiden. Shot in and around Dundee using local talent, Schemers
+        celebrates youthful ambition.
+    media:
+        id: 325
+        Trailer:
+            -
+                id: 310
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 306
+                Url: ''
+    tags:
+        id: 313
+    countriesAndLanguages:
+        id: 297
+        countries:
+            -
+                id: 893
+                created_at: '2020-08-17T14:20:46.574Z'
+                updated_at: '2020-08-17T14:20:46.574Z'
+                code: GB
+                name_et: Suurbritannia
+                name_ru: Великобритания
+                name: Great Britain
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_ru: Английский
+                code: en
+                name: English
+    title: Schemers
+    slug: schemers
+    directory: source/_fetchdir/films_poff/schemers
+    path: film/schemers
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 545
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-24T13:33:28.644Z'
+    updated_at: '2020-08-28T09:02:06.752Z'
+    title_et: Marcel Duchamp ja võimalikkuse kunst
+    title_ru: ''
+    titleOriginal: ''
+    year: 2019
+    runtime: 86
+    slug_et: marcel-duchamp-ja-voimalikkuse-kunst
+    slug_ru: ''
+    filmId: '1016'
+    credentials:
+        id: 391
+        director:
+            - Matthew Taylor
+        cast:
+            - Marina Abramovic
+            - ' William Anastasi'
+            - ' Michel Gondry'
+    synopsis: >-
+        Art Of The Possible is broken into three acts that follow the arcs of
+        Duchamp’s life. Each act functions to explain three ideas: who is Marcel
+        Duchamp; what are Duchamp’s most inﬂuential works and why are they
+        important; and what is Duchamp’s lasting legacy from his death to
+        present day and how does his work shape our future.
+    media:
+        id: 326
+        Trailer:
+            -
+                id: 311
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 307
+                Url: ''
+    tags:
+        id: 314
+    countriesAndLanguages:
+        id: 299
+        countries:
+            -
+                id: 1076
+                created_at: '2020-08-17T14:20:56.062Z'
+                updated_at: '2020-08-17T14:20:56.062Z'
+                code: US
+                name_et: USA
+                name_ru: США
+                name: USA
+            -
+                id: 877
+                created_at: '2020-08-17T14:20:44.692Z'
+                updated_at: '2020-08-17T14:20:44.692Z'
+                code: DE
+                name_et: Saksamaa
+                name_ru: Германия
+                name: Germany
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_ru: Английский
+                code: en
+                name: English
+    title: 'Marcel Duchamp: Art of the Possible'
+    slug: marcel-duchamp-art-of-the-possible
+    directory: source/_fetchdir/films_poff/marcel-duchamp-art-of-the-possible
+    path: film/marcel-duchamp-art-of-the-possible
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 511
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.316Z'
+    updated_at: '2020-08-28T09:01:51.309Z'
+    title_et: Hape
+    title_ru: ''
+    titleOriginal: Kislota
+    year: 2018
+    runtime: 97
+    slug_et: hape
+    slug_ru: ''
+    filmId: '1009'
+    credentials:
+        id: 392
+        director:
+            - Aleksandr Gorchilin
+        screenwriter:
+            - Valery Pecheykin
+        doP:
+            - Kseniya Sereda
+        cast:
+            - Filipp Avdeev
+            - ' Aleksandr Kuznetsov'
+            - ' Aleksandra Rebenok'
+    synopsis: >-
+        "Acid” is an ode to youth, a film about today’s 20-year-olds who are
+        entering the real world for the first time, and becoming conscious of
+        their role within it.  The film is a portrait of a generation for whom
+        ambition is devoid of meaning.  They lament the fact that everything has
+        already been invented before their appearance, already done for them. 
+        The main characters justify their irresponsibility and infantile
+        behaviour by the lack of communication with their parents.   But their
+        principal agony is that they grew up without fathers, and now the time
+        is ripe for them to do things and achieve the status of adult males.
+    media:
+        id: 327
+        Trailer:
+            -
+                id: 312
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 308
+                Url: ''
+    tags:
+        id: 315
+    countriesAndLanguages:
+        id: 298
+        countries:
+            -
+                id: 1030
+                created_at: '2020-08-17T14:20:54.589Z'
+                updated_at: '2020-08-17T14:20:54.589Z'
+                code: RU
+                name_et: Venemaa
+                name_ru: Российская Федерация
+                name: Russian Federation
+        languages:
+            -
+                id: 1796
+                created_at: '2020-08-24T12:28:30.605Z'
+                updated_at: '2020-08-24T12:28:30.605Z'
+                name_et: Vene
+                name_ru: Русский
+                code: ru
+                name: Russian
+    title: Acid
+    slug: acid
+    directory: source/_fetchdir/films_poff/acid
+    path: film/acid
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 512
+    updated_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-08-19T08:36:37.357Z'
+    updated_at: '2020-08-28T09:02:05.147Z'
+    title_et: Viimane portree
+    title_ru: ''
+    titleOriginal: ''
+    year: 2017
+    runtime: 90
+    slug_et: viimane-portree
+    slug_ru: ''
+    filmId: '1010'
+    credentials:
+        id: 393
+        director:
+            - Stanley Tucci
+        screenwriter:
+            - Stanley Tucci
+        doP:
+            - Danny Cohen
+        cast:
+            - Geoffrey Rush
+            - ' Armie Hammer'
+            - ' Tony Shalhoub'
+        composer:
+            - Evan Lurie
+    synopsis: >-
+        In 1964, while on a short trip to Paris, the American writer and
+        art-lover James Lord is asked by his friend, the world-renowned artist
+        Alberto Giacometti, to sit for a portrait. The process, Giacometti
+        assures Lord, will take only a few days. Flattered and intrigued, Lord
+        agrees.
+
+        "Final Portrait” is a bewitching portrait of a genius, and of a
+        friendship between two men who are utterly different, yet increasingly
+        bonded through a single, ever-evolving act of creativity. It is a film
+        which shines a light on the artistic process itself, by turns
+        exhilarating, exasperating and bewildering, questioning whether the gift
+        of a great artist is a blessing or a curse.
+    media:
+        id: 328
+        Trailer:
+            -
+                id: 313
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 309
+                Url: ''
+    tags:
+        id: 316
+    countriesAndLanguages:
+        id: 300
+        countries:
+            -
+                id: 893
+                created_at: '2020-08-17T14:20:46.574Z'
+                updated_at: '2020-08-17T14:20:46.574Z'
+                code: GB
+                name_et: Suurbritannia
+                name_ru: Великобритания
+                name: Great Britain
+        languages:
+            -
+                id: 1709
+                created_at: '2020-08-24T12:28:26.804Z'
+                updated_at: '2020-08-24T12:28:26.804Z'
+                name_et: Itaalia
+                name_ru: Итальянский
+                code: it
+                name: Italian
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_ru: Английский
+                code: en
+                name: English
+            -
+                id: 1845
+                created_at: '2020-08-24T12:28:31.466Z'
+                updated_at: '2020-08-24T12:28:31.466Z'
+                name_et: Prantsuse
+                name_ru: Французский
+                code: fr
+                name: French
+    title: Final Portrait
+    slug: final-portrait
+    directory: source/_fetchdir/films_poff/final-portrait
+    path: film/final-portrait
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 510
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.284Z'
+    updated_at: '2020-08-28T09:01:49.730Z'
+    title_et: Harjumuse jõud
+    title_ru: ''
+    titleOriginal: Tottumiskysymys
+    year: 2019
+    runtime: 75
+    slug_et: harjumuse-joud
+    slug_ru: ''
+    filmId: '1008'
+    credentials:
+        id: 395
+        director:
+            - Reetta Aalto
+            - ' Alli Haapasalo'
+            - ' Anna Paavilainen'
+            - ' Kirsikka Saari'
+            - ' Miia Tervo'
+            - ' Elli Toivoniemi'
+            - ' Jenni Toivoniemi'
+        doP:
+            - Kerttu Hakkarainen
+            - ' Päivi Kettunen'
+            - ' Jarmo Kiuru'
+        composer:
+            - Joona Jaakkola
+    synopsis: >-
+        Force of Habit follows the lives of various women throughout one day.
+        Hilla is having a romantic vacation, Emmi is throwing a house party, and
+        Milja is on her way to school when they're approached by a stranger and
+        things take an unexpected turn. At the same time, Emppu, a young
+        actress, is conflicted as she rehearses for the biggest role of her
+        life. Elsewhere, Aleksi, an inexperienced prosecutor, is preparing for
+        his first court case in haste; Niina, the victim of the crime, has been
+        waiting years to see her case tried. Miia throws a company party, and
+        the mood dramatically changes when her colleague Katja opens up about
+        their boss coming on to her. Miia and a couple of her closest colleagues
+        try to resolve the situation, but how do the others react?
+    media:
+        id: 330
+        Trailer:
+            -
+                id: 315
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 311
+                Url: ''
+    tags:
+        id: 318
+    countriesAndLanguages:
+        id: 302
+        countries:
+            -
+                id: 908
+                created_at: '2020-08-17T14:20:47.900Z'
+                updated_at: '2020-08-17T14:20:47.900Z'
+                code: FI
+                name_et: Soome
+                name_ru: Финляндия
+                name: Finland
+        languages:
+            -
+                id: 1744
+                created_at: '2020-08-24T12:28:28.778Z'
+                updated_at: '2020-08-24T12:28:28.778Z'
+                name_et: Inglise
+                name_ru: Английский
+                code: en
+                name: English
+            -
+                id: 1745
+                created_at: '2020-08-24T12:28:28.842Z'
+                updated_at: '2020-08-24T12:28:28.842Z'
+                name_et: Soome
+                name_ru: Финский
+                code: fi
+                name: Finnish
+    title: Force of Habit
+    slug: force-of-habit
+    directory: source/_fetchdir/films_poff/force-of-habit
+    path: film/force-of-habit
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.en.yaml
+-
+    id: 517
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:47.029Z'
+    updated_at: '2020-08-28T09:01:50.078Z'
+    title_et: Autoportree
+    title_ru: ''
+    titleOriginal: Selvportrett
+    year: 2020
+    runtime: 80
+    slug_et: autoportree
+    slug_ru: ''
+    filmId: '1017'
+    credentials:
+        id: 394
+        director:
+            - Katja Høgset
+            - ' Margreth Olin'
+            - ' Espen Wallin'
+        cast:
+            - Geir Fossen
+            - ' Lene Marie Fossen'
+            - ' Torill Fossen'
+    synopsis: >-
+        Lene Marie Fossen is 32-years-old and a unique photographer with an
+        extraordinary talent. But she also suffers from severe anorexia and has
+        done so for ten years.
+    media:
+        id: 329
+        Trailer:
+            -
+                id: 314
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 310
+                Url: ''
+    tags:
+        id: 317
+    countriesAndLanguages:
+        id: 301
+        countries:
+            -
+                id: 996
+                created_at: '2020-08-17T14:20:53.242Z'
+                updated_at: '2020-08-17T14:20:53.242Z'
+                code: 'NO'
+                name_et: Norra
+                name_ru: Норвегия
+                name: Norway
+        languages:
+            -
+                id: 1750
+                created_at: '2020-08-24T12:28:29.070Z'
+                updated_at: '2020-08-24T12:28:29.070Z'
+                name_et: Norwegian
+                name_ru: Нюнорск (новонорвежский)
+                code: nn
+                name: Norwegian
+    title: Self Portrait
+    slug: self-portrait
+    directory: source/_fetchdir/films_poff/self-portrait
+    path: film/self-portrait
     data:
         pictures: /film_pictures.yaml
         screenings: /film/screenings.en.yaml

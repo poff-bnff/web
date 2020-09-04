@@ -14,8 +14,8 @@
     slug_en: test-5-en
     lead_en: Lead 5 en
     contents_en: >-
-        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
-        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5
+        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5
         encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  en
     publishFrom: '2020-08-07T09:00:00.000Z'
     publishUntil: '2021-01-07T10:00:00.000Z'
@@ -162,7 +162,7 @@
         samaaegselt Tartus ja veebiplatvormil Elisa Stage ning selle alateemaks
         on kunst.
     publish: true
-    directory: source/article/test-5-en
+    directory: source/_fetchdir/articles_poff/test-5-en
     path: article/mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
     data:
         pictures: /article_pictures.yaml
@@ -282,7 +282,7 @@
         stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
         juhul tervenisti virtuaalsel kujul.
     publish: false
-    directory: source/article/test7-en
+    directory: source/_fetchdir/articles_poff/test7-en
     path: article/p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
     data:
         pictures: /article_pictures.yaml
@@ -398,7 +398,7 @@
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
     publish: true
-    directory: source/article/test-2-en
+    directory: source/_fetchdir/articles_poff/test-2-en
     path: article/tartuffi-esimene-film-on-seksuaalsest-ahistamisest
     data:
         pictures: /article_pictures.yaml
@@ -561,7 +561,7 @@
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
     publish: true
-    directory: source/article/test-3-en
+    directory: source/_fetchdir/articles_poff/test-3-en
     path: article/tartuff-on-puehendatud-kunstile
     data:
         pictures: /article_pictures.yaml
@@ -719,7 +719,7 @@
         Festivali virtuaalses kinos Elisa Stage saab filme vaadata 16.
         augustini.
     publish: true
-    directory: source/article/test-6-en
+    directory: source/_fetchdir/articles_poff/test-6-en
     path: article/tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
     data:
         pictures: /article_pictures.yaml
@@ -893,7 +893,7 @@
 
         „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
         tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid
-        The Wrap. 
+        The Wrap.
 
 
         (<iframe width="500" height="281"
@@ -912,11 +912,11 @@
         Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide
         Oscarile. USA filmiorganisatsiooni The National Board of Review
         hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse
-        mängufilmiga. 
+        mängufilmiga.
 
 
         Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
-        elu”. Peaosades Carol Duarte ja Julia Stockler. 
+        elu”. Peaosades Carol Duarte ja Julia Stockler.
 
 
         „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
@@ -929,9 +929,9 @@
         **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
         augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
         Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
-        [](https://lmk.ee). 
+        [](https://lmk.ee).
     publish: true
-    directory: source/article/test-4-en
+    directory: source/_fetchdir/articles_poff/test-4-en
     path: article/test-4-et
     data:
         pictures: /article_pictures.yaml
@@ -1013,7 +1013,7 @@
 
 
         26. augustil kell 18 Kumu auditooriumis linastuvat filmi juhatab sisse
-        Katrin Nabel Ungari Instituudist. 
+        Katrin Nabel Ungari Instituudist.
 
 
         Sari jätkub Damian Pettigrew´ klassikalise, 18 aastat tagasi valminud
@@ -1085,7 +1085,7 @@
         Kultuuriteemaliste filmide sarja „Kumu dokumentaal” korraldavad Kumu ja
         PÖFF.
     publish: true
-    directory: source/article/test-9-en
+    directory: source/_fetchdir/articles_poff/test-9-en
     path: article/kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
     data:
         pictures: /article_pictures.yaml
@@ -1239,7 +1239,7 @@
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
     publish: true
-    directory: source/article/test-en
+    directory: source/_fetchdir/articles_poff/test-en
     path: article/tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
     data:
         pictures: /article_pictures.yaml
@@ -1403,7 +1403,7 @@
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
     publish: false
-    directory: source/article/test-8-en
+    directory: source/_fetchdir/articles_poff/test-8-en
     path: article/test-8-et
     data:
         pictures: /article_pictures.yaml
@@ -1435,7 +1435,7 @@
     lead: TEST ARTIKKEL 2
     contents: TEST ARTIKKEL 2
     publish: true
-    directory: source/article/test-artikkel-2
+    directory: source/_fetchdir/articles_poff/test-artikkel-2
     path: article/test-artikkel-2
     data:
         pictures: /article_pictures.yaml

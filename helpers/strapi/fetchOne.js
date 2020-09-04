@@ -1,4 +1,6 @@
 const AuthStrapi = require('./AuthStrapi');
+// vaja valmis teha, kunagi, vist ... starpi tagatuba v6ib ka aidata
+
 
 function FetchOne(dataPath, id, token){
 
