@@ -1,24 +1,47 @@
 footer
     .social
+        if self.footer.socialGroup
+            each socialGroups in self.footer.socialGroup
+                if socialGroups.name
+                    p= socialGroups.name
+                if socialGroups.items
+                    each item in socialGroups.items
+                        if item.svgCode
+                            a(href=item.url target='_blank') !{item.svgCode}
+                        else if item.svgMedia
+                            img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}` src=`/assets/img/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}`)
 
-        each socialGroups in self.footer.socialGroup
-            p= socialGroups.name
-            each socialGroup in socialGroups.items
-                a(href=socialGroup.url target='_blank') !{socialGroup.svgCode}
+
+    if self.footer.item
+        each item in self.footer.item
+            if item.name
+                p= item.name
+            if item.image
+                img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`)
+            if item.svgItem
+                each svgItem in item.svgItem
+                    if svgItem.name
+                        h1.section_headline_footer= svgItem.name
+                    .footer_logos_1
+                        if svgItem.svgCode
+                            | !{svgItem.svgCode}
+                        else if svgItem.svgMedia
+                            img.footer_logo_item_1(alt=svgItem.name data-src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
 
 
-    each item in self.footer.item
-        p= item.name
-        each svgItem in item.svgItem
-            h1.section_headline_footer= self.label.all.presenters
-            .footer_logos_1
-                img.footer_logo_item_1(alt='Elisa' data-src='/assets/img/global/tartuff_f_elisa.svg' src='/assets/img/global/tartuff_f_elisa.svg')
-
-    each section in self.footer.logosSections
-        h1.section_headline_footer= section.name
-            each logo in section.logo
-                .footer_logos_1
-                    img.footer_logo_item_1(alt=logo.url data-src=`/assets/img/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`/assets/img/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
+    if self.footer.logosSections
+        each section in self.footer.logosSections
+            if section.name
+                h1.section_headline_footer= section.name
+            if section.logo
+                each logo in section.logo
+                    .footer_logos_1
+                        if logo.imgWhite
+                            img.footer_logo_item_1(alt=logo.url data-src=`/assets/img/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`/assets/img/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
+                        else if logo.imgBlack
+                            img.footer_logo_item_1(alt=logo.url data-src=`/assets/img/img_footer/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`/assets/img/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
+                        else if imgColour
+                            img.footer_logo_item_1(alt=logo.url data-src=`/assets/img/img_footer/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`/assets/img/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
 
 
 
