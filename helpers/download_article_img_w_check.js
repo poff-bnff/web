@@ -3,7 +3,6 @@ const FileReader = require('filereader');
 const http = require('http');
 const fs = require('fs');
 const yaml = require('js-yaml');
-const request = require('request');
 
 // var blob = null;
 // var xhr = new XMLHttpRequest();
