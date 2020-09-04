@@ -66,7 +66,14 @@ function fetchAll(token) {
 }
 
 
-function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, callback) {
+function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, getDataCB) {
+
+    fs.mkdir(dirPath, err => {
+        if (err && err.errno !== -4075) {
+            console.log(`error: ${err}`);
+        }
+    });
+
     allData = [];
     let req = http.request(options, function(response) {
         let data = '';
@@ -75,7 +82,7 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, c
         });
         response.on('end', function () {
             data = JSON.parse(data);
-            callback(data, dirPath, lang, writeIndexFile, dataFrom, showErrors);
+            getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml);
         });
     }).end();
 }
@@ -138,7 +145,7 @@ function rueten(obj, lang) {
 }
 
 
-function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors) {
+function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml) {
     allData = [];
     // data = rueten(data, lang);
     // console.log(data);
@@ -158,48 +165,52 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors) {
 
         if(element.directory) {
             fs.mkdir(element.directory, err => {
-                if (err) {
-                    // console.log(`error: ${err}`);
+                if (err && err.errno !== -4075) {
+                    console.log(`error: ${err}`);
+                }else{
+
+                    // let element = JSON.parse(JSON.stringify(element));
+                    // let aliases = []
+                    let languageKeys = ['en', 'et', 'ru'];
+                    for (key in element) {
+                        let lastThree = key.substring(key.length - 3, key.length);
+                        let findHyphen = key.substring(key.length - 3, key.length - 2);
+                        // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
+                        //     if (key.substring(0, key.length - 3) == 'slug') {
+                        //         aliases.push(element[key]);
+                        //     }
+                        //     delete element[key];
+                        // }
+                        // if (lastThree === `_${lang}`) {
+                        if (key == 'slug') {
+                            element.path = `article/${element[key]}`;
+                        }
+                            // element[key.substring(0, key.length - 3)] = element[key];
+
+
+                        //     delete element[key];
+                        // }
+
+                        // Make separate CSV with key
+
+                        if (typeof(element[key]) === 'object' && element[key] != null) {
+                            // makeCSV(element[key], element, lang);
+                        }
+
+                    }
+
+
+
+                    // element.aliases = aliases;
+                    // rueten(element, `_${lang}`);
+                    allData.push(element);
+                    element.data = dataFrom;
+                    generateYaml(element, element, dirPath, lang, writeIndexFile)
+
                 }
             });
 
-            // let element = JSON.parse(JSON.stringify(element));
-            // let aliases = []
-            let languageKeys = ['en', 'et', 'ru'];
-            for (key in element) {
-                let lastThree = key.substring(key.length - 3, key.length);
-                let findHyphen = key.substring(key.length - 3, key.length - 2);
-                // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
-                //     if (key.substring(0, key.length - 3) == 'slug') {
-                //         aliases.push(element[key]);
-                //     }
-                //     delete element[key];
-                // }
-                // if (lastThree === `_${lang}`) {
-                if (key == 'slug') {
-                    element.path = `article/${element[key]}`;
-                }
-                    // element[key.substring(0, key.length - 3)] = element[key];
 
-
-                //     delete element[key];
-                // }
-
-                // Make separate CSV with key
-
-                if (typeof(element[key]) === 'object' && element[key] != null) {
-                    // makeCSV(element[key], element, lang);
-                }
-
-            }
-
-
-
-            // element.aliases = aliases;
-            // rueten(element, `_${lang}`);
-            allData.push(element);
-            element.data = dataFrom;
-            generateYaml(element, element, dirPath, lang, writeIndexFile)
         }else{
             if(showErrors) {
                 console.log(`Film ID ${element.id} slug_en value missing`);
