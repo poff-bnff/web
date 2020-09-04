@@ -102,7 +102,7 @@
                 name: Персидский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//yalda-a-night-for-forgiveness
+    directory: source/_fetchdir/films_poff/yalda-a-night-for-forgiveness
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -181,7 +181,7 @@
                 name: Английский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//maudie
+    directory: source/_fetchdir/films_poff/maudie
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -251,7 +251,7 @@
                 name: Английский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//banksy-most-wanted
+    directory: source/_fetchdir/films_poff/banksy-most-wanted
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -340,7 +340,7 @@
                 name: Английский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//acasa-my-home
+    directory: source/_fetchdir/films_poff/acasa-my-home
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -411,7 +411,7 @@
                 name: Английский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//storm-boy
+    directory: source/_fetchdir/films_poff/storm-boy
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -496,7 +496,7 @@
                 name: Португальский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//invisible-life-of-euridice-gusmao
+    directory: source/_fetchdir/films_poff/invisible-life-of-euridice-gusmao
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -567,7 +567,7 @@
                 name: Корейский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//house-of-hummingbird
+    directory: source/_fetchdir/films_poff/house-of-hummingbird
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -664,80 +664,7 @@
                 name: Русский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//flawless
-    path: film/
-    data:
-        pictures: /film_pictures.yaml
-        screenings: /film/screenings.ru.yaml
--
-    id: 506
-    updated_by:
-        id: 1
-        firstname: Mihkel
-        lastname: Putrinš
-    created_at: '2020-08-19T08:36:37.102Z'
-    updated_at: '2020-08-28T09:01:48.953Z'
-    title_et: Õnnejumalanna
-    title_en: The Goddess of Fortune
-    titleOriginal: La dea fortuna
-    year: 2019
-    runtime: 114
-    slug_et: onnejumalanna
-    slug_en: the-goddess-of-fortune
-    filmId: '1004'
-    credentials:
-        id: 387
-        director:
-            - Ferzan Özpetek
-        screenwriter:
-            - Ferzan Özpetek
-            - ' Silvia Ranfagni'
-            - ' Gianni Romoli'
-        doP:
-            - Gian Filippo Corticelli
-        cast:
-            - Stefano Accorsi
-            - ' Jasmine Trinca'
-            - ' Edoardo Leo'
-        composer:
-            - Pasquale Catalano
-    synopsis: ''
-    media:
-        id: 322
-        Trailer:
-            -
-                id: 307
-                Url: ''
-                Source: ''
-        QaClip:
-            -
-                id: 303
-                Url: ''
-    tags:
-        id: 310
-    countriesAndLanguages:
-        id: 294
-        countries:
-            -
-                id: 936
-                created_at: '2020-08-17T14:20:49.557Z'
-                updated_at: '2020-08-17T14:20:49.557Z'
-                code: IT
-                name_et: Itaalia
-                name_en: Italy
-                name: Италия
-        languages:
-            -
-                id: 1709
-                created_at: '2020-08-24T12:28:26.804Z'
-                updated_at: '2020-08-24T12:28:26.804Z'
-                name_et: Itaalia
-                name_en: Italian
-                code: it
-                name: Итальянский
-    title: ''
-    slug: ''
-    directory: source/_fetchdir/films_poff//the-goddess-of-fortune
+    directory: source/_fetchdir/films_poff/flawless
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -811,7 +738,80 @@
                 name: Эстонский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//the-secret-lamb
+    directory: source/_fetchdir/films_poff/the-secret-lamb
+    path: film/
+    data:
+        pictures: /film_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 506
+    updated_by:
+        id: 1
+        firstname: Mihkel
+        lastname: Putrinš
+    created_at: '2020-08-19T08:36:37.102Z'
+    updated_at: '2020-08-28T09:01:48.953Z'
+    title_et: Õnnejumalanna
+    title_en: The Goddess of Fortune
+    titleOriginal: La dea fortuna
+    year: 2019
+    runtime: 114
+    slug_et: onnejumalanna
+    slug_en: the-goddess-of-fortune
+    filmId: '1004'
+    credentials:
+        id: 387
+        director:
+            - Ferzan Özpetek
+        screenwriter:
+            - Ferzan Özpetek
+            - ' Silvia Ranfagni'
+            - ' Gianni Romoli'
+        doP:
+            - Gian Filippo Corticelli
+        cast:
+            - Stefano Accorsi
+            - ' Jasmine Trinca'
+            - ' Edoardo Leo'
+        composer:
+            - Pasquale Catalano
+    synopsis: ''
+    media:
+        id: 322
+        Trailer:
+            -
+                id: 307
+                Url: ''
+                Source: ''
+        QaClip:
+            -
+                id: 303
+                Url: ''
+    tags:
+        id: 310
+    countriesAndLanguages:
+        id: 294
+        countries:
+            -
+                id: 936
+                created_at: '2020-08-17T14:20:49.557Z'
+                updated_at: '2020-08-17T14:20:49.557Z'
+                code: IT
+                name_et: Itaalia
+                name_en: Italy
+                name: Италия
+        languages:
+            -
+                id: 1709
+                created_at: '2020-08-24T12:28:26.804Z'
+                updated_at: '2020-08-24T12:28:26.804Z'
+                name_et: Itaalia
+                name_en: Italian
+                code: it
+                name: Итальянский
+    title: ''
+    slug: ''
+    directory: source/_fetchdir/films_poff/the-goddess-of-fortune
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -883,7 +883,7 @@
                 name: Испанский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//champions
+    directory: source/_fetchdir/films_poff/champions
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -953,7 +953,7 @@
                 name: Английский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//schemers
+    directory: source/_fetchdir/films_poff/schemers
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -1026,7 +1026,7 @@
                 name: Английский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//marcel-duchamp-art-of-the-possible
+    directory: source/_fetchdir/films_poff/marcel-duchamp-art-of-the-possible
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -1095,7 +1095,7 @@
                 name: Русский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//acid
+    directory: source/_fetchdir/films_poff/acid
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -1182,7 +1182,7 @@
                 name: Французский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//final-portrait
+    directory: source/_fetchdir/films_poff/final-portrait
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -1263,7 +1263,7 @@
                 name: Финский
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//force-of-habit
+    directory: source/_fetchdir/films_poff/force-of-habit
     path: film/
     data:
         pictures: /film_pictures.yaml
@@ -1330,7 +1330,7 @@
                 name: Нюнорск (новонорвежский)
     title: ''
     slug: ''
-    directory: source/_fetchdir/films_poff//self-portrait
+    directory: source/_fetchdir/films_poff/self-portrait
     path: film/
     data:
         pictures: /film_pictures.yaml
