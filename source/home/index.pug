@@ -98,28 +98,18 @@ block content
                             - var currentTime = new Date()
                             if typeof(news.publishFrom) === 'undefined'
                                 - var publishFrom= new Date(news.created_at)
-                                //- - console.log(typeof(news.publishFrom))
                             else
                                 - var publishFrom= new Date(news.publishFrom)
 
-                            //- if typeof(news.publishUntil) === 'undefined'
-                            //-     - var publishUntil= news.publish
-                            //-     - console.log(typeof(news.publishUntil))
-                            //- else
                             if news.publishUntil
                                 - var publishUntil = new Date(news.publishUntil)
 
                             if (currentTime > publishFrom)
                                 if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
 
-                                    p=  `ajssa ${publishFrom} - ${currentTime} - ${publishUntil}`
-                                    //- p= (news.title + ' / ' + counter)
-
                                     if news.article_types && news.article_types[0]
                                         - var articleType = news.article_types[0].et
-
                                     if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
-
                                         - continue
                                     if counter >= 5
                                         - break
