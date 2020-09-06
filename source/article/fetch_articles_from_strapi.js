@@ -2,6 +2,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const http = require('http');
+var rimraf = require("rimraf");
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -68,6 +69,7 @@ function fetchAll(token) {
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, getDataCB) {
 
+    rimraf.sync(dirPath);
     fs.mkdir(dirPath, err => {
         if (err && err.errno !== -4075) {
             console.log(`error: ${err}`);
@@ -164,6 +166,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         // element = rueten(element, `_${lang}`);
 
         if(element.directory) {
+            rimraf.sync(element.directory);
             fs.mkdir(element.directory, err => {
                 if (err && err.errno !== -4075) {
                     console.log(`error: ${err}`);
