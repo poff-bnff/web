@@ -4,11 +4,11 @@ created_by:
     firstname: Martin
     lastname: Pennaste
 updated_by:
-    id: 3
-    firstname: Liis
-    lastname: Käsper
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
 created_at: '2020-09-02T07:02:01.637Z'
-updated_at: '2020-09-03T13:24:37.925Z'
+updated_at: '2020-09-06T15:23:42.588Z'
 title_et: Tartuffi filmid jõuavad ekraanile ka Tallinnas
 slug_et: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
 title_en: test 6 en
@@ -62,7 +62,7 @@ contents_et: >-
     PÖFFi armastusfilmide festival Tartuff kestab 10.–15. augustini. Festivali
     virtuaalses kinos Elisa Stage saab filme vaadata 16. augustini.
 contents_en: cont 6 en
-publishFrom: '2020-09-24T05:30:00.000Z'
+publishFrom: '2020-09-02T05:30:00.000Z'
 publishUntil: '2019-12-31T22:00:00.000Z'
 publish_et: true
 publish_en: false
@@ -145,8 +145,10 @@ tag_genres:
 tag_keywords:
     - MeToo
     - Общество
+slug: pof-fi-article-1
 publish: false
 directory: source/_fetchdir/articles_poff/test-6-en
+path: article/pof-fi-article-1
 data:
     pictures: /article_pictures.yaml
     screenings: /film/screenings.ru.yaml

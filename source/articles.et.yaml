@@ -12,10 +12,13 @@
     updated_at: '2020-09-02T08:01:22.167Z'
     title_et: Mitte ainult filmid! Tartuff pakub ka põnevaid üritusi
     slug_et: mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
+    title_en: test 5 en
+    slug_en: test-5-en
     lead_et: >-
         Mida põnevat võib leida Eesti tänavakunstipealinna Tartu seintelt? Kui
         levinud on naiste ahistamine Soomes? Milline võiks välja näha
         hommikupiknik Emajõe lodjal?
+    lead_en: Lead 5 en
     contents_et: >-
         Vastused leiate juba 10. augustil Tartus avataval PÖFFi armastusfilmide
         festivalil Tartuff, mis toob lisaks filmidele huviliste ette rikkaliku
@@ -76,10 +79,14 @@
         PÖFFi armastusfilmide festival Tartuff toimub tänavu 10.-15. augustini
         samaaegselt Tartus ja veebiplatvormil Elisa Stage ning selle alateemaks
         on kunst.
+    contents_en: >-
+        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  en
     publishFrom: '2020-08-07T09:00:00.000Z'
     publishUntil: '2021-01-07T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 12
         imageDefault:
@@ -152,19 +159,11 @@
             et: Uudised
             en: News
             ru: Новости
-    title: test 5 en
-    slug: test-5-en
-    lead: Lead 5 en
-    contents: >-
-        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
-        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
-        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  en
     publish: true
     directory: source/_fetchdir/articles_poff/test-5-en
-    path: article/test-5-en
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 7
     created_by:
@@ -172,17 +171,20 @@
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
     created_at: '2020-09-02T07:03:23.979Z'
-    updated_at: '2020-09-03T13:13:24.826Z'
+    updated_at: '2020-09-06T16:13:53.324Z'
     title_et: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
     slug_et: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
+    title_en: test7 en
+    slug_en: test7-en
     lead_et: >-
         Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
         professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
         kolib selleks sügiseks veebi.
+    lead_en: lead 7 en
     contents_et: >-
         Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
         piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
@@ -227,10 +229,11 @@
         Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
         stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
         juhul tervenisti virtuaalsel kujul.
+    contents_en: cont 7 en
     publishFrom: '2020-08-17T09:00:00.000Z'
     publishUntil: '2020-12-17T10:00:00.000Z'
-    publish_et: false
-    publish_ru: false
+    publish_et: true
+    publish_en: false
     media:
         id: 14
         imageDefault:
@@ -275,16 +278,13 @@
             et: Uudised
             en: News
             ru: Новости
-    title: test7 en
-    slug: test7-en
-    lead: lead 7 en
-    contents: cont 7 en
+    slug: pof-fi-article-2
     publish: false
     directory: source/_fetchdir/articles_poff/test7-en
-    path: article/test7-en
+    path: article/pof-fi-article-2
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 2
     created_by:
@@ -299,9 +299,12 @@
     updated_at: '2020-09-02T08:11:15.785Z'
     title_et: Tartuffi esimene film on seksuaalsest ahistamisest
     slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
+    title_en: test 2 en
+    slug_en: test-2-en
     lead_et: >-
         PÖFFi armastusfilmide festival Tartuff kuulutas välja esimese linateose,
         mille teema on hetkel üliaktuaalne – seksuaalne ahistamine.
+    lead_en: lead 2 en
     contents_et: >-
         „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb kuuest
         absurdihuumoriga vürtsitatud loost, mis on inspireeritud igapäevastest
@@ -344,10 +347,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: cont 2 en
     publishFrom: '2020-07-07T09:00:00.000Z'
     publishUntil: '2021-01-14T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 9
         imageDefault:
@@ -391,16 +395,11 @@
             et: Uudised
             en: News
             ru: Новости
-    title: test 2 en
-    slug: test-2-en
-    lead: lead 2 en
-    contents: cont 2 en
     publish: true
     directory: source/_fetchdir/articles_poff/test-2-en
-    path: article/test-2-en
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 3
     created_by:
@@ -415,9 +414,12 @@
     updated_at: '2020-09-02T08:07:38.360Z'
     title_et: Tartuff on pühendatud kunstile
     slug_et: tartuff-on-puehendatud-kunstile
+    title_en: test 3 en
+    slug_en: test-3-en
     lead_et: >-
         PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu
         kunstile.
+    lead_en: lead 3 en
     contents_et: >-
         Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
         Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid
@@ -507,10 +509,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: cont 3 en
     publishFrom: '2020-07-15T09:00:00.000Z'
     publishUntil: '2021-01-07T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 10
         imageDefault:
@@ -554,174 +557,11 @@
             et: Uudised
             en: News
             ru: Новости
-    title: test 3 en
-    slug: test-3-en
-    lead: lead 3 en
-    contents: cont 3 en
     publish: true
     directory: source/_fetchdir/articles_poff/test-3-en
-    path: article/test-3-en
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
--
-    id: 6
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-02T07:02:01.637Z'
-    updated_at: '2020-09-03T13:24:37.925Z'
-    title_et: Tartuffi filmid jõuavad ekraanile ka Tallinnas
-    slug_et: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
-    lead_et: >-
-        Tartus jätkuva PÖFFi armastusfilmide festivali Tartuff filme saab
-        vaadata ka järgmisel nädalal Tallinnas, kui Filmimuuseum näitab
-        festivali valikkava.
-    contents_et: >-
-        19.–22. augustini linastuvad Maarjamäel asuva Filmimuuseumi kinos
-        Hispaania režissööri Javier Fesseri komöödia „Tšempionid”, Lõuna-Korea
-        režissööri Bora Kimi draama „Hüvasti!”, Iiri režissööri Aisling Walshi
-        biograafiline draama „Maudie” ja Brasiilia režissööri Karim Aïnouzi
-        melodraama „Nähtamatu elu”.
-
-
-        „Valisime Tartuffi programmist näitamiseks filmid, mis tutvustavad
-        erinevaid filmikultuure ja viivad erinevatesse ajastutesse. Kõik filmid
-        on äratanud tähelepanu tippfestivalidel või veel parem – oma maa
-        vaatajate seas,” ütles Filmimuuseumi kuraator Karlo Funk.
-
-
-        „Tšempionid” on südamlik komöödia vaimupuudega inimestest, kes hakkavad
-        professionaalse treeneri käe all korvpalli mängima. Linateos võitis
-        aasta parima Hispaania filmi auhinna ja esindas Hispaaniat ka
-        mitteingliskeelsete filmide Oscari konkurentsis. Seansi juhatab sisse
-        Hispaania Maja juht Neftali Peral Joris.
-
-
-        Brasiilia rohkelt auhinnatud troopilises melodraamas „Nähtamatu elu”
-        surub ühiskonna konservatiivsus alla kahe õe unistused. Brasiilia esitas
-        filmi ka Oscarile. Seansi juhatab sisse režissöör Kadri Kõusaar, kes on
-        ise Lõuna-Ameerikas filminud.
-
-
-        14-aastane üksildane Seouli tüdruk Eun-hee otsib filmis „Hüvasti!”
-        mõistmist, millest ta on ilma jäetud nii kodus kui koolis. Tegu on
-        tänavuse Tartuffi tunnustatuima linateosega, mis on võitnud ligemale 30
-        auhinda. Seansi juhatab sisse Lõuna-Korea kultuuri uurija Maari
-        Hinsberg.
-
-
-        „Maudie” on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
-        ennast kunsti kaudu. Film põhineb Kanada naivistliku kunstniku Maud
-        Lewise (1903-1970) elul. Teda mängib Sally Hawkins, kes on võitnud selle
-        osatäitmise eest ka hulk auhindu.
-
-
-        Seansid algavad kell 19 ja pilet maksab viis eurot. Filmidel on
-        eestikeelsed subtiitrid. Piletid on saadaval Fientas.
-
-
-        PÖFFi armastusfilmide festival Tartuff kestab 10.–15. augustini.
-        Festivali virtuaalses kinos Elisa Stage saab filme vaadata 16.
-        augustini.
-    publishFrom: '2020-09-24T05:30:00.000Z'
-    publishUntil: '2019-12-31T22:00:00.000Z'
-    publish_et: true
-    publish_ru: false
-    media:
-        id: 13
-        imageDefault:
-            -
-                id: 2
-                name: F_3_invisible_life.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    large:
-                        ext: .jpg
-                        url: /uploads/large_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: large_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: large_F_3_invisible_life.jpg
-                        size: 53.41
-                        width: 1000
-                        height: 563
-                    small:
-                        ext: .jpg
-                        url: /uploads/small_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: small_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: small_F_3_invisible_life.jpg
-                        size: 15.85
-                        width: 500
-                        height: 281
-                    medium:
-                        ext: .jpg
-                        url: /uploads/medium_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: medium_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: medium_F_3_invisible_life.jpg
-                        size: 30.86
-                        width: 750
-                        height: 422
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: thumbnail_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: thumbnail_F_3_invisible_life.jpg
-                        size: 5.62
-                        width: 245
-                        height: 138
-                hash: F_3_invisible_life_fb118ee4f7
-                ext: .jpg
-                mime: image/jpeg
-                size: 122.39
-                url: /uploads/F_3_invisible_life_fb118ee4f7.jpg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-13T19:16:16.284Z'
-                updated_at: '2020-08-13T19:16:16.529Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    tag_premiere_types:
-        - World Premiere
-    tag_programmes:
-        - Official Selection
-    tag_genres:
-        - Animation
-    tag_keywords:
-        - MeToo
-        - Society
-    title: test 6 en
-    slug: test-6-en
-    lead: lead 6 en
-    contents: cont 6 en
-    publish: false
-    directory: source/_fetchdir/articles_poff/test-6-en
-    path: article/test-6-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 4
     created_by:
@@ -733,13 +573,15 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-02T06:24:45.587Z'
-    updated_at: '2020-09-02T08:21:08.339Z'
+    updated_at: '2020-09-06T16:09:41.606Z'
     title_et: Tartu armastusfilmide festivali avab troopiline melodraama
-    slug_et: test-4-et
+    slug_et: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    title_en: test 4 en
+    slug_en: test-4-en
     lead_et: >-
-        **PÖFFi armastusfilmide festival Tartuff** kuulutas väljatänavuse
-        avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud
-        „Nähtamatu elu”.
+        PÖFFi armastusfilmide festival Tartuff kuulutas väljatänavuse avafilmi,
+        milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud „Nähtamatu elu”.
+    lead_en: lead 4 en
     contents_et: >-
         End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
         kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne
@@ -756,16 +598,10 @@
         The Wrap. 
 
 
-        (<iframe width="500" height="281"
+        [Trailer](<iframe width="500" height="281"
         src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope;
         picture-in-picture" allowfullscreen></iframe>)
-
-
-        ```<iframe width="500" height="281"
-        src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope;
-        picture-in-picture" allowfullscreen></iframe>```
 
 
         Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un
@@ -790,10 +626,11 @@
         augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
         Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
         [](https://lmk.ee). 
+    contents_en: cont 4 en
     publishFrom: '2020-07-22T09:00:00.000Z'
     publishUntil: '2021-01-06T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 11
         imageDefault:
@@ -919,16 +756,172 @@
             et: Uudised
             en: News
             ru: Новости
-    title: test 4 en
-    slug: test-4-en
-    lead: lead 4 en
-    contents: cont 4 en
+    slug: pof-fi-article-3
     publish: true
     directory: source/_fetchdir/articles_poff/test-4-en
-    path: article/test-4-en
+    path: article/pof-fi-article-3
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
+-
+    id: 6
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-02T07:02:01.637Z'
+    updated_at: '2020-09-06T15:23:42.588Z'
+    title_et: Tartuffi filmid jõuavad ekraanile ka Tallinnas
+    slug_et: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
+    title_en: test 6 en
+    slug_en: test-6-en
+    lead_et: >-
+        Tartus jätkuva PÖFFi armastusfilmide festivali Tartuff filme saab
+        vaadata ka järgmisel nädalal Tallinnas, kui Filmimuuseum näitab
+        festivali valikkava.
+    lead_en: lead 6 en
+    contents_et: >-
+        19.–22. augustini linastuvad Maarjamäel asuva Filmimuuseumi kinos
+        Hispaania režissööri Javier Fesseri komöödia „Tšempionid”, Lõuna-Korea
+        režissööri Bora Kimi draama „Hüvasti!”, Iiri režissööri Aisling Walshi
+        biograafiline draama „Maudie” ja Brasiilia režissööri Karim Aïnouzi
+        melodraama „Nähtamatu elu”.
+
+
+        „Valisime Tartuffi programmist näitamiseks filmid, mis tutvustavad
+        erinevaid filmikultuure ja viivad erinevatesse ajastutesse. Kõik filmid
+        on äratanud tähelepanu tippfestivalidel või veel parem – oma maa
+        vaatajate seas,” ütles Filmimuuseumi kuraator Karlo Funk.
+
+
+        „Tšempionid” on südamlik komöödia vaimupuudega inimestest, kes hakkavad
+        professionaalse treeneri käe all korvpalli mängima. Linateos võitis
+        aasta parima Hispaania filmi auhinna ja esindas Hispaaniat ka
+        mitteingliskeelsete filmide Oscari konkurentsis. Seansi juhatab sisse
+        Hispaania Maja juht Neftali Peral Joris.
+
+
+        Brasiilia rohkelt auhinnatud troopilises melodraamas „Nähtamatu elu”
+        surub ühiskonna konservatiivsus alla kahe õe unistused. Brasiilia esitas
+        filmi ka Oscarile. Seansi juhatab sisse režissöör Kadri Kõusaar, kes on
+        ise Lõuna-Ameerikas filminud.
+
+
+        14-aastane üksildane Seouli tüdruk Eun-hee otsib filmis „Hüvasti!”
+        mõistmist, millest ta on ilma jäetud nii kodus kui koolis. Tegu on
+        tänavuse Tartuffi tunnustatuima linateosega, mis on võitnud ligemale 30
+        auhinda. Seansi juhatab sisse Lõuna-Korea kultuuri uurija Maari
+        Hinsberg.
+
+
+        „Maudie” on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
+        ennast kunsti kaudu. Film põhineb Kanada naivistliku kunstniku Maud
+        Lewise (1903-1970) elul. Teda mängib Sally Hawkins, kes on võitnud selle
+        osatäitmise eest ka hulk auhindu.
+
+
+        Seansid algavad kell 19 ja pilet maksab viis eurot. Filmidel on
+        eestikeelsed subtiitrid. Piletid on saadaval Fientas.
+
+
+        PÖFFi armastusfilmide festival Tartuff kestab 10.–15. augustini.
+        Festivali virtuaalses kinos Elisa Stage saab filme vaadata 16.
+        augustini.
+    contents_en: cont 6 en
+    publishFrom: '2020-09-02T05:30:00.000Z'
+    publishUntil: '2019-12-31T22:00:00.000Z'
+    publish_et: true
+    publish_en: false
+    media:
+        id: 13
+        imageDefault:
+            -
+                id: 2
+                name: F_3_invisible_life.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    large:
+                        ext: .jpg
+                        url: /uploads/large_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: large_F_3_invisible_life_fb118ee4f7
+                        mime: image/jpeg
+                        name: large_F_3_invisible_life.jpg
+                        size: 53.41
+                        width: 1000
+                        height: 563
+                    small:
+                        ext: .jpg
+                        url: /uploads/small_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: small_F_3_invisible_life_fb118ee4f7
+                        mime: image/jpeg
+                        name: small_F_3_invisible_life.jpg
+                        size: 15.85
+                        width: 500
+                        height: 281
+                    medium:
+                        ext: .jpg
+                        url: /uploads/medium_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: medium_F_3_invisible_life_fb118ee4f7
+                        mime: image/jpeg
+                        name: medium_F_3_invisible_life.jpg
+                        size: 30.86
+                        width: 750
+                        height: 422
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_F_3_invisible_life_fb118ee4f7.jpg
+                        hash: thumbnail_F_3_invisible_life_fb118ee4f7
+                        mime: image/jpeg
+                        name: thumbnail_F_3_invisible_life.jpg
+                        size: 5.62
+                        width: 245
+                        height: 138
+                hash: F_3_invisible_life_fb118ee4f7
+                ext: .jpg
+                mime: image/jpeg
+                size: 122.39
+                url: /uploads/F_3_invisible_life_fb118ee4f7.jpg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-13T19:16:16.284Z'
+                updated_at: '2020-08-13T19:16:16.529Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    tag_premiere_types:
+        - Мировая премьера
+    tag_programmes:
+        - Основная конкурсная программа
+    tag_genres:
+        - Анимация
+    tag_keywords:
+        - MeToo
+        - Общество
+    slug: pof-fi-article-1
+    publish: false
+    directory: source/_fetchdir/articles_poff/test-6-en
+    path: article/pof-fi-article-1
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 9
     created_by:
@@ -943,9 +936,12 @@
     updated_at: '2020-09-03T13:08:15.555Z'
     title_et: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
     slug_et: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
+    title_en: test 9 en
+    slug_en: test-9-en
     lead_et: >-
         Kumu kultuuriteemaliste dokumentaalfilmide sügishooaja juhatab sisse
         kuulsast Tokaj veinist rääkiv linateos.
+    lead_en: test 9 en lead
     contents_et: >-
         Ungarlase Tamás Almási „Vedel kuld” (Folyékony arany) on esimene film
         Ungari veinist, täpsemalt maailmakuulsast Aszú veinist, mille
@@ -1025,9 +1021,10 @@
 
         Kultuuriteemaliste filmide sarja „Kumu dokumentaal” korraldavad Kumu ja
         PÖFF.
+    contents_en: test 9 en cont
     publishFrom: '2020-08-24T09:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 16
         imageDefault:
@@ -1073,16 +1070,11 @@
             et: Uudised
             en: News
             ru: Новости
-    title: test 9 en
-    slug: test-9-en
-    lead: test 9 en lead
-    contents: test 9 en cont
     publish: true
     directory: source/_fetchdir/articles_poff/test-9-en
-    path: article/test-9-en
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 1
     created_by:
@@ -1097,10 +1089,13 @@
     updated_at: '2020-09-02T08:12:28.165Z'
     title_et: Tartu armastusfilmide festival laieneb üle kogu Eesti
     slug_et: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
+    title_en: Test EN
+    slug_en: test-en
     lead_et: >-
         Juba 15. korda muutub Tartu Raekoja plats Eesti suurimaks vabaõhukinoks,
         kui augusti teisel nädalal jõuab sealsele väliekraanile 11 armastusest
         kõnelevat filmi.
+    lead_en: Lead EN
     contents_et: >-
         Peale selle avab PÖFFi armastusfilmide festival Tartuff esimest korda ka
         virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
@@ -1143,10 +1138,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: Cont EN
     publishFrom: '2020-06-18T09:00:00.000Z'
     publishUntil: '2021-01-14T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 8
         imageDefault:
@@ -1219,24 +1215,19 @@
             en: News
             ru: Новости
     tag_premiere_types:
-        - International Premiere
+        - Международная премьера
     tag_programmes:
-        - Official Selection
+        - Основная конкурсная программа
     tag_genres:
-        - Drama
+        - Драма
     tag_keywords:
         - MeToo
-        - Society
-    title: Test EN
-    slug: test-en
-    lead: Lead EN
-    contents: Cont EN
+        - Общество
     publish: true
     directory: source/_fetchdir/articles_poff/test-en
-    path: article/test-en
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 8
     created_by:
@@ -1251,9 +1242,12 @@
     updated_at: '2020-09-02T11:47:03.136Z'
     title_et: Tartuffi publikuauhind rändab Itaaliasse
     slug_et: test-8-et
+    title_en: test 8 en
+    slug_en: test-8-en
     lead_et: >-
         PÖFFi armastusfilmide festivali Tartuff publik valis oma lemmikuks
         Itaalia draamakomöödia „Õnnejumalanna”.
+    lead_en: test 8 en lead
     contents_et: >-
         Ferzan Özpeteki filmis peavad kaks lastekauget, oma suhtega kriisi
         jõudnud meest kantseldama lapsi, kes neile hoida jäetakse.
@@ -1290,10 +1284,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: test 8 en cont
     publishFrom: '2020-05-18T09:00:00.000Z'
     publishUntil: '2020-11-10T10:00:00.000Z'
     publish_et: false
-    publish_ru: true
+    publish_en: true
     media:
         id: 15
         imageDefault:
@@ -1366,14 +1361,14 @@
             en: News
             ru: Новости
     tag_premiere_types:
-        - European premiere
+        - Европейская премьера
     tag_programmes:
-        - Official Selection
+        - Основная конкурсная программа
     tag_genres:
-        - Drama
-        - Animation
+        - Драма
+        - Анимация
     tag_keywords:
-        - Society
+        - Общество
     web_authors:
         -
             id: 1
@@ -1382,7 +1377,7 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
+            name: Волк
         -
             id: 2
             namePrivate: Toimetaja
@@ -1391,16 +1386,11 @@
             created_at: '2020-09-02T11:28:23.386Z'
             updated_at: '2020-09-02T11:28:23.428Z'
             name: Editor
-    title: test 8 en
-    slug: test-8-en
-    lead: test 8 en lead
-    contents: test 8 en cont
     publish: true
     directory: source/_fetchdir/articles_poff/test-8-en
-    path: article/test-8-en
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 11
     created_by:
@@ -1415,12 +1405,12 @@
     updated_at: '2020-09-03T15:18:29.859Z'
     title_et: TEST ARTIKKEL 2
     slug_et: test-artikkel-2
-    title_ru: TEST ARTIKKEL 2
-    slug_ru: test-artikkel-2
+    title_en: TEST ARTIKKEL 2
+    slug_en: test-artikkel-2
     lead_et: TEST ARTIKKEL 2
-    lead_ru: TEST ARTIKKEL 2
+    lead_en: TEST ARTIKKEL 2
     contents_et: TEST ARTIKKEL 2
-    contents_ru: TEST ARTIKKEL 2
+    contents_en: TEST ARTIKKEL 2
     publishFrom: '2020-09-01T09:00:00.000Z'
     publish_et: true
     article_types: []
@@ -1432,7 +1422,7 @@
     path: article/test-artikkel-2
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 12
     created_by:
@@ -1447,7 +1437,7 @@
     updated_at: '2020-09-04T08:24:36.805Z'
     title_et: TEST33
     slug_et: pof-fi-article
-    slug_ru: pof-fi-article
+    slug_en: pof-fi-article
     publishFrom: '2020-09-16T09:00:00.000Z'
     publish_et: true
     article_types: []
@@ -1456,7 +1446,7 @@
     path: article/pof-fi-article
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
+        screenings: /film/screenings.ru.yaml
 -
     id: 5
     created_by:
@@ -1633,13 +1623,14 @@
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
     created_at: '2020-09-02T07:03:23.979Z'
-    updated_at: '2020-09-03T13:13:24.826Z'
+    updated_at: '2020-09-06T16:13:53.324Z'
     title_en: test7 en
     slug_en: test7-en
+    slug_ru: pof-fi-article-2
     lead_en: lead 7 en
     contents_en: cont 7 en
     publishFrom: '2020-08-17T09:00:00.000Z'
@@ -1740,7 +1731,7 @@
         Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
         stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
         juhul tervenisti virtuaalsel kujul.
-    publish: false
+    publish: true
     directory: source/_fetchdir/articles_poff/test7-en
     path: article/p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
     data:
@@ -2026,22 +2017,229 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
 -
+    id: 4
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-02T06:24:45.587Z'
+    updated_at: '2020-09-06T16:09:41.606Z'
+    title_en: test 4 en
+    slug_en: test-4-en
+    slug_ru: pof-fi-article-3
+    lead_en: lead 4 en
+    contents_en: cont 4 en
+    publishFrom: '2020-07-22T09:00:00.000Z'
+    publishUntil: '2021-01-06T10:00:00.000Z'
+    publish_en: true
+    publish_ru: true
+    media:
+        id: 11
+        imageDefault:
+            -
+                id: 3
+                name: F_2_invisible_life.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    large:
+                        ext: .jpg
+                        url: /uploads/large_F_2_invisible_life_feb5451063.jpg
+                        hash: large_F_2_invisible_life_feb5451063
+                        mime: image/jpeg
+                        name: large_F_2_invisible_life.jpg
+                        size: 89.02
+                        width: 1000
+                        height: 563
+                    small:
+                        ext: .jpg
+                        url: /uploads/small_F_2_invisible_life_feb5451063.jpg
+                        hash: small_F_2_invisible_life_feb5451063
+                        mime: image/jpeg
+                        name: small_F_2_invisible_life.jpg
+                        size: 28.41
+                        width: 500
+                        height: 281
+                    medium:
+                        ext: .jpg
+                        url: /uploads/medium_F_2_invisible_life_feb5451063.jpg
+                        hash: medium_F_2_invisible_life_feb5451063
+                        mime: image/jpeg
+                        name: medium_F_2_invisible_life.jpg
+                        size: 53.8
+                        width: 750
+                        height: 422
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_F_2_invisible_life_feb5451063.jpg
+                        hash: thumbnail_F_2_invisible_life_feb5451063
+                        mime: image/jpeg
+                        name: thumbnail_F_2_invisible_life.jpg
+                        size: 9.4
+                        width: 245
+                        height: 138
+                hash: F_2_invisible_life_feb5451063
+                ext: .jpg
+                mime: image/jpeg
+                size: 195.11
+                url: /uploads/F_2_invisible_life_feb5451063.jpg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-13T19:16:16.310Z'
+                updated_at: '2020-08-13T19:16:16.552Z'
+        image:
+            -
+                id: 4
+                name: F_1_invisible_life.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    large:
+                        ext: .jpg
+                        url: /uploads/large_F_1_invisible_life_745fc8df60.jpg
+                        hash: large_F_1_invisible_life_745fc8df60
+                        mime: image/jpeg
+                        name: large_F_1_invisible_life.jpg
+                        path: null
+                        size: 81.71
+                        width: 1000
+                        height: 563
+                    small:
+                        ext: .jpg
+                        url: /uploads/small_F_1_invisible_life_745fc8df60.jpg
+                        hash: small_F_1_invisible_life_745fc8df60
+                        mime: image/jpeg
+                        name: small_F_1_invisible_life.jpg
+                        path: null
+                        size: 24.04
+                        width: 500
+                        height: 281
+                    medium:
+                        ext: .jpg
+                        url: /uploads/medium_F_1_invisible_life_745fc8df60.jpg
+                        hash: medium_F_1_invisible_life_745fc8df60
+                        mime: image/jpeg
+                        name: medium_F_1_invisible_life.jpg
+                        path: null
+                        size: 46.72
+                        width: 750
+                        height: 422
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_F_1_invisible_life_745fc8df60.jpg
+                        hash: thumbnail_F_1_invisible_life_745fc8df60
+                        mime: image/jpeg
+                        name: thumbnail_F_1_invisible_life.jpg
+                        path: null
+                        size: 8.1
+                        width: 245
+                        height: 138
+                hash: F_1_invisible_life_745fc8df60
+                ext: .jpg
+                mime: image/jpeg
+                size: 194.74
+                url: /uploads/F_1_invisible_life_745fc8df60.jpg
+                previewUrl: null
+                provider: local
+                provider_metadata: null
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-13T19:16:16.414Z'
+                updated_at: '2020-08-13T19:16:16.648Z'
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    title: Tartu armastusfilmide festivali avab troopiline melodraama
+    slug: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    lead: >-
+        PÖFFi armastusfilmide festival Tartuff kuulutas väljatänavuse avafilmi,
+        milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud „Nähtamatu elu”.
+    contents: >-
+        End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
+        kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne
+        isa ja patriarhaalne ühiskond kisuvad nad lahku ega luba täita oma
+        unistusi, kuid nad ei kaota kõigele vaatamata lootust.
+
+
+        Režissöör pühendab oma filmi kõigile neile naistele, kellest Brasiilia
+        ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.
+
+
+        „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
+        tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid
+        The Wrap. 
+
+
+        [Trailer](<iframe width="500" height="281"
+        src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope;
+        picture-in-picture" allowfullscreen></iframe>)
+
+
+        Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un
+        Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide
+        Oscarile. USA filmiorganisatsiooni The National Board of Review
+        hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse
+        mängufilmiga. 
+
+
+        Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
+        elu”. Peaosades Carol Duarte ja Julia Stockler. 
+
+
+        „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
+        samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.
+
+
+        Kogu kava avalikustab festival juuli lõpus.
+
+
+        **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
+        augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
+        Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
+        [](https://lmk.ee). 
+    publish: true
+    directory: source/_fetchdir/articles_poff/test-4-en
+    path: article/tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
     id: 6
     created_by:
         id: 5
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
     created_at: '2020-09-02T07:02:01.637Z'
-    updated_at: '2020-09-03T13:24:37.925Z'
+    updated_at: '2020-09-06T15:23:42.588Z'
     title_en: test 6 en
     slug_en: test-6-en
+    slug_ru: pof-fi-article-1
     lead_en: lead 6 en
     contents_en: cont 6 en
-    publishFrom: '2020-09-24T05:30:00.000Z'
+    publishFrom: '2020-09-02T05:30:00.000Z'
     publishUntil: '2019-12-31T22:00:00.000Z'
     publish_en: false
     publish_ru: false
@@ -2180,218 +2378,6 @@
     publish: true
     directory: source/_fetchdir/articles_poff/test-6-en
     path: article/tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
-    id: 4
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-02T06:24:45.587Z'
-    updated_at: '2020-09-02T08:21:08.339Z'
-    title_en: test 4 en
-    slug_en: test-4-en
-    lead_en: lead 4 en
-    contents_en: cont 4 en
-    publishFrom: '2020-07-22T09:00:00.000Z'
-    publishUntil: '2021-01-06T10:00:00.000Z'
-    publish_en: true
-    publish_ru: true
-    media:
-        id: 11
-        imageDefault:
-            -
-                id: 3
-                name: F_2_invisible_life.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    large:
-                        ext: .jpg
-                        url: /uploads/large_F_2_invisible_life_feb5451063.jpg
-                        hash: large_F_2_invisible_life_feb5451063
-                        mime: image/jpeg
-                        name: large_F_2_invisible_life.jpg
-                        size: 89.02
-                        width: 1000
-                        height: 563
-                    small:
-                        ext: .jpg
-                        url: /uploads/small_F_2_invisible_life_feb5451063.jpg
-                        hash: small_F_2_invisible_life_feb5451063
-                        mime: image/jpeg
-                        name: small_F_2_invisible_life.jpg
-                        size: 28.41
-                        width: 500
-                        height: 281
-                    medium:
-                        ext: .jpg
-                        url: /uploads/medium_F_2_invisible_life_feb5451063.jpg
-                        hash: medium_F_2_invisible_life_feb5451063
-                        mime: image/jpeg
-                        name: medium_F_2_invisible_life.jpg
-                        size: 53.8
-                        width: 750
-                        height: 422
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_F_2_invisible_life_feb5451063.jpg
-                        hash: thumbnail_F_2_invisible_life_feb5451063
-                        mime: image/jpeg
-                        name: thumbnail_F_2_invisible_life.jpg
-                        size: 9.4
-                        width: 245
-                        height: 138
-                hash: F_2_invisible_life_feb5451063
-                ext: .jpg
-                mime: image/jpeg
-                size: 195.11
-                url: /uploads/F_2_invisible_life_feb5451063.jpg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-13T19:16:16.310Z'
-                updated_at: '2020-08-13T19:16:16.552Z'
-        image:
-            -
-                id: 4
-                name: F_1_invisible_life.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    large:
-                        ext: .jpg
-                        url: /uploads/large_F_1_invisible_life_745fc8df60.jpg
-                        hash: large_F_1_invisible_life_745fc8df60
-                        mime: image/jpeg
-                        name: large_F_1_invisible_life.jpg
-                        path: null
-                        size: 81.71
-                        width: 1000
-                        height: 563
-                    small:
-                        ext: .jpg
-                        url: /uploads/small_F_1_invisible_life_745fc8df60.jpg
-                        hash: small_F_1_invisible_life_745fc8df60
-                        mime: image/jpeg
-                        name: small_F_1_invisible_life.jpg
-                        path: null
-                        size: 24.04
-                        width: 500
-                        height: 281
-                    medium:
-                        ext: .jpg
-                        url: /uploads/medium_F_1_invisible_life_745fc8df60.jpg
-                        hash: medium_F_1_invisible_life_745fc8df60
-                        mime: image/jpeg
-                        name: medium_F_1_invisible_life.jpg
-                        path: null
-                        size: 46.72
-                        width: 750
-                        height: 422
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_F_1_invisible_life_745fc8df60.jpg
-                        hash: thumbnail_F_1_invisible_life_745fc8df60
-                        mime: image/jpeg
-                        name: thumbnail_F_1_invisible_life.jpg
-                        path: null
-                        size: 8.1
-                        width: 245
-                        height: 138
-                hash: F_1_invisible_life_745fc8df60
-                ext: .jpg
-                mime: image/jpeg
-                size: 194.74
-                url: /uploads/F_1_invisible_life_745fc8df60.jpg
-                previewUrl: null
-                provider: local
-                provider_metadata: null
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-13T19:16:16.414Z'
-                updated_at: '2020-08-13T19:16:16.648Z'
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    title: Tartu armastusfilmide festivali avab troopiline melodraama
-    slug: test-4-et
-    lead: >-
-        **PÖFFi armastusfilmide festival Tartuff** kuulutas väljatänavuse
-        avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud
-        „Nähtamatu elu”.
-    contents: >-
-        End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
-        kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne
-        isa ja patriarhaalne ühiskond kisuvad nad lahku ega luba täita oma
-        unistusi, kuid nad ei kaota kõigele vaatamata lootust.
-
-
-        Režissöör pühendab oma filmi kõigile neile naistele, kellest Brasiilia
-        ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.
-
-
-        „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
-        tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid
-        The Wrap. 
-
-
-        (<iframe width="500" height="281"
-        src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope;
-        picture-in-picture" allowfullscreen></iframe>)
-
-
-        ```<iframe width="500" height="281"
-        src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope;
-        picture-in-picture" allowfullscreen></iframe>```
-
-
-        Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un
-        Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide
-        Oscarile. USA filmiorganisatsiooni The National Board of Review
-        hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse
-        mängufilmiga. 
-
-
-        Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
-        elu”. Peaosades Carol Duarte ja Julia Stockler. 
-
-
-        „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
-        samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.
-
-
-        Kogu kava avalikustab festival juuli lõpus.
-
-
-        **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
-        augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
-        Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
-        [](https://lmk.ee). 
-    publish: true
-    directory: source/_fetchdir/articles_poff/test-4-en
-    path: article/test-4-et
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
