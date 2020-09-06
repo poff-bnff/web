@@ -72,11 +72,7 @@ function fetchAll(token) {
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, getDataCB) {
 
-    fs.mkdir(dirPath, err => {
-        if (err && err.errno !== -4075) {
-            console.log(`error: ${err}`);
-        }
-    });
+    fs.mkdirSync(dirPath, { recursive: true })
 
     allData = [];
     let req = http.request(options, function(response) {
@@ -168,51 +164,45 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         // element = rueten(element, `_${lang}`);
 
         if(element.directory) {
-            fs.mkdir(element.directory, err => {
-                if (err && err.errno !== -4075) {
-                    console.log(`error: ${err}`);
-                }else{
+            fs.mkdirSync(element.directory, { recursive: true })
 
-                    // let element = JSON.parse(JSON.stringify(element));
-                    // let aliases = []
-                    let languageKeys = ['en', 'et', 'ru'];
-                    for (key in element) {
-                        let lastThree = key.substring(key.length - 3, key.length);
-                        let findHyphen = key.substring(key.length - 3, key.length - 2);
-                        // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
-                        //     if (key.substring(0, key.length - 3) == 'slug') {
-                        //         aliases.push(element[key]);
-                        //     }
-                        //     delete element[key];
-                        // }
-                        // if (lastThree === `_${lang}`) {
-                        if (key == 'slug') {
-                            element.path = `article/${element[key]}`;
-                        }
-                            // element[key.substring(0, key.length - 3)] = element[key];
-
-
-                        //     delete element[key];
-                        // }
-
-                        // Make separate CSV with key
-
-                        if (typeof(element[key]) === 'object' && element[key] != null) {
-                            // makeCSV(element[key], element, lang);
-                        }
-
-                    }
-
-
-
-                    // element.aliases = aliases;
-                    // rueten(element, `_${lang}`);
-                    allData.push(element);
-                    element.data = dataFrom;
-                    generateYaml(element, element, dirPath, lang, writeIndexFile)
-
+            // let element = JSON.parse(JSON.stringify(element));
+            // let aliases = []
+            let languageKeys = ['en', 'et', 'ru'];
+            for (key in element) {
+                let lastThree = key.substring(key.length - 3, key.length);
+                let findHyphen = key.substring(key.length - 3, key.length - 2);
+                // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
+                //     if (key.substring(0, key.length - 3) == 'slug') {
+                //         aliases.push(element[key]);
+                //     }
+                //     delete element[key];
+                // }
+                // if (lastThree === `_${lang}`) {
+                if (key == 'slug') {
+                    element.path = `article/${element[key]}`;
                 }
-            });
+                    // element[key.substring(0, key.length - 3)] = element[key];
+
+
+                //     delete element[key];
+                // }
+
+                // Make separate CSV with key
+
+                if (typeof(element[key]) === 'object' && element[key] != null) {
+                    // makeCSV(element[key], element, lang);
+                }
+
+            }
+
+
+
+            // element.aliases = aliases;
+            // rueten(element, `_${lang}`);
+            allData.push(element);
+            element.data = dataFrom;
+            generateYaml(element, element, dirPath, lang, writeIndexFile)
 
 
         }else{
