@@ -37,7 +37,22 @@ block content
                                 .person_body.text_center
                                     h4.text_center= `${teamMember.person.firstName} ${teamMember.person.lastName}`
                                     //- p.premiere_type.text_center= val.personOrganisation
-                                    +format(teamMember.roleAtTeam)
+                                    p
+                                        span= (teamMember.roleAtTeam)
+                                        br
+                                        if teamMember.emailAtTeam
+                                            span= (teamMember.emailAtTeam)
+                                        else
+                                            span= (teamMember.person.eMail)
+                                        br
+                                        if teamMember.phoneAtTeam
+                                            span= (teamMember.phoneAtTeam)
+                                        else
+                                            span= (teamMember.person.phoneNr)
+                                    //- p= `${teamMember.roleAtTeam} \<br> ${teamMember.emailAtTeam} \br ${teamMember.phoneAtTeam}`
+                                    //- +format(teamMember.roleAtTeam)
+                                    //- +format(teamMember.emailAtTeam)
+                                    //- +format(teamMember.phoneAtTeam)
                                 //- else
                                 //-     .person_body
                                 //-         h4= val.personOrganisation

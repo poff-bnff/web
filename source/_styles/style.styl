@@ -47,7 +47,7 @@ bg_color_4 = #eeeeff
 clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
-clr_primary = #ef0f20 // tartuff red
+clr_primary = #F39133 // PÖFF orange
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -177,6 +177,14 @@ footer
     grid-gap 2rem
     justify-items center
     align-items center
+
+.footer_row_item
+    width 100%
+    justify-self center
+    align-self start
+    text-align center
+
+
 
 nav
     ul
@@ -510,6 +518,58 @@ a .dark:hover
 // .viieka_item:nth-child(5)
 //     grid-column span 2
 
+.footer_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+.footer_logos:first-child
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+.footer_logos:nth-child(2)
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+.footer_logos:nth-child(3)
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(10rem, 12rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+
+.footer_logo_item:first-child
+    width: 70%
+
+.footer_logo_item:nth-child(2)
+    width: 70%
+
+.footer_logo_item:nth-child(3)
+    width: 70%
+
+.footer_logo_item_1
+    // background-color bg_dark_3
+    width 60%
+    // padding 7rem
+
+.footer_logo_item_2
+    width 70%
+
+.footer_logo_item_3
+    width 80%
 
 .footer_logos_1
     display grid
@@ -585,24 +645,18 @@ a .dark:hover
     padding 1.618rem 1rem 1rem 1rem
     // padding 1rem
     // align-self flex-end
+    font-size 1rem
+    line-height 1.2rem
     a
         text-decoration none
         color white_96
         // font-weight 600
+    p
+        font-size 1rem
+        line-height 1.2rem
 
 .schedule
     padding-top header_height
-
-.footer_logo_item_1
-    // background-color bg_dark_3
-    width 60%
-    // padding 7rem
-
-.footer_logo_item_2
-    width 70%
-
-.footer_logo_item_3
-    width 80%
 
 header
     grid-area header
@@ -750,6 +804,7 @@ header
     margin-left 1rem
     text-decoration none
     stroke white_96
+    stroke-width 1
     &:hover
         height calc(1.5rem + 0.1vw)
         width calc(1.5rem + 0.1vw)
@@ -787,7 +842,7 @@ p
 
 .section_headline
   font-family font_h
-  font-size calc(2rem + 5vw)
+  font-size calc(1.618rem + 3vw)
   line-height 1
   font-weight 700
   color bg_dark_4
@@ -814,7 +869,7 @@ p
 
 .section_headline_footer
     font-family font_h
-    font-size calc(2rem + 5vw)
+    font-size calc(1.618rem + 1.618vw)
     line-height 1
     font-weight 700
     color bg_dark_4
@@ -829,7 +884,7 @@ p
 
 .sub_section_headline
   font-family font_h
-  font-size calc(1rem + 2vw)
+  font-size calc(1.618rem + 1.618vw)
   line-height 1
   font-weight 700
   color white_96
