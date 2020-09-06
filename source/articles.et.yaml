@@ -1,4 +1,125 @@
 -
+    id: 7
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-02T07:03:23.979Z'
+    updated_at: '2020-09-06T16:13:53.324Z'
+    title_en: test7 en
+    slug_en: test7-en
+    slug_ru: pof-fi-article-2
+    lead_en: lead 7 en
+    contents_en: cont 7 en
+    publishFrom: '2020-08-17T09:00:00.000Z'
+    publishUntil: '2020-12-17T10:00:00.000Z'
+    publish_en: false
+    publish_ru: false
+    media:
+        id: 14
+        imageDefault:
+            -
+                id: 31
+                name: Industry_2020_online_news.jpeg
+                alternativeText: ''
+                caption: ''
+                width: 900
+                height: 600
+                formats:
+                    thumbnail:
+                        ext: .jpeg
+                        url: >-
+                            /uploads/thumbnail_Industry_2020_online_news_b73f02f092.jpeg
+                        hash: thumbnail_Industry_2020_online_news_b73f02f092
+                        mime: image/jpeg
+                        name: thumbnail_Industry_2020_online_news.jpeg
+                        size: 15.09
+                        width: 234
+                        height: 156
+                hash: Industry_2020_online_news_b73f02f092
+                ext: .jpeg
+                mime: image/jpeg
+                size: 136.1
+                url: /uploads/Industry_2020_online_news_b73f02f092.jpeg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-01T12:27:06.584Z'
+                updated_at: '2020-09-01T12:27:06.648Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    title: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
+    slug: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
+    lead: >-
+        Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
+        professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
+        kolib selleks sügiseks veebi.
+    contents: >-
+        Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
+        piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
+        siia saabumise liikumisvabaduse kärpimisega.
+
+
+        „Teeme seda raske südamega, aga me ei taha võtta riske,” ütles ürituse
+        juht Marge Liiske. Vastava otsuseni jõuti pärast konsulteerimist
+        terviseametnikega, kelle prognoos ei ennusta sügiseks viiruse vaibumist.
+
+
+        Veebi kolimine annab Liiske sõnul samas võimaluse üritust laiendada ja
+        avab ukse neile, kes ei saaks muidu ajapuudusel või kauguse tõttu
+        Tallinna tulla. Ühtlasi on see hea võimalus katsetada uuenduslikke
+        digitaalseid lahendusi.
+
+
+        Endiselt jätkub valmivate või kavandatavate filmiprojektide vastuvõtt
+        Baltic Evendi kaastootmisturule, filmi- ja telesarjade stsenaariumite
+        võistlusele Script Pool ning Põhja- ja Baltimaade stsenaristide
+        projektitutvustuste foorumile POWR Baltic Stories Exchange. Vastuvõtt
+        lõpeb 21. septembril.
+
+
+        Ürituse delegaatidele ja akrediteeritud välispressile garanteeritakse
+        ligipääs üritustele ja Pimedate Ööde filmifestivali kavas olevatele
+        filmidele.
+
+
+        Industry@Tallinn & Baltic Evendi programmi kuuluvad veel seminarid,
+        õpikojad, meistriklassid ja vestlusringid, mis käsitlevad filmitööstuse
+        ja teleturu aktuaalseid teemasid. Samuti leiab esimest korda aset PÖFFi
+        Akadeemia, kus saavad end täiendada filmindusega seotud erialade
+        esindajad alates näitlejatest ja lõpetades heliloojatega.
+
+
+        Programmi esimesed üritused ja esinejad avalikustab Industry@Tallinn &
+        Baltic Event septembris.
+
+
+        Pimedate Ööde filmifestival leiab tänavu aset 13.–29. novembrini.
+        Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
+        stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
+        juhul tervenisti virtuaalsel kujul.
+    publish: true
+    directory: source/_fetchdir/articles_poff/test7-en
+    path: article/p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
     id: 5
     created_by:
         id: 5
@@ -164,127 +285,6 @@
     publish: true
     directory: source/_fetchdir/articles_poff/test-5-en
     path: article/mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
-    id: 7
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-02T07:03:23.979Z'
-    updated_at: '2020-09-06T16:13:53.324Z'
-    title_en: test7 en
-    slug_en: test7-en
-    slug_ru: pof-fi-article-2
-    lead_en: lead 7 en
-    contents_en: cont 7 en
-    publishFrom: '2020-08-17T09:00:00.000Z'
-    publishUntil: '2020-12-17T10:00:00.000Z'
-    publish_en: false
-    publish_ru: false
-    media:
-        id: 14
-        imageDefault:
-            -
-                id: 31
-                name: Industry_2020_online_news.jpeg
-                alternativeText: ''
-                caption: ''
-                width: 900
-                height: 600
-                formats:
-                    thumbnail:
-                        ext: .jpeg
-                        url: >-
-                            /uploads/thumbnail_Industry_2020_online_news_b73f02f092.jpeg
-                        hash: thumbnail_Industry_2020_online_news_b73f02f092
-                        mime: image/jpeg
-                        name: thumbnail_Industry_2020_online_news.jpeg
-                        size: 15.09
-                        width: 234
-                        height: 156
-                hash: Industry_2020_online_news_b73f02f092
-                ext: .jpeg
-                mime: image/jpeg
-                size: 136.1
-                url: /uploads/Industry_2020_online_news_b73f02f092.jpeg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-01T12:27:06.584Z'
-                updated_at: '2020-09-01T12:27:06.648Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    title: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
-    slug: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
-    lead: >-
-        Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
-        professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
-        kolib selleks sügiseks veebi.
-    contents: >-
-        Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
-        piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
-        siia saabumise liikumisvabaduse kärpimisega.
-
-
-        „Teeme seda raske südamega, aga me ei taha võtta riske,” ütles ürituse
-        juht Marge Liiske. Vastava otsuseni jõuti pärast konsulteerimist
-        terviseametnikega, kelle prognoos ei ennusta sügiseks viiruse vaibumist.
-
-
-        Veebi kolimine annab Liiske sõnul samas võimaluse üritust laiendada ja
-        avab ukse neile, kes ei saaks muidu ajapuudusel või kauguse tõttu
-        Tallinna tulla. Ühtlasi on see hea võimalus katsetada uuenduslikke
-        digitaalseid lahendusi.
-
-
-        Endiselt jätkub valmivate või kavandatavate filmiprojektide vastuvõtt
-        Baltic Evendi kaastootmisturule, filmi- ja telesarjade stsenaariumite
-        võistlusele Script Pool ning Põhja- ja Baltimaade stsenaristide
-        projektitutvustuste foorumile POWR Baltic Stories Exchange. Vastuvõtt
-        lõpeb 21. septembril.
-
-
-        Ürituse delegaatidele ja akrediteeritud välispressile garanteeritakse
-        ligipääs üritustele ja Pimedate Ööde filmifestivali kavas olevatele
-        filmidele.
-
-
-        Industry@Tallinn & Baltic Evendi programmi kuuluvad veel seminarid,
-        õpikojad, meistriklassid ja vestlusringid, mis käsitlevad filmitööstuse
-        ja teleturu aktuaalseid teemasid. Samuti leiab esimest korda aset PÖFFi
-        Akadeemia, kus saavad end täiendada filmindusega seotud erialade
-        esindajad alates näitlejatest ja lõpetades heliloojatega.
-
-
-        Programmi esimesed üritused ja esinejad avalikustab Industry@Tallinn &
-        Baltic Event septembris.
-
-
-        Pimedate Ööde filmifestival leiab tänavu aset 13.–29. novembrini.
-        Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
-        stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
-        juhul tervenisti virtuaalsel kujul.
-    publish: true
-    directory: source/_fetchdir/articles_poff/test7-en
-    path: article/p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
@@ -1241,6 +1241,62 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
 -
+    id: 12
+    created_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    updated_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-09-04T06:41:03.958Z'
+    updated_at: '2020-09-04T08:24:36.805Z'
+    slug_en: pof-fi-article
+    slug_ru: pof-fi-article
+    publishFrom: '2020-09-16T09:00:00.000Z'
+    article_types: []
+    title: TEST33
+    slug: pof-fi-article
+    publish: true
+    directory: source/_fetchdir/articles_poff/pof-fi-article
+    path: article/pof-fi-article
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 11
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    created_at: '2020-09-03T15:18:01.174Z'
+    updated_at: '2020-09-03T15:18:29.859Z'
+    title_en: TEST ARTIKKEL 2
+    slug_en: test-artikkel-2
+    title_ru: TEST ARTIKKEL 2
+    slug_ru: test-artikkel-2
+    lead_ru: TEST ARTIKKEL 2
+    lead_en: TEST ARTIKKEL 2
+    contents_en: TEST ARTIKKEL 2
+    contents_ru: TEST ARTIKKEL 2
+    publishFrom: '2020-09-01T09:00:00.000Z'
+    article_types: []
+    title: TEST ARTIKKEL 2
+    slug: test-artikkel-2
+    lead: TEST ARTIKKEL 2
+    contents: TEST ARTIKKEL 2
+    publish: true
+    directory: source/_fetchdir/articles_poff/test-artikkel-2
+    path: article/test-artikkel-2
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
     id: 8
     created_by:
         id: 5
@@ -1401,62 +1457,6 @@
     publish: false
     directory: source/_fetchdir/articles_poff/test-8-en
     path: article/test-8-et
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
-    id: 11
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    created_at: '2020-09-03T15:18:01.174Z'
-    updated_at: '2020-09-03T15:18:29.859Z'
-    title_en: TEST ARTIKKEL 2
-    slug_en: test-artikkel-2
-    title_ru: TEST ARTIKKEL 2
-    slug_ru: test-artikkel-2
-    lead_ru: TEST ARTIKKEL 2
-    lead_en: TEST ARTIKKEL 2
-    contents_en: TEST ARTIKKEL 2
-    contents_ru: TEST ARTIKKEL 2
-    publishFrom: '2020-09-01T09:00:00.000Z'
-    article_types: []
-    title: TEST ARTIKKEL 2
-    slug: test-artikkel-2
-    lead: TEST ARTIKKEL 2
-    contents: TEST ARTIKKEL 2
-    publish: true
-    directory: source/_fetchdir/articles_poff/test-artikkel-2
-    path: article/test-artikkel-2
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
-    id: 12
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-04T06:41:03.958Z'
-    updated_at: '2020-09-04T08:24:36.805Z'
-    slug_en: pof-fi-article
-    slug_ru: pof-fi-article
-    publishFrom: '2020-09-16T09:00:00.000Z'
-    article_types: []
-    title: TEST33
-    slug: pof-fi-article
-    publish: true
-    directory: source/_fetchdir/articles_poff/pof-fi-article
-    path: article/pof-fi-article
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml

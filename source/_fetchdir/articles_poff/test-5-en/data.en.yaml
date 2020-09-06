@@ -11,13 +11,10 @@ created_at: '2020-09-02T07:00:57.082Z'
 updated_at: '2020-09-02T08:01:22.167Z'
 title_et: Mitte ainult filmid! Tartuff pakub ka põnevaid üritusi
 slug_et: mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
-title_en: test 5 en
-slug_en: test-5-en
 lead_et: >-
     Mida põnevat võib leida Eesti tänavakunstipealinna Tartu seintelt? Kui
     levinud on naiste ahistamine Soomes? Milline võiks välja näha hommikupiknik
     Emajõe lodjal?
-lead_en: Lead 5 en
 contents_et: >-
     Vastused leiate juba 10. augustil Tartus avataval PÖFFi armastusfilmide
     festivalil Tartuff, mis toob lisaks filmidele huviliste ette rikkaliku
@@ -77,14 +74,10 @@ contents_et: >-
     PÖFFi armastusfilmide festival Tartuff toimub tänavu 10.-15. augustini
     samaaegselt Tartus ja veebiplatvormil Elisa Stage ning selle alateemaks on
     kunst.
-contents_en: >-
-    cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont
-    5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
-    encont 5  encont 5  encont 5  encont 5  encont 5  en
 publishFrom: '2020-08-07T09:00:00.000Z'
 publishUntil: '2021-01-07T10:00:00.000Z'
 publish_et: true
-publish_en: true
+publish_ru: true
 media:
     id: 12
     imageDefault:
@@ -157,8 +150,16 @@ article_types:
         et: Uudised
         en: News
         ru: Новости
+title: test 5 en
+slug: test-5-en
+lead: Lead 5 en
+contents: >-
+    cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont
+    5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+    encont 5  encont 5  encont 5  encont 5  encont 5  en
 publish: true
 directory: source/_fetchdir/articles_poff/test-5-en
+path: article/test-5-en
 data:
     pictures: /article_pictures.yaml
-    screenings: /film/screenings.ru.yaml
+    screenings: /film/screenings.en.yaml

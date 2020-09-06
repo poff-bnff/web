@@ -9,10 +9,13 @@ const allLanguages = ["en", "et", "ru"];
 let allData = []; // for articles view
 
 function fetchAllData(options){
+    dirPath = "source/_fetchdir/articles_poff/";
+    rimraf.sync(dirPath);
+
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/_fetchdir/articles_poff/", "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
-    getData("source/_fetchdir/articles_poff/", "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
-    getData("source/_fetchdir/articles_poff/", "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
+    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml'}, options, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml'}, options, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
@@ -69,7 +72,6 @@ function fetchAll(token) {
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, getDataCB) {
 
-    rimraf.sync(dirPath);
     fs.mkdir(dirPath, err => {
         if (err && err.errno !== -4075) {
             console.log(`error: ${err}`);
@@ -166,7 +168,6 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         // element = rueten(element, `_${lang}`);
 
         if(element.directory) {
-            rimraf.sync(element.directory);
             fs.mkdir(element.directory, err => {
                 if (err && err.errno !== -4075) {
                     console.log(`error: ${err}`);
