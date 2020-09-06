@@ -9,16 +9,108 @@ updated_by:
     lastname: Leppik
 created_at: '2020-09-02T07:00:57.082Z'
 updated_at: '2020-09-06T21:37:29.116Z'
-title_et: Mitte ainult filmid! Tartuff pakub ka põnevaid üritusi
-slug_et: mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
 title_en: test 5 en
 slug_en: test-5-en
-lead_et: >-
+slug_ru: pof-fi-article-4
+lead_en: Lead 5 en
+contents_en: >-
+    cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont
+    5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+    encont 5  encont 5  encont 5  encont 5  encont 5  en
+publishFrom: '2020-08-07T09:00:00.000Z'
+publishUntil: '2021-01-07T10:00:00.000Z'
+publish_en: true
+publish_ru: true
+media:
+    id: 12
+    imageDefault:
+        -
+            id: 32
+            name: F_1_maudie.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1920
+            height: 1080
+            formats:
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_F_1_maudie_8754a1bf4d.jpg
+                    hash: thumbnail_F_1_maudie_8754a1bf4d
+                    mime: image/jpeg
+                    name: thumbnail_F_1_maudie.jpg
+                    size: 8.44
+                    width: 245
+                    height: 138
+            hash: F_1_maudie_8754a1bf4d
+            ext: .jpg
+            mime: image/jpeg
+            size: 182.99
+            url: /uploads/F_1_maudie_8754a1bf4d.jpg
+            provider: local
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:30:02.744Z'
+            updated_at: '2020-09-01T12:30:02.829Z'
+    image:
+        -
+            id: 33
+            name: maarjanuut-scaled-2020.jpeg
+            alternativeText: ''
+            caption: ''
+            width: 1067
+            height: 600
+            formats:
+                thumbnail:
+                    ext: .jpeg
+                    url: >-
+                        /uploads/thumbnail_maarjanuut_scaled_2020_63516cc8aa.jpeg
+                    hash: thumbnail_maarjanuut_scaled_2020_63516cc8aa
+                    mime: image/jpeg
+                    name: thumbnail_maarjanuut-scaled-2020.jpeg
+                    path: null
+                    size: 7.51
+                    width: 245
+                    height: 138
+            hash: maarjanuut_scaled_2020_63516cc8aa
+            ext: .jpeg
+            mime: image/jpeg
+            size: 75.64
+            url: /uploads/maarjanuut_scaled_2020_63516cc8aa.jpeg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:44:38.655Z'
+            updated_at: '2020-09-01T12:44:38.738Z'
+article_types:
+    -
+        id: 2
+        name: Uudis
+        created_by: 6
+        updated_by: 1
+        created_at: '2020-08-18T13:49:51.616Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
+        article: null
+        et: Uudised
+        en: News
+        ru: Новости
+web_authors:
+    -
+        id: 1
+        namePrivate: Pöffihunt
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-09-02T11:27:48.489Z'
+        updated_at: '2020-09-02T11:27:48.544Z'
+        name: Pöffihunt
+title: Mitte ainult filmid! Tartuff pakub ka põnevaid üritusi
+slug: mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
+lead: >-
     Mida põnevat võib leida Eesti tänavakunstipealinna Tartu seintelt? Kui
     levinud on naiste ahistamine Soomes? Milline võiks välja näha hommikupiknik
     Emajõe lodjal?
-lead_en: Lead 5 en
-contents_et: >-
+contents: >-
     Vastused leiate juba 10. augustil Tartus avataval PÖFFi armastusfilmide
     festivalil Tartuff, mis toob lisaks filmidele huviliste ette rikkaliku
     ürituste kava.
@@ -77,99 +169,9 @@ contents_et: >-
     PÖFFi armastusfilmide festival Tartuff toimub tänavu 10.-15. augustini
     samaaegselt Tartus ja veebiplatvormil Elisa Stage ning selle alateemaks on
     kunst.
-contents_en: >-
-    cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont
-    5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
-    encont 5  encont 5  encont 5  encont 5  encont 5  en
-publishFrom: '2020-08-07T09:00:00.000Z'
-publishUntil: '2021-01-07T10:00:00.000Z'
-publish_et: true
-publish_en: true
-media:
-    id: 12
-    imageDefault:
-        -
-            id: 32
-            name: F_1_maudie.jpg
-            alternativeText: ''
-            caption: ''
-            width: 1920
-            height: 1080
-            formats:
-                thumbnail:
-                    ext: .jpg
-                    url: /uploads/thumbnail_F_1_maudie_8754a1bf4d.jpg
-                    hash: thumbnail_F_1_maudie_8754a1bf4d
-                    mime: image/jpeg
-                    name: thumbnail_F_1_maudie.jpg
-                    size: 8.44
-                    width: 245
-                    height: 138
-            hash: F_1_maudie_8754a1bf4d
-            ext: .jpg
-            mime: image/jpeg
-            size: 182.99
-            url: /uploads/F_1_maudie_8754a1bf4d.jpg
-            provider: local
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:30:02.744Z'
-            updated_at: '2020-09-01T12:30:02.829Z'
-    image_et:
-        -
-            id: 33
-            name: maarjanuut-scaled-2020.jpeg
-            alternativeText: ''
-            caption: ''
-            width: 1067
-            height: 600
-            formats:
-                thumbnail:
-                    ext: .jpeg
-                    url: >-
-                        /uploads/thumbnail_maarjanuut_scaled_2020_63516cc8aa.jpeg
-                    hash: thumbnail_maarjanuut_scaled_2020_63516cc8aa
-                    mime: image/jpeg
-                    name: thumbnail_maarjanuut-scaled-2020.jpeg
-                    size: 7.51
-                    width: 245
-                    height: 138
-            hash: maarjanuut_scaled_2020_63516cc8aa
-            ext: .jpeg
-            mime: image/jpeg
-            size: 75.64
-            url: /uploads/maarjanuut_scaled_2020_63516cc8aa.jpeg
-            provider: local
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:44:38.655Z'
-            updated_at: '2020-09-01T12:44:38.738Z'
-    image: []
-article_types:
-    -
-        id: 2
-        name: Uudis
-        created_by: 6
-        updated_by: 1
-        created_at: '2020-08-18T13:49:51.616Z'
-        updated_at: '2020-08-27T13:27:26.065Z'
-        article: null
-        et: Uudised
-        en: News
-        ru: Новости
-web_authors:
-    -
-        id: 1
-        namePrivate: Pöffihunt
-        created_by: 6
-        updated_by: 6
-        created_at: '2020-09-02T11:27:48.489Z'
-        updated_at: '2020-09-02T11:27:48.544Z'
-        name: Волк
-slug: pof-fi-article-4
 publish: true
 directory: source/_fetchdir/articles_poff/test-5-en
-path: article/pof-fi-article-4
+path: article/mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
 data:
     pictures: /article_pictures.yaml
-    screenings: /film/screenings.ru.yaml
+    screenings: /film/screenings.et.yaml

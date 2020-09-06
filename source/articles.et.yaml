@@ -9,9 +9,10 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-02T07:00:57.082Z'
-    updated_at: '2020-09-02T08:01:22.167Z'
+    updated_at: '2020-09-06T21:37:29.116Z'
     title_en: test 5 en
     slug_en: test-5-en
+    slug_ru: pof-fi-article-4
     lead_en: Lead 5 en
     contents_en: >-
         cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
@@ -95,6 +96,15 @@
             et: Uudised
             en: News
             ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
     title: Mitte ainult filmid! Tartuff pakub ka põnevaid üritusi
     slug: mitte-ainult-filmid-tartuff-pakub-ka-ponevaid-ueritusi
     lead: >-
@@ -168,6 +178,132 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
 -
+    id: 2
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-02T06:22:29.284Z'
+    updated_at: '2020-09-06T21:38:28.279Z'
+    title_en: test 2 en
+    slug_en: test-2-en
+    slug_ru: pof-fi-article-7
+    lead_en: lead 2 en
+    contents_en: cont 2 en
+    publishFrom: '2020-07-07T09:00:00.000Z'
+    publishUntil: '2021-01-14T10:00:00.000Z'
+    publish_en: true
+    publish_ru: true
+    media:
+        id: 9
+        imageDefault:
+            -
+                id: 35
+                name: F_1_force_of_habit.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_F_1_force_of_habit_9bdbea96b7.jpg
+                        hash: thumbnail_F_1_force_of_habit_9bdbea96b7
+                        mime: image/jpeg
+                        name: thumbnail_F_1_force_of_habit.jpg
+                        size: 9
+                        width: 245
+                        height: 138
+                hash: F_1_force_of_habit_9bdbea96b7
+                ext: .jpg
+                mime: image/jpeg
+                size: 277.58
+                url: /uploads/F_1_force_of_habit_9bdbea96b7.jpg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T08:11:05.707Z'
+                updated_at: '2020-09-02T08:11:05.787Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
+    title: Tartuffi esimene film on seksuaalsest ahistamisest
+    slug: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
+    lead: >-
+        PÖFFi armastusfilmide festival Tartuff kuulutas välja esimese linateose,
+        mille teema on hetkel üliaktuaalne – seksuaalne ahistamine.
+    contents: >-
+        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb kuuest
+        absurdihuumoriga vürtsitatud loost, mis on inspireeritud igapäevastest
+        naiste avaliku või varjatud diskrimineerimise viisidest.
+
+
+        „Kui te ei ole veel aru saanud, mida taotleb #MeToo, vaadake seda
+        filmi,” soovitab ajaleht Helsingin Sanomat, nimetades „Harjumuse jõudu”
+        eelmise aasta olulisimaks Soome linateoseks.
+
+
+        Patriarhaalse ühiskonna käitumismustreid avav draamakomöödia põhineb
+        populaarsel lühifilmide sarjal „Üksikjuhtum”, mis on Soome veebi-TVs Yle
+        Areena kogunud üle miljoni vaatamiskorra.
+
+
+        Soome noorema ja keskmise põlve naisrežissööride jõudemonstratsiooniks
+        nimetatava filmi on kirjutanud ja lavastanud Kirsikka Saari, Elli
+        Toivoniemi, Anna Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
+        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad eesotsas Krista
+        Kosoneni ja Johannes Holopaineniga.
+
+
+        Autorite enda sõnul ei ole filmi ajendiks niivõrd seksuaalne ahistamine,
+        kuivõrd see, kuidas ühiskond seda normaalseks peab.
+
+
+        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud” parima filmi,
+        režii, stsenaariumi ja meeskõrvalosa kategoorias. Linateose
+        rahvusvaheline esilinastus oli tänavusel Göteborgi filmifestivalil.
+
+
+        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu Raekoja platsist
+        saab taas Eesti suurim vabaõhukino. Esimest korda avab festival ka
+        virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
+
+
+        Kogu programmi avalikustab festival juuli lõpus.
+
+
+        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
+        Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    publish: true
+    directory: source/_fetchdir/articles_poff/test-2-en
+    path: article/tartuffi-esimene-film-on-seksuaalsest-ahistamisest
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
     id: 7
     created_by:
         id: 5
@@ -178,14 +314,14 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-02T07:03:23.979Z'
-    updated_at: '2020-09-06T16:13:53.324Z'
+    updated_at: '2020-09-06T21:37:40.276Z'
     title_en: test7 en
     slug_en: test7-en
     slug_ru: pof-fi-article-2
     lead_en: lead 7 en
     contents_en: cont 7 en
     publishFrom: '2020-08-17T09:00:00.000Z'
-    publishUntil: '2020-12-17T10:00:00.000Z'
+    publishUntil: '2020-12-16T22:00:00.000Z'
     publish_en: false
     publish_ru: false
     media:
@@ -232,6 +368,15 @@
             et: Uudised
             en: News
             ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
     title: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
     slug: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
     lead: >-
@@ -289,285 +434,6 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
 -
-    id: 2
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-02T06:22:29.284Z'
-    updated_at: '2020-09-02T08:11:15.785Z'
-    title_en: test 2 en
-    slug_en: test-2-en
-    lead_en: lead 2 en
-    contents_en: cont 2 en
-    publishFrom: '2020-07-07T09:00:00.000Z'
-    publishUntil: '2021-01-14T10:00:00.000Z'
-    publish_en: true
-    publish_ru: true
-    media:
-        id: 9
-        imageDefault:
-            -
-                id: 35
-                name: F_1_force_of_habit.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_F_1_force_of_habit_9bdbea96b7.jpg
-                        hash: thumbnail_F_1_force_of_habit_9bdbea96b7
-                        mime: image/jpeg
-                        name: thumbnail_F_1_force_of_habit.jpg
-                        size: 9
-                        width: 245
-                        height: 138
-                hash: F_1_force_of_habit_9bdbea96b7
-                ext: .jpg
-                mime: image/jpeg
-                size: 277.58
-                url: /uploads/F_1_force_of_habit_9bdbea96b7.jpg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T08:11:05.707Z'
-                updated_at: '2020-09-02T08:11:05.787Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    title: Tartuffi esimene film on seksuaalsest ahistamisest
-    slug: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
-    lead: >-
-        PÖFFi armastusfilmide festival Tartuff kuulutas välja esimese linateose,
-        mille teema on hetkel üliaktuaalne – seksuaalne ahistamine.
-    contents: >-
-        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb kuuest
-        absurdihuumoriga vürtsitatud loost, mis on inspireeritud igapäevastest
-        naiste avaliku või varjatud diskrimineerimise viisidest.
-
-
-        „Kui te ei ole veel aru saanud, mida taotleb #MeToo, vaadake seda
-        filmi,” soovitab ajaleht Helsingin Sanomat, nimetades „Harjumuse jõudu”
-        eelmise aasta olulisimaks Soome linateoseks.
-
-
-        Patriarhaalse ühiskonna käitumismustreid avav draamakomöödia põhineb
-        populaarsel lühifilmide sarjal „Üksikjuhtum”, mis on Soome veebi-TVs Yle
-        Areena kogunud üle miljoni vaatamiskorra.
-
-
-        Soome noorema ja keskmise põlve naisrežissööride jõudemonstratsiooniks
-        nimetatava filmi on kirjutanud ja lavastanud Kirsikka Saari, Elli
-        Toivoniemi, Anna Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
-        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad eesotsas Krista
-        Kosoneni ja Johannes Holopaineniga.
-
-
-        Autorite enda sõnul ei ole filmi ajendiks niivõrd seksuaalne ahistamine,
-        kuivõrd see, kuidas ühiskond seda normaalseks peab.
-
-
-        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud” parima filmi,
-        režii, stsenaariumi ja meeskõrvalosa kategoorias. Linateose
-        rahvusvaheline esilinastus oli tänavusel Göteborgi filmifestivalil.
-
-
-        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu Raekoja platsist
-        saab taas Eesti suurim vabaõhukino. Esimest korda avab festival ka
-        virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
-
-
-        Kogu programmi avalikustab festival juuli lõpus.
-
-
-        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
-        Tartu filmifondi ja Tartu loomemajanduskeskusega.
-    publish: true
-    directory: source/_fetchdir/articles_poff/test-2-en
-    path: article/tartuffi-esimene-film-on-seksuaalsest-ahistamisest
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
-    id: 3
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-02T06:23:30.743Z'
-    updated_at: '2020-09-02T08:07:38.360Z'
-    title_en: test 3 en
-    slug_en: test-3-en
-    lead_en: lead 3 en
-    contents_en: cont 3 en
-    publishFrom: '2020-07-15T09:00:00.000Z'
-    publishUntil: '2021-01-07T10:00:00.000Z'
-    publish_en: true
-    publish_ru: true
-    media:
-        id: 10
-        imageDefault:
-            -
-                id: 34
-                name: banksy_scaled.jpeg
-                alternativeText: ''
-                caption: ''
-                width: 1069
-                height: 600
-                formats:
-                    thumbnail:
-                        ext: .jpeg
-                        url: /uploads/thumbnail_banksy_scaled_178b048e4a.jpeg
-                        hash: thumbnail_banksy_scaled_178b048e4a
-                        mime: image/jpeg
-                        name: thumbnail_banksy_scaled.jpeg
-                        size: 6.62
-                        width: 245
-                        height: 138
-                hash: banksy_scaled_178b048e4a
-                ext: .jpeg
-                mime: image/jpeg
-                size: 68.06
-                url: /uploads/banksy_scaled_178b048e4a.jpeg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T08:07:24.614Z'
-                updated_at: '2020-09-02T08:07:24.707Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    title: Tartuff on pühendatud kunstile
-    slug: tartuff-on-puehendatud-kunstile
-    lead: >-
-        PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu
-        kunstile.
-    contents: >-
-        Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
-        Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid
-        jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15.
-        augustini Tartus.
-
-
-        Tartuffi juhi Kristiina Reidolvi sõnul pole kunsti teema aktuaalne mitte
-        ainult Tartu kui kunstilinna traditsioonide ja ümmarguste tähtpäevade
-        tõttu – Pallas sai mullu saja- ja Tartu kunstimuuseum saab tänavu
-        80-aastaseks -, vaid hoopis laiemas tähenduses.
-
-
-        „Tahame festivaliga tõsta fookusesse kunsti sotsiaalse rolli nii
-        ühiskondlike protsesside käivitaja kui filosoofiliste mõttepiiride
-        nihutajana. Tartu valmistub saama Euroopa kultuuripealinnaks ja selle
-        sotsiaalselt ning ökoloogiliselt vastutustundlik lipukiri „Ellujäämise
-        kunstid” on praegu aktuaalsem kui kunagi varem,” ütles ta.
-
-
-        Kunstiprogrammi avab värske, maailmas vaid mõnel korral linastatud
-        dokumentaalfilm „Tagaotsitav: Banksy!”. Aurélia Rouvieri ja Seamus Haley
-        linateos uurib, kes varjab ennast Banksy nime taga ja miks ta ei taha
-        oma identiteeti paljastada. Vaataja ees avaneb Robin Hoodina tegutseva
-        erakordselt tundliku sotsiaalse närviga tänavakunstniku kaasahaarav
-        portree. Film esilinastus maikuus USAs mainekal Tribeca festivalil.
-
-
-        1964. aastal palus Alberto Giacometti enesele poseerida kriitik James
-        Lordil. Pingeline sessioon kestis kokku 18 päeva, mille jooksul avanes
-        Lordil võimalus heita pilk ühe 20. sajandi kõige olulisema skulptori
-        loomingu kulisside taha, elada kaasa tema siseheitlustele. Stanley Tucci
-        mängufilmi „Viimane portree” aluseks on seesama sessioon, mille
-        tulemusena valmis vähem kui kaks aastat hiljem surnud kunstniku
-        viimaseid meistriteoseid. Giacometti rollis näeme Oscari-võitjast
-        austraallast Geoffrey Rushi.
-
-
-        Aisling Walshi mängufilm „Maudie” on meie esimene põhjalikum tutvus
-        Kanada naivistliku kunstniku Maud Lewisega (1903-1970), kes vaatamata
-        oma artriidist moonutatud liigestele maalis harvanähtava entusiasmiga
-        lilli, loomi ja liblikaid – nendega oli kaetud ka tema imeväike maja,
-        kus ta oma abikaasaga äärmiselt vaeselt elas. Pärast nende surma hoone
-        restaureeriti ja seda saab praegu näha Nova Scotia Kunstigaleriis.
-        Lewist mängib Sally Hawkins, kes on võitnud selle osatäitmise eest ka
-        hulk auhindu. Tema abikaasat kehastab Ethan Hawke.
-
-
-        Ühest 20. sajandi olulisemast kunstnikust Marcel Duchampist, tema
-        pärandist ja mõjust annab põhjaliku ülevaate Matthew Taylori
-        dokumentaalfilm „Marcel Duchamp ja võimalikkuse kunst”. Kunstniku
-        loomingut mõtestavad Jeff Koons, Marina Abramović, David Bowie ja paljud
-        teised suurnimed.
-
-
-        Kõik filmid linastuvad Eestis esimest korda.
-
-
-        Lisaks filmiseanssidele leiab Tartus aset hulk kunstiteemalisi üritusi
-        alates näitustest ja performance´itest ning lõpetades sümpoosionide ja
-        ekskursioonidega. Ürituste programm valmib koostöös Tartu
-        kunstimuuseumi, kõrgema kunstikooliga Pallas, Eesti Rahva Muuseumi,
-        Voronja galerii, tänavakunstifestivaliga Stencibility ja paljude
-        teistega.
-
-
-        Ka festivali plakati autoriteks on Pallase tudengid Anett Tõnismäe ja
-        Emilia Valgiste.
-
-
-        Mullu oli Tartuffi keskmes muusika, tunamullu kirjandus.
-
-
-        15. PÖFFi armastusfilmide festival leiab aset 10.–15. augustini, kui
-        Tartu Raekoja platsist saab taas Eesti suurim vabaõhukino. Dokumentaal-
-        ja lastefilmid linastuvad Athena keskuses. Kõik seansid on
-        traditsiooniliselt tasuta.
-
-
-        Esimest korda avab Tartuff ka virtuaalse kinosaali, mida saab külastada
-        üle kogu Eesti. Elisa Stage´i veebiplatvormi kaudu jõuab vaatajani suur
-        osa Tartuffi filmidest. Virtuaalsetele seanssidele tuleb osta pilet.
-
-
-        Kogu programmi avalikustab festival juuli lõpus.
-
-
-        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
-        Tartu filmifondi ja Tartu loomemajanduskeskusega.
-    publish: true
-    directory: source/_fetchdir/articles_poff/test-3-en
-    path: article/tartuff-on-puehendatud-kunstile
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
     id: 6
     created_by:
         id: 5
@@ -578,14 +444,14 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-02T07:02:01.637Z'
-    updated_at: '2020-09-06T15:23:42.588Z'
+    updated_at: '2020-09-06T21:38:39.770Z'
     title_en: test 6 en
     slug_en: test-6-en
     slug_ru: pof-fi-article-1
     lead_en: lead 6 en
     contents_en: cont 6 en
     publishFrom: '2020-09-02T05:30:00.000Z'
-    publishUntil: '2019-12-31T22:00:00.000Z'
+    publishUntil: '2022-01-11T22:00:00.000Z'
     publish_en: false
     publish_ru: false
     media:
@@ -667,6 +533,15 @@
     tag_keywords:
         - MeToo
         - Ühiskond
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
     title: Tartuffi filmid jõuavad ekraanile ka Tallinnas
     slug: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
     lead: >-
@@ -737,7 +612,7 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-02T06:24:45.587Z'
-    updated_at: '2020-09-06T18:08:47.199Z'
+    updated_at: '2020-09-06T21:38:12.392Z'
     title_en: test 4 en
     slug_en: test-4-en
     slug_ru: pof-fi-article-3
@@ -877,6 +752,15 @@
             et: Uudised
             en: News
             ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
     title: Tartu armastusfilmide festivali avab troopiline melodraama
     slug: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
     lead: >-
@@ -919,16 +803,192 @@
         samuti saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.
 
 
+        ![Uku_Talmar.jpeg](http://139.59.130.149/uploads/Uku_Talmar_cd27ced892.jpeg)
+
+
         Kogu kava avalikustab festival juuli lõpus.
 
 
         **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
         augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
         Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
-        [Tartu Loomemajanduskeskusega](https://lmk.ee). 
+        [TARTU LOOMEMAJANDUSKESKUSEGA](https://lmk.ee). 
     publish: true
     directory: source/_fetchdir/articles_poff/test-4-en
     path: article/tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 3
+    created_by:
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-02T06:23:30.743Z'
+    updated_at: '2020-09-06T21:38:20.823Z'
+    title_en: test 3 en
+    slug_en: test-3-en
+    slug_ru: pof-fi-article-6
+    lead_en: lead 3 en
+    contents_en: cont 3 en
+    publishFrom: '2020-07-15T09:00:00.000Z'
+    publishUntil: '2021-01-07T10:00:00.000Z'
+    publish_en: true
+    publish_ru: true
+    media:
+        id: 10
+        imageDefault:
+            -
+                id: 34
+                name: banksy_scaled.jpeg
+                alternativeText: ''
+                caption: ''
+                width: 1069
+                height: 600
+                formats:
+                    thumbnail:
+                        ext: .jpeg
+                        url: /uploads/thumbnail_banksy_scaled_178b048e4a.jpeg
+                        hash: thumbnail_banksy_scaled_178b048e4a
+                        mime: image/jpeg
+                        name: thumbnail_banksy_scaled.jpeg
+                        size: 6.62
+                        width: 245
+                        height: 138
+                hash: banksy_scaled_178b048e4a
+                ext: .jpeg
+                mime: image/jpeg
+                size: 68.06
+                url: /uploads/banksy_scaled_178b048e4a.jpeg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T08:07:24.614Z'
+                updated_at: '2020-09-02T08:07:24.707Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
+    title: Tartuff on pühendatud kunstile
+    slug: tartuff-on-puehendatud-kunstile
+    lead: >-
+        PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu
+        kunstile.
+    contents: >-
+        Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
+        Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid
+        jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15.
+        augustini Tartus.
+
+
+        Tartuffi juhi Kristiina Reidolvi sõnul pole kunsti teema aktuaalne mitte
+        ainult Tartu kui kunstilinna traditsioonide ja ümmarguste tähtpäevade
+        tõttu – Pallas sai mullu saja- ja Tartu kunstimuuseum saab tänavu
+        80-aastaseks -, vaid hoopis laiemas tähenduses.
+
+
+        „Tahame festivaliga tõsta fookusesse kunsti sotsiaalse rolli nii
+        ühiskondlike protsesside käivitaja kui filosoofiliste mõttepiiride
+        nihutajana. Tartu valmistub saama Euroopa kultuuripealinnaks ja selle
+        sotsiaalselt ning ökoloogiliselt vastutustundlik lipukiri „Ellujäämise
+        kunstid” on praegu aktuaalsem kui kunagi varem,” ütles ta.
+
+
+        Kunstiprogrammi avab värske, maailmas vaid mõnel korral linastatud
+        dokumentaalfilm „Tagaotsitav: Banksy!”. Aurélia Rouvieri ja Seamus Haley
+        linateos uurib, kes varjab ennast Banksy nime taga ja miks ta ei taha
+        oma identiteeti paljastada. Vaataja ees avaneb Robin Hoodina tegutseva
+        erakordselt tundliku sotsiaalse närviga tänavakunstniku kaasahaarav
+        portree. Film esilinastus maikuus USAs mainekal Tribeca festivalil.
+
+
+        1964. aastal palus Alberto Giacometti enesele poseerida kriitik James
+        Lordil. Pingeline sessioon kestis kokku 18 päeva, mille jooksul avanes
+        Lordil võimalus heita pilk ühe 20. sajandi kõige olulisema skulptori
+        loomingu kulisside taha, elada kaasa tema siseheitlustele. Stanley Tucci
+        mängufilmi „Viimane portree” aluseks on seesama sessioon, mille
+        tulemusena valmis vähem kui kaks aastat hiljem surnud kunstniku
+        viimaseid meistriteoseid. Giacometti rollis näeme Oscari-võitjast
+        austraallast Geoffrey Rushi.
+
+
+        Aisling Walshi mängufilm „Maudie” on meie esimene põhjalikum tutvus
+        Kanada naivistliku kunstniku Maud Lewisega (1903-1970), kes vaatamata
+        oma artriidist moonutatud liigestele maalis harvanähtava entusiasmiga
+        lilli, loomi ja liblikaid – nendega oli kaetud ka tema imeväike maja,
+        kus ta oma abikaasaga äärmiselt vaeselt elas. Pärast nende surma hoone
+        restaureeriti ja seda saab praegu näha Nova Scotia Kunstigaleriis.
+        Lewist mängib Sally Hawkins, kes on võitnud selle osatäitmise eest ka
+        hulk auhindu. Tema abikaasat kehastab Ethan Hawke.
+
+
+        Ühest 20. sajandi olulisemast kunstnikust Marcel Duchampist, tema
+        pärandist ja mõjust annab põhjaliku ülevaate Matthew Taylori
+        dokumentaalfilm „Marcel Duchamp ja võimalikkuse kunst”. Kunstniku
+        loomingut mõtestavad Jeff Koons, Marina Abramović, David Bowie ja paljud
+        teised suurnimed.
+
+
+        Kõik filmid linastuvad Eestis esimest korda.
+
+
+        Lisaks filmiseanssidele leiab Tartus aset hulk kunstiteemalisi üritusi
+        alates näitustest ja performance´itest ning lõpetades sümpoosionide ja
+        ekskursioonidega. Ürituste programm valmib koostöös Tartu
+        kunstimuuseumi, kõrgema kunstikooliga Pallas, Eesti Rahva Muuseumi,
+        Voronja galerii, tänavakunstifestivaliga Stencibility ja paljude
+        teistega.
+
+
+        Ka festivali plakati autoriteks on Pallase tudengid Anett Tõnismäe ja
+        Emilia Valgiste.
+
+
+        Mullu oli Tartuffi keskmes muusika, tunamullu kirjandus.
+
+
+        15. PÖFFi armastusfilmide festival leiab aset 10.–15. augustini, kui
+        Tartu Raekoja platsist saab taas Eesti suurim vabaõhukino. Dokumentaal-
+        ja lastefilmid linastuvad Athena keskuses. Kõik seansid on
+        traditsiooniliselt tasuta.
+
+
+        Esimest korda avab Tartuff ka virtuaalse kinosaali, mida saab külastada
+        üle kogu Eesti. Elisa Stage´i veebiplatvormi kaudu jõuab vaatajani suur
+        osa Tartuffi filmidest. Virtuaalsetele seanssidele tuleb osta pilet.
+
+
+        Kogu programmi avalikustab festival juuli lõpus.
+
+
+        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
+        Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    publish: true
+    directory: source/_fetchdir/articles_poff/test-3-en
+    path: article/tartuff-on-puehendatud-kunstile
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
@@ -939,13 +999,14 @@
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
     created_at: '2020-09-02T07:05:15.585Z'
-    updated_at: '2020-09-03T13:08:15.555Z'
+    updated_at: '2020-09-06T21:37:21.107Z'
     title_en: test 9 en
     slug_en: test-9-en
+    slug_ru: pof-fi-article-9
     lead_en: test 9 en lead
     contents_en: test 9 en cont
     publishFrom: '2020-08-24T09:00:00.000Z'
@@ -996,6 +1057,15 @@
             et: Uudised
             en: News
             ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
     title: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
     slug: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
     lead: >-
@@ -1087,7 +1157,7 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
 -
-    id: 1
+    id: 11
     created_by:
         id: 5
         firstname: Martin
@@ -1096,75 +1166,17 @@
         id: 6
         firstname: Jaan
         lastname: Leppik
-    created_at: '2020-09-02T06:20:22.339Z'
-    updated_at: '2020-09-02T08:12:28.165Z'
-    title_en: Test EN
-    slug_en: test-en
-    lead_en: Lead EN
-    contents_en: Cont EN
-    publishFrom: '2020-06-18T09:00:00.000Z'
-    publishUntil: '2021-01-14T10:00:00.000Z'
-    publish_en: true
-    publish_ru: true
-    media:
-        id: 8
-        imageDefault:
-            -
-                id: 5
-                name: tartuff_2019_ohust_1.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    large:
-                        ext: .jpg
-                        url: /uploads/large_tartuff_2019_ohust_1_778c8d54c2.jpg
-                        hash: large_tartuff_2019_ohust_1_778c8d54c2
-                        mime: image/jpeg
-                        name: large_tartuff_2019_ohust_1.jpg
-                        size: 120.83
-                        width: 1000
-                        height: 563
-                    small:
-                        ext: .jpg
-                        url: /uploads/small_tartuff_2019_ohust_1_778c8d54c2.jpg
-                        hash: small_tartuff_2019_ohust_1_778c8d54c2
-                        mime: image/jpeg
-                        name: small_tartuff_2019_ohust_1.jpg
-                        size: 32.61
-                        width: 500
-                        height: 281
-                    medium:
-                        ext: .jpg
-                        url: /uploads/medium_tartuff_2019_ohust_1_778c8d54c2.jpg
-                        hash: medium_tartuff_2019_ohust_1_778c8d54c2
-                        mime: image/jpeg
-                        name: medium_tartuff_2019_ohust_1.jpg
-                        size: 68.02
-                        width: 750
-                        height: 422
-                    thumbnail:
-                        ext: .jpg
-                        url: >-
-                            /uploads/thumbnail_tartuff_2019_ohust_1_778c8d54c2.jpg
-                        hash: thumbnail_tartuff_2019_ohust_1_778c8d54c2
-                        mime: image/jpeg
-                        name: thumbnail_tartuff_2019_ohust_1.jpg
-                        size: 8.98
-                        width: 245
-                        height: 138
-                hash: tartuff_2019_ohust_1_778c8d54c2
-                ext: .jpg
-                mime: image/jpeg
-                size: 323.02
-                url: /uploads/tartuff_2019_ohust_1_778c8d54c2.jpg
-                provider: local
-                created_by: 3
-                updated_by: 3
-                created_at: '2020-08-26T13:51:45.254Z'
-                updated_at: '2020-08-26T13:51:45.327Z'
-        image: []
+    created_at: '2020-09-03T15:18:01.174Z'
+    updated_at: '2020-09-06T21:37:48.253Z'
+    title_en: TEST ARTIKKEL 2
+    slug_en: test-artikkel-2
+    title_ru: TEST ARTIKKEL 2
+    slug_ru: test-artikkel-2
+    lead_ru: TEST ARTIKKEL 2
+    lead_en: TEST ARTIKKEL 2
+    contents_en: TEST ARTIKKEL 2
+    contents_ru: TEST ARTIKKEL 2
+    publishFrom: '2020-09-01T09:00:00.000Z'
     article_types:
         -
             id: 2
@@ -1177,66 +1189,57 @@
             et: Uudised
             en: News
             ru: Новости
-    tag_premiere_types:
-        - Rahvusvaheline esilinastus
-    tag_programmes:
-        - Põhivõistlusprogramm
-    tag_genres:
-        - Draama
-    tag_keywords:
-        - MeToo
-        - Ühiskond
-    title: Tartu armastusfilmide festival laieneb üle kogu Eesti
-    slug: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
-    lead: >-
-        Juba 15. korda muutub Tartu Raekoja plats Eesti suurimaks vabaõhukinoks,
-        kui augusti teisel nädalal jõuab sealsele väliekraanile 11 armastusest
-        kõnelevat filmi.
-    contents: >-
-        Peale selle avab PÖFFi armastusfilmide festival Tartuff esimest korda ka
-        virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
-
-
-        Filmid jõuavad publikuni telekommunikatsiooniettevõtte Elisa
-        veebiplatvormi Elisa Stage vahendusel, mis kandis üle ka Haapsalu õudus-
-        ja fantaasiafilmide festivali.
-
-
-        Traditsiooniliselt saab kõiki Tartus ekraanile jõudvaid filme vaadata
-        tasuta, virtuaalsetele seanssidele tuleb osta pilet.
-
-
-        „Virtuaalne festival on mõeldud neile, kes platsile ei mahu või ei saa
-        selleks ajaks Tartusse tulla. See annab võimaluse teha Tartuffi
-        programmiga tutvust ka neil, kes pole siia kunagi sattunud,” ütles
-        Tartuffi juht Kristiina Reidolv.
-
-
-        Koroonaviirusega seotud piirangute tõttu tuleb Raekoja platsile tuhat
-        istekohta, tagatakse 2+2 reegli järgimine ja desinfitseerimisvahendite
-        olemaolu. Athena keskuses linastuvate dokumentaal- ja lastefilmide puhul
-        rakendatakse 50-protsendilist saalitäitumuse reeglit.
-
-
-        10.–15. augustini toimuva armastusfilmide festivali alateemaks on tänavu
-        kujutav kunst. Programmi kuulub ligemale 20 filmi, lisaks arvukalt
-        eriüritusi, kuhu on kaasatud ka Tartu kunstimuuseum ja kõrgem kunstikool
-        Pallas.
-
-
-        Programmi avalikustab Tartuff juulis.
-
-
-        Eelmisel aastal kogus festival 15 000 külastust. Populaarseimad
-        linateosed olid Soome noortefilm „Rumal noor süda” ja Itaalia komöödia
-        “Kui ema on ära”, millest kumbki tõi raeplatsile 2300 vaatajat.
-
-
-        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
-        Tartu filmifondi ja Tartu loomemajanduskeskusega.
-    publish: true
-    directory: source/_fetchdir/articles_poff/test-en
-    path: article/tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
+    title: TEST ARTIKKEL 2
+    slug: test-artikkel-2
+    lead: TEST ARTIKKEL 2
+    contents: TEST ARTIKKEL 2
+    publish: false
+    directory: source/_fetchdir/articles_poff/test-artikkel-2
+    path: article/test-artikkel-2
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+-
+    id: 12
+    created_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-04T06:41:03.958Z'
+    updated_at: '2020-09-06T21:37:53.265Z'
+    slug_en: pof-fi-article
+    slug_ru: pof-fi-article
+    publishFrom: '2020-09-01T09:00:00.000Z'
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    title: TEST33
+    slug: pof-fi-article
+    publish: false
+    directory: source/_fetchdir/articles_poff/pof-fi-article
+    path: article/pof-fi-article
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
@@ -1247,13 +1250,14 @@
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
     created_at: '2020-09-02T07:04:20.609Z'
-    updated_at: '2020-09-02T11:47:03.136Z'
+    updated_at: '2020-09-06T21:38:54.520Z'
     title_en: test 8 en
     slug_en: test-8-en
+    slug_ru: pof-fi-article-8
     lead_en: test 8 en lead
     contents_en: test 8 en cont
     publishFrom: '2020-05-18T09:00:00.000Z'
@@ -1349,14 +1353,6 @@
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
             name: Pöffihunt
-        -
-            id: 2
-            namePrivate: Toimetaja
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:28:23.386Z'
-            updated_at: '2020-09-02T11:28:23.428Z'
-            name: Päevatoimetaja
     title: Tartuffi publikuauhind rändab Itaaliasse
     slug: test-8-et
     lead: >-
@@ -1398,65 +1394,173 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
-    publish: false
+    publish: true
     directory: source/_fetchdir/articles_poff/test-8-en
     path: article/test-8-et
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
 -
-    id: 11
+    id: 1
     created_by:
         id: 5
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    created_at: '2020-09-03T15:18:01.174Z'
-    updated_at: '2020-09-03T15:18:29.859Z'
-    title_en: TEST ARTIKKEL 2
-    slug_en: test-artikkel-2
-    title_ru: TEST ARTIKKEL 2
-    slug_ru: test-artikkel-2
-    lead_ru: TEST ARTIKKEL 2
-    lead_en: TEST ARTIKKEL 2
-    contents_en: TEST ARTIKKEL 2
-    contents_ru: TEST ARTIKKEL 2
-    publishFrom: '2020-09-01T09:00:00.000Z'
-    article_types: []
-    title: TEST ARTIKKEL 2
-    slug: test-artikkel-2
-    lead: TEST ARTIKKEL 2
-    contents: TEST ARTIKKEL 2
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-02T06:20:22.339Z'
+    updated_at: '2020-09-06T21:38:03.981Z'
+    title_en: Test EN
+    slug_en: test-en
+    slug_ru: pof-fi-article-5
+    lead_en: Lead EN
+    contents_en: Cont EN
+    publishFrom: '2020-06-18T09:00:00.000Z'
+    publishUntil: '2021-01-14T10:00:00.000Z'
+    publish_en: true
+    publish_ru: true
+    media:
+        id: 8
+        imageDefault:
+            -
+                id: 5
+                name: tartuff_2019_ohust_1.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    large:
+                        ext: .jpg
+                        url: /uploads/large_tartuff_2019_ohust_1_778c8d54c2.jpg
+                        hash: large_tartuff_2019_ohust_1_778c8d54c2
+                        mime: image/jpeg
+                        name: large_tartuff_2019_ohust_1.jpg
+                        size: 120.83
+                        width: 1000
+                        height: 563
+                    small:
+                        ext: .jpg
+                        url: /uploads/small_tartuff_2019_ohust_1_778c8d54c2.jpg
+                        hash: small_tartuff_2019_ohust_1_778c8d54c2
+                        mime: image/jpeg
+                        name: small_tartuff_2019_ohust_1.jpg
+                        size: 32.61
+                        width: 500
+                        height: 281
+                    medium:
+                        ext: .jpg
+                        url: /uploads/medium_tartuff_2019_ohust_1_778c8d54c2.jpg
+                        hash: medium_tartuff_2019_ohust_1_778c8d54c2
+                        mime: image/jpeg
+                        name: medium_tartuff_2019_ohust_1.jpg
+                        size: 68.02
+                        width: 750
+                        height: 422
+                    thumbnail:
+                        ext: .jpg
+                        url: >-
+                            /uploads/thumbnail_tartuff_2019_ohust_1_778c8d54c2.jpg
+                        hash: thumbnail_tartuff_2019_ohust_1_778c8d54c2
+                        mime: image/jpeg
+                        name: thumbnail_tartuff_2019_ohust_1.jpg
+                        size: 8.98
+                        width: 245
+                        height: 138
+                hash: tartuff_2019_ohust_1_778c8d54c2
+                ext: .jpg
+                mime: image/jpeg
+                size: 323.02
+                url: /uploads/tartuff_2019_ohust_1_778c8d54c2.jpg
+                provider: local
+                created_by: 3
+                updated_by: 3
+                created_at: '2020-08-26T13:51:45.254Z'
+                updated_at: '2020-08-26T13:51:45.327Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    tag_premiere_types:
+        - Rahvusvaheline esilinastus
+    tag_programmes:
+        - Põhivõistlusprogramm
+    tag_genres:
+        - Draama
+    tag_keywords:
+        - MeToo
+        - Ühiskond
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
+    title: Tartu armastusfilmide festival laieneb üle kogu Eesti
+    slug: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
+    lead: >-
+        Juba 15. korda muutub Tartu Raekoja plats Eesti suurimaks vabaõhukinoks,
+        kui augusti teisel nädalal jõuab sealsele väliekraanile 11 armastusest
+        kõnelevat filmi.
+    contents: >-
+        Peale selle avab PÖFFi armastusfilmide festival Tartuff esimest korda ka
+        virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
+
+
+        Filmid jõuavad publikuni telekommunikatsiooniettevõtte Elisa
+        veebiplatvormi Elisa Stage vahendusel, mis kandis üle ka Haapsalu õudus-
+        ja fantaasiafilmide festivali.
+
+
+        Traditsiooniliselt saab kõiki Tartus ekraanile jõudvaid filme vaadata
+        tasuta, virtuaalsetele seanssidele tuleb osta pilet.
+
+
+        „Virtuaalne festival on mõeldud neile, kes platsile ei mahu või ei saa
+        selleks ajaks Tartusse tulla. See annab võimaluse teha Tartuffi
+        programmiga tutvust ka neil, kes pole siia kunagi sattunud,” ütles
+        Tartuffi juht Kristiina Reidolv.
+
+
+        Koroonaviirusega seotud piirangute tõttu tuleb Raekoja platsile tuhat
+        istekohta, tagatakse 2+2 reegli järgimine ja desinfitseerimisvahendite
+        olemaolu. Athena keskuses linastuvate dokumentaal- ja lastefilmide puhul
+        rakendatakse 50-protsendilist saalitäitumuse reeglit.
+
+
+        10.–15. augustini toimuva armastusfilmide festivali alateemaks on tänavu
+        kujutav kunst. Programmi kuulub ligemale 20 filmi, lisaks arvukalt
+        eriüritusi, kuhu on kaasatud ka Tartu kunstimuuseum ja kõrgem kunstikool
+        Pallas.
+
+
+        Programmi avalikustab Tartuff juulis.
+
+
+        Eelmisel aastal kogus festival 15 000 külastust. Populaarseimad
+        linateosed olid Soome noortefilm „Rumal noor süda” ja Itaalia komöödia
+        “Kui ema on ära”, millest kumbki tõi raeplatsile 2300 vaatajat.
+
+
+        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
+        Tartu filmifondi ja Tartu loomemajanduskeskusega.
     publish: true
-    directory: source/_fetchdir/articles_poff/test-artikkel-2
-    path: article/test-artikkel-2
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.et.yaml
--
-    id: 12
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-04T06:41:03.958Z'
-    updated_at: '2020-09-04T08:24:36.805Z'
-    slug_en: pof-fi-article
-    slug_ru: pof-fi-article
-    publishFrom: '2020-09-16T09:00:00.000Z'
-    article_types: []
-    title: TEST33
-    slug: pof-fi-article
-    publish: true
-    directory: source/_fetchdir/articles_poff/pof-fi-article
-    path: article/pof-fi-article
+    directory: source/_fetchdir/articles_poff/test-en
+    path: article/tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml

@@ -9,15 +9,73 @@ updated_by:
     lastname: Leppik
 created_at: '2020-09-02T07:05:15.585Z'
 updated_at: '2020-09-06T21:37:21.107Z'
-title_et: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
-slug_et: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
 title_en: test 9 en
 slug_en: test-9-en
-lead_et: >-
+slug_ru: pof-fi-article-9
+lead_en: test 9 en lead
+contents_en: test 9 en cont
+publishFrom: '2020-08-24T09:00:00.000Z'
+publish_en: true
+publish_ru: true
+media:
+    id: 16
+    imageDefault:
+        -
+            id: 28
+            name: Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
+            alternativeText: ''
+            caption: ''
+            width: 1067
+            height: 600
+            formats:
+                thumbnail:
+                    ext: .jpeg
+                    url: >-
+                        /uploads/thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
+                    hash: thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
+                    mime: image/jpeg
+                    name: thumbnail_Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
+                    size: 5.25
+                    width: 245
+                    height: 138
+            hash: Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
+            ext: .jpeg
+            mime: image/jpeg
+            size: 38.72
+            url: /uploads/Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
+            provider: local
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T08:26:38.966Z'
+            updated_at: '2020-09-01T08:26:39.046Z'
+    image: []
+article_types:
+    -
+        id: 2
+        name: Uudis
+        created_by: 6
+        updated_by: 1
+        created_at: '2020-08-18T13:49:51.616Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
+        article: null
+        et: Uudised
+        en: News
+        ru: Новости
+web_authors:
+    -
+        id: 1
+        namePrivate: Pöffihunt
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-09-02T11:27:48.489Z'
+        updated_at: '2020-09-02T11:27:48.544Z'
+        name: Pöffihunt
+title: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
+slug: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
+lead: >-
     Kumu kultuuriteemaliste dokumentaalfilmide sügishooaja juhatab sisse
     kuulsast Tokaj veinist rääkiv linateos.
-lead_en: test 9 en lead
-contents_et: >-
+contents: >-
     Ungarlase Tamás Almási „Vedel kuld” (Folyékony arany) on esimene film Ungari
     veinist, täpsemalt maailmakuulsast Aszú veinist, mille valmistamise
     sajanditepikkuseid traditsioone kiiresti muutuv maailm üha enam mõjutab.
@@ -93,67 +151,9 @@ contents_et: >-
 
     Kultuuriteemaliste filmide sarja „Kumu dokumentaal” korraldavad Kumu ja
     PÖFF.
-contents_en: test 9 en cont
-publishFrom: '2020-08-24T09:00:00.000Z'
-publish_et: true
-publish_en: true
-media:
-    id: 16
-    imageDefault:
-        -
-            id: 28
-            name: Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
-            alternativeText: ''
-            caption: ''
-            width: 1067
-            height: 600
-            formats:
-                thumbnail:
-                    ext: .jpeg
-                    url: >-
-                        /uploads/thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
-                    hash: thumbnail_Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
-                    mime: image/jpeg
-                    name: thumbnail_Vedel-Kuld-e1598259521403-8ccd1c78.jpeg
-                    size: 5.25
-                    width: 245
-                    height: 138
-            hash: Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5
-            ext: .jpeg
-            mime: image/jpeg
-            size: 38.72
-            url: /uploads/Vedel_Kuld_e1598259521403_8ccd1c78_d3946bc2e5.jpeg
-            provider: local
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T08:26:38.966Z'
-            updated_at: '2020-09-01T08:26:39.046Z'
-    image: []
-article_types:
-    -
-        id: 2
-        name: Uudis
-        created_by: 6
-        updated_by: 1
-        created_at: '2020-08-18T13:49:51.616Z'
-        updated_at: '2020-08-27T13:27:26.065Z'
-        article: null
-        et: Uudised
-        en: News
-        ru: Новости
-web_authors:
-    -
-        id: 1
-        namePrivate: Pöffihunt
-        created_by: 6
-        updated_by: 6
-        created_at: '2020-09-02T11:27:48.489Z'
-        updated_at: '2020-09-02T11:27:48.544Z'
-        name: Волк
-slug: pof-fi-article-9
 publish: true
 directory: source/_fetchdir/articles_poff/test-9-en
-path: article/pof-fi-article-9
+path: article/kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
 data:
     pictures: /article_pictures.yaml
-    screenings: /film/screenings.ru.yaml
+    screenings: /film/screenings.et.yaml

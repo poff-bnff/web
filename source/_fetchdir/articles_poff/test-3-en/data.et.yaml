@@ -9,15 +9,73 @@ updated_by:
     lastname: Leppik
 created_at: '2020-09-02T06:23:30.743Z'
 updated_at: '2020-09-06T21:38:20.823Z'
-title_et: Tartuff on pühendatud kunstile
-slug_et: tartuff-on-puehendatud-kunstile
 title_en: test 3 en
 slug_en: test-3-en
-lead_et: >-
+slug_ru: pof-fi-article-6
+lead_en: lead 3 en
+contents_en: cont 3 en
+publishFrom: '2020-07-15T09:00:00.000Z'
+publishUntil: '2021-01-07T10:00:00.000Z'
+publish_en: true
+publish_ru: true
+media:
+    id: 10
+    imageDefault:
+        -
+            id: 34
+            name: banksy_scaled.jpeg
+            alternativeText: ''
+            caption: ''
+            width: 1069
+            height: 600
+            formats:
+                thumbnail:
+                    ext: .jpeg
+                    url: /uploads/thumbnail_banksy_scaled_178b048e4a.jpeg
+                    hash: thumbnail_banksy_scaled_178b048e4a
+                    mime: image/jpeg
+                    name: thumbnail_banksy_scaled.jpeg
+                    size: 6.62
+                    width: 245
+                    height: 138
+            hash: banksy_scaled_178b048e4a
+            ext: .jpeg
+            mime: image/jpeg
+            size: 68.06
+            url: /uploads/banksy_scaled_178b048e4a.jpeg
+            provider: local
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T08:07:24.614Z'
+            updated_at: '2020-09-02T08:07:24.707Z'
+    image: []
+article_types:
+    -
+        id: 2
+        name: Uudis
+        created_by: 6
+        updated_by: 1
+        created_at: '2020-08-18T13:49:51.616Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
+        article: null
+        et: Uudised
+        en: News
+        ru: Новости
+web_authors:
+    -
+        id: 1
+        namePrivate: Pöffihunt
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-09-02T11:27:48.489Z'
+        updated_at: '2020-09-02T11:27:48.544Z'
+        name: Pöffihunt
+title: Tartuff on pühendatud kunstile
+slug: tartuff-on-puehendatud-kunstile
+lead: >-
     PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu
     kunstile.
-lead_en: lead 3 en
-contents_et: >-
+contents: >-
     Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
     Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid
     jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15.
@@ -104,67 +162,9 @@ contents_et: >-
 
     Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
     filmifondi ja Tartu loomemajanduskeskusega.
-contents_en: cont 3 en
-publishFrom: '2020-07-15T09:00:00.000Z'
-publishUntil: '2021-01-07T10:00:00.000Z'
-publish_et: true
-publish_en: true
-media:
-    id: 10
-    imageDefault:
-        -
-            id: 34
-            name: banksy_scaled.jpeg
-            alternativeText: ''
-            caption: ''
-            width: 1069
-            height: 600
-            formats:
-                thumbnail:
-                    ext: .jpeg
-                    url: /uploads/thumbnail_banksy_scaled_178b048e4a.jpeg
-                    hash: thumbnail_banksy_scaled_178b048e4a
-                    mime: image/jpeg
-                    name: thumbnail_banksy_scaled.jpeg
-                    size: 6.62
-                    width: 245
-                    height: 138
-            hash: banksy_scaled_178b048e4a
-            ext: .jpeg
-            mime: image/jpeg
-            size: 68.06
-            url: /uploads/banksy_scaled_178b048e4a.jpeg
-            provider: local
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T08:07:24.614Z'
-            updated_at: '2020-09-02T08:07:24.707Z'
-    image: []
-article_types:
-    -
-        id: 2
-        name: Uudis
-        created_by: 6
-        updated_by: 1
-        created_at: '2020-08-18T13:49:51.616Z'
-        updated_at: '2020-08-27T13:27:26.065Z'
-        article: null
-        et: Uudised
-        en: News
-        ru: Новости
-web_authors:
-    -
-        id: 1
-        namePrivate: Pöffihunt
-        created_by: 6
-        updated_by: 6
-        created_at: '2020-09-02T11:27:48.489Z'
-        updated_at: '2020-09-02T11:27:48.544Z'
-        name: Волк
-slug: pof-fi-article-6
 publish: true
 directory: source/_fetchdir/articles_poff/test-3-en
-path: article/pof-fi-article-6
+path: article/tartuff-on-puehendatud-kunstile
 data:
     pictures: /article_pictures.yaml
-    screenings: /film/screenings.ru.yaml
+    screenings: /film/screenings.et.yaml

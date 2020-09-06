@@ -8,7 +8,7 @@ updated_by:
     firstname: Jaan
     lastname: Leppik
 created_at: '2020-09-02T06:20:22.339Z'
-updated_at: '2020-09-02T08:12:28.165Z'
+updated_at: '2020-09-06T21:38:03.981Z'
 title_et: Tartu armastusfilmide festival laieneb üle kogu Eesti
 slug_et: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
 title_en: Test EN
@@ -144,8 +144,19 @@ tag_genres:
 tag_keywords:
     - MeToo
     - Общество
+web_authors:
+    -
+        id: 1
+        namePrivate: Pöffihunt
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-09-02T11:27:48.489Z'
+        updated_at: '2020-09-02T11:27:48.544Z'
+        name: Волк
+slug: pof-fi-article-5
 publish: true
 directory: source/_fetchdir/articles_poff/test-en
+path: article/pof-fi-article-5
 data:
     pictures: /article_pictures.yaml
     screenings: /film/screenings.ru.yaml

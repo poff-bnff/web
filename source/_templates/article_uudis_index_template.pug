@@ -28,25 +28,25 @@ block content
             .str_info_meta_gi
                     if self.article_types && self.article_types[0]
                         .str_info_meta_item
-                            .str_info_meta_value= self.article_types[0].name
+                            .str_info_meta_value.dark_1= self.article_types[0].name
 
                     if self.web_authors
                         .str_info_meta_item
                             - var authors = []
                             each author in self.web_authors
                                 - authors.push(author.name)
-                            .str_info_meta_value= authors.join(', ')
+                            .str_info_meta_value.dark_1= authors.join(', ')
                     else
                         .str_info_meta_item
-                            .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
+                            .str_info_meta_value.dark_1= `${self.created_by.firstname} ${self.created_by.lastname}`
 
                     if self.publishFrom
                         .str_info_meta_item
-                            .str_info_meta_value
+                            .str_info_meta_value.dark_1
                                 +localdatetime(self.publishFrom)
                     else
                         .str_info_meta_item
-                            .str_info_meta_value
+                            .str_info_meta_value.dark_1
                                 +localdatetime(self.created_at)
 
                     .str_info_meta_item
@@ -61,15 +61,15 @@ block content
                             - self.tag_keywords.forEach(element => tagsList.push(element));
 
                         if tagsList.length > 0
-                            .str_info_meta_keywords= tagsList.join(', ')
+                            .str_info_meta_keywords.ghost_blue= tagsList.join(', ')
 
 
-        section.article_contents
+        section.article_contents.dark_1
             if self.lead
-                p.font_weight_600= self.lead
+                p.font_weight_600.dark_1= self.lead
             //- p= self.articleContents_et
             if typeof(self.contents) !== 'object'
-                +format(self.contents)
+                +format(self.contents).dark_1
 
 
         section.article_extra

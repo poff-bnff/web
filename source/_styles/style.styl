@@ -124,6 +124,10 @@ body
 .bg_dark_4
     background-color bg_dark_4
 
+.ghost_blue
+    color ghost_blue
+
+
 .font_weight_400
     font-weight 400
 
@@ -306,6 +310,7 @@ nav
   grid-template-columns 1fr
   grid-template-rows auto
   padding-top header_height
+  background-color bg_color_1
 //   grid-template-areas   "f_img_slider_box"\
 //                         "f_title_box"\
 //                         "f_synopsis_box"\
@@ -506,13 +511,17 @@ a .dark:hover
     align-content center
     justify-items stretch
     align-items stretch
+    background-color bg_color_1
 
 .viieka_item
     width 100%
     height 100%
     background rgba(255,255,255,.96)
     text-align left
-    padding 2rem 2rem 2rem 2rem
+    // padding 2rem 2rem 2rem 2rem
+    padding 0
+    margin 0
+    border 1px solid red
 
 // .viieka_item:first-child
 // .viieka_item:nth-child(2)
@@ -683,7 +692,7 @@ header
 
 .f_synopsis_box
     grid-area f_synopsis_box
-    background-color bg_dark_2
+    // background-color bg_dark_2
     padding-left calc(1rem + 1vw)
     padding-right calc(1rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -691,6 +700,9 @@ header
     display grid
     grid-template-columns 1
     grid-gap 2rem
+    background-color bg_color_1
+    p
+        color dark_1
 
 .f_cred_box
     grid-area f_cred_box
@@ -1260,11 +1272,11 @@ a.btn_popover
 .article_hero_head
     position relative
     grid-column 1 / 4
-    height full_height
+    height calc(100vh - 97px)
 
 .article_hero_image
     width 100vw
-    height full_height
+    height calc(100vh - 97px)
     object-fit cover
     z-index -1
 
@@ -1310,6 +1322,10 @@ a.btn_popover
         margin-bottom .5rem
         margin-left 1rem
     iframe
+        width 100%
+        margin-top 1.618rem
+        margin-bottom 1.618rem
+    img
         width 100%
         margin-top 1.618rem
         margin-bottom 1.618rem
@@ -1560,6 +1576,7 @@ a.btn_popover
         align-content center
         justify-items stretch
         align-items stretch
+        background-color white
 
     .viieka_item:first-child
     .viieka_item:nth-child(2)
@@ -1730,7 +1747,7 @@ a.btn_popover
 
     .f_synopsis_box
     .f_dir_bio_box
-        background-color bg_dark_2
+        // background-color bg_dark_2
         padding-left calc(1rem + 1vw)
         padding-right calc(1rem + 1vw)
         display grid
@@ -1774,11 +1791,11 @@ a.btn_popover
     .article_hero_head
         position relative
         grid-column 1 / 4
-        height full_height
+        height calc(100vh - 97px)
 
     .article_hero_image
         width 100vw
-        height full_height
+        height calc(100vh - 97px)
         object-fit cover
         z-index -1
 
@@ -1797,6 +1814,7 @@ a.btn_popover
     .article_meta
         padding 0
         padding-bottom calc(2rem + 3vw)
+        padding-left calc(1.618rem + 1.618vw)
 
     .article_contents
         padding 0
@@ -1841,6 +1859,16 @@ a.btn_popover
 
 .margin_bottom_2
     margin-bottom 2rem
+
+.grid_article
+    p
+        color dark_1
+    ul
+        font-family font_p
+        font-weight 300
+
+.dark_1
+    color dark_1
 
 // a
 //     text-decoration none!important

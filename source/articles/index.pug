@@ -59,19 +59,19 @@ block content
                                                 .article_lead=val.contents
 
                                     .card_article_footer
-                                        if val.web_authors
-                                            - var authors = []
-                                            each author in val.web_authors
-                                                - authors.push(author.name)
-                                            .article_author= authors.join(', ')
-                                        else
-                                            .article_author= `${val.created_by.firstname} ${val.created_by.lastname}`
-                                        span &nbsp;&nbsp;
+                                        //- if val.web_authors
+                                        //-     - var authors = []
+                                        //-     each author in val.web_authors
+                                        //-         - authors.push(author.name)
+                                        //-     .article_author= authors.join(', ')
+                                        //- else
+                                        //-     .article_author= `${val.created_by.firstname} ${val.created_by.lastname}`
+                                        span
                                             .article_publish_start
                                                 if val.publishFrom
-                                                    +localdatetime(val.publishFrom)
+                                                    +localdate(val.publishFrom)
                                                 else
-                                                    +localdatetime(val.created_at)
+                                                    +localdate(val.created_at)
 
 
 

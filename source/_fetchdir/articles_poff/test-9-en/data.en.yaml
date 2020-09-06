@@ -11,12 +11,10 @@ created_at: '2020-09-02T07:05:15.585Z'
 updated_at: '2020-09-06T21:37:21.107Z'
 title_et: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
 slug_et: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
-title_en: test 9 en
-slug_en: test-9-en
+slug_ru: pof-fi-article-9
 lead_et: >-
     Kumu kultuuriteemaliste dokumentaalfilmide sügishooaja juhatab sisse
     kuulsast Tokaj veinist rääkiv linateos.
-lead_en: test 9 en lead
 contents_et: >-
     Ungarlase Tamás Almási „Vedel kuld” (Folyékony arany) on esimene film Ungari
     veinist, täpsemalt maailmakuulsast Aszú veinist, mille valmistamise
@@ -93,10 +91,9 @@ contents_et: >-
 
     Kultuuriteemaliste filmide sarja „Kumu dokumentaal” korraldavad Kumu ja
     PÖFF.
-contents_en: test 9 en cont
 publishFrom: '2020-08-24T09:00:00.000Z'
 publish_et: true
-publish_en: true
+publish_ru: true
 media:
     id: 16
     imageDefault:
@@ -149,11 +146,14 @@ web_authors:
         updated_by: 6
         created_at: '2020-09-02T11:27:48.489Z'
         updated_at: '2020-09-02T11:27:48.544Z'
-        name: Волк
-slug: pof-fi-article-9
+        name: Wolf
+title: test 9 en
+slug: test-9-en
+lead: test 9 en lead
+contents: test 9 en cont
 publish: true
 directory: source/_fetchdir/articles_poff/test-9-en
-path: article/pof-fi-article-9
+path: article/test-9-en
 data:
     pictures: /article_pictures.yaml
-    screenings: /film/screenings.ru.yaml
+    screenings: /film/screenings.en.yaml

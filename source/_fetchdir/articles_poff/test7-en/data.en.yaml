@@ -11,13 +11,11 @@ created_at: '2020-09-02T07:03:23.979Z'
 updated_at: '2020-09-06T21:37:40.276Z'
 title_et: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
 slug_et: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt
-title_en: test7 en
-slug_en: test7-en
+slug_ru: pof-fi-article-2
 lead_et: >-
     Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
     professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
     kolib selleks sügiseks veebi.
-lead_en: lead 7 en
 contents_et: >-
     Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud piirangud,
     mis ei luba suurel osal külalistest Tallinna tulla või seovad siia saabumise
@@ -60,11 +58,10 @@ contents_et: >-
     Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
     stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal juhul
     tervenisti virtuaalsel kujul.
-contents_en: cont 7 en
 publishFrom: '2020-08-17T09:00:00.000Z'
 publishUntil: '2020-12-16T22:00:00.000Z'
 publish_et: true
-publish_en: false
+publish_ru: false
 media:
     id: 14
     imageDefault:
@@ -117,11 +114,14 @@ web_authors:
         updated_by: 6
         created_at: '2020-09-02T11:27:48.489Z'
         updated_at: '2020-09-02T11:27:48.544Z'
-        name: Волк
-slug: pof-fi-article-2
+        name: Wolf
+title: test7 en
+slug: test7-en
+lead: lead 7 en
+contents: cont 7 en
 publish: false
 directory: source/_fetchdir/articles_poff/test7-en
-path: article/pof-fi-article-2
+path: article/test7-en
 data:
     pictures: /article_pictures.yaml
-    screenings: /film/screenings.ru.yaml
+    screenings: /film/screenings.en.yaml

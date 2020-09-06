@@ -3,123 +3,130 @@ include /_templates/mixins.pug
 
 block content
 
-        section.grid_hero
-            - var heroPlusTrioNews = []
-            section.hero_head
+    section.grid_hero
+        - var heroPlusTrioNews = []
+        section.hero_head
 
-                a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
-                    if self.data.heroArticle.media.image[0]
-                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
-                    else if self.data.heroArticle.media.imageDefault[0]
-                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
+            a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
+                if self.data.heroArticle.media.image[0]
+                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
+                else if self.data.heroArticle.media.imageDefault[0]
+                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
+                else
+                    img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
+                .hero_headline_box
+                    .hero_headline_box_1
+                        .hero_headline
+                            | !{self.data.heroArticle.title}
+                    .hero_headline_box_2
+                        .hero_p
+                            | !{self.data.heroArticle.lead}
+
+            - heroPlusTrioNews.push(self.data.heroArticle.id)
+
+
+                //- if self.data.heroArticle.media.image[0]
+                //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                //- else if self.data.heroArticle.media.imageDefault[0]
+                //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                //- else
+                //-     img(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                    //- HERO ARTICLE EXAMPLE END
+
+                //- if self.data.heroArticle.media.image[0]
+                //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                //- else if self.data.heroArticle.media.imageDefault[0]
+                //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                //- else
+                //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+
+        section.trio_block
+            //- span.article_title_detailed.clr_primary= self.festivalDates
+            //- //SIIN ON TRIO NÄIDE
+
+
+            //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
+            //- self.data.articleTrioBlock sisaldab mida?
+            for blocks in self.data.articleTrioBlock.sort(function(a, b){ return (a.block.order > b.block.order) ? 1 : ((b.block.order > a.block.order) ? -1 : 0); })
+                if blocks.article
+                    - heroPlusTrioNews.push(blocks.article.id)
+
+                a(href= `/${lang_path}article/${ blocks.article.slug}`)
+                    .trio_block_item
+                        //- if blocks.block.image
+                        //-     img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
+                        //- else if blocks.article.media.image[0]
+                        //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
+                        //- else if blocks.article.media.imageDefault[0]
+                        //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
+                        //- else
+                        //-     img(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
+                        h4.dark
+                            | !{blocks.block.title}
+                        p.dark
+                            | !{blocks.block.lead}
+
+
+            //- //KUNI SIIN
+
+        //- .home_2
+        //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
+        section.viiekas
+
+            //- VIIEKAS START
+            - var counter = 0
+
+            - var sortFunction = function(a, b) {
+            -   if(a.publishFrom) {
+            -       var aSortSource = a.publishFrom
+            -   } else {
+            -       var aSortSource = a.created_at
+            -   }
+            -   if (b.publishFrom) {
+            -       var bSortSource = b.publishFrom
+            -   } else {
+            -       var bSortSource = b.created_at
+            -   }
+            -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
+            - }
+
+            each news in self.data.articles.sort(sortFunction)
+                if news.publish
+                    - var currentTime = new Date()
+                    if typeof(news.publishFrom) === 'undefined'
+                        - var publishFrom= new Date(news.created_at)
                     else
-                        img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
-                    .hero_headline_box
-                        .hero_headline_box_1
-                            .hero_headline
-                                | !{self.data.heroArticle.title}
-                        .hero_headline_box_2
-                            .hero_p
-                                | !{self.data.heroArticle.lead}
+                        - var publishFrom= new Date(news.publishFrom)
 
-                - heroPlusTrioNews.push(self.data.heroArticle.id)
+                    if news.publishUntil
+                        - var publishUntil = new Date(news.publishUntil)
 
+                    if (currentTime > publishFrom)
+                        if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
 
-                    //- if self.data.heroArticle.media.image[0]
-                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
-                    //- else if self.data.heroArticle.media.imageDefault[0]
-                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
-                    //- else
-                    //-     img(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
-                        //- HERO ARTICLE EXAMPLE END
+                            if news.article_types && news.article_types[0]
+                                - var articleType = news.article_types[0].et
+                            if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
+                                - continue
+                            if counter >= 5
+                                - break
+                            - counter++
 
-                    //- if self.data.heroArticle.media.image[0]
-                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
-                    //- else if self.data.heroArticle.media.imageDefault[0]
-                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
-                    //- else
-                    //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
-
-            section.trio_block
-                //- span.article_title_detailed.clr_primary= self.festivalDates
-                //- //SIIN ON TRIO NÄIDE
+                            .viieka_item
+                                a(href= `/${lang_path}article/${ news.slug}`)
+                                    .container_frame_16_9
+                                        if news.media.image[0]
+                                            img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.image[0].hash}${news.media.image[0].ext}`).trio_image
+                                        else if news.media.imageDefault[0]
+                                            img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.imageDefault[0].hash}${news.media.imageDefault[0].ext}`).trio_image
+                                        else
+                                            img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
+                                    p.dark= news.title
+                                    p.dark= news.publishFrom
+                                    p.dark= news.lead
 
 
-                //- - var heroPlusTrioNews = [] //- SEE ON VIIEKA JAOKS TARVILIK
-                //- self.data.articleTrioBlock sisaldab mida?
-                for blocks in self.data.articleTrioBlock.sort(function(a, b){ return (a.block.order > b.block.order) ? 1 : ((b.block.order > a.block.order) ? -1 : 0); })
-                    if blocks.article
-                        - heroPlusTrioNews.push(blocks.article.id)
-
-                    a(href= `/${lang_path}article/${ blocks.article.slug}`)
-                        .trio_block_item
-                            if blocks.block.image
-                                img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
-                            else if blocks.article.media.image[0]
-                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
-                            else if blocks.article.media.imageDefault[0]
-                                img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
-                            else
-                                img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
-                            h4.dark
-                                | !{blocks.block.title}
-                            p.dark
-                                | !{blocks.block.lead}
-
-
-                //- //KUNI SIIN
-
-            //- .home_2
-            //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
-            section.viiekas
-
-
-
-
-                    //- VIIEKAS START
-                    - var counter = 0
-
-                    - var sortFunction = function(a, b) {
-                    -   if(a.publishFrom) {
-                    -       var aSortSource = a.publishFrom
-                    -   } else {
-                    -       var aSortSource = a.created_at
-                    -   }
-                    -   if (b.publishFrom) {
-                    -       var bSortSource = b.publishFrom
-                    -   } else {
-                    -       var bSortSource = b.created_at
-                    -   }
-                    -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
-                    - }
-
-                    each news in self.data.articles.sort(sortFunction)
-                        if news.publish
-                            - var currentTime = new Date()
-                            if typeof(news.publishFrom) === 'undefined'
-                                - var publishFrom= new Date(news.created_at)
-                            else
-                                - var publishFrom= new Date(news.publishFrom)
-
-                            if news.publishUntil
-                                - var publishUntil = new Date(news.publishUntil)
-
-                            if (currentTime > publishFrom)
-                                if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
-
-                                    if news.article_types && news.article_types[0]
-                                        - var articleType = news.article_types[0].et
-                                    if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
-                                        - continue
-                                    if counter >= 5
-                                        - break
-                                    - counter++
-
-                                    .viieka_item
-                                        p.dark= news.title
-
-
-                    //- VIIEKAS LÕPP
+                //- VIIEKAS LÕPP
 
 
 
