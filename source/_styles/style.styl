@@ -170,7 +170,7 @@ footer
     border-top 1px solid rgba(255,255,255,.1)
     padding 10vw
 
-.grid_footer_contact
+.grid_footer_row
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
@@ -748,6 +748,7 @@ header
     width calc(1.5rem + 0.1vw)
     margin-right 1rem
     margin-left 1rem
+    text-decoration none
     stroke white_96
     &:hover
         height calc(1.5rem + 0.1vw)
@@ -758,6 +759,10 @@ header
         stroke-width 1
         transform scale(1.2,1.2)
 /* TEXT */
+
+a .svg_icon_footer
+    text-decoration none
+    stroke white_96
 
 .font_h
   font-family font_h
@@ -1543,11 +1548,11 @@ a.btn_popover
         // padding 10vw
         padding 3rem 5rem 3rem 5rem
 
-    .grid_footer_contact
+    .grid_footer_row
         display grid
-        grid-template-columns 1fr 1fr 1fr
+        grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
         grid-template-rows auto
-        grid-gap 2rem
+        grid-gap 1rem
         justify-items center
         align-items center
 

@@ -1,32 +1,33 @@
 footer
-    .social
-        if self.footer.socialGroup
-            each socialGroups in self.footer.socialGroup
-                if socialGroups.name
-                    p= socialGroups.name
-                if socialGroups.items
-                    each item in socialGroups.items
-                        if item.svgCode
-                            a(href=item.url target='_blank') !{item.svgCode}
-                        else if item.svgMedia
-                            img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}` src=`/assets/img/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}`)
+    .grid_footer_row
+        .social
+            if self.footer.socialGroup
+                each socialGroups in self.footer.socialGroup
+                    if socialGroups.name
+                        p= socialGroups.name
+                    if socialGroups.items
+                        each item in socialGroups.items
+                            if item.svgCode
+                                a(href=item.url target='_blank') !{item.svgCode}
+                            else if item.svgMedia
+                                img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}` src=`/assets/img/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}`)
 
 
-    if self.footer.item
-        each item in self.footer.item
-            if item.name
-                p= item.name
-            if item.image
-                img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`)
-            if item.svgItem
-                each svgItem in item.svgItem
-                    if svgItem.name
-                        h1.section_headline_footer= svgItem.name
-                    .footer_logos_1
-                        if svgItem.svgCode
-                            | !{svgItem.svgCode}
-                        else if svgItem.svgMedia
-                            img.footer_logo_item_1(alt=svgItem.name data-src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
+        if self.footer.item
+            each item in self.footer.item
+                //- if item.name
+                //-     p= item.name
+                if item.image
+                    img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`)
+                if item.svgItem
+                    each svgItem in item.svgItem
+                        //- if svgItem.name
+                        //-     h1.section_headline_footer= svgItem.name
+                        .footer_logos_1
+                            if svgItem.svgCode
+                                | !{svgItem.svgCode}
+                            else if svgItem.svgMedia
+                                img.footer_logo_item_1(alt=svgItem.name data-src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
 
 
     if self.footer.logosSections
