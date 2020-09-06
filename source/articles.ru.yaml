@@ -80,8 +80,8 @@
         samaaegselt Tartus ja veebiplatvormil Elisa Stage ning selle alateemaks
         on kunst.
     contents_en: >-
-        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
-        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
+        cont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5
+        encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5
         encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  en
     publishFrom: '2020-08-07T09:00:00.000Z'
     publishUntil: '2021-01-07T10:00:00.000Z'
@@ -286,121 +286,6 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
 -
-    id: 2
-    created_by:
-        id: 5
-        firstname: Martin
-        lastname: Pennaste
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-02T06:22:29.284Z'
-    updated_at: '2020-09-02T08:11:15.785Z'
-    title_et: Tartuffi esimene film on seksuaalsest ahistamisest
-    slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
-    title_en: test 2 en
-    slug_en: test-2-en
-    lead_et: >-
-        PÖFFi armastusfilmide festival Tartuff kuulutas välja esimese linateose,
-        mille teema on hetkel üliaktuaalne – seksuaalne ahistamine.
-    lead_en: lead 2 en
-    contents_et: >-
-        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb kuuest
-        absurdihuumoriga vürtsitatud loost, mis on inspireeritud igapäevastest
-        naiste avaliku või varjatud diskrimineerimise viisidest.
-
-
-        „Kui te ei ole veel aru saanud, mida taotleb #MeToo, vaadake seda
-        filmi,” soovitab ajaleht Helsingin Sanomat, nimetades „Harjumuse jõudu”
-        eelmise aasta olulisimaks Soome linateoseks.
-
-
-        Patriarhaalse ühiskonna käitumismustreid avav draamakomöödia põhineb
-        populaarsel lühifilmide sarjal „Üksikjuhtum”, mis on Soome veebi-TVs Yle
-        Areena kogunud üle miljoni vaatamiskorra.
-
-
-        Soome noorema ja keskmise põlve naisrežissööride jõudemonstratsiooniks
-        nimetatava filmi on kirjutanud ja lavastanud Kirsikka Saari, Elli
-        Toivoniemi, Anna Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
-        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad eesotsas Krista
-        Kosoneni ja Johannes Holopaineniga.
-
-
-        Autorite enda sõnul ei ole filmi ajendiks niivõrd seksuaalne ahistamine,
-        kuivõrd see, kuidas ühiskond seda normaalseks peab.
-
-
-        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud” parima filmi,
-        režii, stsenaariumi ja meeskõrvalosa kategoorias. Linateose
-        rahvusvaheline esilinastus oli tänavusel Göteborgi filmifestivalil.
-
-
-        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu Raekoja platsist
-        saab taas Eesti suurim vabaõhukino. Esimest korda avab festival ka
-        virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
-
-
-        Kogu programmi avalikustab festival juuli lõpus.
-
-
-        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
-        Tartu filmifondi ja Tartu loomemajanduskeskusega.
-    contents_en: cont 2 en
-    publishFrom: '2020-07-07T09:00:00.000Z'
-    publishUntil: '2021-01-14T10:00:00.000Z'
-    publish_et: true
-    publish_en: true
-    media:
-        id: 9
-        imageDefault:
-            -
-                id: 35
-                name: F_1_force_of_habit.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_F_1_force_of_habit_9bdbea96b7.jpg
-                        hash: thumbnail_F_1_force_of_habit_9bdbea96b7
-                        mime: image/jpeg
-                        name: thumbnail_F_1_force_of_habit.jpg
-                        size: 9
-                        width: 245
-                        height: 138
-                hash: F_1_force_of_habit_9bdbea96b7
-                ext: .jpg
-                mime: image/jpeg
-                size: 277.58
-                url: /uploads/F_1_force_of_habit_9bdbea96b7.jpg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T08:11:05.707Z'
-                updated_at: '2020-09-02T08:11:05.787Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    publish: true
-    directory: source/_fetchdir/articles_poff/test-2-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.ru.yaml
--
     id: 3
     created_by:
         id: 5
@@ -563,7 +448,7 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
 -
-    id: 6
+    id: 2
     created_by:
         id: 5
         firstname: Martin
@@ -572,126 +457,93 @@
         id: 6
         firstname: Jaan
         lastname: Leppik
-    created_at: '2020-09-02T07:02:01.637Z'
-    updated_at: '2020-09-06T15:23:42.588Z'
-    title_et: Tartuffi filmid jõuavad ekraanile ka Tallinnas
-    slug_et: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
-    title_en: test 6 en
-    slug_en: test-6-en
+    created_at: '2020-09-02T06:22:29.284Z'
+    updated_at: '2020-09-02T08:11:15.785Z'
+    title_et: Tartuffi esimene film on seksuaalsest ahistamisest
+    slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
+    title_en: test 2 en
+    slug_en: test-2-en
     lead_et: >-
-        Tartus jätkuva PÖFFi armastusfilmide festivali Tartuff filme saab
-        vaadata ka järgmisel nädalal Tallinnas, kui Filmimuuseum näitab
-        festivali valikkava.
-    lead_en: lead 6 en
+        PÖFFi armastusfilmide festival Tartuff kuulutas välja esimese linateose,
+        mille teema on hetkel üliaktuaalne – seksuaalne ahistamine.
+    lead_en: lead 2 en
     contents_et: >-
-        19.–22. augustini linastuvad Maarjamäel asuva Filmimuuseumi kinos
-        Hispaania režissööri Javier Fesseri komöödia „Tšempionid”, Lõuna-Korea
-        režissööri Bora Kimi draama „Hüvasti!”, Iiri režissööri Aisling Walshi
-        biograafiline draama „Maudie” ja Brasiilia režissööri Karim Aïnouzi
-        melodraama „Nähtamatu elu”.
+        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb kuuest
+        absurdihuumoriga vürtsitatud loost, mis on inspireeritud igapäevastest
+        naiste avaliku või varjatud diskrimineerimise viisidest.
 
 
-        „Valisime Tartuffi programmist näitamiseks filmid, mis tutvustavad
-        erinevaid filmikultuure ja viivad erinevatesse ajastutesse. Kõik filmid
-        on äratanud tähelepanu tippfestivalidel või veel parem – oma maa
-        vaatajate seas,” ütles Filmimuuseumi kuraator Karlo Funk.
+        „Kui te ei ole veel aru saanud, mida taotleb #MeToo, vaadake seda
+        filmi,” soovitab ajaleht Helsingin Sanomat, nimetades „Harjumuse jõudu”
+        eelmise aasta olulisimaks Soome linateoseks.
 
 
-        „Tšempionid” on südamlik komöödia vaimupuudega inimestest, kes hakkavad
-        professionaalse treeneri käe all korvpalli mängima. Linateos võitis
-        aasta parima Hispaania filmi auhinna ja esindas Hispaaniat ka
-        mitteingliskeelsete filmide Oscari konkurentsis. Seansi juhatab sisse
-        Hispaania Maja juht Neftali Peral Joris.
+        Patriarhaalse ühiskonna käitumismustreid avav draamakomöödia põhineb
+        populaarsel lühifilmide sarjal „Üksikjuhtum”, mis on Soome veebi-TVs Yle
+        Areena kogunud üle miljoni vaatamiskorra.
 
 
-        Brasiilia rohkelt auhinnatud troopilises melodraamas „Nähtamatu elu”
-        surub ühiskonna konservatiivsus alla kahe õe unistused. Brasiilia esitas
-        filmi ka Oscarile. Seansi juhatab sisse režissöör Kadri Kõusaar, kes on
-        ise Lõuna-Ameerikas filminud.
+        Soome noorema ja keskmise põlve naisrežissööride jõudemonstratsiooniks
+        nimetatava filmi on kirjutanud ja lavastanud Kirsikka Saari, Elli
+        Toivoniemi, Anna Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
+        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad eesotsas Krista
+        Kosoneni ja Johannes Holopaineniga.
 
 
-        14-aastane üksildane Seouli tüdruk Eun-hee otsib filmis „Hüvasti!”
-        mõistmist, millest ta on ilma jäetud nii kodus kui koolis. Tegu on
-        tänavuse Tartuffi tunnustatuima linateosega, mis on võitnud ligemale 30
-        auhinda. Seansi juhatab sisse Lõuna-Korea kultuuri uurija Maari
-        Hinsberg.
+        Autorite enda sõnul ei ole filmi ajendiks niivõrd seksuaalne ahistamine,
+        kuivõrd see, kuidas ühiskond seda normaalseks peab.
 
 
-        „Maudie” on erakordne lugu artriidihaigest ühiskonnaheidikust, kes leiab
-        ennast kunsti kaudu. Film põhineb Kanada naivistliku kunstniku Maud
-        Lewise (1903-1970) elul. Teda mängib Sally Hawkins, kes on võitnud selle
-        osatäitmise eest ka hulk auhindu.
+        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud” parima filmi,
+        režii, stsenaariumi ja meeskõrvalosa kategoorias. Linateose
+        rahvusvaheline esilinastus oli tänavusel Göteborgi filmifestivalil.
 
 
-        Seansid algavad kell 19 ja pilet maksab viis eurot. Filmidel on
-        eestikeelsed subtiitrid. Piletid on saadaval Fientas.
+        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu Raekoja platsist
+        saab taas Eesti suurim vabaõhukino. Esimest korda avab festival ka
+        virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
 
 
-        PÖFFi armastusfilmide festival Tartuff kestab 10.–15. augustini.
-        Festivali virtuaalses kinos Elisa Stage saab filme vaadata 16.
-        augustini.
-    contents_en: cont 6 en
-    publishFrom: '2020-09-02T05:30:00.000Z'
-    publishUntil: '2019-12-31T22:00:00.000Z'
+        Kogu programmi avalikustab festival juuli lõpus.
+
+
+        Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
+        Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: cont 2 en
+    publishFrom: '2020-07-07T09:00:00.000Z'
+    publishUntil: '2021-01-14T10:00:00.000Z'
     publish_et: true
-    publish_en: false
+    publish_en: true
     media:
-        id: 13
+        id: 9
         imageDefault:
             -
-                id: 2
-                name: F_3_invisible_life.jpg
+                id: 35
+                name: F_1_force_of_habit.jpg
                 alternativeText: ''
                 caption: ''
                 width: 1920
                 height: 1080
                 formats:
-                    large:
-                        ext: .jpg
-                        url: /uploads/large_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: large_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: large_F_3_invisible_life.jpg
-                        size: 53.41
-                        width: 1000
-                        height: 563
-                    small:
-                        ext: .jpg
-                        url: /uploads/small_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: small_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: small_F_3_invisible_life.jpg
-                        size: 15.85
-                        width: 500
-                        height: 281
-                    medium:
-                        ext: .jpg
-                        url: /uploads/medium_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: medium_F_3_invisible_life_fb118ee4f7
-                        mime: image/jpeg
-                        name: medium_F_3_invisible_life.jpg
-                        size: 30.86
-                        width: 750
-                        height: 422
                     thumbnail:
                         ext: .jpg
-                        url: /uploads/thumbnail_F_3_invisible_life_fb118ee4f7.jpg
-                        hash: thumbnail_F_3_invisible_life_fb118ee4f7
+                        url: /uploads/thumbnail_F_1_force_of_habit_9bdbea96b7.jpg
+                        hash: thumbnail_F_1_force_of_habit_9bdbea96b7
                         mime: image/jpeg
-                        name: thumbnail_F_3_invisible_life.jpg
-                        size: 5.62
+                        name: thumbnail_F_1_force_of_habit.jpg
+                        size: 9
                         width: 245
                         height: 138
-                hash: F_3_invisible_life_fb118ee4f7
+                hash: F_1_force_of_habit_9bdbea96b7
                 ext: .jpg
                 mime: image/jpeg
-                size: 122.39
-                url: /uploads/F_3_invisible_life_fb118ee4f7.jpg
+                size: 277.58
+                url: /uploads/F_1_force_of_habit_9bdbea96b7.jpg
                 provider: local
                 created_by: 6
                 updated_by: 6
-                created_at: '2020-08-13T19:16:16.284Z'
-                updated_at: '2020-08-13T19:16:16.529Z'
+                created_at: '2020-09-02T08:11:05.707Z'
+                updated_at: '2020-09-02T08:11:05.787Z'
         image: []
     article_types:
         -
@@ -705,19 +557,8 @@
             et: Uudised
             en: News
             ru: Новости
-    tag_premiere_types:
-        - Мировая премьера
-    tag_programmes:
-        - Основная конкурсная программа
-    tag_genres:
-        - Анимация
-    tag_keywords:
-        - MeToo
-        - Общество
-    slug: pof-fi-article-1
-    publish: false
-    directory: source/_fetchdir/articles_poff/test-6-en
-    path: article/pof-fi-article-1
+    publish: true
+    directory: source/_fetchdir/articles_poff/test-2-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
@@ -732,7 +573,7 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-02T06:24:45.587Z'
-    updated_at: '2020-09-06T18:08:47.199Z'
+    updated_at: '2020-09-06T17:24:17.096Z'
     title_et: Tartu armastusfilmide festivali avab troopiline melodraama
     slug_et: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
     title_en: test 4 en
@@ -754,7 +595,7 @@
 
         „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
         tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid
-        The Wrap. 
+        The Wrap.
 
 
         <iframe width="500" height="281"
@@ -767,11 +608,11 @@
         Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide
         Oscarile. USA filmiorganisatsiooni The National Board of Review
         hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse
-        mängufilmiga. 
+        mängufilmiga.
 
 
         Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
-        elu”. Peaosades Carol Duarte ja Julia Stockler. 
+        elu”. Peaosades Carol Duarte ja Julia Stockler.
 
 
         „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
@@ -784,7 +625,7 @@
         **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
         augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
         Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
-        [Tartu Loomemajanduskeskusega](https://lmk.ee). 
+        [](https://lmk.ee).
     contents_en: cont 4 en
     publishFrom: '2020-07-22T09:00:00.000Z'
     publishUntil: '2021-01-06T10:00:00.000Z'
@@ -950,7 +791,7 @@
 
 
         26. augustil kell 18 Kumu auditooriumis linastuvat filmi juhatab sisse
-        Katrin Nabel Ungari Instituudist. 
+        Katrin Nabel Ungari Instituudist.
 
 
         Sari jätkub Damian Pettigrew´ klassikalise, 18 aastat tagasi valminud
@@ -1392,6 +1233,30 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
 -
+    id: 12
+    created_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    updated_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-09-04T06:41:03.958Z'
+    updated_at: '2020-09-04T08:24:36.805Z'
+    title_et: TEST33
+    slug_et: pof-fi-article
+    slug_en: pof-fi-article
+    publishFrom: '2020-09-16T09:00:00.000Z'
+    publish_et: true
+    article_types: []
+    slug: pof-fi-article
+    directory: source/_fetchdir/articles_poff/pof-fi-article
+    path: article/pof-fi-article
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+-
     id: 11
     created_by:
         id: 5
@@ -1420,30 +1285,6 @@
     contents: TEST ARTIKKEL 2
     directory: source/_fetchdir/articles_poff/test-artikkel-2
     path: article/test-artikkel-2
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.ru.yaml
--
-    id: 12
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-04T06:41:03.958Z'
-    updated_at: '2020-09-04T08:24:36.805Z'
-    title_et: TEST33
-    slug_et: pof-fi-article
-    slug_en: pof-fi-article
-    publishFrom: '2020-09-16T09:00:00.000Z'
-    publish_et: true
-    article_types: []
-    slug: pof-fi-article
-    directory: source/_fetchdir/articles_poff/pof-fi-article
-    path: article/pof-fi-article
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
