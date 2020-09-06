@@ -10,7 +10,7 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-08-28T06:32:26.755Z'
-    updated_at: '2020-09-06T09:26:06.857Z'
+    updated_at: '2020-09-06T14:04:32.228Z'
     domain:
         id: 1
         created_by: 6
@@ -678,6 +678,8 @@
                             updated_at: '2020-08-28T06:22:03.153Z'
                     roleAtTeam_et: Programmi koostaja
                     roleAtTeam_en: Festival Programmer
+                    emailAtTeam: hannes.aava@poff.ee
+                    phoneAtTeam: +372 5552 9211
                     order: 7
                     roleAtTeam: Составитель программы
                 -
@@ -730,8 +732,10 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.148Z'
                             updated_at: '2020-08-28T06:22:02.094Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_et: 'doc@poff koordinaator, Programmi koostaja'
                     roleAtTeam_en: Festival Programmer
+                    emailAtTeam: tiit.tuumalu@poff.ee
+                    phoneAtTeam: +372 516 4204
                     order: 8
                     roleAtTeam: Составитель программы
                 -
@@ -1407,7 +1411,7 @@
                     roleAtTeam_et: Programmi koostaja
                     roleAtTeam_en: Festival Programmer
                     order: 23
-                    roleAtTeam: Составитель программы
+                    roleAtTeam: Со��тавитель программы
                 -
                     id: 37
                     person:
@@ -1555,7 +1559,7 @@
                     roleAtTeam_et: Programmi koostaja
                     roleAtTeam_en: Festival Programmer
                     order: 27
-                    roleAtTeam: Составитель пр��граммы
+                    roleAtTeam: Составитель программы
         -
             id: 7
             order: 3

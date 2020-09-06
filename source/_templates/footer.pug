@@ -1,3 +1,5 @@
+include /_templates/mixins.pug
+
 footer
     .grid_footer_row
         .footer_row_item
@@ -27,8 +29,11 @@ footer
                     if item.image
                         img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`)
                     if item.text
-                        p
-                            | !{item.text}
+                        if typeof(item.text) !== 'object'
+                            +format(item.text)
+                        else
+                            p
+                                | !{item.text}
 
 
 
