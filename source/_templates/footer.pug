@@ -3,8 +3,8 @@ footer
         .social
             if self.footer.socialGroup
                 each socialGroups in self.footer.socialGroup
-                    //- if socialGroups.name
-                    //-     p= socialGroups.name
+                    if socialGroups.name
+                        p= socialGroups.name
                     if socialGroups.items
                         each item in socialGroups.items
                             if item.svgCode
@@ -16,17 +16,14 @@ footer
         if self.footer.item
             each item in self.footer.item
                 .footer_row_item
-                    //- if item.name
-                    //-     p= item.name
+                    if item.name
+                        p= item.name
                     if item.svgItem
                         each svgItem in item.svgItem
-                            //- if svgItem.name
-                            //-     h1.section_headline_footer= svgItem.name
                             if svgItem.svgCode
-                                a(href=item.url target='_blank') !{item.svgCode}
+                                a(href=svgItem.url target='_blank') !{svgItem.svgCode}
                             else if svgItem.svgMedia
-                                a(href=item.url target='_blank')
-                                    img.footer_logo_item_1(alt=svgItem.name data-src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
+                                img.footer_logo_item_1(alt=svgItem.name data-src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
                     if item.image
                         img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`)
                     if item.text
