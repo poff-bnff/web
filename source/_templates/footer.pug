@@ -6,7 +6,7 @@ footer
             if self.footer.socialGroup
                 each socialGroups in self.footer.socialGroup
                     if socialGroups.name
-                        p= socialGroups.name
+                        p.footer_h= socialGroups.name
                     if socialGroups.items
                         each item in socialGroups.items
                             if item.svgCode
@@ -19,7 +19,7 @@ footer
             each item in self.footer.item
                 .footer_row_item
                     if item.name
-                        p= item.name
+                        p.footer_h= item.name
                     if item.svgItem
                         each svgItem in item.svgItem
                             if svgItem.svgCode
