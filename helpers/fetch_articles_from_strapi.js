@@ -235,8 +235,9 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     // console.log(element);
     if (writeIndexFile) {
         if (element.article_types != null && element.article_types[0] != null) {
-                var templateName = element.article_types[0].name.toLowerCase();
-        }else{
+            var templateName = element.article_types[0].name.toLowerCase();
+        }
+        if (!fs.existsSync(`source/_templates/article_${element.article_types[0].name.toLowerCase()}_index_template.pug`)){
             var templateName = 'uudis';
         }
         fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
