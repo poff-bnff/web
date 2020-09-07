@@ -74,24 +74,30 @@ function rueten(obj, lang) {
 
 function processData(data, lang, CreateYAML) {
     var buffer = {}
-    var labels = {'label':{}}
+    var labels = {}
     for (key in data) {
         let smallBuffer = {}
-        console.log(data[key].name);
-        // var data2 = data.film[key];
+        // console.log(data[key].name);
+        var data2 = data[key];
         var name = data[key].name;
-        // for (key2 in data2.label) {
-        //     smallBuffer[data2.label[key2].name] = data2.label[key2].value;
-        // }
-        // buffer[name] = smallBuffer;
+        for (key2 in data2.label) {
+            smallBuffer[data2.label[key2].name] = data2.label[key2].value;
+        }
+        buffer[name] = smallBuffer;
+        labels[name] = buffer[name]
     }
-    labels.label[name] = buffer
-    CreateYAML(labels, lang);
+
+    CreateYAML(rueten(labels, lang), lang);
+    // CreateYAML(labels, lang);
 }
 
 function CreateYAML(labels, lang) {
-    // console.log(process.cwd());
-    let allDataYAML = yaml.safeDump(labels, { 'noRefs': true, 'indent': '4' });
+    // console.log(labels);
+    let globalData= yaml.safeLoad(fs.readFileSync(`../source/global.${lang}.yaml`, 'utf8'))
+    // // console.log(globalData);
+    globalData.label = labels
+    // // console.log(process.cwd());
+    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`labelstest.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
