@@ -3,8 +3,7 @@ name: Build and publish LIVE POFF site
 on:
     release:
         types: [published]
-        branches:
-            - staging_justfilm
+        branches: [staging_justfilm]
 
     # schedule:
     #     - cron: '1 0-7 * * *'
