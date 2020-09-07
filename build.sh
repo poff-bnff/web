@@ -3,7 +3,7 @@
 # node ./helpers/compile_film_pictures.js
 # node ./helpers/compile_article_pictures.js
 
-
+echo 'Starting'
 [ ! -d "build/assets" ] && mkdir build/assets
 
 node ./helpers/fetch_footer_from_strapi.js
