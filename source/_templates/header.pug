@@ -34,7 +34,8 @@ header
 
                     if self.data.articles
                         each article in self.data.articles
-                            if article.article_types && article.article_types[0] && (article.article_types[0].name == 'About')
+                            //- article.article_types && article.article_types[0] && (article.article_types[0].name === 'About')  &&
+                            if (article.id === 12)
                                 li
                                     a(href=`/${lang_path}${article.path}`)= 'See on about link'
                     //- li
