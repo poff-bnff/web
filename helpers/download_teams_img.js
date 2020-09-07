@@ -36,21 +36,24 @@ function loadYaml(readYaml) {
 function readYaml(doc) {
 
     for (team of doc) {
-        for (subTeam of team.subTeam) {
-            for (teamMember of subTeam.teamMember) {
-
-                if (teamMember.pictureAtTeam) {
-                    var imgPath = teamMember.pictureAtTeam[0].url;
-                    var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                }else if (teamMember.person.picture) {
-                    var imgPath = teamMember.person.picture.url;
-                    var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                }
-                if (imgPath) {
-                    // download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
-                    let url = `${strapiPath}${imgPath}`
-                    let dest = `${savePath}${imgFileName}`
-                    download(url, dest);
+        if (team.subTeam) {
+            for (subTeam of team.subTeam) {
+                if (subTeam.teamMember) {
+                    for (teamMember of subTeam.teamMember) {
+                        if (teamMember.pictureAtTeam) {
+                            var imgPath = teamMember.pictureAtTeam[0].url;
+                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+                        }else if (teamMember.person.picture) {
+                            var imgPath = teamMember.person.picture.url;
+                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+                        }
+                        if (imgPath) {
+                            // download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
+                            let url = `${strapiPath}${imgPath}`
+                            let dest = `${savePath}${imgFileName}`
+                            download(url, dest);
+                        }
+                    }
                 }
             }
         }
