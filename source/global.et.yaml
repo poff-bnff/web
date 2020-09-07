@@ -113,11 +113,11 @@ footer:
         firstname: Jaan
         lastname: Leppik
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 3
+        firstname: Liis
+        lastname: Käsper
     created_at: '2020-09-01T09:37:02.304Z'
-    updated_at: '2020-09-06T12:51:44.032Z'
+    updated_at: '2020-09-07T07:11:47.956Z'
     namePrivate: PÖFF
     socialGroup:
         -
@@ -223,6 +223,13 @@ footer:
             text: |-
                 Telliskivi 60A
                 Tallinn
+            svgItem:
+                -
+                    id: 13
+                    name: test
+                    url_en: bkhv-en
+                    url_ru: jnfe-ru
+                    url: jknf-et
     logosSections:
         -
             id: 1
