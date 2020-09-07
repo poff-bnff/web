@@ -448,9 +448,11 @@ LabelGroups:
 
 SocialItem: &SocialItem
     name: (text)
-    url: (text)
+    url_et: (text)
     svgCode: (text)
     svgMedia: (Media)
+    url_en: (text)
+    url_ru: (text)
 
 Logo: &Logo
     url: (text)
