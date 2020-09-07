@@ -45,19 +45,19 @@ function readYaml(doc) {
                 if ('imgWhite' in logo && 'url' in logo.imgWhite){
                     var imgPathW = logo.imgWhite.url;
                     var imgFileName = imgPathW.split('/')[imgPathW.split('/').length - 1];
-                    download(`${strapiPath}${imgPathW}`, `${savePath}${imgFileName}`, ifError);
+                    download(`${strapiPath}${imgPathW}`, `${savePath}${imgFileName}`);
                 }
 
                 if ('imgColor' in logo && 'url' in logo.imgColour){
                     var imgPathC = logo.imgColour.url;
                     var imgFileName = imgPathC.split('/')[imgPathC.split('/').length - 1];
-                    download(`${strapiPath}${imgPathC}`, `${savePath}${imgFileName}`, ifError);
+                    download(`${strapiPath}${imgPathC}`, `${savePath}${imgFileName}`);
                 }
 
                 if ('imgBlack' in logo && 'url' in logo.imgBlack){
                     var imgPathB = logo.imgBlack.url;
                     var imgFileName = imgPathB.split('/')[imgPathB.split('/').length - 1];
-                    download(`${strapiPath}${imgPathB}`, `${savePath}${imgFileName}`, ifError);
+                    download(`${strapiPath}${imgPathB}`, `${savePath}${imgFileName}`);
                 }
             }
         }
@@ -70,7 +70,7 @@ function readYaml(doc) {
                 if ('svgMedia' in items && 'url' in items.svgMedia){
                     var imgPath = items.svgMedia.url;
                     var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                    download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
+                    download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`);
                 }
             }
         }
@@ -82,7 +82,7 @@ function readYaml(doc) {
                 // console.log(item.image);
                 var imgPath = item.image.url;
                 var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
+                download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`);
             }
         }
 
@@ -94,7 +94,7 @@ function readYaml(doc) {
                     // console.log(media.svgMedia.url);
                     var imgPath = media.svgMedia.url;
                     var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                    download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
+                    download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`);
                 }
             }
         }
@@ -102,17 +102,28 @@ function readYaml(doc) {
 }
 
 
-function download(url, dest, cb) {
-    var file = fs.createWriteStream(dest);
+function download(url, dest) {
+    let fileSizeInBytes = 0
+    if (fs.existsSync(dest)) {
+        const stats = fs.statSync(dest);
+        fileSizeInBytes = stats.size;
+    }
+
     var request = http.get(url, function (response) {
-        response.pipe(file);
-        file.on('finish', function () {
-            file.close(cb);  // close() is async, call cb after close completes.
-        });
-        console.log(`Footer img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
+        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
+            var file = fs.createWriteStream(dest);
+            response.pipe(file);
+            file.on('finish', function () {
+                file.close();  // close() is async, call cb after close completes.
+                console.log(`Downloaded: Footer img ${url.split('/')[url.split('/').length - 1]} to ${dest}`);
+            });
+        }else{
+            console.log(`Skipped: Footer img ${url.split('/')[url.split('/').length - 1]} skipped due to same exists`);
+        }
     }).on('error', function (err) { // Handle errors
-        fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        if (cb) cb(err.message);
+        console.log(err);
+        // fs.unlink(dest); // Delete the file async. (But we don't check the result)
+        // if (cb) cb(err.message);
     });
 };
 
