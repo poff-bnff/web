@@ -10,9 +10,9 @@ let allData = []; // for articles view
 
 function fetchAllData(options){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/festival/", "en", 0, 1, {}, options, getDataCB);
-    getData("source/festival/", "et", 0, 0, {}, options, getDataCB);
-    getData("source/festival/", "ru", 0, 0, {}, options, getDataCB);
+    getData("source/festival/", "en", 0, 1, {'articles': '/articles.en.yaml'}, options, getDataCB);
+    getData("source/festival/", "et", 0, 0, {'articles': '/articles.et.yaml'}, options, getDataCB);
+    getData("source/festival/", "ru", 0, 0, {'articles': '/articles.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
@@ -68,6 +68,8 @@ function fetchAll(token) {
 
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, callback) {
+    console.log(`Fetching teams ${lang} data`);
+
     allData = [];
     let req = http.request(options, function(response) {
         let data = '';
