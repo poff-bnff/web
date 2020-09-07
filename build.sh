@@ -4,7 +4,7 @@
 # node ./helpers/compile_article_pictures.js
 
 
-mkdir build/assets
+[ ! -d "build/assets" ] && mkdir build/assets
 
 node ./helpers/fetch_footer_from_strapi.js
 node ./helpers/fetch_heroarticle_from_strapi.js
