@@ -20,3 +20,5 @@ function AfterFetch(modelName, strapiData){
 // FromStrapi.Fetch('HeroArticlePoff', AfterFetch)
 // FromStrapi.Fetch('TrioBlockPoff', AfterFetch)
 // FromStrapi.Fetch('Footer', AfterFetch)
+FromStrapi.Fetch('ShotsiArticle', AfterFetch)
+// FromStrapi.Fetch('JustFilmiArticle', AfterFetch)

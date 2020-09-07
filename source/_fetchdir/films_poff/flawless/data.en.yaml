@@ -1,0 +1,105 @@
+id: 505
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:37.043Z'
+updated_at: '2020-08-28T09:01:48.384Z'
+title_et: Täiuslik
+title_ru: ''
+titleOriginal: HaNeshef
+year: 2018
+runtime: 97
+slug_et: taiuslik
+slug_ru: ''
+filmId: '1002'
+credentials:
+    id: 386
+    director:
+        - Tal Granit
+        - ' Sharon Maymon'
+    screenwriter:
+        - Tal Granit
+        - ' Sharon Maymon'
+    doP:
+        - Giora Bejach
+    cast:
+        - Stav Strashko
+        - ' Netsanet Mekonen'
+        - ' Noam Lugasy'
+    composer:
+        - Ivri Lider
+synopsis: >-
+    Eden a 17-year-old high school student discovers that her two best friends
+    are planning to sell their kidneys to pay for cosmetic surgery and a dress
+    for prom. Eden, who is secretly a trans woman, realizes that this may be the
+    answer to her prayers. She joins the others on their journey to Kiev to
+    exchange their kidneys for the flawless body of their dreams. Their trip
+    does not go as planned and when Eden’s secret is exposed, all three of them
+    need to come to terms with the prejudices they have and redefine who they
+    really want to be in this world.
+media:
+    id: 321
+    Trailer:
+        -
+            id: 306
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 302
+            Url: ''
+tags:
+    id: 309
+countriesAndLanguages:
+    id: 293
+    countries:
+        -
+            id: 877
+            created_at: '2020-08-17T14:20:44.692Z'
+            updated_at: '2020-08-17T14:20:44.692Z'
+            code: DE
+            name_et: Saksamaa
+            name_ru: Германия
+            name: Germany
+        -
+            id: 951
+            created_at: '2020-08-17T14:20:50.795Z'
+            updated_at: '2020-08-17T14:20:50.795Z'
+            code: IL
+            name_et: Iisrael
+            name_ru: Израиль
+            name: Israel
+    languages:
+        -
+            id: 1727
+            created_at: '2020-08-24T12:28:27.872Z'
+            updated_at: '2020-08-24T12:28:27.872Z'
+            name_et: Heebrea
+            name_ru: Иврит
+            code: he
+            name: Hebrew
+        -
+            id: 1744
+            created_at: '2020-08-24T12:28:28.778Z'
+            updated_at: '2020-08-24T12:28:28.778Z'
+            name_et: Inglise
+            name_ru: Английский
+            code: en
+            name: English
+        -
+            id: 1796
+            created_at: '2020-08-24T12:28:30.605Z'
+            updated_at: '2020-08-24T12:28:30.605Z'
+            name_et: Vene
+            name_ru: Русский
+            code: ru
+            name: Russian
+title: Flawless
+slug: flawless
+directory: source/_fetchdir/films_poff/flawless
+path: film/flawless
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.en.yaml
+    articles: /articles.en.yaml

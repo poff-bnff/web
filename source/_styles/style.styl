@@ -33,6 +33,8 @@ elisa_blue = #0019af
 tartuff_violet = #ec008c
 dark_1 = #0E1417
 dark_2 = #192024
+dark_4 = #29333A
+dark_5 = #90999f
 bg_dark_1 = #0E1417
 bg_dark_2 = #192024
 bg_dark_3 = #1C272E
@@ -40,10 +42,14 @@ bg_dark_4 = #29333A
 bg_light_1 = #eeeeee
 bg_light_2 = #dddddd
 bg_light_3 = #cccccc
+bg_color_1 = #ffffff
+bg_color_2 = #f7f7f7
+bg_color_3 = #f7f7ff
+bg_color_4 = #eeeeff
 clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
-clr_primary = #ef0f20 // tartuff red
+clr_primary = #F39133 // PÖFF orange
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -57,7 +63,6 @@ clr_vote = #00aeef
 
 header_height = 97px
 full_height = calc(100vh - header_height)
-
 
 breakpoint-lg = 992px
 breakpoint-md = 768px
@@ -121,6 +126,10 @@ body
 .bg_dark_4
     background-color bg_dark_4
 
+.ghost_blue
+    color ghost_blue
+
+
 .font_weight_400
     font-weight 400
 
@@ -167,13 +176,30 @@ footer
     border-top 1px solid rgba(255,255,255,.1)
     padding 10vw
 
-.grid_footer_contact
+.grid_footer_row
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
     grid-gap 2rem
     justify-items center
     align-items center
+
+.footer_row_item
+    width 100%
+    justify-self center
+    align-self start
+    text-align center
+
+.footer_h
+    // display inline
+    font-family font_h
+    // font-size 1.618rem
+    // font-weight 500
+    color white_96
+    font-size 1rem
+    text-decoration none
+    text-transform uppercase
+
 
 nav
     ul
@@ -237,6 +263,7 @@ nav
     color white_96
     a
         color ghost_blue
+        padding-left 1rem
 
 .logo
     margin 1rem
@@ -290,6 +317,7 @@ nav
   grid-template-columns 1fr
   grid-template-rows auto
   padding-top header_height
+  background-color bg_color_1
 //   grid-template-areas   "f_img_slider_box"\
 //                         "f_title_box"\
 //                         "f_synopsis_box"\
@@ -451,13 +479,15 @@ a .dark:hover
     width 100vw
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
-    grid-gap calc(1.9rem + 1.5vw)
+    // grid-gap calc(1.9rem + 1.5vw)
+    grid-gap 0
     padding-top calc(1.9rem + 1.5vw)
     padding-bottom calc(1.9rem + 1.5vw)
     justify-content center
     align-content center
     justify-items stretch
     align-items stretch
+    background-color white
 
 .trio_image
     width 100%
@@ -467,7 +497,36 @@ a .dark:hover
     height 100%
     background rgba(255,255,255,.96)
     text-align left
-    padding 2rem 2rem 2rem 2rem
+    padding 1rem 2rem 1rem 2rem
+    outline .5px dashed dark_5
+
+.trio_headline
+    color dark_4
+    font-size 1.5rem
+    font-family font_h
+    font-weight 500
+    padding-top .5rem
+    letter-spacing 0.01em
+
+.p_trio, .p_viiekas
+    font-family font_p
+    font-size 1rem
+    line-height 1.618rem
+    padding-top .7rem
+    color dark_1
+    font-weight 300
+
+
+
+// a
+//     .trio_headline
+//         text-decoration none
+//         color ghost_blue
+//         &:hover
+//             text-decoration none
+//             color poff_orange
+
+
 
 // .hero_headline_box_2
 //     background rgba(255,255,255,.9)
@@ -484,19 +543,23 @@ a .dark:hover
     grid-gap calc(1.9rem + 1.5vw)
     // padding-left calc(1.9rem + 1.5vw)
     // padding-right calc(1.9rem + 1.5vw)
-    padding-top calc(1.9rem + 1.5vw)
+    // padding-top calc(1.9rem + 1.5vw)
     padding-bottom calc(1.9rem + 1.5vw)
     justify-content center
     align-content center
     justify-items stretch
     align-items stretch
+    background-color bg_color_1
 
 .viieka_item
     width 100%
     height 100%
     background rgba(255,255,255,.96)
     text-align left
-    padding 2rem 2rem 2rem 2rem
+    // padding 2rem 2rem 2rem 2rem
+    padding 0
+    margin 0
+    // border 1px solid red
 
 // .viieka_item:first-child
 // .viieka_item:nth-child(2)
@@ -507,6 +570,70 @@ a .dark:hover
 // .viieka_item:nth-child(5)
 //     grid-column span 2
 
+.viieka_body
+    margin 0
+    padding 1rem 1rem 1rem 1rem
+
+.viieka_headline
+    color dark_4
+    font-size 1.5rem
+    font-family font_h
+    font-weight 500
+    padding-top .5rem
+    letter-spacing 0.01em
+
+.footer_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+.footer_logos:first-child
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+.footer_logos:nth-child(2)
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+.footer_logos:nth-child(3)
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(10rem, 12rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+
+.footer_logo_item:first-child
+    width: 70%
+
+.footer_logo_item:nth-child(2)
+    width: 70%
+
+.footer_logo_item:nth-child(3)
+    width: 70%
+
+.footer_logo_item_1
+    // background-color bg_dark_3
+    width 60%
+    // padding 7rem
+
+.footer_logo_item_2
+    width 70%
+
+.footer_logo_item_3
+    width 80%
 
 .footer_logos_1
     display grid
@@ -582,24 +709,18 @@ a .dark:hover
     padding 1.618rem 1rem 1rem 1rem
     // padding 1rem
     // align-self flex-end
+    font-size 1rem
+    line-height 1.2rem
     a
         text-decoration none
         color white_96
         // font-weight 600
+    p
+        font-size 1rem
+        line-height 1.2rem
 
 .schedule
     padding-top header_height
-
-.footer_logo_item_1
-    // background-color bg_dark_3
-    width 60%
-    // padding 7rem
-
-.footer_logo_item_2
-    width 70%
-
-.footer_logo_item_3
-    width 80%
 
 header
     grid-area header
@@ -621,7 +742,7 @@ header
 
 .f_synopsis_box
     grid-area f_synopsis_box
-    background-color bg_dark_2
+    // background-color bg_dark_2
     padding-left calc(1rem + 1vw)
     padding-right calc(1rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -629,6 +750,9 @@ header
     display grid
     grid-template-columns 1
     grid-gap 2rem
+    background-color bg_color_1
+    p
+        color dark_1
 
 .f_cred_box
     grid-area f_cred_box
@@ -745,7 +869,9 @@ header
     width calc(1.5rem + 0.1vw)
     margin-right 1rem
     margin-left 1rem
+    text-decoration none
     stroke white_96
+    stroke-width 1
     &:hover
         height calc(1.5rem + 0.1vw)
         width calc(1.5rem + 0.1vw)
@@ -755,6 +881,10 @@ header
         stroke-width 1
         transform scale(1.2,1.2)
 /* TEXT */
+
+a .svg_icon_footer
+    text-decoration none
+    stroke white_96
 
 .font_h
   font-family font_h
@@ -779,7 +909,7 @@ p
 
 .section_headline
   font-family font_h
-  font-size calc(2rem + 5vw)
+  font-size calc(1.618rem + 3vw)
   line-height 1
   font-weight 700
   color bg_dark_4
@@ -806,7 +936,7 @@ p
 
 .section_headline_footer
     font-family font_h
-    font-size calc(2rem + 5vw)
+    font-size calc(1.618rem + 1.618vw)
     line-height 1
     font-weight 700
     color bg_dark_4
@@ -821,7 +951,7 @@ p
 
 .sub_section_headline
   font-family font_h
-  font-size calc(1rem + 2vw)
+  font-size calc(1.618rem + 1.618vw)
   line-height 1
   font-weight 700
   color white_96
@@ -1138,7 +1268,7 @@ a.btn_popover
     grid-template-rows auto
     align-content space-between
     // margin-top 2rem
-    background-color bg_dark_3
+    background-color white
     margin-bottom 2rem
 
 .card_film:hover,
@@ -1192,11 +1322,11 @@ a.btn_popover
 .article_hero_head
     position relative
     grid-column 1 / 4
-    height full_height
+    height calc(100vh - 97px)
 
 .article_hero_image
     width 100vw
-    height full_height
+    height calc(100vh - 97px)
     object-fit cover
     z-index -1
 
@@ -1241,12 +1371,21 @@ a.btn_popover
         margin-top .5rem
         margin-bottom .5rem
         margin-left 1rem
+    iframe
+        width 100%
+        margin-top 1.618rem
+        margin-bottom 1.618rem
+    img
+        width 100%
+        margin-top 1.618rem
+        margin-bottom 1.618rem
 
 .article_lead
-    font-family font_h
-    color white_96
+    font-family font_p
+    color dark_4
     font-size 1rem
     line-height 1.618rem
+    font-weight 300
 
 .article_author
     font-family font_h
@@ -1257,7 +1396,7 @@ a.btn_popover
 
 .article_publish_start
     font-family font_h
-    color white_semi
+    color dark_1
     font-size 1rem
     line-height 1.5rem
     display inline
@@ -1269,9 +1408,9 @@ a.btn_popover
     letter-spacing: 0.04rem
 
 .article_title_locale
-    font-size: 2rem
-    color: white_96
-    letter-spacing: 0.04rem
+    font-size 2rem
+    color dark_4
+    letter-spacing 0.04rem
 
 .str_info_value_program
     color: clr_primary
@@ -1418,10 +1557,10 @@ a.btn_popover
     .grid_articles
         display: grid
         // grid-template-columns 1fr 1fr 1fr
-        grid-template-columns repeat(auto-fit, minmax(440px, 1fr))
+        grid-template-columns repeat(auto-fit, minmax(420px, 1fr))
         grid-template-rows auto
-        grid-gap 1rem
-        padding 1rem
+        grid-gap 2rem
+        padding 2rem
         padding-top header_height
         // height 100vh
 
@@ -1470,8 +1609,8 @@ a.btn_popover
     //     z-index -1
 
     .trio_block
-        padding-left calc(1.9rem + 1.5vw)
-        padding-right calc(1.9rem + 1.5vw)
+        padding-left calc(2rem + 2vw)
+        padding-right calc(2rem + 2vw)
 
     .viiekas
         width 100vw
@@ -1479,15 +1618,17 @@ a.btn_popover
         grid-template-columns minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr)
         padding 0
         margin 0
-        grid-gap calc(1.9rem + 1.5vw)
-        padding-left calc(1.9rem + 1.5vw)
-        padding-right calc(1.9rem + 1.5vw)
-        padding-top calc(1.9rem + 1.5vw)
-        padding-bottom calc(1.9rem + 1.5vw)
+        // grid-gap calc(1.9rem + 1.5vw)
+        grid-gap 2rem
+        padding-left 2rem
+        padding-right 2rem
+        // padding-top calc(1.9rem + 1.5vw)
+        padding-bottom 2rem
         justify-content center
         align-content center
         justify-items stretch
         align-items stretch
+        background-color bg_color_1
 
     .viieka_item:first-child
     .viieka_item:nth-child(2)
@@ -1540,11 +1681,11 @@ a.btn_popover
         // padding 10vw
         padding 3rem 5rem 3rem 5rem
 
-    .grid_footer_contact
+    .grid_footer_row
         display grid
-        grid-template-columns 1fr 1fr 1fr
+        grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
         grid-template-rows auto
-        grid-gap 2rem
+        grid-gap 1rem
         justify-items center
         align-items center
 
@@ -1658,7 +1799,7 @@ a.btn_popover
 
     .f_synopsis_box
     .f_dir_bio_box
-        background-color bg_dark_2
+        // background-color bg_dark_2
         padding-left calc(1rem + 1vw)
         padding-right calc(1rem + 1vw)
         display grid
@@ -1702,11 +1843,11 @@ a.btn_popover
     .article_hero_head
         position relative
         grid-column 1 / 4
-        height full_height
+        height calc(100vh - 97px)
 
     .article_hero_image
         width 100vw
-        height full_height
+        height calc(100vh - 97px)
         object-fit cover
         z-index -1
 
@@ -1725,6 +1866,7 @@ a.btn_popover
     .article_meta
         padding 0
         padding-bottom calc(2rem + 3vw)
+        padding-left calc(1.618rem + 1.618vw)
 
     .article_contents
         padding 0
@@ -1770,6 +1912,27 @@ a.btn_popover
 .margin_bottom_2
     margin-bottom 2rem
 
+.grid_article
+    p
+        color dark_1
+    ul
+        font-family font_p
+        font-weight 300
+
+.dark_1
+    color dark_1
+
+a .trio_headline
+    text-decoration none
+
+a .p_trio
+    text-decoration none
+
+.trio_headline:hover
+    text-decoration none
+
+a:hover
+    text-decoration none
 // a
 //     text-decoration none!important
     // font-weight 600

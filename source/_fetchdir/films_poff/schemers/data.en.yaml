@@ -1,0 +1,77 @@
+id: 507
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:37.152Z'
+updated_at: '2020-08-28T09:02:05.068Z'
+title_et: Skeemitajad
+title_ru: ''
+titleOriginal: ''
+year: 2019
+runtime: 91
+slug_et: skeemitajad
+slug_ru: ''
+filmId: '1005'
+credentials:
+    id: 390
+    director:
+        - Dave McLean
+    screenwriter:
+        - Dave McLean
+        - " Kyle Titterton\r"
+    doP:
+        - Alan C. McLaughlin
+    cast:
+        - Conor Berry
+        - ' Sean Connor'
+        - ' Grant Robert Keelan'
+synopsis: >-
+    Set in Dundee c. 1979, Schemers is based on writer-producer Dave McLean’s
+    early years in the music business. A fledgling promoter, he ambitiously
+    booked bands with his friends John and Scot, all of them from the Dundee
+    schemes. Young Davie (Conor Berry) is determined not to get a ‘real’ job. He
+    starts out running discos and, after a run in with a local gangster, raises
+    his ambitions to booking major bands such as Iron Maiden. Shot in and around
+    Dundee using local talent, Schemers celebrates youthful ambition.
+media:
+    id: 325
+    Trailer:
+        -
+            id: 310
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 306
+            Url: ''
+tags:
+    id: 313
+countriesAndLanguages:
+    id: 297
+    countries:
+        -
+            id: 893
+            created_at: '2020-08-17T14:20:46.574Z'
+            updated_at: '2020-08-17T14:20:46.574Z'
+            code: GB
+            name_et: Suurbritannia
+            name_ru: Великобритания
+            name: Great Britain
+    languages:
+        -
+            id: 1744
+            created_at: '2020-08-24T12:28:28.778Z'
+            updated_at: '2020-08-24T12:28:28.778Z'
+            name_et: Inglise
+            name_ru: Английский
+            code: en
+            name: English
+title: Schemers
+slug: schemers
+directory: source/_fetchdir/films_poff/schemers
+path: film/schemers
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.en.yaml
+    articles: /articles.en.yaml

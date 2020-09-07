@@ -1,0 +1,82 @@
+id: 513
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:37.436Z'
+updated_at: '2020-08-28T09:02:04.855Z'
+title_et: Maudie
+title_ru: ''
+titleOriginal: ''
+year: 2016
+runtime: 115
+slug_et: maudie
+slug_ru: ''
+filmId: '1011'
+credentials:
+    id: 380
+    director:
+        - Aisling Walsh
+    screenwriter:
+        - Sherry White
+    doP:
+        - Guy Godfree
+    cast:
+        - Sally Hawkins
+        - ' Ethan Hawke'
+        - ' Kari Matchett'
+    composer:
+        - Michael Timmins
+synopsis: >-
+    "Maudie", is based on the true story of folk artist Maud Lewis (Sally
+    Hawkins) and the unlikely romance between Maud and a hardened reclusive
+    bachelor, Everett Lewis (Ethan Hawke).
+media:
+    id: 315
+    Trailer:
+        -
+            id: 300
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 296
+            Url: ''
+tags:
+    id: 303
+countriesAndLanguages:
+    id: 287
+    countries:
+        -
+            id: 952
+            created_at: '2020-08-17T14:20:50.882Z'
+            updated_at: '2020-08-17T14:20:50.882Z'
+            code: IE
+            name_et: Iirimaa
+            name_ru: Ирландия
+            name: Ireland
+        -
+            id: 864
+            created_at: '2020-08-17T14:20:41.574Z'
+            updated_at: '2020-08-17T14:20:41.574Z'
+            code: CA
+            name_et: Kanada
+            name_ru: Канада
+            name: Canada
+    languages:
+        -
+            id: 1744
+            created_at: '2020-08-24T12:28:28.778Z'
+            updated_at: '2020-08-24T12:28:28.778Z'
+            name_et: Inglise
+            name_ru: Английский
+            code: en
+            name: English
+title: Maudie
+slug: maudie
+directory: source/_fetchdir/films_poff/maudie
+path: film/maudie
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.en.yaml
+    articles: /articles.en.yaml

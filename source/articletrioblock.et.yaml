@@ -13,9 +13,10 @@
         created_by: 5
         updated_by: 6
         created_at: '2020-09-02T06:20:22.339Z'
-        updated_at: '2020-09-02T08:12:28.165Z'
+        updated_at: '2020-09-06T21:38:03.981Z'
         title_en: Test EN
         slug_en: test-en
+        slug_ru: pof-fi-article-5
         lead_en: Lead EN
         contents_en: Cont EN
         publishFrom: '2020-06-18T09:00:00.000Z'
@@ -148,9 +149,10 @@
         created_by: 5
         updated_by: 6
         created_at: '2020-09-02T06:23:30.743Z'
-        updated_at: '2020-09-02T08:07:38.360Z'
+        updated_at: '2020-09-06T21:38:20.823Z'
         title_en: test 3 en
         slug_en: test-3-en
+        slug_ru: pof-fi-article-6
         lead_en: lead 3 en
         contents_en: cont 3 en
         publishFrom: '2020-07-15T09:00:00.000Z'
@@ -214,7 +216,7 @@
             ta.
 
 
-            Kunstiprogrammi avab värske, maailmas vaid m��nel korral linastatud
+            Kunstiprogrammi avab värske, maailmas vaid mõnel korral linastatud
             dokumentaalfilm „Tagaotsitav: Banksy!”. Aurélia Rouvieri ja Seamus
             Haley linateos uurib, kes varjab ennast Banksy nime taga ja miks ta
             ei taha oma identiteeti paljastada. Vaataja ees avaneb Robin Hoodina
@@ -334,11 +336,12 @@
     article:
         id: 4
         created_by: 5
-        updated_by: 6
+        updated_by: 5
         created_at: '2020-09-02T06:24:45.587Z'
-        updated_at: '2020-09-02T08:21:08.339Z'
+        updated_at: '2020-09-07T10:40:47.706Z'
         title_en: test 4 en
         slug_en: test-4-en
+        slug_ru: pof-fi-article-3
         lead_en: lead 4 en
         contents_en: cont 4 en
         publishFrom: '2020-07-22T09:00:00.000Z'
@@ -468,11 +471,11 @@
                     created_at: '2020-08-13T19:16:16.414Z'
                     updated_at: '2020-08-13T19:16:16.648Z'
         title: Tartu armastusfilmide festivali avab troopiline melodraama
-        slug: test-4-et
+        slug: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
         lead: >-
-            **PÖFFi armastusfilmide festival Tartuff** kuulutas väljatänavuse
+            PÖFFi armastusfilmide festival Tartuff kuulutas väljatänavuse
             avafilmi, milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud
-            „Nähtamatu elu”.
+            "Nähtamatu elu".
         contents: >-
             End troopiliseks melodraamaks nimetav linateos räägib kahest
             üksteisega kokku kasvanud õest 1950ndate aastate Rio de Janeiros.
@@ -490,16 +493,10 @@
             väljaandeid The Wrap. 
 
 
-            (<iframe width="500" height="281"
+            <iframe width="500" height="281"
             src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope;
-            picture-in-picture" allowfullscreen></iframe>)
-
-
-            ```<iframe width="500" height="281"
-            src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope;
-            picture-in-picture" allowfullscreen></iframe>```
+            picture-in-picture" allowfullscreen></iframe>
 
 
             Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un
@@ -518,11 +515,14 @@
             Stage.
 
 
+            ![Uku_Talmar.jpeg](http://139.59.130.149/uploads/Uku_Talmar_cd27ced892.jpeg)
+
+
             Kogu kava avalikustab festival juuli lõpus.
 
 
             **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset
             10.-15. augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali
             korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
-            filmifondi ja [](https://lmk.ee). 
+            filmifondi ja [TARTU LOOMEMAJANDUSKESKUSEGA](https://lmk.ee). 
         publish: true

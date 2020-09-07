@@ -22,6 +22,21 @@ mixin localdatetime(dateString)
 
         })();
 
+mixin localdate(dateString)
+    - var dom_id = Math.random()
+    div(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var NowMoment1 = moment('#{dateString}').format('L');
+            var weekDay= moment('#{dateString}').format('ddd');
+            eDisplayMoment1.innerHTML = weekDay + ' ' +  NowMoment1;
+
+        })();
+
 //- tekitab formaadis (nt 15. nov) kohaliku kuupäeva, kasutuses film.layout.pug (section.f_screenings_box)
 //- sisend kujul ('2020-08-10')
 mixin screeningDate(dateString)

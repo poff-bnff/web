@@ -2,14 +2,18 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const http = require('http');
+const rimraf = require("rimraf");
 
 const allLanguages = ["en", "et", "ru"];
 
 function fetchAllData(options){
+    dirPath = "source/_fetchdir/film/";
+    rimraf.sync(dirPath);
+
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/film/", "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.en.yaml'}, options, getDataCB);
-    getData("source/film/", "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.et.yaml'}, options, getDataCB);
-    getData("source/film/", "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.ru.yaml'}, options, getDataCB);
+    getData(dirPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.en.yaml'}, options, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.et.yaml'}, options, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': 'screenings.ru.yaml'}, options, getDataCB);
 }
 
 function getToken() {
@@ -105,10 +109,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors) {
         console.log(element);
 
         if(element.slug_en) {
-            fs.mkdir(`${dirPath}${element.slug_en}`, err => {
-                if (err) {
-                }
-            });
+            fs.mkdirSync(element.slug_en, { recursive: true })
 
             let elementEt = JSON.parse(JSON.stringify(element));
             let aliases = []

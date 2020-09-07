@@ -1,0 +1,67 @@
+id: 517
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:47.029Z'
+updated_at: '2020-08-28T09:01:50.078Z'
+title_et: Autoportree
+title_en: Self Portrait
+titleOriginal: Selvportrett
+year: 2020
+runtime: 80
+slug_et: autoportree
+slug_en: self-portrait
+filmId: '1017'
+credentials:
+    id: 394
+    director:
+        - Katja Høgset
+        - ' Margreth Olin'
+        - ' Espen Wallin'
+    cast:
+        - Geir Fossen
+        - ' Lene Marie Fossen'
+        - ' Torill Fossen'
+synopsis: ''
+media:
+    id: 329
+    Trailer:
+        -
+            id: 314
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 310
+            Url: ''
+tags:
+    id: 317
+countriesAndLanguages:
+    id: 301
+    countries:
+        -
+            id: 996
+            created_at: '2020-08-17T14:20:53.242Z'
+            updated_at: '2020-08-17T14:20:53.242Z'
+            code: 'NO'
+            name_et: Norra
+            name_en: Norway
+            name: Норвегия
+    languages:
+        -
+            id: 1750
+            created_at: '2020-08-24T12:28:29.070Z'
+            updated_at: '2020-08-24T12:28:29.070Z'
+            name_et: Norwegian
+            name_en: Norwegian
+            code: nn
+            name: Нюнорск (новонорвежский)
+title: ''
+slug: ''
+directory: source/_fetchdir/films_poff/self-portrait
+path: film/
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.ru.yaml
+    articles: /articles.ru.yaml

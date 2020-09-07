@@ -62,22 +62,32 @@ function readYaml(lang, doc) {
         if (values.block.image) {
             var imgPath = values.block.image.url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`, ifError);
+            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`);
         }
     }
 }
 
-function download(url, dest, cb) {
-    var file = fs.createWriteStream(dest);
+function download(url, dest) {
+    let fileSizeInBytes = 0
+    if (fs.existsSync(dest)) {
+        const stats = fs.statSync(dest);
+        fileSizeInBytes = stats.size;
+    }
+
     var request = http.get(url, function (response) {
-        response.pipe(file);
-        file.on('finish', function () {
-            file.close(cb);  // close() is async, call cb after close completes.
-        });
-        console.log(`File ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
+        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
+            var file = fs.createWriteStream(dest);
+            response.pipe(file);
+            file.on('finish', function () {
+                file.close();  // close() is async, call cb after close completes.
+                console.log(`Downloaded: Trioblock img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
+            });
+        }else{
+            console.log(`Skipped: Trioblock img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+        }
     }).on('error', function (err) { // Handle errors
         fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        if (cb) cb(err.message);
+        // if (cb) cb(err.message);
     });
 };
 

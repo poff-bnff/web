@@ -1,0 +1,85 @@
+id: 508
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:37.191Z'
+updated_at: '2020-08-28T09:02:05.132Z'
+title_en: Champions
+title_ru: ''
+titleOriginal: Campeones
+year: 2018
+runtime: 124
+slug_en: champions
+slug_ru: ''
+filmId: '1006'
+credentials:
+    id: 389
+    director:
+        - Javier Fesser
+    screenwriter:
+        - David Marqués
+        - ' Javier Fesser'
+    doP:
+        - Chechu Graf
+    cast:
+        - Javier Gutiérrez
+        - ' Athenea Mata'
+        - " Juan Margallo\r"
+    composer:
+        - Rafael Arnau
+synopsis: >-
+    Hispaania režissöör Javier Fesser on ka oma varasemates filmides käsitlenud
+    tõsiseid teemasid läbi kergendustunnet tekitava huumoriprisma, mis vaataja
+    meelt ühest küljest lõbustab, teisalt elus mitte just loterii peavõitu
+    tõmmanud inimestele kaasa elama paneb.
+
+    Endine nimekas korvpallitreener saadetakse purjuspäi autojuhtimise eest
+    ühiskondlikult kasulikule tööle, mille käigus on tema ülesandeks treenida
+    kergete puuetega innukad sportlased võistlusvalmis meeskonnaks. Protsessi
+    käigus õpitakse vastakuti nii elust, spordist kui iseendast. Elukogemuste ja
+    reaalsuse tajumise erinevused loovad ridamisi hirmnaljakaid, kuid ka
+    südamlikke situatsioone. Vaatajale on oluline teada, et film põhineb
+    paljuski tõestisündinud lool ning "meeskonna” moodustavad näitlejad, kellele
+    see on esimene ülesastumine kinolinal.
+media:
+    id: 324
+    Trailer:
+        -
+            id: 309
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 305
+            Url: ''
+tags:
+    id: 312
+countriesAndLanguages:
+    id: 296
+    countries:
+        -
+            id: 906
+            created_at: '2020-08-17T14:20:47.692Z'
+            updated_at: '2020-08-17T14:20:47.692Z'
+            code: ES
+            name_en: Spain
+            name_ru: Испания
+            name: Hispaania
+    languages:
+        -
+            id: 1742
+            created_at: '2020-08-24T12:28:28.680Z'
+            updated_at: '2020-08-24T12:28:28.680Z'
+            name_en: Spanish
+            name_ru: Испанский
+            code: es
+            name: Hispaania
+title: Tšempionid
+slug: tsempionid
+directory: source/_fetchdir/films_poff/champions
+path: film/tsempionid
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.et.yaml
+    articles: /articles.et.yaml

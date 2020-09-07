@@ -13,6 +13,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
+    console.log(`Fetching heroarticle ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -98,6 +99,7 @@ function processData(data, lang, CreateYAML) {
         }
 
     }
+
     CreateYAML(buffer, lang);
 }
 
