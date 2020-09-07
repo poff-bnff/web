@@ -3,6 +3,7 @@ root: /ru/
 language:
     et: eesti
     en: english
+    ru: русский
 navigation:
     -
         url: /riigid/
@@ -18,17 +19,74 @@ search:
     button: Искать
 label:
     all:
-        presenters: Esitlejad
-        thanksTo: Täname
+        selectLocale: Языки
+        presenters: Presenters
+        sponsors: Спонсоры
+        supporters: Друзья
+        festivalTeam: Команда фестиваля
+        officialPartners: Официальные партнеры
+        partners: Партнёры
+        screeningsCalendar: Screenings calendar
+        eventsCalendar: Events calendar
+        eventsGalleries: What happened?
+        team: Команда фестиваля
     film:
-        title: Название
+        filmTitleOriginal: Original title
+        filmTitle_en: Title in English
+        filmTitle_ru: Title in Russian
+        filmTitle_et: Local title
+        filmTitleSec: Title in Estonian
+        filmCountries: Country
+        filmLanguages: Language
+        filmYear: Year
+        filmRuntime: Runtime
+        filmDirector: Director
+        filmProducer: Producer
+        filmCoProducer: Coproducer
+        filmScreenwriter: Screenwriter
+        filmDop: DoP
+        filmEditor: Editor
+        filmComposer: Music
+        filmCast: Cast
+        filmProduction: Production
+        filmSynopsis: Synopsis
+        filmTrailer: Trailer
+        filmFestival: Festival
+        filmPremiereType: Premiere type
+        filmProgramme: Programme
+        filmGenre: Genre
+        filmKeyword: Keywords
+        filmOtherFestivals: Festivals
+        filmAwards: Awards
+        filmScreenings: Screenings
+        filmQaClip: Q&A with filmmaker
+        languageSelect: Языки
     screening:
-        screeningSubtitles: Subtiitrid
+        screeningSubtitles: Subtitles
+        screeningIntroPresenter: Intro by
+        screeningIntroGuests: Intro guests
+        screeningQaPresenter: Q&A presenter
+        screeningQaGuests: Q&A guests
+        screeningQaDuration: Q&A duration
+        screeningTotalDuration: Screening duration
+        screeningName: Screening
+        screeningAdditionalInfo: Additional info
+    selectLocale: Языки
     buttons:
-        filmTicketBuy: Osta pilet
-        filmTicketFree: Tasuta
-        newsButton: Uudised
-        filmsButton: Filmid
+        filmTicketBuy: Buy ticket
+        filmTicketFree: Free
+        newsButton: News
+        filmsButton: Films
+        filmAudienceVote: Vote for the film
+        covidRegister: Covid-19 - register your participation
+    menu:
+        mainNews: Новости
+        mainFilms: Филмы
+        mainInfo: Инфо
+        mainCovid: Covid
+        mainFestival: Фестиваль
+        mainTeam: Команда
+        mainSchedule: Расписание
 eFilmInfo: ''
 footer:
     id: 2
