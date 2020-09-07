@@ -1,9 +1,9 @@
+name: Build and publish LIVE INDUSTRY site
+
 on:
     release:
-        types: [published]
-        branches: [staging_industry]
-
-name: Build and publish LIVE INDUSTRY site
+        types: [ published ]
+        branches: [ staging_industry ]
 
     # schedule:
     #     - cron: '1 0-7 * * *'

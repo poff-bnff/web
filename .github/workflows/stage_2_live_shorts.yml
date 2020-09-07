@@ -2,8 +2,8 @@ name: Build and publish LIVE SHORTS site
 
 on:
     release:
-        types: [published]
-        branches: [staging_shorts]
+        types: [ published ]
+        branches: [ staging_shorts ]
 
     # schedule:
     #     - cron: '1 0-7 * * *'

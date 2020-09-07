@@ -2,8 +2,8 @@ name: Build and publish LIVE JUSTFILM site
 
 on:
     release:
-        types: [published]
-        branches: [staging_justfilm]
+        types: [ published ]
+        branches: [ staging_justfilm ]
 
     # schedule:
     #     - cron: '1 0-7 * * *'

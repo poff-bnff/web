@@ -2,8 +2,8 @@ name: Build and publish LIVE KINOFF site
 
 on:
     release:
-        types: [published]
-        branches: [staging_kinoff]
+        types: [ published ]
+        branches: [ staging_kinoff ]
 
     # schedule:
     #     - cron: '1 0-7 * * *'
