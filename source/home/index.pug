@@ -105,7 +105,7 @@ block content
                         if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
 
                             if news.article_types && news.article_types[0]
-                                - var articleType = news.article_types[0].et
+                                - var articleType = news.article_types[0].name
                             if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
                                 - continue
                             if counter >= 5
@@ -122,8 +122,8 @@ block content
                                         else
                                             img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
                                     .viieka_body
-                                        .viieka_headline= news.title
-                                        .p_viiekas= news.lead
+                                        h3.article_title_locale= news.title
+                                        .article_lead= news.lead
                                         //- p.dark= news.publishFrom
 
 

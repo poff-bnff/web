@@ -1,0 +1,69 @@
+id: 507
+updated_by:
+    id: 1
+    firstname: Mihkel
+    lastname: Putrinš
+created_at: '2020-08-19T08:36:37.152Z'
+updated_at: '2020-08-28T09:02:05.068Z'
+title_et: Skeemitajad
+title_en: Schemers
+titleOriginal: ''
+year: 2019
+runtime: 91
+slug_et: skeemitajad
+slug_en: schemers
+filmId: '1005'
+credentials:
+    id: 390
+    director:
+        - Dave McLean
+    screenwriter:
+        - Dave McLean
+        - " Kyle Titterton\r"
+    doP:
+        - Alan C. McLaughlin
+    cast:
+        - Conor Berry
+        - ' Sean Connor'
+        - ' Grant Robert Keelan'
+synopsis: ''
+media:
+    id: 325
+    Trailer:
+        -
+            id: 310
+            Url: ''
+            Source: ''
+    QaClip:
+        -
+            id: 306
+            Url: ''
+tags:
+    id: 313
+countriesAndLanguages:
+    id: 297
+    countries:
+        -
+            id: 893
+            created_at: '2020-08-17T14:20:46.574Z'
+            updated_at: '2020-08-17T14:20:46.574Z'
+            code: GB
+            name_et: Suurbritannia
+            name_en: Great Britain
+            name: Великобритания
+    languages:
+        -
+            id: 1744
+            created_at: '2020-08-24T12:28:28.778Z'
+            updated_at: '2020-08-24T12:28:28.778Z'
+            name_et: Inglise
+            name_en: English
+            code: en
+            name: Английский
+title: ''
+slug: ''
+directory: source/_fetchdir/films_poff/schemers
+path: film/
+data:
+    pictures: /film_pictures.yaml
+    screenings: /film/screenings.ru.yaml
