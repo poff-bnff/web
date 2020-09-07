@@ -13,34 +13,12 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
-        steps:
-        - uses: actions/checkout@v2
-          with:
-            fetch-depth: 2
-
-        - name: Use Node.js 12.x
-          uses: actions/setup-node@v1
-          with:
-            node-version: '12.x'
-
-        - name: Install node dependencies
-          run: npm install
-
-        - name: Build Project
-          run: node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
-
-        - name: Copy Assets
-          run: cp -R assets build/assets
-
-        # - name: List output files
-        #   run: ls
-
         - name: rsync deployments
           uses: burnett01/rsync-deployments@4.1
           with:
-            switches: -avzr --delete
-            path: build/
-            # remote_path: ${{ secrets.DEPLOY_PATH }}
+            switches: -avzr
+            path: ${{ secrets.DEPLOY_STAGING_POFF_PATH }}
+            remote_path: ${{ secrets.DEPLOY_LIVE_POFF_PATH }}
             remote_host: ${{ secrets.DEPLOY_HOST }}
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}
