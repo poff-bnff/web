@@ -2,7 +2,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const http = require('http');
-var rimraf = require("rimraf");
+const rimraf = require("rimraf");
 
 const allLanguages = ["en", "et", "ru"];
 
