@@ -13,6 +13,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
+    console.log(`Fetching footer ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -95,10 +96,10 @@ function CreateYAML(buffer, lang) {
     globalData.footer = buffer
     for (values in globalData){
         if (values === 'footer'){
-            console.log(values);
+            // console.log(values);
         }
     }
-    console.log(globalData);
+    // console.log(globalData);
 
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`../source/global.${lang}.yaml`, allDataYAML, 'utf8');
