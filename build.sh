@@ -12,7 +12,7 @@ node ./helpers/fetch_trioblock_from_strapi.js
 node ./helpers/fetch_articles_from_strapi.js
 node ./helpers/fetch_films_from_strapi.js
 
-node ./helpers/download_article_img_w_check.js
+node ./helpers/download_article_img.js
 node ./helpers/download_footer_img.js
 node ./helpers/download_teams_img.js
 node ./helpers/download_trioblock_img.js
