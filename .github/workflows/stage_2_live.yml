@@ -1,10 +1,10 @@
 name: Build and publish LIVE POFF site
 
-on:
-    release:
-        types: [published]
-        branches:
-            - staging_poff
+# on:
+#     release:
+#         types: [published]
+#         branches:
+#             - staging_poff
 
     # schedule:
     #     - cron: '1 0-7 * * *'
