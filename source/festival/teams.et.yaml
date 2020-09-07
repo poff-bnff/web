@@ -1409,7 +1409,7 @@
                             created_at: '2020-09-05T20:16:24.963Z'
                             updated_at: '2020-09-05T20:16:25.410Z'
                     roleAtTeam_en: Festival Programmer
-                    roleAtTeam_ru: Со��тавитель программы
+                    roleAtTeam_ru: Составитель программы
                     order: 23
                     roleAtTeam: Programmi koostaja
                 -
@@ -1623,4 +1623,30 @@
                     order: 1
                     roleAtTeam: Turundusjuht
     name: PÖFFi meeskond
-    data: {}
+    data:
+        articles: /articles.et.yaml
+-
+    id: 3
+    namePrivate: Just Filmi kogu tiim
+    created_by:
+        id: 14
+        firstname: Heleen
+        lastname: Sutt
+    updated_by:
+        id: 14
+        firstname: Heleen
+        lastname: Sutt
+    created_at: '2020-09-07T07:10:32.708Z'
+    updated_at: '2020-09-07T07:10:33.032Z'
+    subTeam:
+        -
+            id: 8
+            name:
+                id: 3865
+        -
+            id: 9
+            name:
+                id: 3866
+    name: Meeskond
+    data:
+        articles: /articles.et.yaml
