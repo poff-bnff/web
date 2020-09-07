@@ -484,7 +484,6 @@ Footer:
             - *Logo
     namePrivate: (text)
 
-
 HeroArticlePoff:
     _path: /article-hero
     article_et: *POFFiArticle
@@ -506,4 +505,28 @@ TrioBlockPoff:
     poffi_article_3: *POFFiArticle #(Component)
     trioBlockItem_3: *TrioBlockItemPoff
 
+HeroArticleJustFilm:
+    _path: /hero-article-just-film
+    article_et: *JustFilmiArticle
+    article_en: *JustFilmiArticle
+    article_ru: *JustFilmiArticle
 
+TrioBlockJustFilm:
+    _path: /trio-block-just-film
+    blockName: *Translated
+    trioBlockItem_1: *TrioBlockItemPoff
+    trioBlockItem_2: *TrioBlockItemPoff
+    trioBlockItem_3: *TrioBlockItemPoff
+    poffi_article_1: *JustFilmiArticle #(Component)
+    poffi_article_2: *JustFilmiArticle #(Component)
+    poffi_article_3: *JustFilmiArticle #(Component)
+
+TrioBlockShorts:
+    _path: /trio-block-shorts
+    blockName: *Translated
+    trioBlockItem_1: *TrioBlockItemPoff
+    trioBlockItem_2: *TrioBlockItemPoff
+    trioBlockItem_3: *TrioBlockItemPoff
+    poffi_article_1: *ShotsiArticle #(Component)
+    poffi_article_2: *ShotsiArticle #(Component)
+    poffi_article_3: *ShotsiArticle #(Component)
