@@ -61,9 +61,9 @@ block content
                         //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
                         //- else
                         //-     img(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
-                        h4.dark
+                        .trio_headline
                             | !{blocks.block.title}
-                        p.dark
+                        .p_trio
                             | !{blocks.block.lead}
 
 
@@ -121,9 +121,10 @@ block content
                                             img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.imageDefault[0].hash}${news.media.imageDefault[0].ext}`).trio_image
                                         else
                                             img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
-                                    p.dark= news.title
-                                    p.dark= news.publishFrom
-                                    p.dark= news.lead
+                                    .viieka_body
+                                        .viieka_headline= news.title
+                                        .p_viiekas= news.lead
+                                        //- p.dark= news.publishFrom
 
 
                 //- VIIEKAS LÕPP
