@@ -4,13 +4,8 @@ name: Build and publish staging_poff
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-<<<<<<< Updated upstream
     push:
         branches: [ staging_poff ]
-=======
-    pull_request:
-        branches: [ master ]
->>>>>>> Stashed changes
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -49,11 +44,7 @@ jobs:
           with:
             switches: -avzr --delete
             path: build/
-<<<<<<< Updated upstream
             # remote_path: ${{ secrets.DEPLOY_PATH }}
-=======
-            remote_path: ${{ secrets.DEPLOY_PATH }}
->>>>>>> Stashed changes
             remote_host: ${{ secrets.DEPLOY_HOST }}
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}
