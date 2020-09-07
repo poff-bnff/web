@@ -73,6 +73,8 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, getData
 
     fs.mkdirSync(dirPath, { recursive: true })
 
+    console.log(`Fetching films ${lang} data`);
+
     allData = [];
     let req = http.request(options, function(response) {
         let data = '';
@@ -160,49 +162,47 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generate
         // element = rueten(element, `_${lang}`);
 
         if(element.directory) {
-            fs.mkdir(element.directory, err => {
-                if (err && err.errno !== -4075) {
-                    console.log(err);
-                }else{
-                                        // let element = JSON.parse(JSON.stringify(element));
-                    // let aliases = []
-                    let languageKeys = ['en', 'et', 'ru'];
-                    for (key in element) {
-                        let lastThree = key.substring(key.length - 3, key.length);
-                        let findHyphen = key.substring(key.length - 3, key.length - 2);
-                        // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
-                        //     if (key.substring(0, key.length - 3) == 'slug') {
-                        //         aliases.push(element[key]);
-                        //     }
-                        //     delete element[key];
-                        // }
-                        // if (lastThree === `_${lang}`) {
-                        if (key == 'slug') {
-                            element.path = `film/${element[key]}`;
-                        }
-                            // element[key.substring(0, key.length - 3)] = element[key];
+            fs.mkdirSync(element.directory, { recursive: true })
 
-
-                        // delete element[key];
-                        // }
-
-                        // Make separate CSV with key
-
-                        if (typeof(element[key]) === 'object' && element[key] != null) {
-                            // makeCSV(element[key], element, lang);
-                        }
-
-                    }
-
-
-
-                    // element.aliases = aliases;
-                    // rueten(element, `_${lang}`);
-                    allData.push(element);
-                    element.data = dataFrom;
-                    generateYaml(element, element, dirPath, lang, copyFile)
+            // let element = JSON.parse(JSON.stringify(element));
+            // let aliases = []
+            let languageKeys = ['en', 'et', 'ru'];
+            for (key in element) {
+                let lastThree = key.substring(key.length - 3, key.length);
+                let findHyphen = key.substring(key.length - 3, key.length - 2);
+                // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
+                //     if (key.substring(0, key.length - 3) == 'slug') {
+                //         aliases.push(element[key]);
+                //     }
+                //     delete element[key];
+                // }
+                // if (lastThree === `_${lang}`) {
+                if (key == 'slug') {
+                    element.path = `film/${element[key]}`;
                 }
-            });
+                    // element[key.substring(0, key.length - 3)] = element[key];
+
+
+                // delete element[key];
+                // }
+
+                // Make separate CSV with key
+
+                if (typeof(element[key]) === 'object' && element[key] != null) {
+                    // makeCSV(element[key], element, lang);
+                }
+
+            }
+
+
+
+            // element.aliases = aliases;
+            // rueten(element, `_${lang}`);
+            allData.push(element);
+            element.data = dataFrom;
+
+            generateYaml(element, element, dirPath, lang, copyFile)
+
         }else{
             if(showErrors) {
                 console.log(`Film ID ${element.id} slug_en value missing`);
@@ -239,6 +239,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
     }
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+
     fs.writeFileSync(`source/films.${lang}.yaml`, allDataYAML, 'utf8');
 }
 

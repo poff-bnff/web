@@ -71,7 +71,7 @@ function download(url, dest, cb) {
             file.close(cb);  // close() is async, call cb after close completes.
         });
         // console.log(`File ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
-        console.log(`File ${url} downloaded to ${dest}`);
+        console.log(`Article img ${url} downloaded to ${dest}`);
     }).on('error', function (err) { // Handle errors
         fs.unlink(dest); // Delete the file async. (But we don't check the result)
         if (cb) cb(err.message);

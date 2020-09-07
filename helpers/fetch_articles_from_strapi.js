@@ -73,6 +73,8 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, g
 
     fs.mkdirSync(dirPath, { recursive: true })
 
+    console.log(`Fetching articles ${lang} data`);
+
     allData = [];
     let req = http.request(options, function(response) {
         let data = '';
@@ -203,7 +205,6 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
             element.data = dataFrom;
             generateYaml(element, element, dirPath, lang, writeIndexFile)
 
-
         }else{
             if(showErrors) {
                 console.log(`Film ID ${element.id} slug_en value missing`);
@@ -251,6 +252,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     }
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+
     fs.writeFileSync(`source/articles.${lang}.yaml`, allDataYAML, 'utf8');
 }
 

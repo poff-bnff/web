@@ -80,10 +80,10 @@ function download(url, dest) {
             response.pipe(file);
             file.on('finish', function () {
                 // file.close();  // close() is async, call cb after close completes.
-                console.log(`File ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest} - ${response.headers["content-length"]} bytes`);
+                console.log(`Article img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest} - ${response.headers["content-length"]} bytes`);
             });
         }else{
-            console.log(`Skipped  ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+            console.log(`Article img skipped  ${url.split('/')[url.split('/').length - 1]} due to same exists`);
         }
     }).on('error', function (err) { // Handle errors
         console.log(err);
