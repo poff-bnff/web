@@ -1,16 +1,13 @@
-name: Build and publish LIVE sites
+name: Build and publish LIVE POFF site
 
 on:
     release:
         types: [published]
         branches:
             - staging_poff
-              staging_justfilm
-              staging_industry
-              staging_shorts
-              staging_kinoff
-    schedule:
-        - cron: '0 0-7 * * *'
+
+    # schedule:
+    #     - cron: '1 0-7 * * *'
 
 jobs:
     build:
