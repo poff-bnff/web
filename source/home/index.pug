@@ -105,7 +105,7 @@ block content
                         if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
 
                             if news.article_types && news.article_types[0]
-                                - var articleType = news.article_types[0].et
+                                - var articleType = news.article_types[0].name
                             if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudised') && (articleType))
                                 - continue
                             if counter >= 5
