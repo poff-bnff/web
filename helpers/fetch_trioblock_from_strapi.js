@@ -13,6 +13,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
+    console.log(`Fetching trioblock ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -112,6 +113,7 @@ function processData(data, lang, CreateYAML) {
     // buffer = rueten(data, lang);
     // console.log(buffer);
     // copyData.blocks = buffer
+
     copyData = rueten(buffer, lang);
     CreateYAML(buffer, lang);
 }

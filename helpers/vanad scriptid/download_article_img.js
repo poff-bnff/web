@@ -51,44 +51,31 @@ function readYaml(lang, doc) {
         if (values.media && values.media.imageDefault) {
             var imgPath = values.media.imageDefault[0].url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            let url = `${strapiPath}${imgPath}`
-            let dest = `${savePath}${lang}/${values.slug}/${imgFileName}`
-            download(url, dest);
+            fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
+            });
+            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
         }
         if (values.media && values.media.image[0]) {
             var imgPath = values.media.image[0].url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            let url = `${strapiPath}${imgPath}`
-            let dest = `${savePath}${lang}/${values.slug}/${imgFileName}`
-            download(url, dest);
+            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
         }
-
     }
 }
 
-function download(url, dest) {
-    let fileSizeInBytes = 0
-    if (fs.existsSync(dest)) {
-        const stats = fs.statSync(dest);
-        fileSizeInBytes = stats.size;
-    }
-
+function download(url, dest, cb) {
+    var file = fs.createWriteStream(dest);
     var request = http.get(url, function (response) {
-        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
-            // console.log(typeof(response.headers["content-length"]));
-            var file = fs.createWriteStream(dest);
-            response.pipe(file);
-            file.on('finish', function () {
-                // file.close();  // close() is async, call cb after close completes.
-                console.log(`File ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest} - ${response.headers["content-length"]} bytes`);
-            });
-        }else{
-            console.log(`Skipped  ${url.split('/')[url.split('/').length - 1]} due to same exists`);
-        }
+        response.pipe(file);
+        file.on('finish', function () {
+            file.close(cb);  // close() is async, call cb after close completes.
+        });
+        // console.log(`File ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
+        console.log(`Article img ${url} downloaded to ${dest}`);
     }).on('error', function (err) { // Handle errors
-        console.log(err);
-        // fs.unlink(dest); // Delete the file async. (But we don't check the result)
-    })
+        fs.unlink(dest); // Delete the file async. (But we don't check the result)
+        if (cb) cb(err.message);
+    });
 };
 
 
