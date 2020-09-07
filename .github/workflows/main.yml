@@ -31,7 +31,8 @@ jobs:
           run: npm install
 
         - name: Build Project
-          run: node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
+        #   run: node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
+          run: . ./build.sh
 
         - name: Copy Assets
           run: cp -R assets build/assets
