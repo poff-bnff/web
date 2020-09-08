@@ -17,17 +17,17 @@ block titleBox
             each p, locale in self.otherLocalePaths
                 if self[`title_${locale}`]
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmTitleSec
+                        .str_info_label= self.label.film.titleSec
                         .str_info_value= self[`title_${locale}`]
 
             if self.titleOriginal
                 .str_info_grid_3
-                    .str_info_label= self.label.film.filmTitleOriginal
+                    .str_info_label= self.label.film.titleOriginal
                     .str_info_value= self.titleOriginal
 
             if self.credentials.director
                 .str_info_grid_3
-                    .str_info_label= self.label.film.filmDirector
+                    .str_info_label= self.label.film.director
                     .str_info_value.clr_primary= self.credentials.director.join(', ')
 
             if self.countriesAndLanguages.countries
@@ -37,10 +37,10 @@ block titleBox
                 - }
 
                 .str_info_grid_3
-                    .str_info_label= self.label.film.filmCountries
+                    .str_info_label= self.label.film.countries
                     .str_info_value= self.countriesAndLanguages.countries.map(countriesNames).join(', ')
 
             if self.year
                 .str_info_grid_3
-                    .str_info_label= self.label.film.filmYear
+                    .str_info_label= self.label.film.year
                     .str_info_value= self.year
