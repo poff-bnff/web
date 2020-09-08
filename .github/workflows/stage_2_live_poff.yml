@@ -18,7 +18,6 @@ jobs:
             with:
                 host: ${{ secrets.DEPLOY_HOST }}
                 username: ${{ secrets.DEPLOY_USER }}
-                port: ${{ secrets.PORT }}
                 key: ${{ secrets.DEPLOY_KEY }}
                 source: ${{ secrets.DEPLOY_STAGING_POFF_PATH }}
                 target: ${{ secrets.DEPLOY_LIVE_POFF_PATH }}
