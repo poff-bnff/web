@@ -7,6 +7,7 @@ FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
 function LabelsToYAMLData(modelName, strapiData){
 LangSelect(strapiData, 'et');
 LangSelect(strapiData, 'en');
+LangSelect(strapiData, 'ru');
 }
 
 function LangSelect(strapiData, lang) {
@@ -98,7 +99,7 @@ function CreateYAML(labels, lang) {
     globalData.label = labels
     // // console.log(process.cwd());
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`labelstest.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`../source/global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

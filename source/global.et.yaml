@@ -18,78 +18,42 @@ search:
     placeholder: sisesta →
     button: Otsi
 label:
-    all:
-        selectLocale: Languages
-        presenters: Esitlejad
-        sponsors: Sponsor
-        supporters: Toetajad
-        festivalTeam: Festivali meeskond
-        officialPartners: Ametlikud partnerid
-        partners: Partnerid
-        thanksTo: Täname
-        screeningsCalendar: Seansside kalender
-        eventsCalendar: Ürituste kalender
-        eventsGalleries: Mis juhtus?
-        team: Festivali meeskond
     film:
-        filmTitleOriginal: Pealkirja originaal
-        filmTitle_en: Pealkiri inglise keeles
-        filmTitle_ru: Pealkiri vene keeles
-        filmTitle_et: Pealkiri
-        filmTitleSec: Pealkiri inglise keeles
-        filmCountries: Riik
-        filmLanguages: Keel
-        filmYear: Aasta
-        filmRuntime: Kestus
-        filmDirector: Režissöör
-        filmProducer: Produtsent
-        filmCoProducer: Kaasprodutsent
-        filmScreenwriter: Stsenarist
-        filmDop: Operaator
-        filmEditor: Monteerija
-        filmComposer: Helilooja
-        filmCast: Osades
-        filmProduction: Produktsioon
-        filmSynopsis: Sünopsis
-        filmTrailer: Treiler
-        filmFestival: Festival
-        filmPremiereType: Esilinastus
-        filmProgramme: Programm
-        filmGenre: Žanr
-        filmKeyword: Märksõnad
-        filmOtherFestivals: Teised festivalid
-        filmAwards: Auhinnad
-        filmScreenings: Seansid
-        filmQaClip: Q&A ehk vestlus filmitegijaga
-        filmKeelevalik: Keeled
-        languageSelect: Keeled
-    screening:
-        screeningSubtitles: Subtiitrid
-        screeningIntroPresenter: Sissejuhataja
-        screeningIntroGuests: Sissejuhatuse külalised
-        screeningQaPresenter: Q&A küsitleja
-        screeningQaGuests: Q&A külalised
-        screeningQaDuration: Q&A kestus
-        screeningTotalDuration: Seansi kestus
-        screeningName: Seanss
-        screeningAdditionalInfo: Lisainfo
-        selectLocale: Keeled
-    selectLocale: Keeled
-    buttons:
-        filmTicketBuy: Osta pilet
-        filmTicketFree: Tasuta
+        titleOriginal: Pealkirja originaal
+        title_en: Ingliskeelne pealkiri
+        ttle_ru: Venekeelne pealkiri
+        titleSec: Pealkiri inglise keeles
+        countries: Riik
+        languages: Keel
+        year: Aasta
+        audienceVote: Anna filmile oma hääl
+        runtime: Kestus
+        director: Režissöör
+        screenwriter: Stsenarist
+        doP: Operaator
+        editor: Monteerija
+        composer: Helilooja
+        cast: Osades
+        production: Produktsioon
+        synopsis: Sünopsis
+        trailer: Treiler
+        festival: Festival
+        premiereType: Esilinastus
+        programme: Programm
+        genre: Žanr
+        keywords: Märksõnad
+        otherFestivals: Teised festivalid
+        awards: Auhinnad
+        screenings: Seansid
+        qaClip: Q&A ehk vestlus filmitegijaga
+        title: Pealkiri eesti keeles
+    button:
+        screeningBuyTicket: Osta pilet
+        screeningFree: Tasuta
+        covidRegister: Covid-19 - registreeri oma osalemine
         newsButton: Uudised
         filmsButton: Filmid
         filmAudienceVote: Anna filmile oma hääl
-        covidRegister: Covid-19 - registeeri oma osalemine
-    menu:
-        mainNews: Uudised
-        mainFilms: Filmid
-        mainInfo: Info
-        mainCovid: Covid
-        mainFestival: Festival
-        mainTeam: Meeskond
-        mainSchedule: Ajakava
 eFilmInfo: ' - filmi saab vaadata ka Elisa veebiplatvormil Elisa Stage'
 festivalDates: 10.-15. august
 festivalLocations:

@@ -68,12 +68,12 @@ block content
 
                 if self.credentials.director
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmDirector
+                        .str_info_label= self.label.film.director
                         .str_info_value= self.credentials.director.join(', ')
 
                 if self.credentials.screenwriter
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmScreenwriter
+                        .str_info_label= self.label.film.screenwriter
                         .str_info_value= self.credentials.screenwriter.join(', ')
 
                 //- //- For each as below if links needed for each person etc
@@ -90,7 +90,7 @@ block content
 
                 if self.credentials.cast
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmCast
+                        .str_info_label= self.label.film.cast
                         .str_info_value= self.credentials.cast.join(', ')
 
                 if self.credentials.producer
@@ -100,23 +100,23 @@ block content
 
                 if self.credentials.doP
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmDop
+                        .str_info_label= self.label.film.doP
                         .str_info_value= self.credentials.doP.join(', ')
 
                 if self.credentials.composer
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmComposer
+                        .str_info_label= self.label.film.composer
                         .str_info_value= self.credentials.composer.join(', ')
 
                 if self.credentials.editor
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmEditor
+                        .str_info_label= self.label.film.editor
                         .str_info_value= self.credentials.editor.join(', ')
 
                 //- Below datamodel needs to be updated and then code amended to be correct
                 if self.credentials.productionCompany
                     .str_info_grid_3
-                        .str_info_label= self.label.film.filmProduction
+                        .str_info_label= self.label.film.production
                         .str_info_value= self.ProductionCompanyCSV
 
         section.f_runtime_box
@@ -126,12 +126,12 @@ block content
                 -   return itemNames
                 - }
                 .str_info_grid_3
-                    .str_info_label= self.label.film.filmLanguages
+                    .str_info_label= self.label.film.languages
                     .str_info_value= self.countriesAndLanguages.languages.map(languagesNames).join(', ')
 
             if self.runtime
                 .str_info_grid_3
-                    .str_info_label= self.label.film.filmRuntime
+                    .str_info_label= self.label.film.runtime
                     .str_info_value
                         +dur(self.runtime)
 
@@ -147,7 +147,7 @@ block content
 
         section.f_screenings_box
             div
-                h1.section_headline= self.label.film.filmScreenings
+                h1.section_headline= self.label.film.screenings
 
             .card-deck.m-o.p-0
                 each screening in self.data.screenings
@@ -187,7 +187,7 @@ block content
                                     //- NÄIDE
                                     //- if self.filmYear
                                     //-     .str_info_grid_3
-                                    //-         .str_info_label= self.label.film.filmYear
+                                    //-         .str_info_label= self.label.film.year
                                     //-         .str_info_value= self.filmYear
 
                             .card-body.bg_dark_3
@@ -228,10 +228,10 @@ block content
 
                                 if screening.screeningHall == 'Online'
                                     a.btn.btn_secondary.active(href='#' role='button') &nbsp;
-                                    a.btn.btn_primary.active(href=screening.screeningOnlineUrl role='button')= self.label.buttons.filmTicketBuy
+                                    a.btn.btn_primary.active(href=screening.screeningOnlineUrl role='button')= self.label.button.screeningBuyTicket
                                 if screening.screeningTown == 'Tartu'
-                                    a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.buttons.covidRegister
-                                    a.btn.btn_primary.active( role='button')= self.label.buttons.filmTicketFree
+                                    a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
+                                    a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
         //- Sample img for showing presenter logo/pic - can be deleted
         //- if self.data.pictures.filmslugs[filmPath].presenter
@@ -241,7 +241,7 @@ block content
         if self.filmQaClip
 
             section.f_qaclip_box
-                .section_headline= self.label.film.filmQaClip
+                .section_headline= self.label.film.qaClip
                 .embed-responsive.embed-responsive-16by9.m-0.p-0
                     - youtubeVideoCode = self.filmQaClip.split("=")
                     +youtube(youtubeVideoCode[1])
@@ -249,7 +249,7 @@ block content
         if self.filmTrailer
 
             section.f_trailer_box
-                .section_headline= self.label.film.filmTrailer
+                .section_headline= self.label.film.trailer
                 .embed-responsive.embed-responsive-16by9.m-0.p-0
                     - youtubeVideoCode = self.filmTrailer.split("=")
                     +youtube(youtubeVideoCode[1])
