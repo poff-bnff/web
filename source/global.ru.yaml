@@ -288,3 +288,117 @@ footer:
                         updated_by: 6
                         created_at: '2020-09-01T12:27:06.584Z'
                         updated_at: '2020-09-01T12:27:06.648Z'
+menu:
+    -
+        id: 1
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 5
+            firstname: Martin
+            lastname: Pennaste
+        created_at: '2020-09-08T12:39:02.007Z'
+        updated_at: '2020-09-08T12:42:49.644Z'
+        order: 1
+        name: Новости
+        customUrl: novosti
+    -
+        id: 2
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        created_at: '2020-09-08T12:39:44.630Z'
+        updated_at: '2020-09-08T12:50:46.495Z'
+        order: 3
+        name: Филмы
+        subMenuItem:
+            -
+                id: 1
+                namePrivate: Programmid
+                poffi_article:
+                    id: 2
+                    created_by: 5
+                    updated_by: 6
+                    created_at: '2020-09-02T06:22:29.284Z'
+                    updated_at: '2020-09-06T21:38:28.279Z'
+                    title_et: Tartuffi esimene film on seksuaalsest ahistamisest
+                    slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
+                    title_en: test 2 en
+                    slug_en: test-2-en
+                    lead_et: >-
+                        PÖFFi armastusfilmide festival Tartuff kuulutas välja
+                        esimese linateose, mille teema on hetkel üliaktuaalne –
+                        seksuaalne ahistamine.
+                    lead_en: lead 2 en
+                    contents_et: >-
+                        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb
+                        kuuest absurdihuumoriga vürtsitatud loost, mis on
+                        inspireeritud igapäevastest naiste avaliku või varjatud
+                        diskrimineerimise viisidest.
+
+
+                        „Kui te ei ole veel aru saanud, mida taotleb #MeToo,
+                        vaadake seda filmi,” soovitab ajaleht Helsingin Sanomat,
+                        nimetades „Harjumuse jõudu” eelmise aasta olulisimaks
+                        Soome linateoseks.
+
+
+                        Patriarhaalse ühiskonna käitumismustreid avav
+                        draamakomöödia põhineb populaarsel lühifilmide sarjal
+                        „Üksikjuhtum”, mis on Soome veebi-TVs Yle Areena kogunud
+                        üle miljoni vaatamiskorra.
+
+
+                        Soome noorema ja keskmise põlve naisrežissööride
+                        jõudemonstratsiooniks nimetatava filmi on kirjutanud ja
+                        lavastanud Kirsikka Saari, Elli Toivoniemi, Anna
+                        Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
+                        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad
+                        eesotsas Krista Kosoneni ja Johannes Holopaineniga.
+
+
+                        Autorite enda sõnul ei ole filmi ajendiks niivõrd
+                        seksuaalne ahistamine, kuivõrd see, kuidas ühiskond seda
+                        normaalseks peab.
+
+
+                        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud”
+                        parima filmi, režii, stsenaariumi ja meeskõrvalosa
+                        kategoorias. Linateose rahvusvaheline esilinastus oli
+                        tänavusel Göteborgi filmifestivalil.
+
+
+                        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu
+                        Raekoja platsist saab taas Eesti suurim vabaõhukino.
+                        Esimest korda avab festival ka virtuaalse kinosaali,
+                        mida saab külastada üle kogu Eesti.
+
+
+                        Kogu programmi avalikustab festival juuli lõpus.
+
+
+                        Tartuffi korraldab Pimedate Ööde filmifestival koostöös
+                        Tartu linna, Tartu filmifondi ja Tartu
+                        loomemajanduskeskusega.
+                    contents_en: cont 2 en
+                    publishFrom: '2020-07-07T09:00:00.000Z'
+                    publishUntil: '2021-01-14T10:00:00.000Z'
+                    publish_et: true
+                    publish_en: true
+                    slug: pof-fi-article-7
+                    publish: true
+                order: 1
+                name: Программы
+            -
+                id: 2
+                namePrivate: Ajakava
+                customUrl: raspisanije
+                order: 2
+                name: Расписание
