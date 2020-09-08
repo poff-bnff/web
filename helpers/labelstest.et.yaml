@@ -1,94 +1,74 @@
-siteTitle: BBNF
-root: /en/
+siteTitle: Tartuff
+root: /
 language:
     et: eesti
     en: english
     ru: русский
 navigation:
     -
-        url: /countries/
-        title: Countries
+        url: /riigid/
+        title: Riigid
     -
-        url: /languages/
-        title: Languages
+        url: /keeled/
+        title: Keeled
 search:
-    url: /en/search/
+    url: /otsing/
     text: |
-        ### Search
-    placeholder: enter →
-    button: Search
+        ### Otsing
+    placeholder: sisesta →
+    button: Otsi
 label:
     button:
-        screeningBuyTicket: Buy ticket
-        screeningFree: Free
-        covidRegister: Covid-19 - register your participation
-        newsButton: News
-        filmsButton: Films
-        filmAudienceVote: Vote for the film
+        screeningBuyTicket: Osta pilet
+        screeningFree: Tasuta
+        covidRegister: Covid-19 - registreeri oma osalemine
     film:
-        titleOriginal: Original title
-        title_et: Local title
-        title_ru: Title in Russian
-        titleSec: Title in Estonian
-        countries: Country
-        languages: Language
-        year: Year
-        audienceVote: Vote for the film
-        runtime: Runtime
-        director: Director
-        screenwriter: Screenwriter
-        doP: DoP
-        editor: Editor
-        composer: Composer
-        cast: Cast
-        production: Production
-        synopsis: Synopsis
-        trailer: Trailer
+        titleOriginal: Pealkirja originaal
+        title_en: Ingliskeelne pealkiri
+        ttle_ru: Venekeelne pealkiri
+        titleSec: Pealkiri inglise keeles
+        countries: Riik
+        languages: Keel
+        year: Aasta
+        audienceVote: Anna filmile oma hääl
+        runtime: Kestus
+        director: Režissöör
+        screenwriter: Stsenarist
+        doP: Operaator
+        editor: Monteerija
+        composer: Helilooja
+        cast: Osades
+        production: Produktsioon
+        synopsis: Sünopsis
+        trailer: Treiler
         festival: Festival
-        premiereType: Premiere
-        programme: Programme
-        genre: Genre
-        keywords: Keywords
-        otherFestivals: Other festivals
-        awards: Awards
-        screenings: Screenings
-        qaClip: Q&A with the filmmaker
-        languageSelect: Languages
-        producer: Producer
-        coProducer: Coproducer
-        title: Title in English
-    screening:
-        Subtitles: Subtitles
-        IntroPresenter: Intro by
-        IntroGuests: Intro guests
-        QaPresenter: Q&A presenter
-        QaGuests: Q&A guests
-        QaDuration: Q&A duration
-        TotalDuration: Screening duration
-        Name: Screening
-        AdditionalInfo: Additional info
-    menu:
-        mainNews: News
-        mainFilms: Films
-        mainInfo: Info
-        mainCovid: Covid
-        mainFestival: Festival
-        mainTeam: Team
-        mainSchedule: Schedule
-    all:
-        selectLocale: Languages
-        presenters: Presenters
-        sponsors: Sponsor
-        supporters: Supporters
-        festivalTeam: Festival team
-        officialPartners: Official partners
-        partners: Partners
-        thanksTo: Täname
-        screeningsCalendar: Screenings calendar
-        eventsCalendar: Events calendar
-        eventsGalleries: What happened?
-        team: Festival team
-eFilmInfo: ' - You can see the film also on Elisa Stage, a VOD platform by Elisa'
+        premiereType: Esilinastus
+        programme: Programm
+        genre: Žanr
+        keywords: Märksõnad
+        otherFestivals: Teised festivalid
+        awards: Auhinnad
+        screenings: Seansid
+        qaClip: Q&A ehk vestlus filmitegijaga
+        title: Pealkiri eesti keeles
+eFilmInfo: ' - filmi saab vaadata ka Elisa veebiplatvormil Elisa Stage'
+festivalDates: 10.-15. august
+festivalLocations:
+    screenings:
+        outdoors: Tartu Raekoja plats
+        indoors: Athena Keskus
+        virtual: Elisa Stage
+    events:
+        location_1: TARTU LINNARUUM
+        location_2: ERM
+        location_3: Pepe´s Bistro & tARTuFF Social Club
+        location_4: KASEKE
+        location_5: KROONUAIA 68
+        location_6: SISEVETE SAATKOND
+        location_7: TARTU KUNSTIMUUSEUM
+        location_8: 'VORONJA GALERII, VARNJA, KESK 27'
+        location_9: TARTU LOOMEMAJANDUSKESKUS
+        location_10: GenKlubi
 footer:
     id: 2
     created_by:
@@ -106,7 +86,7 @@ footer:
         -
             id: 2
             namePrivate: PÖFF Social
-            name: Follow us
+            name: Jälgi meid
             items:
                 -
                     id: 1
@@ -164,7 +144,7 @@ footer:
         -
             id: 1
             namePrivate: Team
-            name: Team
+            name: Meeskond
             svgItem:
                 -
                     id: 5
@@ -183,7 +163,7 @@ footer:
         -
             id: 2
             namePrivate: Join Mailing list
-            name: Subscribe to newsletter
+            name: Liitu uudiskirjaga
             svgItem:
                 -
                     id: 7
@@ -202,7 +182,7 @@ footer:
         -
             id: 3
             namePrivate: Contacts
-            name: Contact
+            name: Kontakt
             text: |-
                 Telliskivi 60A
                 Tallinn
@@ -210,7 +190,7 @@ footer:
         -
             id: 1
             order: 1
-            name: Presenters
+            name: Esitlejad
             logo:
                 -
                     id: 1

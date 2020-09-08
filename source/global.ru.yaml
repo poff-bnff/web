@@ -18,67 +18,55 @@ search:
     placeholder: введите →
     button: Искать
 label:
-    all:
-        selectLocale: Языки
-        presenters: Presenters
-        sponsors: Спонсоры
-        supporters: Друзья
-        festivalTeam: Команда фестиваля
-        officialPartners: Официальные партнеры
-        partners: Партнёры
-        screeningsCalendar: Screenings calendar
-        eventsCalendar: Events calendar
-        eventsGalleries: What happened?
-        team: Команда фестиваля
-    film:
-        filmTitleOriginal: Original title
-        filmTitle_en: Title in English
-        filmTitle_ru: Title in Russian
-        filmTitle_et: Local title
-        filmTitleSec: Title in Estonian
-        filmCountries: Country
-        filmLanguages: Language
-        filmYear: Year
-        filmRuntime: Runtime
-        filmDirector: Director
-        filmProducer: Producer
-        filmCoProducer: Coproducer
-        filmScreenwriter: Screenwriter
-        filmDop: DoP
-        filmEditor: Editor
-        filmComposer: Music
-        filmCast: Cast
-        filmProduction: Production
-        filmSynopsis: Synopsis
-        filmTrailer: Trailer
-        filmFestival: Festival
-        filmPremiereType: Premiere type
-        filmProgramme: Programme
-        filmGenre: Genre
-        filmKeyword: Keywords
-        filmOtherFestivals: Festivals
-        filmAwards: Awards
-        filmScreenings: Screenings
-        filmQaClip: Q&A with filmmaker
-        languageSelect: Языки
-    screening:
-        screeningSubtitles: Subtitles
-        screeningIntroPresenter: Intro by
-        screeningIntroGuests: Intro guests
-        screeningQaPresenter: Q&A presenter
-        screeningQaGuests: Q&A guests
-        screeningQaDuration: Q&A duration
-        screeningTotalDuration: Screening duration
-        screeningName: Screening
-        screeningAdditionalInfo: Additional info
-    selectLocale: Языки
-    buttons:
-        filmTicketBuy: Buy ticket
-        filmTicketFree: Free
-        newsButton: News
-        filmsButton: Films
-        filmAudienceVote: Vote for the film
+    button:
+        screeningBuyTicket: Buy ticket
+        screeningFree: Free
         covidRegister: Covid-19 - register your participation
+        newsButton: News
+        filmsButton: ''
+        filmAudienceVote: Vote for the film
+    film:
+        titleOriginal: Original title
+        title_et: Local title
+        title_en: Title in English
+        titleSec: Title in Estonian
+        countries: Country
+        languages: Language
+        year: Year
+        audienceVote: Vote for the film
+        runtime: Runtime
+        director: Director
+        screenwriter: Screenwriter
+        doP: DoP
+        editor: Editor
+        composer: Composer
+        cast: Cast
+        production: Production
+        synopsis: Synopsis
+        trailer: Trailer
+        festival: Festival
+        premiereType: Premiere
+        programme: Programme
+        genre: Genre
+        keywords: Keywords
+        otherFestivals: Other festivals
+        awards: Awards
+        screenings: Screenings
+        qaClip: Q&A with the filmmaker
+        languageSelect: Languages
+        producer: Producer
+        coProducer: Coproducer
+        title: Title in Russian
+    screening:
+        Subtitles: Subtitles
+        IntroPresenter: Intro by
+        IntroGuests: Intro guests
+        QaPresenter: Q&A presenter
+        QaGuests: Q&A guests
+        QaDuration: Q&A duration
+        TotalDuration: Screening duration
+        Name: Screening
+        AdditionalInfo: Additional info
     menu:
         mainNews: Новости
         mainFilms: Филмы
@@ -87,6 +75,19 @@ label:
         mainFestival: Фестиваль
         mainTeam: Команда
         mainSchedule: Расписание
+    all:
+        selectLocale: Языки
+        presenters: Presenters
+        sponsors: Спонсоры
+        supporters: Друзья
+        festivalTeam: Команда фестиваля
+        officialPartners: Официальные партнеры
+        partners: Партнёры
+        thanksTo: Täname
+        screeningsCalendar: Screenings calendar
+        eventsCalendar: Events calendar
+        eventsGalleries: What happened?
+        team: Команда фестиваля
 eFilmInfo: ''
 footer:
     id: 2
