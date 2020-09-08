@@ -139,7 +139,7 @@ block content
             div.f_interactive_item
                 p
                     | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
-                a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.buttons.filmAudienceVote
+                a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
             //- div
             //-     p
             //-         | Seoses Covid-19 levikuga palume registreerida oma osalemine seansil.
@@ -224,7 +224,7 @@ block content
                                                 +dur(screening.screeningTotalDuration)
 
 
-                            .btn-group(role='group' aria-label='Buttons')
+                            .btn-group(role='group' aria-label='')
 
                                 if screening.screeningHall == 'Online'
                                     a.btn.btn_secondary.active(href='#' role='button') &nbsp;

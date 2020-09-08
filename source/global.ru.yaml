@@ -57,19 +57,6 @@ label:
         producer: Producer
         coProducer: Coproducer
         title: Title in Russian
-    all:
-        selectLocale: ''
-        presenters: Presenters
-        sponsors: Sponsor
-        supporters: Supporters
-        festivalTeam: Festival team
-        officialPartners: Official partners
-        partners: Partners
-        thanksTo: Täname
-        screeningsCalendar: Screenings calendar
-        eventsCalendar: Events calendar
-        eventsGalleries: What happened?
-        team: Festival team
     screening:
         Subtitles: Subtitles
         IntroPresenter: Intro by
@@ -88,6 +75,19 @@ label:
         mainFestival: Фестиваль
         mainTeam: Команда
         mainSchedule: Расписание
+    all:
+        selectLocale: Языки
+        presenters: Presenters
+        sponsors: Спонсоры
+        supporters: Друзья
+        festivalTeam: Команда фестиваля
+        officialPartners: Официальные партнеры
+        partners: Партнёры
+        thanksTo: Täname
+        screeningsCalendar: Screenings calendar
+        eventsCalendar: Events calendar
+        eventsGalleries: What happened?
+        team: Команда фестиваля
 eFilmInfo: ''
 footer:
     id: 2
