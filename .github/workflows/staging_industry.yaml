@@ -6,6 +6,8 @@ name: Build and publish staging_industry
 on:
     push:
         branches: [ staging_industry ]
+    workflow_dispatch:
+        branches: [ staging_industry ]
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel

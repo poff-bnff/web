@@ -6,7 +6,8 @@ name: Build and publish staging_kinoff
 on:
     push:
         branches: [ staging_kinoff ]
-
+    workflow_dispatch:
+        branches: [ staging_kinoff ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
