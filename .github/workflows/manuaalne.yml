@@ -4,9 +4,9 @@ name: Manual workflow
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
-on:
-  workflow_dispatch:
+on: [ workflow_dispatch, push ]
     # Inputs the workflow accepts.
+        branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,4 +24,4 @@ jobs:
       uses: craftech-io/slack-action@v1
       with:
         slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
-      if: always()    
+      if: always()
