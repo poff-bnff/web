@@ -6,7 +6,7 @@ name: Manual workflow
 # or API.
 on: [ workflow_dispatch, push ]
     # Inputs the workflow accepts.
-        branches: [ master ]
+        branches: [ DeploymentTest ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
