@@ -2,7 +2,7 @@ name: Build and publish LIVE site
 
 on:
     release:
-        types: [published]
+        types: [ published ]
         branches: [ stable ]
 
 jobs:
@@ -34,7 +34,7 @@ jobs:
         - name: rsync deployments
           uses: burnett01/rsync-deployments@4.1
           with:
-            switches: -avzr --delete
+            switches: -avzr
             path: build/
             remote_path: ${{ secrets.DEPLOY_PATH }}
             remote_host: ${{ secrets.DEPLOY_HOST }}

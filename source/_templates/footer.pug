@@ -18,7 +18,7 @@ footer
         if self.footer.item
             each item in self.footer.item
                 .footer_row_item
-                    if item.name
+                    if item.name && (typeof(item.name) !== 'object')
                         p.footer_h= item.name
                     if item.svgItem
                         each svgItem in item.svgItem
@@ -39,7 +39,7 @@ footer
 
     if self.footer.logosSections
         each section in self.footer.logosSections
-            if section.name
+            if section.name && (typeof(section.name) !== 'object')
                 h1.section_headline_footer= section.name
             if section.logo
                 .footer_logos

@@ -438,7 +438,7 @@ Team: &Team
     domain: *Domain #(Component)
 
 LabelGroups:
-    _path: /labels
+    _path: /label-groups
     name: (text)
     label: #(Component (repeatable))
         - name: (text)
