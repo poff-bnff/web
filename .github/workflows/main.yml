@@ -4,9 +4,10 @@ name: Build and publish DEV site
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
+    workflow_dispatch:
+        branches: [ master ]
     push:
         branches: [ master ]
-
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -50,7 +51,7 @@ jobs:
           with:
             switches: -avzr
             path: build/
-            remote_path: ${{ secrets.DEPLOY_PATH }}
+            remote_path: ${{ secrets.DEPLOY_DEV_PATH }}
             remote_host: ${{ secrets.DEPLOY_HOST }}
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}

@@ -2,8 +2,8 @@ name: Build and publish LIVE SHORTS site
 
 on:
     release:
-        types: [published]
-        branches: [staging_shorts]
+        types: [ published ]
+        branches: [ staging_shorts ]
 
     # schedule:
     #     - cron: '1 0-7 * * *'
@@ -12,21 +12,21 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
-        - name: rsync deployments
-          uses: burnett01/rsync-deployments@4.1
-          with:
-            switches: -avzr
-            path: ${{ secrets.DEPLOY_STAGING_SHORTS_PATH }}
-            remote_path: ${{ secrets.DEPLOY_LIVE_SHORTS_PATH }}
-            remote_host: ${{ secrets.DEPLOY_HOST }}
-            remote_user: ${{ secrets.DEPLOY_USER }}
-            remote_key: ${{ secrets.DEPLOY_KEY }}
+        steps:
+        -
+            name: rsync deployments
+            uses: burnett01/rsync-deployments@4.1
+            with:
+                switches: -avzr
+                path: ${{ secrets.DEPLOY_STAGING_SHORTS_PATH }}
+                remote_path: ${{ secrets.DEPLOY_LIVE_SHORTS_PATH }}
+                remote_host: ${{ secrets.DEPLOY_HOST }}
+                remote_user: ${{ secrets.DEPLOY_USER }}
+                remote_key: ${{ secrets.DEPLOY_KEY }}
 
-        - name: Github->Slack notification Webhook action
-          uses: craftech-io/slack-action@v1
-          with:
-            slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
-          if: always()
-
-
-
+        -
+            name: Github->Slack notification Webhook action
+            uses: craftech-io/slack-action@v1
+            with:
+                slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+            if: always()
