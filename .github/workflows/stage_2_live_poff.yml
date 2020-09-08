@@ -2,8 +2,10 @@ name: PÖFF staging -> live
 
 on:
     release:
-        types: [ published ]
-        branches: [ staging_poff ]
+        types:
+            - published
+        branches:
+            - staging_poff
     workflow_dispatch:
 
     # schedule:
