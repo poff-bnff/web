@@ -2,8 +2,26 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
-
     section.grid_hero
+
+        each mainMenuItem in self.menu
+            if mainMenuItem.subMenuItem
+                if mainMenuItem.name
+                    //- Kui pole submenu itemeid
+                    p= `- ${mainMenuItem.name}`
+                each subMenuItem in mainMenuItem.subMenuItem
+                    //- Kui on submenu itemeid ja on artikkel
+                    if subMenuItem.poffi_article
+                        a(href= `/${lang_path}articles/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                    //- Kui pole submenu itemeid
+                    else
+                        if subMenuItem.customUrl
+                            a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `---> ${subMenuItem.name}`
+            else
+                a(href= `/${lang_path}articles/`)= `- ${mainMenuItem.name}`
+
+
+
         - var heroPlusTrioNews = []
         section.hero_head
 
