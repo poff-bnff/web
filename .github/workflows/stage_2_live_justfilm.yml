@@ -1,28 +1,27 @@
-name: Build and publish LIVE JUSTFILM site
+name: JUSTFILM staging -> live
 
 on:
     release:
         types: [ published ]
         branches: [ staging_justfilm ]
+    workflow_dispatch:
 
     # schedule:
     #     - cron: '1 0-7 * * *'
 
 jobs:
     build:
+        name: Build
         runs-on: ubuntu-latest
-
         steps:
-        -
-            name: rsync deployments
-            uses: burnett01/rsync-deployments@4.1
+        -   name: copy file via ssh key
+            uses: appleboy/scp-action@master
             with:
-                switches: -avzr
-                path: ${{ secrets.DEPLOY_STAGING_JUSTFILM_PATH }}
-                remote_path: ${{ secrets.DEPLOY_LIVE_JUSTFILM_PATH }}
-                remote_host: ${{ secrets.DEPLOY_HOST }}
-                remote_user: ${{ secrets.DEPLOY_USER }}
-                remote_key: ${{ secrets.DEPLOY_KEY }}
+                host: ${{ secrets.DEPLOY_HOST }}
+                username: ${{ secrets.DEPLOY_USER }}
+                key: ${{ secrets.DEPLOY_KEY }}
+                source: ${{ secrets.DEPLOY_STAGING_JUSTFILM_PATH }}
+                target: ${{ secrets.DEPLOY_LIVE_JUSTFILM_PATH }}
 
         -
             name: Github->Slack notification Webhook action
@@ -30,6 +29,3 @@ jobs:
             with:
                 slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
             if: always()
-
-
-

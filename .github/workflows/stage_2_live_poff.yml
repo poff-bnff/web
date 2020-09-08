@@ -4,6 +4,7 @@ on:
     release:
         types: [ published ]
         branches: [ staging_poff ]
+    workflow_dispatch:
 
     # schedule:
     #     - cron: '1 0-7 * * *'
