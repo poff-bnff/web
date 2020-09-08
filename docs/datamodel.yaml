@@ -246,39 +246,21 @@ ShotsiArticle: &ShotsiArticle
     web_authors:
         - *WebAuthor
 
-# Article: &Article
-#     _path: /articles
-#     publishing: *Publishing
-#     imageDefault: (Media)
-#     title_et: Tartuff on pühendatud kunstile (text)
-#     title_en: Tartuff sets focus on art (text)
-#     title_ru: (text)
-#     contents_et: Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti, Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid jõuavad lisaks traditsioonilistele armastusfilmidele ekraanile 10.-15. augustini Tartus. (rich text)
-#     contents_en: The Robin Hood of the art world aka Banksy, Marcel Duchamp, Alberto Giacometti, Maud Lewis – these are the heroes of the features and documentary films on art topics, that will reach audiences in Tartu at the physical event taking place from the 10th until the 15th of August and also available online throughout Estonia. The full programme of the 15th Tartu Love Film Festival will be announced on the 30th of July. (rich text)
-#     contents_ru: (rich text)
-#     lead_et: PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu kunstile. (rich text)
-#     lead_en: This year's edition sets a special focus on art, screening films on Banksy, Marchel Duchamp, Alberto Giacometti, Maud Lewis. The festival will be available online throughout Estonia (rich text)
-#     lead_ru: (rich text)
-#     tags: *Tags
-#     domains:
-#         - *Domain
-#     image_et: (Media)
-#     image_en: (Media)
-#     image_ru: (Media)
-#     slug_et: tartuff-on-puehendatud-kunstile (UID, No spaces)
-#     slug_en: tartuff-sets-focus-on-art (UID, No spaces)
-#     slug_ru: (UID, No spaces)
-#     clipUrl_et: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
-#     clipUrl_en: https://www.youtube.com/watch?v=s6ZgBnq7Tt4 (text)
-#     clipUrl_ru: (text)
-#     clipUrlDefault: (text)
-#     button: #(Component (repeatable))
-#         - text_et: (text)
-#           url_et: (text)
-#           text_en: (text)
-#           url_en: (text)
-#           text_ru: (text)
-#           url_ru: (text)
+PoffiSubMenuItem: &PoffiSubMenuItem
+    name: *Translated #(Component)
+    poffi_article: *POFFiArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
+
+POFFiMenu: &POFFiMenu
+    _path: /pof-fi-menus
+    name: *Translated #(Component)
+    poffi_article: *POFFiArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *PoffiSubMenuItem
 
 Festival: &Festival
     _path: /festivals
