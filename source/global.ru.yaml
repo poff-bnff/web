@@ -18,6 +18,13 @@ search:
     placeholder: введите →
     button: Искать
 label:
+    button:
+        screeningBuyTicket: Buy ticket
+        screeningFree: Free
+        covidRegister: Covid-19 - register your participation
+        newsButton: News
+        filmsButton: ''
+        filmAudienceVote: Vote for the film
     film:
         titleOriginal: Original title
         title_et: Local title
@@ -46,14 +53,23 @@ label:
         awards: Awards
         screenings: Screenings
         qaClip: Q&A with the filmmaker
-        ttle: Title in Russian
-    button:
-        screeningBuyTicket: Buy ticket
-        screeningFree: Free
-        covidRegister: Covid-19 - register your participation
-        newsButton: News
-        filmsButton: ''
-        filmAudienceVote: Vote for the film
+        languageSelect: Languages
+        producer: Producer
+        coProducer: Coproducer
+        title: Title in Russian
+    all:
+        selectLocale: ''
+        presenters: Presenters
+        sponsors: Sponsor
+        supporters: Supporters
+        festivalTeam: Festival team
+        officialPartners: Official partners
+        partners: Partners
+        thanksTo: Täname
+        screeningsCalendar: Screenings calendar
+        eventsCalendar: Events calendar
+        eventsGalleries: What happened?
+        team: Festival team
 eFilmInfo: ''
 footer:
     id: 2

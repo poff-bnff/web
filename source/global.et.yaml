@@ -18,10 +18,17 @@ search:
     placeholder: sisesta →
     button: Otsi
 label:
+    button:
+        screeningBuyTicket: Osta pilet
+        screeningFree: Tasuta
+        covidRegister: Covid-19 - registreeri oma osalemine
+        newsButton: Uudised
+        filmsButton: Filmid
+        filmAudienceVote: Anna filmile oma hääl
     film:
         titleOriginal: Pealkirja originaal
         title_en: Ingliskeelne pealkiri
-        ttle_ru: Venekeelne pealkiri
+        title_ru: Venekeelne pealkiri
         titleSec: Pealkiri inglise keeles
         countries: Riik
         languages: Keel
@@ -46,14 +53,23 @@ label:
         awards: Auhinnad
         screenings: Seansid
         qaClip: Q&A ehk vestlus filmitegijaga
+        languageSelect: Keeled
+        producer: Produtsent
+        coProducer: Kaasprodutsent
         title: Pealkiri eesti keeles
-    button:
-        screeningBuyTicket: Osta pilet
-        screeningFree: Tasuta
-        covidRegister: Covid-19 - registreeri oma osalemine
-        newsButton: Uudised
-        filmsButton: Filmid
-        filmAudienceVote: Anna filmile oma hääl
+    all:
+        selectLocale: Languages
+        presenters: Esitlejad
+        sponsors: Sponsor
+        supporters: Toetajad
+        festivalTeam: Festivali meeskond
+        officialPartners: Ametlikud partnerid
+        partners: Partnerid
+        thanksTo: Täname
+        screeningsCalendar: Seansside kalender
+        eventsCalendar: Ürituste kalender
+        eventsGalleries: Mis juhtus?
+        team: Festivali meeskond
 eFilmInfo: ' - filmi saab vaadata ka Elisa veebiplatvormil Elisa Stage'
 festivalDates: 10.-15. august
 festivalLocations:

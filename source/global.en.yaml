@@ -18,10 +18,17 @@ search:
     placeholder: enter →
     button: Search
 label:
+    button:
+        screeningBuyTicket: Buy ticket
+        screeningFree: Free
+        covidRegister: Covid-19 - register your participation
+        newsButton: News
+        filmsButton: Films
+        filmAudienceVote: Vote for the film
     film:
         titleOriginal: Original title
         title_et: Local title
-        ttle_ru: Title in Russian
+        title_ru: Title in Russian
         titleSec: Title in Estonian
         countries: Country
         languages: Language
@@ -46,14 +53,23 @@ label:
         awards: Awards
         screenings: Screenings
         qaClip: Q&A with the filmmaker
+        languageSelect: Languages
+        producer: Producer
+        coProducer: Coproducer
         title: Title in English
-    button:
-        screeningBuyTicket: Buy ticket
-        screeningFree: Free
-        covidRegister: Covid-19 - register your participation
-        newsButton: News
-        filmsButton: Films
-        filmAudienceVote: Vote for the film
+    all:
+        selectLocale: Languages
+        presenters: Presenters
+        sponsors: Sponsor
+        supporters: Supporters
+        festivalTeam: Festival team
+        officialPartners: Official partners
+        partners: Partners
+        thanksTo: Täname
+        screeningsCalendar: Screenings calendar
+        eventsCalendar: Events calendar
+        eventsGalleries: What happened?
+        team: Festival team
 eFilmInfo: ' - You can see the film also on Elisa Stage, a VOD platform by Elisa'
 footer:
     id: 2
