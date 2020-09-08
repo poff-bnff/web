@@ -5,7 +5,6 @@ name: Build and publish DEV site
 # events but only for the master branch
 on:
     workflow_dispatch:
-        branches: [ master ]
     push:
         branches: [ master ]
 
