@@ -13,13 +13,25 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
-        -   name: copy file via ssh key
+        -   name: set up
+            run: mkdir temp
+
+        -   name: copy files
             uses: appleboy/scp-action@master
             with:
                 host: inscaping.eu
                 username: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
-                source: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_staging/*
+                source: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_staging
+                target: temp
+
+        -   name: copy files2
+            uses: appleboy/scp-action@master
+            with:
+                host: inscaping.eu
+                username: virt84398
+                key: ${{ secrets.DEPLOY_KEY }}
+                source: temp
                 target: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_live
 
         -
