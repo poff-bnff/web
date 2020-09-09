@@ -41,9 +41,9 @@ jobs:
           with:
             switches: -avzr
             path: build/
-            remote_path: '/data01/virt84398/domeenid/www.inscaping.eu/web/staging_poff'
-            remote_host: ${{ secrets.DEPLOY_HOST }}
-            remote_user: ${{ secrets.DEPLOY_USER }}
+            remote_path: /data01/virt84398/domeenid/www.inscaping.eu/web/staging_poff
+            remote_host: inscaping.eu
+            remote_user: virt84398
             remote_key: ${{ secrets.DEPLOY_KEY }}
 
         - name: Github->Slack notification Webhook action
