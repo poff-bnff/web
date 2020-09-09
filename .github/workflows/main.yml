@@ -4,9 +4,9 @@ name: Build and publish DEV site
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
+    workflow_dispatch:
     push:
         branches: [ master ]
-
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,7 +31,12 @@ jobs:
           run: npm install
 
         - name: Build Project
-          run: node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
+        #   run: node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
+          run: . ./build.sh
+          env:
+            StrapiHost: ${{ secrets.FETCH_HOST }}
+            StrapiUserName: ${{ secrets.FETCH_USER }}
+            StrapiPassword: ${{ secrets.FETCH_KEY }}
 
         - name: Copy Assets
           run: cp -R assets build/assets
@@ -42,9 +47,9 @@ jobs:
         - name: rsync deployments
           uses: burnett01/rsync-deployments@4.1
           with:
-            switches: -avzr --delete
+            switches: -avzr
             path: build/
-            remote_path: ${{ secrets.DEPLOY_PATH }}
+            remote_path:  '/data01/virt84398/domeenid/www.inscaping.eu/web/dev'
             remote_host: ${{ secrets.DEPLOY_HOST }}
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}

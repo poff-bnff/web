@@ -1,22 +1,23 @@
-id: 8
+id: 4
 created_by: 5
-updated_by: 6
-created_at: '2020-09-02T07:04:20.609Z'
-updated_at: '2020-09-02T07:14:22.240Z'
-title_en: test 8 en
-slug_en: test-8-en
-lead_en: test 8 en lead
-contents_en: test 8 en cont
-publishFrom: '2020-05-18T09:00:00.000Z'
-publishUntil: '2020-11-10T10:00:00.000Z'
+updated_by: 5
+created_at: '2020-09-02T06:24:45.587Z'
+updated_at: '2020-09-07T10:40:47.706Z'
+title_en: test 4 en
+slug_en: test-4-en
+slug_ru: pof-fi-article-3
+lead_en: lead 4 en
+contents_en: cont 4 en
+publishFrom: '2020-07-22T09:00:00.000Z'
+publishUntil: '2021-01-06T10:00:00.000Z'
 publish_en: true
 publish_ru: true
 media:
-    id: 15
+    id: 11
     imageDefault:
         -
-            id: 5
-            name: tartuff_2019_ohust_1.jpg
+            id: 3
+            name: F_2_invisible_life.jpg
             alternativeText: ''
             caption: ''
             width: 1920
@@ -24,88 +25,159 @@ media:
             formats:
                 large:
                     ext: .jpg
-                    url: /uploads/large_tartuff_2019_ohust_1_778c8d54c2.jpg
-                    hash: large_tartuff_2019_ohust_1_778c8d54c2
+                    url: /uploads/large_F_2_invisible_life_feb5451063.jpg
+                    hash: large_F_2_invisible_life_feb5451063
                     mime: image/jpeg
-                    name: large_tartuff_2019_ohust_1.jpg
-                    size: 120.83
+                    name: large_F_2_invisible_life.jpg
+                    size: 89.02
                     width: 1000
                     height: 563
                 small:
                     ext: .jpg
-                    url: /uploads/small_tartuff_2019_ohust_1_778c8d54c2.jpg
-                    hash: small_tartuff_2019_ohust_1_778c8d54c2
+                    url: /uploads/small_F_2_invisible_life_feb5451063.jpg
+                    hash: small_F_2_invisible_life_feb5451063
                     mime: image/jpeg
-                    name: small_tartuff_2019_ohust_1.jpg
-                    size: 32.61
+                    name: small_F_2_invisible_life.jpg
+                    size: 28.41
                     width: 500
                     height: 281
                 medium:
                     ext: .jpg
-                    url: /uploads/medium_tartuff_2019_ohust_1_778c8d54c2.jpg
-                    hash: medium_tartuff_2019_ohust_1_778c8d54c2
+                    url: /uploads/medium_F_2_invisible_life_feb5451063.jpg
+                    hash: medium_F_2_invisible_life_feb5451063
                     mime: image/jpeg
-                    name: medium_tartuff_2019_ohust_1.jpg
-                    size: 68.02
+                    name: medium_F_2_invisible_life.jpg
+                    size: 53.8
                     width: 750
                     height: 422
                 thumbnail:
                     ext: .jpg
-                    url: /uploads/thumbnail_tartuff_2019_ohust_1_778c8d54c2.jpg
-                    hash: thumbnail_tartuff_2019_ohust_1_778c8d54c2
+                    url: /uploads/thumbnail_F_2_invisible_life_feb5451063.jpg
+                    hash: thumbnail_F_2_invisible_life_feb5451063
                     mime: image/jpeg
-                    name: thumbnail_tartuff_2019_ohust_1.jpg
-                    size: 8.98
+                    name: thumbnail_F_2_invisible_life.jpg
+                    size: 9.4
                     width: 245
                     height: 138
-            hash: tartuff_2019_ohust_1_778c8d54c2
+            hash: F_2_invisible_life_feb5451063
             ext: .jpg
             mime: image/jpeg
-            size: 323.02
-            url: /uploads/tartuff_2019_ohust_1_778c8d54c2.jpg
+            size: 195.11
+            url: /uploads/F_2_invisible_life_feb5451063.jpg
             provider: local
-            created_by: 3
-            updated_by: 3
-            created_at: '2020-08-26T13:51:45.254Z'
-            updated_at: '2020-08-26T13:51:45.327Z'
-    image: []
-title: Tartuffi publikuauhind rändab Itaaliasse
-slug: test-8-et
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-13T19:16:16.310Z'
+            updated_at: '2020-08-13T19:16:16.552Z'
+    image:
+        -
+            id: 4
+            name: F_1_invisible_life.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1920
+            height: 1080
+            formats:
+                large:
+                    ext: .jpg
+                    url: /uploads/large_F_1_invisible_life_745fc8df60.jpg
+                    hash: large_F_1_invisible_life_745fc8df60
+                    mime: image/jpeg
+                    name: large_F_1_invisible_life.jpg
+                    path: null
+                    size: 81.71
+                    width: 1000
+                    height: 563
+                small:
+                    ext: .jpg
+                    url: /uploads/small_F_1_invisible_life_745fc8df60.jpg
+                    hash: small_F_1_invisible_life_745fc8df60
+                    mime: image/jpeg
+                    name: small_F_1_invisible_life.jpg
+                    path: null
+                    size: 24.04
+                    width: 500
+                    height: 281
+                medium:
+                    ext: .jpg
+                    url: /uploads/medium_F_1_invisible_life_745fc8df60.jpg
+                    hash: medium_F_1_invisible_life_745fc8df60
+                    mime: image/jpeg
+                    name: medium_F_1_invisible_life.jpg
+                    path: null
+                    size: 46.72
+                    width: 750
+                    height: 422
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_F_1_invisible_life_745fc8df60.jpg
+                    hash: thumbnail_F_1_invisible_life_745fc8df60
+                    mime: image/jpeg
+                    name: thumbnail_F_1_invisible_life.jpg
+                    path: null
+                    size: 8.1
+                    width: 245
+                    height: 138
+            hash: F_1_invisible_life_745fc8df60
+            ext: .jpg
+            mime: image/jpeg
+            size: 194.74
+            url: /uploads/F_1_invisible_life_745fc8df60.jpg
+            previewUrl: null
+            provider: local
+            provider_metadata: null
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-13T19:16:16.414Z'
+            updated_at: '2020-08-13T19:16:16.648Z'
+title: Tartu armastusfilmide festivali avab troopiline melodraama
+slug: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
 lead: >-
-    PÖFFi armastusfilmide festivali Tartuff publik valis oma lemmikuks Itaalia
-    draamakomöödia „Õnnejumalanna”.
+    PÖFFi armastusfilmide festival Tartuff kuulutas väljatänavuse avafilmi,
+    milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud "Nähtamatu elu".
 contents: >-
-    Ferzan Özpeteki filmis peavad kaks lastekauget, oma suhtega kriisi jõudnud
-    meest kantseldama lapsi, kes neile hoida jäetakse.
+    End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
+    kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne isa ja
+    patriarhaalne ühiskond kisuvad nad lahku ega luba täita oma unistusi, kuid
+    nad ei kaota kõigele vaatamata lootust.
 
 
-    Filmi režissöör saab auhinnaks Mati Karmini skulptuuri „Suudlevad tudengid”.
+    Režissöör pühendab oma filmi kõigile neile naistele, kellest Brasiilia
+    ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.
 
 
-    Ööl vastu pühapäeva lõppenud festivali populaarseim film oli Soome draama
-    „Harjumuse jõud”, mida vaatas Raekoja platsi vabaõhukinos 700 inimest.
-    Festivali virtuaalses kinos Elisa Stage kogus enim vaatamisi – ligemale 300
-    – Norra dokumentaalfilm „Autoportree”.
+    „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha – tõeline
+    pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid The Wrap. 
 
 
-    Koos üritustega sai Tartus festivalist osa ligemale 6300 inimest,
-    virtuaalset kino külastati üle Eesti 1200 korda.
+    <iframe width="500" height="281"
+    src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope;
+    picture-in-picture" allowfullscreen></iframe>
 
 
-    „Me oleme väga tänulikud publikule, kes käitus äreval ajal
-    vastutustundlikult ja täitis kõiki reegleid,” ütles festivali juht Kristiina
-    Reidolv Tartu hiljutisele koroonapuhangule viidates. Samuti tõstis ta esile
-    Tartu kunstiorganisatsioonide koostööd, mille tulemusena toimus ligemale 30
-    üritust.
+    Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un Certain
+    Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide Oscarile. USA
+    filmiorganisatsiooni The National Board of Review hinnangul on tegu 2019.
+    aasta ühe kõige huvitavama mitteingliskeelse mängufilmiga. 
 
 
-    15. PÖFFi armastusfilmide festival Tartuff leidis aset 10.–15. augustini.
-    Festivali fookuses oli kunst. Koroonaviiruse tõttu toimus festival piiratud
-    publikuhulgaga, samuti rakendati teisi ettevaatusabinõusid. Esimest korda
-    sai kümmet filmi vaadata virtuaalselt üle kogu Eesti. Festivali filme saab
-    näha veel 19.–22. augustini Tallinnas Filmimuuseumis.
+    Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu elu”.
+    Peaosades Carol Duarte ja Julia Stockler. 
 
 
-    Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna, Tartu
-    filmifondi ja Tartu loomemajanduskeskusega.
-publish: false
+    „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil, samuti
+    saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.
+
+
+    ![Uku_Talmar.jpeg](http://139.59.130.149/uploads/Uku_Talmar_cd27ced892.jpeg)
+
+
+    Kogu kava avalikustab festival juuli lõpus.
+
+
+    **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
+    augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
+    Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja [TARTU
+    LOOMEMAJANDUSKESKUSEGA](https://lmk.ee). 
+publish: true

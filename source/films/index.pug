@@ -22,14 +22,14 @@ block content
                         each p, locale in self.otherLocalePaths
                             if val[`title_${locale}`]
                                 .str_info_grid_3
-                                    .str_info_label= self.label.film.filmTitleSec
+                                    .str_info_label= self.label.film.titleSec
                                     .str_info_value= val[`title_${locale}`]
                         if val.credentials.director
                             .str_info_grid_3
-                                .str_info_label= self.label.film.filmDirector
+                                .str_info_label= self.label.film.director
                                 .str_info_value= val.credentials.director.join(', ')
                         if val.credentials.cast
                             .str_info_grid_3
-                                .str_info_label= self.label.film.filmCast
+                                .str_info_label= self.label.film.cast
                                 .str_info_value= val.credentials.cast.join(', ')
 

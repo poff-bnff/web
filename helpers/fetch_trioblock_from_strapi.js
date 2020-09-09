@@ -2,16 +2,18 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.ValidateAndFetch('TrioBlockPoff', DataToYAMLData);
+FromStrapi.Fetch('TrioBlockPoff', DataToYAMLData);
 
-function DataToYAMLData(strapiData){
-    // console.log(strapiData);
+function DataToYAMLData(modelName, strapiData){
+    // console.log(strapiData[0]);
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
+    LangSelect(strapiData, 'ru');
 }
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
+    console.log(`Fetching trioblock ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -95,8 +97,11 @@ function processData(data, lang, CreateYAML) {
 
         // console.log(key);
         if(key.substr(0, key.length-2) === 'trioBlockItem') {
-            console.log(copyData[key].poffi_article.publishFrom);
-            buffer.push(copyData[key]);
+            // console.log(copyData[`poffi_article${key.substr(key.length-2, key.length)}`]);
+            smallBuffer.block = copyData[key];
+            smallBuffer.article = copyData[`poffi_article${key.substr(key.length-2, key.length)}`];
+            buffer.push(smallBuffer);
+
             // console.log(copyData[key]);
             delete copyData[key]
         }
@@ -107,9 +112,10 @@ function processData(data, lang, CreateYAML) {
     // console.log(data);
     // buffer = rueten(data, lang);
     // console.log(buffer);
-    copyData.blocks = buffer
-    copyData = rueten(copyData, lang);
-    CreateYAML(copyData, lang);
+    // copyData.blocks = buffer
+
+    copyData = rueten(buffer, lang);
+    CreateYAML(buffer, lang);
 }
 
 function CreateYAML(copyData, lang) {

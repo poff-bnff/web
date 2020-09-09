@@ -2,16 +2,18 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.ValidateAndFetch('HeroArticlePoff', DataToYAMLData)
+FromStrapi.Fetch('HeroArticlePoff', DataToYAMLData)
 
-function DataToYAMLData(strapiData){
+function DataToYAMLData(modelName, strapiData){
     // console.log(strapiData);
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
+    LangSelect(strapiData, 'ru');
 }
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
+    console.log(`Fetching heroarticle ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -97,6 +99,7 @@ function processData(data, lang, CreateYAML) {
         }
 
     }
+
     CreateYAML(buffer, lang);
 }
 

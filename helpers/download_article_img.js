@@ -21,6 +21,7 @@ var savePath = 'assets/img/img_articles/';
 
 loadYaml('et', readYaml);
 loadYaml('en', readYaml);
+loadYaml('ru', readYaml);
 
 function loadYaml(lang, readYaml) {
     var doc = '';
@@ -47,33 +48,47 @@ function readYaml(lang, doc) {
             });
         }
 
-        if (values.media.imageDefault) {
+        if (values.media && values.media.imageDefault) {
             var imgPath = values.media.imageDefault[0].url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
-            });
-            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
+            let url = `${strapiPath}${imgPath}`
+            let dest = `${savePath}${lang}/${values.slug}/${imgFileName}`
+            download(url, dest);
         }
-        if (values.media.image[0]) {
+        if (values.media && values.media.image[0]) {
             var imgPath = values.media.image[0].url;
             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.slug}/${imgFileName}`, ifError);
+            let url = `${strapiPath}${imgPath}`
+            let dest = `${savePath}${lang}/${values.slug}/${imgFileName}`
+            download(url, dest);
         }
+
     }
 }
 
-function download(url, dest, cb) {
-    var file = fs.createWriteStream(dest);
+function download(url, dest) {
+    let fileSizeInBytes = 0
+    if (fs.existsSync(dest)) {
+        const stats = fs.statSync(dest);
+        fileSizeInBytes = stats.size;
+    }
+
     var request = http.get(url, function (response) {
-        response.pipe(file);
-        file.on('finish', function () {
-            file.close(cb);  // close() is async, call cb after close completes.
-        });
-        console.log(`File ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
+        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
+            // console.log(typeof(response.headers["content-length"]));
+            var file = fs.createWriteStream(dest);
+            response.pipe(file);
+            file.on('finish', function () {
+                file.close();  // close() is async, call cb after close completes.
+                console.log(`Downloaded: Article img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest} - ${response.headers["content-length"]} bytes`);
+            });
+        }else{
+            // console.log(`Skipped: Article img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+        }
     }).on('error', function (err) { // Handle errors
-        fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        if (cb) cb(err.message);
-    });
+        console.log(err);
+        // fs.unlink(dest); // Delete the file async. (But we don't check the result)
+    })
 };
 
 
