@@ -5,8 +5,6 @@ on:
         types: [ published ]
         branches: [ staging_poff ]
     workflow_dispatch:
-    # schedule:
-    #     - cron: '1 0-7 * * *'
 
 jobs:
     deploy:
@@ -21,45 +19,3 @@ jobs:
                 host: inscaping.eu
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
-
-        # -   name: set up
-        #     run: mkdir temp
-
-        # -   name: scp attempt
-        #     run: echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
-        # -   name: scp attempt
-        #     run: chmod 644 id_rsa
-        # -   name: scp attempt
-        #     run: ssh virt84398@inscaping.eu -i id_rsa "ls -latr domeenid/www.inscaping.eu/web/*"
-
-            # run: echo "${{ secrets.DEPLOY_KEY }}" | ssh -i /dev/stdin virt84398@inscaping.eu "rsync -avzr --delete domeenid/www.inscaping.eu/web/poff_staging/* domeenid/www.inscaping.eu/web/poff_live/"
-
-        # -   name: copy files from server
-        #     uses: appleboy/scp-action@master
-        #     env:
-        #         host: inscaping.eu
-        #         username: virt84398
-        #         key: ${{ secrets.DEPLOY_KEY }}
-        #     with:
-        #         source: domeenid/www.inscaping.eu/web/poff_staging/*
-        #         target: temp/
-
-        # -   name: copy files to server
-        #     uses: appleboy/scp-action@master
-        #     env:
-        #         host: inscaping.eu
-        #         username: virt84398
-        #         key: ${{ secrets.DEPLOY_KEY }}
-        #     with:
-        #         source: temp/*
-        #         target: domeenid/www.inscaping.eu/web/poff_live/
-
-        # -
-        #     name: Github->Slack notification Webhook action
-        #     uses: craftech-io/slack-action@v1
-        #     with:
-        #         slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
-        #     if: always()
-
-
-
