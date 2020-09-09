@@ -54,6 +54,32 @@ header
             //-         li
             //-             a(href=`/${lang_path}festival`)= self.label.menu.mainTeam
 
+                                        li
+                                            a(href=`/${lang_path}${article.path}`)= 'See on about link (label)'
+                    //- li
+                    //-     a(href='#') Piletid
+                    //- li
+                    //-     a(href='#') Press
+                    //- li
+                    //-     a(href='#') Festivalist
+                    //- li
+                    //-     p.select_locale_label= self.label.selectLocale
+                    //-     a(href='#') Toetajad
+                    li
+                        nav.lang_menu
+                            //- | prefiks&nbsp;
+                            //- .clr_primary= self.label.film.languageSelect + 'rr'
+                            each p, locale in self.otherLocalePaths
+                                //- span.clr_white_semi= self.label.film.languageSelect + ':  '
+                                //- if self.publish && (self[`publish_${locale}`] === false)
+                                //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
+                                //- a(href=(p !== '/' ? p + '/' : '/'))= locale
+
+                                if !('publish' in self) || ((self[`publish_${locale}`] !== false) && (`publish_${locale}` in self))
+                                    //- p= !('publish' in self) + ' or ' + ((self[`publish_${locale}`] !== false) && (`publish_${locale}` in self)) + ': ' + (self[`publish_${locale}`] !== false) + ' - ' + (`publish_${locale}` in self)
+                                    a(href=(p !== '/' ? p + '/' : '/'))= locale
+                                else
+                                    a= locale
 
             //-             if self.data.articles
             //-                 each article in self.data.articles

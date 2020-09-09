@@ -255,6 +255,7 @@ PoffiSubMenuItem: &PoffiSubMenuItem
 
 POFFiMenu: &POFFiMenu
     _path: /pof-fi-menus
+    #namePrivate: (text, private field)
     name: *Translated #(Component)
     poffi_article: *POFFiArticle
     customUrl: *Translated #(Component)

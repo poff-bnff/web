@@ -83,7 +83,7 @@ function download(url, dest) {
                 console.log(`Downloaded: Article img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest} - ${response.headers["content-length"]} bytes`);
             });
         }else{
-            console.log(`Skipped: Article img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+            // console.log(`Skipped: Article img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
         }
     }).on('error', function (err) { // Handle errors
         console.log(err);
