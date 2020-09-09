@@ -38,7 +38,6 @@ jobs:
             StrapiUserName: ${{ secrets.FETCH_USER }}
             StrapiPassword: ${{ secrets.FETCH_KEY }}
 
-
         - name: Copy Assets
           run: cp -R assets build/assets
 
