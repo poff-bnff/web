@@ -17,7 +17,7 @@ jobs:
             run: mkdir temp
 
         -   name: scp attempt
-            run: echo "${{ secrets.DEPLOY_KEY }}" | ssh -i /dev/stdin virt84398@inscaping.eu "ls -latr domeenid/www.inscaping.eu/web/*"
+            run: echo "${{ secrets.DEPLOY_KEY }}" | ssh virt84398@inscaping.eu -i /dev/stdin "ls -latr domeenid/www.inscaping.eu/web/*"
 
             # run: echo "${{ secrets.DEPLOY_KEY }}" | ssh -i /dev/stdin virt84398@inscaping.eu "rsync -avzr --delete domeenid/www.inscaping.eu/web/poff_staging/* domeenid/www.inscaping.eu/web/poff_live/"
 
