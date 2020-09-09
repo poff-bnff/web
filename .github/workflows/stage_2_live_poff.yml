@@ -17,8 +17,7 @@ jobs:
             uses: fifsky/ssh-action@master
             with:
                 command: |
-                    cd /tmp
-                    ls -a
+                    ls -latr domeenid/www.inscaping.eu/web/*
                 host: inscaping.eu
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
