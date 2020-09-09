@@ -13,15 +13,25 @@ jobs:
         name: SCP files to server
         runs-on: ubuntu-latest
         steps:
-        -   name: set up
-            run: mkdir temp
+        -   name: ls -a via ssh
+            uses: fifsky/ssh-action@master
+            with:
+                command: |
+                    cd /tmp
+                    ls -a
+                host: inscaping.eu
+                user: virt84398
+                key: ${{ secrets.DEPLOY_KEY }}
 
-        -   name: scp attempt
-            run: echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
-        -   name: scp attempt
-            run: chmod 644 id_rsa
-        -   name: scp attempt
-            run: ssh virt84398@inscaping.eu -i id_rsa "ls -latr domeenid/www.inscaping.eu/web/*"
+        # -   name: set up
+        #     run: mkdir temp
+
+        # -   name: scp attempt
+        #     run: echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
+        # -   name: scp attempt
+        #     run: chmod 644 id_rsa
+        # -   name: scp attempt
+        #     run: ssh virt84398@inscaping.eu -i id_rsa "ls -latr domeenid/www.inscaping.eu/web/*"
 
             # run: echo "${{ secrets.DEPLOY_KEY }}" | ssh -i /dev/stdin virt84398@inscaping.eu "rsync -avzr --delete domeenid/www.inscaping.eu/web/poff_staging/* domeenid/www.inscaping.eu/web/poff_live/"
 
