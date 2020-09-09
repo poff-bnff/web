@@ -19,20 +19,22 @@ jobs:
         -   name: copy files
             uses: appleboy/scp-action@master
             with:
+                switches: -r
                 host: inscaping.eu
                 username: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
-                source: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_staging
-                target: temp
+                source: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_staging/*
+                target: temp/
 
         -   name: copy files2
             uses: appleboy/scp-action@master
             with:
+                switches: -r
                 host: inscaping.eu
                 username: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
-                source: temp
-                target: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_live
+                source: temp/*
+                target: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_live/
 
         -
             name: Github->Slack notification Webhook action
