@@ -118,7 +118,7 @@ function download(url, dest) {
                 console.log(`Downloaded: Footer img ${url.split('/')[url.split('/').length - 1]} to ${dest}`);
             });
         }else{
-            console.log(`Skipped: Footer img ${url.split('/')[url.split('/').length - 1]} skipped due to same exists`);
+            // console.log(`Skipped: Footer img ${url.split('/')[url.split('/').length - 1]} skipped due to same exists`);
         }
     }).on('error', function (err) { // Handle errors
         console.log(err);
