@@ -22,7 +22,7 @@ jobs:
                 host: inscaping.eu
                 username: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
-                source: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_staging/*
+                source: domeenid/www.inscaping.eu/web/poff_staging/*
                 target: temp/
 
         -   name: copy files2
@@ -32,7 +32,7 @@ jobs:
                 username: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
                 source: temp/*
-                target: /data01/virt84398/domeenid/www.inscaping.eu/web/poff_live/
+                target: domeenid/www.inscaping.eu/web/poff_live/
 
         -
             name: Github->Slack notification Webhook action
