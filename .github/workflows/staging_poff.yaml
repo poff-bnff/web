@@ -44,7 +44,7 @@ jobs:
           with:
             switches: -avzr
             path: build/
-            remote_path: ${{ secrets.DEPLOY_STAGING_POFF_PATH }}
+            remote_path: '/data01/virt84398/domeenid/www.inscaping.eu/web/staging_poff'
             remote_host: ${{ secrets.DEPLOY_HOST }}
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}
