@@ -13,7 +13,7 @@ function FetchOne(dataPath, id, token){
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token}
         }
-        console.log(path);
+        // console.log(path);
         let req = http.request(options, function (response) {
             let allData = '';
             response.on('data', function (chunk) {

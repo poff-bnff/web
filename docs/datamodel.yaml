@@ -137,6 +137,7 @@ Media: &Media
 POFFiArticle: &POFFiArticle
     _refetch: true
     _path: /pof-fi-articles
+    _refetch: true
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)

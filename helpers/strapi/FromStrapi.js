@@ -4,6 +4,8 @@ const AuthStrapi = require('./AuthStrapi');
 const Validate = require('../compareStructure')
 const yaml= require('js-yaml');
 
+const { inspect } = require('util');
+
 const DATAMODEL = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
 const DOMAIN = 'poff.ee'
 
@@ -72,7 +74,20 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
             if (! '_path' in dataModel) {
                 throw new Error ('Missing _path in model')
             }
-            fetchOne(dataPath, id, token)
+
+            dataPath = dataPath + '/' + id
+            let options = {
+                //see võiks tulla muutujast
+                host: process.env['StrapiHost'],
+                // ?_limit=-1 see tagab, et strapi tagastab kogu data, mitte 100 esimest nagu on vaikimisi säte
+                path: dataPath + '/' + id,
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token}
+            }
+            // FetchData(options)
+            // fetchOne(dataPath, id, token)
         }
 
         ValidateCB(modelName, strapiData, AfterFetchCB)
@@ -115,7 +130,7 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
                 }
 
                 strapiData = strapiData.filter(checkDomain)
-
+                console.log('88' + inspect(strapiData))
                 RefetchIfNeeded(modelName, strapiData, ValidateCB)
                 // ValidateCB(modelName, strapiData, AfterFetchCB)  //  const Validate = function(modelName, strapiData, AfterFetchCB){
             });
