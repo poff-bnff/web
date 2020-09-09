@@ -50,7 +50,7 @@ jobs:
           with:
             switches: -avzr
             path: build/
-            remote_path:  '/data01/84398/domeenid/www.inscaping.eu/web/dev'
+            remote_path:  '/data01/virt84398/domeenid/www.inscaping.eu/web/dev'
             remote_host: ${{ secrets.DEPLOY_HOST }}
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}
