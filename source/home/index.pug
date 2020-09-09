@@ -23,9 +23,9 @@ block content
         section.hero_head
 
             a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
-                if self.data.heroArticle.media.image[0]
+                if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.image[0]
                     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
-                else if self.data.heroArticle.media.imageDefault[0]
+                else if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.imageDefault[0]
                     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
                 else
                     img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
@@ -132,9 +132,9 @@ block content
                             .viieka_item
                                 a(href= `/${lang_path}article/${ news.slug}`)
                                     .container_frame_16_9
-                                        if news.media.image[0]
+                                        if news.media && news.media.image[0]
                                             img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.image[0].hash}${news.media.image[0].ext}`).trio_image
-                                        else if news.media.imageDefault[0]
+                                        else if news.media && news.media.imageDefault[0]
                                             img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.imageDefault[0].hash}${news.media.imageDefault[0].ext}`).trio_image
                                         else
                                             img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
