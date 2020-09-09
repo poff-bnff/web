@@ -36,9 +36,6 @@ jobs:
         - name: Copy Assets
           run: cp -R assets build/assets
 
-        # - name: List output files
-        #   run: ls
-
         - name: rsync deployments
           uses: burnett01/rsync-deployments@4.1
           with:
