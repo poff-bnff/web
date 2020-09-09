@@ -66,20 +66,23 @@ block content
                 if blocks.article
                     - heroPlusTrioNews.push(blocks.article.id)
 
-                a(href= `/${lang_path}article/${ blocks.article.slug}`)
-                    .trio_block_item
-                        //- if blocks.block.image
-                        //-     img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
-                        //- else if blocks.article.media.image[0]
-                        //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
-                        //- else if blocks.article.media.imageDefault[0]
-                        //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
-                        //- else
-                        //-     img(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
-                        .trio_headline
-                            | !{blocks.block.title}
-                        .p_trio
-                            | !{blocks.block.lead}
+                if (typeof(blocks.block.title) !== 'object') && (typeof(blocks.block.lead) !== 'object')
+                    a(href= `/${lang_path}article/${ blocks.article.slug}`)
+                        .trio_block_item
+                            //- if blocks.block.image
+                            //-     img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
+                            //- else if blocks.article.media.image[0]
+                            //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
+                            //- else if blocks.article.media.imageDefault[0]
+                            //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
+                            //- else
+                            //-     img(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
+                            .trio_headline
+                                if typeof(blocks.block.title) !== 'object'
+                                    | !{blocks.block.title}
+                            .p_trio
+                                if typeof(blocks.block.lead) !== 'object'
+                                    | !{blocks.block.lead}
 
 
             //- //KUNI SIIN
