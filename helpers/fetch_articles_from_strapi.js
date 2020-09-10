@@ -110,7 +110,9 @@ function rueten(obj, lang) {
         } else if (key.match(regex) !== null) {
             // console.log(regex, key, key.match(regex));
             obj[key.substring(0, key.length-3)] = obj[key];
-            delete obj[key];
+            if (key.substring(0, 7) !== 'publish_') {
+                delete obj[key];
+            }
         // } else if (Array.isArray(obj[key])) {
         //     obj[key].forEach(element => {
         //         element = rueten(element, lang)

@@ -910,7 +910,7 @@
 
 
         Tartuffi juhi Kristiina Reidolvi sõnul pole kunsti teema aktuaalne mitte
-        ainult Tartu kui kunstilinna traditsioonide ja ümmarguste tähtpäevade
+        ainult Tartu kui kunstilinna traditsioonide ja ümmarguste t��htpäevade
         tõttu – Pallas sai mullu saja- ja Tartu kunstimuuseum saab tänavu
         80-aastaseks -, vaid hoopis laiemas tähenduses.
 
@@ -1223,11 +1223,11 @@
         firstname: Liis
         lastname: Käsper
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
     created_at: '2020-09-04T06:41:03.958Z'
-    updated_at: '2020-09-06T21:37:53.265Z'
+    updated_at: '2020-09-09T11:19:34.081Z'
     slug_en: pof-fi-article
     slug_ru: pof-fi-article
     publishFrom: '2020-09-01T09:00:00.000Z'
@@ -1245,7 +1245,7 @@
             ru: Новости
     title: TEST33
     slug: pof-fi-article
-    publish: false
+    publish: true
     directory: source/_fetchdir/articles_poff/pof-fi-article
     path: article/pof-fi-article
     data:
@@ -1417,19 +1417,34 @@
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
     created_at: '2020-09-02T06:20:22.339Z'
-    updated_at: '2020-09-06T21:38:03.981Z'
+    updated_at: '2020-09-09T10:53:59.266Z'
     title_en: Test EN
     slug_en: test-en
+    title_ru: 'Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ '
     slug_ru: pof-fi-article-5
+    lead_ru: >-
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ 
     lead_en: Lead EN
     contents_en: Cont EN
+    contents_ru: >-
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски Контентс по русски Контентс
+        по русски Контентс по русски Контентс по русски Контентс по русски
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски Контентс по русски Контентс
+        по русски Контентс по русски Контентс по русски Контентс по русски
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски 
     publishFrom: '2020-06-18T09:00:00.000Z'
     publishUntil: '2021-01-14T10:00:00.000Z'
-    publish_en: true
+    publish_en: false
     publish_ru: true
     media:
         id: 8
