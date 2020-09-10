@@ -67,14 +67,6 @@ label:
         TotalDuration: Screening duration
         Name: Screening
         AdditionalInfo: Additional info
-    menu:
-        mainNews: Новости
-        mainFilms: Филмы
-        mainInfo: Инфо
-        mainCovid: Covid
-        mainFestival: Фестиваль
-        mainTeam: Команда
-        mainSchedule: Расписание
     all:
         selectLocale: Языки
         presenters: Presenters
@@ -88,6 +80,15 @@ label:
         eventsCalendar: Events calendar
         eventsGalleries: What happened?
         team: Команда фестиваля
+    menu:
+        mainNews: Новости
+        mainFilms: Филмы
+        mainInfo: Инфо
+        mainCovid: Covid
+        mainFestival: Фестиваль
+        mainTeam: Команда
+        mainSchedule: Расписание
+        mainLogin: login
 eFilmInfo: ''
 footer:
     id: 2

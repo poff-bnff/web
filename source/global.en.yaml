@@ -67,14 +67,6 @@ label:
         TotalDuration: Screening duration
         Name: Screening
         AdditionalInfo: Additional info
-    menu:
-        mainNews: News
-        mainFilms: Films
-        mainInfo: Info
-        mainCovid: Covid
-        mainFestival: Festival
-        mainTeam: Team
-        mainSchedule: Schedule
     all:
         selectLocale: Languages
         presenters: Presenters
@@ -88,6 +80,15 @@ label:
         eventsCalendar: Events calendar
         eventsGalleries: What happened?
         team: Festival team
+    menu:
+        mainNews: News
+        mainFilms: Films
+        mainInfo: Info
+        mainCovid: Covid
+        mainFestival: Festival
+        mainTeam: Team
+        mainSchedule: Schedule
+        mainLogin: login
 eFilmInfo: ' - You can see the film also on Elisa Stage, a VOD platform by Elisa'
 footer:
     id: 2

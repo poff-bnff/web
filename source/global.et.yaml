@@ -67,14 +67,6 @@ label:
         TotalDuration: Seansi kestus
         Name: Seanss
         AdditionalInfo: Lisainfo
-    menu:
-        mainNews: Uudised
-        mainFilms: Filmid
-        mainInfo: Info
-        mainCovid: Covid
-        mainFestival: Festival
-        mainTeam: Meeskond
-        mainSchedule: Ajakava
     all:
         selectLocale: Languages
         presenters: Esitlejad
@@ -88,6 +80,15 @@ label:
         eventsCalendar: Ürituste kalender
         eventsGalleries: Mis juhtus?
         team: Festivali meeskond
+    menu:
+        mainNews: Uudised
+        mainFilms: Filmid
+        mainInfo: Info
+        mainCovid: Covid
+        mainFestival: Festival
+        mainTeam: Meeskond
+        mainSchedule: Ajakava
+        mainLogin: logi sisse
 eFilmInfo: ' - filmi saab vaadata ka Elisa veebiplatvormil Elisa Stage'
 festivalDates: 10.-15. august
 festivalLocations:
