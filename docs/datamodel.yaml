@@ -135,6 +135,7 @@ Media: &Media
     clipUrl_ru: (text)
 
 WebAuthor: &WebAuthor
+    _path: /web-authors
     namePrivate: (text)
     name: *Translated
 
