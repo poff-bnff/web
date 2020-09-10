@@ -4,7 +4,17 @@ const util = require('util')
 const { resolve } = require('path')
 const yaml = require('js-yaml')
 
-const DATAMODEL = yaml.safeLoad(fs.readFileSync(__dirname + '/../docs/minimodel.yaml', 'utf8'))
+const DATAMODEL = yaml.safeLoad(fs.readFileSync(__dirname + '/../docs/datamodel.yaml', 'utf8'))
+for (const key in DATAMODEL) {
+    if (DATAMODEL.hasOwnProperty(key)) {
+        const element = DATAMODEL[key]
+        if (element.hasOwnProperty('_path')) {
+            element['_modelName'] = key
+        }
+    }
+}
+// todo:
+// luua _modelname property
 
 // console.log(__dirname);
 async function strapiAuth() {
@@ -44,7 +54,30 @@ async function strapiAuth() {
     })
 }
 
-async function strapiFetch(modelName, token){
+async function strapiFetch(domain, modelName, token){
+
+    let checkDomain = function(element){
+        // kui on domain, siis element['domains'] = [domain]
+        if (element['domain']){
+            element['domains'] = [element['domain']]
+        }
+
+        if (element['domains'] === undefined) {
+            // console.log(3);
+            return true
+        }
+
+        for(let ix in element['domains']){
+            let el = element['domains'][ix]
+            // console.log(ix, el)
+            if (el['url'] === domain){
+                console.log('domain !');
+                return true
+            }
+        }
+
+        return false
+    }
 
     if (DATAMODEL[modelName] === undefined){
         throw new Error('Model ' + modelName + ' not in data model.')
@@ -72,7 +105,14 @@ async function strapiFetch(modelName, token){
             })
             response.on('end', function () {
                 if (response.statusCode === 200) {
-                    resolve(JSON.parse(allData))
+                    let strapiData = JSON.parse(allData)
+
+                    if (!Array.isArray(strapiData)){
+                        strapiData = [strapiData]
+                    }
+
+                    strapiData = strapiData.filter(checkDomain)
+                    resolve(strapiData)
                 } else {
                     console.log(response.statusCode)
                     resolve([])
@@ -89,23 +129,90 @@ async function strapiFetch(modelName, token){
     })
 }
 
+const Compare = function (lhs, rhs, path) {
+    // console.log('<--', path)
+    // delete lhs._path
+    if (Array.isArray(lhs)) {
+        if (Array.isArray(rhs)) {
+            for (const ix in rhs) {
+                Compare(lhs[0], rhs[ix], path + '[' + ix + ']')
+            }
+        } else {
+            console.log('- Not an array:', path)
+        }
+    } else {
+        for (const key in lhs) {
+            if (key === '_path' || key === '_modelName') {
+                continue
+            }
+            let next_path = path + '.' + key
+            if (rhs === null) {
+                console.log(next_path, 'is null in data')
+                return
+            }
+            const lh_element = lhs[key]
+            if (key in rhs) {
+                console.log(key)
+                if (lh_element !== null && typeof(lh_element) === 'object' ) {
+                    Compare(lh_element, rhs[key], next_path)
+                }
+            } else {
+                console.log('path', path, 'missing', key, 'in', rhs)
+                console.log('- Missing key:', next_path)
+            }
+        }
+    }
+    // console.log('-->', path)
+}
 
 
-const foo = async () => {
+const foo = async (domain) => {
     const token = await strapiAuth()
     let strapiData = {}
-
+    try{
+    // datamodel on meie kirjeldatud andmemudel
+    // otsime sellest mudelist ühte mudelit =model
     for (const modelName in DATAMODEL) {
         if (DATAMODEL.hasOwnProperty(modelName)) {
             let model = DATAMODEL[modelName]
             if (model.hasOwnProperty('_path')) {
-                strapiData[modelName] = await strapiFetch(modelName, token)
+                let modelData = await strapiFetch(domain, modelName, token)
+                // otsime kirjet mudelis =value
+                for (const property_name in model) {
+                    if (model.hasOwnProperty(property_name)) {
+                        const value = model[property_name]
+                        // '_modelName' on üleval ise sees kirjutaud väärtus andmemudelis, mis on võrdne mudeli nimega
+                        if (value.hasOwnProperty('_modelName')) {
+                            let search_model_name = value['_modelName']
+                            // console.log('foo', search_model_name, 'in', modelName)
+                            let searchData = strapiData[search_model_name]
+                            // otsime juba olemasolevast strapi datast
+                            for (const ix in modelData) {
+                                const element = modelData[ix]
+                                if (element[property_name] !== null) {
+                                    const element_id = element[property_name]['id']
+                                    element[property_name] = searchData.find(element => element.id = element_id)
+                                    // element[property_name]['_replaced'] = true
+                                }
+                                Compare(model, element, modelName)
+                                console.log('Validated ', modelName, ix, element['id'])
+                            }
+                        }
+                    }
+                }
+                strapiData[modelName] = modelData
                 console.log('Fetched ', modelName)
             }
         }
     }
     // console.log(token)
-    console.log(util.inspect(strapiData));
+    } catch(err){
+        console.log(err)
+    }
+
+    let yamlStr = yaml.safeDump(strapiData)
+    fs.writeFileSync(__dirname + '/../docs/allStrapiData.yaml', yamlStr, 'utf8');
+
 }
 
-foo()
+foo('poff.ee')
