@@ -3,6 +3,10 @@ include /_templates/mixins.pug
 
 block content
 
+    //- SIIA ALLA KÕIK ARTIKLITÜÜBID (STRAPI "NAME" lahtri järgi) MIDA KUVADA
+    //- AINULT VÄIKETÄHTEDES!!!
+    - var whichTypesToDisplay = ['uudis'];
+
     if self.data.articles
         main.grid_articles
             - var sortFunction = function(a, b) {
@@ -20,7 +24,10 @@ block content
             - }
             each val in self.data.articles.sort(sortFunction)
                 //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
-                if val.publish
+                if val.article_types && val.article_types[0]
+                    - var articleType = val.article_types[0].name
+
+                if val.publish && whichTypesToDisplay.includes(articleType.toLowerCase())
                     - var currentTime = new Date()
                         if typeof(val.publishFrom) === 'undefined'
                             - var publishFrom= new Date(val.created_at)

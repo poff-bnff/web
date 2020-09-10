@@ -1002,7 +1002,7 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-02T07:05:15.585Z'
-    updated_at: '2020-09-06T21:37:21.107Z'
+    updated_at: '2020-09-09T06:47:34.423Z'
     title_et: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
     slug_et: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
     slug_ru: pof-fi-article-9
@@ -1090,7 +1090,7 @@
         PÖFF.
     publishFrom: '2020-08-24T09:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_ru: false
     media:
         id: 16
         imageDefault:
@@ -1149,7 +1149,7 @@
     slug: test-9-en
     lead: test 9 en lead
     contents: test 9 en cont
-    publish: true
+    publish: false
     directory: source/_fetchdir/articles_poff/test-9-en
     path: article/test-9-en
     data:
@@ -1216,16 +1216,16 @@
         firstname: Liis
         lastname: Käsper
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
     created_at: '2020-09-04T06:41:03.958Z'
-    updated_at: '2020-09-06T21:37:53.265Z'
+    updated_at: '2020-09-09T11:19:34.081Z'
     title_et: TEST33
     slug_et: pof-fi-article
     slug_ru: pof-fi-article
     publishFrom: '2020-09-01T09:00:00.000Z'
-    publish_et: false
+    publish_et: true
     article_types:
         -
             id: 2
@@ -1410,18 +1410,24 @@
         firstname: Martin
         lastname: Pennaste
     updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
+        id: 5
+        firstname: Martin
+        lastname: Pennaste
     created_at: '2020-09-02T06:20:22.339Z'
-    updated_at: '2020-09-06T21:38:03.981Z'
+    updated_at: '2020-09-09T10:53:59.266Z'
     title_et: Tartu armastusfilmide festival laieneb üle kogu Eesti
     slug_et: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
+    title_ru: 'Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ '
     slug_ru: pof-fi-article-5
     lead_et: >-
         Juba 15. korda muutub Tartu Raekoja plats Eesti suurimaks vabaõhukinoks,
         kui augusti teisel nädalal jõuab sealsele väliekraanile 11 armastusest
         kõnelevat filmi.
+    lead_ru: >-
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ 
     contents_et: >-
         Peale selle avab PÖFFi armastusfilmide festival Tartuff esimest korda ka
         virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
@@ -1464,6 +1470,15 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_ru: >-
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски Контентс по русски Контентс
+        по русски Контентс по русски Контентс по русски Контентс по русски
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски Контентс по русски Контентс
+        по русски Контентс по русски Контентс по русски Контентс по русски
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски 
     publishFrom: '2020-06-18T09:00:00.000Z'
     publishUntil: '2021-01-14T10:00:00.000Z'
     publish_et: true
@@ -1561,7 +1576,7 @@
     slug: test-en
     lead: Lead EN
     contents: Cont EN
-    publish: true
+    publish: false
     directory: source/_fetchdir/articles_poff/test-en
     path: article/test-en
     data:
@@ -1579,7 +1594,7 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-07T11:26:40.139Z'
-    updated_at: '2020-09-07T11:26:58.525Z'
+    updated_at: '2020-09-08T12:30:36.314Z'
     title_et: Pimedate Ööde filmifestival
     slug_et: pimedate-oeoede-filmifestival
     slug_ru: pof-fi-article-10
