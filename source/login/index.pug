@@ -50,11 +50,6 @@ block content
 
         contentfromStrapi.innerHTML = 'Not logged in';
 
-        function doLogin2(){
-            window.open("https://stapp.auth.us-east-2.amazoncognito.com/login?response_type=token&client_id=cc9tu60rl2v7ujl71eephljc7&redirect_uri=https://localhost:4000/articles");
-
-
-        }
 
         // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
 
@@ -69,13 +64,14 @@ block content
                 };
                 var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
                 var userData = {
-                    Username : 'username',
+                    Username : 'siimsutt@hotmail.com',
                     Pool : userPool
                 };
                 var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
                 cognitoUser.authenticateUser(authenticationDetails, {
                     onSuccess: function (result) {
                         var accessToken = result.getAccessToken().getJwtToken();
+                        console.log(accessToken);
 
                         /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
                         var idToken = result.idToken.jwtToken;
