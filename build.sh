@@ -34,7 +34,11 @@ node ./helpers/fetch_teams_from_yaml.js
 echo 'fetch_menu_from_yaml'
 node ./helpers/fetch_menu_from_yaml.js
 
-printf '\n----------        FINISHED creating separate YAML files      ----------\n\n\n'
+printf '\n----------        FINISHED creating separate YAML files      ----------\n'
+
+printf '\n----------                  Processing styles                ----------\n\n'
+node ./helpers/copy_styles_acc_to_domain.js
+printf '\n----------             Finished processing styles            ----------\n\n'
 
 node ./helpers/download_article_img.js
 node ./helpers/download_footer_img.js
