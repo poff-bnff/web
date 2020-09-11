@@ -95,8 +95,9 @@ function processData(data, lang, CreateYAML) {
 
         if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
-            // console.log(copyData[values]);
+            console.log('IF SEES: ' + domain + copyData[values]);
         }
+        console.log(copyData[values].domain.url);
     }
     CreateYAML(buffer, lang);
     // console.log(buffer);
@@ -107,8 +108,6 @@ function CreateYAML(buffer, lang) {
     let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
     // console.log(globalData);
     globalData.footer = buffer
-
-    console.log(globalData);
 
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
