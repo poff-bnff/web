@@ -6,6 +6,13 @@
 echo 'Starting'
 [ ! -d "build/assets" ] && mkdir -p build/assets
 
+
+echo 'fetch_articles_from_strapi'
+node ./helpers/fetch_articles_from_strapi.js
+
+echo 'fetch_films_from_strapi'
+node ./helpers/fetch_films_from_strapi.js
+
 echo 'fetch_labels_from_strapi'
 node ./helpers/fetch_labels_from_strapi.js
 
@@ -17,12 +24,6 @@ node ./helpers/fetch_heroarticle_from_strapi.js
 
 echo 'fetch_trioblock_from_strapi'
 node ./helpers/fetch_trioblock_from_strapi.js
-
-echo 'fetch_articles_from_strapi'
-node ./helpers/fetch_articles_from_strapi.js
-
-echo 'fetch_films_from_strapi'
-node ./helpers/fetch_films_from_strapi.js
 
 echo 'fetch_teams_from_strapi'
 node ./helpers/fetch_teams_from_strapi.js

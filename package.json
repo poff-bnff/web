@@ -20,7 +20,10 @@
     "yaml-diff": "^0.1.1"
   },
   "scripts": {
-    "dev": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml full",
+    "dev": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
+    "dev_poff": "cross-env DOMAIN=poff.ee node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
+    "dev_just": ". ./dev_just.sh",
+    "dev_shorts": ". ./dev_shorts.sh",
     "build_Poff": ". ./build_poff.sh",
     "build_just": ". ./build_just.sh",
     "build_shorts": ". ./build_shorts.sh"

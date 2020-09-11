@@ -257,10 +257,10 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (writeIndexFile) {
-        if (element.article_types != null && element.article_types[0] != null) {
+        if (element.article_types && element.article_types != null && element.article_types[0] != null) {
             var templateName = element.article_types[0].name.toLowerCase();
         }
-        if (!fs.existsSync(`source/_templates/article_${element.article_types[0].name.toLowerCase()}_index_template.pug`)){
+        if ((templateName && !fs.existsSync(`source/_templates/article_${templateName}_index_template.pug`)) || !templateName){
             var templateName = 'uudis';
         }
         fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {

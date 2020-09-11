@@ -26,6 +26,8 @@ block content
                 //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
                 if val.article_types && val.article_types[0]
                     - var articleType = val.article_types[0].name
+                else
+                    - var articleType = 'Uudis'
 
                 if val.publish && whichTypesToDisplay.includes(articleType.toLowerCase())
                     - var currentTime = new Date()

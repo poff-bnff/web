@@ -126,6 +126,9 @@ block content
 
                             if news.article_types && news.article_types[0]
                                 - var articleType = news.article_types[0].name
+                            else
+                                - var articleType = 'Uudis'
+
                             if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudis') && (articleType))
                                 - continue
                             if counter >= 5
