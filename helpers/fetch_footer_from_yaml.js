@@ -116,6 +116,7 @@ function CreateYAML(buffer, lang) {
 
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
+    console.log(`${domain}: ${sourceFolder}global.${lang}.yaml` + JSON.stringify(buffer));
 }
 
 
