@@ -1,4 +1,4 @@
-name: JUSTFILM staging -> live
+name: justfilm.inscaping.eu/
 
 on:
     release:
@@ -15,7 +15,14 @@ jobs:
             uses: fifsky/ssh-action@master
             with:
                 command: |
-                    rsync -avzr --delete domeenid/www.inscaping.eu/web/justfilm_staging/* domeenid/www.inscaping.eu/web/justfilm_live/
+                    rsync -avzr --delete domeenid/www.inscaping.eu/web/just_staging/* domeenid/www.inscaping.eu/web/just_live/
                 host: inscaping.eu
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
+
+        -
+            name: Github->Slack notification Webhook action
+            uses: craftech-io/slack-action@v1
+            with:
+                slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+            if: always()
