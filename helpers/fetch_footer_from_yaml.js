@@ -90,7 +90,6 @@ function processData(data, lang, CreateYAML) {
     let copyData = JSON.parse(JSON.stringify(data));
     let buffer = [];
     for (values in copyData) {
-        console.log(values)
 
         if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
