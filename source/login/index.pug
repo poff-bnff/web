@@ -55,8 +55,8 @@ block content
 
         function doLogin2(){
             var authenticationData = {
-                    Username : 'siimsutt@hotmail.com',
-                    Password : 'Telliskivi1!',
+                    Username : document.getElementById('loginUsername').value,
+                    Password : document.getElementById('loginPassword').value,
                 };
                 var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
                 var poolData = { UserPoolId : 'us-east-2_WrK36FZvj',
@@ -64,7 +64,7 @@ block content
                 };
                 var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
                 var userData = {
-                    Username : 'siimsutt@hotmail.com',
+                    Username : document.getElementById('loginUsername').value,
                     Pool : userPool
                 };
                 var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
