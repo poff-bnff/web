@@ -4,15 +4,19 @@ const FromStrapi = require('./strapi/FromStrapi.js');
 
 console.log('DOMAIN', process.env['DOMAIN'])
 
-var fetchFrom = 'LabelGroups';
+// FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
 
-FromStrapi.Fetch(fetchFrom, LabelsToYAMLData)
+const modelName = 'LabelGroup'
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+console.log(__dirname + '/../source/strapiData.yaml')
 
-function LabelsToYAMLData(modelName, strapiData){
-LangSelect(strapiData, 'et');
-LangSelect(strapiData, 'en');
-LangSelect(strapiData, 'ru');
+function LabelsToYAMLData(strapiData) {
+    LangSelect(strapiData, 'et')
+    LangSelect(strapiData, 'en')
+    LangSelect(strapiData, 'ru')
 }
+
+LabelsToYAMLData(strapiData[modelName])
 
 function LangSelect(strapiData, lang) {
     let data = rueten(strapiData, lang);

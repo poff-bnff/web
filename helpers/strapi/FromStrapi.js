@@ -140,7 +140,7 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
                 if (modelName in options) {
                     RefetchIfNeeded(options.modelName, strapiData, ValidateCB)
                 }
-                console.log('88' + inspect(strapiData))
+                // console.log('88' + inspect(strapiData))
                 // ValidateCB(modelName, strapiData, AfterFetchCB)  //  const Validate = function(modelName, strapiData, AfterFetchCB){
             });
             response.on('error', function (error) {
