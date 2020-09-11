@@ -1,6 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 // FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
 
@@ -100,12 +102,12 @@ function processData(data, lang, CreateYAML) {
 
 function CreateYAML(labels, lang) {
     // console.log(labels);
-    let globalData= yaml.safeLoad(fs.readFileSync(`../source/global.${lang}.yaml`, 'utf8'))
+    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
     // // console.log(globalData);
     globalData.label = labels
     // // console.log(process.cwd());
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/global.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

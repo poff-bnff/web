@@ -1,6 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 if (process.env['DOMAIN'] === 'shorts.poff.ee') {
     var fetchFrom = 'HeroArticleShorts';
@@ -115,7 +117,7 @@ function processData(data, lang, CreateYAML) {
 function CreateYAML(buffer, lang) {
     // console.log(buffer);
     let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

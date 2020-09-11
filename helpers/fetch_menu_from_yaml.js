@@ -1,6 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 if (process.env['DOMAIN'] === 'justfilm.ee') {
     var fetchFrom = 'JustFilmiMenu';
@@ -96,11 +98,11 @@ function processData(data, lang, CreateYAML) {
 
 function CreateYAML(buffer, lang) {
     // console.log(buffer);
-    let globalData= yaml.safeLoad(fs.readFileSync(`../source/global.${lang}.yaml`, 'utf8'))
+    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
     globalData.menu = buffer
 
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/global.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 
