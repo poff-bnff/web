@@ -98,10 +98,13 @@ async function strapiFetch(modelName, token){
             }
         }
 
+        process.stdout.write('Fetching ' + modelName + ' ')
+
         const request = http.request(options, (response) => {
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
+                process.stdout.write('.')
             })
             response.on('end', function () {
                 if (response.statusCode === 200) {
@@ -207,7 +210,7 @@ const foo = async () => {
                     }
                 }
                 strapiData[modelName] = modelData
-                console.log('Fetched ', modelName)
+                console.log(' done')
             }
             // if (strapiData.hasOwnProperty('Country')) {
             //     console.log(strapiData['Country'][0])
