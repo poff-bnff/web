@@ -13,8 +13,14 @@
     updated_at: '2020-09-06T14:23:20.907Z'
     domain:
         id: 1
-        created_by: 6
-        updated_by: 3
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
         created_at: '2020-08-19T10:43:32.378Z'
         updated_at: '2020-08-31T13:52:31.385Z'
         url: poff.ee
@@ -1623,5 +1629,14 @@
                     order: 1
                     roleAtTeam: Turundusjuht
     name: PÖFFi meeskond
+    domains:
+        -
+            id: 1
+            created_by: 6
+            updated_by: 3
+            created_at: '2020-08-19T10:43:32.378Z'
+            updated_at: '2020-08-31T13:52:31.385Z'
+            url: poff.ee
+            name: PÖFF
     data:
         articles: /articles.et.yaml
