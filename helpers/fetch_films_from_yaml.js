@@ -1,6 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const http = require('http');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -9,7 +11,7 @@ let allData = []; // for films view
 var dataModel = 'Film';
 
 function fetchAllData(dataModel){
-    var dirPath = "source/_fetchdir/films/";
+    var dirPath = `${sourceFolder}_fetchdir/films/`;
     deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
@@ -177,7 +179,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (copyFile) {
-        fs.copyFile(`source/_templates/film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
+        fs.copyFile(`${sourceFolder}_templates/film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
             if (err) throw err;
             // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
@@ -185,7 +187,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`source/films.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}films.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){

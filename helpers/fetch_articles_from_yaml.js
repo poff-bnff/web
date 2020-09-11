@@ -1,6 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const http = require('http');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -15,7 +17,7 @@ if (process.env['DOMAIN'] === 'justfilm.ee') {
 let allData = []; // for articles view
 
 function fetchAllData(dataModel){
-    var dirPath = "source/_fetchdir/articles/";
+    var dirPath = `${sourceFolder}_fetchdir/articles/`;
     deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
@@ -204,7 +206,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
         if (element.article_types && element.article_types != null && element.article_types[0] != null) {
             var templateName = element.article_types[0].name.toLowerCase();
         }
-        if ((templateName && !fs.existsSync(`source/_templates/article_${templateName}_index_template.pug`)) || !templateName){
+        if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
             var templateName = 'uudis';
         }
         fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
@@ -221,7 +223,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`source/articles.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}articles.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){

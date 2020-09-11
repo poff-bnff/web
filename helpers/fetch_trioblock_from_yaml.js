@@ -1,6 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 if (process.env['DOMAIN'] === 'justfilm.ee') {
     var fetchFrom = 'TrioBlockJustFilm';
@@ -135,7 +137,7 @@ function processData(data, lang, CreateYAML) {
 function CreateYAML(copyData, lang) {
     // console.log(copyData);
     let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 
