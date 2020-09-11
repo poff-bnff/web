@@ -27,7 +27,6 @@ function DataToYAMLData(strapiData){
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
     console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`);
-    console.log(strapiData);
 }
 
 function rueten(obj, lang) {
@@ -91,7 +90,7 @@ function processData(data, lang, CreateYAML) {
     let copyData = JSON.parse(JSON.stringify(data));
     let buffer = [];
     for (values in copyData) {
-        // console.log(values)
+        console.log(values)
 
         if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
