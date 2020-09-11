@@ -1,12 +1,13 @@
 
-name: dev.inscaping.eu/
+name: Build and publish staging_industry
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-    workflow_dispatch:
     push:
-        branches: [ master ]
+        branches: [ staging_industry ]
+    workflow_dispatch:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,12 +32,7 @@ jobs:
           run: npm install
 
         - name: Build Project
-        #   run: node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
-          run: . ./build.sh
-          env:
-            StrapiHost: ${{ secrets.FETCH_HOST }}
-            StrapiUserName: ${{ secrets.FETCH_USER }}
-            StrapiPassword: ${{ secrets.FETCH_KEY }}
+          run: npm run-script build
 
         - name: Copy Assets
           run: cp -R assets build/assets
@@ -49,7 +45,7 @@ jobs:
           with:
             switches: -avzr
             path: build/
-            remote_path:  '/data01/virt84398/domeenid/www.inscaping.eu/web/dev'
+            remote_path: ${{ secrets.DEPLOY_STAGING_INDUSTRY_PATH }}
             remote_host: ${{ secrets.DEPLOY_HOST }}
             remote_user: ${{ secrets.DEPLOY_USER }}
             remote_key: ${{ secrets.DEPLOY_KEY }}

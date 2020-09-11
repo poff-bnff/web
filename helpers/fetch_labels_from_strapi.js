@@ -2,6 +2,8 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
+console.log('DOMAIN', process.env['DOMAIN'])
+
 FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
 
 function LabelsToYAMLData(modelName, strapiData){
