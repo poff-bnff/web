@@ -3,7 +3,7 @@
 # node ./helpers/compile_film_pictures.js
 # node ./helpers/compile_article_pictures.js
 
-printf 'STARTING BUILD'
+echo 'STARTING BUILD'
 [ ! -d "build/assets" ] && mkdir -p build/assets
 
 echo 'Fetch strapiData.yaml from Strapi'
