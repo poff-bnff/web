@@ -144,11 +144,11 @@ const Compare = function (lhs, rhs, path) {
             if (key === '_path' || key === '_modelName') {
                 continue
             }
-            let next_path = path + '.' + key
             if (rhs === null) {
-                console.log(next_path, 'is null in data')
+                console.log(path, 'is null in data')
                 return
             }
+            let next_path = path + '.' + key
             const lh_element = lhs[key]
             if (rhs.hasOwnProperty(key)) {
                 if (lh_element !== null && typeof(lh_element) === 'object' ) {
@@ -225,7 +225,7 @@ const foo = async () => {
 
                     // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)
                     Compare(DATAMODEL[modelName], element, modelName)
-                    console.log('Validated ', modelName, ix, element['id'])
+                    // console.log('Validated ', modelName, ix, element['id'])
                 }
             }
         }
