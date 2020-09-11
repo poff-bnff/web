@@ -2,7 +2,15 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.Fetch('TrioBlockPoff', DataToYAMLData);
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var fetchFrom = 'TrioBlockJustFilm';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var fetchFrom = 'TrioBlockShorts';
+} else {
+    var fetchFrom = 'TrioBlockPoff';
+}
+
+FromStrapi.Fetch(fetchFrom, DataToYAMLData);
 
 function DataToYAMLData(modelName, strapiData){
     // console.log(strapiData[0]);
@@ -13,7 +21,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
-    console.log(`Fetching trioblock ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} trioblock ${lang} data`);
 }
 
 function rueten(obj, lang) {

@@ -1,10 +1,16 @@
-
-
 const fs = require('fs');
 const yaml = require('js-yaml');
 const http = require('http');
 
 const allLanguages = ["en", "et", "ru"];
+
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var domain = 'justfilm.ee';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var domain = 'shorts.poff.ee';
+} else {
+    var domain = 'poff.ee';
+}
 
 let allData = []; // for articles view
 
@@ -68,7 +74,7 @@ function fetchAll(token) {
 
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, callback) {
-    console.log(`Fetching teams ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} teams ${lang} data`);
 
     allData = [];
     let req = http.request(options, function(response) {
@@ -144,31 +150,33 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors) {
     // console.log(data);
     data.forEach(element => {
 
-        // rueten func. is run for each element separately instead of whole data, that is
-        // for the purpose of saving slug_en before it will be removed by rueten func.
-        element = rueten(element, lang);
+        if (element.domain && element.domain.url === domain) {
+            console.log(domain);
+            // console.log(element);
+            // rueten func. is run for each element separately instead of whole data, that is
+            // for the purpose of saving slug_en before it will be removed by rueten func.
+            element = rueten(element, lang);
 
-        // console.log(element.directory);
-        // element = rueten(element, `_${lang}`);
+            // console.log(element.directory);
+            // element = rueten(element, `_${lang}`);
 
 
 
             // let element = JSON.parse(JSON.stringify(element));
             // let aliases = []
-            let languageKeys = ['en', 'et', 'ru'];
             // element.aliases = aliases;
             // rueten(element, `_${lang}`);
             allData.push(element);
             element.data = dataFrom;
-            generateYaml(element, element, dirPath, lang, writeIndexFile)
+            generateYaml(element, dirPath, lang, writeIndexFile)
+        }
 
     });
 
 }
 
-function generateYaml(element, element, dirPath, lang, writeIndexFile){
+function generateYaml(element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
-
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`source/festival/teams.${lang}.yaml`, allDataYAML, 'utf8');
 }

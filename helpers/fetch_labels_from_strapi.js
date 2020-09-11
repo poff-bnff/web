@@ -4,7 +4,9 @@ const FromStrapi = require('./strapi/FromStrapi.js');
 
 console.log('DOMAIN', process.env['DOMAIN'])
 
-FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
+var fetchFrom = 'LabelGroups';
+
+FromStrapi.Fetch(fetchFrom, LabelsToYAMLData)
 
 function LabelsToYAMLData(modelName, strapiData){
 LangSelect(strapiData, 'et');
@@ -15,6 +17,7 @@ LangSelect(strapiData, 'ru');
 function LangSelect(strapiData, lang) {
     let data = rueten(strapiData, lang);
     processData(data, lang, CreateYAML);
+    console.log(`Fetching ${process.env['DOMAIN']} labels ${lang} data`);
 }
 
 function rueten(obj, lang) {

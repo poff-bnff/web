@@ -1,21 +1,42 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const http = require('http');
-const rimraf = require("rimraf");
 
 const allLanguages = ["en", "et", "ru"];
+
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var fetchFrom = '/just-filmi-articles';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var fetchFrom = '/shortsi-articles';
+} else {
+    var fetchFrom = '/Pof-Fi-Articles';
+}
 
 let allData = []; // for articles view
 
 function fetchAllData(options){
-    dirPath = "source/_fetchdir/articles_poff/";
-    rimraf.sync(dirPath);
+    var dirPath = "source/_fetchdir/articles/";
+    deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
     getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, options, getDataCB);
     getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, options, getDataCB);
     getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, options, getDataCB);
 }
+
+function deleteFolderRecursive(path) {
+    if( fs.existsSync(path) ) {
+        fs.readdirSync(path).forEach(function(file,index){
+            var curPath = path + "/" + file;
+            if(fs.lstatSync(curPath).isDirectory()) { // recurse
+                deleteFolderRecursive(curPath);
+            } else { // delete file
+                fs.unlinkSync(curPath);
+            }
+        });
+        fs.rmdirSync(path);
+    }
+  };
 
 function getToken() {
     let token = '';
@@ -60,7 +81,7 @@ function fetchAll(token) {
 
     let options = {
         host: process.env['StrapiHost'],
-        path: '/Pof-Fi-Articles',
+        path: fetchFrom,
         method: 'GET',
         headers: {'Authorization': 'Bearer ' + token}
     }
@@ -73,7 +94,7 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, g
 
     fs.mkdirSync(dirPath, { recursive: true })
 
-    console.log(`Fetching articles ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} articles ${lang} data`);
 
     allData = [];
     let req = http.request(options, function(response) {

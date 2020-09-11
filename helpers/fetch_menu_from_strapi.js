@@ -2,7 +2,15 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
-FromStrapi.Fetch('POFFiMenu', DataToYAMLData)
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var fetchFrom = 'JUSTFILMiMenu';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var fetchFrom = 'SHORTSiMenu';
+} else {
+    var fetchFrom = 'POFFiMenu';
+}
+
+FromStrapi.Fetch(fetchFrom, DataToYAMLData)
 
 function DataToYAMLData(modelName, strapiData){
     // console.log(strapiData);
@@ -13,7 +21,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
-    console.log(`Fetching menu ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} menu ${lang} data`);
 }
 
 function rueten(obj, lang) {

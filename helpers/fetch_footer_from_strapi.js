@@ -2,6 +2,14 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
+if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var domain = 'shorts.poff.ee';
+} else if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var domain = 'justfilm.ee';
+} else {
+    var domain = 'poff.ee';
+}
+
 FromStrapi.Fetch('Footer', DataToYAMLData)
 
 function DataToYAMLData(modelName, strapiData){
@@ -13,7 +21,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
-    console.log(`Fetching footer ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -80,7 +88,7 @@ function processData(data, lang, CreateYAML) {
     for (values in copyData) {
         // console.log(values)
 
-        if(copyData[values].namePrivate=== `PÖFF`) {
+        if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
             // console.log(copyData[values]);
         }
