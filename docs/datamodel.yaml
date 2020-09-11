@@ -601,15 +601,6 @@ TrioBlockShorts:
     trioBlockItem_1: *TrioBlockItemPoff
     trioBlockItem_2: *TrioBlockItemPoff
     trioBlockItem_3: *TrioBlockItemPoff
-    poffi_article_1: *ShotsiArticle #(Component)
-    poffi_article_2: *ShotsiArticle #(Component)
-    poffi_article_3: *ShotsiArticle #(Component)
-
-HeroArticleShorts:
-    _path: /hero-article-shorts
-
-ShortsiMenu:
-    _path: /shortsi-menus
-
-JustFilmiMenu:
-    _path: /just-filmi-menus
+    poffi_article_1: *ShortsiArticle #(Component)
+    poffi_article_2: *ShortsiArticle #(Component)
+    poffi_article_3: *ShortsiArticle #(Component)

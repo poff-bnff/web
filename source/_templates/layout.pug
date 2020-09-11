@@ -1,15 +1,49 @@
 doctype html
 html(lang='en')
 
-    include ../_templates/head.pug
+    if process.env['DOMAIN'] === 'justfilm.ee'
 
-    body
-        // HEADER
+        //- JUSTFILM
+        include ../_templates/head_justfilm.pug
 
-        include ../_templates/header.pug
+        body
+            // HEADER
 
-        // Sisu
+            include ../_templates/header_justfilm.pug
 
-        block content
-        p= 'BLA' + process.env['DOMAIN']
-        include ../_templates/footer.pug
+            // Sisu
+
+            block content
+
+            include ../_templates/footer.pug
+
+    else if process.env['DOMAIN'] === 'shorts.poff.ee'
+
+        //- SHORTS
+        include ../_templates/head_shorts.pug
+
+        body
+            // HEADER
+
+            include ../_templates/header_shorts.pug
+
+            // Sisu
+
+            block content
+
+            include ../_templates/footer.pug
+
+    else
+        //- POFF
+        include ../_templates/head_poff.pug
+
+        body
+            // HEADER
+
+            include ../_templates/header_poff.pug
+
+            // Sisu
+
+            block content
+
+            include ../_templates/footer.pug

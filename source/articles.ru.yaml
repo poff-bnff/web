@@ -1725,7 +1725,7 @@
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-11T11:24:18.903Z'
-    updated_at: '2020-09-11T11:24:19.055Z'
+    updated_at: '2020-09-11T12:19:24.124Z'
     title_et: Maailma Filmifestivalid Paluvad Ellujäämiseks Toetust
     slug_et: maailma-filmifestivalid-paluvad-ellujaeaemiseks-toetust
     slug_en: pof-fi-article-2
@@ -1772,13 +1772,64 @@
 
         24. Pimedate Ööde filmifestival leiab aset 13.–29. novembrini.
     publish_et: true
+    media:
+        id: 20
+        imageDefault:
+            -
+                id: 143
+                name: howl_landscape_web.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_howl_landscape_web_f73ecdd38c.jpg
+                        hash: thumbnail_howl_landscape_web_f73ecdd38c
+                        mime: image/jpeg
+                        name: thumbnail_howl_landscape_web.jpg
+                        size: 6.73
+                        width: 245
+                        height: 138
+                hash: howl_landscape_web_f73ecdd38c
+                ext: .jpg
+                mime: image/jpeg
+                size: 177.1
+                url: /uploads/howl_landscape_web_f73ecdd38c.jpg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-11T11:46:02.126Z'
+                updated_at: '2020-09-11T11:46:02.223Z'
+        image: []
     button:
         -
             id: 9
             text_et: Loe pöördumist
             url_et: >-
                 https://covid.fiapf.org/2020/09/01/call-in-support-to-international-film-festivals/
-    article_types: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Волк
     slug: pof-fi-article-11
     directory: source/_fetchdir/articles/pof-fi-article-2
     path: article/pof-fi-article-11
