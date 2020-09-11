@@ -6,6 +6,8 @@
 echo 'Starting'
 [ ! -d "build/assets" ] && mkdir -p build/assets
 
+echo 'Fetch from Strapi'
+node ./helpers/a_fetch.js
 
 echo 'fetch_articles_from_strapi'
 node ./helpers/fetch_articles_from_strapi.js
