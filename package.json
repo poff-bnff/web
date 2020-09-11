@@ -22,7 +22,9 @@
   },
   "scripts": {
     "dev": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml full",
-    "build": ". ./build.sh"
+    "build_Poff": ". ./build_poff.sh",
+    "build_just": ". ./build_just.sh",
+    "build_shorts": ". ./build_shorts.sh"
   },
   "repository": {
     "type": "git",
