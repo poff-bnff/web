@@ -21,6 +21,7 @@ LabelsToYAMLData(strapiData[modelName])
 function LangSelect(strapiData, lang) {
     let data = rueten(strapiData, lang);
     processData(data, lang, CreateYAML);
+    console.log(`Fetching ${process.env['DOMAIN']} labels ${lang} data`);
 }
 
 function rueten(obj, lang) {

@@ -170,7 +170,7 @@
         encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  encont 5 
         encont 5  encont 5  encont 5  encont 5  encont 5  encont 5  en
     publish: true
-    directory: source/_fetchdir/articles_poff/test-5-en
+    directory: source/_fetchdir/articles/test-5-en
     path: article/test-5-en
     data:
         pictures: /article_pictures.yaml
@@ -297,7 +297,7 @@
     lead: lead 2 en
     contents: cont 2 en
     publish: true
-    directory: source/_fetchdir/articles_poff/test-2-en
+    directory: source/_fetchdir/articles/test-2-en
     path: article/test-2-en
     data:
         pictures: /article_pictures.yaml
@@ -428,7 +428,7 @@
     lead: lead 7 en
     contents: cont 7 en
     publish: false
-    directory: source/_fetchdir/articles_poff/test7-en
+    directory: source/_fetchdir/articles/test7-en
     path: article/test7-en
     data:
         pictures: /article_pictures.yaml
@@ -597,7 +597,7 @@
     lead: lead 6 en
     contents: cont 6 en
     publish: false
-    directory: source/_fetchdir/articles_poff/test-6-en
+    directory: source/_fetchdir/articles/test-6-en
     path: article/test-6-en
     data:
         pictures: /article_pictures.yaml
@@ -811,7 +811,7 @@
     lead: lead 4 en
     contents: cont 4 en
     publish: true
-    directory: source/_fetchdir/articles_poff/test-4-en
+    directory: source/_fetchdir/articles/test-4-en
     path: article/test-4-en
     data:
         pictures: /article_pictures.yaml
@@ -985,7 +985,7 @@
     lead: lead 3 en
     contents: cont 3 en
     publish: true
-    directory: source/_fetchdir/articles_poff/test-3-en
+    directory: source/_fetchdir/articles/test-3-en
     path: article/test-3-en
     data:
         pictures: /article_pictures.yaml
@@ -1150,7 +1150,7 @@
     lead: test 9 en lead
     contents: test 9 en cont
     publish: false
-    directory: source/_fetchdir/articles_poff/test-9-en
+    directory: source/_fetchdir/articles/test-9-en
     path: article/test-9-en
     data:
         pictures: /article_pictures.yaml
@@ -1203,7 +1203,7 @@
     slug: test-artikkel-2
     lead: TEST ARTIKKEL 2
     contents: TEST ARTIKKEL 2
-    directory: source/_fetchdir/articles_poff/test-artikkel-2
+    directory: source/_fetchdir/articles/test-artikkel-2
     path: article/test-artikkel-2
     data:
         pictures: /article_pictures.yaml
@@ -1239,7 +1239,7 @@
             en: News
             ru: Новости
     slug: pof-fi-article
-    directory: source/_fetchdir/articles_poff/pof-fi-article
+    directory: source/_fetchdir/articles/pof-fi-article
     path: article/pof-fi-article
     data:
         pictures: /article_pictures.yaml
@@ -1397,7 +1397,7 @@
     lead: test 8 en lead
     contents: test 8 en cont
     publish: true
-    directory: source/_fetchdir/articles_poff/test-8-en
+    directory: source/_fetchdir/articles/test-8-en
     path: article/test-8-en
     data:
         pictures: /article_pictures.yaml
@@ -1577,7 +1577,7 @@
     lead: Lead EN
     contents: Cont EN
     publish: false
-    directory: source/_fetchdir/articles_poff/test-en
+    directory: source/_fetchdir/articles/test-en
     path: article/test-en
     data:
         pictures: /article_pictures.yaml
@@ -1708,8 +1708,131 @@
             en: About
             ru: About
     slug: pof-fi-article-1
-    directory: source/_fetchdir/articles_poff/pof-fi-article-1
+    directory: source/_fetchdir/articles/pof-fi-article-1
     path: article/pof-fi-article-1
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 14
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-11T11:24:18.903Z'
+    updated_at: '2020-09-11T12:19:24.124Z'
+    title_et: Maailma Filmifestivalid Paluvad Ellujäämiseks Toetust
+    slug_et: maailma-filmifestivalid-paluvad-ellujaeaemiseks-toetust
+    slug_ru: pof-fi-article-11
+    lead_et: >-
+        PÖFF ühines rahvusvahelise pöördumisega, milles maailma juhtivad
+        filmifestivalid kutsuvad poliitikuid üles välja töötama meetmeid, et
+        koroonaviiruse tingimustes ellu jääda.
+    contents_et: >-
+        "COVID-19 on pannud tõsisele proovile filmifestivalide ökosüsteemi
+        jätkusuutlikkuse," on kirjas pöördumises, millele on alla kirjutanud 41
+        festivali, keda on tunnustanud rahvusvaheline filmiprodutsentide
+        föderatsioon FIAPF. Pöördumist on toetanud ka hulk rahvusvahelisi
+        filmiorganisatsioone, sealhulgas Euroopa filmirežissööride föderatsioon
+        ja rahvusvahelised näitlejate ning filmilevitajate föderatsioonid.
+
+
+        Pöördumises rõhutatakse, et filmifestivalid ei ole olulised üksnes
+        rahvusvahelise filmitööstuse, vaid ka nende riikide ja piirkondade
+        kultuurilise, sotsiaalse ja majandusliku arengu seisukohast, kus nad
+        toimuvad. Näiteks toob samuti pöördumisele alla kirjutanud Cannes´i
+        filmifestival igal aastal kohalikku majandusse ligemale 200 miljonit
+        eurot.
+
+
+        Seda rolli saab pöördujate sõnul säilitada vaid siis, kui kohalikud ja
+        regionaalsed ametivõimud, sealhulgas Euroopa Liit, ulatavad
+        festivalidele abikäe ja töötavad välja strateegia, mis aitab keerulise
+        aja üle elada.
+
+
+        PÖFFi juhi Tiina Loki sõnul vajab ka PÖFF toetust rohkem kui kunagi
+        varem. „Koroonaviiruse mõju meie festivalile on kahetine. Ühelt poolt on
+        see ergutanud välja töötama midagi täiesti uut – veebiruumi, kus oleks
+        võimalik linastada filme ja suhelda filmitegijate- ja tootjatega üle
+        terve maailma ning millest kujuneks tulevikus värav ja ekspordikeskkond
+        tervele Eesti filmitööstusele ja seda toetavatele loome-, teenus- ja
+        turismimajanduse harudele. Teiselt poolt annab see meile valusa hoobi,
+        kui me kaotame eelarves olulist kohta omava piletitulu. Kui siia ei
+        saabu ka külalisi, kannatab ühtlasi festivali atmosfäär, võimalus
+        publikul ja ja filmitegijatel vahetult suhelda, saada tagasisidet… –
+        see, mis teeb festivalist festivali,” ütles ta, nimetades tänavuse
+        festivali korraldamist erakordselt närvesöövaks.
+
+
+        24. Pimedate Ööde filmifestival leiab aset 13.–29. novembrini.
+    publish_et: true
+    media:
+        id: 20
+        imageDefault:
+            -
+                id: 143
+                name: howl_landscape_web.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_howl_landscape_web_f73ecdd38c.jpg
+                        hash: thumbnail_howl_landscape_web_f73ecdd38c
+                        mime: image/jpeg
+                        name: thumbnail_howl_landscape_web.jpg
+                        size: 6.73
+                        width: 245
+                        height: 138
+                hash: howl_landscape_web_f73ecdd38c
+                ext: .jpg
+                mime: image/jpeg
+                size: 177.1
+                url: /uploads/howl_landscape_web_f73ecdd38c.jpg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-11T11:46:02.126Z'
+                updated_at: '2020-09-11T11:46:02.223Z'
+        image: []
+    button:
+        -
+            id: 9
+            text_et: Loe pöördumist
+            url_et: >-
+                https://covid.fiapf.org/2020/09/01/call-in-support-to-international-film-festivals/
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Wolf
+    slug: pof-fi-article-2
+    directory: source/_fetchdir/articles/pof-fi-article-2
+    path: article/pof-fi-article-2
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
