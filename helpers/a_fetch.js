@@ -156,7 +156,7 @@ const Compare = function (lhs, rhs, path) {
                     Compare(lh_element, rhs[key], next_path)
                 }
             } else {
-                console.log('path', path, 'missing', key, 'in', rhs)
+                console.log('path', path, 'missing', key)
                 console.log('- Missing key:', next_path)
             }
         }
