@@ -3,9 +3,9 @@ const yaml = require('js-yaml');
 const FromStrapi = require('./strapi/FromStrapi.js');
 
 if (process.env['DOMAIN'] === 'justfilm.ee') {
-    var fetchFrom = 'JUSTFILMiMenu';
+    var fetchFrom = 'JustFilmiMenu';
 } else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
-    var fetchFrom = 'SHORTSiMenu';
+    var fetchFrom = 'ShortsiMenu';
 } else {
     var fetchFrom = 'POFFiMenu';
 }
