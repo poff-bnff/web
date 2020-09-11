@@ -98,10 +98,13 @@ async function strapiFetch(modelName, token){
             }
         }
 
+        process.stdout.write('Fetching ' + modelName + ' ')
+
         const request = http.request(options, (response) => {
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
+                process.stdout.write('.')
             })
             response.on('end', function () {
                 if (response.statusCode === 200) {
@@ -146,7 +149,7 @@ const Compare = function (lhs, rhs, path) {
             }
             let next_path = path + '.' + key
             if (rhs === null) {
-                console.log(next_path, 'is null in data')
+                console.log(path, 'is null in data')
                 return
             }
             const lh_element = lhs[key]
@@ -207,7 +210,7 @@ const foo = async () => {
                     }
                 }
                 strapiData[modelName] = modelData
-                console.log('Fetched ', modelName)
+                console.log(' done')
             }
             // if (strapiData.hasOwnProperty('Country')) {
             //     console.log(strapiData['Country'][0])
@@ -225,7 +228,7 @@ const foo = async () => {
 
                     // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)
                     Compare(DATAMODEL[modelName], element, modelName)
-                    console.log('Validated ', modelName, ix, element['id'])
+                    // console.log('Validated ', modelName, ix, element['id'])
                 }
             }
         }
