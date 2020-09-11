@@ -14,7 +14,7 @@ if (process.env['DOMAIN'] === 'shorts.poff.ee') {
 
 const modelName = 'Footer'
 const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
-
+console.log(strapiData.Gender);
 DataToYAMLData(strapiData[modelName]);
 
 function DataToYAMLData(strapiData){
@@ -22,7 +22,7 @@ function DataToYAMLData(strapiData){
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
     LangSelect(strapiData, 'ru');
-    console.log(strapiData);
+    console.log('TEST: ' + __dirname + '/../source/strapiData.yaml');
 }
 
 function LangSelect(strapiData, lang) {
