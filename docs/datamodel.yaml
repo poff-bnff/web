@@ -124,11 +124,18 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
+StrapiMedia: &StrapiMedia
+    id: (number)
+
 Media: &Media
-    imageDefault: (Media)
-    image_et: (Media)
-    image_en: (Media)
-    image_ru: (Media)
+    imageDefault:
+        - *StrapiMedia
+    image_et:
+        - *StrapiMedia
+    image_en:
+        - *StrapiMedia
+    image_ru:
+        - *StrapiMedia
     clipUrlDefault: (text)
     clipUrl_et: (text)
     clipUrl_en: (text)
@@ -154,7 +161,7 @@ POFFiArticle: &POFFiArticle
     contents_et: (Rich text)
     contents_en: (Rich text)
     contents_ru: (Rich text)
-    media: *Media #(Component)
+    media: *Media
     publishFrom: (Datetime)
     publishUntil: (Datetime)
     publish_et: (boolean)
@@ -262,7 +269,12 @@ POFFiMenu: &POFFiMenu
     customUrl: *Translated #(Component)
     order: (Number)
     subMenuItem: #(Component (repeatable))
-        - *PoffiSubMenuItem
+        -   name: *Translated #(Component)
+            poffi_article: *POFFiArticle
+            order: (Number)
+            customUrl: *Translated #(Component)
+            namePrivate: (text)
+
 
 Festival: &Festival
     _path: /festivals
@@ -272,8 +284,9 @@ Festival: &Festival
     description_et: (Rich text)
     description_en: (Rich text)
     description_ru: (Rich text)
-    logo: (Media)
-    images: (Media)
+    logo: *StrapiMedia
+    images:
+        - *StrapiMedia
     clipUrl: (text)
 
 FestivalEdition: &FestivalEdition
@@ -297,9 +310,10 @@ Organisation: &Organisation
     nameTranslated: # (Component (repeatable))
         - *Translated
     description: *Translated # (Component)
-    images: (Media)
+    images:
+        - *StrapiMedia
     type: (Enumeration)
-    logo: (Media)
+    logo: *StrapiMedia
 
 ScreeningMode: &ScreeningMode
     _path: /screening-modes
@@ -339,8 +353,10 @@ Film: &Film
             - *Translated
     synopsis: *Translated #(Component)
     media: #(Component)
-        Stills: (Media)
-        Posters: (Media)
+        Stills:
+        - *StrapiMedia
+        Posters:
+        - *StrapiMedia
         Trailer: #(Component (repeatable))
             - Url: https://www.youtube.com/watch?v=NRF-Pba3QrE (Text)
               Source: YouTube (Enumeration)
@@ -391,7 +407,7 @@ Person: &Person
     _path: /people
     firstName: (text)
     lastName: (text)
-    picture: (Media)
+    picture: *StrapiMedia
     gender: *Gender
     phoneNr: (text)
     eMail: (text)
@@ -410,7 +426,8 @@ Team: &Team
       - name: *Translated
         teamMember: #(component (repeatable))
           - person: *Person
-            pictureAtTeam: (Media)
+            pictureAtTeam:
+                - *StrapiMedia
             roleAtTeam_et: (text)
             roleAtTeam_en: (text)
             roleAtTeam_ru: (text)
@@ -434,15 +451,15 @@ SocialItem: &SocialItem
     name: (text)
     url_et: (text)
     svgCode: (text)
-    svgMedia: (Media)
+    svgMedia: *StrapiMedia
     url_en: (text)
     url_ru: (text)
 
 Logo: &Logo
     url: (text)
-    imgWhite: (Media)
-    imgColour: (Media)
-    imgBlack: (Media)
+    imgWhite: *StrapiMedia
+    imgColour: *StrapiMedia
+    imgBlack: *StrapiMedia
 
 Footer:
     _path: /footers
@@ -458,7 +475,7 @@ Footer:
             - *Button
           text: #(Component (repeatable))
             - *Translated
-          image: (Media)
+          image: *StrapiMedia
           svgItem: #(Component (repeatable))
             - *SocialItem
     logosSections: #(Component (repeatable))
