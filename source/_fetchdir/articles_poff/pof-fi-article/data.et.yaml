@@ -1,0 +1,35 @@
+id: 12
+created_by:
+    id: 3
+    firstname: Liis
+    lastname: Käsper
+updated_by:
+    id: 5
+    firstname: Martin
+    lastname: Pennaste
+created_at: '2020-09-04T06:41:03.958Z'
+updated_at: '2020-09-09T11:19:34.081Z'
+slug_en: pof-fi-article
+slug_ru: pof-fi-article
+publishFrom: '2020-09-01T09:00:00.000Z'
+article_types:
+    -
+        id: 2
+        name: Uudis
+        created_by: 6
+        updated_by: 1
+        created_at: '2020-08-18T13:49:51.616Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
+        article: null
+        et: Uudised
+        en: News
+        ru: Новости
+title: TEST33
+slug: pof-fi-article
+publish: true
+directory: source/_fetchdir/articles_poff/pof-fi-article
+path: article/pof-fi-article
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.et.yaml
+    articles: /articles.et.yaml

@@ -15,13 +15,14 @@
     "install": "^0.13.0",
     "node-fetch": "^2.6.1",
     "rimraf": "^3.0.2",
+    "serve": "^11.3.2",
     "slugify": "^1.4.5",
     "xmlhttprequest": "^1.8.0",
     "yaml": "^1.10.0",
     "yaml-diff": "^0.1.1"
   },
   "scripts": {
-    "dev": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml full",
+    "dev": "serve build",
     "build_Poff": ". ./build_poff.sh",
     "build_just": ". ./build_just.sh",
     "build_shorts": ". ./build_shorts.sh"
