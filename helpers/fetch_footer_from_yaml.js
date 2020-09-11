@@ -95,9 +95,8 @@ function processData(data, lang, CreateYAML) {
 
         if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
-            console.log('IF SEES: ' + domain + copyData[values]);
         }
-        console.log(copyData[values].domain.url);
+        // console.log(copyData[values].domain.url);
     }
     CreateYAML(buffer, lang);
     // console.log(buffer);
