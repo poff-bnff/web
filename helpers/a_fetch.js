@@ -54,7 +54,7 @@ async function strapiAuth() {
     })
 }
 
-async function strapiFetch(domain, modelName, token){
+async function strapiFetch(modelName, token){
 
     let checkDomain = function(element){
         // kui on domain, siis element['domains'] = [domain]
@@ -70,8 +70,8 @@ async function strapiFetch(domain, modelName, token){
         for(let ix in element['domains']){
             let el = element['domains'][ix]
             // console.log(ix, el)
-            if (el['url'] === domain){
-                console.log('domain !');
+            if (el['url'] === process.env['DOMAIN']){
+                console.log('====================== domain !');
                 return true
             }
         }
@@ -131,7 +131,6 @@ async function strapiFetch(domain, modelName, token){
 
 const Compare = function (lhs, rhs, path) {
     // console.log('<--', path)
-    // delete lhs._path
     if (Array.isArray(lhs)) {
         if (Array.isArray(rhs)) {
             for (const ix in rhs) {
@@ -151,9 +150,9 @@ const Compare = function (lhs, rhs, path) {
                 return
             }
             const lh_element = lhs[key]
-            if (key in rhs) {
-                console.log(key)
+            if (rhs.hasOwnProperty(key)) {
                 if (lh_element !== null && typeof(lh_element) === 'object' ) {
+                    // console.log('E1', rhs[key]);
                     Compare(lh_element, rhs[key], next_path)
                 }
             } else {
@@ -166,17 +165,33 @@ const Compare = function (lhs, rhs, path) {
 }
 
 
-const foo = async (domain) => {
+const foo = async () => {
+
+    const ReplaceInModel = function(property_name, modelData, searchData) {
+        for (const ix in modelData) {
+            const element = modelData[ix]
+            if (element[property_name] !== null) {
+                let element_id = element[property_name]
+                if (element_id.hasOwnProperty('id')) {
+                    element_id = element_id['id']
+                }
+                element[property_name] = searchData.find(element => element.id === element_id)
+                // element[property_name]['_replaced'] = true
+            }
+            // console.log('E2', element)
+        }
+    }
+
     const token = await strapiAuth()
     let strapiData = {}
-    try{
     // datamodel on meie kirjeldatud andmemudel
     // otsime sellest mudelist ühte mudelit =model
     for (const modelName in DATAMODEL) {
         if (DATAMODEL.hasOwnProperty(modelName)) {
             let model = DATAMODEL[modelName]
+            // '_path' muutujas on kirjas tee andmete küsimiseks
             if (model.hasOwnProperty('_path')) {
-                let modelData = await strapiFetch(domain, modelName, token)
+                let modelData = await strapiFetch(modelName, token)
                 // otsime kirjet mudelis =value
                 for (const property_name in model) {
                     if (model.hasOwnProperty(property_name)) {
@@ -187,32 +202,38 @@ const foo = async (domain) => {
                             // console.log('foo', search_model_name, 'in', modelName)
                             let searchData = strapiData[search_model_name]
                             // otsime juba olemasolevast strapi datast
-                            for (const ix in modelData) {
-                                const element = modelData[ix]
-                                if (element[property_name] !== null) {
-                                    const element_id = element[property_name]['id']
-                                    element[property_name] = searchData.find(element => element.id = element_id)
-                                    // element[property_name]['_replaced'] = true
-                                }
-                                Compare(model, element, modelName)
-                                console.log('Validated ', modelName, ix, element['id'])
-                            }
+                            ReplaceInModel(property_name, modelData, searchData)
                         }
                     }
                 }
                 strapiData[modelName] = modelData
                 console.log('Fetched ', modelName)
             }
+            // if (strapiData.hasOwnProperty('Country')) {
+            //     console.log(strapiData['Country'][0])
+            // }
         }
     }
     // console.log(token)
-    } catch(err){
-        console.log(err)
+
+    for (const modelName in strapiData) {
+        if (strapiData.hasOwnProperty(modelName)) {
+            const modelData = strapiData[modelName]
+            for (const ix in modelData) {
+                if (modelData.hasOwnProperty(ix)) {
+                    const element = modelData[ix]
+
+                    // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)
+                    Compare(DATAMODEL[modelName], element, modelName)
+                    console.log('Validated ', modelName, ix, element['id'])
+                }
+            }
+        }
     }
 
     let yamlStr = yaml.safeDump(strapiData)
-    fs.writeFileSync(__dirname + '/../docs/allStrapiData.yaml', yamlStr, 'utf8');
+    fs.writeFileSync(__dirname + '/../source/strapiData.yaml', yamlStr, 'utf8')
 
 }
 
-foo('poff.ee')
+foo()
