@@ -352,19 +352,19 @@ ScreeningType: &ScreeningType
     validTo: (Datetime)
 
 Trailer: &Trailer
-    Url: https://www.youtube.com/watch?v=NRF-Pba3QrE (Text)
-    Source: YouTube (Enumeration)
+    url: https://www.youtube.com/watch?v=NRF-Pba3QrE (Text)
+    source: YouTube (Enumeration)
 
 QaClip: &QaClip
-    Url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
-    Type: Conversation (Enumeration)
+    url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
+    type: Conversation (Enumeration)
 
 FilmMedia: &FilmMedia
-    Stills:
+    stills:
     - *StrapiMedia
-    Posters:
+    posters:
     - *StrapiMedia
-    Trailer: #(Component (repeatable))
+    trailer: #(Component (repeatable))
         - *Trailer
     QaClip: #(Component (repeatable))
         - *QaClip
