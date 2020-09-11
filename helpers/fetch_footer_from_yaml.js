@@ -88,16 +88,15 @@ function rueten(obj, lang) {
 
 function processData(data, lang, CreateYAML) {
     let copyData = JSON.parse(JSON.stringify(data));
-    // console.log(copyData);
+    console.log('COPYDATA: ' + copyData);
     let buffer = [];
     for (values in copyData) {
         // console.log(values)
 
         if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
-            console.log('IF SEES: ' + domain + copyData[values]);
         }
-        console.log(copyData[values].domain.url);
+        // console.log(copyData[values].domain.url);
     }
     CreateYAML(buffer, lang);
     // console.log(buffer);
