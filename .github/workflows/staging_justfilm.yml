@@ -1,5 +1,5 @@
 
-name: Build and publish staging_justfilm
+name: staging.justfilm.inscaping.eu/
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -32,7 +32,7 @@ jobs:
           run: npm install
 
         - name: Build Project
-          run: npm run-script build
+          run: npm run-script build_just
 
         - name: Copy Assets
           run: cp -R assets build/assets
@@ -45,9 +45,9 @@ jobs:
           with:
             switches: -avzr
             path: build/
-            remote_path: ${{ secrets.DEPLOY_STAGING_JUSTFILM_PATH }}
-            remote_host: ${{ secrets.DEPLOY_HOST }}
-            remote_user: ${{ secrets.DEPLOY_USER }}
+            remote_path: /data01/virt84398/domeenid/www.inscaping.eu/web/just_staging
+            remote_host: inscaping.eu
+            remote_user: virt84398
             remote_key: ${{ secrets.DEPLOY_KEY }}
 
         - name: Github->Slack notification Webhook action

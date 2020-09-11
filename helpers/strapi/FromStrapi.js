@@ -4,6 +4,8 @@ const AuthStrapi = require('./AuthStrapi');
 const Validate = require('../compareStructure')
 const yaml= require('js-yaml');
 
+const { inspect } = require('util');
+
 const DATAMODEL = yaml.safeLoad(fs.readFileSync('../docs/datamodel.yaml', 'utf8'))
 const DOMAIN = 'poff.ee'
 
@@ -18,6 +20,7 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
     let dataPath = DATAMODEL[modelName]['_path']
 
     let options = {
+        modelName: modelName,
         //see võiks tulla muutujast
         host: process.env['StrapiHost'],
         // ?_limit=-1 see tagab, et strapi tagastab kogu data, mitte 100 esimest nagu on vaikimisi säte
@@ -58,7 +61,8 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
         // console.log('-->', path)
     }
 
-    let RefetchIfNeeded = function(modelName, strapiData, token, CBfunction) {
+    let RefetchIfNeeded = function(modelName, strapiData, token, ValidateCB) {
+        console.log('Refetching if needed ', modelName);
         if (DATAMODEL[modelName] === undefined){
             throw new Error('Model ' + modelName + ' not in data model.')
         }
@@ -72,7 +76,24 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
             if (! '_path' in dataModel) {
                 throw new Error ('Missing _path in model')
             }
-            fetchOne(dataPath, id, token)
+
+            for (const ix in strapiData) {
+                if (strapiData.hasOwnProperty(ix)) {
+                    const element = strapiData[ix];
+                }
+                dataPath = dataPath + '/' + element.id
+                options = {
+                    //see võiks tulla muutujast
+                    host: process.env['StrapiHost'],
+                    // ?_limit=-1 see tagab, et strapi tagastab kogu data, mitte 100 esimest nagu on vaikimisi säte
+                    path: dataPath,
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token}
+                }
+                FetchData(options)
+            }
         }
 
         ValidateCB(modelName, strapiData, AfterFetchCB)
@@ -116,7 +137,10 @@ function FromStrapi(modelName, ValidateCB, AfterFetchCB){
 
                 strapiData = strapiData.filter(checkDomain)
 
-                RefetchIfNeeded(modelName, strapiData, ValidateCB)
+                if (modelName in options) {
+                    RefetchIfNeeded(options.modelName, strapiData, ValidateCB)
+                }
+                console.log('88' + inspect(strapiData))
                 // ValidateCB(modelName, strapiData, AfterFetchCB)  //  const Validate = function(modelName, strapiData, AfterFetchCB){
             });
             response.on('error', function (error) {
