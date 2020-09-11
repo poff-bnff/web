@@ -32,7 +32,7 @@ jobs:
           run: npm install
 
         - name: Build Project
-          run: npm run-script build
+          run: npm run-script build_Poff
 
         - name: Copy Assets
           run: cp -R assets build/assets
