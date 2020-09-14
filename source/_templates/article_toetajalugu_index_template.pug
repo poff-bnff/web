@@ -6,6 +6,7 @@ include /_templates/mixins.pug
 block content
 
     if self.publish
+        h1= 'kontroll'
         - var currentTime = new Date()
             if typeof(self.publishFrom) === 'undefined'
                 - var publishFrom= new Date(self.created_at)
