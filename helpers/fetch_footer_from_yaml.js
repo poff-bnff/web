@@ -90,11 +90,12 @@ function processData(data, lang, CreateYAML) {
     let copyData = JSON.parse(JSON.stringify(data));
     let buffer = [];
     for (values in copyData) {
-
+        console.log('values', values);
+        console.log('domain', domain);
+        console.log('copydatadomeen', copyData[values].domain);
         if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
         }
-        // console.log(copyData[values].domain.url);
     }
     CreateYAML(buffer, lang);
     console.log('COPYDATA', copyData.keys());
