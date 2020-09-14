@@ -16,13 +16,13 @@
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "rimraf": "^3.0.2",
-    "serve": "^11.3.2",
     "slugify": "^1.4.5",
     "xmlhttprequest": "^1.8.0",
     "yaml": "^1.10.0",
     "yaml-diff": "^0.1.1"
   },
   "scripts": {
+    "ssg-serve": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml",
     "serve_local": "serve build",
     "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
     "build_Poff": ". ./build_poff.sh",
@@ -38,6 +38,7 @@
   },
   "homepage": "",
   "devDependencies": {
+    "serve": "^11.3.2",
     "yaml-validator": "^3.0.0"
   }
 }

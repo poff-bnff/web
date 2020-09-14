@@ -90,14 +90,16 @@ function processData(data, lang, CreateYAML) {
     let copyData = JSON.parse(JSON.stringify(data));
     let buffer = [];
     for (values in copyData) {
-
+        console.log('values', values);
+        console.log('domain', domain);
+        console.log('copydatadomeen', copyData[values].domain);
         if(copyData[values].domain.url === domain) {
             buffer = rueten(copyData[values], lang);
         }
-        // console.log(copyData[values].domain.url);
     }
     CreateYAML(buffer, lang);
-    // console.log(buffer);
+    console.log('COPYDATA', copyData.keys());
+    console.log('BUFFER', buffer);
 }
 
 function CreateYAML(buffer, lang) {
@@ -108,6 +110,7 @@ function CreateYAML(buffer, lang) {
 
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
+    console.log(`${sourceFolder}global.${lang}.yaml`);
 }
 
 

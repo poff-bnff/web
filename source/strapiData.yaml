@@ -6373,7 +6373,7 @@ Country:
         code: AE
         name_et: Araabia Ühendemiraadid
         name_en: United Arab Emirates
-        name_ru: Объединен��ые Арабские Эмираты
+        name_ru: Объединенные Арабские Эмираты
     -
         id: 1057
         Code: null
@@ -10592,10 +10592,10 @@ POFFiArticle:
         contents_ru: >-
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
-            Контентс по русски Контентс по русски Контентс ��о русски Контентс
-            по русски Контентс по русски Контентс по русски Контентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
+            Контентс по русски Контентс по русски Контентс по русски Контентс по
+            русски Контентс по русски Контентс по русски Ко��тентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски 
         publishFrom: '2020-06-18T09:00:00.000Z'
@@ -11003,7 +11003,7 @@ POFFiArticle:
             into the mix last year.
              
             Festival director Tiina Lokk commented:  „Some of the changes that
-            are being prepared will actually rewire the festival’s DNA, making
+            are being prepared will actually rewire the festival���s DNA, making
             it more digital, networked, ubiquitous and inclusive than ever
             before! But first and foremost, we are hoping to make the physical
             festival still happen this year!” she added.
@@ -11153,6 +11153,143 @@ POFFiArticle:
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
+        web_authors:
+            -
+                id: 1
+                namePrivate: Pöffihunt
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T11:27:48.489Z'
+                updated_at: '2020-09-02T11:27:48.544Z'
+                name:
+                    id: 3851
+                    et: Pöffihunt
+                    en: Wolf
+                    ru: Волк
+    -
+        id: 32
+        created_by:
+            id: 17
+            firstname: Test
+            lastname: Toimetaja
+            username: null
+        updated_by:
+            id: 17
+            firstname: Test
+            lastname: Toimetaja
+            username: null
+        created_at: '2020-09-14T09:40:30.683Z'
+        updated_at: '2020-09-14T09:40:30.931Z'
+        title_et: Test0
+        slug_et: test0
+        title_en: null
+        slug_en: pof-fi-article-4
+        title_ru: null
+        slug_ru: pof-fi-article-11
+        lead_et: Test0 Test0
+        lead_ru: null
+        lead_en: null
+        contents_et: Test0 Test0
+        contents_en: null
+        contents_ru: null
+        publishFrom: '2020-09-14T09:00:00.000Z'
+        publishUntil: null
+        publish_et: true
+        publish_en: null
+        publish_ru: null
+        media:
+            id: 29
+            clipUrlDefault: null
+            clipUrl_et: null
+            clipUrl_en: null
+            clipUrl_ru: null
+            imageDefault: []
+            image_et: []
+            image_en: []
+            image_ru: []
+        button: []
+        article_types:
+            -
+                id: 4
+                name: ToetajaLugu
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:51:35.072Z'
+                updated_at: '2020-09-02T07:50:32.835Z'
+                article: null
+                et: Toetaja lugu
+                en: Supporter Story
+                ru: История поддержки
+        tag_premiere_types:
+            -
+                id: 6
+                PremiereType_et: null
+                PremiereType_en: null
+                PremiereType_ru: null
+                created_by: 6
+                updated_by: 3
+                created_at: '2020-08-19T10:51:47.582Z'
+                updated_at: '2020-08-27T10:11:28.929Z'
+                Value_et: null
+                Value_en: null
+                Value_ru: null
+                value_et: Euroopa esilinastus
+                value_en: European premiere
+                value_ru: Европейская премьера
+                et: Euroopa esilinastus
+                en: European premiere
+                ru: Европейская премьера
+        tag_programmes:
+            -
+                id: 3
+                TagProgramme_et: null
+                TagProgramme_en: null
+                TagProgramme_ru: null
+                created_by: 6
+                updated_by: 3
+                created_at: '2020-08-19T10:54:54.776Z'
+                updated_at: '2020-08-27T10:16:02.833Z'
+                Value_et: null
+                Value_en: null
+                Value_ru: null
+                value_et: Põhivõistlusprogramm
+                value_en: Official Selection
+                value_ru: Основная конкурсная программа
+                et: Põhivõistlusprogramm
+                en: Official Selection
+                ru: Основная конкурсная программа
+        tag_genres:
+            -
+                id: 8
+                Value_et: null
+                Value_en: null
+                Value_ru: null
+                created_by: 6
+                updated_by: 3
+                created_at: '2020-08-19T10:48:21.708Z'
+                updated_at: '2020-08-27T10:05:22.300Z'
+                value_et: Joonisfilm
+                value_en: Animation
+                value_ru: Анимация
+                et: Joonisfilm
+                en: Animation
+                ru: Анимация
+        tag_keywords:
+            -
+                id: 6
+                Value_et: null
+                Value_en: null
+                Value_ru: null
+                created_by: 6
+                updated_by: 3
+                created_at: '2020-08-19T10:48:40.233Z'
+                updated_at: '2020-08-27T10:08:18.035Z'
+                value_et: MeToo
+                value_en: MeToo
+                value_ru: MeToo
+                et: MeToo
+                en: MeToo
+                ru: MeToo
         web_authors:
             -
                 id: 1
@@ -14464,13 +14601,13 @@ Film:
                 paneb.
 
                 Endine nimekas korvpallitreener saadetakse purjuspäi
-                autojuhtimise eest ühiskondlikult kasulikule tööle, mille käigus
-                on tema ülesandeks treenida kergete puuetega innukad sportlased
-                võistlusvalmis meeskonnaks. Protsessi käigus õpitakse vastakuti
-                nii elust, spordist kui iseendast. Elukogemuste ja reaalsuse
-                tajumise erinevused loovad ridamisi hirmnaljakaid, kuid ka
-                südamlikke situatsioone. Vaatajale on oluline teada, et film
-                põhineb paljuski tõestisündinud lool ning "meeskonna”
+                autojuhtimise eest ��hiskondlikult kasulikule tööle, mille
+                käigus on tema ülesandeks treenida kergete puuetega innukad
+                sportlased võistlusvalmis meeskonnaks. Protsessi käigus õpitakse
+                vastakuti nii elust, spordist kui iseendast. Elukogemuste ja
+                reaalsuse tajumise erinevused loovad ridamisi hirmnaljakaid,
+                kuid ka südamlikke situatsioone. Vaatajale on oluline teada, et
+                film põhineb paljuski tõestisündinud lool ning "meeskonna”
                 moodustavad näitlejad, kellele see on esimene ülesastumine
                 kinolinal.
             en: >-
@@ -34420,7 +34557,7 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Külaliste osakonna koordinaator
                         roleAtTeam_en: Coordinator of Guest Department
-                        roleAtTeam_ru: Координатор отдела ��о приему гостей
+                        roleAtTeam_ru: Координатор отдела по приему гостей
                         emailAtTeam: indrek.migur@poff.ee
                         phoneAtTeam: +372 58557241
                         order: 3
@@ -35403,7 +35540,7 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Industry@Tallinn külalisteosakonna assistent
                         roleAtTeam_en: Industry@Tallinn Hospitality Assistant
-                        roleAtTeam_ru: 'Ассистент от��ела по приему гостей Industry@Tallinn '
+                        roleAtTeam_ru: 'Ассистент отдела по приему гостей Industry@Tallinn '
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 7
@@ -36949,7 +37086,7 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Lühifilmide programmi juht
                         roleAtTeam_en: Short Film Programme Director
-                        roleAtTeam_ru: Программый диреткор короткометражных фильмов
+                        roleAtTeam_ru: Программый диреткор короткометражны�� фильмов
                         emailAtTeam: laurence.boyce@poff.ee
                         phoneAtTeam: +372 5698 7199
                         order: 5
@@ -38580,10 +38717,10 @@ HeroArticlePoff:
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
-                Контентс ��о русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
+                Контентс по русски Контентс по русски Ко��тентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски 
@@ -39082,10 +39219,10 @@ TrioBlockPoff:
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
-                Контентс ��о русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
+                Контентс по русски Контентс по русски Ко��тентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски 

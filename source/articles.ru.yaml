@@ -122,7 +122,7 @@
             name: Editor
     slug: pof-fi-article-14
     directory: >-
-        /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/the-goddess-of-fortune-wins-tartuff-audience-award
+        C:\dev2\web\source\_fetchdir/articles/the-goddess-of-fortune-wins-tartuff-audience-award
     path: article/pof-fi-article-14
     data:
         pictures: /article_pictures.yaml
@@ -249,7 +249,7 @@
             name: Волк
     slug: pof-fi-article-7
     publish: true
-    directory: /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/test-2-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-2-en'
     path: article/pof-fi-article-7
     data:
         pictures: /article_pictures.yaml
@@ -466,7 +466,7 @@
             name: Волк
     slug: pof-fi-article-3
     publish: true
-    directory: /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/test-4-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-4-en'
     path: article/pof-fi-article-3
     data:
         pictures: /article_pictures.yaml
@@ -635,7 +635,7 @@
             name: Волк
     slug: pof-fi-article-1
     publish: false
-    directory: /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/test-6-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-6-en'
     path: article/pof-fi-article-1
     data:
         pictures: /article_pictures.yaml
@@ -809,7 +809,7 @@
             name: Волк
     slug: pof-fi-article-6
     publish: true
-    directory: /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/test-3-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-3-en'
     path: article/pof-fi-article-6
     data:
         pictures: /article_pictures.yaml
@@ -974,7 +974,7 @@
             name: Волк
     slug: pof-fi-article-9
     publish: false
-    directory: /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/test-9-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-9-en'
     path: article/pof-fi-article-9
     data:
         pictures: /article_pictures.yaml
@@ -1145,8 +1145,7 @@
         «Тёмные ночи» в сотрудничестве с городом Тарту, Тартуским фондом кино и
         Тартуского центра креативной экономики.
     publish: true
-    directory: >-
-        /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-3
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-3'
     path: article/segodnya-v-tartu-otkryvaetsya-festival-filmov-o-lyubvi
     data:
         pictures: /article_pictures.yaml
@@ -1304,7 +1303,7 @@
             name: Волк
     slug: pof-fi-article-8
     publish: true
-    directory: /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/test-8-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-8-en'
     path: article/pof-fi-article-8
     data:
         pictures: /article_pictures.yaml
@@ -1380,8 +1379,7 @@
             en: News
             ru: Новости
     slug: pof-fi-article-4
-    directory: >-
-        /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/just-english-test
+    directory: 'C:\dev2\web\source\_fetchdir/articles/just-english-test'
     path: article/pof-fi-article-4
     data:
         pictures: /article_pictures.yaml
@@ -1554,14 +1552,14 @@
     contents: >-
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
-        по русски Контентс по русски Контентс ��о русски Контентс по русски
+        по русски Контентс по русски Контентс по русски Контентс по русски
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
-        по русски Контентс по русски Контентс по русски Контентс по русски
+        по русски Контентс по русски Ко��тентс по русски Контентс по русски
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски 
     publish: true
-    directory: /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/test-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-en'
     path: article/pof-fi-article-5
     data:
         pictures: /article_pictures.yaml
@@ -1762,7 +1760,7 @@
         added the European Film Academy Masterclasses into the mix last year.
          
         Festival director Tiina Lokk commented:  „Some of the changes that are
-        being prepared will actually rewire the festival’s DNA, making it more
+        being prepared will actually rewire the festival���s DNA, making it more
         digital, networked, ubiquitous and inclusive than ever before! But first
         and foremost, we are hoping to make the physical festival still happen
         this year!” she added.
@@ -1907,9 +1905,67 @@
         киноиндустрии получат доступ к программе фестиваля в цифровом виде на
         платформе Shift72, независимо от их географического положения.
     directory: >-
-        /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+        C:\dev2\web\source\_fetchdir/articles/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     path: >-
         article/kinorynok-tallinnskogo-kinofestivalya-tyomnye-nochi-projdet-onlajn
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
+-
+    id: 32
+    created_by:
+        id: 17
+        firstname: Test
+        lastname: Toimetaja
+    updated_by:
+        id: 17
+        firstname: Test
+        lastname: Toimetaja
+    created_at: '2020-09-14T09:40:30.683Z'
+    updated_at: '2020-09-14T09:40:30.931Z'
+    title_et: Test0
+    slug_et: test0
+    slug_en: pof-fi-article-4
+    lead_et: Test0 Test0
+    contents_et: Test0 Test0
+    publishFrom: '2020-09-14T09:00:00.000Z'
+    publish_et: true
+    media:
+        id: 29
+        image: []
+    article_types:
+        -
+            id: 4
+            name: ToetajaLugu
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-18T13:51:35.072Z'
+            updated_at: '2020-09-02T07:50:32.835Z'
+            article: null
+            et: Toetaja lugu
+            en: Supporter Story
+            ru: История поддержки
+    tag_premiere_types:
+        - Европейская премьера
+    tag_programmes:
+        - Основная конкурсная программа
+    tag_genres:
+        - Анимация
+    tag_keywords:
+        - MeToo
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Волк
+    slug: pof-fi-article-11
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-4'
+    path: article/pof-fi-article-11
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
@@ -2030,8 +2086,7 @@
             updated_at: '2020-09-02T11:27:48.544Z'
             name: Волк
     slug: pof-fi-article-2
-    directory: >-
-        /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-1
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-1'
     path: article/pof-fi-article-2
     data:
         pictures: /article_pictures.yaml
@@ -2153,8 +2208,7 @@
             updated_at: '2020-09-02T11:27:48.544Z'
             name: Волк
     slug: pof-fi-article-10
-    directory: >-
-        /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-2
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-2'
     path: article/pof-fi-article-10
     data:
         pictures: /article_pictures.yaml
@@ -2240,7 +2294,7 @@
             ru: Новости
     slug: pof-fi-article-13
     directory: >-
-        /Users/Mariann/Documents/GitHub/web/source/_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+        C:\dev2\web\source\_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
     path: article/pof-fi-article-13
     data:
         pictures: /article_pictures.yaml
