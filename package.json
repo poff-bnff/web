@@ -23,8 +23,8 @@
     "yaml-diff": "^0.1.1"
   },
   "scripts": {
-    "serve local": "serve build",
-    "rebuild local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
+    "serve_local": "serve build",
+    "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
     "build_Poff": ". ./build_poff.sh",
     "build_just": ". ./build_just.sh",
     "build_shorts": ". ./build_shorts.sh"
