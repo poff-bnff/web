@@ -16,7 +16,6 @@
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "rimraf": "^3.0.2",
-    "serve": "^11.3.2",
     "slugify": "^1.4.5",
     "xmlhttprequest": "^1.8.0",
     "yaml": "^1.10.0",
@@ -39,6 +38,7 @@
   },
   "homepage": "",
   "devDependencies": {
+    "serve": "^11.3.2",
     "yaml-validator": "^3.0.0"
   }
 }
