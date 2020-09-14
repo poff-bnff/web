@@ -124,7 +124,7 @@
         until the 22nd of August.
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/the-goddess-of-fortune-wins-tartuff-audience-award
+        C:\dev2\web\source\_fetchdir/articles/the-goddess-of-fortune-wins-tartuff-audience-award
     path: article/the-goddess-of-fortune-wins-tartuff-audience-award
     data:
         pictures: /article_pictures.yaml
@@ -251,8 +251,7 @@
     lead: lead 2 en
     contents: cont 2 en
     publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-2-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-2-en'
     path: article/test-2-en
     data:
         pictures: /article_pictures.yaml
@@ -469,9 +468,68 @@
     lead: lead 4 en
     contents: cont 4 en
     publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-4-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-4-en'
     path: article/test-4-en
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 34
+    created_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    updated_by:
+        id: 3
+        firstname: Liis
+        lastname: Käsper
+    created_at: '2020-09-14T12:07:40.816Z'
+    updated_at: '2020-09-14T12:08:09.348Z'
+    slug_et: pof-fi-article-4
+    slug_ru: pof-fi-article-15
+    lead_et: Ilma et pealkirjata
+    publish_et: true
+    publish_ru: true
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+        -
+            id: 4
+            name: ToetajaLugu
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-18T13:51:35.072Z'
+            updated_at: '2020-09-02T07:50:32.835Z'
+            article: null
+            et: Toetaja lugu
+            en: Supporter Story
+            ru: История поддержки
+        -
+            id: 5
+            name: About
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:17:53.527Z'
+            updated_at: '2020-09-01T12:17:53.548Z'
+            article: null
+            et: About
+            en: About
+            ru: About
+    title: ilma et pealkirjata
+    slug: ilma-et-pealkirjata
+    publish: true
+    directory: 'C:\dev2\web\source\_fetchdir/articles/ilma-et-pealkirjata'
+    path: article/ilma-et-pealkirjata
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -639,8 +697,7 @@
     lead: lead 6 en
     contents: cont 6 en
     publish: false
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-6-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-6-en'
     path: article/test-6-en
     data:
         pictures: /article_pictures.yaml
@@ -814,8 +871,7 @@
     lead: lead 3 en
     contents: cont 3 en
     publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-3-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-3-en'
     path: article/test-3-en
     data:
         pictures: /article_pictures.yaml
@@ -889,7 +945,7 @@
         50 aastat tagasi lahkus meie seast rahvusvaheliselt tuntumaid eesti
         kunstnikke Ülo Sooster. Lilija Vjugina „Ülo Sooster. Mees, kes kuivatas
         rätikut tuule käes” on esimene nõnda põhjalik ülevaade sellest
-        modernismi suurkujust ja tema pärandist – omamoodi rännak ajas ja
+        modernismi suurkujust ja tema pärandist �� omamoodi rännak ajas ja
         ruumis, mille võtab ette kunstniku poeg Tenno.
 
 
@@ -980,8 +1036,7 @@
     lead: test 9 en lead
     contents: test 9 en cont
     publish: false
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-9-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-9-en'
     path: article/test-9-en
     data:
         pictures: /article_pictures.yaml
@@ -1152,8 +1207,7 @@
             en: News
             ru: Новости
     slug: pof-fi-article-3
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-3
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-3'
     path: article/pof-fi-article-3
     data:
         pictures: /article_pictures.yaml
@@ -1311,88 +1365,8 @@
     lead: test 8 en lead
     contents: test 8 en cont
     publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-8-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-8-en'
     path: article/test-8-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 31
-    created_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-14T08:38:28.216Z'
-    updated_at: '2020-09-14T09:00:37.804Z'
-    slug_et: pof-fi-article-3
-    slug_ru: pof-fi-article-4
-    media:
-        id: 28
-        image:
-            -
-                id: 149
-                name: >-
-                    2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
-                    web.png
-                alternativeText: ''
-                caption: ''
-                width: 800
-                height: 450
-                formats:
-                    thumbnail:
-                        ext: .png
-                        url: >-
-                            /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                        hash: >-
-                            thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                        mime: image/png
-                        name: >-
-                            thumbnail_2020 Tartuff Closing - Dagmar Raudam,
-                            Kristiina Reidolv web.png
-                        path: null
-                        size: 68.25
-                        width: 245
-                        height: 138
-                hash: >-
-                    2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                ext: .png
-                mime: image/png
-                size: 515.58
-                url: >-
-                    /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                previewUrl: null
-                provider: local
-                provider_metadata: null
-                created_by: 11
-                updated_by: 11
-                created_at: '2020-09-13T19:45:40.785Z'
-                updated_at: '2020-09-13T19:45:40.871Z'
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    title: Just English test
-    slug: just-english-test
-    lead: lead
-    contents: contents
-    publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/just-english-test
-    path: article/just-english-test
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1571,8 +1545,87 @@
     lead: Lead EN
     contents: Cont EN
     publish: false
-    directory: /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-en
+    directory: 'C:\dev2\web\source\_fetchdir/articles/test-en'
     path: article/test-en
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 31
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 2
+        firstname: Mariann
+        lastname: Tapfer
+    created_at: '2020-09-14T08:38:28.216Z'
+    updated_at: '2020-09-14T11:10:52.404Z'
+    title_et: test
+    slug_et: pof-fi-article-3
+    slug_ru: pof-fi-article-4
+    media:
+        id: 28
+        image:
+            -
+                id: 149
+                name: >-
+                    2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
+                    web.png
+                alternativeText: ''
+                caption: ''
+                width: 800
+                height: 450
+                formats:
+                    thumbnail:
+                        ext: .png
+                        url: >-
+                            /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                        hash: >-
+                            thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                        mime: image/png
+                        name: >-
+                            thumbnail_2020 Tartuff Closing - Dagmar Raudam,
+                            Kristiina Reidolv web.png
+                        path: null
+                        size: 68.25
+                        width: 245
+                        height: 138
+                hash: >-
+                    2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                ext: .png
+                mime: image/png
+                size: 515.58
+                url: >-
+                    /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                previewUrl: null
+                provider: local
+                provider_metadata: null
+                created_by: 11
+                updated_by: 11
+                created_at: '2020-09-13T19:45:40.785Z'
+                updated_at: '2020-09-13T19:45:40.871Z'
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    title: Just English test
+    slug: just-english-test
+    lead: lead
+    contents: contents
+    publish: true
+    directory: 'C:\dev2\web\source\_fetchdir/articles/just-english-test'
+    path: article/just-english-test
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1667,11 +1720,11 @@
 
         «Я считаю, что переезд в Интернет также создаст для нас и для аудитории
         некоторые новые возможности: мы надеемся, что из нашей программы смогут
-        извлечь по��ьзу даже больше профессионалов киноиндустрии, чем раньше,
+        извлечь пользу даже больше профессионалов киноиндустрии, чем раньше,
         поскольку им не нужно будет ехать в Таллинн и они смогут получить доступ
         к контенту из любой удобной для них географической точки. Кроме того,
         при подготовке программы мы можем поиграть с различными привлекательными
-        цифровыми форматами и привлечь докладчиков, которые не смогли бы
+        цифровыми форматами и привлечь докладчиков, кот��рые не смогли бы
         посетить нас в Таллинне», - добавила Лийске.
 
 
@@ -1917,7 +1970,7 @@
         Industry@Tallinn & Baltic Event will run from the 23rd until the 27th of
         November.
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+        C:\dev2\web\source\_fetchdir/articles/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     path: >-
         article/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     data:
@@ -1931,11 +1984,11 @@
         firstname: Test
         lastname: Toimetaja
     updated_by:
-        id: 17
-        firstname: Test
-        lastname: Toimetaja
+        id: 3
+        firstname: Liis
+        lastname: Käsper
     created_at: '2020-09-14T09:40:30.683Z'
-    updated_at: '2020-09-14T09:40:30.931Z'
+    updated_at: '2020-09-14T12:05:58.987Z'
     title_et: Test0
     slug_et: test0
     slug_ru: pof-fi-article-11
@@ -1948,6 +2001,28 @@
         image: []
     article_types:
         -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+        -
+            id: 3
+            name: Intervjuu
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:50:35.561Z'
+            updated_at: '2020-08-27T13:26:22.977Z'
+            article: null
+            et: Intervjuu
+            en: Interview
+            ru: Интервю
+        -
             id: 4
             name: ToetajaLugu
             created_by: 6
@@ -1958,6 +2033,28 @@
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+        -
+            id: 5
+            name: About
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:17:53.527Z'
+            updated_at: '2020-09-01T12:17:53.548Z'
+            article: null
+            et: About
+            en: About
+            ru: About
+        -
+            id: 6
+            name: IndustryProjekt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T07:48:49.095Z'
+            updated_at: '2020-09-02T07:48:49.116Z'
+            article: null
+            et: Projekt
+            en: Project
+            ru: Проэкт
     tag_premiere_types:
         - European premiere
     tag_programmes:
@@ -1976,8 +2073,7 @@
             updated_at: '2020-09-02T11:27:48.544Z'
             name: Wolf
     slug: pof-fi-article-4
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-4
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-4'
     path: article/pof-fi-article-4
     data:
         pictures: /article_pictures.yaml
@@ -2099,8 +2195,7 @@
             updated_at: '2020-09-02T11:27:48.544Z'
             name: Wolf
     slug: pof-fi-article-1
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-1
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-1'
     path: article/pof-fi-article-1
     data:
         pictures: /article_pictures.yaml
@@ -2222,8 +2317,7 @@
             updated_at: '2020-09-02T11:27:48.544Z'
             name: Wolf
     slug: pof-fi-article-2
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-2
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-2'
     path: article/pof-fi-article-2
     data:
         pictures: /article_pictures.yaml
@@ -2311,8 +2405,86 @@
         possible qualification.
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+        C:\dev2\web\source\_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
     path: article/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 33
+    created_by:
+        id: 8
+        firstname: Jaan
+        lastname: Editor
+    updated_by:
+        id: 8
+        firstname: Jaan
+        lastname: Editor
+    created_at: '2020-09-14T11:57:04.424Z'
+    updated_at: '2020-09-14T11:57:04.610Z'
+    title_et: Test Et 14. sept
+    slug_et: test-et-14-sept
+    slug_ru: pof-fi-article-12
+    lead_et: lead test et
+    contents_et: contents test et
+    publishFrom: '2020-09-14T09:00:00.000Z'
+    publish_et: true
+    media:
+        id: 30
+        imageDefault:
+            -
+                id: 151
+                name: tove_kumu.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1130
+                height: 688
+                formats:
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_tove_kumu_569459f68e.jpg
+                        hash: thumbnail_tove_kumu_569459f68e
+                        mime: image/jpeg
+                        name: thumbnail_tove_kumu.jpg
+                        size: 9.93
+                        width: 245
+                        height: 149
+                hash: tove_kumu_569459f68e
+                ext: .jpg
+                mime: image/jpeg
+                size: 150.64
+                url: /uploads/tove_kumu_569459f68e.jpg
+                provider: local
+                created_by: 8
+                updated_by: 8
+                created_at: '2020-09-14T11:56:40.943Z'
+                updated_at: '2020-09-14T11:56:41.044Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Wolf
+    slug: pof-fi-article-5
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-5'
+    path: article/pof-fi-article-5
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
