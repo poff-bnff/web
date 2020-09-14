@@ -125,9 +125,9 @@ block content
                         .viieka_item
                             a(href= `/${lang_path}article/${ news.slug}`)
                                 .container_frame_16_9
-                                    if news.media && news.media.image[0]
+                                    if news.media && news.media.image && news.media.image[0]
                                         img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.image[0].hash}${news.media.image[0].ext}`).trio_image
-                                    else if news.media && news.media.imageDefault[0]
+                                    else if news.media && news.media.imageDefault && news.media.imageDefault[0]
                                         img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.imageDefault[0].hash}${news.media.imageDefault[0].ext}`).trio_image
                                     else
                                         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
