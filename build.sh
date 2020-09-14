@@ -28,8 +28,8 @@ node ./helpers/fetch_heroarticle_from_yaml.js
 echo 'fetch_trioblock_from_yaml'
 node ./helpers/fetch_trioblock_from_yaml.js
 
-echo 'fetch_teams_from_yaml'
-node ./helpers/fetch_teams_from_yaml.js
+# echo 'fetch_teams_from_yaml'
+# node ./helpers/fetch_teams_from_yaml.js
 
 echo 'fetch_menu_from_yaml'
 node ./helpers/fetch_menu_from_yaml.js
@@ -42,7 +42,7 @@ printf '\n----------             Finished processing styles            ---------
 
 node ./helpers/download_article_img.js
 node ./helpers/download_footer_img.js
-node ./helpers/download_teams_img.js
+# node ./helpers/download_teams_img.js
 node ./helpers/download_trioblock_img.js
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
