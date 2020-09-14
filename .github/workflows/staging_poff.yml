@@ -33,7 +33,7 @@ jobs:
 
         - name: Build Project
           run: npm run-script build_Poff
-        env:
+          env:
             StrapiHost: ${{ secrets.FETCH_HOST }}
             StrapiUserName: ${{ secrets.FETCH_USER }}
             StrapiPassword: ${{ secrets.FETCH_KEY }}
