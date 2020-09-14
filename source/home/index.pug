@@ -3,57 +3,64 @@ include /_templates/mixins.pug
 
 block content
     section.grid_hero
-
-        each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-            if mainMenuItem.subMenuItem
-                if mainMenuItem.name
-                    a= `- ${mainMenuItem.name}`
-                each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                    if subMenuItem.poffi_article
-                        a(href= `/${lang_path}article/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+        nav.main_menu
+            ul
+                each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                    if mainMenuItem.subMenuItem
+                        if mainMenuItem.name
+                            li
+                                a= `- ${mainMenuItem.name}`
+                                ul
+                        each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            if subMenuItem.poffi_article
+                                li
+                                    a(href= `/${lang_path}article/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                            else
+                                if subMenuItem.customUrl
+                                    li
+                                        a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `---> ${subMenuItem.name}`
                     else
-                        if subMenuItem.customUrl
-                            a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `---> ${subMenuItem.name}`
-            else
-                a(href= `/${lang_path}articles/`)= `- ${mainMenuItem.name}`
-
+                        li
+                            a(href= `/${lang_path}articles/`)= `- ${mainMenuItem.name}`
+        label.main_menu_toggle_label(for='main_menu_toggle')
+            span
 
 
         - var heroPlusTrioNews = []
         section.hero_head
+            if self.data.heroArticle
+                a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
+                    if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.image[0]
+                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
+                    else if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.imageDefault[0]
+                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
+                    else
+                        img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
+                    .hero_headline_box
+                        .hero_headline_box_1
+                            .hero_headline
+                                | !{self.data.heroArticle.title}
+                        .hero_headline_box_2
+                            .hero_p
+                                | !{self.data.heroArticle.lead}
 
-            a(href= `/${lang_path}article/${ self.data.heroArticle.slug}`)
-                if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.image[0]
-                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
-                else if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.imageDefault[0]
-                    img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
-                else
-                    img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
-                .hero_headline_box
-                    .hero_headline_box_1
-                        .hero_headline
-                            | !{self.data.heroArticle.title}
-                    .hero_headline_box_2
-                        .hero_p
-                            | !{self.data.heroArticle.lead}
-
-            - heroPlusTrioNews.push(self.data.heroArticle.id)
+                - heroPlusTrioNews.push(self.data.heroArticle.id)
 
 
-                //- if self.data.heroArticle.media.image[0]
-                //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
-                //- else if self.data.heroArticle.media.imageDefault[0]
-                //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
-                //- else
-                //-     img(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
-                    //- HERO ARTICLE EXAMPLE END
+                    //- if self.data.heroArticle.media.image[0]
+                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    //- else if self.data.heroArticle.media.imageDefault[0]
+                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                    //- else
+                    //-     img(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                        //- HERO ARTICLE EXAMPLE END
 
-                //- if self.data.heroArticle.media.image[0]
-                //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
-                //- else if self.data.heroArticle.media.imageDefault[0]
-                //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
-                //- else
-                //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                    //- if self.data.heroArticle.media.image[0]
+                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    //- else if self.data.heroArticle.media.imageDefault[0]
+                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                    //- else
+                    //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
 
         section.trio_block
             //- span.article_title_detailed.clr_primary= self.festivalDates
@@ -126,6 +133,9 @@ block content
 
                             if news.article_types && news.article_types[0]
                                 - var articleType = news.article_types[0].name
+                            else
+                                - var articleType = 'Uudis'
+
                             if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudis') && (articleType))
                                 - continue
                             if counter >= 5

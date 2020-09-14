@@ -40,10 +40,11 @@ function readYaml(doc) {
             for (subTeam of team.subTeam) {
                 if (subTeam.teamMember) {
                     for (teamMember of subTeam.teamMember) {
-                        if (teamMember.pictureAtTeam) {
+                        // console.log(teamMember.pictureAtTeam);
+                        if (teamMember.pictureAtTeam && teamMember.pictureAtTeam.length > 0) {
                             var imgPath = teamMember.pictureAtTeam[0].url;
                             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                        }else if (teamMember.person.picture) {
+                        } else if (teamMember.person && teamMember.person.picture) {
                             var imgPath = teamMember.person.picture.url;
                             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
                         }

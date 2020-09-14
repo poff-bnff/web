@@ -1,91 +1,57 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const http = require('http');
-const rimraf = require("rimraf");
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 const allLanguages = ["en", "et", "ru"];
 
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var dataModel = 'JustFilmiArticle';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var dataModel = 'ShortsiArticle';
+} else {
+    var dataModel = 'POFFiArticle';
+}
+
 let allData = []; // for articles view
 
-function fetchAllData(options){
-    dirPath = "source/_fetchdir/articles_poff/";
-    rimraf.sync(dirPath);
+function fetchAllData(dataModel){
+    var dirPath = `${sourceFolder}_fetchdir/articles/`;
+    deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, options, getDataCB);
-    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, options, getDataCB);
-    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, options, getDataCB);
+    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
 }
 
-function getToken() {
-    let token = '';
-
-    let requestOptions = {
-        host: process.env['StrapiHost'],
-        path: '/auth/local',
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'}
-    }
-    let requesting = http.request(requestOptions, function(response) {
-        let tokenStr = '';
-        //another chunk of data has been received, so append it to `token`
-        response.on('data', function (chunk) {
-          tokenStr += chunk;
+function deleteFolderRecursive(path) {
+    if( fs.existsSync(path) ) {
+        fs.readdirSync(path).forEach(function(file,index){
+            var curPath = path + "/" + file;
+            if(fs.lstatSync(curPath).isDirectory()) { // recurse
+                deleteFolderRecursive(curPath);
+            } else { // delete file
+                fs.unlinkSync(curPath);
+            }
         });
-        //the whole response has been received, so we just print it out here
-        response.on('end', function () {
-            let token = JSON.parse(tokenStr)
-            fetchAll(token)
-        });
-        response.on('error', function (error) {
-            console.log(error);
-        })
-    })
-    requesting.write(JSON.stringify({
-            "identifier":process.env['StrapiUserName'],
-            "password":process.env['StrapiPassword']
-        })
-    )
-    requesting.on('error', function (error) {
-        console.log(error);
-    })
-    requesting.end(function () {
-    })
-
-
-}
-
-function fetchAll(token) {
-    token = token.jwt;
-
-    let options = {
-        host: process.env['StrapiHost'],
-        path: '/Pof-Fi-Articles',
-        method: 'GET',
-        headers: {'Authorization': 'Bearer ' + token}
+        fs.rmdirSync(path);
     }
+  };
 
-    fetchAllData(options);
-}
-
-
-function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, options, getDataCB) {
+function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, dataModel, getDataCB) {
 
     fs.mkdirSync(dirPath, { recursive: true })
 
-    console.log(`Fetching articles ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} articles ${lang} data`);
 
     allData = [];
-    let req = http.request(options, function(response) {
-        let data = '';
-        response.on('data', function (chunk) {
-            data += chunk;
-        });
-        response.on('end', function () {
-            data = JSON.parse(data);
-            getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml);
-        });
-    }).end();
+
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+
+    getDataCB(data[dataModel], dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml);
+
 }
 
 function rueten(obj, lang) {
@@ -205,6 +171,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
             // rueten(element, `_${lang}`);
             allData.push(element);
             element.data = dataFrom;
+
             generateYaml(element, element, dirPath, lang, writeIndexFile)
 
         }else{
@@ -236,10 +203,10 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (writeIndexFile) {
-        if (element.article_types != null && element.article_types[0] != null) {
+        if (element.article_types && element.article_types != null && element.article_types[0] != null) {
             var templateName = element.article_types[0].name.toLowerCase();
         }
-        if (!fs.existsSync(`source/_templates/article_${element.article_types[0].name.toLowerCase()}_index_template.pug`)){
+        if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
             var templateName = 'uudis';
         }
         fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
@@ -256,7 +223,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`source/articles.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}articles.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){
@@ -265,5 +232,6 @@ function modifyData(element, key, lang){
     element[key] = finalData;
 }
 
-getToken();
+// getToken();
 
+fetchAllData(dataModel);

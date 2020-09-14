@@ -1,91 +1,51 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const http = require('http');
-const rimraf = require('rimraf');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 const allLanguages = ["en", "et", "ru"];
 
 let allData = []; // for films view
 
-function fetchAllData(options){
-    dirPath = "source/_fetchdir/films_poff/";
-    rimraf.sync(dirPath);
+var dataModel = 'Film';
+
+function fetchAllData(dataModel){
+    var dirPath = `${sourceFolder}_fetchdir/films/`;
+    deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(dirPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, options, getDataCB);
-    getData(dirPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, options, getDataCB);
-    getData(dirPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, options, getDataCB);
+    getData(dirPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
 }
 
-function getToken() {
-    let token = '';
-
-    let requestOptions = {
-        host: process.env['StrapiHost'],
-        path: '/auth/local',
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'}
-    }
-    let requesting = http.request(requestOptions, function(response) {
-        let tokenStr = '';
-        //another chunk of data has been received, so append it to `token`
-        response.on('data', function (chunk) {
-          tokenStr += chunk;
+function deleteFolderRecursive(path) {
+    if( fs.existsSync(path) ) {
+        fs.readdirSync(path).forEach(function(file,index){
+            var curPath = path + "/" + file;
+            if(fs.lstatSync(curPath).isDirectory()) { // recurse
+                deleteFolderRecursive(curPath);
+            } else { // delete file
+                fs.unlinkSync(curPath);
+            }
         });
-        //the whole response has been received, so we just print it out here
-        response.on('end', function () {
-            let token = JSON.parse(tokenStr)
-            fetchAll(token)
-        });
-        response.on('error', function (error) {
-            console.log(error);
-        })
-    })
-    requesting.write(JSON.stringify({
-            "identifier":process.env['StrapiUserName'],
-            "password":process.env['StrapiPassword']
-        })
-    )
-    requesting.on('error', function (error) {
-        console.log(error);
-    })
-    requesting.end(function () {
-    })
-
-
-}
-
-function fetchAll(token) {
-    token = token.jwt;
-
-    let options = {
-        host: process.env['StrapiHost'],
-        path: '/films',
-        method: 'GET',
-        headers: {'Authorization': 'Bearer ' + token}
+        fs.rmdirSync(path);
     }
+  };
 
-    fetchAllData(options);
-}
-
-
-function getData(dirPath, lang, copyFile, showErrors, dataFrom, options, getDataCB) {
+function getData(dirPath, lang, copyFile, showErrors, dataFrom, dataModel, getDataCB) {
 
     fs.mkdirSync(dirPath, { recursive: true })
 
-    console.log(`Fetching films ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} films ${lang} data`);
 
     allData = [];
-    let req = http.request(options, function(response) {
-        let data = '';
-        response.on('data', function (chunk) {
-            data += chunk;
-        });
-        response.on('end', function () {
-            data = JSON.parse(data);
-            getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generateYaml);
-        });
-    }).end();
+
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+
+    getDataCB(data[dataModel], dirPath, lang, copyFile, dataFrom, showErrors, generateYaml);
+
 }
 
 function rueten(obj, lang) {
@@ -212,19 +172,6 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generate
 
 }
 
-function makeCSV(obj, element, lang) {
-    // console.log(obj);
-    for (const [key, value] of Object.entries(obj)) {
-        if (value && value != '' && !value.toString().includes('[object Object]')) {
-            element[`${key}CSV`] = value.toString();
-        }else if (value && value != '') {
-            // rueten(value, `_${lang}`);
-            makeCSV(value, element, lang)
-        }
-        // console.log(`${key}: ${value}`);
-    }
-}
-
 function generateYaml(element, element, dirPath, lang, copyFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
@@ -232,7 +179,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (copyFile) {
-        fs.copyFile(`source/_templates/film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
+        fs.copyFile(`${sourceFolder}_templates/film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
             if (err) throw err;
             // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
@@ -240,7 +187,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`source/films.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}films.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){
@@ -249,5 +196,5 @@ function modifyData(element, key, lang){
     element[key] = finalData;
 }
 
-getToken();
+fetchAllData(dataModel);
 
