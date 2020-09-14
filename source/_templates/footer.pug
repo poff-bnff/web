@@ -1,12 +1,9 @@
 include /_templates/mixins.pug
 
 footer
-
-    h1 HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe
     .grid_footer_row
         .footer_row_item
             if self.footer.socialGroup
-                h1 TEST if self footer socialGroup
                 each socialGroups in self.footer.socialGroup
                     if socialGroups.name
                         p.footer_h= socialGroups.name
@@ -19,7 +16,6 @@ footer
 
 
         if self.footer.item
-            h1 TEST if self footer item
             each item in self.footer.item
                 .footer_row_item
                     if item.name && (typeof(item.name) !== 'object')
@@ -42,7 +38,6 @@ footer
 
 
     if self.footer.logosSections
-        h1 TEST if self footer logosSections
         each section in self.footer.logosSections
             if section.name && (typeof(section.name) !== 'object')
                 h1.section_headline_footer= section.name
