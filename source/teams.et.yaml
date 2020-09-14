@@ -29,7 +29,7 @@
         -
             id: 5
             order: 1
-            name: Administration
+            name: Administratsioon
             teamMember:
                 -
                     id: 6
@@ -72,7 +72,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.802Z'
                             updated_at: '2020-09-05T20:16:36.264Z'
-                    roleAtTeam_et: 'Festivali direktor, Juhatuse liige'
+                    roleAtTeam_en: 'Festival Director, Member of the Board'
                     roleAtTeam_ru: 'Член правления, Директор кинофестиваля'
                     emailAtTeam: tiina.lokk@poff.ee
                     order: 1
@@ -105,7 +105,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.802Z'
                             updated_at: '2020-09-05T20:16:36.264Z'
-                    roleAtTeam: 'Festival Director, Member of the Board'
+                    roleAtTeam: 'Festivali direktor, Juhatuse liige'
                 -
                     id: 9
                     person:
@@ -148,7 +148,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.481Z'
                             updated_at: '2020-09-05T20:16:35.864Z'
-                    roleAtTeam_et: 'Tegevjuht, Juhatuse liige'
+                    roleAtTeam_en: 'CEO, Member of the Board'
                     roleAtTeam_ru: 'Член правления, Административный директор'
                     emailAtTeam: mikk.granstrom@poff.ee
                     phoneAtTeam: +372 5300 2617
@@ -182,7 +182,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.481Z'
                             updated_at: '2020-09-05T20:16:35.864Z'
-                    roleAtTeam: 'CEO, Member of the Board'
+                    roleAtTeam: 'Tegevjuht, Juhatuse liige'
                 -
                     id: 10
                     person:
@@ -224,7 +224,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:36.200Z'
                             updated_at: '2020-09-05T20:16:36.723Z'
-                    roleAtTeam_et: Nõunik
+                    roleAtTeam_en: Advisor
                     roleAtTeam_ru: Cоветник
                     emailAtTeam: herlend.lukksepp@poff.ee
                     order: 3
@@ -257,7 +257,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:36.200Z'
                             updated_at: '2020-09-05T20:16:36.723Z'
-                    roleAtTeam: Advisor
+                    roleAtTeam: Nõunik
                 -
                     id: 11
                     person:
@@ -300,7 +300,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.018Z'
                             updated_at: '2020-09-05T20:16:35.263Z'
-                    roleAtTeam_et: Finantsnõustaja
+                    roleAtTeam_en: Financial Advisor
                     roleAtTeam_ru: Советник по финансам
                     emailAtTeam: kylli@poff.ee
                     phoneAtTeam: +372 518 8128
@@ -334,7 +334,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.018Z'
                             updated_at: '2020-09-05T20:16:35.263Z'
-                    roleAtTeam: Financial Advisor
+                    roleAtTeam: Finantsnõustaja
                 -
                     id: 12
                     person:
@@ -348,7 +348,7 @@
                         gender: 3
                         eMail: elin.laikre@poff.ee
                         firstNameLastName: Elin Laikre
-                    roleAtTeam_et: Raamatupidaja
+                    roleAtTeam_en: Accountant
                     roleAtTeam_ru: Бухгалтер
                     emailAtTeam: elin.laikre@poff.ee
                     order: 5
@@ -381,7 +381,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Accountant
+                    roleAtTeam: Raamatupidaja
                 -
                     id: 13
                     person:
@@ -424,7 +424,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:36:38.444Z'
                             updated_at: '2020-09-05T20:36:38.557Z'
-                    roleAtTeam_et: Juhatuse ja kontori assistent
+                    roleAtTeam_en: Executive and Office Assistant
                     roleAtTeam_ru: Ассистент
                     emailAtTeam: mariliis.parve@poff.ee
                     phoneAtTeam: +372 507 0980
@@ -458,11 +458,11 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:36:38.444Z'
                             updated_at: '2020-09-05T20:36:38.557Z'
-                    roleAtTeam: Executive and Office Assistant
+                    roleAtTeam: Juhatuse ja kontori assistent
         -
             id: 6
             order: 2
-            name: Programme Department
+            name: Programm
             teamMember:
                 -
                     id: 14
@@ -505,7 +505,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.802Z'
                             updated_at: '2020-09-05T20:16:36.264Z'
-                    roleAtTeam_et: Programmijuht
+                    roleAtTeam_en: Programme Director
                     roleAtTeam_ru: Программный директор
                     emailAtTeam: tiina.lokk@poff.ee
                     order: 1
@@ -538,7 +538,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.802Z'
                             updated_at: '2020-09-05T20:16:36.264Z'
-                    roleAtTeam: Programme Director
+                    roleAtTeam: Programmijuht
                 -
                     id: 15
                     person:
@@ -581,7 +581,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:34.604Z'
                             updated_at: '2020-09-05T20:16:35.023Z'
-                    roleAtTeam_et: Programmi koordinaator
+                    roleAtTeam_en: Programme Coordinator
                     roleAtTeam_ru: Программный координатор
                     emailAtTeam: triin.tramberg@poff.ee
                     phoneAtTeam: +372 502 3395
@@ -615,7 +615,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:34.604Z'
                             updated_at: '2020-09-05T20:16:35.023Z'
-                    roleAtTeam: Programme Coordinator
+                    roleAtTeam: Programmi koordinaator
                 -
                     id: 16
                     person:
@@ -658,7 +658,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:36.120Z'
                             updated_at: '2020-09-05T20:16:36.598Z'
-                    roleAtTeam_et: Programmikoordinaatori assistent
+                    roleAtTeam_en: Assistant of Programme Coordinator
                     roleAtTeam_ru: Ассистент программного координатора
                     emailAtTeam: festivalassistant@poff.ee
                     phoneAtTeam: +372 5689 0524
@@ -692,7 +692,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:36.120Z'
                             updated_at: '2020-09-05T20:16:36.598Z'
-                    roleAtTeam: Assistant of Programme Coordinator
+                    roleAtTeam: Programmikoordinaatori assistent
                 -
                     id: 17
                     person:
@@ -735,7 +735,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.129Z'
                             updated_at: '2020-09-05T20:16:35.328Z'
-                    roleAtTeam_et: Filmitõlgete koordinaator
+                    roleAtTeam_en: Coordinator of Film Translations
                     roleAtTeam_ru: Координатор перевода фильмов
                     emailAtTeam: tiiu.kraut@poff.ee
                     phoneAtTeam: +372 506 4829
@@ -769,7 +769,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.129Z'
                             updated_at: '2020-09-05T20:16:35.328Z'
-                    roleAtTeam: Coordinator of Film Translations
+                    roleAtTeam: Filmitõlgete koordinaator
                 -
                     id: 18
                     person:
@@ -812,7 +812,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.481Z'
                             updated_at: '2020-09-05T20:16:35.864Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: mikk.granstrom@poff.ee
                     phoneAtTeam: +372 5300 2617
@@ -846,7 +846,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.481Z'
                             updated_at: '2020-09-05T20:16:35.864Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 19
                     person:
@@ -889,7 +889,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.900Z'
                             updated_at: '2020-09-05T20:16:29.411Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: helmut.janes@poff.ee
                     phoneAtTeam: +372 5623 7992
@@ -923,7 +923,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.900Z'
                             updated_at: '2020-09-05T20:16:29.411Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 20
                     person:
@@ -974,7 +974,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:02.883Z'
                             updated_at: '2020-08-28T06:22:03.153Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: hannes.aava@poff.ee
                     phoneAtTeam: +372 5552 9211
@@ -1008,7 +1008,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.763Z'
                             updated_at: '2020-09-05T20:16:38.105Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 21
                     person:
@@ -1059,7 +1059,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.148Z'
                             updated_at: '2020-08-28T06:22:02.094Z'
-                    roleAtTeam_et: 'doc@poff koordinaator, Programmi koostaja'
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: tiit.tuumalu@poff.ee
                     phoneAtTeam: +372 516 4204
@@ -1093,7 +1093,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.792Z'
                             updated_at: '2020-09-05T20:16:38.111Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: 'doc@poff koordinaator, Programmi koostaja'
                 -
                     id: 22
                     person:
@@ -1136,7 +1136,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.824Z'
                             updated_at: '2020-09-05T20:16:29.323Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: laurence.boyce@poff.ee
                     phoneAtTeam: +372 5698 7199
@@ -1170,7 +1170,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.824Z'
                             updated_at: '2020-09-05T20:16:29.323Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 23
                     person:
@@ -1212,7 +1212,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.839Z'
                             updated_at: '2020-09-05T20:16:29.342Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: christoph.groener@filmfest-muenchen.de
                     order: 10
@@ -1245,7 +1245,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.839Z'
                             updated_at: '2020-09-05T20:16:29.342Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 24
                     person:
@@ -1288,7 +1288,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.861Z'
                             updated_at: '2020-09-05T20:16:29.366Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: dagmar.raudam@poff.ee
                     phoneAtTeam: +372 5308 0143
@@ -1322,7 +1322,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.861Z'
                             updated_at: '2020-09-05T20:16:29.366Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 43
                     person:
@@ -1373,7 +1373,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:34:20.215Z'
                             updated_at: '2020-08-28T06:34:20.285Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: elise.eimre@poff.ee
                     phoneAtTeam: +372 584 14828
@@ -1407,7 +1407,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.894Z'
                             updated_at: '2020-09-05T20:16:36.392Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 25
                     person:
@@ -1448,7 +1448,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.933Z'
                             updated_at: '2020-09-05T20:16:27.519Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 13
                     pictureAtTeam:
@@ -1480,7 +1480,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.933Z'
                             updated_at: '2020-09-05T20:16:27.519Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 26
                     person:
@@ -1522,7 +1522,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.932Z'
                             updated_at: '2020-09-05T20:16:27.519Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: javiergarcia.puerto@poff.ee
                     order: 14
@@ -1555,7 +1555,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.932Z'
                             updated_at: '2020-09-05T20:16:27.519Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 27
                     person:
@@ -1596,7 +1596,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.934Z'
                             updated_at: '2020-09-05T20:16:27.520Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festibal Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 15
                     pictureAtTeam:
@@ -1628,7 +1628,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.934Z'
                             updated_at: '2020-09-05T20:16:27.520Z'
-                    roleAtTeam: Festibal Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 28
                     person:
@@ -1669,7 +1669,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:27.000Z'
                             updated_at: '2020-09-05T20:16:27.592Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 16
                     pictureAtTeam:
@@ -1701,7 +1701,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:27.000Z'
                             updated_at: '2020-09-05T20:16:27.592Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 29
                     person:
@@ -1745,7 +1745,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.818Z'
                             updated_at: '2020-09-05T20:16:27.373Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 17
                     pictureAtTeam:
@@ -1780,7 +1780,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:26.818Z'
                             updated_at: '2020-09-05T20:16:27.373Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 30
                     person:
@@ -1821,7 +1821,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:27.069Z'
                             updated_at: '2020-09-05T20:16:27.652Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 18
                     pictureAtTeam:
@@ -1853,7 +1853,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:27.069Z'
                             updated_at: '2020-09-05T20:16:27.652Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 31
                     person:
@@ -1894,7 +1894,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.153Z'
                             updated_at: '2020-09-05T20:16:25.641Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 19
                     pictureAtTeam:
@@ -1926,7 +1926,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.153Z'
                             updated_at: '2020-09-05T20:16:25.641Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 32
                     person:
@@ -1968,7 +1968,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.231Z'
                             updated_at: '2020-09-05T20:16:25.714Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: anna.arutyunova@poff.ee
                     order: 20
@@ -2001,7 +2001,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.231Z'
                             updated_at: '2020-09-05T20:16:25.714Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 33
                     person:
@@ -2043,7 +2043,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.106Z'
                             updated_at: '2020-09-05T20:16:25.595Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Fesrival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: edvinas.puksta@poff.ee
                     order: 21
@@ -2076,7 +2076,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.106Z'
                             updated_at: '2020-09-05T20:16:25.595Z'
-                    roleAtTeam: Fesrival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 34
                     person:
@@ -2118,7 +2118,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.097Z'
                             updated_at: '2020-09-05T20:16:25.580Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: 24fpsverite@gmail.com
                     order: 22
@@ -2151,7 +2151,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.097Z'
                             updated_at: '2020-09-05T20:16:25.580Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 35
                     person:
@@ -2193,7 +2193,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.059Z'
                             updated_at: '2020-09-05T20:16:25.560Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: adamgregorycook@gmail.com
                     phoneAtTeam: +164 7773 3246
@@ -2227,7 +2227,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:25.059Z'
                             updated_at: '2020-09-05T20:16:25.560Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 36
                     person:
@@ -2269,8 +2269,8 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:24.963Z'
                             updated_at: '2020-09-05T20:16:25.410Z'
-                    roleAtTeam_et: Programmi koostaja
-                    roleAtTeam_ru: Составитель программы
+                    roleAtTeam_en: Festival Programmer
+                    roleAtTeam_ru: Составит��ль программы
                     emailAtTeam: Clandsberger5@gmail.com
                     phoneAtTeam: ' + 316 8542 1422'
                     order: 24
@@ -2303,7 +2303,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:24.963Z'
                             updated_at: '2020-09-05T20:16:25.410Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 37
                     person:
@@ -2344,7 +2344,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:23.381Z'
                             updated_at: '2020-09-05T20:16:23.891Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 25
                     pictureAtTeam:
@@ -2376,7 +2376,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:23.381Z'
                             updated_at: '2020-09-05T20:16:23.891Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 38
                     person:
@@ -2417,7 +2417,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:23.261Z'
                             updated_at: '2020-09-05T20:16:23.747Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 26
                     pictureAtTeam:
@@ -2449,7 +2449,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:23.261Z'
                             updated_at: '2020-09-05T20:16:23.747Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 39
                     person:
@@ -2490,7 +2490,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:23.195Z'
                             updated_at: '2020-09-05T20:16:23.678Z'
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 27
                     pictureAtTeam:
@@ -2522,7 +2522,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:23.195Z'
                             updated_at: '2020-09-05T20:16:23.678Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 42
                     person:
@@ -2565,7 +2565,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.685Z'
                             updated_at: '2020-09-05T20:16:02.355Z'
-                    roleAtTeam_et: KinoFF produtsent
+                    roleAtTeam_en: Producer of KinoFF
                     roleAtTeam_ru: Продюсер KinoFF
                     order: 28
                     pictureAtTeam:
@@ -2597,7 +2597,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.685Z'
                             updated_at: '2020-09-05T20:16:02.355Z'
-                    roleAtTeam: Producer of KinoFF
+                    roleAtTeam: KinoFF produtsent
                 -
                     id: 40
                     person:
@@ -2610,7 +2610,7 @@
                         lastName: Möllman
                         gender: 2
                         firstNameLastName: Mihkel Möllman
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 29
                     pictureAtTeam:
@@ -2642,11 +2642,11 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
         -
             id: 7
             order: 3
-            name: 'Marketing and Communication Department, Partners Relations'
+            name: 'Turundus ja kommunikatsioon, partnersuhted'
             teamMember:
                 -
                     id: 41
@@ -2699,7 +2699,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:02.967Z'
                             updated_at: '2020-08-28T06:22:03.216Z'
-                    roleAtTeam_et: Turundusjuht
+                    roleAtTeam_en: Head of Marketing
                     roleAtTeam_ru: Директор по м��ркетингу
                     emailAtTeam: maria.plees@poff.ee
                     phoneAtTeam: +372 56 606 236
@@ -2733,7 +2733,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:38.266Z'
                             updated_at: '2020-09-05T20:16:38.333Z'
-                    roleAtTeam: Head of Marketing
+                    roleAtTeam: Turundusjuht
                 -
                     id: 44
                     person:
@@ -2784,7 +2784,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:02.883Z'
                             updated_at: '2020-08-28T06:22:03.153Z'
-                    roleAtTeam_et: Pressi- ja kommunikatsioonijuht
+                    roleAtTeam_en: Head of Communications and Press Department
                     roleAtTeam_ru: Директор по связям с общественностью
                     emailAtTeam: hannes.aava@poff.ee
                     phoneAtTeam: +372 5552 9211
@@ -2818,7 +2818,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.763Z'
                             updated_at: '2020-09-05T20:16:38.105Z'
-                    roleAtTeam: Head of Communications and Press Department
+                    roleAtTeam: Pressi- ja kommunikatsioonijuht
                 -
                     id: 45
                     person:
@@ -2869,7 +2869,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.261Z'
                             updated_at: '2020-08-28T06:22:02.129Z'
-                    roleAtTeam_et: Partnersuhete juht
+                    roleAtTeam_en: Head of Sponsor Relations
                     roleAtTeam_ru: Директор по партнерским отношениям
                     emailAtTeam: elina.kask@poff.ee
                     phoneAtTeam: +372 501 3478
@@ -2903,7 +2903,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.659Z'
                             updated_at: '2020-09-05T20:16:38.053Z'
-                    roleAtTeam: Head of Sponsor Relations
+                    roleAtTeam: Partnersuhete juht
                 -
                     id: 46
                     person:
@@ -2954,7 +2954,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.148Z'
                             updated_at: '2020-08-28T06:22:02.094Z'
-                    roleAtTeam_et: Eestikeelse kommunikatsiooni koordinaator
+                    roleAtTeam_en: Communication Coordinator for Estonian Speaking Audience
                     roleAtTeam_ru: Координатор эстоноязычной коммуникации
                     emailAtTeam: tiit.tuumalu@poff.ee
                     phoneAtTeam: +372 516 4204
@@ -2988,7 +2988,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.792Z'
                             updated_at: '2020-09-05T20:16:38.111Z'
-                    roleAtTeam: Communication Coordinator for Estonian Speaking Audience
+                    roleAtTeam: Eestikeelse kommunikatsiooni koordinaator
                 -
                     id: 47
                     person:
@@ -3031,7 +3031,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.814Z'
                             updated_at: '2020-09-05T20:15:59.452Z'
-                    roleAtTeam_et: Turunduse koordinaator
+                    roleAtTeam_en: Marketing Coordinator
                     roleAtTeam_ru: Координатор маркетинга
                     emailAtTeam: rebecca.andreas@poff.ee
                     phoneAtTeam: +372 501 3626
@@ -3065,7 +3065,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.814Z'
                             updated_at: '2020-09-05T20:15:59.452Z'
-                    roleAtTeam: Marketing Coordinator
+                    roleAtTeam: Turunduse koordinaator
                 -
                     id: 48
                     person:
@@ -3116,7 +3116,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.261Z'
                             updated_at: '2020-08-28T06:22:02.042Z'
-                    roleAtTeam_et: Sotsiaalmeedia koordinaator
+                    roleAtTeam_en: Social Media Coordinator
                     roleAtTeam_ru: Координатор социальных медиа
                     emailAtTeam: ana.falcon@poff.ee
                     order: 6
@@ -3149,7 +3149,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.094Z'
                             updated_at: '2020-09-05T20:16:37.680Z'
-                    roleAtTeam: Social Media Coordinator
+                    roleAtTeam: Sotsiaalmeedia koordinaator
                 -
                     id: 49
                     person:
@@ -3200,7 +3200,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.343Z'
                             updated_at: '2020-08-28T06:22:02.198Z'
-                    roleAtTeam_et: Pressi koordinaator
+                    roleAtTeam_en: Press Coordinator
                     roleAtTeam_ru: Координатор прессы
                     emailAtTeam: annaliiza.izbas@poff.ee
                     phoneAtTeam: +372 518 0659
@@ -3244,7 +3244,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.343Z'
                             updated_at: '2020-08-28T06:22:02.198Z'
-                    roleAtTeam: Press Coordinator
+                    roleAtTeam: Pressi koordinaator
                 -
                     id: 50
                     person:
@@ -3295,7 +3295,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:00.976Z'
                             updated_at: '2020-08-28T06:22:01.928Z'
-                    roleAtTeam_et: Venekeelse kommunikatsiooni koorinaator
+                    roleAtTeam_en: Communication Coordinaator for Russian Speaking Audience
                     roleAtTeam_ru: Координатор русскоязычной коммуникации
                     emailAtTeam: jaana.kalinistova@poff.ee
                     order: 8
@@ -3328,7 +3328,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:36.219Z'
                             updated_at: '2020-09-05T20:16:36.772Z'
-                    roleAtTeam: Communication Coordinaator for Russian Speaking Audience
+                    roleAtTeam: Venekeelse kommunikatsiooni koorinaator
                 -
                     id: 51
                     person:
@@ -3379,7 +3379,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:34:20.215Z'
                             updated_at: '2020-08-28T06:34:20.285Z'
-                    roleAtTeam_et: PÖFFi kodulehe toimetaja & koordinator
+                    roleAtTeam_en: PÖFF website editor & coordinator
                     roleAtTeam_ru: Редактор и координатор сайта PÖFF
                     emailAtTeam: elise.eimre@poff.ee
                     phoneAtTeam: +372 5841 4828
@@ -3413,7 +3413,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.894Z'
                             updated_at: '2020-09-05T20:16:36.392Z'
-                    roleAtTeam: PÖFF website editor & coordinator
+                    roleAtTeam: PÖFFi kodulehe toimetaja & koordinator
                 -
                     id: 52
                     person:
@@ -3426,7 +3426,7 @@
                         lastName: Lilloja
                         gender: 3
                         firstNameLastName: Anna Lilloja
-                    roleAtTeam_et: poff.ee blogija
+                    roleAtTeam_en: poff.ee blogger
                     roleAtTeam_ru: блогер poff.ee
                     order: 10
                     pictureAtTeam:
@@ -3458,7 +3458,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: poff.ee blogger
+                    roleAtTeam: poff.ee blogija
                 -
                     id: 53
                     person:
@@ -3509,7 +3509,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.399Z'
                             updated_at: '2020-08-28T06:22:02.264Z'
-                    roleAtTeam_et: Videokunstnik
+                    roleAtTeam_en: Video Artist
                     roleAtTeam_ru: Видеохудожник
                     order: 11
                     pictureAtTeam:
@@ -3541,11 +3541,11 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.204Z'
                             updated_at: '2020-09-05T20:16:37.789Z'
-                    roleAtTeam: Video Artist
+                    roleAtTeam: Videokunstnik
         -
             id: 10
             order: 4
-            name: Events
+            name: Üritused
             teamMember:
                 -
                     id: 55
@@ -3597,7 +3597,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:22:01.261Z'
                             updated_at: '2020-08-28T06:22:02.129Z'
-                    roleAtTeam_et: Ürituste peaprodutsent
+                    roleAtTeam_en: Event Executive Producer
                     roleAtTeam_ru: Генеральный продюсер мероприятий
                     emailAtTeam: elina.kask@poff.ee
                     phoneAtTeam: +372 501 3478
@@ -3631,11 +3631,11 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:37.659Z'
                             updated_at: '2020-09-05T20:16:38.053Z'
-                    roleAtTeam: Event Executive Producer
+                    roleAtTeam: Ürituste peaprodutsent
         -
             id: 11
             order: 5
-            name: Production
+            name: Produktsioon
             teamMember:
                 -
                     id: 58
@@ -3679,7 +3679,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:21.615Z'
                             updated_at: '2020-09-05T20:16:22.099Z'
-                    roleAtTeam_et: Produktsiooni juht
+                    roleAtTeam_en: Production Manager
                     roleAtTeam_ru: Руководитель производства
                     emailAtTeam: olari.oja@poff.ee
                     phoneAtTeam: +372 5866 5583
@@ -3713,7 +3713,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:21.615Z'
                             updated_at: '2020-09-05T20:16:22.099Z'
-                    roleAtTeam: Production Manager
+                    roleAtTeam: Produktsiooni juht
                 -
                     id: 59
                     person:
@@ -3756,7 +3756,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.660Z'
                             updated_at: '2020-09-05T20:15:59.324Z'
-                    roleAtTeam_et: Produktsiooni koordinaator
+                    roleAtTeam_en: Production Coordinator
                     roleAtTeam_ru: Координатор производства
                     emailAtTeam: kalev.smidt@poff.ee
                     phoneAtTeam: +372 5341 4787
@@ -3790,7 +3790,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.660Z'
                             updated_at: '2020-09-05T20:15:59.324Z'
-                    roleAtTeam: Production Coordinator
+                    roleAtTeam: Produktsiooni koordinaator
                 -
                     id: 60
                     person:
@@ -3833,7 +3833,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:21.598Z'
                             updated_at: '2020-09-05T20:16:22.081Z'
-                    roleAtTeam_et: IT-koordinaator
+                    roleAtTeam_en: IT coordinator
                     roleAtTeam_ru: ИТ-координатор
                     emailAtTeam: henri.pill@poff.ee
                     phoneAtTeam: +372 5699 7298
@@ -3867,7 +3867,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:21.598Z'
                             updated_at: '2020-09-05T20:16:22.081Z'
-                    roleAtTeam: IT coordinator
+                    roleAtTeam: IT-koordinaator
                 -
                     id: 61
                     person:
@@ -3910,7 +3910,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.406Z'
                             updated_at: '2020-09-05T20:15:59.091Z'
-                    roleAtTeam_et: Black Carpeti tehniline produtsent
+                    roleAtTeam_en: Black Carpet technical producer
                     roleAtTeam_ru: Технический производитель Black Carpet
                     emailAtTeam: hendri.parrol@poff.ee
                     phoneAtTeam: +372 5190 6255
@@ -3944,7 +3944,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.406Z'
                             updated_at: '2020-09-05T20:15:59.091Z'
-                    roleAtTeam: Black Carpet technical producer
+                    roleAtTeam: Black Carpeti tehniline produtsent
                 -
                     id: 62
                     person:
@@ -3987,12 +3987,12 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.797Z'
                             updated_at: '2020-09-05T20:15:59.439Z'
-                    roleAtTeam_et: Ehituste koordinaator
+                    roleAtTeam_en: Construction Coordinator
                     roleAtTeam_ru: Координатор строительства
                     emailAtTeam: uku.talmar@poff.ee
                     phoneAtTeam: +372 5623 6372
                     order: 5
-                    roleAtTeam: Construction Coordinator
+                    roleAtTeam: Ehituste koordinaator
                 -
                     id: 63
                     person:
@@ -4035,7 +4035,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:20.858Z'
                             updated_at: '2020-09-05T20:16:21.572Z'
-                    roleAtTeam_et: Festivali informatsiooni süsteemi konsultant
+                    roleAtTeam_en: Festival information system Consultant
                     roleAtTeam_ru: Консультант по инфосистеме фестиваля
                     emailAtTeam: jurgen.peil@poff.ee
                     phoneAtTeam: +372 525 2870
@@ -4069,7 +4069,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:20.858Z'
                             updated_at: '2020-09-05T20:16:21.572Z'
-                    roleAtTeam: Festival information system Consultant
+                    roleAtTeam: Festivali informatsiooni süsteemi konsultant
                 -
                     id: 64
                     person:
@@ -4082,7 +4082,7 @@
                         lastName: Koppel
                         gender: 3
                         firstNameLastName: Heidi Koppel
-                    roleAtTeam_et: Festivali informatsiooni süsteemi konsultant
+                    roleAtTeam_en: Festival Information System Consultant
                     roleAtTeam_ru: Консультант по инфосистеме фествиаля
                     order: 7
                     pictureAtTeam:
@@ -4114,11 +4114,11 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Festival Information System Consultant
+                    roleAtTeam: Festivali informatsiooni süsteemi konsultant
         -
             id: 12
             order: 6
-            name: Digital Cinema
+            name: Digitaalne kino
             teamMember:
                 -
                     id: 65
@@ -4162,7 +4162,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.826Z'
                             updated_at: '2020-09-05T20:16:19.450Z'
-                    roleAtTeam_et: Digitaalse kino juht
+                    roleAtTeam_en: Digital Cinema Manager
                     roleAtTeam_ru: Менеджер цифрового кино
                     emailAtTeam: rasmus.puksmann@poff.ee
                     phoneAtTeam: +372 5393 7092
@@ -4196,7 +4196,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.826Z'
                             updated_at: '2020-09-05T20:16:19.450Z'
-                    roleAtTeam: Digital Cinema Manager
+                    roleAtTeam: Digitaalse kino juht
                 -
                     id: 66
                     person:
@@ -4211,7 +4211,7 @@
                         phoneNr: +372 5398 1762
                         eMail: Maria.joela@poff.ee
                         firstNameLastName: Maria Jõela
-                    roleAtTeam_et: Subtitreerijate koordinaator
+                    roleAtTeam_en: Coordinator of Subtitlers
                     roleAtTeam_ru: Координатор субтитров
                     emailAtTeam: Maria.joela@poff.ee
                     phoneAtTeam: +372 5398 1762
@@ -4245,15 +4245,15 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Coordinator of Subtitlers
+                    roleAtTeam: Subtitreerijate koordinaator
         -
             id: 13
             order: 7
-            name: Guest Department
+            name: Külalised
             teamMember:
                 -
                     id: 67
-                    roleAtTeam_et: Industry@Tallinn külaliste osakonna juht
+                    roleAtTeam_en: Manager of Guest Department
                     roleAtTeam_ru: Руководитель ��тдела по приему гостей Industry@Tallinn
                     emailAtTeam: maria.suurvali@poff.ee
                     phoneAtTeam: +372 514 2229
@@ -4287,7 +4287,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.762Z'
                             updated_at: '2020-09-05T20:16:19.347Z'
-                    roleAtTeam: Manager of Guest Department
+                    roleAtTeam: Industry@Tallinn külaliste osakonna juht
                 -
                     id: 68
                     person:
@@ -4330,7 +4330,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.861Z'
                             updated_at: '2020-09-05T20:16:29.366Z'
-                    roleAtTeam_et: Külaliste osakonna juht
+                    roleAtTeam_en: Head of the Film Guests Hospitality Department
                     roleAtTeam_ru: Руководитель отдела по приему гостей
                     emailAtTeam: dagmar.raudam@poff.ee
                     phoneAtTeam: +372 5308 0143
@@ -4364,10 +4364,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.861Z'
                             updated_at: '2020-09-05T20:16:29.366Z'
-                    roleAtTeam: Head of the Film Guests Hospitality Department
+                    roleAtTeam: Külaliste osakonna juht
                 -
                     id: 69
-                    roleAtTeam_et: Külaliste osakonna koordinaator
+                    roleAtTeam_en: Coordinator of Guest Department
                     roleAtTeam_ru: Координатор отдела по приему гостей
                     emailAtTeam: indrek.migur@poff.ee
                     phoneAtTeam: +372 58557241
@@ -4401,10 +4401,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.773Z'
                             updated_at: '2020-09-05T20:16:19.355Z'
-                    roleAtTeam: Coordinator of Guest Department
+                    roleAtTeam: Külaliste osakonna koordinaator
                 -
                     id: 70
-                    roleAtTeam_et: Külaliste osakonna assistent
+                    roleAtTeam_en: Assistant of Guest Department
                     roleAtTeam_ru: Ассистент отдела по приему гостей
                     emailAtTeam: kart.paju@poff.ee
                     order: 4
@@ -4437,12 +4437,12 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.870Z'
                             updated_at: '2020-09-05T20:16:19.569Z'
-                    roleAtTeam: Assistant of Guest Department
+                    roleAtTeam: Külaliste osakonna assistent
                 -
                     id: 77
                 -
                     id: 130
-                    roleAtTeam_et: Külaliste Koordinaator
+                    roleAtTeam_en: Industry Guest Coordinator
                     roleAtTeam_ru: Приглашенный координатор отрасли
                     pictureAtTeam:
                         -
@@ -4473,15 +4473,15 @@
                             updated_by: 10
                             created_at: '2020-09-13T16:44:43.718Z'
                             updated_at: '2020-09-13T16:44:43.785Z'
-                    roleAtTeam: Industry Guest Coordinator
+                    roleAtTeam: Külaliste Koordinaator
         -
             id: 14
             order: 8
-            name: Logistics
+            name: Logistika
             teamMember:
                 -
                     id: 71
-                    roleAtTeam_et: Logistikajuht
+                    roleAtTeam_en: Head of Logistics
                     roleAtTeam_ru: Директор по логистике
                     emailAtTeam: siim.vahter@poff.ee
                     phoneAtTeam: +372 5598 1000
@@ -4515,10 +4515,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.734Z'
                             updated_at: '2020-09-05T20:16:19.329Z'
-                    roleAtTeam: Head of Logistics
+                    roleAtTeam: Logistikajuht
                 -
                     id: 72
-                    roleAtTeam_et: Rahvusvahelise filmilogistika koordinaator
+                    roleAtTeam_en: Coordinator of  International Film Logistics
                     roleAtTeam_ru: Координатор международной кинологистики
                     emailAtTeam: andrei.visnevski@poff.ee  Кадри Райго
                     phoneAtTeam: +372 528 3899
@@ -4553,10 +4553,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.870Z'
                             updated_at: '2020-09-05T20:16:19.570Z'
-                    roleAtTeam: Coordinator of  International Film Logistics
+                    roleAtTeam: Rahvusvahelise filmilogistika koordinaator
                 -
                     id: 73
-                    roleAtTeam_et: Eesti-sisese filmilogistika koordinaator
+                    roleAtTeam_en: Coordinator of Estonian Film Logistics
                     roleAtTeam_ru: Координатор кинологистики в Эстонии
                     order: 3
                     pictureAtTeam:
@@ -4588,10 +4588,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Coordinator of Estonian Film Logistics
+                    roleAtTeam: Eesti-sisese filmilogistika koordinaator
                 -
                     id: 74
-                    roleAtTeam_et: Külaliste logistik
+                    roleAtTeam_en: Guest Logistics
                     roleAtTeam_ru: Организатор логистики гостей
                     order: 4
                     pictureAtTeam:
@@ -4623,10 +4623,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Guest Logistics
+                    roleAtTeam: Külaliste logistik
                 -
                     id: 75
-                    roleAtTeam_et: Külaliste logistik
+                    roleAtTeam_en: Guest Logistics
                     roleAtTeam_ru: Организатор логистики гостей
                     order: 5
                     pictureAtTeam:
@@ -4658,15 +4658,15 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Guest Logistics
+                    roleAtTeam: Külaliste logistik
         -
             id: 15
             order: 9
-            name: Ticket Sales and Information
+            name: Piletimüük ja info
             teamMember:
                 -
                     id: 76
-                    roleAtTeam_et: 'Piletimüügi juht, Arenduse projektijuht'
+                    roleAtTeam_en: 'Head of Ticket Sales ,Development Project Manager'
                     roleAtTeam_ru: >-
                         Начальник отдела продаж билетов, Руководитель проекта
                         развития
@@ -4702,10 +4702,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: 'Head of Ticket Sales ,Development Project Manager'
+                    roleAtTeam: 'Piletimüügi juht, Arenduse projektijuht'
                 -
                     id: 90
-                    roleAtTeam_et: Piletimüügi koordinaator
+                    roleAtTeam_en: Manager of Ticket Sales
                     roleAtTeam_ru: Координатор продажи билетов
                     emailAtTeam: sten.otsmaa@poff.ee
                     phoneAtTeam: +372 5326 7157
@@ -4739,10 +4739,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:16.918Z'
                             updated_at: '2020-09-05T20:16:17.538Z'
-                    roleAtTeam: Manager of Ticket Sales
+                    roleAtTeam: Piletimüügi koordinaator
                 -
                     id: 91
-                    roleAtTeam_et: Vabatahtlike koordinaator
+                    roleAtTeam_en: Coordinator of Volunteer
                     roleAtTeam_ru: Координатор волонтеров
                     order: 3
                     pictureAtTeam:
@@ -4774,10 +4774,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:17.090Z'
                             updated_at: '2020-09-05T20:16:17.642Z'
-                    roleAtTeam: Coordinator of Volunteer
+                    roleAtTeam: Vabatahtlike koordinaator
                 -
                     id: 92
-                    roleAtTeam_et: Piletimüügi assistent
+                    roleAtTeam_en: Assistant of Ticket Sales
                     roleAtTeam_ru: Ассистент по продаже билетов
                     emailAtTeam: tiina.tartes@poff.ee
                     order: 4
@@ -4810,10 +4810,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:16.927Z'
                             updated_at: '2020-09-05T20:16:17.547Z'
-                    roleAtTeam: Assistant of Ticket Sales
+                    roleAtTeam: Piletimüügi assistent
                 -
                     id: 93
-                    roleAtTeam_et: Piletikontrolöride töö koordinaator
+                    roleAtTeam_en: Conductors Coordinator
                     roleAtTeam_ru: Координатор работы билетеров
                     order: 5
                     pictureAtTeam:
@@ -4846,7 +4846,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:16.823Z'
                             updated_at: '2020-09-05T20:16:17.486Z'
-                    roleAtTeam: Conductors Coordinator
+                    roleAtTeam: Piletikontrolöride töö koordinaator
         -
             id: 16
             order: 10
@@ -4854,7 +4854,7 @@
             teamMember:
                 -
                     id: 94
-                    roleAtTeam_et: Industry@Tallinn & Baltic Event juht
+                    roleAtTeam_en: Head of Industry@Tallinn & Baltic Event
                     roleAtTeam_ru: Директор Industry@Tallinn & Baltic Event
                     emailAtTeam: marge.liiske@poff.ee
                     phoneAtTeam: +372 514 8134
@@ -4888,7 +4888,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:16.614Z'
                             updated_at: '2020-09-05T20:16:17.298Z'
-                    roleAtTeam: Head of Industry@Tallinn & Baltic Event
+                    roleAtTeam: Industry@Tallinn & Baltic Event juht
                 -
                     id: 95
                     person:
@@ -4931,7 +4931,9 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:34.604Z'
                             updated_at: '2020-09-05T20:16:35.023Z'
-                    roleAtTeam_et: Loomemajanduse arenduskeskus Creative Gate juht
+                    roleAtTeam_en: >-
+                        Creative Gate Project Manager Industry@Tallinn Script
+                        Pool ja Works in Progress Manager
                     roleAtTeam_ru: >-
                         Руководитель центра по развитию креативной экономики
                         Creative Gate Руоковдитель проектов Script Pool и
@@ -4968,9 +4970,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:34.604Z'
                             updated_at: '2020-09-05T20:16:35.023Z'
-                    roleAtTeam: >-
-                        Creative Gate Project Manager Industry@Tallinn Script
-                        Pool ja Works in Progress Manager
+                    roleAtTeam: Loomemajanduse arenduskeskus Creative Gate juht
                 -
                     id: 96
                     person:
@@ -5012,7 +5012,9 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.802Z'
                             updated_at: '2020-09-05T20:16:36.264Z'
-                    roleAtTeam_et: Loomemajanduse arenduskeskus Creative Gate konsultant
+                    roleAtTeam_en: >-
+                        Consultant for Creative Gate Development Centre for
+                        Creative Industries
                     roleAtTeam_ru: >-
                         Консультант центра по развитию креативной экономики
                         Creative Gate
@@ -5047,12 +5049,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:16.244Z'
                             updated_at: '2020-09-05T20:16:17.043Z'
-                    roleAtTeam: >-
-                        Consultant for Creative Gate Development Centre for
-                        Creative Industries
+                    roleAtTeam: Loomemajanduse arenduskeskus Creative Gate konsultant
                 -
                     id: 97
-                    roleAtTeam_et: Industry@Tallinn ürituste koordinaator POWR koordinaator
+                    roleAtTeam_en: Industry@Tallinn & Baltic Event Coordinator POWR Manager
                     roleAtTeam_ru: >-
                         Координатор мероприятий Industry@Tallinn  Координатор
                         POWR
@@ -5088,12 +5088,12 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:15.329Z'
                             updated_at: '2020-09-05T20:16:15.823Z'
-                    roleAtTeam: Industry@Tallinn & Baltic Event Coordinator POWR Manager
+                    roleAtTeam: Industry@Tallinn ürituste koordinaator POWR koordinaator
                 -
                     id: 98
-                    roleAtTeam_et: >-
-                        Industry@Tallinn & Baltic Event kommunikatsiooni
-                        koordinaator
+                    roleAtTeam_en: >-
+                        Industry@Tallinn & Baltic Event Communications
+                        Coordinator
                     roleAtTeam_ru: Координатор коммуникации Industry@Tallinn & Baltic Event
                     emailAtTeam: industrycommunications@poff.ee
                     order: 5
@@ -5127,11 +5127,11 @@
                             created_at: '2020-09-05T20:16:14.881Z'
                             updated_at: '2020-09-05T20:16:15.458Z'
                     roleAtTeam: >-
-                        Industry@Tallinn & Baltic Event Communications
-                        Coordinator
+                        Industry@Tallinn & Baltic Event kommunikatsiooni
+                        koordinaator
                 -
                     id: 99
-                    roleAtTeam_et: Industry@Tallinn külaliste osakonna juht
+                    roleAtTeam_en: Industry@Tallinn Hospitality Manager
                     roleAtTeam_ru: Рукоовдитель отдела по приему гостей Industry@Tallinn
                     emailAtTeam: maria.suurvali@poff.ee
                     phoneAtTeam: +372 514 2229
@@ -5165,10 +5165,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:18.762Z'
                             updated_at: '2020-09-05T20:16:19.347Z'
-                    roleAtTeam: Industry@Tallinn Hospitality Manager
+                    roleAtTeam: Industry@Tallinn külaliste osakonna juht
                 -
                     id: 100
-                    roleAtTeam_et: Industry@Tallinn külalisteosakonna assistent
+                    roleAtTeam_en: Industry@Tallinn Hospitality Assistant
                     roleAtTeam_ru: 'Ассистент отдела по приему гостей Industry@Tallinn '
                     order: 7
                     pictureAtTeam:
@@ -5200,10 +5200,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:15.268Z'
                             updated_at: '2020-09-05T20:16:15.760Z'
-                    roleAtTeam: Industry@Tallinn Hospitality Assistant
+                    roleAtTeam: Industry@Tallinn külalisteosakonna assistent
                 -
                     id: 101
-                    roleAtTeam_et: Industry@Tallinn külalisteosakonna assistent
+                    roleAtTeam_en: Industry@Tallinn Hospitality Assistant
                     roleAtTeam_ru: 'Ассистент отдела по приему гостей Industry@Tallinn '
                     emailAtTeam: greta.liht@poff.ee
                     order: 8
@@ -5236,10 +5236,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:15.120Z'
                             updated_at: '2020-09-05T20:16:15.659Z'
-                    roleAtTeam: Industry@Tallinn Hospitality Assistant
+                    roleAtTeam: Industry@Tallinn külalisteosakonna assistent
                 -
                     id: 102
-                    roleAtTeam_et: Baltic Event külaliste osakonna juht
+                    roleAtTeam_en: Baltic Event Hospitality Manager
                     roleAtTeam_ru: Руководитель отдела по приему гостей Baltic Event
                     pictureAtTeam:
                         -
@@ -5271,10 +5271,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:15.339Z'
                             updated_at: '2020-09-05T20:16:15.851Z'
-                    roleAtTeam: Baltic Event Hospitality Manager
+                    roleAtTeam: Baltic Event külaliste osakonna juht
                 -
                     id: 103
-                    roleAtTeam_et: European Film Forum Tallinn kuraator
+                    roleAtTeam_en: European Film Forum Tallinn Curator
                     roleAtTeam_ru: Куратор European Film Forum Tallinn
                     pictureAtTeam:
                         -
@@ -5306,10 +5306,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:14.395Z'
                             updated_at: '2020-09-05T20:16:14.914Z'
-                    roleAtTeam: European Film Forum Tallinn Curator
+                    roleAtTeam: European Film Forum Tallinn kuraator
                 -
                     id: 104
-                    roleAtTeam_et: Music Meets Film kuraator
+                    roleAtTeam_en: Music Meets Film Curator
                     roleAtTeam_ru: Куратор Music Meets Film
                     pictureAtTeam:
                         -
@@ -5340,10 +5340,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:13.620Z'
                             updated_at: '2020-09-05T20:16:14.194Z'
-                    roleAtTeam: Music Meets Film Curator
+                    roleAtTeam: Music Meets Film kuraator
                 -
                     id: 105
-                    roleAtTeam_et: Music Meets Film koordinaator
+                    roleAtTeam_en: Music Meets Film Coordinator
                     roleAtTeam_ru: Координатор Music Meets Film
                     pictureAtTeam:
                         -
@@ -5374,10 +5374,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:13.519Z'
                             updated_at: '2020-09-05T20:16:14.092Z'
-                    roleAtTeam: Music Meets Film Coordinator
+                    roleAtTeam: Music Meets Film koordinaator
                 -
                     id: 106
-                    roleAtTeam_et: European Genre Forum projektijuht
+                    roleAtTeam_en: European Genre Forum Tallinn Lab Manager
                     roleAtTeam_ru: Руоковдитель проекта European Genre Forum
                     pictureAtTeam:
                         -
@@ -5408,10 +5408,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:13.432Z'
                             updated_at: '2020-09-05T20:16:13.982Z'
-                    roleAtTeam: European Genre Forum Tallinn Lab Manager
+                    roleAtTeam: European Genre Forum projektijuht
                 -
                     id: 107
-                    roleAtTeam_et: Baltic Event kaastootmisturu juht
+                    roleAtTeam_en: Baltic Event Co-Production Market Manager
                     roleAtTeam_ru: >-
                         Руководитель рынка совместного производства Baltic
                         Event 
@@ -5444,10 +5444,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:13.479Z'
                             updated_at: '2020-09-05T20:16:14.070Z'
-                    roleAtTeam: Baltic Event Co-Production Market Manager
+                    roleAtTeam: Baltic Event kaastootmisturu juht
                 -
                     id: 108
-                    roleAtTeam_et: MTÜ BE juhatuse liige
+                    roleAtTeam_en: NGO BE Member of the Board
                     roleAtTeam_ru: Член правления MTÜ BE
                     pictureAtTeam:
                         -
@@ -5478,10 +5478,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:13.352Z'
                             updated_at: '2020-09-05T20:16:13.924Z'
-                    roleAtTeam: NGO BE Member of the Board
+                    roleAtTeam: MTÜ BE juhatuse liige
                 -
                     id: 109
-                    roleAtTeam_et: MEDIA lounge koordinaator
+                    roleAtTeam_en: MEDIA Lounge Manager
                     roleAtTeam_ru: Координатор MEDIA lounge
                     pictureAtTeam:
                         -
@@ -5512,12 +5512,12 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:12.873Z'
                             updated_at: '2020-09-05T20:16:13.750Z'
-                    roleAtTeam: MEDIA Lounge Manager
+                    roleAtTeam: MEDIA lounge koordinaator
                 -
                     id: 110
-                    roleAtTeam_et: Baltic Event Works in Progress juht
+                    roleAtTeam_en: Works in Progress Manager
                     roleAtTeam_ru: Руководитель Baltic Event Works in Progress
-                    roleAtTeam: Works in Progress Manager
+                    roleAtTeam: Baltic Event Works in Progress juht
                 -
                     id: 111
                     person:
@@ -5559,7 +5559,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:24.963Z'
                             updated_at: '2020-09-05T20:16:25.410Z'
-                    roleAtTeam_et: Black Night Stars konsultant
+                    roleAtTeam_en: Black Night Stars Consultant
                     roleAtTeam_ru: Консультант Black Night Stars
                     pictureAtTeam:
                         -
@@ -5590,7 +5590,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:24.963Z'
                             updated_at: '2020-09-05T20:16:25.410Z'
-                    roleAtTeam: Black Night Stars Consultant
+                    roleAtTeam: Black Night Stars konsultant
                 -
                     id: 112
                     person:
@@ -5641,7 +5641,7 @@
                             updated_by: 6
                             created_at: '2020-08-28T06:34:20.215Z'
                             updated_at: '2020-08-28T06:34:20.285Z'
-                    roleAtTeam_et: PÖFF Black Room projektijuht
+                    roleAtTeam_en: PÖFF Black Room project manager
                     roleAtTeam_ru: PÖFF Black Room руководитель проекта
                     pictureAtTeam:
                         -
@@ -5672,10 +5672,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.894Z'
                             updated_at: '2020-09-05T20:16:36.392Z'
-                    roleAtTeam: PÖFF Black Room project manager
+                    roleAtTeam: PÖFF Black Room projektijuht
                 -
                     id: 113
-                    roleAtTeam_et: Black Night Stars Projektijuht
+                    roleAtTeam_en: Black Night Stars Consultant
                     roleAtTeam_ru: Руководитель проекта Black Night Stars
                     pictureAtTeam:
                         -
@@ -5706,10 +5706,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:10.545Z'
                             updated_at: '2020-09-05T20:16:11.119Z'
-                    roleAtTeam: Black Night Stars Consultant
+                    roleAtTeam: Black Night Stars Projektijuht
                 -
                     id: 114
-                    roleAtTeam_et: PÖFF BlackWalk projektijuht
+                    roleAtTeam_en: BlackWalk Project Manager
                     roleAtTeam_ru: Руководитель проекта PÖFF BlackWalk
                     pictureAtTeam:
                         -
@@ -5740,10 +5740,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:10.853Z'
                             updated_at: '2020-09-05T20:16:11.326Z'
-                    roleAtTeam: BlackWalk Project Manager
+                    roleAtTeam: PÖFF BlackWalk projektijuht
                 -
                     id: 115
-                    roleAtTeam_et: PÖFF BlackWalk pressiesindaja
+                    roleAtTeam_en: Head of Press @ BlackWalk
                     roleAtTeam_ru: Пресс-секретарь PÖFF BlackWalk
                     pictureAtTeam:
                         -
@@ -5774,10 +5774,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:10.575Z'
                             updated_at: '2020-09-05T20:16:11.165Z'
-                    roleAtTeam: Head of Press @ BlackWalk
+                    roleAtTeam: PÖFF BlackWalk pressiesindaja
                 -
                     id: 116
-                    roleAtTeam_et: PÖFF BlackWalk kunstiline juht
+                    roleAtTeam_en: Art Director @ BlackWalk
                     roleAtTeam_ru: Художественный руководитель PÖFF BlackWalk
                     pictureAtTeam:
                         -
@@ -5807,10 +5807,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:10.546Z'
                             updated_at: '2020-09-05T20:16:11.120Z'
-                    roleAtTeam: Art Director @ BlackWalk
+                    roleAtTeam: PÖFF BlackWalk kunstiline juht
                 -
                     id: 117
-                    roleAtTeam_et: PÖFF BlackWalk tagalava juht
+                    roleAtTeam_en: ' Backstage Manager @ BlackWalk'
                     roleAtTeam_ru: Руководитель бекстейджа PÖFF BlackWalk
                     pictureAtTeam:
                         -
@@ -5840,36 +5840,36 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:10.288Z'
                             updated_at: '2020-09-05T20:16:10.982Z'
-                    roleAtTeam: ' Backstage Manager @ BlackWalk'
+                    roleAtTeam: PÖFF BlackWalk tagalava juht
                 -
                     id: 118
-                    roleAtTeam_et: European Genre Forum Tallinn koordinaator
+                    roleAtTeam_en: European Genre Forum Tallinn Coordinator
                     roleAtTeam_ru: Координатор European Genre Forum Tallinn
-                    roleAtTeam: European Genre Forum Tallinn Coordinator
+                    roleAtTeam: European Genre Forum Tallinn koordinaator
                 -
                     id: 119
-                    roleAtTeam_et: TV Beats foorumi ja töötubade koordinaator
+                    roleAtTeam_en: TV Beats foorumi ja töötubade koordinaator
                     roleAtTeam_ru: Координатор форума и семинара TV Beats
                     roleAtTeam: TV Beats foorumi ja töötubade koordinaator
                 -
                     id: 120
-                    roleAtTeam_et: Eriürituste koordinaator
+                    roleAtTeam_en: Special Events Coordinaator
                     roleAtTeam_ru: Координатор спецмероприятий
-                    roleAtTeam: Special Events Coordinaator
+                    roleAtTeam: Eriürituste koordinaator
                 -
                     id: 121
-                    roleAtTeam_et: Black Night Stars Projektijuht
+                    roleAtTeam_en: Black Night Stars Consultant
                     roleAtTeam_ru: Руоковлитель проекта Black Night Stars
-                    roleAtTeam: Black Night Stars Consultant
+                    roleAtTeam: Black Night Stars Projektijuht
                 -
                     id: 122
-                    roleAtTeam_et: Still Meets Film Projektijuht
+                    roleAtTeam_en: Still Meets Film Project Manager
                     roleAtTeam_ru: Руководитель проекта Still Meets Film
-                    roleAtTeam: Still Meets Film Project Manager
+                    roleAtTeam: Still Meets Film Projektijuht
         -
             id: 17
             order: 11
-            name: Youth and Children’s Film Festival Just Film
+            name: Noorte- ja lastefilmide festival Just Film
             teamMember:
                 -
                     id: 78
@@ -5913,7 +5913,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:35.481Z'
                             updated_at: '2020-09-05T20:16:35.864Z'
-                    roleAtTeam_et: Just Filmi tegevjuht
+                    roleAtTeam_en: Just Filmi Festival Director
                     roleAtTeam_ru: Директор Just Film
                     emailAtTeam: mikk.granstrom@poff.ee
                     phoneAtTeam: +372 5300 2617
@@ -5947,10 +5947,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:10.818Z'
                             updated_at: '2020-09-05T20:16:11.319Z'
-                    roleAtTeam: Just Filmi Festival Director
+                    roleAtTeam: Just Filmi tegevjuht
                 -
                     id: 123
-                    roleAtTeam_et: Just Filmi programmi koordinaator
+                    roleAtTeam_en: Programme Coordinator
                     roleAtTeam_ru: Координатор программы Just Film
                     emailAtTeam: maarit.mannama@poff.ee
                     order: 2
@@ -5983,10 +5983,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:07.960Z'
                             updated_at: '2020-09-05T20:16:08.064Z'
-                    roleAtTeam: Programme Coordinator
+                    roleAtTeam: Just Filmi programmi koordinaator
                 -
                     id: 124
-                    roleAtTeam_et: Turundusjuht
+                    roleAtTeam_en: Marketing Manager
                     roleAtTeam_ru: Директор по маркетингу
                     emailAtTeam: heleen.sutt@poff.ee
                     order: 3
@@ -6019,10 +6019,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:07.028Z'
                             updated_at: '2020-09-05T20:16:07.822Z'
-                    roleAtTeam: Marketing Manager
+                    roleAtTeam: Turundusjuht
                 -
                     id: 125
-                    roleAtTeam_et: Turunduse ja partnersuhete koordinaator
+                    roleAtTeam_en: Marketing and Partner Relations Coordinator
                     roleAtTeam_ru: Координатор маркетинга и партнерских отношений
                     emailAtTeam: epp.kouhkna@poff.ee
                     phoneAtTeam: +372 5345 7935
@@ -6056,10 +6056,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:06.799Z'
                             updated_at: '2020-09-05T20:16:07.434Z'
-                    roleAtTeam: Marketing and Partner Relations Coordinator
+                    roleAtTeam: Turunduse ja partnersuhete koordinaator
                 -
                     id: 126
-                    roleAtTeam_et: Kunstiline nõustaja
+                    roleAtTeam_en: Artistic Consultant
                     roleAtTeam_ru: Художественный советник
                     emailAtTeam: marek.metslaid@poff.ee
                     order: 5
@@ -6092,10 +6092,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:06.774Z'
                             updated_at: '2020-09-05T20:16:07.414Z'
-                    roleAtTeam: Artistic Consultant
+                    roleAtTeam: Kunstiline nõustaja
                 -
                     id: 127
-                    roleAtTeam_et: Programmi koostaja ja külaliste koordinaator
+                    roleAtTeam_en: 'Festival Programmer, Guest Coordinator'
                     roleAtTeam_ru: 'Составитель программы и координатор гостей '
                     emailAtTeam: kart.vainola@poff.ee
                     order: 6
@@ -6128,10 +6128,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:06.649Z'
                             updated_at: '2020-09-05T20:16:07.271Z'
-                    roleAtTeam: 'Festival Programmer, Guest Coordinator'
+                    roleAtTeam: Programmi koostaja ja külaliste koordinaator
                 -
                     id: 128
-                    roleAtTeam_et: Külaliste ja koolituuri koordinaator
+                    roleAtTeam_en: 'Guest Coordinator, School Tour Coordinator'
                     roleAtTeam_ru: Координатор гостей и школьных походов
                     emailAtTeam: riina.ries@poff.ee
                     order: 7
@@ -6164,10 +6164,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:07.011Z'
                             updated_at: '2020-09-05T20:16:07.810Z'
-                    roleAtTeam: 'Guest Coordinator, School Tour Coordinator'
+                    roleAtTeam: Külaliste ja koolituuri koordinaator
                 -
                     id: 129
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 8
                     pictureAtTeam:
@@ -6199,15 +6199,15 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.810Z'
                             updated_at: '2020-09-05T20:16:02.437Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
         -
             id: 18
             order: 12
-            name: Short Film and Animation Festival PÖFF Shorts
+            name: Lühifilmide ja animatsiooni festival PÖFF Shorts
             teamMember:
                 -
                     id: 79
-                    roleAtTeam_et: PÖFF Shorts festivali juht
+                    roleAtTeam_en: PÖFF Shorts Festival Director
                     roleAtTeam_ru: Директор фестиваля
                     emailAtTeam: grete.nellis@poff.ee
                     phoneAtTeam: +372 5552 7407
@@ -6241,10 +6241,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:06.117Z'
                             updated_at: '2020-09-05T20:16:06.972Z'
-                    roleAtTeam: PÖFF Shorts Festival Director
+                    roleAtTeam: PÖFF Shorts festivali juht
                 -
                     id: 80
-                    roleAtTeam_et: Turunduse ja kommunikatsiooni koordinaator
+                    roleAtTeam_en: Marketing and Communications Coordinator
                     roleAtTeam_ru: Координатор маркетинга и коммуникации
                     emailAtTeam: heinrich.sepp@poff.ee
                     phoneAtTeam: +372 5656 5599
@@ -6278,10 +6278,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:04.867Z'
                             updated_at: '2020-09-05T20:16:05.564Z'
-                    roleAtTeam: Marketing and Communications Coordinator
+                    roleAtTeam: Turunduse ja kommunikatsiooni koordinaator
                 -
                     id: 81
-                    roleAtTeam_et: Eriürituste produtsent
+                    roleAtTeam_en: Events Producer
                     roleAtTeam_ru: Продюсер специальных мероприятий
                     emailAtTeam: monika.tomingas@poff.ee
                     phoneAtTeam: +372 5349 4174
@@ -6315,10 +6315,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:04.882Z'
                             updated_at: '2020-09-05T20:16:05.575Z'
-                    roleAtTeam: Events Producer
+                    roleAtTeam: Eriürituste produtsent
                 -
                     id: 82
-                    roleAtTeam_et: 'Külaliste koordinaator, Programmi koostaja'
+                    roleAtTeam_en: 'Coordinator of Guests, Festival Programmer'
                     roleAtTeam_ru: 'Координатор гостей, Составитель программы'
                     emailAtTeam: siiri.haidma@poff.ee
                     phoneAtTeam: +372 5559 6346
@@ -6352,7 +6352,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:04.867Z'
                             updated_at: '2020-09-05T20:16:05.563Z'
-                    roleAtTeam: 'Coordinator of Guests, Festival Programmer'
+                    roleAtTeam: 'Külaliste koordinaator, Programmi koostaja'
                 -
                     id: 83
                     person:
@@ -6395,7 +6395,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.824Z'
                             updated_at: '2020-09-05T20:16:29.323Z'
-                    roleAtTeam_et: Lühifilmide programmi juht
+                    roleAtTeam_en: Short Film Programme Director
                     roleAtTeam_ru: Программый диреткор короткометражных фильмов
                     emailAtTeam: laurence.boyce@poff.ee
                     phoneAtTeam: +372 5698 7199
@@ -6429,10 +6429,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:28.824Z'
                             updated_at: '2020-09-05T20:16:29.323Z'
-                    roleAtTeam: Short Film Programme Director
+                    roleAtTeam: Lühifilmide programmi juht
                 -
                     id: 84
-                    roleAtTeam_et: Animatsioonide programmi juht
+                    roleAtTeam_en: Animation Programme Director
                     roleAtTeam_ru: Программный директор анимационных фильмов
                     emailAtTeam: vassilis.kroustallis@poff.ee
                     phoneAtTeam: +372 5685 8350
@@ -6466,10 +6466,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:04.848Z'
                             updated_at: '2020-09-05T20:16:05.548Z'
-                    roleAtTeam: Animation Programme Director
+                    roleAtTeam: Animatsioonide programmi juht
                 -
                     id: 85
-                    roleAtTeam_et: Programmi koordinaator
+                    roleAtTeam_en: Programme Coordinator
                     roleAtTeam_ru: Координатор программы
                     emailAtTeam: programme.shorts@poff.ee
                     order: 7
@@ -6502,10 +6502,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:04.580Z'
                             updated_at: '2020-09-05T20:16:05.302Z'
-                    roleAtTeam: Programme Coordinator
+                    roleAtTeam: Programmi koordinaator
                 -
                     id: 86
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     emailAtTeam: kamila.kucikova@poff.ee
                     order: 8
@@ -6538,10 +6538,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.823Z'
                             updated_at: '2020-09-05T20:16:02.459Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 131
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 9
                     pictureAtTeam:
@@ -6573,10 +6573,10 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.507Z'
                             updated_at: '2020-09-05T20:16:02.243Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
                 -
                     id: 132
-                    roleAtTeam_et: Programmi koostaja
+                    roleAtTeam_en: Festival Programmer
                     roleAtTeam_ru: Составитель программы
                     order: 10
                     pictureAtTeam:
@@ -6608,7 +6608,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.643Z'
                             updated_at: '2020-09-05T20:16:02.330Z'
-                    roleAtTeam: Festival Programmer
+                    roleAtTeam: Programmi koostaja
         -
             id: 19
             order: 13
@@ -6656,7 +6656,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.404Z'
                             updated_at: '2020-09-05T20:16:02.177Z'
-                    roleAtTeam_et: PÖFF Tartu projektijuht
+                    roleAtTeam_en: Coordinator of PÖFF Tartu
                     roleAtTeam_ru: Координатор PÖFF в Тарту
                     emailAtTeam: kristiina@lmk.ee
                     phoneAtTeam: +372 552 5258
@@ -6690,7 +6690,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.404Z'
                             updated_at: '2020-09-05T20:16:02.177Z'
-                    roleAtTeam: Coordinator of PÖFF Tartu
+                    roleAtTeam: PÖFF Tartu projektijuht
         -
             id: 20
             order: 14
@@ -6738,7 +6738,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.676Z'
                             updated_at: '2020-09-05T20:15:59.340Z'
-                    roleAtTeam_et: KINOFF projektijuht
+                    roleAtTeam_en: Coordinator of KINOFF
                     roleAtTeam_ru: КINOФF менеджер проектов
                     emailAtTeam: jana.budkovskaja@poff.ee
                     phoneAtTeam: +372 525 8066
@@ -6772,7 +6772,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:15:58.676Z'
                             updated_at: '2020-09-05T20:15:59.340Z'
-                    roleAtTeam: Coordinator of KINOFF
+                    roleAtTeam: KINOFF projektijuht
                 -
                     id: 89
                     person:
@@ -6815,7 +6815,7 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.685Z'
                             updated_at: '2020-09-05T20:16:02.355Z'
-                    roleAtTeam_et: KINOFF programmikoostaja
+                    roleAtTeam_en: KINOFF programmer
                     roleAtTeam_ru: КINOФF программист
                     emailAtTeam: darja.saar@poff.ee
                     phoneAtTeam: +372 5883 7180
@@ -6849,8 +6849,8 @@
                             updated_by: 6
                             created_at: '2020-09-05T20:16:01.685Z'
                             updated_at: '2020-09-05T20:16:02.355Z'
-                    roleAtTeam: KINOFF programmer
-    name: PÖFF Team
+                    roleAtTeam: KINOFF programmikoostaja
+    name: PÖFFi meeskond
     domains:
         -
             id: 1
@@ -6861,4 +6861,4 @@
             url: poff.ee
             name: PÖFF
     data:
-        articles: /articles.en.yaml
+        articles: /articles.et.yaml
