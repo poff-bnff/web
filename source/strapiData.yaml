@@ -4095,7 +4095,7 @@ Country:
         code: BL
         name_et: Saint Barthélemy
         name_en: Saint Barthélemy
-        name_ru: Святой Вар��оломей
+        name_ru: Святой Варфоломей
     -
         id: 901
         Code: null
@@ -5693,7 +5693,7 @@ Country:
         code: SV
         name_et: El Salvador
         name_en: El Salvador
-        name_ru: Сальва��ор
+        name_ru: Сальвадор
     -
         id: 844
         Code: null
@@ -9328,6 +9328,78 @@ POFFiArticle:
                     en: Wolf
                     ru: Волк
     -
+        id: 34
+        created_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        updated_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        created_at: '2020-09-14T12:07:40.816Z'
+        updated_at: '2020-09-14T12:08:09.348Z'
+        title_et: null
+        slug_et: pof-fi-article-4
+        title_en: ilma et pealkirjata
+        slug_en: ilma-et-pealkirjata
+        title_ru: null
+        slug_ru: pof-fi-article-15
+        lead_et: Ilma et pealkirjata
+        lead_ru: null
+        lead_en: null
+        contents_et: null
+        contents_en: null
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: true
+        publish_en: true
+        publish_ru: true
+        media: null
+        button: []
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+            -
+                id: 4
+                name: ToetajaLugu
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:51:35.072Z'
+                updated_at: '2020-09-02T07:50:32.835Z'
+                article: null
+                et: Toetaja lugu
+                en: Supporter Story
+                ru: История поддержки
+            -
+                id: 5
+                name: About
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-01T12:17:53.527Z'
+                updated_at: '2020-09-01T12:17:53.548Z'
+                article: null
+                et: About
+                en: About
+                ru: About
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
+    -
         id: 6
         created_by:
             id: 5
@@ -9863,7 +9935,7 @@ POFFiArticle:
             50 aastat tagasi lahkus meie seast rahvusvaheliselt tuntumaid eesti
             kunstnikke Ülo Sooster. Lilija Vjugina „Ülo Sooster. Mees, kes
             kuivatas rätikut tuule käes” on esimene nõnda põhjalik ülevaade
-            sellest modernismi suurkujust ja tema pärandist – omamoodi rännak
+            sellest modernismi suurkujust ja tema pärandist �� omamoodi rännak
             ajas ja ruumis, mille võtab ette kunstniku poeg Tenno.
 
 
@@ -10165,6 +10237,56 @@ POFFiArticle:
         tag_keywords: []
         web_authors: []
     -
+        id: 35
+        created_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        updated_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        created_at: '2020-09-14T12:35:14.386Z'
+        updated_at: '2020-09-14T13:57:47.775Z'
+        title_et: 'intervjuu Article test '
+        slug_et: about-article-test
+        title_en: null
+        slug_en: pof-fi-article-6
+        title_ru: null
+        slug_ru: pof-fi-article-16
+        lead_et: null
+        lead_ru: null
+        lead_en: null
+        contents_et: null
+        contents_en: null
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: true
+        publish_en: true
+        publish_ru: true
+        media: null
+        button: []
+        article_types:
+            -
+                id: 3
+                name: Intervjuu
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:50:35.561Z'
+                updated_at: '2020-08-27T13:26:22.977Z'
+                article: null
+                et: Intervjuu
+                en: Interview
+                ru: Интервю
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
+    -
         id: 8
         created_by:
             id: 5
@@ -10417,103 +10539,6 @@ POFFiArticle:
                     et: Pöffihunt
                     en: Wolf
                     ru: Волк
-    -
-        id: 31
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        created_at: '2020-09-14T08:38:28.216Z'
-        updated_at: '2020-09-14T09:00:37.804Z'
-        title_et: null
-        slug_et: pof-fi-article-3
-        title_en: Just English test
-        slug_en: just-english-test
-        title_ru: null
-        slug_ru: pof-fi-article-4
-        lead_et: null
-        lead_ru: null
-        lead_en: lead
-        contents_et: null
-        contents_en: contents
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: null
-        publish_en: true
-        publish_ru: null
-        media:
-            id: 28
-            clipUrlDefault: null
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
-            imageDefault: []
-            image_et: []
-            image_en:
-                -
-                    id: 149
-                    name: >-
-                        2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
-                        web.png
-                    alternativeText: ''
-                    caption: ''
-                    width: 800
-                    height: 450
-                    formats:
-                        thumbnail:
-                            ext: .png
-                            url: >-
-                                /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                            hash: >-
-                                thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                            mime: image/png
-                            name: >-
-                                thumbnail_2020 Tartuff Closing - Dagmar Raudam,
-                                Kristiina Reidolv web.png
-                            path: null
-                            size: 68.25
-                            width: 245
-                            height: 138
-                    hash: >-
-                        2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                    ext: .png
-                    mime: image/png
-                    size: 515.58
-                    url: >-
-                        /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                    previewUrl: null
-                    provider: local
-                    provider_metadata: null
-                    created_by: 11
-                    updated_by: 11
-                    created_at: '2020-09-13T19:45:40.785Z'
-                    updated_at: '2020-09-13T19:45:40.871Z'
-            image_ru: []
-        button: []
-        article_types:
-            -
-                id: 2
-                name: Uudis
-                created_by: 6
-                updated_by: 1
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-08-27T13:27:26.065Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors: []
     -
         id: 1
         created_by:
@@ -10789,6 +10814,142 @@ POFFiArticle:
                     en: Wolf
                     ru: Волк
     -
+        id: 31
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        updated_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        created_at: '2020-09-14T08:38:28.216Z'
+        updated_at: '2020-09-14T11:10:52.404Z'
+        title_et: test
+        slug_et: pof-fi-article-3
+        title_en: Just English test
+        slug_en: just-english-test
+        title_ru: null
+        slug_ru: pof-fi-article-4
+        lead_et: null
+        lead_ru: null
+        lead_en: lead
+        contents_et: null
+        contents_en: contents
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: null
+        publish_en: true
+        publish_ru: null
+        media:
+            id: 28
+            clipUrlDefault: null
+            clipUrl_et: null
+            clipUrl_en: null
+            clipUrl_ru: null
+            imageDefault: []
+            image_et: []
+            image_en:
+                -
+                    id: 149
+                    name: >-
+                        2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
+                        web.png
+                    alternativeText: ''
+                    caption: ''
+                    width: 800
+                    height: 450
+                    formats:
+                        thumbnail:
+                            ext: .png
+                            url: >-
+                                /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                            hash: >-
+                                thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                            mime: image/png
+                            name: >-
+                                thumbnail_2020 Tartuff Closing - Dagmar Raudam,
+                                Kristiina Reidolv web.png
+                            path: null
+                            size: 68.25
+                            width: 245
+                            height: 138
+                    hash: >-
+                        2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                    ext: .png
+                    mime: image/png
+                    size: 515.58
+                    url: >-
+                        /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                    previewUrl: null
+                    provider: local
+                    provider_metadata: null
+                    created_by: 11
+                    updated_by: 11
+                    created_at: '2020-09-13T19:45:40.785Z'
+                    updated_at: '2020-09-13T19:45:40.871Z'
+            image_ru: []
+        button: []
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
+    -
+        id: 36
+        created_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        updated_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        created_at: '2020-09-14T13:34:52.739Z'
+        updated_at: '2020-09-14T13:34:52.804Z'
+        title_et: TEST100
+        slug_et: test-100
+        title_en: null
+        slug_en: pof-fi-article-7
+        title_ru: null
+        slug_ru: pof-fi-article-17
+        lead_et: Mis juhtub kui artikli tüüpi pole?
+        lead_ru: null
+        lead_en: null
+        contents_et: null
+        contents_en: null
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: true
+        publish_en: null
+        publish_ru: null
+        media: null
+        button: []
+        article_types: []
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
+    -
         id: 15
         created_by:
             id: 9
@@ -11037,7 +11198,7 @@ POFFiArticle:
 
             «Я считаю, что переезд в Интернет также создаст для нас и для
             аудитории некоторые новые возможности: мы надеемся, что из нашей
-            программы смогут извлечь по��ьзу даже больше профессионалов
+            программы смогут извлечь пользу даже больше профессионалов
             киноиндустрии, чем раньше, поскольку им не нужно будет ехать в
             Таллинн и они смогут получить доступ к контенту из любой удобной для
             них географической точки. Кроме того, при подготовке программы мы
@@ -11174,12 +11335,12 @@ POFFiArticle:
             lastname: Toimetaja
             username: null
         updated_by:
-            id: 17
-            firstname: Test
-            lastname: Toimetaja
+            id: 3
+            firstname: Liis
+            lastname: Käsper
             username: null
         created_at: '2020-09-14T09:40:30.683Z'
-        updated_at: '2020-09-14T09:40:30.931Z'
+        updated_at: '2020-09-14T12:05:58.987Z'
         title_et: Test0
         slug_et: test0
         title_en: null
@@ -11210,6 +11371,28 @@ POFFiArticle:
         button: []
         article_types:
             -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+            -
+                id: 3
+                name: Intervjuu
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:50:35.561Z'
+                updated_at: '2020-08-27T13:26:22.977Z'
+                article: null
+                et: Intervjuu
+                en: Interview
+                ru: Интервю
+            -
                 id: 4
                 name: ToetajaLugu
                 created_by: 6
@@ -11220,6 +11403,28 @@ POFFiArticle:
                 et: Toetaja lugu
                 en: Supporter Story
                 ru: История поддержки
+            -
+                id: 5
+                name: About
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-01T12:17:53.527Z'
+                updated_at: '2020-09-01T12:17:53.548Z'
+                article: null
+                et: About
+                en: About
+                ru: About
+            -
+                id: 6
+                name: IndustryProjekt
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T07:48:49.095Z'
+                updated_at: '2020-09-02T07:48:49.116Z'
+                article: null
+                et: Projekt
+                en: Project
+                ru: Проэкт
         tag_premiere_types:
             -
                 id: 6
@@ -11303,6 +11508,67 @@ POFFiArticle:
                     et: Pöffihunt
                     en: Wolf
                     ru: Волк
+    -
+        id: 37
+        created_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        updated_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        created_at: '2020-09-14T13:44:32.454Z'
+        updated_at: '2020-09-14T13:45:09.563Z'
+        title_et: ' '
+        slug_et: '-1'
+        title_en: null
+        slug_en: pof-fi-article-8
+        title_ru: null
+        slug_ru: pof-fi-article-18
+        lead_et: 'See on artikkel, mille pealkiri on tühik!'
+        lead_ru: null
+        lead_en: null
+        contents_et: null
+        contents_en: null
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: true
+        publish_en: null
+        publish_ru: null
+        media: null
+        button: []
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+            -
+                id: 4
+                name: ToetajaLugu
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:51:35.072Z'
+                updated_at: '2020-09-02T07:50:32.835Z'
+                article: null
+                et: Toetaja lugu
+                en: Supporter Story
+                ru: История поддержки
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
     -
         id: 16
         created_by:
@@ -11705,6 +11971,107 @@ POFFiArticle:
         tag_genres: []
         tag_keywords: []
         web_authors: []
+    -
+        id: 33
+        created_by:
+            id: 8
+            firstname: Jaan
+            lastname: Editor
+            username: null
+        updated_by:
+            id: 8
+            firstname: Jaan
+            lastname: Editor
+            username: null
+        created_at: '2020-09-14T11:57:04.424Z'
+        updated_at: '2020-09-14T11:57:04.610Z'
+        title_et: Test Et 14. sept
+        slug_et: test-et-14-sept
+        title_en: null
+        slug_en: pof-fi-article-5
+        title_ru: null
+        slug_ru: pof-fi-article-12
+        lead_et: lead test et
+        lead_ru: null
+        lead_en: null
+        contents_et: contents test et
+        contents_en: null
+        contents_ru: null
+        publishFrom: '2020-09-14T09:00:00.000Z'
+        publishUntil: null
+        publish_et: true
+        publish_en: null
+        publish_ru: null
+        media:
+            id: 30
+            clipUrlDefault: null
+            clipUrl_et: null
+            clipUrl_en: null
+            clipUrl_ru: null
+            imageDefault:
+                -
+                    id: 151
+                    name: tove_kumu.jpg
+                    alternativeText: ''
+                    caption: ''
+                    width: 1130
+                    height: 688
+                    formats:
+                        thumbnail:
+                            ext: .jpg
+                            url: /uploads/thumbnail_tove_kumu_569459f68e.jpg
+                            hash: thumbnail_tove_kumu_569459f68e
+                            mime: image/jpeg
+                            name: thumbnail_tove_kumu.jpg
+                            path: null
+                            size: 9.93
+                            width: 245
+                            height: 149
+                    hash: tove_kumu_569459f68e
+                    ext: .jpg
+                    mime: image/jpeg
+                    size: 150.64
+                    url: /uploads/tove_kumu_569459f68e.jpg
+                    previewUrl: null
+                    provider: local
+                    provider_metadata: null
+                    created_by: 8
+                    updated_by: 8
+                    created_at: '2020-09-14T11:56:40.943Z'
+                    updated_at: '2020-09-14T11:56:41.044Z'
+            image_et: []
+            image_en: []
+            image_ru: []
+        button: []
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors:
+            -
+                id: 1
+                namePrivate: Pöffihunt
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T11:27:48.489Z'
+                updated_at: '2020-09-02T11:27:48.544Z'
+                name:
+                    id: 3851
+                    et: Pöffihunt
+                    en: Wolf
+                    ru: Волк
 POFFiMenu:
     -
         id: 1
@@ -11989,6 +12356,101 @@ JustFilmiArticle:
                     et: Justi Hundu
                     en: Wolfie
                     ru: Волчонок
+    -
+        id: 2
+        created_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        updated_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        created_at: '2020-09-14T11:23:22.443Z'
+        updated_at: '2020-09-14T11:31:51.742Z'
+        title_et: JustTestJust
+        slug_et: just-filmi-article
+        title_en: testJustTest
+        slug_en: test-just-test
+        title_ru: null
+        slug_ru: just-filmi-article-1
+        lead_et: ''
+        lead_en: null
+        lead_ru: null
+        contents_et: null
+        contents_en: testJustTest
+        contents_ru: testJustTest
+        publishFrom: '2020-09-09T09:00:00.000Z'
+        publishUntil: '2020-09-18T09:00:00.000Z'
+        publish_et: true
+        publish_en: null
+        publish_ru: null
+        media: null
+        button: []
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        tag_premiere_types:
+            -
+                id: 6
+                PremiereType_et: null
+                PremiereType_en: null
+                PremiereType_ru: null
+                created_by: 6
+                updated_by: 3
+                created_at: '2020-08-19T10:51:47.582Z'
+                updated_at: '2020-08-27T10:11:28.929Z'
+                Value_et: null
+                Value_en: null
+                Value_ru: null
+                value_et: Euroopa esilinastus
+                value_en: European premiere
+                value_ru: Европейская премьера
+                et: Euroopa esilinastus
+                en: European premiere
+                ru: Европейская премьера
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords:
+            -
+                id: 7
+                Value_et: null
+                Value_en: null
+                Value_ru: null
+                created_by: 6
+                updated_by: 3
+                created_at: '2020-08-19T10:49:52.991Z'
+                updated_at: '2020-08-27T10:07:40.422Z'
+                value_et: Ühiskond
+                value_en: Society
+                value_ru: Общество
+                et: Ühiskond
+                en: Society
+                ru: Общество
+        web_authors:
+            -
+                id: 2
+                namePrivate: Toimetaja
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T11:28:23.386Z'
+                updated_at: '2020-09-02T11:28:23.428Z'
+                name:
+                    id: 3852
+                    et: Päevatoimetaja
+                    en: Editor
+                    ru: Editor
 JustFilmiMenu: []
 ShortsiArticle:
     -
@@ -14601,13 +15063,13 @@ Film:
                 paneb.
 
                 Endine nimekas korvpallitreener saadetakse purjuspäi
-                autojuhtimise eest ühiskondlikult kasulikule tööle, mille käigus
-                on tema ülesandeks treenida kergete puuetega innukad sportlased
-                võistlusvalmis meeskonnaks. Protsessi käigus õpitakse vastakuti
-                nii elust, spordist kui iseendast. Elukogemuste ja reaalsuse
-                tajumise erinevused loovad ridamisi hirmnaljakaid, kuid ka
-                südamlikke situatsioone. Vaatajale on oluline teada, et film
-                põhineb paljuski tõestisündinud lool ning "meeskonna”
+                autojuhtimise eest ��hiskondlikult kasulikule tööle, mille
+                käigus on tema ülesandeks treenida kergete puuetega innukad
+                sportlased võistlusvalmis meeskonnaks. Protsessi käigus õpitakse
+                vastakuti nii elust, spordist kui iseendast. Elukogemuste ja
+                reaalsuse tajumise erinevused loovad ridamisi hirmnaljakaid,
+                kuid ka südamlikke situatsioone. Vaatajale on oluline teada, et
+                film põhineb paljuski tõestisündinud lool ning "meeskonna”
                 moodustavad näitlejad, kellele see on esimene ülesastumine
                 kinolinal.
             en: >-
@@ -14656,7 +15118,7 @@ Film:
                     code: ES
                     name_et: Hispaania
                     name_en: Spain
-                    name_ru: Испания
+                    name_ru: Испа��ия
             languages:
                 -
                     id: 1742
@@ -16400,7 +16862,7 @@ Person:
                 code: EE
                 name_et: Eesti
                 name_en: Estonia
-                name_ru: Эс��ония
+                name_ru: Эстония
         organisations:
             -
                 id: 3
@@ -31991,7 +32453,7 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Programmi koostaja
                         roleAtTeam_en: Festival Programmer
-                        roleAtTeam_ru: Составитель программы
+                        roleAtTeam_ru: Составит��ль программы
                         emailAtTeam: Clandsberger5@gmail.com
                         phoneAtTeam: ' + 316 8542 1422'
                         order: 24

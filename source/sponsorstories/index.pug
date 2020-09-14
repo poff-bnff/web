@@ -23,13 +23,13 @@ block content
             -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
             - }
             each val in self.data.articles.sort(sortFunction)
-                //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
-                if val.article_types && val.article_types[0]
-                    - var articleType = val.article_types[0].name
-                else
-                    - var articleType = 'Uudis'
+                - var artTypes= []
 
-                if val.publish && whichTypesToDisplay.includes(articleType.toLowerCase())
+                if val.article_types && val.article_types[0]
+                    each artType in val.article_types
+                        - artTypes.push(artType.name.toLowerCase())
+
+                if val.publish && artTypes.some(ai => whichTypesToDisplay.includes(ai))
                     - var currentTime = new Date()
                         if typeof(val.publishFrom) === 'undefined'
                             - var publishFrom= new Date(val.created_at)
