@@ -55,7 +55,6 @@ clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
 clr_keyword = #3EADEF
 clr_elisa_stage = #0019af
-clr_header_bg = #0E1417
 clr_tartuff_red = #c92c33
 clr_popover = #0E1417
 clr_covid = #bc06c6
@@ -63,6 +62,8 @@ clr_vote = #00aeef
 
 header_height = 97px
 full_height = calc(100vh - header_height)
+clr_header_text = #0E1417
+clr_header_bg = white
 
 breakpoint-lg = 992px
 breakpoint-md = 768px
@@ -152,16 +153,18 @@ h4
 .dark
     color dark_1
 
-/* Header & Nav styles */
+// HEADER & NAV --------------------
 
 header
+    display grid
+    grid-template-columns auto 1fr
     background-color clr_header_bg
     width 100%
-    text-align center
+    // text-align center
     position fixed
     z-index 900
-    display flex
-    justify-content flex-start
+    // display flex
+    // justify-content flex-start
 
 .main_menu
     position absolute
@@ -172,6 +175,77 @@ header
     padding-top 1rem
     padding-bottom 1rem
     display none
+
+.main_menu ul
+    margin 0
+    padding 0
+    list-style none
+
+.main_menu li
+    margin-top .5rem
+    margin-bottom .5rem
+    // margin-left 1rem
+
+.main_menu a
+    color clr_header_text
+    font-size 1rem
+    text-decoration none
+    text-transform uppercase
+
+.main_menu a:hover
+    color clr_primary
+    text-decoration none
+
+.main_menu_toggle
+    display none
+
+.main_menu_toggle:checked~main_menu
+    display block
+
+.main_menu_toggle_label
+    position absolute
+    top 0
+    right 0
+    margin-right 1rem
+    height 100%
+    display flex
+    align-items center
+
+.main_menu_toggle_label span,
+.main_menu_toggle_label span::before,
+.main_menu_toggle_label span::after
+    display block
+    background clr_header_text
+    height 1px
+    width 1.6rem
+    border-radius 2px
+    position relative
+
+.main_menu_toggle_label span::before,
+.main_menu_toggle_label span::after
+    content ""
+    position absolute
+
+.main_menu_toggle_label span::before
+    bottom 7px
+
+.main_menu_toggle_label span::after
+    top 7px
+
+
+
+// HEADER & NAV --------------------
+
+
+// .main_menu
+//     position absolute
+//     text-align left
+//     left 0
+//     background-color clr_header_bg
+//     width 100%
+//     padding-top 1rem
+//     padding-bottom 1rem
+//     display none
 
 footer
     grid-area footer
@@ -203,63 +277,64 @@ footer
     text-transform uppercase
 
 
-nav
-    ul
-        padding 0
-        margin 0
-        list-style none
-    li
-        margin-top .5rem
-        margin-bottom .5rem
-        margin-left 1rem
-        a
-            color white_96
-            font-size 1rem
-            text-decoration none
-            text-transform uppercase
-            &:hover
-            &:focus
-                color clr_primary
-                // color ghost_blue
-                text-decoration none
-                opacity 0.99
-                transform scale(1.07, 1.07)
+// VANA NAV
+// nav
+//     ul
+//         padding 0
+//         margin 0
+//         list-style none
+//     li
+//         margin-top .5rem
+//         margin-bottom .5rem
+//         margin-left 1rem
+//         a
+//             color white_96
+//             font-size 1rem
+//             text-decoration none
+//             text-transform uppercase
+//             &:hover
+//             &:focus
+//                 color clr_primary
+//                 // color ghost_blue
+//                 text-decoration none
+//                 opacity 0.99
+//                 transform scale(1.07, 1.07)
 
 
-.main_menu_toggle
-    display none
-    &:checked
-        & ~ main_menu
-            display block
+// .main_menu_toggle
+//     display none
+//     &:checked
+//         & ~ main_menu
+//             display block
 
-.main_menu_toggle_label
-    position absolute
-    top 0
-    right 0
-    margin-right 1rem
-    height 100%
-    display flex
-    align-items center
-    span
-        &::before
-            bottom 7px
-        &::after
-            top 7px
+// .main_menu_toggle_label
+//     position absolute
+//     top 0
+//     right 0
+//     margin-right 1rem
+//     height 100%
+//     display flex
+//     align-items center
+//     span
+//         &::before
+//             bottom 7px
+//         &::after
+//             top 7px
 
-.main_menu_toggle_label span,
-.main_menu_toggle_label span::before,
-.main_menu_toggle_label span::after
-    display block
-    background white_96
-    height 1px
-    width 1.6rem
-    border-radius 2px
-    position relative
+// .main_menu_toggle_label span,
+// .main_menu_toggle_label span::before,
+// .main_menu_toggle_label span::after
+//     display block
+//     background white_96
+//     height 1px
+//     width 1.6rem
+//     border-radius 2px
+//     position relative
 
-.main_menu_toggle_label span::before,
-.main_menu_toggle_label span::after
-    content ""
-    position absolute
+// .main_menu_toggle_label span::before,
+// .main_menu_toggle_label span::after
+//     content ""
+//     position absolute
 
 .lang_menu
     color white_96
@@ -965,11 +1040,6 @@ p
   padding-right calc(1rem + 1vw)
   margin-top .6em
 
-.main_menu_toggle
-  &:checked
-    & ~ .main_menu
-      display flex
-
 .premiere_type
   font-family font_h
   text-transform uppercase
@@ -1668,12 +1738,64 @@ a.btn_popover
         grid-gap 2rem
         padding calc(2rem + 2vw)
 
-    .main_menu_toggle_label
-        display none
-
     header
         display grid
         grid-template-columns auto 1fr
+
+    .main_menu_toggle_label
+            display none
+
+    .main_menu
+        grid-column 2 / 3
+        display flex
+        justify-content flex-end
+        align-items flex-end
+        position static
+        margin 0
+        padding 0
+        padding-right 1.2rem
+        border 1px blue
+
+    .main_menu ul
+        display flex
+        justify-content flex-end
+        align-items flex-end
+        /* border: 1px solid red; */
+
+    nav li
+        /* margin-bottom: 0; */
+        height 100%
+        margin 0
+        padding-left 1.2rem
+        padding-right 1.2rem
+        padding-top 1rem
+        padding-bottom 1rem
+        border 1px solid rgba(255, 255, 255, 0)
+        /* background-color: red; */
+
+    .main_menu ul li.dropdown ul
+        background-color bg_dark_2
+        position absolute
+        left 0
+        padding-left 0
+        width max-content
+        /* display: block; */
+        display none
+
+    .main_menu ul li.dropdown:hover ul
+        display block
+        /* margin-top: 1rem; */
+
+    .main_menu ul li.dropdown ul li a
+        text-transform none
+
+    nav li:hover
+        background-color bg_dark_2
+        border-top 1px solid clr_primary
+        /* border-right: 1px solid var(--clr_primary); */
+
+    nav li a:hover
+        color white_96
 
     footer
         grid-area footer
@@ -1692,30 +1814,30 @@ a.btn_popover
         align-items center
 
 
-    nav
-        ul
-            display flex
-            justify-content flex-end
-            align-items flex-end
-        li
-            height 100%
-            margin 0
-            padding-left 1.2rem
-            padding-right 1.2rem
-            padding-top 1rem
-            padding-bottom 1rem
-            border 1px solid rgba(255, 255, 255, 0)
-            // &:hover
-            // &:focus
-            //     background-color bg_dark_3
-            //     border-top 1px solid clr_primary
-            //     // opacity 0.99
-            //     transform scale(1.02, 1.02)
+    // nav
+    //     ul
+    //         display flex
+    //         justify-content flex-end
+    //         align-items flex-end
+    //     li
+    //         height 100%
+    //         margin 0
+    //         padding-left 1.2rem
+    //         padding-right 1.2rem
+    //         padding-top 1rem
+    //         padding-bottom 1rem
+    //         border 1px solid rgba(255, 255, 255, 0)
+    //         // &:hover
+    //         // &:focus
+    //         //     background-color bg_dark_3
+    //         //     border-top 1px solid clr_primary
+    //         //     // opacity 0.99
+    //         //     transform scale(1.02, 1.02)
 
-            a
-                // color ghost_blue
-                &:hover
-                    color poff_orange
+    //         a
+    //             // color ghost_blue
+    //             &:hover
+    //                 color poff_orange
 
     // nav
     //     ul
@@ -1756,32 +1878,32 @@ a.btn_popover
     //                     color white_96
 
 
-    .main_menu
-        grid-column 2 / 3
-        display flex
-        justify-content flex-end
-        align-items flex-end
-        position static
-        border 1px white
-        margin 0
-        padding 0
-        padding-right 1.2rem
+    // .main_menu
+    //     grid-column 2 / 3
+    //     display flex
+    //     justify-content flex-end
+    //     align-items flex-end
+    //     position static
+    //     border 1px white
+    //     margin 0
+    //     padding 0
+    //     padding-right 1.2rem
 
-        ul
-            li.dropdown
-                ul
-                    background-color bg_dark_2
-                    position absolute
-                    left 0
-                    padding-left 0
-                    width max-content
-                    display none
-                    li
-                        a
-                            text-transform none
-                &:hover
-                    ul
-                        display block
+    //     ul
+    //         li.dropdown
+    //             ul
+    //                 background-color bg_dark_2
+    //                 position absolute
+    //                 left 0
+    //                 padding-left 0
+    //                 width max-content
+    //                 display none
+    //                 li
+    //                     a
+    //                         text-transform none
+    //             &:hover
+    //                 ul
+    //                     display block
 
     .logo
         grid-column 1 / 2
@@ -1891,10 +2013,10 @@ a.btn_popover
 /* OVERRIDES */
 
 .text_left
-  text-align left
+    text-align left
 
 .text_right
-  text-align right
+    text-align right
 
 .text_center
     text-align center
