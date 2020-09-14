@@ -97,8 +97,8 @@ function processData(data, lang, CreateYAML) {
         // console.log(copyData[values].domain.url);
     }
     CreateYAML(buffer, lang);
-    console.log('COPYDATA' + copyData.keys());
-    console.log('BUFFER' + buffer);
+    console.log('COPYDATA', copyData.keys());
+    console.log('BUFFER', buffer);
 }
 
 function CreateYAML(buffer, lang) {
