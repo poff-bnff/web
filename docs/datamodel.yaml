@@ -476,14 +476,19 @@ TeamMember: &TeamMember
     phoneAtTeam: (text)
     order: (Number)
 
+SubTeam: &SubTeam
+    name: *Translated
+    order: (Number)
+    # namePrivate: (text, private field)
+    teamMember:
+        - *TeamMember
+
 Team: &Team
     _path: /teams
-    subTeam: #(component (repeatable))
-      - name: *Translated
-        teamMember: #(component (repeatable))
-            - *TeamMember
-    name: #(Component (repeatable))
-        - *Translated
+    subTeam:
+        - *SubTeam
+    name: #(Component)
+        *Translated
     domain: *Domain #(Component)
 
 Label: &Label
