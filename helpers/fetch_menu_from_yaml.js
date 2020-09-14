@@ -1,27 +1,30 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
 
-console.log('DOMAIN', process.env['DOMAIN'])
+const sourceFolder =  path.join(__dirname, '../source/');
 
-// FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
-
-const modelName = 'LabelGroup'
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
-console.log(__dirname + '/../source/strapiData.yaml')
-
-function LabelsToYAMLData(strapiData) {
-    LangSelect(strapiData, 'et')
-    LangSelect(strapiData, 'en')
-    LangSelect(strapiData, 'ru')
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var fetchFrom = 'JustFilmiMenu';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var fetchFrom = 'ShortsiMenu';
+} else {
+    var fetchFrom = 'POFFiMenu';
 }
 
-LabelsToYAMLData(strapiData[modelName])
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+DataToYAMLData(strapiData[fetchFrom]);
+
+function DataToYAMLData(strapiData){
+    // console.log(strapiData);
+    LangSelect(strapiData, 'et');
+    LangSelect(strapiData, 'en');
+    LangSelect(strapiData, 'ru');
+}
 
 function LangSelect(strapiData, lang) {
-    let data = rueten(strapiData, lang);
-    processData(data, lang, CreateYAML);
-    console.log(`Fetching ${process.env['DOMAIN']} labels ${lang} data`);
+    processData(strapiData, lang, CreateYAML);
+    console.log(`Fetching ${process.env['DOMAIN']} menu ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -37,15 +40,14 @@ function rueten(obj, lang) {
             delete obj[key];
             continue
         }
-        if (key === 'id') {
-            delete obj[key];
-            continue
-        }
+        // if (key === 'id') {
+        //     delete obj[key];
+        //     continue
+        // }
         else if (key === lang) {
             // console.log(key, obj[key]);
             return obj[key]
         } else if (key.match(regex) !== null) {
-            // console.log(regex, key, key.match(regex));
             obj[key.substring(0, key.length-3)] = obj[key];
             delete obj[key];
         // } else if (Array.isArray(obj[key])) {
@@ -83,32 +85,24 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
-    var buffer = {}
-    var labels = {}
-    for (key in data) {
-        let smallBuffer = {}
-        // console.log(data[key].name);
-        var data2 = data[key];
-        var name = data[key].name;
-        for (key2 in data2.label) {
-            smallBuffer[data2.label[key2].name] = data2.label[key2].value;
-        }
-        buffer[name] = smallBuffer;
-        labels[name] = buffer[name]
+    let copyData = JSON.parse(JSON.stringify(data));
+    // console.log(copyData);
+    let buffer = [];
+    for (values in copyData) {
+            buffer.push(rueten(copyData[values], lang));
     }
 
-    CreateYAML(rueten(labels, lang), lang);
-    // CreateYAML(labels, lang);
+    CreateYAML(buffer, lang);
+    // console.log(buffer);
 }
 
-function CreateYAML(labels, lang) {
-    // console.log(labels);
-    let globalData= yaml.safeLoad(fs.readFileSync(`../source/global.${lang}.yaml`, 'utf8'))
-    // // console.log(globalData);
-    globalData.label = labels
-    // // console.log(process.cwd());
+function CreateYAML(buffer, lang) {
+    // console.log(buffer);
+    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
+    globalData.menu = buffer
+
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/global.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

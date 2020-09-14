@@ -1,18 +1,23 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 if (process.env['DOMAIN'] === 'shorts.poff.ee') {
-    var fetchFrom = 'HeroArticleShorts';
+    var domain = 'shorts.poff.ee';
 } else if (process.env['DOMAIN'] === 'justfilm.ee') {
-    var fetchFrom = 'HeroArticleJustFilm';
+    var domain = 'justfilm.ee';
 } else {
-    var fetchFrom = 'HeroArticlePoff';
+    var domain = 'poff.ee';
 }
 
-FromStrapi.Fetch(fetchFrom, DataToYAMLData)
+const modelName = 'Footer'
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
 
-function DataToYAMLData(modelName, strapiData){
+DataToYAMLData(strapiData[modelName]);
+
+function DataToYAMLData(strapiData){
     // console.log(strapiData);
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
@@ -21,7 +26,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
-    console.log(`Fetching ${process.env['DOMAIN']} heroarticle ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -82,39 +87,27 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
-    var buffer = {}
-    for (key in data[0]) {
-        let smallBuffer = {}
-        var data2 = data[key];
-        // console.log(data2);
-        // var name = data[key].name;
-        // for (key2 in data2.label) {
-        //     // console.log(data2.label[key]);
-        //     // smallBuffer[data2.label[key2].name] = {
-        //     //     'value' : data2.label[key2].value,
-        //     //     'value_en' : data2.label[key2].value_en
-        //     //     }
-        //     let tinyBuffer = {};
-        //     for(key3 in data2.label[key2]) {
-        //         tinyBuffer[key3] = data2.label[key2][key3];
-        //     }
-        //     smallBuffer[data2.label[key2].name] = tinyBuffer;
-        // }
+    let copyData = JSON.parse(JSON.stringify(data));
+    let buffer = [];
+    for (values in copyData) {
 
-        if(key === `article_${lang}`) {
-            buffer = rueten(data[0][`article_${lang}`], lang);
-            // console.log(buffer);
+        if(copyData[values].domain.url === domain) {
+            buffer = rueten(copyData[values], lang);
         }
-
+        // console.log(copyData[values].domain.url);
     }
-
     CreateYAML(buffer, lang);
+    // console.log(buffer);
 }
 
 function CreateYAML(buffer, lang) {
     // console.log(buffer);
-    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/heroarticle.${lang}.yaml`, allDataYAML, 'utf8');
+    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
+    // console.log(globalData);
+    globalData.footer = buffer
+
+    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
+    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

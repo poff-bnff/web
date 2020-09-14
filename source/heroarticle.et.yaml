@@ -1,183 +1,104 @@
-id: 4
-created_by: 5
-updated_by: 5
-created_at: '2020-09-02T06:24:45.587Z'
-updated_at: '2020-09-07T10:40:47.706Z'
-title_en: test 4 en
-slug_en: test-4-en
-slug_ru: pof-fi-article-3
-lead_en: lead 4 en
-contents_en: cont 4 en
-publishFrom: '2020-07-22T09:00:00.000Z'
-publishUntil: '2021-01-06T10:00:00.000Z'
-publish_en: true
-publish_ru: true
+id: 14
+created_by:
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
+updated_by:
+    id: 6
+    firstname: Jaan
+    lastname: Leppik
+created_at: '2020-09-11T11:24:18.903Z'
+updated_at: '2020-09-11T12:19:24.124Z'
+slug_en: pof-fi-article-2
+slug_ru: pof-fi-article-11
 media:
-    id: 11
+    id: 20
     imageDefault:
         -
-            id: 3
-            name: F_2_invisible_life.jpg
+            id: 143
+            name: howl_landscape_web.jpg
             alternativeText: ''
             caption: ''
             width: 1920
             height: 1080
             formats:
-                large:
-                    ext: .jpg
-                    url: /uploads/large_F_2_invisible_life_feb5451063.jpg
-                    hash: large_F_2_invisible_life_feb5451063
-                    mime: image/jpeg
-                    name: large_F_2_invisible_life.jpg
-                    size: 89.02
-                    width: 1000
-                    height: 563
-                small:
-                    ext: .jpg
-                    url: /uploads/small_F_2_invisible_life_feb5451063.jpg
-                    hash: small_F_2_invisible_life_feb5451063
-                    mime: image/jpeg
-                    name: small_F_2_invisible_life.jpg
-                    size: 28.41
-                    width: 500
-                    height: 281
-                medium:
-                    ext: .jpg
-                    url: /uploads/medium_F_2_invisible_life_feb5451063.jpg
-                    hash: medium_F_2_invisible_life_feb5451063
-                    mime: image/jpeg
-                    name: medium_F_2_invisible_life.jpg
-                    size: 53.8
-                    width: 750
-                    height: 422
                 thumbnail:
                     ext: .jpg
-                    url: /uploads/thumbnail_F_2_invisible_life_feb5451063.jpg
-                    hash: thumbnail_F_2_invisible_life_feb5451063
+                    url: /uploads/thumbnail_howl_landscape_web_f73ecdd38c.jpg
+                    hash: thumbnail_howl_landscape_web_f73ecdd38c
                     mime: image/jpeg
-                    name: thumbnail_F_2_invisible_life.jpg
-                    size: 9.4
+                    name: thumbnail_howl_landscape_web.jpg
+                    size: 6.73
                     width: 245
                     height: 138
-            hash: F_2_invisible_life_feb5451063
+            hash: howl_landscape_web_f73ecdd38c
             ext: .jpg
             mime: image/jpeg
-            size: 195.11
-            url: /uploads/F_2_invisible_life_feb5451063.jpg
+            size: 177.1
+            url: /uploads/howl_landscape_web_f73ecdd38c.jpg
             provider: local
             created_by: 6
             updated_by: 6
-            created_at: '2020-08-13T19:16:16.310Z'
-            updated_at: '2020-08-13T19:16:16.552Z'
-    image:
-        -
-            id: 4
-            name: F_1_invisible_life.jpg
-            alternativeText: ''
-            caption: ''
-            width: 1920
-            height: 1080
-            formats:
-                large:
-                    ext: .jpg
-                    url: /uploads/large_F_1_invisible_life_745fc8df60.jpg
-                    hash: large_F_1_invisible_life_745fc8df60
-                    mime: image/jpeg
-                    name: large_F_1_invisible_life.jpg
-                    path: null
-                    size: 81.71
-                    width: 1000
-                    height: 563
-                small:
-                    ext: .jpg
-                    url: /uploads/small_F_1_invisible_life_745fc8df60.jpg
-                    hash: small_F_1_invisible_life_745fc8df60
-                    mime: image/jpeg
-                    name: small_F_1_invisible_life.jpg
-                    path: null
-                    size: 24.04
-                    width: 500
-                    height: 281
-                medium:
-                    ext: .jpg
-                    url: /uploads/medium_F_1_invisible_life_745fc8df60.jpg
-                    hash: medium_F_1_invisible_life_745fc8df60
-                    mime: image/jpeg
-                    name: medium_F_1_invisible_life.jpg
-                    path: null
-                    size: 46.72
-                    width: 750
-                    height: 422
-                thumbnail:
-                    ext: .jpg
-                    url: /uploads/thumbnail_F_1_invisible_life_745fc8df60.jpg
-                    hash: thumbnail_F_1_invisible_life_745fc8df60
-                    mime: image/jpeg
-                    name: thumbnail_F_1_invisible_life.jpg
-                    path: null
-                    size: 8.1
-                    width: 245
-                    height: 138
-            hash: F_1_invisible_life_745fc8df60
-            ext: .jpg
-            mime: image/jpeg
-            size: 194.74
-            url: /uploads/F_1_invisible_life_745fc8df60.jpg
-            previewUrl: null
-            provider: local
-            provider_metadata: null
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-13T19:16:16.414Z'
-            updated_at: '2020-08-13T19:16:16.648Z'
-title: Tartu armastusfilmide festivali avab troopiline melodraama
-slug: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
+            created_at: '2020-09-11T11:46:02.126Z'
+            updated_at: '2020-09-11T11:46:02.223Z'
+    image: []
+button:
+    -
+        id: 9
+        text: Loe pöördumist
+        url: >-
+            https://covid.fiapf.org/2020/09/01/call-in-support-to-international-film-festivals/
+article_types:
+    - Uudised
+web_authors:
+    -
+        id: 1
+        namePrivate: Pöffihunt
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-09-02T11:27:48.489Z'
+        updated_at: '2020-09-02T11:27:48.544Z'
+        name: Pöffihunt
+title: Maailma Filmifestivalid Paluvad Ellujäämiseks Toetust
+slug: maailma-filmifestivalid-paluvad-ellujaeaemiseks-toetust
 lead: >-
-    PÖFFi armastusfilmide festival Tartuff kuulutas väljatänavuse avafilmi,
-    milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud "Nähtamatu elu".
+    PÖFF ühines rahvusvahelise pöördumisega, milles maailma juhtivad
+    filmifestivalid kutsuvad poliitikuid üles välja töötama meetmeid, et
+    koroonaviiruse tingimustes ellu jääda.
 contents: >-
-    End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
-    kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne isa ja
-    patriarhaalne ühiskond kisuvad nad lahku ega luba täita oma unistusi, kuid
-    nad ei kaota kõigele vaatamata lootust.
+    "COVID-19 on pannud tõsisele proovile filmifestivalide ökosüsteemi
+    jätkusuutlikkuse," on kirjas pöördumises, millele on alla kirjutanud 41
+    festivali, keda on tunnustanud rahvusvaheline filmiprodutsentide
+    föderatsioon FIAPF. Pöördumist on toetanud ka hulk rahvusvahelisi
+    filmiorganisatsioone, sealhulgas Euroopa filmirežissööride föderatsioon ja
+    rahvusvahelised näitlejate ning filmilevitajate föderatsioonid.
 
 
-    Režissöör pühendab oma filmi kõigile neile naistele, kellest Brasiilia
-    ühiskond on kaua mööda vaadanud, neid nähtamatuks pidades.
+    Pöördumises rõhutatakse, et filmifestivalid ei ole olulised üksnes
+    rahvusvahelise filmitööstuse, vaid ka nende riikide ja piirkondade
+    kultuurilise, sotsiaalse ja majandusliku arengu seisukohast, kus nad
+    toimuvad. Näiteks toob samuti pöördumisele alla kirjutanud Cannes´i
+    filmifestival igal aastal kohalikku majandusse ligemale 200 miljonit eurot.
 
 
-    „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha – tõeline
-    pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid The Wrap. 
+    Seda rolli saab pöördujate sõnul säilitada vaid siis, kui kohalikud ja
+    regionaalsed ametivõimud, sealhulgas Euroopa Liit, ulatavad festivalidele
+    abikäe ja töötavad välja strateegia, mis aitab keerulise aja üle elada.
 
 
-    <iframe width="500" height="281"
-    src="https://www.youtube.com/embed/8fBBGRT9ga0" frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope;
-    picture-in-picture" allowfullscreen></iframe>
+    PÖFFi juhi Tiina Loki sõnul vajab ka PÖFF toetust rohkem kui kunagi varem.
+    „Koroonaviiruse mõju meie festivalile on kahetine. Ühelt poolt on see
+    ergutanud välja töötama midagi täiesti uut – veebiruumi, kus oleks võimalik
+    linastada filme ja suhelda filmitegijate- ja tootjatega üle terve maailma
+    ning millest kujuneks tulevikus värav ja ekspordikeskkond tervele Eesti
+    filmitööstusele ja seda toetavatele loome-, teenus- ja turismimajanduse
+    harudele. Teiselt poolt annab see meile valusa hoobi, kui me kaotame
+    eelarves olulist kohta omava piletitulu. Kui siia ei saabu ka külalisi,
+    kannatab ühtlasi festivali atmosfäär, võimalus publikul ja ja filmitegijatel
+    vahetult suhelda, saada tagasisidet… – see, mis teeb festivalist festivali,”
+    ütles ta, nimetades tänavuse festivali korraldamist erakordselt
+    närvesöövaks.
 
 
-    Film võitis mainekal Cannes´i festivalil kõrvalvõistlusprogrammi „Un Certain
-    Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide Oscarile. USA
-    filmiorganisatsiooni The National Board of Review hinnangul on tegu 2019.
-    aasta ühe kõige huvitavama mitteingliskeelse mängufilmiga. 
-
-
-    Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu elu”.
-    Peaosades Carol Duarte ja Julia Stockler. 
-
-
-    „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil, samuti
-    saab seda vaadata Tartuffi virtuaalses kinosaalis Elisa Stage.
-
-
-    ![Uku_Talmar.jpeg](http://139.59.130.149/uploads/Uku_Talmar_cd27ced892.jpeg)
-
-
-    Kogu kava avalikustab festival juuli lõpus.
-
-
-    **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
-    augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
-    Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja [TARTU
-    LOOMEMAJANDUSKESKUSEGA](https://lmk.ee). 
+    24. Pimedate Ööde filmifestival leiab aset 13.–29. novembrini.
 publish: true

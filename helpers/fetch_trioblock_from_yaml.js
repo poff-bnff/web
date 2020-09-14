@@ -1,6 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
+
+const sourceFolder =  path.join(__dirname, '../source/');
 
 if (process.env['DOMAIN'] === 'justfilm.ee') {
     var fetchFrom = 'TrioBlockJustFilm';
@@ -10,9 +12,11 @@ if (process.env['DOMAIN'] === 'justfilm.ee') {
     var fetchFrom = 'TrioBlockPoff';
 }
 
-FromStrapi.Fetch(fetchFrom, DataToYAMLData);
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+DataToYAMLData(strapiData[fetchFrom]);
 
-function DataToYAMLData(modelName, strapiData){
+
+function DataToYAMLData(strapiData){
     // console.log(strapiData[0]);
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
@@ -20,8 +24,12 @@ function DataToYAMLData(modelName, strapiData){
 }
 
 function LangSelect(strapiData, lang) {
-    processData(strapiData, lang, CreateYAML);
-    console.log(`Fetching ${process.env['DOMAIN']} trioblock ${lang} data`);
+    if (strapiData.length < 1) {
+        console.log(`ERROR! No data to fetch for ${process.env['DOMAIN']} trioblock ${lang}`);
+    } else {
+        processData(strapiData, lang, CreateYAML);
+        console.log(`Fetching ${process.env['DOMAIN']} trioblock ${lang} data`);
+    }
 }
 
 function rueten(obj, lang) {
@@ -129,7 +137,7 @@ function processData(data, lang, CreateYAML) {
 function CreateYAML(copyData, lang) {
     // console.log(copyData);
     let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 
