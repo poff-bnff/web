@@ -96,7 +96,8 @@ block content
         - }
 
         each news in self.data.articles.sort(sortFunction)
-            if news.publish
+
+            if news.publish && news.title
                 - var currentTime = new Date()
                 if typeof(news.publishFrom) === 'undefined'
                     - var publishFrom= new Date(news.created_at)

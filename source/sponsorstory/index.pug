@@ -27,7 +27,7 @@ block content
                 if val.article_types && val.article_types[0]
                     - var articleType = val.article_types[0].name
                 else
-                    - var articleType = 'Uudis'
+                    - var articleType = 'ToetajaLugu'
 
                 if val.publish && whichTypesToDisplay.includes(articleType.toLowerCase())
                     - var currentTime = new Date()
