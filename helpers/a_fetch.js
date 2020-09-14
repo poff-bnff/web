@@ -134,23 +134,23 @@ async function strapiFetch(modelName, token){
 // lhs == model, rhs == data
 const Compare = function (model, data, path) {
     // console.log('<--', path)
+    if (data === null) {
+        console.log(path, 'is null in data')
+        return
+    }
     if (Array.isArray(model)) {
         if (Array.isArray(data)) {
             for (const ix in data) {
-                console.log('foo', path, ix);
+                // console.log('foo', path, ix);
                 Compare(model[0], data[ix], path + '[' + ix + ']')
             }
         } else {
-            console.log('- Not an array:', path)
+            console.log('- Not an array:', path, model)
         }
     } else {
         for (const key in model) {
             if (key === '_path' || key === '_modelName') {
                 continue
-            }
-            if (data === null) {
-                console.log(path, 'is null in data')
-                return
             }
             let next_path = path + '.' + key
             const model_element = model[key]
@@ -159,8 +159,7 @@ const Compare = function (model, data, path) {
                     Compare(model_element, data[key], next_path)
                 }
             } else {
-                console.log('path', path, 'missing', key)
-                console.log('- Missing key:', next_path)
+                // console.log('path', path, 'missing', key)
             }
         }
     }
@@ -173,15 +172,25 @@ const foo = async () => {
     const ReplaceInModel = function(property_name, modelData, searchData) {
         for (const ix in modelData) {
             const element = modelData[ix]
-            if (element[property_name] !== null) {
-                let element_id = element[property_name]
-                if (element_id.hasOwnProperty('id')) {
-                    element_id = element_id['id']
-                }
-                element[property_name] = searchData.find(element => element.id === element_id)
-                // element[property_name]['_replaced'] = true
+            if (element[property_name] === null) {
+                continue
             }
-            // console.log('E2', element)
+            if (element[property_name] === undefined) {
+                element[property_name] = null
+                continue
+            }
+
+            // kui nt toimetaja on kustutanud artikli, millele mujalt viidatakse
+            if (element[property_name].constructor === Object && Object.keys(element[property_name]).length === 0) {
+                element[property_name] = null
+                continue
+            }
+
+            let element_id = element[property_name]
+            if (element_id.hasOwnProperty('id')) {
+                element_id = element_id['id']
+            }
+            element[property_name] = searchData.find(element => element.id === element_id)
         }
     }
 
