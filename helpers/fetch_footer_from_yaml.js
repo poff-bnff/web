@@ -88,14 +88,14 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
-    console.log(util.inspect(data));
+    // console.log(util.inspect(data));
 
 
     let copyData = JSON.parse(JSON.stringify(data));
-    console.log(util.inspect(copyData));
+    // console.log(util.inspect(copyData));
     let buffer = [];
     for (index in copyData) {
-        console.log('index', index);
+        // console.log('index', index);
         // console.log('domain', domain);
         // console.log('copydatadomeen', copyData[index].domain);
         if(copyData[index].domain.url === domain) {
@@ -115,7 +115,7 @@ function CreateYAML(buffer, lang) {
 
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
-    console.log(`${sourceFolder}global.${lang}.yaml`);
+    // console.log(`${sourceFolder}global.${lang}.yaml`);
 }
 
 
