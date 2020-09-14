@@ -3,20 +3,27 @@ include /_templates/mixins.pug
 
 block content
     section.grid_hero
-
-        each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-            if mainMenuItem.subMenuItem
-                if mainMenuItem.name
-                    a= `- ${mainMenuItem.name}`
-                each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                    if subMenuItem.poffi_article
-                        a(href= `/${lang_path}article/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+        nav.main_menu
+            ul
+                each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                    if mainMenuItem.subMenuItem
+                        if mainMenuItem.name
+                            li
+                                a= `- ${mainMenuItem.name}`
+                                ul
+                        each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            if subMenuItem.poffi_article
+                                li
+                                    a(href= `/${lang_path}article/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                            else
+                                if subMenuItem.customUrl
+                                    li
+                                        a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `---> ${subMenuItem.name}`
                     else
-                        if subMenuItem.customUrl
-                            a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `---> ${subMenuItem.name}`
-            else
-                a(href= `/${lang_path}articles/`)= `- ${mainMenuItem.name}`
-
+                        li
+                            a(href= `/${lang_path}articles/`)= `- ${mainMenuItem.name}`
+        label.main_menu_toggle_label(for='main_menu_toggle')
+            span
 
 
         - var heroPlusTrioNews = []
@@ -126,6 +133,9 @@ block content
 
                             if news.article_types && news.article_types[0]
                                 - var articleType = news.article_types[0].name
+                            else
+                                - var articleType = 'Uudis'
+
                             if heroPlusTrioNews.includes(news.id) || ((articleType !== 'Uudis') && (articleType))
                                 - continue
                             if counter >= 5

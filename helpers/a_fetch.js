@@ -71,7 +71,6 @@ async function strapiFetch(modelName, token){
             let el = element['domains'][ix]
             // console.log(ix, el)
             if (el['url'] === process.env['DOMAIN']){
-                console.log('====================== domain !');
                 return true
             }
         }
@@ -98,10 +97,13 @@ async function strapiFetch(modelName, token){
             }
         }
 
+        process.stdout.write('Fetching ' + modelName + ' ')
+
         const request = http.request(options, (response) => {
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
+                process.stdout.write('.')
             })
             response.on('end', function () {
                 if (response.statusCode === 200) {
@@ -129,34 +131,35 @@ async function strapiFetch(modelName, token){
     })
 }
 
-const Compare = function (lhs, rhs, path) {
+// lhs == model, rhs == data
+const Compare = function (model, data, path) {
     // console.log('<--', path)
-    if (Array.isArray(lhs)) {
-        if (Array.isArray(rhs)) {
-            for (const ix in rhs) {
-                Compare(lhs[0], rhs[ix], path + '[' + ix + ']')
+    if (Array.isArray(model)) {
+        if (Array.isArray(data)) {
+            for (const ix in data) {
+                console.log('foo', path, ix);
+                Compare(model[0], data[ix], path + '[' + ix + ']')
             }
         } else {
             console.log('- Not an array:', path)
         }
     } else {
-        for (const key in lhs) {
+        for (const key in model) {
             if (key === '_path' || key === '_modelName') {
                 continue
             }
-            let next_path = path + '.' + key
-            if (rhs === null) {
-                console.log(next_path, 'is null in data')
+            if (data === null) {
+                console.log(path, 'is null in data')
                 return
             }
-            const lh_element = lhs[key]
-            if (rhs.hasOwnProperty(key)) {
-                if (lh_element !== null && typeof(lh_element) === 'object' ) {
-                    // console.log('E1', rhs[key]);
-                    Compare(lh_element, rhs[key], next_path)
+            let next_path = path + '.' + key
+            const model_element = model[key]
+            if (data.hasOwnProperty(key) && data[key]) {
+                if (model_element !== null && typeof(model_element) === 'object' ) {
+                    Compare(model_element, data[key], next_path)
                 }
             } else {
-                console.log('path', path, 'missing', key, 'in', rhs)
+                console.log('path', path, 'missing', key)
                 console.log('- Missing key:', next_path)
             }
         }
@@ -207,7 +210,7 @@ const foo = async () => {
                     }
                 }
                 strapiData[modelName] = modelData
-                console.log('Fetched ', modelName)
+                console.log(' done')
             }
             // if (strapiData.hasOwnProperty('Country')) {
             //     console.log(strapiData['Country'][0])
@@ -225,13 +228,13 @@ const foo = async () => {
 
                     // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)
                     Compare(DATAMODEL[modelName], element, modelName)
-                    console.log('Validated ', modelName, ix, element['id'])
+                    // console.log('Validated ', modelName, ix, element['id'])
                 }
             }
         }
     }
 
-    let yamlStr = yaml.safeDump(strapiData)
+    let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(__dirname + '/../source/strapiData.yaml', yamlStr, 'utf8')
 
 }
