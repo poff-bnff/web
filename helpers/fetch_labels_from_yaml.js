@@ -1,20 +1,26 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
 
-console.log('DOMAIN', process.env['DOMAIN'])
+const sourceFolder =  path.join(__dirname, '../source/');
 
-FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
+// FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
 
-function LabelsToYAMLData(modelName, strapiData){
-LangSelect(strapiData, 'et');
-LangSelect(strapiData, 'en');
-LangSelect(strapiData, 'ru');
+const modelName = 'LabelGroup'
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+
+function LabelsToYAMLData(strapiData) {
+    LangSelect(strapiData, 'et')
+    LangSelect(strapiData, 'en')
+    LangSelect(strapiData, 'ru')
 }
+
+LabelsToYAMLData(strapiData[modelName])
 
 function LangSelect(strapiData, lang) {
     let data = rueten(strapiData, lang);
     processData(data, lang, CreateYAML);
+    console.log(`Fetching ${process.env['DOMAIN']} labels ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -96,12 +102,12 @@ function processData(data, lang, CreateYAML) {
 
 function CreateYAML(labels, lang) {
     // console.log(labels);
-    let globalData= yaml.safeLoad(fs.readFileSync(`../source/global.${lang}.yaml`, 'utf8'))
+    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
     // // console.log(globalData);
     globalData.label = labels
     // // console.log(process.cwd());
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/global.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 

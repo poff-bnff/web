@@ -26,6 +26,8 @@ block content
                 //- .sort(function(a, b){ return (a.publishSettings[0].from > b.publishSettings[0].from) ? -1 : ((b.publishSettings[0].from > a.publishSettings[0].from) ? 1 : 0); })
                 if val.article_types && val.article_types[0]
                     - var articleType = val.article_types[0].name
+                else
+                    - var articleType = 'Uudis'
 
                 if val.publish && whichTypesToDisplay.includes(articleType.toLowerCase())
                     - var currentTime = new Date()
@@ -61,9 +63,9 @@ block content
                                     .card_article_lead
                                         if val.lead
                                             .article_lead=val.lead
-                                        else
-                                            if val.contents
-                                                .article_lead=val.contents
+                                        //- else
+                                        //-     if val.contents
+                                        //-         .article_lead=val.contents
 
                                     .card_article_footer
                                         //- if val.web_authors

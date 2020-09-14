@@ -1,11 +1,24 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const FromStrapi = require('./strapi/FromStrapi.js');
+const path = require('path');
 
-FromStrapi.Fetch('TrioBlockPoff', DataToYAMLData);
+const sourceFolder =  path.join(__dirname, '../source/');
 
-function DataToYAMLData(modelName, strapiData){
-    // console.log(strapiData[0]);
+if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var domain = 'shorts.poff.ee';
+} else if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var domain = 'justfilm.ee';
+} else {
+    var domain = 'poff.ee';
+}
+
+const modelName = 'Footer'
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+
+DataToYAMLData(strapiData[modelName]);
+
+function DataToYAMLData(strapiData){
+    // console.log(strapiData);
     LangSelect(strapiData, 'et');
     LangSelect(strapiData, 'en');
     LangSelect(strapiData, 'ru');
@@ -13,7 +26,7 @@ function DataToYAMLData(modelName, strapiData){
 
 function LangSelect(strapiData, lang) {
     processData(strapiData, lang, CreateYAML);
-    console.log(`Fetching trioblock ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`);
 }
 
 function rueten(obj, lang) {
@@ -33,8 +46,7 @@ function rueten(obj, lang) {
         //     delete obj[key];
         //     continue
         // }
-        // else
-        if (key === lang) {
+        else if (key === lang) {
             // console.log(key, obj[key]);
             return obj[key]
         } else if (key.match(regex) !== null) {
@@ -75,53 +87,27 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
-    let copyData = JSON.parse(JSON.stringify(data[0]));
+    let copyData = JSON.parse(JSON.stringify(data));
     let buffer = [];
-    for (key in copyData) {
-        let smallBuffer = {}
-        var data2 = copyData[key];
-        // console.log(data2);
-        // var name = data[key].name;
-        // for (key2 in data2.label) {
-        //     // console.log(data2.label[key]);
-        //     // smallBuffer[data2.label[key2].name] = {
-        //     //     'value' : data2.label[key2].value,
-        //     //     'value_en' : data2.label[key2].value_en
-        //     //     }
-        //     let tinyBuffer = {};
-        //     for(key3 in data2.label[key2]) {
-        //         tinyBuffer[key3] = data2.label[key2][key3];
-        //     }
-        //     smallBuffer[data2.label[key2].name] = tinyBuffer;
-        // }
+    for (values in copyData) {
 
-        // console.log(key);
-        if(key.substr(0, key.length-2) === 'trioBlockItem') {
-            // console.log(copyData[`poffi_article${key.substr(key.length-2, key.length)}`]);
-            smallBuffer.block = copyData[key];
-            smallBuffer.article = copyData[`poffi_article${key.substr(key.length-2, key.length)}`];
-            buffer.push(smallBuffer);
-
-            // console.log(copyData[key]);
-            delete copyData[key]
+        if(copyData[values].domain.url === domain) {
+            buffer = rueten(copyData[values], lang);
         }
-
+        // console.log(copyData[values].domain.url);
     }
-    // buffer = rueten(buffer, lang);
-    // data.blocks = JSON.parse(buffer);
-    // console.log(data);
-    // buffer = rueten(data, lang);
-    // console.log(buffer);
-    // copyData.blocks = buffer
-
-    copyData = rueten(buffer, lang);
     CreateYAML(buffer, lang);
+    // console.log(buffer);
 }
 
-function CreateYAML(copyData, lang) {
-    // console.log(copyData);
-    let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`../source/articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
+function CreateYAML(buffer, lang) {
+    // console.log(buffer);
+    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
+    // console.log(globalData);
+    globalData.footer = buffer
+
+    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
+    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 
