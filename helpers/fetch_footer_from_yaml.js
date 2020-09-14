@@ -97,7 +97,8 @@ function processData(data, lang, CreateYAML) {
         // console.log(copyData[values].domain.url);
     }
     CreateYAML(buffer, lang);
-    // console.log(buffer);
+    console.log('COPYDATA' + copyData.keys());
+    console.log('BUFFER' + buffer);
 }
 
 function CreateYAML(buffer, lang) {
@@ -108,6 +109,7 @@ function CreateYAML(buffer, lang) {
 
     let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
+    console.log(`${sourceFolder}global.${lang}.yaml`);
 }
 
 
