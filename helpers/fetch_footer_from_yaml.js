@@ -1,6 +1,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
+const util = require('util');
 
 const sourceFolder =  path.join(__dirname, '../source/');
 
@@ -87,19 +88,23 @@ function rueten(obj, lang) {
 }
 
 function processData(data, lang, CreateYAML) {
+    console.log(util.inspect(data));
+
+
     let copyData = JSON.parse(JSON.stringify(data));
+    console.log(util.inspect(copyData));
     let buffer = [];
-    for (values in copyData) {
-        console.log('values', values);
-        console.log('domain', domain);
-        console.log('copydatadomeen', copyData[values].domain);
-        if(copyData[values].domain.url === domain) {
-            buffer = rueten(copyData[values], lang);
+    for (index in copyData) {
+        console.log('index', index);
+        // console.log('domain', domain);
+        // console.log('copydatadomeen', copyData[index].domain);
+        if(copyData[index].domain.url === domain) {
+            buffer = rueten(copyData[index], lang);
         }
     }
     CreateYAML(buffer, lang);
-    console.log('COPYDATA', copyData.keys());
-    console.log('BUFFER', buffer);
+    // console.log('COPYDATA', copyData.keys());
+    // console.log('BUFFER', buffer);
 }
 
 function CreateYAML(buffer, lang) {
