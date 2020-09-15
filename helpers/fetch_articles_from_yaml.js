@@ -258,42 +258,65 @@ function makeCSV(obj, element, lang) {
     }
 }
 
-function generateYaml(element, element, dirPath, lang, writeIndexFile) {
-    let yamlStr = yaml.safeDump(element, { indent: "4" });
-    fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, "utf8");
+function generateYaml(element, element, dirPath, lang, writeIndexFile){
 
-    for (let i = 0; i < element.article_types.length; i++) {
-        // console.log(articleName)
-        if (element.article_types[i].name === "About") {
-            // console.log('jdsk')
+    let yamlStr = yaml.safeDump(element, { 'indent': '4' });
+
+    fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
+
+
+    for (let i=0; i< element.article_types.length; i++){
+        // console.log(element.directory, '------------')
+        // console.log(element.article_types)
+        if(element.article_types[i].name === 'About'){
             if (writeIndexFile) {
-                if (
-                    element.article_types &&
-                    element.article_types != null &&
-                    element.article_types[i] != null
-                ) {
-                    var templateName = element.article_types[
-                        i
-                    ].name.toLowerCase();
-                }
-                if (
-                    (templateName &&
-                        !fs.existsSync(
-                            `${sourceFolder}_templates/article_${templateName}_index_template.pug`
-                        )) ||
-                    !templateName
-                ) {
-                    var templateName = "about";
-                }
-                fs.writeFileSync(
-                    `${element.directory}/index.pug`,
-                    `include /_templates/article_${templateName}_index_template.pug`,
-                    function (err) {
-                        if (err) {
-                            return console.log(err);
-                        }
+                // if (element.article_types && element.article_types != null && element.article_types[i] != null) {
+                //     var templateName = element.article_types[i].name.toLowerCase();
+                // }
+                // if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
+                //     var templateName = 'about';
+                // }
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_about_index_template.pug`, function(err) {
+                    if(err) {
+                        return console.log(err);
                     }
-                );
+                });
+            }
+        }
+        else if(element.article_types[i].name === 'Uudis'){
+            if (writeIndexFile) {
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_uudis_index_template.pug`, function(err) {
+                    if(err) {
+                        return console.log(err);
+                    }
+                });
+            }
+        }
+        else if(element.article_types[i].name === 'Intervjuu'){
+            if (writeIndexFile) {
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_intervjuu_index_template.pug`, function(err) {
+                    if(err) {
+                        return console.log(err);
+                    }
+                });
+            }
+        }
+        else if(element.article_types[i].name === 'ToetajaLugu'){
+            if (writeIndexFile) {
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_toetajalugu_index_template.pug`, function(err) {
+                    if(err) {
+                        return console.log(err);
+                    }
+                });
+            }
+        }
+        else if(element.article_types[i].name === 'IndustryProjekt'){
+            if (writeIndexFile) {
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_industryprojekt_index_template.pug`, function(err) {
+                    if(err) {
+                        return console.log(err);
+                    }
+                });
             }
         }
     }
