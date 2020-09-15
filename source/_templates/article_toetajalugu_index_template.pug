@@ -6,6 +6,7 @@ include /_templates/mixins.pug
 block content
 
     if self.publish
+        P="HEUREKA"
         - var currentTime = new Date()
             if typeof(self.publishFrom) === 'undefined'
                 - var publishFrom= new Date(self.created_at)
@@ -34,7 +35,7 @@ block content
                                 img(src='/assets/img/global/placeholder_hd_1.jpg').article_hero_image
                         if self.title
                             .article_hero_headline_box
-                                h1= 'kontroll'
+                                h1= 'KONTROLL'
                                 .article_title_detailed= self.title + '!!! TOETAJALUGU !!!'
 
                     section.grid_article

@@ -19,12 +19,7 @@ if (process.env["DOMAIN"] === "justfilm.ee") {
 let allData = []; // for articles view
 
 function fetchAllData(dataModel) {
-    let dirPath = `${sourceFolder}_fetchdir/articles/`;
-    let newDirPath = `${sourceFolder}_fetchdir/`;
-    let aboutDirPath = `${sourceFolder}_fetchdir/abouts/`;
-    let interviewDirPath = `${sourceFolder}_fetchdir/interviews/`;
-    let sponsorDirPath = `${sourceFolder}_fetchdir/sponsorstories/`;
-    let industryDirPath = `${sourceFolder}_fetchdir/industryprojects/`;
+    let newDirPath = path.join(sourceFolder, "_fetchdir" )
 
     // deleteFolderRecursive(dirPath);
     // deleteFolderRecursive(newsDirPath);
@@ -184,41 +179,28 @@ function rueten(obj, lang) {
 function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml) {
     allData = [];
     data.forEach((element) => {
-        let slugEn = element.slug_en;
+        let slugEn = element.slug_en || element.slug_et
         if (!slugEn) {
-            slugEn = element.slug_et;
+            throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang);
 
         for (artType of element.article_types) {
-            if (artType.name === "About") {
-                element.directory = dirPath + "about/" + slugEn;
-                fs.mkdirSync(element.directory, { recursive: true });
-            } else if (artType.name === "Uudis") {
-                element.directory = dirPath + "news/" + slugEn;
-                fs.mkdirSync(element.directory, { recursive: true });
-            } else if (artType.name === "ToetajaLugu") {
-                element.directory = dirPath + "sponsorstory/" + slugEn;
-                fs.mkdirSync(element.directory, { recursive: true });
-            } else if (artType.name === "Intervjuu") {
-                element.directory = dirPath + "interview/" + slugEn;
-                fs.mkdirSync(element.directory, { recursive: true });
-            } else if (artType.name === "IndustryProjekt") {
-                element.directory = dirPath + "industryproject/" + slugEn;
-                fs.mkdirSync(element.directory, { recursive: true });
-            }
 
-            if (element.directory) {
+            element.directory = path.join(dirPath, artType.name, slugEn)
 
-                //fs.mkdirSync(element.directory, { recursive: true });
+
+
+                fs.mkdirSync(element.directory, { recursive: true });
                 //let languageKeys = ['en', 'et', 'ru'];
                 for (key in element) {
-                    //let lastThree = key.substring(key.length - 3, key.length);
-                    //let findHyphen = key.substring(key.length - 3, key.length - 2);
+
                     if (key == "slug") {
-                        element.path = `article/${element[key]}`;
+                        //console.log(self.data.path)
+
+                        element.path = path.join(artType.name, element[key])
                     }
 
                     if (typeof element[key] === "object" && element[key] != null) {
@@ -228,12 +210,8 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 allData.push(element);
                 element.data = dataFrom;
 
-                generateYaml(element, element, dirPath, lang, writeIndexFile);
-            } else {
-                if (showErrors) {
-                    console.log(`Film ID ${element.id} slug_en value missing`);
-                }
-            }
+                generateYaml(element, element, dirPath, lang, writeIndexFile, artType);
+
         }
 
 
@@ -258,98 +236,42 @@ function makeCSV(obj, element, lang) {
     }
 }
 
-function generateYaml(element, element, dirPath, lang, writeIndexFile){
+let allNews = [];
+let allSponsor = [];
+let allAbout = [];
+let allInterview = [];
+let allIndustry = [];
+
+function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
 
+    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+    });
 
-    for (let i=0; i< element.article_types.length; i++){
-        // console.log(element.directory, '------------')
-        // console.log(element.article_types)
-        if(element.article_types[i].name === 'About'){
-            if (writeIndexFile) {
-                // if (element.article_types && element.article_types != null && element.article_types[i] != null) {
-                //     var templateName = element.article_types[i].name.toLowerCase();
-                // }
-                // if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
-                //     var templateName = 'about';
-                // }
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_about_index_template.pug`, function(err) {
-                    if(err) {
-                        return console.log(err);
-                    }
-                });
-            }
-        }
-        else if(element.article_types[i].name === 'Uudis'){
-            if (writeIndexFile) {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_uudis_index_template.pug`, function(err) {
-                    if(err) {
-                        return console.log(err);
-                    }
-                });
-            }
-        }
-        else if(element.article_types[i].name === 'Intervjuu'){
-            if (writeIndexFile) {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_intervjuu_index_template.pug`, function(err) {
-                    if(err) {
-                        return console.log(err);
-                    }
-                });
-            }
-        }
-        else if(element.article_types[i].name === 'ToetajaLugu'){
-            if (writeIndexFile) {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_toetajalugu_index_template.pug`, function(err) {
-                    if(err) {
-                        return console.log(err);
-                    }
-                });
-            }
-        }
-        else if(element.article_types[i].name === 'IndustryProjekt'){
-            if (writeIndexFile) {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_industryprojekt_index_template.pug`, function(err) {
-                    if(err) {
-                        return console.log(err);
-                    }
-                });
-            }
-        }
-    }
-
-    //console.log(` see on generate YAML-is${dirPath}`)
-    //KAS IIN SAAN TEHA _fetchdir-i kaustad ja failid??
-    //fs.mkdirSync(dirPath, { recursive: true })
-
-    //console.log(allData)
     let allDataYAML = yaml.safeDump(allData, { noRefs: true, indent: "4" });
-    let allNews = [];
-    let allSponsor = [];
-    let allAbout = [];
-    let allInterview = [];
-    let allIndustry = [];
 
-    for (article of allData) {
-        //console.log(article.article_types)
-        for (artType of article.article_types) {
-            //console.log(artType.name)
-            if (artType.name === "Uudis") {
-                allNews.push(article);
-            } else if (artType.name === "ToetajaLugu") {
-                allSponsor.push(article);
-            } else if (artType.name === "Intervjuu") {
-                allInterview.push(article);
-            } else if (artType.name === "About") {
-                allAbout.push(article);
-            } else if (artType.name === "IndustryProjekt") {
-                allIndustry.push(article);
-            }
-        }
+    if (artType.name === "Uudis") {
+        allNews.push(element);
+    } else if (artType.name === "ToetajaLugu") {
+        allSponsor.push(element);
+    } else if (artType.name === "Intervjuu") {
+        allInterview.push(element);
+    } else if (artType.name === "About") {
+        allAbout.push(element);
+    } else if (artType.name === "IndustryProjekt") {
+        allIndustry.push(element);
     }
+    //console.log(allAbout)
+
+
+
+    //console.log(allAbout)
 
     let allNewsYAML = yaml.safeDump(allNews, { noRefs: true, indent: "4" });
     let allSponsorYAML = yaml.safeDump(allSponsor, {noRefs: true, indent: "4",});
