@@ -1,14 +1,7 @@
 extends /_templates/layout.pug
 include /_templates/mixins.pug
 
-
-
-
-
 block content
-
-
-
     br
     br
     br
@@ -23,180 +16,123 @@ block content
     br
     br
     //- button(onclick='doLogin2()') Log in
-    a(href='https://poff.auth.eu-central-1.amazoncognito.com/login?client_id=3d4n3tb8an4eaq9na89dpbj9jc&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
+
+
+    //-     //- const queryString = window.location.search;
+    //-     //- console.log(queryString);
+    //-     //- const urlParams = new URLSearchParams(queryString);
+    //-     //- const token = urlParams.get('access_token')
+    //-     //- console.log(token);
+
+
+    a(href='https://poff.auth.eu-central-1.amazoncognito.com/login?client_id=3d4n3tb8an4eaq9na89dpbj9jc&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
+    br
+    br
+    br
+    button(onclick='doDisplayToken()') Display token
+    button(onclick='printAWSresponse()') AWSresponse
     br
     br
     br
     br
     br
     br
-    button(onclick='doGetSomeData()') Make get request
     br
-    button(onclick='doLogout()') Log out
+    h1#token
 
-    br
-    br
-    br
-    br
+    script.
+        var url = window.location;
 
-
-    h1#contentfromStrapi
-
-
-
-    script(type="text/javascript").
-
-        var today = new Date();
-
-        contentfromStrapi.innerHTML = 'Not logged in';
-
-
-        // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
-
-        function doLogin2(){
-            var authenticationData = {
-                    Username : document.getElementById('loginUsername').value,
-                    Password : document.getElementById('loginPassword').value,
-                };
-                var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-                var poolData = { UserPoolId : 'us-east-2_WrK36FZvj',
-                    ClientId : 'cc9tu60rl2v7ujl71eephljc7'
-                };
-                var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-                var userData = {
-                    Username : document.getElementById('loginUsername').value,
-                    Pool : userPool
-                };
-                var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-                cognitoUser.authenticateUser(authenticationDetails, {
-                    onSuccess: function (result) {
-                        var accessToken = result.getAccessToken().getJwtToken();
-                        console.log(accessToken);
-
-                        /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
-                        var idToken = result.idToken.jwtToken;
-                    },
-
-                    onFailure: function(err) {
-                        alert(JSON.stringify(err));
-                    },
-
-            });
+        var code = new URLSearchParams(url.search).get('code')
+        console.log(code);
+        if (code) {
+            getReplyFromAWS(code);
+            console.log('Code sent: ', getReplyFromAWS(code))
+        } else {
+            console.log('Not sent ')
         }
 
-
-        async function doLogin(){
-
-            console.log(AWS);
-            console.log(Amplify);
-
-
-
-
-            let credentials = {
-                identifier: document.getElementById("loginUsername").value,
-                password: document.getElementById("loginPassword").value
-            };
-
-             document.getElementById("loginUsername").value = '';
-             document.getElementById("loginPassword").value = '';
-
-            //- console.log(credentials);
-
-            let userDetails = await postCredentials(credentials);
-            console.log(userDetails);
-
-            let userMessage = userDetails;
-            if (userMessage != 'Unauthorized!'){
-                userMessage = 'Logged in';
-                number.innerHTML = userDetails.user.username + ' has logged in ' + today.toString();
-            }
-
-            contentfromStrapi.innerHTML = userMessage;
-
-
-            //- console.log(userDetails.jwt);
-            //- console.log(userDetails.user.username);
-
-            localStorage.setItem('POFF_TOKEN', userDetails.jwt);
-            localStorage.setItem('POFF_USER', userDetails.user.username)
-
-
-
-        }
-
-
-
-
-
-        async function postCredentials(credentials) {
-            let response = await fetch(`http://139.59.130.149/auth/local`, {
+        async function getReplyFromAWS(code) {
+            let response = await fetch(`https://9t1wskosmj.execute-api.eu-central-1.amazonaws.com/default/POFF-Validate`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(credentials)
+                //- headers: {Authorization: 'Bearer ' + accessToken}
+                body: code
             });
-
-            return processJsonResponse(response);
+            return await response.json();
+            //- return processJsonResponse(response);
         }
 
-
-        async function processJsonResponse(response) {
-            if (response.ok && response.status >= 200 && response.status < 300) {
-            // Kõik on hästi!
-                return await response.json();
-            }
-            else if (response.status >= 400 && response.status < 500) {
-            // Autentimine ebaõnnestus!
-                //- throw new Error('Unauthorized');
-                let result = 'Unauthorized!';
-                return result;
-            }
-            else {
-                // Päring ebaõnnestus, aga probleem ei olnud autentimisega.
-                throw new Error('Request failed', response);
-            }
-        }
-
-        async function doGetSomeData(){
-            let response = await fetch(`http://139.59.130.149/organisations`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('POFF_TOKEN')}`
-                }
+        async function getReplyFromAWS(code) {
+            let response = await fetch(`https://9t1wskosmj.execute-api.eu-central-1.amazonaws.com/default/POFF-Validate`, {
+                method: 'POST',
+                //- headers: {Authorization: 'Bearer ' + accessToken}
+                body: code
             });
-            let data = await processJsonResponse(response);
-            console.log(data);
-            contentfromStrapi.innerHTML = JSON.stringify(data);
-        }
-
-        function doLogout(){
-            localStorage.setItem('POFF_TOKEN', '');
-            localStorage.setItem('POFF_USER', '');
-            contentfromStrapi.innerHTML = 'Not logged in';
-            number.innerHTML = 'Log in here:'
-
-
+            return await response.json();
+            //- return processJsonResponse(response);
         }
 
 
+    //- script(type="text/javascript").
+
+    //-     let accessToken;
+
+    //-     // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
+
+    //-     function doLogin2(){
+    //-         var authenticationData = {
+    //-                 Username : document.getElementById('loginUsername').value,
+    //-                 Password : document.getElementById('loginPassword').value,
+    //-             };
+    //-             var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+    //-             var poolData = { UserPoolId : 'us-east-2_WrK36FZvj',
+    //-                 ClientId : 'cc9tu60rl2v7ujl71eephljc7'
+    //-             };
+    //-             var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    //-             var userData = {
+    //-                 Username : document.getElementById('loginUsername').value,
+    //-                 Pool : userPool
+    //-             };
+    //-             var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+    //-             cognitoUser.authenticateUser(authenticationDetails, {
+    //-                 onSuccess: function (result) {
+    //-                     accessToken = result.getAccessToken().getJwtToken();
+    //-                     console.log(accessToken);
+    //-                     console.log(getReplyFromAWS(accessToken));
+
+    //-                     /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
+    //-                     var idToken = result.idToken.jwtToken;
+    //-                 },
+
+    //-                 onFailure: function(err) {
+    //-                     alert(JSON.stringify(err));
+    //-                 },
+
+    //-         });
+
+    //-     }
 
 
-        //- // Add 'aws-amplify' library into your application
+    //-     function doDisplayToken(){
+    //-         token.innerHTML = accessToken;
+    //-     }
 
-        //- // Configure Auth category with your Amazon Cognito credentials
-        //- Amplify.configure({
-        //-     Auth: {
-        //-         identityPoolId: 'us-east-2_YZIoayw5r', // Amazon Cognito Identity Pool ID
-        //-         region: 'XX-XXXX-X', // Amazon Cognito Region
-        //-     }
-        //- });
 
-        //- // Call Auth.signIn with user credentials
-        //- Auth.signIn(username, password)
-        //-     .then(user => console.log(user))
-        //-     .catch(err => console.log(err));
+    //-     async function getReplyFromAWS() {
+    //-         let response = await fetch(`https://wbnk9bg6sf.execute-api.us-east-2.amazonaws.com/default/helloWorld`, {
+    //-             method: 'POST',
+    //-             headers: {Authorization: 'Bearer ' + accessToken}
+    //-             //- body: JSON.stringify(accessToken)
+    //-         });
+    //-         return await response.json();
+    //-         //- return processJsonResponse(response);
+    //-     }
+
+
+    //-     async function printAWSresponse(){
+    //-         result = await getReplyFromAWS();
+    //-         console.log(result);
+    //-     }
 
 
 
