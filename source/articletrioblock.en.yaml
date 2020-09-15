@@ -8,8 +8,14 @@
         lead: Trio lead Trio lead Trio lead Trio lead EN EN EN
     article:
         id: 1
-        created_by: 5
-        updated_by: 5
+        created_by:
+            id: 5
+            firstname: Martin
+            lastname: Pennaste
+        updated_by:
+            id: 5
+            firstname: Martin
+            lastname: Pennaste
         created_at: '2020-09-02T06:20:22.339Z'
         updated_at: '2020-09-09T10:53:59.266Z'
         title_et: Tartu armastusfilmide festival laieneb üle kogu Eesti
@@ -72,8 +78,8 @@
         contents_ru: >-
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
-            Контентс по русски Контентс по русски Контентс по русски Контентс по
-            русски Контентс по русски Контентс по русски Контентс по русски
+            Контентс по русски Контентс по русски Контентс по русски Конте��тс
+            по русски Контентс по русски Контентс по русски Контентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
@@ -144,6 +150,26 @@
                     created_at: '2020-08-26T13:51:45.254Z'
                     updated_at: '2020-08-26T13:51:45.327Z'
             image: []
+        article_types:
+            - News
+        tag_premiere_types:
+            - International Premiere
+        tag_programmes:
+            - Official Selection
+        tag_genres:
+            - Drama
+        tag_keywords:
+            - MeToo
+            - Society
+        web_authors:
+            -
+                id: 1
+                namePrivate: Pöffihunt
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T11:27:48.489Z'
+                updated_at: '2020-09-02T11:27:48.544Z'
+                name: Wolf
         title: Test EN
         slug: test-en
         lead: Lead EN
@@ -159,8 +185,14 @@
         lead: LEAD EN
     article:
         id: 3
-        created_by: 5
-        updated_by: 6
+        created_by:
+            id: 5
+            firstname: Martin
+            lastname: Pennaste
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
         created_at: '2020-09-02T06:23:30.743Z'
         updated_at: '2020-09-06T21:38:20.823Z'
         title_et: Tartuff on pühendatud kunstile
@@ -297,6 +329,17 @@
                     created_at: '2020-09-02T08:07:24.614Z'
                     updated_at: '2020-09-02T08:07:24.707Z'
             image: []
+        article_types:
+            - News
+        web_authors:
+            -
+                id: 1
+                namePrivate: Pöffihunt
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T11:27:48.489Z'
+                updated_at: '2020-09-02T11:27:48.544Z'
+                name: Wolf
         title: test 3 en
         slug: test-3-en
         lead: lead 3 en
@@ -348,10 +391,16 @@
             updated_at: '2020-08-13T14:00:41.586Z'
     article:
         id: 4
-        created_by: 5
-        updated_by: 5
+        created_by:
+            id: 5
+            firstname: Martin
+            lastname: Pennaste
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
         created_at: '2020-09-02T06:24:45.587Z'
-        updated_at: '2020-09-07T10:40:47.706Z'
+        updated_at: '2020-09-14T08:36:18.597Z'
         title_et: Tartu armastusfilmide festivali avab troopiline melodraama
         slug_et: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
         slug_ru: pof-fi-article-3
@@ -399,6 +448,9 @@
 
 
             ![Uku_Talmar.jpeg](http://139.59.130.149/uploads/Uku_Talmar_cd27ced892.jpeg)
+
+            ![Keiti Piirisild
+            (002).jpg](http://139.59.130.149/uploads/Keiti_Piirisild_002_fc277e1c8b.jpg)
 
 
             Kogu kava avalikustab festival juuli lõpus.
@@ -529,6 +581,17 @@
                     created_at: '2020-08-13T19:16:16.414Z'
                     updated_at: '2020-08-13T19:16:16.648Z'
             image: []
+        article_types:
+            - News
+        web_authors:
+            -
+                id: 1
+                namePrivate: Pöffihunt
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-02T11:27:48.489Z'
+                updated_at: '2020-09-02T11:27:48.544Z'
+                name: Wolf
         title: test 4 en
         slug: test-4-en
         lead: lead 4 en

@@ -1,4 +1,4 @@
-name: PÖFF staging -> live
+name: poff.inscaping.eu/
 
 on:
     release:
@@ -19,3 +19,9 @@ jobs:
                 host: inscaping.eu
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
+
+        - name: Github->Slack notification Webhook action
+          uses: craftech-io/slack-action@v1
+          with:
+            slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          if: always()

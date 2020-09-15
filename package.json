@@ -15,6 +15,8 @@
     "filereader": "^0.10.3",
     "googleapis": "^59.0.0",
     "install": "^0.13.0",
+    "lodash": "^4.17.20",
+    "node-fetch": "^2.6.1",
     "rimraf": "^3.0.2",
     "slugify": "^1.4.5",
     "xmlhttprequest": "^1.8.0",
@@ -22,8 +24,12 @@
     "yaml-diff": "^0.1.1"
   },
   "scripts": {
-    "dev": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml full",
-    "build": ". ./build.sh"
+    "ssg-serve": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml",
+    "serve_local": "serve build",
+    "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
+    "build_Poff": ". ./build_poff.sh",
+    "build_just": ". ./build_just.sh",
+    "build_shorts": ". ./build_shorts.sh"
   },
   "repository": {
     "type": "git",
@@ -34,6 +40,7 @@
   },
   "homepage": "",
   "devDependencies": {
+    "serve": "^11.3.2",
     "yaml-validator": "^3.0.0"
   }
 }

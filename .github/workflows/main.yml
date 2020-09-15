@@ -1,5 +1,5 @@
 
-name: Build and publish DEV site
+name: dev.inscaping.eu/
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -37,6 +37,7 @@ jobs:
             StrapiHost: ${{ secrets.FETCH_HOST }}
             StrapiUserName: ${{ secrets.FETCH_USER }}
             StrapiPassword: ${{ secrets.FETCH_KEY }}
+            DOMAIN: poff.ee
 
         - name: Copy Assets
           run: cp -R assets build/assets
@@ -50,8 +51,8 @@ jobs:
             switches: -avzr
             path: build/
             remote_path:  '/data01/virt84398/domeenid/www.inscaping.eu/web/dev'
-            remote_host: ${{ secrets.DEPLOY_HOST }}
-            remote_user: ${{ secrets.DEPLOY_USER }}
+            remote_host: inscaping.eu
+            remote_user: virt84398
             remote_key: ${{ secrets.DEPLOY_KEY }}
 
         - name: Github->Slack notification Webhook action

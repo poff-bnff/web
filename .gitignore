@@ -7,7 +7,23 @@ node_modules
 *.pickle
 credentials.json
 token.json
+.env
 
 
 .vscode/settings.json
 *.json
+assets/img/*
+source/strapiData.yaml
+source/articles.en.yaml
+source/articles.et.yaml
+source/articles.ru.yaml
+source/articletrioblock.en.yaml
+source/articletrioblock.et.yaml
+source/articletrioblock.ru.yaml
+source/festival/teams.en.yaml
+source/festival/teams.et.yaml
+source/festival/teams.ru.yaml
+source/films.en.yaml
+source/films.et.yaml
+source/films.ru.yaml
+source/heroarticle.et.yaml

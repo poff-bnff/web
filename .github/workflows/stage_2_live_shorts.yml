@@ -1,4 +1,4 @@
-name: SHORTS staging -> live
+name: shorts.inscaping.eu/
 
 on:
     release:
@@ -10,18 +10,18 @@ on:
     #     - cron: '1 0-7 * * *'
 
 jobs:
-    build:
-        name: Build
+    deploy:
+        name: SCP files to server
         runs-on: ubuntu-latest
         steps:
-        -   name: copy file via ssh key
-            uses: appleboy/scp-action@master
+        -   name: ls -a via ssh
+            uses: fifsky/ssh-action@master
             with:
-                host: ${{ secrets.DEPLOY_HOST }}
-                username: ${{ secrets.DEPLOY_USER }}
+                command: |
+                    rsync -avzr --delete domeenid/www.inscaping.eu/web/shorts_staging/* domeenid/www.inscaping.eu/web/shorts_live/
+                host: inscaping.eu
+                user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
-                source: ${{ secrets.DEPLOY_STAGING_SHORTS_PATH }}
-                target: ${{ secrets.DEPLOY_LIVE_SHORTS_PATH }}
 
         -
             name: Github->Slack notification Webhook action
