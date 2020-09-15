@@ -6,7 +6,6 @@ include /_templates/mixins.pug
 block content
 
     if self.publish
-        h1= 'kontroll'
         - var currentTime = new Date()
             if typeof(self.publishFrom) === 'undefined'
                 - var publishFrom= new Date(self.created_at)
@@ -35,11 +34,13 @@ block content
                                 img(src='/assets/img/global/placeholder_hd_1.jpg').article_hero_image
                         if self.title
                             .article_hero_headline_box
+                                h1= 'kontroll'
                                 .article_title_detailed= self.title + '!!! TOETAJALUGU !!!'
 
                     section.grid_article
                         section.article_meta
                             .str_info_meta_gi
+
                                     if self.article_types && self.article_types[0]
                                         .str_info_meta_item
                                             .str_info_meta_value= self.article_types[0].name
