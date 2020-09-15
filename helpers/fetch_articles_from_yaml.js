@@ -1,8 +1,10 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
+const { type } = require('os');
 const path = require('path');
 
 const sourceFolder =  path.join(__dirname, '../source/');
+//console.log(sourceFolder)
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -18,13 +20,27 @@ let allData = []; // for articles view
 
 
 function fetchAllData(dataModel){
-    var dirPath = `${sourceFolder}_fetchdir/articles/`;
-    deleteFolderRecursive(dirPath);
+
+    let dirPath = `${sourceFolder}_fetchdir/articles/`;
+    let newDirPath = `${sourceFolder}_fetchdir/`;
+    let aboutDirPath = `${sourceFolder}_fetchdir/abouts/`;
+    let interviewDirPath = `${sourceFolder}_fetchdir/interviews/`;
+    let sponsorDirPath = `${sourceFolder}_fetchdir/sponsorstories/`;
+    let industryDirPath = `${sourceFolder}_fetchdir/industryprojects/`;
+
+    // deleteFolderRecursive(dirPath);
+    // deleteFolderRecursive(newsDirPath);
+    // deleteFolderRecursive(aboutDirPath);
+    // deleteFolderRecursive(interviewDirPath);
+    // deleteFolderRecursive(sponsorDirPath);
+    // deleteFolderRecursive(industryDirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
+    getData(newDirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
+    getData(newDirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
+    getData(newDirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
+
+
 }
 
 function deleteFolderRecursive(path) {
@@ -39,11 +55,13 @@ function deleteFolderRecursive(path) {
         });
         fs.rmdirSync(path);
     }
-  };
+};
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, dataModel, getDataCB) {
 
-    fs.mkdirSync(dirPath, { recursive: true })
+    // fs.mkdirSync(dirPath, { recursive: true })
+    // console.log(dirPath)
+
 
     console.log(`Fetching ${process.env['DOMAIN']} articles ${lang} data`);
 
@@ -114,26 +132,42 @@ function rueten(obj, lang) {
     return obj
 }
 
+let aboutFolder= "about"
+ let article_types =[]
+
 
 function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml) {
     allData = [];
-    // data = rueten(data, lang);
-    // console.log(data);
     data.forEach(element => {
         let slugEn = element.slug_en;
         if (!slugEn) {
             slugEn = element.slug_et;
         }
-
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang);
 
-        element.directory = dirPath + slugEn;
+        for (artType of element.article_types){
+            //console.log(artType.name)
+            //console.log(dirPath)
+            if (artType.name ==="About"){
+                //console.log(artType.name)
+                console.log(dirPath)
+                element.directory = dirPath +"/about/"+ slugEn;
+            }else if(artType.name ==="Uudis"){
+                element.directory = "TESTUUDIS"
+            }
+        }
+
+       // element.directory = dirPath + slugEn;
+
+        //console.log(element.directory)
+
         // console.log(element.directory);
         // element = rueten(element, `_${lang}`);
 
         if(element.directory) {
+            //console.log(element)
             fs.mkdirSync(element.directory, { recursive: true })
 
             // let element = JSON.parse(JSON.stringify(element));
@@ -151,6 +185,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 // if (lastThree === `_${lang}`) {
                 if (key == 'slug') {
                     element.path = `article/${element[key]}`;
+
                 }
                     // element[key.substring(0, key.length - 3)] = element[key];
 
@@ -196,11 +231,12 @@ function makeCSV(obj, element, lang) {
 }
 
 function generateYaml(element, element, dirPath, lang, writeIndexFile){
+
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-    // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
-    // console.log(element);
+
+
     if (writeIndexFile) {
         if (element.article_types && element.article_types != null && element.article_types[0] != null) {
             var templateName = element.article_types[0].name.toLowerCase();
@@ -213,21 +249,14 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
                 return console.log(err);
             }
         });
-
-        // fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
-        //     if (err) throw err;
-        //     // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
-        // })
     }
 
-
-
-
-
+    //console.log(` see on generate YAML-is${dirPath}`)
+    //KAS IIN SAAN TEHA _fetchdir-i kaustad ja failid??
+    //fs.mkdirSync(dirPath, { recursive: true })
 
     //console.log(allData)
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-    //console.log(allDataYAML)
     let allNews =[]
     let allSponsor = []
     let allAbout = []
@@ -250,21 +279,15 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
             }else if (artType.name === "IndustryProjekt") {
                 allIndustry.push(article)
             }
-
-
-
-
-
         }
-
     }
+
     let allNewsYAML = yaml.safeDump(allNews, { 'noRefs': true, 'indent': '4' });
     let allSponsorYAML = yaml.safeDump(allSponsor, { 'noRefs': true, 'indent': '4' });
     let allInterviewYAML = yaml.safeDump(allInterview, { 'noRefs': true, 'indent': '4' });
     let allAboutYAML = yaml.safeDump(allAbout, { 'noRefs': true, 'indent': '4' });
     let allIndustryYAML = yaml.safeDump(allIndustry, { 'noRefs': true, 'indent': '4' });
 
-    // console.log(allNewsYAML)
 
     fs.writeFileSync(`${sourceFolder}articles.${lang}.yaml`, allDataYAML, 'utf8');
     fs.writeFileSync(`${sourceFolder}news.${lang}.yaml`, allNewsYAML, 'utf8');
@@ -281,6 +304,5 @@ function modifyData(element, key, lang){
     element[key] = finalData;
 }
 
-// getToken();
 
 fetchAllData(dataModel);
