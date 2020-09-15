@@ -50,6 +50,7 @@ clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
 clr_primary = #F39133 // PÖFF orange
+clr_primary_text =#F36C3F // PÖFF orange teine
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -193,7 +194,7 @@ header
     text-transform uppercase
 
 .main_menu a:hover
-    color clr_primary
+    color clr_primary_text
     text-decoration none
 
 .main_menu_toggle
@@ -1754,7 +1755,7 @@ a.btn_popover
         margin 0
         padding 0
         padding-right 1.2rem
-        border 1px blue
+        border dashed red
 
     .main_menu ul
         display flex
@@ -1762,7 +1763,7 @@ a.btn_popover
         align-items flex-end
         /* border: 1px solid red; */
 
-    nav li
+    .main_menu li
         /* margin-bottom: 0; */
         height 100%
         margin 0
@@ -1787,15 +1788,15 @@ a.btn_popover
         /* margin-top: 1rem; */
 
     .main_menu ul li.dropdown ul li a
-        text-transform none
+        text-transform uppercase
 
-    nav li:hover
+    .main_menu li:hover
         background-color clr_header_bg
         // border-top 1px solid clr_primary
         /* border-right: 1px solid var(--clr_primary); */
 
-    nav li a:hover
-        color white_96
+    .main_menu li a:hover
+        color clr_primary_text
 
     footer
         grid-area footer
