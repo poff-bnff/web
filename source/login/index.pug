@@ -1,0 +1,209 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+
+
+
+
+block content
+
+
+
+    br
+    br
+    br
+    br
+    br
+    h4#number Log in here:
+    label(for='loginUsername') Username:
+    input#loginUsername(type='text')
+    br
+    label(for='loginPassword') Password:
+    input#loginPassword(type='password')
+    br
+    br
+    //- button(onclick='doLogin2()') Log in
+    a(href='https://stapp.auth.us-east-2.amazoncognito.com/login?client_id=cc9tu60rl2v7ujl71eephljc7&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://localhost:4000/articles') Log in
+    br
+    br
+    br
+    br
+    br
+    br
+    button(onclick='doGetSomeData()') Make get request
+    br
+    button(onclick='doLogout()') Log out
+
+    br
+    br
+    br
+    br
+
+
+    h1#contentfromStrapi
+
+
+
+    script(type="text/javascript").
+
+        var today = new Date();
+
+        contentfromStrapi.innerHTML = 'Not logged in';
+
+
+        // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
+
+        function doLogin2(){
+            var authenticationData = {
+                    Username : document.getElementById('loginUsername').value,
+                    Password : document.getElementById('loginPassword').value,
+                };
+                var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+                var poolData = { UserPoolId : 'us-east-2_WrK36FZvj',
+                    ClientId : 'cc9tu60rl2v7ujl71eephljc7'
+                };
+                var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+                var userData = {
+                    Username : document.getElementById('loginUsername').value,
+                    Pool : userPool
+                };
+                var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+                cognitoUser.authenticateUser(authenticationDetails, {
+                    onSuccess: function (result) {
+                        var accessToken = result.getAccessToken().getJwtToken();
+                        console.log(accessToken);
+
+                        /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
+                        var idToken = result.idToken.jwtToken;
+                    },
+
+                    onFailure: function(err) {
+                        alert(JSON.stringify(err));
+                    },
+
+            });
+        }
+
+
+        async function doLogin(){
+
+            console.log(AWS);
+            console.log(Amplify);
+
+
+
+
+            let credentials = {
+                identifier: document.getElementById("loginUsername").value,
+                password: document.getElementById("loginPassword").value
+            };
+
+             document.getElementById("loginUsername").value = '';
+             document.getElementById("loginPassword").value = '';
+
+            //- console.log(credentials);
+
+            let userDetails = await postCredentials(credentials);
+            console.log(userDetails);
+
+            let userMessage = userDetails;
+            if (userMessage != 'Unauthorized!'){
+                userMessage = 'Logged in';
+                number.innerHTML = userDetails.user.username + ' has logged in ' + today.toString();
+            }
+
+            contentfromStrapi.innerHTML = userMessage;
+
+
+            //- console.log(userDetails.jwt);
+            //- console.log(userDetails.user.username);
+
+            localStorage.setItem('POFF_TOKEN', userDetails.jwt);
+            localStorage.setItem('POFF_USER', userDetails.user.username)
+
+
+
+        }
+
+
+
+
+
+        async function postCredentials(credentials) {
+            let response = await fetch(`http://139.59.130.149/auth/local`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(credentials)
+            });
+
+            return processJsonResponse(response);
+        }
+
+
+        async function processJsonResponse(response) {
+            if (response.ok && response.status >= 200 && response.status < 300) {
+            // Kõik on hästi!
+                return await response.json();
+            }
+            else if (response.status >= 400 && response.status < 500) {
+            // Autentimine ebaõnnestus!
+                //- throw new Error('Unauthorized');
+                let result = 'Unauthorized!';
+                return result;
+            }
+            else {
+                // Päring ebaõnnestus, aga probleem ei olnud autentimisega.
+                throw new Error('Request failed', response);
+            }
+        }
+
+        async function doGetSomeData(){
+            let response = await fetch(`http://139.59.130.149/organisations`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('POFF_TOKEN')}`
+                }
+            });
+            let data = await processJsonResponse(response);
+            console.log(data);
+            contentfromStrapi.innerHTML = JSON.stringify(data);
+        }
+
+        function doLogout(){
+            localStorage.setItem('POFF_TOKEN', '');
+            localStorage.setItem('POFF_USER', '');
+            contentfromStrapi.innerHTML = 'Not logged in';
+            number.innerHTML = 'Log in here:'
+
+
+        }
+
+
+
+
+        //- // Add 'aws-amplify' library into your application
+
+        //- // Configure Auth category with your Amazon Cognito credentials
+        //- Amplify.configure({
+        //-     Auth: {
+        //-         identityPoolId: 'us-east-2_YZIoayw5r', // Amazon Cognito Identity Pool ID
+        //-         region: 'XX-XXXX-X', // Amazon Cognito Region
+        //-     }
+        //- });
+
+        //- // Call Auth.signIn with user credentials
+        //- Auth.signIn(username, password)
+        //-     .then(user => console.log(user))
+        //-     .catch(err => console.log(err));
+
+
+
+
+
+
+
+
+
+
