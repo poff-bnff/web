@@ -1012,7 +1012,7 @@
         50 aastat tagasi lahkus meie seast rahvusvaheliselt tuntumaid eesti
         kunstnikke Ülo Sooster. Lilija Vjugina „Ülo Sooster. Mees, kes kuivatas
         rätikut tuule käes” on esimene nõnda põhjalik ülevaade sellest
-        modernismi suurkujust ja tema pärandist – omamoodi rännak ajas ja
+        modernismi suurkujust ja tema pärandist �� omamoodi rännak ajas ja
         ruumis, mille võtab ette kunstniku poeg Tenno.
 
 
@@ -1252,9 +1252,13 @@
     title: 'intervjuu Article test '
     slug: about-article-test
     publish: true
+<<<<<<< HEAD
     directory: >-
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir/articles/pof-fi-article-6
+=======
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-6'
+>>>>>>> c032750e3b4b286f396d94c02fa1dcc1b37bcf79
     path: article/about-article-test
     data:
         pictures: /article_pictures.yaml
@@ -1696,9 +1700,13 @@
     slug: test-100
     lead: Mis juhtub kui artikli tüüpi pole?
     publish: true
+<<<<<<< HEAD
     directory: >-
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir/articles/pof-fi-article-7
+=======
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-7'
+>>>>>>> c032750e3b4b286f396d94c02fa1dcc1b37bcf79
     path: article/test-100
     data:
         pictures: /article_pictures.yaml
@@ -2196,9 +2204,13 @@
     slug: '-1'
     lead: 'See on artikkel, mille pealkiri on tühik!'
     publish: true
+<<<<<<< HEAD
     directory: >-
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir/articles/pof-fi-article-8
+=======
+    directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-8'
+>>>>>>> c032750e3b4b286f396d94c02fa1dcc1b37bcf79
     path: article/-1
     data:
         pictures: /article_pictures.yaml
