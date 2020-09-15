@@ -24,7 +24,7 @@ loadYaml(readYaml);
 function loadYaml(readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/festival/teams.et.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/teams.et.yaml`, 'utf8'));
 
     } catch (e) {
         console.log(e);
