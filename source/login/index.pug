@@ -22,8 +22,8 @@ block content
     input#loginPassword(type='password')
     br
     br
-    button(onclick='doLogin2()') Log in
-    //- a(href='https://stapp.auth.us-east-2.amazoncognito.com/login?response_type=token&client_id=cc9tu60rl2v7ujl71eephljc7&redirect_uri=https://localhost:4000/articles') Log in
+    //- button(onclick='doLogin2()') Log in
+    a(href='https://stapp.auth.us-east-2.amazoncognito.com/login?client_id=cc9tu60rl2v7ujl71eephljc7&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://localhost:4000/articles') Log in
     br
     br
     br
