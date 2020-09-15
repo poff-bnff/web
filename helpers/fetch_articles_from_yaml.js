@@ -193,28 +193,18 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         element = rueten(element, lang);
 
         for (artType of element.article_types) {
-            console.log(artType)
-            console.log('Enne ------', element.directory)
             if (artType.name === "About") {
                 element.directory = dirPath + "about/" + slugEn;
                 fs.mkdirSync(element.directory, { recursive: true });
-                console.log('ABOUT', element.directory)
-
             } else if (artType.name === "Uudis") {
                 element.directory = dirPath + "news/" + slugEn;
                 fs.mkdirSync(element.directory, { recursive: true });
-                console.log('UUDIS', element.directory)
-
             } else if (artType.name === "ToetajaLugu") {
                 element.directory = dirPath + "sponsorstory/" + slugEn;
                 fs.mkdirSync(element.directory, { recursive: true });
-                console.log('TOETAJA', element.directory)
-
             } else if (artType.name === "Intervjuu") {
                 element.directory = dirPath + "interview/" + slugEn;
                 fs.mkdirSync(element.directory, { recursive: true });
-                console.log('INTERVJUU', element.directory)
-
             } else if (artType.name === "IndustryProjekt") {
                 element.directory = dirPath + "industryproject/" + slugEn;
                 fs.mkdirSync(element.directory, { recursive: true });
