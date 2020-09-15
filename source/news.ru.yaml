@@ -13,78 +13,15 @@
     created_at: '2020-09-13T19:46:09.085Z'
     updated_at: '2020-09-13T19:46:09.253Z'
     slug_et: pof-fi-article-2
-    slug_ru: pof-fi-article-14
-    media:
-        id: 26
-        image:
-            -
-                id: 149
-                name: >-
-                    2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
-                    web.png
-                alternativeText: ''
-                caption: ''
-                width: 800
-                height: 450
-                formats:
-                    thumbnail:
-                        ext: .png
-                        url: >-
-                            /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                        hash: >-
-                            thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                        mime: image/png
-                        name: >-
-                            thumbnail_2020 Tartuff Closing - Dagmar Raudam,
-                            Kristiina Reidolv web.png
-                        path: null
-                        size: 68.25
-                        width: 245
-                        height: 138
-                hash: >-
-                    2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                ext: .png
-                mime: image/png
-                size: 515.58
-                url: >-
-                    /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                previewUrl: null
-                provider: local
-                provider_metadata: null
-                created_by: 11
-                updated_by: 11
-                created_at: '2020-09-13T19:45:40.785Z'
-                updated_at: '2020-09-13T19:45:40.871Z'
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    web_authors:
-        -
-            id: 2
-            namePrivate: Toimetaja
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:28:23.386Z'
-            updated_at: '2020-09-02T11:28:23.428Z'
-            name: Editor
-    title: The Goddess of Fortune wins Tartuff Audience Award
-    slug: the-goddess-of-fortune-wins-tartuff-audience-award
-    lead: >-
+    title_en: The Goddess of Fortune wins Tartuff Audience Award
+    slug_en: the-goddess-of-fortune-wins-tartuff-audience-award
+    lead_en: >-
         The audience of the Tartu Love Film Festival that wrapped on Sunday
         picked the Italian dramedy The Goddess of Fortune as their favourite
         film. The festival, affected heavily by the COVID-related restrictions
         saw an attendance of around 6300 (including 1200 online viewers) which
         marks a big drop from previous editions.
-    contents: >-
+    contents_en: >-
         The audience of the Tartu Love Film Festival that wrapped on Sunday
         picked the Italian dramedy **The Goddess of Fortune** as their favourite
         film. The festival, affected heavily by the COVID-related restrictions
@@ -122,15 +59,76 @@
         including moving a part of the programme online. Most of the festival
         films will also be screened in the Film Museum in Tallinn from the 19th
         until the 22nd of August.
-    publish: true
+    publish_en: true
+    media:
+        id: 26
+        image_en:
+            -
+                id: 149
+                name: >-
+                    2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
+                    web.png
+                alternativeText: ''
+                caption: ''
+                width: 800
+                height: 450
+                formats:
+                    thumbnail:
+                        ext: .png
+                        url: >-
+                            /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                        hash: >-
+                            thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                        mime: image/png
+                        name: >-
+                            thumbnail_2020 Tartuff Closing - Dagmar Raudam,
+                            Kristiina Reidolv web.png
+                        size: 68.25
+                        width: 245
+                        height: 138
+                hash: >-
+                    2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                ext: .png
+                mime: image/png
+                size: 515.58
+                url: >-
+                    /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                provider: local
+                created_by: 11
+                updated_by: 11
+                created_at: '2020-09-13T19:45:40.785Z'
+                updated_at: '2020-09-13T19:45:40.871Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    web_authors:
+        -
+            id: 2
+            namePrivate: Toimetaja
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:28:23.386Z'
+            updated_at: '2020-09-02T11:28:23.428Z'
+            name: Editor
+    slug: pof-fi-article-14
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//news/the-goddess-of-fortune-wins-tartuff-audience-award
-    path: article/the-goddess-of-fortune-wins-tartuff-audience-award
+    path: article/pof-fi-article-14
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 2
     created_by:
@@ -145,10 +143,12 @@
     updated_at: '2020-09-06T21:38:28.279Z'
     title_et: Tartuffi esimene film on seksuaalsest ahistamisest
     slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
-    slug_ru: pof-fi-article-7
+    title_en: test 2 en
+    slug_en: test-2-en
     lead_et: >-
         PÖFFi armastusfilmide festival Tartuff kuulutas välja esimese linateose,
         mille teema on hetkel üliaktuaalne – seksuaalne ahistamine.
+    lead_en: lead 2 en
     contents_et: >-
         „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb kuuest
         absurdihuumoriga vürtsitatud loost, mis on inspireeritud igapäevastest
@@ -191,10 +191,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: cont 2 en
     publishFrom: '2020-07-07T09:00:00.000Z'
     publishUntil: '2021-01-14T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 9
         imageDefault:
@@ -246,18 +247,15 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: test 2 en
-    slug: test-2-en
-    lead: lead 2 en
-    contents: cont 2 en
+            name: Волк
+    slug: pof-fi-article-7
     publish: true
     directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir//news/test-2-en'
-    path: article/test-2-en
+    path: article/pof-fi-article-7
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 4
     created_by:
@@ -272,10 +270,12 @@
     updated_at: '2020-09-14T08:36:18.597Z'
     title_et: Tartu armastusfilmide festivali avab troopiline melodraama
     slug_et: tartu-armastusfilmide-festivali-avab-troopiline-melodraama
-    slug_ru: pof-fi-article-3
+    title_en: test 4 en
+    slug_en: test-4-en
     lead_et: >-
         PÖFFi armastusfilmide festival Tartuff kuulutas väljatänavuse avafilmi,
         milleks on brasiillase Karim Aïnouzi rohkelt auhinnatud "Nähtamatu elu".
+    lead_en: lead 4 en
     contents_et: >-
         End troopiliseks melodraamaks nimetav linateos räägib kahest üksteisega
         kokku kasvanud õest 1950ndate aastate Rio de Janeiros. Konservatiivne
@@ -326,10 +326,11 @@
         augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
         Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
         [TARTU LOOMEMAJANDUSKESKUSEGA](https://lmk.ee). 
+    contents_en: cont 4 en
     publishFrom: '2020-07-22T09:00:00.000Z'
     publishUntil: '2021-01-06T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 11
         imageDefault:
@@ -463,18 +464,15 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: test 4 en
-    slug: test-4-en
-    lead: lead 4 en
-    contents: cont 4 en
+            name: Волк
+    slug: pof-fi-article-3
     publish: true
     directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir//news/test-4-en'
-    path: article/test-4-en
+    path: article/pof-fi-article-3
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 34
     created_by:
@@ -488,10 +486,11 @@
     created_at: '2020-09-14T12:07:40.816Z'
     updated_at: '2020-09-14T12:08:09.348Z'
     slug_et: pof-fi-article-4
-    slug_ru: pof-fi-article-15
+    title_en: ilma et pealkirjata
+    slug_en: ilma-et-pealkirjata
     lead_et: Ilma et pealkirjata
     publish_et: true
-    publish_ru: true
+    publish_en: true
     article_types:
         -
             id: 2
@@ -526,17 +525,16 @@
             et: About
             en: About
             ru: About
-    title: ilma et pealkirjata
-    slug: ilma-et-pealkirjata
+    slug: pof-fi-article-15
     publish: true
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//about/ilma-et-pealkirjata
-    path: article/ilma-et-pealkirjata
+    path: article/pof-fi-article-15
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 6
     created_by:
@@ -551,11 +549,13 @@
     updated_at: '2020-09-06T21:38:39.770Z'
     title_et: Tartuffi filmid jõuavad ekraanile ka Tallinnas
     slug_et: tartuffi-filmid-jouavad-ekraanile-ka-tallinnas
-    slug_ru: pof-fi-article-1
+    title_en: test 6 en
+    slug_en: test-6-en
     lead_et: >-
         Tartus jätkuva PÖFFi armastusfilmide festivali Tartuff filme saab
         vaadata ka järgmisel nädalal Tallinnas, kui Filmimuuseum näitab
         festivali valikkava.
+    lead_en: lead 6 en
     contents_et: >-
         19.–22. augustini linastuvad Maarjamäel asuva Filmimuuseumi kinos
         Hispaania režissööri Javier Fesseri komöödia „Tšempionid”, Lõuna-Korea
@@ -603,10 +603,11 @@
         PÖFFi armastusfilmide festival Tartuff kestab 10.–15. augustini.
         Festivali virtuaalses kinos Elisa Stage saab filme vaadata 16.
         augustini.
+    contents_en: cont 6 en
     publishFrom: '2020-09-02T05:30:00.000Z'
     publishUntil: '2022-01-11T22:00:00.000Z'
     publish_et: true
-    publish_ru: false
+    publish_en: false
     media:
         id: 13
         imageDefault:
@@ -678,14 +679,14 @@
             en: News
             ru: Новости
     tag_premiere_types:
-        - World Premiere
+        - Мировая премьера
     tag_programmes:
-        - Official Selection
+        - Основная конкурсная программа
     tag_genres:
-        - Animation
+        - Анимация
     tag_keywords:
         - MeToo
-        - Society
+        - Общество
     web_authors:
         -
             id: 1
@@ -694,18 +695,15 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: test 6 en
-    slug: test-6-en
-    lead: lead 6 en
-    contents: cont 6 en
+            name: Волк
+    slug: pof-fi-article-1
     publish: false
     directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir//news/test-6-en'
-    path: article/test-6-en
+    path: article/pof-fi-article-1
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 3
     created_by:
@@ -720,10 +718,12 @@
     updated_at: '2020-09-06T21:38:20.823Z'
     title_et: Tartuff on pühendatud kunstile
     slug_et: tartuff-on-puehendatud-kunstile
-    slug_ru: pof-fi-article-6
+    title_en: test 3 en
+    slug_en: test-3-en
     lead_et: >-
         PÖFFi armastusfilmide festival Tartuff pöörab tänavu erilist tähelepanu
         kunstile.
+    lead_en: lead 3 en
     contents_et: >-
         Kunstimaailma Robin Hood ehk Banksy, Marcel Duchamp, Alberto Giacometti,
         Kanada naivist Maud Lewis – neist kõnelevad mängu- ja dokumentaalfilmid
@@ -813,10 +813,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: cont 3 en
     publishFrom: '2020-07-15T09:00:00.000Z'
     publishUntil: '2021-01-07T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 10
         imageDefault:
@@ -868,18 +869,15 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: test 3 en
-    slug: test-3-en
-    lead: lead 3 en
-    contents: cont 3 en
+            name: Волк
+    slug: pof-fi-article-6
     publish: true
     directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir//news/test-3-en'
-    path: article/test-3-en
+    path: article/pof-fi-article-6
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 9
     created_by:
@@ -894,10 +892,12 @@
     updated_at: '2020-09-09T06:47:34.423Z'
     title_et: Kumu dokumentaalfilmide sari alustab hooaega Tokaj veiniga
     slug_et: kumu-dokumentaalfilmide-sari-alustab-hooaega-tokaj-veiniga
-    slug_ru: pof-fi-article-9
+    title_en: test 9 en
+    slug_en: test-9-en
     lead_et: >-
         Kumu kultuuriteemaliste dokumentaalfilmide sügishooaja juhatab sisse
         kuulsast Tokaj veinist rääkiv linateos.
+    lead_en: test 9 en lead
     contents_et: >-
         Ungarlase Tamás Almási „Vedel kuld” (Folyékony arany) on esimene film
         Ungari veinist, täpsemalt maailmakuulsast Aszú veinist, mille
@@ -977,9 +977,10 @@
 
         Kultuuriteemaliste filmide sarja „Kumu dokumentaal” korraldavad Kumu ja
         PÖFF.
+    contents_en: test 9 en cont
     publishFrom: '2020-08-24T09:00:00.000Z'
     publish_et: true
-    publish_ru: false
+    publish_en: false
     media:
         id: 16
         imageDefault:
@@ -1033,18 +1034,15 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: test 9 en
-    slug: test-9-en
-    lead: test 9 en lead
-    contents: test 9 en cont
+            name: Волк
+    slug: pof-fi-article-9
     publish: false
     directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir//news/test-9-en'
-    path: article/test-9-en
+    path: article/pof-fi-article-9
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 30
     created_by:
@@ -1059,14 +1057,10 @@
     updated_at: '2020-09-14T08:15:41.891Z'
     title_et: Tartus avatakse täna armastusfilmide festival
     slug_et: tartus-avatakse-taena-armastusfilmide-festival
-    title_ru: Сегодня в Тарту открывается фестиваль фильмов о любви
-    slug_ru: segodnya-v-tartu-otkryvaetsya-festival-filmov-o-lyubvi
+    slug_en: pof-fi-article-3
     lead_et: >-
         Täna õhtul avatakse Tartus PÖFFi armastusfilmide festival Tartuff, mida
         saab esimest korda külastada ka virtuaalselt.
-    lead_ru: >-
-        Сегодня вечером в Тарту открывается фестиваль фильмов о любви Tartuff,
-        проводимый под эгидой кинофестиваля «Тёмные ночи» (PÖFF). 
     contents_et: >-
         Kell 22 Raekoja platsil algaval tseremoonial annavad kontserdi Maarja
         Nuut ja Hendrik Kaljujärv. Festivali avafilmiks on Brasiilia režissööri
@@ -1101,7 +1095,57 @@
         PÖFFi armastusfilmide festivali Tartuff korraldab Pimedate Ööde
         filmifestival koostöös Tartu linna, Tartu filmifondi ja Tartu
         loomemajanduskeskusega.
-    contents_ru: >-
+    publishFrom: '2020-08-10T07:00:00.000Z'
+    publish_et: true
+    media:
+        id: 27
+        imageDefault:
+            -
+                id: 150
+                name: placeholder_hd_1.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1920
+                height: 1080
+                formats:
+                    thumbnail:
+                        ext: .jpg
+                        url: /uploads/thumbnail_placeholder_hd_1_ac79948667.jpg
+                        hash: thumbnail_placeholder_hd_1_ac79948667
+                        mime: image/jpeg
+                        name: thumbnail_placeholder_hd_1.jpg
+                        size: 4.08
+                        width: 245
+                        height: 138
+                hash: placeholder_hd_1_ac79948667
+                ext: .jpg
+                mime: image/jpeg
+                size: 96.15
+                url: /uploads/placeholder_hd_1_ac79948667.jpg
+                provider: local
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-09-14T08:15:15.435Z'
+                updated_at: '2020-09-14T08:15:15.813Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    title: Сегодня в Тарту открывается фестиваль фильмов о любви
+    slug: segodnya-v-tartu-otkryvaetsya-festival-filmov-o-lyubvi
+    lead: >-
+        Сегодня вечером в Тарту открывается фестиваль фильмов о любви Tartuff,
+        проводимый под эгидой кинофестиваля «Тёмные ночи» (PÖFF). 
+    contents: >-
         В течение недели зрители смогут посмотреть 17 фильмов как в кинотеатре
         под открытым небом, так и виртуально на платформе Elisa Stage. Посещение
         фильмов и практически всех сопутствующих мероприятий бесплатно. 
@@ -1163,100 +1207,15 @@
         который проводится в 15-й раз. Его организует Таллиннский кинофестиваль
         «Тёмные ночи» в сотрудничестве с городом Тарту, Тартуским фондом кино и
         Тартуского центра креативной экономики.
-    publishFrom: '2020-08-10T07:00:00.000Z'
-    publish_et: true
-    publish_ru: true
-    media:
-        id: 27
-        imageDefault:
-            -
-                id: 150
-                name: placeholder_hd_1.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1920
-                height: 1080
-                formats:
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_placeholder_hd_1_ac79948667.jpg
-                        hash: thumbnail_placeholder_hd_1_ac79948667
-                        mime: image/jpeg
-                        name: thumbnail_placeholder_hd_1.jpg
-                        size: 4.08
-                        width: 245
-                        height: 138
-                hash: placeholder_hd_1_ac79948667
-                ext: .jpg
-                mime: image/jpeg
-                size: 96.15
-                url: /uploads/placeholder_hd_1_ac79948667.jpg
-                provider: local
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-14T08:15:15.435Z'
-                updated_at: '2020-09-14T08:15:15.813Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    slug: pof-fi-article-3
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir//news/pof-fi-article-3
-    path: article/pof-fi-article-3
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 35
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T12:35:14.386Z'
-    updated_at: '2020-09-14T13:57:47.775Z'
-    title_et: 'intervjuu Article test '
-    slug_et: about-article-test
-    slug_ru: pof-fi-article-16
-    publish_et: true
-    publish_ru: true
-    article_types:
-        -
-            id: 3
-            name: Intervjuu
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-    slug: pof-fi-article-6
     publish: true
     directory: >-
         c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir//interview/pof-fi-article-6
-    path: article/pof-fi-article-6
+        Käsper\Documents\web\source\_fetchdir//news/pof-fi-article-3
+    path: article/segodnya-v-tartu-otkryvaetsya-festival-filmov-o-lyubvi
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 8
     created_by:
@@ -1271,10 +1230,12 @@
     updated_at: '2020-09-06T21:38:54.520Z'
     title_et: Tartuffi publikuauhind rändab Itaaliasse
     slug_et: test-8-et
-    slug_ru: pof-fi-article-8
+    title_en: test 8 en
+    slug_en: test-8-en
     lead_et: >-
         PÖFFi armastusfilmide festivali Tartuff publik valis oma lemmikuks
         Itaalia draamakomöödia „Õnnejumalanna”.
+    lead_en: test 8 en lead
     contents_et: >-
         Ferzan Özpeteki filmis peavad kaks lastekauget, oma suhtega kriisi
         jõudnud meest kantseldama lapsi, kes neile hoida jäetakse.
@@ -1311,10 +1272,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
+    contents_en: test 8 en cont
     publishFrom: '2020-05-18T09:00:00.000Z'
     publishUntil: '2020-11-10T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: true
     media:
         id: 15
         imageDefault:
@@ -1387,14 +1349,14 @@
             en: News
             ru: Новости
     tag_premiere_types:
-        - European premiere
+        - Европейская премьера
     tag_programmes:
-        - Official Selection
+        - Основная конкурсная программа
     tag_genres:
-        - Drama
-        - Animation
+        - Драма
+        - Анимация
     tag_keywords:
-        - Society
+        - Общество
     web_authors:
         -
             id: 1
@@ -1403,18 +1365,15 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: test 8 en
-    slug: test-8-en
-    lead: test 8 en lead
-    contents: test 8 en cont
+            name: Волк
+    slug: pof-fi-article-8
     publish: true
     directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir//news/test-8-en'
-    path: article/test-8-en
+    path: article/pof-fi-article-8
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 1
     created_by:
@@ -1429,17 +1388,13 @@
     updated_at: '2020-09-09T10:53:59.266Z'
     title_et: Tartu armastusfilmide festival laieneb üle kogu Eesti
     slug_et: tartu-armastusfilmide-festival-laieneb-uele-kogu-eesti
-    title_ru: 'Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ '
-    slug_ru: pof-fi-article-5
+    title_en: Test EN
+    slug_en: test-en
     lead_et: >-
         Juba 15. korda muutub Tartu Raekoja plats Eesti suurimaks vabaõhukinoks,
         kui augusti teisel nädalal jõuab sealsele väliekraanile 11 armastusest
         kõnelevat filmi.
-    lead_ru: >-
-        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
-        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
-        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
-        Леад РУ Леад РУ 
+    lead_en: Lead EN
     contents_et: >-
         Peale selle avab PÖFFi armastusfilmide festival Tartuff esimest korda ka
         virtuaalse kinosaali, mida saab külastada üle kogu Eesti.
@@ -1482,19 +1437,11 @@
 
         Tartuffi korraldab Pimedate Ööde filmifestival koostöös Tartu linna,
         Tartu filmifondi ja Tartu loomemajanduskeskusega.
-    contents_ru: >-
-        Контентс по русски Контентс по русски Контентс по русски Контентс по
-        русски Контентс по русски Контентс по русски Контентс по русски Контентс
-        по русски Контентс по русски Контентс по русски Конте��тс по русски
-        Контентс по русски Контентс по русски Контентс по русски Контентс по
-        русски Контентс по русски Контентс по русски Контентс по русски Контентс
-        по русски Контентс по русски Контентс по русски Контентс по русски
-        Контентс по русски Контентс по русски Контентс по русски Контентс по
-        русски Контентс по русски Контентс по русски 
+    contents_en: Cont EN
     publishFrom: '2020-06-18T09:00:00.000Z'
     publishUntil: '2021-01-14T10:00:00.000Z'
     publish_et: true
-    publish_ru: true
+    publish_en: false
     media:
         id: 8
         imageDefault:
@@ -1567,14 +1514,14 @@
             en: News
             ru: Новости
     tag_premiere_types:
-        - International Premiere
+        - Международная премьера
     tag_programmes:
-        - Official Selection
+        - Основная конкурсная программа
     tag_genres:
-        - Drama
+        - Драма
     tag_keywords:
         - MeToo
-        - Society
+        - Общество
     web_authors:
         -
             id: 1
@@ -1583,18 +1530,30 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: Test EN
-    slug: test-en
-    lead: Lead EN
-    contents: Cont EN
-    publish: false
+            name: Волк
+    title: 'Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ Титле РУ '
+    slug: pof-fi-article-5
+    lead: >-
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
+        Леад РУ Леад РУ 
+    contents: >-
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски Контентс по русски Контентс
+        по русски Контентс по русски Контентс по русски Конте��тс по русски
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски Контентс по русски Контентс
+        по русски Контентс по русски Контентс по русски Контентс по русски
+        Контентс по русски Контентс по русски Контентс по русски Контентс по
+        русски Контентс по русски Контентс по русски 
+    publish: true
     directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir//news/test-en'
-    path: article/test-en
+    path: article/pof-fi-article-5
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 31
     created_by:
@@ -1609,10 +1568,14 @@
     updated_at: '2020-09-14T11:10:52.404Z'
     title_et: test
     slug_et: pof-fi-article-3
-    slug_ru: pof-fi-article-4
+    title_en: Just English test
+    slug_en: just-english-test
+    lead_en: lead
+    contents_en: contents
+    publish_en: true
     media:
         id: 28
-        image:
+        image_en:
             -
                 id: 149
                 name: >-
@@ -1633,7 +1596,6 @@
                         name: >-
                             thumbnail_2020 Tartuff Closing - Dagmar Raudam,
                             Kristiina Reidolv web.png
-                        path: null
                         size: 68.25
                         width: 245
                         height: 138
@@ -1644,13 +1606,12 @@
                 size: 515.58
                 url: >-
                     /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                previewUrl: null
                 provider: local
-                provider_metadata: null
                 created_by: 11
                 updated_by: 11
                 created_at: '2020-09-13T19:45:40.785Z'
                 updated_at: '2020-09-13T19:45:40.871Z'
+        image: []
     article_types:
         -
             id: 2
@@ -1663,19 +1624,15 @@
             et: Uudised
             en: News
             ru: Новости
-    title: Just English test
-    slug: just-english-test
-    lead: lead
-    contents: contents
-    publish: true
+    slug: pof-fi-article-4
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//news/just-english-test
-    path: article/just-english-test
+    path: article/pof-fi-article-4
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 15
     created_by:
@@ -1690,16 +1647,16 @@
     updated_at: '2020-09-14T08:07:13.507Z'
     title_et: PÖFFi filmitööstusüritus toimub tänavu virtuaalselt
     slug_et: p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt-1
-    title_ru: Кинорынок Таллиннского кинофестиваля «Тёмные ночи» пройдет онлайн
-    slug_ru: kinorynok-tallinnskogo-kinofestivalya-tyomnye-nochi-projdet-onlajn
+    title_en: Industry@Tallinn & Baltic Event happens fully online this year
+    slug_en: industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     lead_et: >-
         Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
         professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
         kolib selleks sügiseks veebi.
-    lead_ru: >-
-        В этом году спутник Таллиннского кинофестиваля «Тёмные ночи» – кинорынок
-        Industry@Tallinn & Baltic Event – пройдет полностью онлайн. Это
-        обусловлено потенциальными ограничениями на путешествия из-за COVID-19.
+    lead_en: >-
+        Industry@Tallinn & Baltic Event, the industry strand of the Tallinn
+        Black Nights Film Festival has decided to move online completely due to
+        likely travel restrictions caused by the resurgence of COVID-19.
     contents_et: >-
         Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
         piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
@@ -1744,140 +1701,7 @@
         Koroonaviiruse levikust tulenevalt on ette valmistamisel mitu võimalikku
         stsenaariumit, sealhulgas toimumist hübriidfestivalina või halvimal
         juhul tervenisti virtuaalsel kujul.
-    contents_ru: >-
-        После появления первых признаков возможной второй волны COVID-19 в
-        стране организаторы учли прогнозы Департамента здоровья Эстонии и
-        приняли решение перевести программу кинорынка в онлайн-режим, продолжив
-        принимать проектные заявки. Представители мировой киноиндустрии
-        по-прежнему смогут подавать заявки на получение доступа ко всем
-        мероприятиям, презентациям проектов и фильмам независимо от их
-        географического положения.
-
-
-        «По итогам консультаций с представителями здравоохранения Эстонии
-        представляется более чем вероятным, что в той или иной форме произойдет
-        еще одна вспышка заболеваемости и что будет наложен запрет на зарубежные
-        поездки либо введены ограничения. Это не позволило бы нашим гостям
-        должным образом посещать мероприятия, и поэтому с тяжелым сердцем мы
-        заблаговременно решили не рисковать и перенести в этом году все наши
-        мероприятия в виртуальную среду», - прокомментировала директор
-        Industry@Tallinn & Baltic Event Марге Лийске.
-
-
-        «Я считаю, что переезд в Интернет также создаст для нас и для аудитории
-        некоторые новые возможности: мы надеемся, что из нашей программы смогут
-        извлечь пользу даже больше профессионалов киноиндустрии, чем раньше,
-        поскольку им не нужно будет ехать в Таллинн и они смогут получить доступ
-        к контенту из любой удобной для них географической точки. Кром�� того,
-        при подготовке программы мы можем поиграть с различными привлекательными
-        цифровыми форматами и привлечь докладчиков, которые не смогли бы
-        посетить нас в Таллинне», - добавила Лийске.
-
-
-        В настоящее время команда работает над программой, и первые докладчики
-        будут объявлены в сентябре. Программа включит в себя, как обычно,
-        семинары, мастерские, мастер-классы, панельные дискуссии, которые
-        покроют все самые животрепещущие темы, а также пройдут мероприятия
-        Академии PÖFF, ориентированные на актеров, агентов, кинокомпозиторов,
-        художников по костюмам и фотографов-декораторов. 
-
-
-        В настоящее время открыт прием заявок на участие в Baltic Event
-        Co-production Market (проекты для сопродюсеров, инвесторов и торговых
-        агентов), Script Pool Tallinn (всемирный конкурс сценариев фильмов и
-        сериалов) и POWR Baltic Stories Exchange (для сценаристов из стран
-        Северной Европы и Балтии, ищущих продюсеров). Срок подачи проектов – 21
-        сентября, и их оценивание проводится онлайн. Каждый участник, приславший
-        проект, будет иметь доступ к онлайн-программе мероприятий
-        Industry@Tallinn & Baltic Event, включающей семинары, мастер-классы,
-        панельные дискуссии, встречи с профессионалами киноиндустрии и т. д. 
-
-
-        В этом году впервые будет организована Академия PÖFF, целью которой
-        является предоставление высококачественного аудиовизуального
-        образования.
-
-
-        Industry@Tallinn & Baltic Event пройдет с 23 по 27 ноября 2020, и его
-        программа будет объявлена поэтапно в течение сентября и октября.
-
-
-        Таллиннский кинофестиваль «Тёмные ночи» пройдет в этом году с 13 по 29
-        ноября. Из-за распространения коронавируса организаторы готовятся к
-        нескольким возможным сценариям, включая традиционную организацию на
-        месте и готовность в случае необходимости провести мероприятия самого
-        фестиваля частично или полностью онлайн.
-
-
-        Аккредитованные иностранные представители прессы и профессионалы
-        киноиндустрии получат доступ к программе фестиваля в цифровом виде на
-        платформе Shift72, независимо от их географического положения.
-    publish_et: true
-    media:
-        id: 21
-        imageDefault:
-            -
-                id: 145
-                name: >-
-                    Industry-at-Tallinn-works-in-progress-2018-photo-by-Aron-Urb--b165780c.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1400
-                height: 933
-                formats:
-                    thumbnail:
-                        ext: .jpg
-                        url: >-
-                            /uploads/thumbnail_Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036.jpg
-                        hash: >-
-                            thumbnail_Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036
-                        mime: image/jpeg
-                        name: >-
-                            thumbnail_Industry-at-Tallinn-works-in-progress-2018-photo-by-Aron-Urb--b165780c.jpg
-                        size: 14.95
-                        width: 234
-                        height: 156
-                hash: >-
-                    Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036
-                ext: .jpg
-                mime: image/jpeg
-                size: 303.73
-                url: >-
-                    /uploads/Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036.jpg
-                provider: local
-                created_by: 9
-                updated_by: 9
-                created_at: '2020-09-13T18:19:49.875Z'
-                updated_at: '2020-09-13T18:19:49.953Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: Industry@Tallinn & Baltic Event happens fully online this year
-    slug: industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
-    lead: >-
-        Industry@Tallinn & Baltic Event, the industry strand of the Tallinn
-        Black Nights Film Festival has decided to move online completely due to
-        likely travel restrictions caused by the resurgence of COVID-19.
-    contents: >-
+    contents_en: >-
         Industry@Tallinn & Baltic Event, the industry strand of the Tallinn
         Black Nights Film Festival has decided to move online completely due to
         likely travel restrictions caused by the resurgence of COVID-19.
@@ -2015,15 +1839,148 @@
 
         Industry@Tallinn & Baltic Event will run from the 23rd until the 27th of
         November.
+    publish_et: true
+    media:
+        id: 21
+        imageDefault:
+            -
+                id: 145
+                name: >-
+                    Industry-at-Tallinn-works-in-progress-2018-photo-by-Aron-Urb--b165780c.jpg
+                alternativeText: ''
+                caption: ''
+                width: 1400
+                height: 933
+                formats:
+                    thumbnail:
+                        ext: .jpg
+                        url: >-
+                            /uploads/thumbnail_Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036.jpg
+                        hash: >-
+                            thumbnail_Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036
+                        mime: image/jpeg
+                        name: >-
+                            thumbnail_Industry-at-Tallinn-works-in-progress-2018-photo-by-Aron-Urb--b165780c.jpg
+                        size: 14.95
+                        width: 234
+                        height: 156
+                hash: >-
+                    Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036
+                ext: .jpg
+                mime: image/jpeg
+                size: 303.73
+                url: >-
+                    /uploads/Industry_at_Tallinn_works_in_progress_2018_photo_by_Aron_Urb_b165780c_bb052ec036.jpg
+                provider: local
+                created_by: 9
+                updated_by: 9
+                created_at: '2020-09-13T18:19:49.875Z'
+                updated_at: '2020-09-13T18:19:49.953Z'
+        image: []
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Волк
+    title: Кинорынок Таллиннского кинофестиваля «Тёмные ночи» пройдет онлайн
+    slug: kinorynok-tallinnskogo-kinofestivalya-tyomnye-nochi-projdet-onlajn
+    lead: >-
+        В этом году спутник Таллиннского кинофестиваля «Тёмные ночи» – кинорынок
+        Industry@Tallinn & Baltic Event – пройдет полностью онлайн. Это
+        обусловлено потенциальными ограничениями на путешествия из-за COVID-19.
+    contents: >-
+        После появления первых признаков возможной второй волны COVID-19 в
+        стране организаторы учли прогнозы Департамента здоровья Эстонии и
+        приняли решение перевести программу кинорынка в онлайн-режим, продолжив
+        принимать проектные заявки. Представители мировой киноиндустрии
+        по-прежнему смогут подавать заявки на получение доступа ко всем
+        мероприятиям, презентациям проектов и фильмам независимо от их
+        географического положения.
+
+
+        «По итогам консультаций с представителями здравоохранения Эстонии
+        представляется более чем вероятным, что в той или иной форме произойдет
+        еще одна вспышка заболеваемости и что будет наложен запрет на зарубежные
+        поездки либо введены ограничения. Это не позволило бы нашим гостям
+        должным образом посещать мероприятия, и поэтому с тяжелым сердцем мы
+        заблаговременно решили не рисковать и перенести в этом году все наши
+        мероприятия в виртуальную среду», - прокомментировала директор
+        Industry@Tallinn & Baltic Event Марге Лийске.
+
+
+        «Я считаю, что переезд в Интернет также создаст для нас и для аудитории
+        некоторые новые возможности: мы надеемся, что из нашей программы смогут
+        извлечь пользу даже больше профессионалов киноиндустрии, чем раньше,
+        поскольку им не нужно будет ехать в Таллинн и они смогут получить доступ
+        к контенту из любой удобной для них географической точки. Кром�� того,
+        при подготовке программы мы можем поиграть с различными привлекательными
+        цифровыми форматами и привлечь докладчиков, которые не смогли бы
+        посетить нас в Таллинне», - добавила Лийске.
+
+
+        В настоящее время команда работает над программой, и первые докладчики
+        будут объявлены в сентябре. Программа включит в себя, как обычно,
+        семинары, мастерские, мастер-классы, панельные дискуссии, которые
+        покроют все самые животрепещущие темы, а также пройдут мероприятия
+        Академии PÖFF, ориентированные на актеров, агентов, кинокомпозиторов,
+        художников по костюмам и фотографов-декораторов. 
+
+
+        В настоящее время открыт прием заявок на участие в Baltic Event
+        Co-production Market (проекты для сопродюсеров, инвесторов и торговых
+        агентов), Script Pool Tallinn (всемирный конкурс сценариев фильмов и
+        сериалов) и POWR Baltic Stories Exchange (для сценаристов из стран
+        Северной Европы и Балтии, ищущих продюсеров). Срок подачи проектов – 21
+        сентября, и их оценивание проводится онлайн. Каждый участник, приславший
+        проект, будет иметь доступ к онлайн-программе мероприятий
+        Industry@Tallinn & Baltic Event, включающей семинары, мастер-классы,
+        панельные дискуссии, встречи с профессионалами киноиндустрии и т. д. 
+
+
+        В этом году впервые будет организована Академия PÖFF, целью которой
+        является предоставление высококачественного аудиовизуального
+        образования.
+
+
+        Industry@Tallinn & Baltic Event пройдет с 23 по 27 ноября 2020, и его
+        программа будет объявлена поэтапно в течение сентября и октября.
+
+
+        Таллиннский кинофестиваль «Тёмные ночи» пройдет в этом году с 13 по 29
+        ноября. Из-за распространения коронавируса организаторы готовятся к
+        нескольким возможным сценариям, включая традиционную организацию на
+        месте и готовность в случае необходимости провести мероприятия самого
+        фестиваля частично или полностью онлайн.
+
+
+        Аккредитованные иностранные представители прессы и профессионалы
+        киноиндустрии получат доступ к программе фестиваля в цифровом виде на
+        платформе Shift72, независимо от их географического положения.
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//news/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     path: >-
-        article/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+        article/kinorynok-tallinnskogo-kinofestivalya-tyomnye-nochi-projdet-onlajn
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 32
     created_by:
@@ -2038,7 +1995,7 @@
     updated_at: '2020-09-14T12:05:58.987Z'
     title_et: Test0
     slug_et: test0
-    slug_ru: pof-fi-article-11
+    slug_en: pof-fi-article-4
     lead_et: Test0 Test0
     contents_et: Test0 Test0
     publishFrom: '2020-09-14T09:00:00.000Z'
@@ -2103,11 +2060,11 @@
             en: Project
             ru: Проэкт
     tag_premiere_types:
-        - European premiere
+        - Европейская премьера
     tag_programmes:
-        - Official Selection
+        - Основная конкурсная программа
     tag_genres:
-        - Animation
+        - Анимация
     tag_keywords:
         - MeToo
     web_authors:
@@ -2118,16 +2075,16 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-4
+            name: Волк
+    slug: pof-fi-article-11
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//industryproject/pof-fi-article-4
-    path: article/pof-fi-article-4
+    path: article/pof-fi-article-11
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 37
     created_by:
@@ -2142,7 +2099,7 @@
     updated_at: '2020-09-14T14:42:08.863Z'
     title_et: ' '
     slug_et: '-1'
-    slug_ru: pof-fi-article-18
+    slug_en: pof-fi-article-8
     lead_et: 'See on artikkel, mille pealkiri on tühik!'
     publish_et: true
     article_types:
@@ -2168,15 +2125,15 @@
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
-    slug: pof-fi-article-8
+    slug: pof-fi-article-18
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//sponsorstory/pof-fi-article-8
-    path: article/pof-fi-article-8
+    path: article/pof-fi-article-18
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 16
     created_by:
@@ -2191,7 +2148,7 @@
     updated_at: '2020-09-13T19:01:54.266Z'
     title_et: Maailma filmifestivalid paluvad ellujäämiseks toetust
     slug_et: maailma-filmifestivalid-paluvad-ellujaeaemiseks-toetust-1
-    slug_ru: pof-fi-article-2
+    slug_en: pof-fi-article-1
     lead_et: >-
         PÖFF ühines rahvusvahelise pöördumisega, milles maailma juhtivad
         filmifestivalid kutsuvad poliitikuid üles välja töötama meetmeid, et
@@ -2291,16 +2248,16 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-1
+            name: Волк
+    slug: pof-fi-article-2
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//news/pof-fi-article-1
-    path: article/pof-fi-article-1
+    path: article/pof-fi-article-2
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 17
     created_by:
@@ -2315,7 +2272,7 @@
     updated_at: '2020-09-13T19:05:11.491Z'
     title_et: 'Kumu näitab, kuidas muumilugude autor suvitas'
     slug_et: kumu-naeitab-kuidas-muumilugude-autor-suvitas
-    slug_ru: pof-fi-article-10
+    slug_en: pof-fi-article-2
     lead_et: >+
         25 suve veetsid kirjanik Tove Jansson ja kunstnik Tuulikki Pietilä Soome
         lahes asuval tillukesel Klovharu saarel, kaasas filmikaamera.
@@ -2415,16 +2372,16 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-2
+            name: Волк
+    slug: pof-fi-article-10
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//news/pof-fi-article-2
-    path: article/pof-fi-article-2
+    path: article/pof-fi-article-10
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 28
     created_by:
@@ -2439,10 +2396,28 @@
     created_at: '2020-09-13T19:40:20.911Z'
     updated_at: '2020-09-14T06:12:38.653Z'
     slug_et: pof-fi-article-1
-    slug_ru: pof-fi-article-13
+    title_en: PÖFF Shorts now an Academy Award Qualifying Festival
+    slug_en: p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+    lead_en: >-
+        The team of Black Nights celebrates the news its the sub-festival,
+        international short film and animation festival PÖFF Shorts has now
+        become an Academy Qualifying film event.
+    contents_en: >-
+        The team of Black Nights celebrates the news its the sub-festival,
+        international short film and animation festival PÖFF Shorts has now
+        become an Academy Qualifying film event.
+
+
+        The status means that, should they be eligible, films winning a
+        qualifying award at PÖFF Shorts will be eligible to submit their films
+        for consideration for both the Live Action and Animation Short Awards at
+        the Academy Awards. Competition winners in both the International and
+        National competitive sections of PÖFF Shorts will be eligible for
+        possible qualification.
+    publish_en: true
     media:
         id: 25
-        image:
+        image_en:
             -
                 id: 148
                 name: 2019 PÖFF Shorts Night screening.jpg
@@ -2459,7 +2434,6 @@
                             thumbnail_2019_P_Oe_FF_Shorts_Night_screening_ad2441b557
                         mime: image/jpeg
                         name: thumbnail_2019 PÖFF Shorts Night screening.jpg
-                        path: null
                         size: 11.12
                         width: 234
                         height: 156
@@ -2468,13 +2442,12 @@
                 mime: image/jpeg
                 size: 1029.61
                 url: /uploads/2019_P_Oe_FF_Shorts_Night_screening_ad2441b557.jpg
-                previewUrl: null
                 provider: local
-                provider_metadata: null
                 created_by: 11
                 updated_by: 11
                 created_at: '2020-09-13T19:39:49.407Z'
                 updated_at: '2020-09-13T19:39:49.511Z'
+        image: []
     article_types:
         -
             id: 2
@@ -2487,33 +2460,15 @@
             et: Uudised
             en: News
             ru: Новости
-    title: PÖFF Shorts now an Academy Award Qualifying Festival
-    slug: p-oe-ff-shorts-now-an-academy-award-qualifying-festival
-    lead: >-
-        The team of Black Nights celebrates the news its the sub-festival,
-        international short film and animation festival PÖFF Shorts has now
-        become an Academy Qualifying film event.
-    contents: >-
-        The team of Black Nights celebrates the news its the sub-festival,
-        international short film and animation festival PÖFF Shorts has now
-        become an Academy Qualifying film event.
-
-
-        The status means that, should they be eligible, films winning a
-        qualifying award at PÖFF Shorts will be eligible to submit their films
-        for consideration for both the Live Action and Animation Short Awards at
-        the Academy Awards. Competition winners in both the International and
-        National competitive sections of PÖFF Shorts will be eligible for
-        possible qualification.
-    publish: true
+    slug: pof-fi-article-13
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//news/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
-    path: article/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+    path: article/pof-fi-article-13
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
 -
     id: 33
     created_by:
@@ -2528,7 +2483,7 @@
     updated_at: '2020-09-14T11:57:04.610Z'
     title_et: Test Et 14. sept
     slug_et: test-et-14-sept
-    slug_ru: pof-fi-article-12
+    slug_en: pof-fi-article-5
     lead_et: lead test et
     contents_et: contents test et
     publishFrom: '2020-09-14T09:00:00.000Z'
@@ -2584,13 +2539,13 @@
             updated_by: 6
             created_at: '2020-09-02T11:27:48.489Z'
             updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-5
+            name: Волк
+    slug: pof-fi-article-12
     directory: >-
         c:\Users\Liis
         Käsper\Documents\web\source\_fetchdir//news/pof-fi-article-5
-    path: article/pof-fi-article-5
+    path: article/pof-fi-article-12
     data:
         pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml

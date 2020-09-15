@@ -1219,45 +1219,6 @@
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
-    id: 35
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T12:35:14.386Z'
-    updated_at: '2020-09-14T13:57:47.775Z'
-    title_et: 'intervjuu Article test '
-    slug_et: about-article-test
-    slug_ru: pof-fi-article-16
-    publish_et: true
-    publish_ru: true
-    article_types:
-        -
-            id: 3
-            name: Intervjuu
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-    slug: pof-fi-article-6
-    publish: true
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir//interview/pof-fi-article-6
-    path: article/pof-fi-article-6
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
     id: 8
     created_by:
         id: 5

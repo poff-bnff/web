@@ -1,0 +1,77 @@
+id: 33
+created_by:
+    id: 8
+    firstname: Jaan
+    lastname: Editor
+updated_by:
+    id: 8
+    firstname: Jaan
+    lastname: Editor
+created_at: '2020-09-14T11:57:04.424Z'
+updated_at: '2020-09-14T11:57:04.610Z'
+slug_en: pof-fi-article-5
+slug_ru: pof-fi-article-12
+publishFrom: '2020-09-14T09:00:00.000Z'
+media:
+    id: 30
+    imageDefault:
+        -
+            id: 151
+            name: tove_kumu.jpg
+            alternativeText: ''
+            caption: ''
+            width: 1130
+            height: 688
+            formats:
+                thumbnail:
+                    ext: .jpg
+                    url: /uploads/thumbnail_tove_kumu_569459f68e.jpg
+                    hash: thumbnail_tove_kumu_569459f68e
+                    mime: image/jpeg
+                    name: thumbnail_tove_kumu.jpg
+                    size: 9.93
+                    width: 245
+                    height: 149
+            hash: tove_kumu_569459f68e
+            ext: .jpg
+            mime: image/jpeg
+            size: 150.64
+            url: /uploads/tove_kumu_569459f68e.jpg
+            provider: local
+            created_by: 8
+            updated_by: 8
+            created_at: '2020-09-14T11:56:40.943Z'
+            updated_at: '2020-09-14T11:56:41.044Z'
+    image: []
+article_types:
+    -
+        id: 2
+        name: Uudis
+        created_by: 6
+        updated_by: 1
+        created_at: '2020-08-18T13:49:51.616Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
+        article: null
+        et: Uudised
+        en: News
+        ru: Новости
+web_authors:
+    -
+        id: 1
+        namePrivate: Pöffihunt
+        created_by: 6
+        updated_by: 6
+        created_at: '2020-09-02T11:27:48.489Z'
+        updated_at: '2020-09-02T11:27:48.544Z'
+        name: Pöffihunt
+title: Test Et 14. sept
+slug: test-et-14-sept
+lead: lead test et
+contents: contents test et
+publish: true
+directory: TESTUUDIS
+path: article/test-et-14-sept
+data:
+    pictures: /article_pictures.yaml
+    screenings: /film/screenings.et.yaml
+    articles: /articles.et.yaml

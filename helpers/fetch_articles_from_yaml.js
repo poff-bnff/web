@@ -148,14 +148,16 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         element = rueten(element, lang);
 
         for (artType of element.article_types){
-            //console.log(artType.name)
-            //console.log(dirPath)
             if (artType.name ==="About"){
-                //console.log(artType.name)
-                console.log(dirPath)
                 element.directory = dirPath +"/about/"+ slugEn;
             }else if(artType.name ==="Uudis"){
-                element.directory = "TESTUUDIS"
+                element.directory = dirPath +"/news/"+ slugEn;
+            }else if(artType.name ==="ToetajaLugu"){
+                element.directory = dirPath +"/sponsorstory/"+ slugEn;
+            }else if(artType.name ==="Intervjuu"){
+                element.directory = dirPath +"/interview/"+ slugEn;
+            }else if(artType.name ==="IndustryProjekt"){
+                element.directory = dirPath +"/industryproject/"+ slugEn;
             }
         }
 
@@ -237,18 +239,25 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
 
 
-    if (writeIndexFile) {
-        if (element.article_types && element.article_types != null && element.article_types[0] != null) {
-            var templateName = element.article_types[0].name.toLowerCase();
-        }
-        if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
-            var templateName = 'uudis';
-        }
-        fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
-            if(err) {
-                return console.log(err);
+    for (let i=0; i< element.article_types.length; i++){
+        // console.log(articleName)
+        if(element.article_types[i].name === 'About'){
+            // console.log('jdsk')
+            if (writeIndexFile) {
+                if (element.article_types && element.article_types != null && element.article_types[i] != null) {
+                    var templateName = element.article_types[i].name.toLowerCase();
+                }
+                if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
+                    var templateName = 'about';
+                }
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
+                    if(err) {
+                        return console.log(err);
+                    }
+                });
+
             }
-        });
+        }
     }
 
     //console.log(` see on generate YAML-is${dirPath}`)
