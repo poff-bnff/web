@@ -476,12 +476,28 @@ TeamMember: &TeamMember
     phoneAtTeam: (text)
     order: (Number)
 
+JuryMember: &JuryMember
+    person: *Person
+    pictureAtJury: *StrapiMedia
+    roleAtJury_et: (text)
+    roleAtJury_en: (text)
+    roleAtJury_ru: (text)
+    professions_et: (text)
+    professions_en: (text)
+    professions_ru: (text)
+    country: *Country
+    about_et: (Rich text)
+    about_en: (Rich text)
+    about_ru: (Rich text)
+
 SubTeam: &SubTeam
     name: *Translated
     order: (Number)
     # namePrivate: (text, private field)
     teamMember:
         - *TeamMember
+    juryMember:
+        - *JuryMember
 
 Team: &Team
     _path: /teams
@@ -490,6 +506,8 @@ Team: &Team
     name: #(Component)
         *Translated
     domain: *Domain #(Component)
+    namePrivate: (text)
+    groupType: (Enumeration)
 
 Label: &Label
     name: (text)
