@@ -16,6 +16,7 @@ if (process.env['DOMAIN'] === 'justfilm.ee') {
 
 let allData = []; // for articles view
 
+
 function fetchAllData(dataModel){
     var dirPath = `${sourceFolder}_fetchdir/articles/`;
     deleteFolderRecursive(dirPath);
@@ -164,13 +165,11 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 }
 
             }
-
-
-
             // element.aliases = aliases;
             // rueten(element, `_${lang}`);
             allData.push(element);
             element.data = dataFrom;
+            //console.log(allData)
 
             generateYaml(element, element, dirPath, lang, writeIndexFile)
 
@@ -221,10 +220,60 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
         // })
     }
 
+
+
+
+
+
+    //console.log(allData)
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+    //console.log(allDataYAML)
+    let allNews =[]
+    let allSponsor = []
+    let allAbout = []
+    let allInterview = []
+    let allIndustry = []
+
+
+    for (article of allData ){
+        //console.log(article.article_types)
+        for (artType of article.article_types) {
+            //console.log(artType.name)
+            if (artType.name === "Uudis"){
+                allNews.push(article)
+            }else if (artType.name === "ToetajaLugu") {
+                allSponsor.push(article)
+            }else if (artType.name === "Intervjuu") {
+                allInterview.push(article)
+            }else if (artType.name === "About") {
+                allAbout.push(article)
+            }else if (artType.name === "IndustryProjekt") {
+                allIndustry.push(article)
+            }
+
+
+
+
+
+        }
+
+    }
+    let allNewsYAML = yaml.safeDump(allNews, { 'noRefs': true, 'indent': '4' });
+    let allSponsorYAML = yaml.safeDump(allSponsor, { 'noRefs': true, 'indent': '4' });
+    let allInterviewYAML = yaml.safeDump(allInterview, { 'noRefs': true, 'indent': '4' });
+    let allAboutYAML = yaml.safeDump(allAbout, { 'noRefs': true, 'indent': '4' });
+    let allIndustryYAML = yaml.safeDump(allIndustry, { 'noRefs': true, 'indent': '4' });
+
+    // console.log(allNewsYAML)
 
     fs.writeFileSync(`${sourceFolder}articles.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}news.${lang}.yaml`, allNewsYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}sponsorstories.${lang}.yaml`, allSponsorYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}interviews.${lang}.yaml`, allInterviewYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}about.${lang}.yaml`, allAboutYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}industry.${lang}.yaml`, allIndustryYAML, 'utf8');
 }
+
 
 function modifyData(element, key, lang){
     finalData = element[key][lang];
