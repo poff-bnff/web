@@ -29,7 +29,8 @@
     "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
     "build_Poff": ". ./build_poff.sh",
     "build_just": ". ./build_just.sh",
-    "build_shorts": ". ./build_shorts.sh"
+    "build_shorts": ". ./build_shorts.sh",
+    "update_poff_styles": "node helpers/copy_styles_acc_to_domain.js"
   },
   "repository": {
     "type": "git",
