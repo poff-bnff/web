@@ -10237,6 +10237,56 @@ POFFiArticle:
         tag_keywords: []
         web_authors: []
     -
+        id: 35
+        created_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        updated_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+            username: null
+        created_at: '2020-09-14T12:35:14.386Z'
+        updated_at: '2020-09-14T13:57:47.775Z'
+        title_et: 'intervjuu Article test '
+        slug_et: about-article-test
+        title_en: null
+        slug_en: pof-fi-article-6
+        title_ru: null
+        slug_ru: pof-fi-article-16
+        lead_et: null
+        lead_ru: null
+        lead_en: null
+        contents_et: null
+        contents_en: null
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: true
+        publish_en: true
+        publish_ru: true
+        media: null
+        button: []
+        article_types:
+            -
+                id: 3
+                name: Intervjuu
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:50:35.561Z'
+                updated_at: '2020-08-27T13:26:22.977Z'
+                article: null
+                et: Intervjuu
+                en: Interview
+                ru: Интервю
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
+    -
         id: 8
         created_by:
             id: 5
@@ -10567,8 +10617,8 @@ POFFiArticle:
         contents_ru: >-
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
-            Контентс по русски Контентс по русски Контентс по русски Контентс по
-            русски Контентс по русски Контентс по русски Контентс по русски
+            Контентс по русски Контентс по русски Контентс по русски Конте��тс
+            по русски Контентс по русски Контентс по русски Контентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
@@ -10680,7 +10730,7 @@ POFFiArticle:
                 Value_ru: null
                 value_et: Rahvusvaheline esilinastus
                 value_en: INternational Premiere
-                value_ru: Международная премьера
+                value_ru: Международная п��емьера
                 et: Rahvusvaheline esilinastus
                 en: International Premiere
                 ru: Международная премьера
@@ -10861,6 +10911,48 @@ POFFiArticle:
         tag_keywords: []
         web_authors: []
     -
+<<<<<<< HEAD
+        id: 36
+        created_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        updated_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        created_at: '2020-09-14T13:34:52.739Z'
+        updated_at: '2020-09-14T13:34:52.804Z'
+        title_et: TEST100
+        slug_et: test-100
+        title_en: null
+        slug_en: pof-fi-article-7
+        title_ru: null
+        slug_ru: pof-fi-article-17
+        lead_et: Mis juhtub kui artikli tüüpi pole?
+        lead_ru: null
+        lead_en: null
+        contents_et: null
+        contents_en: null
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: true
+        publish_en: null
+        publish_ru: null
+        media: null
+        button: []
+        article_types: []
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
+    -
+=======
+>>>>>>> 50fddb6be3ff6b28cf6f099d2698a379cd91d561
         id: 15
         created_by:
             id: 9
@@ -11112,7 +11204,7 @@ POFFiArticle:
             программы смогут извлечь пользу даже больше профессионалов
             киноиндустрии, чем раньше, поскольку им не нужно будет ехать в
             Таллинн и они смогут получить доступ к контенту из любой удобной для
-            них географической точки. Кроме того, при подготовке программы мы
+            них географической точки. Кром�� того, при подготовке программы мы
             можем поиграть с различными привлекательными цифровыми форматами и
             привлечь докладчиков, которые не смогли бы посетить нас в Таллинне»,
             - добавила Лийске.
@@ -11419,6 +11511,67 @@ POFFiArticle:
                     et: Pöffihunt
                     en: Wolf
                     ru: Волк
+    -
+        id: 37
+        created_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        updated_by:
+            id: 2
+            firstname: Mariann
+            lastname: Tapfer
+            username: null
+        created_at: '2020-09-14T13:44:32.454Z'
+        updated_at: '2020-09-14T14:42:08.863Z'
+        title_et: ' '
+        slug_et: '-1'
+        title_en: null
+        slug_en: pof-fi-article-8
+        title_ru: null
+        slug_ru: pof-fi-article-18
+        lead_et: 'See on artikkel, mille pealkiri on tühik!'
+        lead_ru: null
+        lead_en: null
+        contents_et: null
+        contents_en: null
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: true
+        publish_en: null
+        publish_ru: null
+        media: null
+        button: []
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+            -
+                id: 4
+                name: ToetajaLugu
+                created_by: 6
+                updated_by: 6
+                created_at: '2020-08-18T13:51:35.072Z'
+                updated_at: '2020-09-02T07:50:32.835Z'
+                article: null
+                et: Toetaja lugu
+                en: Supporter Story
+                ru: История поддержки
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
     -
         id: 16
         created_by:
@@ -12828,7 +12981,7 @@ Film:
                 millest enamikul meist aimugi ei ole.
 
                 Linateos võitis mainekal Sundance´i festivalil maailmafilmi
-                võistlusprogrammi peaauhinna.
+                v��istlusprogrammi peaauhinna.
             en: >-
                 In Iran today: Maryam (22) accidentally kills her husband Nasser
                 (65) and is sentenced to death. The only person who can save her
@@ -14913,13 +15066,13 @@ Film:
                 paneb.
 
                 Endine nimekas korvpallitreener saadetakse purjuspäi
-                autojuhtimise eest ühiskondlikult kasulikule tööle, mille käigus
-                on tema ülesandeks treenida kergete puuetega innukad sportlased
-                võistlusvalmis meeskonnaks. Protsessi käigus õpitakse vastakuti
-                nii elust, spordist kui iseendast. Elukogemuste ja reaalsuse
-                tajumise erinevused loovad ridamisi hirmnaljakaid, kuid ka
-                südamlikke situatsioone. Vaatajale on oluline teada, et film
-                põhineb paljuski tõestisündinud lool ning "meeskonna”
+                autojuhtimise eest ��hiskondlikult kasulikule tööle, mille
+                käigus on tema ülesandeks treenida kergete puuetega innukad
+                sportlased võistlusvalmis meeskonnaks. Protsessi käigus õpitakse
+                vastakuti nii elust, spordist kui iseendast. Elukogemuste ja
+                reaalsuse tajumise erinevused loovad ridamisi hirmnaljakaid,
+                kuid ka südamlikke situatsioone. Vaatajale on oluline teada, et
+                film põhineb paljuski tõestisündinud lool ning "meeskonna”
                 moodustavad näitlejad, kellele see on esimene ülesastumine
                 kinolinal.
             en: >-
@@ -29553,12 +29706,12 @@ Team:
             lastname: Leppik
             username: null
         updated_by:
-            id: 10
-            firstname: Maria
-            lastname: Plees
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
             username: null
         created_at: '2020-08-28T06:32:26.755Z'
-        updated_at: '2020-09-14T08:22:28.075Z'
+        updated_at: '2020-09-14T15:05:36.885Z'
         domain:
             id: 1
             Url: null
@@ -29581,6 +29734,7 @@ Team:
             server: null
             festival_edition: null
             name: PÖFF
+        groupType: festivalTeam
         subTeam:
             -
                 id: 5
@@ -29650,6 +29804,16 @@ Team:
                         emailAtTeam: tiina.lokk@poff.ee
                         phoneAtTeam: null
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 130
@@ -29741,6 +29905,16 @@ Team:
                         emailAtTeam: mikk.granstrom@poff.ee
                         phoneAtTeam: +372 5300 2617
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 129
@@ -29832,6 +30006,16 @@ Team:
                         emailAtTeam: herlend.lukksepp@poff.ee
                         phoneAtTeam: null
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 133
@@ -29923,6 +30107,16 @@ Team:
                         emailAtTeam: kylli@poff.ee
                         phoneAtTeam: +372 518 8128
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 127
@@ -29984,6 +30178,16 @@ Team:
                         emailAtTeam: elin.laikre@poff.ee
                         phoneAtTeam: null
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -30075,6 +30279,16 @@ Team:
                         emailAtTeam: mariliis.parve@poff.ee
                         phoneAtTeam: +372 507 0980
                         order: 6
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 142
@@ -30107,6 +30321,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:36:38.444Z'
                                 updated_at: '2020-09-05T20:36:38.557Z'
+                juryMember: []
             -
                 id: 6
                 order: 2
@@ -30175,6 +30390,16 @@ Team:
                         emailAtTeam: tiina.lokk@poff.ee
                         phoneAtTeam: null
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 130
@@ -30266,6 +30491,16 @@ Team:
                         emailAtTeam: triin.tramberg@poff.ee
                         phoneAtTeam: +372 502 3395
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 125
@@ -30357,6 +30592,16 @@ Team:
                         emailAtTeam: festivalassistant@poff.ee
                         phoneAtTeam: +372 5689 0524
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 132
@@ -30448,6 +30693,16 @@ Team:
                         emailAtTeam: tiiu.kraut@poff.ee
                         phoneAtTeam: +372 506 4829
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 128
@@ -30539,6 +30794,16 @@ Team:
                         emailAtTeam: mikk.granstrom@poff.ee
                         phoneAtTeam: +372 5300 2617
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 129
@@ -30630,6 +30895,16 @@ Team:
                         emailAtTeam: helmut.janes@poff.ee
                         phoneAtTeam: +372 5623 7992
                         order: 6
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 124
@@ -30732,6 +31007,16 @@ Team:
                         emailAtTeam: hannes.aava@poff.ee
                         phoneAtTeam: +372 5552 9211
                         order: 7
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 139
@@ -30834,6 +31119,16 @@ Team:
                         emailAtTeam: tiit.tuumalu@poff.ee
                         phoneAtTeam: +372 516 4204
                         order: 8
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 140
@@ -30925,6 +31220,16 @@ Team:
                         emailAtTeam: laurence.boyce@poff.ee
                         phoneAtTeam: +372 5698 7199
                         order: 9
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 120
@@ -31016,6 +31321,16 @@ Team:
                         emailAtTeam: christoph.groener@filmfest-muenchen.de
                         phoneAtTeam: null
                         order: 10
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 121
@@ -31107,6 +31422,16 @@ Team:
                         emailAtTeam: dagmar.raudam@poff.ee
                         phoneAtTeam: +372 5308 0143
                         order: 11
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 122
@@ -31209,6 +31534,16 @@ Team:
                         emailAtTeam: elise.eimre@poff.ee
                         phoneAtTeam: +372 584 14828
                         order: 12
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 131
@@ -31300,6 +31635,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 13
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 115
@@ -31391,6 +31736,16 @@ Team:
                         emailAtTeam: javiergarcia.puerto@poff.ee
                         phoneAtTeam: null
                         order: 14
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 114
@@ -31482,6 +31837,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 15
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 116
@@ -31573,6 +31938,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 16
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 117
@@ -31667,6 +32042,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 17
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 113
@@ -31761,6 +32146,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 18
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 118
@@ -31852,6 +32247,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 19
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 111
@@ -31943,6 +32348,16 @@ Team:
                         emailAtTeam: anna.arutyunova@poff.ee
                         phoneAtTeam: null
                         order: 20
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 112
@@ -32034,6 +32449,16 @@ Team:
                         emailAtTeam: edvinas.puksta@poff.ee
                         phoneAtTeam: null
                         order: 21
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 110
@@ -32125,6 +32550,16 @@ Team:
                         emailAtTeam: 24fpsverite@gmail.com
                         phoneAtTeam: null
                         order: 22
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 109
@@ -32216,6 +32651,16 @@ Team:
                         emailAtTeam: adamgregorycook@gmail.com
                         phoneAtTeam: +164 7773 3246
                         order: 23
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 108
@@ -32307,6 +32752,16 @@ Team:
                         emailAtTeam: Clandsberger5@gmail.com
                         phoneAtTeam: ' + 316 8542 1422'
                         order: 24
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 107
@@ -32398,6 +32853,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 25
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 106
@@ -32489,6 +32954,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 26
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 103
@@ -32580,6 +33055,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 27
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 101
@@ -32671,6 +33156,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 28
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 49
@@ -32732,6 +33227,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 29
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -32764,6 +33269,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
+                juryMember: []
             -
                 id: 7
                 order: 3
@@ -32845,6 +33351,16 @@ Team:
                         emailAtTeam: maria.plees@poff.ee
                         phoneAtTeam: +372 56 606 236
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 141
@@ -32947,6 +33463,16 @@ Team:
                         emailAtTeam: hannes.aava@poff.ee
                         phoneAtTeam: +372 5552 9211
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 139
@@ -33049,6 +33575,16 @@ Team:
                         emailAtTeam: elina.kask@poff.ee
                         phoneAtTeam: +372 501 3478
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 138
@@ -33153,6 +33689,16 @@ Team:
                         emailAtTeam: tiit.tuumalu@poff.ee
                         phoneAtTeam: +372 516 4204
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 140
@@ -33244,6 +33790,16 @@ Team:
                         emailAtTeam: rebecca.andreas@poff.ee
                         phoneAtTeam: +372 501 3626
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 45
@@ -33346,6 +33902,16 @@ Team:
                         emailAtTeam: ana.falcon@poff.ee
                         phoneAtTeam: null
                         order: 6
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 136
@@ -33448,6 +34014,16 @@ Team:
                         emailAtTeam: annaliiza.izbas@poff.ee
                         phoneAtTeam: +372 518 0659
                         order: 7
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 11
@@ -33563,6 +34139,16 @@ Team:
                         emailAtTeam: jaana.kalinistova@poff.ee
                         phoneAtTeam: null
                         order: 8
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 134
@@ -33665,6 +34251,16 @@ Team:
                         emailAtTeam: elise.eimre@poff.ee
                         phoneAtTeam: +372 5841 4828
                         order: 9
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 131
@@ -33726,6 +34322,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 10
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -33828,6 +34434,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 11
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 137
@@ -33860,6 +34476,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:37.204Z'
                                 updated_at: '2020-09-05T20:16:37.789Z'
+                juryMember: []
             -
                 id: 10
                 order: 4
@@ -33939,6 +34556,16 @@ Team:
                         emailAtTeam: elina.kask@poff.ee
                         phoneAtTeam: +372 501 3478
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 138
@@ -33971,6 +34598,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:37.659Z'
                                 updated_at: '2020-09-05T20:16:38.053Z'
+                juryMember: []
             -
                 id: 11
                 order: 5
@@ -34039,6 +34667,16 @@ Team:
                         emailAtTeam: olari.oja@poff.ee
                         phoneAtTeam: +372 5866 5583
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 100
@@ -34130,6 +34768,16 @@ Team:
                         emailAtTeam: kalev.smidt@poff.ee
                         phoneAtTeam: +372 5341 4787
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 42
@@ -34221,6 +34869,16 @@ Team:
                         emailAtTeam: henri.pill@poff.ee
                         phoneAtTeam: +372 5699 7298
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 99
@@ -34312,6 +34970,16 @@ Team:
                         emailAtTeam: hendri.parrol@poff.ee
                         phoneAtTeam: +372 5190 6255
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 40
@@ -34403,6 +35071,16 @@ Team:
                         emailAtTeam: uku.talmar@poff.ee
                         phoneAtTeam: +372 5623 6372
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 63
@@ -34463,6 +35141,16 @@ Team:
                         emailAtTeam: jurgen.peil@poff.ee
                         phoneAtTeam: +372 525 2870
                         order: 6
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 95
@@ -34524,6 +35212,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 7
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -34556,6 +35254,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
+                juryMember: []
             -
                 id: 12
                 order: 6
@@ -34624,6 +35323,16 @@ Team:
                         emailAtTeam: rasmus.puksmann@poff.ee
                         phoneAtTeam: +372 5393 7092
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 92
@@ -34685,6 +35394,16 @@ Team:
                         emailAtTeam: Maria.joela@poff.ee
                         phoneAtTeam: +372 5398 1762
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -34717,6 +35436,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
+                juryMember: []
             -
                 id: 13
                 order: 7
@@ -34739,6 +35459,16 @@ Team:
                         emailAtTeam: maria.suurvali@poff.ee
                         phoneAtTeam: +372 514 2229
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 90
@@ -34830,6 +35560,16 @@ Team:
                         emailAtTeam: dagmar.raudam@poff.ee
                         phoneAtTeam: +372 5308 0143
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 122
@@ -34873,6 +35613,16 @@ Team:
                         emailAtTeam: indrek.migur@poff.ee
                         phoneAtTeam: +372 58557241
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 91
@@ -34916,6 +35666,16 @@ Team:
                         emailAtTeam: kart.paju@poff.ee
                         phoneAtTeam: null
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 93
@@ -34959,6 +35719,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 130
@@ -34971,6 +35741,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 144
@@ -35003,6 +35783,7 @@ Team:
                                 updated_by: 10
                                 created_at: '2020-09-13T16:44:43.718Z'
                                 updated_at: '2020-09-13T16:44:43.785Z'
+                juryMember: []
             -
                 id: 14
                 order: 8
@@ -35023,6 +35804,16 @@ Team:
                         emailAtTeam: siim.vahter@poff.ee
                         phoneAtTeam: +372 5598 1000
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 89
@@ -35066,6 +35857,16 @@ Team:
                         emailAtTeam: andrei.visnevski@poff.ee  Кадри Райго
                         phoneAtTeam: +372 528 3899
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 94
@@ -35111,6 +35912,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -35154,6 +35965,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -35197,6 +36018,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -35229,6 +36060,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
+                juryMember: []
             -
                 id: 15
                 order: 9
@@ -35251,6 +36083,16 @@ Team:
                         emailAtTeam: jaan.leppik@poff.ee
                         phoneAtTeam: +372 5563 3213
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -35294,6 +36136,16 @@ Team:
                         emailAtTeam: sten.otsmaa@poff.ee
                         phoneAtTeam: +372 5326 7157
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 86
@@ -35337,6 +36189,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 88
@@ -35380,6 +36242,16 @@ Team:
                         emailAtTeam: tiina.tartes@poff.ee
                         phoneAtTeam: null
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 87
@@ -35423,6 +36295,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 85
@@ -35457,6 +36339,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:16.823Z'
                                 updated_at: '2020-09-05T20:16:17.486Z'
+                juryMember: []
             -
                 id: 16
                 order: 10
@@ -35477,6 +36360,16 @@ Team:
                         emailAtTeam: marge.liiske@poff.ee
                         phoneAtTeam: +372 514 8134
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 84
@@ -35573,6 +36466,16 @@ Team:
                         emailAtTeam: triin.tramberg@poff.ee
                         phoneAtTeam: +372 502 3395
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 125
@@ -35670,6 +36573,16 @@ Team:
                         emailAtTeam: tiina.lokk@poff.ee
                         phoneAtTeam: null
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 83
@@ -35719,6 +36632,16 @@ Team:
                         emailAtTeam: saara.huimerind@poff.ee
                         phoneAtTeam: '+372 5176 502 '
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 81
@@ -35768,6 +36691,16 @@ Team:
                         emailAtTeam: industrycommunications@poff.ee
                         phoneAtTeam: null
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 78
@@ -35813,6 +36746,16 @@ Team:
                         emailAtTeam: maria.suurvali@poff.ee
                         phoneAtTeam: +372 514 2229
                         order: 6
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 90
@@ -35856,6 +36799,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 7
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 80
@@ -35899,6 +36852,16 @@ Team:
                         emailAtTeam: greta.liht@poff.ee
                         phoneAtTeam: null
                         order: 8
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 79
@@ -35942,6 +36905,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 82
@@ -35987,6 +36960,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 77
@@ -36032,6 +37015,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 76
@@ -36075,6 +37068,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 75
@@ -36118,6 +37121,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 73
@@ -36163,6 +37176,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 74
@@ -36206,6 +37229,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 72
@@ -36249,6 +37282,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 71
@@ -36292,6 +37335,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 111
@@ -36352,6 +37405,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 107
@@ -36454,6 +37517,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 131
@@ -36497,6 +37570,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 66
@@ -36540,6 +37623,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 70
@@ -36583,6 +37676,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 68
@@ -36626,6 +37729,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 67
@@ -36668,6 +37781,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 65
@@ -36710,6 +37833,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 119
@@ -36722,6 +37855,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 120
@@ -36734,6 +37877,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 121
@@ -36746,6 +37899,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 122
@@ -36758,7 +37921,18 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam: []
+                juryMember: []
             -
                 id: 17
                 order: 11
@@ -36827,6 +38001,16 @@ Team:
                         emailAtTeam: mikk.granstrom@poff.ee
                         phoneAtTeam: +372 5300 2617
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 69
@@ -36870,6 +38054,16 @@ Team:
                         emailAtTeam: maarit.mannama@poff.ee
                         phoneAtTeam: null
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 64
@@ -36913,6 +38107,16 @@ Team:
                         emailAtTeam: heleen.sutt@poff.ee
                         phoneAtTeam: null
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 63
@@ -36956,6 +38160,16 @@ Team:
                         emailAtTeam: epp.kouhkna@poff.ee
                         phoneAtTeam: +372 5345 7935
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 61
@@ -36999,6 +38213,16 @@ Team:
                         emailAtTeam: marek.metslaid@poff.ee
                         phoneAtTeam: null
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 60
@@ -37042,6 +38266,16 @@ Team:
                         emailAtTeam: kart.vainola@poff.ee
                         phoneAtTeam: null
                         order: 6
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 59
@@ -37085,6 +38319,16 @@ Team:
                         emailAtTeam: riina.ries@poff.ee
                         phoneAtTeam: null
                         order: 7
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 62
@@ -37128,6 +38372,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 8
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -37160,6 +38414,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
+                juryMember: []
             -
                 id: 18
                 order: 12
@@ -37182,6 +38437,16 @@ Team:
                         emailAtTeam: grete.nellis@poff.ee
                         phoneAtTeam: +372 5552 7407
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 58
@@ -37225,6 +38490,16 @@ Team:
                         emailAtTeam: heinrich.sepp@poff.ee
                         phoneAtTeam: +372 5656 5599
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 55
@@ -37268,6 +38543,16 @@ Team:
                         emailAtTeam: monika.tomingas@poff.ee
                         phoneAtTeam: +372 5349 4174
                         order: 3
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 57
@@ -37311,6 +38596,16 @@ Team:
                         emailAtTeam: siiri.haidma@poff.ee
                         phoneAtTeam: +372 5559 6346
                         order: 4
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 56
@@ -37402,6 +38697,16 @@ Team:
                         emailAtTeam: laurence.boyce@poff.ee
                         phoneAtTeam: +372 5698 7199
                         order: 5
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 120
@@ -37445,6 +38750,16 @@ Team:
                         emailAtTeam: vassilis.kroustallis@poff.ee
                         phoneAtTeam: +372 5685 8350
                         order: 6
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 54
@@ -37488,6 +38803,16 @@ Team:
                         emailAtTeam: programme.shorts@poff.ee
                         phoneAtTeam: null
                         order: 7
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 52
@@ -37531,6 +38856,16 @@ Team:
                         emailAtTeam: kamila.kucikova@poff.ee
                         phoneAtTeam: null
                         order: 8
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 51
@@ -37574,6 +38909,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 9
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 47
@@ -37617,6 +38962,16 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 10
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 48
@@ -37649,6 +39004,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.643Z'
                                 updated_at: '2020-09-05T20:16:02.330Z'
+                juryMember: []
             -
                 id: 19
                 order: 13
@@ -37717,6 +39073,16 @@ Team:
                         emailAtTeam: kristiina@lmk.ee
                         phoneAtTeam: +372 552 5258
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 46
@@ -37749,6 +39115,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.404Z'
                                 updated_at: '2020-09-05T20:16:02.177Z'
+                juryMember: []
             -
                 id: 20
                 order: 14
@@ -37817,6 +39184,16 @@ Team:
                         emailAtTeam: jana.budkovskaja@poff.ee
                         phoneAtTeam: +372 525 8066
                         order: 1
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 43
@@ -37908,6 +39285,16 @@ Team:
                         emailAtTeam: darja.saar@poff.ee
                         phoneAtTeam: +372 5883 7180
                         order: 2
+                        professions_et: null
+                        professions_en: null
+                        professions_ru: null
+                        country: null
+                        roleAtJury_et: null
+                        roleAtJury_en: null
+                        roleAtJury_ru: null
+                        about_et: null
+                        about_en: null
+                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 49
@@ -37940,6 +39327,7 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.685Z'
                                 updated_at: '2020-09-05T20:16:02.355Z'
+                juryMember: []
         name:
             id: 3840
             et: PÖFFi meeskond
@@ -39029,7 +40417,7 @@ HeroArticlePoff:
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
-                Контентс по русски Контентс по русски Контентс по русски
+                Контентс по русски Конте��тс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
@@ -39143,7 +40531,7 @@ HeroArticlePoff:
                     Value_ru: null
                     value_et: Rahvusvaheline esilinastus
                     value_en: INternational Premiere
-                    value_ru: Международная премьера
+                    value_ru: Международная п��емьера
                     et: Rahvusvaheline esilinastus
                     en: International Premiere
                     ru: Международная премьера
@@ -39531,7 +40919,7 @@ TrioBlockPoff:
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
-                Контентс по русски Контентс по русски Контентс по русски
+                Контентс по русски Конте��тс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
@@ -39645,7 +41033,7 @@ TrioBlockPoff:
                     Value_ru: null
                     value_et: Rahvusvaheline esilinastus
                     value_en: INternational Premiere
-                    value_ru: Международная премьера
+                    value_ru: Международная п��емьера
                     et: Rahvusvaheline esilinastus
                     en: International Premiere
                     ru: Международная премьера
