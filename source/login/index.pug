@@ -84,9 +84,21 @@ block content
 
             await fetch("https://poff.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
                 .then(response => response.text())
-                .then(result => console.log(result))
+                .then(result => {
+                    console.log(result);
+                    storeAuthentication(result);
+                })
                 .catch(error => console.log('error', error));
 
+            const AUTH_TOKEN = "AUTH_TOKEN";
+            const AUTH_USERNAME = "AUTH_USERNAME";
+
+            function storeAuthentication(result) {
+                localStorage.setItem(ACCESS_TOKEN, result.access_token);
+                localStorage.setItem(REFRESH_TOKEN, result.refresh_token);
+                localStorage.setItem(ID_TOKEN, result.id_token);
+                //- localStorage.setItem(AUTH_USERNAME, result.username);
+            }
             //- return await response.json();
 
         //- var options = {
