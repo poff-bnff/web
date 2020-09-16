@@ -4,6 +4,7 @@ const http = require('http');
 const path = require('path');
 
 const sourceFolder =  path.join(__dirname, '../source/');
+const writeToFilePath = sourceFolder;
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -98,13 +99,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors) {
 function generateYaml(element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`${sourceFolder}festival/teams.${lang}.yaml`, allDataYAML, 'utf8');
-}
-
-function modifyData(element, key, lang){
-    finalData = element[key][lang];
-    delete element[key];
-    element[key] = finalData;
+    fs.writeFileSync(`${writeToFilePath}teams.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 fetchAllData(fetchFrom)
