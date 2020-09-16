@@ -2,6 +2,7 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
+
     br
     br
     br
@@ -42,6 +43,9 @@ block content
 
     script.
         var url = window.location;
+        const ACCESS_TOKEN = "ACCESS_TOKEN";
+        const REFRESH_TOKEN = "REFRESH_TOKEN";
+        const ID_TOKEN = "ID_TOKEN";
 
         var code = new URLSearchParams(url.search).get('code')
         console.log(code);
@@ -86,18 +90,20 @@ block content
                 .then(response => response.text())
                 .then(result => {
                     console.log(result);
-                    storeAuthentication(result);
+                    const JSONresult = JSON.parse(result);
+                    console.log(JSONresult.access_token);
+                    if (JSONresult.access_token && JSONresult.refresh_token) {
+                        storeAuthentication(JSONresult);
+                    }
                 })
                 .catch(error => console.log('error', error));
 
-            const AUTH_TOKEN = "AUTH_TOKEN";
-            const AUTH_USERNAME = "AUTH_USERNAME";
-
-            function storeAuthentication(result) {
-                localStorage.setItem(ACCESS_TOKEN, result.access_token);
-                localStorage.setItem(REFRESH_TOKEN, result.refresh_token);
-                localStorage.setItem(ID_TOKEN, result.id_token);
-                //- localStorage.setItem(AUTH_USERNAME, result.username);
+            function storeAuthentication(JSONresult) {
+                localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
+                localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
+                localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+                //- localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+                //- localStorage.setItem(AUTH_USERNAME, JSONresult.username);
             }
             //- return await response.json();
 
