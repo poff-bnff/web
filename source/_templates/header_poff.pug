@@ -19,8 +19,14 @@ header
                                     ul.ul_kaks
                                         each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                                             if subMenuItem.poffi_article
-                                                li
-                                                    a(href= `/${lang_path}article/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+
+                                                if self.data.articles
+                                                    each article in self.data.articles
+                                                        //- article.article_types && article.article_types[0] && (article.article_types[0].name === 'About')  &&
+                                                        if (article.id === subMenuItem.poffi_article.id)
+
+                                                            li
+                                                                a(href= `/${lang_path}${}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
                                             else
                                                 if subMenuItem.customUrl
                                                     li
@@ -31,6 +37,8 @@ header
 
             label.main_menu_toggle_label(for='main_menu_toggle')
                 span
+
+
 
             //- nav.main_menu
             //-     ul
