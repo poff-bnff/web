@@ -39,6 +39,9 @@ ArticleType: &ArticleType
     et: (text)
     en: (text)
     ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
 
 Domain: &Domain
     _path: /domains
