@@ -24,9 +24,12 @@ header
                                                     each article in self.data.articles
                                                         //- article.article_types && article.article_types[0] && (article.article_types[0].name === 'About')  &&
                                                         if (article.id === subMenuItem.poffi_article.id)
+                                                            each tyyp in article.article_types
+                                                                p= 'laaaaang ' + tyyp.name
+                                                                if (tyyp.name === 'About')
+                                                                    li
+                                                                        a(href= `/${lang_path}${tyyp[`slug_${lang}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
 
-                                                            li
-                                                                a(href= `/${lang_path}${article.article_types[0].name}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
                                             else
                                                 if subMenuItem.customUrl
                                                     li

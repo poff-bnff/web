@@ -4,6 +4,49 @@ include /_templates/mixins.pug
 
 block content
 
+
+    h1 bbbbbbbbbbbbbbbbbbbbbbbbb
+    nav.main_menu
+        ul.ul_yx
+            each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                if mainMenuItem.subMenuItem
+                    if mainMenuItem.name
+                        li.dropdown
+                            a= `- ${mainMenuItem.name}`
+                            ul.ul_kaks
+                                each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                                    if subMenuItem.poffi_article
+
+                                        if self.data.articles
+                                            p= 'aaaaaaaaaaaaaaaaaaaaaaaaa'
+                                            each article in self.data.articles
+                                                //- article.article_types && article.article_types[0] && (article.article_types[0].name === 'About')  &&
+                                                //- if (article.id === subMenuItem.poffi_article.id)
+                                                if (article.id === subMenuItem.poffi_article['34'])
+                                                    p= 'laaaaang ' + article.id
+                                                    each tyyp in article.article_types
+                                                        if (tyyp.name === 'About')
+                                                            li
+                                                                a(href= `/${lang_path}${tyyp[`slug_${lang}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                                        if (tyyp.name === 'Interview')
+                                                            li
+                                                                a(href= `/${lang_path}${tyyp[`slug_${lang}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                                        if (tyyp.name === 'SponsorStory')
+                                                            li
+                                                                a(href= `/${lang_path}${tyyp[`slug_${lang}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                                        else (tyyp = 'News')
+                                                            li
+                                                                a(href= `/${lang_path}${tyyp[`slug_${lang}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                    else
+                                        if subMenuItem.customUrl
+                                            li
+                                                a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `---> ${subMenuItem.name}`
+                else
+                    li
+                        a(href= `/${lang_path}articles/`)= `- ${mainMenuItem.name}`
+
+
+
     - var heroPlusTrioNews = []
 
     section.grid_hero
