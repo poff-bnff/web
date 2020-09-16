@@ -114,11 +114,11 @@ footer:
         firstname: Jaan
         lastname: Leppik
     updated_by:
-        id: 8
+        id: 6
         firstname: Jaan
-        lastname: Editor
+        lastname: Leppik
     created_at: '2020-09-01T09:37:02.304Z'
-    updated_at: '2020-09-11T09:45:40.796Z'
+    updated_at: '2020-09-16T10:49:56.373Z'
     namePrivate: PÖFF
     domain:
         id: 1
@@ -209,7 +209,7 @@ footer:
                 -
                     id: 5
                     name: Team
-                    url: 'https://poff.ee/meeskond/'
+                    url: team
                     svgCode: >-
                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24" fill="none"
@@ -220,6 +220,8 @@ footer:
                         r="4"></circle><path d="M23 21v-2a4 4 0 0
                         0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0
                         7.75"></path></svg>
+                    url_en: team
+                    url_ru: team
         -
             id: 2
             namePrivate: Subscribe to newsletter
@@ -357,90 +359,133 @@ menu:
             firstname: Jaan
             lastname: Leppik
         created_at: '2020-09-08T12:39:44.630Z'
-        updated_at: '2020-09-08T12:50:46.495Z'
-        order: 3
-        name: Filmid
+        updated_at: '2020-09-16T11:07:09.368Z'
+        order: 9
+        name: Festivalist
         subMenuItem:
             -
                 id: 1
-                namePrivate: Programmid
-                poffi_article:
-                    id: 2
-                    created_by: 5
-                    updated_by: 6
-                    created_at: '2020-09-02T06:22:29.284Z'
-                    updated_at: '2020-09-06T21:38:28.279Z'
-                    title_en: test 2 en
-                    slug_en: test-2-en
-                    slug_ru: pof-fi-article-7
-                    lead_en: lead 2 en
-                    contents_en: cont 2 en
-                    publishFrom: '2020-07-07T09:00:00.000Z'
-                    publishUntil: '2021-01-14T10:00:00.000Z'
-                    publish_en: true
-                    publish_ru: true
-                    title: Tartuffi esimene film on seksuaalsest ahistamisest
-                    slug: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
-                    lead: >-
-                        PÖFFi armastusfilmide festival Tartuff kuulutas välja
-                        esimese linateose, mille teema on hetkel üliaktuaalne –
-                        seksuaalne ahistamine.
-                    contents: >-
-                        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb
-                        kuuest absurdihuumoriga vürtsitatud loost, mis on
-                        inspireeritud igapäevastest naiste avaliku või varjatud
-                        diskrimineerimise viisidest.
-
-
-                        „Kui te ei ole veel aru saanud, mida taotleb #MeToo,
-                        vaadake seda filmi,” soovitab ajaleht Helsingin Sanomat,
-                        nimetades „Harjumuse jõudu” eelmise aasta olulisimaks
-                        Soome linateoseks.
-
-
-                        Patriarhaalse ühiskonna käitumismustreid avav
-                        draamakomöödia põhineb populaarsel lühifilmide sarjal
-                        „Üksikjuhtum”, mis on Soome veebi-TVs Yle Areena kogunud
-                        üle miljoni vaatamiskorra.
-
-
-                        Soome noorema ja keskmise põlve naisrežissööride
-                        jõudemonstratsiooniks nimetatava filmi on kirjutanud ja
-                        lavastanud Kirsikka Saari, Elli Toivoniemi, Anna
-                        Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
-                        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad
-                        eesotsas Krista Kosoneni ja Johannes Holopaineniga.
-
-
-                        Autorite enda sõnul ei ole filmi ajendiks niivõrd
-                        seksuaalne ahistamine, kuivõrd see, kuidas ühiskond seda
-                        normaalseks peab.
-
-
-                        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud”
-                        parima filmi, režii, stsenaariumi ja meeskõrvalosa
-                        kategoorias. Linateose rahvusvaheline esilinastus oli
-                        tänavusel Göteborgi filmifestivalil.
-
-
-                        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu
-                        Raekoja platsist saab taas Eesti suurim vabaõhukino.
-                        Esimest korda avab festival ka virtuaalse kinosaali,
-                        mida saab külastada üle kogu Eesti.
-
-
-                        Kogu programmi avalikustab festival juuli lõpus.
-
-
-                        Tartuffi korraldab Pimedate Ööde filmifestival koostöös
-                        Tartu linna, Tartu filmifondi ja Tartu
-                        loomemajanduskeskusega.
-                    publish: true
-                order: 1
-                name: Programmid
+                namePrivate: Meeskond
+                customUrl: team/
+                order: 3
+                name: Meeskond
             -
                 id: 2
-                namePrivate: Ajakava
-                customUrl: ajakava
-                order: 2
-                name: Ajakava
+                namePrivate: Fesrtivali tutvustus
+                poffi_article:
+                    id: 38
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-16T11:04:26.573Z'
+                    updated_at: '2020-09-16T11:04:26.657Z'
+                    title_en: Black Nights Film Festival
+                    slug_en: black-nights-film-festival
+                    slug_ru: pof-fi-article-19
+                    lead_en: >-
+                        Started in 1997, the Tallinn Black Nights Film Festival
+                        has grown into one of the biggest film festivals in
+                        Northern Europe and busiest regional industry platforms,
+                        hosting more than 1000 guests and industry delegates and
+                        over 160 journalists. The festival screens around 250
+                        features and more than 300 shorts and animations and
+                        sees an attendance of 80 000 people annually. 
+
+
+                        As of 2014 the festival holds the FIAPF accreditation
+                        for holding an international competition programme which
+                        puts the festival into the so- called A-category of film
+                        festivals, alongside other 14 festivals in the world.
+
+
+
+                        #### Join the Wolf Pack
+
+
+                        A PÖFF Wolf is a pack animal who knows that he’ll get
+                        farther working together with the others. Without you,
+                        our cinema audience and supporters, this film festival,
+                        largely cobbled together on pure enthusiasm in 1997,
+                        would not be what it is today. Every year, PÖFF is kept
+                        in constant movement by wonderful collaboration where
+                        the audience and the films are connected by volunteers,
+                        more than 300 by today. Together in our small Estonia,
+                        we have succeeded in filling the black nights of
+                        November with unique northern lights which manifest as
+                        bright film experiences on cinema screens and attract
+                        filmmakers from different corners of the world to enjoy
+                        it all with us.
+
+
+                        The gathering places of the PÖFF Wolves in Estonian
+                        cinemas remain the same, but the routes are different
+                        every year. This year, the festival will take you on a
+                        journey to Arab countries to enjoy the best of the Arab
+                        cinema from the past 10 years. Besides grit and courage,
+                        PÖFF’s growth preconditions include the will and desire
+                        to see past the horizon in order to constantly broaden
+                        our view of the world. Thus, PÖFF’s programme always
+                        wanders beyond its comfort zone. The PÖFF Wolves are not
+                        afraid of new cultural spaces, burning questions and
+                        emotions which make us laugh, astound us and move us in
+                        their bracing authenticity.
+
+
+                        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
+
+                        test subline 
+                    publish_en: true
+                    title: PImedate Ööde filmifestival
+                    slug: p-imedate-oeoede-filmifestival
+                    contents: >-
+                        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis
+                        toob iga aasta novembris maailmakino värskemad ning
+                        haaravamad palad ühes rahvusvaheliste filmitegijatega
+                        koju kätte. PÖFFi selle aasta programmist leiab üle 250
+                        mängufilmi ning enam kui 300 lühi- ja animafilmi. 
+
+
+                        Igal aastal korraldatakse üle maailma umbes 4000
+                        filmifestivali, millest vaid viisteist on Rahvusvahelise
+                        Produtsentide Liitude Föderatsiooni poolt saanud
+                        A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
+                        Berliini, Veneetsia ning teiste maailma
+                        tipp-filmifestivalidega sellesse A-kategooriasse.
+
+
+
+                        #### Tõutunnused
+
+
+                        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab
+                        kaugemale. Ilma teie, oma kinopubliku ja toetajateta
+                        poleks 1997. aastal suuresti põlve otsas loodud
+                        filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
+                        aastal pidevas liikumises iselaadi koostegemine, kus
+                        publiku ja filmielamuste ühendavaks lüliks on
+                        vabatahtlikud, keda on tänaseks enam kui 300. Koos oleme
+                        siin väikeses Eestis suutnud süsimustad novembrikuu ööd
+                        täita omanäoliste virmalistega, mis eredate
+                        filmielamustena end kinolinadel ilmutavad ja
+                        filmitegijaid eri maailma nurkadest meid külastama
+                        toovad.
+
+
+                        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad,
+                        kuid teekonnad on igal aastal erinevad. Sel aastal
+                        avastame Araabiat läbi selle viimase kümne aasta
+                        parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
+                        südikuse kõrval ka tahe näha kaugemale silmapiirist, et
+                        hoida oma maailmapilti pidevas avardumises. Nii kulgeb
+                        PÖFFi programm igal aastal väljaspool oma mugavustsooni.
+                        Pöffihundid ei pelga uusi kultuuriruume, põletavaid
+                        küsimusi ega emotsioone, mis naerutavad, rabavad ja
+                        liigutavad oma karges eheduses.
+
+
+                        ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
+
+                        testallkiri pildile
+                    publish: true
+                customUrl: ''
+                order: 1
+                name: Festivali tutvustus
