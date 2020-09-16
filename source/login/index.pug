@@ -26,12 +26,12 @@ block content
     //-     //- console.log(token);
 
 
-    a(href='https://poff.auth.eu-central-1.amazoncognito.com/login?client_id=3d4n3tb8an4eaq9na89dpbj9jc&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
+    a(href='https://tests.auth.us-east-2.amazoncognito.com/login?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
     br
     br
     br
-    button(onclick='doDisplayToken()') Display token
-    button(onclick='printAWSresponse()') AWSresponse
+    button(onclick='loadCognitoUser()') Show cognito user
+    a(href='https://tests.auth.us-east-2.amazoncognito.com/logout?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&logout_uri=https://dev.inscaping.eu/login/' onclick='logout()') Log out
     br
     br
     br
@@ -39,7 +39,7 @@ block content
     br
     br
     br
-    h1#token
+    h1#hello
 
     script.
         var url = window.location;
@@ -52,7 +52,7 @@ block content
         if (code) {
             //- getReplyFromAWS(code);
             loginWithCode(code)
-            console.log('Code sent: ')
+            console.log('Code sent: ' + code);
         } else {
             console.log('Not sent ')
         }
@@ -70,8 +70,9 @@ block content
         async function loginWithCode(code) {
 
             var myHeaders = new Headers();
+
             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-            myHeaders.append("Authorization", "Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh");
+            myHeaders.append("Authorization", "Basic Njd0dTNmbW05djdobzhtbnNsdGNkNmg1cDM6MTZ1cDVlYW5mMzVqczVvcXNnM2ticmtuaGI5ZmkxbzJxMjcxNmkzNG9vcnVsa29pbnUybg==");
             myHeaders.append("Cookie", "XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64");
 
             var urlencoded = new URLSearchParams();
@@ -86,7 +87,7 @@ block content
                 redirect: 'follow'
             };
 
-            await fetch("https://poff.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
+            await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/token", requestOptions)
                 .then(response => response.text())
                 .then(result => {
                     console.log(result);
@@ -106,104 +107,44 @@ block content
                 //- localStorage.setItem(AUTH_USERNAME, JSONresult.username);
             }
             //- return await response.json();
-
-        //- var options = {
-        //- method: 'POST',
-        //- hostname: 'poff.auth.eu-central-1.amazoncognito.com',
-        //- path: '/oauth2/token',
-        //- headers: {
-        //-     'Content-Type': 'application/x-www-form-urlencoded',
-        //-     'Authorization': 'Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh',
-        //-     'Cookie': 'XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64'
-        //- },
-        //- maxRedirects: 20,
-        //- body: {
-        //-     'grant_type': 'authorization_code',
-        //-     'redirect_uri': 'https://dev.inscaping.eu/login/',
-        //-     'code': code
-        //- }
-        //- };
-
-        //-     let response = await fetch(`https://poff.auth.eu-central-1.amazoncognito.com/oauth2/token`, options);
-        //-     //-     method: 'POST',
-        //-     //-     //- headers: {Authorization: 'Bearer ' + accessToken}
-        //-     //-     path: '/',
-        //-     //-     headers: {
-        //-     //-         grant_type: 'authorization_code',
-        //-     //-         client_id: '3d4n3tb8an4eaq9na89dpbj9jc',
-        //-     //-         redirect_uri: 'http://neti.ee',
-        //-     //-         code: '0537785b-fa66-4f7e-b18d-d67f4571b87a',
-        //-     //-         Authorization: 'Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh',
-        //-     //-         "Content-Type": 'application/x-www-form-urlencoded',
-        //-     //-         Cookie: 'XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64'
-        //-     //-     },
-        //-     //-     //- body: code
-        //-     //- });
-
-            //- return processJsonResponse(response);
         }
 
-
-    //- script(type="text/javascript").
-
-    //-     let accessToken;
-
-    //-     // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
-
-    //-     function doLogin2(){
-    //-         var authenticationData = {
-    //-                 Username : document.getElementById('loginUsername').value,
-    //-                 Password : document.getElementById('loginPassword').value,
-    //-             };
-    //-             var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-    //-             var poolData = { UserPoolId : 'us-east-2_WrK36FZvj',
-    //-                 ClientId : 'cc9tu60rl2v7ujl71eephljc7'
-    //-             };
-    //-             var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-    //-             var userData = {
-    //-                 Username : document.getElementById('loginUsername').value,
-    //-                 Pool : userPool
-    //-             };
-    //-             var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-    //-             cognitoUser.authenticateUser(authenticationDetails, {
-    //-                 onSuccess: function (result) {
-    //-                     accessToken = result.getAccessToken().getJwtToken();
-    //-                     console.log(accessToken);
-    //-                     console.log(getReplyFromAWS(accessToken));
-
-    //-                     /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
-    //-                     var idToken = result.idToken.jwtToken;
-    //-                 },
-
-    //-                 onFailure: function(err) {
-    //-                     alert(JSON.stringify(err));
-    //-                 },
-
-    //-         });
-
-    //-     }
+            function logout(){
+            localStorage.removeItem(ACCESS_TOKEN);
+            localStorage.removeItem(REFRESH_TOKEN);
+            localStorage.removeItem(ID_TOKEN);
+            }
 
 
-    //-     function doDisplayToken(){
-    //-         token.innerHTML = accessToken;
-    //-     }
+
+            async function loadCognitoUser(){
+                console.log('Hello');
+                var myHeaders = new Headers();
+
+                myHeaders.append('Authorization', `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`);
+
+                var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+                console.log(requestOptions.headers);
+
+            await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/userInfo", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    const JSONresult = JSON.parse(result);
+                    console.log(JSONresult.name);
+                    element = document.querySelector(hello)
+
+                })
+                .catch(error => console.log('error', error));
+            }
 
 
-    //-     async function getReplyFromAWS() {
-    //-         let response = await fetch(`https://wbnk9bg6sf.execute-api.us-east-2.amazonaws.com/default/helloWorld`, {
-    //-             method: 'POST',
-    //-             headers: {Authorization: 'Bearer ' + accessToken}
-    //-             //- body: JSON.stringify(accessToken)
-    //-         });
-    //-         return await response.json();
-    //-         //- return processJsonResponse(response);
-    //-     }
 
-
-    //-     async function printAWSresponse(){
-    //-         result = await getReplyFromAWS();
-    //-         console.log(result);
-    //-     }
 
 
 
