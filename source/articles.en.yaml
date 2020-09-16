@@ -58,18 +58,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 2
@@ -127,7 +124,7 @@
         until the 22nd of August.
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/the-goddess-of-fortune-wins-tartuff-audience-award
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/the-goddess-of-fortune-wins-tartuff-audience-award
     path: article/the-goddess-of-fortune-wins-tartuff-audience-award
     data:
         pictures: /article_pictures.yaml
@@ -231,18 +228,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -258,7 +252,7 @@
     contents: cont 2 en
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-2-en
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-2-en
     path: article/test-2-en
     data:
         pictures: /article_pictures.yaml
@@ -452,18 +446,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -479,78 +470,8 @@
     contents: cont 4 en
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-4-en
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-4-en
     path: article/test-4-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 34
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T12:07:40.816Z'
-    updated_at: '2020-09-14T12:08:09.348Z'
-    slug_et: pof-fi-article-4
-    slug_ru: pof-fi-article-15
-    lead_et: Ilma et pealkirjata
-    publish_et: true
-    publish_ru: true
-    article_types:
-        -
-            id: 2
-            name: News
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
-        -
-            id: 4
-            name: SponsorStory
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-16T09:12:19.035Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-            slug_et: toetaja-lugu
-            slug_en: supporter-story
-            slug_ru: istoriya-podderzhki
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-16T09:13:52.747Z'
-            article: null
-            et: Artikkel
-            en: About
-            ru: Артикл
-            slug_et: artikkel
-            slug_en: about
-            slug_ru: artikl
-    title: ilma et pealkirjata
-    slug: ilma-et-pealkirjata
-    publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/ilma-et-pealkirjata
-    path: article/ilma-et-pealkirjata
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -686,18 +607,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     tag_premiere_types:
         - World Premiere
     tag_programmes:
@@ -722,7 +640,7 @@
     contents: cont 6 en
     publish: false
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-6-en
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-6-en
     path: article/test-6-en
     data:
         pictures: /article_pictures.yaml
@@ -873,18 +791,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -900,7 +815,7 @@
     contents: cont 3 en
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-3-en
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-3-en
     path: article/test-3-en
     data:
         pictures: /article_pictures.yaml
@@ -1042,18 +957,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -1069,7 +981,7 @@
     contents: test 9 en cont
     publish: false
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-9-en
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-9-en
     path: article/test-9-en
     data:
         pictures: /article_pictures.yaml
@@ -1139,7 +1051,7 @@
 
         На церемонии открытия, которая начнется в 22:00 на Ратушной площади в
         сердце Тарту, с концертом выступят Маарья Нуут и Хендрик Кальюярв.
-        Фестиваль откроет мелодрама бразильского режиссера Карима Айн��за
+        Фестиваль откроет мелодрама бразильского режиссера Карима Айнуза
         «Невидимая жизнь Эвридики».
 
 
@@ -1230,201 +1142,19 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     slug: pof-fi-article-3
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-3
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-3
     path: article/pof-fi-article-3
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 35
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T12:35:14.386Z'
-    updated_at: '2020-09-14T13:57:47.775Z'
-    title_et: 'intervjuu Article test '
-    slug_et: about-article-test
-    slug_ru: pof-fi-article-16
-    publish_et: true
-    publish_ru: true
-    article_types:
-        -
-            id: 3
-            name: Interview
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-09-16T09:11:42.284Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-            slug_et: intervjuu
-            slug_en: interview
-            slug_ru: intervyu
-    slug: pof-fi-article-6
-    publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-6
-    path: article/pof-fi-article-6
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 38
-    created_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    updated_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    created_at: '2020-09-16T11:04:26.573Z'
-    updated_at: '2020-09-16T11:04:26.657Z'
-    title_et: PImedate Ööde filmifestival
-    slug_et: p-imedate-oeoede-filmifestival
-    slug_ru: pof-fi-article-19
-    contents_et: >-
-        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis toob iga aasta
-        novembris maailmakino värskemad ning haaravamad palad ühes
-        rahvusvaheliste filmitegijatega koju kätte. PÖFFi selle aasta
-        programmist leiab üle 250 mängufilmi ning enam kui 300 lühi- ja
-        animafilmi. 
-
-
-        Igal aastal korraldatakse üle maailma umbes 4000 filmifestivali, millest
-        vaid viisteist on Rahvusvahelise Produtsentide Liitude Föderatsiooni
-        poolt saanud A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
-        Berliini, Veneetsia ning teiste maailma tipp-filmifestivalidega sellesse
-        A-kategooriasse.
-
-
-
-        #### Tõutunnused
-
-
-        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab kaugemale. Ilma
-        teie, oma kinopubliku ja toetajateta poleks 1997. aastal suuresti põlve
-        otsas loodud filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
-        aastal pidevas liikumises iselaadi koostegemine, kus publiku ja
-        filmielamuste ühendavaks lüliks on vabatahtlikud, keda on tänaseks enam
-        kui 300. Koos oleme siin väikeses Eestis suutnud süsimustad novembrikuu
-        ööd täita omanäoliste virmalistega, mis eredate filmielamustena end
-        kinolinadel ilmutavad ja filmitegijaid eri maailma nurkadest meid
-        külastama toovad.
-
-
-        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad, kuid teekonnad
-        on igal aastal erinevad. Sel aastal avastame Araabiat läbi selle viimase
-        kümne aasta parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
-        südikuse kõrval ka tahe näha kaugemale silmapiirist, et hoida oma
-        maailmapilti pidevas avardumises. Nii kulgeb PÖFFi programm igal aastal
-        väljaspool oma mugavustsooni. Pöffihundid ei pelga uusi kultuuriruume,
-        põletavaid küsimusi ega emotsioone, mis naerutavad, rabavad ja
-        liigutavad oma karges eheduses.
-
-
-        ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
-
-        testallkiri pildile
-    publish_et: true
-    article_types:
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-16T09:13:52.747Z'
-            article: null
-            et: Artikkel
-            en: About
-            ru: Артикл
-            slug_et: artikkel
-            slug_en: about
-            slug_ru: artikl
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    title: Black Nights Film Festival
-    slug: black-nights-film-festival
-    lead: >-
-        Started in 1997, the Tallinn Black Nights Film Festival has grown into
-        one of the biggest film festivals in Northern Europe and busiest
-        regional industry platforms, hosting more than 1000 guests and industry
-        delegates and over 160 journalists. The festival screens around 250
-        features and more than 300 shorts and animations and sees an attendance
-        of 80 000 people annually. 
-
-
-        As of 2014 the festival holds the FIAPF accreditation for holding an
-        international competition programme which puts the festival into the so-
-        called A-category of film festivals, alongside other 14 festivals in the
-        world.
-
-
-
-        #### Join the Wolf Pack
-
-
-        A PÖFF Wolf is a pack animal who knows that he’ll get farther working
-        together with the others. Without you, our cinema audience and
-        supporters, this film festival, largely cobbled together on pure
-        enthusiasm in 1997, would not be what it is today. Every year, PÖFF is
-        kept in constant movement by wonderful collaboration where the audience
-        and the films are connected by volunteers, more than 300 by today.
-        Together in our small Estonia, we have succeeded in filling the black
-        nights of November with unique northern lights which manifest as bright
-        film experiences on cinema screens and attract filmmakers from different
-        corners of the world to enjoy it all with us.
-
-
-        The gathering places of the PÖFF Wolves in Estonian cinemas remain the
-        same, but the routes are different every year. This year, the festival
-        will take you on a journey to Arab countries to enjoy the best of the
-        Arab cinema from the past 10 years. Besides grit and courage, PÖFF’s
-        growth preconditions include the will and desire to see past the horizon
-        in order to constantly broaden our view of the world. Thus, PÖFF’s
-        programme always wanders beyond its comfort zone. The PÖFF Wolves are
-        not afraid of new cultural spaces, burning questions and emotions which
-        make us laugh, astound us and move us in their bracing authenticity.
-
-
-        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
-
-        test subline 
-    publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/black-nights-film-festival
-    path: article/black-nights-film-festival
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1549,18 +1279,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     tag_premiere_types:
         - European premiere
     tag_programmes:
@@ -1585,8 +1312,87 @@
     contents: test 8 en cont
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-8-en
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-8-en
     path: article/test-8-en
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 31
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-14T08:38:28.216Z'
+    updated_at: '2020-09-14T09:00:37.804Z'
+    slug_et: pof-fi-article-3
+    slug_ru: pof-fi-article-4
+    media:
+        id: 28
+        image:
+            -
+                id: 149
+                name: >-
+                    2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
+                    web.png
+                alternativeText: ''
+                caption: ''
+                width: 800
+                height: 450
+                formats:
+                    thumbnail:
+                        ext: .png
+                        url: >-
+                            /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                        hash: >-
+                            thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                        mime: image/png
+                        name: >-
+                            thumbnail_2020 Tartuff Closing - Dagmar Raudam,
+                            Kristiina Reidolv web.png
+                        path: null
+                        size: 68.25
+                        width: 245
+                        height: 138
+                hash: >-
+                    2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                ext: .png
+                mime: image/png
+                size: 515.58
+                url: >-
+                    /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                previewUrl: null
+                provider: local
+                provider_metadata: null
+                created_by: 11
+                updated_by: 11
+                created_at: '2020-09-13T19:45:40.785Z'
+                updated_at: '2020-09-13T19:45:40.871Z'
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    title: Just English test
+    slug: just-english-test
+    lead: lead
+    contents: contents
+    publish: true
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/just-english-test
+    path: article/just-english-test
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1661,7 +1467,7 @@
     contents_ru: >-
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
-        по русски Контентс по русски Контентс по русски Контентс по русски
+        по русски Контентс по русски Контентс ��о русски Контентс по русски
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
         по русски Контентс по русски Контентс по русски Контентс по русски
@@ -1733,18 +1539,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     tag_premiere_types:
         - International Premiere
     tag_programmes:
@@ -1768,117 +1571,9 @@
     lead: Lead EN
     contents: Cont EN
     publish: false
-    directory: /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/test-en
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-en
     path: article/test-en
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 31
-    created_by:
-        id: 6
-        firstname: Jaan
-        lastname: Leppik
-    updated_by:
-        id: 2
-        firstname: Mariann
-        lastname: Tapfer
-    created_at: '2020-09-14T08:38:28.216Z'
-    updated_at: '2020-09-14T11:10:52.404Z'
-    title_et: test
-    slug_et: pof-fi-article-3
-    slug_ru: pof-fi-article-4
-    media:
-        id: 28
-        image:
-            -
-                id: 149
-                name: >-
-                    2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
-                    web.png
-                alternativeText: ''
-                caption: ''
-                width: 800
-                height: 450
-                formats:
-                    thumbnail:
-                        ext: .png
-                        url: >-
-                            /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                        hash: >-
-                            thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                        mime: image/png
-                        name: >-
-                            thumbnail_2020 Tartuff Closing - Dagmar Raudam,
-                            Kristiina Reidolv web.png
-                        path: null
-                        size: 68.25
-                        width: 245
-                        height: 138
-                hash: >-
-                    2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                ext: .png
-                mime: image/png
-                size: 515.58
-                url: >-
-                    /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                previewUrl: null
-                provider: local
-                provider_metadata: null
-                created_by: 11
-                updated_by: 11
-                created_at: '2020-09-13T19:45:40.785Z'
-                updated_at: '2020-09-13T19:45:40.871Z'
-    article_types:
-        -
-            id: 2
-            name: News
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
-    title: Just English test
-    slug: just-english-test
-    lead: lead
-    contents: contents
-    publish: true
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/just-english-test
-    path: article/just-english-test
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 36
-    created_by:
-        id: 2
-        firstname: Mariann
-        lastname: Tapfer
-    updated_by:
-        id: 2
-        firstname: Mariann
-        lastname: Tapfer
-    created_at: '2020-09-14T13:34:52.739Z'
-    updated_at: '2020-09-14T13:34:52.804Z'
-    title_et: TEST100
-    slug_et: test-100
-    slug_ru: pof-fi-article-17
-    lead_et: Mis juhtub kui artikli tüüpi pole?
-    publish_et: true
-    article_types: []
-    slug: pof-fi-article-7
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-7
-    path: article/pof-fi-article-7
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1904,10 +1599,9 @@
         professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
         kolib selleks sügiseks veebi.
     lead_ru: >-
-        В этом году спутник Таллиннского кинофестиваля «Тёмные ночи» –
-        кин��рынок Industry@Tallinn & Baltic Event – пройдет полностью онлайн.
-        Это обусловлено потенциальными ограничениями на путешествия из-за
-        COVID-19.
+        В этом году спутник Таллиннского кинофестиваля «Тёмные ночи» – кинорынок
+        Industry@Tallinn & Baltic Event – пройдет полностью онлайн. Это
+        обусловлено потенциальными ограничениями на путешествия из-за COVID-19.
     contents_et: >-
         Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
         piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
@@ -1974,7 +1668,7 @@
 
         «Я считаю, что переезд в Интернет также создаст для нас и для аудитории
         некоторые новые возможности: мы надеемся, что из нашей программы смогут
-        извлечь пользу даже больше профессионалов киноиндустри��, чем раньше,
+        извлечь пользу даже больше профессионалов киноиндустрии, чем раньше,
         поскольку им не нужно будет ехать в Таллинн и они смогут получить доступ
         к контенту из любой удобной для них географической точки. Кроме того,
         при подготовке программы мы можем поиграть с различными привлекательными
@@ -2002,12 +1696,12 @@
 
 
         В этом году впервые будет организована Академия PÖFF, целью которой
-        является предоставление высококачественного аудиовизуальног��
+        является предоставление высококачественного аудиовизуального
         образования.
 
 
         Industry@Tallinn & Baltic Event пройдет с 23 по 27 ноября 2020, и его
-        программа будет объявлена поэтапно в течение сентября и октября.
+        программа будет объявлена поэтапно в течение сент��бря и октября.
 
 
         Таллиннский кинофестиваль «Тёмные ночи» пройдет в этом году с 13 по 29
@@ -2061,18 +1755,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2227,7 +1918,7 @@
         Industry@Tallinn & Baltic Event will run from the 23rd until the 27th of
         November.
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     path: >-
         article/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     data:
@@ -2241,11 +1932,11 @@
         firstname: Test
         lastname: Toimetaja
     updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
+        id: 17
+        firstname: Test
+        lastname: Toimetaja
     created_at: '2020-09-14T09:40:30.683Z'
-    updated_at: '2020-09-14T12:05:58.987Z'
+    updated_at: '2020-09-14T09:40:30.931Z'
     title_et: Test0
     slug_et: test0
     slug_ru: pof-fi-article-11
@@ -2258,75 +1949,16 @@
         image: []
     article_types:
         -
-            id: 2
-            name: News
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
-        -
-            id: 3
-            name: Interview
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-09-16T09:11:42.284Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-            slug_et: intervjuu
-            slug_en: interview
-            slug_ru: intervyu
-        -
             id: 4
-            name: SponsorStory
+            name: ToetajaLugu
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-16T09:12:19.035Z'
+            updated_at: '2020-09-02T07:50:32.835Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
-            slug_et: toetaja-lugu
-            slug_en: supporter-story
-            slug_ru: istoriya-podderzhki
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-16T09:13:52.747Z'
-            article: null
-            et: Artikkel
-            en: About
-            ru: Артикл
-            slug_et: artikkel
-            slug_en: about
-            slug_ru: artikl
-        -
-            id: 6
-            name: IndustryProject
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-16T09:11:25.159Z'
-            article: null
-            et: Projekt
-            en: Project
-            ru: Проэкт
-            slug_et: projekt
-            slug_en: project
-            slug_ru: proekt
     tag_premiere_types:
         - European premiere
     tag_programmes:
@@ -2346,62 +1978,8 @@
             name: Wolf
     slug: pof-fi-article-4
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-4
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-4
     path: article/pof-fi-article-4
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 37
-    created_by:
-        id: 2
-        firstname: Mariann
-        lastname: Tapfer
-    updated_by:
-        id: 2
-        firstname: Mariann
-        lastname: Tapfer
-    created_at: '2020-09-14T13:44:32.454Z'
-    updated_at: '2020-09-14T14:42:08.863Z'
-    title_et: ' '
-    slug_et: '-1'
-    slug_ru: pof-fi-article-18
-    lead_et: 'See on artikkel, mille pealkiri on tühik!'
-    publish_et: true
-    article_types:
-        -
-            id: 2
-            name: News
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
-        -
-            id: 4
-            name: SponsorStory
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-16T09:12:19.035Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-            slug_et: toetaja-lugu
-            slug_en: supporter-story
-            slug_ru: istoriya-podderzhki
-    slug: pof-fi-article-8
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-8
-    path: article/pof-fi-article-8
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -2426,7 +2004,7 @@
         filmifestivalid kutsuvad poliitikuid üles välja töötama meetmeid, et
         koroonaviiruse tingimustes ellu jääda.
     contents_et: >-
-        „COVID-19 on pannud tõsisele proovile filmifestivalide ökos��steemi
+        „COVID-19 on pannud tõsisele proovile filmifestivalide ökosüsteemi
         jätkusuutlikkuse,” on kirjas pöördumises, millele on alla kirjutanud 41
         festivali, keda on tunnustanud rahvusvaheline filmiprodutsentide
         föderatsioon FIAPF. Pöördumist on toetanud ka hulk rahvusvahelisi
@@ -2503,18 +2081,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2526,7 +2101,7 @@
             name: Wolf
     slug: pof-fi-article-1
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-1
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-1
     path: article/pof-fi-article-1
     data:
         pictures: /article_pictures.yaml
@@ -2629,18 +2204,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2652,7 +2224,7 @@
             name: Wolf
     slug: pof-fi-article-2
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-2
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-2
     path: article/pof-fi-article-2
     data:
         pictures: /article_pictures.yaml
@@ -2711,18 +2283,15 @@
     article_types:
         -
             id: 2
-            name: News
+            name: Uudis
             created_by: 6
-            updated_by: 6
+            updated_by: 1
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
     title: PÖFF Shorts now an Academy Award Qualifying Festival
     slug: p-oe-ff-shorts-now-an-academy-award-qualifying-festival
     lead: >-
@@ -2743,90 +2312,8 @@
         possible qualification.
     publish: true
     directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
     path: article/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 33
-    created_by:
-        id: 8
-        firstname: Jaan
-        lastname: Editor
-    updated_by:
-        id: 8
-        firstname: Jaan
-        lastname: Editor
-    created_at: '2020-09-14T11:57:04.424Z'
-    updated_at: '2020-09-14T11:57:04.610Z'
-    title_et: Test Et 14. sept
-    slug_et: test-et-14-sept
-    slug_ru: pof-fi-article-12
-    lead_et: lead test et
-    contents_et: contents test et
-    publishFrom: '2020-09-14T09:00:00.000Z'
-    publish_et: true
-    media:
-        id: 30
-        imageDefault:
-            -
-                id: 151
-                name: tove_kumu.jpg
-                alternativeText: ''
-                caption: ''
-                width: 1130
-                height: 688
-                formats:
-                    thumbnail:
-                        ext: .jpg
-                        url: /uploads/thumbnail_tove_kumu_569459f68e.jpg
-                        hash: thumbnail_tove_kumu_569459f68e
-                        mime: image/jpeg
-                        name: thumbnail_tove_kumu.jpg
-                        size: 9.93
-                        width: 245
-                        height: 149
-                hash: tove_kumu_569459f68e
-                ext: .jpg
-                mime: image/jpeg
-                size: 150.64
-                url: /uploads/tove_kumu_569459f68e.jpg
-                provider: local
-                created_by: 8
-                updated_by: 8
-                created_at: '2020-09-14T11:56:40.943Z'
-                updated_at: '2020-09-14T11:56:41.044Z'
-        image: []
-    article_types:
-        -
-            id: 2
-            name: News
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-09-16T09:12:30.682Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-            slug_et: uudised
-            slug_en: news
-            slug_ru: novosti
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-5
-    directory: >-
-        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-5
-    path: article/pof-fi-article-5
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml

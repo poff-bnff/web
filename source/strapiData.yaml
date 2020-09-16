@@ -319,93 +319,43 @@ TagProgramme:
         ru: Основная конкурсная программа
 ArticleType:
     -
-        id: 6
-        name: IndustryProject
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        created_at: '2020-09-02T07:48:49.095Z'
-        updated_at: '2020-09-16T09:11:25.159Z'
-        article: null
-        et: Projekt
-        en: Project
-        ru: Проэкт
-        slug_et: projekt
-        slug_en: project
-        slug_ru: proekt
-    -
         id: 3
-        name: Interview
+        name: Intervjuu
         created_by:
             id: 6
             firstname: Jaan
             lastname: Leppik
             username: null
         updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
+            id: 1
+            firstname: Mihkel
+            lastname: Putrinš
             username: null
         created_at: '2020-08-18T13:50:35.561Z'
-        updated_at: '2020-09-16T09:11:42.284Z'
+        updated_at: '2020-08-27T13:26:22.977Z'
         article: null
         et: Intervjuu
         en: Interview
         ru: Интервю
-        slug_et: intervjuu
-        slug_en: interview
-        slug_ru: intervyu
-    -
-        id: 4
-        name: SponsorStory
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        created_at: '2020-08-18T13:51:35.072Z'
-        updated_at: '2020-09-16T09:12:19.035Z'
-        article: null
-        et: Toetaja lugu
-        en: Supporter Story
-        ru: История поддержки
-        slug_et: toetaja-lugu
-        slug_en: supporter-story
-        slug_ru: istoriya-podderzhki
     -
         id: 2
-        name: News
+        name: Uudis
         created_by:
             id: 6
             firstname: Jaan
             lastname: Leppik
             username: null
         updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
+            id: 1
+            firstname: Mihkel
+            lastname: Putrinš
             username: null
         created_at: '2020-08-18T13:49:51.616Z'
-        updated_at: '2020-09-16T09:12:30.682Z'
+        updated_at: '2020-08-27T13:27:26.065Z'
         article: null
         et: Uudised
         en: News
         ru: Новости
-        slug_et: uudised
-        slug_en: news
-        slug_ru: novosti
     -
         id: 5
         name: About
@@ -420,14 +370,49 @@ ArticleType:
             lastname: Leppik
             username: null
         created_at: '2020-09-01T12:17:53.527Z'
-        updated_at: '2020-09-16T09:13:52.747Z'
+        updated_at: '2020-09-01T12:17:53.548Z'
         article: null
-        et: Artikkel
+        et: About
         en: About
-        ru: Артикл
-        slug_et: artikkel
-        slug_en: about
-        slug_ru: artikl
+        ru: About
+    -
+        id: 6
+        name: IndustryProjekt
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        created_at: '2020-09-02T07:48:49.095Z'
+        updated_at: '2020-09-02T07:48:49.116Z'
+        article: null
+        et: Projekt
+        en: Project
+        ru: Проэкт
+    -
+        id: 4
+        name: ToetajaLugu
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        created_at: '2020-08-18T13:51:35.072Z'
+        updated_at: '2020-09-02T07:50:32.835Z'
+        article: null
+        et: Toetaja lugu
+        en: Supporter Story
+        ru: История поддержки
 Domain:
     -
         id: 4
@@ -8407,7 +8392,6 @@ Hall:
         floor: Second
         name_en: Test88
         name_ru: Test88
-        test: null
     -
         id: 3
         Name: null
@@ -8500,7 +8484,6 @@ Hall:
         floor: null
         name_en: null
         name_ru: null
-        test: null
 Location:
     -
         id: 2
@@ -8719,7 +8702,6 @@ Location:
             floor: Second
             name_en: Test88
             name_ru: Test88
-            test: null
         created_by:
             id: 3
             firstname: Liis
@@ -8922,18 +8904,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -9073,18 +9052,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -9325,18 +9301,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -9354,87 +9327,6 @@ POFFiArticle:
                     et: Pöffihunt
                     en: Wolf
                     ru: Волк
-    -
-        id: 34
-        created_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        updated_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        created_at: '2020-09-14T12:07:40.816Z'
-        updated_at: '2020-09-14T12:08:09.348Z'
-        title_et: null
-        slug_et: pof-fi-article-4
-        title_en: ilma et pealkirjata
-        slug_en: ilma-et-pealkirjata
-        title_ru: null
-        slug_ru: pof-fi-article-15
-        lead_et: Ilma et pealkirjata
-        lead_ru: null
-        lead_en: null
-        contents_et: null
-        contents_en: null
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: true
-        publish_en: true
-        publish_ru: true
-        media: null
-        button: []
-        article_types:
-            -
-                id: 2
-                name: News
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
-            -
-                id: 4
-                name: SponsorStory
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:51:35.072Z'
-                updated_at: '2020-09-16T09:12:19.035Z'
-                article: null
-                et: Toetaja lugu
-                en: Supporter Story
-                ru: История поддержки
-                slug_et: toetaja-lugu
-                slug_en: supporter-story
-                slug_ru: istoriya-podderzhki
-            -
-                id: 5
-                name: About
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-01T12:17:53.527Z'
-                updated_at: '2020-09-16T09:13:52.747Z'
-                article: null
-                et: Artikkel
-                en: About
-                ru: Артикл
-                slug_et: artikkel
-                slug_en: about
-                slug_ru: artikl
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors: []
     -
         id: 6
         created_by:
@@ -9591,18 +9483,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types:
             -
                 id: 4
@@ -9870,18 +9759,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -10062,18 +9948,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -10163,7 +10046,7 @@ POFFiArticle:
 
             На церемонии открытия, которая начнется в 22:00 на Ратушной площади
             в сердце Тарту, с концертом выступят Маарья Нуут и Хендрик Кальюярв.
-            Фестиваль откроет мелодрама бразильского режиссера Карима Айн��за
+            Фестиваль откроет мелодрама бразильского режиссера Карима Айнуза
             «Невидимая жизнь Эвридики».
 
 
@@ -10267,230 +10150,20 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
         web_authors: []
-    -
-        id: 35
-        created_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        updated_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        created_at: '2020-09-14T12:35:14.386Z'
-        updated_at: '2020-09-14T13:57:47.775Z'
-        title_et: 'intervjuu Article test '
-        slug_et: about-article-test
-        title_en: null
-        slug_en: pof-fi-article-6
-        title_ru: null
-        slug_ru: pof-fi-article-16
-        lead_et: null
-        lead_ru: null
-        lead_en: null
-        contents_et: null
-        contents_en: null
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: true
-        publish_en: true
-        publish_ru: true
-        media: null
-        button: []
-        article_types:
-            -
-                id: 3
-                name: Interview
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:50:35.561Z'
-                updated_at: '2020-09-16T09:11:42.284Z'
-                article: null
-                et: Intervjuu
-                en: Interview
-                ru: Интервю
-                slug_et: intervjuu
-                slug_en: interview
-                slug_ru: intervyu
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors: []
-    -
-        id: 38
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        created_at: '2020-09-16T11:04:26.573Z'
-        updated_at: '2020-09-16T11:04:26.657Z'
-        title_et: PImedate Ööde filmifestival
-        slug_et: p-imedate-oeoede-filmifestival
-        title_en: Black Nights Film Festival
-        slug_en: black-nights-film-festival
-        title_ru: null
-        slug_ru: pof-fi-article-19
-        lead_et: null
-        lead_ru: null
-        lead_en: >-
-            Started in 1997, the Tallinn Black Nights Film Festival has grown
-            into one of the biggest film festivals in Northern Europe and
-            busiest regional industry platforms, hosting more than 1000 guests
-            and industry delegates and over 160 journalists. The festival
-            screens around 250 features and more than 300 shorts and animations
-            and sees an attendance of 80 000 people annually. 
-
-
-            As of 2014 the festival holds the FIAPF accreditation for holding an
-            international competition programme which puts the festival into the
-            so- called A-category of film festivals, alongside other 14
-            festivals in the world.
-
-
-
-            #### Join the Wolf Pack
-
-
-            A PÖFF Wolf is a pack animal who knows that he’ll get farther
-            working together with the others. Without you, our cinema audience
-            and supporters, this film festival, largely cobbled together on pure
-            enthusiasm in 1997, would not be what it is today. Every year, PÖFF
-            is kept in constant movement by wonderful collaboration where the
-            audience and the films are connected by volunteers, more than 300 by
-            today. Together in our small Estonia, we have succeeded in filling
-            the black nights of November with unique northern lights which
-            manifest as bright film experiences on cinema screens and attract
-            filmmakers from different corners of the world to enjoy it all with
-            us.
-
-
-            The gathering places of the PÖFF Wolves in Estonian cinemas remain
-            the same, but the routes are different every year. This year, the
-            festival will take you on a journey to Arab countries to enjoy the
-            best of the Arab cinema from the past 10 years. Besides grit and
-            courage, PÖFF’s growth preconditions include the will and desire to
-            see past the horizon in order to constantly broaden our view of the
-            world. Thus, PÖFF’s programme always wanders beyond its comfort
-            zone. The PÖFF Wolves are not afraid of new cultural spaces, burning
-            questions and emotions which make us laugh, astound us and move us
-            in their bracing authenticity.
-
-
-            ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
-
-            test subline 
-        contents_et: >-
-            PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis toob iga
-            aasta novembris maailmakino värskemad ning haaravamad palad ühes
-            rahvusvaheliste filmitegijatega koju kätte. PÖFFi selle aasta
-            programmist leiab üle 250 mängufilmi ning enam kui 300 lühi- ja
-            animafilmi. 
-
-
-            Igal aastal korraldatakse üle maailma umbes 4000 filmifestivali,
-            millest vaid viisteist on Rahvusvahelise Produtsentide Liitude
-            Föderatsiooni poolt saanud A-kategooria sertifikaadi. PÖFF kuulub
-            ühes Cannes’i, Berliini, Veneetsia ning teiste maailma
-            tipp-filmifestivalidega sellesse A-kategooriasse.
-
-
-
-            #### Tõutunnused
-
-
-            Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab kaugemale.
-            Ilma teie, oma kinopubliku ja toetajateta poleks 1997. aastal
-            suuresti põlve otsas loodud filmifestival see, mis ta on tänaseks.
-            PÖFFi hoiab igal aastal pidevas liikumises iselaadi koostegemine,
-            kus publiku ja filmielamuste ühendavaks lüliks on vabatahtlikud,
-            keda on tänaseks enam kui 300. Koos oleme siin väikeses Eestis
-            suutnud süsimustad novembrikuu ööd täita omanäoliste virmalistega,
-            mis eredate filmielamustena end kinolinadel ilmutavad ja
-            filmitegijaid eri maailma nurkadest meid külastama toovad.
-
-
-            Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad, kuid
-            teekonnad on igal aastal erinevad. Sel aastal avastame Araabiat läbi
-            selle viimase kümne aasta parimate filmipalade. PÖFFi
-            kasvutingimuste hulka kuulub südikuse kõrval ka tahe näha kaugemale
-            silmapiirist, et hoida oma maailmapilti pidevas avardumises. Nii
-            kulgeb PÖFFi programm igal aastal väljaspool oma mugavustsooni.
-            Pöffihundid ei pelga uusi kultuuriruume, põletavaid küsimusi ega
-            emotsioone, mis naerutavad, rabavad ja liigutavad oma karges
-            eheduses.
-
-
-            ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
-
-            testallkiri pildile
-        contents_en: null
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: true
-        publish_en: true
-        publish_ru: null
-        media: null
-        button: []
-        article_types:
-            -
-                id: 5
-                name: About
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-01T12:17:53.527Z'
-                updated_at: '2020-09-16T09:13:52.747Z'
-                article: null
-                et: Artikkel
-                en: About
-                ru: Артикл
-                slug_et: artikkel
-                slug_en: about
-                slug_ru: artikl
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors:
-            -
-                id: 1
-                namePrivate: Pöffihunt
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T11:27:48.489Z'
-                updated_at: '2020-09-02T11:27:48.544Z'
-                name:
-                    id: 3851
-                    et: Pöffihunt
-                    en: Wolf
-                    ru: Волк
     -
         id: 8
         created_by:
@@ -10637,18 +10310,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types:
             -
                 id: 6
@@ -10748,6 +10418,103 @@ POFFiArticle:
                     en: Wolf
                     ru: Волк
     -
+        id: 31
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        created_at: '2020-09-14T08:38:28.216Z'
+        updated_at: '2020-09-14T09:00:37.804Z'
+        title_et: null
+        slug_et: pof-fi-article-3
+        title_en: Just English test
+        slug_en: just-english-test
+        title_ru: null
+        slug_ru: pof-fi-article-4
+        lead_et: null
+        lead_ru: null
+        lead_en: lead
+        contents_et: null
+        contents_en: contents
+        contents_ru: null
+        publishFrom: null
+        publishUntil: null
+        publish_et: null
+        publish_en: true
+        publish_ru: null
+        media:
+            id: 28
+            clipUrlDefault: null
+            clipUrl_et: null
+            clipUrl_en: null
+            clipUrl_ru: null
+            imageDefault: []
+            image_et: []
+            image_en:
+                -
+                    id: 149
+                    name: >-
+                        2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
+                        web.png
+                    alternativeText: ''
+                    caption: ''
+                    width: 800
+                    height: 450
+                    formats:
+                        thumbnail:
+                            ext: .png
+                            url: >-
+                                /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                            hash: >-
+                                thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                            mime: image/png
+                            name: >-
+                                thumbnail_2020 Tartuff Closing - Dagmar Raudam,
+                                Kristiina Reidolv web.png
+                            path: null
+                            size: 68.25
+                            width: 245
+                            height: 138
+                    hash: >-
+                        2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                    ext: .png
+                    mime: image/png
+                    size: 515.58
+                    url: >-
+                        /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                    previewUrl: null
+                    provider: local
+                    provider_metadata: null
+                    created_by: 11
+                    updated_by: 11
+                    created_at: '2020-09-13T19:45:40.785Z'
+                    updated_at: '2020-09-13T19:45:40.871Z'
+            image_ru: []
+        button: []
+        article_types:
+            -
+                id: 2
+                name: Uudis
+                created_by: 6
+                updated_by: 1
+                created_at: '2020-08-18T13:49:51.616Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
+                article: null
+                et: Uudised
+                en: News
+                ru: Новости
+        tag_premiere_types: []
+        tag_programmes: []
+        tag_genres: []
+        tag_keywords: []
+        web_authors: []
+    -
         id: 1
         created_by:
             id: 5
@@ -10825,8 +10592,8 @@ POFFiArticle:
         contents_ru: >-
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
-            Контентс по русски Контентс по русски Контентс по русски Контентс по
-            русски Контентс по русски Контентс по русски Контентс по русски
+            Контентс по русски Контентс по русски Контентс ��о русски Контентс
+            по русски Контентс по русски Контентс по русски Контентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
             русски Контентс по русски Контентс по русски Контентс по русски
             Контентс по русски Контентс по русски Контентс по русски Контентс по
@@ -10914,18 +10681,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types:
             -
                 id: 5
@@ -11025,145 +10789,6 @@ POFFiArticle:
                     en: Wolf
                     ru: Волк
     -
-        id: 31
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-            username: null
-        updated_by:
-            id: 2
-            firstname: Mariann
-            lastname: Tapfer
-            username: null
-        created_at: '2020-09-14T08:38:28.216Z'
-        updated_at: '2020-09-14T11:10:52.404Z'
-        title_et: test
-        slug_et: pof-fi-article-3
-        title_en: Just English test
-        slug_en: just-english-test
-        title_ru: null
-        slug_ru: pof-fi-article-4
-        lead_et: null
-        lead_ru: null
-        lead_en: lead
-        contents_et: null
-        contents_en: contents
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: null
-        publish_en: true
-        publish_ru: null
-        media:
-            id: 28
-            clipUrlDefault: null
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
-            imageDefault: []
-            image_et: []
-            image_en:
-                -
-                    id: 149
-                    name: >-
-                        2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
-                        web.png
-                    alternativeText: ''
-                    caption: ''
-                    width: 800
-                    height: 450
-                    formats:
-                        thumbnail:
-                            ext: .png
-                            url: >-
-                                /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                            hash: >-
-                                thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                            mime: image/png
-                            name: >-
-                                thumbnail_2020 Tartuff Closing - Dagmar Raudam,
-                                Kristiina Reidolv web.png
-                            path: null
-                            size: 68.25
-                            width: 245
-                            height: 138
-                    hash: >-
-                        2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
-                    ext: .png
-                    mime: image/png
-                    size: 515.58
-                    url: >-
-                        /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
-                    previewUrl: null
-                    provider: local
-                    provider_metadata: null
-                    created_by: 11
-                    updated_by: 11
-                    created_at: '2020-09-13T19:45:40.785Z'
-                    updated_at: '2020-09-13T19:45:40.871Z'
-            image_ru: []
-        button: []
-        article_types:
-            -
-                id: 2
-                name: News
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors: []
-    -
-        id: 36
-        created_by:
-            id: 2
-            firstname: Mariann
-            lastname: Tapfer
-            username: null
-        updated_by:
-            id: 2
-            firstname: Mariann
-            lastname: Tapfer
-            username: null
-        created_at: '2020-09-14T13:34:52.739Z'
-        updated_at: '2020-09-14T13:34:52.804Z'
-        title_et: TEST100
-        slug_et: test-100
-        title_en: null
-        slug_en: pof-fi-article-7
-        title_ru: null
-        slug_ru: pof-fi-article-17
-        lead_et: Mis juhtub kui artikli tüüpi pole?
-        lead_ru: null
-        lead_en: null
-        contents_et: null
-        contents_en: null
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: true
-        publish_en: null
-        publish_ru: null
-        media: null
-        button: []
-        article_types: []
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors: []
-    -
         id: 15
         created_by:
             id: 9
@@ -11189,7 +10814,7 @@ POFFiArticle:
             Event kolib selleks sügiseks veebi.
         lead_ru: >-
             В этом году спутник Таллиннского кинофестиваля «Тёмные ночи» –
-            кин��рынок Industry@Tallinn & Baltic Event – пройдет полностью
+            кинорынок Industry@Tallinn & Baltic Event – пройдет полностью
             онлайн. Это обусловлено потенциальными ограничениями на путешествия
             из-за COVID-19.
         lead_en: >-
@@ -11413,7 +11038,7 @@ POFFiArticle:
             «Я считаю, что переезд в Интернет также создаст для нас и для
             аудитории некоторые новые возможности: мы надеемся, что из нашей
             программы смогут извлечь пользу даже больше профессионалов
-            киноиндустри��, чем раньше, поскольку им не нужно будет ехать в
+            киноиндустрии, чем раньше, поскольку им не нужно будет ехать в
             Таллинн и они смогут получить доступ к контенту из любой удобной для
             них географической точки. Кроме того, при подготовке программы мы
             можем поиграть с различными привлекательными цифровыми форматами и
@@ -11442,12 +11067,13 @@ POFFiArticle:
 
 
             В этом году впервые будет организована Академия PÖFF, целью которой
-            является предоставление высококачественного аудиовизуальног��
+            является предоставление высококачественного аудиовизуального
             образования.
 
 
             Industry@Tallinn & Baltic Event пройдет с 23 по 27 ноября 2020, и
-            его программа будет объявлена поэтапно в течение сентября и октября.
+            его программа будет объявлена поэтапно в течение сент��бря и
+            октября.
 
 
             Таллиннский кинофестиваль «Тёмные ночи» пройдет в этом году с 13 по
@@ -11515,18 +11141,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -11552,12 +11175,12 @@ POFFiArticle:
             lastname: Toimetaja
             username: null
         updated_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
+            id: 17
+            firstname: Test
+            lastname: Toimetaja
             username: null
         created_at: '2020-09-14T09:40:30.683Z'
-        updated_at: '2020-09-14T12:05:58.987Z'
+        updated_at: '2020-09-14T09:40:30.931Z'
         title_et: Test0
         slug_et: test0
         title_en: null
@@ -11588,75 +11211,16 @@ POFFiArticle:
         button: []
         article_types:
             -
-                id: 2
-                name: News
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
-            -
-                id: 3
-                name: Interview
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:50:35.561Z'
-                updated_at: '2020-09-16T09:11:42.284Z'
-                article: null
-                et: Intervjuu
-                en: Interview
-                ru: Интервю
-                slug_et: intervjuu
-                slug_en: interview
-                slug_ru: intervyu
-            -
                 id: 4
-                name: SponsorStory
+                name: ToetajaLugu
                 created_by: 6
                 updated_by: 6
                 created_at: '2020-08-18T13:51:35.072Z'
-                updated_at: '2020-09-16T09:12:19.035Z'
+                updated_at: '2020-09-02T07:50:32.835Z'
                 article: null
                 et: Toetaja lugu
                 en: Supporter Story
                 ru: История поддержки
-                slug_et: toetaja-lugu
-                slug_en: supporter-story
-                slug_ru: istoriya-podderzhki
-            -
-                id: 5
-                name: About
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-01T12:17:53.527Z'
-                updated_at: '2020-09-16T09:13:52.747Z'
-                article: null
-                et: Artikkel
-                en: About
-                ru: Артикл
-                slug_et: artikkel
-                slug_en: about
-                slug_ru: artikl
-            -
-                id: 6
-                name: IndustryProject
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T07:48:49.095Z'
-                updated_at: '2020-09-16T09:11:25.159Z'
-                article: null
-                et: Projekt
-                en: Project
-                ru: Проэкт
-                slug_et: projekt
-                slug_en: project
-                slug_ru: proekt
         tag_premiere_types:
             -
                 id: 6
@@ -11741,73 +11305,6 @@ POFFiArticle:
                     en: Wolf
                     ru: Волк
     -
-        id: 37
-        created_by:
-            id: 2
-            firstname: Mariann
-            lastname: Tapfer
-            username: null
-        updated_by:
-            id: 2
-            firstname: Mariann
-            lastname: Tapfer
-            username: null
-        created_at: '2020-09-14T13:44:32.454Z'
-        updated_at: '2020-09-14T14:42:08.863Z'
-        title_et: ' '
-        slug_et: '-1'
-        title_en: null
-        slug_en: pof-fi-article-8
-        title_ru: null
-        slug_ru: pof-fi-article-18
-        lead_et: 'See on artikkel, mille pealkiri on tühik!'
-        lead_ru: null
-        lead_en: null
-        contents_et: null
-        contents_en: null
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: true
-        publish_en: null
-        publish_ru: null
-        media: null
-        button: []
-        article_types:
-            -
-                id: 2
-                name: News
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
-            -
-                id: 4
-                name: SponsorStory
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:51:35.072Z'
-                updated_at: '2020-09-16T09:12:19.035Z'
-                article: null
-                et: Toetaja lugu
-                en: Supporter Story
-                ru: История поддержки
-                slug_et: toetaja-lugu
-                slug_en: supporter-story
-                slug_ru: istoriya-podderzhki
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors: []
-    -
         id: 16
         created_by:
             id: 9
@@ -11834,7 +11331,7 @@ POFFiArticle:
         lead_ru: null
         lead_en: null
         contents_et: >-
-            „COVID-19 on pannud tõsisele proovile filmifestivalide ökos��steemi
+            „COVID-19 on pannud tõsisele proovile filmifestivalide ökosüsteemi
             jätkusuutlikkuse,” on kirjas pöördumises, millele on alla kirjutanud
             41 festivali, keda on tunnustanud rahvusvaheline filmiprodutsentide
             föderatsioon FIAPF. Pöördumist on toetanud ka hulk rahvusvahelisi
@@ -11930,18 +11427,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -12080,18 +11574,15 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -12201,127 +11692,20 @@ POFFiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
         tag_keywords: []
         web_authors: []
-    -
-        id: 33
-        created_by:
-            id: 8
-            firstname: Jaan
-            lastname: Editor
-            username: null
-        updated_by:
-            id: 8
-            firstname: Jaan
-            lastname: Editor
-            username: null
-        created_at: '2020-09-14T11:57:04.424Z'
-        updated_at: '2020-09-14T11:57:04.610Z'
-        title_et: Test Et 14. sept
-        slug_et: test-et-14-sept
-        title_en: null
-        slug_en: pof-fi-article-5
-        title_ru: null
-        slug_ru: pof-fi-article-12
-        lead_et: lead test et
-        lead_ru: null
-        lead_en: null
-        contents_et: contents test et
-        contents_en: null
-        contents_ru: null
-        publishFrom: '2020-09-14T09:00:00.000Z'
-        publishUntil: null
-        publish_et: true
-        publish_en: null
-        publish_ru: null
-        media:
-            id: 30
-            clipUrlDefault: null
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
-            imageDefault:
-                -
-                    id: 151
-                    name: tove_kumu.jpg
-                    alternativeText: ''
-                    caption: ''
-                    width: 1130
-                    height: 688
-                    formats:
-                        thumbnail:
-                            ext: .jpg
-                            url: /uploads/thumbnail_tove_kumu_569459f68e.jpg
-                            hash: thumbnail_tove_kumu_569459f68e
-                            mime: image/jpeg
-                            name: thumbnail_tove_kumu.jpg
-                            path: null
-                            size: 9.93
-                            width: 245
-                            height: 149
-                    hash: tove_kumu_569459f68e
-                    ext: .jpg
-                    mime: image/jpeg
-                    size: 150.64
-                    url: /uploads/tove_kumu_569459f68e.jpg
-                    previewUrl: null
-                    provider: local
-                    provider_metadata: null
-                    created_by: 8
-                    updated_by: 8
-                    created_at: '2020-09-14T11:56:40.943Z'
-                    updated_at: '2020-09-14T11:56:41.044Z'
-            image_et: []
-            image_en: []
-            image_ru: []
-        button: []
-        article_types:
-            -
-                id: 2
-                name: News
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors:
-            -
-                id: 1
-                namePrivate: Pöffihunt
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T11:27:48.489Z'
-                updated_at: '2020-09-02T11:27:48.544Z'
-                name:
-                    id: 3851
-                    et: Pöffihunt
-                    en: Wolf
-                    ru: Волк
 POFFiMenu:
     -
         id: 1
@@ -12363,167 +11747,116 @@ POFFiMenu:
             lastname: Leppik
             username: null
         created_at: '2020-09-08T12:39:44.630Z'
-        updated_at: '2020-09-16T11:07:09.368Z'
+        updated_at: '2020-09-08T12:50:46.495Z'
         poffi_article: null
-        order: 9
+        order: 3
         name:
             id: 3870
-            et: Festivalist
-            en: Festival
-            ru: Фестиваль
+            et: Filmid
+            en: Films
+            ru: Филмы
         customUrl: null
         subMenuItem:
             -
                 id: 1
-                namePrivate: Meeskond
-                poffi_article: null
-                customUrl:
-                    id: 3896
-                    et: team/
-                    en: team/
-                    ru: team/
-                order: 3
-                name:
-                    id: 3871
-                    et: Meeskond
-                    en: Team
-                    ru: Команда
-            -
-                id: 2
-                namePrivate: Fesrtivali tutvustus
+                namePrivate: Programmid
                 poffi_article:
-                    id: 38
-                    created_by: 6
+                    id: 2
+                    created_by: 5
                     updated_by: 6
-                    created_at: '2020-09-16T11:04:26.573Z'
-                    updated_at: '2020-09-16T11:04:26.657Z'
-                    title_et: PImedate Ööde filmifestival
-                    slug_et: p-imedate-oeoede-filmifestival
-                    title_en: Black Nights Film Festival
-                    slug_en: black-nights-film-festival
+                    created_at: '2020-09-02T06:22:29.284Z'
+                    updated_at: '2020-09-06T21:38:28.279Z'
+                    title_et: Tartuffi esimene film on seksuaalsest ahistamisest
+                    slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
+                    title_en: test 2 en
+                    slug_en: test-2-en
                     title_ru: null
-                    slug_ru: pof-fi-article-19
-                    lead_et: null
+                    slug_ru: pof-fi-article-7
+                    lead_et: >-
+                        PÖFFi armastusfilmide festival Tartuff kuulutas välja
+                        esimese linateose, mille teema on hetkel üliaktuaalne –
+                        seksuaalne ahistamine.
                     lead_ru: null
-                    lead_en: >-
-                        Started in 1997, the Tallinn Black Nights Film Festival
-                        has grown into one of the biggest film festivals in
-                        Northern Europe and busiest regional industry platforms,
-                        hosting more than 1000 guests and industry delegates and
-                        over 160 journalists. The festival screens around 250
-                        features and more than 300 shorts and animations and
-                        sees an attendance of 80 000 people annually. 
-
-
-                        As of 2014 the festival holds the FIAPF accreditation
-                        for holding an international competition programme which
-                        puts the festival into the so- called A-category of film
-                        festivals, alongside other 14 festivals in the world.
-
-
-
-                        #### Join the Wolf Pack
-
-
-                        A PÖFF Wolf is a pack animal who knows that he’ll get
-                        farther working together with the others. Without you,
-                        our cinema audience and supporters, this film festival,
-                        largely cobbled together on pure enthusiasm in 1997,
-                        would not be what it is today. Every year, PÖFF is kept
-                        in constant movement by wonderful collaboration where
-                        the audience and the films are connected by volunteers,
-                        more than 300 by today. Together in our small Estonia,
-                        we have succeeded in filling the black nights of
-                        November with unique northern lights which manifest as
-                        bright film experiences on cinema screens and attract
-                        filmmakers from different corners of the world to enjoy
-                        it all with us.
-
-
-                        The gathering places of the PÖFF Wolves in Estonian
-                        cinemas remain the same, but the routes are different
-                        every year. This year, the festival will take you on a
-                        journey to Arab countries to enjoy the best of the Arab
-                        cinema from the past 10 years. Besides grit and courage,
-                        PÖFF’s growth preconditions include the will and desire
-                        to see past the horizon in order to constantly broaden
-                        our view of the world. Thus, PÖFF’s programme always
-                        wanders beyond its comfort zone. The PÖFF Wolves are not
-                        afraid of new cultural spaces, burning questions and
-                        emotions which make us laugh, astound us and move us in
-                        their bracing authenticity.
-
-
-                        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
-
-                        test subline 
+                    lead_en: lead 2 en
                     contents_et: >-
-                        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis
-                        toob iga aasta novembris maailmakino värskemad ning
-                        haaravamad palad ühes rahvusvaheliste filmitegijatega
-                        koju kätte. PÖFFi selle aasta programmist leiab üle 250
-                        mängufilmi ning enam kui 300 lühi- ja animafilmi. 
+                        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb
+                        kuuest absurdihuumoriga vürtsitatud loost, mis on
+                        inspireeritud igapäevastest naiste avaliku või varjatud
+                        diskrimineerimise viisidest.
 
 
-                        Igal aastal korraldatakse üle maailma umbes 4000
-                        filmifestivali, millest vaid viisteist on Rahvusvahelise
-                        Produtsentide Liitude Föderatsiooni poolt saanud
-                        A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
-                        Berliini, Veneetsia ning teiste maailma
-                        tipp-filmifestivalidega sellesse A-kategooriasse.
+                        „Kui te ei ole veel aru saanud, mida taotleb #MeToo,
+                        vaadake seda filmi,” soovitab ajaleht Helsingin Sanomat,
+                        nimetades „Harjumuse jõudu” eelmise aasta olulisimaks
+                        Soome linateoseks.
 
 
-
-                        #### Tõutunnused
-
-
-                        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab
-                        kaugemale. Ilma teie, oma kinopubliku ja toetajateta
-                        poleks 1997. aastal suuresti põlve otsas loodud
-                        filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
-                        aastal pidevas liikumises iselaadi koostegemine, kus
-                        publiku ja filmielamuste ühendavaks lüliks on
-                        vabatahtlikud, keda on tänaseks enam kui 300. Koos oleme
-                        siin väikeses Eestis suutnud süsimustad novembrikuu ööd
-                        täita omanäoliste virmalistega, mis eredate
-                        filmielamustena end kinolinadel ilmutavad ja
-                        filmitegijaid eri maailma nurkadest meid külastama
-                        toovad.
+                        Patriarhaalse ühiskonna käitumismustreid avav
+                        draamakomöödia põhineb populaarsel lühifilmide sarjal
+                        „Üksikjuhtum”, mis on Soome veebi-TVs Yle Areena kogunud
+                        üle miljoni vaatamiskorra.
 
 
-                        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad,
-                        kuid teekonnad on igal aastal erinevad. Sel aastal
-                        avastame Araabiat läbi selle viimase kümne aasta
-                        parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
-                        südikuse kõrval ka tahe näha kaugemale silmapiirist, et
-                        hoida oma maailmapilti pidevas avardumises. Nii kulgeb
-                        PÖFFi programm igal aastal väljaspool oma mugavustsooni.
-                        Pöffihundid ei pelga uusi kultuuriruume, põletavaid
-                        küsimusi ega emotsioone, mis naerutavad, rabavad ja
-                        liigutavad oma karges eheduses.
+                        Soome noorema ja keskmise põlve naisrežissööride
+                        jõudemonstratsiooniks nimetatava filmi on kirjutanud ja
+                        lavastanud Kirsikka Saari, Elli Toivoniemi, Anna
+                        Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
+                        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad
+                        eesotsas Krista Kosoneni ja Johannes Holopaineniga.
 
 
-                        ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
+                        Autorite enda sõnul ei ole filmi ajendiks niivõrd
+                        seksuaalne ahistamine, kuivõrd see, kuidas ühiskond seda
+                        normaalseks peab.
 
-                        testallkiri pildile
-                    contents_en: null
+
+                        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud”
+                        parima filmi, režii, stsenaariumi ja meeskõrvalosa
+                        kategoorias. Linateose rahvusvaheline esilinastus oli
+                        tänavusel Göteborgi filmifestivalil.
+
+
+                        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu
+                        Raekoja platsist saab taas Eesti suurim vabaõhukino.
+                        Esimest korda avab festival ka virtuaalse kinosaali,
+                        mida saab külastada üle kogu Eesti.
+
+
+                        Kogu programmi avalikustab festival juuli lõpus.
+
+
+                        Tartuffi korraldab Pimedate Ööde filmifestival koostöös
+                        Tartu linna, Tartu filmifondi ja Tartu
+                        loomemajanduskeskusega.
+                    contents_en: cont 2 en
                     contents_ru: null
-                    publishFrom: null
-                    publishUntil: null
+                    publishFrom: '2020-07-07T09:00:00.000Z'
+                    publishUntil: '2021-01-14T10:00:00.000Z'
                     publish_et: true
                     publish_en: true
-                    publish_ru: null
-                customUrl:
-                    id: 3873
-                    et: ''
-                    en: ''
-                    ru: ''
+                    publish_ru: true
+                customUrl: null
                 order: 1
                 name:
+                    id: 3871
+                    et: Programmid
+                    en: Programmes
+                    ru: Программы
+            -
+                id: 2
+                namePrivate: Ajakava
+                poffi_article: null
+                customUrl:
+                    id: 3873
+                    et: ajakava
+                    en: schedule
+                    ru: raspisanije
+                order: 2
+                name:
                     id: 3872
-                    et: Festivali tutvustus
-                    en: About the Festival
-                    ru: О фестивале
+                    et: Ajakava
+                    en: Schedule
+                    ru: Расписание
 JustFilmiArticle:
     -
         id: 1
@@ -12620,293 +11953,26 @@ JustFilmiArticle:
         article_types:
             -
                 id: 2
-                name: News
+                name: Uudis
                 created_by: 6
-                updated_by: 6
+                updated_by: 1
                 created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
+                updated_at: '2020-08-27T13:27:26.065Z'
                 article: null
                 et: Uudised
                 en: News
                 ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
             -
                 id: 4
-                name: SponsorStory
+                name: ToetajaLugu
                 created_by: 6
                 updated_by: 6
                 created_at: '2020-08-18T13:51:35.072Z'
-                updated_at: '2020-09-16T09:12:19.035Z'
+                updated_at: '2020-09-02T07:50:32.835Z'
                 article: null
                 et: Toetaja lugu
                 en: Supporter Story
                 ru: История поддержки
-                slug_et: toetaja-lugu
-                slug_en: supporter-story
-                slug_ru: istoriya-podderzhki
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors:
-            -
-                id: 3
-                namePrivate: Justi Hundu
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-04T10:41:16.303Z'
-                updated_at: '2020-09-04T10:41:16.384Z'
-                name:
-                    id: 3858
-                    et: Justi Hundu
-                    en: Wolfie
-                    ru: Волчонок
-    -
-        id: 2
-        created_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        updated_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        created_at: '2020-09-14T11:23:22.443Z'
-        updated_at: '2020-09-14T11:31:51.742Z'
-        title_et: JustTestJust
-        slug_et: just-filmi-article
-        title_en: testJustTest
-        slug_en: test-just-test
-        title_ru: null
-        slug_ru: just-filmi-article-1
-        lead_et: ''
-        lead_en: null
-        lead_ru: null
-        contents_et: null
-        contents_en: testJustTest
-        contents_ru: testJustTest
-        publishFrom: '2020-09-09T09:00:00.000Z'
-        publishUntil: '2020-09-18T09:00:00.000Z'
-        publish_et: true
-        publish_en: null
-        publish_ru: null
-        media: null
-        button: []
-        article_types:
-            -
-                id: 2
-                name: News
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
-        tag_premiere_types:
-            -
-                id: 6
-                PremiereType_et: null
-                PremiereType_en: null
-                PremiereType_ru: null
-                created_by: 6
-                updated_by: 3
-                created_at: '2020-08-19T10:51:47.582Z'
-                updated_at: '2020-08-27T10:11:28.929Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                value_et: Euroopa esilinastus
-                value_en: European premiere
-                value_ru: Европейская премьера
-                et: Euroopa esilinastus
-                en: European premiere
-                ru: Европейская премьера
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords:
-            -
-                id: 7
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                created_by: 6
-                updated_by: 3
-                created_at: '2020-08-19T10:49:52.991Z'
-                updated_at: '2020-08-27T10:07:40.422Z'
-                value_et: Ühiskond
-                value_en: Society
-                value_ru: Общество
-                et: Ühiskond
-                en: Society
-                ru: Общество
-        web_authors:
-            -
-                id: 2
-                namePrivate: Toimetaja
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T11:28:23.386Z'
-                updated_at: '2020-09-02T11:28:23.428Z'
-                name:
-                    id: 3852
-                    et: Päevatoimetaja
-                    en: Editor
-                    ru: Editor
-    -
-        id: 3
-        created_by:
-            id: 14
-            firstname: Heleen
-            lastname: Sutt
-            username: null
-        updated_by:
-            id: 14
-            firstname: Heleen
-            lastname: Sutt
-            username: null
-        created_at: '2020-09-15T12:02:30.958Z'
-        updated_at: '2020-09-15T12:23:52.492Z'
-        title_et: "\U0001F3AC Kandideeri laste- ja noortežüriidesse!"
-        slug_et: kandideeri-laste-ja-noortezueriidesse
-        title_en: null
-        slug_en: just-filmi-article-1
-        title_ru: null
-        slug_ru: just-filmi-article-2
-        lead_et: "Kas oled alati mõelnud, et tahaksid ka põnevast ja harivast filmimaailmast osa saada? \U0001F642"
-        lead_en: null
-        lead_ru: null
-        contents_et: >-
-            Just Film ootab kõiki tegusaid lapsi ja noori võtma osa meie
-            festivali žüriide tegevusest. Ka sel aastal kutsume laste- ja
-            noortežüriidesse kandideerima lapsi ja noori vanuses 7-13 ning
-            14-19. Mõlema žürii raskeks, kuid põnevaks ülesandeks on vaadata
-            Just Filmi programmide filme ning valida nende seast välja
-            võidufilm. Just Filmi festival toimub sel aastal 13.-29. novembrini
-            Tallinna ja Tartu kinodes ning samaaegselt ka veebis!
-
-
-            **Kandideerimine on avatud 28. septembrini 2020!**
-
-             
-
-            **Lastežüriisse kandideerimiseks:**
-
-
-            Kirjuta meile vähemalt kahest huvitavast filmist. Kirjuta, mis just
-            Sulle meeldis, mis ei meeldinud ja miks. Räägi meile ka lühidalt
-            endast ning miks just Sina peaksid olema Just Filmi Lastežüriis.
-
-
-            Saada kiri pealkirjaga “Lastežürii” aadressile justfilm@poff.ee. Ära
-            unusta oma kontaktandmeid (nimi, sünniaasta, telefon, meiliaadress)!
-
-             
-
-            **Noortežüriisse kandideerimiseks:**
-
-
-            Kirjuta meile üks filmiarvustus koos lühikese motivatsioonikirja ja
-            enesetutvustusega ning saada see meiliaadressile justfilm@poff.ee,
-            pealkirjaga “Noortežürii”. Ära unusta oma kontaktandmeid (nimi,
-            sünniaasta, telefon, meiliaadress)!
-
-             
-
-            Vaata ka lõbusat videot, mille tegid 2019a Just Filmi lastežürii
-            liikmed Brittany Aasamets, Heleri Pajuste, Kris Prendon Teder, Mona
-            Grete Pärgma, Otto Samuel Kahar koos lastežürii mentori Heli
-            Jürissoniga.
-
-
-            [Vaata videot.](https://vimeo.com/455916372)
-        contents_en: null
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: true
-        publish_en: null
-        publish_ru: null
-        media:
-            id: 31
-            clipUrlDefault: 'https://vimeo.com/455916372'
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
-            imageDefault:
-                -
-                    id: 152
-                    name: Züriid 2019.jpg
-                    alternativeText: ''
-                    caption: ''
-                    width: 2048
-                    height: 1365
-                    formats:
-                        thumbnail:
-                            ext: .jpg
-                            url: /uploads/thumbnail_Zueriid_2019_4b8a4c857b.jpg
-                            hash: thumbnail_Zueriid_2019_4b8a4c857b
-                            mime: image/jpeg
-                            name: thumbnail_Züriid 2019.jpg
-                            path: null
-                            size: 9.4
-                            width: 234
-                            height: 156
-                    hash: Zueriid_2019_4b8a4c857b
-                    ext: .jpg
-                    mime: image/jpeg
-                    size: 609.57
-                    url: /uploads/Zueriid_2019_4b8a4c857b.jpg
-                    previewUrl: null
-                    provider: local
-                    provider_metadata: null
-                    created_by: 14
-                    updated_by: 14
-                    created_at: '2020-09-15T12:00:27.267Z'
-                    updated_at: '2020-09-15T12:00:27.372Z'
-            image_et: []
-            image_en: []
-            image_ru: []
-        button:
-            -
-                id: 10
-                buttonText: null
-                buttonUrl: null
-                buttonText_et: null
-                buttonUrl_et: null
-                buttonText_en: null
-                buttonUrl_en: null
-                buttonText_ru: null
-                buttonUrl_ru: null
-                text_et: null
-                url_et: null
-                text_en: null
-                url_en: null
-                text_ru: null
-                url_ru: null
-        article_types:
-            -
-                id: 2
-                name: News
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-09-16T09:12:30.682Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-                slug_et: uudised
-                slug_en: news
-                slug_ru: novosti
         tag_premiere_types: []
         tag_programmes: []
         tag_genres: []
@@ -30176,12 +29242,12 @@ Team:
             lastname: Leppik
             username: null
         updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
+            id: 10
+            firstname: Maria
+            lastname: Plees
             username: null
         created_at: '2020-08-28T06:32:26.755Z'
-        updated_at: '2020-09-14T15:05:36.885Z'
+        updated_at: '2020-09-14T08:22:28.075Z'
         domain:
             id: 1
             Url: null
@@ -30204,7 +29270,6 @@ Team:
             server: null
             festival_edition: null
             name: PÖFF
-        groupType: festivalTeam
         subTeam:
             -
                 id: 5
@@ -30274,16 +29339,6 @@ Team:
                         emailAtTeam: tiina.lokk@poff.ee
                         phoneAtTeam: null
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 130
@@ -30375,16 +29430,6 @@ Team:
                         emailAtTeam: mikk.granstrom@poff.ee
                         phoneAtTeam: +372 5300 2617
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 129
@@ -30476,16 +29521,6 @@ Team:
                         emailAtTeam: herlend.lukksepp@poff.ee
                         phoneAtTeam: null
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 133
@@ -30577,16 +29612,6 @@ Team:
                         emailAtTeam: kylli@poff.ee
                         phoneAtTeam: +372 518 8128
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 127
@@ -30648,16 +29673,6 @@ Team:
                         emailAtTeam: elin.laikre@poff.ee
                         phoneAtTeam: null
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -30749,16 +29764,6 @@ Team:
                         emailAtTeam: mariliis.parve@poff.ee
                         phoneAtTeam: +372 507 0980
                         order: 6
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 142
@@ -30791,7 +29796,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:36:38.444Z'
                                 updated_at: '2020-09-05T20:36:38.557Z'
-                juryMember: []
             -
                 id: 6
                 order: 2
@@ -30860,16 +29864,6 @@ Team:
                         emailAtTeam: tiina.lokk@poff.ee
                         phoneAtTeam: null
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 130
@@ -30961,16 +29955,6 @@ Team:
                         emailAtTeam: triin.tramberg@poff.ee
                         phoneAtTeam: +372 502 3395
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 125
@@ -31062,16 +30046,6 @@ Team:
                         emailAtTeam: festivalassistant@poff.ee
                         phoneAtTeam: +372 5689 0524
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 132
@@ -31163,16 +30137,6 @@ Team:
                         emailAtTeam: tiiu.kraut@poff.ee
                         phoneAtTeam: +372 506 4829
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 128
@@ -31264,16 +30228,6 @@ Team:
                         emailAtTeam: mikk.granstrom@poff.ee
                         phoneAtTeam: +372 5300 2617
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 129
@@ -31365,16 +30319,6 @@ Team:
                         emailAtTeam: helmut.janes@poff.ee
                         phoneAtTeam: +372 5623 7992
                         order: 6
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 124
@@ -31477,16 +30421,6 @@ Team:
                         emailAtTeam: hannes.aava@poff.ee
                         phoneAtTeam: +372 5552 9211
                         order: 7
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 139
@@ -31589,16 +30523,6 @@ Team:
                         emailAtTeam: tiit.tuumalu@poff.ee
                         phoneAtTeam: +372 516 4204
                         order: 8
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 140
@@ -31690,16 +30614,6 @@ Team:
                         emailAtTeam: laurence.boyce@poff.ee
                         phoneAtTeam: +372 5698 7199
                         order: 9
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 120
@@ -31791,16 +30705,6 @@ Team:
                         emailAtTeam: christoph.groener@filmfest-muenchen.de
                         phoneAtTeam: null
                         order: 10
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 121
@@ -31892,16 +30796,6 @@ Team:
                         emailAtTeam: dagmar.raudam@poff.ee
                         phoneAtTeam: +372 5308 0143
                         order: 11
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 122
@@ -32004,16 +30898,6 @@ Team:
                         emailAtTeam: elise.eimre@poff.ee
                         phoneAtTeam: +372 584 14828
                         order: 12
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 131
@@ -32105,16 +30989,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 13
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 115
@@ -32206,16 +31080,6 @@ Team:
                         emailAtTeam: javiergarcia.puerto@poff.ee
                         phoneAtTeam: null
                         order: 14
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 114
@@ -32307,16 +31171,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 15
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 116
@@ -32408,16 +31262,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 16
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 117
@@ -32512,16 +31356,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 17
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 113
@@ -32616,16 +31450,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 18
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 118
@@ -32717,16 +31541,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 19
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 111
@@ -32818,16 +31632,6 @@ Team:
                         emailAtTeam: anna.arutyunova@poff.ee
                         phoneAtTeam: null
                         order: 20
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 112
@@ -32919,16 +31723,6 @@ Team:
                         emailAtTeam: edvinas.puksta@poff.ee
                         phoneAtTeam: null
                         order: 21
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 110
@@ -33020,16 +31814,6 @@ Team:
                         emailAtTeam: 24fpsverite@gmail.com
                         phoneAtTeam: null
                         order: 22
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 109
@@ -33121,16 +31905,6 @@ Team:
                         emailAtTeam: adamgregorycook@gmail.com
                         phoneAtTeam: +164 7773 3246
                         order: 23
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 108
@@ -33222,16 +31996,6 @@ Team:
                         emailAtTeam: Clandsberger5@gmail.com
                         phoneAtTeam: ' + 316 8542 1422'
                         order: 24
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 107
@@ -33323,16 +32087,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 25
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 106
@@ -33424,16 +32178,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 26
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 103
@@ -33525,16 +32269,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 27
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 101
@@ -33626,16 +32360,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 28
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 49
@@ -33697,16 +32421,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 29
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -33739,7 +32453,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
-                juryMember: []
             -
                 id: 7
                 order: 3
@@ -33821,16 +32534,6 @@ Team:
                         emailAtTeam: maria.plees@poff.ee
                         phoneAtTeam: +372 56 606 236
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 141
@@ -33933,16 +32636,6 @@ Team:
                         emailAtTeam: hannes.aava@poff.ee
                         phoneAtTeam: +372 5552 9211
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 139
@@ -34045,16 +32738,6 @@ Team:
                         emailAtTeam: elina.kask@poff.ee
                         phoneAtTeam: +372 501 3478
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 138
@@ -34159,16 +32842,6 @@ Team:
                         emailAtTeam: tiit.tuumalu@poff.ee
                         phoneAtTeam: +372 516 4204
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 140
@@ -34260,16 +32933,6 @@ Team:
                         emailAtTeam: rebecca.andreas@poff.ee
                         phoneAtTeam: +372 501 3626
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 45
@@ -34372,16 +33035,6 @@ Team:
                         emailAtTeam: ana.falcon@poff.ee
                         phoneAtTeam: null
                         order: 6
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 136
@@ -34484,16 +33137,6 @@ Team:
                         emailAtTeam: annaliiza.izbas@poff.ee
                         phoneAtTeam: +372 518 0659
                         order: 7
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 11
@@ -34609,16 +33252,6 @@ Team:
                         emailAtTeam: jaana.kalinistova@poff.ee
                         phoneAtTeam: null
                         order: 8
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 134
@@ -34721,16 +33354,6 @@ Team:
                         emailAtTeam: elise.eimre@poff.ee
                         phoneAtTeam: +372 5841 4828
                         order: 9
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 131
@@ -34792,16 +33415,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 10
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -34904,16 +33517,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 11
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 137
@@ -34946,7 +33549,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:37.204Z'
                                 updated_at: '2020-09-05T20:16:37.789Z'
-                juryMember: []
             -
                 id: 10
                 order: 4
@@ -35026,16 +33628,6 @@ Team:
                         emailAtTeam: elina.kask@poff.ee
                         phoneAtTeam: +372 501 3478
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 138
@@ -35068,7 +33660,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:37.659Z'
                                 updated_at: '2020-09-05T20:16:38.053Z'
-                juryMember: []
             -
                 id: 11
                 order: 5
@@ -35137,16 +33728,6 @@ Team:
                         emailAtTeam: olari.oja@poff.ee
                         phoneAtTeam: +372 5866 5583
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 100
@@ -35238,16 +33819,6 @@ Team:
                         emailAtTeam: kalev.smidt@poff.ee
                         phoneAtTeam: +372 5341 4787
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 42
@@ -35339,16 +33910,6 @@ Team:
                         emailAtTeam: henri.pill@poff.ee
                         phoneAtTeam: +372 5699 7298
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 99
@@ -35440,16 +34001,6 @@ Team:
                         emailAtTeam: hendri.parrol@poff.ee
                         phoneAtTeam: +372 5190 6255
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 40
@@ -35541,16 +34092,6 @@ Team:
                         emailAtTeam: uku.talmar@poff.ee
                         phoneAtTeam: +372 5623 6372
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 63
@@ -35611,16 +34152,6 @@ Team:
                         emailAtTeam: jurgen.peil@poff.ee
                         phoneAtTeam: +372 525 2870
                         order: 6
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 95
@@ -35682,16 +34213,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 7
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -35724,7 +34245,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
-                juryMember: []
             -
                 id: 12
                 order: 6
@@ -35793,16 +34313,6 @@ Team:
                         emailAtTeam: rasmus.puksmann@poff.ee
                         phoneAtTeam: +372 5393 7092
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 92
@@ -35864,16 +34374,6 @@ Team:
                         emailAtTeam: Maria.joela@poff.ee
                         phoneAtTeam: +372 5398 1762
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -35906,7 +34406,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
-                juryMember: []
             -
                 id: 13
                 order: 7
@@ -35929,16 +34428,6 @@ Team:
                         emailAtTeam: maria.suurvali@poff.ee
                         phoneAtTeam: +372 514 2229
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 90
@@ -36030,16 +34519,6 @@ Team:
                         emailAtTeam: dagmar.raudam@poff.ee
                         phoneAtTeam: +372 5308 0143
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 122
@@ -36083,16 +34562,6 @@ Team:
                         emailAtTeam: indrek.migur@poff.ee
                         phoneAtTeam: +372 58557241
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 91
@@ -36132,20 +34601,10 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Külaliste osakonna assistent
                         roleAtTeam_en: Assistant of Guest Department
-                        roleAtTeam_ru: Ассистент от��ела по приему гостей
+                        roleAtTeam_ru: Ассистент отдела по приему гостей
                         emailAtTeam: kart.paju@poff.ee
                         phoneAtTeam: null
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 93
@@ -36189,16 +34648,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 130
@@ -36211,16 +34660,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 144
@@ -36253,7 +34692,6 @@ Team:
                                 updated_by: 10
                                 created_at: '2020-09-13T16:44:43.718Z'
                                 updated_at: '2020-09-13T16:44:43.785Z'
-                juryMember: []
             -
                 id: 14
                 order: 8
@@ -36274,16 +34712,6 @@ Team:
                         emailAtTeam: siim.vahter@poff.ee
                         phoneAtTeam: +372 5598 1000
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 89
@@ -36327,16 +34755,6 @@ Team:
                         emailAtTeam: andrei.visnevski@poff.ee  Кадри Райго
                         phoneAtTeam: +372 528 3899
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 94
@@ -36382,16 +34800,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -36435,16 +34843,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -36488,16 +34886,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -36530,7 +34918,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
-                juryMember: []
             -
                 id: 15
                 order: 9
@@ -36553,16 +34940,6 @@ Team:
                         emailAtTeam: jaan.leppik@poff.ee
                         phoneAtTeam: +372 5563 3213
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -36606,16 +34983,6 @@ Team:
                         emailAtTeam: sten.otsmaa@poff.ee
                         phoneAtTeam: +372 5326 7157
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 86
@@ -36659,16 +35026,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 88
@@ -36712,16 +35069,6 @@ Team:
                         emailAtTeam: tiina.tartes@poff.ee
                         phoneAtTeam: null
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 87
@@ -36765,16 +35112,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 85
@@ -36809,7 +35146,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:16.823Z'
                                 updated_at: '2020-09-05T20:16:17.486Z'
-                juryMember: []
             -
                 id: 16
                 order: 10
@@ -36830,16 +35166,6 @@ Team:
                         emailAtTeam: marge.liiske@poff.ee
                         phoneAtTeam: +372 514 8134
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 84
@@ -36936,16 +35262,6 @@ Team:
                         emailAtTeam: triin.tramberg@poff.ee
                         phoneAtTeam: +372 502 3395
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 125
@@ -37043,16 +35359,6 @@ Team:
                         emailAtTeam: tiina.lokk@poff.ee
                         phoneAtTeam: null
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 83
@@ -37102,16 +35408,6 @@ Team:
                         emailAtTeam: saara.huimerind@poff.ee
                         phoneAtTeam: '+372 5176 502 '
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 81
@@ -37161,16 +35457,6 @@ Team:
                         emailAtTeam: industrycommunications@poff.ee
                         phoneAtTeam: null
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 78
@@ -37216,16 +35502,6 @@ Team:
                         emailAtTeam: maria.suurvali@poff.ee
                         phoneAtTeam: +372 514 2229
                         order: 6
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 90
@@ -37269,16 +35545,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 7
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 80
@@ -37322,16 +35588,6 @@ Team:
                         emailAtTeam: greta.liht@poff.ee
                         phoneAtTeam: null
                         order: 8
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 79
@@ -37375,16 +35631,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 82
@@ -37430,16 +35676,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 77
@@ -37485,16 +35721,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 76
@@ -37538,16 +35764,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 75
@@ -37591,16 +35807,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 73
@@ -37646,16 +35852,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 74
@@ -37699,16 +35895,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 72
@@ -37752,16 +35938,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 71
@@ -37805,16 +35981,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 111
@@ -37875,16 +36041,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 107
@@ -37987,16 +36143,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 131
@@ -38040,16 +36186,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 66
@@ -38093,16 +36229,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 70
@@ -38146,16 +36272,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 68
@@ -38199,16 +36315,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 67
@@ -38251,16 +36357,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 65
@@ -38303,16 +36399,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 119
@@ -38325,16 +36411,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 120
@@ -38347,16 +36423,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 121
@@ -38369,16 +36435,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
                     -
                         id: 122
@@ -38391,18 +36447,7 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: null
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam: []
-                juryMember: []
             -
                 id: 17
                 order: 11
@@ -38471,16 +36516,6 @@ Team:
                         emailAtTeam: mikk.granstrom@poff.ee
                         phoneAtTeam: +372 5300 2617
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 69
@@ -38524,16 +36559,6 @@ Team:
                         emailAtTeam: maarit.mannama@poff.ee
                         phoneAtTeam: null
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 64
@@ -38577,16 +36602,6 @@ Team:
                         emailAtTeam: heleen.sutt@poff.ee
                         phoneAtTeam: null
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 63
@@ -38630,16 +36645,6 @@ Team:
                         emailAtTeam: epp.kouhkna@poff.ee
                         phoneAtTeam: +372 5345 7935
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 61
@@ -38683,16 +36688,6 @@ Team:
                         emailAtTeam: marek.metslaid@poff.ee
                         phoneAtTeam: null
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 60
@@ -38736,16 +36731,6 @@ Team:
                         emailAtTeam: kart.vainola@poff.ee
                         phoneAtTeam: null
                         order: 6
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 59
@@ -38789,16 +36774,6 @@ Team:
                         emailAtTeam: riina.ries@poff.ee
                         phoneAtTeam: null
                         order: 7
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 62
@@ -38842,16 +36817,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 8
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 50
@@ -38884,7 +36849,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.810Z'
                                 updated_at: '2020-09-05T20:16:02.437Z'
-                juryMember: []
             -
                 id: 18
                 order: 12
@@ -38907,16 +36871,6 @@ Team:
                         emailAtTeam: grete.nellis@poff.ee
                         phoneAtTeam: +372 5552 7407
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 58
@@ -38960,16 +36914,6 @@ Team:
                         emailAtTeam: heinrich.sepp@poff.ee
                         phoneAtTeam: +372 5656 5599
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 55
@@ -39013,16 +36957,6 @@ Team:
                         emailAtTeam: monika.tomingas@poff.ee
                         phoneAtTeam: +372 5349 4174
                         order: 3
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 57
@@ -39066,16 +37000,6 @@ Team:
                         emailAtTeam: siiri.haidma@poff.ee
                         phoneAtTeam: +372 5559 6346
                         order: 4
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 56
@@ -39167,16 +37091,6 @@ Team:
                         emailAtTeam: laurence.boyce@poff.ee
                         phoneAtTeam: +372 5698 7199
                         order: 5
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 120
@@ -39220,16 +37134,6 @@ Team:
                         emailAtTeam: vassilis.kroustallis@poff.ee
                         phoneAtTeam: +372 5685 8350
                         order: 6
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 54
@@ -39273,16 +37177,6 @@ Team:
                         emailAtTeam: programme.shorts@poff.ee
                         phoneAtTeam: null
                         order: 7
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 52
@@ -39326,16 +37220,6 @@ Team:
                         emailAtTeam: kamila.kucikova@poff.ee
                         phoneAtTeam: null
                         order: 8
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 51
@@ -39379,16 +37263,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 9
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 47
@@ -39432,16 +37306,6 @@ Team:
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 10
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 48
@@ -39474,7 +37338,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.643Z'
                                 updated_at: '2020-09-05T20:16:02.330Z'
-                juryMember: []
             -
                 id: 19
                 order: 13
@@ -39543,16 +37406,6 @@ Team:
                         emailAtTeam: kristiina@lmk.ee
                         phoneAtTeam: +372 552 5258
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 46
@@ -39585,7 +37438,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.404Z'
                                 updated_at: '2020-09-05T20:16:02.177Z'
-                juryMember: []
             -
                 id: 20
                 order: 14
@@ -39654,16 +37506,6 @@ Team:
                         emailAtTeam: jana.budkovskaja@poff.ee
                         phoneAtTeam: +372 525 8066
                         order: 1
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 43
@@ -39755,16 +37597,6 @@ Team:
                         emailAtTeam: darja.saar@poff.ee
                         phoneAtTeam: +372 5883 7180
                         order: 2
-                        professions_et: null
-                        professions_en: null
-                        professions_ru: null
-                        country: null
-                        roleAtJury_et: null
-                        roleAtJury_en: null
-                        roleAtJury_ru: null
-                        about_et: null
-                        about_en: null
-                        about_ru: null
                         pictureAtTeam:
                             -
                                 id: 49
@@ -39797,7 +37629,6 @@ Team:
                                 updated_by: 6
                                 created_at: '2020-09-05T20:16:01.685Z'
                                 updated_at: '2020-09-05T20:16:02.355Z'
-                juryMember: []
         name:
             id: 3840
             et: PÖFFi meeskond
@@ -40502,12 +38333,12 @@ Footer:
             lastname: Leppik
             username: null
         updated_by:
-            id: 6
+            id: 8
             firstname: Jaan
-            lastname: Leppik
+            lastname: Editor
             username: null
         created_at: '2020-09-01T09:37:02.304Z'
-        updated_at: '2020-09-16T10:49:56.373Z'
+        updated_at: '2020-09-11T09:45:40.796Z'
         namePrivate: PÖFF
         domain:
             id: 1
@@ -40638,9 +38469,9 @@ Footer:
                             cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0
                             0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0
                             7.75"></path></svg>
-                        url_et: team
-                        url_en: team
-                        url_ru: team
+                        url_et: null
+                        url_en: null
+                        url_ru: null
                         svgMedia: null
                 image: null
             -
@@ -40806,159 +38637,7 @@ Roll: []
 HeroArticlePoff:
     -
         id: 1
-        article_et:
-            id: 16
-            created_by:
-                id: 9
-                firstname: Elise
-                lastname: Eimre
-                username: null
-            updated_by:
-                id: 9
-                firstname: Elise
-                lastname: Eimre
-                username: null
-            created_at: '2020-09-13T19:01:54.101Z'
-            updated_at: '2020-09-13T19:01:54.266Z'
-            title_et: Maailma filmifestivalid paluvad ellujäämiseks toetust
-            slug_et: maailma-filmifestivalid-paluvad-ellujaeaemiseks-toetust-1
-            title_en: null
-            slug_en: pof-fi-article-1
-            title_ru: null
-            slug_ru: pof-fi-article-2
-            lead_et: >-
-                PÖFF ühines rahvusvahelise pöördumisega, milles maailma juhtivad
-                filmifestivalid kutsuvad poliitikuid üles välja töötama
-                meetmeid, et koroonaviiruse tingimustes ellu jääda.
-            lead_ru: null
-            lead_en: null
-            contents_et: >-
-                „COVID-19 on pannud tõsisele proovile filmifestivalide
-                ökos��steemi jätkusuutlikkuse,” on kirjas pöördumises, millele
-                on alla kirjutanud 41 festivali, keda on tunnustanud
-                rahvusvaheline filmiprodutsentide föderatsioon FIAPF. Pöördumist
-                on toetanud ka hulk rahvusvahelisi filmiorganisatsioone,
-                sealhulgas Euroopa filmirežissööride föderatsioon ja
-                rahvusvahelised näitlejate ning filmilevitajate föderatsioonid.
-
-
-                Pöördumises rõhutatakse, et filmifestivalid ei ole olulised
-                üksnes rahvusvahelise filmitööstuse, vaid ka nende riikide ja
-                piirkondade kultuurilise, sotsiaalse ja majandusliku arengu
-                seisukohast, kus nad toimuvad. Näiteks toob samuti pöördumisele
-                alla kirjutanud Cannes´i filmifestival igal aastal kohalikku
-                majandusse ligemale 200 miljonit eurot.
-
-
-                Seda rolli saab pöördujate sõnul säilitada vaid siis, kui
-                kohalikud ja regionaalsed ametivõimud, sealhulgas Euroopa Liit,
-                ulatavad festivalidele abikäe ja töötavad välja strateegia, mis
-                aitab keerulise aja üle elada.
-
-
-                PÖFFi juhi Tiina Loki sõnul vajab ka PÖFF toetust rohkem kui
-                kunagi varem. „Koroonaviiruse mõju meie festivalile on kahetine.
-                Ühelt poolt on see ergutanud välja töötama midagi täiesti uut –
-                veebiruumi, kus oleks võimalik linastada filme ja suhelda
-                filmitegijate- ja tootjatega üle terve maailma ning millest
-                kujuneks tulevikus värav ja ekspordikeskkond tervele Eesti
-                filmitööstusele ja seda toetavatele loome-, teenus- ja
-                turismimajanduse harudele. Teiselt poolt annab see meile valusa
-                hoobi, kui me kaotame eelarves olulist kohta omava piletitulu.
-                Kui siia ei saabu ka külalisi, kannatab ühtlasi festivali
-                atmosfäär, võimalus publikul ja ja filmitegijatel vahetult
-                suhelda, saada tagasisidet… – see, mis teeb festivalist
-                festivali,” ütles ta, nimetades tänavuse festivali korraldamist
-                erakordselt närvesöövaks.
-
-
-                24. Pimedate Ööde filmifestival leiab aset 13.–29. novembrini.
-            contents_en: null
-            contents_ru: null
-            publishFrom: null
-            publishUntil: null
-            publish_et: true
-            publish_en: null
-            publish_ru: null
-            media:
-                id: 22
-                clipUrlDefault: null
-                clipUrl_et: null
-                clipUrl_en: null
-                clipUrl_ru: null
-                imageDefault:
-                    -
-                        id: 146
-                        name: >-
-                            PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg
-                        alternativeText: ''
-                        caption: ''
-                        width: 2048
-                        height: 879
-                        formats:
-                            thumbnail:
-                                ext: .jpg
-                                url: >-
-                                    /uploads/thumbnail_P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg
-                                hash: >-
-                                    thumbnail_P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5
-                                mime: image/jpeg
-                                name: >-
-                                    thumbnail_PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg
-                                path: null
-                                size: 8.58
-                                width: 245
-                                height: 105
-                        hash: >-
-                            P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5
-                        ext: .jpg
-                        mime: image/jpeg
-                        size: 376.66
-                        url: >-
-                            /uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg
-                        previewUrl: null
-                        provider: local
-                        provider_metadata: null
-                        created_by: 9
-                        updated_by: 9
-                        created_at: '2020-09-13T19:01:29.953Z'
-                        updated_at: '2020-09-13T19:01:30.023Z'
-                image_et: []
-                image_en: []
-                image_ru: []
-            button: []
-            article_types:
-                -
-                    id: 2
-                    name: News
-                    created_by: 6
-                    updated_by: 6
-                    created_at: '2020-08-18T13:49:51.616Z'
-                    updated_at: '2020-09-16T09:12:30.682Z'
-                    article: null
-                    et: Uudised
-                    en: News
-                    ru: Новости
-                    slug_et: uudised
-                    slug_en: news
-                    slug_ru: novosti
-            tag_premiere_types: []
-            tag_programmes: []
-            tag_genres: []
-            tag_keywords: []
-            web_authors:
-                -
-                    id: 1
-                    namePrivate: Pöffihunt
-                    created_by: 6
-                    updated_by: 6
-                    created_at: '2020-09-02T11:27:48.489Z'
-                    updated_at: '2020-09-02T11:27:48.544Z'
-                    name:
-                        id: 3851
-                        et: Pöffihunt
-                        en: Wolf
-                        ru: Волк
+        article_et: null
         article_en:
             id: 1
             created_by:
@@ -41039,7 +38718,7 @@ HeroArticlePoff:
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
-                Контентс по русски Контентс по русски Контентс по русски
+                Контентс ��о русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
@@ -41129,18 +38808,15 @@ HeroArticlePoff:
             article_types:
                 -
                     id: 2
-                    name: News
+                    name: Uudis
                     created_by: 6
-                    updated_by: 6
+                    updated_by: 1
                     created_at: '2020-08-18T13:49:51.616Z'
-                    updated_at: '2020-09-16T09:12:30.682Z'
+                    updated_at: '2020-08-27T13:27:26.065Z'
                     article: null
                     et: Uudised
                     en: News
                     ru: Новости
-                    slug_et: uudised
-                    slug_en: news
-                    slug_ru: novosti
             tag_premiere_types:
                 -
                     id: 5
@@ -41411,18 +39087,15 @@ HeroArticlePoff:
             article_types:
                 -
                     id: 2
-                    name: News
+                    name: Uudis
                     created_by: 6
-                    updated_by: 6
+                    updated_by: 1
                     created_at: '2020-08-18T13:49:51.616Z'
-                    updated_at: '2020-09-16T09:12:30.682Z'
+                    updated_at: '2020-08-27T13:27:26.065Z'
                     article: null
                     et: Uudised
                     en: News
                     ru: Новости
-                    slug_et: uudised
-                    slug_en: news
-                    slug_ru: novosti
             tag_premiere_types: []
             tag_programmes: []
             tag_genres: []
@@ -41451,7 +39124,7 @@ HeroArticlePoff:
             lastname: Leppik
             username: null
         created_at: '2020-08-19T11:25:46.587Z'
-        updated_at: '2020-09-15T20:16:53.202Z'
+        updated_at: '2020-09-14T07:52:22.443Z'
 TrioBlockPoff:
     -
         id: 1
@@ -41547,7 +39220,7 @@ TrioBlockPoff:
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
-                Контентс по русски Контентс по русски Контентс по русски
+                Контентс ��о русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
                 Контентс по русски Контентс по русски Контентс по русски
@@ -41637,18 +39310,15 @@ TrioBlockPoff:
             article_types:
                 -
                     id: 2
-                    name: News
+                    name: Uudis
                     created_by: 6
-                    updated_by: 6
+                    updated_by: 1
                     created_at: '2020-08-18T13:49:51.616Z'
-                    updated_at: '2020-09-16T09:12:30.682Z'
+                    updated_at: '2020-08-27T13:27:26.065Z'
                     article: null
                     et: Uudised
                     en: News
                     ru: Новости
-                    slug_et: uudised
-                    slug_en: news
-                    slug_ru: novosti
             tag_premiere_types:
                 -
                     id: 5
@@ -41919,18 +39589,15 @@ TrioBlockPoff:
             article_types:
                 -
                     id: 2
-                    name: News
+                    name: Uudis
                     created_by: 6
-                    updated_by: 6
+                    updated_by: 1
                     created_at: '2020-08-18T13:49:51.616Z'
-                    updated_at: '2020-09-16T09:12:30.682Z'
+                    updated_at: '2020-08-27T13:27:26.065Z'
                     article: null
                     et: Uudised
                     en: News
                     ru: Новости
-                    slug_et: uudised
-                    slug_en: news
-                    slug_ru: novosti
             tag_premiere_types: []
             tag_programmes: []
             tag_genres: []
@@ -42177,18 +39844,15 @@ TrioBlockPoff:
             article_types:
                 -
                     id: 2
-                    name: News
+                    name: Uudis
                     created_by: 6
-                    updated_by: 6
+                    updated_by: 1
                     created_at: '2020-08-18T13:49:51.616Z'
-                    updated_at: '2020-09-16T09:12:30.682Z'
+                    updated_at: '2020-08-27T13:27:26.065Z'
                     article: null
                     et: Uudised
                     en: News
                     ru: Новости
-                    slug_et: uudised
-                    slug_en: news
-                    slug_ru: novosti
             tag_premiere_types: []
             tag_programmes: []
             tag_genres: []
