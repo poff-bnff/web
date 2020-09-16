@@ -58,15 +58,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 2
@@ -228,15 +231,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -446,15 +452,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -496,37 +505,46 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
     title: ilma et pealkirjata
     slug: ilma-et-pealkirjata
     publish: true
@@ -668,15 +686,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     tag_premiere_types:
         - World Premiere
     tag_programmes:
@@ -852,15 +873,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -1018,15 +1042,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -1112,7 +1139,7 @@
 
         На церемонии открытия, которая начнется в 22:00 на Ратушной площади в
         сердце Тарту, с концертом выступят Маарья Нуут и Хендрик Кальюярв.
-        Фестиваль откроет мелодрама бразильского режиссера Карима Айнуза
+        Фестиваль откроет мелодрама бразильского режиссера Карима Айн��за
         «Невидимая жизнь Эвридики».
 
 
@@ -1126,7 +1153,7 @@
         Крупнейший из проводимых под открытым небом кинофестивалей в странах
         Балтии пройдет с 10 по 15 августа в Тарту. Семнадцать фильмов покажут на
         Ратушной площади и в центре Athena, и 10 из них можно будет посмотреть
-        виртуально по всей Э��тонии. Все киноленты так или иначе посвящены теме
+        виртуально по всей Эстонии. Все киноленты так или иначе посвящены теме
         любви и представляют такие экзотические страны, как Иран, Бразилия,
         Южная Корея и Австралия.
 
@@ -1145,7 +1172,7 @@
         международном кинофестивале.
 
 
-        В связи с коронавирусом на Р��тушной площади, которая на время фестиваля
+        В связи с коронавирусом на Ратушной площади, которая на время фестиваля
         превратится в кинозал, будет установлено 500 стульев вместо привычных
         1200. Это позволит соблюсти правило «2+2». На сеансы документальных и
         детских фильмов в центре Athena будут пропускать до 120 человек, и между
@@ -1203,15 +1230,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     slug: pof-fi-article-3
     directory: >-
         /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-3
@@ -1240,20 +1270,161 @@
     article_types:
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
     slug: pof-fi-article-6
     publish: true
     directory: >-
         /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-6
     path: article/pof-fi-article-6
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 38
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-16T11:04:26.573Z'
+    updated_at: '2020-09-16T11:04:26.657Z'
+    title_et: PImedate Ööde filmifestival
+    slug_et: p-imedate-oeoede-filmifestival
+    slug_ru: pof-fi-article-19
+    contents_et: >-
+        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis toob iga aasta
+        novembris maailmakino värskemad ning haaravamad palad ühes
+        rahvusvaheliste filmitegijatega koju kätte. PÖFFi selle aasta
+        programmist leiab üle 250 mängufilmi ning enam kui 300 lühi- ja
+        animafilmi. 
+
+
+        Igal aastal korraldatakse üle maailma umbes 4000 filmifestivali, millest
+        vaid viisteist on Rahvusvahelise Produtsentide Liitude Föderatsiooni
+        poolt saanud A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
+        Berliini, Veneetsia ning teiste maailma tipp-filmifestivalidega sellesse
+        A-kategooriasse.
+
+
+
+        #### Tõutunnused
+
+
+        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab kaugemale. Ilma
+        teie, oma kinopubliku ja toetajateta poleks 1997. aastal suuresti põlve
+        otsas loodud filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
+        aastal pidevas liikumises iselaadi koostegemine, kus publiku ja
+        filmielamuste ühendavaks lüliks on vabatahtlikud, keda on tänaseks enam
+        kui 300. Koos oleme siin väikeses Eestis suutnud süsimustad novembrikuu
+        ööd täita omanäoliste virmalistega, mis eredate filmielamustena end
+        kinolinadel ilmutavad ja filmitegijaid eri maailma nurkadest meid
+        külastama toovad.
+
+
+        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad, kuid teekonnad
+        on igal aastal erinevad. Sel aastal avastame Araabiat läbi selle viimase
+        kümne aasta parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
+        südikuse kõrval ka tahe näha kaugemale silmapiirist, et hoida oma
+        maailmapilti pidevas avardumises. Nii kulgeb PÖFFi programm igal aastal
+        väljaspool oma mugavustsooni. Pöffihundid ei pelga uusi kultuuriruume,
+        põletavaid küsimusi ega emotsioone, mis naerutavad, rabavad ja
+        liigutavad oma karges eheduses.
+
+
+        ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
+
+        testallkiri pildile
+    publish_et: true
+    article_types:
+        -
+            id: 5
+            name: About
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:17:53.527Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
+            article: null
+            et: Artikkel
+            en: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Wolf
+    title: Black Nights Film Festival
+    slug: black-nights-film-festival
+    lead: >-
+        Started in 1997, the Tallinn Black Nights Film Festival has grown into
+        one of the biggest film festivals in Northern Europe and busiest
+        regional industry platforms, hosting more than 1000 guests and industry
+        delegates and over 160 journalists. The festival screens around 250
+        features and more than 300 shorts and animations and sees an attendance
+        of 80 000 people annually. 
+
+
+        As of 2014 the festival holds the FIAPF accreditation for holding an
+        international competition programme which puts the festival into the so-
+        called A-category of film festivals, alongside other 14 festivals in the
+        world.
+
+
+
+        #### Join the Wolf Pack
+
+
+        A PÖFF Wolf is a pack animal who knows that he’ll get farther working
+        together with the others. Without you, our cinema audience and
+        supporters, this film festival, largely cobbled together on pure
+        enthusiasm in 1997, would not be what it is today. Every year, PÖFF is
+        kept in constant movement by wonderful collaboration where the audience
+        and the films are connected by volunteers, more than 300 by today.
+        Together in our small Estonia, we have succeeded in filling the black
+        nights of November with unique northern lights which manifest as bright
+        film experiences on cinema screens and attract filmmakers from different
+        corners of the world to enjoy it all with us.
+
+
+        The gathering places of the PÖFF Wolves in Estonian cinemas remain the
+        same, but the routes are different every year. This year, the festival
+        will take you on a journey to Arab countries to enjoy the best of the
+        Arab cinema from the past 10 years. Besides grit and courage, PÖFF’s
+        growth preconditions include the will and desire to see past the horizon
+        in order to constantly broaden our view of the world. Thus, PÖFF’s
+        programme always wanders beyond its comfort zone. The PÖFF Wolves are
+        not afraid of new cultural spaces, burning questions and emotions which
+        make us laugh, astound us and move us in their bracing authenticity.
+
+
+        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
+
+        test subline 
+    publish: true
+    directory: >-
+        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/black-nights-film-festival
+    path: article/black-nights-film-festival
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1378,15 +1549,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     tag_premiere_types:
         - European premiere
     tag_programmes:
@@ -1559,15 +1733,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     tag_premiere_types:
         - International Premiere
     tag_programmes:
@@ -1656,15 +1833,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     title: Just English test
     slug: just-english-test
     lead: lead
@@ -1722,11 +1902,12 @@
     lead_et: >-
         Pimedate Ööde filmifestivali rahvusvaheline filmivaldkonna
         professionaalidele suunatud suursündmus Industry@Tallinn & Baltic Event
-        kolib selleks s��giseks veebi.
+        kolib selleks sügiseks veebi.
     lead_ru: >-
-        В этом году спутник Таллиннского кинофестиваля «Тёмные ночи» – кинорынок
-        Industry@Tallinn & Baltic Event – пройдет полностью онлайн. Это
-        обусловлено потенциальными ограничениями на путешествия из-за COVID-19.
+        В этом году спутник Таллиннского кинофестиваля «Тёмные ночи» –
+        кин��рынок Industry@Tallinn & Baltic Event – пройдет полностью онлайн.
+        Это обусловлено потенциальными ограничениями на путешествия из-за
+        COVID-19.
     contents_et: >-
         Põhjuseks on tõenäoliselt ka sügisel kehtivad reisimisega seotud
         piirangud, mis ei luba suurel osal külalistest Tallinna tulla või seovad
@@ -1793,7 +1974,7 @@
 
         «Я считаю, что переезд в Интернет также создаст для нас и для аудитории
         некоторые новые возможности: мы надеемся, что из нашей программы смогут
-        извлечь пользу даже больше профессионалов киноиндустрии, чем раньше,
+        извлечь пользу даже больше профессионалов киноиндустри��, чем раньше,
         поскольку им не нужно будет ехать в Таллинн и они смогут получить доступ
         к контенту из любой удобной для них географической точки. Кроме того,
         при подготовке программы мы можем поиграть с различными привлекательными
@@ -1805,7 +1986,7 @@
         будут объявлены в сентябре. Программа включит в себя, как обычно,
         семинары, мастерские, мастер-классы, панельные дискуссии, которые
         покроют все самые животрепещущие темы, а также пройдут мероприятия
-        Академии PÖFF, ориентированные на ��ктеров, агентов, кинокомпозиторов,
+        Академии PÖFF, ориентированные на актеров, агентов, кинокомпозиторов,
         художников по костюмам и фотографов-декораторов. 
 
 
@@ -1821,7 +2002,7 @@
 
 
         В этом году впервые будет организована Академия PÖFF, целью которой
-        является предоставление высококачественного аудиовизуального
+        является предоставление высококачественного аудиовизуальног��
         образования.
 
 
@@ -1880,15 +2061,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2075,59 +2259,74 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
-            ru: Исто��ия поддержки
+            ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
         -
             id: 6
-            name: IndustryProjekt
+            name: IndustryProject
             created_by: 6
             updated_by: 6
             created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
+            updated_at: '2020-09-16T09:11:25.159Z'
             article: null
             et: Projekt
             en: Project
             ru: Проэкт
+            slug_et: projekt
+            slug_en: project
+            slug_ru: proekt
     tag_premiere_types:
         - European premiere
     tag_programmes:
@@ -2173,26 +2372,32 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
     slug: pof-fi-article-8
     directory: >-
         /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/pof-fi-article-8
@@ -2221,7 +2426,7 @@
         filmifestivalid kutsuvad poliitikuid üles välja töötama meetmeid, et
         koroonaviiruse tingimustes ellu jääda.
     contents_et: >-
-        „COVID-19 on pannud tõsisele proovile filmifestivalide ökosüsteemi
+        „COVID-19 on pannud tõsisele proovile filmifestivalide ökos��steemi
         jätkusuutlikkuse,” on kirjas pöördumises, millele on alla kirjutanud 41
         festivali, keda on tunnustanud rahvusvaheline filmiprodutsentide
         föderatsioon FIAPF. Pöördumist on toetanud ka hulk rahvusvahelisi
@@ -2298,15 +2503,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2421,15 +2629,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2500,15 +2711,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     title: PÖFF Shorts now an Academy Award Qualifying Festival
     slug: p-oe-ff-shorts-now-an-academy-award-qualifying-festival
     lead: >-
@@ -2588,15 +2802,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1

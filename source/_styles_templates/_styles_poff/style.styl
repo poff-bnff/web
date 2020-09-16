@@ -39,7 +39,7 @@ bg_dark_1 = #0E1417
 bg_dark_2 = #192024
 bg_dark_3 = #1C272E
 bg_dark_4 = #29333A
-bg_light_1 = #eeeeee
+bg_light_1 = #ffffff
 bg_light_2 = #dddddd
 bg_light_3 = #cccccc
 bg_color_1 = #ffffff
@@ -50,7 +50,7 @@ clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
 clr_primary = #F39133 // PÖFF orange
-clr_primary_text =#F36C3F // PÖFF orange teine
+clr_primary_text = #F39133 // PÖFF orange
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -64,7 +64,7 @@ clr_vote = #00aeef
 header_height = 97px
 full_height = calc(100vh - header_height)
 clr_header_text = #0E1417
-clr_header_bg = white
+clr_header_bg = #ffffff
 
 breakpoint-lg = 992px
 breakpoint-md = 768px
@@ -108,7 +108,7 @@ body
     font-size 16px
     line-height 1.618rem
     color white_96
-    background-color bg_dark_1
+    background-color bg_light_1
     font-family font_h
     margin 0
     // padding-left 0
@@ -133,6 +133,11 @@ body
 .ghost_blue
     color ghost_blue
 
+.font_weight_200
+    font-weight 200
+
+.font_weight_300
+    font-weight 300
 
 .font_weight_400
     font-weight 400
@@ -161,6 +166,7 @@ header
     grid-template-columns auto 1fr
     background-color clr_header_bg
     width 100%
+    // height header_height
     // text-align center
     position fixed
     z-index 900
@@ -169,23 +175,29 @@ header
 
 .main_menu
     position absolute
-    text-align left
+    text-align center
     left 0
     background-color clr_header_bg
     width 100%
     padding-top 1rem
     padding-bottom 1rem
     display none
+    margin-top 5rem
+    // text-align right
+    // height header_height
 
 .main_menu ul
     margin 0
     padding 0
     list-style none
+    // border dashed red
+    width 100%
 
 .main_menu li
     margin-top .5rem
     margin-bottom .5rem
     // margin-left 1rem
+    // border dashed blue
 
 .main_menu a
     color clr_header_text
@@ -200,8 +212,12 @@ header
 .main_menu_toggle
     display none
 
-.main_menu_toggle:checked~main_menu
-    display block
+// .main_menu_toggle:checked~main_menu
+//     display block
+
+.main_menu_toggle:checked~.main_menu
+    display flex
+    width 100vw
 
 .main_menu_toggle_label
     position absolute
@@ -233,7 +249,23 @@ header
 .main_menu_toggle_label span::after
     top 7px
 
+.ul_kaks
+    text-align right
+    // margin-top 3rem
+    // padding-top 5rem
+    // border dashed blue
 
+
+.ul_kaks li
+    padding-right 30vw
+
+
+.ul_kaks a
+    color dark_4
+
+// .ul_kaks:first-child
+//     padding-top 5rem
+//     padding-right 50vw
 
 // HEADER & NAV --------------------
 
@@ -252,6 +284,7 @@ footer
     grid-area footer
     border-top 1px solid rgba(255,255,255,.1)
     padding 10vw
+    background-color bg_dark_1
 
 .grid_footer_row
     display grid
@@ -341,7 +374,8 @@ footer
     color white_96
     a
         color ghost_blue
-        padding-left 1rem
+        padding-left .6rem
+        padding-right .6rem
 
 .logo
     margin 1rem
@@ -482,7 +516,7 @@ footer
     font-size calc(1.9rem + 1.5vw)
     text-decoration none
     text-align left
-    font-weight 600
+    font-weight 400
     line-height 1.4
     letter-spacing 0.04rem
     // padding-top 1rem
@@ -582,7 +616,7 @@ a .dark:hover
     color dark_4
     font-size 1.5rem
     font-family font_h
-    font-weight 500
+    font-weight 400
     padding-top .5rem
     letter-spacing 0.01em
 
@@ -656,7 +690,7 @@ a .dark:hover
     color dark_4
     font-size 1.5rem
     font-family font_h
-    font-weight 500
+    font-weight 400
     padding-top .5rem
     letter-spacing 0.01em
 
@@ -989,7 +1023,7 @@ p
   font-family font_h
   font-size calc(1.618rem + 3vw)
   line-height 1
-  font-weight 700
+  font-weight 500
   color bg_dark_4
   letter-spacing 0.04em
   text-align center
@@ -1004,7 +1038,7 @@ p
   font-family font_h
   font-size calc(4rem + 5vw)
   line-height 1
-  font-weight 700
+  font-weight 500
   color bg_dark_4
   letter-spacing 0.04em
   text-align center
@@ -1016,7 +1050,7 @@ p
     font-family font_h
     font-size calc(1.618rem + 1.618vw)
     line-height 1
-    font-weight 700
+    font-weight 500
     color bg_dark_4
     letter-spacing 0.04em
     text-align center
@@ -1031,7 +1065,7 @@ p
   font-family font_h
   font-size calc(1.618rem + 1.618vw)
   line-height 1
-  font-weight 700
+  font-weight 500
   color white_96
   letter-spacing 0.04em
   text-align center
@@ -1053,7 +1087,7 @@ p
   font-size calc(1rem + 2.4vw)
   text-decoration none
   text-align left
-  font-weight 600
+  font-weight 500
   line-height 1.3
   letter-spacing 0.04rem
   padding-top 1rem
@@ -1234,7 +1268,7 @@ a.btn_popover
 .screening_hall
   text-align left
   font-size calc(1.25rem + 0.1vw)
-  font-weight 500
+  font-weight 400
   color white_96
   letter-spacing 0.04em
 
@@ -1420,7 +1454,7 @@ a.btn_popover
     font-size calc(1.9rem + 1.5vw)
     text-decoration none
     text-align left
-    font-weight 600
+    font-weight 500
     line-height 1.4
     letter-spacing 0.04rem
     padding-top 1rem
@@ -1751,11 +1785,13 @@ a.btn_popover
         display flex
         justify-content flex-end
         align-items flex-end
+        // justify-items flex-end
+        // align-content flex-end
         position static
         margin 0
         padding 0
         padding-right 1.2rem
-        border dashed red
+        // border dashed red
 
     .main_menu ul
         display flex
@@ -1785,6 +1821,7 @@ a.btn_popover
 
     .main_menu ul li.dropdown:hover ul
         display block
+        margin-bottom 5rem
         /* margin-top: 1rem; */
 
     .main_menu ul li.dropdown ul li a
@@ -1798,6 +1835,18 @@ a.btn_popover
     .main_menu li a:hover
         color clr_primary_text
 
+    .ul_kaks
+        text-align left
+        padding 0
+        margin 0
+        li
+            padding-top .5rem
+            padding-bottom .5rem
+        li:first-child
+            padding-top 1.618rem
+        li:last-child
+            padding-bottom 1.618rem
+
     footer
         grid-area footer
         border-top 1px solid rgba(255,255,255,.1)
@@ -1805,6 +1854,7 @@ a.btn_popover
         padding 0
         // padding 10vw
         padding 3rem 5rem 3rem 5rem
+        background-color bg_dark_1
 
     .grid_footer_row
         display grid
@@ -2026,7 +2076,7 @@ a.btn_popover
     text-transform uppercase
 
 .bold
-    font-weight 600
+    font-weight 500
 
 .lh2
     line-height 4rem
