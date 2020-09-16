@@ -18,21 +18,24 @@
     article_types:
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
     slug: pof-fi-article-6
     publish: true
     directory: >-
         C:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir\Intervjuu\pof-fi-article-6
-    path: Intervjuu\pof-fi-article-6
+        Käsper\Documents\web\source\_fetchdir\Interview\pof-fi-article-6
+    path: interview\pof-fi-article-6
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -62,59 +65,74 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
         -
             id: 6
-            name: IndustryProjekt
+            name: IndustryProject
             created_by: 6
             updated_by: 6
             created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
+            updated_at: '2020-09-16T09:11:25.159Z'
             article: null
             et: Projekt
             en: Project
             ru: Проэкт
+            slug_et: projekt
+            slug_en: project
+            slug_ru: proekt
     tag_premiere_types:
         - European premiere
     tag_programmes:
@@ -135,8 +153,8 @@
     slug: pof-fi-article-4
     directory: >-
         C:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir\IndustryProjekt\pof-fi-article-4
-    path: IndustryProjekt\pof-fi-article-4
+        Käsper\Documents\web\source\_fetchdir\IndustryProject\pof-fi-article-4
+    path: project\pof-fi-article-4
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml

@@ -18,44 +18,192 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
     title: ilma et pealkirjata
     slug: ilma-et-pealkirjata
     publish: true
     directory: >-
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\About\ilma-et-pealkirjata
-    path: About\ilma-et-pealkirjata
+    path: about\ilma-et-pealkirjata
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 38
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-16T11:04:26.573Z'
+    updated_at: '2020-09-16T11:04:26.657Z'
+    title_et: PImedate Ööde filmifestival
+    slug_et: p-imedate-oeoede-filmifestival
+    slug_ru: pof-fi-article-19
+    contents_et: >-
+        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis toob iga aasta
+        novembris maailmakino värskemad ning haaravamad palad ühes
+        rahvusvaheliste filmitegijatega koju kätte. PÖFFi selle aasta
+        programmist leiab üle 250 mängufilmi ning enam kui 300 lühi- ja
+        animafilmi. 
+
+
+        Igal aastal korraldatakse üle maailma umbes 4000 filmifestivali, millest
+        vaid viisteist on Rahvusvahelise Produtsentide Liitude Föderatsiooni
+        poolt saanud A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
+        Berliini, Veneetsia ning teiste maailma tipp-filmifestivalidega sellesse
+        A-kategooriasse.
+
+
+
+        #### Tõutunnused
+
+
+        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab kaugemale. Ilma
+        teie, oma kinopubliku ja toetajateta poleks 1997. aastal suuresti põlve
+        otsas loodud filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
+        aastal pidevas liikumises iselaadi koostegemine, kus publiku ja
+        filmielamuste ühendavaks lüliks on vabatahtlikud, keda on tänaseks enam
+        kui 300. Koos oleme siin väikeses Eestis suutnud süsimustad novembrikuu
+        ööd täita omanäoliste virmalistega, mis eredate filmielamustena end
+        kinolinadel ilmutavad ja filmitegijaid eri maailma nurkadest meid
+        külastama toovad.
+
+
+        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad, kuid teekonnad
+        on igal aastal erinevad. Sel aastal avastame Araabiat läbi selle viimase
+        kümne aasta parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
+        südikuse kõrval ka tahe näha kaugemale silmapiirist, et hoida oma
+        maailmapilti pidevas avardumises. Nii kulgeb PÖFFi programm igal aastal
+        väljaspool oma mugavustsooni. Pöffihundid ei pelga uusi kultuuriruume,
+        põletavaid küsimusi ega emotsioone, mis naerutavad, rabavad ja
+        liigutavad oma karges eheduses.
+
+
+        ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
+
+        testallkiri pildile
+    publish_et: true
+    article_types:
+        -
+            id: 5
+            name: About
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:17:53.527Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
+            article: null
+            et: Artikkel
+            en: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Wolf
+    title: Black Nights Film Festival
+    slug: black-nights-film-festival
+    lead: >-
+        Started in 1997, the Tallinn Black Nights Film Festival has grown into
+        one of the biggest film festivals in Northern Europe and busiest
+        regional industry platforms, hosting more than 1000 guests and industry
+        delegates and over 160 journalists. The festival screens around 250
+        features and more than 300 shorts and animations and sees an attendance
+        of 80 000 people annually. 
+
+
+        As of 2014 the festival holds the FIAPF accreditation for holding an
+        international competition programme which puts the festival into the so-
+        called A-category of film festivals, alongside other 14 festivals in the
+        world.
+
+
+
+        #### Join the Wolf Pack
+
+
+        A PÖFF Wolf is a pack animal who knows that he’ll get farther working
+        together with the others. Without you, our cinema audience and
+        supporters, this film festival, largely cobbled together on pure
+        enthusiasm in 1997, would not be what it is today. Every year, PÖFF is
+        kept in constant movement by wonderful collaboration where the audience
+        and the films are connected by volunteers, more than 300 by today.
+        Together in our small Estonia, we have succeeded in filling the black
+        nights of November with unique northern lights which manifest as bright
+        film experiences on cinema screens and attract filmmakers from different
+        corners of the world to enjoy it all with us.
+
+
+        The gathering places of the PÖFF Wolves in Estonian cinemas remain the
+        same, but the routes are different every year. This year, the festival
+        will take you on a journey to Arab countries to enjoy the best of the
+        Arab cinema from the past 10 years. Besides grit and courage, PÖFF’s
+        growth preconditions include the will and desire to see past the horizon
+        in order to constantly broaden our view of the world. Thus, PÖFF’s
+        programme always wanders beyond its comfort zone. The PÖFF Wolves are
+        not afraid of new cultural spaces, burning questions and emotions which
+        make us laugh, astound us and move us in their bracing authenticity.
+
+
+        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
+
+        test subline 
+    publish: true
+    directory: >-
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\About\black-nights-film-festival
+    path: about\black-nights-film-festival
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -85,59 +233,74 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
         -
             id: 6
-            name: IndustryProjekt
+            name: IndustryProject
             created_by: 6
             updated_by: 6
             created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
+            updated_at: '2020-09-16T09:11:25.159Z'
             article: null
             et: Projekt
             en: Project
             ru: Проэкт
+            slug_et: projekt
+            slug_en: project
+            slug_ru: proekt
     tag_premiere_types:
         - European premiere
     tag_programmes:
@@ -158,8 +321,8 @@
     slug: pof-fi-article-4
     directory: >-
         C:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir\IndustryProjekt\pof-fi-article-4
-    path: IndustryProjekt\pof-fi-article-4
+        Käsper\Documents\web\source\_fetchdir\IndustryProject\pof-fi-article-4
+    path: project\pof-fi-article-4
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -184,44 +347,192 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
     slug: pof-fi-article-4
     lead: Ilma et pealkirjata
     publish: true
     directory: >-
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\About\ilma-et-pealkirjata
-    path: About\pof-fi-article-4
+    path: artikkel\pof-fi-article-4
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.et.yaml
+        articles: /articles.et.yaml
+-
+    id: 38
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-16T11:04:26.573Z'
+    updated_at: '2020-09-16T11:04:26.657Z'
+    title_en: Black Nights Film Festival
+    slug_en: black-nights-film-festival
+    slug_ru: pof-fi-article-19
+    lead_en: >-
+        Started in 1997, the Tallinn Black Nights Film Festival has grown into
+        one of the biggest film festivals in Northern Europe and busiest
+        regional industry platforms, hosting more than 1000 guests and industry
+        delegates and over 160 journalists. The festival screens around 250
+        features and more than 300 shorts and animations and sees an attendance
+        of 80 000 people annually. 
+
+
+        As of 2014 the festival holds the FIAPF accreditation for holding an
+        international competition programme which puts the festival into the so-
+        called A-category of film festivals, alongside other 14 festivals in the
+        world.
+
+
+
+        #### Join the Wolf Pack
+
+
+        A PÖFF Wolf is a pack animal who knows that he’ll get farther working
+        together with the others. Without you, our cinema audience and
+        supporters, this film festival, largely cobbled together on pure
+        enthusiasm in 1997, would not be what it is today. Every year, PÖFF is
+        kept in constant movement by wonderful collaboration where the audience
+        and the films are connected by volunteers, more than 300 by today.
+        Together in our small Estonia, we have succeeded in filling the black
+        nights of November with unique northern lights which manifest as bright
+        film experiences on cinema screens and attract filmmakers from different
+        corners of the world to enjoy it all with us.
+
+
+        The gathering places of the PÖFF Wolves in Estonian cinemas remain the
+        same, but the routes are different every year. This year, the festival
+        will take you on a journey to Arab countries to enjoy the best of the
+        Arab cinema from the past 10 years. Besides grit and courage, PÖFF’s
+        growth preconditions include the will and desire to see past the horizon
+        in order to constantly broaden our view of the world. Thus, PÖFF’s
+        programme always wanders beyond its comfort zone. The PÖFF Wolves are
+        not afraid of new cultural spaces, burning questions and emotions which
+        make us laugh, astound us and move us in their bracing authenticity.
+
+
+        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
+
+        test subline 
+    publish_en: true
+    article_types:
+        -
+            id: 5
+            name: About
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:17:53.527Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
+            article: null
+            et: Artikkel
+            en: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Pöffihunt
+    title: PImedate Ööde filmifestival
+    slug: p-imedate-oeoede-filmifestival
+    contents: >-
+        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis toob iga aasta
+        novembris maailmakino värskemad ning haaravamad palad ühes
+        rahvusvaheliste filmitegijatega koju kätte. PÖFFi selle aasta
+        programmist leiab üle 250 mängufilmi ning enam kui 300 lühi- ja
+        animafilmi. 
+
+
+        Igal aastal korraldatakse üle maailma umbes 4000 filmifestivali, millest
+        vaid viisteist on Rahvusvahelise Produtsentide Liitude Föderatsiooni
+        poolt saanud A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
+        Berliini, Veneetsia ning teiste maailma tipp-filmifestivalidega sellesse
+        A-kategooriasse.
+
+
+
+        #### Tõutunnused
+
+
+        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab kaugemale. Ilma
+        teie, oma kinopubliku ja toetajateta poleks 1997. aastal suuresti põlve
+        otsas loodud filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
+        aastal pidevas liikumises iselaadi koostegemine, kus publiku ja
+        filmielamuste ühendavaks lüliks on vabatahtlikud, keda on tänaseks enam
+        kui 300. Koos oleme siin väikeses Eestis suutnud süsimustad novembrikuu
+        ööd täita omanäoliste virmalistega, mis eredate filmielamustena end
+        kinolinadel ilmutavad ja filmitegijaid eri maailma nurkadest meid
+        külastama toovad.
+
+
+        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad, kuid teekonnad
+        on igal aastal erinevad. Sel aastal avastame Araabiat läbi selle viimase
+        kümne aasta parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
+        südikuse kõrval ka tahe näha kaugemale silmapiirist, et hoida oma
+        maailmapilti pidevas avardumises. Nii kulgeb PÖFFi programm igal aastal
+        väljaspool oma mugavustsooni. Pöffihundid ei pelga uusi kultuuriruume,
+        põletavaid küsimusi ega emotsioone, mis naerutavad, rabavad ja
+        liigutavad oma karges eheduses.
+
+
+        ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
+
+        testallkiri pildile
+    publish: true
+    directory: >-
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\About\black-nights-film-festival
+    path: artikkel\p-imedate-oeoede-filmifestival
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml
@@ -247,59 +558,74 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
         -
             id: 6
-            name: IndustryProjekt
+            name: IndustryProject
             created_by: 6
             updated_by: 6
             created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
+            updated_at: '2020-09-16T09:11:25.159Z'
             article: null
             et: Projekt
             en: Project
             ru: Проэкт
+            slug_et: projekt
+            slug_en: project
+            slug_ru: proekt
     tag_premiere_types:
         - Euroopa esilinastus
     tag_programmes:
@@ -324,8 +650,8 @@
     publish: true
     directory: >-
         C:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir\IndustryProjekt\pof-fi-article-4
-    path: IndustryProjekt\test0
+        Käsper\Documents\web\source\_fetchdir\IndustryProject\pof-fi-article-4
+    path: projekt\test0
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.et.yaml

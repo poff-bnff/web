@@ -4110,7 +4110,7 @@ Country:
         code: BL
         name_et: Saint Barthélemy
         name_en: Saint Barthélemy
-        name_ru: Святой Вар��оломей
+        name_ru: Святой Варфоломей
     -
         id: 901
         Code: null
@@ -10189,7 +10189,7 @@ POFFiArticle:
 
 
             На русском языке покажут кинодраму российского режиссера Александра
-            Горчилина «Кислота», повествующую �� молодых людях, которые только
+            Горчилина «Кислота», повествующую о молодых людях, которые только
             преодолели 20-летний рубеж и испытывают чувство разъедающего изнутри
             одиночества в отвергнувшем свои устои обществе. Премьера фильма,
             названного также манифестом своего поколения, состоялась на
@@ -11739,7 +11739,7 @@ POFFiArticle:
                     id: 3851
                     et: Pöffihunt
                     en: Wolf
-                    ru: ��олк
+                    ru: Волк
     -
         id: 37
         created_by:
@@ -12363,7 +12363,7 @@ POFFiMenu:
             lastname: Leppik
             username: null
         created_at: '2020-09-08T12:39:44.630Z'
-        updated_at: '2020-09-16T11:07:09.368Z'
+        updated_at: '2020-09-16T12:25:42.383Z'
         poffi_article: null
         order: 9
         name:
@@ -12379,9 +12379,9 @@ POFFiMenu:
                 poffi_article: null
                 customUrl:
                     id: 3896
-                    et: team/
-                    en: team/
-                    ru: team/
+                    et: team
+                    en: team
+                    ru: team
                 order: 3
                 name:
                     id: 3871
@@ -12924,264 +12924,6 @@ JustFilmiArticle:
                     et: Justi Hundu
                     en: Wolfie
                     ru: Волчонок
-<<<<<<< HEAD
-    -
-        id: 2
-        created_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        updated_by:
-            id: 3
-            firstname: Liis
-            lastname: Käsper
-            username: null
-        created_at: '2020-09-14T11:23:22.443Z'
-        updated_at: '2020-09-14T11:31:51.742Z'
-        title_et: JustTestJust
-        slug_et: just-filmi-article
-        title_en: testJustTest
-        slug_en: test-just-test
-        title_ru: null
-        slug_ru: just-filmi-article-1
-        lead_et: ''
-        lead_en: null
-        lead_ru: null
-        contents_et: null
-        contents_en: testJustTest
-        contents_ru: testJustTest
-        publishFrom: '2020-09-09T09:00:00.000Z'
-        publishUntil: '2020-09-18T09:00:00.000Z'
-        publish_et: true
-        publish_en: null
-        publish_ru: null
-        media: null
-        button: []
-        article_types:
-            -
-                id: 2
-                name: Uudis
-                created_by: 6
-                updated_by: 1
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-08-27T13:27:26.065Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-        tag_premiere_types:
-            -
-                id: 6
-                PremiereType_et: null
-                PremiereType_en: null
-                PremiereType_ru: null
-                created_by: 6
-                updated_by: 3
-                created_at: '2020-08-19T10:51:47.582Z'
-                updated_at: '2020-08-27T10:11:28.929Z'
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                value_et: Euroopa esilinastus
-                value_en: European premiere
-                value_ru: Европейская премьера
-                et: Euroopa esilinastus
-                en: European premiere
-                ru: Европейская премьера
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords:
-            -
-                id: 7
-                Value_et: null
-                Value_en: null
-                Value_ru: null
-                created_by: 6
-                updated_by: 3
-                created_at: '2020-08-19T10:49:52.991Z'
-                updated_at: '2020-08-27T10:07:40.422Z'
-                value_et: Ühiskond
-                value_en: Society
-                value_ru: Общество
-                et: Ühiskond
-                en: Society
-                ru: Общество
-        web_authors:
-            -
-                id: 2
-                namePrivate: Toimetaja
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-02T11:28:23.386Z'
-                updated_at: '2020-09-02T11:28:23.428Z'
-                name:
-                    id: 3852
-                    et: Päevatoimetaja
-                    en: Editor
-                    ru: Editor
-    -
-        id: 3
-        created_by:
-            id: 14
-            firstname: Heleen
-            lastname: Sutt
-            username: null
-        updated_by:
-            id: 14
-            firstname: Heleen
-            lastname: Sutt
-            username: null
-        created_at: '2020-09-15T12:02:30.958Z'
-        updated_at: '2020-09-15T12:23:52.492Z'
-        title_et: "\U0001F3AC Kandideeri laste- ja noortežüriidesse!"
-        slug_et: kandideeri-laste-ja-noortezueriidesse
-        title_en: null
-        slug_en: just-filmi-article-1
-        title_ru: null
-        slug_ru: just-filmi-article-2
-        lead_et: "Kas oled alati mõelnud, et tahaksid ka põnevast ja harivast filmimaailmast osa saada? \U0001F642"
-        lead_en: null
-        lead_ru: null
-        contents_et: >-
-            Just Film ootab kõiki tegusaid lapsi ja noori võtma osa meie
-            festivali žüriide tegevusest. Ka sel aastal kutsume laste- ja
-            noortežüriidesse kandideerima lapsi ja noori vanuses 7-13 ning
-            14-19. Mõlema žürii raskeks, kuid põnevaks ülesandeks on vaadata
-            Just Filmi programmide filme ning valida nende seast välja
-            võidufilm. Just Filmi festival toimub sel aastal 13.-29. novembrini
-            Tallinna ja Tartu kinodes ning samaaegselt ka veebis!
-
-
-            **Kandideerimine on avatud 28. septembrini 2020!**
-
-             
-
-            **Lastežüriisse kandideerimiseks:**
-
-
-            Kirjuta meile vähemalt kahest huvitavast filmist. Kirjuta, mis just
-            Sulle meeldis, mis ei meeldinud ja miks. Räägi meile ka lühidalt
-            endast ning miks just Sina peaksid olema Just Filmi Lastežüriis.
-
-
-            Saada kiri pealkirjaga “Lastežürii” aadressile justfilm@poff.ee. Ära
-            unusta oma kontaktandmeid (nimi, sünniaasta, telefon, meiliaadress)!
-
-             
-
-            **Noortežüriisse kandideerimiseks:**
-
-
-            Kirjuta meile üks filmiarvustus koos lühikese motivatsioonikirja ja
-            enesetutvustusega ning saada see meiliaadressile justfilm@poff.ee,
-            pealkirjaga “Noortežürii”. Ära unusta oma kontaktandmeid (nimi,
-            sünniaasta, telefon, meiliaadress)!
-
-             
-
-            Vaata ka lõbusat videot, mille tegid 2019a Just Filmi lastežürii
-            liikmed Brittany Aasamets, Heleri Pajuste, Kris Prendon Teder, Mona
-            Grete Pärgma, Otto Samuel Kahar koos lastežürii mentori Heli
-            Jürissoniga.
-
-
-            [Vaata videot.](https://vimeo.com/455916372)
-        contents_en: null
-        contents_ru: null
-        publishFrom: null
-        publishUntil: null
-        publish_et: true
-        publish_en: null
-        publish_ru: null
-        media:
-            id: 31
-            clipUrlDefault: 'https://vimeo.com/455916372'
-            clipUrl_et: null
-            clipUrl_en: null
-            clipUrl_ru: null
-            imageDefault:
-                -
-                    id: 152
-                    name: Züriid 2019.jpg
-                    alternativeText: ''
-                    caption: ''
-                    width: 2048
-                    height: 1365
-                    formats:
-                        thumbnail:
-                            ext: .jpg
-                            url: /uploads/thumbnail_Zueriid_2019_4b8a4c857b.jpg
-                            hash: thumbnail_Zueriid_2019_4b8a4c857b
-                            mime: image/jpeg
-                            name: thumbnail_Züriid 2019.jpg
-                            path: null
-                            size: 9.4
-                            width: 234
-                            height: 156
-                    hash: Zueriid_2019_4b8a4c857b
-                    ext: .jpg
-                    mime: image/jpeg
-                    size: 609.57
-                    url: /uploads/Zueriid_2019_4b8a4c857b.jpg
-                    previewUrl: null
-                    provider: local
-                    provider_metadata: null
-                    created_by: 14
-                    updated_by: 14
-                    created_at: '2020-09-15T12:00:27.267Z'
-                    updated_at: '2020-09-15T12:00:27.372Z'
-            image_et: []
-            image_en: []
-            image_ru: []
-        button:
-            -
-                id: 10
-                buttonText: null
-                buttonUrl: null
-                buttonText_et: null
-                buttonUrl_et: null
-                buttonText_en: null
-                buttonUrl_en: null
-                buttonText_ru: null
-                buttonUrl_ru: null
-                text_et: null
-                url_et: null
-                text_en: null
-                url_en: null
-                text_ru: null
-                url_ru: null
-        article_types:
-            -
-                id: 2
-                name: Uudis
-                created_by: 6
-                updated_by: 1
-                created_at: '2020-08-18T13:49:51.616Z'
-                updated_at: '2020-08-27T13:27:26.065Z'
-                article: null
-                et: Uudised
-                en: News
-                ru: Новости
-        tag_premiere_types: []
-        tag_programmes: []
-        tag_genres: []
-        tag_keywords: []
-        web_authors:
-            -
-                id: 3
-                namePrivate: Justi Hundu
-                created_by: 6
-                updated_by: 6
-                created_at: '2020-09-04T10:41:16.303Z'
-                updated_at: '2020-09-04T10:41:16.384Z'
-                name:
-                    id: 3858
-                    et: Justi Hundu
-                    en: Wolfie
-                    ru: Волчонок
-=======
->>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
 JustFilmiMenu: []
 ShortsiArticle:
     -
@@ -33072,7 +32814,7 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Programmi koostaja
                         roleAtTeam_en: Festival Programmer
-                        roleAtTeam_ru: Составитель програм��ы
+                        roleAtTeam_ru: Составитель программы
                         emailAtTeam: anna.arutyunova@poff.ee
                         phoneAtTeam: null
                         order: 20
@@ -37019,7 +36761,7 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Piletikontrolöride töö koordinaator
                         roleAtTeam_en: Conductors Coordinator
-                        roleAtTeam_ru: Координатор ра��оты билетеров
+                        roleAtTeam_ru: Координатор работы билетеров
                         emailAtTeam: null
                         phoneAtTeam: null
                         order: 5
@@ -41188,29 +40930,18 @@ HeroArticlePoff:
             article_types:
                 -
                     id: 2
-<<<<<<< HEAD
-                    name: Uudis
-                    created_by: 6
-                    updated_by: 1
-                    created_at: '2020-08-18T13:49:51.616Z'
-                    updated_at: '2020-08-27T13:27:26.065Z'
-=======
                     name: News
                     created_by: 6
                     updated_by: 6
                     created_at: '2020-08-18T13:49:51.616Z'
                     updated_at: '2020-09-16T09:12:30.682Z'
->>>>>>> 3f724bd6e93e63bf1bce376dfb77076e128b5190
                     article: null
                     et: Uudised
                     en: News
                     ru: Новости
-<<<<<<< HEAD
-=======
                     slug_et: uudised
                     slug_en: news
                     slug_ru: novosti
->>>>>>> 3f724bd6e93e63bf1bce376dfb77076e128b5190
             tag_premiere_types: []
             tag_programmes: []
             tag_genres: []
