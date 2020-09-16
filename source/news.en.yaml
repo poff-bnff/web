@@ -124,9 +124,9 @@
         until the 22nd of August.
     publish: true
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/the-goddess-of-fortune-wins-tartuff-audience-award
-    path: article/the-goddess-of-fortune-wins-tartuff-audience-award
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\the-goddess-of-fortune-wins-tartuff-audience-award
+    path: Uudis\the-goddess-of-fortune-wins-tartuff-audience-award
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -252,8 +252,8 @@
     lead: lead 2 en
     contents: cont 2 en
     publish: true
-    directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir/news/test-2-en'
-    path: article/test-2-en
+    directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-2-en'
+    path: Uudis\test-2-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -469,8 +469,8 @@
     lead: lead 4 en
     contents: cont 4 en
     publish: true
-    directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir/news/test-4-en'
-    path: article/test-4-en
+    directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-4-en'
+    path: Uudis\test-4-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -530,133 +530,9 @@
     slug: ilma-et-pealkirjata
     publish: true
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/about/ilma-et-pealkirjata
-    path: article/ilma-et-pealkirjata
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 34
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T12:07:40.816Z'
-    updated_at: '2020-09-14T12:08:09.348Z'
-    slug_et: pof-fi-article-4
-    slug_ru: pof-fi-article-15
-    lead_et: Ilma et pealkirjata
-    publish_et: true
-    publish_ru: true
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
-            article: null
-            et: About
-            en: About
-            ru: About
-    title: ilma et pealkirjata
-    slug: ilma-et-pealkirjata
-    publish: true
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/about/ilma-et-pealkirjata
-    path: article/ilma-et-pealkirjata
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 34
-    created_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T12:07:40.816Z'
-    updated_at: '2020-09-14T12:08:09.348Z'
-    slug_et: pof-fi-article-4
-    slug_ru: pof-fi-article-15
-    lead_et: Ilma et pealkirjata
-    publish_et: true
-    publish_ru: true
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
-            article: null
-            et: About
-            en: About
-            ru: About
-    title: ilma et pealkirjata
-    slug: ilma-et-pealkirjata
-    publish: true
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/about/ilma-et-pealkirjata
-    path: article/ilma-et-pealkirjata
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\About\ilma-et-pealkirjata
+    path: About\ilma-et-pealkirjata
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -824,8 +700,8 @@
     lead: lead 6 en
     contents: cont 6 en
     publish: false
-    directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir/news/test-6-en'
-    path: article/test-6-en
+    directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-6-en'
+    path: Uudis\test-6-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -998,8 +874,8 @@
     lead: lead 3 en
     contents: cont 3 en
     publish: true
-    directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir/news/test-3-en'
-    path: article/test-3-en
+    directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-3-en'
+    path: Uudis\test-3-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1163,8 +1039,8 @@
     lead: test 9 en lead
     contents: test 9 en cont
     publish: false
-    directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir/news/test-9-en'
-    path: article/test-9-en
+    directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-9-en'
+    path: Uudis\test-9-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1240,7 +1116,7 @@
         Фильм стал призером конкурсной программы «Особый взгляд» на престижном
         Каннском кинофестивале, а также был выдвинут Бразилией на премию «Оскар»
         в категории «Лучший фильм на иностранном языке». Кинокартина снята по
-        мотивам одноименного романа Марты Батальи. Глав��ые роли исполнили Карол
+        мотивам одноименного романа Марты Батальи. Главные роли исполнили Карол
         Дуарте и Жулия Стокклер.
 
 
@@ -1335,9 +1211,9 @@
             ru: Новости
     slug: pof-fi-article-3
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/pof-fi-article-3
-    path: article/pof-fi-article-3
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\pof-fi-article-3
+    path: Uudis\pof-fi-article-3
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1494,8 +1370,8 @@
     lead: test 8 en lead
     contents: test 8 en cont
     publish: true
-    directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir/news/test-8-en'
-    path: article/test-8-en
+    directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-8-en'
+    path: Uudis\test-8-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1674,8 +1550,8 @@
     lead: Lead EN
     contents: Cont EN
     publish: false
-    directory: 'c:\Users\Liis Käsper\Documents\web\source\_fetchdir/news/test-en'
-    path: article/test-en
+    directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-en'
+    path: Uudis\test-en
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1754,9 +1630,9 @@
     contents: contents
     publish: true
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/just-english-test
-    path: article/just-english-test
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\just-english-test
+    path: Uudis\just-english-test
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -2101,10 +1977,9 @@
         Industry@Tallinn & Baltic Event will run from the 23rd until the 27th of
         November.
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
-    path: >-
-        article/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+    path: Uudis\industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -2206,425 +2081,9 @@
             name: Wolf
     slug: pof-fi-article-4
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/industryproject/pof-fi-article-4
-    path: article/pof-fi-article-4
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 32
-    created_by:
-        id: 17
-        firstname: Test
-        lastname: Toimetaja
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T09:40:30.683Z'
-    updated_at: '2020-09-14T12:05:58.987Z'
-    title_et: Test0
-    slug_et: test0
-    slug_ru: pof-fi-article-11
-    lead_et: Test0 Test0
-    contents_et: Test0 Test0
-    publishFrom: '2020-09-14T09:00:00.000Z'
-    publish_et: true
-    media:
-        id: 29
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 3
-            name: Intervjuu
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
-            article: null
-            et: About
-            en: About
-            ru: About
-        -
-            id: 6
-            name: IndustryProjekt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
-            article: null
-            et: Projekt
-            en: Project
-            ru: Проэкт
-    tag_premiere_types:
-        - European premiere
-    tag_programmes:
-        - Official Selection
-    tag_genres:
-        - Animation
-    tag_keywords:
-        - MeToo
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-4
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/industryproject/pof-fi-article-4
-    path: article/pof-fi-article-4
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 32
-    created_by:
-        id: 17
-        firstname: Test
-        lastname: Toimetaja
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T09:40:30.683Z'
-    updated_at: '2020-09-14T12:05:58.987Z'
-    title_et: Test0
-    slug_et: test0
-    slug_ru: pof-fi-article-11
-    lead_et: Test0 Test0
-    contents_et: Test0 Test0
-    publishFrom: '2020-09-14T09:00:00.000Z'
-    publish_et: true
-    media:
-        id: 29
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 3
-            name: Intervjuu
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
-            article: null
-            et: About
-            en: About
-            ru: About
-        -
-            id: 6
-            name: IndustryProjekt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
-            article: null
-            et: Projekt
-            en: Project
-            ru: Проэкт
-    tag_premiere_types:
-        - European premiere
-    tag_programmes:
-        - Official Selection
-    tag_genres:
-        - Animation
-    tag_keywords:
-        - MeToo
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-4
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/industryproject/pof-fi-article-4
-    path: article/pof-fi-article-4
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 32
-    created_by:
-        id: 17
-        firstname: Test
-        lastname: Toimetaja
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T09:40:30.683Z'
-    updated_at: '2020-09-14T12:05:58.987Z'
-    title_et: Test0
-    slug_et: test0
-    slug_ru: pof-fi-article-11
-    lead_et: Test0 Test0
-    contents_et: Test0 Test0
-    publishFrom: '2020-09-14T09:00:00.000Z'
-    publish_et: true
-    media:
-        id: 29
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 3
-            name: Intervjuu
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
-            article: null
-            et: About
-            en: About
-            ru: About
-        -
-            id: 6
-            name: IndustryProjekt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
-            article: null
-            et: Projekt
-            en: Project
-            ru: Проэкт
-    tag_premiere_types:
-        - European premiere
-    tag_programmes:
-        - Official Selection
-    tag_genres:
-        - Animation
-    tag_keywords:
-        - MeToo
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-4
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/industryproject/pof-fi-article-4
-    path: article/pof-fi-article-4
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 32
-    created_by:
-        id: 17
-        firstname: Test
-        lastname: Toimetaja
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T09:40:30.683Z'
-    updated_at: '2020-09-14T12:05:58.987Z'
-    title_et: Test0
-    slug_et: test0
-    slug_ru: pof-fi-article-11
-    lead_et: Test0 Test0
-    contents_et: Test0 Test0
-    publishFrom: '2020-09-14T09:00:00.000Z'
-    publish_et: true
-    media:
-        id: 29
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 3
-            name: Intervjuu
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
-            article: null
-            et: About
-            en: About
-            ru: About
-        -
-            id: 6
-            name: IndustryProjekt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
-            article: null
-            et: Projekt
-            en: Project
-            ru: Проэкт
-    tag_premiere_types:
-        - European premiere
-    tag_programmes:
-        - Official Selection
-    tag_genres:
-        - Animation
-    tag_keywords:
-        - MeToo
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-4
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/industryproject/pof-fi-article-4
-    path: article/pof-fi-article-4
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\IndustryProjekt\pof-fi-article-4
+    path: IndustryProjekt\pof-fi-article-4
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -2671,58 +2130,9 @@
             ru: История поддержки
     slug: pof-fi-article-8
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/sponsorstory/pof-fi-article-8
-    path: article/pof-fi-article-8
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 37
-    created_by:
-        id: 2
-        firstname: Mariann
-        lastname: Tapfer
-    updated_by:
-        id: 2
-        firstname: Mariann
-        lastname: Tapfer
-    created_at: '2020-09-14T13:44:32.454Z'
-    updated_at: '2020-09-14T14:42:08.863Z'
-    title_et: ' '
-    slug_et: '-1'
-    slug_ru: pof-fi-article-18
-    lead_et: 'See on artikkel, mille pealkiri on tühik!'
-    publish_et: true
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-    slug: pof-fi-article-8
-    directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/sponsorstory/pof-fi-article-8
-    path: article/pof-fi-article-8
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\ToetajaLugu\pof-fi-article-8
+    path: ToetajaLugu\pof-fi-article-8
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -2844,9 +2254,9 @@
             name: Wolf
     slug: pof-fi-article-1
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/pof-fi-article-1
-    path: article/pof-fi-article-1
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\pof-fi-article-1
+    path: Uudis\pof-fi-article-1
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -2968,9 +2378,9 @@
             name: Wolf
     slug: pof-fi-article-2
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/pof-fi-article-2
-    path: article/pof-fi-article-2
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\pof-fi-article-2
+    path: Uudis\pof-fi-article-2
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -3057,9 +2467,9 @@
         possible qualification.
     publish: true
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
-    path: article/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+    path: Uudis\p-oe-ff-shorts-now-an-academy-award-qualifying-festival
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -3137,9 +2547,9 @@
             name: Wolf
     slug: pof-fi-article-5
     directory: >-
-        c:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir/news/pof-fi-article-5
-    path: article/pof-fi-article-5
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\Uudis\pof-fi-article-5
+    path: Uudis\pof-fi-article-5
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml

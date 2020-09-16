@@ -5,7 +5,7 @@ block content
 
     //- SIIA ALLA KÕIK ARTIKLITÜÜBID (STRAPI "NAME" lahtri järgi) MIDA KUVADA
     //- AINULT VÄIKETÄHTEDES!!!
-    - var whichTypesToDisplay = ['toetajalugu'];
+    - var whichTypesToDisplay = ['uudis'];
 
     if self.data.articles
         main.grid_articles
@@ -63,9 +63,9 @@ block content
                                     .card_article_lead
                                         if val.lead
                                             .article_lead=val.lead
-                                        else
-                                            if val.contents
-                                                .article_lead=val.contents
+                                        //- else
+                                        //-     if val.contents
+                                        //-         .article_lead=val.contents
 
                                     .card_article_footer
                                         //- if val.web_authors

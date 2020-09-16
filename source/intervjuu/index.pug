@@ -46,7 +46,7 @@ block content
                             if val.title
                                 - var article_slug = val.slug
                                 //- - var article_pictures = self.data.article_pictures.articles[article_slug]
-                                a(href= `/${lang_path}article/${article_slug}`).card_article
+                                a(href= `/${lang_path}${val.path}`).card_article
                                     .container_frame_16_9
                                         if val.media && val.media.image && val.media.image[0]
                                             img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.image[0].hash}${val.media.image[0].ext}`)
