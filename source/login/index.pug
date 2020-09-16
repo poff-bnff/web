@@ -46,29 +46,82 @@ block content
         var code = new URLSearchParams(url.search).get('code')
         console.log(code);
         if (code) {
-            getReplyFromAWS(code);
-            console.log('Code sent: ', getReplyFromAWS(code))
+            //- getReplyFromAWS(code);
+            loginWithCode(code)
+            console.log('Code sent: ')
         } else {
             console.log('Not sent ')
         }
 
-        async function getReplyFromAWS(code) {
-            let response = await fetch(`https://9t1wskosmj.execute-api.eu-central-1.amazonaws.com/default/POFF-Validate`, {
-                method: 'POST',
-                //- headers: {Authorization: 'Bearer ' + accessToken}
-                body: code
-            });
-            return await response.json();
-            //- return processJsonResponse(response);
-        }
+        //- async function getReplyFromAWS(code) {
+        //-     let response = await fetch(`https://9t1wskosmj.execute-api.eu-central-1.amazonaws.com/default/POFF-Validate`, {
+        //-         method: 'POST',
+        //-         //- headers: {Authorization: 'Bearer ' + accessToken}
+        //-         body: code
+        //-     });
+        //-     return await response.json();
+        //-     //- return processJsonResponse(response);
+        //- }
 
-        async function getReplyFromAWS(code) {
-            let response = await fetch(`https://9t1wskosmj.execute-api.eu-central-1.amazonaws.com/default/POFF-Validate`, {
+        async function loginWithCode(code) {
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh");
+            myHeaders.append("Cookie", "XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64");
+
+            var urlencoded = new URLSearchParams();
+            urlencoded.append("grant_type", "authorization_code");
+            urlencoded.append("redirect_uri", "https://dev.inscaping.eu/login/");
+            urlencoded.append("code", code);
+
+            var requestOptions = {
                 method: 'POST',
-                //- headers: {Authorization: 'Bearer ' + accessToken}
-                body: code
-            });
-            return await response.json();
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: 'follow'
+            };
+
+            await fetch("https://poff.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+
+            //- return await response.json();
+
+        //- var options = {
+        //- method: 'POST',
+        //- hostname: 'poff.auth.eu-central-1.amazoncognito.com',
+        //- path: '/oauth2/token',
+        //- headers: {
+        //-     'Content-Type': 'application/x-www-form-urlencoded',
+        //-     'Authorization': 'Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh',
+        //-     'Cookie': 'XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64'
+        //- },
+        //- maxRedirects: 20,
+        //- body: {
+        //-     'grant_type': 'authorization_code',
+        //-     'redirect_uri': 'https://dev.inscaping.eu/login/',
+        //-     'code': code
+        //- }
+        //- };
+
+        //-     let response = await fetch(`https://poff.auth.eu-central-1.amazoncognito.com/oauth2/token`, options);
+        //-     //-     method: 'POST',
+        //-     //-     //- headers: {Authorization: 'Bearer ' + accessToken}
+        //-     //-     path: '/',
+        //-     //-     headers: {
+        //-     //-         grant_type: 'authorization_code',
+        //-     //-         client_id: '3d4n3tb8an4eaq9na89dpbj9jc',
+        //-     //-         redirect_uri: 'http://neti.ee',
+        //-     //-         code: '0537785b-fa66-4f7e-b18d-d67f4571b87a',
+        //-     //-         Authorization: 'Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh',
+        //-     //-         "Content-Type": 'application/x-www-form-urlencoded',
+        //-     //-         Cookie: 'XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64'
+        //-     //-     },
+        //-     //-     //- body: code
+        //-     //- });
+
             //- return processJsonResponse(response);
         }
 
