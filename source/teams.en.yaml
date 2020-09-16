@@ -6,11 +6,11 @@
         firstname: Jaan
         lastname: Leppik
     updated_by:
-        id: 10
-        firstname: Maria
-        lastname: Plees
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
     created_at: '2020-08-28T06:32:26.755Z'
-    updated_at: '2020-09-14T08:22:28.075Z'
+    updated_at: '2020-09-14T15:05:36.885Z'
     domain:
         id: 1
         created_by:
@@ -25,6 +25,7 @@
         updated_at: '2020-08-31T13:52:31.385Z'
         url: poff.ee
         name: PÖFF
+    groupType: festivalTeam
     subTeam:
         -
             id: 5
@@ -4405,7 +4406,7 @@
                 -
                     id: 70
                     roleAtTeam_et: Külaliste osakonna assistent
-                    roleAtTeam_ru: Ассистент от��ела по приему гостей
+                    roleAtTeam_ru: Ассистент отдела по приему гостей
                     emailAtTeam: kart.paju@poff.ee
                     order: 4
                     pictureAtTeam:
@@ -4814,7 +4815,7 @@
                 -
                     id: 93
                     roleAtTeam_et: Piletikontrolöride töö koordinaator
-                    roleAtTeam_ru: Координатор работы билетеров
+                    roleAtTeam_ru: Координатор ра��оты билетеров
                     order: 5
                     pictureAtTeam:
                         -
