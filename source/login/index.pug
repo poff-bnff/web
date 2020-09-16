@@ -28,9 +28,14 @@ block content
 
     a(href='https://poff.auth.eu-central-1.amazoncognito.com/login?client_id=3d4n3tb8an4eaq9na89dpbj9jc&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
     br
+        //- if (typeof(accessToken) !== 'undefined')
+
+    a(href='https://poff.auth.eu-central-1.amazoncognito.com/logout?client_id=3d4n3tb8an4eaq9na89dpbj9jc&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
     br
     br
-    button(onclick='doDisplayToken()') Display token
+    br
+    button(onclick='getAccessToken()') Display token
+    button(onclick='logOut()') Log out
     button(onclick='printAWSresponse()') AWSresponse
     br
     br
@@ -72,7 +77,7 @@ block content
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
             myHeaders.append("Authorization", "Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh");
-            myHeaders.append("Cookie", "XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64");
+            //- myHeaders.append("Cookie", "XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64");
 
             var urlencoded = new URLSearchParams();
             urlencoded.append("grant_type", "authorization_code");
@@ -97,14 +102,32 @@ block content
                     }
                 })
                 .catch(error => console.log('error', error));
+        }
 
-            function storeAuthentication(JSONresult) {
-                localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
-                localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
-                localStorage.setItem(ID_TOKEN, JSONresult.id_token);
-                //- localStorage.setItem(ID_TOKEN, JSONresult.id_token);
-                //- localStorage.setItem(AUTH_USERNAME, JSONresult.username);
-            }
+
+        function storeAuthentication(JSONresult) {
+            localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
+            localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
+            localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+            //- localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+            //- localStorage.setItem(AUTH_USERNAME, JSONresult.username);
+        }
+
+        function getAccessToken() {
+            //- console.log('Token: ', getToken('ACCESS'))
+            token.innerHTML = localStorage.getItem(`ACCESS_TOKEN`);
+            return localStorage.getItem(`ACCESS_TOKEN`);
+        }
+
+        function logOut() {
+            localStorage.removeItem(ACCESS_TOKEN);
+            localStorage.removeItem(REFRESH_TOKEN);
+            localStorage.removeItem(ID_TOKEN);
+            console.log('LOGITUD VÄLJA');
+        }
+
+
+
             //- return await response.json();
 
         //- var options = {
@@ -141,7 +164,6 @@ block content
         //-     //- });
 
             //- return processJsonResponse(response);
-        }
 
 
     //- script(type="text/javascript").
