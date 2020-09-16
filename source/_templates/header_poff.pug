@@ -20,15 +20,24 @@ header
                                         each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                                             if subMenuItem.poffi_article
 
-                                                if self.data.articles
+                                                  if self.data.articles
                                                     each article in self.data.articles
                                                         //- article.article_types && article.article_types[0] && (article.article_types[0].name === 'About')  &&
+                                                        //- if (article.id === subMenuItem.poffi_article.id)
                                                         if (article.id === subMenuItem.poffi_article.id)
+                                                            p= 'laaaaang ' + article.id + ' - ' + subMenuItem.poffi_article.id
                                                             each tyyp in article.article_types
-                                                                p= 'laaaaang ' + tyyp.name
                                                                 if (tyyp.name === 'About')
                                                                     li
-                                                                        a(href= `/${lang_path}${tyyp[`slug_${lang}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                                                        a(href= `/${lang_path}${tyyp[`slug_${self.locale}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                                                else if (tyyp.name === 'Interview')
+                                                                    li
+                                                                        a(href= `/${lang_path}${tyyp[`slug_${self.locale}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                                                else if (tyyp.name === 'SponsorStory')
+                                                                    li
+                                                                        a(href= `/${lang_path}${tyyp[`slug_${self.locale}`]}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                                                else if (tyyp.name === 'News')
+                                                                    li
 
                                             else
                                                 if subMenuItem.customUrl

@@ -200,7 +200,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                     if (key == "slug") {
                         //console.log(self.data.path)
 
-                        element.path = path.join(artType.name, element[key])
+                        element.path = path.join(artType[`slug_${lang}`], element[key])
                     }
 
                     if (typeof element[key] === "object" && element[key] != null) {
