@@ -248,7 +248,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
 
-    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`, function(err) {
+    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name.toLowerCase()}_index_template.pug`, function(err) {
         if(err) {
             return console.log(err);
         }
@@ -256,15 +256,15 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     let allDataYAML = yaml.safeDump(allData, { noRefs: true, indent: "4" });
 
-    if (artType.name === "Uudis") {
+    if (artType.name === "News") {
         allNews.push(element);
-    } else if (artType.name === "ToetajaLugu") {
+    } else if (artType.name === "SponsorStory") {
         allSponsor.push(element);
-    } else if (artType.name === "Intervjuu") {
+    } else if (artType.name === "Interview") {
         allInterview.push(element);
     } else if (artType.name === "About") {
         allAbout.push(element);
-    } else if (artType.name === "IndustryProjekt") {
+    } else if (artType.name === "IndustryProject") {
         allIndustry.push(element);
     }
     //console.log(allAbout)
