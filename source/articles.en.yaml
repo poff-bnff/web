@@ -124,9 +124,14 @@
         until the 22nd of August.
     publish: true
     directory: >-
+<<<<<<< HEAD
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\Uudis\the-goddess-of-fortune-wins-tartuff-audience-award
     path: Uudis\the-goddess-of-fortune-wins-tartuff-audience-award
+=======
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/the-goddess-of-fortune-wins-tartuff-audience-award
+    path: article/the-goddess-of-fortune-wins-tartuff-audience-award
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -252,8 +257,14 @@
     lead: lead 2 en
     contents: cont 2 en
     publish: true
+<<<<<<< HEAD
     directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-2-en'
     path: Uudis\test-2-en
+=======
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-2-en
+    path: article/test-2-en
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -469,13 +480,20 @@
     lead: lead 4 en
     contents: cont 4 en
     publish: true
+<<<<<<< HEAD
     directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-4-en'
     path: Uudis\test-4-en
+=======
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-4-en
+    path: article/test-4-en
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
+<<<<<<< HEAD
     id: 34
     created_by:
         id: 3
@@ -662,6 +680,8 @@
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
+=======
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     id: 6
     created_by:
         id: 5
@@ -824,8 +844,14 @@
     lead: lead 6 en
     contents: cont 6 en
     publish: false
+<<<<<<< HEAD
     directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-6-en'
     path: Uudis\test-6-en
+=======
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-6-en
+    path: article/test-6-en
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -998,8 +1024,14 @@
     lead: lead 3 en
     contents: cont 3 en
     publish: true
+<<<<<<< HEAD
     directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-3-en'
     path: Uudis\test-3-en
+=======
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-3-en
+    path: article/test-3-en
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1163,8 +1195,14 @@
     lead: test 9 en lead
     contents: test 9 en cont
     publish: false
+<<<<<<< HEAD
     directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-9-en'
     path: Uudis\test-9-en
+=======
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-9-en
+    path: article/test-9-en
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1335,14 +1373,20 @@
             ru: Новости
     slug: pof-fi-article-3
     directory: >-
+<<<<<<< HEAD
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\Uudis\pof-fi-article-3
     path: Uudis\pof-fi-article-3
+=======
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-3
+    path: article/pof-fi-article-3
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
+<<<<<<< HEAD
     id: 35
     created_by:
         id: 3
@@ -1382,6 +1426,8 @@
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
+=======
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     id: 8
     created_by:
         id: 5
@@ -1533,8 +1579,93 @@
     lead: test 8 en lead
     contents: test 8 en cont
     publish: true
+<<<<<<< HEAD
     directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-8-en'
     path: Uudis\test-8-en
+=======
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-8-en
+    path: article/test-8-en
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+    id: 31
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-14T08:38:28.216Z'
+    updated_at: '2020-09-14T09:00:37.804Z'
+    slug_et: pof-fi-article-3
+    slug_ru: pof-fi-article-4
+    media:
+        id: 28
+        image:
+            -
+                id: 149
+                name: >-
+                    2020 Tartuff Closing - Dagmar Raudam, Kristiina Reidolv
+                    web.png
+                alternativeText: ''
+                caption: ''
+                width: 800
+                height: 450
+                formats:
+                    thumbnail:
+                        ext: .png
+                        url: >-
+                            /uploads/thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                        hash: >-
+                            thumbnail_2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                        mime: image/png
+                        name: >-
+                            thumbnail_2020 Tartuff Closing - Dagmar Raudam,
+                            Kristiina Reidolv web.png
+                        path: null
+                        size: 68.25
+                        width: 245
+                        height: 138
+                hash: >-
+                    2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a
+                ext: .png
+                mime: image/png
+                size: 515.58
+                url: >-
+                    /uploads/2020_Tartuff_Closing_Dagmar_Raudam_Kristiina_Reidolv_web_ffcf05ba9a.png
+                previewUrl: null
+                provider: local
+                provider_metadata: null
+                created_by: 11
+                updated_by: 11
+                created_at: '2020-09-13T19:45:40.785Z'
+                updated_at: '2020-09-13T19:45:40.871Z'
+    article_types:
+        -
+            id: 2
+            name: Uudis
+            created_by: 6
+            updated_by: 1
+            created_at: '2020-08-18T13:49:51.616Z'
+            updated_at: '2020-08-27T13:27:26.065Z'
+            article: null
+            et: Uudised
+            en: News
+            ru: Новости
+    title: Just English test
+    slug: just-english-test
+    lead: lead
+    contents: contents
+    publish: true
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/just-english-test
+    path: article/just-english-test
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -1609,7 +1740,7 @@
     contents_ru: >-
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
-        по русски Контентс по русски Контентс по русски Контентс по русски
+        по русски Контентс по русски Контентс ��о русски Контентс по русски
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
         по русски Контентс по русски Контентс по русски Контентс по русски
@@ -1713,13 +1844,20 @@
     lead: Lead EN
     contents: Cont EN
     publish: false
+<<<<<<< HEAD
     directory: 'C:\Users\Liis Käsper\Documents\web\source\_fetchdir\Uudis\test-en'
     path: Uudis\test-en
+=======
+    directory: >-
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/test-en
+    path: article/test-en
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
+<<<<<<< HEAD
     id: 31
     created_by:
         id: 6
@@ -1801,6 +1939,8 @@
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
+=======
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     id: 15
     created_by:
         id: 9
@@ -1923,7 +2063,7 @@
 
 
         Industry@Tallinn & Baltic Event пройдет с 23 по 27 ноября 2020, и его
-        программа будет объявлена поэтапно в течение сентября и октября.
+        программа будет объявлена поэтапно в течение сент��бря и октября.
 
 
         Таллиннский кинофестиваль «Тёмные ночи» пройдет в этом году с 13 по 29
@@ -2140,14 +2280,86 @@
         Industry@Tallinn & Baltic Event will run from the 23rd until the 27th of
         November.
     directory: >-
+<<<<<<< HEAD
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\Uudis\industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
     path: Uudis\industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+=======
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+    path: >-
+        article/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
 -
+    id: 32
+    created_by:
+        id: 17
+        firstname: Test
+        lastname: Toimetaja
+    updated_by:
+        id: 17
+        firstname: Test
+        lastname: Toimetaja
+    created_at: '2020-09-14T09:40:30.683Z'
+    updated_at: '2020-09-14T09:40:30.931Z'
+    title_et: Test0
+    slug_et: test0
+    slug_ru: pof-fi-article-11
+    lead_et: Test0 Test0
+    contents_et: Test0 Test0
+    publishFrom: '2020-09-14T09:00:00.000Z'
+    publish_et: true
+    media:
+        id: 29
+        image: []
+    article_types:
+        -
+            id: 4
+            name: ToetajaLugu
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-08-18T13:51:35.072Z'
+            updated_at: '2020-09-02T07:50:32.835Z'
+            article: null
+            et: Toetaja lugu
+            en: Supporter Story
+            ru: История поддержки
+    tag_premiere_types:
+        - European premiere
+    tag_programmes:
+        - Official Selection
+    tag_genres:
+        - Animation
+    tag_keywords:
+        - MeToo
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Wolf
+    slug: pof-fi-article-4
+    directory: >-
+<<<<<<< HEAD
+        C:\Users\Liis
+        Käsper\Documents\web\source\_fetchdir\IndustryProjekt\pof-fi-article-4
+    path: IndustryProjekt\pof-fi-article-4
+=======
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-4
+    path: article/pof-fi-article-4
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.en.yaml
+        articles: /articles.en.yaml
+-
+<<<<<<< HEAD
     id: 32
     created_by:
         id: 17
@@ -2253,110 +2465,9 @@
         articles: /articles.en.yaml
 -
     id: 32
-    created_by:
-        id: 17
-        firstname: Test
-        lastname: Toimetaja
-    updated_by:
-        id: 3
-        firstname: Liis
-        lastname: Käsper
-    created_at: '2020-09-14T09:40:30.683Z'
-    updated_at: '2020-09-14T12:05:58.987Z'
-    title_et: Test0
-    slug_et: test0
-    slug_ru: pof-fi-article-11
-    lead_et: Test0 Test0
-    contents_et: Test0 Test0
-    publishFrom: '2020-09-14T09:00:00.000Z'
-    publish_et: true
-    media:
-        id: 29
-        image: []
-    article_types:
-        -
-            id: 2
-            name: Uudis
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
-            article: null
-            et: Uudised
-            en: News
-            ru: Новости
-        -
-            id: 3
-            name: Intervjuu
-            created_by: 6
-            updated_by: 1
-            created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
-            article: null
-            et: Intervjuu
-            en: Interview
-            ru: Интервю
-        -
-            id: 4
-            name: ToetajaLugu
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
-            article: null
-            et: Toetaja lugu
-            en: Supporter Story
-            ru: История поддержки
-        -
-            id: 5
-            name: About
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
-            article: null
-            et: About
-            en: About
-            ru: About
-        -
-            id: 6
-            name: IndustryProjekt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
-            article: null
-            et: Projekt
-            en: Project
-            ru: Проэкт
-    tag_premiere_types:
-        - European premiere
-    tag_programmes:
-        - Official Selection
-    tag_genres:
-        - Animation
-    tag_keywords:
-        - MeToo
-    web_authors:
-        -
-            id: 1
-            namePrivate: Pöffihunt
-            created_by: 6
-            updated_by: 6
-            created_at: '2020-09-02T11:27:48.489Z'
-            updated_at: '2020-09-02T11:27:48.544Z'
-            name: Wolf
-    slug: pof-fi-article-4
-    directory: >-
-        C:\Users\Liis
-        Käsper\Documents\web\source\_fetchdir\IndustryProjekt\pof-fi-article-4
-    path: IndustryProjekt\pof-fi-article-4
-    data:
-        pictures: /article_pictures.yaml
-        screenings: /film/screenings.en.yaml
-        articles: /articles.en.yaml
--
-    id: 32
+=======
+    id: 16
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     created_by:
         id: 17
         firstname: Test
@@ -2882,9 +2993,14 @@
             name: Wolf
     slug: pof-fi-article-1
     directory: >-
+<<<<<<< HEAD
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\Uudis\pof-fi-article-1
     path: Uudis\pof-fi-article-1
+=======
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-1
+    path: article/pof-fi-article-1
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -3006,9 +3122,14 @@
             name: Wolf
     slug: pof-fi-article-2
     directory: >-
+<<<<<<< HEAD
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\Uudis\pof-fi-article-2
     path: Uudis\pof-fi-article-2
+=======
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/pof-fi-article-2
+    path: article/pof-fi-article-2
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
@@ -3095,13 +3216,19 @@
         possible qualification.
     publish: true
     directory: >-
+<<<<<<< HEAD
         C:\Users\Liis
         Käsper\Documents\web\source\_fetchdir\Uudis\p-oe-ff-shorts-now-an-academy-award-qualifying-festival
     path: Uudis\p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+=======
+        /Users/michelek/Documents/GitHub/poff-bnff/web/source/_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+    path: article/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
+<<<<<<< HEAD
 -
     id: 33
     created_by:
@@ -3182,3 +3309,5 @@
         pictures: /article_pictures.yaml
         screenings: /film/screenings.en.yaml
         articles: /articles.en.yaml
+=======
+>>>>>>> c8b4590b6f705ca690174a9670d347018dc2b693

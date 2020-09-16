@@ -6,7 +6,7 @@ header
                 //- Defining locale path for multilingual support
                 - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
                 a(href=`/${lang_path}`)
-                    img.logo_img(alt='PÖFF' data-src='/assets/img/global/poff24_logo_white_o.svg' src='/assets/img/global/poff24_logo_white_o.svg')
+                    img.logo_img(alt='PÖFF' data-src='/assets/img/global/poff24_logo_black_o.svg' src='/assets/img/global/poff24_logo_black_o.svg')
             input#main_menu_toggle.main_menu_toggle(type='checkbox')
 
             nav.main_menu
@@ -34,6 +34,22 @@ header
                         else
                             li
                                 a(href= `/${lang_path}articles/`)= `- ${mainMenuItem.name}`
+
+                    li
+                        nav.lang_menu
+                            //- | prefiks&nbsp;
+                            //- .clr_primary= self.label.film.languageSelect + 'rr'
+                            each p, locale in self.otherLocalePaths
+                                //- span.clr_white_semi= self.label.film.languageSelect + ':  '
+                                //- if self.publish && (self[`publish_${locale}`] === false)
+                                //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
+                                //- a(href=(p !== '/' ? p + '/' : '/'))= locale
+
+                                if !('publish' in self) || ((self[`publish_${locale}`] !== false) && (`publish_${locale}` in self))
+                                    //- p= !('publish' in self) + ' or ' + ((self[`publish_${locale}`] !== false) && (`publish_${locale}` in self)) + ': ' + (self[`publish_${locale}`] !== false) + ' - ' + (`publish_${locale}` in self)
+                                    a(href=(p !== '/' ? p + '/' : '/'))= locale
+                                else
+                                    a= locale
 
             label.main_menu_toggle_label(for='main_menu_toggle')
                 span
