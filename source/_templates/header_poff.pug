@@ -19,8 +19,10 @@ header
                                     each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                                         if subMenuItem.poffi_article
                                             if self.data.articles
-                                                - let article = self.data.articles.filter( (a) => { return subMenuItem.poffi_article.id === a.id })
-                                                p= 'laaaaang ' + article.id + ' - ' + subMenuItem.poffi_article.id
+                                                - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem.poffi_article.id === a.id })
+                                                - let article = articleFromYAML
+                                                li
+                                                    a= 'laaaaang ' + JSON.stringify(article) + ' id: ' + article.id + ' - ' + subMenuItem.poffi_article.id
                                                 //- - let article_type = article.article_types[0]
                                                 //- li
                                                 //-     a(href= `/${lang_path}${article_type}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
