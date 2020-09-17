@@ -23,7 +23,11 @@ footer
                     if item.svgItem
                         each svgItem in item.svgItem
                             if svgItem.svgCode
-                                a(href=svgItem.url target='_blank') !{svgItem.svgCode}
+                                if svgItem.url && (svgItem.url.substr(0, 3).toLowerCase() === 'http')
+                                    - var urlToDisplay = svgItem.url
+                                else
+                                    - var urlToDisplay = `/${svgItem.url}`
+                                a(href=urlToDisplay target='_blank') !{svgItem.svgCode}
                             else if svgItem.svgMedia
                                 img.footer_logo_item(alt=svgItem.name data-src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
                     if item.image
