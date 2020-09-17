@@ -12,22 +12,25 @@ header
             nav.main_menu
                 ul.ul_yx
                     each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                        if mainMenuItem.subMenuItem
-                            if mainMenuItem.name
-                                li.dropdown
-                                    a= `${mainMenuItem.name}`
-                                    ul.ul_kaks
-                                        each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                                            if subMenuItem.poffi_article
+                        if mainMenuItem.subMenuItem && mainMenuItem.name
+                            li.dropdown
+                                a= `${mainMenuItem.name}`
+                                ul.ul_kaks
+                                    each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                                        if subMenuItem.poffi_article
+                                            if self.data.articles
+                                                - let article = self.data.articles.filter( (a) => { return subMenuItem.poffi_article.id === a.id })
+                                                p= 'laaaaang ' + article.id + ' - ' + subMenuItem.poffi_article.id
+                                                //- - let article_type = article.article_types[0]
+                                                //- li
+                                                //-     a(href= `/${lang_path}${article_type}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                        else
+                                            if subMenuItem.customUrl
                                                 li
-                                                    a(href= `/${lang_path}article/${subMenuItem.poffi_article.slug}`)= `${subMenuItem.name}`
-                                            else
-                                                if subMenuItem.customUrl
-                                                    li
-                                                        a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
+                                                    a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
                         else
                             li
-                                a(href= `/${lang_path}articles/`)= `${mainMenuItem.name}`
+                                a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
                     li
                         nav.lang_menu
@@ -47,6 +50,8 @@ header
 
             label.main_menu_toggle_label(for='main_menu_toggle')
                 span
+
+
 
             //- nav.main_menu
             //-     ul

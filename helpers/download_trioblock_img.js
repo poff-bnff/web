@@ -25,7 +25,7 @@ loadYaml('en', readYaml);
 function loadYaml(lang, readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/articletrioblock.${lang}.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/articletrioblock.${lang}.yaml`, 'utf8'));
 
     } catch (e) {
         console.log(e);
