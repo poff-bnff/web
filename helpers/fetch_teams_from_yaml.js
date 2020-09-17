@@ -3,7 +3,7 @@ const yaml = require('js-yaml');
 const http = require('http');
 const path = require('path');
 
-const sourceFolder =  path.join(__dirname, '../source/');
+const sourceFolder =  path.join(__dirname, '../source/_fetchdir/');
 const writeToFilePath = sourceFolder;
 
 const allLanguages = ["en", "et", "ru"];
