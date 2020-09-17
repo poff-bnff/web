@@ -23,7 +23,7 @@ footer
                     if item.svgItem
                         each svgItem in item.svgItem
                             if svgItem.svgCode
-                                if svgItem.url && (svgItem.url.substr(0, 3).toLowerCase() === 'http')
+                                if svgItem.url && (svgItem.url.substr(0, 4).toLowerCase() === 'http')
                                     - var urlToDisplay = svgItem.url
                                 else
                                     - var urlToDisplay = `/${svgItem.url}`
