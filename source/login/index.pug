@@ -9,10 +9,12 @@ block content
     br
     br
     h4#number Log in here:
-    label(for='loginUsername') Username:
+    label(style={color: 'red'} for='loginUsername') Username:
     input#loginUsername(type='text')
+    a()
+
     br
-    label(for='loginPassword') Password:
+    label(style={color: 'red'} for='loginPassword') Password:
     input#loginPassword(type='password')
     br
     br
@@ -26,24 +28,31 @@ block content
     //-     //- console.log(token);
 
 
-    a(href='https://tests.auth.us-east-2.amazoncognito.com/login?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
+    a(href='https://tests.auth.us-east-2.amazoncognito.com/login?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in via hosted UI
     br
         //- if (typeof(accessToken) !== 'undefined')
 
-    a(href='https://poff.auth.eu-central-1.amazoncognito.com/logout?client_id=3d4n3tb8an4eaq9na89dpbj9jc&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
+    a(href='https://tests.auth.us-east-2.amazoncognito.com/logout?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
     br
     br
+    br
+    button(onclick='toLocalhost()') Switch back to localhost
     br
     button(onclick='loadCognitoUser()') Show cognito user
-    a(href='https://tests.auth.us-east-2.amazoncognito.com/logout?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&logout_uri=https://dev.inscaping.eu/login/' onclick='logout()') Log out
     br
-    button(onclick="sayHello()") Say Hello
     br
     br
     br
     br
     br
     h1#hello
+
+    style.
+        h1 {color: #464646}
+        h4 {color: #464646}
+
+
+
 
     script.
         var url = window.location;
@@ -70,6 +79,15 @@ block content
         //-     return await response.json();
         //-     //- return processJsonResponse(response);
         //- }
+
+        function toLocalhost(){
+            let param = window.location.search;
+            let url = 'http://localhost:4000/login/' + param;
+            window.location.replace(url);
+
+
+
+        }
 
         async function loginWithCode(code) {
 
