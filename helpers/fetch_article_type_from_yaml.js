@@ -21,7 +21,7 @@ let allData = []; // for articles view
 function fetchAllData(dataModel) {
     let newDirPath = path.join(sourceFolder, "_fetchdir" )
 
-    deleteFolderRecursive(newsDirPath);
+    // deleteFolderRecursive(newsDirPath);
 
     // deleteFolderRecursive(dirPath);
     // deleteFolderRecursive(aboutDirPath);
@@ -275,7 +275,6 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
     let allAboutYAML = yaml.safeDump(allAbout, { noRefs: true, indent: "4" });
     let allIndustryYAML = yaml.safeDump(allIndustry, {noRefs: true, indent: "4",});
 
-    fs.writeFileSync( `${sourceFolder}articles.${lang}.yaml`, allDataYAML, "utf8");
     fs.writeFileSync(`${sourceFolder}news.${lang}.yaml`, allNewsYAML, "utf8");
     fs.writeFileSync( `${sourceFolder}sponsorstories.${lang}.yaml`, allSponsorYAML, "utf8");
     fs.writeFileSync(`${sourceFolder}interviews.${lang}.yaml`, allInterviewYAML, "utf8");

@@ -165,8 +165,6 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
 
             }
 
-
-
             // element.aliases = aliases;
             // rueten(element, `_${lang}`);
             allData.push(element);
@@ -207,7 +205,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
             var templateName = element.article_types[0].name.toLowerCase();
         }
         if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
-            var templateName = 'uudis';
+            var templateName = 'news';
         }
         fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
             if(err) {

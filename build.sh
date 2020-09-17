@@ -13,6 +13,9 @@ printf '\n\n---------- Creating separate YAML files from strapiData.yaml -------
 echo 'fetch_articles_from_yaml'
 node ./helpers/fetch_articles_from_yaml.js
 
+echo 'fetch_article_types_from_yaml'
+node ./helpers/fetch_article_type_from_yaml.js
+
 echo 'fetch_films_from_yaml'
 node ./helpers/fetch_films_from_yaml.js
 
