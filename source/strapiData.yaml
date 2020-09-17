@@ -428,6 +428,28 @@ ArticleType:
         slug_et: artikkel
         slug_en: about
         slug_ru: artikl
+    -
+        id: 7
+        name: PressRelease
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+            username: null
+        created_at: '2020-09-17T14:37:55.799Z'
+        updated_at: '2020-09-17T14:37:55.823Z'
+        article: null
+        et: Pressiteade
+        en: Press Release
+        ru: Пресс-релиз
+        slug_et: pressiteade
+        slug_en: press-release
+        slug_ru: press-reliz
 Domain:
     -
         id: 4
@@ -3071,7 +3093,7 @@ Language:
         Name_ru: null
         name_et: Aymara
         name_en: Aymara
-        name_ru: ��ймарский
+        name_ru: Аймарский
         code: ay
     -
         id: 1788
@@ -11207,7 +11229,7 @@ POFFiArticle:
             Лийске.
 
 
-            «Я считаю, что переезд в Интернет также создаст ��ля нас и для
+            «Я считаю, что переезд в Интернет также создаст для нас и для
             аудитории некоторые новые возможности: мы надеемся, что из нашей
             программы смогут извлечь пользу даже больше профессионалов
             киноиндустрии, чем раньше, поскольку им не нужно будет ехать в
@@ -11222,7 +11244,7 @@ POFFiArticle:
             докладчики будут объявлены в сентябре. Программа включит в себя, как
             обычно, семинары, мастерские, мастер-классы, панельные дискуссии,
             которые покроют все самые животрепещущие темы, а также пройдут
-            мероприятия Академии PÖFF, ориентированные на актеров, агентов,
+            мероприятия Академии PÖFF, ориентированные на а��теров, агентов,
             кинокомпозиторов, художников по костюмам и фотографов-декораторов. 
 
 
@@ -37219,7 +37241,7 @@ Team:
                         phoneNrAtTeam: null
                         roleAtTeam_et: Subtitreerijate koordinaator
                         roleAtTeam_en: Coordinator of Subtitlers
-                        roleAtTeam_ru: Координатор субт��тров
+                        roleAtTeam_ru: Координатор субтитров
                         emailAtTeam: Maria.joela@poff.ee
                         phoneAtTeam: +372 5398 1762
                         order: 2
