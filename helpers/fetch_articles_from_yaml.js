@@ -1,120 +1,61 @@
-const fs = require("fs");
-const yaml = require("js-yaml");
-const { type } = require("os");
-const path = require("path");
+const fs = require('fs');
+const yaml = require('js-yaml');
+const path = require('path');
 
-const sourceFolder = path.join(__dirname, "../source/");
-//console.log(sourceFolder)
+const sourceFolder =  path.join(__dirname, '../source/');
 
 const allLanguages = ["en", "et", "ru"];
 
-if (process.env["DOMAIN"] === "justfilm.ee") {
-    var dataModel = "JustFilmiArticle";
-} else if (process.env["DOMAIN"] === "shorts.poff.ee") {
-    var dataModel = "ShortsiArticle";
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var dataModel = 'JustFilmiArticle';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var dataModel = 'ShortsiArticle';
 } else {
-    var dataModel = "POFFiArticle";
+    var dataModel = 'POFFiArticle';
 }
 
 let allData = []; // for articles view
 
-function fetchAllData(dataModel) {
-    let newDirPath = path.join(sourceFolder, "_fetchdir" )
-
-    deleteFolderRecursive(newsDirPath);
-
-    // deleteFolderRecursive(dirPath);
-    // deleteFolderRecursive(aboutDirPath);
-    // deleteFolderRecursive(interviewDirPath);
-    // deleteFolderRecursive(sponsorDirPath);
-    // deleteFolderRecursive(industryDirPath);
+function fetchAllData(dataModel){
+    var dirPath = `${sourceFolder}_fetchdir/articles/`;
+    deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(newDirPath,"en",1,1,{
-            pictures: "/article_pictures.yaml",
-            screenings: "/film/screenings.en.yaml",
-            articles: "/articles.en.yaml",
-        },
-        dataModel,
-        getDataCB
-    );
-    getData(
-        newDirPath,
-        "et",
-        0,
-        0,
-        {
-            pictures: "/article_pictures.yaml",
-            screenings: "/film/screenings.et.yaml",
-            articles: "/articles.et.yaml",
-        },
-        dataModel,
-        getDataCB
-    );
-    getData(
-        newDirPath,
-        "ru",
-        0,
-        0,
-        {
-            pictures: "/article_pictures.yaml",
-            screenings: "/film/screenings.ru.yaml",
-            articles: "/articles.ru.yaml",
-        },
-        dataModel,
-        getDataCB
-    );
+    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
-    if (fs.existsSync(path)) {
-        fs.readdirSync(path).forEach(function (file, index) {
+    if( fs.existsSync(path) ) {
+        fs.readdirSync(path).forEach(function(file,index){
             var curPath = path + "/" + file;
-            if (fs.lstatSync(curPath).isDirectory()) {
-                // recurse
+            if(fs.lstatSync(curPath).isDirectory()) { // recurse
                 deleteFolderRecursive(curPath);
-            } else {
-                // delete file
+            } else { // delete file
                 fs.unlinkSync(curPath);
             }
         });
         fs.rmdirSync(path);
     }
-}
+  };
 
-function getData(
-    dirPath,
-    lang,
-    writeIndexFile,
-    showErrors,
-    dataFrom,
-    dataModel,
-    getDataCB
-) {
-    // fs.mkdirSync(dirPath, { recursive: true })
-    // console.log(dirPath)
+function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, dataModel, getDataCB) {
 
-    console.log(`Fetching ${process.env["DOMAIN"]} articles ${lang} data`);
+    fs.mkdirSync(dirPath, { recursive: true })
+
+    console.log(`Fetching ${process.env['DOMAIN']} articles ${lang} data`);
 
     allData = [];
 
-    const data = yaml.safeLoad(
-        fs.readFileSync(__dirname + "/../source/strapiData.yaml", "utf8")
-    );
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
 
-    getDataCB(
-        data[dataModel],
-        dirPath,
-        lang,
-        writeIndexFile,
-        dataFrom,
-        showErrors,
-        generateYaml
-    );
+    getDataCB(data[dataModel], dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml);
+
 }
 
 function rueten(obj, lang) {
-    const regex = new RegExp(`.*_${lang}$`, "g");
+    const regex = new RegExp(`.*_${lang}$`, 'g');
 
     for (const key in obj) {
         // console.log(obj[key] + ' - ' + Array.isArray(obj[key]));
@@ -124,25 +65,26 @@ function rueten(obj, lang) {
 
         if (obj[key] === null) {
             delete obj[key];
-            continue;
+            continue
         }
-        if (key === "article_types") {
-            continue;
-        } else if (key === lang) {
+        if (key === 'article_types') {
+            continue
+        }
+        else if (key === lang) {
             // console.log(key, obj[key]);
-            return obj[key];
+            return obj[key]
         } else if (key.match(regex) !== null) {
             // console.log(regex, key, key.match(regex));
-            obj[key.substring(0, key.length - 3)] = obj[key];
-            if (key.substring(0, 7) !== "publish_") {
+            obj[key.substring(0, key.length-3)] = obj[key];
+            if (key.substring(0, 7) !== 'publish_') {
                 delete obj[key];
             }
-            // } else if (Array.isArray(obj[key])) {
-            //     obj[key].forEach(element => {
-            //         element = rueten(element, lang)
-            //     })
-        } else if (typeof obj[key] === "object") {
-            obj[key] = rueten(obj[key], lang);
+        // } else if (Array.isArray(obj[key])) {
+        //     obj[key].forEach(element => {
+        //         element = rueten(element, lang)
+        //     })
+        } else if (typeof(obj[key]) === 'object') {
+            obj[key] = rueten(obj[key], lang)
             // if (Array.isArray(obj[key])) {
             //     if (typeof(obj[key][0]) === 'string') {
             //         obj[key] = obj[key].join(', ');
@@ -154,7 +96,7 @@ function rueten(obj, lang) {
             // console.log(JSON.stringify(obj[key]));
             if (obj[key].length > 0) {
                 for (var i = 0; i < obj[key].length; i++) {
-                    if (obj[key][i] === "") {
+                    if (obj[key][i] === '') {
                         // console.log('EMPTY ONE');
                         obj[key].splice(i, 1);
                         i--;
@@ -163,130 +105,133 @@ function rueten(obj, lang) {
                 if (obj[key].length === 0) {
                     delete obj[key];
                 }
-            } else {
+            }else{
                 delete obj[key];
             }
         }
     }
-    return obj;
+    return obj
 }
 
 
 function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml) {
     allData = [];
-    data.forEach((element) => {
-        let slugEn = element.slug_en || element.slug_et
+    // data = rueten(data, lang);
+    // console.log(data);
+    data.forEach(element => {
+        let slugEn = element.slug_en;
         if (!slugEn) {
-            throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
+            slugEn = element.slug_et;
         }
+
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang);
 
-        for (artType of element.article_types) {
+        element.directory = dirPath + slugEn;
+        // console.log(element.directory);
+        // element = rueten(element, `_${lang}`);
 
-            element.directory = path.join(dirPath, artType.name, slugEn)
+        if(element.directory) {
+            fs.mkdirSync(element.directory, { recursive: true })
 
-
-
-                fs.mkdirSync(element.directory, { recursive: true });
-                //let languageKeys = ['en', 'et', 'ru'];
-                for (key in element) {
-
-                    if (key == "slug") {
-                        //console.log(self.data.path)
-
-                        element.path = path.join(artType[`slug_${lang}`], element[key])
-                    }
-
-                    if (typeof element[key] === "object" && element[key] != null) {
-                        // makeCSV(element[key], element, lang);
-                    }
+            // let element = JSON.parse(JSON.stringify(element));
+            // let aliases = []
+            let languageKeys = ['en', 'et', 'ru'];
+            for (key in element) {
+                let lastThree = key.substring(key.length - 3, key.length);
+                let findHyphen = key.substring(key.length - 3, key.length - 2);
+                // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
+                //     if (key.substring(0, key.length - 3) == 'slug') {
+                //         aliases.push(element[key]);
+                //     }
+                //     delete element[key];
+                // }
+                // if (lastThree === `_${lang}`) {
+                if (key == 'slug') {
+                    element.path = `article/${element[key]}`;
                 }
-                allData.push(element);
-                element.data = dataFrom;
+                    // element[key.substring(0, key.length - 3)] = element[key];
 
-                generateYaml(element, element, dirPath, lang, writeIndexFile, artType);
 
+                //     delete element[key];
+                // }
+
+                // Make separate CSV with key
+
+                if (typeof(element[key]) === 'object' && element[key] != null) {
+                    // makeCSV(element[key], element, lang);
+                }
+
+            }
+
+
+
+            // element.aliases = aliases;
+            // rueten(element, `_${lang}`);
+            allData.push(element);
+            element.data = dataFrom;
+
+            generateYaml(element, element, dirPath, lang, writeIndexFile)
+
+        }else{
+            if(showErrors) {
+                console.log(`Film ID ${element.id} slug_en value missing`);
+            }
         }
-
-
-
     });
+
 }
 
 function makeCSV(obj, element, lang) {
     // console.log(obj);
     for (const [key, value] of Object.entries(obj)) {
-        if (
-            value &&
-            value != "" &&
-            !value.toString().includes("[object Object]")
-        ) {
+        if (value && value != '' && !value.toString().includes('[object Object]')) {
             element[`${key}CSV`] = value.toString();
-        } else if (value && value != "") {
+        }else if (value && value != '') {
             // rueten(value, `_${lang}`);
-            makeCSV(value, element, lang);
+            makeCSV(value, element, lang)
         }
         // console.log(`${key}: ${value}`);
     }
 }
 
-let allNews = [];
-let allSponsor = [];
-let allAbout = [];
-let allInterview = [];
-let allIndustry = [];
-
-function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
-
+function generateYaml(element, element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-
-    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name.toLowerCase()}_index_template.pug`, function(err) {
-        if(err) {
-            return console.log(err);
+    // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
+    // console.log(element);
+    if (writeIndexFile) {
+        if (element.article_types && element.article_types != null && element.article_types[0] != null) {
+            var templateName = element.article_types[0].name.toLowerCase();
         }
-    });
+        if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
+            var templateName = 'uudis';
+        }
+        fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+        });
 
-    let allDataYAML = yaml.safeDump(allData, { noRefs: true, indent: "4" });
-
-    if (artType.name === "News") {
-        allNews.push(element);
-    } else if (artType.name === "SponsorStory") {
-        allSponsor.push(element);
-    } else if (artType.name === "Interview") {
-        allInterview.push(element);
-    } else if (artType.name === "About") {
-        allAbout.push(element);
-    } else if (artType.name === "IndustryProject") {
-        allIndustry.push(element);
+        // fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
+        //     if (err) throw err;
+        //     // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
+        // })
     }
-    //console.log(allAbout)
 
+    let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-
-    //console.log(allAbout)
-
-    let allNewsYAML = yaml.safeDump(allNews, { noRefs: true, indent: "4" });
-    let allSponsorYAML = yaml.safeDump(allSponsor, {noRefs: true, indent: "4",});
-    let allInterviewYAML = yaml.safeDump(allInterview, { noRefs: true, indent: "4",});
-    let allAboutYAML = yaml.safeDump(allAbout, { noRefs: true, indent: "4" });
-    let allIndustryYAML = yaml.safeDump(allIndustry, {noRefs: true, indent: "4",});
-
-    fs.writeFileSync( `${sourceFolder}articles.${lang}.yaml`, allDataYAML, "utf8");
-    fs.writeFileSync(`${sourceFolder}news.${lang}.yaml`, allNewsYAML, "utf8");
-    fs.writeFileSync( `${sourceFolder}sponsorstories.${lang}.yaml`, allSponsorYAML, "utf8");
-    fs.writeFileSync(`${sourceFolder}interviews.${lang}.yaml`, allInterviewYAML, "utf8");
-    fs.writeFileSync(`${sourceFolder}about.${lang}.yaml`, allAboutYAML, "utf8");
-    fs.writeFileSync(`${sourceFolder}industry.${lang}.yaml`, allIndustryYAML, "utf8");
+    fs.writeFileSync(`${sourceFolder}articles.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
-function modifyData(element, key, lang) {
+function modifyData(element, key, lang){
     finalData = element[key][lang];
     delete element[key];
     element[key] = finalData;
 }
+
+// getToken();
 
 fetchAllData(dataModel);
