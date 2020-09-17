@@ -28,6 +28,10 @@ block content
 
     a(href='https://tests.auth.us-east-2.amazoncognito.com/login?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
     br
+        //- if (typeof(accessToken) !== 'undefined')
+
+    a(href='https://poff.auth.eu-central-1.amazoncognito.com/logout?client_id=3d4n3tb8an4eaq9na89dpbj9jc&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
+    br
     br
     br
     button(onclick='loadCognitoUser()') Show cognito user
@@ -98,16 +102,68 @@ block content
                     }
                 })
                 .catch(error => console.log('error', error));
-
-            function storeAuthentication(JSONresult) {
-                localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
-                localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
-                localStorage.setItem(ID_TOKEN, JSONresult.id_token);
-                //- localStorage.setItem(ID_TOKEN, JSONresult.id_token);
-                //- localStorage.setItem(AUTH_USERNAME, JSONresult.username);
-            }
-            //- return await response.json();
         }
+
+
+        function storeAuthentication(JSONresult) {
+            localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
+            localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
+            localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+            //- localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+            //- localStorage.setItem(AUTH_USERNAME, JSONresult.username);
+        }
+
+        function getAccessToken() {
+            //- console.log('Token: ', getToken('ACCESS'))
+            token.innerHTML = localStorage.getItem(`ACCESS_TOKEN`);
+            return localStorage.getItem(`ACCESS_TOKEN`);
+        }
+
+        function logOut() {
+            localStorage.removeItem(ACCESS_TOKEN);
+            localStorage.removeItem(REFRESH_TOKEN);
+            localStorage.removeItem(ID_TOKEN);
+            console.log('LOGITUD VÄLJA');
+        }
+
+
+
+            //- return await response.json();
+
+        //- var options = {
+        //- method: 'POST',
+        //- hostname: 'poff.auth.eu-central-1.amazoncognito.com',
+        //- path: '/oauth2/token',
+        //- headers: {
+        //-     'Content-Type': 'application/x-www-form-urlencoded',
+        //-     'Authorization': 'Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh',
+        //-     'Cookie': 'XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64'
+        //- },
+        //- maxRedirects: 20,
+        //- body: {
+        //-     'grant_type': 'authorization_code',
+        //-     'redirect_uri': 'https://dev.inscaping.eu/login/',
+        //-     'code': code
+        //- }
+        //- };
+
+        //-     let response = await fetch(`https://poff.auth.eu-central-1.amazoncognito.com/oauth2/token`, options);
+        //-     //-     method: 'POST',
+        //-     //-     //- headers: {Authorization: 'Bearer ' + accessToken}
+        //-     //-     path: '/',
+        //-     //-     headers: {
+        //-     //-         grant_type: 'authorization_code',
+        //-     //-         client_id: '3d4n3tb8an4eaq9na89dpbj9jc',
+        //-     //-         redirect_uri: 'http://neti.ee',
+        //-     //-         code: '0537785b-fa66-4f7e-b18d-d67f4571b87a',
+        //-     //-         Authorization: 'Basic M2Q0bjN0YjhhbjRlYXE5bmE4OWRwYmo5amM6NXBodmk1OXNlYjBzbWJnMTl2Z2ZyMWZkc291aG51Nmc3Nm1rcWFhaTlvNzZ1c3N1NGZh',
+        //-     //-         "Content-Type": 'application/x-www-form-urlencoded',
+        //-     //-         Cookie: 'XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64'
+        //-     //-     },
+        //-     //-     //- body: code
+        //-     //- });
+
+            //- return processJsonResponse(response);
 
             function logout(){
             localStorage.removeItem(ACCESS_TOKEN);
