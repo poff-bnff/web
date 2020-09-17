@@ -6,8 +6,8 @@ block content
     //- SIIA ALLA KÕIK ARTIKLITÜÜBID (STRAPI "NAME" lahtri järgi) MIDA KUVADA
     //- AINULT VÄIKETÄHTEDES!!!
     - var whichTypesToDisplay = ['interview'];
-    if self.data.articles
 
+    if self.data.articles
         main.grid_articles
             - var sortFunction = function(a, b) {
             -   if(a.publishFrom) {
@@ -23,11 +23,16 @@ block content
             -   return (aSortSource > bSortSource) ? -1 : ((bSortSource > aSortSource) ? 1 : 0);
             - }
             each val in self.data.articles.sort(sortFunction)
-                - var artTypes= []
-
+                - var artTypes = []
+                - var artTypeForPath = '';
                 if val.article_types && val.article_types[0]
+
                     each artType in val.article_types
                         - artTypes.push(artType.name.toLowerCase())
+                        if artType.name.toLowerCase() === whichTypesToDisplay[0]
+                            - artTypeForPath = artType[`slug_${self.locale}`].toLowerCase()
+                        else if whichTypesToDisplay.includes(artType.name.toLowerCase())
+                            - artTypeForPath = artType[`slug_${self.locale}`].toLowerCase()
 
                 if val.publish && artTypes.some(ai => whichTypesToDisplay.includes(ai))
                     - var currentTime = new Date()
@@ -43,10 +48,10 @@ block content
                             if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
 
 
-                            if val.title
+                            if val.title && val.title.length > 1
                                 - var article_slug = val.slug
                                 //- - var article_pictures = self.data.article_pictures.articles[article_slug]
-                                a(href= `/${lang_path}${val.path}`).card_article
+                                a(href= `/${lang_path}${artTypeForPath}/${val.slug}`).card_article
                                     .container_frame_16_9
                                         if val.media && val.media.image && val.media.image[0]
                                             img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${val.slug}/${val.media.image[0].hash}${val.media.image[0].ext}`)
@@ -59,13 +64,14 @@ block content
                                         .card_article_title
                                             p.keywords_left=val.tagKeyword
                                             h3.article_title_locale= val.title
+                                            //- h1= 'TÜÜBID: ' + artTypes + ' PUBLISH: ' + val.publish + ' TITLE: ' + val.title + ' - Type slug: ' + artTypeForPath + 'titlelen: ' + val.title.length
 
                                     .card_article_lead
                                         if val.lead
                                             .article_lead=val.lead
-                                        else
-                                            if val.contents
-                                                .article_lead=val.contents
+                                        //- else
+                                        //-     if val.contents
+                                        //-         .article_lead=val.contents
 
                                     .card_article_footer
                                         //- if val.web_authors

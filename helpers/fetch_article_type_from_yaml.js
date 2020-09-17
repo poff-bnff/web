@@ -269,17 +269,17 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     //console.log(allAbout)
 
-    let allNewsYAML = yaml.safeDump(allNews, { noRefs: true, indent: "4" });
-    let allSponsorYAML = yaml.safeDump(allSponsor, {noRefs: true, indent: "4",});
-    let allInterviewYAML = yaml.safeDump(allInterview, { noRefs: true, indent: "4",});
-    let allAboutYAML = yaml.safeDump(allAbout, { noRefs: true, indent: "4" });
-    let allIndustryYAML = yaml.safeDump(allIndustry, {noRefs: true, indent: "4",});
+    // let allNewsYAML = yaml.safeDump(allNews, { noRefs: true, indent: "4" });
+    // let allSponsorYAML = yaml.safeDump(allSponsor, {noRefs: true, indent: "4",});
+    // let allInterviewYAML = yaml.safeDump(allInterview, { noRefs: true, indent: "4",});
+    // let allAboutYAML = yaml.safeDump(allAbout, { noRefs: true, indent: "4" });
+    // let allIndustryYAML = yaml.safeDump(allIndustry, {noRefs: true, indent: "4",});
 
-    fs.writeFileSync(`${sourceFolder}news.${lang}.yaml`, allNewsYAML, "utf8");
-    fs.writeFileSync( `${sourceFolder}sponsorstories.${lang}.yaml`, allSponsorYAML, "utf8");
-    fs.writeFileSync(`${sourceFolder}interviews.${lang}.yaml`, allInterviewYAML, "utf8");
-    fs.writeFileSync(`${sourceFolder}about.${lang}.yaml`, allAboutYAML, "utf8");
-    fs.writeFileSync(`${sourceFolder}industry.${lang}.yaml`, allIndustryYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}news.${lang}.yaml`, allNewsYAML, "utf8");
+    // fs.writeFileSync( `${sourceFolder}sponsorstories.${lang}.yaml`, allSponsorYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}interviews.${lang}.yaml`, allInterviewYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}about.${lang}.yaml`, allAboutYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}industry.${lang}.yaml`, allIndustryYAML, "utf8");
 }
 
 function modifyData(element, key, lang) {
