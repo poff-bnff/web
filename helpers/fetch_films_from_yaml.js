@@ -189,7 +189,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`${sourceFolder}films.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}_fetchdir/films.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){
