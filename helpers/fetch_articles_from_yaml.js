@@ -21,20 +21,16 @@ let allData = []; // for articles view
 function fetchAllData(dataModel) {
     let newDirPath = path.join(sourceFolder, "_fetchdir" )
 
+    deleteFolderRecursive(newsDirPath);
+
     // deleteFolderRecursive(dirPath);
-    // deleteFolderRecursive(newsDirPath);
     // deleteFolderRecursive(aboutDirPath);
     // deleteFolderRecursive(interviewDirPath);
     // deleteFolderRecursive(sponsorDirPath);
     // deleteFolderRecursive(industryDirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(
-        newDirPath,
-        "en",
-        1,
-        1,
-        {
+    getData(newDirPath,"en",1,1,{
             pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.en.yaml",
             articles: "/articles.en.yaml",
