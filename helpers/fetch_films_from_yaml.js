@@ -175,6 +175,8 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generate
 function generateYaml(element, element, dirPath, lang, copyFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
+    console.log(element.directory)
+
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
