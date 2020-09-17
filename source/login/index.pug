@@ -19,7 +19,7 @@ block content
     br
     a(href='https://tests.auth.us-east-2.amazoncognito.com/oauth2/authorize?response_type=code&client_id=67tu3fmm9v7ho8mnsltcd6h5p3&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
     br
-    button(onclick='login()') Login
+    button(onclick='loginAWS()') Login
     br
     br
     button(onclick='loadCognitoUser()') Say Hello to Cognito user
@@ -120,6 +120,8 @@ block content
 
 
 
+
+
         async function loadCognitoUser(){
             console.log('Hello');
             var myHeaders = new Headers();
@@ -146,10 +148,32 @@ block content
         }
 
 
-        function login(){
-            let userName = document.getElementById('loginUsername').value;
-            let password = document.getElementById('loginPassword').value;
+        function loginAWS(){
+
+        var authenticationData = {
+                Username : document.getElementById('loginUsername').value,
+                Password : document.getElementById('loginPassword').value
+        };
+
+        var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+        var poolData = {
+                UserPoolId : 'us-east-2_1bCsYSArV',
+                ClientId : '6t3b33mud4uacl644m2k0i1vuv'
+        };
+
+        var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+        var userData = {
+                Username : document.getElementById('loginUsername').value,
+                Pool : userPool
+        };
+
+        var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+
+        console.log(cognitoUser);
         }
+
+
+
 
 
 
