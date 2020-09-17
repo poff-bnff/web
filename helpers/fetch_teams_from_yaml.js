@@ -22,9 +22,9 @@ var fetchFrom = 'Team';
 
 function fetchAllData(fetchFrom){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/festival/", "en", 0, 1, {'articles': '/articles.en.yaml'}, fetchFrom, getDataCB);
-    getData("source/festival/", "et", 0, 0, {'articles': '/articles.et.yaml'}, fetchFrom, getDataCB);
-    getData("source/festival/", "ru", 0, 0, {'articles': '/articles.ru.yaml'}, fetchFrom, getDataCB);
+    getData("source/festival/", "en", 0, 1, {'articles': '/_fetchdir/articles.en.yaml'}, fetchFrom, getDataCB);
+    getData("source/festival/", "et", 0, 0, {'articles': '/_fetchdir/articles.et.yaml'}, fetchFrom, getDataCB);
+    getData("source/festival/", "ru", 0, 0, {'articles': '/_fetchdir/articles.ru.yaml'}, fetchFrom, getDataCB);
 }
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, fetchFrom, callback) {

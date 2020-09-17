@@ -21,9 +21,9 @@ function fetchAllData(dataModel){
     // deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, dataModel, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
@@ -221,7 +221,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`${sourceFolder}articles.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}_fetchdir/articles.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){

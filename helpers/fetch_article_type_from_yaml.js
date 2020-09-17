@@ -33,7 +33,7 @@ function fetchAllData(dataModel) {
     getData(newDirPath,"en",1,1,{
             pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.en.yaml",
-            articles: "/articles.en.yaml",
+            articles: "/_fetchdir/articles.en.yaml",
         },
         dataModel,
         getDataCB
@@ -46,7 +46,7 @@ function fetchAllData(dataModel) {
         {
             pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.et.yaml",
-            articles: "/articles.et.yaml",
+            articles: "/_fetchdir/articles.et.yaml",
         },
         dataModel,
         getDataCB
@@ -59,7 +59,7 @@ function fetchAllData(dataModel) {
         {
             pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.ru.yaml",
-            articles: "/articles.ru.yaml",
+            articles: "/_fetchdir/articles.ru.yaml",
         },
         dataModel,
         getDataCB
@@ -275,11 +275,11 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
     // let allAboutYAML = yaml.safeDump(allAbout, { noRefs: true, indent: "4" });
     // let allIndustryYAML = yaml.safeDump(allIndustry, {noRefs: true, indent: "4",});
 
-    // fs.writeFileSync(`${sourceFolder}news.${lang}.yaml`, allNewsYAML, "utf8");
-    // fs.writeFileSync( `${sourceFolder}sponsorstories.${lang}.yaml`, allSponsorYAML, "utf8");
-    // fs.writeFileSync(`${sourceFolder}interviews.${lang}.yaml`, allInterviewYAML, "utf8");
-    // fs.writeFileSync(`${sourceFolder}about.${lang}.yaml`, allAboutYAML, "utf8");
-    // fs.writeFileSync(`${sourceFolder}industry.${lang}.yaml`, allIndustryYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}_fetchdir/news.${lang}.yaml`, allNewsYAML, "utf8");
+    // fs.writeFileSync( `${sourceFolder}_fetchdir/sponsorstories.${lang}.yaml`, allSponsorYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}_fetchdir/interviews.${lang}.yaml`, allInterviewYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}_fetchdir/about.${lang}.yaml`, allAboutYAML, "utf8");
+    // fs.writeFileSync(`${sourceFolder}_fetchdir/industry.${lang}.yaml`, allIndustryYAML, "utf8");
 }
 
 function modifyData(element, key, lang) {
