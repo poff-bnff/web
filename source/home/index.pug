@@ -130,7 +130,7 @@ block content
                             - counter++
 
                             .viieka_item
-                                - console.log('arttype: ' + artTypeForPath + ' title: ' + news.title + ' arttypes: ' + artTypes + ' continue or not: ' + artTypes.some(ai => whichTypesToDisplay.includes(ai)))
+                                //- - console.log('arttype: ' + artTypeForPath + ' title: ' + news.title + ' arttypes: ' + artTypes + ' continue or not: ' + artTypes.some(ai => whichTypesToDisplay.includes(ai)))
                                 a(href= `/${lang_path}${artTypeForPath}/${ news.slug}`)
                                     .container_frame_16_9
                                         if news.media && news.media.image && news.media.image[0]

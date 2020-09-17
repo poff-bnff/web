@@ -43,9 +43,12 @@ printf '\n----------                  Processing styles                ---------
 node ./helpers/copy_styles_acc_to_domain.js
 printf '\n----------             Finished processing styles            ----------\n\n'
 
+printf '\n\n----------         Downloading all img from Strapi         ----------\n\n'
 node ./helpers/download_article_img.js
 node ./helpers/download_footer_img.js
 node ./helpers/download_teams_img.js
 node ./helpers/download_trioblock_img.js
+printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
+
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
