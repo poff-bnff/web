@@ -29,7 +29,10 @@ function loadYaml(readYaml) {
     } catch (e) {
         console.log(e);
     }
-
+    fs.mkdir(`${savePath}`, err => {
+        if (err) {
+        }
+    });
     readYaml(doc);
 }
 

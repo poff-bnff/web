@@ -102,15 +102,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 2
@@ -229,15 +232,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -288,7 +294,7 @@
 
         „See on sedasorti armastuslugu, mida saab harva kinoekraanil näha –
         tõeline pärl,” kirjutab USA juhtivaid meelelahutustööstuse väljaandeid
-        The Wrap. 
+        The Wrap.
 
 
         <iframe width="500" height="281"
@@ -301,11 +307,11 @@
         Certain Regard” ja Brasiilia esitas selle mitteingliskeelsete filmide
         Oscarile. USA filmiorganisatsiooni The National Board of Review
         hinnangul on tegu 2019. aasta ühe kõige huvitavama mitteingliskeelse
-        mängufilmiga. 
+        mängufilmiga.
 
 
         Linateos põhineb Martha Batalha romaanil „Eurídice Gusmão nähtamatu
-        elu”. Peaosades Carol Duarte ja Julia Stockler. 
+        elu”. Peaosades Carol Duarte ja Julia Stockler.
 
 
         „Nähtamatu elu” jõuab ekraanile 10. augustil Tartu Raekoja platsil,
@@ -324,7 +330,7 @@
         **15. PÖFFi armastusfilmide festival Tartuff** leiab tänavu aset 10.-15.
         augustini Tartus ja virtuaalselt üle kogu Eesti. Festivali korraldab
         Pimedate Ööde filmifestival koostöös Tartu linna, Tartu filmifondi ja
-        [TARTU LOOMEMAJANDUSKESKUSEGA](https://lmk.ee). 
+        [TARTU LOOMEMAJANDUSKESKUSEGA](https://lmk.ee).
     contents_en: cont 4 en
     publishFrom: '2020-07-22T09:00:00.000Z'
     publishUntil: '2021-01-06T10:00:00.000Z'
@@ -446,15 +452,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -493,37 +502,46 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
     slug: pof-fi-article-15
     publish: true
     directory: 'C:\dev2\web\source\_fetchdir/articles/ilma-et-pealkirjata'
@@ -666,15 +684,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     tag_premiere_types:
         - Мировая премьера
     tag_programmes:
@@ -849,15 +870,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -903,7 +927,7 @@
 
 
         26. augustil kell 18 Kumu auditooriumis linastuvat filmi juhatab sisse
-        Katrin Nabel Ungari Instituudist. 
+        Katrin Nabel Ungari Instituudist.
 
 
         Sari jätkub Damian Pettigrew´ klassikalise, 18 aastat tagasi valminud
@@ -1014,15 +1038,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -1086,7 +1113,7 @@
         Kõik Tartus toimuvad seansid ja enamik üritusi on vaatajatele tasuta.
         Virtuaalse festivali piletid maksavad neli ja kaheksa eurot. Filmi saab
         hakata vaatama kohe pärast selle Tartu seansi lõppu ja pilet kehtib kuni
-        festivali lõpuni. 
+        festivali lõpuni.
 
 
         PÖFFi armastusfilmide festivali Tartuff korraldab Pimedate Ööde
@@ -1128,24 +1155,27 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     title: Сегодня в Тарту открывается фестиваль фильмов о любви
     slug: segodnya-v-tartu-otkryvaetsya-festival-filmov-o-lyubvi
     lead: >-
         Сегодня вечером в Тарту открывается фестиваль фильмов о любви Tartuff,
-        проводимый под эгидой кинофестиваля «Тёмные ночи» (PÖFF). 
+        проводимый под эгидой кинофестиваля «Тёмные ночи» (PÖFF).
     contents: >-
         В течение недели зрители смогут посмотреть 17 фильмов как в кинотеатре
         под открытым небом, так и виртуально на платформе Elisa Stage. Посещение
-        фильмов и практически всех сопутствующих мероприятий бесплатно. 
+        фильмов и практически всех сопутствующих мероприятий бесплатно.
 
 
         На церемонии открытия, которая начнется в 22:00 на Ратушной площади в
@@ -1231,15 +1261,18 @@
     article_types:
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
     slug: pof-fi-article-16
     publish: true
     directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-6'
@@ -1371,15 +1404,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     tag_premiere_types:
         - Европейская премьера
     tag_programmes:
@@ -1536,15 +1572,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     tag_premiere_types:
         - Международная премьера
     tag_programmes:
@@ -1569,16 +1608,16 @@
         Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
         Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
         Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ Леад РУ
-        Леад РУ Леад РУ 
+        Леад РУ Леад РУ
     contents: >-
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
         по русски Контентс по русски Контентс по русски Конте��тс по русски
         Контентс по русски Контентс по русски Контентс по русски Контентс по
         русски Контентс по русски Контентс по русски Контентс по русски Контентс
-        по русски Контентс по русски Контентс по русски Контентс по русски
+        по русски Контентс по русски Контен��с по русски Контентс по русски
         Контентс по русски Контентс по русски Контентс по русски Контентс по
-        русски Контентс по русски Контентс по русски 
+        русски Контентс по русски Контентс по русски
     publish: true
     directory: 'C:\dev2\web\source\_fetchdir/articles/test-en'
     path: article/pof-fi-article-5
@@ -1647,15 +1686,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     slug: pof-fi-article-4
     directory: 'C:\dev2\web\source\_fetchdir/articles/just-english-test'
     path: article/pof-fi-article-4
@@ -1766,7 +1808,7 @@
         Festival include the readiness to provide global industry and press
         access for the films and events, while preparations for holding a
         physical event are still underway.
-         
+
         Following the first signs of the possible resurgence of COVID-19 in the
         country, the organisers of the festival and its affiliated industry
         event have followed the predictions of the Health Board of Estonia and
@@ -1800,7 +1842,7 @@
         seminars, workshops, masterclasses, panel discussions, as usual,
         covering the most burning topics of film and TV market as well as PÖFF
         Academy events directed towards actors, scouting agents, film music
-        composers, costume designers and set photographers. 
+        composers, costume designers and set photographers.
 
 
         Currently, submissions are open for Baltic Event Co-production Market
@@ -1811,14 +1853,14 @@
         and the evaluation of the projects is carried out online. Everyone who
         has submitted the project has access to Industry @Tallinn & Baltic event
         online-program including workshops, masterclasses, panel discussions,
-        meetings with industry professionals, etc. 
-         
+        meetings with industry professionals, etc.
+
         The programme will be announced in various stages throughout September
         and October.
 
 
         Black Nights Film Festival is making preparations for several scenarios.
-         
+
         Since the first COVID-19-related lockdown in spring, Black Nights has
         been preparing for several possible scenarios, getting ready to take
         place physically while also upgrading the digital infrastructure that
@@ -1851,7 +1893,7 @@
         physical event. We are doing everything in our power to hold physical
         screenings and bring over as many foreign guests as possible, but the
         virus and Estonia’s Health Board will have the final say in these
-        matters.” 
+        matters.”
 
 
         The festival’s plans for digital development goes further than this
@@ -1862,7 +1904,7 @@
         meeting and pitching rooms and a year-around project market to connect
         projects at all stages of their cycle with respective parties of
         interest – financiers, producers, distributors etc.
-         
+
         Another important aspect will be the year-around promotion of Estonia as
         a location for production and recruiting talent, including the
         introduction of locations of interest, a database of the country’s
@@ -1870,7 +1912,7 @@
         have produced. Estonia’s first two regional film funds – the Viru Film
         Fund and the Tartu Film Fund – will be in charge of keeping the
         locations and talent pools up to date.
-         
+
         The third fundamental element of the new platform is education, that
         will see the launch of PÖFF Academy aiming to provide high-quality
         audiovisual education with partners at the Estonian Film Institute, the
@@ -1881,7 +1923,7 @@
         directed towards actors, scouting agents, film music composers, costume
         designers and set photographers over the last three years, and which
         added the European Film Academy Masterclasses into the mix last year.
-         
+
         Festival director Tiina Lokk commented:  „Some of the changes that are
         being prepared will actually rewire the festival’s DNA, making it more
         digital, networked, ubiquitous and inclusive than ever before! But first
@@ -1935,15 +1977,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -1994,7 +2039,7 @@
         семинары, мастерские, мастер-классы, панельные дискуссии, которые
         покроют все самые животрепещущие темы, а также пройдут мероприятия
         Академии PÖFF, ориентированные на актеров, агентов, кинокомпозиторов,
-        художников по костюмам и фотографов-декораторов. 
+        художников по костюмам и фотографов-декораторов.
 
 
         В настоящее время открыт прием заявок на участие в Baltic Event
@@ -2005,7 +2050,7 @@
         сентября, и их оценивание проводится онлайн. Каждый участник, приславший
         проект, будет иметь доступ к онлайн-программе мероприятий
         Industry@Tallinn & Baltic Event, включающей семинары, мастер-классы,
-        панельные дискуссии, встречи с профессионалами киноиндустрии и т. д. 
+        панельные дискуссии, встречи с профессионалами киноиндустрии и т. д.
 
 
         В этом году впервые будет организована Академия PÖFF, целью которой
@@ -2020,7 +2065,7 @@
         Таллиннский кинофестиваль «Тёмные ночи» пройдет в этом году с 13 по 29
         ноября. Из-за распространения коронавируса организаторы готовятся к
         нескольким возможным сценариям, включая традиционную организацию на
-        месте и готовность в случае необходимости провести мероприятия самого
+        месте и г��товность в случае необходимости провести мероприятия самого
         фестиваля частично или полностью онлайн.
 
 
@@ -2060,59 +2105,74 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 3
-            name: Intervjuu
+            name: Interview
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:50:35.561Z'
-            updated_at: '2020-08-27T13:26:22.977Z'
+            updated_at: '2020-09-16T09:11:42.284Z'
             article: null
             et: Intervjuu
             en: Interview
             ru: Интервю
+            slug_et: intervjuu
+            slug_en: interview
+            slug_ru: intervyu
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
         -
             id: 5
             name: About
             created_by: 6
             updated_by: 6
             created_at: '2020-09-01T12:17:53.527Z'
-            updated_at: '2020-09-01T12:17:53.548Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
             article: null
-            et: About
+            et: Artikkel
             en: About
-            ru: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
         -
             id: 6
-            name: IndustryProjekt
+            name: IndustryProject
             created_by: 6
             updated_by: 6
             created_at: '2020-09-02T07:48:49.095Z'
-            updated_at: '2020-09-02T07:48:49.116Z'
+            updated_at: '2020-09-16T09:11:25.159Z'
             article: null
             et: Projekt
             en: Project
             ru: Проэкт
+            slug_et: projekt
+            slug_en: project
+            slug_ru: proekt
     tag_premiere_types:
         - Европейская премьера
     tag_programmes:
@@ -2157,29 +2217,209 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
         -
             id: 4
-            name: ToetajaLugu
+            name: SponsorStory
             created_by: 6
             updated_by: 6
             created_at: '2020-08-18T13:51:35.072Z'
-            updated_at: '2020-09-02T07:50:32.835Z'
+            updated_at: '2020-09-16T09:12:19.035Z'
             article: null
             et: Toetaja lugu
             en: Supporter Story
             ru: История поддержки
+            slug_et: toetaja-lugu
+            slug_en: supporter-story
+            slug_ru: istoriya-podderzhki
     slug: pof-fi-article-18
     directory: 'C:\dev2\web\source\_fetchdir/articles/pof-fi-article-8'
     path: article/pof-fi-article-18
+    data:
+        pictures: /article_pictures.yaml
+        screenings: /film/screenings.ru.yaml
+        articles: /articles.ru.yaml
+-
+    id: 38
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-16T11:04:26.573Z'
+    updated_at: '2020-09-16T14:35:37.252Z'
+    title_et: PImedate Ööde filmifestival
+    slug_et: p-imedate-oeoede-filmifestival
+    title_en: Black Nights Film Festival
+    slug_en: black-nights-film-festival
+    lead_en: >-
+        Started in 1997, the Tallinn Black Nights Film Festival has grown into
+        one of the biggest film festivals in Northern Europe and busiest
+        regional industry platforms, hosting more than 1000 guests and industry
+        delegates and over 160 journalists. The festival screens around 250
+        features and more than 300 shorts and animations and sees an attendance
+        of 80 000 people annually.
+
+
+        As of 2014 the festival holds the FIAPF accreditation for holding an
+        international competition programme which puts the festival into the so-
+        called A-category of film festivals, alongside other 14 festivals in the
+        world.
+
+
+
+        #### Join the Wolf Pack
+
+
+        A PÖFF Wolf is a pack animal who knows that he’ll get farther working
+        together with the others. Without you, our cinema audience and
+        supporters, this film festival, largely cobbled together on pure
+        enthusiasm in 1997, would not be what it is today. Every year, PÖFF is
+        kept in constant movement by wonderful collaboration where the audience
+        and the films are connected by volunteers, more than 300 by today.
+        Together in our small Estonia, we have succeeded in filling the black
+        nights of November with unique northern lights which manifest as bright
+        film experiences on cinema screens and attract filmmakers from different
+        corners of the world to enjoy it all with us.
+
+
+        The gathering places of the PÖFF Wolves in Estonian cinemas remain the
+        same, but the routes are different every year. This year, the festival
+        will take you on a journey to Arab countries to enjoy the best of the
+        Arab cinema from the past 10 years. Besides grit and courage, PÖFF’s
+        growth preconditions include the will and desire to see past the horizon
+        in order to constantly broaden our view of the world. Thus, PÖFF’s
+        programme always wanders beyond its comfort zone. The PÖFF Wolves are
+        not afraid of new cultural spaces, burning questions and emotions which
+        make us laugh, astound us and move us in their bracing authenticity.
+
+
+        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
+
+        test subline
+    contents_et: >-
+        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis toob iga aasta
+        novembris maailmakino värskemad ning haaravamad palad ühes
+        rahvusvaheliste filmitegijatega koju kätte. PÖFFi selle aasta
+        programmist leiab üle 250 mängufilmi ning enam kui 300 lühi- ja
+        animafilmi.
+
+
+        Igal aastal korraldatakse üle maailma umbes 4000 filmifestivali, millest
+        vaid viisteist on Rahvusvahelise Produtsentide Liitude Föderatsiooni
+        poolt saanud A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
+        Berliini, Veneetsia ning teiste maailma tipp-filmifestivalidega sellesse
+        A-kategooriasse.
+
+
+
+        #### Tõutunnused
+
+
+        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab kaugemale. Ilma
+        teie, oma kinopubliku ja toetajateta poleks 1997. aastal suuresti põlve
+        otsas loodud filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
+        aastal pidevas liikumises iselaadi koostegemine, kus publiku ja
+        filmielamuste ühendavaks lüliks on vabatahtlikud, keda on tänaseks enam
+        kui 300. Koos oleme siin väikeses Eestis suutnud süsimustad novembrikuu
+        ööd täita omanäoliste virmalistega, mis eredate filmielamustena end
+        kinolinadel ilmutavad ja filmitegijaid eri maailma nurkadest meid
+        külastama toovad.
+
+
+        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad, kuid teekonnad
+        on igal aastal erinevad. Sel aastal avastame Araabiat läbi selle viimase
+        kümne aasta parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
+        südikuse kõrval ka tahe näha kaugemale silmapiirist, et hoida oma
+        maailmapilti pidevas avardumises. Nii kulgeb PÖFFi programm igal aastal
+        väljaspool oma mugavustsooni. Pöffihundid ei pelga uusi kultuuriruume,
+        põletavaid küsimusi ega emotsioone, mis naerutavad, rabavad ja
+        liigutavad oma karges eheduses.
+
+
+        ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
+
+        testallkiri pildile
+    publish_et: true
+    publish_en: true
+    media:
+        id: 32
+        imageDefault:
+            -
+                id: 146
+                name: PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg
+                alternativeText: ''
+                caption: ''
+                width: 2048
+                height: 879
+                formats:
+                    thumbnail:
+                        ext: .jpg
+                        url: >-
+                            /uploads/thumbnail_P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg
+                        hash: >-
+                            thumbnail_P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5
+                        mime: image/jpeg
+                        name: >-
+                            thumbnail_PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg
+                        size: 8.58
+                        width: 245
+                        height: 105
+                hash: >-
+                    P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5
+                ext: .jpg
+                mime: image/jpeg
+                size: 376.66
+                url: >-
+                    /uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg
+                provider: local
+                created_by: 9
+                updated_by: 9
+                created_at: '2020-09-13T19:01:29.953Z'
+                updated_at: '2020-09-13T19:01:30.023Z'
+        image: []
+    article_types:
+        -
+            id: 5
+            name: About
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-01T12:17:53.527Z'
+            updated_at: '2020-09-16T09:13:52.747Z'
+            article: null
+            et: Artikkel
+            en: About
+            ru: Артикл
+            slug_et: artikkel
+            slug_en: about
+            slug_ru: artikl
+    web_authors:
+        -
+            id: 1
+            namePrivate: Pöffihunt
+            created_by: 6
+            updated_by: 6
+            created_at: '2020-09-02T11:27:48.489Z'
+            updated_at: '2020-09-02T11:27:48.544Z'
+            name: Волк
+    slug: pof-fi-article-19
+    directory: >-
+        /Users/jaanleppik/Documents/GitHub/web/source/_fetchdir/articles/black-nights-film-festival
+    path: article/pof-fi-article-19
     data:
         pictures: /article_pictures.yaml
         screenings: /film/screenings.ru.yaml
@@ -2281,15 +2521,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2403,15 +2646,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
@@ -2497,15 +2743,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     slug: pof-fi-article-13
     directory: >-
         C:\dev2\web\source\_fetchdir/articles/p-oe-ff-shorts-now-an-academy-award-qualifying-festival
@@ -2567,15 +2816,18 @@
     article_types:
         -
             id: 2
-            name: Uudis
+            name: News
             created_by: 6
-            updated_by: 1
+            updated_by: 6
             created_at: '2020-08-18T13:49:51.616Z'
-            updated_at: '2020-08-27T13:27:26.065Z'
+            updated_at: '2020-09-16T09:12:30.682Z'
             article: null
             et: Uudised
             en: News
             ru: Новости
+            slug_et: uudised
+            slug_en: news
+            slug_ru: novosti
     web_authors:
         -
             id: 1
