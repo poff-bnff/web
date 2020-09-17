@@ -19,7 +19,7 @@ block content
     br
     a(href='https://tests.auth.us-east-2.amazoncognito.com/oauth2/authorize?response_type=code&client_id=67tu3fmm9v7ho8mnsltcd6h5p3&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
     br
-    button(onclick='loginAWS()') Login
+    button(onclick='login()') Login
     br
     br
     button(onclick='loadCognitoUser()') Say Hello to Cognito user
@@ -123,7 +123,7 @@ block content
 
 
         async function loadCognitoUser(){
-            console.log('Hello');
+            console.log(localStorage.getItem(ACCESS_TOKEN));
             var myHeaders = new Headers();
 
             myHeaders.append('Authorization', `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`);
@@ -148,28 +148,49 @@ block content
         }
 
 
-        function loginAWS(){
 
-        var authenticationData = {
-                Username : document.getElementById('loginUsername').value,
-                Password : document.getElementById('loginPassword').value
-        };
 
-        var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-        var poolData = {
-                UserPoolId : 'us-east-2_1bCsYSArV',
-                ClientId : '6t3b33mud4uacl644m2k0i1vuv'
-        };
+        function login(){
 
-        var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-        var userData = {
-                Username : document.getElementById('loginUsername').value,
-                Pool : userPool
-        };
+            let loginUsername = document.getElementById('loginUsername').value;
+            let loginPassword = document.getElementById('loginPassword').value;
 
-        var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
 
-        console.log(cognitoUser);
+        // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
+
+            var authenticationData = {
+                    Username : loginUsername,
+                    Password : loginPassword
+            };
+
+            var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+            var poolData = {
+                    UserPoolId : 'us-east-2_1bCsYSArV',
+                    ClientId : '6t3b33mud4uacl644m2k0i1vuv'
+            };
+
+            var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+            var userData = {
+                    Username : loginUsername,
+                    Pool : userPool
+            };
+
+            var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+            cognitoUser.authenticateUser(authenticationDetails, {
+                onSuccess: function (result) {
+                    //- var accessToken = result.getAccessToken().getJwtToken();
+                    localStorage.setItem('ACCESS_TOKEN', result.accessToken.jwtToken);
+                    localStorage.setItem('REFRESH_TOKEN', result.refreshToken.token);
+                    localStorage.setItem('ID_TOKEN', result.idToken.jwtToken);
+
+                    /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
+                    var idToken = result.idToken.jwtToken;
+                },
+
+                onFailure: function(err) {
+                    alert(JSON.stringify(err));
+                },
+            });
         }
 
 
