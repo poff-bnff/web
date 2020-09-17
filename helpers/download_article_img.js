@@ -26,7 +26,7 @@ loadYaml('ru', readYaml);
 function loadYaml(lang, readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/articles.${lang}.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/articles.${lang}.yaml`, 'utf8'));
 
     } catch (e) {
         console.log(e);
