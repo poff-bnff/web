@@ -33,7 +33,7 @@ block content
     button(onclick='loadCognitoUser()') Show cognito user
     a(href='https://tests.auth.us-east-2.amazoncognito.com/logout?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&logout_uri=https://dev.inscaping.eu/login/' onclick='logout()') Log out
     br
-    br
+    button(onclick="sayHello()") Say Hello
     br
     br
     br
@@ -137,11 +137,12 @@ block content
                     console.log(result);
                     const JSONresult = JSON.parse(result);
                     console.log(JSONresult.name);
-                    element = document.querySelector(hello)
-
+                    hello.innerHTML = 'Hello! ' + JSONresult.name;
                 })
                 .catch(error => console.log('error', error));
             }
+
+
 
 
 
