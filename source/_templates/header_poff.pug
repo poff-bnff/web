@@ -22,22 +22,22 @@ header
                                             if self.data.articles
                                                 - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem.poffi_article.id === a.id })
                                                 - let article = articleFromYAML[0]
-                                                li
-                                                    if article.article_types && article.article_types[0]
-                                                        - var articleTypePath = ''
-                                                        each artType in article.article_types
-                                                            if artType.name.toLowerCase() === 'about'
-                                                                - articleTypePath = artType[`slug_${self.locale}`]
-                                                            else if artType.name.toLowerCase() === 'interview'
-                                                                - articleTypePath = artType[`slug_${self.locale}`]
-                                                            else if artType.name.toLowerCase() === 'sponsorstory'
-                                                                - articleTypePath = artType[`slug_${self.locale}`]
-                                                            else if artType.name.toLowerCase() === 'news'
-                                                                - articleTypePath = artType[`slug_${self.locale}`]
-                                                            else
-                                                                - articleTypePath = article.article_types[0][`slug_${self.locale}`]
+                                                    if article.article_types && article.article_types[0] && article.publish === true && article.title
+                                                        li
+                                                            - var articleTypePath = ''
+                                                            each artType in article.article_types
+                                                                if artType.name.toLowerCase() === 'about'
+                                                                    - articleTypePath = artType[`slug_${self.locale}`]
+                                                                else if artType.name.toLowerCase() === 'interview'
+                                                                    - articleTypePath = artType[`slug_${self.locale}`]
+                                                                else if artType.name.toLowerCase() === 'sponsorstory'
+                                                                    - articleTypePath = artType[`slug_${self.locale}`]
+                                                                else if artType.name.toLowerCase() === 'news'
+                                                                    - articleTypePath = artType[`slug_${self.locale}`]
+                                                                else
+                                                                    - articleTypePath = article.article_types[0][`slug_${self.locale}`]
 
-                                                        a(href= `/${lang_path}${articleTypePath}/${subMenuItem.poffi_article.slug}`)= subMenuItem.name
+                                                            a(href= `/${lang_path}${articleTypePath}/${subMenuItem.poffi_article.slug}`)= subMenuItem.name
 
 
                                                 //- - let article_type = article.article_types[0]
