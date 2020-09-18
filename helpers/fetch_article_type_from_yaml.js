@@ -99,7 +99,7 @@ function getData(
     allData = [];
 
     const data = yaml.safeLoad(
-        fs.readFileSync(__dirname + "/../source/strapiData.yaml", "utf8")
+        fs.readFileSync(__dirname + "/../source/_fetchdir/strapiData.yaml", "utf8")
     );
 
     getDataCB(

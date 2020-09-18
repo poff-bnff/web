@@ -12,7 +12,7 @@ if (process.env['DOMAIN'] === 'shorts.poff.ee') {
     var fetchFrom = 'HeroArticlePoff';
 }
 
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 DataToYAMLData(strapiData[fetchFrom]);
 
 function DataToYAMLData(strapiData){
