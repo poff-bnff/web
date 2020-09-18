@@ -117,7 +117,7 @@ menu:
             firstname: Jaan
             lastname: Leppik
         created_at: '2020-09-08T12:39:44.630Z'
-        updated_at: '2020-09-17T13:59:52.484Z'
+        updated_at: '2020-09-17T20:38:45.490Z'
         order: 9
         name: Festival
         subMenuItem:
@@ -135,7 +135,7 @@ menu:
                     created_by: 6
                     updated_by: 6
                     created_at: '2020-09-16T11:04:26.573Z'
-                    updated_at: '2020-09-17T12:29:45.565Z'
+                    updated_at: '2020-09-17T21:13:35.583Z'
                     title_et: PImedate Ööde filmifestival
                     slug_et: p-imedate-oeoede-filmifestival
                     slug_ru: pof-fi-article-19
@@ -187,6 +187,7 @@ menu:
 
                         ![howl_landscape_web.jpg](http://139.59.130.149/uploads/howl_landscape_web_f73ecdd38c.jpg)
 
+
                         ###### testallkiri pildile
 
 
@@ -197,11 +198,13 @@ menu:
                         clipboard-write; encrypted-media; gyroscope;
                         picture-in-picture" allowfullscreen></iframe>
 
+
                         ###### PÖFF 2019 Teaser Trailer
                     publish_et: true
                     title: Black Nights Film Festival
                     slug: black-nights-film-festival
-                    lead: >-
+                    lead: ''
+                    contents: >-
                         Started in 1997, the Tallinn Black Nights Film Festival
                         has grown into one of the biggest film festivals in
                         Northern Europe and busiest regional industry platforms,
@@ -252,11 +255,158 @@ menu:
 
                         ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
 
-                        test subline 
+
+                        ###### test subline
                     publish: true
                 customUrl: ''
                 order: 1
                 name: About the Festival
+            -
+                id: 3
+                namePrivate: Auhinnad
+                poffi_article:
+                    id: 41
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-17T20:35:05.638Z'
+                    updated_at: '2020-09-17T20:44:15.324Z'
+                    title_et: Auhinnad
+                    slug_et: auhinnad
+                    slug_ru: pof-fi-article-12
+                    contents_et: >-
+                        #### Põhivõistlusprogramm
+
+
+                        - Grand prix parimale filmile (stipendium 10 000 eurot
+                        Tallinna linnalt)
+
+                        - Auhind parimale režissöörile (stipendium 5000 eurot)
+
+                        - Auhind parimale stsenaariumile
+
+                        - Auhind parimale naisnäitlejale (auhind Elisalt)
+
+                        - Auhind parimale meesnäitlejale (auhind Elisalt)
+
+                        - Auhind parimale operaatorile (stipendium 1000 eurot)
+
+                        - Auhind parimale filmimuuusikale
+
+
+
+                        #### Debüütfilmide võistlusprogramm
+
+
+                        - Parima filmi auhind (stipendium 5000 eurot)
+
+                        - Kaks žürii eriauhinda
+
+
+
+                        #### Balti filmide võistlusprogramm
+
+
+                        - Parim Balti mängufilm (stipendium 3200 eurot)
+
+
+
+                        #### “Põhjusega mässajad” võistlusprogramm
+
+
+                        - Põhjusega mässaja auhind (stipendium 1200 eurot
+                        Nudistilt)
+
+
+
+                        ###3 Teised auhinnad
+
+
+                        - Auhind publiku lemmikfilmile (stipendium 2000 eurot
+                        Tallinna linnalt)
+
+                        - Rahvusvaheline filmikriitikute (FIPRESCI) žürii auhind
+
+                        - Aasia filmikunsti edendamise võrgustiku (NETPAC) žürii
+                        auhind parimale aasia filmile
+
+                        - Eesti oikumeenilise žürii auhind
+
+                        - Elutööauhind
+
+                        ### Teised auhinnade stipendium (stipendium 1000 eurot)
+                    publish_et: true
+                    title: ''
+                    slug: awards
+                    contents: >-
+                        #### Official Selection Competition
+
+
+                        - Grand Prix for the Best Film (grant of 10 000 euros
+                        from the City of Tallinn, shared by the Director and
+                        Producer)
+
+                        - Award for Best Director (grant of 5000 euros)
+
+                        - Award for Best Script
+
+                        - Award for Best Actress (award from Elisa)
+
+                        - Award for Best Actor (award from Elisa)
+
+                        - Award for Best Cinematographer (grant of 1000 euros)
+
+                        - Award for Best Music
+
+
+
+                        #### First Feature Competition
+
+
+                        - Best Film Award (grant of 5000 euros, shared by the
+                        Director and Producer)
+
+                        - Two Special Jury Prizes
+
+
+
+                        #### Baltic Film Competition
+
+
+                        - Award for Best Baltic Feature Film (grant of 3200
+                        euros, shared by the Director and Producer)
+
+
+
+                        #### Rebels with a Cause Competition
+
+
+                        - Rebel with a Cause Award (grant of 1200 euros from
+                        Nudist)
+
+
+
+                        Additional Awards
+
+
+                        - Audience Award (grant of 2000 euros from the City of
+                        Tallinn)
+
+                        - FIPRESCI Award presented by International Federation
+                        of Film Critics
+
+                        - NETPAC Award for Best Asian film presented by Network
+                        for the Promotion of Asian Cinema
+
+                        - Estonian Oecumenical Jury Prize presented by the
+                        representatives of the largest congregations in Estonia
+
+                        - Lifetime Achievement Award
+
+                        - Bruno O’ya Award for Internationally Acknowledged
+                        Estonian Talent (with scholarship of 1000 euros)
+                    publish: true
+                order: 5
+                name: Awards
 footer:
     id: 2
     created_by:
@@ -268,7 +418,7 @@ footer:
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-01T09:37:02.304Z'
-    updated_at: '2020-09-16T10:49:56.373Z'
+    updated_at: '2020-09-17T19:47:02.892Z'
     namePrivate: PÖFF
     domain:
         id: 1
@@ -391,6 +541,10 @@ footer:
                         2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2
                         2-2z"></path><polyline points="22,6 12,13
                         2,6"></polyline></svg>
+                    url_et: >-
+                        https://poff.us7.list-manage.com/subscribe?u=c2426593c5ba2369b6e13a66e&id=d1371cd550
+                    url_ru: >-
+                        https://poff.us7.list-manage.com/subscribe?u=c2426593c5ba2369b6e13a66e&id=d1371cd550
         -
             id: 3
             namePrivate: Contacts
