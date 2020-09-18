@@ -139,28 +139,6 @@ function makeCSV(obj, element, lang) {
 function generateYaml(element, element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
-    // fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-    // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
-    // console.log(element);
-    // if (writeIndexFile) {
-    //     if (element.article_types && element.article_types != null && element.article_types[0] != null) {
-    //         var templateName = element.article_types[0].name.toLowerCase();
-    //     }
-    //     if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
-    //         var templateName = 'news';
-    //     }
-    //     fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
-    //         if(err) {
-    //             return console.log(err);
-    //         }
-    //     });
-
-    //     // fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
-    //     //     if (err) throw err;
-    //     //     // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
-    //     // })
-    // }
-
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
     fs.writeFileSync(`${sourceFolder}_fetchdir/articles.${lang}.yaml`, allDataYAML, 'utf8');
