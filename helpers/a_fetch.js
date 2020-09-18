@@ -136,7 +136,26 @@ async function strapiFetch(modelName, token){
     })
 }
 
-// lhs == model, rhs == data
+const isObject = (o) => {
+    return typeof o === 'object' && o !== null
+}
+
+const TakeOutTrash = (data, model) => {
+    // eeldame, et nii data kui model on objektid
+
+    const keysToCheck = data.keys()
+    for (const key in keysToCheck) {
+        if (!model.hasOwnProperty(key)) {
+            delete(data[key])
+            continue
+        }
+        // kui property oli mudelis kirjeldatud, tuleb vaadata, kas on põhjust rekursiooniks
+        if( isObject(data[key]) && isObject(model[key])) {
+            TakeOutTrash(data[key], model[key])
+        }
+    }
+}
+
 const Compare = function (model, data, path) {
     // console.log('<--', path)
     if (data === null) {
@@ -203,6 +222,10 @@ const foo = async () => {
     let strapiData = {}
     // datamodel on meie kirjeldatud andmemudel
     // otsime sellest mudelist ühte mudelit =model
+    //
+    // Esimese sammuna rikastame Strapist tulnud andmeid, mis liigse sygavuse tõttu on jäänud tulemata.
+    // Rikastame kõiki alamkomponente, millel mudelis on _path defineeritud
+    //
     for (const modelName in DATAMODEL) {
         if (DATAMODEL.hasOwnProperty(modelName)) {
             let model = DATAMODEL[modelName]
@@ -226,20 +249,20 @@ const foo = async () => {
                 strapiData[modelName] = modelData
                 console.log(' done')
             }
-            // if (strapiData.hasOwnProperty('Country')) {
-            //     console.log(strapiData['Country'][0])
-            // }
         }
     }
-    // console.log(token)
+
 
     for (const modelName in strapiData) {
         if (strapiData.hasOwnProperty(modelName)) {
             const modelData = strapiData[modelName]
             for (const ix in modelData) {
                 if (modelData.hasOwnProperty(ix)) {
-                    const element = modelData[ix]
+                    let element = modelData[ix]
+                    // 2. kustutame andmetest kõik propertid, mida mudelis pole
+                    TakeOutTrash(element, DATAMODEL[modelName])
 
+                    // 3. valideerime kõike, mis mudelis on kirjeldatud
                     // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)
                     Compare(DATAMODEL[modelName], element, modelName)
                     // console.log('Validated ', modelName, ix, element['id'])
