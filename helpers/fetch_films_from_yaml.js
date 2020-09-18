@@ -42,7 +42,7 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, dataModel, getDa
 
     allData = [];
 
-    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 
     getDataCB(data[dataModel], dirPath, lang, copyFile, dataFrom, showErrors, generateYaml);
 

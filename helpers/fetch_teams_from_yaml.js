@@ -32,7 +32,7 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, fetchFrom,
 
     allData = [];
 
-    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 
     callback(data[fetchFrom], dirPath, lang, writeIndexFile, dataFrom, showErrors);
 }
