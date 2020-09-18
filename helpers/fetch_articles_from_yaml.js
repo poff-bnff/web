@@ -66,6 +66,14 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
             slugEn = element.slug_et;
         }
 
+        let doNotTouchTheTypes = [];
+        if(element.article_types && element.article_types[0]) {
+            for (let typeIndex = 0; typeIndex < element.article_types.length; typeIndex++) {
+                const oneType = element.article_types[typeIndex];
+                doNotTouchTheTypes.push(oneType);
+            }
+        }
+
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang);
@@ -109,6 +117,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
 
             // element.aliases = aliases;
             // rueten(element, `_${lang}`);
+            element.article_types = doNotTouchTheTypes;
             allData.push(element);
             element.data = dataFrom;
 
@@ -119,6 +128,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 console.log(`Film ID ${element.id} slug_en value missing`);
             }
         }
+
     });
 
 }
