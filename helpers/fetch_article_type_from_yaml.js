@@ -1,10 +1,10 @@
-const fs = require("fs");
-const yaml = require("js-yaml");
-const { type } = require("os");
-const path = require("path");
+const fs = require('fs');
+const yaml = require('js-yaml');
+const { type } = require('os');
+const path = require('path');
 const rueten = require('./rueten.js')
 
-const sourceFolder = path.join(__dirname, "../source/");
+const sourceFolder = path.join(__dirname, '../source/');
 //console.log(sourceFolder)
 
 // const allLanguages = ['en', 'et', 'ru'];
