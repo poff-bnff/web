@@ -1,7 +1,6 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
-const path = require("path");
 const rueten = require('./rueten.js')
 
 const sourceFolder =  path.join(__dirname, '../source/');

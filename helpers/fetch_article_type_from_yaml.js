@@ -1,20 +1,20 @@
-const fs = require("fs");
-const yaml = require("js-yaml");
-const { type } = require("os");
-const path = require("path");
+const fs = require('fs');
+const yaml = require('js-yaml');
+const { type } = require('os');
+const path = require('path');
 const rueten = require('./rueten.js')
 
-const sourceFolder = path.join(__dirname, "../source/");
+const sourceFolder = path.join(__dirname, '../source/');
 //console.log(sourceFolder)
 
-const allLanguages = ["en", "et", "ru"];
+const allLanguages = ['en', 'et', 'ru'];
 
-if (process.env["DOMAIN"] === "justfilm.ee") {
-    var dataModel = "JustFilmiArticle";
-} else if (process.env["DOMAIN"] === "shorts.poff.ee") {
-    var dataModel = "ShortsiArticle";
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    var dataModel = 'JustFilmiArticle';
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    var dataModel = 'ShortsiArticle';
 } else {
-    var dataModel = "POFFiArticle";
+    var dataModel = 'POFFiArticle';
 }
 
 let allData = []; // for articles view

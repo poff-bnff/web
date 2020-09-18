@@ -40,3 +40,5 @@ function rueten(obj, lang) {
     }
     return obj
 }
+
+module.exports = rueten
