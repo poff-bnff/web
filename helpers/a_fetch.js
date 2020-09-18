@@ -3,6 +3,11 @@ const fs = require('fs')
 const util = require('util')
 const { resolve } = require('path')
 const yaml = require('js-yaml')
+const path = require('path');
+
+const dirPath =  path.join(__dirname, '../source/_fetchdir/');
+
+fs.mkdirSync(dirPath, { recursive: true })
 
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(__dirname + '/../docs/datamodel.yaml', 'utf8'))
 for (const key in DATAMODEL) {
@@ -244,7 +249,7 @@ const foo = async () => {
     }
 
     let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(__dirname + '/../source/strapiData.yaml', yamlStr, 'utf8')
+    fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
 
 }
 
