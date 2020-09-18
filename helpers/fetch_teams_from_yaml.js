@@ -8,7 +8,6 @@ const strapiDataPath = path.join(sourceFolder, 'strapiData.yaml')
 const writeToFilePath = sourceFolder
 
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
-
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Team']
 
 const languages = ['en', 'et', 'ru']
