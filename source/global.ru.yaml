@@ -1,0 +1,972 @@
+siteTitle: PÖFF
+root: /ru/
+language:
+    et: eesti
+    en: english
+    ru: русский
+navigation:
+    -
+        url: /riigid/
+        title: Riigid
+    -
+        url: /keeled/
+        title: Keeled
+search:
+    url: /ru/poisk/
+    text: |
+        ### Поиск
+    placeholder: введите →
+    button: Искать
+eFilmInfo: ''
+label:
+    button:
+        screeningBuyTicket: Osta pilet
+        screeningFree: Tasuta
+        covidRegister: Covid-19 - registreeri oma osalemine
+        newsButton: Uudised
+        filmsButton: ''
+        filmAudienceVote: Anna filmile oma hääl
+    film:
+        titleOriginal: Pealkirja originaal
+        title_et: Pealkiri eesti keeles
+        title_en: Ingliskeelne pealkiri
+        title_ru: Venekeelne pealkiri
+        titleSec: Pealkiri inglise keeles
+        countries: Riik
+        languages: Keel
+        year: Aasta
+        audienceVote: Anna filmile oma hääl
+        runtime: Kestus
+        director: Režissöör
+        screenwriter: Stsenarist
+        doP: Operaator
+        editor: Monteerija
+        composer: Helilooja
+        cast: Osades
+        production: Produktsioon
+        synopsis: Sünopsis
+        trailer: Treiler
+        festival: Festival
+        premiereType: Esilinastus
+        programme: Programm
+        genre: Žanr
+        keywords: Märksõnad
+        otherFestivals: Teised festivalid
+        awards: Auhinnad
+        screenings: Seansid
+        qaClip: Q&A ehk vestlus filmitegijaga
+        languageSelect: Keeled
+        producer: Produtsent
+        coProducer: Kaasprodutsent
+    screening:
+        Subtitles: Subtiitrid
+        IntroPresenter: Sissejuhataja
+        IntroGuests: Sissejuhatuse külalised
+        QaPresenter: Q&A küsitleja
+        QaGuests: Q&A külalised
+        QaDuration: Q&A kestus
+        TotalDuration: Seansi kestus
+        Name: Seanss
+        AdditionalInfo: Lisainfo
+    all:
+        selectLocale: Языки
+        presenters: Esitlejad
+        sponsors: Спонсоры
+        supporters: Друзья
+        festivalTeam: Команда фестиваля
+        officialPartners: Официальные партнеры
+        partners: Партнёры
+        thanksTo: Täname
+        screeningsCalendar: Seansside kalender
+        eventsCalendar: Ürituste kalender
+        eventsGalleries: Mis juhtus?
+        team: Команда фестиваля
+    menu:
+        mainNews: Новости
+        mainFilms: Филмы
+        mainInfo: Инфо
+        mainCovid: Covid
+        mainFestival: Фестиваль
+        mainTeam: Команда
+        mainSchedule: Расписание
+        mainLogin: logi sisse
+footer:
+    id: 2
+    created_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    updated_by:
+        id: 6
+        firstname: Jaan
+        lastname: Leppik
+    created_at: '2020-09-01T09:37:02.304Z'
+    updated_at: '2020-09-17T19:47:02.892Z'
+    namePrivate: PÖFF
+    domain:
+        id: 1
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 3
+            firstname: Liis
+            lastname: Käsper
+        created_at: '2020-08-19T10:43:32.378Z'
+        updated_at: '2020-08-31T13:52:31.385Z'
+        url: poff.ee
+        name: PÖFF
+    socialGroup:
+        -
+            id: 2
+            namePrivate: PÖFF Social
+            name: Follow us
+            items:
+                -
+                    id: 1
+                    name: Facebook
+                    url: 'https://www.facebook.com/tallinnblacknightsff/'
+                    svgCode: >-
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                        stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="svg_icon_footer">
+
+                        <path d="M18 2h-3a5 5 0 0 0-5
+                        5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1
+                        1-1h3z"></path></svg>
+                    url_et: 'https://www.facebook.com/tallinnblacknightsff/'
+                    url_en: 'https://www.facebook.com/tallinnblacknightsff/'
+                -
+                    id: 2
+                    name: Instagram
+                    url: 'https://www.instagram.com/tallinnblacknightsff/'
+                    svgCode: >-
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                        stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="svg_icon_footer"><rect x="2" y="2" width="20"
+                        height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4
+                        0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
+                        x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    url_et: 'https://www.instagram.com/tallinnblacknightsff/'
+                    url_en: 'https://www.instagram.com/tallinnblacknightsff/'
+                -
+                    id: 3
+                    name: YouTube
+                    url: 'https://www.youtube.com/user/Poffihunt'
+                    svgCode: >-
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                        stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="svg_icon_footer"><path d="M22.54 6.42a2.78 2.78 0
+                        0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0
+                        0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78
+                        2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0
+                        8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29
+                        29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02
+                        15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    url_et: 'https://www.youtube.com/user/Poffihunt'
+                    url_en: 'https://www.youtube.com/user/Poffihunt'
+                -
+                    id: 4
+                    name: Twitter
+                    url: 'https://twitter.com/poffihunt'
+                    svgCode: >-
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                        stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="svg_icon_footer"><path d="M23 3a10.9 10.9 0 0
+                        1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3
+                        4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5
+                        4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    url_et: 'https://twitter.com/poffihunt'
+                    url_en: 'https://twitter.com/poffihunt'
+    item:
+        -
+            id: 1
+            namePrivate: Team
+            name: Komanda
+            svgItem:
+                -
+                    id: 5
+                    name: Team
+                    url: team
+                    svgCode: >-
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="svg_icon_footer"><path d="M17 21v-2a4 4 0 0
+                        0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7"
+                        r="4"></circle><path d="M23 21v-2a4 4 0 0
+                        0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0
+                        7.75"></path></svg>
+                    url_et: team
+                    url_en: team
+        -
+            id: 2
+            namePrivate: Subscribe to newsletter
+            name:
+                id: 3853
+                et: Liitu uudiskirjaga
+                en: Subscribe to newsletter
+            svgItem:
+                -
+                    id: 7
+                    name: E-mail
+                    url: >-
+                        https://poff.us7.list-manage.com/subscribe?u=c2426593c5ba2369b6e13a66e&id=d1371cd550
+                    svgCode: >-
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="svg_icon_footer"><path d="M4 4h16c1.1 0 2 .9 2
+                        2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2
+                        2-2z"></path><polyline points="22,6 12,13
+                        2,6"></polyline></svg>
+                    url_et: >-
+                        https://poff.us7.list-manage.com/subscribe?u=c2426593c5ba2369b6e13a66e&id=d1371cd550
+                    url_en: >-
+                        https://poff.us7.list-manage.com/subscribe?u=c2426593c5ba2369b6e13a66e&id=d1371cd550
+        -
+            id: 3
+            namePrivate: Contacts
+            name: Контакт
+            text: |-
+                Telliskivi 60A
+                Tallinn
+    logosSections:
+        -
+            id: 1
+            order: 1
+            name:
+                id: 3843
+                et: Esitlejad
+                en: Presenters
+            logo:
+                -
+                    id: 1
+                    url: delfi.ee
+                    imgWhite:
+                        id: 30
+                        name: tartuff_f_elisa.svg
+                        alternativeText: ''
+                        caption: ''
+                        width: 160
+                        height: 90
+                        hash: tartuff_f_elisa_4741e382f5
+                        ext: .svg
+                        mime: image/svg+xml
+                        size: 3.48
+                        url: /uploads/tartuff_f_elisa_4741e382f5.svg
+                        provider: local
+                        created_by: 6
+                        updated_by: 6
+                        created_at: '2020-09-01T10:15:24.826Z'
+                        updated_at: '2020-09-01T10:15:24.934Z'
+                -
+                    id: 2
+                    url: toyota.ee
+                    imgWhite:
+                        id: 29
+                        name: tartuff_f_toyota.svg
+                        alternativeText: ''
+                        caption: ''
+                        width: 160
+                        height: 90
+                        hash: tartuff_f_toyota_1f300fd44b
+                        ext: .svg
+                        mime: image/svg+xml
+                        size: 2.87
+                        url: /uploads/tartuff_f_toyota_1f300fd44b.svg
+                        provider: local
+                        created_by: 6
+                        updated_by: 6
+                        created_at: '2020-09-01T10:15:24.826Z'
+                        updated_at: '2020-09-01T10:15:24.929Z'
+                    imgBlack:
+                        id: 31
+                        name: Industry_2020_online_news.jpeg
+                        alternativeText: ''
+                        caption: ''
+                        width: 900
+                        height: 600
+                        formats:
+                            thumbnail:
+                                ext: .jpeg
+                                url: >-
+                                    /uploads/thumbnail_Industry_2020_online_news_b73f02f092.jpeg
+                                hash: >-
+                                    thumbnail_Industry_2020_online_news_b73f02f092
+                                mime: image/jpeg
+                                name: thumbnail_Industry_2020_online_news.jpeg
+                                size: 15.09
+                                width: 234
+                                height: 156
+                        hash: Industry_2020_online_news_b73f02f092
+                        ext: .jpeg
+                        mime: image/jpeg
+                        size: 136.1
+                        url: /uploads/Industry_2020_online_news_b73f02f092.jpeg
+                        provider: local
+                        created_by: 6
+                        updated_by: 6
+                        created_at: '2020-09-01T12:27:06.584Z'
+                        updated_at: '2020-09-01T12:27:06.648Z'
+    domains:
+        -
+            id: 1
+            created_by: 6
+            updated_by: 3
+            created_at: '2020-08-19T10:43:32.378Z'
+            updated_at: '2020-08-31T13:52:31.385Z'
+            url: poff.ee
+            name: PÖFF
+menu:
+    -
+        id: 1
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 5
+            firstname: Martin
+            lastname: Pennaste
+        created_at: '2020-09-08T12:39:02.007Z'
+        updated_at: '2020-09-08T12:42:49.644Z'
+        order: 1
+        name: Новости
+        customUrl: novosti
+    -
+        id: 2
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        created_at: '2020-09-08T12:39:44.630Z'
+        updated_at: '2020-09-17T20:38:45.490Z'
+        order: 9
+        name: Фестиваль
+        subMenuItem:
+            -
+                id: 1
+                namePrivate: Meeskond
+                customUrl: team
+                order: 3
+                name: Команда
+            -
+                id: 2
+                namePrivate: Fesrtivali tutvustus
+                poffi_article:
+                    id: 38
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-16T11:04:26.573Z'
+                    updated_at: '2020-09-18T12:19:59.391Z'
+                    title_et: Pimedate Ööde filmifestival
+                    slug_et: p-imedate-oeoede-filmifestival
+                    title_en: Black Nights Film Festival
+                    slug_en: black-nights-film-festival
+                    lead_en: ''
+                    contents_et: >-
+                        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis
+                        toob iga aasta novembris maailmakino värskemad ning
+                        haaravamad palad ühes rahvusvaheliste filmitegijatega
+                        koju kätte. PÖFFi selle aasta programmist leiab üle 250
+                        mängufilmi ning enam kui 300 lühi- ja animafilmi.  
+
+
+                        Igal aastal korraldatakse üle maailma umbes 4000
+                        filmifestivali, millest vaid viisteist on Rahvusvahelise
+                        Produtsentide Liitude Föderatsiooni poolt saanud
+                        A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
+                        Berliini, Veneetsia ning teiste maailma
+                        tipp-filmifestivalidega sellesse A-kategooriasse.
+
+
+
+                        #### Tõutunnused
+
+
+                        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab
+                        kaugemale. Ilma teie, oma kinopubliku ja toetajateta
+                        poleks 1997. aastal suuresti põlve otsas loodud
+                        filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
+                        aastal pidevas liikumises iselaadi koostegemine, kus
+                        publiku ja filmielamuste ühendavaks lüliks on
+                        vabatahtlikud, keda on tänaseks enam kui 300. Koos oleme
+                        siin väikeses Eestis suutnud süsimustad novembrikuu ööd
+                        täita omanäoliste virmalistega, mis eredate
+                        filmielamustena end kinolinadel ilmutavad ja
+                        filmitegijaid eri maailma nurkadest meid külastama
+                        toovad.
+
+
+                        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad,
+                        kuid teekonnad on igal aastal erinevad. Sel aastal
+                        avastame Araabiat läbi selle viimase kümne aasta
+                        parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
+                        südikuse kõrval ka tahe näha kaugemale silmapiirist, et
+                        hoida oma maailmapilti pidevas avardumises. Nii kulgeb
+                        PÖFFi programm igal aastal väljaspool oma mugavustsooni.
+                        Pöffihundid ei pelga uusi kultuuriruume, põletavaid
+                        küsimusi ega emotsioone, mis naerutavad, rabavad ja
+                        liigutavad oma karges eheduses.
+
+
+                        <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/oZLMwp13goE"
+                        frameborder="0" allow="accelerometer; autoplay;
+                        clipboard-write; encrypted-media; gyroscope;
+                        picture-in-picture" allowfullscreen></iframe>
+
+
+                        ###### PÖFF 2019 Teaser Trailer
+                    contents_en: >-
+                        Started in 1997, the Tallinn Black Nights Film Festival
+                        has grown into one of the biggest film festivals in
+                        Northern Europe and busiest regional industry platforms,
+                        hosting more than 1000 guests and industry delegates and
+                        over 160 journalists. The festival screens around 250
+                        features and more than 300 shorts and animations and
+                        sees an attendance of 80 000 people annually. 
+
+
+                        As of 2014 the festival holds the FIAPF accreditation
+                        for holding an international competition programme which
+                        puts the festival into the so- called A-category of film
+                        festivals, alongside other 14 festivals in the world.
+
+
+
+                        #### Join the Wolf Pack
+
+
+                        A PÖFF Wolf is a pack animal who knows that he’ll get
+                        farther working together with the others. Without you,
+                        our cinema audience and supporters, this film festival,
+                        largely cobbled together on pure enthusiasm in 1997,
+                        would not be what it is today. Every year, PÖFF is kept
+                        in constant movement by wonderful collaboration where
+                        the audience and the films are connected by volunteers,
+                        more than 300 by today. Together in our small Estonia,
+                        we have succeeded in filling the black nights of
+                        November with unique northern lights which manifest as
+                        bright film experiences on cinema screens and attract
+                        filmmakers from different corners of the world to enjoy
+                        it all with us.
+
+
+                        The gathering places of the PÖFF Wolves in Estonian
+                        cinemas remain the same, but the routes are different
+                        every year. This year, the festival will take you on a
+                        journey to Arab countries to enjoy the best of the Arab
+                        cinema from the past 10 years. Besides grit and courage,
+                        PÖFF’s growth preconditions include the will and desire
+                        to see past the horizon in order to constantly broaden
+                        our view of the world. Thus, PÖFF’s programme always
+                        wanders beyond its comfort zone. The PÖFF Wolves are not
+                        afraid of new cultural spaces, burning questions and
+                        emotions which make us laugh, astound us and move us in
+                        their bracing authenticity.
+
+
+                        ![PÖFF-2018-Opening-Ceremony-photo-by-Ahto-Sooaru-263447d1.jpg](http://139.59.130.149/uploads/P_Oe_FF_2018_Opening_Ceremony_photo_by_Ahto_Sooaru_263447d1_7c4179f1e5.jpg)
+
+
+                        ###### test subline
+                    publish_et: true
+                    publish_en: true
+                    slug: pof-fi-article-19
+                customUrl: ''
+                order: 1
+                name: О фестивале
+            -
+                id: 3
+                namePrivate: Auhinnad
+                poffi_article:
+                    id: 41
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-17T20:35:05.638Z'
+                    updated_at: '2020-09-18T09:47:24.437Z'
+                    title_et: Auhinnad
+                    slug_et: auhinnad
+                    title_en: ''
+                    slug_en: awards
+                    contents_et: >-
+                        #### Põhivõistlusprogramm
+
+
+                        - Grand prix parimale filmile (stipendium 10 000 eurot
+                        Tallinna linnalt)
+
+                        - Auhind parimale režissöörile (stipendium 5000 eurot)
+
+                        - Auhind parimale stsenaariumile
+
+                        - Auhind parimale naisnäitlejale (auhind Elisalt)
+
+                        - Auhind parimale meesnäitlejale (auhind Elisalt)
+
+                        - Auhind parimale operaatorile (stipendium 1000 eurot)
+
+                        - Auhind parimale filmimuuusikale
+
+
+
+                        #### Debüütfilmide võistlusprogramm
+
+
+                        - Parima filmi auhind (stipendium 5000 eurot)
+
+                        - Kaks žürii eriauhinda
+
+
+
+                        #### Balti filmide võistlusprogramm
+
+
+                        - Parim Balti mängufilm (stipendium 3200 eurot)
+
+
+
+                        #### “Põhjusega mässajad” võistlusprogramm
+
+
+                        - Põhjusega mässaja auhind (stipendium 1200 eurot
+                        Nudistilt)
+
+
+
+                        #### 3 Teised auhinnad
+
+
+                        - Auhind publiku lemmikfilmile (stipendium 2000 eurot
+                        Tallinna linnalt)
+
+                        - Rahvusvaheline filmikriitikute (FIPRESCI) žürii auhind
+
+                        - Aasia filmikunsti edendamise võrgustiku (NETPAC) žürii
+                        auhind parimale aasia filmile
+
+                        - Eesti oikumeenilise žürii auhind
+
+                        - Elutööauhind
+
+                        - Teised auhinnade stipendium (stipendium 1000 eurot)
+                    contents_en: >-
+                        #### Official Selection Competition
+
+
+                        - Grand Prix for the Best Film (grant of 10 000 euros
+                        from the City of Tallinn, shared by the Director and
+                        Producer)
+
+                        - Award for Best Director (grant of 5000 euros)
+
+                        - Award for Best Script
+
+                        - Award for Best Actress (award from Elisa)
+
+                        - Award for Best Actor (award from Elisa)
+
+                        - Award for Best Cinematographer (grant of 1000 euros)
+
+                        - Award for Best Music
+
+
+
+                        #### First Feature Competition
+
+
+                        - Best Film Award (grant of 5000 euros, shared by the
+                        Director and Producer)
+
+                        - Two Special Jury Prizes
+
+
+
+                        #### Baltic Film Competition
+
+
+                        - Award for Best Baltic Feature Film (grant of 3200
+                        euros, shared by the Director and Producer)
+
+
+
+                        #### Rebels with a Cause Competition
+
+
+                        - Rebel with a Cause Award (grant of 1200 euros from
+                        Nudist)
+
+
+
+                        Additional Awards
+
+
+                        - Audience Award (grant of 2000 euros from the City of
+                        Tallinn)
+
+                        - FIPRESCI Award presented by International Federation
+                        of Film Critics
+
+                        - NETPAC Award for Best Asian film presented by Network
+                        for the Promotion of Asian Cinema
+
+                        - Estonian Oecumenical Jury Prize presented by the
+                        representatives of the largest congregations in Estonia
+
+                        - Lifetime Achievement Award
+
+                        - Bruno O’ya Award for Internationally Acknowledged
+                        Estonian Talent (with scholarship of 1000 euros)
+                    publish_et: true
+                    publish_en: true
+                    slug: pof-fi-article-12
+                order: 5
+                name:
+                    id: 3897
+                    et: Auhinnad
+                    en: Awards
+    -
+        id: 3
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        created_at: '2020-09-18T07:20:56.188Z'
+        updated_at: '2020-09-18T07:26:02.181Z'
+        order: 7
+        name: Пресса & Про
+        customUrl: press-i-pro
+        subMenuItem:
+            -
+                id: 4
+                namePrivate: Pressiteenistus
+                poffi_article:
+                    id: 39
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-17T14:43:17.579Z'
+                    updated_at: '2020-09-18T14:24:55.487Z'
+                    title_et: Pressiteenistus
+                    slug_et: pressiteenistus
+                    slug_en: pof-fi-article-4
+                    contents_et: >-
+                        Lugupeetud ajakirjanik!
+
+
+                        Pimedate Ööde filmifestivali pressimeeskond aitab teid
+                        meeleldi akrediteerimist ning pressilinastusi ja
+                        -konverentse puudutavate küsimuste korral ning
+                        intervjuude organiseerimisel.
+
+
+
+                        Akrediteering
+
+
+                        Akrediteerimine 23. PÖFFile algab 13. septembril ja
+                        kestab festivali lõpuni.
+
+                        Taotleda on võimalik kahte liiki akrediteeringut:
+
+
+                        - PRESS akrediteering võimaldab külastada ainult PÖFFi
+                        pressiseansse ja -konverentse ning kõiki filmitööstuse
+                        kohtumise Industry@Tallinn & Baltic Event avalikke
+                        üritusi ning on tasuta.
+
+                        - PRESS+ akrediteering võimaldab külastada nii PÖFFi
+                        pressi- kui tavaseansse ja kõiki filmitööstuse kohtumise
+                        Industry@Tallinn & Baltic Event avalikke üritusi ning
+                        maksab kuni 31. oktoobrini 35 eurot, alates 1.
+                        novembrist 50 eurot.
+
+
+                        Pressiakrediteeringu taotlemiseks külastage
+                        [**seda**](https://vp.eventival.eu/poff/24) lehekülge.
+
+
+
+                        Pressilistiga liitumine
+
+
+                        Kui te soovite saada PÖFFi pressiteateid ja -teavitusi
+                        otse oma postkasti, siis liituge meie
+                        [pressilistiga](http://eepurl.com/c0vNcz)!
+
+
+
+                        Informatsioon ja kontaktid
+
+
+                        - Akrediteeringu ja pressiüritustega seotud küsimustega
+                        pöörduge PÖFFi pressikoordinaatori Anna-Liiza Izbaši
+                        poole – press@poff.ee / +372 518 0659.
+
+                        - Festivali külastavate filmitegijate intervjueerimiseks
+                        kirjutage interviews@poff.ee.
+
+                        - Eestikeelset kommunikatsiooni puudutavate küsimustega
+                        tegeleb PÖFFi pressikoordinaator Tiit Tuumalu –
+                        tiit.tuumalu@poff.ee / +372 516 4204. 
+
+                        - Venekeelset kommunikatsiooni puudutavates küsimustes
+                        aitab PÖFFi vene kommunikatsioonikoordinaator Jaana
+                        Kalinistova – jaana.kalinistova@poff.ee / +372 56644650
+
+                        - Rahvusvahelise kommunikatsiooniga seotud küsimuste
+                        puhul ootab teie kõnesid PÖFFi kommunikatsioonijuht
+                        Hannes Aava – hannes.aava@poff.ee / +372 5552 9211.
+                    publish_et: true
+                    publish_en: true
+                    slug: pof-fi-article-4
+                    publish: true
+                order: 1
+                name: Пресс-служба
+            -
+                id: 5
+                namePrivate: Pressiteated
+                poffi_article:
+                    id: 40
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-17T14:50:18.488Z'
+                    updated_at: '2020-09-18T14:24:39.686Z'
+                    title_et: Pressiteated
+                    slug_et: pressiteated
+                    slug_en: pof-fi-article-5
+                    contents_et: >+
+                        https://mailchi.mp/poff/poffbarmak-281439Kui te soovite
+                        saada PÖFFi pressiteateid ja akrediteeringuga seotud
+                        infot otse oma postkasti, liituge PÖFFi pressilistiga
+                        [sellel aadressil](http://eepurl.com/HbReL).
+
+
+
+                        26.11.2019 – [PÖFF näitab Mark Soosaare Kihnu
+                        triloogiat](https://mailchi.mp/poff/poffkihnu281547-281619) 
+                         
+                        25.11.2019 – [Euroopa Filmifoorum Tallinnas keskendub
+                        Euroopa filmi- ja meediatööstuse
+                        tulevikule](https://mailchi.mp/poff/euroopa-filmifoorum-tallinnas-keskendub-euroopa-filmi-ja-meediatstuse-tulevikule)
+                         
+                        24.11.2019 – [Värske Grammy kandidaat esitleb PÖFFil
+                        filmi](https://mailchi.mp/poff/poffapparat281547-281579)
+                         
+                        24.11.2019 – [PÖFFi publik jookseb Michelangelole
+                        tormi](https://mailchi.mp/poff/poffpatt281547)
+                         
+                        23.11.2019 – [PÖFF näitab mitut tuliuut
+                        telesarja](https://mailchi.mp/poff/pofftelesari-281531)
+                         
+                        22.11.2019 – [PÖFF ja Fotografiska korraldavad nimekate
+                        fotograafide
+                        meistriklassi](https://mailchi.mp/poff/pofffotografiska-281495)
+                         
+                        20.11.2019 – [PÖFFile tuleb Kuldgloobuse
+                        võitja](https://mailchi.mp/poff/poffbarmak-281439)
+                         
+                        20.11.2019 – [PÖFF rullib lahti musta vaiba ja alustab
+                        võistlusfilmide
+                        näitamist](http://P%D6FF%20rullib%20lahti%20musta%20vaiba%20ja%20alustab%20v%F5istlusfilmide%20n%E4itamist)
+                         
+                        18.11.2019 – [Pressiteade: PÖFF Shorts korraldab
+                        A-klassi
+                        kokkutuleku](https://us7.campaign-archive.com/?u=c2426593c5ba2369b6e13a66e&id=54eb95ea41)
+                         
+                        18.11.2019 – [Filmimaailma tipptegijad viivad PÖFFil
+                        läbi
+                        meistriklasse](https://mailchi.mp/poff/filmimaailma-tipptegijad-viivad-tallinnas-lbi-meistriklasse)
+                         
+                        15.11.2019 – [PÖFF jõuab Elisa ja Levira vahendusel ka
+                        teleekraanidele](https://mailchi.mp/poff/pofftv-281307)
+                         ]
+                        15.11.2019 – [Bruno O´Ya noore talendi stipendiumi sai
+                        Rea Lest](https://mailchi.mp/poff/poffbrunooja-281275)
+                         
+                        14.11.2019 – [Täna algav PÖFF toob Tallinna araabia
+                        hõngu](https://mailchi.mp/poff/poffavamine-281263)
+                         
+                        12.11.2019 – [PÖFF Shorts valib esmakordselt kandidaadi
+                        Euroopa
+                        Filmiauhinnale](https://mailchi.mp/poff/shorts_est-281211)
+                         
+                        11.11.2019 – [PÖFFi Moekino uurib maailma elustiili ja
+                        kultuuri spektri
+                        kaudu](https://mailchi.mp/poff/poffmoekino-281203)
+                         
+                        8.11.2019 – [PÖFF kuulutas välja kogu
+                        kava](https://mailchi.mp/poff/poffkolmpaevak-281163)
+
+
+                        7.11.2019 – [PÖFFi elutööpreemia saab Andrei
+                        Kontšalovski](https://mailchi.mp/poff/poffelutoo1-281155)
+
+
+                        7.11.2019 – [Pressiteade: PÖFFi rahvusvahelises
+                        programmis Black Nights Stars osaleb kaks Eesti noort
+                        näitlejat](https://mailchi.mp/poff/stars2018-281123)
+
+
+                        6.11.2019 – [PÖFF kuulutas välja Saksa
+                        filmid](https://mailchi.mp/poff/poffsaksa-281119)
+
+
+                        5.11.2019 – [KinoFF kuulutas välja
+                        kava](https://mailchi.mp/poff/poffkinoffkava-281067)
+
+
+                        4.11.2019 – [PÖFFi fookuses on tänavu araabia
+                        maailm](https://mailchi.mp/poff/poffaraabia-281043)
+
+
+                        31.10.2019 – [PÖFF kuulutas välja mässavad
+                        filmid](https://mailchi.mp/poff/poffmassajad-281023)
+                         
+                        29.10.2019 – [PÖFFil selgub Baltikumi parim
+                        film](https://mailchi.mp/poff/balti-280983)
+                         
+                        25.10.2019 – [PÖFF Shortsi rahvuslikus
+                        võistlusprogrammis võistlevad uusimad Eesti lühi- ja
+                        animafilmid](https://mailchi.mp/poff/shorts_est-280959)
+                         
+                        24.10.2019 – [21 filmi võistlevad PÖFFil peaauhinna
+                        pärast](https://mailchi.mp/poff/poffpohivoistlus-280927)
+                         
+                        18.10.2019 – [PÖFF müüb soodsa hinnaga
+                        pileteid](https://mailchi.mp/poff/poffsoodusmuuk-280891)
+                         
+                        18.10.2019 – [PÖFF Shorts avalikustas animatsiooni
+                        võistlusprogrammi](https://mailchi.mp/poff/poff_shorts_competition_announced-280887)
+                         
+                        17.10.2019 – [PÖFFi debüütfilmide võistlus käsitleb
+                        teravaid
+                        teemasid](https://mailchi.mp/poff/poffkoikdebuudid-280871)
+                         
+                        16.10.2019 – [PÖFFi noorte- ja lastefilmide festivali
+                        Just Film piletimüük on
+                        avatud](https://mailchi.mp/poff/just-film-avalikustas-vistlusprogrammide-filmid-280855)
+                         
+                        14.10.2019 – [PÖFFi noorte- ja lastefilmide festival
+                        Just Film avalikustas rahvusvahelise noortefilmide
+                        võistlusprogrammi](https://mailchi.mp/poff/just-film-avalikustas-vistlusprogrammide-filmid-280827)
+                         
+                        11.10.2019 – [PÖFF Shortsil seisavad Eesti filmitegijad
+                        kõrvuti maailma
+                        parimatega](https://mailchi.mp/poff/poff_shorts_competition_announced-280795)
+                         
+                        10.10.2019 – [PÖFFi põhivõistlusel saavad kokku nimekad
+                        autorid](https://mailchi.mp/poff/poffesimeseddebuudid-280779)
+                         
+                        07.10.2019 – [PÖFFi debüütfilmide võistlus toob üheksa
+                        maailmaesilinastust](https://mailchi.mp/poff/poffesimeseddebuudid-280739)
+
+
+                        01.10.2019 – [KinoFFi plakatikonkursi võitsid
+                        kaevurikiivriga hunt ja
+                        matrjoška](https://mailchi.mp/poff/poffvabatahtlikeautasu-280719)
+
+
+                        20.09.2019 – [PÖFF sai vabatahtlike sõbra
+                        märgi](https://mailchi.mp/poff/poffvabatahtlikeautasu-280691)
+                         
+                        18.09.2019 – [Just Film kutsub lapsi ja noori filme
+                        hindama](https://mailchi.mp/poff/pxwftyr1x4-280675)
+                         
+                        13.09.2019 – [PÖFFi pressiakrediteering avatud
+                        2019](https://mailchi.mp/poff/alanud-on-pressi-akrediteerimine-22-pimedate-de-filmifestivalile-280659)
+                         
+                        11.09.2019 – [PÖFF kuulutab välja vabatahtlike
+                        konkursi](https://mailchi.mp/poff/poffvabatahtlikud-280623)
+                         
+                        23.08.2019 – [PÖFF asutab Ida-Virumaale
+                        filmifestivali](https://mailchi.mp/poff/poffkinoff-280571)
+                         
+                        20.08.2019 – [Tartuffi populaarseimad seansid kogusid
+                        üle 2000
+                        vaataja](https://mailchi.mp/poff/tartufflopp-280563)
+                         
+                        12.08.2019 – [Tartus avab täna uksed Eesti suurim
+                        vabaõhukino](https://mailchi.mp/poff/tartuffavapaev-280531)
+                         
+                        07.08.2019 – [Tartuffi avamine on pühendatud Lõuna-Eesti
+                        filmimaagiale](https://mailchi.mp/poff/tartuffavamine-280523)
+
+
+                        31.07.2019 – [Tartuffi kavas on publikulemmikuid siit-
+                        ja sealtpoolt
+                        ookeani](https://mailchi.mp/poff/tartuffkava-280503)
+                         
+                        17.07.2019 – [Jaapan tunnustas PÖFFi kõrge
+                        autasuga](https://mailchi.mp/poff/poffjaapan-280495)
+
+                    publish_et: true
+                    publish_en: true
+                    title: Пресс-релизы
+                    slug: pof-fi-article-11
+                    lead: ''
+                    contents: >
+                        Если Вы желаете получать пресс-релизы PÖFF и связанную с
+                        аккредитацией информацию прямо на свою эл. почту, то
+                        присоединяйтесь к пресс-листу PÖFF [по этому
+                        адресу](http://eepurl.com/HbReL).
+
+
+                        25.10.2019 – [В основную конкурсную программу PÖFF вошел
+                        21
+                        фильм](https://mailchi.mp/poff/poffesimeseddebuudid-280963)
+                         
+                        24.10.2019 – [Just Film покажет фильмы с русскими
+                        субтитрами](https://mailchi.mp/poff/just-film-avalikustas-vistlusprogrammide-filmid-280931)
+                         
+                        17.10.2019 – [Режиссеры-дебютанты PÖFF представили
+                        фильмы на острые
+                        темы](https://mailchi.mp/poff/poffesimeseddebuudid-280863)
+                         
+                        10.10.2019 – [За гран-при PÖFF поборются именитые
+                        режиссёры](https://mailchi.mp/poff/poffesimeseddebuudid-280791)
+                         
+                        07.10.2019 – [Программа дебютов PÖFF включит девять
+                        мировых
+                        премьер](https://mailchi.mp/poff/poffesimeseddebuudid-280747)
+
+
+                        02.10.2019 – [В конкурсе плакатов KinoFF победу одержали
+                        волк в шахтерской каске и
+                        волк-матрешка](https://mailchi.mp/poff/poffvabatahtlikeautasu-280723)
+
+
+                        13.09.2019 – [Начался прием заявок на аккредитацию
+                        представителей СМИ на XXIII кинофестиваль «Тёмные ночи»
+                        (PÖFF)](https://mailchi.mp/poff/rcq32xrvju-280663)
+                         
+                        10.09.2019 – [PÖFF объявляет набор
+                        волонтёров](https://mailchi.mp/poff/poffvabatahtlikud-280635)
+                         
+                        27.08.2019 – [KinoFF объявляет конкурс на дизайн
+                        кинофестиваля](https://mailchi.mp/poff/hoffvenenr2-280583)
+                         
+                        23.08.2019 – [PÖFF учредил новый кинофестиваль в
+                        Ида-Вирумаа](https://mailchi.mp/poff/hoffvenenr2-280575)
+                         
+                        27.08.2019 – [KinoFF объявляет конкурс на дизайн
+                        кинофестиваля](https://mailchi.mp/poff/hoffvenenr2-280583)
+                    publish: true
+                order: 2
+                name: Пресс-релизы
