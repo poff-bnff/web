@@ -124,8 +124,46 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
+Small: &Small
+    ext: (text)
+    url:  (text)
+    hash:  (text)
+    mime:  (text)
+    name:  (text)
+    path:  (text)
+    size:  (number)
+    width:  (number)
+    heigth:  (number)
+
+Thumbnail: &Thumbnail
+    ext:  (text)
+    url:  (text)
+    hash:  (text)
+    mime:  (text)
+    name:  (text)
+    path:  (text)
+    size:  (number)
+    width:  (number)
+    heigth:  (number)
+
 StrapiMedia: &StrapiMedia
     id: (number)
+    name: (text)
+    alternativeText: (text)
+    caption: (text)
+    width:
+    height:
+    formats:
+        small: *Small
+        thumbnail: *Thumbnail
+    hash:
+    ext:
+    mime:
+    size:
+    url:
+    previewUrl:
+    provider:
+    provider_metadata:
 
 Media: &Media
     imageDefault:
