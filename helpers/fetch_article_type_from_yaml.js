@@ -121,7 +121,6 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         } else {
             var publishFrom= new Date(element.publishFrom)
         }
-
         if (element.publishUntil) {
             var publishUntil = new Date(element.publishUntil)
         }
@@ -134,13 +133,10 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         if (element[`publish_${lang}`] === null || element[`publish_${lang}`] === false) {
             return;
         }
-        if (element[`title_${lang}`] < 2) {
-            // console.log(element[`title_${lang}`], ' - ', element[`title_${lang}`] < 2);
+        if (element[`title_${lang}`] < 1) {
             return;
         }
-        // var published = element.indexOf(`publish_${lang}`);
-        // rueten func. is run for each element separately instead of whole data, that is
-        // for the purpose of saving slug_en before it will be removed by rueten func.
+
         let doNotTouchTheTypes = [];
         if(element.article_types && element.article_types[0]) {
             for (let typeIndex = 0; typeIndex < element.article_types.length; typeIndex++) {
@@ -148,19 +144,15 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 doNotTouchTheTypes.push(oneType);
             }
         }
-
+        // rueten func. is run for each element separately instead of whole data, that is
+        // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang);
         element.article_types = doNotTouchTheTypes;
 
-        // console.log(element)
         for (artType of element.article_types) {
-
-            // console.log(dirPath, artType.name, slugEn)
             element.directory = path.join(dirPath, artType.name, slugEn)
                 fs.mkdirSync(element.directory, { recursive: true });
-                //let languageKeys = ['en', 'et', 'ru'];
                 for (key in element) {
-
                     if (key === "slug") {
                         element.path = path.join(artType[`slug_${lang}`], element[key])
 
@@ -171,10 +163,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 element.data = dataFrom;
 
                 generateYaml(element, element, dirPath, lang, writeIndexFile, artType.name);
-
         }
-
-
     });
 }
 
