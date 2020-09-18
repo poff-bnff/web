@@ -12,7 +12,6 @@ const mapping = {
     'justfilm.ee': 'JustFilmiMenu',
     'shorts.poff.ee': 'ShortsiMenu'
 }
-
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIMENUDATA = STRAPIDATA[mapping[DOMAIN]]
