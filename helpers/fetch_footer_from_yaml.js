@@ -109,7 +109,7 @@ function processData(data, lang, CreateYAML) {
 
 function CreateYAML(buffer, lang) {
     // console.log(buffer);
-    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
+    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global_static/global_s.${lang}.yaml`, 'utf8'))
     // console.log(globalData);
     globalData.footer = buffer
 
