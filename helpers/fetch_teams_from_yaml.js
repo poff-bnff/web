@@ -2,6 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const http = require('http');
 const path = require('path');
+const rueten = require('./rueten.js')
 
 const sourceFolder =  path.join(__dirname, '../source/_fetchdir/');
 const writeToFilePath = sourceFolder;
@@ -35,46 +36,6 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, fetchFrom,
     const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 
     callback(data[fetchFrom], dirPath, lang, writeIndexFile, dataFrom, showErrors);
-}
-
-function rueten(obj, lang) {
-    const regex = new RegExp(`.*_${lang}$`, 'g');
-
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            const element = obj[key];
-        }
-
-        if (obj[key] === null) {
-            delete obj[key];
-            continue
-        }
-        else if (key === lang) {
-            return obj[key]
-        } else if (key.match(regex) !== null) {
-            obj[key.substring(0, key.length-3)] = obj[key];
-            delete obj[key];
-        } else if (typeof(obj[key]) === 'object') {
-            obj[key] = rueten(obj[key], lang)
-        }
-        if (Array.isArray(obj[key])) {
-            if (obj[key].length > 0) {
-                for (var i = 0; i < obj[key].length; i++) {
-                    if (obj[key][i] === '') {
-                        // console.log('EMPTY ONE');
-                        obj[key].splice(i, 1);
-                        i--;
-                    }
-                }
-                if (obj[key].length === 0) {
-                    delete obj[key];
-                }
-            }else{
-                delete obj[key];
-            }
-        }
-    }
-    return obj
 }
 
 
