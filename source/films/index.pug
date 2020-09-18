@@ -6,30 +6,33 @@ block content
 
     if self.data.films
         main.grid_films
-            each val in self.data.films
-                a.card_film(href= `/${lang_path}film/${val.slug}`)
+            each film in self.data.films
+                a.card_film(href= `/${lang_path}film/${film.slug}`)
                     .container_frame_16_9
-                        if self.data.pictures.filmslugs[val.path]
-                            if self.data.pictures.filmslugs[val.path].poster
-                                img.container_contents_16_9(src=`/assets/img/img_films/${val.path}/${self.data.pictures.filmslugs[val.path].poster}` alt = val[`filmTitle_${self.locale}`])
-                            else
-                                img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
-                        else
-                            img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
+                        each media in film.media
+                            //- - console.log(film.media)
+                            if film.media['posters']
+                                //- -console.log(film.media['posters'][0]['name'])
+                            //-     if self.data.pictures.filmslugs[film.path].posters
+                            //-         img.container_contents_16_9(src=`/assets/img/img_films/${film.path}/${self.data.pictures.filmslugs[film.path].poster}` alt = film[`filmTitle_${self.locale}`])
+                            //-     else
+                            //-         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = film[`filmTitle_${self.locale}`])
+                            //- else
+                            //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = film[`filmTitle_${self.locale}`])
                     .card_film_title
-                        h3.film_title_locale= val.title
+                        h3.film_title_locale= film.title
                     .card_film_info
                         each p, locale in self.otherLocalePaths
-                            if val[`title_${locale}`]
+                            if film[`title_${locale}`]
                                 .str_info_grid_3
                                     .str_info_label= self.label.film.titleSec
-                                    .str_info_value= val[`title_${locale}`]
-                        if val.credentials.director
+                                    .str_info_value= film[`title_${locale}`]
+                        if film.credentials.director
                             .str_info_grid_3
                                 .str_info_label= self.label.film.director
-                                .str_info_value= val.credentials.director.join(', ')
-                        if val.credentials.cast
+                                .str_info_value= film.credentials.director.join(', ')
+                        if film.credentials.cast
                             .str_info_grid_3
                                 .str_info_label= self.label.film.cast
-                                .str_info_value= val.credentials.cast.join(', ')
+                                .str_info_value= film.credentials.cast.join(', ')
 

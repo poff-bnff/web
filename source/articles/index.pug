@@ -50,7 +50,6 @@ block content
 
                             if val.title && val.title.length > 1
                                 - var article_slug = val.slug
-                                //- - var article_pictures = self.data.article_pictures.articles[article_slug]
                                 a(href= `/${lang_path}${artTypeForPath}/${val.slug}`).card_article
                                     .container_frame_16_9
                                         if val.media && val.media.image && val.media.image[0]
