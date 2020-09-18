@@ -31,8 +31,8 @@ node ./helpers/fetch_heroarticle_from_yaml.js
 echo 'fetch_trioblock_from_yaml'
 node ./helpers/fetch_trioblock_from_yaml.js
 
-# echo 'fetch_teams_from_yaml'
-# node ./helpers/fetch_teams_from_yaml.js
+echo 'fetch_teams_from_yaml'
+node ./helpers/fetch_teams_from_yaml.js
 
 echo 'fetch_menu_from_yaml'
 node ./helpers/fetch_menu_from_yaml.js
