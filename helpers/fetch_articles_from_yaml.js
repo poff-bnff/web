@@ -77,7 +77,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang);
-
+        element.article_types = doNotTouchTheTypes;
         element.directory = dirPath + slugEn;
         // console.log(element.directory);
         // element = rueten(element, `_${lang}`);
@@ -117,7 +117,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
 
             // element.aliases = aliases;
             // rueten(element, `_${lang}`);
-            element.article_types = doNotTouchTheTypes;
+
             allData.push(element);
             element.data = dataFrom;
 

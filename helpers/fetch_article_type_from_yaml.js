@@ -117,25 +117,35 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         }
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
+        let doNotTouchTheTypes = [];
+        if(element.article_types && element.article_types[0]) {
+            for (let typeIndex = 0; typeIndex < element.article_types.length; typeIndex++) {
+                const oneType = element.article_types[typeIndex];
+                doNotTouchTheTypes.push(oneType);
+            }
+        }
+
         element = rueten(element, lang);
+        element.article_types = doNotTouchTheTypes;
+
         // console.log(element)
         for (artType of element.article_types) {
 
-            // console.log(dirPath, artType, slugEn)
-            element.directory = path.join(dirPath, artType, slugEn)
-
+            // console.log(dirPath, artType.name, slugEn)
+            element.directory = path.join(dirPath, artType.name, slugEn)
                 fs.mkdirSync(element.directory, { recursive: true });
                 //let languageKeys = ['en', 'et', 'ru'];
                 for (key in element) {
 
                     if (key === "slug") {
-                        element.path = path.join(artType, element[key])
+                        element.path = path.join(artType[`slug_${lang}`], element[key])
+
                     }
                 }
                 allData.push(element);
                 element.data = dataFrom;
 
-                generateYaml(element, element, dirPath, lang, writeIndexFile, artType);
+                generateYaml(element, element, dirPath, lang, writeIndexFile, artType.name);
 
         }
 
@@ -144,22 +154,6 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
     });
 }
 
-function makeCSV(obj, element, lang) {
-    // console.log(obj);
-    for (const [key, value] of Object.entries(obj)) {
-        if (
-            value &&
-            value != "" &&
-            !value.toString().includes("[object Object]")
-        ) {
-            element[`${key}CSV`] = value.toString();
-        } else if (value && value != "") {
-            // rueten(value, `_${lang}`);
-            makeCSV(value, element, lang);
-        }
-        // console.log(`${key}: ${value}`);
-    }
-}
 
 let allNews = [];
 let allSponsor = [];
@@ -181,17 +175,17 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     let allDataYAML = yaml.safeDump(allData, { noRefs: true, indent: "4" });
 
-    if (artType === "News") {
-        allNews.push(element);
-    } else if (artType === "SponsorStory") {
-        allSponsor.push(element);
-    } else if (artType === "Interview") {
-        allInterview.push(element);
-    } else if (artType === "About") {
-        allAbout.push(element);
-    } else if (artType === "IndustryProject") {
-        allIndustry.push(element);
-    }
+    // if (artType === "News") {
+    //     allNews.push(element);
+    // } else if (artType === "SponsorStory") {
+    //     allSponsor.push(element);
+    // } else if (artType === "Interview") {
+    //     allInterview.push(element);
+    // } else if (artType === "About") {
+    //     allAbout.push(element);
+    // } else if (artType === "IndustryProject") {
+    //     allIndustry.push(element);
+    // }
     //console.log(allAbout)
 
 
