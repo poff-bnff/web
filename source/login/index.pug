@@ -22,7 +22,6 @@ block content
     button(onclick='login()') Login
     br
     br
-    button(onclick='loadCognitoUser()') Say Hello to Cognito user
     br
     a(href='https://tests.auth.us-east-2.amazoncognito.com/logout?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
     br
@@ -30,10 +29,11 @@ block content
     h1#hello
     br
     br
-    br
     a(href='https://tests.auth.us-east-2.amazoncognito.com/login?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
     br
     button(onclick='toLocalhost()') Switch back to localhost
+    br
+    button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
 
 
     style.
@@ -47,6 +47,12 @@ block content
         const REFRESH_TOKEN = "REFRESH_TOKEN";
         const ID_TOKEN = "ID_TOKEN";
 
+        if (localStorage.getItem('ID_TOKEN')){
+            hello.innerHTML = 'Hello, ' + name;
+        } else {
+            hello.innerHTML = 'Not logged in'
+        }
+
         var code = new URLSearchParams(url.search).get('code')
         console.log(code);
         if (code) {
@@ -56,6 +62,11 @@ block content
         } else {
             console.log('Not sent ')
         }
+
+
+
+
+
 
 
 
@@ -98,10 +109,12 @@ block content
         }
 
 
-        function storeAuthentication(JSONresult) {
+        async function storeAuthentication(JSONresult) {
             localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
             localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
             localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+            await loadInfoFromIdtkn();
+            location.reload();
         }
 
         function getAccessToken() {
@@ -114,6 +127,7 @@ block content
             localStorage.removeItem(REFRESH_TOKEN);
             localStorage.removeItem(ID_TOKEN);
             console.log('LOGITUD VÄLJA');
+            location.reload();
         }
 
 
@@ -129,28 +143,28 @@ block content
             myHeaders.append('Authorization', `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`);
 
             var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
 
             console.log(requestOptions.headers);
 
-        await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/userInfo", requestOptions)
-            .then(response => response.text())
-            .then(result => {
-                console.log(result);
-                const JSONresult = JSON.parse(result);
-                console.log(JSONresult.name);
-                hello.innerHTML = 'Hello! ' + JSONresult.name;
-            })
-            .catch(error => console.log('error', error));
+            await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/userInfo", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    const JSONresult = JSON.parse(result);
+                    console.log(JSONresult.name);
+                    hello.innerHTML = 'Hello, ' + JSONresult.name + '(token+userInfo request)';
+                })
+                .catch(error => console.log('error', error));
         }
 
 
 
 
-        function login(){
+        async function login(){
 
             let loginUsername = document.getElementById('loginUsername').value;
             let loginPassword = document.getElementById('loginPassword').value;
@@ -177,20 +191,39 @@ block content
 
             var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
             cognitoUser.authenticateUser(authenticationDetails, {
-                onSuccess: function (result) {
+                onSuccess: async function (result) {
                     //- var accessToken = result.getAccessToken().getJwtToken();
                     localStorage.setItem('ACCESS_TOKEN', result.accessToken.jwtToken);
                     localStorage.setItem('REFRESH_TOKEN', result.refreshToken.token);
                     localStorage.setItem('ID_TOKEN', result.idToken.jwtToken);
+                    await loadInfoFromIdtkn();
+                    location.reload();
 
                     /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
                     var idToken = result.idToken.jwtToken;
+
                 },
 
                 onFailure: function(err) {
                     alert(JSON.stringify(err));
                 },
             });
+        }
+
+
+        async function loadInfoFromIdtkn(){
+            let response = await fetch(`https://kewlo9ntw1.execute-api.eu-north-1.amazonaws.com/dev/tkns`, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
+
+                });
+                let name1 = await response.json();
+                name = name1.message;
+                //- hello.innerHTML = 'Hello, ' + name.message;
+                //- return await response.json();
+                //- return processJsonResponse(response);
+
         }
 
 
