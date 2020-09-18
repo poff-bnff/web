@@ -12,7 +12,7 @@ if (process.env['DOMAIN'] === 'justfilm.ee') {
     var fetchFrom = 'POFFiMenu';
 }
 
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source_fetchdir/_fetchdir/strapiData.yaml', 'utf8'))
 DataToYAMLData(strapiData[fetchFrom]);
 
 function DataToYAMLData(strapiData){

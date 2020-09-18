@@ -249,7 +249,7 @@ const foo = async () => {
     }
 
     let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(__dirname + '/../source/strapiData.yaml', yamlStr, 'utf8')
+    fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
 
 }
 

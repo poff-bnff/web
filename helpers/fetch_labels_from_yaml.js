@@ -7,7 +7,7 @@ const sourceFolder =  path.join(__dirname, '../source/');
 // FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
 
 const modelName = 'LabelGroup'
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 
 function LabelsToYAMLData(strapiData) {
     LangSelect(strapiData, 'et')
