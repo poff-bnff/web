@@ -115,6 +115,30 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         if (!slugEn) {
             throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
+        var currentTime = new Date()
+        if (typeof(element.publishFrom) === 'undefined') {
+            var publishFrom= new Date(element.created_at)
+        } else {
+            var publishFrom= new Date(element.publishFrom)
+        }
+
+        if (element.publishUntil) {
+            var publishUntil = new Date(element.publishUntil)
+        }
+        if (currentTime < publishFrom) {
+            return;
+        }
+        if (publishUntil !== 'undefined' && publishUntil < currentTime) {
+            return;
+        }
+        if (element[`publish_${lang}`] === null || element[`publish_${lang}`] === false) {
+            return;
+        }
+        if (element[`title_${lang}`] < 2) {
+            // console.log(element[`title_${lang}`], ' - ', element[`title_${lang}`] < 2);
+            return;
+        }
+        // var published = element.indexOf(`publish_${lang}`);
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         let doNotTouchTheTypes = [];
@@ -142,13 +166,13 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
 
                     }
                 }
+
                 allData.push(element);
                 element.data = dataFrom;
 
                 generateYaml(element, element, dirPath, lang, writeIndexFile, artType.name);
 
         }
-
 
 
     });
@@ -203,12 +227,6 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
     // fs.writeFileSync(`${sourceFolder}_fetchdir/interviews.${lang}.yaml`, allInterviewYAML, "utf8");
     // fs.writeFileSync(`${sourceFolder}_fetchdir/about.${lang}.yaml`, allAboutYAML, "utf8");
     // fs.writeFileSync(`${sourceFolder}_fetchdir/industry.${lang}.yaml`, allIndustryYAML, "utf8");
-}
-
-function modifyData(element, key, lang) {
-    finalData = element[key][lang];
-    delete element[key];
-    element[key] = finalData;
 }
 
 fetchAllData(dataModel);

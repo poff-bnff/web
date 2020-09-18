@@ -62,11 +62,11 @@ header
                                 //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
                                 //- a(href=(p !== '/' ? p + '/' : '/'))= locale
 
-                                if !('publish' in self) || ((self[`publish_${locale}`] !== false) && (`publish_${locale}` in self))
+                                //- if !('publish' in self) || ((self[`publish_${locale}`] !== false) && (`publish_${locale}` in self))
                                     //- p= !('publish' in self) + ' or ' + ((self[`publish_${locale}`] !== false) && (`publish_${locale}` in self)) + ': ' + (self[`publish_${locale}`] !== false) + ' - ' + (`publish_${locale}` in self)
-                                    a(href=(p !== '/' ? p + '/' : '/'))= locale
-                                else
-                                    a= locale
+                                a(href=(p !== '/' ? p + '/' : '/'))= locale
+                                //- else
+                                //-     a= locale
 
             label.main_menu_toggle_label(for='main_menu_toggle')
                 span
