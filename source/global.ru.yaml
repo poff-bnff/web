@@ -101,7 +101,7 @@ footer:
         firstname: Jaan
         lastname: Leppik
     created_at: '2020-09-01T09:37:02.304Z'
-    updated_at: '2020-09-19T20:21:25.866Z'
+    updated_at: '2020-09-19T22:22:28.662Z'
     namePrivate: PÖFF
     domain:
         id: 1
@@ -236,16 +236,17 @@ footer:
             namePrivate: Contacts
             name: Контакт
             text: |-
-                Telliskivi 60A
-                Tallinn
+                Telliskivi 60a, 10412 Tallinn 
+                Tel: +372 5620 8308
+                E-mail: info@poff.ee
+                Registrikood: 80044767
+                KMKR: EE100520914
+                IBAN: EE791700017002751609
     logosSections:
         -
             id: 1
             order: 1
-            name:
-                id: 3843
-                et: Esitlejad
-                en: Presenters
+            name: Presenters
             logo:
                 -
                     id: 1
@@ -332,307 +333,6 @@ menu:
         order: 1
         name: Новости
         customUrl: novosti
-    -
-        id: 2
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-        updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-        created_at: '2020-09-08T12:39:44.630Z'
-        updated_at: '2020-09-17T20:38:45.490Z'
-        order: 9
-        name: Фестиваль
-        subMenuItem:
-            -
-                id: 1
-                namePrivate: Meeskond
-                customUrl: team
-                order: 3
-                name: Команда
-            -
-                id: 2
-                namePrivate: Fesrtivali tutvustus
-                poffi_article:
-                    id: 38
-                    created_by: 6
-                    updated_by: 6
-                    created_at: '2020-09-16T11:04:26.573Z'
-                    updated_at: '2020-09-19T19:59:54.606Z'
-                    title_et: Pimedate Ööde filmifestival
-                    slug_et: p-imedate-oeoede-filmifestival
-                    title_en: Black Nights Film Festival
-                    slug_en: black-nights-film-festival
-                    lead_en: ''
-                    contents_et: >-
-                        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis
-                        toob iga aasta novembris maailmakino värskemad ning
-                        haaravamad palad ühes rahvusvaheliste filmitegijatega
-                        koju kätte. PÖFFi selle aasta programmist leiab üle 250
-                        mängufilmi ning enam kui 300 lühi- ja animafilmi.  
-
-
-                        Igal aastal korraldatakse üle maailma umbes 4000
-                        filmifestivali, millest vaid viisteist on Rahvusvahelise
-                        Produtsentide Liitude Föderatsiooni poolt saanud
-                        A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
-                        Berliini, Veneetsia ning teiste maailma
-                        tipp-filmifestivalidega sellesse A-kategooriasse.
-
-
-
-                        #### Tõutunnused
-
-
-                        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab
-                        kaugemale. Ilma teie, oma kinopubliku ja toetajateta
-                        poleks 1997. aastal suuresti põlve otsas loodud
-                        filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
-                        aastal pidevas liikumises iselaadi koostegemine, kus
-                        publiku ja filmielamuste ühendavaks lüliks on
-                        vabatahtlikud, keda on tänaseks enam kui 300. Koos oleme
-                        siin väikeses Eestis suutnud süsimustad novembrikuu ööd
-                        täita omanäoliste virmalistega, mis eredate
-                        filmielamustena end kinolinadel ilmutavad ja
-                        filmitegijaid eri maailma nurkadest meid külastama
-                        toovad.
-
-
-                        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad,
-                        kuid teekonnad on igal aastal erinevad. Sel aastal
-                        avastame Araabiat läbi selle viimase kümne aasta
-                        parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
-                        südikuse kõrval ka tahe näha kaugemale silmapiirist, et
-                        hoida oma maailmapilti pidevas avardumises. Nii kulgeb
-                        PÖFFi programm igal aastal väljaspool oma mugavustsooni.
-                        Pöffihundid ei pelga uusi kultuuriruume, põletavaid
-                        küsimusi ega emotsioone, mis naerutavad, rabavad ja
-                        liigutavad oma karges eheduses.
-
-
-                        <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/oZLMwp13goE"
-                        frameborder="0" allow="accelerometer; autoplay;
-                        clipboard-write; encrypted-media; gyroscope;
-                        picture-in-picture" allowfullscreen></iframe>
-
-
-                        ###### PÖFF 2019 Teaser Trailer
-                    contents_en: >-
-                        Started in 1997, the Tallinn Black Nights Film Festival
-                        has grown into one of the biggest film festivals in
-                        Northern Europe and busiest regional industry platforms,
-                        hosting more than 1000 guests and industry delegates and
-                        over 160 journalists. The festival screens around 250
-                        features and more than 300 shorts and animations and
-                        sees an attendance of 80 000 people annually. 
-
-
-                        As of 2014 the festival holds the FIAPF accreditation
-                        for holding an international competition programme which
-                        puts the festival into the so- called A-category of film
-                        festivals, alongside other 14 festivals in the world.
-
-
-
-                        #### Join the Wolf Pack
-
-
-                        A PÖFF Wolf is a pack animal who knows that he’ll get
-                        farther working together with the others. Without you,
-                        our cinema audience and supporters, this film festival,
-                        largely cobbled together on pure enthusiasm in 1997,
-                        would not be what it is today. Every year, PÖFF is kept
-                        in constant movement by wonderful collaboration where
-                        the audience and the films are connected by volunteers,
-                        more than 300 by today. Together in our small Estonia,
-                        we have succeeded in filling the black nights of
-                        November with unique northern lights which manifest as
-                        bright film experiences on cinema screens and attract
-                        filmmakers from different corners of the world to enjoy
-                        it all with us.
-
-
-                        The gathering places of the PÖFF Wolves in Estonian
-                        cinemas remain the same, but the routes are different
-                        every year. This year, the festival will take you on a
-                        journey to Arab countries to enjoy the best of the Arab
-                        cinema from the past 10 years. Besides grit and courage,
-                        PÖFF’s growth preconditions include the will and desire
-                        to see past the horizon in order to constantly broaden
-                        our view of the world. Thus, PÖFF’s programme always
-                        wanders beyond its comfort zone. The PÖFF Wolves are not
-                        afraid of new cultural spaces, burning questions and
-                        emotions which make us laugh, astound us and move us in
-                        their bracing authenticity.
-
-
-                        <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/oZLMwp13goE"
-                        frameborder="0" allow="accelerometer; autoplay;
-                        clipboard-write; encrypted-media; gyroscope;
-                        picture-in-picture" allowfullscreen></iframe>
-
-
-                        ###### PÖFF 2019 Teaser Trailer
-                    publish_et: true
-                    publish_en: true
-                    slug: pof-fi-article-19
-                customUrl: ''
-                order: 1
-                name: О фестивале
-            -
-                id: 3
-                namePrivate: Auhinnad
-                poffi_article:
-                    id: 41
-                    created_by: 6
-                    updated_by: 6
-                    created_at: '2020-09-17T20:35:05.638Z'
-                    updated_at: '2020-09-18T09:47:24.437Z'
-                    title_et: Auhinnad
-                    slug_et: auhinnad
-                    title_en: ''
-                    slug_en: awards
-                    contents_et: >-
-                        #### Põhivõistlusprogramm
-
-
-                        - Grand prix parimale filmile (stipendium 10 000 eurot
-                        Tallinna linnalt)
-
-                        - Auhind parimale režissöörile (stipendium 5000 eurot)
-
-                        - Auhind parimale stsenaariumile
-
-                        - Auhind parimale naisnäitlejale (auhind Elisalt)
-
-                        - Auhind parimale meesnäitlejale (auhind Elisalt)
-
-                        - Auhind parimale operaatorile (stipendium 1000 eurot)
-
-                        - Auhind parimale filmimuuusikale
-
-
-
-                        #### Debüütfilmide võistlusprogramm
-
-
-                        - Parima filmi auhind (stipendium 5000 eurot)
-
-                        - Kaks žürii eriauhinda
-
-
-
-                        #### Balti filmide võistlusprogramm
-
-
-                        - Parim Balti mängufilm (stipendium 3200 eurot)
-
-
-
-                        #### “Põhjusega mässajad” võistlusprogramm
-
-
-                        - Põhjusega mässaja auhind (stipendium 1200 eurot
-                        Nudistilt)
-
-
-
-                        #### 3 Teised auhinnad
-
-
-                        - Auhind publiku lemmikfilmile (stipendium 2000 eurot
-                        Tallinna linnalt)
-
-                        - Rahvusvaheline filmikriitikute (FIPRESCI) žürii auhind
-
-                        - Aasia filmikunsti edendamise võrgustiku (NETPAC) žürii
-                        auhind parimale aasia filmile
-
-                        - Eesti oikumeenilise žürii auhind
-
-                        - Elutööauhind
-
-                        - Teised auhinnade stipendium (stipendium 1000 eurot)
-                    contents_en: >-
-                        #### Official Selection Competition
-
-
-                        - Grand Prix for the Best Film (grant of 10 000 euros
-                        from the City of Tallinn, shared by the Director and
-                        Producer)
-
-                        - Award for Best Director (grant of 5000 euros)
-
-                        - Award for Best Script
-
-                        - Award for Best Actress (award from Elisa)
-
-                        - Award for Best Actor (award from Elisa)
-
-                        - Award for Best Cinematographer (grant of 1000 euros)
-
-                        - Award for Best Music
-
-
-
-                        #### First Feature Competition
-
-
-                        - Best Film Award (grant of 5000 euros, shared by the
-                        Director and Producer)
-
-                        - Two Special Jury Prizes
-
-
-
-                        #### Baltic Film Competition
-
-
-                        - Award for Best Baltic Feature Film (grant of 3200
-                        euros, shared by the Director and Producer)
-
-
-
-                        #### Rebels with a Cause Competition
-
-
-                        - Rebel with a Cause Award (grant of 1200 euros from
-                        Nudist)
-
-
-
-                        Additional Awards
-
-
-                        - Audience Award (grant of 2000 euros from the City of
-                        Tallinn)
-
-                        - FIPRESCI Award presented by International Federation
-                        of Film Critics
-
-                        - NETPAC Award for Best Asian film presented by Network
-                        for the Promotion of Asian Cinema
-
-                        - Estonian Oecumenical Jury Prize presented by the
-                        representatives of the largest congregations in Estonia
-
-                        - Lifetime Achievement Award
-
-                        - Bruno O’ya Award for Internationally Acknowledged
-                        Estonian Talent (with scholarship of 1000 euros)
-                    publish_et: true
-                    publish_en: true
-                    slug: pof-fi-article-12
-                order: 5
-                name:
-                    id: 3897
-                    et: Auhinnad
-                    en: Awards
     -
         id: 3
         created_by:
@@ -838,7 +538,7 @@ menu:
                         pileteid](https://mailchi.mp/poff/poffsoodusmuuk-280891)
                          
                         18.10.2019 – [PÖFF Shorts avalikustas animatsiooni
-                        võistlusprogrammi](https://mailchi.mp/poff/poff_shorts_competition_announced-280887)
+                        v��istlusprogrammi](https://mailchi.mp/poff/poff_shorts_competition_announced-280887)
                          
                         17.10.2019 – [PÖFFi debüütfilmide võistlus käsitleb
                         teravaid
@@ -920,7 +620,7 @@ menu:
                         24.10.2019 – [Just Film покажет фильмы с русскими
                         субтитрами](https://mailchi.mp/poff/just-film-avalikustas-vistlusprogrammide-filmid-280931)
                          
-                        17.10.2019 – [Режиссеры-��ебютанты PÖFF представили
+                        17.10.2019 – [Режиссеры-дебютанты PÖFF представили
                         фильмы на острые
                         темы](https://mailchi.mp/poff/poffesimeseddebuudid-280863)
                          
@@ -947,7 +647,7 @@ menu:
                         27.08.2019 – [KinoFF объявляет конкурс на дизайн
                         кинофестиваля](https://mailchi.mp/poff/hoffvenenr2-280583)
                          
-                        23.08.2019 – [PÖFF учредил новый кинофестиваль в
+                        23.08.2019 – [PÖFF ��чредил новый кинофестиваль в
                         Ида-Вирумаа](https://mailchi.mp/poff/hoffvenenr2-280575)
                          
                         27.08.2019 – [KinoFF объявляет конкурс на дизайн
@@ -955,3 +655,427 @@ menu:
                     publish: true
                 order: 2
                 name: Пресс-релизы
+    -
+        id: 2
+        created_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        updated_by:
+            id: 6
+            firstname: Jaan
+            lastname: Leppik
+        created_at: '2020-09-08T12:39:44.630Z'
+        updated_at: '2020-09-19T21:57:13.055Z'
+        order: 9
+        name: Фестиваль
+        subMenuItem:
+            -
+                id: 1
+                namePrivate: Meeskond
+                customUrl: team
+                order: 3
+                name: Команда
+            -
+                id: 2
+                namePrivate: Fesrtivali tutvustus
+                poffi_article:
+                    id: 38
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-16T11:04:26.573Z'
+                    updated_at: '2020-09-19T21:59:36.060Z'
+                    title_et: Pimedate Ööde filmifestival
+                    slug_et: p-imedate-oeoede-filmifestival
+                    title_en: Black Nights Film Festival
+                    slug_en: black-nights-film-festival
+                    lead_en: ''
+                    contents_et: >-
+                        PÖFF on üks suurimaid Põhja-Euroopa filmifestivale, mis
+                        toob iga aasta novembris maailmakino värskemad ning
+                        haaravamad palad ühes rahvusvaheliste filmitegijatega
+                        koju kätte. PÖFFi selle aasta programmist leiab üle 250
+                        mängufilmi ning enam kui 300 lühi- ja animafilmi.  
+
+
+                        Igal aastal korraldatakse üle maailma umbes 4000
+                        filmifestivali, millest vaid viisteist on Rahvusvahelise
+                        Produtsentide Liitude Föderatsiooni poolt saanud
+                        A-kategooria sertifikaadi. PÖFF kuulub ühes Cannes’i,
+                        Berliini, Veneetsia ning teiste maailma
+                        tipp-filmifestivalidega sellesse A-kategooriasse.
+
+
+
+                        #### Tõutunnused
+
+
+                        Pöffihunt on karjaloom, kes teab, et kokku hoides jõuab
+                        kaugemale. Ilma teie, oma kinopubliku ja toetajateta
+                        poleks 1997. aastal suuresti põlve otsas loodud
+                        filmifestival see, mis ta on tänaseks. PÖFFi hoiab igal
+                        aastal pidevas liikumises iselaadi koostegemine, kus
+                        publiku ja filmielamuste ühendavaks lüliks on
+                        vabatahtlikud, keda on tänaseks enam kui 300. Koos oleme
+                        siin väikeses Eestis suutnud süsimustad novembrikuu ööd
+                        täita omanäoliste virmalistega, mis eredate
+                        filmielamustena end kinolinadel ilmutavad ja
+                        filmitegijaid eri maailma nurkadest meid külastama
+                        toovad.
+
+
+                        Pöffihuntide kogunemiskohad püsivad Eesti kinodes samad,
+                        kuid teekonnad on igal aastal erinevad. Sel aastal
+                        avastame Araabiat läbi selle viimase kümne aasta
+                        parimate filmipalade. PÖFFi kasvutingimuste hulka kuulub
+                        südikuse kõrval ka tahe näha kaugemale silmapiirist, et
+                        hoida oma maailmapilti pidevas avardumises. Nii kulgeb
+                        PÖFFi programm igal aastal väljaspool oma mugavustsooni.
+                        Pöffihundid ei pelga uusi kultuuriruume, põletavaid
+                        küsimusi ega emotsioone, mis naerutavad, rabavad ja
+                        liigutavad oma karges eheduses.
+
+
+                        <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/oZLMwp13goE"
+                        frameborder="0" allow="accelerometer; autoplay;
+                        clipboard-write; encrypted-media; gyroscope;
+                        picture-in-picture" allowfullscreen></iframe>
+
+
+                        ###### PÖFF 2019 Teaser Trailer
+                    contents_en: >-
+                        Started in 1997, the Tallinn Black Nights Film Festival
+                        has grown into one of the biggest film festivals in
+                        Northern Europe and busiest regional industry platforms,
+                        hosting more than 1000 guests and industry delegates and
+                        over 160 journalists. The festival screens around 250
+                        features and more than 300 shorts and animations and
+                        sees an attendance of 80 000 people annually. 
+
+
+                        As of 2014 the festival holds the FIAPF accreditation
+                        for holding an international competition programme which
+                        puts the festival into the so- called A-category of film
+                        festivals, alongside other 14 festivals in the world.
+
+
+
+                        #### Join the Wolf Pack
+
+
+                        A PÖFF Wolf is a pack animal who knows that he’ll get
+                        farther working together with the others. Without you,
+                        our cinema audience and supporters, this film festival,
+                        largely cobbled together on pure enthusiasm in 1997,
+                        would not be what it is today. Every year, PÖFF is kept
+                        in constant movement by wonderful collaboration where
+                        the audience and the films are connected by volunteers,
+                        more than 300 by today. Together in our small Estonia,
+                        we have succeeded in filling the black nights of
+                        November with unique northern lights which manifest as
+                        bright film experiences on cinema screens and attract
+                        filmmakers from different corners of the world to enjoy
+                        it all with us.
+
+
+                        The gathering places of the PÖFF Wolves in Estonian
+                        cinemas remain the same, but the routes are different
+                        every year. This year, the festival will take you on a
+                        journey to Arab countries to enjoy the best of the Arab
+                        cinema from the past 10 years. Besides grit and courage,
+                        PÖFF’s growth preconditions include the will and desire
+                        to see past the horizon in order to constantly broaden
+                        our view of the world. Thus, PÖFF’s programme always
+                        wanders beyond its comfort zone. The PÖFF Wolves are not
+                        afraid of new cultural spaces, burning questions and
+                        emotions which make us laugh, astound us and move us in
+                        their bracing authenticity.
+
+
+                        <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/oZLMwp13goE"
+                        frameborder="0" allow="accelerometer; autoplay;
+                        clipboard-write; encrypted-media; gyroscope;
+                        picture-in-picture" allowfullscreen></iframe>
+
+
+                        ###### PÖFF 2019 Teaser Trailer
+                    publish_et: true
+                    publish_en: true
+                    slug: pof-fi-article-19
+                    contents: >-
+                        Started in 1997, the Tallinn Black Nights Film Festival
+                        has grown into one of the biggest film festivals in
+                        Northern Europe and busiest regional industry platforms,
+                        hosting more than 1000 guests and industry delegates and
+                        over 160 journalists. The festival screens around 250
+                        features and more than 300 shorts and animations and
+                        sees an attendance of 80 000 people annually. 
+
+
+                        As of 2014 the festival holds the FIAPF accreditation
+                        for holding an international competition programme which
+                        puts the festival into the so- called A-category of film
+                        festivals, alongside other 14 festivals in the world.
+
+
+
+                        #### Join the Wolf Pack
+
+
+                        A PÖFF Wolf is a pack animal who knows that he’ll get
+                        farther working together with the others. Without you,
+                        our cinema audience and supporters, this film festival,
+                        largely cobbled together on pure enthusiasm in 1997,
+                        would not be what it is today. Every year, PÖFF is kept
+                        in constant movement by wonderful collaboration where
+                        the audience and the films are connected by volunteers,
+                        more than 300 by today. Together in our small Estonia,
+                        we have succeeded in filling the black nights of
+                        November with unique northern lights which manifest as
+                        bright film experiences on cinema screens and attract
+                        filmmakers from different corners of the world to enjoy
+                        it all with us.
+
+
+                        The gathering places of the PÖFF Wolves in Estonian
+                        cinemas remain the same, but the routes are different
+                        every year. This year, the festival will take you on a
+                        journey to Arab countries to enjoy the best of the Arab
+                        cinema from the past 10 years. Besides grit and courage,
+                        PÖFF’s growth preconditions include the will and desire
+                        to see past the horizon in order to constantly broaden
+                        our view of the world. Thus, PÖFF’s programme always
+                        wanders beyond its comfort zone. The PÖFF Wolves are not
+                        afraid of new cultural spaces, burning questions and
+                        emotions which make us laugh, astound us and move us in
+                        their bracing authenticity.
+
+
+                        <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/oZLMwp13goE"
+                        frameborder="0" allow="accelerometer; autoplay;
+                        clipboard-write; encrypted-media; gyroscope;
+                        picture-in-picture" allowfullscreen></iframe>
+
+
+                        ###### PÖFF 2019 Teaser Trailer
+                    publish: true
+                customUrl: ''
+                order: 1
+                name: О фестивале
+            -
+                id: 3
+                namePrivate: Auhinnad
+                poffi_article:
+                    id: 41
+                    created_by: 6
+                    updated_by: 6
+                    created_at: '2020-09-17T20:35:05.638Z'
+                    updated_at: '2020-09-19T22:24:26.964Z'
+                    title_et: Auhinnad
+                    slug_et: auhinnad
+                    title_en: ''
+                    slug_en: awards
+                    contents_et: >-
+                        #### Põhivõistlusprogramm
+
+
+                        - Grand prix parimale filmile (stipendium 10 000 eurot
+                        Tallinna linnalt)
+
+                        - Auhind parimale režissöörile (stipendium 5000 eurot)
+
+                        - Auhind parimale stsenaariumile
+
+                        - Auhind parimale naisnäitlejale (auhind Elisalt)
+
+                        - Auhind parimale meesnäitlejale (auhind Elisalt)
+
+                        - Auhind parimale operaatorile (stipendium 1000 eurot)
+
+                        - Auhind parimale filmimuuusikale
+
+
+
+                        #### Debüütfilmide võistlusprogramm
+
+
+                        - Parima filmi auhind (stipendium 5000 eurot)
+
+                        - Kaks žürii eriauhinda
+
+
+
+                        #### Balti filmide võistlusprogramm
+
+
+                        - Parim Balti mängufilm (stipendium 3200 eurot)
+
+
+
+                        #### “Põhjusega mässajad” võistlusprogramm
+
+
+                        - Põhjusega mässaja auhind (stipendium 1200 eurot
+                        Nudistilt)
+
+
+
+                        #### 3 Teised auhinnad
+
+
+                        - Auhind publiku lemmikfilmile (stipendium 2000 eurot
+                        Tallinna linnalt)
+
+                        - Rahvusvaheline filmikriitikute (FIPRESCI) žürii auhind
+
+                        - Aasia filmikunsti edendamise võrgustiku (NETPAC) žürii
+                        auhind parimale aasia filmile
+
+                        - Eesti oikumeenilise žürii auhind
+
+                        - Elutööauhind
+
+                        - Teised auhinnade stipendium (stipendium 1000 eurot)
+                    contents_en: >-
+                        #### Official Selection Competition
+
+
+                        - Grand Prix for the Best Film (grant of 10 000 euros
+                        from the City of Tallinn, shared by the Director and
+                        Producer)
+
+                        - Award for Best Director (grant of 5000 euros)
+
+                        - Award for Best Script
+
+                        - Award for Best Actress (award from Elisa)
+
+                        - Award for Best Actor (award from Elisa)
+
+                        - Award for Best Cinematographer (grant of 1000 euros)
+
+                        - Award for Best Music
+
+
+
+                        #### First Feature Competition
+
+
+                        - Best Film Award (grant of 5000 euros, shared by the
+                        Director and Producer)
+
+                        - Two Special Jury Prizes
+
+
+
+                        #### Baltic Film Competition
+
+
+                        - Award for Best Baltic Feature Film (grant of 3200
+                        euros, shared by the Director and Producer)
+
+
+
+                        #### Rebels with a Cause Competition
+
+
+                        - Rebel with a Cause Award (grant of 1200 euros from
+                        Nudist)
+
+
+
+                        Additional Awards
+
+
+                        - Audience Award (grant of 2000 euros from the City of
+                        Tallinn)
+
+                        - FIPRESCI Award presented by International Federation
+                        of Film Critics
+
+                        - NETPAC Award for Best Asian film presented by Network
+                        for the Promotion of Asian Cinema
+
+                        - Estonian Oecumenical Jury Prize presented by the
+                        representatives of the largest congregations in Estonia
+
+                        - Lifetime Achievement Award
+
+                        - Bruno O’ya Award for Internationally Acknowledged
+                        Estonian Talent (with scholarship of 1000 euros)
+                    publish_et: true
+                    publish_en: true
+                    slug: pof-fi-article-12
+                    contents: >-
+                        #### Official Selection Competition
+
+
+                        - Grand Prix for the Best Film (grant of 10 000 euros
+                        from the City of Tallinn, shared by the Director and
+                        Producer)
+
+                        - Award for Best Director (grant of 5000 euros)
+
+                        - Award for Best Script
+
+                        - Award for Best Actress (award from Elisa)
+
+                        - Award for Best Actor (award from Elisa)
+
+                        - Award for Best Cinematographer (grant of 1000 euros)
+
+                        - Award for Best Music
+
+
+
+                        #### First Feature Competition
+
+
+                        - Best Film Award (grant of 5000 euros, shared by the
+                        Director and Producer)
+
+                        - Two Special Jury Prizes
+
+
+
+                        #### Baltic Film Competition
+
+
+                        - Award for Best Baltic Feature Film (grant of 3200
+                        euros, shared by the Director and Producer)
+
+
+
+                        #### Rebels with a Cause Competition
+
+
+                        - Rebel with a Cause Award (grant of 1200 euros from
+                        Nudist)
+
+
+
+                        Additional Awards
+
+
+                        - Audience Award (grant of 2000 euros from the City of
+                        Tallinn)
+
+                        - FIPRESCI Award presented by International Federation
+                        of Film Critics
+
+                        - NETPAC Award for Best Asian film presented by Network
+                        for the Promotion of Asian Cinema
+
+                        - Estonian Oecumenical Jury Prize presented by the
+                        representatives of the largest congregations in Estonia
+
+                        - Lifetime Achievement Award
+
+                        - Bruno O’ya Award for Internationally Acknowledged
+                        Estonian Talent (with scholarship of 1000 euros)
+                    publish: true
+                order: 5
+                name: Awards
