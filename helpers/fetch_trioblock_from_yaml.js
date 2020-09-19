@@ -1,143 +1,55 @@
-const fs = require('fs');
-const yaml = require('js-yaml');
-const path = require('path');
+const fs = require('fs')
+const yaml = require('js-yaml')
+const path = require('path')
+const rueten = require('./rueten.js')
 
-const sourceFolder =  path.join(__dirname, '../source/_fetchdir/');
+const sourceDir =  path.join(__dirname, '..', 'source')
+const fetchDir =  path.join(sourceDir, '_fetchdir')
 
+const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const mapping = {
+    'poff.ee': 'TrioBlockPoff',
+    'justfilm.ee': 'TrioBlockJustFilm',
+    'shorts.poff.ee': 'TrioBlockShorts'
+}
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const STRAPITRIODATA = STRAPIDATA[mapping[DOMAIN]]
+
+if (STRAPITRIODATA.length < 1) {
+    console.log(`ERROR! No data to fetch for ${DOMAIN} trioblock`)
+}
+
+const languages = ['en', 'et', 'ru']
+
+var fetchFrom = 'TrioBlockPoff'
 if (process.env['DOMAIN'] === 'justfilm.ee') {
-    var fetchFrom = 'TrioBlockJustFilm';
+    fetchFrom = 'TrioBlockJustFilm'
 } else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
-    var fetchFrom = 'TrioBlockShorts';
-} else {
-    var fetchFrom = 'TrioBlockPoff';
+    fetchFrom = 'TrioBlockShorts'
 }
 
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
-DataToYAMLData(strapiData[fetchFrom]);
+for (const ix in languages) {
+    const lang = languages[ix]
+    console.log(`Fetching ${DOMAIN} trioblock ${lang} data`)
 
-
-function DataToYAMLData(strapiData){
-    // console.log(strapiData[0]);
-    LangSelect(strapiData, 'et');
-    LangSelect(strapiData, 'en');
-    LangSelect(strapiData, 'ru');
-}
-
-function LangSelect(strapiData, lang) {
-    if (strapiData.length < 1) {
-        console.log(`ERROR! No data to fetch for ${process.env['DOMAIN']} trioblock ${lang}`);
-    } else {
-        processData(strapiData, lang, CreateYAML);
-        console.log(`Fetching ${process.env['DOMAIN']} trioblock ${lang} data`);
-    }
-}
-
-function rueten(obj, lang) {
-    const regex = new RegExp(`.*_${lang}$`, 'g');
-
-    for (const key in obj) {
-        // console.log(obj[key] + ' - ' + Array.isArray(obj[key]));
-        if (obj.hasOwnProperty(key)) {
-            const element = obj[key];
-        }
-
-        if (obj[key] === null) {
-            delete obj[key];
+    let copyData = JSON.parse(JSON.stringify(STRAPITRIODATA[0]))
+    let buffer = []
+    for (key in copyData) {
+        if (key.split('_')[0] !== 'trioBlockItem') {
             continue
         }
-        // if (key === 'id') {
-        //     delete obj[key];
-        //     continue
-        // }
-        // else
-        if (key === lang) {
-            // console.log(key, obj[key]);
-            return obj[key]
-        } else if (key.match(regex) !== null) {
-            obj[key.substring(0, key.length-3)] = obj[key];
-            delete obj[key];
-        // } else if (Array.isArray(obj[key])) {
-        //     obj[key].forEach(element => {
-        //         element = rueten(element, lang)
-        //     })
-        } else if (typeof(obj[key]) === 'object') {
-            obj[key] = rueten(obj[key], lang)
-            // if (Array.isArray(obj[key])) {
-            //     if (typeof(obj[key][0]) === 'string') {
-            //         obj[key] = obj[key].join(', ');
-            //     }
-            // }
-        }
-        if (Array.isArray(obj[key])) {
-            // console.log(key + ' len: ' + obj[key].length + ' entries: ' + obj[key].length);
-            // console.log(JSON.stringify(obj[key]));
-            if (obj[key].length > 0) {
-                for (var i = 0; i < obj[key].length; i++) {
-                    if (obj[key][i] === '') {
-                        // console.log('EMPTY ONE');
-                        obj[key].splice(i, 1);
-                        i--;
-                    }
-                }
-                if (obj[key].length === 0) {
-                    delete obj[key];
-                }
-            }else{
-                delete obj[key];
-            }
-        }
+        let block_index = key.split('_')[1]
+
+        buffer.push({
+            'block': copyData[key],
+            'article': copyData[`poffi_article_${block_index}`]
+        })
+        delete copyData[key]
     }
-    return obj
+
+    copyData = rueten(buffer, lang)
+    let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' })
+    const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
+    fs.writeFileSync(outFile, allDataYAML, 'utf8')
 }
-
-function processData(data, lang, CreateYAML) {
-    let copyData = JSON.parse(JSON.stringify(data[0]));
-    let buffer = [];
-    for (key in copyData) {
-        let smallBuffer = {}
-        var data2 = copyData[key];
-        // console.log(data2);
-        // var name = data[key].name;
-        // for (key2 in data2.label) {
-        //     // console.log(data2.label[key]);
-        //     // smallBuffer[data2.label[key2].name] = {
-        //     //     'value' : data2.label[key2].value,
-        //     //     'value_en' : data2.label[key2].value_en
-        //     //     }
-        //     let tinyBuffer = {};
-        //     for(key3 in data2.label[key2]) {
-        //         tinyBuffer[key3] = data2.label[key2][key3];
-        //     }
-        //     smallBuffer[data2.label[key2].name] = tinyBuffer;
-        // }
-
-        // console.log(key);
-        if(key.substr(0, key.length-2) === 'trioBlockItem') {
-            // console.log(copyData[`poffi_article${key.substr(key.length-2, key.length)}`]);
-            smallBuffer.block = copyData[key];
-            smallBuffer.article = copyData[`poffi_article${key.substr(key.length-2, key.length)}`];
-            buffer.push(smallBuffer);
-
-            // console.log(copyData[key]);
-            delete copyData[key]
-        }
-
-    }
-    // buffer = rueten(buffer, lang);
-    // data.blocks = JSON.parse(buffer);
-    // console.log(data);
-    // buffer = rueten(data, lang);
-    // console.log(buffer);
-    // copyData.blocks = buffer
-
-    copyData = rueten(buffer, lang);
-    CreateYAML(buffer, lang);
-}
-
-function CreateYAML(copyData, lang) {
-    // console.log(copyData);
-    let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`${sourceFolder}articletrioblock.${lang}.yaml`, allDataYAML, 'utf8');
-}
-
-

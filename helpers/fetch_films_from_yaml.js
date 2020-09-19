@@ -1,6 +1,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
+const rueten = require('./rueten.js')
 
 const sourceFolder =  path.join(__dirname, '../source/');
 
@@ -48,59 +49,6 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, dataModel, getDa
 
 }
 
-function rueten(obj, lang) {
-    const regex = new RegExp(`.*_${lang}$`, 'g');
-
-    for (const key in obj) {
-        // console.log(obj[key] + ' - ' + Array.isArray(obj[key]));
-        if (obj.hasOwnProperty(key)) {
-            const element = obj[key];
-        }
-
-        if (obj[key] === null) {
-            delete obj[key];
-            continue
-        }
-        else if (key === lang) {
-            // console.log(key, obj[key]);
-            return obj[key]
-        } else if (key.match(regex) !== null) {
-            // console.log(regex, key, key.match(regex));
-            obj[key.substring(0, key.length-3)] = obj[key];
-            delete obj[key];
-        // } else if (Array.isArray(obj[key])) {
-        //     obj[key].forEach(element => {
-        //         element = rueten(element, lang)
-        //     })
-        } else if (typeof(obj[key]) === 'object') {
-            obj[key] = rueten(obj[key], lang)
-            // if (Array.isArray(obj[key])) {
-            //     if (typeof(obj[key][0]) === 'string') {
-            //         obj[key] = obj[key].join(', ');
-            //     }
-            // }
-        }
-        if (Array.isArray(obj[key])) {
-            // console.log(key + ' len: ' + obj[key].length + ' entries: ' + obj[key].length);
-            // console.log(JSON.stringify(obj[key]));
-            if (obj[key].length > 0) {
-                for (var i = 0; i < obj[key].length; i++) {
-                    if (obj[key][i] === '') {
-                        // console.log('EMPTY ONE');
-                        obj[key].splice(i, 1);
-                        i--;
-                    }
-                }
-                if (obj[key].length === 0) {
-                    delete obj[key];
-                }
-            }else{
-                delete obj[key];
-            }
-        }
-    }
-    return obj
-}
 
 
 function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generateYaml) {

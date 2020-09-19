@@ -1,33 +1,27 @@
-const fs = require("fs");
-const yaml = require("js-yaml");
-const { type } = require("os");
-const path = require("path");
+const fs = require('fs');
+const yaml = require('js-yaml');
+const { type } = require('os');
+const path = require('path');
+const rueten = require('./rueten.js')
 
-const sourceFolder = path.join(__dirname, "../source/");
+const sourceFolder = path.join(__dirname, '../source/');
 //console.log(sourceFolder)
 
-const allLanguages = ["en", "et", "ru"];
+// const allLanguages = ['en', 'et', 'ru'];
 
-if (process.env["DOMAIN"] === "justfilm.ee") {
-    var dataModel = "JustFilmiArticle";
-} else if (process.env["DOMAIN"] === "shorts.poff.ee") {
-    var dataModel = "ShortsiArticle";
+var dataModel = 'POFFiArticle'
+if (process.env['DOMAIN'] === 'justfilm.ee') {
+    dataModel = 'JustFilmiArticle'
+} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
+    dataModel = 'ShortsiArticle'
 } else {
-    var dataModel = "POFFiArticle";
+    process.env['DOMAIN'] = 'poff.ee'
 }
 
 let allData = []; // for articles view
 
 function fetchAllData(dataModel) {
     let newDirPath = path.join(sourceFolder, "_fetchdir" )
-
-    // deleteFolderRecursive(newsDirPath);
-
-    // deleteFolderRecursive(dirPath);
-    // deleteFolderRecursive(aboutDirPath);
-    // deleteFolderRecursive(interviewDirPath);
-    // deleteFolderRecursive(sponsorDirPath);
-    // deleteFolderRecursive(industryDirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
     getData(newDirPath,"en",1,1,{
@@ -110,64 +104,6 @@ function getData(
     );
 }
 
-function rueten(obj, lang) {
-    const regex = new RegExp(`.*_${lang}$`, "g");
-
-    for (const key in obj) {
-        // console.log(obj[key] + ' - ' + Array.isArray(obj[key]));
-        if (obj.hasOwnProperty(key)) {
-            const element = obj[key];
-        }
-
-        if (obj[key] === null) {
-            delete obj[key];
-            continue;
-        }
-        if (key === "article_types") {
-            continue;
-        } else if (key === lang) {
-            // console.log(key, obj[key]);
-            return obj[key];
-        } else if (key.match(regex) !== null) {
-            // console.log(regex, key, key.match(regex));
-            obj[key.substring(0, key.length - 3)] = obj[key];
-            if (key.substring(0, 7) !== "publish_") {
-                delete obj[key];
-            }
-            // } else if (Array.isArray(obj[key])) {
-            //     obj[key].forEach(element => {
-            //         element = rueten(element, lang)
-            //     })
-        } else if (typeof obj[key] === "object") {
-            obj[key] = rueten(obj[key], lang);
-            // if (Array.isArray(obj[key])) {
-            //     if (typeof(obj[key][0]) === 'string') {
-            //         obj[key] = obj[key].join(', ');
-            //     }
-            // }
-        }
-        if (Array.isArray(obj[key])) {
-            // console.log(key + ' len: ' + obj[key].length + ' entries: ' + obj[key].length);
-            // console.log(JSON.stringify(obj[key]));
-            if (obj[key].length > 0) {
-                for (var i = 0; i < obj[key].length; i++) {
-                    if (obj[key][i] === "") {
-                        // console.log('EMPTY ONE');
-                        obj[key].splice(i, 1);
-                        i--;
-                    }
-                }
-                if (obj[key].length === 0) {
-                    delete obj[key];
-                }
-            } else {
-                delete obj[key];
-            }
-        }
-    }
-    return obj;
-}
-
 
 function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml) {
     allData = [];
@@ -179,25 +115,18 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang);
-
+        // console.log(element)
         for (artType of element.article_types) {
 
-            element.directory = path.join(dirPath, artType.name, slugEn)
-
-
+            // console.log(dirPath, artType, slugEn)
+            element.directory = path.join(dirPath, artType, slugEn)
 
                 fs.mkdirSync(element.directory, { recursive: true });
                 //let languageKeys = ['en', 'et', 'ru'];
                 for (key in element) {
 
-                    if (key == "slug") {
-                        //console.log(self.data.path)
-
-                        element.path = path.join(artType[`slug_${lang}`], element[key])
-                    }
-
-                    if (typeof element[key] === "object" && element[key] != null) {
-                        // makeCSV(element[key], element, lang);
+                    if (key === "slug") {
+                        element.path = path.join(artType, element[key])
                     }
                 }
                 allData.push(element);
@@ -241,7 +170,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
 
-    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name.toLowerCase()}_index_template.pug`, function(err) {
+    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.toLowerCase()}_index_template.pug`, function(err) {
         if(err) {
             return console.log(err);
         }
@@ -249,15 +178,15 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     let allDataYAML = yaml.safeDump(allData, { noRefs: true, indent: "4" });
 
-    if (artType.name === "News") {
+    if (artType === "News") {
         allNews.push(element);
-    } else if (artType.name === "SponsorStory") {
+    } else if (artType === "SponsorStory") {
         allSponsor.push(element);
-    } else if (artType.name === "Interview") {
+    } else if (artType === "Interview") {
         allInterview.push(element);
-    } else if (artType.name === "About") {
+    } else if (artType === "About") {
         allAbout.push(element);
-    } else if (artType.name === "IndustryProject") {
+    } else if (artType === "IndustryProject") {
         allIndustry.push(element);
     }
     //console.log(allAbout)
