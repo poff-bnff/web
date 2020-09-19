@@ -4,12 +4,16 @@ const util = require('util')
 const { resolve } = require('path')
 const yaml = require('js-yaml')
 const path = require('path');
+const { isatty } = require('tty')
 
-const dirPath =  path.join(__dirname, '../source/_fetchdir/');
+const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir');
 
 fs.mkdirSync(dirPath, { recursive: true })
 
-const DATAMODEL = yaml.safeLoad(fs.readFileSync(__dirname + '/../docs/datamodel.yaml', 'utf8'))
+// const modelFile = path.join(__dirname, '..', 'docs', 'minimodel.yaml')
+const modelFile = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
+const DATAMODEL = yaml.safeLoad(fs.readFileSync(modelFile, 'utf8'))
+
 for (const key in DATAMODEL) {
     if (DATAMODEL.hasOwnProperty(key)) {
         const element = DATAMODEL[key]
@@ -136,24 +140,51 @@ async function strapiFetch(modelName, token){
     })
 }
 
-const isObject = (o) => {
-    return typeof o === 'object' && o !== null
-}
 
-const TakeOutTrash = (data, model) => {
+function TakeOutTrash (data, model, dataPath) {
+    const isObject = (o) => { return typeof o === 'object' && o !== null }
+    const isArray = (a) => { return Array.isArray(a) }
+    const isEmpty = (p) => { return !p || p == null || p === '' || p === [] } // "== null" checks for both null and for undefined
+
+    // console.log('Grooming', dataPath)
     // eeldame, et nii data kui model on objektid
 
-    const keysToCheck = data.keys()
-    for (const key in keysToCheck) {
+    const keysToCheck = Object.keys(data)
+    let report = {'trash':[], 'keepers':[], 'nobrainers':[]}
+    for (const key of keysToCheck) {
+        if (isEmpty(data[key])) { delete(data[key]); continue }
+        // console.log(key, model)
+        if (['id', '_path', '_model'].includes(key)) {
+            report.nobrainers.push(key)
+            // console.log('Definately keep', key, 'in', dataPath)
+            continue
+        }
         if (!model.hasOwnProperty(key)) {
+            report.trash.push(key)
+            // console.log('Trash', key, 'in', dataPath)
             delete(data[key])
             continue
         }
-        // kui property oli mudelis kirjeldatud, tuleb vaadata, kas on põhjust rekursiooniks
-        if( isObject(data[key]) && isObject(model[key])) {
-            TakeOutTrash(data[key], model[key])
+        report.keepers.push(key)
+        // console.log('Keep', key, 'in', dataPath)
+        const nextData = data[key]
+        const nextModel = model[key]
+
+        if (isArray(nextData) ^ isArray(nextModel)) {
+            console.log(nextData, nextModel)
+            throw new Error('Data vs model mismatch. Both should be array or none of them.')
+        }
+        if (isArray(nextData) && isArray(nextModel)) {
+            for (const nd of nextData) {
+                if (isEmpty(nd)) { continue }
+                TakeOutTrash(nd, nextModel[0], key)
+            }
+        }
+        if (isObject(nextData) && isObject(nextModel)) {
+            TakeOutTrash(nextData, nextModel, key)
         }
     }
+    // console.log('Reporting', dataPath, report)
 }
 
 const Compare = function (model, data, path) {
@@ -223,7 +254,7 @@ const foo = async () => {
     // datamodel on meie kirjeldatud andmemudel
     // otsime sellest mudelist ühte mudelit =model
     //
-    // Esimese sammuna rikastame Strapist tulnud andmeid, mis liigse sygavuse tõttu on jäänud tulemata.
+    // Esimese sammuna 1. rikastame Strapist tulnud andmeid, mis liigse sygavuse tõttu on jäänud tulemata.
     // Rikastame kõiki alamkomponente, millel mudelis on _path defineeritud
     //
     for (const modelName in DATAMODEL) {
@@ -247,7 +278,7 @@ const foo = async () => {
                     }
                 }
                 strapiData[modelName] = modelData
-                console.log(' done')
+                // console.log('done replacing', modelName)
             }
         }
     }
@@ -260,7 +291,7 @@ const foo = async () => {
                 if (modelData.hasOwnProperty(ix)) {
                     let element = modelData[ix]
                     // 2. kustutame andmetest kõik propertid, mida mudelis pole
-                    TakeOutTrash(element, DATAMODEL[modelName])
+                    TakeOutTrash(element, DATAMODEL[modelName], modelName)
 
                     // 3. valideerime kõike, mis mudelis on kirjeldatud
                     // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)
@@ -271,7 +302,8 @@ const foo = async () => {
         }
     }
 
-    let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
+    let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
+    // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', yamlStr, 'utf8')
 
 }
