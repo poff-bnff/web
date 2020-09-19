@@ -60,6 +60,7 @@ clr_tartuff_red = #c92c33
 clr_popover = #0E1417
 clr_covid = #bc06c6
 clr_vote = #00aeef
+clr_grey_light = #dddddd
 
 header_height = 97px
 full_height = calc(100vh - header_height)
@@ -150,6 +151,9 @@ body
 
 .font_weight_700
     font-weight 700
+
+h3
+    font-weight 400
 
 h4
     font-size 1.4rem
@@ -1071,7 +1075,7 @@ p a
   font-family font_h
   font-size calc(1.618rem + 1.618vw)
   line-height 1
-  font-weight 500
+  font-weight 400
   color dark_1
   letter-spacing 0.04em
   text-align center
@@ -1382,7 +1386,8 @@ a.btn_popover
     align-content space-between
     // margin-top 2rem
     background-color white
-    margin-bottom 2rem
+    margin-bottom 1.618rem
+    border .5px solid clr_grey_light
 
 .card_film:hover,
 .card_article:hover
@@ -1586,7 +1591,7 @@ a.btn_popover
     letter-spacing: 0.04rem
 
 .article_title_locale
-    font-size 2rem
+    font-size 1.4rem
     color dark_4
     letter-spacing 0.04rem
 
