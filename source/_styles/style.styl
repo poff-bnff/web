@@ -179,6 +179,8 @@ header
 
 .main_menu
     position absolute
+    font-family font_h
+    font-weight 300
     text-align center
     left 0
     background-color clr_header_bg
@@ -311,6 +313,18 @@ footer
     // font-weight 500
     color white_96
     font-size 1rem
+    text-decoration none
+    text-transform uppercase
+
+.footer_p
+    // display inline
+    font-family font_p
+    // font-size 1.618rem
+    // font-weight 500
+    color white_96
+    font-size 1rem
+    line-height 1.618
+    text-align left
     text-decoration none
     text-transform uppercase
 
@@ -1455,7 +1469,7 @@ a.btn_popover
 
 .about_hero_image
     width 100vw
-    height calc(60vh - 97px)
+    height calc(70vh - 97px)
     object-fit cover
     z-index -1
 
@@ -1473,7 +1487,7 @@ a.btn_popover
 
 .about_hero_headline_box
     position absolute
-    bottom calc(32vh - 6rem)
+    bottom calc(33vh - 6rem)
     left 0
     width 67vw
     // background rgba(10,0,3,.6)
@@ -1512,13 +1526,15 @@ a.btn_popover
         // color white_96
 
 .about_title_detailed span
-    background-color bg_dark_4
-    color white_96
+    // background-color rgba(255,255,255,.9)
+    background-color white
+    color dark_4
     display inline
     padding-left 3rem
     padding-right 1.2rem
+    padding-top .2rem
     font-size 3rem
-    line-height 1.2
+    line-height 1.25
     box-decoration-break clone
 
 .article_meta
