@@ -11,14 +11,14 @@ jobs:
         name: SCP files to server
         runs-on: ubuntu-latest
         steps:
-        -   name: ls -a via ssh
-            uses: fifsky/ssh-action@master
+        -   name: executing remote ssh commands using ssh key
+            uses: appleboy/ssh-action@master
             with:
-                command: |
-                    rsync -avzr --delete domeenid/www.inscaping.eu/web/poff_staging/* domeenid/www.inscaping.eu/web/poff_live/
                 host: inscaping.eu
-                user: virt84398
+                username: virt84398
+                port: 22
                 key: ${{ secrets.DEPLOY_KEY }}
+                script: scp -r domeenid/www.inscaping.eu/web/poff_staging poff:domeenid/www.poff.ee/web2020/poff_live
 
         - name: Github->Slack notification Webhook action
           uses: craftech-io/slack-action@v1
