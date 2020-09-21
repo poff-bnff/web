@@ -90,135 +90,22 @@ label:
         mainSchedule: Schedule
         mainLogin: login
 eFilmInfo: ' - You can see the film also on Elisa Stage, a VOD platform by Elisa'
-menu:
-    -
-        id: 1
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-        updated_by:
-            id: 5
-            firstname: Martin
-            lastname: Pennaste
-        created_at: '2020-09-08T12:39:02.007Z'
-        updated_at: '2020-09-08T12:42:49.644Z'
-        order: 1
-        name: News
-        customUrl: news
-    -
-        id: 2
-        created_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-        updated_by:
-            id: 6
-            firstname: Jaan
-            lastname: Leppik
-        created_at: '2020-09-08T12:39:44.630Z'
-        updated_at: '2020-09-08T12:50:46.495Z'
-        order: 3
-        name: Films
-        subMenuItem:
-            -
-                id: 1
-                namePrivate: Programmid
-                poffi_article:
-                    id: 2
-                    created_by: 5
-                    updated_by: 6
-                    created_at: '2020-09-02T06:22:29.284Z'
-                    updated_at: '2020-09-06T21:38:28.279Z'
-                    title_et: Tartuffi esimene film on seksuaalsest ahistamisest
-                    slug_et: tartuffi-esimene-film-on-seksuaalsest-ahistamisest
-                    slug_ru: pof-fi-article-7
-                    lead_et: >-
-                        PÖFFi armastusfilmide festival Tartuff kuulutas välja
-                        esimese linateose, mille teema on hetkel üliaktuaalne –
-                        seksuaalne ahistamine.
-                    contents_et: >-
-                        „Harjumuse jõud” (originaalis „Tottumiskysymys”) koosneb
-                        kuuest absurdihuumoriga vürtsitatud loost, mis on
-                        inspireeritud igapäevastest naiste avaliku või varjatud
-                        diskrimineerimise viisidest.
-
-
-                        „Kui te ei ole veel aru saanud, mida taotleb #MeToo,
-                        vaadake seda filmi,” soovitab ajaleht Helsingin Sanomat,
-                        nimetades „Harjumuse jõudu” eelmise aasta olulisimaks
-                        Soome linateoseks.
-
-
-                        Patriarhaalse ühiskonna käitumismustreid avav
-                        draamakomöödia põhineb populaarsel lühifilmide sarjal
-                        „Üksikjuhtum”, mis on Soome veebi-TVs Yle Areena kogunud
-                        üle miljoni vaatamiskorra.
-
-
-                        Soome noorema ja keskmise põlve naisrežissööride
-                        jõudemonstratsiooniks nimetatava filmi on kirjutanud ja
-                        lavastanud Kirsikka Saari, Elli Toivoniemi, Anna
-                        Paavilainen, Alli Haapasalo, Reetta Aalto, Jenni
-                        Toivoniemi ja Miia Tervo. Mängivad Soome tippnäitlejad
-                        eesotsas Krista Kosoneni ja Johannes Holopaineniga.
-
-
-                        Autorite enda sõnul ei ole filmi ajendiks niivõrd
-                        seksuaalne ahistamine, kuivõrd see, kuidas ühiskond seda
-                        normaalseks peab.
-
-
-                        Soome filmiauhinnale Jussi kandideerib “Harjumuse jõud”
-                        parima filmi, režii, stsenaariumi ja meeskõrvalosa
-                        kategoorias. Linateose rahvusvaheline esilinastus oli
-                        tänavusel Göteborgi filmifestivalil.
-
-
-                        Tartuff leiab tänavu aset 10.–15. augustini, kui Tartu
-                        Raekoja platsist saab taas Eesti suurim vabaõhukino.
-                        Esimest korda avab festival ka virtuaalse kinosaali,
-                        mida saab külastada üle kogu Eesti.
-
-
-                        Kogu programmi avalikustab festival juuli lõpus.
-
-
-                        Tartuffi korraldab Pimedate Ööde filmifestival koostöös
-                        Tartu linna, Tartu filmifondi ja Tartu
-                        loomemajanduskeskusega.
-                    publishFrom: '2020-07-07T09:00:00.000Z'
-                    publishUntil: '2021-01-14T10:00:00.000Z'
-                    publish_et: true
-                    publish_ru: true
-                    title: test 2 en
-                    slug: test-2-en
-                    lead: lead 2 en
-                    contents: cont 2 en
-                    publish: true
-                order: 1
-                name: Programmes
-            -
-                id: 2
-                namePrivate: Ajakava
-                customUrl: schedule
-                order: 2
-                name: Schedule
+menu: []
 footer:
-    id: 2
+    id: 4
     created_by:
-        id: 6
+        id: 8
         firstname: Jaan
-        lastname: Leppik
+        lastname: Editor
     updated_by:
         id: 8
         firstname: Jaan
         lastname: Editor
-    created_at: '2020-09-01T09:37:02.304Z'
-    updated_at: '2020-09-11T09:45:40.796Z'
-    namePrivate: PÖFF
+    created_at: '2020-09-11T09:23:35.659Z'
+    updated_at: '2020-09-11T09:45:50.974Z'
+    namePrivate: JustFIlm
     domain:
-        id: 1
+        id: 2
         created_by:
             id: 6
             firstname: Jaan
@@ -227,20 +114,19 @@ footer:
             id: 3
             firstname: Liis
             lastname: Käsper
-        created_at: '2020-08-19T10:43:32.378Z'
-        updated_at: '2020-08-31T13:52:31.385Z'
-        url: poff.ee
-        name: PÖFF
+        created_at: '2020-08-19T10:43:52.272Z'
+        updated_at: '2020-08-31T13:52:48.952Z'
+        url: justfilm.ee
+        name: Just Film
     socialGroup:
         -
-            id: 2
-            namePrivate: PÖFF Social
+            id: 6
+            namePrivate: JustFilmiSocial
             name: Follow us
             items:
                 -
-                    id: 1
+                    id: 14
                     name: Facebook
-                    url: 'https://www.facebook.com/tallinnblacknightsff/'
                     svgCode: >-
                         <svg viewBox="0 0 24 24" width="24" height="24"
                         stroke="currentColor" stroke-width="2" fill="none"
@@ -250,12 +136,12 @@ footer:
                         <path d="M18 2h-3a5 5 0 0 0-5
                         5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1
                         1-1h3z"></path></svg>
-                    url_et: 'https://www.facebook.com/tallinnblacknightsff/'
-                    url_ru: 'https://www.facebook.com/tallinnblacknightsff/'
+                    url_et: 'https://www.facebook.com/justfilm'
+                    url_ru: 'https://www.facebook.com/justfilm'
+                    url: 'https://www.facebook.com/justfilm'
                 -
-                    id: 2
+                    id: 15
                     name: Instagram
-                    url: 'https://www.instagram.com/tallinnblacknightsff/'
                     svgCode: >-
                         <svg viewBox="0 0 24 24" width="24" height="24"
                         stroke="currentColor" stroke-width="2" fill="none"
@@ -264,12 +150,12 @@ footer:
                         height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4
                         0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
                         x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    url_et: 'https://www.instagram.com/tallinnblacknightsff/'
-                    url_ru: 'https://www.instagram.com/tallinnblacknightsff/'
+                    url_et: 'https://www.instagram.com/just.film/'
+                    url_ru: 'https://www.instagram.com/just.film/'
+                    url: 'https://www.instagram.com/just.film/'
                 -
-                    id: 3
+                    id: 16
                     name: YouTube
-                    url: 'https://www.youtube.com/user/Poffihunt'
                     svgCode: >-
                         <svg viewBox="0 0 24 24" width="24" height="24"
                         stroke="currentColor" stroke-width="2" fill="none"
@@ -283,10 +169,10 @@ footer:
                         15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                     url_et: 'https://www.youtube.com/user/Poffihunt'
                     url_ru: 'https://www.youtube.com/user/Poffihunt'
+                    url: 'https://www.youtube.com/user/Poffihunt'
                 -
-                    id: 4
+                    id: 17
                     name: Twitter
-                    url: 'https://twitter.com/poffihunt'
                     svgCode: >-
                         <svg viewBox="0 0 24 24" width="24" height="24"
                         stroke="currentColor" stroke-width="2" fill="none"
@@ -297,16 +183,16 @@ footer:
                         4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
                     url_et: 'https://twitter.com/poffihunt'
                     url_ru: 'https://twitter.com/poffihunt'
+                    url: 'https://twitter.com/poffihunt'
     item:
         -
-            id: 1
+            id: 6
             namePrivate: Team
             name: Team
             svgItem:
                 -
-                    id: 5
+                    id: 18
                     name: Team
-                    url: 'https://poff.ee/meeskond/'
                     svgCode: >-
                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24" fill="none"
@@ -318,15 +204,13 @@ footer:
                         0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0
                         7.75"></path></svg>
         -
-            id: 2
+            id: 7
             namePrivate: Subscribe to newsletter
             name: Subscribe to newsletter
             svgItem:
                 -
-                    id: 7
+                    id: 19
                     name: E-mail
-                    url: >-
-                        https://poff.us7.list-manage.com/subscribe?u=c2426593c5ba2369b6e13a66e&id=d1371cd550
                     svgCode: >-
                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24" fill="none"
@@ -337,7 +221,7 @@ footer:
                         2-2z"></path><polyline points="22,6 12,13
                         2,6"></polyline></svg>
         -
-            id: 3
+            id: 8
             namePrivate: Contacts
             name: Contact
             text: |-
@@ -345,85 +229,14 @@ footer:
                 Tallinn
     logosSections:
         -
-            id: 1
-            order: 1
+            id: 7
             name: Presenters
-            logo:
-                -
-                    id: 1
-                    url: delfi.ee
-                    imgWhite:
-                        id: 30
-                        name: tartuff_f_elisa.svg
-                        alternativeText: ''
-                        caption: ''
-                        width: 160
-                        height: 90
-                        hash: tartuff_f_elisa_4741e382f5
-                        ext: .svg
-                        mime: image/svg+xml
-                        size: 3.48
-                        url: /uploads/tartuff_f_elisa_4741e382f5.svg
-                        provider: local
-                        created_by: 6
-                        updated_by: 6
-                        created_at: '2020-09-01T10:15:24.826Z'
-                        updated_at: '2020-09-01T10:15:24.934Z'
-                -
-                    id: 2
-                    url: toyota.ee
-                    imgWhite:
-                        id: 29
-                        name: tartuff_f_toyota.svg
-                        alternativeText: ''
-                        caption: ''
-                        width: 160
-                        height: 90
-                        hash: tartuff_f_toyota_1f300fd44b
-                        ext: .svg
-                        mime: image/svg+xml
-                        size: 2.87
-                        url: /uploads/tartuff_f_toyota_1f300fd44b.svg
-                        provider: local
-                        created_by: 6
-                        updated_by: 6
-                        created_at: '2020-09-01T10:15:24.826Z'
-                        updated_at: '2020-09-01T10:15:24.929Z'
-                    imgBlack:
-                        id: 31
-                        name: Industry_2020_online_news.jpeg
-                        alternativeText: ''
-                        caption: ''
-                        width: 900
-                        height: 600
-                        formats:
-                            thumbnail:
-                                ext: .jpeg
-                                url: >-
-                                    /uploads/thumbnail_Industry_2020_online_news_b73f02f092.jpeg
-                                hash: >-
-                                    thumbnail_Industry_2020_online_news_b73f02f092
-                                mime: image/jpeg
-                                name: thumbnail_Industry_2020_online_news.jpeg
-                                size: 15.09
-                                width: 234
-                                height: 156
-                        hash: Industry_2020_online_news_b73f02f092
-                        ext: .jpeg
-                        mime: image/jpeg
-                        size: 136.1
-                        url: /uploads/Industry_2020_online_news_b73f02f092.jpeg
-                        provider: local
-                        created_by: 6
-                        updated_by: 6
-                        created_at: '2020-09-01T12:27:06.584Z'
-                        updated_at: '2020-09-01T12:27:06.648Z'
     domains:
         -
-            id: 1
+            id: 2
             created_by: 6
             updated_by: 3
-            created_at: '2020-08-19T10:43:32.378Z'
-            updated_at: '2020-08-31T13:52:31.385Z'
-            url: poff.ee
-            name: PÖFF
+            created_at: '2020-08-19T10:43:52.272Z'
+            updated_at: '2020-08-31T13:52:48.952Z'
+            url: justfilm.ee
+            name: Just Film
