@@ -88,6 +88,30 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
             // console.log(element)
             throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
+        console.log(element[`publish_${lang}`]);
+        var currentTime = new Date()
+        if (typeof(element.publishFrom) === 'undefined') {
+            var publishFrom= new Date(element.created_at)
+        } else {
+            var publishFrom= new Date(element.publishFrom)
+        }
+        if (element.publishUntil) {
+            var publishUntil = new Date(element.publishUntil)
+        }
+        if (currentTime < publishFrom) {
+            continue;
+        }
+        if (publishUntil !== 'undefined' && publishUntil < currentTime) {
+            continue;
+        }
+        if (element[`publish_${lang}`] === undefined || element[`publish_${lang}`] === false) {
+            continue;
+        }
+        if (element[`title_${lang}`] < 1) {
+            continue;
+        }
+
+
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         rueten(element, lang);
