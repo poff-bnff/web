@@ -4,7 +4,7 @@ const yaml = require('js-yaml');
 
 
 var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/img_persons/';
+var savePath = 'assets/img/dynamic/img_persons/';
 
 loadYaml(readYaml);
 

@@ -20,9 +20,9 @@ function fetchAllData(){
     deleteFolderRecursive(filmsPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(filmsPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
-    getData(filmsPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
-    getData(filmsPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
+    getData(filmsPath, "en", 1, 1, {'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
+    getData(filmsPath, "et", 0, 0, {'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
+    getData(filmsPath, "ru", 0, 0, {'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
@@ -119,4 +119,3 @@ function generateYaml(element, lang, copyFile, allData){
 
 
 fetchAllData();
-

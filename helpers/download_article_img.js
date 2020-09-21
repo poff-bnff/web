@@ -3,7 +3,7 @@ const yaml = require('js-yaml');
 const http = require('http');
 const path = require('path')
 const strapiPath = 'http://' + process.env['StrapiHost'];
-const savePath = path.join(__dirname, '..', 'assets', 'img', 'img_articles')
+const savePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_articles')
 
 const languages = ['en', 'et', 'ru']
 for (const lang of languages) {

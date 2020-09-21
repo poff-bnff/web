@@ -23,7 +23,6 @@ function fetchAllData() {
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
     getData(newDirPath,"en",1,1,{
-            pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.en.yaml",
             articles: "/_fetchdir/articles.en.yaml",
         },
@@ -35,7 +34,6 @@ function fetchAllData() {
         0,
         0,
         {
-            pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.et.yaml",
             articles: "/_fetchdir/articles.et.yaml",
         },
@@ -47,7 +45,6 @@ function fetchAllData() {
         0,
         0,
         {
-            pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.ru.yaml",
             articles: "/_fetchdir/articles.ru.yaml",
         },
