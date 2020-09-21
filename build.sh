@@ -1,5 +1,5 @@
 
-# ls -lRm assets/img/img_films/* > uusfail.txt
+# ls -lRm assets/img/dynamic/img_films/* > uusfail.txt
 # node ./helpers/compile_film_pictures.js
 # node ./helpers/compile_article_pictures.js
 

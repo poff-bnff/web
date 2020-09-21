@@ -1,6 +1,6 @@
 
 
-const testFolder = 'assets/img/img_films/';
+const testFolder = 'assets/img/dynamic/img_films/';
 const fs = require('fs');
 const yaml = require('js-yaml');
 let data = new Object();

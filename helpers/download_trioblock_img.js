@@ -17,7 +17,7 @@ const yaml = require('js-yaml');
 // console.log(blob);
 
 var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/img_trioblock/';
+var savePath = 'assets/img/dynamic/img_trioblock/';
 
 loadYaml('et', readYaml);
 loadYaml('en', readYaml);

@@ -11,11 +11,11 @@ block content
                     .container_frame_16_9
                         if self.data.pictures.filmslugs[val.path]
                             if self.data.pictures.filmslugs[val.path].poster
-                                img.container_contents_16_9(src=`/assets/img/img_films/${val.path}/${self.data.pictures.filmslugs[val.path].poster}` alt = val[`filmTitle_${self.locale}`])
+                                img.container_contents_16_9(src=`/assets/img/dynamic/img_films/${val.path}/${self.data.pictures.filmslugs[val.path].poster}` alt = val[`filmTitle_${self.locale}`])
                             else
-                                img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
+                                img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
                         else
-                            img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
+                            img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = val[`filmTitle_${self.locale}`])
                     .card_film_title
                         h3.film_title_locale= val.title
                     .card_film_info
