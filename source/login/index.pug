@@ -1,202 +1,291 @@
 extends /_templates/layout.pug
 include /_templates/mixins.pug
 
-
-
-
-
 block content
 
-
-
     br
     br
     br
     br
     br
-    h4#number Log in here:
-    label(for='loginUsername') Username:
+    h4#number Log in without hosted UI:
+    label(style={color: 'red'} for='loginUsername') Username:
     input#loginUsername(type='text')
     br
-    label(for='loginPassword') Password:
+    label(style={color: 'red'} for='loginPassword') Password:
     input#loginPassword(type='password')
     br
+    a(href='https://tests.auth.us-east-2.amazoncognito.com/oauth2/authorize?response_type=code&client_id=67tu3fmm9v7ho8mnsltcd6h5p3&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
     br
-    //- button(onclick='doLogin2()') Log in
-    a(href='https://poff.auth.eu-central-1.amazoncognito.com/login?client_id=3d4n3tb8an4eaq9na89dpbj9jc&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') Log in
+    a(href='https://tests.auth.us-east-2.amazoncognito.com/oauth2/authorize?response_type=code&client_id=67tu3fmm9v7ho8mnsltcd6h5p3&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
     br
-    br
-    br
-    br
+    button(onclick='login()') Login
     br
     br
-    button(onclick='doGetSomeData()') Make get request
     br
-    button(onclick='doLogout()') Log out
+    a(href='https://tests.auth.us-east-2.amazoncognito.com/logout?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
+    br
+    br
+    h1#hello
+    p#favoritefilm(style={color: 'green'})
+    br
+    a(href='https://testsss.auth.us-east-2.amazoncognito.com/login?client_id=6r7q5s89eam1ngaviibpcoqfak&response_type=code&scope=phone+email+openid+aws.cognito.signin.user.admin+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
+    br
+    button(onclick='toLocalhost()') Switch back to localhost
+    br
+    button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
+    br
+    br
+    br
+    button(onclick='showUserInfo()') Show user info
 
-    br
-    br
-    br
-    br
 
 
-    h1#contentfromStrapi
+    style.
+        h1 {color: #464646}
+        h4 {color: #464646}
+
+
+    script.
+        var url = window.location;
+        const ACCESS_TOKEN = "ACCESS_TOKEN";
+        const REFRESH_TOKEN = "REFRESH_TOKEN";
+        const ID_TOKEN = "ID_TOKEN";
+
+        if (localStorage.getItem('ID_TOKEN')){
+            hello.innerHTML = 'Hello, ' + name;
+            favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
+
+        } else {
+            hello.innerHTML = 'Not logged in'
+        }
+
+        var code = new URLSearchParams(url.search).get('code')
+        console.log(code);
+        if (code) {
+            //- getReplyFromAWS(code);
+            loginWithCode(code)
+            console.log('Code sent: ' + code);
+        } else {
+            console.log('Not sent ')
+        }
 
 
 
-    script(type="text/javascript").
 
-        var today = new Date();
 
-        contentfromStrapi.innerHTML = 'Not logged in';
+
+
+
+        function toLocalhost(){
+            let url = 'http://localhost:4000/login/' + window.location.search;
+            window.location.replace(url);
+        }
+
+        async function loginWithCode(code) {
+
+            var myHeaders = new Headers();
+
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic Njd0dTNmbW05djdobzhtbnNsdGNkNmg1cDM6MTZ1cDVlYW5mMzVqczVvcXNnM2ticmtuaGI5ZmkxbzJxMjcxNmkzNG9vcnVsa29pbnUybg==");
+            myHeaders.append("Cookie", "XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64");
+
+            var urlencoded = new URLSearchParams();
+            urlencoded.append("grant_type", "authorization_code");
+            urlencoded.append("redirect_uri", "https://dev.inscaping.eu/login/");
+            urlencoded.append("code", code);
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: 'follow'
+            };
+
+            await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/token", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    const JSONresult = JSON.parse(result);
+                    console.log(JSONresult.access_token);
+                    if (JSONresult.access_token && JSONresult.refresh_token) {
+                        storeAuthentication(JSONresult);
+                    }
+                })
+                .catch(error => console.log('error', error));
+        }
+
+
+        async function storeAuthentication(JSONresult) {
+            localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
+            localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
+            localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+            await loadInfoFromIdtkn();
+            location.reload();
+        }
+
+        function getAccessToken() {
+            token.innerHTML = localStorage.getItem(`ACCESS_TOKEN`);
+            return localStorage.getItem(`ACCESS_TOKEN`);
+        }
+
+        function logOut() {
+            localStorage.removeItem(ACCESS_TOKEN);
+            localStorage.removeItem(REFRESH_TOKEN);
+            localStorage.removeItem(ID_TOKEN);
+            console.log('LOGITUD VÄLJA');
+            location.reload();
+        }
+
+
+
+
+
+
+
+        async function loadCognitoUser(){
+            console.log(localStorage.getItem(ACCESS_TOKEN));
+            var myHeaders = new Headers();
+
+            myHeaders.append('Authorization', `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`);
+
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            console.log(requestOptions.headers);
+
+            await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/userInfo", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    const JSONresult = JSON.parse(result);
+                    console.log(JSONresult.name);
+                    hello.innerHTML = 'Hello1, ' + JSONresult.name + '(token+userInfo request)';
+                })
+                .catch(error => console.log('error', error));
+        }
+
+
+
+
+        async function login(){
+
+            let loginUsername = document.getElementById('loginUsername').value;
+            let loginPassword = document.getElementById('loginPassword').value;
 
 
         // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
 
-        function doLogin2(){
             var authenticationData = {
-                    Username : document.getElementById('loginUsername').value,
-                    Password : document.getElementById('loginPassword').value,
-                };
-                var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-                var poolData = { UserPoolId : 'us-east-2_WrK36FZvj',
-                    ClientId : 'cc9tu60rl2v7ujl71eephljc7'
-                };
-                var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-                var userData = {
-                    Username : document.getElementById('loginUsername').value,
-                    Pool : userPool
-                };
-                var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-                cognitoUser.authenticateUser(authenticationDetails, {
-                    onSuccess: function (result) {
-                        var accessToken = result.getAccessToken().getJwtToken();
-                        console.log(accessToken);
-
-                        /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
-                        var idToken = result.idToken.jwtToken;
-                    },
-
-                    onFailure: function(err) {
-                        alert(JSON.stringify(err));
-                    },
-
-            });
-        }
-
-
-        async function doLogin(){
-
-            console.log(AWS);
-            console.log(Amplify);
-
-
-
-
-            let credentials = {
-                identifier: document.getElementById("loginUsername").value,
-                password: document.getElementById("loginPassword").value
+                    Username : loginUsername,
+                    Password : loginPassword
             };
 
-             document.getElementById("loginUsername").value = '';
-             document.getElementById("loginPassword").value = '';
+            var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+            var poolData = {
+                    UserPoolId : 'us-east-2_k12HwMzhu',
+                    ClientId : '6r7q5s89eam1ngaviibpcoqfak'
+            };
 
-            //- console.log(credentials);
+            var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+            var userData = {
+                    Username : loginUsername,
+                    Pool : userPool
+            };
 
-            let userDetails = await postCredentials(credentials);
-            console.log(userDetails);
+            var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+            cognitoUser.authenticateUser(authenticationDetails, {
+                onSuccess: async function (result) {
+                    //- var accessToken = result.getAccessToken().getJwtToken();
+                    localStorage.setItem('ACCESS_TOKEN', result.accessToken.jwtToken);
+                    localStorage.setItem('REFRESH_TOKEN', result.refreshToken.token);
+                    localStorage.setItem('ID_TOKEN', result.idToken.jwtToken);
+                    await loadInfoFromIdtkn();
+                    location.reload();
 
-            let userMessage = userDetails;
-            if (userMessage != 'Unauthorized!'){
-                userMessage = 'Logged in';
-                number.innerHTML = userDetails.user.username + ' has logged in ' + today.toString();
-            }
+                    /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
+                    var idToken = result.idToken.jwtToken;
 
-            contentfromStrapi.innerHTML = userMessage;
-
-
-            //- console.log(userDetails.jwt);
-            //- console.log(userDetails.user.username);
-
-            localStorage.setItem('POFF_TOKEN', userDetails.jwt);
-            localStorage.setItem('POFF_USER', userDetails.user.username)
-
-
-
-        }
-
-
-
-
-
-        async function postCredentials(credentials) {
-            let response = await fetch(`http://139.59.130.149/auth/local`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(credentials)
+
+                onFailure: function(err) {
+                    alert(JSON.stringify(err));
+                },
             });
-
-            return processJsonResponse(response);
         }
 
 
-        async function processJsonResponse(response) {
-            if (response.ok && response.status >= 200 && response.status < 300) {
-            // Kõik on hästi!
-                return await response.json();
-            }
-            else if (response.status >= 400 && response.status < 500) {
-            // Autentimine ebaõnnestus!
-                //- throw new Error('Unauthorized');
-                let result = 'Unauthorized!';
-                return result;
-            }
-            else {
-                // Päring ebaõnnestus, aga probleem ei olnud autentimisega.
-                throw new Error('Request failed', response);
-            }
-        }
+        function showUserInfo(){
 
-        async function doGetSomeData(){
-            let response = await fetch(`http://139.59.130.149/organisations`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('POFF_TOKEN')}`
-                }
+            var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'us-east-2'});
+
+            var params = {
+                AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
+            };
+            cognitoidentityserviceprovider.getUser(params, function(err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+            else     console.log(data);           // successful response
             });
-            let data = await processJsonResponse(response);
-            console.log(data);
-            contentfromStrapi.innerHTML = JSON.stringify(data);
-        }
-
-        function doLogout(){
-            localStorage.setItem('POFF_TOKEN', '');
-            localStorage.setItem('POFF_USER', '');
-            contentfromStrapi.innerHTML = 'Not logged in';
-            number.innerHTML = 'Log in here:'
-
-
         }
 
 
+        async function loadInfoFromIdtkn(){
+            console.log('loadInfoFromIdtk');
+            let response = await fetch(`https://rud4xujjle.execute-api.eu-north-1.amazonaws.com/dev/tkns`, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
+
+                });
+                let name1 = await response.json();
+                name = name1.message;
+                //- hello.innerHTML = 'Hello, ' + name.message;
+                //- return await response.json();
+                //- return processJsonResponse(response);
+        }
 
 
-        //- // Add 'aws-amplify' library into your application
+        async function addFavoriteFilm(){
+            console.log('addFavoriteFilm');
 
-        //- // Configure Auth category with your Amazon Cognito credentials
-        //- Amplify.configure({
-        //-     Auth: {
-        //-         identityPoolId: 'us-east-2_YZIoayw5r', // Amazon Cognito Identity Pool ID
-        //-         region: 'XX-XXXX-X', // Amazon Cognito Region
-        //-     }
-        //- });
+            let favoriteEntry = {
+                user: 'test123',
+                film: 'funnyFilm'
+            }
 
-        //- // Call Auth.signIn with user credentials
-        //- Auth.signIn(username, password)
-        //-     .then(user => console.log(user))
-        //-     .catch(err => console.log(err));
+
+            let response = await fetch(`https://2uz8lf2cf6.execute-api.eu-north-1.amazonaws.com/dev/hello-world`, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')},
+                        body: JSON.stringify(favoriteEntry)
+                        //- body: JSON.stringify(data)
+                });
+                console.log(await response.json());
+        }
+
+
+
+
+
+
+
+    //- async function getReplyFromAWS(code) {
+            //-     let response = await fetch(`https://9t1wskosmj.execute-api.eu-central-1.amazonaws.com/default/POFF-Validate`, {
+            //-         method: 'POST',
+            //-         //- headers: {Authorization: 'Bearer ' + accessToken}
+            //-         body: code
+            //-     });
+            //-     return await response.json();
+            //-     //- return processJsonResponse(response);
+            //- }
+
+
+
+
 
 
 
