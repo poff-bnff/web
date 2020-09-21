@@ -1,12 +1,9 @@
 const http = require('http')
 const fs = require('fs')
-const util = require('util')
-const { resolve } = require('path')
 const yaml = require('js-yaml')
-const path = require('path');
-const { isatty } = require('tty')
+const path = require('path')
 
-const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir');
+const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
 fs.mkdirSync(dirPath, { recursive: true })
 
@@ -22,10 +19,7 @@ for (const key in DATAMODEL) {
         }
     }
 }
-// todo:
-// luua _modelname property
 
-// console.log(__dirname);
 async function strapiAuth() {
 
     return new Promise((resolve, reject) => {
@@ -72,7 +66,7 @@ async function strapiFetch(modelName, token){
         }
 
         if (element['domains'] === undefined) {
-            // console.log(3);
+            // console.log(3)
             return true
         }
 
@@ -124,13 +118,14 @@ async function strapiFetch(modelName, token){
 
                     strapiData = strapiData.filter(checkDomain)
                     resolve(strapiData)
+                    console.log('.')
                 } else {
                     console.log(response.statusCode)
                     resolve([])
                 }
             })
             response.on('error', function (thisError) {
-                console.log(thisError);
+                console.log(thisError)
                 reject(thisError)
             })
         })
@@ -146,7 +141,7 @@ function TakeOutTrash (data, model, dataPath) {
     const isArray = (a) => { return Array.isArray(a) }
     const isEmpty = (p) => { return !p || p == null || p === '' || p === [] } // "== null" checks for both null and for undefined
 
-    // console.log('Grooming', dataPath)
+    // console.log('Grooming', dataPath, data, model)
     // eeldame, et nii data kui model on objektid
 
     const keysToCheck = Object.keys(data)
@@ -170,7 +165,7 @@ function TakeOutTrash (data, model, dataPath) {
         const nextData = data[key]
         const nextModel = model[key]
 
-        if (isArray(nextData) ^ isArray(nextModel)) {
+        if (isArray(nextData) ^ isArray(nextModel)) { // bitwise OR - XOR: true ^ false === false ^ true === true
             console.log(nextData, nextModel)
             throw new Error('Data vs model mismatch. Both should be array or none of them.')
         }
@@ -179,8 +174,7 @@ function TakeOutTrash (data, model, dataPath) {
                 if (isEmpty(nd)) { continue }
                 TakeOutTrash(nd, nextModel[0], key)
             }
-        }
-        if (isObject(nextData) && isObject(nextModel)) {
+        } else if (isObject(nextData) && isObject(nextModel)) {
             TakeOutTrash(nextData, nextModel, key)
         }
     }
@@ -195,8 +189,9 @@ const Compare = function (model, data, path) {
     }
     if (Array.isArray(model)) {
         if (Array.isArray(data)) {
+            // data = data.filter(function (el) { return el != null })
             for (const ix in data) {
-                // console.log('foo', path, ix);
+                // console.log('foo', path, ix)
                 Compare(model[0], data[ix], path + '[' + ix + ']')
             }
         } else {
@@ -224,27 +219,24 @@ const Compare = function (model, data, path) {
 
 const foo = async () => {
 
-    const ReplaceInModel = function(property_name, modelData, searchData) {
-        for (const ix in modelData) {
-            const element = modelData[ix]
-            if (element[property_name] === null) {
-                continue
-            }
-            if (element[property_name] === undefined) {
+    // Replace every property_name in strapiData with object from searchData
+    const ReplaceInModel = function(property_name, strapiData, searchData) {
+        // console.log(property_name, strapiData, searchData)
+        for (const element of strapiData) {
+            const value = element[property_name]
+            if (value === null || value === undefined) {
                 element[property_name] = null
                 continue
             }
 
             // kui nt toimetaja on kustutanud artikli, millele mujalt viidatakse
-            if (element[property_name].constructor === Object && Object.keys(element[property_name]).length === 0) {
+            if (value.constructor === Object && Object.keys(value).length === 0) {
                 element[property_name] = null
                 continue
             }
 
-            let element_id = element[property_name]
-            if (element_id.hasOwnProperty('id')) {
-                element_id = element_id['id']
-            }
+
+            const element_id = (value.hasOwnProperty('id') ? value.id : value)
             element[property_name] = searchData.find(element => element.id === element_id)
         }
     }

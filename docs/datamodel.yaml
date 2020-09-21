@@ -36,9 +36,9 @@ TagProgramme: &TagProgramme
 ArticleType: &ArticleType
     _path: /article-types
     name: (text)
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
+    label_et: (text)
+    label_en: (text)
+    label_ru: (text)
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
@@ -186,6 +186,10 @@ WebAuthor: &WebAuthor
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)

@@ -45,26 +45,23 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, getDataCB) {
 
     console.log(`Fetching ${DOMAIN} films ${lang} data`);
 
-    getDataCB(STRAPIDATA_FILM, dirPath, lang, copyFile, dataFrom, showErrors, generateYaml);
+    getDataCB(dirPath, lang, copyFile, dataFrom, showErrors);
 }
 
 
 
-function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generateYaml) {
+function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let allData = []
     // data = rueten(data, lang);
     // console.log(data);
-    data.forEach(element => {
-        let slugEn = element.slug_en;
-        if (!slugEn) {
-            slugEn = element.slug_et;
-        }
+    for (const originalElement of STRAPIDATA_FILM) {
+        const element = JSON.parse(JSON.stringify(originalElement))
 
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
-        element = rueten(element, lang);
+        rueten(element, lang)
 
-        element.directory = dirPath + slugEn;
+        element.directory = path.join(dirPath, element.slug)
         // console.log(element.directory);
         // element = rueten(element, `_${lang}`);
 
@@ -75,36 +72,16 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generate
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru'];
             for (key in element) {
-                let lastThree = key.substring(key.length - 3, key.length);
-                let findHyphen = key.substring(key.length - 3, key.length - 2);
-                // if (lastThree !== `_${lang}` && findHyphen === '_' && !allLanguages.includes(lastThree)) {
-                //     if (key.substring(0, key.length - 3) == 'slug') {
-                //         aliases.push(element[key]);
-                //     }
-                //     delete element[key];
-                // }
-                // if (lastThree === `_${lang}`) {
+
                 if (key == 'slug') {
                     element.path = `film/${element[key]}`;
                 }
-                    // element[key.substring(0, key.length - 3)] = element[key];
-
-
-                // delete element[key];
-                // }
-
-                // Make separate CSV with key
 
                 if (typeof(element[key]) === 'object' && element[key] != null) {
                     // makeCSV(element[key], element, lang);
                 }
-
             }
 
-
-
-            // element.aliases = aliases;
-            // rueten(element, `_${lang}`);
             allData.push(element);
             element.data = dataFrom;
 
@@ -115,7 +92,7 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generate
                 console.log(`Film ID ${element.id} slug_en value missing`);
             }
         }
-    });
+    }
 }
 
 function generateYaml(element, lang, copyFile, allData){
