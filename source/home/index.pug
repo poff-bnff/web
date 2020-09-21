@@ -27,11 +27,11 @@ block content
             section.hero_head
                 a(href= `/${lang_path}${artHeroTypeForPath}/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.image[0]
-                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
+                        img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}`).hero_image
                     else if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.imageDefault[0]
-                        img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
+                        img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}`).hero_image
                     else
-                        img(src='/assets/img/global/placeholder_hd_1.jpg').hero_image
+                        img(src='/assets/img/static/placeholder_hd_1.jpg').hero_image
                     .hero_headline_box
                         .hero_headline_box_1
                             .hero_headline
@@ -44,19 +44,19 @@ block content
 
 
                     //- if self.data.heroArticle.media.image[0]
-                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    //-     img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
                     //- else if self.data.heroArticle.media.imageDefault[0]
-                    //-     img(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                    //-     img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
                     //- else
-                    //-     img(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                    //-     img(src='/assets/img/static/placeholder_hd_1.jpg' style='width:30%; height:30%;')
                         //- HERO ARTICLE EXAMPLE END
 
                     //- if self.data.heroArticle.media.image[0]
-                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
+                    //-     img.container_contents_16_9(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.image[0].hash}${self.data.heroArticle.media.image[0].ext}` style='width:30%; height:30%;')
                     //- else if self.data.heroArticle.media.imageDefault[0]
-                    //-     img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
+                    //-     img.container_contents_16_9(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.data.heroArticle.slug}/${self.data.heroArticle.media.imageDefault[0].hash}${self.data.heroArticle.media.imageDefault[0].ext}` style='width:30%; height:30%;')
                     //- else
-                    //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' style='width:30%; height:30%;')
+                    //-     img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' style='width:30%; height:30%;')
 
     section.trio_block
         //- span.article_title_detailed.clr_primary= self.festivalDates
@@ -85,13 +85,13 @@ block content
                     a(href= `/${lang_path}${artTrioTypeForPath}/${ blocks.article.slug}`)
                         .trio_block_item
                             //- if blocks.block.image
-                            //-     img(src=`/assets/img/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
+                            //-     img(src=`/assets/img/dynamic/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
                             //- else if blocks.article.media.image[0]
-                            //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
+                            //-     img(src=`/assets/img/dynamic/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
                             //- else if blocks.article.media.imageDefault[0]
-                            //-     img(src=`/assets/img/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
+                            //-     img(src=`/assets/img/dynamic/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
                             //- else
-                            //-     img(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
+                            //-     img(src='/assets/img/static/placeholder_hd_1.jpg').trio_image
                             .trio_headline
                                 if typeof(blocks.block.title) !== 'object'
                                     | !{blocks.block.title}
@@ -103,7 +103,7 @@ block content
         //- //KUNI SIIN
 
     //- .home_2
-    //-     img.home_hero_img(src='/assets/img/global/hunt_dark.png' alt='Tartuff 2020')
+    //-     img.home_hero_img(src='/assets/img/static/hunt_dark.png' alt='Tartuff 2020')
     section.viiekas
 
         //- VIIEKAS START
@@ -158,11 +158,11 @@ block content
                                 a(href= `/${lang_path}${artTypeForPath}/${ news.slug}`)
                                     .container_frame_16_9
                                         if news.media && news.media.image && news.media.image[0]
-                                            img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.image[0].hash}${news.media.image[0].ext}`).trio_image
+                                            img.container_contents_16_9(src=`/assets/img/dynamic/img_articles/${self.locale}/${news.slug}/${news.media.image[0].hash}${news.media.image[0].ext}`).trio_image
                                         else if news.media && news.media.imageDefault && news.media.imageDefault[0]
-                                            img.container_contents_16_9(src=`/assets/img/img_articles/${self.locale}/${news.slug}/${news.media.imageDefault[0].hash}${news.media.imageDefault[0].ext}`).trio_image
+                                            img.container_contents_16_9(src=`/assets/img/dynamic/img_articles/${self.locale}/${news.slug}/${news.media.imageDefault[0].hash}${news.media.imageDefault[0].ext}`).trio_image
                                         else
-                                            img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg').trio_image
+                                            img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg').trio_image
                                     .viieka_body
                                         h3.article_title_locale= news.title
                                         .article_lead= news.lead
