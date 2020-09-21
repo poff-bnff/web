@@ -24,12 +24,15 @@ loadYaml(readYaml);
 function loadYaml(readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/teams.et.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/teams.et.yaml`, 'utf8'));
 
     } catch (e) {
         console.log(e);
     }
-
+    fs.mkdir(`${savePath}`, err => {
+        if (err) {
+        }
+    });
     readYaml(doc);
 }
 

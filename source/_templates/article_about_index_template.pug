@@ -25,42 +25,43 @@ block content
                     +tabname self.title
 
                     section.grid_article
-                        section.article_hero_head
+                        section.about_hero_head
                             if self.media && self.media.image && self.media.image[0]
-                                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`).article_hero_image
+                                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`).about_hero_image
                             else if self.media && self.media.imageDefault && self.media.imageDefault[0]
-                                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`).article_hero_image
+                                img(src=`/assets/img/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`).about_hero_image
                             else
-                                img(src='/assets/img/global/placeholder_hd_1.jpg').article_hero_image
+                                img(src='/assets/img/global/placeholder_hd_1.jpg').about_hero_image
                         if self.title
-                            .article_hero_headline_box
-                                .article_title_detailed= self.title
+                            .about_hero_headline_box
+                                .about_title_detailed
+                                    span= self.title + '!!!!!!!!!!!!!!!ABOUT!!!!!!!!!!!!!!!'
 
                     section.grid_article
                         section.article_meta
                             .str_info_meta_gi
-                                    if self.article_types && self.article_types[0]
-                                        .str_info_meta_item
-                                            .str_info_meta_value.dark_1= self.article_types[0].name
+                                    //- if self.article_types && self.article_types[0]
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1= self.article_types[0].name
 
-                                    if self.web_authors
-                                        .str_info_meta_item
-                                            - var authors = []
-                                            each author in self.web_authors
-                                                - authors.push(author.name)
-                                            .str_info_meta_value.dark_1= authors.join(', ')
-                                    else
-                                        .str_info_meta_item
-                                            .str_info_meta_value.dark_1= `${self.created_by.firstname} ${self.created_by.lastname}`
+                                    //- if self.web_authors
+                                    //-     .str_info_meta_item
+                                    //-         - var authors = []
+                                    //-         each author in self.web_authors
+                                    //-             - authors.push(author.name)
+                                    //-         .str_info_meta_value.dark_1= authors.join(', ')
+                                    //- else
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1= `${self.created_by.firstname} ${self.created_by.lastname}`
 
-                                    if self.publishFrom
-                                        .str_info_meta_item
-                                            .str_info_meta_value.dark_1
-                                                +localdatetime(self.publishFrom)
-                                    else
-                                        .str_info_meta_item
-                                            .str_info_meta_value.dark_1
-                                                +localdatetime(self.created_at)
+                                    //- if self.publishFrom
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1
+                                    //-             +localdatetime(self.publishFrom)
+                                    //- else
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1
+                                    //-             +localdatetime(self.created_at)
 
                                     .str_info_meta_item
                                         - var tagsList = []
@@ -79,7 +80,7 @@ block content
 
                         section.article_contents.dark_1
                             if self.lead
-                                p.font_weight_600.dark_1= self.lead
+                                p.font_weight_500.dark_1= self.lead
                             //- p= self.articleContents_et
                             if typeof(self.contents) !== 'object'
                                 +format(self.contents).dark_1

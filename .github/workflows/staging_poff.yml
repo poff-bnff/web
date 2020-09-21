@@ -8,7 +8,6 @@ on:
     push:
         branches: [ staging_poff ]
 
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
     # This workflow contains a single job called "build"
@@ -33,6 +32,10 @@ jobs:
 
         - name: Build Project
           run: npm run-script build_Poff
+          env:
+            StrapiHost: ${{ secrets.FETCH_HOST }}
+            StrapiUserName: ${{ secrets.FETCH_USER }}
+            StrapiPassword: ${{ secrets.FETCH_KEY }}
 
         - name: Copy Assets
           run: cp -R assets build/assets

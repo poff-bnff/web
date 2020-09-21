@@ -36,9 +36,9 @@ TagProgramme: &TagProgramme
 ArticleType: &ArticleType
     _path: /article-types
     name: (text)
-    et: (text)
-    en: (text)
-    ru: (text)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
@@ -619,7 +619,7 @@ TrioBlockItemPoff: &TrioBlockItemPoff
     lead: *Translated #(Component)
     customUrl: (text)
     order: (Number)
-    image: *Media
+    image: *StrapiMedia
 
 HeroArticlePoff:
     _path: /article-hero
@@ -631,10 +631,10 @@ TrioBlockPoff:
     _path: /trio-block-poeff
     blockName: *Translated
     poffi_article_1: *POFFiArticle #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff
     poffi_article_2: *POFFiArticle #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff
     poffi_article_3: *POFFiArticle #(Component)
+    trioBlockItem_1: *TrioBlockItemPoff
+    trioBlockItem_2: *TrioBlockItemPoff
     trioBlockItem_3: *TrioBlockItemPoff
 
 HeroArticleJustFilm:

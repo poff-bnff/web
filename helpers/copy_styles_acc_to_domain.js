@@ -3,6 +3,8 @@ const path = require('path');
 
 const stylesFolder =  path.join(__dirname, '../source/_styles/');
 
+fs.mkdirSync(stylesFolder, { recursive: true });
+
 if (process.env['DOMAIN'] === 'justfilm.ee') {
     var stylesFolderSource = path.join(__dirname, '../source/_styles_templates/_styles_justfilm/');
 } else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
