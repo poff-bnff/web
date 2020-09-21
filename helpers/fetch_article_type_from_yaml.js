@@ -88,7 +88,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
             // console.log(element)
             throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
-        console.log(element[`publish_${lang}`]);
+
         var currentTime = new Date()
         if (typeof(element.publishFrom) === 'undefined') {
             var publishFrom= new Date(element.created_at)
