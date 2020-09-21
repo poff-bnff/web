@@ -20,12 +20,6 @@ node ./helpers/fetch_article_type_from_yaml.js
 echo 'fetch_films_from_yaml'
 node ./helpers/fetch_films_from_yaml.js
 
-echo 'fetch_labels_from_yaml'
-node ./helpers/fetch_labels_from_yaml.js
-
-echo 'fetch_footer_from_yaml'
-node ./helpers/fetch_footer_from_yaml.js
-
 echo 'fetch_heroarticle_from_yaml'
 node ./helpers/fetch_heroarticle_from_yaml.js
 
@@ -34,6 +28,15 @@ node ./helpers/fetch_trioblock_from_yaml.js
 
 echo 'fetch_teams_from_yaml'
 node ./helpers/fetch_teams_from_yaml.js
+
+# labels, footer and menu are fetched to global
+# labels uses static global (first to fetch)
+
+echo 'fetch_labels_from_yaml'
+node ./helpers/fetch_labels_from_yaml.js
+
+echo 'fetch_footer_from_yaml'
+node ./helpers/fetch_footer_from_yaml.js
 
 echo 'fetch_menu_from_yaml'
 node ./helpers/fetch_menu_from_yaml.js

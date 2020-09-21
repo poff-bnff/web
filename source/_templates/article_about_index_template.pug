@@ -18,9 +18,7 @@ block content
             if (currentTime > publishFrom)
                 if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
 
-                    - var articlePics = self.data.pictures.articles
                     - var splitSelfPath = self.path.split("/")[self.path.split("/").length-1]
-                    - var articlePic = articlePics[splitSelfPath]
 
                     +tabname self.title
 

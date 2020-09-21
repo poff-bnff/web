@@ -5,46 +5,47 @@ include ../_templates/mixins.pug
 block content
 
     main.grid_film
-        if self.locale != 'et'
-            - my_path = self.path.substring(1).split("/")[1]
-        else
-            - my_path = self.path.substring(1)
-        - filmslugs = self.data.pictures.filmslugs
-        - filmslug = filmslugs[my_path]
 
-        section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
-            ol.carousel-indicators
-                if filmslug
-                    if filmslug.pics
-                        each val, index in filmslug.pics
-                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
-            .carousel-inner.container_frame_16_9
-                if filmslug
-                    if filmslug.pics.length
-                        each val, index in filmslug.pics
-                            if index == 0
-                                .carousel-item.active.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${my_path}/${val}` alt = self.filmTitle)
-                            else
-                                .carousel-item.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${my_path}/${val}` alt = self.filmTitle)
-                    else
-                        .carousel-item.active.container_contents_16_9
-                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.filmTitle)
-                else
-                    .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.filmTitle)
+        //- if self.locale != 'et'
+        //-     - my_path = self.path.substring(1).split("/")[1]
+        //- else
+        //-     - my_path = self.path.substring(1)
+        //- - filmslugs = self.data.pictures.filmslugs
+        //- - filmslug = filmslugs[my_path]
 
-            a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-                // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                    polyline(points='15 18 9 12 15 6')
-                span.sr-only Previous
-            a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-                // <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                    polyline(points='9 18 15 12 9 6')
-                span.sr-only Next
+        //- section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+        //-     ol.carousel-indicators
+        //-         if filmslug
+        //-             if filmslug.pics
+        //-                 each val, index in filmslug.pics
+        //-                     li(data-target='#carouselExampleIndicators' data-slide-to = index)
+        //-     .carousel-inner.container_frame_16_9
+        //-         if filmslug
+        //-             if filmslug.pics.length
+        //-                 each val, index in filmslug.pics
+        //-                     if index == 0
+        //-                         .carousel-item.active.container_contents_16_9
+        //-                             img.d-block.container_contents_16_9(src=`/assets/img/img_films/${my_path}/${val}` alt = self.filmTitle)
+        //-                     else
+        //-                         .carousel-item.container_contents_16_9
+        //-                             img.d-block.container_contents_16_9(src=`/assets/img/img_films/${my_path}/${val}` alt = self.filmTitle)
+        //-             else
+        //-                 .carousel-item.active.container_contents_16_9
+        //-                     img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+        //-         else
+        //-             .carousel-item.active.container_contents_16_9
+        //-                 img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+
+        //-     a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+        //-         // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        //-         svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+        //-             polyline(points='15 18 9 12 15 6')
+        //-         span.sr-only Previous
+        //-     a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+        //-         // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        //-         svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+        //-             polyline(points='9 18 15 12 9 6')
+        //-         span.sr-only Next
 
         block titleBox
         section.f_synopsis_box
