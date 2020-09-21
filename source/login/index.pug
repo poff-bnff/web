@@ -27,13 +27,18 @@ block content
     br
     br
     h1#hello
+    p#favoritefilm(style={color: 'green'})
     br
-    br
-    a(href='https://tests.auth.us-east-2.amazoncognito.com/login?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
+    a(href='https://testsss.auth.us-east-2.amazoncognito.com/login?client_id=6r7q5s89eam1ngaviibpcoqfak&response_type=code&scope=phone+email+openid+aws.cognito.signin.user.admin+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
     br
     button(onclick='toLocalhost()') Switch back to localhost
     br
     button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
+    br
+    br
+    br
+    button(onclick='showUserInfo()') Show user info
+
 
 
     style.
@@ -49,6 +54,8 @@ block content
 
         if (localStorage.getItem('ID_TOKEN')){
             hello.innerHTML = 'Hello, ' + name;
+            favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
+
         } else {
             hello.innerHTML = 'Not logged in'
         }
@@ -156,7 +163,7 @@ block content
                     console.log(result);
                     const JSONresult = JSON.parse(result);
                     console.log(JSONresult.name);
-                    hello.innerHTML = 'Hello, ' + JSONresult.name + '(token+userInfo request)';
+                    hello.innerHTML = 'Hello1, ' + JSONresult.name + '(token+userInfo request)';
                 })
                 .catch(error => console.log('error', error));
         }
@@ -179,8 +186,8 @@ block content
 
             var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
             var poolData = {
-                    UserPoolId : 'us-east-2_1bCsYSArV',
-                    ClientId : '6t3b33mud4uacl644m2k0i1vuv'
+                    UserPoolId : 'us-east-2_k12HwMzhu',
+                    ClientId : '6r7q5s89eam1ngaviibpcoqfak'
             };
 
             var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
@@ -211,8 +218,23 @@ block content
         }
 
 
+        function showUserInfo(){
+
+            var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'us-east-2'});
+
+            var params = {
+                AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
+            };
+            cognitoidentityserviceprovider.getUser(params, function(err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+            else     console.log(data);           // successful response
+            });
+        }
+
+
         async function loadInfoFromIdtkn(){
-            let response = await fetch(`https://kewlo9ntw1.execute-api.eu-north-1.amazonaws.com/dev/tkns`, {
+            console.log('loadInfoFromIdtk');
+            let response = await fetch(`https://rud4xujjle.execute-api.eu-north-1.amazonaws.com/dev/tkns`, {
                     method: 'GET',
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
@@ -223,8 +245,28 @@ block content
                 //- hello.innerHTML = 'Hello, ' + name.message;
                 //- return await response.json();
                 //- return processJsonResponse(response);
-
         }
+
+
+        async function addFavoriteFilm(){
+            console.log('addFavoriteFilm');
+
+            let favoriteEntry = {
+                user: 'test123',
+                film: 'funnyFilm'
+            }
+
+
+            let response = await fetch(`https://2uz8lf2cf6.execute-api.eu-north-1.amazonaws.com/dev/hello-world`, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')},
+                        body: JSON.stringify(favoriteEntry)
+                        //- body: JSON.stringify(data)
+                });
+                console.log(await response.json());
+        }
+
 
 
 
