@@ -22,7 +22,6 @@ header
                                     if self.data.articles
                                         - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem.poffi_article.id === a.id })
                                         - let article = articleFromYAML[0]
-                                        - console.log(article)
                                         li
                                             if article.article_types && article.article_types[0]
                                                 - var articleTypePath = ''

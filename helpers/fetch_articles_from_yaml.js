@@ -46,9 +46,7 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom) {
 
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
-        console.log('enne', element.article_types);
         rueten(element, lang)
-        console.log('pärast', element.article_types);
 
         element.directory = dirPath + slugEn
 
