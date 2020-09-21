@@ -29,7 +29,8 @@ node ./helpers/fetch_trioblock_from_yaml.js
 echo 'fetch_teams_from_yaml'
 node ./helpers/fetch_teams_from_yaml.js
 
-# footer, labels and menu are fetched to global
+# labels, footer and menu are fetched to global
+# labels uses static global (first to fetch)
 
 echo 'fetch_labels_from_yaml'
 node ./helpers/fetch_labels_from_yaml.js
