@@ -38,7 +38,7 @@ async function strapiAuth() {
         }
 
         const request = http.request(options, (response) => {
-
+            response.setEncoding('utf8')
             let tokenStr = ''
             response.on('data', function (chunk) {
                 tokenStr += chunk
@@ -103,6 +103,7 @@ async function strapiFetch(modelName, token){
         process.stdout.write('Fetching ' + modelName + ' ')
 
         const request = http.request(options, (response) => {
+            response.setEncoding('utf8')
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
