@@ -100,6 +100,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
 
                 if (key === "slug") {
                     element.path = path.join(artType.slug, element[key])
+                    element.articleType = artType.label
                 }
             }
             allData.push(element);
