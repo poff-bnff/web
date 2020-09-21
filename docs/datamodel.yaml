@@ -125,45 +125,45 @@ Button: &Button
     url_ru: (text)
 
 Small: &Small
-    ext: (text)
+    # ext: (text)
     url:  (text)
-    hash:  (text)
-    mime:  (text)
+    # hash:  (text)
+    # mime:  (text)
     name:  (text)
     path:  (text)
-    size:  (number)
-    width:  (number)
-    heigth:  (number)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
 
 Thumbnail: &Thumbnail
-    ext:  (text)
+    # ext:  (text)
     url:  (text)
-    hash:  (text)
-    mime:  (text)
+    # hash:  (text)
+    # mime:  (text)
     name:  (text)
     path:  (text)
-    size:  (number)
-    width:  (number)
-    heigth:  (number)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
 
 StrapiMedia: &StrapiMedia
     id: (number)
     name: (text)
     alternativeText: (text)
     caption: (text)
-    width:
-    height:
+    width: (Number)
+    height: (Number)
     formats:
         small: *Small
         thumbnail: *Thumbnail
-    hash:
-    ext:
-    mime:
-    size:
-    url:
-    previewUrl:
-    provider:
-    provider_metadata:
+    # hash: (text)
+    # ext: (text)
+    # mime: (text)
+    # size: (Number)
+    url: (text)
+    previewUrl: (text)
+    # provider: (text)
+    # provider_metadata: (text)
 
 Media: &Media
     imageDefault:
