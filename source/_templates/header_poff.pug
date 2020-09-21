@@ -27,15 +27,15 @@ header
                                                 - var articleTypePath = ''
                                                 each artType in article.article_types
                                                     if artType.name.toLowerCase() === 'about'
-                                                        - articleTypePath = artType[`slug_${self.locale}`]
+                                                        - articleTypePath = artType.slug
                                                     else if artType.name.toLowerCase() === 'interview'
-                                                        - articleTypePath = artType[`slug_${self.locale}`]
-                                                    else if artType.name.toLowerCase() === 'sponsorstory'
-                                                        - articleTypePath = artType[`slug_${self.locale}`]
+                                                        - articleTypePath = artType.slug
+                                                    else if artType.name.toLowerCase() === 'sponsor_story'
+                                                        - articleTypePath = artType.slug
                                                     else if artType.name.toLowerCase() === 'news'
-                                                        - articleTypePath = artType[`slug_${self.locale}`]
+                                                        - articleTypePath = artType.slug
                                                     else
-                                                        - articleTypePath = article.article_types[0][`slug_${self.locale}`]
+                                                        - articleTypePath = article.article_types[0].slug
 
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem.poffi_article.slug}`)= subMenuItem.name
 
