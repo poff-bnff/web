@@ -36,9 +36,9 @@ TagProgramme: &TagProgramme
 ArticleType: &ArticleType
     _path: /article-types
     name: (text)
-    et: (text)
-    en: (text)
-    ru: (text)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
