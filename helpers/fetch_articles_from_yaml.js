@@ -18,12 +18,12 @@ let allData = []; // for articles view
 
 function fetchAllData(dataModel){
     var dirPath = `${sourceFolder}_fetchdir/articles/`;
-    deleteFolderRecursive(dirPath);
+    // deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "en", 1, 1, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/article_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, dataModel, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
@@ -42,13 +42,13 @@ function deleteFolderRecursive(path) {
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, dataModel, getDataCB) {
 
-    fs.mkdirSync(dirPath, { recursive: true })
+    // fs.mkdirSync(dirPath, { recursive: true })
 
     console.log(`Fetching ${process.env['DOMAIN']} articles ${lang} data`);
 
     allData = [];
 
-    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 
     getDataCB(data[dataModel], dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml);
 
@@ -133,7 +133,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         // element = rueten(element, `_${lang}`);
 
         if(element.directory) {
-            fs.mkdirSync(element.directory, { recursive: true })
+            // fs.mkdirSync(element.directory, { recursive: true })
 
             // let element = JSON.parse(JSON.stringify(element));
             // let aliases = []
@@ -164,8 +164,6 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 }
 
             }
-
-
 
             // element.aliases = aliases;
             // rueten(element, `_${lang}`);
@@ -199,31 +197,31 @@ function makeCSV(obj, element, lang) {
 function generateYaml(element, element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
-    fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
+    // fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
-    if (writeIndexFile) {
-        if (element.article_types && element.article_types != null && element.article_types[0] != null) {
-            var templateName = element.article_types[0].name.toLowerCase();
-        }
-        if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
-            var templateName = 'uudis';
-        }
-        fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
-            if(err) {
-                return console.log(err);
-            }
-        });
+    // if (writeIndexFile) {
+    //     if (element.article_types && element.article_types != null && element.article_types[0] != null) {
+    //         var templateName = element.article_types[0].name.toLowerCase();
+    //     }
+    //     if ((templateName && !fs.existsSync(`${sourceFolder}_templates/article_${templateName}_index_template.pug`)) || !templateName){
+    //         var templateName = 'news';
+    //     }
+    //     fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${templateName}_index_template.pug`, function(err) {
+    //         if(err) {
+    //             return console.log(err);
+    //         }
+    //     });
 
-        // fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
-        //     if (err) throw err;
-        //     // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
-        // })
-    }
+    //     // fs.copyFile(`${dirPath}article_index_template.pug`, `${element.directory}/index.pug`, (err) => {
+    //     //     if (err) throw err;
+    //     //     // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
+    //     // })
+    // }
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`${sourceFolder}articles.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}_fetchdir/articles.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){

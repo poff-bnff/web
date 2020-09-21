@@ -14,8 +14,7 @@ jobs:
         -   name: ls -a via ssh
             uses: fifsky/ssh-action@master
             with:
-                command: |
-                    rsync -avzr --delete domeenid/www.inscaping.eu/web/poff_staging/* domeenid/www.inscaping.eu/web/poff_live/
+                command: scp -r domeenid/www.inscaping.eu/web/poff_staging poff:domeenid/www.poff.ee/web2020/poff_live
                 host: inscaping.eu
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
