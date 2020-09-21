@@ -1,4 +1,4 @@
-name: poff.inscaping.eu/
+name: poff.ee
 
 on:
     release:
@@ -11,14 +11,14 @@ jobs:
         name: SCP files to server
         runs-on: ubuntu-latest
         steps:
-        -   name: executing remote ssh commands using ssh key
-            uses: appleboy/ssh-action@master
+        -   name: ls -a via ssh
+            uses: fifsky/ssh-action@master
             with:
+            # /* kopeeritava ja / target folderi lõppu tagab, et failid kirjutatakse üle
+                command: scp -r domeenid/www.inscaping.eu/web/poff_staging/* poff:domeenid/www.poff.ee/web2020/poff_live/
                 host: inscaping.eu
-                username: virt84398
-                port: 22
+                user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
-                script: scp -r domeenid/www.inscaping.eu/web/poff_staging poff:domeenid/www.poff.ee/web2020/poff_live
 
         - name: Github->Slack notification Webhook action
           uses: craftech-io/slack-action@v1
