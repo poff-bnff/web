@@ -39,7 +39,7 @@ bg_dark_1 = #0E1417
 bg_dark_2 = #192024
 bg_dark_3 = #1C272E
 bg_dark_4 = #29333A
-bg_light_1 = #ffffff
+bg_light_1 = #eeeeee
 bg_light_2 = #dddddd
 bg_light_3 = #cccccc
 bg_color_1 = #ffffff
@@ -50,7 +50,6 @@ clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 // clr_primary = #ec008c
 clr_primary = #F39133 // PÖFF orange
-clr_primary_text = #F39133 // PÖFF orange
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -60,12 +59,11 @@ clr_tartuff_red = #c92c33
 clr_popover = #0E1417
 clr_covid = #bc06c6
 clr_vote = #00aeef
-clr_grey_light = #dddddd
 
 header_height = 97px
 full_height = calc(100vh - header_height)
 clr_header_text = #0E1417
-clr_header_bg = #ffffff
+clr_header_bg = white
 
 breakpoint-lg = 992px
 breakpoint-md = 768px
@@ -78,7 +76,7 @@ font_h = 'Open Sans Condensed', sans-serif
 // font_h = 'Fira Sans Extra Condensed', sans-serif
 // font_h = 'Sofia Pro Condensed', sans-serif
 
-// font_p = 'Source Sans Pro', sans-serif
+font_p = 'Source Sans Pro', sans-serif
 // font_p = 'Barlow', sans-serif
 // font_p = 'Roboto', sans-serif
 // font_p = 'Lato', sans-serif
@@ -109,7 +107,7 @@ body
     font-size 16px
     line-height 1.618rem
     color white_96
-    background-color bg_light_1
+    background-color bg_dark_1
     font-family font_h
     margin 0
     // padding-left 0
@@ -134,11 +132,6 @@ body
 .ghost_blue
     color ghost_blue
 
-.font_weight_200
-    font-weight 200
-
-.font_weight_300
-    font-weight 300
 
 .font_weight_400
     font-weight 400
@@ -151,9 +144,6 @@ body
 
 .font_weight_700
     font-weight 700
-
-h3
-    font-weight 400
 
 h4
     font-size 1.4rem
@@ -170,7 +160,6 @@ header
     grid-template-columns auto 1fr
     background-color clr_header_bg
     width 100%
-    // height header_height
     // text-align center
     position fixed
     z-index 900
@@ -179,31 +168,23 @@ header
 
 .main_menu
     position absolute
-    font-family font_h
-    font-weight 300
-    text-align center
+    text-align left
     left 0
     background-color clr_header_bg
     width 100%
     padding-top 1rem
     padding-bottom 1rem
     display none
-    margin-top 5rem
-    // text-align right
-    // height header_height
 
 .main_menu ul
     margin 0
     padding 0
     list-style none
-    // border dashed red
-    width 100%
 
 .main_menu li
     margin-top .5rem
     margin-bottom .5rem
     // margin-left 1rem
-    // border dashed blue
 
 .main_menu a
     color clr_header_text
@@ -212,18 +193,14 @@ header
     text-transform uppercase
 
 .main_menu a:hover
-    color clr_primary_text
+    color clr_primary
     text-decoration none
 
 .main_menu_toggle
     display none
 
-// .main_menu_toggle:checked~main_menu
-//     display block
-
-.main_menu_toggle:checked~.main_menu
-    display flex
-    width 100vw
+.main_menu_toggle:checked~main_menu
+    display block
 
 .main_menu_toggle_label
     position absolute
@@ -255,23 +232,7 @@ header
 .main_menu_toggle_label span::after
     top 7px
 
-.ul_kaks
-    text-align right
-    // margin-top 3rem
-    // padding-top 5rem
-    // border dashed blue
 
-
-.ul_kaks li
-    padding-right 30vw
-
-
-.ul_kaks a
-    color dark_4
-
-// .ul_kaks:first-child
-//     padding-top 5rem
-//     padding-right 50vw
 
 // HEADER & NAV --------------------
 
@@ -292,7 +253,7 @@ footer
     padding 10vw
     background-color bg_dark_1
     min-height calc(100vh - 97px)
-    
+
 
 .grid_footer_row
     display grid
@@ -315,18 +276,6 @@ footer
     // font-weight 500
     color white_96
     font-size 1rem
-    text-decoration none
-    text-transform uppercase
-
-.footer_p
-    // display inline
-    font-family font_p
-    // font-size 1.618rem
-    // font-weight 500
-    color white_96
-    font-size 1rem
-    line-height 1.618
-    text-align left
     text-decoration none
     text-transform uppercase
 
@@ -394,8 +343,7 @@ footer
     color white_96
     a
         color ghost_blue
-        padding-left .6rem
-        padding-right .6rem
+        padding-left 1rem
 
 .logo
     margin 1rem
@@ -536,7 +484,7 @@ footer
     font-size calc(1.9rem + 1.5vw)
     text-decoration none
     text-align left
-    font-weight 400
+    font-weight 600
     line-height 1.4
     letter-spacing 0.04rem
     // padding-top 1rem
@@ -636,7 +584,7 @@ a .dark:hover
     color dark_4
     font-size 1.5rem
     font-family font_h
-    font-weight 400
+    font-weight 500
     padding-top .5rem
     letter-spacing 0.01em
 
@@ -691,7 +639,6 @@ a .dark:hover
     // padding 2rem 2rem 2rem 2rem
     padding 0
     margin 0
-    border .5px solid clr_grey_light
     // border 1px solid red
 
 // .viieka_item:first-child
@@ -711,27 +658,27 @@ a .dark:hover
     color dark_4
     font-size 1.5rem
     font-family font_h
-    font-weight 400
+    font-weight 500
     padding-top .5rem
     letter-spacing 0.01em
 
 .footer_logos
     display grid
-    grid-template-columns repeat(auto-fill, minmax(12rem, 15rem))
+    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logost:first-child
+.footer_logos:first-child
     display grid
-    grid-template-columns repeat(auto-fill, minmax(50rem, 60rem))
+    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logost:nth-child(2)
+.footer_logos:nth-child(2)
     display grid
     grid-template-columns repeat(auto-fill, minmax(15rem, 20rem))
     justify-content center
@@ -739,26 +686,23 @@ a .dark:hover
     align-items center
     grid-gap 2rem
 
-.footer_logosT:nth-child(3)
+.footer_logos:nth-child(3)
     display grid
-    grid-template-columns repeat(auto-fill, minmax(4rem, 6rem))
+    grid-template-columns repeat(auto-fit, minmax(10rem, 12rem))
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logo_item
-    width: 100%
 
+.footer_logo_item:first-child
+    width: 70%
 
-// .footer_logo_item:first-child
-//     width: 100%
+.footer_logo_item:nth-child(2)
+    width: 70%
 
-// .footer_logo_item:nth-child(2)
-//     width: 70%
-
-// .footer_logo_item:nth-child(3)
-//     width: 70%
+.footer_logo_item:nth-child(3)
+    width: 70%
 
 .footer_logo_item_1
     // background-color bg_dark_3
@@ -849,14 +793,11 @@ a .dark:hover
     line-height 1.2rem
     a
         text-decoration none
-        color dark_1
+        color white_96
         // font-weight 600
     p
         font-size 1rem
         line-height 1.2rem
-        color dark_1
-    h4
-        color dark_1
 
 .schedule
     padding-top header_height
@@ -1016,9 +957,9 @@ header
         width calc(1.5rem + 0.1vw)
         margin-right 1rem
         margin-left 1rem
-        stroke white_semi
+        stroke clr_primary
         stroke-width 1
-        transform scale(.96,.96)
+        transform scale(1.2,1.2)
 /* TEXT */
 
 a .svg_icon_footer
@@ -1042,9 +983,6 @@ p
   font-weight 300
   margin-bottom calc((1rem * 1.618) / 2)
 
-p a
-    text-decoration none
-
 // br
 //     display block
 //     line-height 5rem
@@ -1053,7 +991,7 @@ p a
   font-family font_h
   font-size calc(1.618rem + 3vw)
   line-height 1
-  font-weight 400
+  font-weight 700
   color bg_dark_4
   letter-spacing 0.04em
   text-align center
@@ -1068,7 +1006,7 @@ p a
   font-family font_h
   font-size calc(4rem + 5vw)
   line-height 1
-  font-weight 400
+  font-weight 700
   color bg_dark_4
   letter-spacing 0.04em
   text-align center
@@ -1080,7 +1018,7 @@ p a
     font-family font_h
     font-size calc(1.618rem + 1.618vw)
     line-height 1
-    font-weight 500
+    font-weight 700
     color bg_dark_4
     letter-spacing 0.04em
     text-align center
@@ -1095,8 +1033,8 @@ p a
   font-family font_h
   font-size calc(1.618rem + 1.618vw)
   line-height 1
-  font-weight 400
-  color dark_1
+  font-weight 700
+  color white_96
   letter-spacing 0.04em
   text-align center
   margin 0
@@ -1117,7 +1055,7 @@ p a
   font-size calc(1rem + 2.4vw)
   text-decoration none
   text-align left
-  font-weight 400
+  font-weight 600
   line-height 1.3
   letter-spacing 0.04rem
   padding-top 1rem
@@ -1277,7 +1215,7 @@ a.btn_popover
 .screening_date
   text-align left
   font-size calc(1.25rem + 0.1vw)
-  font-weight 400
+  font-weight 500
   color white_96
   letter-spacing 0.04em
 
@@ -1291,14 +1229,14 @@ a.btn_popover
 .screening_time
   text-align right
   font-size calc(1.25rem + 0.1vw)
-  font-weight 400
+  font-weight 500
   color ghost_blue
   letter-spacing 0.04em
 
 .screening_hall
   text-align left
   font-size calc(1.25rem + 0.1vw)
-  font-weight 400
+  font-weight 500
   color white_96
   letter-spacing 0.04em
 
@@ -1406,8 +1344,7 @@ a.btn_popover
     align-content space-between
     // margin-top 2rem
     background-color white
-    margin-bottom 1.618rem
-    border .5px solid clr_grey_light
+    margin-bottom 2rem
 
 .card_film:hover,
 .card_article:hover
@@ -1468,17 +1405,6 @@ a.btn_popover
     object-fit cover
     z-index -1
 
-.about_hero_head
-    position relative
-    grid-column 1 / 4
-    height calc(80vh - 97px)
-
-.about_hero_image
-    width 100vw
-    height calc(80vh - 97px)
-    object-fit cover
-    z-index -1
-
 .article_hero_headline_box
     position absolute
     bottom 0
@@ -1491,24 +1417,12 @@ a.btn_popover
     text-align left
     padding 2rem 2rem 2rem 2rem
 
-.about_hero_headline_box
-    position absolute
-    bottom calc(30vh - 6rem)
-    left 0
-    width 67vw
-    // background rgba(10,0,3,.6)
-    // background rgba(236,0,140,.6)
-    // background rgba(90,0,60,.7)
-    // background-color clr_primary
-    text-align left
-    padding 2rem 2rem 2rem 0rem
-
 .article_title_detailed
     font-family font_h
     font-size calc(1.9rem + 1.5vw)
     text-decoration none
     text-align left
-    font-weight 400
+    font-weight 600
     line-height 1.4
     letter-spacing 0.04rem
     padding-top 1rem
@@ -1517,55 +1431,13 @@ a.btn_popover
         text-decoration: none
         // color white_96
 
-.about_title_detailed
-    font-family font_h
-    font-size calc(1.9rem + 1.5vw)
-    text-decoration none
-    text-align left
-    font-weight 300
-    line-height 1.2
-    letter-spacing 0.04rem
-    padding-top 1rem
-    padding-bottom 1rem
-    a
-        text-decoration: none
-        // color white_96
-
-.about_title_detailed span
-    // background-color rgba(255,255,255,.9)
-    background-color white
-    color dark_4
-    display inline
-    padding-left 3rem
-    padding-right 1.2rem
-    padding-top .5rem
-    font-size 3rem
-    line-height 1.55
-    box-decoration-break clone
-
 .article_meta
     padding 1rem
     text-align center
 
 .article_contents
     padding 1rem
-    img
-        // padding-left -1rem
-        // padding-right -1rem
-        // margin-left -1rem
-        // margin-right -1rem
-        width 100vw
-    h4
-        padding-top 1.618rem
-    h6
-        font-family font_p
-        font-size 1rem
-        font-style italic
-        font-weight 300
-        color dark_4
-        text-align left
-        aligh left
-        margin-top -1.618rem
+
     ul
         padding 0
         margin 0
@@ -1576,14 +1448,10 @@ a.btn_popover
         margin-left 1rem
     iframe
         width 100%
-        padding 0
-        margin 0
         margin-top 1.618rem
         margin-bottom 1.618rem
     img
         width 100%
-        padding 0
-        margin 0
         margin-top 1.618rem
         margin-bottom 1.618rem
 
@@ -1606,7 +1474,6 @@ a.btn_popover
     color dark_1
     font-size 1rem
     line-height 1.5rem
-    font-weight 300
     display inline
 
 
@@ -1616,7 +1483,7 @@ a.btn_popover
     letter-spacing: 0.04rem
 
 .article_title_locale
-    font-size 1.4rem
+    font-size 2rem
     color dark_4
     letter-spacing 0.04rem
 
@@ -1886,13 +1753,11 @@ a.btn_popover
         display flex
         justify-content flex-end
         align-items flex-end
-        // justify-items flex-end
-        // align-content flex-end
         position static
         margin 0
         padding 0
         padding-right 1.2rem
-        // border dashed red
+        border 1px blue
 
     .main_menu ul
         display flex
@@ -1900,19 +1765,19 @@ a.btn_popover
         align-items flex-end
         /* border: 1px solid red; */
 
-    .main_menu li
+    nav li
         /* margin-bottom: 0; */
         height 100%
         margin 0
-        padding-left 1.5rem
-        padding-right 1.5rem
+        padding-left 1.2rem
+        padding-right 1.2rem
         padding-top 1rem
         padding-bottom 1rem
-        // border 1px solid rgba(255, 255, 255, 0)
+        border 1px solid rgba(255, 255, 255, 0)
         /* background-color: red; */
 
     .main_menu ul li.dropdown ul
-        background-color clr_header_bg
+        background-color bg_dark_2
         position absolute
         left 0
         padding-left 0
@@ -1922,31 +1787,18 @@ a.btn_popover
 
     .main_menu ul li.dropdown:hover ul
         display block
-        margin-bottom 5rem
         /* margin-top: 1rem; */
 
     .main_menu ul li.dropdown ul li a
-        text-transform uppercase
+        text-transform none
 
-    .main_menu li:hover
-        background-color clr_header_bg
-        // border-top 1px solid clr_primary
+    nav li:hover
+        background-color bg_dark_2
+        border-top 1px solid clr_primary
         /* border-right: 1px solid var(--clr_primary); */
 
-    .main_menu li a:hover
-        color clr_primary_text
-
-    .ul_kaks
-        text-align left
-        padding 0
-        margin 0
-        li
-            padding-top .5rem
-            padding-bottom .5rem
-        li:first-child
-            padding-top 1.618rem
-        li:last-child
-            padding-bottom 1.618rem
+    nav li a:hover
+        color white_96
 
     footer
         grid-area footer
@@ -1955,7 +1807,6 @@ a.btn_popover
         padding 0
         // padding 10vw
         padding 3rem 5rem 3rem 5rem
-        background-color bg_dark_1
 
     .grid_footer_row
         display grid
@@ -2127,17 +1978,6 @@ a.btn_popover
         object-fit cover
         z-index -1
 
-    .about_hero_head
-        position relative
-        grid-column 1 / 4
-        height calc(80vh - 97px)
-
-    .about_hero_image
-        width 100%
-        height calc(80vh - 97px)
-        object-fit cover
-        z-index -1
-
     .article_hero_headline_box
         position absolute
         bottom 0
@@ -2159,21 +1999,6 @@ a.btn_popover
         padding 0
         // padding-top calc(2rem + 3vw)
         padding-bottom calc(2rem + 3vw)
-        img
-            // position relative
-            // left 0%
-            width 60vw
-            max-width 66vw
-            // max-width 100vw
-            // grid-column 2 / span 3
-            // column-span 2
-        iframe
-            width 60vw
-            max-width 66vw
-            height 34vw
-            max-height 34vw
-        h4
-            padding-top 1.618rem
 
     .home_hero_img
         width 100%
@@ -2203,7 +2028,7 @@ a.btn_popover
     text-transform uppercase
 
 .bold
-    font-weight 500
+    font-weight 600
 
 .lh2
     line-height 4rem
@@ -2217,9 +2042,6 @@ a.btn_popover
 .grid_article
     p
         color dark_1
-        a
-            text-decoration none
-            color orange_strong
     ul
         font-family font_p
         font-weight 300
@@ -2241,9 +2063,3 @@ a:hover
 // a
 //     text-decoration none!important
     // font-weight 600
-
-strong
-    font-weight 500
-
-.padding_top_4
-    padding-top 4rem
