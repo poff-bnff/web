@@ -1,34 +1,31 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const { type } = require('os');
 const path = require('path');
 const rueten = require('./rueten.js')
 
-const sourceFolder = path.join(__dirname, '../source/');
-//console.log(sourceFolder)
+const sourceDir =  path.join(__dirname, '..', 'source')
+const fetchDir =  path.join(sourceDir, '_fetchdir')
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
-// const allLanguages = ['en', 'et', 'ru'];
-
-var dataModel = 'POFFiArticle'
-if (process.env['DOMAIN'] === 'justfilm.ee') {
-    dataModel = 'JustFilmiArticle'
-} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
-    dataModel = 'ShortsiArticle'
-} else {
-    process.env['DOMAIN'] = 'poff.ee'
+const mapping = {
+    'poff.ee': 'POFFiArticle',
+    'justfilm.ee': 'JustFilmiArticle',
+    'shorts.poff.ee': 'ShortsiArticle'
 }
+const modelName = mapping[DOMAIN]
+const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
 
-let allData = []; // for articles view
 
-function fetchAllData(dataModel) {
-    let newDirPath = path.join(sourceFolder, "_fetchdir" )
+function fetchAllData() {
+    let newDirPath = path.join(sourceDir, "_fetchdir" )
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
     getData(newDirPath,"en",1,1,{
             screenings: "/film/screenings.en.yaml",
             articles: "/_fetchdir/articles.en.yaml",
         },
-        dataModel,
         getDataCB
     );
     getData(
@@ -40,7 +37,6 @@ function fetchAllData(dataModel) {
             screenings: "/film/screenings.et.yaml",
             articles: "/_fetchdir/articles.et.yaml",
         },
-        dataModel,
         getDataCB
     );
     getData(
@@ -52,25 +48,8 @@ function fetchAllData(dataModel) {
             screenings: "/film/screenings.ru.yaml",
             articles: "/_fetchdir/articles.ru.yaml",
         },
-        dataModel,
         getDataCB
     );
-}
-
-function deleteFolderRecursive(path) {
-    if (fs.existsSync(path)) {
-        fs.readdirSync(path).forEach(function (file, index) {
-            var curPath = path + "/" + file;
-            if (fs.lstatSync(curPath).isDirectory()) {
-                // recurse
-                deleteFolderRecursive(curPath);
-            } else {
-                // delete file
-                fs.unlinkSync(curPath);
-            }
-        });
-        fs.rmdirSync(path);
-    }
 }
 
 function getData(
@@ -79,22 +58,15 @@ function getData(
     writeIndexFile,
     showErrors,
     dataFrom,
-    dataModel,
     getDataCB
 ) {
     // fs.mkdirSync(dirPath, { recursive: true })
     // console.log(dirPath)
 
-    console.log(`Fetching ${process.env["DOMAIN"]} articles ${lang} data`);
-
-    allData = [];
-
-    const data = yaml.safeLoad(
-        fs.readFileSync(__dirname + "/../source/_fetchdir/strapiData.yaml", "utf8")
-    );
+    console.log(`Fetching ${DOMAIN} articles ${lang} data`)
 
     getDataCB(
-        data[dataModel],
+        STRAPIDATA_ARTICLE,
         dirPath,
         lang,
         writeIndexFile,
@@ -107,14 +79,16 @@ function getData(
 
 function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml) {
     allData = [];
-    data.forEach((element) => {
+    for (const strapiElement of data) {
+        const element = JSON.parse(JSON.stringify(strapiElement))
         let slugEn = element.slug_en || element.slug_et
         if (!slugEn) {
+            console.log(element)
             throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
-        element = rueten(element, lang);
+        rueten(element, lang);
         // console.log(element)
         for (artType of element.article_types) {
 
@@ -133,12 +107,8 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 element.data = dataFrom;
 
                 generateYaml(element, element, dirPath, lang, writeIndexFile, artType);
-
         }
-
-
-
-    });
+    }
 }
 
 function makeCSV(obj, element, lang) {
@@ -158,12 +128,6 @@ function makeCSV(obj, element, lang) {
     }
 }
 
-let allNews = [];
-let allSponsor = [];
-let allAbout = [];
-let allInterview = [];
-let allIndustry = [];
-
 function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
 
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
@@ -175,43 +139,7 @@ function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
             return console.log(err);
         }
     });
-
-    let allDataYAML = yaml.safeDump(allData, { noRefs: true, indent: "4" });
-
-    if (artType === "News") {
-        allNews.push(element);
-    } else if (artType === "SponsorStory") {
-        allSponsor.push(element);
-    } else if (artType === "Interview") {
-        allInterview.push(element);
-    } else if (artType === "About") {
-        allAbout.push(element);
-    } else if (artType === "IndustryProject") {
-        allIndustry.push(element);
-    }
-    //console.log(allAbout)
-
-
-
-    //console.log(allAbout)
-
-    // let allNewsYAML = yaml.safeDump(allNews, { noRefs: true, indent: "4" });
-    // let allSponsorYAML = yaml.safeDump(allSponsor, {noRefs: true, indent: "4",});
-    // let allInterviewYAML = yaml.safeDump(allInterview, { noRefs: true, indent: "4",});
-    // let allAboutYAML = yaml.safeDump(allAbout, { noRefs: true, indent: "4" });
-    // let allIndustryYAML = yaml.safeDump(allIndustry, {noRefs: true, indent: "4",});
-
-    // fs.writeFileSync(`${sourceFolder}_fetchdir/news.${lang}.yaml`, allNewsYAML, "utf8");
-    // fs.writeFileSync( `${sourceFolder}_fetchdir/sponsorstories.${lang}.yaml`, allSponsorYAML, "utf8");
-    // fs.writeFileSync(`${sourceFolder}_fetchdir/interviews.${lang}.yaml`, allInterviewYAML, "utf8");
-    // fs.writeFileSync(`${sourceFolder}_fetchdir/about.${lang}.yaml`, allAboutYAML, "utf8");
-    // fs.writeFileSync(`${sourceFolder}_fetchdir/industry.${lang}.yaml`, allIndustryYAML, "utf8");
 }
 
-function modifyData(element, key, lang) {
-    finalData = element[key][lang];
-    delete element[key];
-    element[key] = finalData;
-}
 
-fetchAllData(dataModel);
+fetchAllData();

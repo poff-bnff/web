@@ -1,50 +1,40 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
-const util = require('util');
 const rueten = require('./rueten.js')
 
-const sourceFolder =  path.join(__dirname, '../source/');
-
-if (process.env['DOMAIN'] === 'shorts.poff.ee') {
-    var domain = 'shorts.poff.ee';
-} else if (process.env['DOMAIN'] === 'justfilm.ee') {
-    var domain = 'justfilm.ee';
-} else {
-    var domain = 'poff.ee';
-}
+const sourceDir =  path.join(__dirname, '..', 'source')
+const fetchDir =  path.join(sourceDir, '_fetchdir')
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const modelName = 'Footer'
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
+const STRAPIDATA_FOOTER = STRAPIDATA[modelName]
 
-DataToYAMLData(strapiData[modelName]);
+LangSelect('et');
+LangSelect('en');
+LangSelect('ru');
 
-function DataToYAMLData(strapiData){
-    // console.log(strapiData);
-    LangSelect(strapiData, 'et');
-    LangSelect(strapiData, 'en');
-    LangSelect(strapiData, 'ru');
-}
-
-function LangSelect(strapiData, lang) {
-    processData(strapiData, lang, CreateYAML);
+function LangSelect(lang) {
+    processData(lang, CreateYAML);
     console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`);
 }
 
 
-function processData(data, lang, CreateYAML) {
+function processData(lang, CreateYAML) {
     // console.log(util.inspect(data));
 
 
-    let copyData = JSON.parse(JSON.stringify(data));
+    let copyData = JSON.parse(JSON.stringify(STRAPIDATA_FOOTER));
     // console.log(util.inspect(copyData));
     let buffer = [];
     for (index in copyData) {
         // console.log('index', index);
         // console.log('domain', domain);
         // console.log('copydatadomeen', copyData[index].domain);
-        if(copyData[index].domain.url === domain) {
-            buffer = rueten(copyData[index], lang);
+        if(copyData[index].domain.url === DOMAIN) {
+            buffer = rueten(copyData[index], lang)
         }
     }
     CreateYAML(buffer, lang);
@@ -53,14 +43,14 @@ function processData(data, lang, CreateYAML) {
 }
 
 function CreateYAML(buffer, lang) {
+    const globalDataPath = path.join(sourceDir, `global.${lang}.yaml`)
     // console.log(buffer);
-    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global_static/global_s.${lang}.yaml`, 'utf8'))
+    let globalData= yaml.safeLoad(fs.readFileSync(globalDataPath, 'utf8'))
     // console.log(globalData);
     globalData.footer = buffer
 
-    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
-    // console.log(`${sourceFolder}global.${lang}.yaml`);
+    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(globalDataPath, allDataYAML, 'utf8')
 }
 
 

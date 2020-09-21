@@ -5,18 +5,18 @@ const rueten = require('./rueten.js')
 
 const sourceDir =  path.join(__dirname, '..', 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
-
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+
 const mapping = {
     'poff.ee': 'TrioBlockPoff',
     'justfilm.ee': 'TrioBlockJustFilm',
     'shorts.poff.ee': 'TrioBlockShorts'
 }
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPITRIODATA = STRAPIDATA[mapping[DOMAIN]]
+const STRAPIDATA_TRIO = STRAPIDATA[mapping[DOMAIN]]
 
-if (STRAPITRIODATA.length < 1) {
+if (STRAPIDATA_TRIO.length < 1) {
     console.log(`ERROR! No data to fetch for ${DOMAIN} trioblock`)
 }
 
@@ -29,11 +29,10 @@ if (process.env['DOMAIN'] === 'justfilm.ee') {
     fetchFrom = 'TrioBlockShorts'
 }
 
-for (const ix in languages) {
-    const lang = languages[ix]
+for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} trioblock ${lang} data`)
 
-    let copyData = JSON.parse(JSON.stringify(STRAPITRIODATA[0]))
+    let copyData = JSON.parse(JSON.stringify(STRAPIDATA_TRIO[0]))
     let buffer = []
     for (key in copyData) {
         if (key.split('_')[0] !== 'trioBlockItem') {
