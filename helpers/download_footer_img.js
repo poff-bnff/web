@@ -120,11 +120,9 @@ function download(url, dest) {
         }else{
             // console.log(`Skipped: Footer img ${url.split('/')[url.split('/').length - 1]} skipped due to same exists`);
         }
-    }).on('error', function (err) { // Handle errors
-        console.log(err);
-        // fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        // if (cb) cb(err.message);
-    });
+    }).on('error', function (err) {
+        console.log(err)
+    })
 };
 
 

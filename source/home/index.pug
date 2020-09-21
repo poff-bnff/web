@@ -21,9 +21,9 @@ block content
             each artHeroType in articleHero.article_types
                 - artHeroTypes.push(artHeroType.name.toLowerCase())
                 if artHeroType.name.toLowerCase() === whichTypesToDisplay[0]
-                    - artHeroTypeForPath = artHeroType[`slug_${self.locale}`].toLowerCase()
+                    - artHeroTypeForPath = artHeroType.slug.toLowerCase()
                 else if whichTypesToDisplay.includes(artHeroType.name.toLowerCase())
-                    - artHeroTypeForPath = artHeroType[`slug_${self.locale}`].toLowerCase()
+                    - artHeroTypeForPath = artHeroType.slug.toLowerCase()
             section.hero_head
                 a(href= `/${lang_path}${artHeroTypeForPath}/${ self.data.heroArticle.slug}`)
                     if self.data.heroArticle && self.data.heroArticle.media && self.data.heroArticle.media.image[0]
@@ -79,9 +79,9 @@ block content
                     each artTrioType in articleTrio.article_types
                         - artTrioTypes.push(artTrioType.name.toLowerCase())
                         if artTrioType.name.toLowerCase() === whichTypesToDisplay[0]
-                            - artTrioTypeForPath = artTrioType[`slug_${self.locale}`].toLowerCase()
+                            - artTrioTypeForPath = artTrioType.slug.toLowerCase()
                         else if whichTypesToDisplay.includes(artTrioType.name.toLowerCase())
-                            - artTrioTypeForPath = artTrioType[`slug_${self.locale}`].toLowerCase()
+                            - artTrioTypeForPath = artTrioType.slug.toLowerCase()
                     a(href= `/${lang_path}${artTrioTypeForPath}/${ blocks.article.slug}`)
                         .trio_block_item
                             //- if blocks.block.image
@@ -144,9 +144,9 @@ block content
                             each artType in news.article_types
                                 - artTypes.push(artType.name.toLowerCase())
                                 if artType.name.toLowerCase() === whichTypesToDisplay[0]
-                                    - artTypeForPath = artType[`slug_${self.locale}`].toLowerCase()
+                                    - artTypeForPath = artType.slug.toLowerCase()
                                 else if whichTypesToDisplay.includes(artType.name.toLowerCase())
-                                    - artTypeForPath = artType[`slug_${self.locale}`].toLowerCase()
+                                    - artTypeForPath = artType.slug.toLowerCase()
                             if heroPlusTrioNews.includes(news.id) || (!artTypes.some(ai => whichTypesToDisplay.includes(ai)))
                                 - continue
                             if counter >= 5

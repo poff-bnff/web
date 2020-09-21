@@ -36,9 +36,9 @@ TagProgramme: &TagProgramme
 ArticleType: &ArticleType
     _path: /article-types
     name: (text)
-    et: (text)
-    en: (text)
-    ru: (text)
+    label_et: (text)
+    label_en: (text)
+    label_ru: (text)
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
@@ -124,8 +124,46 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
+Small: &Small
+    ext: (text)
+    url:  (text)
+    hash:  (text)
+    mime:  (text)
+    name:  (text)
+    path:  (text)
+    size:  (number)
+    width:  (number)
+    heigth:  (number)
+
+Thumbnail: &Thumbnail
+    ext:  (text)
+    url:  (text)
+    hash:  (text)
+    mime:  (text)
+    name:  (text)
+    path:  (text)
+    size:  (number)
+    width:  (number)
+    heigth:  (number)
+
 StrapiMedia: &StrapiMedia
     id: (number)
+    name: (text)
+    alternativeText: (text)
+    caption: (text)
+    width:
+    height:
+    formats:
+        small: *Small
+        thumbnail: *Thumbnail
+    hash:
+    ext:
+    mime:
+    size:
+    url:
+    previewUrl:
+    provider:
+    provider_metadata:
 
 Media: &Media
     imageDefault:
@@ -148,6 +186,10 @@ WebAuthor: &WebAuthor
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)

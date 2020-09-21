@@ -3,12 +3,14 @@ const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js')
 
-const sourceFolder =  path.join(__dirname, '..', 'source', '_fetchdir')
-const strapiDataPath = path.join(sourceFolder, 'strapiData.yaml')
-const writeToFilePath = sourceFolder
-
+const sourceDir =  path.join(__dirname, '..', 'source')
+const fetchDir =  path.join(sourceDir, '_fetchdir')
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA_TEAM = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Team']
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Team']
+
+const writeToFilePath = fetchDir
+
 
 const languages = ['en', 'et', 'ru']
 for (const ix in languages) {
@@ -16,8 +18,8 @@ for (const ix in languages) {
     console.log(`Fetching ${DOMAIN} teams ${lang} data`)
 
     allData = []
-    for (const ix in STRAPIDATA) {
-        let element = STRAPIDATA[ix]
+    for (const ix in STRAPIDATA_TEAM) {
+        let element = STRAPIDATA_TEAM[ix]
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         element = rueten(element, lang)

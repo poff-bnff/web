@@ -30,9 +30,9 @@ block content
                     each artType in val.article_types
                         - artTypes.push(artType.name.toLowerCase())
                         if artType.name.toLowerCase() === whichTypesToDisplay[0]
-                            - artTypeForPath = artType[`slug_${self.locale}`].toLowerCase()
+                            - artTypeForPath = artType.slug.toLowerCase()
                         else if whichTypesToDisplay.includes(artType.name.toLowerCase())
-                            - artTypeForPath = artType[`slug_${self.locale}`].toLowerCase()
+                            - artTypeForPath = artType.slug.toLowerCase()
 
                 if val.publish && artTypes.some(ai => whichTypesToDisplay.includes(ai))
                     - var currentTime = new Date()

@@ -34,14 +34,14 @@ block content
                                 img(src='/assets/img/static/placeholder_hd_1.jpg').article_hero_image
                         if self.title
                             .article_hero_headline_box
-                                .article_title_detailed= self.title + '!!! INTERVJUU !!!'
+                                .article_title_detailed= self.title
 
                     section.grid_article
                         section.article_meta
                             .str_info_meta_gi
-                                    if self.article_types && self.article_types[0]
+                                    if self.articleType
                                         .str_info_meta_item
-                                            .str_info_meta_value= self.article_types[0].name
+                                            .str_info_meta_value= self.articleType
 
                                     if self.web_authors
                                         .str_info_meta_item
