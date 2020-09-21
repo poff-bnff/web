@@ -25,7 +25,7 @@ loadYaml('en', readYaml);
 function loadYaml(lang, readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/articletrioblock.${lang}.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/articletrioblock.${lang}.yaml`, 'utf8'));
 
     } catch (e) {
         console.log(e);
@@ -89,10 +89,9 @@ function download(url, dest) {
         }else{
             // console.log(`Skipped: Trioblock img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
         }
-    }).on('error', function (err) { // Handle errors
-        fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        // if (cb) cb(err.message);
-    });
+    }).on('error', function (err) {
+        console.log(err)
+    })
 };
 
 
