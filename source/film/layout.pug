@@ -24,16 +24,16 @@ block content
                         each val, index in filmslug.pics
                             if index == 0
                                 .carousel-item.active.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/img_films/${my_path}/${val}` alt = self.filmTitle)
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${my_path}/${val}` alt = self.filmTitle)
                             else
                                 .carousel-item.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/img_films/${my_path}/${val}` alt = self.filmTitle)
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${my_path}/${val}` alt = self.filmTitle)
                     else
                         .carousel-item.active.container_contents_16_9
-                            img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.filmTitle)
                 else
                     .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.filmTitle)
 
             a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
                 // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -236,7 +236,7 @@ block content
         //- Sample img for showing presenter logo/pic - can be deleted
         //- if self.data.pictures.filmslugs[filmPath].presenter
         //-     section.f_extra_box
-        //-             img.presenter_img(src=`/assets/img/img_films/${filmPath}/${self.data.pictures.filmslugs[filmPath].presenter}`)
+        //-             img.presenter_img(src=`/assets/img/dynamic/img_films/${filmPath}/${self.data.pictures.filmslugs[filmPath].presenter}`)
 
         if self.filmQaClip
 
