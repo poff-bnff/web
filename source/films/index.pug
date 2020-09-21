@@ -9,7 +9,7 @@ block content
             each film in self.data.films
                 a.card_film(href= `/${lang_path}film/${film.slug}`)
                     .container_frame_16_9
-                        each media in film.media
+                        //- each media in film.media
                             //- - console.log(film.media)
                             if film.media['posters']
                                 //- -console.log(film.media['posters'][0]['name'])
