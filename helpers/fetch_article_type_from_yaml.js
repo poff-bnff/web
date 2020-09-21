@@ -102,7 +102,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
             for (key in element) {
 
                 if (key === "slug") {
-                    element.path = path.join(artType.name, element[key])
+                    element.path = path.join(artType.slug, element[key])
                 }
             }
             allData.push(element);
