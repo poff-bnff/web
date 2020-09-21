@@ -74,8 +74,7 @@ function getData(
         lang,
         writeIndexFile,
         dataFrom,
-        showErrors,
-        generateYaml
+        showErrors
     );
 }
 
