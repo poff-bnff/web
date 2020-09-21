@@ -3,25 +3,24 @@ const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js')
 
+const sourceDir =  path.join(__dirname, '..', 'source')
+const fetchDir =  path.join(sourceDir, '_fetchdir')
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA_LABELGROUP = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['LabelGroup']
+const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+
 const sourceFolder =  path.join(__dirname, '../source/');
 
 // FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
 
-const modelName = 'LabelGroup'
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
+LangSelect('et')
+LangSelect('en')
+LangSelect('ru')
 
-function LabelsToYAMLData(strapiData) {
-    LangSelect(strapiData, 'et')
-    LangSelect(strapiData, 'en')
-    LangSelect(strapiData, 'ru')
-}
-
-LabelsToYAMLData(strapiData[modelName])
-
-function LangSelect(strapiData, lang) {
-    let data = rueten(strapiData, lang);
+function LangSelect(lang) {
+    let data = rueten(STRAPIDATA_LABELGROUP, lang);
     processData(data, lang, CreateYAML);
-    console.log(`Fetching ${process.env['DOMAIN']} labels ${lang} data`);
+    console.log(`Fetching ${DOMAIN} labels ${lang} data`);
 }
 
 function processData(data, lang, CreateYAML) {

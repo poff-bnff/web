@@ -3,22 +3,26 @@ const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js')
 
-const sourceFolder =  path.join(__dirname, '../source/');
+const sourceDir =  path.join(__dirname, '..', 'source')
+const fetchDir =  path.join(sourceDir, '_fetchdir')
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+
+const modelName = 'Film';
+const STRAPIDATA_FILM = STRAPIDATA[modelName]
 
 const allLanguages = ["en", "et", "ru"];
 
-let allData = []; // for films view
 
-var dataModel = 'Film';
-
-function fetchAllData(dataModel){
-    var dirPath = `${sourceFolder}_fetchdir/films/`;
-    deleteFolderRecursive(dirPath);
+function fetchAllData(){
+    const filmsPath = path.join(fetchDir, 'films')
+    deleteFolderRecursive(filmsPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(dirPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, dataModel, getDataCB);
+    getData(filmsPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
+    getData(filmsPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
+    getData(filmsPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
@@ -35,24 +39,19 @@ function deleteFolderRecursive(path) {
     }
   };
 
-function getData(dirPath, lang, copyFile, showErrors, dataFrom, dataModel, getDataCB) {
+function getData(dirPath, lang, copyFile, showErrors, dataFrom, getDataCB) {
 
     fs.mkdirSync(dirPath, { recursive: true })
 
-    console.log(`Fetching ${process.env['DOMAIN']} films ${lang} data`);
+    console.log(`Fetching ${DOMAIN} films ${lang} data`);
 
-    allData = [];
-
-    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
-
-    getDataCB(data[dataModel], dirPath, lang, copyFile, dataFrom, showErrors, generateYaml);
-
+    getDataCB(STRAPIDATA_FILM, dirPath, lang, copyFile, dataFrom, showErrors, generateYaml);
 }
 
 
 
 function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generateYaml) {
-    allData = [];
+    let allData = []
     // data = rueten(data, lang);
     // console.log(data);
     data.forEach(element => {
@@ -109,18 +108,17 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generate
             allData.push(element);
             element.data = dataFrom;
 
-            generateYaml(element, element, dirPath, lang, copyFile)
+            generateYaml(element, lang, copyFile, allData)
 
-        }else{
+        } else {
             if(showErrors) {
                 console.log(`Film ID ${element.id} slug_en value missing`);
             }
         }
     });
-
 }
 
-function generateYaml(element, element, dirPath, lang, copyFile){
+function generateYaml(element, lang, copyFile, allData){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
     // console.log(element.directory)
@@ -129,7 +127,9 @@ function generateYaml(element, element, dirPath, lang, copyFile){
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
     if (copyFile) {
-        fs.copyFile(`${sourceFolder}_templates/film_index_template.pug`, `${element.directory}/index.pug`, (err) => {
+        const templateSourcePath = path.join(sourceDir, '_templates', 'film_index_template.pug')
+        const templateTargetPath = path.join(element.directory, 'index.pug')
+        fs.copyFile(templateSourcePath, templateTargetPath, (err) => {
             if (err) throw err;
             // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
         })
@@ -137,14 +137,9 @@ function generateYaml(element, element, dirPath, lang, copyFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`${sourceFolder}_fetchdir/films.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(path.join(fetchDir, `films.${lang}.yaml`), allDataYAML, 'utf8')
 }
 
-function modifyData(element, key, lang){
-    finalData = element[key][lang];
-    delete element[key];
-    element[key] = finalData;
-}
 
-fetchAllData(dataModel);
+fetchAllData();
 

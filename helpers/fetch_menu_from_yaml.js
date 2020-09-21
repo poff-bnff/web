@@ -5,26 +5,25 @@ const rueten = require('./rueten.js')
 
 const sourceDir =  path.join(__dirname, '..', 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
-
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+
 const mapping = {
     'poff.ee': 'POFFiMenu',
     'justfilm.ee': 'JustFilmiMenu',
     'shorts.poff.ee': 'ShortsiMenu'
 }
-const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIMENUDATA = STRAPIDATA[mapping[DOMAIN]]
+const STRAPIDATA_MENU = STRAPIDATA[mapping[DOMAIN]]
 
 const languages = ['en', 'et', 'ru']
-for (const ix in languages) {
-    const lang = languages[ix]
+for (const lang of languages) {
 
     const globalDataFile =  path.join(sourceDir, `global.${lang}.yaml`)
     let globalData = yaml.safeLoad(fs.readFileSync(globalDataFile, 'utf8'))
     globalData.menu = []
 
-    let copyData = JSON.parse(JSON.stringify(STRAPIMENUDATA))
+    let copyData = JSON.parse(JSON.stringify(STRAPIDATA_MENU))
     for (values in copyData) {
         globalData.menu.push(rueten(copyData[values], lang))
     }
