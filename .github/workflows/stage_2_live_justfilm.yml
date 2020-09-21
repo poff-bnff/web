@@ -6,9 +6,6 @@ on:
         branches: [ staging_justfilm ]
     workflow_dispatch:
 
-    # schedule:
-    #     - cron: '1 0-7 * * *'
-
 jobs:
     deploy:
         name: SCP files to server

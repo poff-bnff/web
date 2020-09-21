@@ -5,6 +5,8 @@
   "private": true,
   "dependencies": {
     "all": "0.0.0",
+    "amazon-cognito-identity-js": "^4.4.0",
+    "amplify": "0.0.11",
     "color": "^3.1.2",
     "colors": "^1.4.0",
     "deep-diff": "^1.0.2",
@@ -16,7 +18,6 @@
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "rimraf": "^3.0.2",
-    "serve": "^11.3.2",
     "slugify": "^1.4.5",
     "xmlhttprequest": "^1.8.0",
     "yaml": "^1.10.0",
@@ -28,7 +29,8 @@
     "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
     "build_Poff": ". ./build_poff.sh",
     "build_just": ". ./build_just.sh",
-    "build_shorts": ". ./build_shorts.sh"
+    "build_shorts": ". ./build_shorts.sh",
+    "update_poff_styles": "node helpers/copy_styles_acc_to_domain.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
   },
   "homepage": "",
   "devDependencies": {
+    "serve": "^11.3.2",
     "yaml-validator": "^3.0.0"
   }
 }

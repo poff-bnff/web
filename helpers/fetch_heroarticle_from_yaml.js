@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
 
-const sourceFolder =  path.join(__dirname, '../source/');
+const sourceFolder =  path.join(__dirname, '../source/_fetchdir/');
 
 if (process.env['DOMAIN'] === 'shorts.poff.ee') {
     var fetchFrom = 'HeroArticleShorts';
@@ -12,7 +12,7 @@ if (process.env['DOMAIN'] === 'shorts.poff.ee') {
     var fetchFrom = 'HeroArticlePoff';
 }
 
-const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+const strapiData = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 DataToYAMLData(strapiData[fetchFrom]);
 
 function DataToYAMLData(strapiData){

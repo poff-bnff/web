@@ -3,7 +3,8 @@ const yaml = require('js-yaml');
 const http = require('http');
 const path = require('path');
 
-const sourceFolder =  path.join(__dirname, '../source/');
+const sourceFolder =  path.join(__dirname, '../source/_fetchdir/');
+const writeToFilePath = sourceFolder;
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -21,9 +22,9 @@ var fetchFrom = 'Team';
 
 function fetchAllData(fetchFrom){
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData("source/festival/", "en", 0, 1, {'articles': '/articles.en.yaml'}, fetchFrom, getDataCB);
-    getData("source/festival/", "et", 0, 0, {'articles': '/articles.et.yaml'}, fetchFrom, getDataCB);
-    getData("source/festival/", "ru", 0, 0, {'articles': '/articles.ru.yaml'}, fetchFrom, getDataCB);
+    getData("source/festival/", "en", 0, 1, {'articles': '/_fetchdir/articles.en.yaml'}, fetchFrom, getDataCB);
+    getData("source/festival/", "et", 0, 0, {'articles': '/_fetchdir/articles.et.yaml'}, fetchFrom, getDataCB);
+    getData("source/festival/", "ru", 0, 0, {'articles': '/_fetchdir/articles.ru.yaml'}, fetchFrom, getDataCB);
 }
 
 function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, fetchFrom, callback) {
@@ -31,7 +32,7 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom, fetchFrom,
 
     allData = [];
 
-    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 
     callback(data[fetchFrom], dirPath, lang, writeIndexFile, dataFrom, showErrors);
 }
@@ -98,13 +99,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors) {
 function generateYaml(element, dirPath, lang, writeIndexFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`${sourceFolder}festival/teams.${lang}.yaml`, allDataYAML, 'utf8');
-}
-
-function modifyData(element, key, lang){
-    finalData = element[key][lang];
-    delete element[key];
-    element[key] = finalData;
+    fs.writeFileSync(`${writeToFilePath}teams.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 fetchAllData(fetchFrom)

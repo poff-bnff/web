@@ -15,9 +15,9 @@ function fetchAllData(dataModel){
     deleteFolderRecursive(dirPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(dirPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/articles.en.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/articles.et.yaml'}, dataModel, getDataCB);
-    getData(dirPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/articles.ru.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "en", 1, 1, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "et", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, dataModel, getDataCB);
+    getData(dirPath, "ru", 0, 0, {'pictures': '/film_pictures.yaml', 'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, dataModel, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
@@ -42,7 +42,7 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, dataModel, getDa
 
     allData = [];
 
-    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/strapiData.yaml', 'utf8'))
+    const data = yaml.safeLoad(fs.readFileSync(__dirname + '/../source/_fetchdir/strapiData.yaml', 'utf8'))
 
     getDataCB(data[dataModel], dirPath, lang, copyFile, dataFrom, showErrors, generateYaml);
 
@@ -175,6 +175,8 @@ function getDataCB(data, dirPath, lang, copyFile, dataFrom, showErrors, generate
 function generateYaml(element, element, dirPath, lang, copyFile){
     let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
+    // console.log(element.directory)
+
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
     // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
     // console.log(element);
@@ -187,7 +189,7 @@ function generateYaml(element, element, dirPath, lang, copyFile){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(`${sourceFolder}films.${lang}.yaml`, allDataYAML, 'utf8');
+    fs.writeFileSync(`${sourceFolder}_fetchdir/films.${lang}.yaml`, allDataYAML, 'utf8');
 }
 
 function modifyData(element, key, lang){
