@@ -34,10 +34,10 @@ footer
                         img.footer_logo_item_1(alt=item.name data-src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/img_footer/${item.image.hash}${item.image.ext}`)
                     if item.text
                         if typeof(item.text) !== 'object'
-                            +format(item.text)
+                            +format(item.text).footer_h
                         else
-                            p
-                                | !{item.text}
+                            p.footer_h
+                                | !{item.text}.footer_h
 
 
 
