@@ -154,8 +154,8 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
                 fs.mkdirSync(element.directory, { recursive: true });
                 for (key in element) {
                     if (key === "slug") {
-                        element.path = path.join(artType[`slug_${lang}`], element[key])
-
+                        element.path = `${artType[`slug_${lang}`]}/${element[key]}`;
+                        element.articleType = artType[`name_${lang}`]
                     }
                 }
 
