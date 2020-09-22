@@ -124,46 +124,70 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
-Small: &Small
-    ext: (text)
+Large: &Large
+    # ext: (text)
     url:  (text)
-    hash:  (text)
-    mime:  (text)
+    # hash:  (text)
+    # mime:  (text)
     name:  (text)
     path:  (text)
-    size:  (number)
-    width:  (number)
-    heigth:  (number)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Medium : &Medium
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Small: &Small
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
 
 Thumbnail: &Thumbnail
-    ext:  (text)
+    # ext:  (text)
     url:  (text)
-    hash:  (text)
-    mime:  (text)
+    # hash:  (text)
+    # mime:  (text)
     name:  (text)
     path:  (text)
-    size:  (number)
-    width:  (number)
-    heigth:  (number)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
 
 StrapiMedia: &StrapiMedia
     id: (number)
     name: (text)
     alternativeText: (text)
     caption: (text)
-    width:
-    height:
+    width: (Number)
+    height: (Number)
     formats:
+        large: *Large
+        medium: *Medium
         small: *Small
         thumbnail: *Thumbnail
-    hash:
-    ext:
-    mime:
-    size:
-    url:
-    previewUrl:
-    provider:
-    provider_metadata:
+    # hash: (text)
+    # ext: (text)
+    # mime: (text)
+    # size: (Number)
+    url: (text)
+    previewUrl: (text)
+    # provider: (text)
+    # provider_metadata: (text)
 
 Media: &Media
     imageDefault:
@@ -677,6 +701,6 @@ TrioBlockShorts:
     trioBlockItem_1: *TrioBlockItemPoff
     trioBlockItem_2: *TrioBlockItemPoff
     trioBlockItem_3: *TrioBlockItemPoff
-    poffi_article_1: *ShortsiArticle #(Component)
-    poffi_article_2: *ShortsiArticle #(Component)
-    poffi_article_3: *ShortsiArticle #(Component)
+    shortsi_article_1: *ShortsiArticle #(Component)
+    shortsi_article_2: *ShortsiArticle #(Component)
+    shortsi_article_3: *ShortsiArticle #(Component)
