@@ -30,7 +30,14 @@ function loadYaml(lang, readYaml) {
     } catch (e) {
         console.log(e);
     }
-    fs.mkdirSync(`${savePath}${lang}`, { recursive: true });
+    fs.mkdir(`${savePath}`, err => {
+        if (err) {
+        }
+    });
+    fs.mkdir(`${savePath}${lang}`, err => {
+        if (err) {
+        }
+    });
     readYaml(lang, doc);
 }
 
