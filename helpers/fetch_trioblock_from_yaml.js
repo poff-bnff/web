@@ -47,13 +47,13 @@ for (const lang of languages) {
 
         buffer.push({
             'block': copyData[key],
-            'article': copyData[`${articleMapping}_article_${block_index}`]
+            'article': copyData[`${articleMapping[DOMAIN]}_article_${block_index}`]
         })
         delete copyData[key]
     }
 
-    copyData = rueten(buffer, lang)
-    let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' })
+    rueten(buffer, lang)
+    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
     const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
     fs.writeFileSync(outFile, allDataYAML, 'utf8')
 }
