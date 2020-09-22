@@ -51,7 +51,7 @@ printf '\n----------         Downloading all img from Strapi         ----------\
 node ./helpers/download_article_img.js
 node ./helpers/download_footer_img.js
 node ./helpers/download_teams_img.js
-node ./helpers/download_trioblock_img.js
+#node ./helpers/download_trioblock_img.js
 printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 
 cp -R assets/* build/assets/
