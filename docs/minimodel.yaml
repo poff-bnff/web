@@ -1,40 +1,143 @@
+Translated: &Translated
+    et: (text)
+    en: (text)
+    ru: (text)
 
-Country: &Country
-    _path: /countries
-    id: 1 (number)
-    code: EE (short text, min len 2, max len 3, uppercase)
-    name_et: Eesti (short text)
-    name_en: Estonia (short text)
-    name_ru: Эстония (short text)
+TagGenre: &TagGenre
+    _path: /tag-genres
+    et: (text)
+    en: (text)
+    ru: (text)
 
-Town: &Town
-    _path: /towns
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
-    country: *Country #(Component)
+TagKeyword: &TagKeyword
+    _path: /tag-keywords
+    et: (text)
+    en: (text)
+    ru: (text)
 
-Cinema: &Cinema
-    _path: /cinemas
-    town: *Town
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
+TagPremiereType: &TagPremiereType
+    _path: /tag-premiere-types
+    et: (text)
+    en: (text)
+    ru: (text)
 
-Hall: &Hall
-    _path: /halls
-    name_et: (text)
-    number: (Number)
-    numberOfSeats: (Number)
-    cinema: *Cinema
-    floor: (Enumeration)
-    name_en: (text)
-    name_ru: (text)
+TagProgramme: &TagProgramme
+    _path: /tag-programmes
+    et: (text)
+    en: (text)
+    ru: (text)
 
-Location: &Location
-    _path: /locations
-    country: *Country #(Component)
-    town: *Town #(Component)
-    cinema: *Cinema #(Component)
-    hall: *Hall #(Component)
+ArticleType: &ArticleType
+    _path: /article-types
     name: (text)
+    et: (text)
+    en: (text)
+    ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+
+Button: &Button
+    text_et: (text)
+    text_en: (text)
+    text_ru: (text)
+    url_et: (text)
+    url_en: (text)
+    url_ru: (text)
+
+Small: &Small
+    ext: (text)
+    url:  (text)
+    hash:  (text)
+    mime:  (text)
+    name:  (text)
+    path:  (text)
+    size:  (number)
+    width:  (number)
+    heigth:  (number)
+
+Thumbnail: &Thumbnail
+    ext:  (text)
+    url:  (text)
+    hash:  (text)
+    mime:  (text)
+    name:  (text)
+    path:  (text)
+    size:  (number)
+    width:  (number)
+    heigth:  (number)
+
+StrapiMedia: &StrapiMedia
+    id: (number)
+    name: (text)
+    alternativeText: (text)
+    caption: (text)
+    width:
+    height:
+    formats:
+        small: *Small
+        thumbnail: *Thumbnail
+    hash:
+    ext:
+    mime:
+    size:
+    url:
+    previewUrl:
+    provider:
+    provider_metadata:
+
+Media: &Media
+    imageDefault:
+        - *StrapiMedia
+    image_et:
+        - *StrapiMedia
+    image_en:
+        - *StrapiMedia
+    image_ru:
+        - *StrapiMedia
+    clipUrlDefault: (text)
+    clipUrl_et: (text)
+    clipUrl_en: (text)
+    clipUrl_ru: (text)
+
+WebAuthor: &WebAuthor
+    _path: /web-authors
+    namePrivate: (text)
+    name: *Translated
+
+POFFiArticle: &POFFiArticle
+    _path: /pof-fi-articles
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    tag_programmes: #(Component (repeatable))
+        - *TagProgramme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+    web_authors:
+        - *WebAuthor
+
