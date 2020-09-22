@@ -1,0 +1,423 @@
+[
+    {
+        "id": 1,
+        "namePrivate": "PÖFF team",
+        "created_by": {
+            "id": 6,
+            "firstname": "Jaan",
+            "lastname": "Leppik",
+            "username": null
+        },
+        "updated_by": {
+            "id": 6,
+            "firstname": "Jaan",
+            "lastname": "Leppik",
+            "username": null
+        },
+        "created_at": "2020-08-28T06:32:26.755Z",
+        "updated_at": "2020-09-02T11:54:54.224Z",
+        "domain": {
+            "id": 1,
+            "Url": null,
+            "IpAdress": null,
+            "Server": null,
+            "created_by": 6,
+            "updated_by": 3,
+            "created_at": "2020-08-19T10:43:32.378Z",
+            "updated_at": "2020-08-31T13:52:31.385Z",
+            "url": "poff.ee",
+            "ipAdress": null,
+            "server": null,
+            "festival_edition": null,
+            "name": "PÖFF"
+        },
+        "subTeam": [
+            {
+                "id": 1,
+                "order": 5,
+                "name": {
+                    "id": 3549,
+                    "et": "Turundus ja kommunikatsioon, partnersuhted",
+                    "en": "Marketing and Communication Department, Partners Relations",
+                    "ru": "Mаркетинг и коммуникация, Партнерские отношения"
+                },
+                "teamMember": [
+                    {
+                        "id": 1,
+                        "person": {
+                            "id": 9,
+                            "Forename": null,
+                            "created_by": 3,
+                            "updated_by": 6,
+                            "created_at": "2020-08-27T12:13:02.898Z",
+                            "updated_at": "2020-08-28T06:22:46.015Z",
+                            "Surname": null,
+                            "firstName": "Maria",
+                            "lastName": "Plees",
+                            "gender": null,
+                            "phoneNr": "",
+                            "eMail": null,
+                            "dateOfBirth": null,
+                            "biography": null,
+                            "filmography": null,
+                            "profession": null,
+                            "picture": {
+                                "id": 14,
+                                "name": "Maria_Plees.jpeg",
+                                "alternativeText": "",
+                                "caption": "",
+                                "width": 612,
+                                "height": 612,
+                                "formats": {
+                                    "small": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/small_Maria_Plees_3134010e9f.jpeg",
+                                        "hash": "small_Maria_Plees_3134010e9f",
+                                        "mime": "image/jpeg",
+                                        "name": "small_Maria_Plees.jpeg",
+                                        "path": null,
+                                        "size": 28.65,
+                                        "width": 500,
+                                        "height": 500
+                                    },
+                                    "thumbnail": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/thumbnail_Maria_Plees_3134010e9f.jpeg",
+                                        "hash": "thumbnail_Maria_Plees_3134010e9f",
+                                        "mime": "image/jpeg",
+                                        "name": "thumbnail_Maria_Plees.jpeg",
+                                        "path": null,
+                                        "size": 4.29,
+                                        "width": 156,
+                                        "height": 156
+                                    }
+                                },
+                                "hash": "Maria_Plees_3134010e9f",
+                                "ext": ".jpeg",
+                                "mime": "image/jpeg",
+                                "size": 41.68,
+                                "url": "/uploads/Maria_Plees_3134010e9f.jpeg",
+                                "previewUrl": null,
+                                "provider": "local",
+                                "provider_metadata": null,
+                                "created_by": 6,
+                                "updated_by": 6,
+                                "created_at": "2020-08-28T06:22:02.967Z",
+                                "updated_at": "2020-08-28T06:22:03.216Z"
+                            }
+                        },
+                        "eMailAtTeam": null,
+                        "phoneNrAtTeam": null,
+                        "roleAtTeam_et": "Turundusjuht",
+                        "roleAtTeam_en": "Head of Marketing",
+                        "roleAtTeam_ru": "Директор по маркетингу",
+                        "emailAtTeam": "maria.plees@poff.ee",
+                        "phoneAtTeam": "+372 5660 6236",
+                        "pictureAtTeam": []
+                    },
+                    {
+                        "id": 2,
+                        "person": {
+                            "id": 10,
+                            "Forename": null,
+                            "created_by": 6,
+                            "updated_by": 6,
+                            "created_at": "2020-08-28T06:23:59.112Z",
+                            "updated_at": "2020-08-28T06:23:59.140Z",
+                            "Surname": null,
+                            "firstName": "Hannes",
+                            "lastName": "Aava",
+                            "gender": null,
+                            "phoneNr": null,
+                            "eMail": null,
+                            "dateOfBirth": null,
+                            "biography": null,
+                            "filmography": null,
+                            "profession": null,
+                            "picture": {
+                                "id": 13,
+                                "name": "Hannes_Aava.jpeg",
+                                "alternativeText": "",
+                                "caption": "",
+                                "width": 612,
+                                "height": 612,
+                                "formats": {
+                                    "small": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/small_Hannes_Aava_1f4f22b05d.jpeg",
+                                        "hash": "small_Hannes_Aava_1f4f22b05d",
+                                        "mime": "image/jpeg",
+                                        "name": "small_Hannes_Aava.jpeg",
+                                        "path": null,
+                                        "size": 17.25,
+                                        "width": 500,
+                                        "height": 500
+                                    },
+                                    "thumbnail": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/thumbnail_Hannes_Aava_1f4f22b05d.jpeg",
+                                        "hash": "thumbnail_Hannes_Aava_1f4f22b05d",
+                                        "mime": "image/jpeg",
+                                        "name": "thumbnail_Hannes_Aava.jpeg",
+                                        "path": null,
+                                        "size": 2.93,
+                                        "width": 156,
+                                        "height": 156
+                                    }
+                                },
+                                "hash": "Hannes_Aava_1f4f22b05d",
+                                "ext": ".jpeg",
+                                "mime": "image/jpeg",
+                                "size": 24.31,
+                                "url": "/uploads/Hannes_Aava_1f4f22b05d.jpeg",
+                                "previewUrl": null,
+                                "provider": "local",
+                                "provider_metadata": null,
+                                "created_by": 6,
+                                "updated_by": 6,
+                                "created_at": "2020-08-28T06:22:02.883Z",
+                                "updated_at": "2020-08-28T06:22:03.153Z"
+                            }
+                        },
+                        "eMailAtTeam": null,
+                        "phoneNrAtTeam": null,
+                        "roleAtTeam_et": "Pressi- ja kommunikatsioonijuht",
+                        "roleAtTeam_en": "Head of Communications and Press ",
+                        "roleAtTeam_ru": "Директор по связям с общественностью",
+                        "emailAtTeam": "hannes.aava@poff.ee",
+                        "phoneAtTeam": "+372 5552 9211",
+                        "pictureAtTeam": [
+                            {
+                                "id": 13,
+                                "name": "Hannes_Aava.jpeg",
+                                "alternativeText": "",
+                                "caption": "",
+                                "width": 612,
+                                "height": 612,
+                                "formats": {
+                                    "small": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/small_Hannes_Aava_1f4f22b05d.jpeg",
+                                        "hash": "small_Hannes_Aava_1f4f22b05d",
+                                        "mime": "image/jpeg",
+                                        "name": "small_Hannes_Aava.jpeg",
+                                        "path": null,
+                                        "size": 17.25,
+                                        "width": 500,
+                                        "height": 500
+                                    },
+                                    "thumbnail": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/thumbnail_Hannes_Aava_1f4f22b05d.jpeg",
+                                        "hash": "thumbnail_Hannes_Aava_1f4f22b05d",
+                                        "mime": "image/jpeg",
+                                        "name": "thumbnail_Hannes_Aava.jpeg",
+                                        "path": null,
+                                        "size": 2.93,
+                                        "width": 156,
+                                        "height": 156
+                                    }
+                                },
+                                "hash": "Hannes_Aava_1f4f22b05d",
+                                "ext": ".jpeg",
+                                "mime": "image/jpeg",
+                                "size": 24.31,
+                                "url": "/uploads/Hannes_Aava_1f4f22b05d.jpeg",
+                                "previewUrl": null,
+                                "provider": "local",
+                                "provider_metadata": null,
+                                "created_by": 6,
+                                "updated_by": 6,
+                                "created_at": "2020-08-28T06:22:02.883Z",
+                                "updated_at": "2020-08-28T06:22:03.153Z"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "person": {
+                            "id": 17,
+                            "Forename": null,
+                            "created_by": 6,
+                            "updated_by": 6,
+                            "created_at": "2020-08-28T06:34:23.976Z",
+                            "updated_at": "2020-08-28T06:34:24.164Z",
+                            "Surname": null,
+                            "firstName": "Elise",
+                            "lastName": "Eimre",
+                            "gender": null,
+                            "phoneNr": null,
+                            "eMail": null,
+                            "dateOfBirth": null,
+                            "biography": null,
+                            "filmography": null,
+                            "profession": null,
+                            "picture": {
+                                "id": 15,
+                                "name": "Elise_Eimre.jpeg",
+                                "alternativeText": "",
+                                "caption": "",
+                                "width": 612,
+                                "height": 612,
+                                "formats": {
+                                    "small": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/small_Elise_Eimre_3216dcaca7.jpeg",
+                                        "hash": "small_Elise_Eimre_3216dcaca7",
+                                        "mime": "image/jpeg",
+                                        "name": "small_Elise_Eimre.jpeg",
+                                        "path": null,
+                                        "size": 23.42,
+                                        "width": 500,
+                                        "height": 500
+                                    },
+                                    "thumbnail": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/thumbnail_Elise_Eimre_3216dcaca7.jpeg",
+                                        "hash": "thumbnail_Elise_Eimre_3216dcaca7",
+                                        "mime": "image/jpeg",
+                                        "name": "thumbnail_Elise_Eimre.jpeg",
+                                        "path": null,
+                                        "size": 3.58,
+                                        "width": 156,
+                                        "height": 156
+                                    }
+                                },
+                                "hash": "Elise_Eimre_3216dcaca7",
+                                "ext": ".jpeg",
+                                "mime": "image/jpeg",
+                                "size": 33.65,
+                                "url": "/uploads/Elise_Eimre_3216dcaca7.jpeg",
+                                "previewUrl": null,
+                                "provider": "local",
+                                "provider_metadata": null,
+                                "created_by": 6,
+                                "updated_by": 6,
+                                "created_at": "2020-08-28T06:34:20.215Z",
+                                "updated_at": "2020-08-28T06:34:20.285Z"
+                            }
+                        },
+                        "eMailAtTeam": null,
+                        "phoneNrAtTeam": null,
+                        "roleAtTeam_et": "PÖFFi kodulehe toimetaja & koordinator",
+                        "roleAtTeam_en": "poff.ee Editor",
+                        "roleAtTeam_ru": "Редактор и координатор сайта PÖFF",
+                        "emailAtTeam": "elise.eimre@poff.ee",
+                        "phoneAtTeam": "+37258414828",
+                        "pictureAtTeam": []
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "order": 3,
+                "name": {
+                    "id": 3838,
+                    "et": "Test team",
+                    "en": "Test team EN",
+                    "ru": "Test team RU"
+                },
+                "teamMember": [
+                    {
+                        "id": 4,
+                        "person": {
+                            "id": 16,
+                            "Forename": null,
+                            "created_by": 6,
+                            "updated_by": 6,
+                            "created_at": "2020-08-28T06:26:10.172Z",
+                            "updated_at": "2020-08-28T06:26:10.206Z",
+                            "Surname": null,
+                            "firstName": "Jaana",
+                            "lastName": "Kalinstova",
+                            "gender": null,
+                            "phoneNr": null,
+                            "eMail": null,
+                            "dateOfBirth": null,
+                            "biography": null,
+                            "filmography": null,
+                            "profession": null,
+                            "picture": {
+                                "id": 7,
+                                "name": "Jaana_Kalinistova.jpeg",
+                                "alternativeText": "",
+                                "caption": "",
+                                "width": 612,
+                                "height": 612,
+                                "formats": {
+                                    "small": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/small_Jaana_Kalinistova_a892ee2652.jpeg",
+                                        "hash": "small_Jaana_Kalinistova_a892ee2652",
+                                        "mime": "image/jpeg",
+                                        "name": "small_Jaana_Kalinistova.jpeg",
+                                        "path": null,
+                                        "size": 26.34,
+                                        "width": 500,
+                                        "height": 500
+                                    },
+                                    "thumbnail": {
+                                        "ext": ".jpeg",
+                                        "url": "/uploads/thumbnail_Jaana_Kalinistova_a892ee2652.jpeg",
+                                        "hash": "thumbnail_Jaana_Kalinistova_a892ee2652",
+                                        "mime": "image/jpeg",
+                                        "name": "thumbnail_Jaana_Kalinistova.jpeg",
+                                        "path": null,
+                                        "size": 3.95,
+                                        "width": 156,
+                                        "height": 156
+                                    }
+                                },
+                                "hash": "Jaana_Kalinistova_a892ee2652",
+                                "ext": ".jpeg",
+                                "mime": "image/jpeg",
+                                "size": 38.7,
+                                "url": "/uploads/Jaana_Kalinistova_a892ee2652.jpeg",
+                                "previewUrl": null,
+                                "provider": "local",
+                                "provider_metadata": null,
+                                "created_by": 6,
+                                "updated_by": 6,
+                                "created_at": "2020-08-28T06:22:00.976Z",
+                                "updated_at": "2020-08-28T06:22:01.928Z"
+                            }
+                        },
+                        "eMailAtTeam": null,
+                        "phoneNrAtTeam": null,
+                        "roleAtTeam_et": "Test",
+                        "roleAtTeam_en": "Test EN",
+                        "roleAtTeam_ru": "Test RU",
+                        "emailAtTeam": "test@test.ee",
+                        "phoneAtTeam": "123456789",
+                        "pictureAtTeam": []
+                    }
+                ]
+            }
+        ],
+        "name": [
+            {
+                "id": 3840,
+                "et": "PÖFFi meeskond",
+                "en": "PÖFF Team",
+                "ru": "Komanda PÖFF"
+            }
+        ],
+        "domains": [
+            {
+                "id": 1,
+                "Url": null,
+                "IpAdress": null,
+                "Server": null,
+                "created_by": 6,
+                "updated_by": 3,
+                "created_at": "2020-08-19T10:43:32.378Z",
+                "updated_at": "2020-08-31T13:52:31.385Z",
+                "url": "poff.ee",
+                "ipAdress": null,
+                "server": null,
+                "festival_edition": null,
+                "name": "PÖFF"
+            }
+        ]
+    }
+]
