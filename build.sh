@@ -4,9 +4,9 @@
 # node ./helpers/compile_article_pictures.js
 
 echo 'STARTING BUILD'
-[ -d "build/assets" ] && rmdir -r build/assets
+[ -d "build/assets" ] && rm -r build/*
 [ ! -d "build/assets" ] && mkdir -p build/assets
-[ -d "source/_fetchdir" ] && rmdir -r source/_fetchdir
+[ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
 
 echo 'Fetch strapiData.yaml from Strapi'
@@ -53,7 +53,7 @@ printf '\n----------         Downloading all img from Strapi         ----------\
 node ./helpers/download_article_img.js
 node ./helpers/download_footer_img.js
 node ./helpers/download_teams_img.js
-#node ./helpers/download_trioblock_img.js
+node ./helpers/download_trioblock_img.js
 printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 
 cp -R assets/* build/assets/
