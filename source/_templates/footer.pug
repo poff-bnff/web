@@ -34,7 +34,8 @@ footer
                         img.footer_logo_item_1(alt=item.name data-src=`/assets/img/dynamic/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/dynamic/img_footer/${item.image.hash}${item.image.ext}`)
                     if item.text
                         if typeof(item.text) !== 'object'
-                            +format(item.text).footer_h
+                            p.footer_h
+                                +format(item.text)
                         else
                             p.footer_h
                                 | !{item.text}
