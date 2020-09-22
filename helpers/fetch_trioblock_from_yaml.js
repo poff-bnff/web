@@ -14,6 +14,11 @@ const mapping = {
     'justfilm.ee': 'TrioBlockJustFilm',
     'shorts.poff.ee': 'TrioBlockShorts'
 }
+const articleMapping = {
+    'poff.ee': 'poffi',
+    'justfilm.ee': 'just_filmi',
+    'shorts.poff.ee': 'shortsi'
+}
 const STRAPIDATA_TRIO = STRAPIDATA[mapping[DOMAIN]]
 
 if (STRAPIDATA_TRIO.length < 1) {
@@ -42,7 +47,7 @@ for (const lang of languages) {
 
         buffer.push({
             'block': copyData[key],
-            'article': copyData[`poffi_article_${block_index}`]
+            'article': copyData[`${articleMapping}_article_${block_index}`]
         })
         delete copyData[key]
     }
