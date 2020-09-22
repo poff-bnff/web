@@ -20,7 +20,8 @@ block content
 
                     - var splitSelfPath = self.path.split("/")[self.path.split("/").length-1]
 
-                    +tabname self.title
+                    if self.title
+                        +tabname(self.title)
 
                     section.grid_article
                         section.about_hero_head
