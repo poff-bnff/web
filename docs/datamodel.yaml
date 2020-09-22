@@ -243,6 +243,10 @@ POFFiMenu: &POFFiMenu
 
 JustFilmiArticle: &JustFilmiArticle
     _path: /just-filmi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
@@ -296,6 +300,10 @@ JustFilmiMenu: &JustFilmiMenu
 
 ShortsiArticle: &ShortsiArticle
     _path: /shortsi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
