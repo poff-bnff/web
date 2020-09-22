@@ -4,7 +4,9 @@
 # node ./helpers/compile_article_pictures.js
 
 echo 'STARTING BUILD'
+[ -d "build/assets" ] && rmdir -r build/assets
 [ ! -d "build/assets" ] && mkdir -p build/assets
+[ -d "source/_fetchdir" ] && rmdir -r source/_fetchdir
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
 
 echo 'Fetch strapiData.yaml from Strapi'
