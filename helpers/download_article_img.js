@@ -3,7 +3,7 @@ const yaml = require('js-yaml');
 const http = require('http');
 const path = require('path')
 const strapiPath = 'http://' + process.env['StrapiHost'];
-const savePath = path.join(__dirname, '..', 'assets', 'img', 'img_articles')
+const savePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_articles')
 
 const languages = ['en', 'et', 'ru']
 for (const lang of languages) {
@@ -60,8 +60,7 @@ function download(url, dest) {
         }else{
             // console.log(`Skipped: Article img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
         }
-    }).on('error', function (err) { // Handle errors
-        console.log(err);
-        // fs.unlink(dest); // Delete the file async. (But we don't check the result)
+    }).on('error', function (err) {
+        console.log(err)
     })
-};
+}

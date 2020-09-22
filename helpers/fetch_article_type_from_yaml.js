@@ -23,7 +23,6 @@ function fetchAllData() {
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
     getData(newDirPath,"en",1,1,{
-            pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.en.yaml",
             articles: "/_fetchdir/articles.en.yaml",
         },
@@ -35,7 +34,6 @@ function fetchAllData() {
         0,
         0,
         {
-            pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.et.yaml",
             articles: "/_fetchdir/articles.et.yaml",
         },
@@ -47,7 +45,6 @@ function fetchAllData() {
         0,
         0,
         {
-            pictures: "/article_pictures.yaml",
             screenings: "/film/screenings.ru.yaml",
             articles: "/_fetchdir/articles.ru.yaml",
         },
@@ -74,8 +71,7 @@ function getData(
         lang,
         writeIndexFile,
         dataFrom,
-        showErrors,
-        generateYaml
+        showErrors
     );
 }
 
@@ -86,9 +82,33 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         const element = JSON.parse(JSON.stringify(strapiElement))
         let slugEn = element.slug_en || element.slug_et
         if (!slugEn) {
-            console.log(element)
+            // console.log(element)
             throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
+
+        var currentTime = new Date()
+        if (typeof(element.publishFrom) === 'undefined') {
+            var publishFrom= new Date(element.created_at)
+        } else {
+            var publishFrom= new Date(element.publishFrom)
+        }
+        if (element.publishUntil) {
+            var publishUntil = new Date(element.publishUntil)
+        }
+        if (currentTime < publishFrom) {
+            continue;
+        }
+        if (publishUntil !== 'undefined' && publishUntil < currentTime) {
+            continue;
+        }
+        if (element[`publish_${lang}`] === undefined || element[`publish_${lang}`] === false) {
+            continue;
+        }
+        if (element[`title_${lang}`] < 1) {
+            continue;
+        }
+
+
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         rueten(element, lang);
@@ -96,52 +116,26 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         for (artType of element.article_types) {
 
             // console.log(dirPath, artType, slugEn)
-            element.directory = path.join(dirPath, artType, slugEn)
+            element.directory = path.join(dirPath, artType.name, slugEn)
 
-                fs.mkdirSync(element.directory, { recursive: true });
-                //let languageKeys = ['en', 'et', 'ru'];
-                for (key in element) {
+            fs.mkdirSync(element.directory, { recursive: true });
+            //let languageKeys = ['en', 'et', 'ru'];
+            for (key in element) {
 
-                    if (key === "slug") {
-                        element.path = path.join(artType, element[key])
-                    }
+                if (key === "slug") {
+                    element.path = path.join(artType.slug, element[key])
+                    element.articleType = artType.label
                 }
-                allData.push(element);
-                element.data = dataFrom;
+            }
+            allData.push(element);
+            element.data = dataFrom;
 
-                generateYaml(element, element, dirPath, lang, writeIndexFile, artType);
+            let yamlStr = yaml.safeDump(element, { 'indent': '4' });
+
+            fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
+            fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`)
         }
     }
-}
-
-function makeCSV(obj, element, lang) {
-    // console.log(obj);
-    for (const [key, value] of Object.entries(obj)) {
-        if (
-            value &&
-            value != "" &&
-            !value.toString().includes("[object Object]")
-        ) {
-            element[`${key}CSV`] = value.toString();
-        } else if (value && value != "") {
-            // rueten(value, `_${lang}`);
-            makeCSV(value, element, lang);
-        }
-        // console.log(`${key}: ${value}`);
-    }
-}
-
-function generateYaml(element, element, dirPath, lang, writeIndexFile, artType){
-
-    let yamlStr = yaml.safeDump(element, { 'indent': '4' });
-
-    fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-
-    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.toLowerCase()}_index_template.pug`, function(err) {
-        if(err) {
-            return console.log(err);
-        }
-    });
 }
 
 
