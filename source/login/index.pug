@@ -15,23 +15,22 @@ block content
     label(style={color: 'red'} for='loginPassword') Password:
     input#loginPassword(type='password')
     br
-    a(href='https://tests.auth.us-east-2.amazoncognito.com/oauth2/authorize?response_type=code&client_id=67tu3fmm9v7ho8mnsltcd6h5p3&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1h2sd5s0l7s75qi2dfeku57lls&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
     br
-    a(href='https://tests.auth.us-east-2.amazoncognito.com/oauth2/authorize?response_type=code&client_id=67tu3fmm9v7ho8mnsltcd6h5p3&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1h2sd5s0l7s75qi2dfeku57lls&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
     br
     button(onclick='login()') Login
     br
     br
     br
-    a(href='https://tests.auth.us-east-2.amazoncognito.com/logout?client_id=67tu3fmm9v7ho8mnsltcd6h5p3&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1h2sd5s0l7s75qi2dfeku57lls&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
     br
     br
     h1#hello
     p#favoritefilm(style={color: 'green'})
     br
-    a(href='https://testsss.auth.us-east-2.amazoncognito.com/login?client_id=6r7q5s89eam1ngaviibpcoqfak&response_type=code&scope=phone+email+openid+aws.cognito.signin.user.admin+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/login?client_id=1h2sd5s0l7s75qi2dfeku57lls&response_type=code&scope=openid+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
     br
-    button(onclick='toLocalhost()') Switch back to localhost
     br
     button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
     br
@@ -72,22 +71,12 @@ block content
 
 
 
-
-
-
-
-
-        function toLocalhost(){
-            let url = 'http://localhost:4000/login/' + window.location.search;
-            window.location.replace(url);
-        }
-
         async function loginWithCode(code) {
 
             var myHeaders = new Headers();
 
             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-            myHeaders.append("Authorization", "Basic Njd0dTNmbW05djdobzhtbnNsdGNkNmg1cDM6MTZ1cDVlYW5mMzVqczVvcXNnM2ticmtuaGI5ZmkxbzJxMjcxNmkzNG9vcnVsa29pbnUybg==");
+            myHeaders.append("Authorization", "Basic MTlucjlqNXZqaGM2dDRuOWdhaWM0bXRjcTM6MTluYzdiOWVlYnMzbmg4NGowajV1cG92b2I3c2djbDJqcWRma2NibDdybTc2YXM5bWV1");
             myHeaders.append("Cookie", "XSRF-TOKEN=e7ac0bb5-d5b1-4e39-8692-2fb0600fbb64");
 
             var urlencoded = new URLSearchParams();
@@ -102,10 +91,10 @@ block content
                 redirect: 'follow'
             };
 
-            await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/token", requestOptions)
+            await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
                 .then(response => response.text())
                 .then(result => {
-                    console.log(result);
+                    //- console.log(result);
                     const JSONresult = JSON.parse(result);
                     console.log(JSONresult.access_token);
                     if (JSONresult.access_token && JSONresult.refresh_token) {
@@ -157,7 +146,7 @@ block content
 
             console.log(requestOptions.headers);
 
-            await fetch("https://tests.auth.us-east-2.amazoncognito.com/oauth2/userInfo", requestOptions)
+            await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/userInfo", requestOptions)
                 .then(response => response.text())
                 .then(result => {
                     console.log(result);
@@ -186,8 +175,8 @@ block content
 
             var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
             var poolData = {
-                    UserPoolId : 'us-east-2_k12HwMzhu',
-                    ClientId : '6r7q5s89eam1ngaviibpcoqfak'
+                    UserPoolId : 'eu-central-1_ockBtdcsP',
+                    ClientId : '1h2sd5s0l7s75qi2dfeku57lls'
             };
 
             var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
