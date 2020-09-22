@@ -94,7 +94,7 @@ block content
             await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
                 .then(response => response.text())
                 .then(result => {
-                    //- console.log(result);
+                    console.log(result);
                     const JSONresult = JSON.parse(result);
                     console.log(JSONresult.access_token);
                     if (JSONresult.access_token && JSONresult.refresh_token) {
