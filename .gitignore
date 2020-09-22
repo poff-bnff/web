@@ -1,8 +1,6 @@
-build
-source/_fetchdir/*
-source/_styles/*
 node_modules
 .DS_Store
+
 
 # sanity
 *.pickle
@@ -11,8 +9,14 @@ token.json
 .env
 
 
-.vscode/settings.json
-*.json
+# dev tools
+.vscode/*
+
+
+# dynamic stuff
+build
+source/_fetchdir/*
+source/_styles/*
 
 assets/img/dynamic/*
 
