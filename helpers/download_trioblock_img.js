@@ -17,7 +17,7 @@ const yaml = require('js-yaml');
 // console.log(blob);
 
 var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/img_trioblock/';
+var savePath = 'assets/img/dynamic/img_trioblock/';
 
 loadYaml('et', readYaml);
 loadYaml('en', readYaml);
@@ -89,10 +89,9 @@ function download(url, dest) {
         }else{
             // console.log(`Skipped: Trioblock img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
         }
-    }).on('error', function (err) { // Handle errors
-        fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        // if (cb) cb(err.message);
-    });
+    }).on('error', function (err) {
+        console.log(err)
+    })
 };
 
 
