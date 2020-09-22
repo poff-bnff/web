@@ -243,6 +243,10 @@ POFFiMenu: &POFFiMenu
 
 JustFilmiArticle: &JustFilmiArticle
     _path: /just-filmi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
@@ -296,6 +300,10 @@ JustFilmiMenu: &JustFilmiMenu
 
 ShortsiArticle: &ShortsiArticle
     _path: /shortsi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
@@ -650,12 +658,12 @@ HeroArticleJustFilm:
 TrioBlockJustFilm:
     _path: /trio-block-just-film
     blockName: *Translated
+    just_filmi_article_1: *JustFilmiArticle #(Component)
+    just_filmi_article_2: *JustFilmiArticle #(Component)
+    just_filmi_article_3: *JustFilmiArticle #(Component)
     trioBlockItem_1: *TrioBlockItemPoff
     trioBlockItem_2: *TrioBlockItemPoff
     trioBlockItem_3: *TrioBlockItemPoff
-    poffi_article_1: *JustFilmiArticle #(Component)
-    poffi_article_2: *JustFilmiArticle #(Component)
-    poffi_article_3: *JustFilmiArticle #(Component)
 
 HeroArticleShorts:
     _path: /hero-article-shorts

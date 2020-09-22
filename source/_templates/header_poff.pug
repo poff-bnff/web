@@ -6,9 +6,16 @@ header
         //- Defining locale path for multilingual support
         - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
         a(href=`/${lang_path}`)
-            img.logo_img(alt='PÖFF' data-src='/assets/img/global/poff24_logo_black_o.svg' src='/assets/img/global/poff24_logo_black_o.svg')
+            img.logo_img(alt='PÖFF' data-src='/assets/img/static/poff24_logo_black_o.svg' src='/assets/img/static/poff24_logo_black_o.svg')
     input#main_menu_toggle.main_menu_toggle(type='checkbox')
 
+
+    if process.env['DOMAIN'] === 'justfilm.ee'
+        - var articleMenuItemDomain = 'just_filmi_article'
+    else if process.env['DOMAIN'] === 'shorts.poff.ee'
+        - var articleMenuItemDomain = 'shortsi_article'
+    else
+        - var articleMenuItemDomain = 'poffi_article'
 
     nav.main_menu
         ul.ul_yx
@@ -18,9 +25,9 @@ header
                         a= mainMenuItem.name
                         ul.ul_kaks
                             each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                                if subMenuItem.poffi_article
+                                if subMenuItem[articleMenuItemDomain]
                                     if self.data.articles
-                                        - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem.poffi_article.id === a.id })
+                                        - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem[articleMenuItemDomain].id === a.id })
                                         - let article = articleFromYAML[0]
 
                                         if article.article_types && article.article_types[0] && article.publish === true && article.title
@@ -38,7 +45,7 @@ header
                                                     else
                                                         - articleTypePath = article.article_types[0].slug
 
-                                                a(href= `/${lang_path}${articleTypePath}/${subMenuItem.poffi_article.slug}`)= subMenuItem.name
+                                                a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
                                                     //- /////////////////////////////
                                                     //-             nav.main_menu
                                                     //-                 ul.ul_yx
@@ -48,9 +55,9 @@ header
                                                     //-                                 a= `${mainMenuItem.name}`
                                                     //-                                 ul.ul_kaks
                                                     //-                                     each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                                                    //-                                         if subMenuItem.poffi_article
+                                                    //-                                         if subMenuItem[articleMenuItemDomain]
                                                     //-                                             if self.data.articles
-                                                    //-                                                 - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem.poffi_article.id === a.id })
+                                                    //-                                                 - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem[articleMenuItemDomain].id === a.id })
                                                     //-                                                 - let article = articleFromYAML[0]
                                                     //-                                                     if article.article_types && article.article_types[0] && article.publish === true && article.title
                                                     //-                                                         li
@@ -67,13 +74,13 @@ header
                                                     //-                                                                 else
                                                     //-                                                                     - articleTypePath = article.article_types[0][`slug_${self.locale}`]
 
-                                                    //-                                                             a(href= `/${lang_path}${articleTypePath}/${subMenuItem.poffi_article.slug}`)= subMenuItem.name
+                                                    //-                                                             a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
                                                     //-         ////////////////////////////////
 
 
                                         //- - let article_type = article.article_types[0]
                                         //- li
-                                        //-     a(href= `/${lang_path}${article_type}/${subMenuItem.poffi_article.slug}`)= `---> ${subMenuItem.name}`
+                                        //-     a(href= `/${lang_path}${article_type}/${subMenuItem[articleMenuItemDomain].slug}`)= `---> ${subMenuItem.name}`
                                 else
                                     if subMenuItem.customUrl
                                         li

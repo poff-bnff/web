@@ -1,7 +1,6 @@
-build
-source/_fetchdir/*
 node_modules
 .DS_Store
+
 
 # sanity
 *.pickle
@@ -10,39 +9,18 @@ token.json
 .env
 
 
-.vscode/settings.json
-*.json
-assets/img/*
-source/strapiData.yaml
-source/articles.en.yaml
-source/articles.et.yaml
-source/articles.ru.yaml
-source/articletrioblock.en.yaml
-source/articletrioblock.et.yaml
-source/articletrioblock.ru.yaml
-source/festival/teams.en.yaml
-source/festival/teams.et.yaml
-source/festival/teams.ru.yaml
-source/films.en.yaml
-source/films.et.yaml
-source/films.ru.yaml
-source/heroarticle.et.yaml
-source/heroarticle.en.yaml
-source/teams.en.yaml
-source/teams.et.yaml
-source/teams.ru.yaml
-source/about.en.yaml
-source/about.et.yaml
-source/about.ru.yaml
-source/sponsorstories.en.yaml
-source/sponsorstories.et.yaml
-source/sponsorstories.ru.yaml
-source/industry.en.yaml
-source/industry.et.yaml
-source/industry.ru.yaml
-source/news.en.yaml
-source/news.et.yaml
-source/news.ru.yaml
-source/interviews.en.yaml
-source/interviews.et.yaml
-source/interviews.ru.yaml
+# dev tools
+.vscode/*
+
+
+# dynamic stuff
+build
+source/_fetchdir/*
+source/_styles/*
+
+assets/img/dynamic/*
+
+source/global.et.yaml
+source/global.en.yaml
+source/global.ru.yaml
+

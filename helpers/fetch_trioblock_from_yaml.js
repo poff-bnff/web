@@ -14,6 +14,11 @@ const mapping = {
     'justfilm.ee': 'TrioBlockJustFilm',
     'shorts.poff.ee': 'TrioBlockShorts'
 }
+const articleMapping = {
+    'poff.ee': 'poffi',
+    'justfilm.ee': 'just_filmi',
+    'shorts.poff.ee': 'shortsi'
+}
 const STRAPIDATA_TRIO = STRAPIDATA[mapping[DOMAIN]]
 
 if (STRAPIDATA_TRIO.length < 1) {
@@ -42,13 +47,13 @@ for (const lang of languages) {
 
         buffer.push({
             'block': copyData[key],
-            'article': copyData[`poffi_article_${block_index}`]
+            'article': copyData[`${articleMapping[DOMAIN]}_article_${block_index}`]
         })
         delete copyData[key]
     }
 
-    copyData = rueten(buffer, lang)
-    let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' })
+    rueten(buffer, lang)
+    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
     const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
     fs.writeFileSync(outFile, allDataYAML, 'utf8')
 }

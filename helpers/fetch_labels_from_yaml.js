@@ -44,7 +44,9 @@ function processData(data, lang, CreateYAML) {
 
 function CreateYAML(labels, lang) {
     // console.log(labels);
-    let globalData= yaml.safeLoad(fs.readFileSync(`${sourceFolder}global.${lang}.yaml`, 'utf8'))
+    const globalStatic = path.join(sourceFolder, 'global_static', `global_s.${lang}.yaml`)
+    console.log(globalStatic)
+    let globalData= yaml.safeLoad(fs.readFileSync(globalStatic, 'utf8'))
     // // console.log(globalData);
     globalData.label = labels
     // // console.log(process.cwd());

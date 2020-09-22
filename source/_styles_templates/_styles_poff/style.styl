@@ -78,14 +78,14 @@ font_h = 'Open Sans Condensed', sans-serif
 // font_h = 'Fira Sans Extra Condensed', sans-serif
 // font_h = 'Sofia Pro Condensed', sans-serif
 
-// font_p = 'Source Sans Pro', sans-serif
+font_p = 'Source Sans Pro', sans-serif
 // font_p = 'Barlow', sans-serif
 // font_p = 'Roboto', sans-serif
 // font_p = 'Lato', sans-serif
 // font_p = 'Barlow Semi Condensed', sans-serif
 // font_p = 'Source Serif Pro', serif
 // font_p = 'EB Garamond', serif
-font_p = 'Open Sans', serif
+// font_p = 'Open Sans', serif
 // font_p = 'Scheherazade', serif
 
 font-family-monospace = "SFMono-Regular", "Menlo, Monaco", "Consolas", "Liberation Mono", "Courier New", monospace
@@ -294,6 +294,7 @@ footer
     min-height calc(100vh - 97px)
 
 .grid_footer_row
+    grid-area footer
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
@@ -1947,22 +1948,24 @@ a.btn_popover
         li:last-child
             padding-bottom 1.618rem
 
-    footer
-        grid-area footer
-        border-top 1px solid rgba(255,255,255,.1)
-        margin 0
-        padding 0
-        // padding 10vw
-        padding 3rem 5rem 3rem 5rem
-        background-color bg_dark_1
+    // .grid_footer_row
+    //     grid-area footer
+    //     border-top 1px solid rgba(255,255,255,.1)
+    //     margin 0
+    //     padding 0
+    //     // padding 10vw
+    //     padding 3rem 5rem 3rem 5rem
+    //     background-color bg_dark_1
 
     .grid_footer_row
+        grid-area footer
         display grid
-        grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
+        grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
         grid-template-rows auto
         grid-gap 1rem
         justify-items center
         align-items center
+        background-color bg_dark_1
 
 
     // nav
