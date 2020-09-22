@@ -30,7 +30,8 @@
     "build_Poff": ". ./build_poff.sh",
     "build_just": ". ./build_just.sh",
     "build_shorts": ". ./build_shorts.sh",
-    "update_poff_styles": "node helpers/copy_styles_acc_to_domain.js"
+    "update_poff_styles": "DOMAIN='poff.ee' node helpers/copy_styles_acc_to_domain.js",
+    "update_jusrfilm_styles": "DOMAIN='justfilm.ee' node helpers/copy_styles_acc_to_domain.js"
   },
   "repository": {
     "type": "git",
