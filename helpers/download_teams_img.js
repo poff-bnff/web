@@ -93,7 +93,7 @@ function download(url, dest, parallelCB, retrys=5) {
             response.pipe(file)
             file.on('finish', function () {
                 file.close(() => {
-                    console.log('Try', retrys, `Downloaded: Teams img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`)
+                    // console.log('Try', retrys, `Downloaded: Teams img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`)
                     setTimeout(() => {
                         parallelCB(null, 'downloaded ' + url)
                     }, 500)
@@ -101,7 +101,7 @@ function download(url, dest, parallelCB, retrys=5) {
             })
         } else {
             // parallelCB(null, 'skipped ' + url)
-            console.log('Try', retrys, `Skipped: Teams img ${url.split('/')[url.split('/').length - 1]} due to same exists`)
+            // console.log('Try', retrys, `Skipped: Teams img ${url.split('/')[url.split('/').length - 1]} due to same exists`)
             setTimeout(() => {
                 parallelCB(null, 'skipped ' + url)
             }, 500)
