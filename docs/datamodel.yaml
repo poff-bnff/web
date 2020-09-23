@@ -180,8 +180,8 @@ StrapiMedia: &StrapiMedia
         medium: *Medium
         small: *Small
         thumbnail: *Thumbnail
-    # hash: (text)
-    # ext: (text)
+    hash: (text)
+    ext: (text)
     # mime: (text)
     # size: (Number)
     url: (text)
