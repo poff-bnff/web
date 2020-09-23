@@ -15,21 +15,21 @@ block content
     label(style={color: 'red'} for='loginPassword') Password:
     input#loginPassword(type='password')
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1h2sd5s0l7s75qi2dfeku57lls&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1h2sd5s0l7s75qi2dfeku57lls&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
     br
     button(onclick='login()') Login
     br
     br
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1h2sd5s0l7s75qi2dfeku57lls&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1q24246tqd48cpepne3vnunmiq&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
     br
     br
     h1#hello
     p#favoritefilm(style={color: 'green'})
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/login?client_id=1h2sd5s0l7s75qi2dfeku57lls&response_type=code&scope=openid+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/login?client_id=1q24246tqd48cpepne3vnunmiq&response_type=code&scope=profile+aws.cognito.signin.user.admin+openid+email+phone&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
     br
     br
     button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
@@ -63,8 +63,7 @@ block content
         console.log(code);
         if (code) {
             //- getReplyFromAWS(code);
-           // loginWithCode(code)
-            console.log('Code sent: ' + code);
+            loginWithCode(code)
         } else {
             console.log('Not sent ')
         }
@@ -72,12 +71,13 @@ block content
 
 
         async function loginWithCode(code) {
+            console.log('Code sent: ' + code);
 
             var myHeaders = new Headers();
 
             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-            myHeaders.append("Authorization", "Basic MTlucjlqNXZqaGM2dDRuOWdhaWM0bXRjcTM6MTluYzdiOWVlYnMzbmg4NGowajV1cG92b2I3c2djbDJqcWRma2NibDdybTc2YXM5bWV1");
-            myHeaders.append("Cookie", "XSRF-TOKEN=510bcfa6-c39d-4607-bf83-bf7672c2fb2b");
+            myHeaders.append("Authorization", "Basic MXEyNDI0NnRxZDQ4Y3BlcG5lM3ZudW5taXE6MW1xNmk0dnRqaXFubmMwOGVxMGRzNGJlbzVic2dkY3ViN2I2bjVrdXYxODViYmozc2hoYg==");
+            myHeaders.append("Cookie", "XSRF-TOKEN=85d4e10e-24b4-4b63-90ff-f7d791471e38");
 
             var urlencoded = new URLSearchParams();
             urlencoded.append("grant_type", "authorization_code");
@@ -176,7 +176,7 @@ block content
             var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
             var poolData = {
                     UserPoolId : 'eu-central-1_ockBtdcsP',
-                    ClientId : '1h2sd5s0l7s75qi2dfeku57lls'
+                    ClientId : 'le8630imjv6fcffqqt0ugpm5s'
             };
 
             var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
