@@ -1,23 +1,11 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const FileReader = require('filereader');
-const http = require('http');
-const fs = require('fs');
-const yaml = require('js-yaml');
+const http = require('http')
+const fs = require('fs')
+const yaml = require('js-yaml')
+const {parallelLimit} = require('async')
+const { parseAllDocuments } = require('yaml')
 
-// var blob = null;
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET", "http://'+ process.env['StrapiHost']+'/uploads/F_3_invisible_life_fb118ee4f7.jpg");
-// xhr.responseType = "blob";//force the HTTP response, response-type header to be blob
-// xhr.onload = function()
-// {
-//     blob = xhr.response;//xhr.response is now a blob object
-// }
-// xhr.send();
-
-// console.log(blob);
-
-var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/dynamic/img_trioblock/';
+const strapiPath = 'http://' + process.env['StrapiHost']
+const savePath = 'assets/img/dynamic/img_trioblock/'
 
 loadYaml('et', readYaml);
 loadYaml('en', readYaml);
@@ -41,8 +29,14 @@ function loadYaml(lang, readYaml) {
     readYaml(lang, doc);
 }
 
-function readYaml(lang, doc) {
+function downloadsMaker(url, dest) {
+    return function(parallelCB) {
+        download(url, dest, parallelCB)
+    }
+}
 
+function readYaml(lang, doc) {
+    let parallelDownloads = []
     for (values of doc) {
         if (!values.article.slug) {
             continue;
@@ -51,81 +45,61 @@ function readYaml(lang, doc) {
             });
         }
 
-        // if (values.article.media && values.article.media.imageDefault) {
-        //     var imgPath = values.article.media.imageDefault[0].url;
-        //     var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-        //     fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
-        //     });
-        //     download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`, ifError);
-        // }
-        // if (values.article.media && values.article.media.image[0]) {
-        //     var imgPath = values.article.media.image[0].url;
-        //     var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-        //     download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`, ifError);
-        // }
         if (values.block.image) {
-            var imgPath = values.block.image.url;
-            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            download(`${strapiPath}${imgPath}`, `${savePath}${lang}/${values.article.slug}/${imgFileName}`);
+            let imgPath = values.block.image.url
+            let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
+            let url = `${strapiPath}${imgPath}`
+            let dest = `${savePath}${lang}/${values.article.slug}/${imgFileName}`
+            parallelDownloads.push( downloadsMaker(url, dest) )
         }
     }
+    parallelLimit(
+        parallelDownloads,
+        10,
+        function(err, results) {
+            if (err) {
+                console.log(err)
+            }
+            console.log(results)
+        }
+    )
 }
 
-function download(url, dest) {
+
+
+function download(url, dest, parallelCB, retrys=5) {
     let fileSizeInBytes = 0
     if (fs.existsSync(dest)) {
         const stats = fs.statSync(dest);
         fileSizeInBytes = stats.size;
     }
 
-    var request = http.get(url, function (response) {
+    http.get(url, function (response) {
+        const { statusCode } = response
+        console.log('Status', statusCode, url)
         if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
-            var file = fs.createWriteStream(dest);
+            let file = fs.createWriteStream(dest);
             response.pipe(file);
             file.on('finish', function () {
-                file.close();  // close() is async, call cb after close completes.
-                console.log(`Downloaded: Trioblock img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
-            });
+                file.close(() => {
+                    // console.log('Try', retrys, `Downloaded: Trioblock img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`)
+                    setTimeout(() => {
+                        parallelCB(null, 'downloaded ' + url)
+                    }, 500)
+                })
+            })
         }else{
-            // console.log(`Skipped: Trioblock img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+            // console.log('Try', retrys, `Skipped: Trioblock img ${url.split('/')[url.split('/').length - 1]} due to same exists`)
+            setTimeout(() => {
+                parallelCB(null, 'skipped ' + url)
+            }, 500)
         }
     }).on('error', function (err) {
-        console.log(err)
+        console.log('ERROR', url, err)
+        if (retrys > 0) {
+            download(url, dest, parallelCB, retrys-1)
+        }
+        parallelCB(err)
     })
-};
-
-
-
-// download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
-
-function ifError(error, url, dest) {
-    if (error) {
-        console.log(`ERROR: ${error}`);
-    } else {
-        // console.log(`File ${imgFileName} downloaded to ${savePath}`);
-
-    }
 }
 
-// var myReader = new FileReader();
-// myReader.readAsArrayBuffer(blob)
-// myReader.addEventListener("loadend", function(e)
-// {
-//         var buffer = e.srcElement.result;//arraybuffer object
-// });
-
-// // new File("");
-
-// function readImage(file) {
-//     // Check if the file is an image.
-//     if (file.type && file.type.indexOf('image') === -1) {
-//       console.log('File is not an image.', file.type, file);
-//       return;
-//     }
-
-//     const reader = new FileReader();
-//     reader.addEventListener('load', (event) => {
-//       img.src = event.target.result;
-//     });
-//     reader.readAsDataURL(file);
-//   }
