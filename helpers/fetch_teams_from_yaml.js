@@ -13,8 +13,7 @@ const writeToFilePath = fetchDir
 
 
 const languages = ['en', 'et', 'ru']
-for (const ix in languages) {
-    const lang = languages[ix]
+for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} teams ${lang} data`)
 
     allData = []

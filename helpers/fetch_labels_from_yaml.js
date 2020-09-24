@@ -6,12 +6,13 @@ const rueten = require('./rueten.js')
 const sourceDir =  path.join(__dirname, '..', 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
+
 const STRAPIDATA_LABELGROUP = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['LabelGroup']
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const sourceFolder =  path.join(__dirname, '../source/');
 
-// FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
+console.log(DOMAIN)
 
 LangSelect('et')
 LangSelect('en')
