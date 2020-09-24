@@ -101,7 +101,7 @@ function readYaml(doc) {
             if (err) {
                 console.log(err)
             }
-            // console.log('results', results)
+            console.log('.')
         }
     )
 }
