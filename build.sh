@@ -8,6 +8,8 @@ echo 'STARTING BUILD'
 [ ! -d "build/assets" ] && mkdir -p build/assets
 [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
+[ -d "assets/img/dynamic" ] && rm -r assets/img/dynamic/*
+
 
 echo 'Fetch strapiData.yaml from Strapi'
 node ./helpers/a_fetch.js
