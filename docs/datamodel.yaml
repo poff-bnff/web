@@ -585,6 +585,12 @@ Team: &Team
     domain: *Domain #(Component)
     namePrivate: (text)
     groupType: (Enumeration)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
 
 Label: &Label
     name: (text)
