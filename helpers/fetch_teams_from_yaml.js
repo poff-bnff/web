@@ -5,7 +5,7 @@ const rueten = require('./rueten.js');
 
 const sourceDir =  path.join(__dirname, '..', 'source');
 const fetchDir =  path.join(sourceDir, '_fetchdir');
-const fetchJuriesDir =  path.join(fetchDir, 'juries');
+const fetchDataDir =  path.join(fetchDir, 'teamsandjuries');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
 const STRAPIDATA_TEAM = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Team'];
 const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
@@ -18,32 +18,51 @@ for (const ix in languages) {
 
     allData = []
     for (const ix in STRAPIDATA_TEAM) {
-        let element = STRAPIDATA_TEAM[ix];
+        let element = JSON.parse(JSON.stringify(STRAPIDATA_TEAM[ix]));
+
+        if (DOMAIN === 'justfilm.ee') {
+            let templateDomainName = 'justfilm';
+        } else if (DOMAIN === 'shorts.poff.ee') {
+            var templateDomainName = 'shorts';
+        } else {
+            var templateDomainName = 'poff';
+        }
+
+        if (element.groupType === 'festivalTeam') {
+            var templateGroupName = 'team';
+        } else {
+            var templateGroupName = 'jury';
+        }
 
         for (const subTeamIx in element.subTeam) {
             let subTeam = element.subTeam[subTeamIx];
             for (const juryMemberIx in subTeam.juryMember) {
                 let juryMember = subTeam.juryMember[juryMemberIx];
                 let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return juryMember.person.id === a.id });
-                let isJury = true;
                 juryMember.person = personFromYAML[0];
             }
         }
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
+        let dirSlug = element.slug_en || element.slug_et ? element.slug_en || element.slug_et : null ;
         element = rueten(element, lang);
         element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
+        element.path = element.slug;
 
-        // if (isJury) {
-        //     const oneJuryYAML = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
-        //     const yamlJuriesPath = path.join(fetchJuriesDir, `teams.${lang}.yaml`);
-        //     fs.writeFileSync(yamlJuriesPath, oneJuryYAML, 'utf8');
-        // } else {
-            allData.push(element);
-        // }
+        const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
 
-        const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-        const yamlPath = path.join(fetchDir, `teams.${lang}.yaml`);
-        fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+        if (dirSlug != null) {
+            const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
+            let saveDir = path.join(fetchDataDir, dirSlug);
+            fs.mkdirSync(saveDir, { recursive: true });
+
+            fs.writeFileSync(yamlPath, oneYaml, 'utf8');
+            fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/${templateGroupName}_${templateDomainName}_index_template.pug`)
+        }
+    allData.push(element);
     }
+
+    const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+    const yamlPath = path.join(fetchDir, `teams.${lang}.yaml`);
+    fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
 }
