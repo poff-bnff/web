@@ -14,45 +14,35 @@ const sourceFolder =  path.join(__dirname, '../source/');
 
 console.log(DOMAIN)
 
-LangSelect('et')
-LangSelect('en')
-LangSelect('ru')
+const languages = ['et', 'en', 'ru']
 
-function LangSelect(lang) {
-    let data = rueten(STRAPIDATA_LABELGROUP, lang);
-    processData(data, lang, CreateYAML);
-    console.log(`Fetching ${DOMAIN} labels ${lang} data`);
-}
+for (const lang of languages) {
+    console.log(`Fetching ${DOMAIN} labels ${lang} data`)
 
-function processData(data, lang, CreateYAML) {
-    var buffer = {}
-    var labels = {}
-    for (key in data) {
-        let smallBuffer = {}
-        // console.log(data[key].name);
-        var data2 = data[key];
-        var name = data[key].name;
-        for (key2 in data2.label) {
-            smallBuffer[data2.label[key2].name] = data2.label[key2].value;
+    let labelGroups = JSON.parse(JSON.stringify(STRAPIDATA_LABELGROUP))
+    rueten(labelGroups, lang)
+
+    let labels = {}
+    for (labelGroup of labelGroups) {
+        let labelGroupName = labelGroup.name
+        labels[labelGroupName] = {}
+        for (label of labelGroup.label) {
+            // console.log(label);
+            labels[labelGroupName][label.name] = label.value
         }
-        buffer[name] = smallBuffer;
-        labels[name] = buffer[name]
     }
+    rueten(labels, lang)
 
-    CreateYAML(rueten(labels, lang), lang);
-    // CreateYAML(labels, lang);
-}
+    console.log(labels);
 
-function CreateYAML(labels, lang) {
-    // console.log(labels);
     const globalStatic = path.join(sourceFolder, 'global_static', `global_s.${lang}.yaml`)
-    console.log(globalStatic)
+    // console.log(globalStatic)
     let globalData= yaml.safeLoad(fs.readFileSync(globalStatic, 'utf8'))
-    // // console.log(globalData);
+    // // console.log(globalData)
     globalData.label = labels
-    // // console.log(process.cwd());
-    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' });
-    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8');
+    // // console.log(process.cwd())
+    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(`${sourceFolder}global.${lang}.yaml`, allDataYAML, 'utf8')
 }
 
 
