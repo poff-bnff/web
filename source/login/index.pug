@@ -15,26 +15,19 @@ block content
     label(style={color: 'red'} for='loginPassword') Password:
     input#loginPassword(type='password')
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1h2sd5s0l7s75qi2dfeku57lls&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=code&client_id=1h2sd5s0l7s75qi2dfeku57lls&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
     br
     button(onclick='login()') Login
     br
     br
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1h2sd5s0l7s75qi2dfeku57lls&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1q24246tqd48cpepne3vnunmiq&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
     br
     br
     h1#hello
     p#favoritefilm(style={color: 'green'})
-    br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/login?client_id=1h2sd5s0l7s75qi2dfeku57lls&response_type=code&scope=openid+profile&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
-    br
-    br
-    button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
-    br
-    br
     br
     button(onclick='showUserInfo()') Show user info
 
@@ -48,8 +41,8 @@ block content
     script.
         var url = window.location;
         const ACCESS_TOKEN = "ACCESS_TOKEN";
-        const REFRESH_TOKEN = "REFRESH_TOKEN";
         const ID_TOKEN = "ID_TOKEN";
+        const REFRESH_TOKEN = "REFRESH_TOKEN";
 
         if (localStorage.getItem('ID_TOKEN')){
             hello.innerHTML = 'Hello, ' + name;
@@ -59,57 +52,19 @@ block content
             hello.innerHTML = 'Not logged in'
         }
 
-        var code = new URLSearchParams(url.search).get('code')
-        console.log(code);
-        if (code) {
-            //- getReplyFromAWS(code);
-            loginWithCode(code)
-            console.log('Code sent: ' + code);
+        var tokens = (window.location.hash.substr(1)).split('&');
+        console.log(tokens);
+        if (tokens[3]) {
+            storeAuthentication(tokens);
         } else {
             console.log('Not sent ')
         }
 
-
-
-        async function loginWithCode(code) {
-
-            var myHeaders = new Headers();
-
-            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-            myHeaders.append("Authorization", "Basic MTlucjlqNXZqaGM2dDRuOWdhaWM0bXRjcTM6MTluYzdiOWVlYnMzbmg4NGowajV1cG92b2I3c2djbDJqcWRma2NibDdybTc2YXM5bWV1");
-            myHeaders.append("Cookie", "XSRF-TOKEN=510bcfa6-c39d-4607-bf83-bf7672c2fb2b");
-
-            var urlencoded = new URLSearchParams();
-            urlencoded.append("grant_type", "authorization_code");
-            urlencoded.append("redirect_uri", "https://dev.inscaping.eu/login/");
-            urlencoded.append("code", code);
-
-            var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: urlencoded,
-                redirect: 'follow'
-            };
-
-            await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
-                .then(response => response.text())
-                .then(result => {
-                    //- console.log(result);
-                    const JSONresult = JSON.parse(result);
-                    console.log(JSONresult.access_token);
-                    if (JSONresult.access_token && JSONresult.refresh_token) {
-                        storeAuthentication(JSONresult);
-                    }
-                })
-                .catch(error => console.log('error', error));
-        }
-
-
-        async function storeAuthentication(JSONresult) {
-            localStorage.setItem(ACCESS_TOKEN, JSONresult.access_token);
-            localStorage.setItem(REFRESH_TOKEN, JSONresult.refresh_token);
-            localStorage.setItem(ID_TOKEN, JSONresult.id_token);
+        async function storeAuthentication(tokens) {
+            localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
+            localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
             await loadInfoFromIdtkn();
+            window.location.hash = '';
             location.reload();
         }
 
@@ -176,7 +131,7 @@ block content
             var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
             var poolData = {
                     UserPoolId : 'eu-central-1_ockBtdcsP',
-                    ClientId : '1h2sd5s0l7s75qi2dfeku57lls'
+                    ClientId : 'le8630imjv6fcffqqt0ugpm5s'
             };
 
             var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
@@ -209,7 +164,7 @@ block content
 
         function showUserInfo(){
 
-            var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'us-east-2'});
+            var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
 
             var params = {
                 AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
@@ -223,7 +178,7 @@ block content
 
         async function loadInfoFromIdtkn(){
             console.log('loadInfoFromIdtk');
-            let response = await fetch(`https://rud4xujjle.execute-api.eu-north-1.amazonaws.com/dev/tkns`, {
+            let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/tkns`, {
                     method: 'GET',
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
@@ -231,9 +186,6 @@ block content
                 });
                 let name1 = await response.json();
                 name = name1.message;
-                //- hello.innerHTML = 'Hello, ' + name.message;
-                //- return await response.json();
-                //- return processJsonResponse(response);
         }
 
 
@@ -246,7 +198,7 @@ block content
             }
 
 
-            let response = await fetch(`https://2uz8lf2cf6.execute-api.eu-north-1.amazonaws.com/dev/hello-world`, {
+            let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/verif`, {
                     method: 'POST',
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')},
@@ -260,25 +212,47 @@ block content
 
 
 
+        // HISTORY:
 
 
-    //- async function getReplyFromAWS(code) {
-            //-     let response = await fetch(`https://9t1wskosmj.execute-api.eu-central-1.amazonaws.com/default/POFF-Validate`, {
-            //-         method: 'POST',
-            //-         //- headers: {Authorization: 'Bearer ' + accessToken}
-            //-         body: code
-            //-     });
-            //-     return await response.json();
-            //-     //- return processJsonResponse(response);
-            //- }
+        //- async function loginWithCode(code) {
+        //-             console.log('Code sent: ' + code);
+
+        //-             var myHeaders = new Headers();
+
+        //-             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+        //-             myHeaders.append("Authorization", "Basic [clientId:clientSecret base64");
+        //-             myHeaders.append("Cookie", "XSRF-TOKEN=85d4e10e-24b4-4b63-90ff-f7d791471e38");
+
+        //-             var urlencoded = new URLSearchParams();
+        //-             urlencoded.append("grant_type", "authorization_code");
+        //-             urlencoded.append("redirect_uri", "https://dev.inscaping.eu/login/");
+        //-             urlencoded.append("code", code);
+
+        //-             var requestOptions = {
+        //-                 method: 'POST',
+        //-                 headers: myHeaders,
+        //-                 body: urlencoded,
+        //-                 redirect: 'follow'
+        //-             };
+
+        //-             await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
+        //-                 .then(response => response.text())
+        //-                 .then(result => {
+        //-                     console.log(result);
+        //-                     const JSONresult = JSON.parse(result);
+        //-                     console.log(JSONresult.access_token);
+        //-                     if (JSONresult.access_token && JSONresult.refresh_token) {
+        //-                         storeAuthentication(JSONresult);
+        //-                     }
+        //-                 })
+        //-                 .catch(error => console.log('error', error));
+        //-         }
 
 
+//- button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
 
-
-
-
-
-
+//- a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/login?client_id=1q24246tqd48cpepne3vnunmiq&response_type=code&scope=profile+aws.cognito.signin.user.admin+openid+email+phone&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
 
 
 
