@@ -62,6 +62,7 @@ function downloadsMaker(url, dest) {
             const callback = parallelCB
             const dest_stream = fs.createWriteStream(dest)
             res.body.pipe(dest_stream)
+            process.stdout.write('.')
             callback(null, url)
         })
     }
@@ -100,7 +101,7 @@ function readYaml(doc) {
             if (err) {
                 console.log(err)
             }
-            console.log('results', results)
+            // console.log('results', results)
         }
     )
 }
