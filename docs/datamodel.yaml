@@ -704,3 +704,23 @@ TrioBlockShorts:
     shortsi_article_1: *ShortsiArticle #(Component)
     shortsi_article_2: *ShortsiArticle #(Component)
     shortsi_article_3: *ShortsiArticle #(Component)
+
+TrioItemPoff: &TrioItemPoff
+    poffi_article: *POFFiArticle
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia
+
+TrioPOFF: &TrioPOFF
+    trioItem_1: *TrioItemPoff
+    trioItem_2: *TrioItemPoff
+    trioItem_3: *TrioItemPoff
+    name: (text)
+    lead: (text)
+
+TrioPÖFF: &TrioPÖFF
+    _path: /trio-p-oe-ff
+    trioPoff_et: *TrioPOFF
+    trioPoff_en: *TrioPOFF
+    trioPoff_ru: *TrioPOFF
