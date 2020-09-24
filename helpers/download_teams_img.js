@@ -1,77 +1,108 @@
-const http = require('http');
-const fs = require('fs');
-const yaml = require('js-yaml');
+const fs = require('fs')
+const yaml = require('js-yaml')
+const fetch = require('node-fetch')
+
+const {parallelLimit} = require('async')
+// teeb sama välja, mis
+// const parallelLimit = require('async').parallelLimit
 
 
-var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/dynamic/img_persons/';
+var strapiPath = 'http://' + process.env['StrapiHost']
+var savePath = 'assets/img/dynamic/img_persons/'
 
-loadYaml(readYaml);
+loadYaml(readYaml)
 
 function loadYaml(readYaml) {
-    var doc = '';
+    var doc = ''
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/teams.et.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/teams.et.yaml`, 'utf8'))
 
     } catch (e) {
-        console.log(e);
+        console.log(e)
     }
     fs.mkdir(`${savePath}`, err => {
         if (err) {
         }
-    });
-    readYaml(doc);
+    })
+    readYaml(doc)
+}
+
+const delay = (ms) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, ms)
+    })
+}
+function retryFetch (url, fetchOptions={}, retries=3, retryDelay=1000) {
+    return new Promise((resolve, reject) => {
+        const wrapper = n => {
+            fetch(url, fetchOptions)
+                .then(res => { resolve(res) })
+                .catch(async err => {
+                    if(n > 0) {
+                        console.log(`retrying ${n}`)
+                        await delay(retryDelay)
+                        wrapper(--n)
+                    } else {
+                        reject(err)
+                    }
+                })
+        }
+
+        wrapper(retries)
+    })
+}
+
+// Read more about closures: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+function downloadsMaker(url, dest) {
+    return function(parallelCB) {
+        retryFetch(url)
+        .then(res => {
+            const callback = parallelCB
+            const dest_stream = fs.createWriteStream(dest)
+            res.body.pipe(dest_stream)
+            process.stdout.write('.')
+            callback(null, url)
+        })
+    }
 }
 
 function readYaml(doc) {
-
+    process.stdout.write('Team pics ')
+    let parallelDownloads = []
     for (team of doc) {
         if (team.subTeam) {
             for (subTeam of team.subTeam) {
                 if (subTeam.teamMember) {
                     for (teamMember of subTeam.teamMember) {
-                        // console.log(teamMember.pictureAtTeam);
+                        // console.log(teamMember.pictureAtTeam)
                         if (teamMember.pictureAtTeam && teamMember.pictureAtTeam.length > 0) {
-                            var imgPath = teamMember.pictureAtTeam[0].url;
-                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+                            var imgPath = teamMember.pictureAtTeam[0].url
+                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
                         } else if (teamMember.person && teamMember.person.picture) {
-                            var imgPath = teamMember.person.picture.url;
-                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+                            var imgPath = teamMember.person.picture.url
+                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
                         }
                         if (imgPath) {
-                            // download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
+                            // download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError)
                             let url = `${strapiPath}${imgPath}`
                             let dest = `${savePath}${imgFileName}`
-                            download(url, dest);
+                            parallelDownloads.push( downloadsMaker(url, dest) )
                         }
                     }
                 }
             }
         }
     }
-}
-
-function download(url, dest) {
-    let fileSizeInBytes = 0
-    if (fs.existsSync(dest)) {
-        const stats = fs.statSync(dest);
-        fileSizeInBytes = stats.size;
-    }
-
-    var request = http.get(url, function (response) {
-        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
-            var file = fs.createWriteStream(dest);
-            response.pipe(file);
-            file.on('finish', function () {
-                file.close();  // close() is async, call cb after close completes.
-                console.log(`Downloaded: Teams img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
-            });
-        } else {
-            // console.log(`Skipped: Teams img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+    parallelLimit(
+        parallelDownloads,
+        10,
+        function(err, results) {
+            if (err) {
+                console.log(err)
+            }
+            console.log(' ' + results.length + ' files downloaded.')
         }
-    }).on('error', function (err) {
-        console.log(err)
-    })
-};
-
-
+    )
+}
