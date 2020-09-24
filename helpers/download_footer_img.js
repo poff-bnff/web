@@ -67,6 +67,7 @@ function downloadsMaker(url, dest) {
 }
 
 function readYaml(doc) {
+    process.stdout.write('Footer pics ')
     let parallelDownloads = []
     // console.log(doc.footer);
     if (doc.footer.logosSections) {

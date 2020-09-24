@@ -63,6 +63,7 @@ function downloadsMaker(url, dest) {
 }
 
 function readYaml(lang, doc) {
+    process.stdout.write('Trioblock pics ')
     let parallelDownloads = []
     for (values of doc) {
         if (!values.article.slug) {
@@ -91,42 +92,4 @@ function readYaml(lang, doc) {
         }
     )
 }
-
-
-
-// function download(url, dest, parallelCB, retrys=5) {
-//     let fileSizeInBytes = 0
-//     if (fs.existsSync(dest)) {
-//         const stats = fs.statSync(dest);
-//         fileSizeInBytes = stats.size;
-//     }
-
-//     http.get(url, function (response) {
-//         const { statusCode } = response
-//         console.log('Status', statusCode, url)
-//         if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
-//             let file = fs.createWriteStream(dest);
-//             response.pipe(file);
-//             file.on('finish', function () {
-//                 file.close(() => {
-//                     // console.log('Try', retrys, `Downloaded: Trioblock img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`)
-//                     setTimeout(() => {
-//                         parallelCB(null, 'downloaded ' + url)
-//                     }, 500)
-//                 })
-//             })
-//         }else{
-//             // console.log('Try', retrys, `Skipped: Trioblock img ${url.split('/')[url.split('/').length - 1]} due to same exists`)
-//             setTimeout(() => {
-//                 parallelCB(null, 'skipped ' + url)
-//             }, 500)
-//         }
-//     }).on('error', function (err) {
-//         console.log('ERROR', url, err)
-//         if (retrys > 0) {
-//             download(url, dest, parallelCB, retrys-1)
-//         }
-//         parallelCB(err)
-//     })
-// }
 

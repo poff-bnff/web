@@ -69,6 +69,7 @@ function downloadsMaker(url, dest) {
 }
 
 function readYaml(doc) {
+    process.stdout.write('Team pics ')
     let parallelDownloads = []
     for (team of doc) {
         if (team.subTeam) {
