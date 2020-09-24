@@ -55,15 +55,15 @@ function downloadsMaker(url, dest) {
         .then(res => {
             const callback = parallelCB
             const dest_stream = fs.createWriteStream(dest)
-            res.body.pipe(dest_stream)
             process.stdout.write('.')
+            res.body.pipe(dest_stream)
             callback(null, url)
         })
     }
 }
 
+process.stdout.write('Trioblock pics ')
 function readYaml(lang, doc) {
-    process.stdout.write('Trioblock pics ')
     let parallelDownloads = []
     for (values of doc) {
         if (!values.article.slug) {
