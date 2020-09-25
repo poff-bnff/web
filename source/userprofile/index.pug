@@ -2,55 +2,71 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                br
+                br
+                br
+                br
+                br
+                h1.display-4.m-b-2 Palun täida kasutaja ankeet:
 
-    br
-    br
-    br
-    br
-    br
-    h4#number Log in without hosted UI:
-    label(style={color: 'red'} for='loginUsername') Username:
-    input#loginUsername(type='text')
-    br
-    label(style={color: 'red'} for='loginPassword') Password:
-    input#loginPassword(type='password')
-    br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
-    br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
-    br
-    button(onclick='login()') Login
-    br
-    br
-    br
+                form(method='POST' action='/register')
+                    div.form-group
+                        label(for='profileImg') Profiili pilt (kohustuslik passiostjale):
+                        input#profileImg.form-control(type='file', value='fileupload' name='profileImg')
+                    div.form-group
+                        label(for='firstName') Eesnimi:
+                        input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' required=true)
+                    div.form-group
+                        label(for='lastName') Perekonnanimi:
+                        input#lastName.form-control(type='text', placeholder='Perenimi' name='lastName' required=true)
+                    div.form-group
+                        label(for='gender') Sugu:
+                        br
+                        label(for='male') Mees:
+                            input(type='radio', name='gender' value="male")
+                        label(for='female') Naine:
+                            input(type='radio', name='gender' value="female")
+                        label(for='other') Muu:
+                            input(type='radio', name='gender' value="other")
+                    div.form-group
+                        label(for='dob') Sünnikuupäev:
+                        input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
+                    div.form-group
+                        label(for='phoneNr') Telefoni number:
+                        input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr')
+                    div.form-group
+                        label(for='email') Email:
+                        input#email.form-control(type='email', placeholder='Email' name='email')
+                    div.form-group
+                        label(for='country') Elukoha riik:
+                        input#country.form-control(type='text', placeholder='Elukoha riik' name='country')
+                    div.form-group
+                        label(for='city') Elukoha linn:
+                        input#city.form-control(type='text', placeholder='Elukoha linn' name='city')
+                    button.btn.btn-primary(type='submit') Salvesta
+
     a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1q24246tqd48cpepne3vnunmiq&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
-    br
-    br
-    h1#hello
-    p#favoritefilm(style={color: 'green'})
-    br
-    button(onclick='showUserInfo()') Show user info
-
-
 
     style.
         h1 {color: #464646}
         h4 {color: #464646}
-
-
+        label {color: black}
     script.
         var url = window.location;
         const ACCESS_TOKEN = "ACCESS_TOKEN";
         const ID_TOKEN = "ID_TOKEN";
         const REFRESH_TOKEN = "REFRESH_TOKEN";
 
-        if (localStorage.getItem('ID_TOKEN')){
-            hello.innerHTML = 'Hello, ' + name;
-            favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
+        //- if (localStorage.getItem('ID_TOKEN')){
+        //-     hello.innerHTML = 'Hello, ' + name;
+        //-     favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
 
-        } else {
-            hello.innerHTML = 'Not logged in'
-        }
+        //- } else {
+        //-     hello.innerHTML = 'Not logged in'
+        //- }
 
         var tokens = (window.location.hash.substr(1)).split('&');
         console.log(tokens);
@@ -83,10 +99,6 @@ block content
 
 
 
-
-
-
-
         async function loadCognitoUser(){
             console.log(localStorage.getItem(ACCESS_TOKEN));
             var myHeaders = new Headers();
@@ -107,7 +119,7 @@ block content
                     console.log(result);
                     const JSONresult = JSON.parse(result);
                     console.log(JSONresult.name);
-                    hello.innerHTML = 'Hello1, ' + JSONresult.name + '(token+userInfo request)';
+                    //hello.innerHTML = 'Hello1, ' + JSONresult.name + '(token+userInfo request)';
                 })
                 .catch(error => console.log('error', error));
         }
@@ -186,6 +198,7 @@ block content
                 });
                 let name1 = await response.json();
                 name = name1.message;
+                console.log(name1)
         }
 
 
@@ -204,58 +217,6 @@ block content
                         Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')},
                         body: JSON.stringify(favoriteEntry)
                         //- body: JSON.stringify(data)
-                });
-                console.log(await response.json());
-        }
-
-
-
-
-
-        // HISTORY:
-
-
-        //- async function loginWithCode(code) {
-        //-             console.log('Code sent: ' + code);
-
-        //-             var myHeaders = new Headers();
-
-        //-             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-        //-             myHeaders.append("Authorization", "Basic [clientId:clientSecret base64");
-        //-             myHeaders.append("Cookie", "XSRF-TOKEN=85d4e10e-24b4-4b63-90ff-f7d791471e38");
-
-        //-             var urlencoded = new URLSearchParams();
-        //-             urlencoded.append("grant_type", "authorization_code");
-        //-             urlencoded.append("redirect_uri", "https://dev.inscaping.eu/login/");
-        //-             urlencoded.append("code", code);
-
-        //-             var requestOptions = {
-        //-                 method: 'POST',
-        //-                 headers: myHeaders,
-        //-                 body: urlencoded,
-        //-                 redirect: 'follow'
-        //-             };
-
-        //-             await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/token", requestOptions)
-        //-                 .then(response => response.text())
-        //-                 .then(result => {
-        //-                     console.log(result);
-        //-                     const JSONresult = JSON.parse(result);
-        //-                     console.log(JSONresult.access_token);
-        //-                     if (JSONresult.access_token && JSONresult.refresh_token) {
-        //-                         storeAuthentication(JSONresult);
-        //-                     }
-        //-                 })
-        //-                 .catch(error => console.log('error', error));
-        //-         }
-
-
-//- button(onclick='loadCognitoUser()') Say Hello to Cognito user via token+userInfo request
-
-//- a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/login?client_id=1q24246tqd48cpepne3vnunmiq&response_type=code&scope=profile+aws.cognito.signin.user.admin+openid+email+phone&redirect_uri=https://dev.inscaping.eu/login/') (Log in via hosted UI)
-
-
-
-
-
-
+                    });
+                    console.log(await response.json());
+             }

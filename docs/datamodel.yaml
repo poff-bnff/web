@@ -180,8 +180,8 @@ StrapiMedia: &StrapiMedia
         medium: *Medium
         small: *Small
         thumbnail: *Thumbnail
-    # hash: (text)
-    # ext: (text)
+    hash: (text)
+    ext: (text)
     # mime: (text)
     # size: (Number)
     url: (text)
@@ -585,6 +585,12 @@ Team: &Team
     domain: *Domain #(Component)
     namePrivate: (text)
     groupType: (Enumeration)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
 
 Label: &Label
     name: (text)
@@ -704,3 +710,23 @@ TrioBlockShorts:
     shortsi_article_1: *ShortsiArticle #(Component)
     shortsi_article_2: *ShortsiArticle #(Component)
     shortsi_article_3: *ShortsiArticle #(Component)
+
+TrioItemPoff: &TrioItemPoff
+    poffi_article: *POFFiArticle
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia
+
+TrioPOFF: &TrioPOFF
+    trioItem_1: *TrioItemPoff
+    trioItem_2: *TrioItemPoff
+    trioItem_3: *TrioItemPoff
+    name: (text)
+    lead: (text)
+
+TrioPÖFF: &TrioPÖFF
+    _path: /trio-p-oe-ff
+    trioPoff_et: *TrioPOFF
+    trioPoff_en: *TrioPOFF
+    trioPoff_ru: *TrioPOFF
