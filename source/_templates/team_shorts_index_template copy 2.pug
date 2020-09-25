@@ -18,7 +18,9 @@ block content
         //- if self.data.teams
         //- each team in self.data.teams
         - var teamId = self.id
+        - var teamName = self.name
         if self.groupType === 'festivalTeam'
+            h1.section_headline= teamName
             if self.subTeam
                 each subTeam in self.subTeam.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                     if subTeam.name && (typeof(subTeam.name) !== 'object')
