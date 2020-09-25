@@ -48,6 +48,9 @@ block content
         const ID_TOKEN = "ID_TOKEN";
         const REFRESH_TOKEN = "REFRESH_TOKEN";
 
+        let userProfile = loadCognitoUser();
+        console.log(userProfile);
+
         if (localStorage.getItem('ID_TOKEN')){
             hello.innerHTML = 'Hello, ' + name;
             favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
