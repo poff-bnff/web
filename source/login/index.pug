@@ -44,11 +44,13 @@ block content
 
     script.
         var url = window.location;
+
+
         const ACCESS_TOKEN = "ACCESS_TOKEN";
         const ID_TOKEN = "ID_TOKEN";
         const REFRESH_TOKEN = "REFRESH_TOKEN";
 
-        //- let userProfile = loadCognitoUser();
+        //- let userProfile = loadInfoFromIdtkn();
         //- console.log(userProfile);
 
         if (localStorage.getItem('ID_TOKEN')){
@@ -70,7 +72,6 @@ block content
         async function storeAuthentication(tokens) {
             localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
             localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
-            await loadInfoFromIdtkn();
             window.location.hash = '';
             location.reload();
         }
@@ -154,7 +155,6 @@ block content
                     localStorage.setItem('ACCESS_TOKEN', result.accessToken.jwtToken);
                     localStorage.setItem('REFRESH_TOKEN', result.refreshToken.token);
                     localStorage.setItem('ID_TOKEN', result.idToken.jwtToken);
-                    await loadInfoFromIdtkn();
                     location.reload();
 
                     /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
@@ -171,8 +171,7 @@ block content
 
         async function showUserInfo(){
 
-            let userProfile = await loadInfoFromIdtkn();
-            console.log(userprofile);
+            console.log(userProfile);
             //- var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
 
             //- var params = {
@@ -193,8 +192,8 @@ block content
                         Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
 
                 });
-                let name1 = await response.json();
-                name = name1.message;
+                return response.json();
+
         }
 
 
