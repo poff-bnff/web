@@ -26,7 +26,7 @@ footer
                                 if svgItem.url && (svgItem.url.substr(0, 4).toLowerCase() === 'http')
                                     - var urlToDisplay = svgItem.url
                                 else
-                                    - var urlToDisplay = `/${svgItem.url}`
+                                    - var urlToDisplay = `/${lang_path}${svgItem.url}`
                                 a(href=urlToDisplay target='_blank') !{svgItem.svgCode}
                             else if svgItem.svgMedia
                                 img.footer_logo_item(alt=svgItem.name data-src=`/assets/img/dynamic/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/dynamic/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
