@@ -76,8 +76,7 @@ function readYaml(lang, doc) {
         if (!values.article.slug) {
             continue;
         }else{
-            fs.mkdir(`${savePath}${lang}/${values.article.slug}`, err => {
-            });
+            fs.mkdirSync(`${savePath}${lang}/${values.article.slug}`, {recursive: true})
         }
 
         if (values.block.image) {
