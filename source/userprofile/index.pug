@@ -1,0 +1,222 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                br
+                br
+                br
+                br
+                br
+                h1.display-4.m-b-2 Palun täida kasutaja ankeet:
+
+                form(method='POST' action='/register')
+                    div.form-group
+                        label(for='profileImg') Profiili pilt (kohustuslik passiostjale):
+                        input#profileImg.form-control(type='file', value='fileupload' name='profileImg')
+                    div.form-group
+                        label(for='firstName') Eesnimi:
+                        input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' required=true)
+                    div.form-group
+                        label(for='lastName') Perekonnanimi:
+                        input#lastName.form-control(type='text', placeholder='Perenimi' name='lastName' required=true)
+                    div.form-group
+                        label(for='gender') Sugu:
+                        br
+                        label(for='male') Mees:
+                            input(type='radio', name='gender' value="male")
+                        label(for='female') Naine:
+                            input(type='radio', name='gender' value="female")
+                        label(for='other') Muu:
+                            input(type='radio', name='gender' value="other")
+                    div.form-group
+                        label(for='dob') Sünnikuupäev:
+                        input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
+                    div.form-group
+                        label(for='phoneNr') Telefoni number:
+                        input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr')
+                    div.form-group
+                        label(for='email') Email:
+                        input#email.form-control(type='email', placeholder='Email' name='email')
+                    div.form-group
+                        label(for='country') Elukoha riik:
+                        input#country.form-control(type='text', placeholder='Elukoha riik' name='country')
+                    div.form-group
+                        label(for='city') Elukoha linn:
+                        input#city.form-control(type='text', placeholder='Elukoha linn' name='city')
+                    button.btn.btn-primary(type='submit') Salvesta
+
+    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1q24246tqd48cpepne3vnunmiq&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
+
+    style.
+        h1 {color: #464646}
+        h4 {color: #464646}
+        label {color: black}
+    script.
+        var url = window.location;
+        const ACCESS_TOKEN = "ACCESS_TOKEN";
+        const ID_TOKEN = "ID_TOKEN";
+        const REFRESH_TOKEN = "REFRESH_TOKEN";
+
+        //- if (localStorage.getItem('ID_TOKEN')){
+        //-     hello.innerHTML = 'Hello, ' + name;
+        //-     favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
+
+        //- } else {
+        //-     hello.innerHTML = 'Not logged in'
+        //- }
+
+        var tokens = (window.location.hash.substr(1)).split('&');
+        console.log(tokens);
+        if (tokens[3]) {
+            storeAuthentication(tokens);
+        } else {
+            console.log('Not sent ')
+        }
+
+        async function storeAuthentication(tokens) {
+            localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
+            localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
+            await loadInfoFromIdtkn();
+            window.location.hash = '';
+            location.reload();
+        }
+
+        function getAccessToken() {
+            token.innerHTML = localStorage.getItem(`ACCESS_TOKEN`);
+            return localStorage.getItem(`ACCESS_TOKEN`);
+        }
+
+        function logOut() {
+            localStorage.removeItem(ACCESS_TOKEN);
+            localStorage.removeItem(REFRESH_TOKEN);
+            localStorage.removeItem(ID_TOKEN);
+            console.log('LOGITUD VÄLJA');
+            location.reload();
+        }
+
+
+
+        async function loadCognitoUser(){
+            console.log(localStorage.getItem(ACCESS_TOKEN));
+            var myHeaders = new Headers();
+
+            myHeaders.append('Authorization', `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`);
+
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            console.log(requestOptions.headers);
+
+            await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/userInfo", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    const JSONresult = JSON.parse(result);
+                    console.log(JSONresult.name);
+                    //hello.innerHTML = 'Hello1, ' + JSONresult.name + '(token+userInfo request)';
+                })
+                .catch(error => console.log('error', error));
+        }
+
+
+
+
+        async function login(){
+
+            let loginUsername = document.getElementById('loginUsername').value;
+            let loginPassword = document.getElementById('loginPassword').value;
+
+
+        // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
+
+            var authenticationData = {
+                    Username : loginUsername,
+                    Password : loginPassword
+            };
+
+            var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+            var poolData = {
+                    UserPoolId : 'eu-central-1_ockBtdcsP',
+                    ClientId : 'le8630imjv6fcffqqt0ugpm5s'
+            };
+
+            var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+            var userData = {
+                    Username : loginUsername,
+                    Pool : userPool
+            };
+
+            var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+            cognitoUser.authenticateUser(authenticationDetails, {
+                onSuccess: async function (result) {
+                    //- var accessToken = result.getAccessToken().getJwtToken();
+                    localStorage.setItem('ACCESS_TOKEN', result.accessToken.jwtToken);
+                    localStorage.setItem('REFRESH_TOKEN', result.refreshToken.token);
+                    localStorage.setItem('ID_TOKEN', result.idToken.jwtToken);
+                    await loadInfoFromIdtkn();
+                    location.reload();
+
+                    /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
+                    var idToken = result.idToken.jwtToken;
+
+                },
+
+                onFailure: function(err) {
+                    alert(JSON.stringify(err));
+                },
+            });
+        }
+
+
+        function showUserInfo(){
+
+            var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
+
+            var params = {
+                AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
+            };
+            cognitoidentityserviceprovider.getUser(params, function(err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+            else     console.log(data);           // successful response
+            });
+        }
+
+
+        async function loadInfoFromIdtkn(){
+            console.log('loadInfoFromIdtk');
+            let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/tkns`, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
+
+                });
+                let name1 = await response.json();
+                name = name1.message;
+                console.log(name1)
+        }
+
+
+        async function addFavoriteFilm(){
+            console.log('addFavoriteFilm');
+
+            let favoriteEntry = {
+                user: 'test123',
+                film: 'funnyFilm'
+            }
+
+
+            let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/verif`, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')},
+                        body: JSON.stringify(favoriteEntry)
+                        //- body: JSON.stringify(data)
+                    });
+                    console.log(await response.json());
+             }
