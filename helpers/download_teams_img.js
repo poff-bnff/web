@@ -1,122 +1,108 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const FileReader = require('filereader');
-const http = require('http');
-const fs = require('fs');
-const yaml = require('js-yaml');
+const fs = require('fs')
+const yaml = require('js-yaml')
+const fetch = require('node-fetch')
 
-// var blob = null;
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET", "http://'+ process.env['StrapiHost']+'/uploads/F_3_invisible_life_fb118ee4f7.jpg");
-// xhr.responseType = "blob";//force the HTTP response, response-type header to be blob
-// xhr.onload = function()
-// {
-//     blob = xhr.response;//xhr.response is now a blob object
-// }
-// xhr.send();
+const {parallelLimit} = require('async')
+// teeb sama välja, mis
+// const parallelLimit = require('async').parallelLimit
 
-// console.log(blob);
 
-var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/img_persons/';
+var strapiPath = 'http://' + process.env['StrapiHost']
+var savePath = 'assets/img/dynamic/img_persons/'
 
-loadYaml(readYaml);
+loadYaml(readYaml)
 
 function loadYaml(readYaml) {
-    var doc = '';
+    var doc = ''
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/festival/teams.et.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/teams.et.yaml`, 'utf8'))
 
     } catch (e) {
-        console.log(e);
+        console.log(e)
     }
+    fs.mkdir(`${savePath}`, err => {
+        if (err) {
+        }
+    })
+    readYaml(doc)
+}
 
-    readYaml(doc);
+const delay = (ms) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, ms)
+    })
+}
+function retryFetch (url, fetchOptions={}, retries=3, retryDelay=1000) {
+    return new Promise((resolve, reject) => {
+        const wrapper = n => {
+            fetch(url, fetchOptions)
+                .then(res => { resolve(res) })
+                .catch(async err => {
+                    if(n > 0) {
+                        console.log(`retrying ${n}`)
+                        await delay(retryDelay)
+                        wrapper(--n)
+                    } else {
+                        reject(err)
+                    }
+                })
+        }
+
+        wrapper(retries)
+    })
+}
+
+// Read more about closures: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+function downloadsMaker(url, dest) {
+    return function(parallelCB) {
+        retryFetch(url)
+        .then(res => {
+            const callback = parallelCB
+            const dest_stream = fs.createWriteStream(dest)
+            res.body.pipe(dest_stream)
+            process.stdout.write('.')
+            callback(null, url)
+        })
+    }
 }
 
 function readYaml(doc) {
-
+    process.stdout.write('Team pics ')
+    let parallelDownloads = []
     for (team of doc) {
         if (team.subTeam) {
             for (subTeam of team.subTeam) {
                 if (subTeam.teamMember) {
                     for (teamMember of subTeam.teamMember) {
-                        // console.log(teamMember.pictureAtTeam);
+                        // console.log(teamMember.pictureAtTeam)
                         if (teamMember.pictureAtTeam && teamMember.pictureAtTeam.length > 0) {
-                            var imgPath = teamMember.pictureAtTeam[0].url;
-                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+                            var imgPath = teamMember.pictureAtTeam[0].url
+                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
                         } else if (teamMember.person && teamMember.person.picture) {
-                            var imgPath = teamMember.person.picture.url;
-                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
+                            var imgPath = teamMember.person.picture.url
+                            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
                         }
                         if (imgPath) {
-                            // download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
+                            // download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError)
                             let url = `${strapiPath}${imgPath}`
                             let dest = `${savePath}${imgFileName}`
-                            download(url, dest);
+                            parallelDownloads.push( downloadsMaker(url, dest) )
                         }
                     }
                 }
             }
         }
     }
-}
-
-function download(url, dest) {
-    let fileSizeInBytes = 0
-    if (fs.existsSync(dest)) {
-        const stats = fs.statSync(dest);
-        fileSizeInBytes = stats.size;
-    }
-
-    var request = http.get(url, function (response) {
-        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
-            var file = fs.createWriteStream(dest);
-            response.pipe(file);
-            file.on('finish', function () {
-                file.close();  // close() is async, call cb after close completes.
-                console.log(`Downloaded: Teams img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest}`);
-            });
-        }else{
-            // console.log(`Skipped: Teams img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+    parallelLimit(
+        parallelDownloads,
+        10,
+        function(err, results) {
+            if (err) {
+                console.log(err)
+            }
+            console.log(' ' + results.length + ' files downloaded.')
         }
-    }).on('error', function (err) { // Handle errors
-        fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        // if (cb) cb(err.message);
-    });
-};
-
-
-
-// download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
-
-function ifError(error, url, dest) {
-    if (error) {
-        console.log(`ERROR: ${error}`);
-    } else {
-        // console.log(`File ${imgFileName} downloaded to ${savePath}`);
-
-    }
+    )
 }
-
-// var myReader = new FileReader();
-// myReader.readAsArrayBuffer(blob)
-// myReader.addEventListener("loadend", function(e)
-// {
-//         var buffer = e.srcElement.result;//arraybuffer object
-// });
-
-// // new File("");
-
-// function readImage(file) {
-//     // Check if the file is an image.
-//     if (file.type && file.type.indexOf('image') === -1) {
-//       console.log('File is not an image.', file.type, file);
-//       return;
-//     }
-
-//     const reader = new FileReader();
-//     reader.addEventListener('load', (event) => {
-//       img.src = event.target.result;
-//     });
-//     reader.readAsDataURL(file);
-//   }

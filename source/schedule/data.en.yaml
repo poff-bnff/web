@@ -1,5 +1,4 @@
 path: 'schedule'
 data:
-    pictures: /film_pictures.yaml
     screeningsCalendar: /film/screeningsCalendar.en.yaml
-    articles: /articles.en.yaml
+    articles: /_fetchdir/articles.en.yaml

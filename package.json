@@ -5,6 +5,9 @@
   "private": true,
   "dependencies": {
     "all": "0.0.0",
+    "amazon-cognito-identity-js": "^4.4.0",
+    "amplify": "0.0.11",
+    "async": "^3.2.0",
     "color": "^3.1.2",
     "colors": "^1.4.0",
     "deep-diff": "^1.0.2",
@@ -15,6 +18,7 @@
     "install": "^0.13.0",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
+    "retry": "^0.12.0",
     "rimraf": "^3.0.2",
     "slugify": "^1.4.5",
     "xmlhttprequest": "^1.8.0",
@@ -26,8 +30,12 @@
     "serve_local": "serve build",
     "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
     "build_Poff": ". ./build_poff.sh",
+    "build_Poff_no_img": ". ./build_poff_no_img.sh",
     "build_just": ". ./build_just.sh",
-    "build_shorts": ". ./build_shorts.sh"
+    "build_shorts": ". ./build_shorts.sh",
+    "update_poff_styles": "DOMAIN='poff.ee' node helpers/copy_styles_acc_to_domain.js",
+    "update_justfilm_styles": "DOMAIN='justfilm.ee' node helpers/copy_styles_acc_to_domain.js",
+    "update_shorts_styles": "DOMAIN='shorts.poff.ee' node helpers/copy_styles_acc_to_domain.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +46,7 @@
   },
   "homepage": "",
   "devDependencies": {
+    "@types/async": "^3.2.3",
     "serve": "^11.3.2",
     "yaml-validator": "^3.0.0"
   }

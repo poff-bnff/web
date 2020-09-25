@@ -1,128 +1,138 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const FileReader = require('filereader');
-const http = require('http');
-const fs = require('fs');
-const yaml = require('js-yaml');
+const fs = require('fs')
+const yaml = require('js-yaml')
+const path = require('path')
+const {parallelLimit} = require('async')
+const fetch = require('node-fetch')
 
-// var blob = null;
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET", "http://'+ process.env['StrapiHost']+'/uploads/F_3_invisible_life_fb118ee4f7.jpg");
-// xhr.responseType = "blob";//force the HTTP response, response-type header to be blob
-// xhr.onload = function()
-// {
-//     blob = xhr.response;//xhr.response is now a blob object
-// }
-// xhr.send();
 
-// console.log(blob);
+const strapiPath = 'http://' + process.env['StrapiHost']
+const savePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_articles')
 
-var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/img_articles/';
+const languages = ['en', 'et', 'ru']
 
-loadYaml('et', readYaml);
-loadYaml('en', readYaml);
-loadYaml('ru', readYaml);
-
-function loadYaml(lang, readYaml) {
-    var doc = '';
-    try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/articles.${lang}.yaml`, 'utf8'));
-
-    } catch (e) {
-        console.log(e);
-    }
-    fs.mkdir(`${savePath}${lang}`, err => {
-        if (err) {
+const delay = (ms) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, ms)
+    })
+}
+function retryFetch (url, fetchOptions={}, retries=3, retryDelay=1000) {
+    return new Promise((resolve, reject) => {
+        const wrapper = n => {
+            fetch(url, fetchOptions)
+                .then(res => { resolve(res) })
+                .catch(async err => {
+                    if(n > 0) {
+                        console.log(`retrying ${n}`)
+                        await delay(retryDelay)
+                        wrapper(--n)
+                    } else {
+                        reject(err)
+                    }
+                })
         }
-    });
-    readYaml(lang, doc);
+
+        wrapper(retries)
+    })
 }
 
-function readYaml(lang, doc) {
+function downloadsMaker(url, dest) {
+    return function(parallelCB) {
+        retryFetch(url)
+        .then(res => {
+            const callback = parallelCB
+            const dest_stream = fs.createWriteStream(dest)
+            res.body.pipe(dest_stream)
+            process.stdout.write('.')
+            callback(null, url)
+        })
+    }
+}
 
-    for (values of doc) {
+process.stdout.write('Article pics ')
+let parallelDownloads = []
+for (const lang of languages) {
+    var articleData = ''
+    try {
+        const articleDataFile = path.join('source', '_fetchdir', `articles.${lang}.yaml`)
+        articleData = yaml.safeLoad(fs.readFileSync(articleDataFile, 'utf8'))
+    } catch (e) {
+        console.log(e)
+    }
+
+    for (values of articleData) {
         if (!values.slug) {
-            continue;
-        }else{
-            fs.mkdir(`${savePath}${lang}/${values.slug}`, err => {
-            });
+            continue
         }
+
+        const imgDir = path.join(savePath, lang, values.slug)
+        fs.mkdirSync( path.join(savePath, lang, values.slug), {recursive: true} )
 
         if (values.media && values.media.imageDefault) {
-            var imgPath = values.media.imageDefault[0].url;
-            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            let url = `${strapiPath}${imgPath}`
-            let dest = `${savePath}${lang}/${values.slug}/${imgFileName}`
-            download(url, dest);
-        }
-        if (values.media && values.media.image[0]) {
-            var imgPath = values.media.image[0].url;
-            var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-            let url = `${strapiPath}${imgPath}`
-            let dest = `${savePath}${lang}/${values.slug}/${imgFileName}`
-            download(url, dest);
+            const imgPath = values.media.imageDefault[0].url
+            const imgFileName = path.basename(imgPath)
+            const url = `${strapiPath}${imgPath}`
+            const dest = path.join(imgDir, imgFileName)
+            parallelDownloads.push( downloadsMaker(url, dest) )
         }
 
+        if (values.media && values.media.image && values.media.image[0]) {
+            const imgPath = values.media.image[0].url
+            const imgFileName = path.basename(imgPath)
+            const url = `${strapiPath}${imgPath}`
+            const dest = path.join(imgDir, imgFileName)
+            parallelDownloads.push( downloadsMaker(url, dest) )
+        }
     }
 }
-
-function download(url, dest) {
-    let fileSizeInBytes = 0
-    if (fs.existsSync(dest)) {
-        const stats = fs.statSync(dest);
-        fileSizeInBytes = stats.size;
-    }
-
-    var request = http.get(url, function (response) {
-        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
-            // console.log(typeof(response.headers["content-length"]));
-            var file = fs.createWriteStream(dest);
-            response.pipe(file);
-            file.on('finish', function () {
-                file.close();  // close() is async, call cb after close completes.
-                console.log(`Downloaded: Article img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest} - ${response.headers["content-length"]} bytes`);
-            });
-        }else{
-            // console.log(`Skipped: Article img ${url.split('/')[url.split('/').length - 1]} due to same exists`);
+parallelLimit(
+    parallelDownloads,
+    10,
+    function(err, results) {
+        if (err) {
+            console.log(err)
         }
-    }).on('error', function (err) { // Handle errors
-        console.log(err);
-        // fs.unlink(dest); // Delete the file async. (But we don't check the result)
-    })
-};
-
-
-
-// download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
-
-function ifError(error, url, dest) {
-    if (error) {
-        console.log(`ERROR: ${error}`);
-    } else {
-        // console.log(`File ${imgFileName} downloaded to ${savePath}`);
-
+        console.log(' ' + results.length + ' files downloaded.')
     }
-}
+)
 
-// var myReader = new FileReader();
-// myReader.readAsArrayBuffer(blob)
-// myReader.addEventListener("loadend", function(e)
-// {
-//         var buffer = e.srcElement.result;//arraybuffer object
-// });
-
-// // new File("");
-
-// function readImage(file) {
-//     // Check if the file is an image.
-//     if (file.type && file.type.indexOf('image') === -1) {
-//       console.log('File is not an image.', file.type, file);
-//       return;
+// function download(url, dest, parallelCB, retrys=5) {
+//     let fileSizeInBytes = 0
+//     if (fs.existsSync(dest)) {
+//         const stats = fs.statSync(dest);
+//         fileSizeInBytes = stats.size;
 //     }
+//     try {
 
-//     const reader = new FileReader();
-//     reader.addEventListener('load', (event) => {
-//       img.src = event.target.result;
-//     });
-//     reader.readAsDataURL(file);
-//   }
+//     } catch (error) {
+
+//     }
+//     http.get(url, function (response) {
+//         const { statusCode } = response
+//         if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
+//             // console.log(typeof(response.headers["content-length"]));
+//             let file = fs.createWriteStream(dest);
+//             response.pipe(file);
+//             file.on('finish', function () {
+//                 file.close(() => {
+//                     // console.log('Try', retrys, `Downloaded: Article img ${url.split('/')[url.split('/').length - 1]} downloaded to ${dest} - ${response.headers["content-length"]} bytes`)
+//                     setTimeout(() => {
+//                         parallelCB(null, 'downloaded ' + url)
+//                     }, 500)
+//                 })
+//             })
+//         }else{
+//             // console.log('Try', retrys, `Skipped: Article img ${url.split('/')[url.split('/').length - 1]} due to same exists`)
+//             setTimeout(() => {
+//                 parallelCB(null, 'skipped ' + url)
+//             }, 500)
+//         }
+//     }).on('error', function (err) {
+//         console.log('ERROR', url, err)
+//         if (retrys > 0) {
+//             download(url, dest, parallelCB, retrys-1)
+//         }
+//         parallelCB(err)
+//     })
+// }

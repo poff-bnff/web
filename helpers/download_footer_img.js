@@ -1,63 +1,102 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const FileReader = require('filereader');
-const http = require('http');
-const fs = require('fs');
-const yaml = require('js-yaml');
+const http = require('http')
+const fs = require('fs')
+const yaml = require('js-yaml')
+const fetch = require('node-fetch')
 
-// var blob = null;
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET", "http://'+ process.env['StrapiHost']+'/uploads/F_3_invisible_life_fb118ee4f7.jpg");
-// xhr.responseType = "blob";//force the HTTP response, response-type header to be blob
-// xhr.onload = function()
-// {
-//     blob = xhr.response;//xhr.response is now a blob object
-// }
-// xhr.send();
 
-// console.log(blob);
+const {parallelLimit} = require('async')
 
-var strapiPath = 'http://' + process.env['StrapiHost'];
-var savePath = 'assets/img/img_footer/';
+var strapiPath = 'http://' + process.env['StrapiHost']
+var savePath = 'assets/img/dynamic/img_footer/'
 
 loadYaml(readYaml);
 
 function loadYaml(readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/global.et.yaml`, 'utf8'));
+        doc = yaml.safeLoad(fs.readFileSync(`source/global.et.yaml`, 'utf8'))
 
     } catch (e) {
-        // console.log(e);
+        console.log(e);
     }
     fs.mkdir(`${savePath}`, err => {
         if (err) {
         }
-    });
+    })
     readYaml(doc);
 }
 
+const delay = (ms) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, ms)
+    })
+}
+function retryFetch (url, fetchOptions={}, retries=3, retryDelay=1000) {
+    return new Promise((resolve, reject) => {
+        const wrapper = n => {
+            fetch(url, fetchOptions)
+                .then(res => { resolve(res) })
+                .catch(async err => {
+                    if(n > 0) {
+                        console.log(`retrying ${n}`)
+                        await delay(retryDelay)
+                        wrapper(--n)
+                    } else {
+                        reject(err)
+                    }
+                })
+        }
+
+        wrapper(retries)
+    })
+}
+
+function downloadsMaker(url, dest) {
+    return function(parallelCB) {
+        retryFetch(url)
+        .then(res => {
+            const callback = parallelCB
+            const dest_stream = fs.createWriteStream(dest)
+            res.body.pipe(dest_stream)
+            process.stdout.write('.')
+            callback(null, url)
+        })
+    }
+}
+
 function readYaml(doc) {
+    process.stdout.write('Footer pics ')
+    let parallelDownloads = []
+    // console.log(doc.footer);
     if (doc.footer.logosSections) {
         for (const ix in doc.footer.logosSections) {
             const section = doc.footer.logosSections[ix]
             for (const i in section.logo) {
                 const logo = section.logo[i]
                 if ('imgWhite' in logo && 'url' in logo.imgWhite){
-                    var imgPathW = logo.imgWhite.url;
-                    var imgFileName = imgPathW.split('/')[imgPathW.split('/').length - 1];
-                    download(`${strapiPath}${imgPathW}`, `${savePath}${imgFileName}`);
+                    let imgPathW = logo.imgWhite.url;
+                    let imgFileName = imgPathW.split('/')[imgPathW.split('/').length - 1]
+                    let url = `${strapiPath}${imgPathW}`
+                    let dest = `${savePath}${imgFileName}`
+                    parallelDownloads.push( downloadsMaker(url, dest) )
                 }
 
                 if ('imgColor' in logo && 'url' in logo.imgColour){
-                    var imgPathC = logo.imgColour.url;
-                    var imgFileName = imgPathC.split('/')[imgPathC.split('/').length - 1];
-                    download(`${strapiPath}${imgPathC}`, `${savePath}${imgFileName}`);
+                    let imgPathC = logo.imgColour.url;
+                    let imgFileName = imgPathC.split('/')[imgPathC.split('/').length - 1]
+                    let url = `${strapiPath}${imgPathC}`
+                    let dest = `${savePath}${imgFileName}`
+                    parallelDownloads.push( downloadsMaker(url, dest) )
                 }
 
                 if ('imgBlack' in logo && 'url' in logo.imgBlack){
-                    var imgPathB = logo.imgBlack.url;
-                    var imgFileName = imgPathB.split('/')[imgPathB.split('/').length - 1];
-                    download(`${strapiPath}${imgPathB}`, `${savePath}${imgFileName}`);
+                    let imgPathB = logo.imgBlack.url;
+                    let imgFileName = imgPathB.split('/')[imgPathB.split('/').length - 1]
+                    let url = `${strapiPath}${imgPathB}`
+                    let dest = `${savePath}${imgFileName}`
+                    parallelDownloads.push( downloadsMaker(url, dest) )
                 }
             }
         }
@@ -68,9 +107,11 @@ function readYaml(doc) {
             for (const i in group.items) {
                 const items = group.items[i]
                 if ('svgMedia' in items && 'url' in items.svgMedia){
-                    var imgPath = items.svgMedia.url;
-                    var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                    download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`);
+                    let imgPath = items.svgMedia.url;
+                    let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
+                    let url = `${strapiPath}${imgPath}`
+                    let dest = `${savePath}${imgFileName}`
+                    parallelDownloads.push( downloadsMaker(url, dest) )
                 }
             }
         }
@@ -80,9 +121,11 @@ function readYaml(doc) {
             const item = doc.footer.item[ix]
             if ('image' in item && 'url' in item.image) {
                 // console.log(item.image);
-                var imgPath = item.image.url;
-                var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`);
+                let imgPath = item.image.url;
+                let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
+                let url = `${strapiPath}${imgPath}`
+                let dest = `${savePath}${imgFileName}`
+                parallelDownloads.push( downloadsMaker(url, dest) )
             }
         }
 
@@ -92,73 +135,25 @@ function readYaml(doc) {
                 const media = item.svgItem[i]
                 if('svgMedia' in media &&'url' in media.svgMedia) {
                     // console.log(media.svgMedia.url);
-                    var imgPath = media.svgMedia.url;
-                    var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1];
-                    download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`);
+                    let imgPath = media.svgMedia.url;
+                    let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
+                    let url = `${strapiPath}${imgPath}`
+                    let dest = `${savePath}${imgFileName}`
+                    parallelDownloads.push( downloadsMaker(url, dest) )
                 }
             }
         }
     }
-}
-
-
-function download(url, dest) {
-    let fileSizeInBytes = 0
-    if (fs.existsSync(dest)) {
-        const stats = fs.statSync(dest);
-        fileSizeInBytes = stats.size;
-    }
-
-    var request = http.get(url, function (response) {
-        if (response.headers["content-length"] !== fileSizeInBytes.toString()) {
-            var file = fs.createWriteStream(dest);
-            response.pipe(file);
-            file.on('finish', function () {
-                file.close();  // close() is async, call cb after close completes.
-                console.log(`Downloaded: Footer img ${url.split('/')[url.split('/').length - 1]} to ${dest}`);
-            });
-        }else{
-            // console.log(`Skipped: Footer img ${url.split('/')[url.split('/').length - 1]} skipped due to same exists`);
+    // console.log(parallelDownloads);
+    parallelLimit(
+        parallelDownloads,
+        10,
+        function(err, results) {
+            if (err) {
+                console.log(err)
+            }
+            console.log(' ' + results.length + ' files downloaded.')
         }
-    }).on('error', function (err) { // Handle errors
-        console.log(err);
-        // fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        // if (cb) cb(err.message);
-    });
-};
-
-
-
-// download(`${strapiPath}${imgPath}`, `${savePath}${imgFileName}`, ifError);
-
-function ifError(error, url, dest) {
-    if (error) {
-        console.log(`ERROR: ${error}`);
-    } else {
-        // console.log(`File ${imgFileName} downloaded to ${savePath}`);
-
-    }
+    )
 }
 
-// var myReader = new FileReader();
-// myReader.readAsArrayBuffer(blob)
-// myReader.addEventListener("loadend", function(e)
-// {
-//         var buffer = e.srcElement.result;//arraybuffer object
-// });
-
-// // new File("");
-
-// function readImage(file) {
-//     // Check if the file is an image.
-//     if (file.type && file.type.indexOf('image') === -1) {
-//       console.log('File is not an image.', file.type, file);
-//       return;
-//     }
-
-//     const reader = new FileReader();
-//     reader.addEventListener('load', (event) => {
-//       img.src = event.target.result;
-//     });
-//     reader.readAsDataURL(file);
-//   }

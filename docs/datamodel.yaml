@@ -36,9 +36,12 @@ TagProgramme: &TagProgramme
 ArticleType: &ArticleType
     _path: /article-types
     name: (text)
-    et: (text)
-    en: (text)
-    ru: (text)
+    label_et: (text)
+    label_en: (text)
+    label_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
 
 Domain: &Domain
     _path: /domains
@@ -121,8 +124,70 @@ Button: &Button
     url_en: (text)
     url_ru: (text)
 
+Large: &Large
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Medium : &Medium
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Small: &Small
+    # ext: (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
+Thumbnail: &Thumbnail
+    # ext:  (text)
+    url:  (text)
+    # hash:  (text)
+    # mime:  (text)
+    name:  (text)
+    path:  (text)
+    # size:  (number)
+    # width:  (number)
+    # heigth:  (number)
+
 StrapiMedia: &StrapiMedia
     id: (number)
+    name: (text)
+    alternativeText: (text)
+    caption: (text)
+    width: (Number)
+    height: (Number)
+    formats:
+        large: *Large
+        medium: *Medium
+        small: *Small
+        thumbnail: *Thumbnail
+    hash: (text)
+    ext: (text)
+    # mime: (text)
+    # size: (Number)
+    url: (text)
+    previewUrl: (text)
+    # provider: (text)
+    # provider_metadata: (text)
 
 Media: &Media
     imageDefault:
@@ -145,6 +210,10 @@ WebAuthor: &WebAuthor
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
@@ -198,6 +267,10 @@ POFFiMenu: &POFFiMenu
 
 JustFilmiArticle: &JustFilmiArticle
     _path: /just-filmi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
@@ -251,6 +324,10 @@ JustFilmiMenu: &JustFilmiMenu
 
 ShortsiArticle: &ShortsiArticle
     _path: /shortsi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
     #titlePrivate: (text, private field)
     title_et: (text)
     title_en: (text)
@@ -476,12 +553,28 @@ TeamMember: &TeamMember
     phoneAtTeam: (text)
     order: (Number)
 
+JuryMember: &JuryMember
+    person: *Person
+    pictureAtJury: *StrapiMedia
+    roleAtJury_et: (text)
+    roleAtJury_en: (text)
+    roleAtJury_ru: (text)
+    professions_et: (text)
+    professions_en: (text)
+    professions_ru: (text)
+    country: *Country
+    about_et: (Rich text)
+    about_en: (Rich text)
+    about_ru: (Rich text)
+
 SubTeam: &SubTeam
     name: *Translated
     order: (Number)
     # namePrivate: (text, private field)
     teamMember:
         - *TeamMember
+    juryMember:
+        - *JuryMember
 
 Team: &Team
     _path: /teams
@@ -490,6 +583,14 @@ Team: &Team
     name: #(Component)
         *Translated
     domain: *Domain #(Component)
+    namePrivate: (text)
+    groupType: (Enumeration)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
 
 Label: &Label
     name: (text)
@@ -560,7 +661,7 @@ TrioBlockItemPoff: &TrioBlockItemPoff
     lead: *Translated #(Component)
     customUrl: (text)
     order: (Number)
-    image: *Media
+    image: *StrapiMedia
 
 HeroArticlePoff:
     _path: /article-hero
@@ -572,10 +673,10 @@ TrioBlockPoff:
     _path: /trio-block-poeff
     blockName: *Translated
     poffi_article_1: *POFFiArticle #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff
     poffi_article_2: *POFFiArticle #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff
     poffi_article_3: *POFFiArticle #(Component)
+    trioBlockItem_1: *TrioBlockItemPoff
+    trioBlockItem_2: *TrioBlockItemPoff
     trioBlockItem_3: *TrioBlockItemPoff
 
 HeroArticleJustFilm:
@@ -587,12 +688,12 @@ HeroArticleJustFilm:
 TrioBlockJustFilm:
     _path: /trio-block-just-film
     blockName: *Translated
+    just_filmi_article_1: *JustFilmiArticle #(Component)
+    just_filmi_article_2: *JustFilmiArticle #(Component)
+    just_filmi_article_3: *JustFilmiArticle #(Component)
     trioBlockItem_1: *TrioBlockItemPoff
     trioBlockItem_2: *TrioBlockItemPoff
     trioBlockItem_3: *TrioBlockItemPoff
-    poffi_article_1: *JustFilmiArticle #(Component)
-    poffi_article_2: *JustFilmiArticle #(Component)
-    poffi_article_3: *JustFilmiArticle #(Component)
 
 HeroArticleShorts:
     _path: /hero-article-shorts
@@ -606,6 +707,26 @@ TrioBlockShorts:
     trioBlockItem_1: *TrioBlockItemPoff
     trioBlockItem_2: *TrioBlockItemPoff
     trioBlockItem_3: *TrioBlockItemPoff
-    poffi_article_1: *ShortsiArticle #(Component)
-    poffi_article_2: *ShortsiArticle #(Component)
-    poffi_article_3: *ShortsiArticle #(Component)
+    shortsi_article_1: *ShortsiArticle #(Component)
+    shortsi_article_2: *ShortsiArticle #(Component)
+    shortsi_article_3: *ShortsiArticle #(Component)
+
+TrioItemPoff: &TrioItemPoff
+    poffi_article: *POFFiArticle
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia
+
+TrioPOFF: &TrioPOFF
+    trioItem_1: *TrioItemPoff
+    trioItem_2: *TrioItemPoff
+    trioItem_3: *TrioItemPoff
+    name: (text)
+    lead: (text)
+
+TrioPÖFF: &TrioPÖFF
+    _path: /trio-p-oe-ff
+    trioPoff_et: *TrioPOFF
+    trioPoff_en: *TrioPOFF
+    trioPoff_ru: *TrioPOFF
