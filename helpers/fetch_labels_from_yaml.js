@@ -1,6 +1,6 @@
-const fs = require('fs');
-const yaml = require('js-yaml');
-const path = require('path');
+const fs = require('fs')
+const yaml = require('js-yaml')
+const path = require('path')
 const rueten = require('./rueten.js')
 
 const sourceDir =  path.join(__dirname, '..', 'source')
@@ -10,7 +10,7 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA_LABELGROUP = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['LabelGroup']
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
-const sourceFolder =  path.join(__dirname, '../source/');
+const sourceFolder =  path.join(__dirname, '../source/')
 
 console.log(DOMAIN)
 
@@ -27,13 +27,13 @@ for (const lang of languages) {
         let labelGroupName = labelGroup.name
         labels[labelGroupName] = {}
         for (label of labelGroup.label) {
-            // console.log(label);
-            labels[labelGroupName][label.name] = label.value
+            // console.log(label)
+            if (label.value) {
+                labels[labelGroupName][label.name] = label.value
+            }
         }
     }
-    rueten(labels, lang)
-
-    console.log(labels);
+    console.log(labels)
 
     const globalStatic = path.join(sourceFolder, 'global_static', `global_s.${lang}.yaml`)
     // console.log(globalStatic)
