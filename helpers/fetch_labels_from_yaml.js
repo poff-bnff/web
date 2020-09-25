@@ -27,13 +27,11 @@ for (const lang of languages) {
         let labelGroupName = labelGroup.name
         labels[labelGroupName] = {}
         for (label of labelGroup.label) {
-            // console.log(label)
             if (label.value) {
                 labels[labelGroupName][label.name] = label.value
             }
         }
     }
-    console.log(labels)
 
     const globalStatic = path.join(sourceFolder, 'global_static', `global_s.${lang}.yaml`)
     // console.log(globalStatic)
