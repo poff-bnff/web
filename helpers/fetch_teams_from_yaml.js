@@ -21,7 +21,7 @@ for (const ix in languages) {
         let element = JSON.parse(JSON.stringify(STRAPIDATA_TEAM[ix]));
 
         if (DOMAIN === 'justfilm.ee') {
-            let templateDomainName = 'justfilm';
+            var templateDomainName = 'justfilm';
         } else if (DOMAIN === 'shorts.poff.ee') {
             var templateDomainName = 'shorts';
         } else {
