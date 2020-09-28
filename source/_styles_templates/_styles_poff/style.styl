@@ -718,37 +718,42 @@ a .dark:hover
 .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(12rem, 15rem))
+    grid-template-rows 3rem
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logost:first-child
+.footer_logos:first-child
     display grid
-    grid-template-columns repeat(auto-fit, minmax(50rem, 60rem))
+    grid-template-columns repeat(auto-fit, minmax(12rem, 15rem))
+    grid-template-rows 3rem
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logost:nth-child(2)
+.footer_logos:nth-child(2)
     display grid
-    grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
+    grid-template-columns repeat(auto-fit, minmax(3rem, 4rem))
+    grid-template-rows 1rem
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logosT:nth-child(3)
+.footer_logos:nth-child(3)
     display grid
-    grid-template-columns repeat(auto-fit, minmax(4rem, 6rem))
+    grid-template-columns repeat(auto-fit, minmax(12rem, 15rem))
+    grid-template-rows 3rem
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
 .footer_logo_item
-    width: 100%
+    width 100%
+    height 100%
 
 
 // .footer_logo_item:first-child
@@ -1911,6 +1916,9 @@ a.btn_popover
         // border 1px solid rgba(255, 255, 255, 0)
         /* background-color: red; */
 
+    .main_menu ul li.dropdown
+        position relative
+
     .main_menu ul li.dropdown ul
         background-color clr_header_bg
         position absolute
@@ -1960,7 +1968,7 @@ a.btn_popover
     .grid_footer_row
         grid-area footer
         display grid
-        grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+        grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
         grid-template-rows auto
         grid-gap 1rem
         justify-items center
