@@ -795,23 +795,37 @@ TicketingRight: &TicketingRight
     rightLimit: (Number)
     rightUsed: (Number)
 
-# Period: &Period
-#     startDateTime: (Datetime)
-#     endDateTime: (Datetime)
+Period: &Period
+    startDateTime: (Datetime)
+    endDateTime: (Datetime)
 
-# PriceAtPeriod: &PriceAtPeriod
-#     price: (number, decimal)
-#     startDateTime: (Datetime)
-#     endDateTime: (Datetime)
-
-Product_Category: &Product_Category
-    _path: /product-categories
-    namePrivate: (text)
-    name: *Translated  #(Component (repeatable))
+PriceAtPeriod: &PriceAtPeriod
+    price: (number, decimal)
+    startDateTime: (Datetime)
+    endDateTime: (Datetime)
 
 Product_Type: &Product_Type
     _path: /products
     name: (text)
+
+Product_Category: &Product_Category
+    _path: /product-categories
+    namePrivate: (text)
+    name:  #(Component (repeatable))
+        - *Translated
+    product_type: *Product_Type
+    festival_edition: *FestivalEdition
+    description:  #(Component (repeatable))
+        - *Translated
+    validityPeriod:  #(Component (repeatable))
+        - *Period
+    salesPeriod:  #(Component (repeatable))
+        - *Period
+    ticketingRight:  #(Component (repeatable))
+        - *TicketingRight
+    priceAtPeriod:  #(Component (repeatable))
+        - *PriceAtPeriod
+    codePrefix: (text)
 
 Product_Pass: &Product_Pass
     _path: /festival-passes
@@ -825,6 +839,7 @@ Product_Pass: &Product_Pass
         - *TicketingRight
 
 Supporters_Page: &Supporters_Page
+    _path: /supporters-pages
     title: *Translated
     intro: *Translated
     logosSection:
