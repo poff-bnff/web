@@ -824,6 +824,14 @@ Product_Pass: &Product_Pass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
+Supporters_Page: &Supporters_Page
+    title: *Translated
+    intro: *Translated
+    logosSection:
+        - *LogosSection
+    # namePrivate: (text, private)
+    domain: *Domain
+
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
