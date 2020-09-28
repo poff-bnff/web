@@ -768,6 +768,62 @@ Roll: &Roll
     namePrivate: (text)
     name: *Translated
 
+# Payment: &Payment
+#     status: (text)
+#     cardNumber: (Number)
+#     cardOwner: (text)
+#     currency: (text)
+#     code: (text)
+#     identifier: (text)
+#     amount: (Number)
+#     method: (Enumeration)
+
+# Transaction: &Transaction
+#     _path: /
+#     dateTime: (Datetime)
+#     person: *Person
+#     type: (Enumeration)
+#     payment:  #(Component (repeatable))
+#         - *Payment
+
+# Ticketing: &Ticketing
+#     ticketingId: (Number)
+#     ticketingUrl: (text)
+
+# TicketingRight: &TicketingRight
+#     ticketType: (text)
+#     rightLimit: (Number)
+#     rightUsed: (Number)
+
+# Period: &Period
+#     startDateTime: (Datetime)
+#     endDateTime: (Datetime)
+
+# PriceAtPeriod: &PriceAtPeriod
+#     price: (number, decimal)
+#     startDateTime: (Datetime)
+#     endDateTime: (Datetime)
+
+# Product_Category: &Product_Category
+#     _path: /
+#     namePrivate: (text)
+#     name: *Translated  #(Component (repeatable))
+
+# Product_Type: &Product_Type
+#     _path: /
+#     name: (text)
+
+# Product_Pass: &Product_Pass
+#     _path: /
+#     product_type: *Product_Type
+#     product_category: *Product_Category
+#     owner: *Person
+#     code: (text)
+#     active: (Boolean)
+#     transaction: *Transaction
+#     ticketingRight: #(Component (repeatable))
+#         - *TicketingRight
+
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
