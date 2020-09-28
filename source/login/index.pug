@@ -15,11 +15,14 @@ block content
     label(style={color: 'red'} for='loginPassword') Password:
     input#loginPassword(type='password')
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
+    p#signUpPassword2
+    a(href='https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Facebook') Facebook
     br
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=1q24246tqd48cpepne3vnunmiq&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
+    a(href='https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=https://dev.inscaping.eu/login/&identity_provider=Google') Google
     br
     button(onclick='login()') Login
+    button(onclick='doSignUp()') SignUp
+    p#doSignUp
     br
     br
     br
@@ -36,13 +39,19 @@ block content
     style.
         h1 {color: #464646}
         h4 {color: #464646}
+        p {color: #464646}
 
 
     script.
         var url = window.location;
+
+
         const ACCESS_TOKEN = "ACCESS_TOKEN";
         const ID_TOKEN = "ID_TOKEN";
         const REFRESH_TOKEN = "REFRESH_TOKEN";
+
+        //- let userProfile = loadInfoFromIdtkn();
+        //- console.log(userProfile);
 
         if (localStorage.getItem('ID_TOKEN')){
             hello.innerHTML = 'Hello, ' + name;
@@ -63,7 +72,6 @@ block content
         async function storeAuthentication(tokens) {
             localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
             localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
-            await loadInfoFromIdtkn();
             window.location.hash = '';
             location.reload();
         }
@@ -147,7 +155,6 @@ block content
                     localStorage.setItem('ACCESS_TOKEN', result.accessToken.jwtToken);
                     localStorage.setItem('REFRESH_TOKEN', result.refreshToken.token);
                     localStorage.setItem('ID_TOKEN', result.idToken.jwtToken);
-                    await loadInfoFromIdtkn();
                     location.reload();
 
                     /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
@@ -162,30 +169,31 @@ block content
         }
 
 
-        function showUserInfo(){
+        async function showUserInfo(){
 
-            var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
+            console.log(userProfile);
+            //- var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
 
-            var params = {
-                AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
-            };
-            cognitoidentityserviceprovider.getUser(params, function(err, data) {
-                if (err) console.log(err, err.stack); // an error occurred
-            else     console.log(data);           // successful response
-            });
+            //- var params = {
+            //-     AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
+            //- };
+            //- cognitoidentityserviceprovider.getUser(params, function(err, data) {
+            //-     if (err) console.log(err, err.stack); // an error occurred
+            //- else     console.log(data);           // successful response
+            //- });
         }
 
 
         async function loadInfoFromIdtkn(){
             console.log('loadInfoFromIdtk');
-            let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/tkns`, {
+            let response = await fetch(`https://0wj1svvewi.execute-api.eu-central-1.amazonaws.com/tkns`, {
                     method: 'GET',
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
 
                 });
-                let name1 = await response.json();
-                name = name1.message;
+                return response.json();
+
         }
 
 
@@ -206,6 +214,18 @@ block content
                         //- body: JSON.stringify(data)
                 });
                 console.log(await response.json());
+        }
+
+
+        function doSignUp(){
+            console.log("Sign up function");
+            signUpPassword2.innerHTML = `<label for'signUpPasswordRepeat' style="color:red;">Password 2x:</label><input type="signUpPasswordRepeat" id="signUpPasswordRepeat">`;
+            //- <label for="loginPassword">Password:</label>
+            //- <input type="password" id="loginPassword">
+
+            let password2 = document.getElementById('signUpPasswordRepeat').value;
+            console.log(password2);
+            doSignUp.innerHTML = `<button>doSignUp</button>`;
         }
 
 
