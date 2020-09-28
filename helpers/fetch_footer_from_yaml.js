@@ -1,6 +1,6 @@
-const fs = require('fs');
-const yaml = require('js-yaml');
-const path = require('path');
+const fs = require('fs')
+const yaml = require('js-yaml')
+const path = require('path')
 const rueten = require('./rueten.js')
 
 const sourceDir =  path.join(__dirname, '..', 'source')
@@ -12,21 +12,13 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const modelName = 'Footer'
 const STRAPIDATA_FOOTER = STRAPIDATA[modelName]
 
-LangSelect('et');
-LangSelect('en');
-LangSelect('ru');
+const languages = ['en', 'et', 'ru']
 
-function LangSelect(lang) {
-    processData(lang, CreateYAML);
-    console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`);
-}
+for (const lang of languages) {
 
+    console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`)
 
-function processData(lang, CreateYAML) {
-    // console.log(util.inspect(data));
-
-
-    let copyData = JSON.parse(JSON.stringify(STRAPIDATA_FOOTER));
+    let copyData = JSON.parse(JSON.stringify(STRAPIDATA_FOOTER))
     // console.log(util.inspect(copyData));
     let buffer = [];
     for (index in copyData) {
@@ -37,12 +29,7 @@ function processData(lang, CreateYAML) {
             buffer = rueten(copyData[index], lang)
         }
     }
-    CreateYAML(buffer, lang);
-    // console.log('COPYDATA', copyData.keys());
-    // console.log('BUFFER', buffer);
-}
 
-function CreateYAML(buffer, lang) {
     const globalDataPath = path.join(sourceDir, `global.${lang}.yaml`)
     // console.log(buffer);
     let globalData= yaml.safeLoad(fs.readFileSync(globalDataPath, 'utf8'))

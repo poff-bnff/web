@@ -14,13 +14,11 @@ const mapping = {
     'justfilm.ee': 'HeroArticleJustFilm',
     'shorts.poff.ee': 'HeroArticleShorts'
 }
+
 const STRAPIDATA_HERO = STRAPIDATA[mapping[DOMAIN]][0]
+const languages = ['en', 'et', 'ru']
 
-LangSelect('et');
-LangSelect('en');
-LangSelect('ru');
-
-function LangSelect(lang) {
+for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} heroarticle ${lang} data`);
     var buffer = {}
     for (key in STRAPIDATA_HERO) {

@@ -12,8 +12,6 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const sourceFolder =  path.join(__dirname, '../source/')
 
-console.log(DOMAIN)
-
 const languages = ['et', 'en', 'ru']
 
 for (const lang of languages) {

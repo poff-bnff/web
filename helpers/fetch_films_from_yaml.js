@@ -6,23 +6,18 @@ const rueten = require('./rueten.js')
 const sourceDir =  path.join(__dirname, '..', 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
-const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
-const modelName = 'Film';
-const STRAPIDATA_FILM = STRAPIDATA[modelName]
-
-const allLanguages = ["en", "et", "ru"];
-
+const STRAPIDATA_FILM = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Film']
 
 function fetchAllData(){
     const filmsPath = path.join(fetchDir, 'films')
     deleteFolderRecursive(filmsPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(filmsPath, "en", 1, 1, {'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
-    getData(filmsPath, "et", 0, 0, {'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
-    getData(filmsPath, "ru", 0, 0, {'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
+    getData(filmsPath, "en", 1, 1, {'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'});
+    getData(filmsPath, "et", 0, 0, {'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'});
+    getData(filmsPath, "ru", 0, 0, {'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'});
 }
 
 function deleteFolderRecursive(path) {
@@ -39,18 +34,12 @@ function deleteFolderRecursive(path) {
     }
   };
 
-function getData(dirPath, lang, copyFile, showErrors, dataFrom, getDataCB) {
-
-    fs.mkdirSync(dirPath, { recursive: true })
+function getData(dirPath, lang, copyFile, showErrors, dataFrom) {
 
     console.log(`Fetching ${DOMAIN} films ${lang} data`);
-
-    getDataCB(dirPath, lang, copyFile, dataFrom, showErrors);
-}
+    fs.mkdirSync(dirPath, { recursive: true })
 
 
-
-function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let allData = []
     // data = rueten(data, lang);
     // console.log(data);
@@ -62,9 +51,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         rueten(element, lang)
 
         element.directory = path.join(dirPath, element.slug)
-        // console.log(element.directory);
+        console.log(element.directory);
         // element = rueten(element, `_${lang}`);
-
         if(element.directory) {
             fs.mkdirSync(element.directory, { recursive: true })
 
