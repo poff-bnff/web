@@ -379,6 +379,118 @@ ShortsiMenu: &ShortsiMenu
     subMenuItem: #(Component (repeatable))
         - *ShortsiSubMenuItem
 
+# IndustryArticle: &IndustryArticle
+#     _path: /
+#     created_by:
+#         firstname: (text)
+#         lastname: (text)
+#     created_at: (datetime)
+#     #titlePrivate: (text, private field)
+#     title_et: (text)
+#     title_en: (text)
+#     title_ru: (text)
+#     slug_et: (text)
+#     slug_en: (text)
+#     slug_ru: (text)
+#     lead_et: (Rich text)
+#     lead_en: (Rich text)
+#     lead_ru: (Rich text)
+#     contents_et: (Rich text)
+#     contents_en: (Rich text)
+#     contents_ru: (Rich text)
+#     media: *Media #(Component)
+#     publishFrom: (Datetime)
+#     publishUntil: (Datetime)
+#     publish_et: (boolean)
+#     publish_en: (boolean)
+#     publish_ru: (boolean)
+#     button: #(Component (repeatable))
+#         - *Button
+#     article_types: #(Component (repeatable))
+#         - *ArticleType
+#     tag_premiere_types: #(Component (repeatable))
+#         - *TagPremiereType
+#     tag_programmes: #(Component (repeatable))
+#         - *TagProgramme
+#     tag_genres: #(Component (repeatable))
+#         - *TagGenre
+#     tag_keywords: #(Component (repeatable))
+#         - *TagKeyword
+#     web_authors:
+#         - *WebAuthor
+
+# IndustrySubMenuItem: &IndustrySubMenuItem
+#     name: *Translated #(Component)
+#     industry_article: *IndustryArticle
+#     order: (Number)
+#     customUrl: *Translated #(Component)
+#     namePrivate: (text)
+
+# IndustryMenu: &IndustryMenu
+#     _path: /
+#     #namePrivate: (text, private field)
+#     name: *Translated #(Component)
+#     industry_article: *IndustryArticle
+#     customUrl: *Translated #(Component)
+#     order: (Number)
+#     subMenuItem: #(Component (repeatable))
+
+# KinoffiArticle: &KinoffiArticle
+#     _path: /
+#     created_by:
+#         firstname: (text)
+#         lastname: (text)
+#     created_at: (datetime)
+#     #titlePrivate: (text, private field)
+#     title_et: (text)
+#     title_en: (text)
+#     title_ru: (text)
+#     slug_et: (text)
+#     slug_en: (text)
+#     slug_ru: (text)
+#     lead_et: (Rich text)
+#     lead_en: (Rich text)
+#     lead_ru: (Rich text)
+#     contents_et: (Rich text)
+#     contents_en: (Rich text)
+#     contents_ru: (Rich text)
+#     media: *Media #(Component)
+#     publishFrom: (Datetime)
+#     publishUntil: (Datetime)
+#     publish_et: (boolean)
+#     publish_en: (boolean)
+#     publish_ru: (boolean)
+#     button: #(Component (repeatable))
+#         - *Button
+#     article_types: #(Component (repeatable))
+#         - *ArticleType
+#     tag_premiere_types: #(Component (repeatable))
+#         - *TagPremiereType
+#     tag_programmes: #(Component (repeatable))
+#         - *TagProgramme
+#     tag_genres: #(Component (repeatable))
+#         - *TagGenre
+#     tag_keywords: #(Component (repeatable))
+#         - *TagKeyword
+#     web_authors:
+#         - *WebAuthor
+
+# KinoffiSubMenuItem: &KinoffiSubMenuItem
+#     name: *Translated #(Component)
+#     kinoffi_article: *KinoffiArticle
+#     order: (Number)
+#     customUrl: *Translated #(Component)
+#     namePrivate: (text)
+
+# KinoffiMenu: &KinoffiMenu
+#     _path: /
+#     #namePrivate: (text, private field)
+#     name: *Translated #(Component)
+#     kinoffi_article: *KinoffiArticle
+#     customUrl: *Translated #(Component)
+#     order: (Number)
+#     subMenuItem: #(Component (repeatable))
+
 Festival: &Festival
     _path: /festivals
     name_et: (text)
@@ -656,6 +768,85 @@ Roll: &Roll
     namePrivate: (text)
     name: *Translated
 
+Payment: &Payment
+    status: (text)
+    cardNumber: (Number)
+    cardOwner: (text)
+    currency: (text)
+    code: (text)
+    identifier: (text)
+    amount: (Number)
+    method: (Enumeration)
+
+Transaction: &Transaction
+    _path: /transactions
+    dateTime: (Datetime)
+    person: *Person
+    type: (Enumeration)
+    payment:  #(Component (repeatable))
+        - *Payment
+
+# Ticketing: &Ticketing
+#     ticketingId: (Number)
+#     ticketingUrl: (text)
+
+TicketingRight: &TicketingRight
+    ticketType: (text)
+    rightLimit: (Number)
+    rightUsed: (Number)
+
+Period: &Period
+    startDateTime: (Datetime)
+    endDateTime: (Datetime)
+
+PriceAtPeriod: &PriceAtPeriod
+    price: (number, decimal)
+    startDateTime: (Datetime)
+    endDateTime: (Datetime)
+
+Product_Type: &Product_Type
+    _path: /products
+    name: (text)
+
+Product_Category: &Product_Category
+    _path: /product-categories
+    namePrivate: (text)
+    name:  #(Component (repeatable))
+        - *Translated
+    product_type: *Product_Type
+    festival_edition: *FestivalEdition
+    description:  #(Component (repeatable))
+        - *Translated
+    validityPeriod:  #(Component (repeatable))
+        - *Period
+    salesPeriod:  #(Component (repeatable))
+        - *Period
+    ticketingRight:  #(Component (repeatable))
+        - *TicketingRight
+    priceAtPeriod:  #(Component (repeatable))
+        - *PriceAtPeriod
+    codePrefix: (text)
+
+Product_Pass: &Product_Pass
+    _path: /festival-passes
+    product_type: *Product_Type
+    product_category: *Product_Category
+    owner: *Person
+    code: (text)
+    active: (Boolean)
+    transaction: *Transaction
+    ticketingRight: #(Component (repeatable))
+        - *TicketingRight
+
+Supporters_Page: &Supporters_Page
+    _path: /supporters-pages
+    title: *Translated
+    intro: *Translated
+    logosSection:
+        - *LogosSection
+    # namePrivate: (text, private)
+    domain: *Domain
+
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
@@ -771,3 +962,42 @@ TrioShorts: &TrioShorts
     trioShorts_en: *Trioshorts
     trioShorts_ru: *Trioshorts
 
+# TrioItemIndustry: &TrioItemIndustry
+#     Industry_article: *IndustryArticle
+#     title: (text)
+#     lead: (text)
+#     customURL: (text)
+#     image: *StrapiMedia
+
+# Trioindustry: &Trioindustry
+#     name: (text)
+#     lead: (text)
+#     trioItem_1: *TrioItemIndustry
+#     trioItem_2: *TrioItemIndustry
+#     trioItem_3: *TrioItemIndustry
+
+# TrioIndustry: &TrioIndustry
+#     _path: /
+#     trioIndustry_et: *Trioindustry
+#     trioIndustry_en: *Trioindustry
+#     trioIndustry_ru: *Trioindustry
+
+# TrioItemKinoff: &TrioItemKinoff
+#     kinoffi_article: *KinoffiArticle
+#     title: (text)
+#     lead: (text)
+#     customURL: (text)
+#     image: *StrapiMedia
+
+# Triokinoff: &Triokinoff
+#     name: (text)
+#     lead: (text)
+#     trioItem_1: *TrioItemKinoff
+#     trioItem_2: *TrioItemKinoff
+#     trioItem_3: *TrioItemKinoff
+
+# TrioKinoff: &TrioKinoff
+#     _path: /
+#     trioKinoff_et: *Triokinoff
+#     trioKinoff_en: *Triokinoff
+#     trioKinoff_ru: *Triokinoff
