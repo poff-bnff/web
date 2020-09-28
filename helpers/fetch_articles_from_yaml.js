@@ -8,6 +8,8 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const STRAPIDIR = '/uploads/'
+const STRAPIHOSTWITHDIR = `http://${process.env['StrapiHost']}${STRAPIDIR}`;
 
 const mapping = {
     'poff.ee': 'POFFiArticle',
@@ -55,6 +57,25 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom) {
                 if (key == 'slug') {
                     element.path = `article/${element[key]}`
                 }
+            }
+
+            if (element.contents && element.contents[0]) {
+                var splitContent = element.contents.split(STRAPIHOSTWITHDIR);
+                var i = 0;
+                var contentImgs = [];
+                while (splitContent[i+1]){
+                    if(splitContent[i+1]) {
+                        // console.log('IMG: ', splitContent[i+1].split(')')[0]);
+                        contentImgs.push(splitContent[i+1].split(')')[0]);
+                        i++;
+                    }
+                }
+                let searchRegExp = new RegExp(STRAPIHOSTWITHDIR, 'g');
+                let replaceWith = `/assets/img/dynamic/img_articles/${lang}/${element.slug}/`;
+                const replaceImgPath = element.contents.replace(searchRegExp, replaceWith);
+                element.contents = replaceImgPath;
+                // console.log(contentImgs);
+                element.contentsImg = contentImgs;
             }
 
             allData.push(element)

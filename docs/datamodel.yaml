@@ -697,9 +697,9 @@ TrioBlockJustFilm:
 
 HeroArticleShorts:
     _path: /hero-article-shorts
-    Article_et: *ShortsiArticle
-    Article_en: *ShortsiArticle
-    Article_ru: *ShortsiArticle
+    article_et: *ShortsiArticle
+    article_en: *ShortsiArticle
+    article_ru: *ShortsiArticle
 
 TrioBlockShorts:
     _path: /trio-block-shorts
@@ -730,3 +730,44 @@ TrioPÖFF: &TrioPÖFF
     trioPoff_et: *TrioPOFF
     trioPoff_en: *TrioPOFF
     trioPoff_ru: *TrioPOFF
+
+TrioItemJustFilm: &TrioItemJustFilm
+    just_filmi_article: *JustFilmiArticle
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia
+
+Triojustfilm: &Triojustfilm
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemJustFilm
+    trioItem_2: *TrioItemJustFilm
+    trioItem_3: *TrioItemJustFilm
+
+TrioJustFilm: &TrioJustFilm
+    _path: /trio-just-film
+    trioJustFilm_et: *Triojustfilm
+    trioJustFilm_en: *Triojustfilm
+    trioJustFilm_ru: *Triojustfilm
+
+TrioItemShorts: &TrioItemShorts
+    shortsi_article: *ShortsiArticle
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia
+
+Trioshorts: &Trioshorts
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemShorts
+    trioItem_2: *TrioItemShorts
+    trioItem_3: *TrioItemShorts
+
+TrioShorts: &TrioShorts
+    _path: /trio-shorts
+    trioShorts_et: *Trioshorts
+    trioShorts_en: *Trioshorts
+    trioShorts_ru: *Trioshorts
+
