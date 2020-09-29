@@ -1026,6 +1026,7 @@ TrioItemPoff: &TrioItemPoff
     customURL: (text)
     image: *StrapiMedia #(Component)
 
+# Trio
 TrioPOFF: &TrioPOFF
     trioItem_1: *TrioItemPoff #(Component)
     trioItem_2: *TrioItemPoff #(Component)
@@ -1079,42 +1080,42 @@ TrioShorts: &TrioShorts
     trioShorts_en: *Trioshorts #(Component)
     trioShorts_ru: *Trioshorts #(Component)
 
-# TrioItemIndustry: &TrioItemIndustry
-#     Industry_article: *IndustryArticle #(Component)
-#     title: (text)
-#     lead: (text)
-#     customURL: (text)
-#     image: *StrapiMedia #(Component)
+TrioItemIndustry: &TrioItemIndustry
+    industry_article: *IndustryArticle #(Component)
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia #(Component)
 
-# Trioindustry: &Trioindustry
-#     name: (text)
-#     lead: (text)
-#     trioItem_1: *TrioItemIndustry #(Component)
-#     trioItem_2: *TrioItemIndustry #(Component)
-#     trioItem_3: *TrioItemIndustry #(Component)
+Trioindustry: &Trioindustry
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemIndustry #(Component)
+    trioItem_2: *TrioItemIndustry #(Component)
+    trioItem_3: *TrioItemIndustry #(Component)
 
-# TrioIndustry: &TrioIndustry
-#     _path: /
-#     trioIndustry_et: *Trioindustry #(Component)
-#     trioIndustry_en: *Trioindustry #(Component)
-#     trioIndustry_ru: *Trioindustry #(Component)
+TrioIndustry: &TrioIndustry
+    _path: /trio-industry
+    trioIndustry_et: *Trioindustry #(Component)
+    trioIndustry_en: *Trioindustry #(Component)
+    trioIndustry_ru: *Trioindustry #(Component)
 
-# TrioItemKinoff: &TrioItemKinoff
-#     kinoffi_article: *KinoffiArticle #(Component)
-#     title: (text)
-#     lead: (text)
-#     customURL: (text)
-#     image: *StrapiMedia #(Component)
+TrioItemKinoff: &TrioItemKinoff
+    kinoffi_article: *KinoffiArticle #(Component)
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia #(Component)
 
-# Triokinoff: &Triokinoff
-#     name: (text)
-#     lead: (text)
-#     trioItem_1: *TrioItemKinoff #(Component)
-#     trioItem_2: *TrioItemKinoff #(Component)
-#     trioItem_3: *TrioItemKinoff #(Component)
+Triokinoff: &Triokinoff
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemKinoff #(Component)
+    trioItem_2: *TrioItemKinoff #(Component)
+    trioItem_3: *TrioItemKinoff #(Component)
 
-# TrioKinoff: &TrioKinoff
-#     _path: /
-#     trioKinoff_et: *Triokinoff #(Component)
-#     trioKinoff_en: *Triokinoff #(Component)
-#     trioKinoff_ru: *Triokinoff #(Component)
+TrioKinoff: &TrioKinoff
+    _path: /trio-kinoff
+    trioKinoff_et: *Triokinoff #(Component)
+    trioKinoff_en: *Triokinoff #(Component)
+    trioKinoff_ru: *Triokinoff #(Component)
