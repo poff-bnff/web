@@ -6,7 +6,7 @@ header
         //- Defining locale path for multilingual support
         - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
         a(href=`/${lang_path}`)
-            img.logo_img(alt='PÖFF' data-src='/assets/img/static/poff24_logo_black_o.svg' src='/assets/img/static/poff24_logo_black_o.svg')
+            img.logo_img(alt='PÖFF' data-src='/assets/img/static/poff24_logo_dark4_o.svg' src='/assets/img/static/poff24_logo_dark4_o.svg')
     input#main_menu_toggle.main_menu_toggle(type='checkbox')
 
 
@@ -19,6 +19,17 @@ header
 
     nav.main_menu
         ul.ul_yx
+            li
+                nav.org_menu
+                    span.org_item
+                        a(href='https://industry.poff.ee')
+                            | Industry@Tallinn
+                    span.org_item
+                        a(href='https://justfilm.ee')
+                            | Just Film
+                    span.org_item
+                        a(href='https://shorts.poff.ee')
+                            | PÖFF Shorts
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                 if mainMenuItem.subMenuItem && mainMenuItem.name
                     li.dropdown
@@ -105,4 +116,4 @@ header
 
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
-
+    - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
