@@ -7,14 +7,14 @@ const fetch = require('node-fetch')
 const {parallelLimit} = require('async')
 
 var strapiPath = 'http://' + process.env['StrapiHost']
-var savePath = 'assets/img/dynamic/img_footer/'
+var savePath = 'assets/img/dynamic/img_supporters/'
 
 loadYaml(readYaml);
 
 function loadYaml(readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/global.et.yaml`, 'utf8'))
+        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/supporterspage.et.yaml`, 'utf8'))
 
     } catch (e) {
         console.log(e);
@@ -67,12 +67,12 @@ function downloadsMaker(url, dest) {
 }
 
 function readYaml(doc) {
-    process.stdout.write('Footer pics ')
+    process.stdout.write('Supporter page pics ')
     let parallelDownloads = []
-    // console.log(doc.footer);
-    if (doc.footer.supporters) {
-        for (const ix in doc.footer.supporters) {
-            const section = doc.footer.supporters[ix]
+    // console.log(doc);
+    if (doc.supporters) {
+        for (const ix in doc.supporters) {
+            const section = doc.supporters[ix]
             for (const i in section.supporter) {
                 const logo = section.supporter[i]
                 if ('logoWhite' in logo && 'url' in logo.logoWhite){
@@ -83,7 +83,7 @@ function readYaml(doc) {
                     parallelDownloads.push( downloadsMaker(url, dest) )
                 }
 
-                if ('logoColor' in logo && 'url' in logo.logoColour){
+                if ('logoColour' in logo && 'url' in logo.logoColour){
                     let imgPathC = logo.logoColour.url;
                     let imgFileName = imgPathC.split('/')[imgPathC.split('/').length - 1]
                     let url = `${strapiPath}${imgPathC}`
@@ -101,9 +101,9 @@ function readYaml(doc) {
             }
         }
     }
-    if (doc.footer.socialGroup) {
-        for (const ix in doc.footer.socialGroup) {
-            const group = doc.footer.socialGroup[ix]
+    if (doc.socialGroup) {
+        for (const ix in doc.socialGroup) {
+            const group = doc.socialGroup[ix]
             for (const i in group.items) {
                 const items = group.items[i]
                 if ('svgMedia' in items && 'url' in items.svgMedia){
@@ -116,9 +116,9 @@ function readYaml(doc) {
             }
         }
     }
-    if (doc.footer.item) {
-        for (const ix in doc.footer.item) {
-            const item = doc.footer.item[ix]
+    if (doc.item) {
+        for (const ix in doc.item) {
+            const item = doc.item[ix]
             if ('image' in item && 'url' in item.image) {
                 // console.log(item.image);
                 let imgPath = item.image.url;
@@ -129,8 +129,8 @@ function readYaml(doc) {
             }
         }
 
-        for (const ix in doc.footer.item) {
-            const item = doc.footer.item[ix]
+        for (const ix in doc.item) {
+            const item = doc.item[ix]
             for (const i in item.svgItem) {
                 const media = item.svgItem[i]
                 if('svgMedia' in media &&'url' in media.svgMedia) {

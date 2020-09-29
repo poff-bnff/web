@@ -6,6 +6,7 @@ const fetch = require('node-fetch')
 
 
 const strapiPath = 'http://' + process.env['StrapiHost']
+const strapiDir = '/uploads/'
 const savePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_articles')
 
 const languages = ['en', 'et', 'ru']
@@ -83,6 +84,17 @@ for (const lang of languages) {
             const url = `${strapiPath}${imgPath}`
             const dest = path.join(imgDir, imgFileName)
             parallelDownloads.push( downloadsMaker(url, dest) )
+        }
+
+        if (values.contentsImg && values.contentsImg[0]) {
+            for (contentsImg in values.contentsImg) {
+                // console.log(values.contentsImg[contentsImg]);
+                const imgPath = values.contentsImg[contentsImg]
+                const imgFileName = path.basename(imgPath)
+                const url = `${strapiPath}${strapiDir}${imgPath}`
+                const dest = path.join(imgDir, imgFileName)
+                parallelDownloads.push( downloadsMaker(url, dest) )
+            }
         }
     }
 }
