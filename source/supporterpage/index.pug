@@ -4,32 +4,32 @@ include /_templates/mixins.pug
     block content
         .grid_footer_row
 
-        if self.data.supporters.logosSection
-            each section in self.data.supporters.logosSection
+        if self.data.supporters
+            each section in self.data.supporters.supporters
                 if section.name && (typeof(section.name) !== 'object')
                     br
                     br
                     br
                     br
                     h1.section_headline_footer= section.name
-                if section.logo
+                if section.supporter
                     .footer_logos
-                        each logo in section.logo
-                            if logo.url
-                                a(href= logo.url)
-                                    if logo.imgWhite
-                                        img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
-                                    else if logo.imgBlack
-                                        img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
-                                    else if logo.imgColour
-                                        img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`)
+                        each supporter in section.supporter
+                            if supporter.customUrl
+                                a(href= supporter.customUrl)
+                                    if supporter.logoWhite
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoBlack
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoColour
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
                             else
-                                if logo.imgWhite
-                                    img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
-                                else if logo.imgBlack
-                                    img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
-                                else if logo.imgColour
-                                    img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`)
+                                if supporter.logoWhite
+                                    img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                else if supporter.logoBlack
+                                    img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                else if supporter.logoColour
+                                    img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
 
 
 
