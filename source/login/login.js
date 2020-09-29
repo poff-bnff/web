@@ -3,9 +3,10 @@ let url = window.location;
 const ACCESS_TOKEN = "ACCESS_TOKEN";
 const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
+let USER_PROFILE ={}
 
-//- let userProfile = loadInfoFromIdtkn();
-//- console.log(userProfile);
+let pageURL = "http://localhost:5000"
+
 
 if (localStorage.getItem('ID_TOKEN')){
     hello.innerHTML = 'Hello, ' + name;
@@ -16,7 +17,7 @@ if (localStorage.getItem('ID_TOKEN')){
 }
 
 let tokens = (window.location.hash.substr(1)).split('&');
-console.log(tokens);
+//console.log(tokens);
 if (tokens[3]) {
     storeAuthentication(tokens);
 } else {
@@ -28,7 +29,8 @@ async function storeAuthentication(tokens) {
     localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
     localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
     window.location.hash = '';
-    loadInfoFromIdtkn();
+    await loadInfoFromIdtkn();
+    CheckIfProfFilled()
     // location.reload();
 }
 
@@ -44,10 +46,6 @@ function logOut() {
     console.log('LOGITUD VÄLJA');
     location.reload();
 }
-
-
-
-
 
 
 
@@ -125,31 +123,28 @@ async function login(){
 }
 
 
-async function showUserInfo(){
-
-    console.log(userProfile);
-    //- var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
-
-    //- var params = {
-    //-     AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
-    //- };
-    //- cognitoidentityserviceprovider.getUser(params, function(err, data) {
-    //-     if (err) console.log(err, err.stack); // an error occurred
-    //- else     console.log(data);           // successful response
-    //- });
-}
-
 
 async function loadInfoFromIdtkn(){
     console.log('loadInfoFromIdtk');
-    let response = await fetch(`https://api.poff.ee/prod-poff-api-tkns`, {
+    let response = await fetch(`https://api.poff.ee/profile`, {
             method: 'GET',
             headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
-
+                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')}
         });
-        return response.json();
+        USER_PROFILE = await response.json()
+        //return response.json()
+}
 
+
+
+function CheckIfProfFilled(){
+    console.log (USER_PROFILE)
+    if (USER_PROFILE.profile_filled === "false"){
+        console.log("heureka")
+        window.open(`${pageURL}/userprofile`, "_self")
+    }else {
+        window.open(`${pageURL}`, "_self")
+    }
 }
 
 
