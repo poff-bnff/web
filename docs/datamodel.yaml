@@ -717,6 +717,13 @@ LabelGroup:
     label: #(Component (repeatable))
         - *Label
 
+FooterLogoShorts: &FooterLogoShorts
+    shortsi_article: *ShortsiArticle
+    url: (text)
+    imgWhite: *StrapiMedia
+    imgColor: *StrapiMedia
+    imgBlack: *StrapiMedia
+
 Logo: &Logo
     url: (text)
     imgWhite: *StrapiMedia #(Component)
@@ -760,7 +767,7 @@ Footer:
     item: #(Component (repeatable))
         - *FooterItemNav
     logosSections: #(Component (repeatable))
-        - *LogosSection
+        # - *LogosSection
     namePrivate: (text)
     domain: *Domain #(Component)
 
