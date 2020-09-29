@@ -8,6 +8,8 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const STRAPIDIR = '/uploads/'
+const STRAPIHOSTWITHDIR = `http://${process.env['StrapiHost']}${STRAPIDIR}`;
 
 const mapping = {
     'poff.ee': 'POFFiArticle',
@@ -112,6 +114,15 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         rueten(element, lang);
+
+
+        if (element.contents && element.contents[0]) {
+            let searchRegExp = new RegExp(STRAPIHOSTWITHDIR, 'g');
+            let replaceWith = `/assets/img/dynamic/img_articles/${lang}/${element.slug}/`;
+            const replaceImgPath = element.contents.replace(searchRegExp, replaceWith);
+            element.contents = replaceImgPath;
+        }
+
         // console.log(element)
         for (artType of element.article_types) {
 

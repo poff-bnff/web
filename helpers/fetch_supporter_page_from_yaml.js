@@ -10,11 +10,11 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const mapping = {
-    'poff.ee': 'POFFiFooter',
-    'justfilm.ee': 'JustFilmFooter',
-    'shorts.poff.ee': 'ShortsiFooter'
+    'poff.ee': 'POFFSupporter',
+    'justfilm.ee': 'JustSupporter',
+    'shorts.poff.ee': 'ShortsSupporter'
 }
-const STRAPIDATA_FOOTER = STRAPIDATA[mapping[DOMAIN]]
+const STRAPIDATA_SUPPORTER_PAGE = STRAPIDATA[mapping[DOMAIN]]
 
 LangSelect('et');
 LangSelect('en');
@@ -22,7 +22,7 @@ LangSelect('ru');
 
 function LangSelect(lang) {
     processData(lang, CreateYAML);
-    console.log(`Fetching ${process.env['DOMAIN']} footer ${lang} data`);
+    console.log(`Fetching ${process.env['DOMAIN']} supporter page ${lang} data`);
 }
 
 
@@ -30,7 +30,7 @@ function processData(lang, CreateYAML) {
     // console.log(util.inspect(data));
 
 
-    let copyData = JSON.parse(JSON.stringify(STRAPIDATA_FOOTER));
+    let copyData = JSON.parse(JSON.stringify(STRAPIDATA_SUPPORTER_PAGE));
     // console.log(util.inspect(copyData));
     let buffer = [];
     for (index in copyData) {
@@ -47,14 +47,9 @@ function processData(lang, CreateYAML) {
 }
 
 function CreateYAML(buffer, lang) {
-    const globalDataPath = path.join(sourceDir, `global.${lang}.yaml`)
-    // console.log(buffer);
-    let globalData= yaml.safeLoad(fs.readFileSync(globalDataPath, 'utf8'))
-    // console.log(globalData);
-    globalData.footer = buffer
-
-    let allDataYAML = yaml.safeDump(globalData, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(globalDataPath, allDataYAML, 'utf8')
+    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
+    const outFile = path.join(fetchDir, `supporterspage.${lang}.yaml`)
+    fs.writeFileSync(outFile, allDataYAML, 'utf8')
 }
 
 

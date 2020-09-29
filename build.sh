@@ -33,6 +33,9 @@ node ./helpers/fetch_trioblock_from_yaml.js
 echo 'fetch_teams_from_yaml'
 node ./helpers/fetch_teams_from_yaml.js
 
+echo 'fetch_supporter_page_from_yaml'
+node ./helpers/fetch_supporter_page_from_yaml.js
+
 # labels, footer and menu are fetched to global
 # labels uses static global (first to fetch)
 
@@ -56,6 +59,7 @@ node ./helpers/download_article_img.js
 node ./helpers/download_footer_img.js
 node ./helpers/download_teams_img.js
 node ./helpers/download_trioblock_img.js
+node ./helpers/download_supporters_page_img.js
 printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 
 cp -R assets/* build/assets/
