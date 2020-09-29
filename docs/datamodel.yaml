@@ -963,7 +963,7 @@ ProductPass: &ProductPass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
-# Single Types
+# Hero kustuta block  kui enam ei kasuta
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
@@ -1019,6 +1019,19 @@ TrioBlockShorts:
     shortsi_article_2: *ShortsiArticle #(Component)
     shortsi_article_3: *ShortsiArticle #(Component)
 
+HeroArticleIndustry:
+    _path: /hero-article-industry
+    article_et: *IndustryArticle #(Component)
+    article_en: *IndustryArticle #(Component)
+    article_ru: *IndustryArticle #(Component)
+
+HeroArticleKinoff:
+    _path: /hero-article-kinoff
+    article_et: *KinoffiArticle #(Component)
+    article_en: *KinoffiArticle #(Component)
+    article_ru: *KinoffiArticle #(Component)
+
+# Trio
 TrioItemPoff: &TrioItemPoff
     poffi_article: *POFFiArticle #(Component)
     title: (text)
@@ -1026,7 +1039,6 @@ TrioItemPoff: &TrioItemPoff
     customURL: (text)
     image: *StrapiMedia #(Component)
 
-# Trio
 TrioPOFF: &TrioPOFF
     trioItem_1: *TrioItemPoff #(Component)
     trioItem_2: *TrioItemPoff #(Component)
