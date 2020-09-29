@@ -7,7 +7,8 @@ const path = require('path')
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
 const EVENTIVAL_TOKEN = process.env['EVENTIVAL_TOKEN']
-const eventivalAPI = 'bo.eventival.com/poff/23/en/ws'
+const edition = '24'
+const eventivalAPI = path.join('bo.eventival.com', 'poff', edition, 'en', 'ws')
 
 const dataMap = {
     'venues': {
