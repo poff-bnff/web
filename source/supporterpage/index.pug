@@ -18,18 +18,18 @@ include /_templates/mixins.pug
                             if logo.url
                                 a(href= logo.url)
                                     if logo.imgWhite
-                                        img.footer_logo_item(alt=logo.url data-src=`assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
+                                        img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
                                     else if logo.imgBlack
-                                        img.footer_logo_item(alt=logo.url data-src=`assets/img/dynamic/img_supporters/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
+                                        img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
                                     else if logo.imgColour
-                                        img.footer_logo_item(alt=logo.url data-src=`assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`)
+                                        img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`)
                             else
                                 if logo.imgWhite
-                                    img.footer_logo_item(alt=logo.url data-src=`assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
+                                    img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
                                 else if logo.imgBlack
-                                    img.footer_logo_item(alt=logo.url data-src=`assets/img/dynamic/img_supporters/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
+                                    img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
                                 else if logo.imgColour
-                                    img.footer_logo_item(alt=logo.url data-src=`assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`)
+                                    img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`/assets/img/dynamic/img_supporters/${logo.imgColour.hash}${logo.imgColour.ext}`)
 
 
 
