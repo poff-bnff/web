@@ -70,29 +70,29 @@ function readYaml(doc) {
     process.stdout.write('Footer pics ')
     let parallelDownloads = []
     // console.log(doc.footer);
-    if (doc.footer.logosSections) {
-        for (const ix in doc.footer.logosSections) {
-            const section = doc.footer.logosSections[ix]
-            for (const i in section.logo) {
-                const logo = section.logo[i]
-                if ('imgWhite' in logo && 'url' in logo.imgWhite){
-                    let imgPathW = logo.imgWhite.url;
+    if (doc.footer.supporters) {
+        for (const ix in doc.footer.supporters) {
+            const section = doc.footer.supporters[ix]
+            for (const i in section.supporter) {
+                const logo = section.supporter[i]
+                if ('logoWhite' in logo && 'url' in logo.logoWhite){
+                    let imgPathW = logo.logoWhite.url;
                     let imgFileName = imgPathW.split('/')[imgPathW.split('/').length - 1]
                     let url = `${strapiPath}${imgPathW}`
                     let dest = `${savePath}${imgFileName}`
                     parallelDownloads.push( downloadsMaker(url, dest) )
                 }
 
-                if ('imgColor' in logo && 'url' in logo.imgColour){
-                    let imgPathC = logo.imgColour.url;
+                if ('logoColor' in logo && 'url' in logo.logoColour){
+                    let imgPathC = logo.logoColour.url;
                     let imgFileName = imgPathC.split('/')[imgPathC.split('/').length - 1]
                     let url = `${strapiPath}${imgPathC}`
                     let dest = `${savePath}${imgFileName}`
                     parallelDownloads.push( downloadsMaker(url, dest) )
                 }
 
-                if ('imgBlack' in logo && 'url' in logo.imgBlack){
-                    let imgPathB = logo.imgBlack.url;
+                if ('logoBlack' in logo && 'url' in logo.logoBlack){
+                    let imgPathB = logo.logoBlack.url;
                     let imgFileName = imgPathB.split('/')[imgPathB.split('/').length - 1]
                     let url = `${strapiPath}${imgPathB}`
                     let dest = `${savePath}${imgFileName}`
