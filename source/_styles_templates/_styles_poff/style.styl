@@ -62,11 +62,14 @@ clr_covid = #bc06c6
 clr_vote = #00aeef
 clr_grey_light = #dddddd
 
-header_height = 97px
+header_height = 0px
 full_height = calc(100vh - header_height)
 clr_header_text = #0E1417
 clr_header_bg = #ffffff
+b = 100px
+korgus = calc(100vh - b)
 
+breakpoint = 960px
 breakpoint-lg = 992px
 breakpoint-md = 768px
 breakpoint-sm  = 576px
@@ -167,16 +170,55 @@ h4
 
 header
     display grid
+    grid-template-columns 1
+    grid-template-rows auto
+    // background-color clr_header_bg
+    width 100%
+    // height header_height
+    // text-align center
+    // position fixed
+    position -webkit-sticky
+    position sticky
+    top 0px
+    z-index 899
+    // display flex
+    // justify-content flex-start
+    // border-bottom .5px solid dark_4
+
+.header_top
+    // display block
+    width 100%
+    background-color bg_dark_4
+    padding 0
+    margin 0
+    // height 30px
+
+.header_nav
+    display grid
     grid-template-columns auto 1fr
     // grid-template-rows 2
     background-color clr_header_bg
     width 100%
     // height header_height
     // text-align center
-    position fixed
+    // position fixed
+    // position -webkit-sticky
+    // position sticky
+    // top 0px
+    // height 97px
     z-index 900
-    // display flex
-    // justify-content flex-start
+
+.org_menu
+    position fixed
+    top 0
+    left 0
+    padding-left 1.618rem
+    padding-top .1rem
+
+.org_item
+    font-size 14px
+    font-family font_h
+    color dark_4
 
 .main_menu
     position absolute
@@ -216,6 +258,30 @@ header
     color clr_primary_text
     text-decoration none
 
+// Dropdown test
+
+// .main_menu ul li.dropdown
+//     position relative
+
+// .main_menu ul li.dropdown ul
+//     background-color clr_header_bg
+//     position absolute
+//     left 0
+//     padding-left 0
+//     width max-content
+//     /* display: block; */
+//     display none
+
+// .main_menu ul li.dropdown:hover ul
+//     display block
+//     margin-bottom 5rem
+//     /* margin-top: 1rem; */
+
+// .main_menu ul li.dropdown ul li a
+//     text-transform uppercase
+
+// Dropdown test lõpp
+
 .main_menu_toggle
     display none
 
@@ -223,7 +289,12 @@ header
 //     display block
 
 .main_menu_toggle:checked~.main_menu
+    // position relative
     display flex
+    width 100vw
+
+.main_menu_toggle:checked~header
+    position static
     width 100vw
 
 .main_menu_toggle_label
@@ -292,7 +363,7 @@ footer
     border-top 1px solid rgba(255,255,255,.1)
     padding 10vw
     background-color bg_dark_1
-    min-height calc(100vh - 97px)
+    min-height 90vh
 
 .grid_footer_row
     grid-area footer
@@ -403,6 +474,7 @@ footer
     padding 0
     width 170px
 
+
 .logo_img:hover,
 .logo_img:focus
     opacity 0.9
@@ -504,7 +576,8 @@ footer
 .hero_head
     position relative
     // height full_height
-    height calc(100vh - 97px)
+    // height calc(100vh - 97px)
+    height 100vh
 
 .hero_headline_box
     position absolute
@@ -604,7 +677,8 @@ a .dark:hover
 
 .hero_image
     width 100vw
-    height calc(100vh - 97px)
+    // height 100vh
+    height korgus
     object-fit cover
     z-index -1
 
@@ -1466,22 +1540,22 @@ a.btn_popover
 .article_hero_head
     position relative
     grid-column 1 / 4
-    height calc(100vh - 97px)
+    height 100vh
 
 .article_hero_image
     width 100vw
-    height calc(100vh - 97px)
+    height 100vh
     object-fit cover
     z-index -1
 
 .about_hero_head
     position relative
     grid-column 1 / 4
-    height calc(80vh - 97px)
+    height 80vh
 
 .about_hero_image
     width 100vw
-    height calc(80vh - 97px)
+    height 80vh
     object-fit cover
     z-index -1
 
@@ -1729,7 +1803,7 @@ a.btn_popover
 
 
 /* MEDIA query: for large screens */
-@media screen and (min-width: 800px)
+@media screen and (min-width breakpoint)
     .grid_film
         display grid
         grid-template-columns 1fr 1fr 1fr
@@ -1813,7 +1887,7 @@ a.btn_popover
     .hero_head
         position relative
         // height full_height
-        height calc(100vh - 97px)
+        height 100vh
 
     // .hero_image
     //     width 100vw
@@ -1880,9 +1954,9 @@ a.btn_popover
         grid-gap 2rem
         padding calc(2rem + 2vw)
 
-    header
-        display grid
-        grid-template-columns auto 1fr
+    // header
+    //     display grid
+    //     grid-template-columns auto 1fr
 
     .main_menu_toggle_label
             display none
@@ -2075,7 +2149,7 @@ a.btn_popover
         width 210px
         padding-left 1.2rem
         padding-bottom .3rem
-        padding-top .4rem
+        padding-top 1.2rem
 
     .film
         display grid
@@ -2130,22 +2204,22 @@ a.btn_popover
     .article_hero_head
         position relative
         grid-column 1 / 4
-        height calc(100vh - 97px)
+        height 100vh
 
     .article_hero_image
         width 100vw
-        height calc(100vh - 97px)
+        height 100vh
         object-fit cover
         z-index -1
 
     .about_hero_head
         position relative
         grid-column 1 / 4
-        height calc(80vh - 97px)
+        height 80vh
 
     .about_hero_image
         width 100%
-        height calc(80vh - 97px)
+        height 80vh
         object-fit cover
         z-index -1
 
