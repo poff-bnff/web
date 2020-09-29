@@ -55,15 +55,6 @@ Domain: &Domain
     ipAdress: (text)
     server: (text)
 
-# Publishing: &Publishing
-#     publish_et: (Boolean)
-#     from: (Datetime)
-#     until: (Datetime)
-#     publish_en: (Boolean)
-#     publish_ru: (Boolean)
-#     article_types: #(Component (repeatable))
-#         - *ArticleType
-
 Tags: &Tags
     genres: #(Component (repeatable))
       - *TagGenre
@@ -800,6 +791,54 @@ ShortsSupporter: &ShortsSupporter
     supporters:
         - *SupSecShorts
 
+SupIndustry: &SupIndustry
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColour: *StrapiMedia
+    logoBlack: *StrapiMedia
+    industry_article: *IndustryArticle
+
+SupSecIndustry: &SupSecIndustry
+    name:
+        - *Translated
+    order: (Number)
+    supporter:
+        - *SupIndustry
+
+IndustrySupporter: &IndustrySupporter
+    _path: /
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecIndustry
+
+SupKinoff: &SupKinoff
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColour: *StrapiMedia
+    logoBlack: *StrapiMedia
+    kinoffi_article: *KinoffiArticle
+
+SupSecKinoff: &SupSecKinoff
+    name:
+        - *Translated
+    order: (Number)
+    supporter:
+        - *SupKinoff
+
+KinoffiSupporter: &KinoffiSupporter
+    _path: /
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecKinoff
+
 # Footer
 SocialItem: &SocialItem
     name: (text)
@@ -858,7 +897,29 @@ ShortsiFooter: &ShortsiFooter
     supporters: #(Component (repeatable))
         - *SupSecShorts
 
-# vana kraam
+# IndustryFooter: &IndustryFooter
+#     _path: /
+#     namePrivate: (text)
+#     domain: *Domain #(Component)
+#     socialGroup: #(Component )
+#         *SocialGroup
+#     item: #(Component (repeatable))
+#         - *FooterItemNav
+#     supporters: #(Component (repeatable))
+#         - *SupSecIndustry
+
+# KinoffFooter: &KinoffFooter
+#     _path: /
+#     namePrivate: (text)
+#     domain: *Domain #(Component)
+#     socialGroup: #(Component )
+#         *SocialGroup
+#     item: #(Component (repeatable))
+#         - *FooterItemNav
+#     supporters: #(Component (repeatable))
+#         - *SupSecKinoff
+
+# vana kraam, kustuta, kui enam ei kasuta
 FooterLogoShorts: &FooterLogoShorts
     shortsi_article: *ShortsiArticle
     url: (text)
@@ -963,7 +1024,7 @@ ProductPass: &ProductPass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
-# Hero kustuta block  kui enam ei kasuta
+# Hero (kustuta block,  kui enam ei kasuta
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
