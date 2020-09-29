@@ -60,6 +60,9 @@ block content
         const ID_TOKEN = "ID_TOKEN";
         const REFRESH_TOKEN = "REFRESH_TOKEN";
 
+        let userProfile = await loadInfoFromIdtkn();
+        console.log(userProfile);
+
         //- if (localStorage.getItem('ID_TOKEN')){
         //-     hello.innerHTML = 'Hello, ' + name;
         //-     favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
@@ -125,55 +128,6 @@ block content
         }
 
 
-
-
-        async function login(){
-
-            let loginUsername = document.getElementById('loginUsername').value;
-            let loginPassword = document.getElementById('loginPassword').value;
-
-
-        // Amazon Cognito creates a session which includes the id, access, and refresh tokens of an authenticated user.
-
-            var authenticationData = {
-                    Username : loginUsername,
-                    Password : loginPassword
-            };
-
-            var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-            var poolData = {
-                    UserPoolId : 'eu-central-1_ockBtdcsP',
-                    ClientId : 'le8630imjv6fcffqqt0ugpm5s'
-            };
-
-            var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-            var userData = {
-                    Username : loginUsername,
-                    Pool : userPool
-            };
-
-            var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-            cognitoUser.authenticateUser(authenticationDetails, {
-                onSuccess: async function (result) {
-                    //- var accessToken = result.getAccessToken().getJwtToken();
-                    localStorage.setItem('ACCESS_TOKEN', result.accessToken.jwtToken);
-                    localStorage.setItem('REFRESH_TOKEN', result.refreshToken.token);
-                    localStorage.setItem('ID_TOKEN', result.idToken.jwtToken);
-                    await loadInfoFromIdtkn();
-                    location.reload();
-
-                    /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
-                    var idToken = result.idToken.jwtToken;
-
-                },
-
-                onFailure: function(err) {
-                    alert(JSON.stringify(err));
-                },
-            });
-        }
-
-
         function showUserInfo(){
 
             var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
@@ -198,7 +152,7 @@ block content
                 });
                 let name1 = await response.json();
                 name = name1.message;
-                console.log(name1)
+                console.log(name1);
         }
 
 

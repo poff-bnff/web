@@ -28,10 +28,11 @@ for (const ix in languages) {
             var templateDomainName = 'poff';
         }
 
-        if (element.groupType === 'festivalTeam') {
-            var templateGroupName = 'team';
+        if (element.groupType) {
+            var templateGroupName = element.groupType.toLowerCase();
         } else {
-            var templateGroupName = 'jury';
+            console.log('ERROR!: Team templateGroupName missing for team with ID no ', element.id);
+            continue;
         }
 
         for (const subTeamIx in element.subTeam) {

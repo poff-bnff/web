@@ -1,0 +1,83 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+    block content
+        //- PRAEGU FOOTERI STIILID
+        .grid_footer_row
+
+        if self.data.supporters
+            each section in self.data.supporters.supporters
+                if section.name && (typeof(section.name) !== 'object')
+                    br
+                    br
+                    br
+                    br
+                    //- SEKTSIOONI NIMI
+                    h1.section_headline_footer= section.name
+                if section.supporter
+                    //- PRAEGU FOOTERI STIILID
+                    .footer_logos
+                        each supporter in section.supporter
+                            - let artTypes = []
+                            - let artTypeForPath = ''
+                            - let defaultTypeIfExists = ['sponsor_story']
+                            - let articleSlug = ''
+                            - let articlePublished = false
+                            //- KOGU KONTROLL ARTIKLI KOHTA KUI SEE ON LINGITUD TOETAJALE
+                            if supporter.poffi_article
+                                - let articleFromYAML = self.data.articles.filter( (a) => { return supporter.poffi_article.id === a.id })
+                                - let article = articleFromYAML[0]
+                                if article.article_types && article.article_types[0]
+
+                                    if article.publish && article.title && article.title.length > 1
+                                        - var currentTime = new Date()
+                                        if typeof(article.publishFrom) === 'undefined'
+                                            - var publishFrom= new Date(article.created_at)
+                                        else
+                                            - var publishFrom= new Date(article.publishFrom)
+
+                                        if article.publishUntil
+                                            - var publishUntil = new Date(article.publishUntil)
+
+                                        if (currentTime > publishFrom)
+
+                                            if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
+
+                                                //- p= `${article.title} - ${article.publish} - ${article.publishFrom} - ${article.publishUntil} - ${heroPlusTrioNews} - ${article.id} - ${article.article_types[0].name} - (${publishUntil} > ${currentTime}) - (${(!publishUntil || (publishUntil && (publishUntil > currentTime)))})`
+                                                - articlePublished = true
+                                                - articleSlug = article.slug
+                                                each artType in article.article_types
+                                                    - artTypes.push(artType.name.toLowerCase())
+                                                    if artType.name.toLowerCase() === defaultTypeIfExists[0]
+                                                        - artTypeForPath = artType.slug.toLowerCase()
+                                                        - break
+                                                    else
+                                                        - artTypeForPath = artType.slug.toLowerCase()
+
+                            //- SIIN SAMUTI FOOTERI STIILID HETKEL
+                            //- KUI ARTIKKEL KEELES OLEMAS JA PUBLISHED JA PEALKIRJAGA JNE
+                            if articlePublished === true
+                                a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`)
+                                    if supporter.logoWhite
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoBlack
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoColour
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
+                            //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
+                            else if supporter.customUrl
+                                a(href= supporter.customUrl)
+                                    if supporter.logoWhite
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoBlack
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoColour
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
+                            //- LOGO ILMA LINGITA
+                            else
+                                    if supporter.logoWhite
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoBlack
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoColour
+                                        img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
