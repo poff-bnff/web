@@ -807,7 +807,7 @@ SupSecIndustry: &SupSecIndustry
         - *SupIndustry
 
 IndustrySupporter: &IndustrySupporter
-    _path: /
+    _path: /industry-supporters
     # namePrivate: (text, private)
     domain: *Domain
     title: *Translated
@@ -831,7 +831,7 @@ SupSecKinoff: &SupSecKinoff
         - *SupKinoff
 
 KinoffiSupporter: &KinoffiSupporter
-    _path: /
+    _path: /kinoffi-supporters
     # namePrivate: (text, private)
     domain: *Domain
     title: *Translated
@@ -897,27 +897,27 @@ ShortsiFooter: &ShortsiFooter
     supporters: #(Component (repeatable))
         - *SupSecShorts
 
-# IndustryFooter: &IndustryFooter
-#     _path: /
-#     namePrivate: (text)
-#     domain: *Domain #(Component)
-#     socialGroup: #(Component )
-#         *SocialGroup
-#     item: #(Component (repeatable))
-#         - *FooterItemNav
-#     supporters: #(Component (repeatable))
-#         - *SupSecIndustry
+IndustryFooter: &IndustryFooter
+    _path: /industry-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecIndustry
 
-# KinoffFooter: &KinoffFooter
-#     _path: /
-#     namePrivate: (text)
-#     domain: *Domain #(Component)
-#     socialGroup: #(Component )
-#         *SocialGroup
-#     item: #(Component (repeatable))
-#         - *FooterItemNav
-#     supporters: #(Component (repeatable))
-#         - *SupSecKinoff
+KinoffiFooter: &KinoffiFooter
+    _path: /kinoffi-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecKinoff
 
 # vana kraam, kustuta, kui enam ei kasuta
 FooterLogoShorts: &FooterLogoShorts
