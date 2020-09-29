@@ -379,61 +379,62 @@ ShortsiMenu: &ShortsiMenu
     subMenuItem: #(Component (repeatable))
         - *ShortsiSubMenuItem
 
-# IndustryArticle: &IndustryArticle
-#     _path: /
-#     created_by:
-#         firstname: (text)
-#         lastname: (text)
-#     created_at: (datetime)
-#     #titlePrivate: (text, private field)
-#     title_et: (text)
-#     title_en: (text)
-#     title_ru: (text)
-#     slug_et: (text)
-#     slug_en: (text)
-#     slug_ru: (text)
-#     lead_et: (Rich text)
-#     lead_en: (Rich text)
-#     lead_ru: (Rich text)
-#     contents_et: (Rich text)
-#     contents_en: (Rich text)
-#     contents_ru: (Rich text)
-#     media: *Media #(Component)
-#     publishFrom: (Datetime)
-#     publishUntil: (Datetime)
-#     publish_et: (boolean)
-#     publish_en: (boolean)
-#     publish_ru: (boolean)
-#     button: #(Component (repeatable))
-#         - *Button
-#     article_types: #(Component (repeatable))
-#         - *ArticleType
-#     tag_premiere_types: #(Component (repeatable))
-#         - *TagPremiereType
-#     tag_programmes: #(Component (repeatable))
-#         - *TagProgramme
-#     tag_genres: #(Component (repeatable))
-#         - *TagGenre
-#     tag_keywords: #(Component (repeatable))
-#         - *TagKeyword
-#     web_authors: #(Component (repeatable))
-#         - *WebAuthor
+IndustryArticle: &IndustryArticle
+    _path: /industry-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media #(Component)
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    tag_programmes: #(Component (repeatable))
+        - *TagProgramme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+    web_authors: #(Component (repeatable))
+        - *WebAuthor
 
-# IndustrySubMenuItem: &IndustrySubMenuItem
-#     name: *Translated #(Component)
-#     industry_article: *IndustryArticle
-#     order: (Number)
-#     customUrl: *Translated #(Component)
-#     namePrivate: (text)
+IndustrySubMenuItem: &IndustrySubMenuItem
+    name: *Translated #(Component)
+    industry_article: *IndustryArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
 
-# IndustryMenu: &IndustryMenu
-#     _path: /
-#     #namePrivate: (text, private field)
-#     name: *Translated #(Component)
-#     industry_article: *IndustryArticle
-#     customUrl: *Translated #(Component)
-#     order: (Number)
-#     subMenuItem: #(Component (repeatable))
+IndustryMenu: &IndustryMenu
+    _path: /industry-menus
+    #namePrivate: (text, private field)
+    name: *Translated #(Component)
+    industry_article: *IndustryArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *IndustrySubMenuItem
 
 # KinoffiArticle: &KinoffiArticle
 #     _path: /
@@ -675,7 +676,7 @@ JuryMember: &JuryMember
     professions_en: (text)
     professions_ru: (text)
     country: #(Component)
-        *Country x
+        *Country
     about_et: (Rich text)
     about_en: (Rich text)
     about_ru: (Rich text)
@@ -724,11 +725,18 @@ FooterLogoShorts: &FooterLogoShorts
     imgColor: *StrapiMedia
     imgBlack: *StrapiMedia
 
-Logo: &Logo
+FooterLogoJustFilm: &FooterLogoJustFilm
+    pof_fi_article: *POFFiArticle
     url: (text)
-    imgWhite: *StrapiMedia #(Component)
-    imgColour: *StrapiMedia #(Component)
-    imgBlack: *StrapiMedia #(Component)
+    imgWhite: *StrapiMedia
+    imgColor: *StrapiMedia
+    imgBlack: *StrapiMedia
+
+# Logo: &Logo
+#     url: (text)
+#     imgWhite: *StrapiMedia #(Component)
+#     imgColour: *StrapiMedia #(Component)
+#     imgBlack: *StrapiMedia #(Component)
 
 SocialItem: &SocialItem
     name: (text)
@@ -754,11 +762,17 @@ FooterItemNav: &FooterItemNav
     svgItem: #(Component (repeatable))
         - *SocialItem
 
-LogosSection: &LogosSection
+# LogosSection: &LogosSection
+#     name: *Translated #(Component)
+#     order: (Number)
+#     logo: #(Component (repeatable))
+#         - *FooterLogoShorts
+
+LogoSectionJustFilm: &LogoSectionJustFilm
     name: *Translated #(Component)
     order: (Number)
     logo: #(Component (repeatable))
-        - *Logo
+        - *FooterLogoJustFilm
 
 Footer:
     _path: /footers
@@ -767,7 +781,7 @@ Footer:
     item: #(Component (repeatable))
         - *FooterItemNav
     logosSections: #(Component (repeatable))
-        # - *LogosSection
+        - *LogoSectionJustFilm
     namePrivate: (text)
     domain: *Domain #(Component)
 
@@ -846,14 +860,29 @@ Product_Pass: &Product_Pass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
-Supporters_Page: &Supporters_Page
+SupPoff: &SupPoff
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColor: *StrapiMedia
+    logoBlack: *StrapiMedia
+    poffi_article: *POFFiArticle
+
+SupSecPoff: &SupSecPoff
+    name:
+        - *Translated
+    order: (Number)
+    supporter:
+        - *SupPoff
+
+POFFSupporter: &POFFSupporter
     _path: /supporters-pages
-    title: *Translated #(Component)
-    intro: *Translated #(Component)
-    logosSection: #(Component (repeatable))
-        - *LogosSection
+    title: *Translated
+    intro: *Translated
     # namePrivate: (text, private)
-    domain: *Domain #(Component)
+    domain: *Domain
+    supporters:
+        - *SupSecPoff
 
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
