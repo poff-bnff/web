@@ -75,7 +75,6 @@ function readYaml(doc) {
             const section = doc.supporters[ix]
             for (const i in section.supporter) {
                 const logo = section.supporter[i]
-                console.log(logo);
                 if ('logoWhite' in logo && 'url' in logo.logoWhite){
                     let imgPathW = logo.logoWhite.url;
                     let imgFileName = imgPathW.split('/')[imgPathW.split('/').length - 1]
