@@ -1,6 +1,5 @@
 let url = window.location;
 
-
 const ACCESS_TOKEN = "ACCESS_TOKEN";
 const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
@@ -25,10 +24,12 @@ if (tokens[3]) {
 }
 
 async function storeAuthentication(tokens) {
+    console.log('storeauth');
     localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
     localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
     window.location.hash = '';
-    location.reload();
+    loadInfoFromIdtkn();
+    // location.reload();
 }
 
 function getAccessToken() {
@@ -141,7 +142,7 @@ async function showUserInfo(){
 
 async function loadInfoFromIdtkn(){
     console.log('loadInfoFromIdtk');
-    let response = await fetch(`https://0wj1svvewi.execute-api.eu-central-1.amazonaws.com/tkns`, {
+    let response = await fetch(`https://api.poff.ee/prod-poff-api-tkns`, {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
@@ -161,7 +162,7 @@ async function addFavoriteFilm(){
     }
 
 
-    let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/verif`, {
+    let response = await fetch(`https://api.poff.ee/prod-poff-api-tkns`, {
             method: 'POST',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')},
