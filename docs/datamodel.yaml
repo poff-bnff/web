@@ -1,3 +1,9 @@
+# POFF
+# Just
+# Shorts
+# Industry
+# Kinoff
+
 Translated: &Translated
     et: (text)
     en: (text)
@@ -207,6 +213,8 @@ WebAuthor: &WebAuthor
     _path: /web-authors
     namePrivate: (text)
     name: *Translated
+
+# Articles
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
@@ -492,6 +500,8 @@ IndustryMenu: &IndustryMenu
 #     order: (Number)
 #     subMenuItem: #(Component (repeatable))
 
+
+#  Festival
 Festival: &Festival
     _path: /festivals
     name_et: (text)
@@ -584,6 +594,7 @@ CountriesAndLanguages: &CountriesAndLanguages
     languages: #(Component (repeatable))
         - *Language
 
+# Film
 Film: &Film
     _path: /films
     id: 1 (number)
@@ -718,6 +729,8 @@ LabelGroup:
     label: #(Component (repeatable))
         - *Label
 
+# Footer
+
 FooterLogoShorts: &FooterLogoShorts
     shortsi_article: *ShortsiArticle
     url: (text)
@@ -790,6 +803,7 @@ Roll: &Roll
     namePrivate: (text)
     name: *Translated #(Component)
 
+# Product & Payment
 Payment: &Payment
     status: (text)
     cardNumber: (Number)
@@ -807,10 +821,6 @@ Transaction: &Transaction
     type: (Enumeration)
     payment:  #(Component (repeatable))
         - *Payment
-
-# Ticketing: &Ticketing
-#     ticketingId: (Number)
-#     ticketingUrl: (text)
 
 TicketingRight: &TicketingRight
     ticketType: (text)
@@ -860,6 +870,7 @@ Product_Pass: &Product_Pass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
+# Supporters
 SupPoff: &SupPoff
     name: (text)
     customUrl: (text)
@@ -884,6 +895,55 @@ POFFSupporter: &POFFSupporter
     supporters:
         - *SupSecPoff
 
+SupJust: &SupJust
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColor: *StrapiMedia
+    logoBlack: *StrapiMedia
+    just_filmi_article: *JustFilmiArticle
+
+SupSecJust: &SupSecJust
+    name:
+        - *Translated
+    order: (Number)
+    supporter:
+        - *SupJust
+
+JustSupporter: &JustSupporter
+    _path: /supporters-pages
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecJust
+
+SupShorts: &SupShorts
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColor: *StrapiMedia
+    logoBlack: *StrapiMedia
+    shortsi_article: *ShortsiArticle
+
+SupSecShorts: &SupSecShorts
+    name:
+        - *Translated
+    order: (Number)
+    supporter:
+        - *SupShorts
+
+ShortsSupporter: &ShortsSupporter
+    _path: /supporters-pages
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecShorts
+
+# Single Types
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
