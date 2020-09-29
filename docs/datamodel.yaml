@@ -734,7 +734,7 @@ SupPoff: &SupPoff
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     poffi_article: *POFFiArticle
 
@@ -757,7 +757,7 @@ SupJust: &SupJust
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     just_filmi_article: *JustFilmiArticle
 
@@ -781,7 +781,7 @@ SupShorts: &SupShorts
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     shortsi_article: *ShortsiArticle
 
