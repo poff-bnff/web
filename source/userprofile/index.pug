@@ -12,8 +12,8 @@ block content
                 br
                 h1.display-4.m-b-2 Palun täida kasutaja ankeet:
 
-                form(method='POST' action='/register')
-                    div.form-group
+                div.form
+                    div.form-group(name= "userForm" onsubmit="return sendUserProfile()")
                         label(for='profileImg') Profiili pilt (kohustuslik passiostjale):
                         input#profileImg.form-control(type='file', value='fileupload' name='profileImg')
                     div.form-group
@@ -25,12 +25,15 @@ block content
                     div.form-group
                         label(for='gender') Sugu:
                         br
+                        input(type='radio', name='gender' value="male")
                         label(for='male') Mees:
-                            input(type='radio', name='gender' value="male")
+                        br
+                        input(type='radio', name='gender' value="female")
                         label(for='female') Naine:
-                            input(type='radio', name='gender' value="female")
+                        br
+                        input(type='radio', name='gender' value="other")
                         label(for='other') Muu:
-                            input(type='radio', name='gender' value="other")
+                        br
                     div.form-group
                         label(for='dob') Sünnikuupäev:
                         input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
@@ -46,7 +49,7 @@ block content
                     div.form-group
                         label(for='city') Elukoha linn:
                         input#city.form-control(type='text', placeholder='Elukoha linn' name='city')
-                    button.btn.btn-primary(type='submit') Salvesta
+                    button.btn.btn-primary(onclick='sendUserProfile()') Salvesta
 
     style.
         h1 {color: #464646}
