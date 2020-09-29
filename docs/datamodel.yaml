@@ -838,6 +838,38 @@ POFFiFooter: &POFFiFooter
     supporters:
         - *SupSecPoff
 
+# vana kraam
+FooterLogoShorts: &FooterLogoShorts
+    shortsi_article: *ShortsiArticle
+    url: (text)
+    imgWhite: *StrapiMedia
+    imgColor: *StrapiMedia
+    imgBlack: *StrapiMedia
+
+FooterLogoJustFilm: &FooterLogoJustFilm
+    pof_fi_article: *POFFiArticle
+    url: (text)
+    imgWhite: *StrapiMedia
+    imgColor: *StrapiMedia
+    imgBlack: *StrapiMedia
+
+LogoSectionJustFilm: &LogoSectionJustFilm
+    name: *Translated #(Component)
+    order: (Number)
+    logo: #(Component (repeatable))
+        - *FooterLogoJustFilm
+Footer:
+    _path: /footers
+    socialGroup: #(Component (repeatable))
+        - *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    logosSections: #(Component (repeatable))
+        - *LogoSectionJustFilm
+    namePrivate: (text)
+    domain: *Domain #(Component)
+
+# Roll
 Roll: &Roll
     _path: /rolls
     namePrivate: (text)
