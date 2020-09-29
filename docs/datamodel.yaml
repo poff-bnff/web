@@ -1,3 +1,9 @@
+# POFF
+# Just
+# Shorts
+# Industry
+# Kinoff
+
 Translated: &Translated
     et: (text)
     en: (text)
@@ -207,6 +213,8 @@ WebAuthor: &WebAuthor
     _path: /web-authors
     namePrivate: (text)
     name: *Translated
+
+# Articles
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
@@ -492,6 +500,8 @@ IndustryMenu: &IndustryMenu
 #     order: (Number)
 #     subMenuItem: #(Component (repeatable))
 
+
+#  Festival
 Festival: &Festival
     _path: /festivals
     name_et: (text)
@@ -584,6 +594,7 @@ CountriesAndLanguages: &CountriesAndLanguages
     languages: #(Component (repeatable))
         - *Language
 
+# Film
 Film: &Film
     _path: /films
     id: 1 (number)
@@ -718,26 +729,79 @@ LabelGroup:
     label: #(Component (repeatable))
         - *Label
 
-FooterLogoShorts: &FooterLogoShorts
+# Supporters
+SupPoff: &SupPoff
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColor: *StrapiMedia
+    logoBlack: *StrapiMedia
+    poffi_article: *POFFiArticle
+
+SupSecPoff: &SupSecPoff
+    name: *Translated
+    order: (Number)
+    supporter:
+        - *SupPoff
+
+POFFSupporter: &POFFSupporter
+    _path: /supporters-pages
+    title: *Translated
+    intro: *Translated
+    # namePrivate: (text, private)
+    domain: *Domain
+    supporters:
+        - *SupSecPoff
+
+SupJust: &SupJust
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColor: *StrapiMedia
+    logoBlack: *StrapiMedia
+    just_filmi_article: *JustFilmiArticle
+
+SupSecJust: &SupSecJust
+    name:
+        - *Translated
+    order: (Number)
+    supporter:
+        - *SupJust
+
+JustSupporter: &JustSupporter
+    _path: /supporters-justs
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecJust
+
+SupShorts: &SupShorts
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColor: *StrapiMedia
+    logoBlack: *StrapiMedia
     shortsi_article: *ShortsiArticle
-    url: (text)
-    imgWhite: *StrapiMedia
-    imgColor: *StrapiMedia
-    imgBlack: *StrapiMedia
 
-FooterLogoJustFilm: &FooterLogoJustFilm
-    pof_fi_article: *POFFiArticle
-    url: (text)
-    imgWhite: *StrapiMedia
-    imgColor: *StrapiMedia
-    imgBlack: *StrapiMedia
+SupSecShorts: &SupSecShorts
+    name:
+        - *Translated
+    order: (Number)
+    supporter:
+        - *SupShorts
 
-# Logo: &Logo
-#     url: (text)
-#     imgWhite: *StrapiMedia #(Component)
-#     imgColour: *StrapiMedia #(Component)
-#     imgBlack: *StrapiMedia #(Component)
+ShortsSupporter: &ShortsSupporter
+    _path: /supporters-shorts
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecShorts
 
+# Footer
 SocialItem: &SocialItem
     name: (text)
     url_et: (text)
@@ -762,11 +826,53 @@ FooterItemNav: &FooterItemNav
     svgItem: #(Component (repeatable))
         - *SocialItem
 
-# LogosSection: &LogosSection
-#     name: *Translated #(Component)
-#     order: (Number)
-#     logo: #(Component (repeatable))
-#         - *FooterLogoShorts
+POFFiFooter: &POFFiFooter
+    _path: /pof-fi-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecPoff
+
+JustFilmFooter: &JustFilmFooter
+    _path: /just-film-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecJust
+
+ShortsiFooter: &ShortsiFooter
+    _path: /shortsi-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecShorts
+
+# vana kraam
+FooterLogoShorts: &FooterLogoShorts
+    shortsi_article: *ShortsiArticle
+    url: (text)
+    imgWhite: *StrapiMedia
+    imgColor: *StrapiMedia
+    imgBlack: *StrapiMedia
+
+FooterLogoJustFilm: &FooterLogoJustFilm
+    pof_fi_article: *POFFiArticle
+    url: (text)
+    imgWhite: *StrapiMedia
+    imgColor: *StrapiMedia
+    imgBlack: *StrapiMedia
 
 LogoSectionJustFilm: &LogoSectionJustFilm
     name: *Translated #(Component)
@@ -785,11 +891,13 @@ Footer:
     namePrivate: (text)
     domain: *Domain #(Component)
 
+# Roll
 Roll: &Roll
     _path: /rolls
     namePrivate: (text)
     name: *Translated #(Component)
 
+# Product & Payment
 Payment: &Payment
     status: (text)
     cardNumber: (Number)
@@ -807,10 +915,6 @@ Transaction: &Transaction
     type: (Enumeration)
     payment:  #(Component (repeatable))
         - *Payment
-
-# Ticketing: &Ticketing
-#     ticketingId: (Number)
-#     ticketingUrl: (text)
 
 TicketingRight: &TicketingRight
     ticketType: (text)
@@ -860,30 +964,7 @@ Product_Pass: &Product_Pass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
-SupPoff: &SupPoff
-    name: (text)
-    customUrl: (text)
-    logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
-    logoBlack: *StrapiMedia
-    poffi_article: *POFFiArticle
-
-SupSecPoff: &SupSecPoff
-    name:
-        - *Translated
-    order: (Number)
-    supporter:
-        - *SupPoff
-
-POFFSupporter: &POFFSupporter
-    _path: /supporters-pages
-    title: *Translated
-    intro: *Translated
-    # namePrivate: (text, private)
-    domain: *Domain
-    supporters:
-        - *SupSecPoff
-
+# Single Types
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
