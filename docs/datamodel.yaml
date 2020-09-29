@@ -739,8 +739,7 @@ SupPoff: &SupPoff
     poffi_article: *POFFiArticle
 
 SupSecPoff: &SupSecPoff
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
     supporter:
         - *SupPoff
@@ -831,11 +830,11 @@ POFFiFooter: &POFFiFooter
     _path: /pof-fi-footers
     namePrivate: (text)
     domain: *Domain #(Component)
-    socialGroup: #(Component (repeatable))
-        - *SocialGroup
+    socialGroup: #(Component )
+        *SocialGroup
     item: #(Component (repeatable))
         - *FooterItemNav
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecPoff
 
 # vana kraam
@@ -858,6 +857,7 @@ LogoSectionJustFilm: &LogoSectionJustFilm
     order: (Number)
     logo: #(Component (repeatable))
         - *FooterLogoJustFilm
+
 Footer:
     _path: /footers
     socialGroup: #(Component (repeatable))
@@ -941,7 +941,6 @@ Product_Pass: &Product_Pass
     transaction: *Transaction #(Component)
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
-
 
 # Single Types
 TrioBlockItemPoff: &TrioBlockItemPoff
