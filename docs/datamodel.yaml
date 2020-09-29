@@ -837,6 +837,28 @@ POFFiFooter: &POFFiFooter
     supporters: #(Component (repeatable))
         - *SupSecPoff
 
+JustFilmFooter: &JustFilmFooter
+    _path: /just-film-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecJust
+
+ShortsiFooter: &ShortsiFooter
+    _path: /shortsi-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecShorts
+
 # vana kraam
 FooterLogoShorts: &FooterLogoShorts
     shortsi_article: *ShortsiArticle
