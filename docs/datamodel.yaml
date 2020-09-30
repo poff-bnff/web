@@ -55,15 +55,6 @@ Domain: &Domain
     ipAdress: (text)
     server: (text)
 
-Publishing: &Publishing
-    publish_et: (Boolean)
-    from: (Datetime)
-    until: (Datetime)
-    publish_en: (Boolean)
-    publish_ru: (Boolean)
-    article_types: #(Component (repeatable))
-        - *ArticleType
-
 Tags: &Tags
     genres: #(Component (repeatable))
       - *TagGenre
@@ -214,8 +205,7 @@ WebAuthor: &WebAuthor
     namePrivate: (text)
     name: *Translated
 
-# Articles
-
+# Articles & Menu
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
     created_by:
@@ -444,62 +434,62 @@ IndustryMenu: &IndustryMenu
     subMenuItem: #(Component (repeatable))
         - *IndustrySubMenuItem
 
-# KinoffiArticle: &KinoffiArticle
-#     _path: /
-#     created_by:
-#         firstname: (text)
-#         lastname: (text)
-#     created_at: (datetime)
-#     #titlePrivate: (text, private field)
-#     title_et: (text)
-#     title_en: (text)
-#     title_ru: (text)
-#     slug_et: (text)
-#     slug_en: (text)
-#     slug_ru: (text)
-#     lead_et: (Rich text)
-#     lead_en: (Rich text)
-#     lead_ru: (Rich text)
-#     contents_et: (Rich text)
-#     contents_en: (Rich text)
-#     contents_ru: (Rich text)
-#     media: *Media #(Component)
-#     publishFrom: (Datetime)
-#     publishUntil: (Datetime)
-#     publish_et: (boolean)
-#     publish_en: (boolean)
-#     publish_ru: (boolean)
-#     button: #(Component (repeatable))
-#         - *Button
-#     article_types: #(Component (repeatable))
-#         - *ArticleType
-#     tag_premiere_types: #(Component (repeatable))
-#         - *TagPremiereType
-#     tag_programmes: #(Component (repeatable))
-#         - *TagProgramme
-#     tag_genres: #(Component (repeatable))
-#         - *TagGenre
-#     tag_keywords: #(Component (repeatable))
-#         - *TagKeyword
-#     web_authors: #(Component (repeatable))
-#         - *WebAuthor
+KinoffiArticle: &KinoffiArticle
+    _path: /kinoffi_articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media #(Component)
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    tag_programmes: #(Component (repeatable))
+        - *TagProgramme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+    web_authors: #(Component (repeatable))
+        - *WebAuthor
 
-# KinoffiSubMenuItem: &KinoffiSubMenuItem
-#     name: *Translated #(Component)
-#     kinoffi_article: *KinoffiArticle
-#     order: (Number)
-#     customUrl: *Translated #(Component)
-#     namePrivate: (text)
+KinoffiSubMenuItem: &KinoffiSubMenuItem
+    name: *Translated #(Component)
+    kinoffi_article: *KinoffiArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
 
-# KinoffiMenu: &KinoffiMenu
-#     _path: /
-#     #namePrivate: (text, private field)
-#     name: *Translated #(Component)
-#     kinoffi_article: *KinoffiArticle
-#     customUrl: *Translated #(Component)
-#     order: (Number)
-#     subMenuItem: #(Component (repeatable))
-
+KinoffiMenu: &KinoffiMenu
+    _path: /kinoffi-menus
+    #namePrivate: (text, private field)
+    name: *Translated #(Component)
+    kinoffi_article: *KinoffiArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *KinoffiSubMenuItem
 
 #  Festival
 Festival: &Festival
@@ -757,13 +747,12 @@ SupJust: &SupJust
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     just_filmi_article: *JustFilmiArticle
 
 SupSecJust: &SupSecJust
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
     supporter:
         - *SupJust
@@ -781,13 +770,12 @@ SupShorts: &SupShorts
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     shortsi_article: *ShortsiArticle
 
 SupSecShorts: &SupSecShorts
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
     supporter:
         - *SupShorts
@@ -800,6 +788,52 @@ ShortsSupporter: &ShortsSupporter
     intro: *Translated
     supporters:
         - *SupSecShorts
+
+SupIndustry: &SupIndustry
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColour: *StrapiMedia
+    logoBlack: *StrapiMedia
+    industry_article: *IndustryArticle
+
+SupSecIndustry: &SupSecIndustry
+    name: *Translated
+    order: (Number)
+    supporter:
+        - *SupIndustry
+
+IndustrySupporter: &IndustrySupporter
+    _path: /industry-supporters
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecIndustry
+
+SupKinoff: &SupKinoff
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColour: *StrapiMedia
+    logoBlack: *StrapiMedia
+    kinoffi_article: *KinoffiArticle
+
+SupSecKinoff: &SupSecKinoff
+    name: *Translated
+    order: (Number)
+    supporter:
+        - *SupKinoff
+
+KinoffiSupporter: &KinoffiSupporter
+    _path: /kinoffi-supporters
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters:
+        - *SupSecKinoff
 
 # Footer
 SocialItem: &SocialItem
@@ -859,7 +893,29 @@ ShortsiFooter: &ShortsiFooter
     supporters: #(Component (repeatable))
         - *SupSecShorts
 
-# vana kraam
+IndustryFooter: &IndustryFooter
+    _path: /industry-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecIndustry
+
+KinoffiFooter: &KinoffiFooter
+    _path: /kinoffi-footers
+    namePrivate: (text)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecKinoff
+
+# vana kraam, kustuta, kui enam ei kasuta
 FooterLogoShorts: &FooterLogoShorts
     shortsi_article: *ShortsiArticle
     url: (text)
@@ -930,16 +986,16 @@ PriceAtPeriod: &PriceAtPeriod
     startDateTime: (Datetime)
     endDateTime: (Datetime)
 
-Product_Type: &Product_Type
+ProductType: &ProductType
     _path: /products
-    name: (text)
+    nae: (text)
 
-Product_Category: &Product_Category
+ProductCategory: &ProductCategory
     _path: /product-categories
     namePrivate: (text)
     name:  #(Component (repeatable))
         - *Translated
-    product_type: *Product_Type #(Component)
+    product_type: *ProductType #(Component)
     festival_edition: *FestivalEdition #(Component)
     description:  #(Component (repeatable))
         - *Translated
@@ -953,10 +1009,10 @@ Product_Category: &Product_Category
         - *PriceAtPeriod
     codePrefix: (text)
 
-Product_Pass: &Product_Pass
+ProductPass: &ProductPass
     _path: /festival-passes
-    product_type: *Product_Type #(Component)
-    product_category: *Product_Category #(Component)
+    product_type: *ProductType #(Component)
+    product_category: *ProductCategory #(Component)
     owner: *Person #(Component)
     code: (text)
     active: (Boolean)
@@ -964,7 +1020,7 @@ Product_Pass: &Product_Pass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
-# Single Types
+# Hero (kustuta block,  kui enam ei kasuta
 TrioBlockItemPoff: &TrioBlockItemPoff
     title: *Translated #(Component)
     lead: *Translated #(Component)
@@ -1020,6 +1076,19 @@ TrioBlockShorts:
     shortsi_article_2: *ShortsiArticle #(Component)
     shortsi_article_3: *ShortsiArticle #(Component)
 
+HeroArticleIndustry:
+    _path: /hero-article-industry
+    article_et: *IndustryArticle #(Component)
+    article_en: *IndustryArticle #(Component)
+    article_ru: *IndustryArticle #(Component)
+
+HeroArticleKinoff:
+    _path: /hero-article-kinoff
+    article_et: *KinoffiArticle #(Component)
+    article_en: *KinoffiArticle #(Component)
+    article_ru: *KinoffiArticle #(Component)
+
+# Trio
 TrioItemPoff: &TrioItemPoff
     poffi_article: *POFFiArticle #(Component)
     title: (text)
@@ -1080,42 +1149,42 @@ TrioShorts: &TrioShorts
     trioShorts_en: *Trioshorts #(Component)
     trioShorts_ru: *Trioshorts #(Component)
 
-# TrioItemIndustry: &TrioItemIndustry
-#     Industry_article: *IndustryArticle #(Component)
-#     title: (text)
-#     lead: (text)
-#     customURL: (text)
-#     image: *StrapiMedia #(Component)
+TrioItemIndustry: &TrioItemIndustry
+    industry_article: *IndustryArticle #(Component)
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia #(Component)
 
-# Trioindustry: &Trioindustry
-#     name: (text)
-#     lead: (text)
-#     trioItem_1: *TrioItemIndustry #(Component)
-#     trioItem_2: *TrioItemIndustry #(Component)
-#     trioItem_3: *TrioItemIndustry #(Component)
+Trioindustry: &Trioindustry
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemIndustry #(Component)
+    trioItem_2: *TrioItemIndustry #(Component)
+    trioItem_3: *TrioItemIndustry #(Component)
 
-# TrioIndustry: &TrioIndustry
-#     _path: /
-#     trioIndustry_et: *Trioindustry #(Component)
-#     trioIndustry_en: *Trioindustry #(Component)
-#     trioIndustry_ru: *Trioindustry #(Component)
+TrioIndustry: &TrioIndustry
+    _path: /trio-industry
+    trioIndustry_et: *Trioindustry #(Component)
+    trioIndustry_en: *Trioindustry #(Component)
+    trioIndustry_ru: *Trioindustry #(Component)
 
-# TrioItemKinoff: &TrioItemKinoff
-#     kinoffi_article: *KinoffiArticle #(Component)
-#     title: (text)
-#     lead: (text)
-#     customURL: (text)
-#     image: *StrapiMedia #(Component)
+TrioItemKinoff: &TrioItemKinoff
+    kinoffi_article: *KinoffiArticle #(Component)
+    title: (text)
+    lead: (text)
+    customURL: (text)
+    image: *StrapiMedia #(Component)
 
-# Triokinoff: &Triokinoff
-#     name: (text)
-#     lead: (text)
-#     trioItem_1: *TrioItemKinoff #(Component)
-#     trioItem_2: *TrioItemKinoff #(Component)
-#     trioItem_3: *TrioItemKinoff #(Component)
+Triokinoff: &Triokinoff
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemKinoff #(Component)
+    trioItem_2: *TrioItemKinoff #(Component)
+    trioItem_3: *TrioItemKinoff #(Component)
 
-# TrioKinoff: &TrioKinoff
-#     _path: /
-#     trioKinoff_et: *Triokinoff #(Component)
-#     trioKinoff_en: *Triokinoff #(Component)
-#     trioKinoff_ru: *Triokinoff #(Component)
+TrioKinoff: &TrioKinoff
+    _path: /trio-kinoff
+    trioKinoff_et: *Triokinoff #(Component)
+    trioKinoff_en: *Triokinoff #(Component)
+    trioKinoff_ru: *Triokinoff #(Component)
