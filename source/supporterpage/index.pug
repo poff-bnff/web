@@ -6,12 +6,16 @@ include /_templates/mixins.pug
         .grid_footer_row
 
         if self.data.supporters
+            br
+            br
+            br
+            br
+            if self.data.supporters.title
+                h1.section_headline_footer= self.data.supporters.title
+            if self.data.supporters.intro
+                h1.section_headline_footer= self.data.supporters.intro
             each section in self.data.supporters.supporters
                 if section.name && (typeof(section.name) !== 'object')
-                    br
-                    br
-                    br
-                    br
                     //- SEKTSIOONI NIMI
                     h1.section_headline_footer= section.name
                 if section.supporter
