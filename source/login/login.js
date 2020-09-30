@@ -7,21 +7,20 @@ let USER_PROFILE ={}
 
 let pageURL = "http://localhost:5000"
 
-
-if (localStorage.getItem('ID_TOKEN')){
-    hello.innerHTML = 'Hello, ' + name;
-    favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
-
-} else {
-    hello.innerHTML = 'Not logged in'
-}
-
 let tokens = (window.location.hash.substr(1)).split('&');
-//console.log(tokens);
+
 if (tokens[3]) {
     storeAuthentication(tokens);
 } else {
     console.log('Not sent ')
+}
+
+if (localStorage.getItem('ID_TOKEN')){
+    hello.innerHTML = 'Hello, ' /*+ USER_PROFILE.name*/
+    favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
+
+} else {
+    hello.innerHTML = 'Not logged in'
 }
 
 async function storeAuthentication(tokens) {
@@ -140,11 +139,13 @@ async function loadInfoFromIdtkn(){
 function CheckIfProfFilled(){
     console.log (USER_PROFILE)
     if (USER_PROFILE.profile_filled === "false"){
-        console.log("heureka")
+        console.log("profile unfilled")
         window.open(`${pageURL}/userprofile`, "_self")
-    }else {
-        window.open(`${pageURL}`, "_self")
     }
+    // else {
+    //     console.log('profile filled')
+    //     window.open(`${pageURL}/login`, "_self")
+    // }
 }
 
 
@@ -178,6 +179,7 @@ function doSignUp(){
     console.log(password2);
     doSignUp.innerHTML = `<button>doSignUp</button>`;
 }
+
 
 
 

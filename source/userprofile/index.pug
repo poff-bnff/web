@@ -42,18 +42,19 @@ block content
                         input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr')
                     div.form-group
                         label(for='email') Email:
-                        input#email.form-control(type='email', placeholder='Email' name='email')
+                        input#email.form-control(type='email', placeholder='Email' name='email' oninput="validateEmail()")
                     div.form-group
                         label(for='country') Elukoha riik:
                         input#country.form-control(type='text', placeholder='Elukoha riik' name='country')
                     div.form-group
                         label(for='city') Elukoha linn:
                         input#city.form-control(type='text', placeholder='Elukoha linn' name='city')
-                    button.btn.btn-primary(onclick='sendUserProfile()') Salvesta
+                    button.btn.btn-primary(onclick='validateForm(), sendUserProfile()') Salvesta
 
     style.
-        h1 {color: #464646}
+        .invalid {color: #ee1b2e}
         h4 {color: #464646}
         label {color: black}
+
     script
         include userprofile.js
