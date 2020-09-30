@@ -57,7 +57,7 @@ include /_templates/mixins.pug
                             //- SIIN SAMUTI FOOTERI STIILID HETKEL
                             //- KUI ARTIKKEL KEELES OLEMAS JA PUBLISHED JA PEALKIRJAGA JNE
                             if articlePublished === true
-                                a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`)
+                                a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`).footer_logo_item
                                     if supporter.logoWhite
                                         img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
                                     else if supporter.logoBlack
@@ -66,7 +66,7 @@ include /_templates/mixins.pug
                                         img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
                             //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
                             else if supporter.customUrl
-                                a(href= supporter.customUrl)
+                                a(href= supporter.customUrl).footer_logo_item
                                     if supporter.logoWhite
                                         img.footer_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
                                     else if supporter.logoBlack
