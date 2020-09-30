@@ -752,8 +752,7 @@ SupJust: &SupJust
     just_filmi_article: *JustFilmiArticle
 
 SupSecJust: &SupSecJust
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
     supporter:
         - *SupJust
@@ -776,8 +775,7 @@ SupShorts: &SupShorts
     shortsi_article: *ShortsiArticle
 
 SupSecShorts: &SupSecShorts
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
     supporter:
         - *SupShorts
@@ -800,8 +798,7 @@ SupIndustry: &SupIndustry
     industry_article: *IndustryArticle
 
 SupSecIndustry: &SupSecIndustry
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
     supporter:
         - *SupIndustry
@@ -824,8 +821,7 @@ SupKinoff: &SupKinoff
     kinoffi_article: *KinoffiArticle
 
 SupSecKinoff: &SupSecKinoff
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
     supporter:
         - *SupKinoff
