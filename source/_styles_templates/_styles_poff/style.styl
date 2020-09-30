@@ -62,7 +62,7 @@ clr_covid = #bc06c6
 clr_vote = #00aeef
 clr_grey_light = #dddddd
 
-header_height = 97px
+header_height = 100px
 full_height = calc(100vh - header_height)
 clr_header_text = #0E1417
 clr_header_bg = #ffffff
@@ -170,6 +170,7 @@ header
     grid-template-columns auto 1fr
     background-color clr_header_bg
     width 100%
+    height auto
     // height header_height
     // text-align center
     position fixed
@@ -257,6 +258,7 @@ header
 
 .ul_kaks
     text-align right
+    text-transform none
     // margin-top 3rem
     // padding-top 5rem
     // border dashed blue
@@ -268,6 +270,29 @@ header
 
 .ul_kaks a
     color dark_4
+    text-transform none
+
+.org_menu
+    position absolute
+    // display inline
+    bottom 0
+    height 1rem
+    // right 0
+    // padding-right 1rem
+    // text-align center
+    // padding-top .1rem
+
+.org_item
+    // display inline
+    font-size 14px
+    font-family font_h
+    color dark_4
+    padding-left 1rem
+    padding-right 1rem
+    // padding-right 1rem
+    a
+        text-decoration none
+        font-size 14px
 
 // .ul_kaks:first-child
 //     padding-top 5rem
@@ -400,7 +425,7 @@ footer
 .logo
     margin 1rem
     padding 0
-    width 170px
+    width 150px
 
 .logo_img:hover,
 .logo_img:focus
@@ -1084,7 +1109,7 @@ p a
 .section_headline_footer
     font-family font_h
     font-size calc(1.618rem + 1.618vw)
-    line-height 1
+    line-height 1.168
     font-weight 500
     color bg_dark_4
     letter-spacing 0.04em
@@ -1093,8 +1118,8 @@ p a
     padding 0
     padding-left calc(1rem + 1vw)
     padding-right calc(1rem + 1vw)
-    margin-top .6em
-    margin-bottom .2em
+    margin-top 3rem
+    margin-bottom 1rem
 
 .sub_section_headline
   font-family font_h
@@ -1882,6 +1907,7 @@ a.btn_popover
     header
         display grid
         grid-template-columns auto 1fr
+        height 100px
 
     .main_menu_toggle_label
             display none
@@ -1955,6 +1981,27 @@ a.btn_popover
             padding-top 1.618rem
         li:last-child
             padding-bottom 1.618rem
+
+    .org_menu
+        position fixed
+        // display inline
+        top 0
+        left 0
+        padding-left 1rem
+        height 1rem
+        // padding-top .1rem
+
+    .org_item
+        // display inline
+        font-size 14px
+        font-family font_h
+        color dark_4
+        padding-left 1rem
+        padding-right 1rem
+        // padding-right 1rem
+        a
+            text-decoration none
+            font-size 14px
 
     // .grid_footer_row
     //     grid-area footer
@@ -2069,12 +2116,22 @@ a.btn_popover
 
     .logo
         grid-column 1 / 2
-        justify-content flex-start
-        align-items flex-end
-        width 210px
-        padding-left 1.2rem
-        padding-bottom .3rem
-        padding-top .4rem
+        justify-self start
+        align-self end
+        // display flex
+        // justify-content flex-start
+        // align-items flex-end
+        width 160px
+        // padding-left 1.2rem
+        // padding-bottom .3rem
+        // padding-top .4rem
+        // border 1px solid blue
+        padding 0
+        margin 0
+        margin-top .5rem
+        margin-left 2rem
+        margin-bottom 1.2rem
+        // padding-bottom .2rem
 
     .film
         display grid
@@ -2257,3 +2314,6 @@ strong
 
 .padding_top_4
     padding-top 4rem
+
+.padding_top_0
+    padding-top 0px
