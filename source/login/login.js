@@ -3,34 +3,42 @@ let url = window.location;
 const ACCESS_TOKEN = "ACCESS_TOKEN";
 const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
-let USER_PROFILE ={}
+// const USER_PROFILE = await loadUserProfile()
 
 let pageURL = "http://localhost:5000"
 
-let tokens = (window.location.hash.substr(1)).split('&');
-
-if (tokens[3]) {
-    storeAuthentication(tokens);
-} else {
-    console.log('Not sent ')
-}
 
 if (localStorage.getItem('ID_TOKEN')){
-    hello.innerHTML = 'Hello, ' /*+ USER_PROFILE.name*/
-    favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
-
-} else {
-    hello.innerHTML = 'Not logged in'
+    loadUserProfile()
+} else if (window.location.hash) {
+    const [access_token, id_token, token_type, token_expires] = (window.location.hash.substr(1)).split('&')
+    // console.log(tokens);
+    if (access_token && id_token) {
+        storeAuthentication(access_token.split('=')[1], id_token.split('=')[1])
+    } else {
+        console.log('Not sent ')
+    }
 }
 
-async function storeAuthentication(tokens) {
+// const [access_token, id_token, token_type, token_expires] = ["access_token=eyJraWQiOiI5K3piWE1tT09JY2laNndWXC9NV…2PIx9Q_MKRWdgacypW9G3P9fL2nBTFcgmympN2rE41wJQen-A", "id_token=eyJraWQiOiJDZ2VnMXozVVpqamM4d0ZjSnB3MUhaX…bAqlYFXLFT1ELIg427eJ7xqZ07PmS5qTU7Zi4rrbs4ek_Nu3Q", "token_type=Bearer", "expires_in=3600"]
+// console.log(access_token);
+
+// if (localStorage.getItem('ID_TOKEN')){
+//     hello.innerHTML = 'Hello, ' /*+ USER_PROFILE.name*/
+//     favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
+
+// } else {
+//     hello.innerHTML = 'Not logged in'
+// }
+
+async function storeAuthentication(access_token, id_token) {
     console.log('storeauth');
-    localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
-    localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
+    localStorage.setItem(ACCESS_TOKEN, access_token);
+    localStorage.setItem(ID_TOKEN, id_token);
     window.location.hash = '';
-    await loadInfoFromIdtkn();
-    CheckIfProfFilled()
-    // location.reload();
+    // await loadUserProfile();
+    // CheckIfProfFilled()
+    location.reload();
 }
 
 function getAccessToken() {
@@ -123,20 +131,30 @@ async function login(){
 
 
 
-async function loadInfoFromIdtkn(){
-    console.log('loadInfoFromIdtk');
+async function loadUserProfile(){
+    console.log('loadUserProfile');
     let response = await fetch(`https://api.poff.ee/profile`, {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')}
         });
-        USER_PROFILE = await response.json()
+        const USER_PROFILE = await response.json()
+        console.log(USER_PROFILE)
+        CheckIfProfFilled(USER_PROFILE)
+
+
+        if (USER_PROFILE){
+            hello.innerHTML = 'Hello, ' + USER_PROFILE.name
+
+        } else {
+            hello.innerHTML = 'Not logged in'
+        }
         //return response.json()
 }
 
 
 
-function CheckIfProfFilled(){
+function CheckIfProfFilled(USER_PROFILE){
     console.log (USER_PROFILE)
     if (USER_PROFILE.profile_filled === "false"){
         console.log("profile unfilled")
