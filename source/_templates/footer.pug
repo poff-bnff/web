@@ -49,7 +49,7 @@ footer
                 .footer_logos
                     each supporter in supporters.supporter
                         if supporter.customUrl
-                            a(href= supporter.customUrl)
+                            a(href= supporter.customUrl).footer_logo_item
                                 if supporter.logoWhite
                                     img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
                                 else if supporter.logoBlack

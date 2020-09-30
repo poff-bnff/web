@@ -3,17 +3,20 @@ include /_templates/mixins.pug
 
     block content
         //- PRAEGU FOOTERI STIILID
-        .grid_footer_row
+
+
+        //- .grid_footer_row
 
         if self.data.supporters
-            br
-            br
-            br
-            br
             if self.data.supporters.title
-                h1.section_headline_footer= self.data.supporters.title
+                section.grid_articles
+                h1.section_headline.margin_header= self.data.supporters.title
             if self.data.supporters.intro
-                h1.section_headline_footer= self.data.supporters.intro
+                section.grid_article.padding_top_0
+                    section.article_meta
+                    section.article_contents.dark_1
+                        p.dark_1= self.data.supporters.intro
+
             each section in self.data.supporters.supporters
                 if section.name && (typeof(section.name) !== 'object')
                     //- SEKTSIOONI NIMI
