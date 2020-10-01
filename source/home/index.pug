@@ -7,13 +7,13 @@ block content
         - var heroPlusTrioNews = []
 
         section.grid_hero
-            include /_templates/home_hero_just.pug
+            include /_templates/home_templates/hero_just.pug
 
         section.trio_block
-            include /_templates/home_trio_block_just.pug
+            include /_templates/home_templates/trio_block_just.pug
 
         section.viiekas
-            include /_templates/home_viiekas_just.pug
+            include /_templates/home_templates/viiekas_just.pug
 
     else if process.env['DOMAIN'] === 'shorts.poff.ee'
 
@@ -21,13 +21,13 @@ block content
         - var heroPlusTrioNews = []
 
         section.grid_hero
-            include /_templates/home_hero_shorts.pug
+            include /_templates/home_templates/hero_shorts.pug
 
         section.trio_block
-            include /_templates/home_trio_block_shorts.pug
+            include /_templates/home_templates/trio_block_shorts.pug
 
         section.viiekas
-            include /_templates/home_viiekas_shorts.pug
+            include /_templates/home_templates/viiekas_shorts.pug
 
     else
 
@@ -35,10 +35,10 @@ block content
         - var heroPlusTrioNews = []
 
         section.grid_hero
-            include /_templates/home_hero_poff.pug
+            include /_templates/home_templates/hero_poff.pug
 
         section.trio_block
-            include /_templates/home_trio_block_poff.pug
+            include /_templates/home_templates/trio_block_poff.pug
 
         section.viiekas
-            include /_templates/home_viiekas_poff.pug
+            include /_templates/home_templates/viiekas_poff.pug
