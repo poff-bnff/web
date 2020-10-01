@@ -1,38 +1,4 @@
-const ACCESS_TOKEN = "ACCESS_TOKEN";
-const ID_TOKEN = "ID_TOKEN";
-const REFRESH_TOKEN = "REFRESH_TOKEN";
 
-let url = window.location;
-let pageURL = "http://localhost:5000"
-
-
-if (localStorage.getItem('ID_TOKEN')){
-    loadUserProfile()
-} else if (window.location.hash) {
-    const [access_token, id_token, token_type, token_expires] = (window.location.hash.substr(1)).split('&')
-
-    if (access_token && id_token) {
-        storeAuthentication(access_token.split('=')[1], id_token.split('=')[1])
-    } else {
-        console.log('Not sent ')
-    }
-}
-
-async function storeAuthentication(access_token, id_token) {
-    console.log('storeauth');
-    localStorage.setItem(ACCESS_TOKEN, access_token);
-    localStorage.setItem(ID_TOKEN, id_token);
-    window.location.hash = '';
-    location.reload();
-}
-
-function logOut() {
-    localStorage.removeItem(ACCESS_TOKEN);
-    localStorage.removeItem(REFRESH_TOKEN);
-    localStorage.removeItem(ID_TOKEN);
-    console.log('LOGITUD VÄLJA');
-    location.reload();
-}
 
 async function loginViaCognito(){
 
@@ -79,37 +45,27 @@ async function loginViaCognito(){
     });
 }
 
-async function loadUserProfile(){
-    console.log('loadUserProfile');
-    let response = await fetch(`https://api.poff.ee/profile`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')}
-        });
-        const USER_PROFILE = await response.json()
-        console.log(USER_PROFILE)
-        CheckIfProfFilled(USER_PROFILE)
+// async function loadUserProfile(){
+//     console.log('loadUserProfile');
+//     let response = await fetch(`https://api.poff.ee/profile`, {
+//             method: 'GET',
+//             headers: {
+//                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')}
+//         });
+//         const USER_PROFILE = await response.json()
+//         console.log(USER_PROFILE)
+//         CheckIfProfFilled(USER_PROFILE)
 
 
-        if (USER_PROFILE){
-            hello.innerHTML = 'Hello, ' + USER_PROFILE.name
+//         if (USER_PROFILE){
+//             hello.innerHTML = 'Hello, ' + USER_PROFILE.name
 
-        } else {
-            hello.innerHTML = 'Not logged in'
-        }
-}
+//         } else {
+//             hello.innerHTML = 'Not logged in'
+//         }
+// }
 
-function CheckIfProfFilled(USER_PROFILE){
-    console.log (USER_PROFILE)
-    if (USER_PROFILE.profile_filled === "false"){
-        console.log("profile unfilled")
-        window.open(`${pageURL}/userprofile`, "_self")
-    }
-    else {
-        console.log('profile filled')
-        window.open(`${pageURL}`, "_self")
-    }
-}
+
 
 
 // function doSignUp(){

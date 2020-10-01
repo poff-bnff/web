@@ -3,7 +3,7 @@ include /_templates/mixins.pug
 
 block content
 
-    - var myUri = 'http://localhost:5000'
+    - var myUri = 'http://localhost:4000'
 
     br
     br
@@ -29,13 +29,11 @@ block content
     br
     br
     br
-    a(href=`https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1q24246tqd48cpepne3vnunmiq&logout_uri=${myUri}/login/` onclick='logOut()')#logOutLink Log out
     br
     br
-    h1#hello
+    br
     p#favoritefilm(style={color: 'green'})
     br
-    button(onclick='showUserInfo()') Show user info
 
 
 
