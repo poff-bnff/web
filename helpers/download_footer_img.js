@@ -83,7 +83,7 @@ function readYaml(doc) {
                     parallelDownloads.push( downloadsMaker(url, dest) )
                 }
 
-                if ('logoColor' in logo && 'url' in logo.logoColour){
+                if ('logoColour' in logo && 'url' in logo.logoColour){
                     let imgPathC = logo.logoColour.url;
                     let imgFileName = imgPathC.split('/')[imgPathC.split('/').length - 1]
                     let url = `${strapiPath}${imgPathC}`
