@@ -42,7 +42,7 @@ footer
 
 
     if self.footer.supporters
-        section
+        section.supporters_footer
             each supporters in self.footer.supporters
                 row
                     if supporters.name && (typeof(supporters.name) !== 'object')
