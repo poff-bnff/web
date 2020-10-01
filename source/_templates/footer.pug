@@ -42,27 +42,29 @@ footer
 
 
     if self.footer.supporters
-        each supporters in self.footer.supporters
-            if supporters.name && (typeof(supporters.name) !== 'object')
-                h1.section_headline_footer= supporters.name
-            if supporters.supporter
-                .footer_logos
-                    each supporter in supporters.supporter
-                        if supporter.customUrl
-                            a(href= supporter.customUrl).footer_logo_item
-                                if supporter.logoWhite
-                                    img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
-                                else if supporter.logoBlack
-                                    img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
-                                else if supporter.logoColour
-                                    img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
-                        else
-                            if supporter.logoWhite
-                                img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
-                            else if supporter.logoBlack
-                                img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
-                            else if supporter.logoColour
-                                img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
+        section
+            each supporters in self.footer.supporters
+                row
+                    if supporters.name && (typeof(supporters.name) !== 'object')
+                        h1.section_headline_footer= supporters.name
+                    if supporters.supporter
+                        .footer_logos
+                            each supporter in supporters.supporter
+                                if supporter.customUrl
+                                    a(href= supporter.customUrl).footer_logo_item
+                                        if supporter.logoWhite
+                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                        else if supporter.logoBlack
+                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
+                                        else if supporter.logoColour
+                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
+                                else
+                                    if supporter.logoWhite
+                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoBlack
+                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
+                                    else if supporter.logoColour
+                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
 
 
 
