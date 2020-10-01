@@ -33,6 +33,8 @@
     "build_Poff_no_img": ". ./build_poff_no_img.sh",
     "build_just": ". ./build_just.sh",
     "build_shorts": ". ./build_shorts.sh",
+    "build_kinoff": ". ./build_kinoff.sh",
+    "build_industry": ". ./build_industry.sh",
     "update_poff_styles": "DOMAIN='poff.ee' node helpers/copy_styles_acc_to_domain.js",
     "update_justfilm_styles": "DOMAIN='justfilm.ee' node helpers/copy_styles_acc_to_domain.js",
     "update_shorts_styles": "DOMAIN='shorts.poff.ee' node helpers/copy_styles_acc_to_domain.js"
