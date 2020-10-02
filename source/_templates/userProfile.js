@@ -67,8 +67,8 @@ function CheckIfProfFilled(USER_PROFILE){
     console.log (USER_PROFILE)
     if (USER_PROFILE.profile_filled === "false"){
         console.log("profile unfilled")
-        if (window.location.href != `${pageURL}/userprofile`){
-            // window.open(`${pageURL}/userprofile`, "_self")
+        if (window.location.href != `${pageURL}/userprofile/`){
+            window.open(`${pageURL}/userprofile`, "_self")
         }
     }
     else if (USER_PROFILE.profile_filled === "true") {
