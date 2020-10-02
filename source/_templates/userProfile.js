@@ -2,14 +2,20 @@ const ACCESS_TOKEN = "ACCESS_TOKEN";
 const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
 let url = window.location;
-let pageURL = "http://localhost:4000"
+
+let pageURL = 'https://dev.inscaping.eu'
+let userprofilePageURL = pageURL + '/userprofile/'
+
+// let pageURL = 'http://localhost:4000'
+// let userprofilePageURL = pageURL + '/userprofile'
+
+// let pageURL = 'http://localhost:5000'
+// let userprofilePageURL = pageURL + '/userprofile'
 
 
-console.log(window.location)
+loadUserProfile()
 
-if (localStorage.getItem('ID_TOKEN')){
-    loadUserProfile()
-} else if (window.location.hash) {
+if (window.location.hash) {
     const [access_token, id_token, token_type, token_expires] = (window.location.hash.substr(1)).split('&')
 
     if (access_token && id_token) {
@@ -17,8 +23,6 @@ if (localStorage.getItem('ID_TOKEN')){
     } else {
         console.log('Not sent ')
     }
-} else {
-    loadUserProfile()
 }
 
 async function storeAuthentication(access_token, id_token) {
@@ -29,13 +33,7 @@ async function storeAuthentication(access_token, id_token) {
     location.reload();
 }
 
-function logOut() {
-    localStorage.removeItem(ACCESS_TOKEN);
-    localStorage.removeItem(REFRESH_TOKEN);
-    localStorage.removeItem(ID_TOKEN);
-    console.log('LOGITUD VÄLJA');
-    location.reload();
-}
+
 
 async function loadUserProfile(){
 
@@ -61,11 +59,12 @@ async function loadUserProfile(){
 
 }
 
+
 function CheckIfProfFilled(USER_PROFILE){
     console.log (USER_PROFILE)
     if (USER_PROFILE.profile_filled === "false"){
         console.log("profile unfilled")
-        if (window.location.href != `${pageURL}/userprofile`){
+        if (window.location.href != userprofilePageURL){
             window.open(`${pageURL}/userprofile`, "_self")
         }
     }
