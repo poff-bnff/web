@@ -2,7 +2,7 @@ const ACCESS_TOKEN = "ACCESS_TOKEN";
 const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
 let url = window.location;
-let pageURL = "http://localhost:4000"
+let pageURL = "https://dev.inscaping.eu/login"
 
 
 console.log(window.location)
