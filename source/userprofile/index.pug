@@ -1,6 +1,7 @@
 extends /_templates/layout.pug
 include /_templates/mixins.pug
 
+
 block content
     .main.container
         .row
@@ -22,21 +23,54 @@ block content
                     div.form-group
                         label(for='lastName') Perekonnanimi:
                         input#lastName.form-control(type='text', placeholder='Perenimi' name='lastName' required=true)
+
                     div.form-group
                         label(for='gender') Sugu:
-                        br
-                        input(type='radio', name='gender' value="male")
-                        label(for='male') Mees:
-                        br
-                        input(type='radio', name='gender' value="female")
-                        label(for='female') Naine:
-                        br
-                        input(type='radio', name='gender' value="other")
-                        label(for='other') Muu:
-                        br
+                        hr
+                        select#gender(name='gender', placeholder='gender')
+                            option(value='male') Mees
+                            option(value='female') Naine
+                            option(value='other') Muu
+
+                        //- input(type='radio', name='gender' value="male")
+                        //- label(for='male') Mees:
+                        //- br
+                        //- input(type='radio', name='gender' value="female")
+                        //- label(for='female') Naine:
+                        //- br
+                        //- input(type='radio', name='gender' value="other")
+                        //- label(for='other') Muu:
+                        //- br
+
                     div.form-group
-                        label(for='dob') Sünnikuupäev:
-                        input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
+                        .datePicker
+                            label(for='dob') Sünnikuupäev:
+                                hr
+                                span
+                                label(for='day') Päev:
+                                input#day.form-control(type='day', placeholder='day', name='day')
+                                //- select#day(name='day', type='day')
+                                span
+                                label(for='month') Kuu:
+                                select#month(name='month', type='month')
+                                    option(selected='') January
+                                    option February
+                                    option March
+                                    option April
+                                    option May
+                                    option June
+                                    option July
+                                    option August
+                                    option September
+                                    option October
+                                    option November
+                                    option December
+                                span
+                                label(for='year') Aasta:
+                                select#year(name='year', type='year')
+
+                        //- label(for='dob') Sünnikuupäev:
+                        //- input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
                     div.form-group
                         label(for='phoneNr') Telefoni number:
                         input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr')
@@ -58,3 +92,10 @@ block content
 
     script
         include userprofile.js
+
+
+        var yearSelect = document.querySelector('#year')
+        var monthSelect = document.querySelector('#month')
+        var daySelect = document.querySelector('#day')
+
+        yearSelect= 'tere'
