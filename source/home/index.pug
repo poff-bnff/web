@@ -29,6 +29,34 @@ block content
         section.viiekas
             include /_templates/home_templates/viiekas_shorts.pug
 
+    else if process.env['DOMAIN'] === 'kinoff.poff.ee'
+
+        - var whichTypesToDisplay = ['news']
+        - var heroPlusTrioNews = []
+
+        section.grid_hero
+            include /_templates/home_templates/hero_kinoff.pug
+
+        section.trio_block
+            include /_templates/home_templates/trio_block_kinoff.pug
+
+        section.viiekas
+            include /_templates/home_templates/viiekas_kinoff.pug
+
+    else if process.env['DOMAIN'] === 'industry.poff.ee'
+
+        - var whichTypesToDisplay = ['news']
+        - var heroPlusTrioNews = []
+
+        section.grid_hero
+            include /_templates/home_templates/hero_industry.pug
+
+        section.trio_block
+            include /_templates/home_templates/trio_block_industry.pug
+
+        section.viiekas
+            include /_templates/home_templates/viiekas_industry.pug
+
     else
 
         - var whichTypesToDisplay = ['news']
