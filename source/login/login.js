@@ -1,4 +1,6 @@
-
+function testfSetAccesstoken(){
+    localStorage.setItem('ACCESS_TOKEN', 'tere')
+}
 
 async function loginViaCognito(){
 

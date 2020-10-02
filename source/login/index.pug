@@ -4,6 +4,7 @@ include /_templates/mixins.pug
 block content
 
     - var myUri = 'https://dev.inscaping.eu'
+    //- - var myUri = 'http://localhost:4000'
     //- - var myUri = 'http://localhost:5000'
 
     br
@@ -25,7 +26,7 @@ block content
     a(href= `https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}/login/&identity_provider=Google`) Google
     br
     button(onclick='loginViaCognito()') Login
-    button(onclick='loadInfoFromIdtkn()') SignUp
+    button(onclick='testfSetAccesstoken()') SignUp
     p#doSignUp
     br
     br
