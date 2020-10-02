@@ -27,7 +27,7 @@ block content
                     div.form-group
                         label(for='gender') Sugu:
                         hr
-                        select#gender(name='gender')
+                        select#gender(name='gender', placeholder='gender')
                             option(value='male') Mees
                             option(value='female') Naine
                             option(value='other') Muu
@@ -48,10 +48,11 @@ block content
                                 hr
                                 span
                                 label(for='day') Päev:
-                                select#day(name='day')
+                                input#day.form-control(type='day', placeholder='day', name='day')
+                                //- select#day(name='day', type='day')
                                 span
                                 label(for='month') Kuu:
-                                select#month(name='month')
+                                select#month(name='month', type='month')
                                     option(selected='') January
                                     option February
                                     option March
@@ -66,7 +67,7 @@ block content
                                     option December
                                 span
                                 label(for='year') Aasta:
-                                select#year(name='year')
+                                select#year(name='year', type='year')
 
                         //- label(for='dob') Sünnikuupäev:
                         //- input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
@@ -91,6 +92,10 @@ block content
 
     script
         include userprofile.js
+
+
         var yearSelect = document.querySelector('#year')
         var monthSelect = document.querySelector('#month')
         var daySelect = document.querySelector('#day')
+
+        yearSelect= 'tere'
