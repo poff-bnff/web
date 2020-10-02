@@ -26,9 +26,12 @@
     "yaml-diff": "^0.1.1"
   },
   "scripts": {
-    "ssg-serve": "node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml",
+    "ssg-serve-pöff": "DOMAIN='poff.ee' node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml",
+    "ssg-serve-just": "DOMAIN='justfilm.ee' node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml",
+    "ssg-serve-shorts": "DOMAIN='shorts.poff.ee' node ./node_modules/entu-ssg/src/serve.js ./entu-ssg.yaml",
     "serve_local": "serve build",
     "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
+    "build": ". ./build.sh",
     "build_Poff": ". ./build_poff.sh",
     "build_Poff_no_img": ". ./build_poff_no_img.sh",
     "build_just": ". ./build_just.sh",
