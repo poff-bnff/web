@@ -6,14 +6,13 @@ BUILDOPTION[4]="shorts.poff.ee"
 
 ask_what_to_build()
 {
-    printf 'Select: \n'
+    printf '\n----------\nSelect: \n'
     for i in "${!BUILDOPTION[@]}"
     do
         let choosenumber=$i+1
         echo "$choosenumber for building ${BUILDOPTION[$i]}"
     done
-    printf '0 for EXIT\n'
-    # printf 'Select: \n1 for building POFF\n2 for building JUST\n3 for building SHORTS\n4 for building KINOFF\n5 for building INDUSTRY\n0 for EXIT\n'
+    printf '0 to EXIT\n'
     read new_number
 
     if [ $new_number -eq 0 ]
@@ -23,7 +22,7 @@ ask_what_to_build()
     then
         let site_number=$new_number-1
         site_name=${BUILDOPTION[site_number]}
-        echo "You selected to build $site_name"
+        printf "You selected to build $site_name\n\n----------\nNow choose options:\n"
         ask_if_fetch $site_name
     else
         echo "Incorrect option, try again!"
@@ -33,11 +32,8 @@ ask_what_to_build()
 
 ask_if_fetch()
 {
-    printf 'Select: \n1 to fetch new data\n2 to not fetch new data\n0 for EXIT\n'
+    printf 'Select: \n1 to fetch new data\n2 to not fetch new data\n0 to EXIT\n'
     read new_number
-
-    echo "You selected $new_number"
-
 
     if [ $new_number -eq 0 ]
     then
@@ -55,9 +51,8 @@ ask_if_fetch()
 
 ask_if_download_img()
 {
-    printf 'Select: \n1 To download all images\n2 to not download all images\n0 for EXIT\n'
+    printf '\n----------\nSelect: \n1 to download all images\n2 to not download all images\n0 to EXIT\n'
     read new_number
-    echo "You selected $new_number"
 
     if [ $new_number -eq 0 ]
     then
@@ -74,9 +69,10 @@ ask_if_download_img()
 
 build()
 {
+    SECONDS=0
     export DOMAIN=$site_name
 
-    printf "\nBuilding $DOMAIN \n"
+    printf "\n----------\nBuilding $DOMAIN \n"
     if [ $fetch_number -eq 1 ]
     then
         printf "\nStarting to fetch new data:\n"
@@ -97,7 +93,11 @@ build()
 
     fi
 
-    printf "\n\nBUILD FINISHED!\n\n"
+    duration=$SECONDS
+    minutes=$((duration/60))
+    seconds=$((duration%60))
+    printf "\n\nBUILD FINISHED IN $minutes m $seconds s.\n\n"
+
     ask_what_to_build
 
 }
