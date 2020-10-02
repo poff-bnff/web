@@ -14,6 +14,8 @@ const STRAPIHOSTWITHDIR = `http://${process.env['StrapiHost']}${STRAPIDIR}`;
 const mapping = {
     'poff.ee': 'POFFiArticle',
     'justfilm.ee': 'JustFilmiArticle',
+    'kinoff.poff.ee': 'KinoffiArticle',
+    'industry.poff.ee': 'IndustryArticle',
     'shorts.poff.ee': 'ShortsiArticle'
 }
 const modelName = mapping[DOMAIN]

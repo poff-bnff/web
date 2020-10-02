@@ -9,6 +9,10 @@ if (process.env['DOMAIN'] === 'justfilm.ee') {
     var stylesFolderSource = path.join(__dirname, '../source/_styles_templates/_styles_justfilm/');
 } else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
     var stylesFolderSource = path.join(__dirname, '../source/_styles_templates/_styles_shorts/');
+} else if (process.env['DOMAIN'] === 'kinoff.poff.ee') {
+    var stylesFolderSource = path.join(__dirname, '../source/_styles_templates/_styles_kinoff/');
+} else if (process.env['DOMAIN'] === 'industry.poff.ee') {
+    var stylesFolderSource = path.join(__dirname, '../source/_styles_templates/_styles_industry/');
 } else {
     var stylesFolderSource = path.join(__dirname, '../source/_styles_templates/_styles_poff/');
 }
