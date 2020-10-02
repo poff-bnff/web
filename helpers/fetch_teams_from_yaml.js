@@ -24,6 +24,10 @@ for (const ix in languages) {
             var templateDomainName = 'justfilm';
         } else if (DOMAIN === 'shorts.poff.ee') {
             var templateDomainName = 'shorts';
+        } else if (DOMAIN === 'kinoff.poff.ee') {
+            var templateDomainName = 'kinoff';
+        } else if (DOMAIN === 'industry.poff.ee') {
+            var templateDomainName = 'industry';
         } else {
             var templateDomainName = 'poff';
         }
