@@ -3,6 +3,8 @@ const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
 let url = window.location;
 let pageURL = "https://dev.inscaping.eu"
+// let pageURL = "http://localhost:5000"
+
 
 
 console.log(window.location)
@@ -66,7 +68,7 @@ function CheckIfProfFilled(USER_PROFILE){
     if (USER_PROFILE.profile_filled === "false"){
         console.log("profile unfilled")
         if (window.location.href != `${pageURL}/userprofile`){
-            window.open(`${pageURL}/userprofile`, "_self")
+            // window.open(`${pageURL}/userprofile`, "_self")
         }
     }
     else if (USER_PROFILE.profile_filled === "true") {
