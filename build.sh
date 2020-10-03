@@ -64,3 +64,4 @@ printf '\n\n----------     Finished downloading all img from Strapi    ---------
 
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
+

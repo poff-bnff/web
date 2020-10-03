@@ -1,4 +1,4 @@
-export DOMAIN='poff.ee'
+export DOMAIN='kinoff.poff.ee'
 echo DOMAIN
 echo $DOMAIN
 . ./build.sh
