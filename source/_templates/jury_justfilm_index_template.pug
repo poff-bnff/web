@@ -22,7 +22,7 @@ block content
                                         .person
                                             .person_head
                                                 - var assetsDir = '/assets/img/dynamic/img_persons/'
-                                                if juryMember.pictureAtTeam
+                                                if juryMember.pictureAtTeam && juryMember.pictureAtTeam[0].hash
                                                     - var personPic = assetsDir + juryMember.pictureAtTeam[0].hash + juryMember.pictureAtTeam[0].ext
                                                 else if juryMember.person.picture
                                                     - var personPic = assetsDir + juryMember.person.picture.hash + juryMember.person.picture.ext
