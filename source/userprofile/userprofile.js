@@ -1,5 +1,4 @@
 
-
 let profileImg = document.getElementById("profileImg")
 let firstName = document.getElementById("firstName")
 let lastName = document.getElementById("lastName")
@@ -22,6 +21,17 @@ function validateEmail() {
     }
 }
 
+function valdateBDay(){
+    let dob = document.getElementById("dob").value
+    let minAge = ((date.getMonth()+1 ) + '-' + (date.getDate()) + '-' + (date.getFullYear()-12))
+    let maxAge = ((date.getMonth()+1 ) + '-' + (date.getDate()) + '-' + (date.getFullYear()-112))
+    if(dob > minAge || dob < maxAge ){
+        document.getElementById("dob").classList.add("invalid")
+    }else {
+        document.getElementById("dob").classList.remove("invalid")
+    }
+}
+
 function validateForm() {
     console.log('validate form')
     let profileImg = document.getElementById("profileImg").value
@@ -37,8 +47,14 @@ function validateForm() {
         console.log(country, ' countryif')
         document.getElementById("country").classList.add("invalid")
         country.value='Elukoha riik'
-
     }
+    if(firstName == '' || firsttName.length < 2 || isNaN(firsttName)){
+        document.getElementById("firstName").classList.add("invalid")
+    }
+    if(lastName == '' || lasttName.length < 2 || isNaN(lasttName)){
+        document.getElementById("lastName").classList.add("invalid")
+    }
+
 }
 
 
@@ -57,8 +73,6 @@ async function LoadUserInfo(){
         // country.value='Elukoha riik'
 }
 LoadUserInfo()
-
-
 
 async function sendUserProfile(){
     //siin panen kokku listi objektidest mida saata cognitosse

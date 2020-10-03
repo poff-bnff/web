@@ -9,8 +9,6 @@ block content
                 br
                 br
                 br
-                br
-                br
                 h1.display-4.m-b-2 Palun täida kasutaja ankeet:
 
                 div.form
@@ -19,10 +17,10 @@ block content
                         input#profileImg.form-control(type='file', value='fileupload' name='profileImg')
                     div.form-group
                         label(for='firstName') Eesnimi:
-                        input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' required=true)
+                        input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' required='')
                     div.form-group
                         label(for='lastName') Perekonnanimi:
-                        input#lastName.form-control(type='text', placeholder='Perenimi' name='lastName' required=true)
+                        input#lastName.form-control(type='text', placeholder='Perenimi' name='lastName' required='')
 
                     div.form-group
                         label(for='gender') Sugu:
@@ -33,10 +31,10 @@ block content
                             option(value='other',selected='')
                     div.form-group
                         label(for='dob') Sünnikuupäev:
-                        input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
+                        input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob', required='')
                     div.form-group
                         label(for='phoneNr') Telefoni number:
-                        input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr')
+                        input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr', required='')
                     div.form-group
                         label(for='email') Email:
                         input#email.form-control(type='email', placeholder='Email' name='email' oninput="validateEmail()")
@@ -45,7 +43,7 @@ block content
                         input#country.form-control(type='text', placeholder='Elukoha riik' name='country')
                     div.form-group
                         label(for='city') Elukoha linn:
-                        input#city.form-control(type='text', placeholder='Elukoha linn' name='city')
+                        input#city.form-control(type='text', placeholder='Elukoha linn' name='city', required='')
                     button.btn.btn-primary(onclick='validateForm(), sendUserProfile()') Salvesta
 
     style.
