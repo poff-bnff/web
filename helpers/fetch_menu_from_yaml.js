@@ -12,6 +12,8 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const mapping = {
     'poff.ee': 'POFFiMenu',
     'justfilm.ee': 'JustFilmiMenu',
+    'kinoff.poff.ee': 'KinoffiMenu',
+    'industry.poff.ee': 'IndustryMenu',
     'shorts.poff.ee': 'ShortsiMenu'
 }
 const STRAPIDATA_MENU = STRAPIDATA[mapping[DOMAIN]]

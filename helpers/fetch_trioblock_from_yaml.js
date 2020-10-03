@@ -12,11 +12,15 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const mapping = {
     'poff.ee': 'TrioPÖFF',
     'justfilm.ee': 'TrioJustFilm',
+    'kinoff.poff.ee': 'TrioKinoff',
+    'industry.poff.ee': 'TrioIndustry',
     'shorts.poff.ee': 'TrioShorts'
 }
 const articleMapping = {
     'poff.ee': 'poffi',
     'justfilm.ee': 'just_filmi',
+    'kinoff.poff.ee': 'kinoffi_article',
+    'industry.poff.ee': 'industry_article',
     'shorts.poff.ee': 'shortsi'
 }
 const STRAPIDATA_TRIO = STRAPIDATA[mapping[DOMAIN]]
