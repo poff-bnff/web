@@ -20,6 +20,17 @@ function validateEmail() {
         document.getElementById("email").classList.remove("invalid")
     }
 }
+function validatePhoneNr() {
+    let phoneNr = document.getElementById("phoneNr").value
+    const regex = /^(?:\+\d{1,3}|0\d{1,3}|00\d{1,2})?(?:\s?\(\d+\))?(?:[-\/\s.]|\d)+$/
+    console.log(regex.test(String(phoneNr).toLowerCase()))
+
+    // if (!re.test(String(emailval).toLowerCase())) {
+    //     document.getElementById("email").classList.add("invalid")
+    // } else {
+    //     document.getElementById("email").classList.remove("invalid")
+    // }
+}
 
 function valdateBDay(){
     let dob = document.getElementById("dob").value
@@ -48,11 +59,14 @@ function validateForm() {
         document.getElementById("country").classList.add("invalid")
         country.value='Elukoha riik'
     }
-    if(firstName == '' || firsttName.length < 2 || isNaN(firsttName)){
+    if(firstName == '' || firsttName.length < 2 || !isNaN(firsttName)){
         document.getElementById("firstName").classList.add("invalid")
     }
-    if(lastName == '' || lasttName.length < 2 || isNaN(lasttName)){
+    if(lastName == '' || lasttName.length < 2 || !isNaN(lasttName)){
         document.getElementById("lastName").classList.add("invalid")
+    }
+    if(city == ''){
+        document.getElementById("city").classList.add("invalid")
     }
 
 }
