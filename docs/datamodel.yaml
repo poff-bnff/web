@@ -4,8 +4,29 @@
 # Industry
 # Kinoff
 
-WebUser
+WebPermission: &WebPermission
+    type: (text)
+    name: (text)
+    action: (text)
+    enabled: (Boolean)
+    controller: (text)
+    policy: (text)
 
+WebRole: &WebRole
+    name: (text)
+    description: (text)
+    type: (text)
+    web_permission: *WebPermission
+
+WebUser:
+    username: (text)
+    emali: (Email)
+    password: (Password)
+    resetPasswordToken: (text)
+    provider: (text)
+    confirmed: (Boolean)
+    blocked: (Boolean)
+    web_role: *WebRole
 
 Translated: &Translated
     et: (text)
