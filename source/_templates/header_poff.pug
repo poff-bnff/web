@@ -14,9 +14,13 @@ header
     nav.main_menu
         ul.ul_yx
             li
-                a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
-                #hello(style='color: red')
-                #logOut(onclick='logOut()', style={color:'black', cursor: 'pointer'})= self.label.menu.mainLogout
+                nav.user_menu
+                    span.org_item
+                        a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
+                    span.org_item
+                        #hello(style='color: red') Hello
+                    span.org_item
+                        #logOut(onclick='logOut()', style={color:'black', cursor: 'pointer'})= self.label.menu.mainLogout
 
             li
                 nav.org_menu
