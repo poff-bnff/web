@@ -14,10 +14,9 @@ header
     nav.main_menu
         ul.ul_yx
             li
-                a#login(href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
-                #login(style='color: red')
+                a#logIn(href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
                 #hello(style='color: red')
-                #out(style={color: 'red', cursor: 'pointer'})
+                #logOut(onclick='logOut()', style={color:'black', cursor: 'pointer'})= self.label.menu.mainLogout
 
             li
                 nav.org_menu

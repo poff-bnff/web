@@ -17,7 +17,19 @@ var userprofilePageUrl = pageURL + '/userprofile'
 
 
 if (localStorage.getItem('ID_TOKEN') != null){
-    document.getElementById("login").style.visibility = "hidden"
+    document.getElementById("logIn").style.visibility = "hidden"
+}
+
+if (localStorage.getItem('ID_TOKEN') == null){
+    document.getElementById("logOut").style.visibility = "hidden"
+}
+
+function logOut() {
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem(REFRESH_TOKEN);
+    localStorage.removeItem(ID_TOKEN);
+    console.log('LOGITUD VÄLJA');
+    location.reload();
 }
 
 

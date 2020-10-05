@@ -46,11 +46,11 @@ async function loadUserProfile(){
         const USER_PROFILE = await response.json()
         console.log('USER_PROFILE in header: ' + JSON.stringify(USER_PROFILE))
 
-        if ('email' in USER_PROFILE){
-            hello.innerHTML = 'Hello, ' + USER_PROFILE.name
-            out.innerHTML = '<a onclick="logOut()">Log out</a>'
+        // if ('email' in USER_PROFILE){
+        //     hello.innerHTML = 'Hello, ' + USER_PROFILE.name
+        //     out.innerHTML = '<a onclick="logOut()">Log out</a>'
 
-        }
+        // }
         // else {
         //     // hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
         //     return false
@@ -75,10 +75,10 @@ function CheckIfProfFilled(USER_PROFILE){
     }
 }
 
-function logOut() {
-    localStorage.removeItem(ACCESS_TOKEN);
-    localStorage.removeItem(REFRESH_TOKEN);
-    localStorage.removeItem(ID_TOKEN);
-    console.log('LOGITUD VÄLJA');
-    location.reload();
-}
+// function logOut() {
+//     localStorage.removeItem(ACCESS_TOKEN);
+//     localStorage.removeItem(REFRESH_TOKEN);
+//     localStorage.removeItem(ID_TOKEN);
+//     console.log('LOGITUD VÄLJA');
+//     location.reload();
+// }
