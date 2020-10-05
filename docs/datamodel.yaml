@@ -5,6 +5,7 @@
 # Kinoff
 
 WebPermission: &WebPermission
+    _path: /web-permissions
     type: (text)
     name: (text)
     action: (text)
@@ -13,12 +14,14 @@ WebPermission: &WebPermission
     policy: (text)
 
 WebRole: &WebRole
+    _path: /web-roles
     name: (text)
     description: (text)
     type: (text)
     web_permission: *WebPermission
 
 WebUser:
+    _path: /web-users
     username: (text)
     emali: (Email)
     password: (Password)
@@ -546,14 +549,26 @@ FestivalEdition: &FestivalEdition
 
 Organisation: &Organisation
     _path: /organisations
-    name: (text)
-    nameTranslated: # (Component (repeatable))
-        - *Translated
+    namePrivate: (text)
+    name: *Translated # (Component)
     description: *Translated # (Component)
     images: #(Component (repeatable))
         - *StrapiMedia
     type: (Enumeration)
-    logo: *StrapiMedia
+    logoWhite: *StrapiMedia
+    logoBlack: *StrapiMedia
+    logoColour: *StrapiMedia
+    industry_articles:
+        - *IndustryArticle
+    just_filmi_articles:
+        - *JustFilmiArticle
+    kinoffi_articles:
+        - *KinoffiArticle
+    poffi_articles:
+        - *POFFiArticle
+    shortsi_articles:
+        - *ShortsiArticle
+    homepageUrl: (text)
 
 ScreeningMode: &ScreeningMode
     _path: /screening-modes
@@ -607,6 +622,25 @@ CountriesAndLanguages: &CountriesAndLanguages
         - *Country
     languages: #(Component (repeatable))
         - *Language
+
+# Programme
+Programme:
+    _path: /programmes
+    namePrivate: (text)
+    name: *Translated #(Component)
+    description: *Translated # (Rich text)
+    festival_editions:
+        - *FestivalEdition #(Component)
+    images:
+        - *StrapiMedia
+    presentedByText: *Translated #(Component)
+    presenters: #(Component (repeatable))
+        - *Organisation
+    tag_programmes:
+        - *TagProgramme #(Component)
+    domains:
+        - *Domain #(Component)
+    order: (Number)
 
 # Film
 Film: &Film
