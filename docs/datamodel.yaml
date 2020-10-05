@@ -518,7 +518,7 @@ KinoffiMenu: &KinoffiMenu
     subMenuItem: #(Component (repeatable))
         - *KinoffiSubMenuItem
 
-#  Festival
+#  Festival & Film
 Festival: &Festival
     _path: /festivals
     name_et: (text)
@@ -626,43 +626,6 @@ CountriesAndLanguages: &CountriesAndLanguages
     languages: #(Component (repeatable))
         - *Language
 
-# Programme
-Programme:
-    _path: /programmes
-    namePrivate: (text)
-    name: *Translated #(Component)
-    description: *Translated # (Rich text)
-    festival_editions:
-        - *FestivalEdition #(Component)
-    images:
-        - *StrapiMedia
-    presentedByText: *Translated #(Component)
-    presenters: #(Component (repeatable))
-        - *Organisation
-    tag_programmes:
-        - *TagProgramme #(Component)
-    domains:
-        - *Domain #(Component)
-    order: (Number)
-
-# Cassette:
-#     title_et: (text)
-#     title_en: (text)
-#     title_ru: (text)
-#     synopsis: *Translated #(Rich text)
-#     media: *FilmMedia
-#     festival_edition: *FestivalEdition
-#     tags: *Tags
-#     slug_et: (UID)
-#     slug_en: (UID)
-#     slug_ru: (UID)
-#     cassetteId: (text)
-#     presenters:
-#         - *Organisation
-#     screenings:
-#         - *Screening
-
-# Film
 Film: &Film
     _path: /films
     id: 1 (number)
@@ -717,6 +680,44 @@ Screening: &Screening
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
 
+Cassette:
+    _path: /cassettes
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    synopsis: *Translated #(Rich text)
+    media: *FilmMedia
+    festival_edition: *FestivalEdition
+    tags: *Tags
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    cassetteId: (text)
+    presenters:
+        - *Organisation
+    screenings:
+        - *Screening
+
+# Programme
+Programme:
+    _path: /programmes
+    namePrivate: (text)
+    name: *Translated #(Component)
+    description: *Translated # (Rich text)
+    festival_editions:
+        - *FestivalEdition #(Component)
+    images:
+        - *StrapiMedia
+    presentedByText: *Translated #(Component)
+    presenters: #(Component (repeatable))
+        - *Organisation
+    tag_programmes:
+        - *TagProgramme #(Component)
+    domains:
+        - *Domain #(Component)
+    order: (Number)
+
+# Person & Team
 Person: &Person
     _path: /people
     firstName: (text)
