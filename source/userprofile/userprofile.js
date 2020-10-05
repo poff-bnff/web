@@ -2,6 +2,7 @@
 let profileImg = document.getElementById("profileImg")
 let firstName = document.getElementById("firstName")
 let lastName = document.getElementById("lastName")
+let lastName = document.getElementById("gender")
 let dob = document.getElementById("dob")
 let phoneNr = document.getElementById("phoneNr")
 let email = document.getElementById("email")
@@ -22,14 +23,9 @@ function validateEmail() {
 }
 function validatePhoneNr() {
     let phoneNr = document.getElementById("phoneNr").value
-    const regex = /^(?:\+\d{1,3}|0\d{1,3}|00\d{1,2})?(?:\s?\(\d+\))?(?:[-\/\s.]|\d)+$/
+    const regex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s0-9]*$/
     console.log(regex.test(String(phoneNr).toLowerCase()))
 
-    // if (!re.test(String(emailval).toLowerCase())) {
-    //     document.getElementById("email").classList.add("invalid")
-    // } else {
-    //     document.getElementById("email").classList.remove("invalid")
-    // }
 }
 
 function valdateBDay(){
@@ -93,23 +89,12 @@ async function sendUserProfile(){
         {Name: "picture", Value: profileImg.value},
         {Name: "name", Value: firstName.value},
         {Name: "family_name", Value: lastName.value},
-        {Name: "gender", Value: $('input[name="gender"]:checked').val()},
+        {Name: "gender", Value: gender.value},
         {Name: "birthdate", Value: dob.value},
         {Name: "phone_number", Value: phoneNr.value},
         {Name: "email", Value: email.value},
         {Name: "address", Value: `${country.value}, ${city.value}`},
         ]
-
-    // let userToSend={
-    //     picture: profileImg.value,
-    //     name: firstName.value,
-    //     family_name: lastName.value,
-    //     gender: $('input[name="gender"]:checked').val(),
-    //     birthdate: dob.value,
-    //     phone: phoneNr.value,
-    //     email: email.value,
-    //     address: `${country.value}, ${city.value}`
-    // }
 
     console.log(userToSend)
 

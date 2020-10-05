@@ -6,11 +6,11 @@ let url = window.location;
 // let pageURL = 'https://dev.inscaping.eu'
 // let userprofilePageURL = pageURL + '/userprofile/'
 
-let pageURL = 'http://localhost:4000'
-let userprofilePageURL = pageURL + '/userprofile'
-
-// let pageURL = 'http://localhost:5000'
+// let pageURL = 'http://localhost:4000'
 // let userprofilePageURL = pageURL + '/userprofile'
+
+let pageURL = 'http://localhost:5000'
+let userprofilePageURL = pageURL + '/userprofile'
 
 
 loadUserProfile()
