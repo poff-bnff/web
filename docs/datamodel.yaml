@@ -14,7 +14,7 @@ WebPermission: &WebPermission
     policy: (text)
 
 WebRole: &WebRole
-    _path:/web-roles
+    _path: /web-roles
     name: (text)
     description: (text)
     type: (text)
@@ -629,14 +629,17 @@ Programme:
     namePrivate: (text)
     name: *Translated #(Component)
     description: *Translated # (Rich text)
-    festival_edition: *FestivalEdition #(Component)
+    festival_editions:
+        - *FestivalEdition #(Component)
     images:
         - *StrapiMedia
     presentedByText: *Translated #(Component)
     presenters: #(Component (repeatable))
         - *Organisation
-    tag_programme: *TagProgramme #(Component)
-    domain: *Domain #(Component)
+    tag_programmes:
+        - *TagProgramme #(Component)
+    domains:
+        - *Domain #(Component)
     order: (Number)
 
 # Film
