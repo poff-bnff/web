@@ -1,5 +1,3 @@
-# web
-
 |  | Develop | Staging | Live |
 | --- | --- | --- | --- |
 | **poff**.ee |  |  | [![](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiOXB4MUc4YkVnRkF2UGxBczZBSVlvdGFnaktDUC9nemgvdXI0ekk0ejBjMFRkNGtQWEF2TTRHV2RQbFdiMWtCdTRsM2ZYVm1JNkZ6SE9LWDA2U1pWVlFzPSIsIml2UGFyYW1ldGVyU3BlYyI6InIwUy9GcktsV20yc3VmUkYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://d1boq44u2bbz7d.cloudfront.net) |
