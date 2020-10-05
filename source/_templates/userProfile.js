@@ -3,11 +3,11 @@ const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
 let url = window.location;
 
-let pageURL = 'https://dev.inscaping.eu'
-let userprofilePageURL = pageURL + '/userprofile/'
+// let pageURL = 'https://dev.inscaping.eu'
+// let userprofilePageURL = pageURL + '/userprofile/'
 
-// let pageURL = 'http://localhost:4000'
-// let userprofilePageURL = pageURL + '/userprofile'
+let pageURL = 'http://localhost:4000'
+let userprofilePageURL = pageURL + '/userprofile'
 
 // let pageURL = 'http://localhost:5000'
 // let userprofilePageURL = pageURL + '/userprofile'
@@ -30,7 +30,14 @@ async function storeAuthentication(access_token, id_token) {
     localStorage.setItem(ACCESS_TOKEN, access_token);
     localStorage.setItem(ID_TOKEN, id_token);
     window.location.hash = '';
-    location.reload();
+
+    if (localStorage.getItem('url')){
+    let url = localStorage.getItem('url')
+    window.open(url, '_self')
+    }
+    else {
+    location.reload()
+    }
 }
 
 
@@ -46,14 +53,15 @@ async function loadUserProfile(){
         const USER_PROFILE = await response.json()
         console.log('USER_PROFILE in header: ' + JSON.stringify(USER_PROFILE))
 
-        if ('email' in USER_PROFILE){
-            hello.innerHTML = 'Hello, ' + USER_PROFILE.name
-            out.innerHTML = '<a onclick="logOut()">Log out</a>'
+        // if ('email' in USER_PROFILE){
+        //     hello.innerHTML = 'Hello, ' + USER_PROFILE.name
+        //     out.innerHTML = '<a onclick="logOut()">Log out</a>'
 
-        } else {
-            hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
-            return false
-        }
+        // }
+        // else {
+        //     // hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
+        //     return false
+        // }
         CheckIfProfFilled(USER_PROFILE)
 
 
@@ -74,10 +82,10 @@ function CheckIfProfFilled(USER_PROFILE){
     }
 }
 
-function logOut() {
-    localStorage.removeItem(ACCESS_TOKEN);
-    localStorage.removeItem(REFRESH_TOKEN);
-    localStorage.removeItem(ID_TOKEN);
-    console.log('LOGITUD VÄLJA');
-    location.reload();
-}
+// function logOut() {
+//     localStorage.removeItem(ACCESS_TOKEN);
+//     localStorage.removeItem(REFRESH_TOKEN);
+//     localStorage.removeItem(ID_TOKEN);
+//     console.log('LOGITUD VÄLJA');
+//     location.reload();
+// }

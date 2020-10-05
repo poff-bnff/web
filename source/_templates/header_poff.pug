@@ -13,10 +13,10 @@ header
 
     nav.main_menu
         ul.ul_yx
-            //- li
-            //-     #hello(style='color: red')
-            //-     //- #out(style='color: red')
-            //-     #out(style={color: 'red', cursor: 'pointer'})
+            li
+                a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
+                #hello(style='color: red')
+                #logOut(onclick='logOut()', style={color:'black', cursor: 'pointer'})= self.label.menu.mainLogout
 
             li
                 nav.org_menu
