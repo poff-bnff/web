@@ -27,17 +27,17 @@ html(lang= self.locale)
 
     //- KINOFF
     else if process.env['DOMAIN'] === 'kinoff.poff.ee'
-        include ../_templates/head_shorts.pug
+        include ../_templates/head_kinoff.pug
         body
-            include ../_templates/header_shorts.pug
+            include ../_templates/header_kinoff.pug
             block content
             include ../_templates/footer.pug
 
     //- INDUSTRY
     else if process.env['DOMAIN'] === 'indusrty.poff.ee'
-        include ../_templates/head_shorts.pug
+        include ../_templates/head_industry.pug
         body
-            include ../_templates/header_shorts.pug
+            include ../_templates/header_industry.pug
             block content
             include ../_templates/footer.pug
 

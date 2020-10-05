@@ -42,7 +42,9 @@
     "build_industry": ". ./build_industry.sh",
     "update_poff_styles": "DOMAIN='poff.ee' node helpers/copy_styles_acc_to_domain.js",
     "update_justfilm_styles": "DOMAIN='justfilm.ee' node helpers/copy_styles_acc_to_domain.js",
-    "update_shorts_styles": "DOMAIN='shorts.poff.ee' node helpers/copy_styles_acc_to_domain.js"
+    "update_shorts_styles": "DOMAIN='shorts.poff.ee' node helpers/copy_styles_acc_to_domain.js",
+    "Custom-Build": ". ./build_custom.sh",
+    "Custom-Serve-SSG": ". ./ssg_serve_custom.sh"
   },
   "repository": {
     "type": "git",
