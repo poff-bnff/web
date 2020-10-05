@@ -24,6 +24,10 @@ if (localStorage.getItem('ID_TOKEN') == null){
     document.getElementById("logOut").style.visibility = "hidden"
 }
 
+function saveUrl(){
+    localStorage.setItem('url', window.location.href)
+}
+
 function logOut() {
     localStorage.removeItem(ACCESS_TOKEN);
     localStorage.removeItem(REFRESH_TOKEN);

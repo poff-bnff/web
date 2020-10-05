@@ -1,7 +1,3 @@
-function testfSetAccesstoken(){
-    localStorage.setItem('ACCESS_TOKEN', 'tere')
-}
-
 async function loginViaCognito(){
 
     let loginUsername = document.getElementById('loginUsername').value;
@@ -46,6 +42,7 @@ async function loginViaCognito(){
         },
     });
 }
+
 
 // async function loadUserProfile(){
 //     console.log('loadUserProfile');

@@ -14,7 +14,7 @@ header
     nav.main_menu
         ul.ul_yx
             li
-                a#logIn(href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
+                a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
                 #hello(style='color: red')
                 #logOut(onclick='logOut()', style={color:'black', cursor: 'pointer'})= self.label.menu.mainLogout
 

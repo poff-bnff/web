@@ -30,7 +30,9 @@ async function storeAuthentication(access_token, id_token) {
     localStorage.setItem(ACCESS_TOKEN, access_token);
     localStorage.setItem(ID_TOKEN, id_token);
     window.location.hash = '';
-    location.reload();
+    // location.reload();
+    console.log(localStorage.getItem('url'))
+    // window.open(localStorage.getItem('url'))
 }
 
 
