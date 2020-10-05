@@ -15,6 +15,7 @@ let userprofilePageURL = pageURL + '/userprofile'
 
 loadUserProfile()
 
+
 if (window.location.hash) {
     const [access_token, id_token, token_type, token_expires] = (window.location.hash.substr(1)).split('&')
 
@@ -43,16 +44,18 @@ async function storeAuthentication(access_token, id_token) {
 
 
 async function loadUserProfile(){
+    let USER_PROFILE;
 
+    if (localStorage.getItem('USER_PROFILE' == null)){
     console.log('loadUserProfile');
     let response = await fetch(`https://api.poff.ee/profile`, {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')}
         });
-        const USER_PROFILE = await response.json()
+        USER_PROFILE = await response.json()
         console.log('USER_PROFILE in header: ' + JSON.stringify(USER_PROFILE))
-
+        localStorage.setItem('USER_PROFILE', JSON.stringify(USER_PROFILE))
         // if ('email' in USER_PROFILE){
         //     hello.innerHTML = 'Hello, ' + USER_PROFILE.name
         //     out.innerHTML = '<a onclick="logOut()">Log out</a>'
@@ -62,8 +65,10 @@ async function loadUserProfile(){
         //     // hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
         //     return false
         // }
+    }
+    if (USER_PROFILE){
         CheckIfProfFilled(USER_PROFILE)
-
+    }
 
 }
 
