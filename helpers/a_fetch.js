@@ -141,7 +141,7 @@ function TakeOutTrash (data, model, dataPath) {
     const isArray = (a) => { return Array.isArray(a) }
     const isEmpty = (p) => { return !p || p == null || p === '' || p === [] || (Object.keys(p).length === 0 && p.constructor === Object)} // "== null" checks for both null and for undefined
 
-    console.log('Grooming', dataPath, data)
+    // console.log('Grooming', dataPath, data)
     // console.log('Grooming', dataPath, data, model)
     // eeldame, et nii data kui model on objektid
 
@@ -150,20 +150,20 @@ function TakeOutTrash (data, model, dataPath) {
     for (const key of keysToCheck) {
         if (isEmpty(data[key])) { delete(data[key]); continue }
         // console.log(key, model)
-        console.log('key', key)
+        // console.log('key', key)
         if (['id', '_path', '_model'].includes(key)) {
             report.nobrainers.push(key)
-            console.log('Definately keep', key, 'in', dataPath)
+            // console.log('Definately keep', key, 'in', dataPath)
             continue
         }
         if (!model.hasOwnProperty(key)) {
             report.trash.push(key)
-            console.log('Trash', key, 'in', dataPath)
+            // console.log('Trash', key, 'in', dataPath)
             delete(data[key])
             continue
         }
         report.keepers.push(key)
-        console.log('Keep', key, 'in', dataPath, data[key])
+        // console.log('Keep', key, 'in', dataPath, data[key])
         let nextData = data[key]
         const nextModel = model[key]
 
@@ -174,17 +174,17 @@ function TakeOutTrash (data, model, dataPath) {
         if (isArray(nextData) && isArray(nextModel)) {
             let filtered = []
             for (const nd of nextData) {
-                console.log('nd,', nd, key);
+                // console.log('nd,', nd, key);
                 if (isEmpty(nd)) {
-                    console.log(nd, 'on tyhi')
+                    // console.log(nd, 'on tyhi')
                     continue
                 }
-                console.log('lisan', nd);
+                // console.log('lisan', nd);
                 filtered.push(nd)
                 TakeOutTrash(nd, nextModel[0], key)
             }
             if(filtered.length == 0) {
-                console.log('on tyhi kyll');
+                // console.log('on tyhi kyll');
                 delete(data[key])
             } else {
                 data[key] = filtered
