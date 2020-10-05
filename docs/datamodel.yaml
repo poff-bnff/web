@@ -4,6 +4,30 @@
 # Industry
 # Kinoff
 
+WebPermission: &WebPermission
+    type: (text)
+    name: (text)
+    action: (text)
+    enabled: (Boolean)
+    controller: (text)
+    policy: (text)
+
+WebRole: &WebRole
+    name: (text)
+    description: (text)
+    type: (text)
+    web_permission: *WebPermission
+
+WebUser:
+    username: (text)
+    emali: (Email)
+    password: (Password)
+    resetPasswordToken: (text)
+    provider: (text)
+    confirmed: (Boolean)
+    blocked: (Boolean)
+    web_role: *WebRole
+
 Translated: &Translated
     et: (text)
     en: (text)
@@ -915,44 +939,6 @@ KinoffiFooter: &KinoffiFooter
     supporters: #(Component (repeatable))
         - *SupSecKinoff
 
-# vana kraam, kustuta, kui enam ei kasuta
-FooterLogoShorts: &FooterLogoShorts
-    shortsi_article: *ShortsiArticle
-    url: (text)
-    imgWhite: *StrapiMedia
-    imgColor: *StrapiMedia
-    imgBlack: *StrapiMedia
-
-FooterLogoJustFilm: &FooterLogoJustFilm
-    pof_fi_article: *POFFiArticle
-    url: (text)
-    imgWhite: *StrapiMedia
-    imgColor: *StrapiMedia
-    imgBlack: *StrapiMedia
-
-LogoSectionJustFilm: &LogoSectionJustFilm
-    name: *Translated #(Component)
-    order: (Number)
-    logo: #(Component (repeatable))
-        - *FooterLogoJustFilm
-
-Footer:
-    _path: /footers
-    socialGroup: #(Component (repeatable))
-        - *SocialGroup
-    item: #(Component (repeatable))
-        - *FooterItemNav
-    logosSections: #(Component (repeatable))
-        - *LogoSectionJustFilm
-    namePrivate: (text)
-    domain: *Domain #(Component)
-
-# Roll
-Roll: &Roll
-    _path: /rolls
-    namePrivate: (text)
-    name: *Translated #(Component)
-
 # Product & Payment
 Payment: &Payment
     status: (text)
@@ -1020,29 +1006,12 @@ ProductPass: &ProductPass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
-# Hero (kustuta block,  kui enam ei kasuta
-TrioBlockItemPoff: &TrioBlockItemPoff
-    title: *Translated #(Component)
-    lead: *Translated #(Component)
-    customUrl: (text)
-    order: (Number)
-    image: *StrapiMedia #(Component)
-
+# Hero
 HeroArticlePoff:
     _path: /article-hero
     article_et: *POFFiArticle #(Component)
     article_en: *POFFiArticle #(Component)
     article_ru: *POFFiArticle #(Component)
-
-TrioBlockPoff:
-    _path: /trio-block-poeff
-    blockName: *Translated
-    poffi_article_1: *POFFiArticle #(Component)
-    poffi_article_2: *POFFiArticle #(Component)
-    poffi_article_3: *POFFiArticle #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff #(Component)
-    trioBlockItem_3: *TrioBlockItemPoff #(Component)
 
 HeroArticleJustFilm:
     _path: /hero-article-just-film
@@ -1050,31 +1019,11 @@ HeroArticleJustFilm:
     article_en: *JustFilmiArticle #(Component)
     article_ru: *JustFilmiArticle #(Component)
 
-TrioBlockJustFilm:
-    _path: /trio-block-just-film
-    blockName: *Translated
-    just_filmi_article_1: *JustFilmiArticle #(Component)
-    just_filmi_article_2: *JustFilmiArticle #(Component)
-    just_filmi_article_3: *JustFilmiArticle #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff #(Component)
-    trioBlockItem_3: *TrioBlockItemPoff #(Component)
-
 HeroArticleShorts:
     _path: /hero-article-shorts
     article_et: *ShortsiArticle #(Component)
     article_en: *ShortsiArticle #(Component)
     article_ru: *ShortsiArticle #(Component)
-
-TrioBlockShorts:
-    _path: /trio-block-shorts
-    blockName: *Translated #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff #(Component)
-    trioBlockItem_3: *TrioBlockItemPoff #(Component)
-    shortsi_article_1: *ShortsiArticle #(Component)
-    shortsi_article_2: *ShortsiArticle #(Component)
-    shortsi_article_3: *ShortsiArticle #(Component)
 
 HeroArticleIndustry:
     _path: /hero-article-industry

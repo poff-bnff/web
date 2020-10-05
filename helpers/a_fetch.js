@@ -139,8 +139,9 @@ async function strapiFetch(modelName, token){
 function TakeOutTrash (data, model, dataPath) {
     const isObject = (o) => { return typeof o === 'object' && o !== null }
     const isArray = (a) => { return Array.isArray(a) }
-    const isEmpty = (p) => { return !p || p == null || p === '' || p === [] } // "== null" checks for both null and for undefined
+    const isEmpty = (p) => { return !p || p == null || p === '' || p === [] || (Object.keys(p).length === 0 && p.constructor === Object)} // "== null" checks for both null and for undefined
 
+    // console.log('Grooming', dataPath, data)
     // console.log('Grooming', dataPath, data, model)
     // eeldame, et nii data kui model on objektid
 
@@ -149,6 +150,7 @@ function TakeOutTrash (data, model, dataPath) {
     for (const key of keysToCheck) {
         if (isEmpty(data[key])) { delete(data[key]); continue }
         // console.log(key, model)
+        // console.log('key', key)
         if (['id', '_path', '_model'].includes(key)) {
             report.nobrainers.push(key)
             // console.log('Definately keep', key, 'in', dataPath)
@@ -161,21 +163,34 @@ function TakeOutTrash (data, model, dataPath) {
             continue
         }
         report.keepers.push(key)
-        // console.log('Keep', key, 'in', dataPath)
-        const nextData = data[key]
+        // console.log('Keep', key, 'in', dataPath, data[key])
+        let nextData = data[key]
         const nextModel = model[key]
 
         if (isArray(nextData) ^ isArray(nextModel)) { // bitwise OR - XOR: true ^ false === false ^ true === true
-            console.log(nextData, nextModel)
+            console.log('next', nextData, key)
             throw new Error('Data vs model mismatch. Both should be array or none of them.')
         }
         if (isArray(nextData) && isArray(nextModel)) {
+            let filtered = []
             for (const nd of nextData) {
-                if (isEmpty(nd)) { continue }
+                // console.log('nd,', nd, key);
+                if (isEmpty(nd)) {
+                    // console.log(nd, 'on tyhi')
+                    continue
+                }
+                // console.log('lisan', nd);
+                filtered.push(nd)
                 TakeOutTrash(nd, nextModel[0], key)
             }
+            if(filtered.length == 0) {
+                // console.log('on tyhi kyll');
+                delete(data[key])
+            } else {
+                data[key] = filtered
+            }
         } else if (isObject(nextData) && isObject(nextModel)) {
-            TakeOutTrash(nextData, nextModel, key)
+            TakeOutTrash(data[key], nextModel, key)
         }
     }
     // console.log('Reporting', dataPath, report)
@@ -301,3 +316,28 @@ const foo = async () => {
 }
 
 foo()
+
+// const testdata =
+//       {
+//         "id": 12,
+//         "person": {
+//           "id": 22,
+//           "firstName": "Elin",
+//           "lastName": "Laikre",
+//           "gender": 3,
+//           "eMail": "elin.laikre@poff.ee"
+//         },
+//         "roleAtTeam_et": "Raamatupidaja",
+//         "roleAtTeam_en": "Accountant",
+//         "roleAtTeam_ru": "Бухгалтер",
+//         "emailAtTeam": "elin.laikre@poff.ee",
+//         "order": 5,
+//         "pictureAtTeam": [
+//           {
+//           }
+//         ]
+//       }
+
+// TakeOutTrash(testdata, DATAMODEL['TeamMember'], 'root')
+
+// console.log(testdata);
