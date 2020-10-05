@@ -645,22 +645,22 @@ Programme:
         - *Domain #(Component)
     order: (Number)
 
-Cassette:
-    title_et: (text)
-    title_en: (text)
-    title_ru: (text)
-    synopsis: *Translated #(Rich text)
-    media: *FilmMedia
-    festival_edition: *FestivalEdition
-    tags: *Tags
-    slug_et: (UID)
-    slug_en: (UID)
-    slug_ru: (UID)
-    cassetteId: (text)
-    presenters:
-        - *Organisation
-    screenings:
-        - *Screening
+# Cassette:
+#     title_et: (text)
+#     title_en: (text)
+#     title_ru: (text)
+#     synopsis: *Translated #(Rich text)
+#     media: *FilmMedia
+#     festival_edition: *FestivalEdition
+#     tags: *Tags
+#     slug_et: (UID)
+#     slug_en: (UID)
+#     slug_ru: (UID)
+#     cassetteId: (text)
+#     presenters:
+#         - *Organisation
+#     screenings:
+#         - *Screening
 
 # Film
 Film: &Film
