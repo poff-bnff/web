@@ -3,11 +3,11 @@ const ID_TOKEN = "ID_TOKEN";
 const REFRESH_TOKEN = "REFRESH_TOKEN";
 let url = window.location;
 
-let pageURL = 'https://dev.inscaping.eu'
-let userprofilePageURL = pageURL + '/userprofile/'
+// let pageURL = 'https://dev.inscaping.eu'
+// let userprofilePageURL = pageURL + '/userprofile/'
 
-// let pageURL = 'http://localhost:4000'
-// let userprofilePageURL = pageURL + '/userprofile'
+let pageURL = 'http://localhost:4000'
+let userprofilePageURL = pageURL + '/userprofile'
 
 // let pageURL = 'http://localhost:5000'
 // let userprofilePageURL = pageURL + '/userprofile'
@@ -50,10 +50,11 @@ async function loadUserProfile(){
             hello.innerHTML = 'Hello, ' + USER_PROFILE.name
             out.innerHTML = '<a onclick="logOut()">Log out</a>'
 
-        } else {
-            hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
-            return false
         }
+        // else {
+        //     // hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
+        //     return false
+        // }
         CheckIfProfFilled(USER_PROFILE)
 
 
