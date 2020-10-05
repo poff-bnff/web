@@ -78,8 +78,10 @@ block content
 
 
                         section.article_contents.dark_1
-                            if self.lead
-                                p.font_weight_500.dark_1= self.lead
+                            if typeof(self.lead) !== 'object'
+                                +format(self.lead).font_weight_600.dark_1
+                            //- if self.lead
+                            //-     p.font_weight_500.dark_1= self.lead
                             //- p= self.articleContents_et
                             if typeof(self.contents) !== 'object'
                                 +format(self.contents).dark_1
