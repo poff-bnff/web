@@ -59,19 +59,16 @@ function validateForm() {
         document.getElementById("country").classList.add("invalid")
         country.value='Elukoha riik'
     }
-    if(firstName == '' || firsttName.length < 2 || !isNaN(firsttName)){
+    if(firstName == '' || firstName.length < 2 || !isNaN(firstName)){
         document.getElementById("firstName").classList.add("invalid")
     }
-    if(lastName == '' || lasttName.length < 2 || !isNaN(lasttName)){
+    if(lastName == '' || lastName.length < 2 || !isNaN(lastName)){
         document.getElementById("lastName").classList.add("invalid")
     }
     if(city == ''){
         document.getElementById("city").classList.add("invalid")
     }
-
 }
-
-
 
 async function LoadUserInfo(){
     let response = await fetch(`https://api.poff.ee/profile`, {
