@@ -23,7 +23,7 @@ for (const ix in languages) {
     const lang = languages[ix];
     console.log(`Fetching ${DOMAIN} programmes ${lang} data`);
 
-    allData = []
+    var allData = []
     for (const ix in STRAPIDATA_PROGRAMME) {
 
         for (programmeDomain in STRAPIDATA_PROGRAMME[ix].domains) {
@@ -46,15 +46,19 @@ for (const ix in languages) {
             element = rueten(element, lang);
             element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
             element.path = festivalEdition.slug;
-            console.log(element);
-            const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
-            if (dirSlug != null) {
+            // console.log(element);
+
+            if (dirSlug != null && typeof element.path !== 'undefined') {
+                const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
                 const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
+
+                allData.push(element)
+
                 let saveDir = path.join(fetchDataDir, dirSlug);
                 fs.mkdirSync(saveDir, { recursive: true });
 
                 fs.writeFileSync(yamlPath, oneYaml, 'utf8');
-                fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/${templateDomainName}_programmes_template.pug`)
+                fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/programmes_${templateDomainName}_index_template.pug`)
             }
         }
 
@@ -86,8 +90,8 @@ for (const ix in languages) {
     // allData.push(element);
     }
 
-    // const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-    // const yamlPath = path.join(fetchDir, `teams.${lang}.yaml`);
-    // fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+    const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+    const yamlPath = path.join(fetchDir, `programmes.${lang}.yaml`);
+    fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
     // console.log(allData);
 }
