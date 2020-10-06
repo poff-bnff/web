@@ -135,11 +135,19 @@ async function strapiFetch(modelName, token){
     })
 }
 
+const isEmpty = (p) => {
+    return typeof p === 'undefined'
+    || p === false
+    || p === null
+    || p === ''
+    || (Array.isArray(p) && p.length === 0)
+    || (Object.keys(p).length === 0 && p.constructor === Object)
+}
+
 
 function TakeOutTrash (data, model, dataPath) {
     const isObject = (o) => { return typeof o === 'object' && o !== null }
     const isArray = (a) => { return Array.isArray(a) }
-    const isEmpty = (p) => { return !p || p == null || p === '' || p === [] || (Object.keys(p).length === 0 && p.constructor === Object)} // "== null" checks for both null and for undefined
 
     // console.log('Grooming', dataPath, data)
     // console.log('Grooming', dataPath, data, model)
@@ -183,7 +191,7 @@ function TakeOutTrash (data, model, dataPath) {
                 filtered.push(nd)
                 TakeOutTrash(nd, nextModel[0], key)
             }
-            if(filtered.length == 0) {
+            if(filtered.length === 0) {
                 // console.log('on tyhi kyll');
                 delete(data[key])
             } else {
