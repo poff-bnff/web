@@ -9,8 +9,14 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
-const modelName = 'POFFSupporter'
-const STRAPIDATA_SUPPORTER_PAGE = STRAPIDATA[modelName]
+const mapping = {
+    'poff.ee': 'POFFSupporter',
+    'justfilm.ee': 'JustSupporter',
+    'kinoff.poff.ee': 'KinoffiSupporter',
+    'industry.poff.ee': 'IndustrySupporter',
+    'shorts.poff.ee': 'ShortsSupporter'
+}
+const STRAPIDATA_SUPPORTER_PAGE = STRAPIDATA[mapping[DOMAIN]]
 
 LangSelect('et');
 LangSelect('en');

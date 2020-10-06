@@ -4,15 +4,15 @@ footer
     .grid_footer_row
         .footer_row_item
             if self.footer.socialGroup
-                each socialGroups in self.footer.socialGroup
-                    if socialGroups.name
-                        p.footer_h= socialGroups.name
-                    if socialGroups.items
-                        each item in socialGroups.items
-                            if item.svgCode
-                                a(href=item.url target='_blank') !{item.svgCode}
-                            else if item.svgMedia
-                                img.footer_logo_item(alt=item.name data-src=`/assets/img/dynamic/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}` src=`/assets/img/dynamic/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}`)
+                //- each socialGroup in self.footer.socialGroup
+                if self.footer.socialGroup.name
+                    p.footer_h= self.footer.socialGroup.name
+                if self.footer.socialGroup.items
+                    each item in self.footer.socialGroup.items
+                        if item.svgCode
+                            a(href=item.url target='_blank') !{item.svgCode}
+                        else if item.svgMedia
+                            img.footer_logo_item(alt=item.name data-src=`/assets/img/dynamic/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}` src=`/assets/img/dynamic/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}`)
 
 
         if self.footer.item
@@ -41,30 +41,41 @@ footer
 
 
 
-    if self.footer.logosSections
-        each section in self.footer.logosSections
-            if section.name && (typeof(section.name) !== 'object')
-                h1.section_headline_footer= section.name
-            if section.logo
-                .footer_logos
-                    each logo in section.logo
-                        if logo.imgWhite
-                            img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`  src=`/assets/img/dynamic/img_footer/${logo.imgWhite.hash}${logo.imgWhite.ext}`)
-                        else if logo.imgBlack
-                            img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_footer/${logo.imgBlack.hash}${logo.imgBlack.ext}`  src=`/assets/img/dynamic/img_footer/${logo.imgBlack.hash}${logo.imgBlack.ext}`)
-                        else if logo.imgColour
-                            img.footer_logo_item(alt=logo.url data-src=`/assets/img/dynamic/img_footer/${logo.imgColour.hash}${logo.imgColour.ext}`  src=`/assets/img/dynamic/img_footer/${logo.imgColour.hash}${logo.imgColour.ext}`)
+    if self.footer.supporters
+        section.supporters_footer
+            each supporters in self.footer.supporters
+                row
+                    if supporters.name && (typeof(supporters.name) !== 'object')
+                        h1.section_headline_footer= supporters.name
+                    if supporters.supporter
+                        .footer_logos
+                            each supporter in supporters.supporter
+                                if supporter.customUrl
+                                    a(href= supporter.customUrl).footer_logo_item
+                                        if supporter.logoWhite
+                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                        else if supporter.logoBlack
+                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
+                                        else if supporter.logoColour
+                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
+                                else
+                                    if supporter.logoWhite
+                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                    else if supporter.logoBlack
+                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
+                                    else if supporter.logoColour
+                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
 
 
 
 
     //-     img.footer_logo_item_1(alt='Tartu' data-src='/assets/img/static/tartuff_f_tartu.svg' src='/assets/img/static/tartuff_f_tartu.svg')
 
-    //- h1.section_headline_footer= self.label.all.sponsors
+    //- h1.supporter_headline_footer= self.label.all.sponsors
     //- .footer_logos_1
     //-     img.footer_logo_item_1(alt='Toyota' data-src='/assets/img/static/tartuff_f_toyota.svg' src='/assets/img/static/tartuff_f_toyota.svg')
 
-    //- h1.section_headline_footer= self.label.all.supporters
+    //- h1.supporter_headline_footer= self.label.all.supporters
     //- .footer_logos_2
     //-     img.footer_logo_item_2(alt='Kultuurkapital' data-src='/assets/img/static/tartuff_f_kulka.svg' src='/assets/img/static/tartuff_f_kulka.svg')
     //-     img.footer_logo_item_2(alt='ERM' data-src='/assets/img/static/tartuff_f_erm.svg' src='/assets/img/static/tartuff_f_erm.svg')
@@ -75,14 +86,14 @@ footer
     //-     img.footer_logo_item_2(alt='Tartu 2024' data-src='/assets/img/static/tartuff_f_tartu_2024.svg' src='/assets/img/static/tartuff_f_tartu_2024.svg')
     //-     img.footer_logo_item_2(alt='Kanada' data-src='/assets/img/static/tartuff_f_canada.svg' src='/assets/img/static/tartuff_f_canada.svg')
 
-    //- h1.section_headline_footer= self.label.all.officialPartners
+    //- h1.supporter_headline_footer= self.label.all.officialPartners
     //- .footer_logos_2
     //-     img.footer_logo_item_2(alt='Lydia' data-src='/assets/img/static/tartuff_f_lydia.svg' src='/assets/img/static/tartuff_f_lydia.svg')
     //-     img.footer_logo_item_2(alt='Dorpat' data-src='/assets/img/static/tartuff_f_dorpat.svg' src='/assets/img/static/tartuff_f_dorpat.svg')
     //-     img.footer_logo_item_2(alt='Pepes' data-src='/assets/img/static/tartuff_f_pepes.svg' src='/assets/img/static/tartuff_f_pepes.svg')
     //-     img.footer_logo_item_2(alt='Medifum' data-src='/assets/img/static/tartuff_f_medifum.svg' src='/assets/img/static/tartuff_f_medifum.svg')
 
-    //- h1.section_headline_footer= self.label.all.partners
+    //- h1.supporter_headline_footer= self.label.all.partners
     //- .footer_logos_3
     //-     img.footer_logo_item_3(alt='3 tilli' data-src='/assets/img/static/tartuff_f_kolm_tilli.svg' src='/assets/img/static/tartuff_f_kolm_tilli.svg')
     //-     img.footer_logo_item_3(alt='Ahhaa' data-src='/assets/img/static/tartuff_f_ahhaa.svg' src='/assets/img/static/tartuff_f_ahhaa.svg')

@@ -10,13 +10,17 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const mapping = {
-    'poff.ee': 'TrioBlockPoff',
-    'justfilm.ee': 'TrioBlockJustFilm',
-    'shorts.poff.ee': 'TrioBlockShorts'
+    'poff.ee': 'TrioPÖFF',
+    'justfilm.ee': 'TrioJustFilm',
+    'kinoff.poff.ee': 'TrioKinoff',
+    'industry.poff.ee': 'TrioIndustry',
+    'shorts.poff.ee': 'TrioShorts'
 }
 const articleMapping = {
     'poff.ee': 'poffi',
     'justfilm.ee': 'just_filmi',
+    'kinoff.poff.ee': 'kinoffi_article',
+    'industry.poff.ee': 'industry_article',
     'shorts.poff.ee': 'shortsi'
 }
 const STRAPIDATA_TRIO = STRAPIDATA[mapping[DOMAIN]]
@@ -27,12 +31,6 @@ if (STRAPIDATA_TRIO.length < 1) {
 
 const languages = ['en', 'et', 'ru']
 
-var fetchFrom = 'TrioBlockPoff'
-if (process.env['DOMAIN'] === 'justfilm.ee') {
-    fetchFrom = 'TrioBlockJustFilm'
-} else if (process.env['DOMAIN'] === 'shorts.poff.ee') {
-    fetchFrom = 'TrioBlockShorts'
-}
 
 for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} trioblock ${lang} data`)
@@ -40,16 +38,21 @@ for (const lang of languages) {
     let copyData = JSON.parse(JSON.stringify(STRAPIDATA_TRIO[0]))
     let buffer = []
     for (key in copyData) {
-        if (key.split('_')[0] !== 'trioBlockItem') {
+        if (key.split('_')[1] !== lang) {
             continue
         }
-        let block_index = key.split('_')[1]
+        for (key2 in copyData[key]) {
+            if (key2.split('_')[0] !== 'trioItem') {
+                continue
+            }
 
-        buffer.push({
-            'block': copyData[key],
-            'article': copyData[`${articleMapping[DOMAIN]}_article_${block_index}`]
-        })
-        delete copyData[key]
+            buffer.push({
+                'block': copyData[key][key2],
+                'article': copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+            })
+            delete copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+            delete copyData[key][key2]
+        }
     }
 
     rueten(buffer, lang)
