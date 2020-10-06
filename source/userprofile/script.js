@@ -89,6 +89,7 @@ async function LoadUserInfo() {
     lastName.value = userProfile.family_name;
     email.value = userProfile.email;
     // country.value='Elukoha riik'
+    console.log(userProfile)
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -101,7 +102,9 @@ async function sendUserProfile() {
     //Kas järjekord on oluline?
     //kas Name-id on kõik õiged?
     let userToSend = [
-        { Name: "picture", Value: output.src },
+        // { Name: "picture", Value: output.src },
+        { Name: "picture", Value: "Pilt" },
+
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
