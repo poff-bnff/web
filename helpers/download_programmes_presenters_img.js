@@ -67,7 +67,7 @@ function downloadsMaker(url, dest) {
 }
 
 function readYaml(doc) {
-    process.stdout.write('Supporter page pics ')
+    process.stdout.write('Programmes presenters page pics ')
     let parallelDownloads = []
     // console.log(doc);
     if (doc) {
