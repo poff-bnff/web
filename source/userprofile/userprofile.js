@@ -1,8 +1,8 @@
 
-
 let profileImg = document.getElementById("profileImg")
 let firstName = document.getElementById("firstName")
 let lastName = document.getElementById("lastName")
+let lastName = document.getElementById("gender")
 let dob = document.getElementById("dob")
 let phoneNr = document.getElementById("phoneNr")
 let email = document.getElementById("email")
@@ -21,6 +21,23 @@ function validateEmail() {
         document.getElementById("email").classList.remove("invalid")
     }
 }
+function validatePhoneNr() {
+    let phoneNr = document.getElementById("phoneNr").value
+    const regex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s0-9]*$/
+    console.log(regex.test(String(phoneNr).toLowerCase()))
+
+}
+
+function valdateBDay(){
+    let dob = document.getElementById("dob").value
+    let minAge = ((date.getMonth()+1 ) + '-' + (date.getDate()) + '-' + (date.getFullYear()-12))
+    let maxAge = ((date.getMonth()+1 ) + '-' + (date.getDate()) + '-' + (date.getFullYear()-112))
+    if(dob > minAge || dob < maxAge ){
+        document.getElementById("dob").classList.add("invalid")
+    }else {
+        document.getElementById("dob").classList.remove("invalid")
+    }
+}
 
 function validateForm() {
     console.log('validate form')
@@ -37,11 +54,17 @@ function validateForm() {
         console.log(country, ' countryif')
         document.getElementById("country").classList.add("invalid")
         country.value='Elukoha riik'
-
+    }
+    if(firstName == '' || firstName.length < 2 || !isNaN(firstName)){
+        document.getElementById("firstName").classList.add("invalid")
+    }
+    if(lastName == '' || lastName.length < 2 || !isNaN(lastName)){
+        document.getElementById("lastName").classList.add("invalid")
+    }
+    if(city == ''){
+        document.getElementById("city").classList.add("invalid")
     }
 }
-
-
 
 async function LoadUserInfo(){
     let response = await fetch(`https://api.poff.ee/profile`, {
@@ -58,8 +81,6 @@ async function LoadUserInfo(){
 }
 LoadUserInfo()
 
-
-
 async function sendUserProfile(){
     //siin panen kokku listi objektidest mida saata cognitosse
     //Kas järjekord on oluline?
@@ -68,23 +89,12 @@ async function sendUserProfile(){
         {Name: "picture", Value: profileImg.value},
         {Name: "name", Value: firstName.value},
         {Name: "family_name", Value: lastName.value},
-        {Name: "gender", Value: $('input[name="gender"]:checked').val()},
+        {Name: "gender", Value: gender.value},
         {Name: "birthdate", Value: dob.value},
         {Name: "phone_number", Value: phoneNr.value},
         {Name: "email", Value: email.value},
         {Name: "address", Value: `${country.value}, ${city.value}`},
         ]
-
-    // let userToSend={
-    //     picture: profileImg.value,
-    //     name: firstName.value,
-    //     family_name: lastName.value,
-    //     gender: $('input[name="gender"]:checked').val(),
-    //     birthdate: dob.value,
-    //     phone: phoneNr.value,
-    //     email: email.value,
-    //     address: `${country.value}, ${city.value}`
-    // }
 
     console.log(userToSend)
 
