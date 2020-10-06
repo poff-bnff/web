@@ -8,6 +8,7 @@ const fetchDir =  path.join(sourceDir, '_fetchdir');
 const fetchDataDir =  path.join(fetchDir, 'programmes');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
 const STRAPIDATA_PROGRAMME = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Programme'];
+const STRAPIDATA_ORGANISATIONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Organisation'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
 
 const languages = ['en', 'et', 'ru']
@@ -43,6 +44,14 @@ for (const ix in languages) {
             let element = JSON.parse(JSON.stringify(STRAPIDATA_PROGRAMME[ix]));
             var festivalEdition = element.festival_editions[eIx];
             let dirSlug = festivalEdition.slug_en || festivalEdition.slug_et ? festivalEdition.slug_en || festivalEdition.slug_et : null ;
+
+            for (orgIx in element.presentedBy.organisations) {
+                let organisationFromYAML = STRAPIDATA_ORGANISATIONS.filter( (a) => { return element.presentedBy.organisations[orgIx].id === a.id })
+                if (organisationFromYAML) {
+                    element.presentedBy.organisations[orgIx] = rueten(organisationFromYAML[0], lang);
+                }
+            }
+
             element = rueten(element, lang);
             element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
             element.path = festivalEdition.slug;
@@ -62,32 +71,6 @@ for (const ix in languages) {
             }
         }
 
-        // for (const subTeamIx in element.subTeam) {
-        //     let subTeam = element.subTeam[subTeamIx];
-        //     for (const juryMemberIx in subTeam.juryMember) {
-        //         let juryMember = subTeam.juryMember[juryMemberIx];
-        //         let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return juryMember.person.id === a.id });
-        //         juryMember.person = personFromYAML[0];
-        //     }
-        // }
-        // rueten func. is run for each element separately instead of whole data, that is
-        // for the purpose of saving slug_en before it will be removed by rueten func.
-    //     let dirSlug = element.slug_en || element.slug_et ? element.slug_en || element.slug_et : null ;
-    //     element = rueten(element, lang);
-    //     element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
-    //     element.path = element.slug;
-
-    //     const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
-
-    //     if (dirSlug != null) {
-    //         const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
-    //         let saveDir = path.join(fetchDataDir, dirSlug);
-    //         fs.mkdirSync(saveDir, { recursive: true });
-
-    //         fs.writeFileSync(yamlPath, oneYaml, 'utf8');
-    //         fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/${templateGroupName}_${templateDomainName}_index_template.pug`)
-    //     }
-    // allData.push(element);
     }
 
     const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });

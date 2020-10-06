@@ -70,11 +70,11 @@ function readYaml(doc) {
     process.stdout.write('Supporter page pics ')
     let parallelDownloads = []
     // console.log(doc);
-    if (doc.supporters) {
-        for (const ix in doc.supporters) {
-            const section = doc.supporters[ix]
-            for (const i in section.supporter) {
-                const logo = section.supporter[i]
+    if (doc) {
+        for (const ix in doc) {
+            const section = doc[ix]
+            for (const i in section.presentedBy.organisations) {
+                const logo = section.presentedBy.organisations[i]
                 if ('logoWhite' in logo && 'url' in logo.logoWhite){
                     let imgPathW = logo.logoWhite.url;
                     let imgFileName = imgPathW.split('/')[imgPathW.split('/').length - 1]
