@@ -14,13 +14,16 @@ header
     nav.main_menu
         ul.ul_yx
             li
-                nav.user_menu
-                    span.org_item
-                        a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login` style='color:black')= self.label.menu.mainLogin
-                    span.org_item
-                        #hello(style='color: red') Hello
-                    span.org_item
-                        #logOut(onclick='logOut()', style={color:'black', cursor: 'pointer'})= self.label.menu.mainLogout
+                nav.lang_menu
+                    //- | prefiks&nbsp;
+                    //- .clr_primary= self.label.film.languageSelect + 'rr'
+                    each p, locale in self.otherLocalePaths
+                        //- span.clr_white_semi= self.label.film.languageSelect + ':  '
+                        //- if self.publish && (self[`publish_${locale}`] === false)
+                        //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
+                        //- a(href=(p !== '/' ? p + '/' : '/'))= locale
+
+                        a(href=(p !== '/' ? p + '/' : '/'))= locale
 
             li
                 nav.org_menu
@@ -103,18 +106,27 @@ header
                     li
                         a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
+            li.user_menu.dropdown
+                a
+                    | MINU PÖFF
+                    ul.ul_kaks
+                        li
+                            a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+                        li
+                            a
+                                | HELLO
+                        li
+                            a#logOut(onclick='logOut()')= self.label.menu.mainLogout
 
-            li
-                nav.lang_menu
-                    //- | prefiks&nbsp;
-                    //- .clr_primary= self.label.film.languageSelect + 'rr'
-                    each p, locale in self.otherLocalePaths
-                        //- span.clr_white_semi= self.label.film.languageSelect + ':  '
-                        //- if self.publish && (self[`publish_${locale}`] === false)
-                        //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
-                        //- a(href=(p !== '/' ? p + '/' : '/'))= locale
+            //- li.dropdown= 'USER'
+            //-     ul.user_menu.ul_kaks
+            //-         li.user_menu_item
+            //-             a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+            //-         li.user_menu_item
+            //-             #hello Hello
+            //-         li.user_menu_item
+            //-             #logOut(onclick='logOut()')= self.label.menu.mainLogout
 
-                        a(href=(p !== '/' ? p + '/' : '/'))= locale
 
 
     label.main_menu_toggle_label(for='main_menu_toggle')
