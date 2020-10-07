@@ -3,10 +3,12 @@ const yaml = require('js-yaml')
 const path = require('path')
 const {parallelLimit} = require('async')
 const fetch = require('node-fetch')
+const { values } = require('lodash')
 
 
 const strapiPath = 'http://' + process.env['StrapiHost']
-const savePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_films')
+const cassetteSavePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_cassettes')
+const filmSavePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_films')
 
 const delay = (ms) => {
     return new Promise(resolve => {
@@ -43,29 +45,33 @@ function downloadsMaker(url, dest) {
             const dest_stream = fs.createWriteStream(dest)
             res.body.pipe(dest_stream)
             process.stdout.write('.')
+            // console.log(dest);
             callback(null, url)
         })
     }
 }
 
-process.stdout.write('Film pics ')
+process.stdout.write('Cassettes and films pics ')
 let parallelDownloads = []
 
-var filmData = ''
+var cassetteData = ''
 try {
-    const filmDataFile = path.join('source', '_fetchdir', `films.en.yaml`)
-    filmData = yaml.safeLoad(fs.readFileSync(filmDataFile, 'utf8'))
+    const cassetteDataFile = path.join('source', '_fetchdir', `cassettes.en.yaml`)
+    cassetteData = yaml.safeLoad(fs.readFileSync(cassetteDataFile, 'utf8'))
 } catch (e) {
     console.log(e)
 }
 
-for (values of filmData) {
-    if (!values.slug) {
+for (cassetteIx in cassetteData) {
+    let values = cassetteData[cassetteIx]
+    if (!values.dirSlug) {
         continue
     }
 
-    const imgDir = path.join(savePath, values.slug)
-    fs.mkdirSync( path.join(savePath, values.slug), {recursive: true} )
+    const cassetteImgDir = path.join(cassetteSavePath, values.dirSlug)
+    fs.mkdirSync( path.join(cassetteSavePath, values.dirSlug), {recursive: true} )
+
+
 
     if (values.media && values.media.stills && values.media.stills[0]) {
         for (stillIx in values.media.stills) {
@@ -73,7 +79,7 @@ for (values of filmData) {
             const imgPath = values.media.stills[stillIx].url
             const imgFileName = path.basename(imgPath)
             const url = `${strapiPath}${imgPath}`
-            const dest = path.join(imgDir, imgFileName)
+            const dest = path.join(cassetteImgDir, imgFileName)
             parallelDownloads.push( downloadsMaker(url, dest) )
         }
     }
@@ -84,11 +90,46 @@ for (values of filmData) {
             const imgPath = values.media.posters[posterIx].url
             const imgFileName = path.basename(imgPath)
             const url = `${strapiPath}${imgPath}`
-            const dest = path.join(imgDir, imgFileName)
+            const dest = path.join(cassetteImgDir, imgFileName)
             parallelDownloads.push( downloadsMaker(url, dest) )
         }
     }
 
+    if (values.films && values.films[0]) {
+        for(filmIx in values.films) {
+            let film = values.films[filmIx]
+            if (!film.dirSlug) {
+                continue
+            }
+
+            const filmImgDir = path.join(filmSavePath, film.dirSlug)
+            fs.mkdirSync( path.join(filmSavePath, film.dirSlug), {recursive: true} )
+
+
+
+            if (film.media && film.media.stills && film.media.stills[0]) {
+                for (stillIx in film.media.stills) {
+                    // console.log(film.media.stills[stillIx]);
+                    const imgPath = film.media.stills[stillIx].url
+                    const imgFileName = path.basename(imgPath)
+                    const url = `${strapiPath}${imgPath}`
+                    const dest = path.join(filmImgDir, imgFileName)
+                    parallelDownloads.push( downloadsMaker(url, dest) )
+                }
+            }
+
+            if (film.media && film.media.posters && film.media.posters[0]) {
+                for (posterIx in film.media.posters) {
+                    // console.log(film.media.stills[posterIx]);
+                    const imgPath = film.media.posters[posterIx].url
+                    const imgFileName = path.basename(imgPath)
+                    const url = `${strapiPath}${imgPath}`
+                    const dest = path.join(filmImgDir, imgFileName)
+                    parallelDownloads.push( downloadsMaker(url, dest) )
+                }
+            }
+        }
+    }
 }
 
 parallelLimit(
