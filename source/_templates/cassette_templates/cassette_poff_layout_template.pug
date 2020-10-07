@@ -81,6 +81,9 @@ block content
                                     if still.hash && still.ext
                                         div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
                                             img(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
+                            else
+                                img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
+
 
                             //- NB!
                             //- NB!
@@ -359,6 +362,8 @@ block content
                                     if still.hash && still.ext
                                         div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
                                             img(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
+                            else
+                                img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
 
                             //- NB!
                             //- NB!
