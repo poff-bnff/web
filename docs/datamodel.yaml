@@ -171,16 +171,6 @@ Organisation: &Organisation
     logoWhite: *StrapiMedia
     logoBlack: *StrapiMedia
     logoColour: *StrapiMedia
-    # industry_articles:
-    #     - *IndustryArticle
-    # just_filmi_articles:
-    #     - *JustFilmiArticle
-    # kinoffi_articles:
-    #     - *KinoffiArticle
-    # poffi_articles:
-    #     - *POFFiArticle
-    # shortsi_articles:
-    #     - *ShortsiArticle
     homepageUrl: (text)
 
 PresentedBy: &PresentedBy
@@ -230,7 +220,8 @@ ArticleType: &ArticleType
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
-# Articles (POFF, Just, Shorts, Industry, Kinoff)
+
+# Articles (POFF, Just, Shorts, Industry, Kinoff)(yhskasutatav komponent j4rgmisel aastal)
 Media: &Media
     imageDefault: #(Component (repeatable))
         - *StrapiMedia
@@ -332,6 +323,7 @@ JustFilmiArticle: &JustFilmiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
+    
 
 ShortsiArticle: &ShortsiArticle
     _path: /shortsi-articles
@@ -676,8 +668,8 @@ QaClip: &QaClip
     url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
     type: Conversation (Enumeration)
 
-Subtitles: &Subtitles
-    language: *Language
+# Subtitles: &Subtitles
+#     language: *Language
 
 FilmMedia: &FilmMedia
     stills: #(Component (repeatable))
@@ -737,7 +729,7 @@ Film: &Film
     festival_editions:
         - *FestivalEdition
     subtitles:
-        - *Subtitles
+        - *Language
     otherFestivals: (text)
     credentials: *CredentialsNew
     presentedBy: *PresentedBy
@@ -767,11 +759,14 @@ Screening: &Screening
     durationTotal: (Number)
     location: *Location
     subtitles: #(Component (repeatable))
-      - *Subtitles
+      - *Language
     extraInfo: (text)
     screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
+    subtitles:
+        - *Language
+    cassette: *Cassette
     bookingUrl: (Rich text)
 
 Cassette:
@@ -789,8 +784,8 @@ Cassette:
     cassetteId: (text)
     presenters:
         - *Organisation
-    screenings:
-        - *Screening
+    films:
+        - *Film
 
 Label: &Label
     name: (text)
