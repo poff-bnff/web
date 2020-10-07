@@ -135,7 +135,11 @@ const fetch_films = async (e_films) => {
         }
         readline.cursorTo(process.stdout, cursor_x)
         process.stdout.write(dot + ' (' + ix + ')')
+
+        readline.cursorTo(process.stdout, cursor_x + 1)
     }
+    process.stdout.write(' = ' + e_films.length + '\n')
+
 }
 
 const foo = async () => {
