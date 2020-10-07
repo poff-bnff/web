@@ -33,16 +33,18 @@
 //     localStorage.setItem('url', window.location.href)
 // }
 
-// function logOut() {
-//     localStorage.removeItem(ACCESS_TOKEN);
-//     localStorage.removeItem(REFRESH_TOKEN);
-//     localStorage.removeItem(ID_TOKEN);
-//     localStorage.removeItem('url');
-//     localStorage.removeItem('USER_PROFILE');
+function logOut() {
+    localStorage.removeItem('ACCESS_TOKEN');
+    localStorage.removeItem('REFRESH_TOKEN');
+    localStorage.removeItem('ID_TOKEN');
+    localStorage.removeItem('url');
+    localStorage.removeItem('USER_PROFILE');
 
-//     console.log('LOGITUD VÄLJA');
-//     location.reload();
-// }
+    console.log('LOGITUD VÄLJA');
+    location.reload();
+}
+
+
 
 
 

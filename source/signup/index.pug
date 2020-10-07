@@ -11,18 +11,23 @@ block content
                 br
                 br
                 br
-                br
-                h1.display-4.m-b-2 Palun täida kasutaja ankeet:
+                h1.display-4.m-b-2 Registreerimiseks täida ankeet:
 
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group(name= "userForm" onsubmit="return sendUserProfile()")
                         label(for='profileImg') Profiili pilt (kohustuslik passiostjale):
                         div#imgError
-                        input#profileImg.form-control(type='file', value='fileUpload' name='profileImg' oninput="readImage()")
+                        input#profileImg.form-control(type='file', value='fileUpload' name='profileImg')
                     div.form-group
                         label(for='email') Email:
                         input#email.form-control(type='email', placeholder='Email' name='email' oninput="validateEmail()")
+                    div.form-group
+                        label(for='psw') Salasõna:
+                        input#psw.form-control(type='password', placeholder='salasõna' name='psw' )
+                    div.form-group
+                        label(for='psw2') Salasõna uuesti:
+                        input#psw2.form-control(type='password', placeholder='salasõna uuesti' name='psw2' oninput="validatePsw()")
                     div.form-group
                         label(for='firstName') Eesnimi:
                         input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' required='')
@@ -54,7 +59,7 @@ block content
     style.
         .invalid {color: #ee1b2e}
         h4 {color: #464646}
-        h1 {color: black}
+        h1{color: black}
         label {color: black}
         #imgError {color: red}
 
