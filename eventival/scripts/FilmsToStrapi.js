@@ -4,18 +4,17 @@ const fs = require('fs')
 const path = require('path')
 
 const { strapiAuth } = require("../../helpers/strapiAuth.js")
-const { PutOneToStrapi } = require('../../helpers/strapi/ToStrapi.js')
+// const { PutOneToStrapi } = require('../../helpers/strapi/ToStrapi.js')
 
 
 const films_fn = path.join(__dirname, '../dynamic/films.yaml')
 const yamlStr = fs.readFileSync(films_fn)
-const films = yaml.safeLoad(yamlStr)
 
-const api = 'http://139.59.130.149/films?filmId='
+const FILMS_API = 'http://139.59.130.149/films'
 
-const strapiFilms = (films.map(film => {
+const eventivalFilms = (yaml.safeLoad(yamlStr).map(film => {
     let filmOut = {
-        filmId: film.ids.system_id,
+        filmId: film.ids.system_id.toString(),
         title_et: film.titles.title_local,
         title_en: film.titles.title_english,
         title_ru: film.titles.title_custom,
@@ -25,34 +24,53 @@ const strapiFilms = (films.map(film => {
     return filmOut
 }))
 
-console.log(strapiFilms[0]['filmId']);
+
+const post_film = async (options, e_film) => {
+    options.path = FILMS_API
+    options.method = 'POST'
+
+    const response = await strapiQuery(options, e_film)
+    // console.log(response);
+}
+
+const update_film = async (options, e_film) => {
+    options.path = FILMS_API + '/' + e_film.id
+    options.method = 'PUT'
+
+    const response = await strapiQuery(options, e_film)
+    // console.log(response);
+}
 
 const foo = async () => {
     const token = await strapiAuth()
-    console.log('token', token);
-    // 620731
 
-    for (const ix in strapiFilms) {
-        const film = strapiFilms[ix];
-
+    for (const ix in eventivalFilms) {
+        if (ix > 5) {
+            continue
+        }
+        const e_film = eventivalFilms[ix];
+        const api = FILMS_API + '?filmId=' + e_film.filmId
         let options = {
             host: process.env['StrapiHost'],
-            path: api + film.filmId,
+            path: api,
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token
             }
         }
-        const resp = await strapiFetch(options)
-        if(resp['id']){
-            Put
+        const strapiFilm = await strapiQuery(options)
+        if(strapiFilm.length) {
+            e_film['id'] = strapiFilm[0].id
+            await update_film(options, e_film)
+        } else {
+            await post_film(options, e_film)
         }
-        console.log('res', resp['id'])
     }
 }
 
-function strapiFetch(options) {
+function strapiQuery(options, dataObject = false) {
+    console.log('Querying', options.method, options.path);
     return new Promise((resolve, reject) => {
 
         const request = http.request(options, (response) => {
@@ -67,25 +85,22 @@ function strapiFetch(options) {
 
                     resolve(strapiData)
                 } else {
-                    console.log(response.statusCode)
+                    console.log('Status', response.statusCode)
                     resolve([])
                 }
             })
             response.on('error', function (thisError) {
-                console.log(thisError)
+                console.log('E', thisError)
                 reject(thisError)
             })
         })
         request.on('error', reject)
+        if (dataObject) {
+            request.write(JSON.stringify(dataObject));
+        }
+
         request.end()
     })
 }
 
 foo()
-
-console.log();
-// let objectsToSEND = JSON.parse(strapiFilms)
-// let objectsInStrapi = JSON.parse(strapiFetch)
-
-
-

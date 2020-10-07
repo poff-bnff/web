@@ -59,33 +59,33 @@ function PutOneToStrapi (path, token, dataObject, id){
         },
     };
     let req = http.request(options, function (res) {
-    let chunks = [];
+        let chunks = [];
 
-    res.on("data", function (chunk) {
-        chunks.push(chunk);
+        res.on("data", function (chunk) {
+            chunks.push(chunk);
+        });
+
+        res.on("end", function () {
+            var body = Buffer.concat(chunks);
+            bodyAsString = body.toString()
+            body = JSON.parse(body)
+            if (body.message == 'ValidationError'){
+                console.log(body.error, body.message, body.data);
+                console.log(dataObject);
+            }else{
+                console.log('updating....')
+                console.log(bodyAsString);
+            }
+        });
+
+        res.on("error", function (error) {
+            console.error(error);
+        });
+
     });
+    req.write(JSON.stringify(dataObject));
 
-    res.on("end", function () {
-        var body = Buffer.concat(chunks);
-        bodyAsString = body.toString()
-        body = JSON.parse(body)
-        if (body.message == 'ValidationError'){
-            console.log(body.error, body.message, body.data);
-            console.log(dataObject);
-        }else{
-            console.log('updating....')
-            console.log(bodyAsString);
-        }
-    });
-
-    res.on("error", function (error) {
-        console.error(error);
-    });
-
-});
-req.write(JSON.stringify(dataObject));
-
-req.end();
+    req.end();
 
 }
 

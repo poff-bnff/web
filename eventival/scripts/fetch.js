@@ -4,7 +4,6 @@ var parser = require('fast-xml-parser');
 const yaml = require('js-yaml')
 const path = require('path')
 const readline = require('readline');
-const { toInteger } = require('lodash');
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
@@ -148,7 +147,7 @@ const foo = async () => {
     await fetch_films(e_data.films)
     for (const [model, data] of Object.entries(e_data)) {
         const yamlStr = yaml.safeDump(data, { 'indent': '4' })
-        fs.writeFileSync(dataMap[model].outyaml, yamlStr)
+        fs.writeFileSync(dataMap[model].outyaml, yamlStr, "utf8")
     }
 }
 
