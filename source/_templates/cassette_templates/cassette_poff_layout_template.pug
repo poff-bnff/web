@@ -5,6 +5,12 @@ include /_templates/mixins.pug
 block content
 
     main.grid_film
+        //- Kasseti title ja synopsis
+        div
+            if self.title
+                h1.dark_1= self.title
+            if self.synopsis
+                h1.dark_1= self.synopsis
 
         //- KARUSELL cassette piltidega
         section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
@@ -40,10 +46,11 @@ block content
                 svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                     polyline(points='9 18 15 12 9 6')
                 span.sr-only Next
+        //- LÕPP! KARUSELL cassette piltidega LÕPP
+
 
         //- Algab kasseti filmide info kuvamine
         each film in self.films
-
             block titleBox
             section
                 section.f_synopsis_box
@@ -65,6 +72,12 @@ block content
             section
                 section.f_cred_box
                     .str_info_blokk_cred
+
+                        if film.media && film.media.stills && film.media.stills[0]
+                            each still in film.media.stills
+                                if still.hash && still.ext
+                                    div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
+                                        img(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
 
                         //- NB!
                         //- NB!
