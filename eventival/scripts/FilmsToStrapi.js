@@ -18,7 +18,11 @@ const eventivalFilms = (yaml.safeLoad(yamlStr).map(film => {
         title_et: film.titles.title_local,
         title_en: film.titles.title_english,
         title_ru: film.titles.title_custom,
-        titleOriginal: film.titles.title_original
+        titleOriginal: film.titles.title_original,
+        year: film_info.completion_date.year,
+        runtime: film.film_info.runtime.seconds / 60,
+
+
     }
 
     return filmOut

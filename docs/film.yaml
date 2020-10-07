@@ -7,10 +7,10 @@ film:
     year: film_info.completion_date.year
     runtime: 120
     slug_et:
-    slug_en: test-en
-    slug_ru: test-ru
-    filmId: film ID
-    festival_edition: festival edition id
+    slug_en:
+    slug_ru:
+    filmId: film.ids.system_id
+    festival_edition: film.eventival_categorization.categories.
     otherFestivals: Tartuff
     synopsis:
         id:
