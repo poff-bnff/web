@@ -2,14 +2,14 @@ var userProfile
 
 
 if (localStorage.getItem('ID_TOKEN') !== null){
-    document.getElementById('logOut').style.visibility = 'visible'
-    document.getElementById('logInName').style.visibility = 'visible'
+    document.getElementById('logOut').style.display = 'block'
+    document.getElementById('logInName').style.display = 'block'
     loadUserProfileH()
 }
 
 if (localStorage.getItem('ID_TOKEN') === null){
-    document.getElementById('logIn').style.visibility = 'visible'
-    document.getElementById('signUp').style.visibility = 'visible'
+    document.getElementById('logIn').style.display = 'block'
+    document.getElementById('signUp').style.display = 'block'
 }
 
 

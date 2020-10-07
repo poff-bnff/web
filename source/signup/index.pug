@@ -16,9 +16,10 @@ block content
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group(name= "userForm" onsubmit="return sendUserProfile()")
-                        label(for='profileImg') Profiili pilt (kohustuslik passiostjale):
+                        | Profiili pilt (kohustuslik passiostjale):
                         div#imgError
-                        input#profileImg.form-control(type='file', value='fileUpload' name='profileImg')
+                        label.btn.btn-primary(for='profileImg') Vali pilt
+                        input#profileImg.form-control(type='file', value='fileUpload' name='profileImg' style='visibility:hidden')
                     div.form-group
                         label(for='email') Email:
                         input#email.form-control(type='email', placeholder='Email' name='email' oninput="validateEmail()")
@@ -49,12 +50,14 @@ block content
                         label(for='phoneNr') Telefoni number:
                         input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr', required='')
                     div.form-group
-                        label.control-label(for='country') Elukoha riik:
+                        | Elukoht:
+                        br
+                        label.control-label(for='country') Riik:
                         select#countrySelection.form-control.gds-cr(country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='')
                     div.form-group
-                        label.control-label(for='gds-cr-one') Elukoha linn:
+                        label.control-label(for='gds-cr-one') Linn:
                         select#gds-cr-one.form-control(required='')
-                    button.btn.btn-primary(onclick='validateForm(), sendUserProfile()') Salvesta
+                    button.btn.btn-primary(onclick='validateForm(), sendNewUser()') Salvesta
 
     style.
         .invalid {color: #ee1b2e}
@@ -62,5 +65,8 @@ block content
         h1{color: black}
         label {color: black}
         #imgError {color: red}
+        .form-group{color: black}
+        #profileImg{display: none}
+
 
 

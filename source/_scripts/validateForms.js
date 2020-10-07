@@ -1,11 +1,11 @@
 
 function validateBDay() {
     var dob = document.getElementById("dob");
-    console.log(dob.value)
+    //console.log(dob.value)
     var date = new Date
     var minAge = date.getMonth() + 1 + "-" + date.getDate() + "-" + (date.getFullYear() - 12);
-    var maxAge = date.getMonth() + 1 + "-" + date.getDate() + "-" + (date.getFullYear() - 112);
-    if (dob.value > minAge || dob.value < maxAge) {
+    var maxAge = date.getMonth() + 1 + "-" + date.getDate() + "-" + (date.getFullYear() - 115);
+    if (dob.value < minAge || dob.value > maxAge) {
         dob.classList.add("invalid");
     } else {
         dob.classList.remove("invalid");

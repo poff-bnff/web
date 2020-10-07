@@ -13,52 +13,45 @@ let city = document.getElementById("gds-cr-one");
 
 function validateForm() {
     console.log("validate form");
-    let profileImg = document.getElementById("profileImg").value;
-    let firstName = document.getElementById("firstName").value;
-    let lastName = document.getElementById("lastName").value;
-    let dob = document.getElementById("dob").value;
-    let phoneNr = document.getElementById("phoneNr").value;
-    let email = document.getElementById("email").value;
-    let country = document.getElementById("country").value;
-    let city = document.getElementById("city").value;
-    console.log(country);
-    if (country == "") {
-        console.log(country, " countryif");
-        document.getElementById("country").classList.add("invalid");
+    console.log(country.value);
+    if (country.value == "") {
+        console.log(country.value, " countryif");
+        country.classList.add("invalid");
         country.value = "Elukoha riik";
     }
-    if (firstName == "" || firstName.length < 2 || !isNaN(firstName)) {
+    if (firstName.value == "" || firstName.value.length < 2 || !isNaN(firstName.value)) {
         document.getElementById("firstName").classList.add("invalid");
     }
-    if (lastName == "" || lastName.length < 2 || !isNaN(lastName)) {
-        document.getElementById("lastName").classList.add("invalid");
+    if (lastName.value == "" || lastName.length < 2 || !isNaN(lastName.value)) {
+        lastName.classList.add("invalid");
     }
-    if (city == "") {
-        document.getElementById("city").classList.add("invalid");
+    if (city.value == "") {
+        city.classList.add("invalid");
     }
 }
 
 
 
-async function sendUserProfile() {
+async function sendNewUser() {
     //siin panen kokku listi objektidest mida saata cognitosse
     //Kas järjekord on oluline?
     //kas Name-id on kõik õiged?
     let userToSend = [
-        { Name: "picture", Value: output.src },
+        { Name: "picture", Value: imgPreview.src },
+        { Name: "password", Value: psw.value },
+        { Name: "email", Value: email.value },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
         { Name: "birthdate", Value: dob.value },
         { Name: "phone_number", Value: phoneNr.value },
-        { Name: "email", Value: email.value },
         { Name: "address", Value: `${country.value}, ${city.value}` },
     ];
 
     console.log(userToSend);
 
     let response = await fetch(`https://api.poff.ee/profile`, {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
             body: JSON.stringify(userToSend)

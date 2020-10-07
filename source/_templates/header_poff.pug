@@ -111,14 +111,13 @@ header
                     | MINU PÖFF
                     ul.ul_kaks
                         li
-                            a#logIn(style={visibility: 'hidden'} onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+                            a#logIn(style={cursor: 'pointer', display: 'none'} onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
                         li
-                            a#signUp(style={visibility: 'hidden'} href=`/${lang_path}signup`)= self.label.menu.mainSignup
+                            a#signUp(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}signup`)= self.label.menu.mainSignup
                         li
-                            a#logInName(style={visibility: 'hidden'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
-
+                            a#logInName(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
                         li
-                            a#logOut(style={cursor: 'pointer', visibility: 'hidden'} onclick='logOut()')= self.label.menu.mainLogout
+                            a#logOut(style={cursor: 'pointer', display: 'none'} onclick='logOut()')= self.label.menu.mainLogout
 
             //- li.dropdown= 'USER'
             //-     ul.user_menu.ul_kaks
