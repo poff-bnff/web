@@ -111,12 +111,12 @@ header
                     | MINU PÖFF
                     ul.ul_kaks
                         li
-                            a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+                            a#logIn(style={visibility: 'hidden'} onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
                         li
-                            a(onclick = 'loadUserProfileH()')
+                            a#logInName(style={visibility: 'hidden'} onclick = 'loadUserProfileH()')
                                 | HELLO
                         li
-                            a#logOut(style={cursor: 'pointer'} onclick='logOut()')= self.label.menu.mainLogout
+                            a#logOut(style={cursor: 'pointer', visibility: 'hidden'} onclick='logOut()')= self.label.menu.mainLogout
 
             //- li.dropdown= 'USER'
             //-     ul.user_menu.ul_kaks
@@ -134,4 +134,4 @@ header
 
 
 
-include scripts.js
+

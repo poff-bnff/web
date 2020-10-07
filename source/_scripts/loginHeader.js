@@ -12,32 +12,28 @@
 var userProfile
 
 
-if (localStorage.getItem('ID_TOKEN') != null){
-    document.getElementById('logIn').style.visibility = 'hidden'
+if (localStorage.getItem('ID_TOKEN') !== null){
+    document.getElementById('logOut').style.visibility = 'visible'
+    document.getElementById('logInName').style.visibility = 'visible'
     // loadUserProfile();
 }
 
-if (localStorage.getItem('ID_TOKEN') == null){
-    document.getElementById('logOut').style.visibility = 'hidden'
+if (localStorage.getItem('ID_TOKEN') === null){
+    document.getElementById('logIn').style.visibility = 'visible'
 }
 
-// // if (localStorage.getItem('USER_PROFILE') == null){
-// //     // console.log(localStorage.getItem('USER_PROFILE'))
-// //     document.getElementById("hello").style.visibility = "hidden"
-// // }
 
+function loadUserProfileH() {
 
-// async function loadUserProfileH() {
-
-//     var response = await fetch(`https://api.poff.ee/profile`, {
-//         method: 'GET',
-//         headers: {
-//             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-//         },
-//     });
-//     userProfile = await response.json()
-//     console.log(userProfile)
-// }
+    var response = fetch('https://api.poff.ee/profile', {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+        },
+    });
+    userProfile = response.json()
+    console.log(userProfile)
+}
 
 
 function saveUrl(){
