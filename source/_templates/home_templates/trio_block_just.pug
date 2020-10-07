@@ -13,21 +13,28 @@ for blocks in self.data.articleTrioBlock.sort(function(a, b){ return (a.block.or
             - let artTrioTypes = []
             - let artTrioTypeForPath = '';
             each artTrioType in articleTrio.article_types
-                - artTrioTypes.push(artTrioType.name.toLowerCase())
-                if artTrioType.name.toLowerCase() === whichTypesToDisplay[0]
-                    - artTrioTypeForPath = artTrioType.slug.toLowerCase()
-                else if whichTypesToDisplay.includes(artTrioType.name.toLowerCase())
-                    - artTrioTypeForPath = artTrioType.slug.toLowerCase()
+                if artTrioType.name.toLowerCase() === 'about'
+                    - artTrioTypeForPath = artTrioType.slug
+                else if artTrioType.name.toLowerCase() === 'interview'
+                    - artTrioTypeForPath = artTrioType.slug
+                else if artTrioType.name.toLowerCase() === 'sponsor_story'
+                    - artTrioTypeForPath = artTrioType.slug
+                else if artTrioType.name.toLowerCase() === 'news'
+                    - artTrioTypeForPath = artTrioType.slug
+                else
+                    - artTrioTypeForPath = article.article_types[0].slug
+
             a(href= `/${lang_path}${artTrioTypeForPath}/${ blocks.article.slug}`)
                 .trio_block_item
-                    //- if blocks.block.image
-                    //-     img(src=`/assets/img/dynamic/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
-                    //- else if blocks.article.media.image[0]
-                    //-     img(src=`/assets/img/dynamic/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.image[0].hash}${blocks.article.media.image[0].ext}`).trio_image
-                    //- else if blocks.article.media.imageDefault[0]
-                    //-     img(src=`/assets/img/dynamic/img_articles/${self.locale}/${blocks.article.slug}/${blocks.article.media.imageDefault[0].hash}${blocks.article.media.imageDefault[0].ext}`).trio_image
-                    //- else
-                    //-     img(src='/assets/img/static/placeholder_hd_1.jpg').trio_image
+                    if blocks.block.image
+                        img(src=`/assets/img/dynamic/img_trioblock/${self.locale}/${blocks.article.slug}/${blocks.block.image.hash}${blocks.block.image.ext}`).trio_image
+                    else if articleTrio.media && articleTrio.media.image[0]
+                        //- - console.log('--------------------------', articleTrio)
+                        img(src=`/assets/img/dynamic/img_articles/${self.locale}/${blocks.article.slug}/${articleTrio.media.image[0].hash}${articleTrio.media.image[0].ext}`).trio_image
+                    else if articleTrio.media && articleTrio.media.imageDefault[0]
+                        img(src=`/assets/img/dynamic/img_articles/${self.locale}/${blocks.article.slug}/${articleTrio.media.imageDefault[0].hash}${articleTrio.media.imageDefault[0].ext}`).trio_image
+                    else
+                        img(src='/assets/img/static/placeholder_hd_1.jpg').trio_image
                     .trio_headline
                         if typeof(blocks.block.title) !== 'object'
                             | !{blocks.block.title}
