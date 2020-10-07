@@ -95,7 +95,7 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom) {
                         let searchRegExp = new RegExp(wholeLinkEscaped, 'g');
                         const replaceLinkWithLinkText = element.lead.replace(searchRegExp, linkText);
                         element.lead = replaceLinkWithLinkText;
-                        console.log(element.lead);
+                        // console.log(element.lead);
                         i++;
                     }
                 }

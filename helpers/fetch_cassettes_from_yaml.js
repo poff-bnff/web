@@ -4,7 +4,7 @@ const path = require('path');
 const rueten = require('./rueten.js')
 
 const sourceDir = path.join(__dirname, '..', 'source')
-const filmTemplatesDir = path.join(sourceDir, '_templates', 'film_templates')
+const cassetteTemplatesDir = path.join(sourceDir, '_templates', 'cassette_templates')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
@@ -18,20 +18,20 @@ const mapping = {
     'shorts.poff.ee': 'shorts'
 }
 
-const modelName = 'Film';
-const STRAPIDATA_FILM = STRAPIDATA[modelName]
+const modelName = 'Cassette';
+const STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
 
 const allLanguages = ["en", "et", "ru"];
 
 
 function fetchAllData(){
-    const filmsPath = path.join(fetchDir, 'films')
-    deleteFolderRecursive(filmsPath);
+    const cassettesPath = path.join(fetchDir, 'cassettes')
+    deleteFolderRecursive(cassettesPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(filmsPath, "en", 1, 1, {'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
-    getData(filmsPath, "et", 0, 0, {'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
-    getData(filmsPath, "ru", 0, 0, {'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
+    getData(cassettesPath, "en", 1, 1, {'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
+    getData(cassettesPath, "et", 0, 0, {'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
+    getData(cassettesPath, "ru", 0, 0, {'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
@@ -52,7 +52,7 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, getDataCB) {
 
     fs.mkdirSync(dirPath, { recursive: true })
 
-    console.log(`Fetching ${DOMAIN} films ${lang} data`);
+    console.log(`Fetching ${DOMAIN} cassettes ${lang} data`);
 
     getDataCB(dirPath, lang, copyFile, dataFrom, showErrors);
 }
@@ -63,7 +63,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let allData = []
     // data = rueten(data, lang);
     // console.log(data);
-    for (const originalElement of STRAPIDATA_FILM) {
+    for (const originalElement of STRAPIDATA_CASSETTE) {
         const element = JSON.parse(JSON.stringify(originalElement))
         let slugEn = element.slug_en
         if (!slugEn) {
@@ -72,13 +72,18 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
+        if(element.films) {
+            var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
+        }
         rueten(element, lang)
-
+        if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
+            element.films = cassetteFilmsBeforeRueten
+        }
         // console.log(element.directory);
         // element = rueten(element, `_${lang}`);
 
         if(typeof slugEn !== 'undefined') {
-            element.picturesDirSlug = slugEn
+            element.dirSlug = slugEn
             element.directory = path.join(dirPath, slugEn)
             fs.mkdirSync(element.directory, { recursive: true })
 
@@ -96,22 +101,37 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 }
             }
 
-            let rolePersonTypes = {}
-            if(element.credentials && element.credentials.rolePerson && element.credentials.rolePerson[0]) {
-                for (roleIx in element.credentials.rolePerson) {
-                    element.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                    let rolePerson = element.credentials.rolePerson[roleIx]
-                    if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
+            if (element.films && element.films[0]) {
+                for (filmIx in element.films) {
+                    let film = element.films[filmIx]
+                    let filmSlugEn = film.slug_en
+                    if (!filmSlugEn) {
+                        filmSlugEn = film.slug_et
                     }
-                    if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
-                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                    rueten(film, lang)
+                    if (typeof filmSlugEn !== 'undefined') {
+                        film.dirSlug = filmSlugEn
                     }
-                    //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
+
+                    let rolePersonTypes = {}
+                    if(film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]) {
+                        for (roleIx in film.credentials.rolePerson) {
+                            film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            let rolePerson = film.credentials.rolePerson[roleIx]
+                            if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
+                                rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
+                            }
+                            if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
+                                rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                            }
+                            //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
+                        }
+                    }
+                    element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                 }
             }
 
-            element.credentials.rolePersonsByRole = rolePersonTypes
+
 
 
             allData.push(element);
@@ -121,7 +141,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
         } else {
             if(showErrors) {
-                console.log(`Film ID ${element.id} slug_en value missing`);
+                console.log(`Cassette ID ${element.id} slug_en value missing`);
             }
         }
     }
@@ -137,9 +157,9 @@ function generateYaml(element, lang, copyFile, allData){
     if (copyFile) {
 
         if (mapping[DOMAIN]) {
-            let filmIndexTemplate = path.join(filmTemplatesDir, `film_${mapping[DOMAIN]}_index_template.pug`);
+            let filmIndexTemplate = path.join(cassetteTemplatesDir, `cassette_${mapping[DOMAIN]}_index_template.pug`);
             if (fs.existsSync(filmIndexTemplate)) {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/film_templates/film_${mapping[DOMAIN]}_index_template.pug`)
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
             } else {
                 console.log(`ERROR! Default template ${filmIndexTemplate} missing!`);
             }
@@ -149,7 +169,7 @@ function generateYaml(element, lang, copyFile, allData){
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
 
-    fs.writeFileSync(path.join(fetchDir, `films.${lang}.yaml`), allDataYAML, 'utf8')
+    fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
 }
 
 

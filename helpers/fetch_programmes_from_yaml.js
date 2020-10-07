@@ -45,10 +45,12 @@ for (const ix in languages) {
             var festivalEdition = element.festival_editions[eIx];
             let dirSlug = festivalEdition.slug_en || festivalEdition.slug_et ? festivalEdition.slug_en || festivalEdition.slug_et : null ;
 
-            for (orgIx in element.presentedBy.organisations) {
-                let organisationFromYAML = STRAPIDATA_ORGANISATIONS.filter( (a) => { return element.presentedBy.organisations[orgIx].id === a.id })
-                if (organisationFromYAML) {
-                    element.presentedBy.organisations[orgIx] = rueten(organisationFromYAML[0], lang);
+            if(element.presentedBy && element.presentedBy[0]) {
+                for (orgIx in element.presentedBy.organisations) {
+                    let organisationFromYAML = STRAPIDATA_ORGANISATIONS.filter( (a) => { return element.presentedBy.organisations[orgIx].id === a.id })
+                    if (organisationFromYAML) {
+                        element.presentedBy.organisations[orgIx] = rueten(organisationFromYAML[0], lang);
+                    }
                 }
             }
 
