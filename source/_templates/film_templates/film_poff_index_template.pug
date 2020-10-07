@@ -1,4 +1,4 @@
-extends /film/layout.pug
+extends /_templates/film_templates/film_poff_layout_template.pug
 
 
 block film
@@ -17,7 +17,7 @@ block titleBox
             each p, locale in self.otherLocalePaths
                 if self[`title_${locale}`]
                     .str_info_grid_3
-                        .str_info_label= self.label.film.titleSec
+                        .str_info_label= self.label.film[`title_${locale}`]
                         .str_info_value= self[`title_${locale}`]
 
             if self.titleOriginal
@@ -25,10 +25,10 @@ block titleBox
                     .str_info_label= self.label.film.titleOriginal
                     .str_info_value= self.titleOriginal
 
-            if self.credentials.director
+            if self.credentials.rolePersonsByRole.director && self.credentials.rolePersonsByRole.director[0]
                 .str_info_grid_3
                     .str_info_label= self.label.film.director
-                    .str_info_value.clr_primary= self.credentials.director.join(', ')
+                    .str_info_value.clr_primary= self.credentials.rolePersonsByRole.director.join(', ')
 
             if self.countriesAndLanguages.countries
                 - var countriesNames = function(item) {

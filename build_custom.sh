@@ -175,6 +175,7 @@ download_img()
     node ./helpers/download_trioblock_img.js
     node ./helpers/download_supporters_page_img.js
     node ./helpers/download_programmes_presenters_img.js
+    node ./helpers/download_films_img.js
     printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 }
 

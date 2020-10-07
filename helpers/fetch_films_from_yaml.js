@@ -3,11 +3,20 @@ const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js')
 
-const sourceDir =  path.join(__dirname, '..', 'source')
-const fetchDir =  path.join(sourceDir, '_fetchdir')
+const sourceDir = path.join(__dirname, '..', 'source')
+const filmTemplatesDir = path.join(sourceDir, '_templates', 'film_templates')
+const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+
+const mapping = {
+    'poff.ee': 'poff',
+    'justfilm.ee': 'justfilm',
+    'kinoff.poff.ee': 'kinoff',
+    'industry.poff.ee': 'industry',
+    'shorts.poff.ee': 'shorts'
+}
 
 const modelName = 'Film';
 const STRAPIDATA_FILM = STRAPIDATA[modelName]
@@ -20,9 +29,9 @@ function fetchAllData(){
     deleteFolderRecursive(filmsPath);
 
     // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(filmsPath, "en", 1, 1, {'screenings': '/film/screenings.en.yaml', 'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
-    getData(filmsPath, "et", 0, 0, {'screenings': '/film/screenings.et.yaml', 'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
-    getData(filmsPath, "ru", 0, 0, {'screenings': '/film/screenings.ru.yaml', 'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
+    getData(filmsPath, "en", 1, 1, {'articles': '/_fetchdir/articles.en.yaml'}, getDataCB);
+    getData(filmsPath, "et", 0, 0, {'articles': '/_fetchdir/articles.et.yaml'}, getDataCB);
+    getData(filmsPath, "ru", 0, 0, {'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB);
 }
 
 function deleteFolderRecursive(path) {
@@ -69,6 +78,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         // element = rueten(element, `_${lang}`);
 
         if(typeof slugEn !== 'undefined') {
+            element.picturesDirSlug = slugEn
             element.directory = path.join(dirPath, slugEn)
             fs.mkdirSync(element.directory, { recursive: true })
 
@@ -85,6 +95,24 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     // makeCSV(element[key], element, lang);
                 }
             }
+
+            let rolePersonTypes = {}
+            if(element.credentials && element.credentials.rolePerson && element.credentials.rolePerson[0]) {
+                for (roleIx in element.credentials.rolePerson) {
+                    element.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                    let rolePerson = element.credentials.rolePerson[roleIx]
+                    if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
+                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
+                    }
+                    if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
+                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                    }
+                    //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
+                }
+            }
+
+            element.credentials.rolePersonsByRole = rolePersonTypes
+
 
             allData.push(element);
             element.data = dataFrom;
@@ -105,15 +133,18 @@ function generateYaml(element, lang, copyFile, allData){
     // console.log(element.directory)
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-    // console.log(`WRITTEN: ${element.directory}/data.${lang}.yaml`);
-    // console.log(element);
+
     if (copyFile) {
-        const templateSourcePath = path.join(sourceDir, '_templates', 'film_index_template.pug')
-        const templateTargetPath = path.join(element.directory, 'index.pug')
-        fs.copyFile(templateSourcePath, templateTargetPath, (err) => {
-            if (err) throw err;
-            // console.log(`File was copied to folder ${dirPath}${element.slug_en}`);
-        })
+
+        if (mapping[DOMAIN]) {
+            let filmIndexTemplate = path.join(filmTemplatesDir, `film_${mapping[DOMAIN]}_index_template.pug`);
+            if (fs.existsSync(filmIndexTemplate)) {
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/film_templates/film_${mapping[DOMAIN]}_index_template.pug`)
+            } else {
+                console.log(`ERROR! Default template ${filmIndexTemplate} missing!`);
+            }
+        }
+
     }
 
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
