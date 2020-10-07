@@ -56,12 +56,16 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     // console.log(data);
     for (const originalElement of STRAPIDATA_FILM) {
         const element = JSON.parse(JSON.stringify(originalElement))
+        let slugEn = element.slug_en
+        if (!slugEn) {
+            slugEn = element.slug_et
+        }
 
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
         rueten(element, lang)
 
-        element.directory = path.join(dirPath, element.slug)
+        element.directory = path.join(dirPath, slugEn)
         // console.log(element.directory);
         // element = rueten(element, `_${lang}`);
 
