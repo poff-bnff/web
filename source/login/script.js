@@ -41,6 +41,7 @@ async function loadUserProfile() {
     });
     userProfile = await response.json()
     checkIfUserProfFilled(userProfile)
+    console.log(userProfile)
 }
 
 

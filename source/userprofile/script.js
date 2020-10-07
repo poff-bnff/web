@@ -5,8 +5,8 @@ let gender = document.getElementById("gender");
 let dob = document.getElementById("dob");
 let phoneNr = document.getElementById("phoneNr");
 let email = document.getElementById("email");
-let country = document.getElementById("country");
-let city = document.getElementById("city");
+let country = document.getElementById("countrySelection");
+let city = document.getElementById("gds-cr-one");
 
 function validateForm() {
     console.log("validate form");
@@ -64,13 +64,13 @@ async function sendUserProfile() {
 
     console.log(userToSend);
 
-    let response = await fetch(`https://api.poff.ee/profile`, {
-            method: 'PUT',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
-            body: JSON.stringify(userToSend)
-        });
-        userProfile = await response.json()
+    // let response = await fetch(`https://api.poff.ee/profile`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
+    //         body: JSON.stringify(userToSend)
+    //     });
+    //     userProfile = await response.json()
 }
 
 
@@ -105,4 +105,6 @@ function readImage() {
         }
     });
 }
+
+
 

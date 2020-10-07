@@ -43,12 +43,16 @@ block content
                     div.form-group
                         label(for='phoneNr') Telefoni number:
                         input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr', required='')
+
+
                     div.form-group
-                        label(for='country') Elukoha riik:
-                        input#country.form-control(type='text', placeholder='Elukoha riik' name='country')
+                        label.control-label(for='country') Elukoha riik:
+                        select#countrySelection.form-control.gds-cr(country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='')
                     div.form-group
-                        label(for='city') Elukoha linn:
-                        input#city.form-control(type='text', placeholder='Elukoha linn' name='city', required='')
+                        label.control-label(for='gds-cr-one') Elukoha linn:
+                        select#gds-cr-one.form-control(required='')
+
+
                     button.btn.btn-primary(onclick='validateForm(), sendUserProfile()') Salvesta
 
     style.

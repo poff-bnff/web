@@ -7,8 +7,8 @@ let lastName = document.getElementById("lastName");
 let gender = document.getElementById("gender");
 let dob = document.getElementById("dob");
 let phoneNr = document.getElementById("phoneNr");
-let country = document.getElementById("country");
-let city = document.getElementById("city");
+let country = document.getElementById("countrySelection");
+let city = document.getElementById("gds-cr-one");
 
 
 function validateForm() {
