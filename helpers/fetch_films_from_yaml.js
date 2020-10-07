@@ -65,11 +65,11 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         // for the purpose of saving slug_en before it will be removed by rueten func.
         rueten(element, lang)
 
-        element.directory = path.join(dirPath, slugEn)
         // console.log(element.directory);
         // element = rueten(element, `_${lang}`);
 
-        if(element.directory) {
+        if(typeof slugEn !== 'undefined') {
+            element.directory = path.join(dirPath, slugEn)
             fs.mkdirSync(element.directory, { recursive: true })
 
             // let element = JSON.parse(JSON.stringify(element));
