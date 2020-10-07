@@ -157,11 +157,11 @@ function generateYaml(element, lang, copyFile, allData){
     if (copyFile) {
 
         if (mapping[DOMAIN]) {
-            let filmIndexTemplate = path.join(cassetteTemplatesDir, `cassette_${mapping[DOMAIN]}_index_template.pug`);
-            if (fs.existsSync(filmIndexTemplate)) {
+            let cassetteIndexTemplate = path.join(cassetteTemplatesDir, `cassette_${mapping[DOMAIN]}_index_template.pug`);
+            if (fs.existsSync(cassetteIndexTemplate)) {
                 fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
             } else {
-                console.log(`ERROR! Default template ${filmIndexTemplate} missing!`);
+                console.log(`ERROR! Default template ${cassetteIndexTemplate} missing!`);
             }
         }
 
