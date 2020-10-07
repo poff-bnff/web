@@ -158,6 +158,38 @@ FestivalEdition: &FestivalEdition
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
+# Articles (POFF, Just, Shorts, Industry, Kinoff)(yhskasutatav komponent j4rgmisel aastal)
+ArticleType: &ArticleType
+    _path: /article-types
+    name: (text)
+    label_et: (text)
+    label_en: (text)
+    label_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+
+Media: &Media
+    imageDefault: #(Component (repeatable))
+        - *StrapiMedia
+    image_et: #(Component (repeatable))
+        - *StrapiMedia
+    image_en: #(Component (repeatable))
+        - *StrapiMedia
+    image_ru: #(Component (repeatable))
+        - *StrapiMedia
+    clipUrlDefault: (text)
+    clipUrl_et: (text)
+    clipUrl_en: (text)
+    clipUrl_ru: (text)
+
+Button: &Button
+    text_et: (text)
+    text_en: (text)
+    text_ru: (text)
+    url_et: (text)
+    url_en: (text)
+    url_ru: (text)
 
 # Organisation
 Organisation: &Organisation
@@ -188,9 +220,6 @@ Programme: &Programme
         - *FestivalEdition
     images:
         - *StrapiMedia
-    presentedByText: *Translated #(Component)
-    presenters: #(Component (repeatable))
-        - *Organisation
     domains:
         - *Domain #(Component)
     order: (Number)
@@ -210,39 +239,6 @@ WebAuthor: &WebAuthor
     _path: /web-authors
     namePrivate: (text)
     name: *Translated
-
-ArticleType: &ArticleType
-    _path: /article-types
-    name: (text)
-    label_et: (text)
-    label_en: (text)
-    label_ru: (text)
-    slug_et: (UID)
-    slug_en: (UID)
-    slug_ru: (UID)
-
-# Articles (POFF, Just, Shorts, Industry, Kinoff)(yhskasutatav komponent j4rgmisel aastal)
-Media: &Media
-    imageDefault: #(Component (repeatable))
-        - *StrapiMedia
-    image_et: #(Component (repeatable))
-        - *StrapiMedia
-    image_en: #(Component (repeatable))
-        - *StrapiMedia
-    image_ru: #(Component (repeatable))
-        - *StrapiMedia
-    clipUrlDefault: (text)
-    clipUrl_et: (text)
-    clipUrl_en: (text)
-    clipUrl_ru: (text)
-
-Button: &Button
-    text_et: (text)
-    text_en: (text)
-    text_ru: (text)
-    url_et: (text)
-    url_en: (text)
-    url_ru: (text)
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
@@ -283,6 +279,8 @@ POFFiArticle: &POFFiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
+    organisations:
+        - *Organisation
 
 JustFilmiArticle: &JustFilmiArticle
     _path: /just-filmi-articles
@@ -323,7 +321,8 @@ JustFilmiArticle: &JustFilmiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-    
+    organisations:
+        - *Organisation
 
 ShortsiArticle: &ShortsiArticle
     _path: /shortsi-articles
@@ -364,6 +363,8 @@ ShortsiArticle: &ShortsiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
+    organisations:
+        - *Organisation
 
 IndustryArticle: &IndustryArticle
     _path: /industry-articles
@@ -404,6 +405,8 @@ IndustryArticle: &IndustryArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
+    organisations:
+        - *Organisation
 
 KinoffiArticle: &KinoffiArticle
     _path: /kinoffi_articles
@@ -444,6 +447,8 @@ KinoffiArticle: &KinoffiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
+    organisations:
+        - *Organisation
 
 Language: &Language
     _path: /languages
@@ -492,6 +497,7 @@ Location: &Location
     cinema: *Cinema #(Component)
     hall: *Hall #(Component)
     name: (text)
+
 
 # Menu
 
@@ -746,6 +752,24 @@ IntroConversationQandA: &IntroConversationQandA
     duration: (Number)
     clipUrl: (text)
 
+Cassette: &Cassette
+    _path: /cassettes
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    synopsis: *Translated #(Rich text)
+    media: *FilmMedia #(Component)
+    festival_edition: *FestivalEdition
+    tags: *Tags
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    cassetteId: (text)
+    presenters:
+        - *Organisation
+    films:
+        - *Film
+
 Screening: &Screening
     _path: /screenings
     screeningId: (Number)
@@ -764,28 +788,8 @@ Screening: &Screening
     screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
-    subtitles:
-        - *Language
     cassette: *Cassette
     bookingUrl: (Rich text)
-
-Cassette:
-    _path: /cassettes
-    title_et: (text)
-    title_en: (text)
-    title_ru: (text)
-    synopsis: *Translated #(Rich text)
-    media: *FilmMedia #(Component)
-    festival_edition: *FestivalEdition
-    tags: *Tags
-    slug_et: (UID)
-    slug_en: (UID)
-    slug_ru: (UID)
-    cassetteId: (text)
-    presenters:
-        - *Organisation
-    films:
-        - *Film
 
 Label: &Label
     name: (text)
