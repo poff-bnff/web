@@ -676,8 +676,8 @@ QaClip: &QaClip
     url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
     type: Conversation (Enumeration)
 
-Subtitles: &Subtitles
-    language: *Language
+# Subtitles: &Subtitles
+#     language: *Language
 
 FilmMedia: &FilmMedia
     stills: #(Component (repeatable))
@@ -737,7 +737,7 @@ Film: &Film
     festival_editions:
         - *FestivalEdition
     subtitles:
-        - *Subtitles
+        - *Language
     otherFestivals: (text)
     credentials: *CredentialsNew
     presentedBy: *PresentedBy
@@ -767,7 +767,7 @@ Screening: &Screening
     durationTotal: (Number)
     location: *Location
     subtitles: #(Component (repeatable))
-      - *Subtitles
+      - *Language
     extraInfo: (text)
     screening_types: #(Component (repeatable))
       - *ScreeningType
