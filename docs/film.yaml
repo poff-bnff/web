@@ -6,14 +6,11 @@ film:
     titleOriginal: Test
     year: 2020
     runtime: 120
-    slug_et: 
+    slug_et:
     slug_en: test-en
     slug_ru: test-ru
     filmId: film ID
     festival_edition: festival edition id
-    subtitles: 
-        language: 
-            - id: 
     otherFestivals: Tartuff
     synopsis:
         id:
@@ -96,7 +93,14 @@ film:
 
     subtitles: #languages list v6i kohe id?
         -
-            id: 4
+            id: language id
+
+        -
+            id: 1704
+
+        -
+            id: 1745
+
     credentials:
         id: 2
         rolePerson:
@@ -130,4 +134,4 @@ film:
         organisations:
             -
                 id: 3
-    world_sales: 
+    world_sales:
