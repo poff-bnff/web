@@ -36,6 +36,7 @@ jobs:
             StrapiHost: ${{ secrets.FETCH_HOST }}
             StrapiUserName: ${{ secrets.FETCH_USER }}
             StrapiPassword: ${{ secrets.FETCH_KEY }}
+            DOMAIN: poff.ee
 
         - name: Copy Assets
           run: cp -R assets build/assets
