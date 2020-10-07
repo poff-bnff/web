@@ -1,0 +1,211 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+
+
+block content
+
+    //- Hetkel filmide mingi stiil
+    main.grid_film
+        //- Hiljem saab panna reaalsed pildid kui nende andmed kusagilt tulevad, hetkel allpool pandud suvalised static kataloogist
+        - var programme = []
+        - programme.pics = ["Hunt_Kriimsilm_2708d753de.jpg", "hunt_dark_shadow.png", "hunt_dark.png", "placeholder_hd_1.jpg"]
+
+        section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+            ol.carousel-indicators
+                if programme
+                    if programme.pics
+                        each val, index in programme.pics
+                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
+            .carousel-inner.container_frame_16_9
+                if programme
+                    if programme.pics.length
+                        each val, index in programme.pics
+                            if index == 0
+                                .carousel-item.active.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`/assets/img/static/${val}` alt = self.filmTitle)
+                            else
+                                .carousel-item.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`/assets/img/static/${val}` alt = self.filmTitle)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+                else
+                    .carousel-item.active.container_contents_16_9
+                        img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+
+            a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                    polyline(points='15 18 9 12 15 6')
+                span.sr-only Previous
+            a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                    polyline(points='9 18 15 12 9 6')
+                span.sr-only Next
+
+    //- Programmi nimi
+    if self.name
+        p.dark_1= self.name
+
+    //- Programmi kirjeldus
+    if self.description
+        p.dark_1= self.description
+
+    //- Programmi presentedBy tekst
+    if self.presentedBy && self.presentedBy.presentedByText
+        p.dark_1= self.presentedBy.presentedByText + ':'
+
+    if self.presentedBy && self.presentedBy.organisations && self.presentedBy.organisations[0]
+
+        each presenter in self.presentedBy.organisations
+
+            //- Artikli kontroll algus, vajab veel artikli kättesaamist ja täiendamist, et olemasolul suunata artiklile!
+            if presenter.poffi_article
+                - let articleFromYAML = self.data.articles.filter( (a) => { return presenter.poffi_article.id === a.id })
+                - let article = articleFromYAML[0]
+                if article.article_types && article.article_types[0]
+
+                    if article.publish && article.title && article.title.length > 1
+                        - var currentTime = new Date()
+                        if typeof(article.publishFrom) === 'undefined'
+                            - var publishFrom= new Date(article.created_at)
+                        else
+                            - var publishFrom= new Date(article.publishFrom)
+
+                        if article.publishUntil
+                            - var publishUntil = new Date(article.publishUntil)
+
+                        if (currentTime > publishFrom)
+
+                            if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
+
+                                //- p= `${article.title} - ${article.publish} - ${article.publishFrom} - ${article.publishUntil} - ${heroPlusTrioNews} - ${article.id} - ${article.article_types[0].name} - (${publishUntil} > ${currentTime}) - (${(!publishUntil || (publishUntil && (publishUntil > currentTime)))})`
+                                - articlePublished = true
+                                - articleSlug = article.slug
+                                each artType in article.article_types
+                                    - artTypes.push(artType.name.toLowerCase())
+                                    if artType.name.toLowerCase() === defaultTypeIfExists[0]
+                                        - artTypeForPath = artType.slug.toLowerCase()
+                                        - break
+                                    else
+                                        - artTypeForPath = artType.slug.toLowerCase()
+            //- Artikli kontroll lõpp
+
+            //- Programmi esitleja nimi
+            if presenter.name
+                p.dark_1= presenter.name
+
+            //- KUI ARTIKKEL KEELES OLEMAS JA PUBLISHED JA PEALKIRJAGA JNE
+            if typeof articlePublished !== 'undefined' && articlePublished === true
+                a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`).supporter_logo_item
+                    if presenter.logoColour
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                    else if presenter.logoBlack
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                    else if presenter.logoWhite
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+            //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
+            else if presenter.homepageUrl
+                a(href= presenter.homepageUrl).supporter_logo_item
+                    if presenter.logoColour
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                    else if presenter.logoBlack
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                    else if presenter.logoWhite
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+            //- LOGO ILMA LINGITA
+            else
+                    if presenter.logoColour
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                    else if presenter.logoBlack
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                    else if presenter.logoWhite
+                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_programmes_presenters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+
+
+    //- SIIN ALL SUVALINE ARTIKLITE VÄRK, VÕIB KUSTUTADA
+
+    //- if self.publish
+    //-     - var currentTime = new Date()
+    //-         if typeof(self.publishFrom) === 'undefined'
+    //-             - var publishFrom= new Date(self.created_at)
+    //-         else
+    //-             - var publishFrom= new Date(self.publishFrom)
+
+    //-         if self.publishUntil
+    //-             - var publishUntil = new Date(self.publishUntil)
+
+    //-         if (currentTime > publishFrom)
+    //-             if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
+
+    //-                 - var splitSelfPath = self.path.split("/")[self.path.split("/").length-1]
+
+    //-                 if self.title
+    //-                     +tabname(self.title)
+
+    //-                 section.grid_article
+    //-                     section.article_hero_head
+    //-                         if self.media && self.media.image && self.media.image[0]
+    //-                             img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`).article_hero_image
+    //-                         else if self.media && self.media.imageDefault && self.media.imageDefault[0]
+    //-                             img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`).article_hero_image
+    //-                         else
+    //-                             img(src='/assets/img/static/placeholder_hd_1.jpg').article_hero_image
+    //-                     if self.title
+    //-                         .article_hero_headline_box
+    //-                             .article_title_detailed= self.title
+
+    //-                 section.grid_article
+    //-                     section.article_meta
+    //-                         .str_info_meta_gi
+    //-                                 if self.articleType
+    //-                                     .str_info_meta_item
+    //-                                         .str_info_meta_value.dark_1= self.articleType
+
+    //-                                 if self.web_authors
+    //-                                     .str_info_meta_item
+    //-                                         - var authors = []
+    //-                                         each author in self.web_authors
+    //-                                             - authors.push(author.name)
+    //-                                         .str_info_meta_value.dark_1= authors.join(', ')
+    //-                                 else
+    //-                                     .str_info_meta_item
+    //-                                         .str_info_meta_value.dark_1= `${self.created_by.firstname} ${self.created_by.lastname}`
+
+    //-                                 if self.publishFrom
+    //-                                     .str_info_meta_item
+    //-                                         .str_info_meta_value.dark_1
+    //-                                             +localdatetime(self.publishFrom)
+    //-                                 else
+    //-                                     .str_info_meta_item
+    //-                                         .str_info_meta_value.dark_1
+    //-                                             +localdatetime(self.created_at)
+
+    //-                                 .str_info_meta_item
+    //-                                     - var tagsList = []
+    //-                                     if self.tag_premiere_types
+    //-                                         - self.tag_premiere_types.forEach(element => tagsList.push(element));
+    //-                                     if self.tag_programmes
+    //-                                         - self.tag_programmes.forEach(element => tagsList.push(element));
+    //-                                     if self.tag_genres
+    //-                                         - self.tag_genres.forEach(element => tagsList.push(element));
+    //-                                     if self.tag_keywords
+    //-                                         - self.tag_keywords.forEach(element => tagsList.push(element));
+
+    //-                                     if tagsList.length > 0
+    //-                                         .str_info_meta_keywords.ghost_blue= tagsList.join(', ')
+
+
+    //-                     section.article_contents.dark_1
+    //-                         if typeof(self.lead) !== 'object'
+    //-                             +format(self.lead).font_weight_600.dark_1
+    //-                         //- if self.lead
+    //-                         //-     p.font_weight_600.dark_1= self.lead
+    //-                         //- p= self.articleContents_et
+    //-                         if typeof(self.contents) !== 'object'
+    //-                             +format(self.contents).dark_1
+
+
+    //-                     section.article_extra
