@@ -39,7 +39,7 @@ function AuthStrapi (CBOptions, CBfunction){
     )
 
     req.on('error', function (error) {
-        console.log(error);
+        console.log('e', error);
     })
 
     req.end()

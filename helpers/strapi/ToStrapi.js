@@ -115,7 +115,10 @@ function ToStrapi(JSONdataToSend, strapiDataFile, dataPath, keysToCompareforId) 
 
 
 
-module.exports.ToStrapi = ToStrapi;
+module.exports.ToStrapi = ToStrapi
+module.exports.PutOneToStrapi = PutOneToStrapi
+module.exports.PostOneToStrapi = PostOneToStrapi
+
 
 // USAGE:
 // ToStrapi('./data/Films.json', './data/test11.json', '/films', 'filmId');

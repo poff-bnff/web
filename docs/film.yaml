@@ -1,10 +1,10 @@
 film:
-    id: 548
-    title_et:
-    title_en: Test_EN
-    title_ru: Test_RU
-    titleOriginal: Test
-    year: 2020
+    id: ids.system_id
+    title_et: titles.title_local
+    title_en: titles.title_english
+    title_ru: titles.title_custom
+    titleOriginal: titles.title_original
+    year: film_info.completion_date.year
     runtime: 120
     slug_et:
     slug_en: test-en

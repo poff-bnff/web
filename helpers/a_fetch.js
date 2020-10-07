@@ -2,6 +2,7 @@ const http = require('http')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
+const { strapiAuth } = require("./strapiAuth.js")
 
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
@@ -17,43 +18,6 @@ for (const key in DATAMODEL) {
             element['_modelName'] = key
         }
     }
-}
-
-async function strapiAuth() {
-
-    return new Promise((resolve, reject) => {
-        const postData = {
-            identifier: process.env['StrapiUserName'],
-            password: process.env['StrapiPassword']
-        }
-
-        const options = {
-            hostname: process.env['StrapiHost'],
-            path: '/auth/local',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-
-        const request = http.request(options, (response) => {
-            response.setEncoding('utf8')
-            let tokenStr = ''
-            response.on('data', function (chunk) {
-                tokenStr += chunk
-            })
-
-            response.on('end', function () {
-                tokenStr = JSON.parse(tokenStr)['jwt']
-                resolve(tokenStr)
-            })
-
-        })
-
-        request.on('error', reject)
-        request.write(JSON.stringify(postData))
-        request.end()
-    })
 }
 
 async function strapiFetch(modelName, token){
