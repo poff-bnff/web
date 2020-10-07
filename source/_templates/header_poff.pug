@@ -113,8 +113,10 @@ header
                         li
                             a#logIn(style={visibility: 'hidden'} onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
                         li
-                            a#logInName(style={visibility: 'hidden'} onclick = 'loadUserProfileH()')
-                                | HELLO
+                            a#signUp(style={visibility: 'hidden'} href=`/${lang_path}signup`)= self.label.menu.mainSignup
+                        li
+                            a#logInName(style={visibility: 'hidden'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
+
                         li
                             a#logOut(style={cursor: 'pointer', visibility: 'hidden'} onclick='logOut()')= self.label.menu.mainLogout
 
