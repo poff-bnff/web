@@ -31,7 +31,7 @@ jobs:
           run: npm install
 
         - name: Build Project
-          run: npm run-script build_Poff
+          run: npm run-script build_poff
           env:
             StrapiHost: ${{ secrets.FETCH_HOST }}
             StrapiUserName: ${{ secrets.FETCH_USER }}
