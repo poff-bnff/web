@@ -758,8 +758,6 @@ IntroConversationQandA: &IntroConversationQandA
 Screening: &Screening
     _path: /screenings
     screeningId: (Number)
-    films: #(Component (repeatable))
-      - *Film
     code: (Number)
     codeAndFilmTitle: (text)
     ticketingId: (Number)
@@ -775,6 +773,7 @@ Screening: &Screening
     screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
+    bookingUrl: (Rich text)
 
 Cassette:
     _path: /cassettes
