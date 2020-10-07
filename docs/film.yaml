@@ -1,0 +1,133 @@
+film:
+    id: 548
+    title_et:
+    title_en: Test_EN
+    title_ru: Test_RU
+    titleOriginal: Test
+    year: 2020
+    runtime: 120
+    slug_et: 
+    slug_en: test-en
+    slug_ru: test-ru
+    filmId: film ID
+    festival_edition: festival edition id
+    subtitles: 
+        language: 
+            - id: 
+    otherFestivals: Tartuff
+    synopsis:
+        id:
+        et:
+        en:
+        ru:
+    media:
+        id: 332
+        trailer:
+            -
+                id: 318
+                url: 'http://youtube.com'
+                source: YouTube
+        QaClip:
+            -
+                id: 313
+                url: 'http://mingivideokoht.film/'
+                type: Conversation
+        stills:
+            -
+                id: 396
+                name: aretha-franklin-amazing-grace-1972.jpg
+                width: 1000
+                height: 609
+                formats:
+                    thumbnail:
+                        url: >-
+                            /uploads/thumbnail_aretha_franklin_amazing_grace_1972_228f9ade30.jpg
+                        name: thumbnail_aretha-franklin-amazing-grace-1972.jpg
+                hash: aretha_franklin_amazing_grace_1972_228f9ade30
+                ext: .jpg
+                url: /uploads/aretha_franklin_amazing_grace_1972_228f9ade30.jpg
+        posters:
+            -
+                id: 393
+                name: 2019 PÖFF press conference by Aron Urb.jpg
+                width: 2048
+                height: 1365
+                formats:
+                    thumbnail:
+                        url: >-
+                            /uploads/thumbnail_2019_P_Oe_FF_press_conference_by_Aron_Urb_26c26611fc.jpg
+                        name: thumbnail_2019 PÖFF press conference by Aron Urb.jpg
+                hash: 2019_P_Oe_FF_press_conference_by_Aron_Urb_26c26611fc
+                ext: .jpg
+                url: >-
+                    /uploads/2019_P_Oe_FF_press_conference_by_Aron_Urb_26c26611fc.jpg
+    tags:
+        id: 325
+        premiere_types:
+            - id Rahvusvaheline esilinastus
+            - id Balti esilinastus
+        genres:
+            - Komöödia id
+            - Joonisfilm id
+        keywords:
+            - Ühiskond id
+        programmes:
+            -
+                id: 1
+                namePrivate: Shorts anima võistlusprogramm
+                order: 1
+    countriesAndLanguages:
+        id: 304
+        countries:
+            -
+                id: 886
+            -
+                id: 894
+
+        languages:
+            -
+                id: 1702
+
+            -
+                id: 1704
+
+            -
+                id: 1745
+
+    subtitles: #languages list v6i kohe id?
+        -
+            id: 4
+    credentials:
+        id: 2
+        rolePerson:
+            -
+                id: 3
+                order: 1
+                role_at_film:
+                    id: 5
+                    roleNamePrivate: Composer
+                    order: 5
+                person:
+                    id: 120
+
+            -
+                id: 4
+                order: 0
+                role_at_film:
+                    id: 1
+                    roleNamePrivate: Director
+                    order: 1
+                person:
+                    id: 120
+        roleCompany:
+            -
+                id: 3
+                order: 2
+                organisation: id
+    presentedBy:
+        id: 3
+        presentedByText: Selle filmi toob teieni
+        organisations:
+            -
+                id: 3
+    world_sales: 
