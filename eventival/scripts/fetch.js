@@ -3,6 +3,8 @@ const fs = require('fs')
 var parser = require('fast-xml-parser');
 const yaml = require('js-yaml')
 const path = require('path')
+const readline = require('readline');
+const { toInteger } = require('lodash');
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
@@ -21,7 +23,6 @@ const categories = [
 const dataMap = {
     'venues': {
         'api': 'venues.xml',
-        'outxml': path.join(dynamicDir, 'venues.xml'),
         'outyaml': path.join(dynamicDir, 'venues.yaml'),
         'root': 'venues',
         'iterator': 'venue'
@@ -29,14 +30,18 @@ const dataMap = {
     'films': {
         'api': 'films/',
         'category': 'categories/?/films.xml',
-        'outxml': path.join(dynamicDir, 'films.xml'),
         'outyaml': path.join(dynamicDir, 'films.yaml'),
         'root': 'films',
         'iterator': 'item'
     },
+    // 'films': {
+    //     'api': 'films/publications-locked.xml',
+    //     'outyaml': path.join(dynamicDir, 'films.yaml'),
+    //     'root': 'films',
+    //     'iterator': 'item'
+    // },
     'screenings': {
         'api': 'films/screenings.xml',
-        'outxml': path.join(dynamicDir, 'screenings.xml'),
         'outyaml': path.join(dynamicDir, 'screenings.yaml'),
         'root': 'screenings',
         'iterator': 'screening'
@@ -44,11 +49,10 @@ const dataMap = {
 }
 
 
-async function eventivalFetch(modelName) {
-    console.log('Fetch', modelName)
+async function eventivalFetch(url) {
+    // console.log('Fetch', modelName)
     return new Promise((resolve, reject) => {
-        const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, modelName)
-        console.log(url);
+        // console.log('url', url);
         https.get(url, (res) => {
             const { statusCode } = res;
             const contentType = res.headers['content-type'];
@@ -56,13 +60,13 @@ async function eventivalFetch(modelName) {
             let error
             if (statusCode !== 200) {
                 error = new Error('Request Failed.\n' + `Status Code: ${statusCode}`)
-                console.log(res.headers);
+                console.log('headers', res.headers);
             } else if (!/^text\/xml/.test(contentType)) {
                 error = new Error('Invalid content-type.\n' + `Expected text/xml but received ${contentType}`);
             }
 
             if (error) {
-                console.error(error.message)
+                console.error('E1', error.message)
                 // Consume response data to free up memory
                 res.resume()
                 return
@@ -80,9 +84,11 @@ async function eventivalFetch(modelName) {
     })
 }
 
-const foo = async () => {
+const fetch_lists = async () => {
+    let e_data = {}
+
     for (const [model, mapping] of Object.entries(dataMap)) {
-        console.log('go for', model)
+        console.log('go for', model, 'list')
         let eApis = []
         let jsonList = []
         if (mapping.category) {
@@ -93,43 +99,76 @@ const foo = async () => {
             eApis.push(mapping.api)
         }
         for (const eApi of eApis) {
-            console.log(eApi);
-            const eventivalXML = await eventivalFetch(eApi)
+            // console.log(eApi);
+            const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, eApi)
+            const eventivalXML = await eventivalFetch(url)
                 .catch(e => {
                     console.log('E3:', e)
                 })
             // console.log('eventivalXML', eventivalXML)
-            if( parser.validate(eventivalXML) !== true) { //optional (it'll return an object in case it's not valid)
-                process.exit(1)
-            }
-            var options = {
-                attributeNamePrefix : "@_",
-                attrNodeName: "attr", //default is 'false'
-                textNodeName : "#text",
-                ignoreAttributes : true,
-                ignoreNameSpace : false,
-                allowBooleanAttributes : false,
-                parseNodeValue : true,
-                parseAttributeValue : false,
-                trimValues: true,
-                cdataTagName: "__cdata", //default is 'false'
-                cdataPositionChar: "\\c",
-                parseTrueNumberOnly: false,
-                arrayMode: false, //"strict"
-                // attrValueProcessor: (val, attrName) => he.decode(val, {isAttributeValue: true}),//default is a=>a
-                // tagValueProcessor : (val, tagName) => he.decode(val), //default is a=>a
-                stopNodes: ["parse-me-as-string"]
-            }
-            const fetched = parser.parse(eventivalXML, options)[mapping.root]
-            console.log(mapping.iterator, Object.keys(fetched));
+            const fetched = my_parser(eventivalXML, mapping.root);
             if (Object.keys(fetched).includes(mapping.iterator)) {
-                console.log('found', mapping.iterator, Object.keys(fetched))
                 jsonList = jsonList.concat(fetched[mapping.iterator])
             }
         }
-        const yamlStr = yaml.safeDump(jsonList, { 'indent': '4' })
-        fs.writeFileSync(mapping.outyaml, yamlStr)
+        e_data[model] = jsonList
     }
+    return e_data
+}
+
+const fetch_films = async (e_films) => {
+    const endlineAt = 60
+    for (const [ix, element] of Object.entries(e_films)) {
+        // console.log('fetch', element.id, element.title_english, element.title_original)
+        const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + element.id + '.xml')
+        const eventivalXML = await eventivalFetch(url)
+        .catch(e => {
+            console.log('E4:', e)
+        })
+        e_films[ix] = my_parser(eventivalXML, 'film')
+
+        const cursor_x = parseInt(ix)%endlineAt
+        const dot = (ix%10 ? (ix%5 ? '.' : 'i') : '|')
+        if (cursor_x === 0 && parseInt(ix) !== 0) {
+            readline.cursorTo(process.stdout, endlineAt)
+            console.log(dot + ' = ' + ix)
+        }
+        readline.cursorTo(process.stdout, cursor_x)
+        process.stdout.write(dot + ' (' + ix + ')')
+    }
+}
+
+const foo = async () => {
+    const e_data = await fetch_lists()
+    console.log('go for all the films ');
+    await fetch_films(e_data.films)
+    for (const [model, data] of Object.entries(e_data)) {
+        const yamlStr = yaml.safeDump(data, { 'indent': '4' })
+        fs.writeFileSync(dataMap[model].outyaml, yamlStr)
+    }
+}
+
+function my_parser(eventivalXML, root_node) {
+    if (parser.validate(eventivalXML) !== true) { //optional (it'll return an object in case it's not valid)
+        process.exit(1)
+    }
+    var options = {
+        attributeNamePrefix: "@_",
+        attrNodeName: "attr",
+        textNodeName: "#text",
+        ignoreAttributes: true,
+        ignoreNameSpace: false,
+        allowBooleanAttributes: false,
+        parseNodeValue: true,
+        parseAttributeValue: false,
+        trimValues: true,
+        cdataTagName: "__cdata",
+        cdataPositionChar: "\\c",
+        parseTrueNumberOnly: false,
+        arrayMode: false,
+        stopNodes: ["parse-me-as-string"]
+    }
+    return parser.parse(eventivalXML, options)[root_node]
 }
 
 foo()
