@@ -10,6 +10,14 @@ const EVENTIVAL_TOKEN = process.env['EVENTIVAL_TOKEN']
 const edition = '24'
 const eventivalAPI = path.join('bo.eventival.com', 'poff', edition, 'en', 'ws')
 
+const categories = [
+    { "id": 9, "name": "Just Film" },
+    { "id": 10, "name": "PÖFF" },
+    { "id": 1838, "name": "Shortsi alam" },
+    { "id": 1839, "name": "Shorts" },
+    { "id": 2651, "name": "KinoFF" }
+]
+
 const dataMap = {
     'venues': {
         'api': 'venues.xml',
@@ -19,7 +27,8 @@ const dataMap = {
         'iterator': 'venue'
     },
     'films': {
-        'api': 'films/publications-locked.xml',
+        'api': 'films/',
+        'category': 'categories/?/films.xml',
         'outxml': path.join(dynamicDir, 'films.xml'),
         'outyaml': path.join(dynamicDir, 'films.yaml'),
         'root': 'films',
@@ -73,38 +82,53 @@ async function eventivalFetch(modelName) {
 
 const foo = async () => {
     for (const [model, mapping] of Object.entries(dataMap)) {
-        console.log('go for', model);
-        const eventivalXML = await eventivalFetch(mapping.api)
-            .catch(e => {
-                console.log('E3:', e)
-            })
-        // console.log('eventivalXML', eventivalXML)
-
-        var options = {
-            attributeNamePrefix : "@_",
-            attrNodeName: "attr", //default is 'false'
-            textNodeName : "#text",
-            ignoreAttributes : true,
-            ignoreNameSpace : false,
-            allowBooleanAttributes : false,
-            parseNodeValue : true,
-            parseAttributeValue : false,
-            trimValues: true,
-            cdataTagName: "__cdata", //default is 'false'
-            cdataPositionChar: "\\c",
-            parseTrueNumberOnly: false,
-            arrayMode: false, //"strict"
-            // attrValueProcessor: (val, attrName) => he.decode(val, {isAttributeValue: true}),//default is a=>a
-            // tagValueProcessor : (val, tagName) => he.decode(val), //default is a=>a
-            stopNodes: ["parse-me-as-string"]
-        };
-
-        if( parser.validate(eventivalXML) === true) { //optional (it'll return an object in case it's not valid)
-            var jsonList = parser.parse(eventivalXML, options)[mapping.root][mapping.iterator]
-            let yamlStr = yaml.safeDump(jsonList, { 'indent': '4' });
-            fs.writeFileSync(mapping.outyaml, yamlStr)
+        console.log('go for', model)
+        let eApis = []
+        let jsonList = []
+        if (mapping.category) {
+            for (const category of categories) {
+                eApis.push(mapping.api + mapping.category.replace('?', category.id))
+            }
+        } else {
+            eApis.push(mapping.api)
         }
-
+        for (const eApi of eApis) {
+            console.log(eApi);
+            const eventivalXML = await eventivalFetch(eApi)
+                .catch(e => {
+                    console.log('E3:', e)
+                })
+            // console.log('eventivalXML', eventivalXML)
+            if( parser.validate(eventivalXML) !== true) { //optional (it'll return an object in case it's not valid)
+                process.exit(1)
+            }
+            var options = {
+                attributeNamePrefix : "@_",
+                attrNodeName: "attr", //default is 'false'
+                textNodeName : "#text",
+                ignoreAttributes : true,
+                ignoreNameSpace : false,
+                allowBooleanAttributes : false,
+                parseNodeValue : true,
+                parseAttributeValue : false,
+                trimValues: true,
+                cdataTagName: "__cdata", //default is 'false'
+                cdataPositionChar: "\\c",
+                parseTrueNumberOnly: false,
+                arrayMode: false, //"strict"
+                // attrValueProcessor: (val, attrName) => he.decode(val, {isAttributeValue: true}),//default is a=>a
+                // tagValueProcessor : (val, tagName) => he.decode(val), //default is a=>a
+                stopNodes: ["parse-me-as-string"]
+            }
+            const fetched = parser.parse(eventivalXML, options)[mapping.root]
+            console.log(mapping.iterator, Object.keys(fetched));
+            if (Object.keys(fetched).includes(mapping.iterator)) {
+                console.log('found', mapping.iterator, Object.keys(fetched))
+                jsonList = jsonList.concat(fetched[mapping.iterator])
+            }
+        }
+        const yamlStr = yaml.safeDump(jsonList, { 'indent': '4' })
+        fs.writeFileSync(mapping.outyaml, yamlStr)
     }
 }
 
