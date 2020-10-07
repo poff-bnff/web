@@ -147,7 +147,7 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
             let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
             fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-            if (fs.existsSync(`include /_templates/article_${artType.name}_index_template.pug`)) {
+            if (fs.existsSync(`${sourceDir}/_templates/article_${artType.name}_index_template.pug`)) {
                 fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`)
             } else {
                 fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${DEFAULTTEMPLATENAME}_index_template.pug`)
