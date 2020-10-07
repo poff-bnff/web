@@ -26,24 +26,13 @@
     "yaml-diff": "^0.1.1"
   },
   "scripts": {
-    "ssg-serve-pöff": ". ./ssg_serve_poff.sh",
-    "ssg-serve-just": ". ./ssg_serve_just.sh",
-    "ssg-serve-shorts": ". ./ssg_serve_shorts.sh",
-    "ssg-serve-kinoff": ". ./ssg_serve_kinoff.sh",
-    "ssg-serve-industry": ". ./ssg_serve_industry.sh",
     "serve_local": "serve build",
-    "rebuild_local": "node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full",
     "build": ". ./build.sh",
-    "build_Poff": ". ./build_poff.sh",
-    "build_Poff_no_img": ". ./build_poff_no_img.sh",
-    "build_just": ". ./build_just.sh",
-    "build_shorts": ". ./build_shorts.sh",
-    "build_kinoff": ". ./build_kinoff.sh",
-    "build_industry": ". ./build_industry.sh",
     "update_poff_styles": "DOMAIN='poff.ee' node helpers/copy_styles_acc_to_domain.js",
     "update_justfilm_styles": "DOMAIN='justfilm.ee' node helpers/copy_styles_acc_to_domain.js",
     "update_shorts_styles": "DOMAIN='shorts.poff.ee' node helpers/copy_styles_acc_to_domain.js",
-    "Custom-Build": ". ./build_custom.sh"
+    "Custom-Build": "bash ./build_custom.sh",
+    "Custom-Serve-SSG": "bash ./ssg_serve_custom.sh"
   },
   "repository": {
     "type": "git",

@@ -80,6 +80,28 @@ function getData(dirPath, lang, writeIndexFile, showErrors, dataFrom) {
                 element.contentsImg = contentImgs;
             }
 
+            if (element.lead && element.lead[0]) {
+                var splitContent = element.lead.split('[');
+                var i = 0;
+                var contentImgs = [];
+                while (splitContent[i+1]){
+                    if(splitContent[i+1]) {
+                        // console.log('IMG: ', splitContent[i+1].split(')')[0]);
+                        // contentImgs.push(splitContent[i+1].split(')')[0]);
+                        var theLink = splitContent[i+1].split(')')[0];
+                        var wholeLink = `[${splitContent[i+1].split(')')[0]})`;
+                        var wholeLinkEscaped = wholeLink.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+                        var linkText = theLink.split(']')[0];
+                        let searchRegExp = new RegExp(wholeLinkEscaped, 'g');
+                        const replaceLinkWithLinkText = element.lead.replace(searchRegExp, linkText);
+                        element.lead = replaceLinkWithLinkText;
+                        console.log(element.lead);
+                        i++;
+                    }
+                }
+
+            }
+
             allData.push(element)
             element.data = dataFrom
 
