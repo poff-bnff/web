@@ -440,13 +440,15 @@ block content
                             - youtubeVideoCode = film.filmQaClip.split("=")
                             +youtube(youtubeVideoCode[1])
 
-                if film.filmTrailer
+                if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].url
 
                     section.f_trailer_box
                         .section_headline= self.label.film.trailer
                         .embed-responsive.embed-responsive-16by9.m-0.p-0
-                            - youtubeVideoCode = film.filmTrailer.split("=")
-                            +youtube(youtubeVideoCode[1])
+                            if film.media.trailer[0].source === 'YouTube'
+                                - youtubeVideoCode = film.media.trailer[0].url.split("=")
+                                +youtube(youtubeVideoCode[1])
+                            else if film.media.trailer[0].source === 'Vimeo'
 
                 section.f_imgs_box
 
