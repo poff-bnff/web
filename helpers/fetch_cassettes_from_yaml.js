@@ -10,6 +10,7 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
 const STRAPIDATA_PROGRAMMES = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Programme'];
+const STRAPIDATA_SCREENINGS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Screening'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const mapping = {
@@ -89,6 +90,20 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             element.directory = path.join(dirPath, slugEn)
             fs.mkdirSync(element.directory, { recursive: true })
 
+            // Screenings
+            let screenings = []
+            for (screeningIx in STRAPIDATA_SCREENINGS) {
+                if (STRAPIDATA_SCREENINGS[screeningIx].cassette && STRAPIDATA_SCREENINGS[screeningIx].cassette.id === element.id) {
+                    let screening = JSON.parse(JSON.stringify(STRAPIDATA_SCREENINGS[screeningIx]));
+                    delete screening.cassette;
+                    screenings.push(screening)
+                }
+            }
+
+            if (screenings.length > 0) {
+                element.screenings = screenings
+            }
+
             // let element = JSON.parse(JSON.stringify(element));
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru'];
@@ -155,7 +170,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
         } else {
             if(showErrors) {
-                console.log(`Cassette ID ${element.id} slug_en value missing`);
+                console.log(`- Notification! Cassette ID ${element.id} slug_en or slug_et value missing`);
             }
         }
     }
