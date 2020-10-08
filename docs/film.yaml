@@ -10,13 +10,13 @@ film:
     slug_en:
     slug_ru:
     filmId: film.ids.system_id
-    festival_edition: film.eventival_categorization.categories.
-    otherFestivals: Tartuff
-    synopsis:
-        id:
-        et:
-        en:
-        ru:
+    festival_edition: film.eventival_categorization.categories.category
+    otherFestivals: '?',
+    synopsis: {
+        et: film.publications.et.synopsis_long
+        en: film.publications.en.synopsis_long
+        ru: film.publications.ru.synopsis_long
+        },
     media:
         id: 332
         trailer:
@@ -58,23 +58,17 @@ film:
                 ext: .jpg
                 url: >-
                     /uploads/2019_P_Oe_FF_press_conference_by_Aron_Urb_26c26611fc.jpg
-    tags:
-        id: 325
-        premiere_types:
-            - id Rahvusvaheline esilinastus
-            - id Balti esilinastus
-        genres:
-            - Komöödia id
-            - Joonisfilm id
-        keywords:
-            - Ühiskond id
+    tags: {
+        premiere_types: '?',
+        genres: film.film_info.types.type,
+        keywords: film.eventival_categorization.tags.tag,
         programmes:
             -
                 id: 1
                 namePrivate: Shorts anima võistlusprogramm
                 order: 1
+        }
     countriesAndLanguages:
-        id: 304
         countries:
             -
                 id: 886
@@ -91,18 +85,9 @@ film:
             -
                 id: 1745
 
-    subtitles: #languages list v6i kohe id?
-        -
-            id: language id
-
-        -
-            id: 1704
-
-        -
-            id: 1745
+    subtitles: {id: film.film_info.subtitle_languages.subtitle_language.code}
 
     credentials:
-        id: 2
         rolePerson:
             -
                 id: 3
