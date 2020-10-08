@@ -357,11 +357,17 @@ block content
                                 -   var itemNames = item.name
                                 -   return itemNames
                                 - }
-                                //- Kas selleks eraldi labelit vaja vms?
                                 .str_info_meta_label.dark_1= self.label.film.programme
                                 .str_info_meta_festival= film.tags.programmes.map(programmeNames).join(', ')
 
+                            if film.tags && film.tags.genres && film.tags.genres[0]
+                                .str_info_meta_label.dark_1= self.label.film.genre
+                                .str_info_meta_festival= film.tags.genres.join(', ')
 
+
+                            if film.tags && film.tags.keywords && film.tags.keywords[0]
+                                .str_info_meta_label.dark_1= self.label.film.keywords
+                                .str_info_meta_festival= film.tags.keywords.join(', ')
 
                             //- festival programm zanrid keywordid
 
