@@ -32,11 +32,12 @@ jobs:
           run: npm install
 
         - name: Build Project
-          run: npm run-script build_just
+          run: . ./build.sh
           env:
             StrapiHost: ${{ secrets.FETCH_HOST }}
             StrapiUserName: ${{ secrets.FETCH_USER }}
             StrapiPassword: ${{ secrets.FETCH_KEY }}
+            DOMAIN: justfilm.ee
 
         - name: Copy Assets
           run: cp -R assets build/assets
