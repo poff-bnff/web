@@ -717,6 +717,25 @@ CountriesAndLanguages: &CountriesAndLanguages
     languages: #(Component (repeatable))
         - *Language
 
+Cassette:
+    _path: /cassettes
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    synopsis: *Translated #(Rich text)
+    media: *FilmMedia #(Component)
+    festival_edition: *FestivalEdition
+    tags: *Tags
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    cassetteId: (text)
+    presenters:
+        - *Organisation
+    films:
+        - *Film
+    remoteId: (UID)
+
 Film: &Film
     _path: /films
     id: 1 (number)
@@ -732,7 +751,7 @@ Film: &Film
     slug_et: naehtamatu-elu (UID, No spaces)
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
-    filmId: 2020 (UID)
+    remoteId: (UID)
     countriesAndLanguages: *CountriesAndLanguages #(Component)
     festival_editions:
         - *FestivalEdition
@@ -756,9 +775,8 @@ IntroConversationQandA: &IntroConversationQandA
 
 Screening: &Screening
     _path: /screenings
-    screeningId: (Number)
     code: (Number)
-    codeAndFilmTitle: (text)
+    codeAndTitle: (text)
     ticketingId: (Number)
     ticketingUrl: (text)
     dateTime: (Datetime)
@@ -766,31 +784,15 @@ Screening: &Screening
       - *IntroConversationQandA
     durationTotal: (Number)
     location: *Location
-    subtitles: #(Component (repeatable))
-      - *Subtitles
     extraInfo: (text)
     screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
-    bookingUrl: (Rich text)
-
-Cassette:
-    _path: /cassettes
-    title_et: (text)
-    title_en: (text)
-    title_ru: (text)
-    synopsis: *Translated #(Rich text)
-    media: *FilmMedia #(Component)
-    festival_edition: *FestivalEdition
-    tags: *Tags
-    slug_et: (UID)
-    slug_en: (UID)
-    slug_ru: (UID)
-    cassetteId: (text)
-    presenters:
-        - *Organisation
-    screenings:
-        - *Screening
+    subtitles: #(Component (repeatable))
+      - *Subtitles
+    cassette: *Cassette
+    bookingUrl: (text)
+    remoteId: (UID)
 
 Label: &Label
     name: (text)
