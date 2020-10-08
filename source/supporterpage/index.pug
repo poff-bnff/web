@@ -66,7 +66,7 @@ include /_templates/mixins.pug
                                     //- SIIN SAMUTI FOOTERI STIILID HETKEL
                                     //- KUI ARTIKKEL KEELES OLEMAS JA PUBLISHED JA PEALKIRJAGA JNE
                                     if articlePublished === true
-                                        a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`).supporter_logo_item
+                                        a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`).supporter_logo_item_container
                                             if supporter.logoColour
                                                 img.supporter_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
                                             else if supporter.logoBlack
@@ -75,7 +75,7 @@ include /_templates/mixins.pug
                                                 img.supporter_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
                                     //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
                                     else if supporter.customUrl
-                                        a(href= supporter.customUrl).supporter_logo_item
+                                        a(href= supporter.customUrl).supporter_logo_item_container
                                             if supporter.logoColour
                                                 img.supporter_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
                                             else if supporter.logoBlack
@@ -84,6 +84,7 @@ include /_templates/mixins.pug
                                                 img.supporter_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
                                     //- LOGO ILMA LINGITA
                                     else
+                                        .supporter_logo_item_container
                                             if supporter.logoColour
                                                 img.supporter_logo_item(alt=supporter.customUrl data-src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
                                             else if supporter.logoBlack
