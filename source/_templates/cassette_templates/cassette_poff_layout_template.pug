@@ -338,12 +338,34 @@ block content
             each film in self.films
                 block titleBox
                 section.f_synopsis_box
+
+                    //- Kassetti festivali info
+                    if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
                     .str_info_meta_gi
                         .str_info_meta_item
-                            .str_info_meta_label.dark_1
-                                | Festival
-                            .str_info_meta_festival
-                                | Tartuff
+                            .str_info_meta_label.dark_1= self.label.film.festival
+                            .str_info_meta_festival= self.festival_edition.festival.name
+
+
+                            if self.festival_edition && self.festival_edition && self.festival_edition.name
+                                //- Kas selleks eraldi labelit vaja vms?
+                                .str_info_meta_label.dark_1= self.label.film.festival
+                                .str_info_meta_festival= self.festival_edition.name
+
+                            if film.tags && film.tags.programmes && film.tags.programmes[0]
+                                - var programmeNames = function(item) {
+                                -   var itemNames = item.name
+                                -   return itemNames
+                                - }
+                                //- Kas selleks eraldi labelit vaja vms?
+                                .str_info_meta_label.dark_1= self.label.film.programme
+                                .str_info_meta_festival= film.tags.programmes.map(programmeNames).join(', ')
+
+
+
+                            //- festival programm zanrid keywordid
+
+
                         //- .str_info_meta_item
                         //-     .str_info_meta_label
                         //-         | Programm
@@ -431,6 +453,25 @@ block content
                         p
                             | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
                         a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
+
+                if film.credentials && film.credentials.rolePerson[0]
+                    - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
+                    - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
+
+                //- if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
+                //-     section.f_dir_bio_box
+                //-         if director.person.picture
+                //-             div(style="width:200px; height:300px; padding-bottom:20px; padding-top:20px;")
+                //-             img(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles style="width:100%; height:100%;")
+
+                //-         p= `${director.person.firstName} ${director.person.lastName}`
+
+                //-         if director.person.biography
+                //-             p= director.person.biography
+
+                //-         if director.person.filmography
+                //-             p= director.person.filmography
+
 
                 if film.filmQaClip
 
