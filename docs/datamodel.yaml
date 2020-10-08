@@ -158,7 +158,69 @@ FestivalEdition: &FestivalEdition
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
-# Articles (POFF, Just, Shorts, Industry, Kinoff)(yhskasutatav komponent j4rgmisel aastal)
+
+# Organisation
+Organisation: &Organisation
+    _path: /organisations
+    namePrivate: (text)
+    name: *Translated # (Component)
+    description: *Translated # (Component)
+    images: #(Component (repeatable))
+        - *StrapiMedia
+    type: (Enumeration)
+    logoWhite: *StrapiMedia
+    logoBlack: *StrapiMedia
+    logoColour: *StrapiMedia
+    # industry_articles:
+    #     - *IndustryArticle
+    # just_filmi_articles:
+    #     - *JustFilmiArticle
+    # kinoffi_articles:
+    #     - *KinoffiArticle
+    # poffi_articles:
+    #     - *POFFiArticle
+    # shortsi_articles:
+    #     - *ShortsiArticle
+    homepageUrl: (text)
+
+PresentedBy: &PresentedBy
+    presentedByText: *Translated
+    organisations:
+        - *Organisation
+
+# Programme
+Programme: &Programme
+    _path: /programmes
+    namePrivate: (text)
+    name: *Translated #(Component)
+    description: *Translated # (Component, rich)
+    festival_editions: #(Component (repeatable))
+        - *FestivalEdition
+    images:
+        - *StrapiMedia
+    presentedByText: *Translated #(Component)
+    presenters: #(Component (repeatable))
+        - *Organisation
+    domains:
+        - *Domain #(Component)
+    order: (Number)
+    presentedBy: *PresentedBy #(Component)
+
+Tags: &Tags
+    genres: #(Component (repeatable))
+      - *TagGenre
+    keywords: #(Component (repeatable))
+      - *TagKeyword
+    premiere_types: #(Component (repeatable))
+      - *TagPremiereType
+    programmes: #(Component (repeatable))
+      - *Programme
+
+WebAuthor: &WebAuthor
+    _path: /web-authors
+    namePrivate: (text)
+    name: *Translated
+
 ArticleType: &ArticleType
     _path: /article-types
     name: (text)
@@ -168,7 +230,7 @@ ArticleType: &ArticleType
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
-
+# Articles (POFF, Just, Shorts, Industry, Kinoff)
 Media: &Media
     imageDefault: #(Component (repeatable))
         - *StrapiMedia
@@ -190,55 +252,6 @@ Button: &Button
     url_et: (text)
     url_en: (text)
     url_ru: (text)
-
-# Organisation
-Organisation: &Organisation
-    _path: /organisations
-    namePrivate: (text)
-    name: *Translated # (Component)
-    description: *Translated # (Component)
-    images: #(Component (repeatable))
-        - *StrapiMedia
-    type: (Enumeration)
-    logoWhite: *StrapiMedia
-    logoBlack: *StrapiMedia
-    logoColour: *StrapiMedia
-    homepageUrl: (text)
-
-PresentedBy: &PresentedBy
-    presentedByText: *Translated
-    organisations:
-        - *Organisation
-
-# Programme
-Programme: &Programme
-    _path: /programmes
-    namePrivate: (text)
-    name: *Translated #(Component)
-    description: *Translated # (Component, rich)
-    festival_editions: #(Component (repeatable))
-        - *FestivalEdition
-    images:
-        - *StrapiMedia
-    domains:
-        - *Domain #(Component)
-    order: (Number)
-    presentedBy: *PresentedBy #(Component)
-
-Tags: &Tags
-    genres: #(Component (repeatable))
-      - *TagGenre
-    keywords: #(Component (repeatable))
-      - *TagKeyword
-    premiere_types: #(Component (repeatable))
-      - *TagPremiereType
-    programmes: #(Component (repeatable))
-      - *Programme
-
-WebAuthor: &WebAuthor
-    _path: /web-authors
-    namePrivate: (text)
-    name: *Translated
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
@@ -279,8 +292,6 @@ POFFiArticle: &POFFiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-    organisations:
-        - *Organisation
 
 JustFilmiArticle: &JustFilmiArticle
     _path: /just-filmi-articles
@@ -321,8 +332,6 @@ JustFilmiArticle: &JustFilmiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-    organisations:
-        - *Organisation
 
 ShortsiArticle: &ShortsiArticle
     _path: /shortsi-articles
@@ -363,8 +372,6 @@ ShortsiArticle: &ShortsiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-    organisations:
-        - *Organisation
 
 IndustryArticle: &IndustryArticle
     _path: /industry-articles
@@ -405,8 +412,6 @@ IndustryArticle: &IndustryArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-    organisations:
-        - *Organisation
 
 KinoffiArticle: &KinoffiArticle
     _path: /kinoffi_articles
@@ -447,8 +452,6 @@ KinoffiArticle: &KinoffiArticle
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-    organisations:
-        - *Organisation
 
 Language: &Language
     _path: /languages
@@ -497,7 +500,6 @@ Location: &Location
     cinema: *Cinema #(Component)
     hall: *Hall #(Component)
     name: (text)
-
 
 # Menu
 
@@ -674,8 +676,8 @@ QaClip: &QaClip
     url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
     type: Conversation (Enumeration)
 
-# Subtitles: &Subtitles
-#     language: *Language
+Subtitles: &Subtitles
+    language: *Language
 
 FilmMedia: &FilmMedia
     stills: #(Component (repeatable))
@@ -730,27 +732,16 @@ Film: &Film
     slug_et: naehtamatu-elu (UID, No spaces)
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
-    filmId: 2020 (UID)
+    remoteId: (UID)
     countriesAndLanguages: *CountriesAndLanguages #(Component)
     festival_editions:
         - *FestivalEdition
     subtitles:
-        - *Language
+        - *Subtitles
     otherFestivals: (text)
     credentials: *CredentialsNew
     presentedBy: *PresentedBy
     world_sales: (text)
-
-IntroConversationQandA: &IntroConversationQandA
-    yesNo: (Boolean)
-    type: (Enumeration)
-    mode: (Enumeration)
-    presenter: #(Component (repeatable))
-        - *Translated
-    guest: #(Component (repeatable))
-        - *Translated
-    duration: (Number)
-    clipUrl: (text)
 
 Cassette: &Cassette
     _path: /cassettes
@@ -764,17 +755,27 @@ Cassette: &Cassette
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
-    cassetteId: (text)
     presenters:
         - *Organisation
     films:
         - *Film
+    remoteId: (UID)
+
+IntroConversationQandA: &IntroConversationQandA
+    yesNo: (Boolean)
+    type: (Enumeration)
+    mode: (Enumeration)
+    presenter: #(Component (repeatable))
+        - *Translated
+    guest: #(Component (repeatable))
+        - *Translated
+    duration: (Number)
+    clipUrl: (text)
 
 Screening: &Screening
     _path: /screenings
-    screeningId: (Number)
     code: (Number)
-    codeAndFilmTitle: (text)
+    codeAndTitle: (text)
     ticketingId: (Number)
     ticketingUrl: (text)
     dateTime: (Datetime)
@@ -782,14 +783,15 @@ Screening: &Screening
       - *IntroConversationQandA
     durationTotal: (Number)
     location: *Location
-    subtitles: #(Component (repeatable))
-      - *Language
     extraInfo: (text)
     screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
+    subtitles: #(Component (repeatable))
+      - *Subtitles
     cassette: *Cassette
-    bookingUrl: (Rich text)
+    bookingUrl: (text)
+    remoteId: (UID)
 
 Label: &Label
     name: (text)
