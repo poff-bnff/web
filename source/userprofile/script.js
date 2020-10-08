@@ -39,7 +39,7 @@ async function LoadUserInfo() {
     firstName.value = userProfile.name;
     lastName.value = userProfile.family_name;
     email.value = userProfile.email;
-    //console.log(userProfile)
+    console.log(userProfile)
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
