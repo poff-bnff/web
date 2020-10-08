@@ -8,6 +8,8 @@ const cassetteTemplatesDir = path.join(sourceDir, '_templates', 'cassette_templa
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
+const STRAPIDATA_PROGRAMMES = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Programme'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const mapping = {
@@ -113,11 +115,23 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         film.dirSlug = filmSlugEn
                     }
 
+                    if (film.tags && film.tags.programmes && film.tags.programmes[0]) {
+                        for (const programmeIx in film.tags.programmes) {
+                            let programme = film.tags.programmes[programmeIx];
+                            let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
+                            film.tags.programmes[programmeIx] = programmeFromYAML[0];
+                        }
+                    }
+
                     let rolePersonTypes = {}
                     if(film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]) {
+                        film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                         for (roleIx in film.credentials.rolePerson) {
-                            film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                             let rolePerson = film.credentials.rolePerson[roleIx]
+
+                            let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
+                            rolePerson.person = personFromYAML[0];
+
                             if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
                                 rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
                             }

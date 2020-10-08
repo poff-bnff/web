@@ -14,6 +14,9 @@ block film
 
                 each film in self.films
                     .premiere_type &nbsp;
+                        if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                            h1= film.tags.premiere_types.join(', ')
+
                     h1.film_title_detailed= film.title
                     .str_info_blokk_1
 
@@ -58,6 +61,10 @@ block film
 
                 each film in self.films
                     .premiere_type &nbsp;
+                        if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                            //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                            p.premiere_type= film.tags.premiere_types.join(', ')
+
                     h1.film_title_detailed= film.title
                     .str_info_blokk_1
 
