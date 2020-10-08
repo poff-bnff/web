@@ -48,6 +48,7 @@ bg_color_3 = #f7f7ff
 bg_color_4 = #eeeeff
 clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
+clr_dark_semi = rgba(23,33,33,.5)
 // clr_primary = #ec008c
 clr_primary = #F39133 // PÖFF orange
 clr_primary_text = #F39133 // PÖFF orange
@@ -1096,7 +1097,8 @@ header
 
 .f_dir_bio_box
     grid-area f_dir_bio_box
-    background-color bg_dark_1
+    // background-color bg_dark_1
+    background-color bg_color_1
     padding-left calc(2rem + 1vw)
     padding-right calc(2rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -2424,6 +2426,9 @@ a.btn_popover
 
 .dark_1
     color dark_1
+
+.dark_semi
+    color clr_dark_semi
 
 a .trio_headline
     text-decoration none
