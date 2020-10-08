@@ -63,11 +63,15 @@ main.grid_film
 
                     if film.tags && film.tags.programmes && film.tags.programmes[0]
                         - var programmeNames = function(item) {
-                        -   var itemNames = item.name
+                        -   if(typeof item.name !== 'object') {
+                        -       var itemNames = item.name
+                        -   }
                         -   return itemNames
                         - }
-                        .str_info_meta_label.dark_1= self.label.film.programme
-                        .str_info_meta_festival= film.tags.programmes.map(programmeNames).join(', ')
+                        - var programmes = film.tags.programmes.map(programmeNames).join(', ')
+                        if programmes.length > 0
+                            .str_info_meta_label.dark_1= self.label.film.programme
+                            .str_info_meta_festival= programmes
 
                     if film.tags && film.tags.genres && film.tags.genres[0]
                         .str_info_meta_label.dark_1= self.label.film.genre
@@ -186,9 +190,9 @@ main.grid_film
 
                     //- if director.person.biography || director.person.filmography
                 .dir_bio
-                    if director.person.biography
+                    if director.person.biography && typeof director.person.biography !== 'object'
                         p= director.person.biography
-                    if director.person.filmography
+                    if director.person.filmography && typeof director.person.filmography !== 'object'
                         p= director.person.filmography
 
         if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
