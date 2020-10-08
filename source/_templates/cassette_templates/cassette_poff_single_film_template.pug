@@ -50,12 +50,12 @@ main.grid_film
         section.f_synopsis_box
 
             //- Kassetti festivali info
-            if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
             .str_info_meta_gi
                 .str_info_meta_item
-                    .str_info_meta_label.dark_1= self.label.film.festival
-                    .str_info_meta_festival= self.festival_edition.festival.name
+                    if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
 
+                        .str_info_meta_label.dark_1= self.label.film.festival
+                        .str_info_meta_festival= self.festival_edition.festival.name
 
                     if self.festival_edition && self.festival_edition && self.festival_edition.name
                         //- Kas selleks eraldi labelit vaja vms?
