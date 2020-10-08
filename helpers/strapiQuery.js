@@ -1,7 +1,15 @@
-const http = require('http');
+const http = require('http')
+const { strapiAuth } = require("./strapiAuth.js")
+var TOKEN = ''
 
-function strapiQuery(options, dataObject = false) {
-    console.log('Querying', options.method, options.path);
+async function strapiQuery(options, dataObject = false) {
+    if (TOKEN === '') {
+        TOKEN = await strapiAuth() // TODO: setting global variable is no a good idea
+        console.log(TOKEN);
+    }
+    options.headers['Authorization'] = `Bearer ${TOKEN}`
+
+    console.log('Querying', options.method, options.path, (dataObject || ''));
     return new Promise((resolve, reject) => {
 
         const request = http.request(options, (response) => {
@@ -33,4 +41,4 @@ function strapiQuery(options, dataObject = false) {
         request.end();
     });
 }
-exports.strapiQuery = strapiQuery;
+exports.strapiQuery = strapiQuery
