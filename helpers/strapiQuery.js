@@ -8,8 +8,9 @@ async function strapiQuery(options, dataObject = false) {
         console.log(TOKEN);
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
+    options['host'] = process.env['StrapiHost']
 
-    console.log('Querying', options.method, options.path, (dataObject || ''));
+    console.log(options, JSON.stringify((dataObject) || ''));
     return new Promise((resolve, reject) => {
 
         const request = http.request(options, (response) => {

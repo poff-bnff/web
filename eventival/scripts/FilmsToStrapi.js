@@ -24,14 +24,14 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const E_FILMS = (EVENTIVAL_FILMS.map(film => {
     let film_out = {
         remoteId: (film.ids ? film.ids : {'system_id': ''}).system_id.toString(),
-        title_et: (film.titles ? film.titles : {'title_local': ''}).title_local,
-        title_en: (film.titles ? film.titles : {'title_english': ''}).title_english,
-        title_ru: (film.titles ? film.titles : {'title_custom': ''}).title_custom,
-        titleOriginal: (film.titles ? film.titles : {'title_original': ''}).title_original,
+        title_et: h2p((film.titles ? film.titles : {'title_local': ''}).title_local),
+        title_en: h2p((film.titles ? film.titles : {'title_english': ''}).title_english),
+        title_ru: h2p((film.titles ? film.titles : {'title_custom': ''}).title_custom),
+        titleOriginal: h2p((film.titles ? film.titles : {'title_original': ''}).title_original),
         // year: film.film_info.completion_date.year.toString(),
         // runtime: (film.film_info.runtime.seconds / 60).toString(),
         // festival_edition: film.eventival_categorization.categories.category,
-        otherFestivals: '?',
+        // otherFestivals: '?',
         // tags: {
         //     premiere_types: '?',
         //     genres: film.film_info.types.type,
@@ -79,7 +79,7 @@ const E_FILMS = (EVENTIVAL_FILMS.map(film => {
         //         id: '?'
         //     }
         // },
-        world_sales: '?'
+        // world_sales: '?'
     }
 
     if (film.publications) {
@@ -99,7 +99,7 @@ const E_FILMS = (EVENTIVAL_FILMS.map(film => {
 
 const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
     const strapiFilm = STRAPIDATA.Film.filter((s_film) => {
-        return s_film.remoteId === e_film.remoteId
+        return s_film.remoteId === e_film.ids.system_id.toString()
     })
     let c_films = []
     if (strapiFilm.length) {
@@ -107,9 +107,9 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
     }
     let cassette_out = {
         remoteId: (e_film.ids ? e_film.ids : {'system_id': ''}).system_id.toString(),
-        title_et: (e_film.titles ? e_film.titles : {'title_local': ''}).title_local,
-        title_en: (e_film.titles ? e_film.titles : {'title_english': ''}).title_english,
-        title_ru: (e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom,
+        title_et: h2p((e_film.titles ? e_film.titles : {'title_local': ''}).title_local),
+        title_en: h2p((e_film.titles ? e_film.titles : {'title_english': ''}).title_english),
+        title_ru: h2p((e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom),
         // festival_edition: e_film.eventival_categorization.categories.category,
         // tags: {
         //     premiere_types: '?',
@@ -140,61 +140,48 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
 }))
 
 
+async function submitFilm(e_film) {
+    let options = {
+        headers: { 'Content-Type': 'application/json' }
+    }
+
+    const strapiFilm = STRAPIDATA.Film.filter((film) => {
+        return film.remoteId === e_film.remoteId
+    })
+
+    if (strapiFilm.length) {
+        e_film['id'] = strapiFilm[0].id
+        options.path = FILMS_API + '/' + e_film.id
+        options.method = 'PUT'
+    } else {
+        options.path = FILMS_API
+        options.method = 'POST'
+    }
+    const film_from_strapi = await strapiQuery(options, e_film)
+    return film_from_strapi
+}
 
 
 const submitFilms = async () => {
-
+    let from_strapi = []
     for (const ix in E_FILMS) {
-        if (ix > 5) {
-            continue
-        }
-        const e_film = E_FILMS[ix];
-        const api = FILMS_API + '?remoteId=' + e_film.remoteId
-        let options = {
-            host: process.env['StrapiHost'],
-            path: api,
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + TOKEN
-            }
-        }
-        const strapiFilm = await strapiQuery(options)
-        let from_strapi = {}
-
-        if(strapiFilm.length) {
-            e_film['id'] = strapiFilm[0].id
-            options.path = FILMS_API + '/' + e_film.id
-            options.method = 'PUT'
-
-            from_strapi = await strapiQuery(options, e_film)
-        } else {
-            options.path = FILMS_API
-            options.method = 'POST'
-
-            from_strapi = await strapiQuery(options, e_film)
-        }
-        // console.log(from_strapi)
+        // if (ix > 5) { continue }
+        const film_from_strapi = await submitFilm(E_FILMS[ix])
+        from_strapi.push(film_from_strapi)
     }
+    return from_strapi
 }
 
 
 async function submitCassette(e_cassette) {
-    const api = CASSETTES_API + '?remoteId=' + e_cassette.remoteId
     let options = {
-        host: process.env['StrapiHost'],
-        path: api,
-        method: 'GET',
         headers: { 'Content-Type': 'application/json' }
     }
-    // const strapiCassette = await strapiQuery(options)
 
     const strapiCassette = STRAPIDATA.Cassette.filter((cassette) => {
         return cassette.remoteId === e_cassette.remoteId
     })
 
-    console.log('SC', strapiCassette);
-    // return
     if (strapiCassette.length) {
         e_cassette['id'] = strapiCassette[0].id
         options.path = CASSETTES_API + '/' + e_cassette.id
@@ -210,9 +197,7 @@ async function submitCassette(e_cassette) {
 const submitCassettes = async () => {
     let from_strapi = []
     for (const ix in E_CASSETTES) {
-        if (ix > 5) {
-            continue
-        }
+        // if (ix > 5) { continue }
         const cassette_from_strapi = await submitCassette(E_CASSETTES[ix])
         from_strapi.push(cassette_from_strapi)
     }
@@ -220,6 +205,7 @@ const submitCassettes = async () => {
 }
 
 const main = async () => {
+    // await submitFilms()
     await submitCassettes()
 }
 

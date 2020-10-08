@@ -130,9 +130,7 @@ const makeList = (obj, keep_prop, list_prop) => {
 const fetch_films = async (e_films) => {
     const endlineAt = 60
     for (const [ix, element] of Object.entries(e_films)) {
-        if (ix > 5) {
-            continue
-        }
+        // if (ix > 5) { continue }
         // console.log('fetch', element.id, element.title_english, element.title_original)
         const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + element.id + '.xml')
         const eventivalXML = await eventivalFetch(url)
