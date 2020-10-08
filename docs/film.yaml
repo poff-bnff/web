@@ -120,3 +120,48 @@ film:
             -
                 id: 3
     world_sales:
+
+
+    let screening_out = {
+        code: venues.id,
+        codeAndTitle: venues.id+ venues.company,
+        ticketingId: stapis,
+        ticketingUrl: strapis,
+        dateTime: film.titles.title_custom,
+        introQaConversation: {
+            yesNo: (Boolean),
+            type: (Enumeration),
+            mode: (Enumeration),
+            presenter: [{
+                et: '0',
+                en: '0',
+                ru: '0'
+            }],
+            guest:  [{
+                et: '0',
+                en: '0',
+                ru: '0'
+            }],
+            duration: (Number)/60).toString(),
+            clipUrl: (text)
+        },
+        durationTotal: (Number)/60).toString(),
+        location: {
+            Location id
+        },
+        extraInfo: text,
+        screening_types: [{
+            id : /screening-types
+        }]
+        screening_mode: {
+            id: /screening-modes
+        }
+        subtitles: [{
+            id : language id
+        }],
+        cassette: {
+            id: *Cassette
+        },
+        bookingUrl: (text),
+        remoteId: num.toString()
+    }

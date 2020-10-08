@@ -97,30 +97,35 @@ const E_FILMS = (EVENTIVAL_FILMS.map(film => {
     return film_out
 }))
 
-const E_CASSETTES = (EVENTIVAL_FILMS.map(film => {
+const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
+    const strapiFilm = STRAPIDATA.Film.filter((s_film) => {
+        return s_film.remoteId === e_film.remoteId
+    })
+    let c_films = []
+    if (strapiFilm.length) {
+        c_films.push({id: strapiFilm[0].id.toString()})
+    }
     let cassette_out = {
-        remoteId: (film.ids ? film.ids : {'system_id': ''}).system_id.toString(),
-        title_et: (film.titles ? film.titles : {'title_local': ''}).title_local,
-        title_en: (film.titles ? film.titles : {'title_english': ''}).title_english,
-        title_ru: (film.titles ? film.titles : {'title_custom': ''}).title_custom,
-        // festival_edition: film.eventival_categorization.categories.category,
+        remoteId: (e_film.ids ? e_film.ids : {'system_id': ''}).system_id.toString(),
+        title_et: (e_film.titles ? e_film.titles : {'title_local': ''}).title_local,
+        title_en: (e_film.titles ? e_film.titles : {'title_english': ''}).title_english,
+        title_ru: (e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom,
+        // festival_edition: e_film.eventival_categorization.categories.category,
         // tags: {
         //     premiere_types: '?',
-        //     genres: film.film_info.types.type,
-        //     keywords: film.eventival_categorization.tags.tag,
+        //     genres: e_film.film_info.types.type,
+        //     keywords: e_film.eventival_categorization.tags.tag,
         //     programmes: {
-        //         id: film.eventival_categorization.sections.section.id
+        //         id: e_film.eventival_categorization.sections.section.id
         //     }
         // },
         // presenters: [{
         //     id: '0'
         // }],
-        // films: [{
-        //     id: '0'
-        // }]
+        films: c_films
     }
-    if (film.publications) {
-        const publications = film.publications
+    if (e_film.publications) {
+        const publications = e_film.publications
         for (const [lang, publication] of Object.entries(publications)) {
             if ('synopsis_long' in publication) {
                 if (cassette_out['synopsis'] === undefined) {
@@ -185,7 +190,6 @@ async function submitCassette(e_cassette) {
     // const strapiCassette = await strapiQuery(options)
 
     const strapiCassette = STRAPIDATA.Cassette.filter((cassette) => {
-        console.log(cassette.remoteId, '===', e_cassette.remoteId);
         return cassette.remoteId === e_cassette.remoteId
     })
 
