@@ -1,0 +1,100 @@
+extends /_templates/cassette_templates/cassette_poff_layout_template.pug
+
+
+block film
+
+    +tabname(self.title)
+
+    //- KUI KASSETIS ON ROHKEM KUI 1 FILM
+    if self.films.length !== 1
+        block titleBox
+            - var pathParts = self.path.split('/')
+            - var filmPath = pathParts[pathParts.length - 1]
+            section.f_title_box
+
+                each film in self.films
+                    .premiere_type &nbsp;
+                        if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                            h1= film.tags.premiere_types.join(', ')
+
+                    h1.film_title_detailed= film.title
+                    .str_info_blokk_1
+
+                        each p, locale in self.otherLocalePaths
+                            if self[`title_${locale}`]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film[`title_${locale}`]
+                                    .str_info_value= film[`title_${locale}`]
+
+                        if film.titleOriginal
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.titleOriginal
+                                .str_info_value= film.titleOriginal
+
+                        if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.director
+                                .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
+
+                        if film.countriesAndLanguages.countries
+                            - var countriesNames = function(item) {
+                            -   var itemNames = item.name
+                            -   return itemNames
+                            - }
+
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.countries
+                                .str_info_value= film.countriesAndLanguages.countries.map(countriesNames).join(', ')
+
+                        if film.year
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.year
+                                .str_info_value= film.year
+
+    //- KUI KASSETIS ON AINULT 1 FILM
+    else if self.films.length === 1
+
+        block titleBox
+            - var pathParts = self.path.split('/')
+            - var filmPath = pathParts[pathParts.length - 1]
+            section.f_title_box
+
+                each film in self.films
+                    .premiere_type &nbsp;
+                        if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                            //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                            p.premiere_type= film.tags.premiere_types.join(', ')
+
+                    h1.film_title_detailed= film.title
+                    .str_info_blokk_1
+
+                        each p, locale in self.otherLocalePaths
+                            if self[`title_${locale}`]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film[`title_${locale}`]
+                                    .str_info_value= film[`title_${locale}`]
+
+                        if film.titleOriginal
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.titleOriginal
+                                .str_info_value= film.titleOriginal
+
+                        if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.director
+                                .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
+
+                        if film.countriesAndLanguages.countries
+                            - var countriesNames = function(item) {
+                            -   var itemNames = item.name
+                            -   return itemNames
+                            - }
+
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.countries
+                                .str_info_value= film.countriesAndLanguages.countries.map(countriesNames).join(', ')
+
+                        if film.year
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.year
+                                .str_info_value= film.year
