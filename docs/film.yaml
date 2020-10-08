@@ -72,18 +72,11 @@ film:
         countries:
             -
                 id: 886
-            -
-                id: 894
+
 
         languages:
             -
                 id: 1702
-
-            -
-                id: 1704
-
-            -
-                id: 1745
 
     subtitles: {id: film.film_info.subtitle_languages.subtitle_language.code}
 
@@ -114,7 +107,6 @@ film:
                 order: 2
                 organisation: id
     presentedBy:
-        id: 3
         presentedByText: Selle filmi toob teieni
         organisations:
             -
