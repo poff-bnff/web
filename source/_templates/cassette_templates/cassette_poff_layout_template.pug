@@ -8,7 +8,7 @@ block content
     if self.films.length !== 1
 
         main.grid_film
-            //- Kasseti title ja synopsis
+            Kasseti title ja synopsis
             div
                 if self.title
                     h1.dark_1= 'MITME FILMIGA KASSETT!!!!!!!!!!!!!!!!!! ' + self.title
@@ -291,11 +291,11 @@ block content
 
         main.grid_film
             //- Kasseti title ja synopsis
-            div
-                if self.title
-                    h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
-                if self.synopsis
-                    h1.dark_1= self.synopsis
+            //- div
+            //-     if self.title
+            //-         h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
+            //-     if self.synopsis
+            //-         h1.dark_1= self.synopsis
 
             //- KARUSELL cassette piltidega
             section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
@@ -337,121 +337,119 @@ block content
             //- Algab kasseti filmide info kuvamine
             each film in self.films
                 block titleBox
-                section
-                    section.f_synopsis_box
-                        .str_info_meta_gi
-                            .str_info_meta_item
-                                .str_info_meta_label.dark_1
-                                    | Festival
-                                .str_info_meta_festival
-                                    | Tartuff
-                            //- .str_info_meta_item
-                            //-     .str_info_meta_label
-                            //-         | Programm
-                            //-     .str_info_meta_program
-                            //-         | Foorum, Põhjusega mässajad
-                        if typeof film.synopsis !== 'undefined'
-                            - var synopsis_md = film.synopsis
-                            .synopsis_gi
-                                +format(synopsis_md)
-                section
-                    section.f_cred_box
-                        .str_info_blokk_cred
+                section.f_synopsis_box
+                    .str_info_meta_gi
+                        .str_info_meta_item
+                            .str_info_meta_label.dark_1
+                                | Festival
+                            .str_info_meta_festival
+                                | Tartuff
+                        //- .str_info_meta_item
+                        //-     .str_info_meta_label
+                        //-         | Programm
+                        //-     .str_info_meta_program
+                        //-         | Foorum, Põhjusega mässajad
+                    if typeof film.synopsis !== 'undefined'
+                        - var synopsis_md = film.synopsis
+                        .synopsis_gi
+                            +format(synopsis_md)
+                section.f_cred_box
+                    .str_info_blokk_cred
 
-                            if film.media && film.media.stills && film.media.stills[0]
-                                each still in film.media.stills
-                                    if still.hash && still.ext
-                                        div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
-                                            img(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
-                            else
-                                div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
-                                    img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
+                        //- if film.media && film.media.stills && film.media.stills[0]
+                        //-     each still in film.media.stills
+                        //-         if still.hash && still.ext
+                        //-             div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
+                        //-                 img(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
+                        //- else
+                        //-     div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
+                        //-         img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
 
-                            //- NB!
-                            //- NB!
-                            //- NB!
-                            //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes
-                            //-     Näiteks: "Composer" all olevad isikud saab kätte film.credentials.rolePersonsByRole.composer.join(', ')
+                        //- NB!
+                        //- NB!
+                        //- NB!
+                        //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes
+                        //-     Näiteks: "Composer" all olevad isikud saab kätte film.credentials.rolePersonsByRole.composer.join(', ')
 
-                            if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.director
-                                    .str_info_value= film.credentials.rolePersonsByRole.director.join(', ')
-
-                            if film.credentials.rolePersonsByRole.screenwriter && film.credentials.rolePersonsByRole.screenwriter[0]
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.screenwriter
-                                    .str_info_value= film.credentials.rolePersonsByRole.screenwriter.join(', ')
-
-                            if film.credentials.rolePersonsByRole.cast && film.credentials.rolePersonsByRole.cast[0]
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.cast
-                                    .str_info_value= film.credentials.rolePersonsByRole.cast.join(', ')
-
-                            if film.credentials.rolePersonsByRole.producer && film.credentials.rolePersonsByRole.producer[0]
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.producer
-                                    .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
-
-                            if film.credentials.rolePersonsByRole.dop && film.credentials.rolePersonsByRole.dop[0]
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.doP
-                                    .str_info_value= film.credentials.rolePersonsByRole.dop.join(', ')
-
-                            if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.composer
-                                    .str_info_value= film.credentials.rolePersonsByRole.composer.join(', ')
-
-                            if film.credentials.rolePersonsByRole.editor && film.credentials.rolePersonsByRole.editor[0]
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.editor
-                                    .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
-
-                            //- Below datamodel needs to be updated and then code amended to be correct
-                            if film.credentials.productionCompany
-                                .str_info_grid_3
-                                    .str_info_label= self.label.film.production
-                                    .str_info_value= film.ProductionCompanyCSV
-                section
-                    section.f_runtime_box
-                        if film.countriesAndLanguages.languages
-                            - var languagesNames = function(item) {
-                            -   var itemNames = item.name
-                            -   return itemNames
-                            - }
+                        if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                             .str_info_grid_3
-                                .str_info_label= self.label.film.languages
-                                .str_info_value= film.countriesAndLanguages.languages.map(languagesNames).join(', ')
+                                .str_info_label= self.label.film.director
+                                .str_info_value= film.credentials.rolePersonsByRole.director.join(', ')
 
-                        if film.runtime
+                        if film.credentials.rolePersonsByRole.screenwriter && film.credentials.rolePersonsByRole.screenwriter[0]
                             .str_info_grid_3
-                                .str_info_label= self.label.film.runtime
-                                .str_info_value
-                                    +dur(film.runtime)
-                section
-                    section.f_interactive_box
-                        div.f_interactive_item
-                            p
-                                | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
-                            a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
+                                .str_info_label= self.label.film.screenwriter
+                                .str_info_value= film.credentials.rolePersonsByRole.screenwriter.join(', ')
 
-                    if film.filmQaClip
+                        if film.credentials.rolePersonsByRole.cast && film.credentials.rolePersonsByRole.cast[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.cast
+                                .str_info_value= film.credentials.rolePersonsByRole.cast.join(', ')
 
-                        section.f_qaclip_box
-                            .section_headline= self.label.film.qaClip
-                            .embed-responsive.embed-responsive-16by9.m-0.p-0
-                                - youtubeVideoCode = film.filmQaClip.split("=")
+                        if film.credentials.rolePersonsByRole.producer && film.credentials.rolePersonsByRole.producer[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.producer
+                                .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
+
+                        if film.credentials.rolePersonsByRole.dop && film.credentials.rolePersonsByRole.dop[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.doP
+                                .str_info_value= film.credentials.rolePersonsByRole.dop.join(', ')
+
+                        if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.composer
+                                .str_info_value= film.credentials.rolePersonsByRole.composer.join(', ')
+
+                        if film.credentials.rolePersonsByRole.editor && film.credentials.rolePersonsByRole.editor[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.editor
+                                .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
+
+                        //- Below datamodel needs to be updated and then code amended to be correct
+                        if film.credentials.productionCompany
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.production
+                                .str_info_value= film.ProductionCompanyCSV
+                section.f_runtime_box
+                    if film.countriesAndLanguages.languages
+                        - var languagesNames = function(item) {
+                        -   var itemNames = item.name
+                        -   return itemNames
+                        - }
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.languages
+                            .str_info_value= film.countriesAndLanguages.languages.map(languagesNames).join(', ')
+
+                    if film.runtime
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.runtime
+                            .str_info_value
+                                +dur(film.runtime)
+                section.f_interactive_box
+                    .f_interactive_item
+                        p
+                            | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
+                        a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
+
+                if film.filmQaClip
+
+                    section.f_qaclip_box
+                        .section_headline= self.label.film.qaClip
+                        .embed-responsive.embed-responsive-16by9.m-0.p-0
+                            - youtubeVideoCode = film.filmQaClip.split("=")
+                            +youtube(youtubeVideoCode[1])
+
+                if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].url
+
+                    section.f_trailer_box
+                        .section_headline= self.label.film.trailer
+                        .embed-responsive.embed-responsive-16by9.m-0.p-0
+                            if film.media.trailer[0].source === 'YouTube'
+                                - youtubeVideoCode = film.media.trailer[0].url.split("=")
                                 +youtube(youtubeVideoCode[1])
+                            else if film.media.trailer[0].source === 'Vimeo'
 
-                    if film.filmTrailer
-
-                        section.f_trailer_box
-                            .section_headline= self.label.film.trailer
-                            .embed-responsive.embed-responsive-16by9.m-0.p-0
-                                - youtubeVideoCode = film.filmTrailer.split("=")
-                                +youtube(youtubeVideoCode[1])
-
-                    section.f_imgs_box
+                section.f_imgs_box
 
                 block film
