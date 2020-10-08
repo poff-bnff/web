@@ -19,12 +19,11 @@ async function strapiQuery(options, dataObject = false) {
                 allData += chunk;
             });
             response.on('end', function () {
+                let strapiData = JSON.parse(allData);
                 if (response.statusCode === 200) {
-                    let strapiData = JSON.parse(allData);
-
                     resolve(strapiData);
                 } else {
-                    console.log('Status', response.statusCode);
+                    console.log('Status', response.statusCode, strapiData);
                     resolve([]);
                 }
             });

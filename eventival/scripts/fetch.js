@@ -115,9 +115,24 @@ const fetch_lists = async () => {
     return e_data
 }
 
+const makeList = (obj, keep_prop, list_prop) => {
+    const list_a = obj[keep_prop][list_prop]
+    if (list_a === undefined) {
+        return
+    }
+    if (Array.isArray(list_a)) {
+        obj[keep_prop] = obj[keep_prop][list_prop]
+    } else {
+        obj[keep_prop] = [obj[keep_prop][list_prop]]
+    }
+}
+
 const fetch_films = async (e_films) => {
     const endlineAt = 60
     for (const [ix, element] of Object.entries(e_films)) {
+        if (ix > 5) {
+            continue
+        }
         // console.log('fetch', element.id, element.title_english, element.title_original)
         const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + element.id + '.xml')
         const eventivalXML = await eventivalFetch(url)
@@ -125,6 +140,14 @@ const fetch_films = async (e_films) => {
             console.log('E4:', e)
         })
         e_films[ix] = my_parser(eventivalXML, 'film')
+        makeList(e_films[ix].film_info, 'languages', 'language')
+        makeList(e_films[ix].film_info, 'types', 'type')
+        makeList(e_films[ix].film_info, 'countries', 'country')
+        makeList(e_films[ix].film_info.relationships, 'directors', 'director')
+        makeList(e_films[ix].film_info.relationships, 'cast', 'cast')
+        makeList(e_films[ix].eventival_categorization, 'categories', 'category')
+        makeList(e_films[ix].eventival_categorization, 'sections', 'section')
+        makeList(e_films[ix].eventival_categorization, 'tags', 'tag')
 
         const cursor_x = parseInt(ix)%endlineAt
         const dot = (ix%10 ? (ix%5 ? '.' : 'i') : '|')

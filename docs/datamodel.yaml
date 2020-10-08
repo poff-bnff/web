@@ -741,7 +741,8 @@ Film: &Film
     otherFestivals: (text)
     credentials: *CredentialsNew
     presentedBy: *PresentedBy
-    world_sales: (text)
+    world_sales:
+        - *Organisation
 
 Cassette: &Cassette
     _path: /cassettes
