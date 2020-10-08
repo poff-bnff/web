@@ -452,10 +452,10 @@ footer
   grid-template-areas   "f_img_slider_box"\
                         "f_title_box"\
                         "f_synopsis_box"\
+                        "f_cred_box"\
                         "f_runtime_box"\
                         "f_interactive_box"\
                         "f_screenings_box"\
-                        "f_cred_box"\
                         "f_dir_bio_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
@@ -1065,6 +1065,7 @@ header
     align-content center
     justify-items center
     align-items center
+    background-color bg_dark_2
 
 .f_interactive_item
     align center
@@ -1104,6 +1105,9 @@ header
 .f_trailer_box
     grid-area f_trailer_box
     width 100%
+    background-color bg_dark_2
+    .section_headline
+        color bg_dark_4
 
 .f_qaclip_box
     grid-area f_qaclip_box
