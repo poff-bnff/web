@@ -21,10 +21,63 @@ const E_FILMS = (EVENTIVAL_FILMS.map(film => {
         title_en: film.titles.title_english,
         title_ru: film.titles.title_custom,
         titleOriginal: film.titles.title_original,
-        year: film.film_info.completion_date.year,
-        runtime: film.film_info.runtime.seconds / 60,
+        year: film_info.completion_date.year,
+        runtime: (film.film_info.runtime.seconds / 60).toString(),
         festival_edition: film.eventival_categorization.categories.category,
         otherFestivals: '?',
+        synopsis: {
+            et: film.publications.et.synopsis_long,
+            en: film.publications.en.synopsis_long,
+            ru: film.publications.ru.synopsis_long
+        },
+        tags: {
+            premiere_types: '?',
+            genres: film.film_info.types.type,
+            keywords: film.eventival_categorization.tags.tag,
+            programmes: {
+                id: film.eventival_categorization.sections.section.id
+            }
+        },
+        countriesAndLanguages: {
+            countries: {
+                id: film.film_info.countries.country.code
+            },
+            languages: {
+                id: film.film_info.languages.language.code
+            }
+        },
+        subtitles: {
+            id: film.film_info.subtitle_languages.subtitle_language.code
+        },
+        credentials: {
+            rolePerson: {
+                role_at_film: {
+                    id: film.publications.en //....
+                },
+                person: {
+                    id: '?'
+                }
+            },
+            roleCompany: {
+                role_at_film: {
+                    id: '?'
+                },
+                person: {
+                    id : '?'
+                }
+            }
+        },
+        presentedBy: {
+            presentedBText: {
+                et: '?',
+                en: '?',
+                ru: '?'
+            },
+            organisations: {
+                id: '?'
+            }
+        },
+        world_sales: '?'
     }
 
     if (film.publications) {
@@ -47,7 +100,30 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(film => {
         remoteId: film.ids.system_id.toString(),
         title_et: film.titles.title_local,
         title_en: film.titles.title_english,
-        title_ru: film.titles.title_custom
+        title_ru: film.titles.title_custom,
+        synopsis: {
+            et: film.publications.et.synopsis_long,
+            en: film.publications.en.synopsis_long,
+            ru: film.publications.ru.synopsis_long
+        },
+        festival_edition: film.eventival_categorization.categories.category,
+        tags: {
+            premiere_types: '?',
+            genres: film.film_info.types.type,
+            keywords: film.eventival_categorization.tags.tag,
+            programmes: {
+                id: film.eventival_categorization.sections.section.id
+            }
+        },
+        slug_et: '?',
+        slug_en: '?',
+        slug_ru: '?',
+        presenters: {
+            id: '?'
+        },
+        films: {
+            id: '?'
+        }
     }
 
     return cassette_out
