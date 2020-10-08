@@ -492,18 +492,18 @@ block content
                                 if presenter.homepageUrl
                                     a(href= presenter.homepageUrl).supporter_logo_item_container
                                         if presenter.logoColour
-                                            img.supporter_logo_item(alt=presenter.homepageUrl data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                            img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                         else if presenter.logoBlack
-                                            img.supporter_logo_item(alt=presenter.homepageUrl data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                            img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                         else if presenter.logoWhite
-                                            img.supporter_logo_item(alt=presenter.homepageUrl data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                            img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
                                 else
                                     if presenter.logoColour
-                                        img.supporter_logo_item(alt=presenter.homepageUrl data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                     else if presenter.logoBlack
-                                        img.supporter_logo_item(alt=presenter.homepageUrl data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                     else if presenter.logoWhite
-                                        img.supporter_logo_item(alt=presenter.homepageUrl data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
                 if film.filmQaClip
