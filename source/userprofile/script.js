@@ -39,7 +39,20 @@ async function LoadUserInfo() {
     firstName.value = userProfile.name;
     lastName.value = userProfile.family_name;
     email.value = userProfile.email;
+    gender.value = userProfile.gender;
+    phoneNr.value = userProfile.phone_number;
+    dob.value = userProfile.birthdate;
+    // city.value = userProfile.address
+    // counstry.value = userProfile.address
+
+    //linn ja riik lahuta aadressist
+
     console.log(userProfile)
+    let address = userProfile.address.split(", ")
+    let riik = address[0]
+    let linn = address[1]
+    console.log(riik)
+    console.log(linn)
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -48,11 +61,18 @@ if (localStorage.getItem("ACCESS_TOKEN")) {
 }
 
 async function sendUserProfile() {
-    //siin panen kokku listi objektidest mida saata cognitosse
-    //Kas järjekord on oluline?
-    //kas Name-id on kõik õiged?
+
+    //küsib lingi kuhu pilti postitada
+    let linkResponse = await fetch(`https://api.poff.ee/picture`, {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
+    });
+    data = await linkResponse.json()
+    console.log(data.link)
+
     let userToSend = [
-        { Name: "picture", Value: imgPreview.src },
+        { Name: "picture", Value: await data.link },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
@@ -62,15 +82,20 @@ async function sendUserProfile() {
         { Name: "address", Value: `${country.value}, ${city.value}` },
     ];
 
-    console.log(userToSend);
 
-    // let response = await fetch(`https://api.poff.ee/profile`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
-    //         body: JSON.stringify(userToSend)
-    //     });
-    //     userProfile = await response.json()
+    //saadab pildi link-ile
+
+
+
+    console.log(userToSend);
+    let response = await fetch(`https://api.poff.ee/profile`, {
+            method: 'PUT',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
+            body: JSON.stringify(userToSend)
+        });
+        userProfile = await response.json()
+
 }
 
 

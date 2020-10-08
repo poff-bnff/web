@@ -21,6 +21,9 @@ if (window.location.hash) {
     }
 }
 
+// salvesta timestamp
+//kasutaja nimi
+// autentimis päring api vastu (email ja parool, sinna, tagasi token ja timestamp
 
 async function storeAuthentication(access_token, id_token) {
     localStorage.setItem('ACCESS_TOKEN', access_token)
