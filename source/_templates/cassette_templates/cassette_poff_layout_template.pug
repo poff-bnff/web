@@ -300,20 +300,20 @@ block content
             //- KARUSELL cassette piltidega
             section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
                 ol.carousel-indicators
-                    if self.media
-                        if self.media.stills && self.media.stills[0]
-                            each val, index in self.media.stills
+                    if self.films[0].media
+                        if self.films[0].media.stills && self.films[0].media.stills[0]
+                            each val, index in self.films[0].media.stills
                                 li(data-target='#carouselExampleIndicators' data-slide-to = index)
                 .carousel-inner.container_frame_16_9
-                    if self.media
-                        if self.media.stills && self.media.stills.length
-                            each val, index in self.media.stills
+                    if self.films[0].media
+                        if self.films[0].media.stills && self.films[0].media.stills.length
+                            each val, index in self.films[0].media.stills
                                 if index == 0
                                     .carousel-item.active.container_contents_16_9
-                                        img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_cassettes/${self.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                        img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
                                 else
                                     .carousel-item.container_contents_16_9
-                                        img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_cassettes/${self.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                        img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
                         else
                             .carousel-item.active.container_contents_16_9
                                 img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
