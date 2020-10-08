@@ -464,19 +464,19 @@ block content
                     - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
                     - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
 
-                //- if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
-                //-     section.f_dir_bio_box
-                //-         if director.person.picture
-                //-             div(style="width:200px; height:300px; padding-bottom:20px; padding-top:20px;")
-                //-             img(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles style="width:100%; height:100%;")
+                if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
+                    section.f_dir_bio_box
+                        if director.person.picture
+                            div(style="width:200px; height:300px; padding-bottom:20px; padding-top:20px;")
+                            img(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles style="width:100%; height:100%;")
 
-                //-         p= `${director.person.firstName} ${director.person.lastName}`
+                        p= `${director.person.firstName} ${director.person.lastName}`
 
-                //-         if director.person.biography
-                //-             p= director.person.biography
+                        if director.person.biography
+                            p= director.person.biography
 
-                //-         if director.person.filmography
-                //-             p= director.person.filmography
+                        if director.person.filmography
+                            p= director.person.filmography
 
 
                 if film.filmQaClip
