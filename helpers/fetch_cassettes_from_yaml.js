@@ -96,7 +96,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 if (STRAPIDATA_SCREENINGS[screeningIx].cassette && STRAPIDATA_SCREENINGS[screeningIx].cassette.id === element.id) {
                     let screening = JSON.parse(JSON.stringify(STRAPIDATA_SCREENINGS[screeningIx]));
                     delete screening.cassette;
-                    screenings.push(screening)
+                    screenings.push(rueten(screening, lang))
                 }
             }
 
