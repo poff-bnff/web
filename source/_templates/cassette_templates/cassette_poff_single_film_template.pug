@@ -243,27 +243,23 @@ main.grid_film
         if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
             section.f_extra_box
-                p= film.presentedBy.presentedByText
                 each presenter in film.presentedBy.organisations
                     p.dark_1= presenter.name
 
                     .supporter_logo_item_container
+                        - var logoImg = ''
+                        if presenter.logoColour
+                            - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                        else if presenter.logoBlack
+                            - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                        else if presenter.logoWhite
+                            - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+
                         if presenter.homepageUrl
                             a(href= presenter.homepageUrl).supporter_logo_item_container
-                                if presenter.logoColour
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
-                                else if presenter.logoBlack
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
-                                else if presenter.logoWhite
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
                         else
-                            if presenter.logoColour
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
-                            else if presenter.logoBlack
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
-                            else if presenter.logoWhite
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
-
+                            img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
 
         section.f_screenings_box
             div

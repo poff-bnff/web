@@ -2,25 +2,29 @@ main.grid_film
     //- Kassetti festivali info
 
     //- KARUSELL kasseti piltidega
+    if self.cassetteCarouselPicsFilms && self.cassetteCarouselPicsFilms.length > 0
+        - var cassetteCarouselPics = self.cassetteCarouselPicsFilms
+    else if self.cassetteCarouselPicsCassette && self.cassetteCarouselPicsCassette.length > 0
+        - var cassetteCarouselPics = self.cassetteCarouselPicsCassette
+    else
+        //- PLACEHOLDER IMG
+        - var cassetteCarouselPics = ['/assets/img/static/placeholder_hd_1.jpg']
+
     section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
         ol.carousel-indicators
-            if self.media
-                if self.media.stills && self.media.stills[0]
-                    each val, index in self.media.stills
+            if cassetteCarouselPics
+                if cassetteCarouselPics
+                    each val, index in cassetteCarouselPics
                         li(data-target='#carouselExampleIndicators' data-slide-to = index)
         .carousel-inner.container_frame_16_9
-            if self.media
-                if self.media.stills && self.media.stills.length
-                    each val, index in self.media.stills
-                        if index == 0
-                            .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_cassettes/${self.dirSlug}/${val.hash}${val.ext}` alt = self.title)
-                        else
-                            .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_cassettes/${self.dirSlug}/${val.hash}${val.ext}` alt = self.title)
-                else
-                    .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+            if cassetteCarouselPics
+                each val, index in cassetteCarouselPics
+                    if index == 0
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src= val alt = self.title)
+                    else
+                        .carousel-item.container_contents_16_9
+                            img.d-block.container_contents_16_9(src= val alt = self.title)
             else
                 .carousel-item.active.container_contents_16_9
                     img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
@@ -39,6 +43,12 @@ main.grid_film
 
     .str_info_meta_gi
         .str_info_meta_item
+            if self.title
+                h1.dark_1= self.title
+
+            if self.synopsis
+                h1.dark_1= self.synopsis
+
             if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
                 .str_info_meta_label.dark_1= self.label.film.festival
                 .str_info_meta_festival= self.festival_edition.festival.name
@@ -161,7 +171,26 @@ main.grid_film
                                 a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
 
+    if self.presenters && self.presenters[0]
 
+        section.f_extra_box
+            each presenter in self.presenters
+                p.dark_1= presenter.name
+
+                .supporter_logo_item_container
+                    - var logoImg = ''
+                    if presenter.logoColour
+                        - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                    else if presenter.logoBlack
+                        - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                    else if presenter.logoWhite
+                        - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+
+                    if presenter.homepageUrl
+                        a(href= presenter.homepageUrl).supporter_logo_item_container
+                            img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
+                    else
+                        img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
 
 
 //- SIIT ALGAB FILMIDE KUVAMINE

@@ -74,40 +74,42 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let slugMissingErrorIDs = []
     for (const originalElement of STRAPIDATA_CASSETTE) {
         const element = JSON.parse(JSON.stringify(originalElement))
+
         let slugEn = element.slug_en
         if (!slugEn) {
             slugEn = element.slug_et
         }
 
-        // rueten func. is run for each element separately instead of whole data, that is
-        // for the purpose of saving slug_en before it will be removed by rueten func.
-        if(element.films) {
-            var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
-        }
-
-        // Kasseti programmid
-        if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
-            for (const programmeIx in element.tags.programmes) {
-                let programme = element.tags.programmes[programmeIx];
-
-                let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
-                if (typeof programmeFromYAML[0] !== 'undefined') {
-                    element.tags.programmes[programmeIx] = programmeFromYAML[0];
-                }
-            }
-        }
-
-        rueten(element, lang)
-        if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
-            element.films = cassetteFilmsBeforeRueten
-        }
-        // console.log(element.directory);
-        // element = rueten(element, `_${lang}`);
-
         if(typeof slugEn !== 'undefined') {
             element.dirSlug = slugEn
             element.directory = path.join(dirPath, slugEn)
             fs.mkdirSync(element.directory, { recursive: true })
+
+            let cassetteCarouselPicsCassette = []
+            let cassetteCarouselPicsFilms = []
+
+            if(element.films) {
+                var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
+            }
+
+            // Kasseti programmid
+            if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
+                for (const programmeIx in element.tags.programmes) {
+                    let programme = element.tags.programmes[programmeIx];
+
+                    let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
+                    if (typeof programmeFromYAML[0] !== 'undefined') {
+                        element.tags.programmes[programmeIx] = programmeFromYAML[0];
+                    }
+                }
+            }
+
+            // rueten func. is run for each element separately instead of whole data, that is
+            // for the purpose of saving slug_en before it will be removed by rueten func.
+            rueten(element, lang)
+            if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
+                element.films = cassetteFilmsBeforeRueten
+            }
 
             // Screenings
             let screenings = []
@@ -148,6 +150,20 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 }
             }
 
+            // Cassette carousel pics
+            if (element.media && element.media.stills && element.media.stills[0]) {
+                for (const stillIx in element.media.stills) {
+                    let still = element.media.stills[stillIx]
+                    if (still.hash && still.ext) {
+                        cassetteCarouselPicsCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${still.hash}${still.ext}`)
+                    }
+                }
+            }
+
+            if (cassetteCarouselPicsCassette.length > 0) {
+                element.cassetteCarouselPicsCassette = cassetteCarouselPicsCassette
+            }
+
             if (element.films && element.films[0]) {
                 for (filmIx in element.films) {
                     let film = element.films[filmIx]
@@ -160,6 +176,21 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         film.dirSlug = filmSlugEn
                     }
 
+                    // Film carousel pics
+                    if (film.media && film.media.stills && film.media.stills[0]) {
+                        for (const stillIx in film.media.stills) {
+                            let still = film.media.stills[stillIx]
+                            if (still.hash && still.ext) {
+                                if (still.hash.substring(0, 4) === 'F_1_') {
+                                    cassetteCarouselPicsFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}`)
+                                }
+                            }
+                        }
+                    }
+
+                    if (cassetteCarouselPicsFilms.length > 0) {
+                        element.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
+                    }
 
                     // Filmi programmid
                     if (film.tags && film.tags.programmes && film.tags.programmes[0]) {
