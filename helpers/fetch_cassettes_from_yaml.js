@@ -70,6 +70,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let allData = []
     // data = rueten(data, lang);
     // console.log(data);
+    let slugMissingErrorNumber = 0
+    let slugMissingErrorIDs = []
     for (const originalElement of STRAPIDATA_CASSETTE) {
         const element = JSON.parse(JSON.stringify(originalElement))
         let slugEn = element.slug_en
@@ -87,8 +89,10 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
             for (const programmeIx in element.tags.programmes) {
                 let programme = element.tags.programmes[programmeIx];
+
                 let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
                 if (typeof programmeFromYAML[0] !== 'undefined') {
+                    console.log('TAAAGASaaaaaaaaa', programmeFromYAML);
                     element.tags.programmes[programmeIx] = programmeFromYAML[0];
                 }
             }
@@ -210,9 +214,13 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
         } else {
             if(showErrors) {
-                console.log(`- Notification! Cassette ID ${element.id} slug_en or slug_et value missing`);
+                slugMissingErrorNumber++
+                slugMissingErrorIDs.push(element.id)
             }
         }
+    }
+    if(slugMissingErrorNumber > 0) {
+        console.log(`Notification! Value of slug_en or slug_et missing for total of ${slugMissingErrorNumber} cassettes with ID's ${slugMissingErrorIDs.join(', ')}`);
     }
 }
 
@@ -230,7 +238,8 @@ function generateYaml(element, lang, copyFile, allData){
             if (fs.existsSync(cassetteIndexTemplate)) {
                 fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
             } else {
-                console.log(`ERROR! Default template ${cassetteIndexTemplate} missing!`);
+                console.log(`ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`);
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
             }
         }
 
