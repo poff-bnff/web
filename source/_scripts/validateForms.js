@@ -1,14 +1,52 @@
 
+var firstName = document.getElementById("firstName");
+var lastName = document.getElementById("lastName");
+var gender = document.getElementById("gender");
+var dob = document.getElementById("dob");
+var phoneNr = document.getElementById("phoneNr");
+var email = document.getElementById("email");
+var country = document.getElementById("countrySelection");
+var city = document.getElementById("gds-cr-one");
+
+function validateForm() {
+    console.log("validate form");
+
+    if (country == "") {
+        console.log(country.value, " countryif");
+        country.classList.add("invalid");
+        country.value = "Elukoha riik";
+    }
+    if (firstName.value == "" || firstName.value.length < 2 || !isNaN(firstName.value)) {
+        firstName.classList.add("invalid");
+    }
+    if (lastName.value == "" || lastName.value.length < 2 || !isNaN(lastName.value)) {
+        lastName.classList.add("invalid");
+    }
+    if (city == "") {
+        city.classList.add("invalid");
+    }
+}
+
+
+
+
 function validateBDay() {
     var dob = document.getElementById("dob");
     //console.log(dob.value)
     var date = new Date
     var minAge = date.getMonth() + 1 + "-" + date.getDate() + "-" + (date.getFullYear() - 12);
     var maxAge = date.getMonth() + 1 + "-" + date.getDate() + "-" + (date.getFullYear() - 115);
-    if (dob.value < minAge || dob.value > maxAge) {
-        dob.classList.add("invalid");
-    } else {
+    console.log('maxAge :', maxAge);
+    console.log('minAge :', minAge);
+    console.log(typeof dob.value);
+    console.log(typeof maxAge);
+    console.log(typeof minAge);
+    console.log('minage ', dob.value < minAge);
+    console.log('maxage ', dob.value > maxAge);
+    if (dob.value < minAge && dob.value > maxAge) {
         dob.classList.remove("invalid");
+    } else {
+        dob.classList.add("invalid");
     }
 }
 

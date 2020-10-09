@@ -1,31 +1,5 @@
-let profileImg = document.getElementById("profileImg");
-let firstName = document.getElementById("firstName");
-let lastName = document.getElementById("lastName");
-let gender = document.getElementById("gender");
-let dob = document.getElementById("dob");
-let phoneNr = document.getElementById("phoneNr");
-let email = document.getElementById("email");
-let country = document.getElementById("countrySelection");
-let city = document.getElementById("gds-cr-one");
-
-function validateForm() {
-    console.log("validate form");
-
-    if (country == "") {
-        console.log(country.value, " countryif");
-        country.classList.add("invalid");
-        country.value = "Elukoha riik";
-    }
-    if (firstName.value == "" || firstName.value.length < 2 || !isNaN(firstName.value)) {
-        firstName.classList.add("invalid");
-    }
-    if (lastName.value == "" || lastName.value.length < 2 || !isNaN(lastName.value)) {
-        lastName.classList.add("invalid");
-    }
-    if (city == "") {
-        city.classList.add("invalid");
-    }
-}
+var imgPreview = document.getElementById("imgPreview");
+var profileImg = document.getElementById("profileImg");
 
 async function LoadUserInfo() {
     let response = await fetch(`https://api.poff.ee/profile`, {
@@ -61,6 +35,7 @@ if (localStorage.getItem("ACCESS_TOKEN")) {
 }
 
 async function sendUserProfile() {
+    console.log('sendUserProfile');
 
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/picture`, {
@@ -84,6 +59,16 @@ async function sendUserProfile() {
 
 
     //saadab pildi link-ile
+    var file = imgPreview.src;
+    console.log(file);
+
+var requestOptions = {
+  method: 'PUT',
+  body: file,
+  redirect: 'follow'
+};
+
+fetch(data.link, requestOptions)
 
 
 
