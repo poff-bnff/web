@@ -31,12 +31,12 @@ block film
                                 .str_info_label= self.label.film.titleOriginal
                                 .str_info_value= film.titleOriginal
 
-                        if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                        if film.credentials && film.credentials.rolePersonsByRole && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.director
                                 .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                        if film.countriesAndLanguages.countries
+                        if film.countriesAndLanguages && film.countriesAndLanguages.countries
                             - var countriesNames = function(item) {
                             -   var itemNames = item.name
                             -   return itemNames
@@ -79,12 +79,12 @@ block film
                                 .str_info_label= self.label.film.titleOriginal
                                 .str_info_value= film.titleOriginal
 
-                        if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                        if film.credentials && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.director
                                 .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                        if film.countriesAndLanguages.countries
+                        if film.countriesAndLanguages && film.countriesAndLanguages.countries
                             - var countriesNames = function(item) {
                             -   var itemNames = item.name
                             -   return itemNames

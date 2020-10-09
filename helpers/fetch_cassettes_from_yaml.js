@@ -13,6 +13,9 @@ const STRAPIDATA_PROGRAMMES = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf
 const STRAPIDATA_SCREENINGS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Screening'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
+// Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
+const whichScreeningTypesToFetch = ['regular', 'first screening']
+
 const mapping = {
     'poff.ee': 'poff',
     'justfilm.ee': 'justfilm',
@@ -93,8 +96,19 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             // Screenings
             let screenings = []
             for (screeningIx in STRAPIDATA_SCREENINGS) {
-                if (STRAPIDATA_SCREENINGS[screeningIx].cassette && STRAPIDATA_SCREENINGS[screeningIx].cassette.id === element.id) {
-                    let screening = JSON.parse(JSON.stringify(STRAPIDATA_SCREENINGS[screeningIx]));
+                let screening = JSON.parse(JSON.stringify(STRAPIDATA_SCREENINGS[screeningIx]));
+                if (screening.cassette && screening.cassette.id === element.id
+                    && screening.screening_types && screening.screening_types[0]) {
+
+                    let screeningNames = function(item) {
+                        let itemNames = item.name
+                        return itemNames
+                    }
+                    // Kontroll kas screeningtype kassetile lisada, st kas vähemalt üks screening type on whichScreeningTypesToFetch arrays olemas
+                    if(!screening.screening_types.map(screeningNames).some(ai => whichScreeningTypesToFetch.includes(ai.toLowerCase()))) {
+                        continue
+                    }
+
                     delete screening.cassette;
                     screenings.push(rueten(screening, lang))
                 }
@@ -138,8 +152,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         }
                     }
 
-                    let rolePersonTypes = {}
+
                     if(film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]) {
+                        let rolePersonTypes = {}
                         film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                         for (roleIx in film.credentials.rolePerson) {
                             let rolePerson = film.credentials.rolePerson[roleIx]
@@ -155,8 +170,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             }
                             //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
+                        element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                     }
-                    element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                 }
             }
 
