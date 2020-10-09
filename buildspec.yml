@@ -12,3 +12,6 @@ phases:
             - aws --output text s3 sync --delete --sse AES256 --acl public-read --only-show-errors --cache-control max-age=300 build/ s3://$S3_BUCKET
             - aws --output text s3 sync --delete --sse AES256 --acl public-read --only-show-errors --cache-control max-age=2592000 build/assets/ s3://$S3_BUCKET/assets
             - aws --output text cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths /\*
+    post_build:
+        commands:
+            - curl -d '{"id":"$CODEBUILD_BUILD_ID","buildNumber":"$CODEBUILD_BUILD_NUMBER","startTime":"$CODEBUILD_START_TIME","initiator":"$CODEBUILD_INITIATOR","commit":"$CODEBUILD_RESOLVED_SOURCE_VERSION","domain":"$DOMAIN","user":"$SLACK_USER","succeeding":"$CODEBUILD_BUILD_SUCCEEDING"}' -H "Content-Type: application/json" -X POST http://slackapp.poff.ee/awshook
