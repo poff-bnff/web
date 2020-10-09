@@ -73,6 +73,10 @@ function readYaml(doc) {
     if (doc) {
         for (const ix in doc) {
             const section = doc[ix]
+            presentedBy = section.presentedBy
+            if (presentedBy === undefined) {
+                continue
+            }
             for (const i in section.presentedBy.organisations) {
                 const logo = section.presentedBy.organisations[i]
                 if ('logoWhite' in logo && 'url' in logo.logoWhite){
