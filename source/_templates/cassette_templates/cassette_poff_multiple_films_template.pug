@@ -305,10 +305,11 @@ each film in self.films
                             -   return itemNames
                             - }
                             each programme in film.tags.programmes
-                                - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
-                                if festivalEditions.length > 0
-                                    .str_info_meta_label.dark_1= self.label.film.programme
-                                    .str_info_meta_festival= festivalEditions
+                                if programme.festival_editions
+                                    - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
+                                    if festivalEditions.length > 0
+                                        .str_info_meta_label.dark_1= self.label.film.programme
+                                        .str_info_meta_festival= festivalEditions
 
                             //- Programmes
                             - var programmes = film.tags.programmes.map(programmeNames).join(', ')
