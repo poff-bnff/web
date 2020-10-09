@@ -14,4 +14,5 @@ phases:
             - aws --output text cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths /\*
     post_build:
         commands:
-            - "curl -d '{\"id\":\"$CODEBUILD_BUILD_ID\",\"buildNumber\":\"$CODEBUILD_BUILD_NUMBER\",\"startTime\":\"$CODEBUILD_START_TIME\",\"initiator\":\"$CODEBUILD_INITIATOR\",\"commit\":\"$CODEBUILD_RESOLVED_SOURCE_VERSION\",\"domain\":\"$DOMAIN\",\"user\":\"$SLACK_USER\",\"succeeding\":\"$CODEBUILD_BUILD_SUCCEEDING\"}' -H \"Content-Type\":\"application/json\" -X POST http://slackapp.poff.ee/awshook"
+            - |
+                curl -X -s POST http://slackapp.poff.ee/awshook -H "Content-Type:application/json" -d "{\"id\":\"$CODEBUILD_BUILD_ID\",\"buildNumber\":\"$CODEBUILD_BUILD_NUMBER\",\"startTime\":\"$CODEBUILD_START_TIME\",\"initiator\":\"$CODEBUILD_INITIATOR\",\"commit\":\"$CODEBUILD_RESOLVED_SOURCE_VERSION\",\"domain\":\"$DOMAIN\",\"user\":\"$SLACK_USER\",\"succeeding\":\"$CODEBUILD_BUILD_SUCCEEDING\"}"
