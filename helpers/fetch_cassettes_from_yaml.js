@@ -1,6 +1,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const path = require('path');
+const path = require('path')
+const util = require('util')
 const rueten = require('./rueten.js')
 
 const sourceDir = path.join(__dirname, '..', 'source')
@@ -87,7 +88,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             for (const programmeIx in element.tags.programmes) {
                 let programme = element.tags.programmes[programmeIx];
                 let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
-                element.tags.programmes[programmeIx] = programmeFromYAML[0];
+                if (typeof programmeFromYAML[0] !== 'undefined') {
+                    element.tags.programmes[programmeIx] = programmeFromYAML[0];
+                }
             }
         }
 
@@ -160,7 +163,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         for (const programmeIx in film.tags.programmes) {
                             let programme = film.tags.programmes[programmeIx];
                             let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
-                            film.tags.programmes[programmeIx] = programmeFromYAML[0];
+                            if (typeof programmeFromYAML[0] !== 'undefined') {
+                                film.tags.programmes[programmeIx] = programmeFromYAML[0];
+                            }
                         }
                     }
 
@@ -192,6 +197,14 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
             allData.push(element);
             element.data = dataFrom;
+
+
+
+
+            // console.log(util.inspect(element, {showHidden: false, depth: null}))
+
+
+
 
             generateYaml(element, lang, copyFile, allData)
 
