@@ -1,29 +1,23 @@
-
 main.grid_film
-    //- Kasseti title ja synopsis
-    //- div
-    //-     if self.title
-    //-         h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
-    //-     if self.synopsis
-    //-         h1.dark_1= self.synopsis
+    //- Kassetti festivali info
 
-    //- KARUSELL cassette piltidega
+    //- KARUSELL kasseti piltidega
     section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
         ol.carousel-indicators
-            if self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills[0]
-                    each val, index in self.films[0].media.stills
+            if self.media
+                if self.media.stills && self.media.stills[0]
+                    each val, index in self.media.stills
                         li(data-target='#carouselExampleIndicators' data-slide-to = index)
         .carousel-inner.container_frame_16_9
-            if self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills.length
-                    each val, index in self.films[0].media.stills
+            if self.media
+                if self.media.stills && self.media.stills.length
+                    each val, index in self.media.stills
                         if index == 0
                             .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_cassettes/${self.dirSlug}/${val.hash}${val.ext}` alt = self.title)
                         else
                             .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_cassettes/${self.dirSlug}/${val.hash}${val.ext}` alt = self.title)
                 else
                     .carousel-item.active.container_contents_16_9
                         img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
@@ -41,11 +35,95 @@ main.grid_film
             svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                 polyline(points='9 18 15 12 9 6')
             span.sr-only Next
-    //- LÕPP! KARUSELL cassette piltidega LÕPP
+    //- LÕPP! KARUSELL kasseti piltidega LÕPP
+
+    .str_info_meta_gi
+        .str_info_meta_item
+            if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
+                .str_info_meta_label.dark_1= self.label.film.festival
+                .str_info_meta_festival= self.festival_edition.festival.name
+
+            if self.festival_edition && self.festival_edition && self.festival_edition.name
+                //- Kas selleks eraldi labelit vaja vms?
+                .str_info_meta_label.dark_1= self.label.film.festival
+                .str_info_meta_festival= self.festival_edition.name
+
+            if self.tags && self.tags.programmes && self.tags.programmes[0]
+                - var programmeNames = function(item) {
+                -   if(typeof item.name !== 'object') {
+                -       var itemNames = item.name
+                -   }
+                -   return itemNames
+                - }
+                - var programmes = self.tags.programmes.map(programmeNames).join(', ')
+                if programmes.length > 0
+                    .str_info_meta_label.dark_1= self.label.film.programme
+                    .str_info_meta_festival= programmes
+
+            if self.tags && self.tags.genres && self.tags.genres[0]
+                .str_info_meta_label.dark_1= self.label.film.genre
+                .str_info_meta_festival= self.tags.genres.join(', ')
 
 
-    //- Algab kasseti filmide info kuvamine
-    each film in self.films
+            if self.tags && self.tags.keywords && self.tags.keywords[0]
+                .str_info_meta_label.dark_1= self.label.film.keywords
+                .str_info_meta_festival= self.tags.keywords.join(', ')
+
+            //- festival programm zanrid keywordid
+
+
+//- SIIT ALGAB FILMIDE KUVAMINE
+//- SIIT ALGAB FILMIDE KUVAMINE
+//- SIIT ALGAB FILMIDE KUVAMINE
+//- SIIT ALGAB FILMIDE KUVAMINE
+each film in self.films
+    main.grid_film
+        //- Kasseti title ja synopsis
+        //- div
+        //-     if self.title
+        //-         h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
+        //-     if self.synopsis
+        //-         h1.dark_1= self.synopsis
+
+        //- KARUSELL filmi piltidega
+        section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+            ol.carousel-indicators
+                if film.media
+                    if film.media.stills && film.media.stills[0]
+                        each val, index in film.media.stills
+                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
+            .carousel-inner.container_frame_16_9
+                if film.media
+                    if film.media.stills && film.media.stills.length
+                        each val, index in film.media.stills
+                            if index == 0
+                                .carousel-item.active.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                            else
+                                .carousel-item.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+                else
+                    .carousel-item.active.container_contents_16_9
+                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+
+            a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                    polyline(points='15 18 9 12 15 6')
+                span.sr-only Previous
+            a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                    polyline(points='9 18 15 12 9 6')
+                span.sr-only Next
+        //- LÕPP! KARUSELL filmi piltidega LÕPP
+
+
+        //- Algab kasseti filmide info kuvamine
+
         block titleBox
         section.f_synopsis_box
 
@@ -331,4 +409,3 @@ main.grid_film
         section.f_imgs_box
 
         block film
-

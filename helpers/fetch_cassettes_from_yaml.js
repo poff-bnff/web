@@ -8,9 +8,9 @@ const cassetteTemplatesDir = path.join(sourceDir, '_templates', 'cassette_templa
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
-const STRAPIDATA_PROGRAMMES = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Programme'];
-const STRAPIDATA_SCREENINGS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Screening'];
+const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
+const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
+const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
@@ -81,6 +81,16 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         if(element.films) {
             var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
         }
+
+        // Kasseti programmid
+        if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
+            for (const programmeIx in element.tags.programmes) {
+                let programme = element.tags.programmes[programmeIx];
+                let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
+                element.tags.programmes[programmeIx] = programmeFromYAML[0];
+            }
+        }
+
         rueten(element, lang)
         if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
             element.films = cassetteFilmsBeforeRueten
@@ -144,6 +154,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         film.dirSlug = filmSlugEn
                     }
 
+
+                    // Filmi programmid
                     if (film.tags && film.tags.programmes && film.tags.programmes[0]) {
                         for (const programmeIx in film.tags.programmes) {
                             let programme = film.tags.programmes[programmeIx];
@@ -192,7 +204,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 }
 
 function generateYaml(element, lang, copyFile, allData){
-    let yamlStr = yaml.safeDump(element, { 'indent': '4' });
+    let yamlStr = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
 
     // console.log(element.directory)
 
