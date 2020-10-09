@@ -92,7 +92,6 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
                 let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
                 if (typeof programmeFromYAML[0] !== 'undefined') {
-                    console.log('TAAAGASaaaaaaaaa', programmeFromYAML);
                     element.tags.programmes[programmeIx] = programmeFromYAML[0];
                 }
             }
