@@ -124,15 +124,14 @@ each film in self.films
 
         //- Algab kasseti filmide info kuvamine
 
-
         - var pathParts = self.path.split('/')
         - var filmPath = pathParts[pathParts.length - 1]
         section.f_title_box
 
-
             .premiere_type &nbsp;
                 if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
-                    h1= film.tags.premiere_types.join(', ')
+                    //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                    p.premiere_type= film.tags.premiere_types.join(', ')
 
             h1.film_title_detailed= film.title
             .str_info_blokk_1
@@ -148,7 +147,7 @@ each film in self.films
                         .str_info_label= self.label.film.titleOriginal
                         .str_info_value= film.titleOriginal
 
-                if film.credentials && film.credentials.rolePersonsByRole && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                if film.credentials && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                     .str_info_grid_3
                         .str_info_label= self.label.film.director
                         .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
@@ -174,35 +173,38 @@ each film in self.films
             //- Kassetti festivali info
             .str_info_meta_gi
                 .str_info_meta_item
-                    if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
-                        .str_info_meta_label.dark_1= self.label.film.festival
-                        .str_info_meta_festival= self.festival_edition.festival.name
+                    if film.tags
 
-                    if self.festival_edition && self.festival_edition && self.festival_edition.name
-                        //- Kas selleks eraldi labelit vaja vms?
-                        .str_info_meta_label.dark_1= self.label.film.festival
-                        .str_info_meta_festival= self.festival_edition.name
+                        if film.tags.programmes && film.tags.programmes[0]
+                            //- Festival editions
+                            - var programmeNames = function(item) {
+                            -   if(typeof item.name !== 'object') {
+                            -       var itemNames = item.name
+                            -   }
+                            -   return itemNames
+                            - }
+                            each programme in film.tags.programmes
+                                - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
+                                if festivalEditions.length > 0
+                                    .str_info_meta_label.dark_1= self.label.film.programme
+                                    .str_info_meta_festival= festivalEditions
 
-                    if film.tags && film.tags.programmes && film.tags.programmes[0]
-                        - var programmeNames = function(item) {
-                        -   if(typeof item.name !== 'object') {
-                        -       var itemNames = item.name
-                        -   }
-                        -   return itemNames
-                        - }
-                        - var programmes = film.tags.programmes.map(programmeNames).join(', ')
-                        if programmes.length > 0
-                            .str_info_meta_label.dark_1= self.label.film.programme
-                            .str_info_meta_festival= programmes
-
-                    if film.tags && film.tags.genres && film.tags.genres[0]
-                        .str_info_meta_label.dark_1= self.label.film.genre
-                        .str_info_meta_festival= film.tags.genres.join(', ')
+                            //- Programmes
+                            - var programmes = film.tags.programmes.map(programmeNames).join(', ')
+                            if programmes.length > 0
+                                .str_info_meta_label.dark_1= self.label.film.programme
+                                .str_info_meta_festival= programmes
 
 
-                    if film.tags && film.tags.keywords && film.tags.keywords[0]
-                        .str_info_meta_label.dark_1= self.label.film.keywords
-                        .str_info_meta_festival= film.tags.keywords.join(', ')
+
+                        if film.tags.genres && film.tags.genres[0]
+                            .str_info_meta_label.dark_1= self.label.film.genre
+                            .str_info_meta_festival= film.tags.genres.join(', ')
+
+
+                        if film.tags.keywords && film.tags.keywords[0]
+                            .str_info_meta_label.dark_1= self.label.film.keywords
+                            .str_info_meta_festival= film.tags.keywords.join(', ')
 
                     //- festival programm zanrid keywordid
 
@@ -454,6 +456,4 @@ each film in self.films
 
         +tabname(self.title)
 
-        //- KUI KASSETIS ON ROHKEM KUI 1 FILM
-        if self.films.length > 1
 
