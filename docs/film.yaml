@@ -124,13 +124,13 @@ film:
 
 const E_SCREENING = (EVENTIVAL_SCREENINGS.map(e_screening => {
     let screening_out = {
-        code: venues.id,
-        codeAndTitle: venues.id+ venues.company,
-        ticketingId: stapis,
-        ticketingUrl: strapis,
-        dateTime: film.titles.title_custom,
+        code: e_screening.code,
+        codeAndTitle: e_screening.code + venues.company,
+        ticketingId: stapis?,
+        ticketingUrl: e_screening.ticketing_url,
+        dateTime: e_screening.start, #tuleb kujul '2020-11-24 17:00:00'
         introQaConversation: {
-            yesNo: (Boolean),
+            yesNo: e_screening.presentation.available, #(Boolean) 0 v 1
             type: (Enumeration),
             mode: (Enumeration),
             presenter: [{
@@ -143,28 +143,29 @@ const E_SCREENING = (EVENTIVAL_SCREENINGS.map(e_screening => {
                 en: '0',
                 ru: '0'
             }],
-            duration: '0', //(Number)/60).toString(),
+            duration: e_screening.qa.duration.toString(),
             clipUrl: (text)
         },
-        durationTotal: '0',  // (Number)/60).toString(),
+        durationTotal: e_screening.complete_duration_minutes.toString(),
         location: {
-            id: '0' // Location id
+            id: e_screening.venue_id #sealt nimi ja selle alt stapile vastav id
         },
-        extraInfo: text,
+        extraInfo: text, #tuleb kolmeskeele, kuidas kuvame? Kas peaks olema teine translated
+        # e_screenig.additional_info { et, en, ru}
         screening_types: [{
-            id : '0' // /screening-types
-        }],
+            id: e_screening.type_of_screening, #saame nt PRESS vaja id
+        }]
         screening_mode: {
-            id: '0' // /screening-modes
-        },
+            id: /screening-modes
+        }
         subtitles: [{
-            id : '0' //language id
+            id : language id
         }],
         cassette: {
-            id: '0' //*Cassette
+            id: e_screening.film.id #saaksime film remoteId, mis sama cassette remoteID
         },
-        bookingUrl: '0', // (text),
-        remoteId: '0' // num.toString()
+        bookingUrl: (text),
+        remoteId: e_screening.id
 
     }
     return screening_out
