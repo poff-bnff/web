@@ -122,6 +122,7 @@ film:
     world_sales:
 
 
+const E_SCREENING = (EVENTIVAL_SCREENINGS.map(e_screening => {
     let screening_out = {
         code: venues.id,
         codeAndTitle: venues.id+ venues.company,
@@ -142,26 +143,30 @@ film:
                 en: '0',
                 ru: '0'
             }],
-            duration: (Number)/60).toString(),
+            duration: '0', //(Number)/60).toString(),
             clipUrl: (text)
         },
-        durationTotal: (Number)/60).toString(),
+        durationTotal: '0',  // (Number)/60).toString(),
         location: {
-            Location id
+            id: '0' // Location id
         },
         extraInfo: text,
         screening_types: [{
-            id : /screening-types
-        }]
+            id : '0' // /screening-types
+        }],
         screening_mode: {
-            id: /screening-modes
-        }
+            id: '0' // /screening-modes
+        },
         subtitles: [{
-            id : language id
+            id : '0' //language id
         }],
         cassette: {
-            id: *Cassette
+            id: '0' //*Cassette
         },
-        bookingUrl: (text),
-        remoteId: num.toString()
+        bookingUrl: '0', // (text),
+        remoteId: '0' // num.toString()
+
     }
+    return screening_out
+}))
+
