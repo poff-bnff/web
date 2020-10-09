@@ -251,15 +251,15 @@ main.grid_film
                                         path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
                                         circle(cx='12' cy='10' r='3')
 
-                                    if screening.location && screening.location.cinema && screening.location.cinema
+                                    if screening.location && screening.location.hall && screening.location.hall.name
                                         if screening.location.hall && screening.location.hall.name
                                             span.screening_hall= screening.location.hall.name
-                                        if screening.location.cinema.name
-                                            span.screening_venue= ` ${screening.location.cinema.name}`
-                                        if screening.location.cinema.town && screening.location.cinema.town.name && screening.location.cinema.town.country && screening.location.cinema.town.country.name
-                                            span.city= ` ${screening.location.cinema.town.name}, ${screening.location.cinema.town.country.name}`
+                                            if screening.location.hall.cinema && screening.location.hall.cinema.name
+                                                span.screening_venue= ` ${screening.location.hall.cinema.name}`
+                                                if screening.location.hall.cinema.town && screening.location.hall.cinema.town.name && screening.location.hall.cinema.town.country && screening.location.hall.cinema.town.country.name
+                                                    span.city= ` ${screening.location.hall.cinema.town.name}, ${screening.location.hall.cinema.town.country.name}`
 
-                                        //- Näiteks: Coca-Cola Plaza, iSense saal
+                                        //- See on privateName tegelikult: Coca-Cola Plaza, iSense saal
                                         //- if screening.location.name
                                         //-     h1= screening.location.name
 
@@ -331,3 +331,4 @@ main.grid_film
         section.f_imgs_box
 
         block film
+
