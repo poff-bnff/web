@@ -6,7 +6,7 @@ block film
     +tabname(self.title)
 
     //- KUI KASSETIS ON ROHKEM KUI 1 FILM
-    if self.films.length !== 1
+    if self.films.length > 1
         block titleBox
             - var pathParts = self.path.split('/')
             - var filmPath = pathParts[pathParts.length - 1]
