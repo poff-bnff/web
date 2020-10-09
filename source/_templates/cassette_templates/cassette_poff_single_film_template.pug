@@ -250,11 +250,11 @@ main.grid_film
                     .supporter_logo_item_container
                         - var logoImg = ''
                         if presenter.logoColour
-                            - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                            - logoImg = `/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`
                         else if presenter.logoBlack
-                            - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                            - logoImg = `/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
                         else if presenter.logoWhite
-                            - logoImg = `/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+                            - logoImg = `/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
 
                         if presenter.homepageUrl
                             a(href= presenter.homepageUrl).supporter_logo_item_container
