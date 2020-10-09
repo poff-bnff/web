@@ -152,8 +152,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         }
                     }
 
-                    let rolePersonTypes = {}
+
                     if(film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]) {
+                        let rolePersonTypes = {}
                         film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                         for (roleIx in film.credentials.rolePerson) {
                             let rolePerson = film.credentials.rolePerson[roleIx]
@@ -169,8 +170,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             }
                             //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
+                        element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                     }
-                    element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                 }
             }
 
