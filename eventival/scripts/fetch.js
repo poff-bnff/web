@@ -47,6 +47,19 @@ const dataMap = {
     }
 }
 
+// const filmsO = yaml.safeLoad(fs.readFileSync(path.join(dynamicDir, 'films.yaml'))).map( film => {
+//     if (film.eventival_categorization && film.eventival_categorization.sections && film.eventival_categorization.sections.section) {
+//         for (const section of film.eventival_categorization.sections.section) {
+//             console.log(section);
+//         }
+//     } else {
+//         return ''
+//     }
+// })
+// console.log(filmsO)
+
+
+
 
 async function eventivalFetch(url) {
     // console.log('Fetch', modelName)
@@ -130,7 +143,7 @@ const makeList = (obj, keep_prop, list_prop) => {
 const fetch_films = async (e_films) => {
     const endlineAt = 60
     for (const [ix, element] of Object.entries(e_films)) {
-        if (ix > 50) { continue }
+        // if (ix > 50) { continue }
         // console.log('fetch', element.id, element.title_english, element.title_original)
         const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + element.id + '.xml')
         const eventivalXML = await eventivalFetch(url)
