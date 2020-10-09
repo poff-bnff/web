@@ -2,7 +2,6 @@ const yaml = require('js-yaml')
 const fs = require('fs')
 const path = require('path')
 const h2p = require('html2plaintext')
-console.log(h2p('J&uuml;rgen ja Rasmus'));
 
 const { strapiQuery } = require("../../helpers/strapiQuery.js")
 
@@ -21,40 +20,103 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
 
-const E_FILMS = (EVENTIVAL_FILMS.map(film => {
+const E_FILMS = (EVENTIVAL_FILMS.map(e_film => {
+    const strapiLang = STRAPIDATA.Language.filter((s_language) => {
+        if( e_film.film_info && e_film.film_info.languages){
+            e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
+        }
+    })
+    let f_language = []
+    if (strapiLang.length){
+        f_language.push({id: strapiLang[0].id.toString()})
+    }
+
+    const strapCountry = STRAPIDATA.Country.filter((s_country) =>{
+        if( e_film.film_info && e_film.film_info.countries){
+            e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
+        }
+    })
+    let f_country = []
+    if (strapCountry.length){
+        f_country.push({id: strapCountry[0].id.toString()})
+    }
+
+    const strapSubLang = STRAPIDATA.Language.filter((s_subLang) =>{
+        if(e_film.film_info && e_film.film_info.subtitle_languages ){
+            e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
+        }
+    })
+    let f_SubLang = []
+    if (strapSubLang.length){
+        f_SubLang.push({id: strapSubLang[0].id.toString()})
+    }
+
+    const strapiProgramme = STRAPIDATA.Programme.filter((s_programme) =>{
+        if(e_film.eventival_categorization && e_film.eventival_categorization.sections ){
+            e_film.eventival_categorization.sections.map( item => { return item.id } ).includes(s_programme.remoteId)
+        }
+    })
+    let f_programme = []
+    if (strapiProgramme.length){
+        f_programme.push({id: strapiProgramme[0].id.toString()})
+    }
+
+    // const strapiGenre = STRAPIDATA.TagGenre.filter((s_genre) =>{
+    //     if(e_film.film_info.types && e_film.film_info.types.type ){
+    //         e_film.film_info.types.type.map( item => { return item.id } ).includes(s_genre.remoteId)
+    //     }
+    // })
+    // let f_genre = []
+    // if (strapiGenre.length){
+    //     f_genre.push({id: strapiGenre[0].id.toString()})
+    // }
+
+    const strapiFestivalEdition = STRAPIDATA.FestivalEdition.filter((s_festivalEdition) =>{
+        if(e_film.eventival_categorization && e_film.film_info.types.type ){
+            e_film.eventival_categorization.categories.includes(s_festivalEdition.name_et)
+        }
+    })
+    let f_festivalEdition = []
+    if (strapiFestivalEdition.length){
+        f_festivalEdition.push({id: strapiFestivalEdition[0].id.toString()})
+    }
+
+
+    // const strapiPerson = STRAPIDATA.Person.filter((s_person) =>{
+
+    //     return s_person.name === e_film.eventival_categorization.sections.name
+    // })
+    // let f_person = []
+    // if (strapiPerson.length){
+    //     f_person.push({id: strapiPerson[0].id.toString()})
+    // }
+
     let film_out = {
-        remoteId: (film.ids ? film.ids : {'system_id': ''}).system_id.toString(),
-        title_et: h2p((film.titles ? film.titles : {'title_local': ''}).title_local),
-        title_en: h2p((film.titles ? film.titles : {'title_english': ''}).title_english),
-        title_ru: h2p((film.titles ? film.titles : {'title_custom': ''}).title_custom),
-        titleOriginal: h2p((film.titles ? film.titles : {'title_original': ''}).title_original),
-        // year: film.film_info.completion_date.year.toString(),
-        // runtime: (film.film_info.runtime.seconds / 60).toString(),
-        // festival_edition: film.eventival_categorization.categories.category,
+
+        remoteId: ((e_film.ids && e_film.ids.system_id) ? e_film.ids : {'system_id': ''}).system_id.toString(),
+        title_et: h2p((e_film.titles ? e_film.titles : {'title_local': ''}).title_local),
+        title_en: h2p((e_film.titles ? e_film.titles : {'title_english': ''}).title_english),
+        title_ru: h2p((e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom),
+        titleOriginal: h2p((e_film.titles ? e_film.titles : {'title_original': ''}).title_original),
+        year: (((e_film.film_info && e_film.film_info.completion_date) ? e_film.film_info.completion_date  : {'year' : ''}).year).toString(),
+        runtime: ((((e_film.film_info && e_film.film_info.runtime) ? e_film.film_info.runtime : { 'seconds' : ''}).seconds)/ 60).toString(),
+        festival_edition: f_festivalEdition,
         // otherFestivals: '?',
-        // tags: {
+        tags: {
         //     premiere_types: '?',
-        //     genres: film.film_info.types.type,
-        //     keywords: film.eventival_categorization.tags.tag,
-        //     programmes: {
-        //         id: film.eventival_categorization.sections.section.id
-        //     }
-        // },
-        // countriesAndLanguages: {
-        //     countries: {
-        //         id: film.film_info.countries.country.code
-        //     },
-        //     languages: {
-        //         id: film.film_info.languages.language.code
-        //     }
-        // },
-        // subtitles: {
-        //     id: film.film_info.subtitle_languages.subtitle_language.code
-        // },
+        //     genres: [e_film.film_info.types.type],
+        //     keywords: [e_film.eventival_categorization.tags.tag],
+            programmes: f_programme
+        },
+        countriesAndLanguages: {
+            countries: f_country,
+            languages: f_language
+        },
+        // subtitles: f_SubLang,
         // credentials: {
         //     rolePerson: {
         //         role_at_film: {
-        //             id: film.publications.en //....
+        //             id: e_film.publications.en //....
         //         },
         //         person: {
         //             id: '?'
@@ -65,7 +127,7 @@ const E_FILMS = (EVENTIVAL_FILMS.map(film => {
         //             id: '?'
         //         },
         //         person: {
-        //             id : '?'
+        //             id : saame rolesAtFilm nime
         //         }
         //     }
         // },
@@ -82,8 +144,8 @@ const E_FILMS = (EVENTIVAL_FILMS.map(film => {
         // world_sales: '?'
     }
 
-    if (film.publications) {
-        const publications = film.publications
+    if (e_film.publications) {
+        const publications = e_film.publications
         for (const [lang, publication] of Object.entries(publications)) {
             if ('synopsis_long' in publication) {
                 if (film_out['synopsis'] === undefined) {
@@ -99,7 +161,9 @@ const E_FILMS = (EVENTIVAL_FILMS.map(film => {
 
 const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
     const strapiFilm = STRAPIDATA.Film.filter((s_film) => {
-        return s_film.remoteId === e_film.ids.system_id.toString()
+        if (e_film.ids && e_film.ids.system_id){
+            return s_film.remoteId === e_film.ids.system_id.toString()
+        }
     })
     let c_films = []
     if (strapiFilm.length) {
@@ -138,6 +202,52 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
 
     return cassette_out
 }))
+
+
+
+// let screening_out = {
+//     code: venues.id,
+//     codeAndTitle: venues.id+ venues.company,
+//     ticketingId: stapis,
+//     ticketingUrl: strapis,
+//     dateTime: film.titles.title_custom,
+//     introQaConversation: {
+//         yesNo: (Boolean),
+//         type: (Enumeration),
+//         mode: (Enumeration),
+//         presenter: [{
+//             et: '0',
+//             en: '0',
+//             ru: '0'
+//         }],
+//         guest:  [{
+//             et: '0',
+//             en: '0',
+//             ru: '0'
+//         }],
+//         duration: (Number)/60).toString(),
+//         clipUrl: (text)
+//     },
+//     durationTotal: (Number)/60).toString(),
+//     location: {
+//         Location id
+//     },
+//     extraInfo: text,
+//     screening_types: [{
+//         id : /screening-types
+//     }]
+//     screening_mode: {
+//         id: /screening-modes
+//     }
+//     subtitles: [{
+//         id : language id
+//     }],
+//     cassette: {
+//         id: *Cassette
+//     },
+//     bookingUrl: (text),
+//     remoteId: num.toString()
+// }
 
 
 async function submitFilm(e_film) {
@@ -205,7 +315,7 @@ const submitCassettes = async () => {
 }
 
 const main = async () => {
-    // await submitFilms()
+    await submitFilms()
     await submitCassettes()
 }
 

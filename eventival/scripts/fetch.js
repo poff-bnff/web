@@ -130,7 +130,7 @@ const makeList = (obj, keep_prop, list_prop) => {
 const fetch_films = async (e_films) => {
     const endlineAt = 60
     for (const [ix, element] of Object.entries(e_films)) {
-        // if (ix > 5) { continue }
+        if (ix > 50) { continue }
         // console.log('fetch', element.id, element.title_english, element.title_original)
         const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + element.id + '.xml')
         const eventivalXML = await eventivalFetch(url)
@@ -139,6 +139,7 @@ const fetch_films = async (e_films) => {
         })
         e_films[ix] = my_parser(eventivalXML, 'film')
         makeList(e_films[ix].film_info, 'languages', 'language')
+        makeList(e_films[ix].film_info, 'subtitle_languages', 'subtitle_language')
         makeList(e_films[ix].film_info, 'types', 'type')
         makeList(e_films[ix].film_info, 'countries', 'country')
         makeList(e_films[ix].film_info.relationships, 'directors', 'director')

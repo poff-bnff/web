@@ -191,6 +191,7 @@ PresentedBy: &PresentedBy
 # Programme
 Programme: &Programme
     _path: /programmes
+    remoteId: (UID)
     namePrivate: (text)
     name: *Translated #(Component)
     description: *Translated # (Component, rich)
@@ -720,6 +721,7 @@ CountriesAndLanguages: &CountriesAndLanguages
 Film: &Film
     _path: /films
     id: 1 (number)
+    remoteId: (UID)
     title_et: Nähtamatu elu (short text)
     title_en: Invisible Life of Eurídice Gusmãos (short text)
     title_ru: Департамент здоровьяs (short text)
@@ -732,7 +734,6 @@ Film: &Film
     slug_et: naehtamatu-elu (UID, No spaces)
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
-    remoteId: (UID)
     countriesAndLanguages: *CountriesAndLanguages #(Component)
     festival_editions:
         - *FestivalEdition
