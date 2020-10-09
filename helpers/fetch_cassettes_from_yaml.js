@@ -172,7 +172,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let rolePerson = film.credentials.rolePerson[roleIx]
 
                             let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
-                            rolePerson.person = personFromYAML[0];
+                            rolePerson.person = rueten(personFromYAML[0], lang);
 
                             if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
                                 rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
