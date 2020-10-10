@@ -128,16 +128,14 @@ const fetch_lists = async () => {
     return e_data
 }
 
+// make sure obj.keep_prop.list_prop is a list
+// and replace obj.keep_prop with obj.keep_prop.list_prop
 const makeList = (obj, keep_prop, list_prop) => {
     const list_a = obj[keep_prop][list_prop]
     if (list_a === undefined) {
         return
     }
-    if (Array.isArray(list_a)) {
-        obj[keep_prop] = obj[keep_prop][list_prop]
-    } else {
-        obj[keep_prop] = [obj[keep_prop][list_prop]]
-    }
+    obj[keep_prop] = (Array.isArray(list_a) ? list_a : [list_a])
 }
 
 const fetch_films = async (e_films) => {
