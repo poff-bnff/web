@@ -5,10 +5,12 @@ const h2p = require('html2plaintext')
 
 const { strapiQuery } = require("../../helpers/strapiQuery.js")
 
+const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
-const FILMS_FN = path.join(__dirname, '../dynamic/films.yaml')
+const FILMS_FN = path.join(DYNAMIC_PATH, 'films.yaml')
 const EVENTIVAL_FILMS = yaml.safeLoad(fs.readFileSync(FILMS_FN))
-const SCREENINGS_FN = path.join(__dirname, '../dynamic/screenings.yaml')
+
+const SCREENINGS_FN = path.join(DYNAMIC_PATH, 'screenings.yaml')
 const EVENTIVAL_SCREENINGS = yaml.safeLoad(fs.readFileSync(SCREENINGS_FN))
 
 const STRAPI_URL = 'http://139.59.130.149'
@@ -20,77 +22,58 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
+const ET = { // eventival translations
+    categories: {
+        "PÖFF" : "2",
+        "Just Film": "3",
+        "Shorts" : "4",
+        "Shortsi alam" : "4",
+        "KinoFF" : "5",
+    }
+}
 
 const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
-    const strapiLang = STRAPIDATA.Language.filter((s_language) => {
-        if( e_film.film_info && e_film.film_info.languages){
+    const f_language = STRAPIDATA.Language.filter((s_language) => {
+        if( e_film.film_info && e_film.film_info.languages) {
             return e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
         }
-    })
-    let f_language = []
-    if (strapiLang.length){
-        f_language.push({id: strapiLang[0].id.toString()})
-    }
+    }).map(e => { return {id: e.id.toString()} })
 
-    const strapiCountry = STRAPIDATA.Country.filter((s_country) => {
+    const f_country = STRAPIDATA.Country.filter((s_country) => {
         if( e_film.film_info && e_film.film_info.countries) {
             return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
         }
-    })
-    let f_country = []
-    if (strapiCountry.length){
-        f_country.push({id: strapiCountry[0].id.toString()})
-    }
+    }).map(e => { return {id: e.id.toString()} })
 
-    const strapiSubLang = STRAPIDATA.Language.filter((s_subLang) =>{
-        if(e_film.film_info && e_film.film_info.subtitle_languages ){
+    const f_subLang = STRAPIDATA.Language.filter((s_subLang) => {
+        if(e_film.film_info && e_film.film_info.subtitle_languages) {
             return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
         }
-    })
-    let f_subLang = []
-    if (strapiSubLang.length){
-        f_subLang.push({id: strapiSubLang[0].id.toString()})
-    }
+    }).map(e => { return {id: e.id.toString()} })
 
-    const strapiProgramme = STRAPIDATA.Programme.filter((s_programme) => {
+    const f_programme = STRAPIDATA.Programme.filter((s_programme) => {
         if(e_film.eventival_categorization && e_film.eventival_categorization.sections ) {
             let sections = e_film.eventival_categorization.sections
-            // console.log(sections);
             return sections.map( item => { return item.id.toString() } ).includes(s_programme.remoteId)
         }
-    })
-    let f_programme = []
-    if (strapiProgramme.length){
-        f_programme.push({id: strapiProgramme[0].id.toString()})
-    }
+    }).map(e => { return {id: e.id.toString()} })
 
-    // const strapiGenre = STRAPIDATA.TagGenre.filter((s_genre) =>{
-    //     if(e_film.film_info.types && e_film.film_info.types.type ){
-    //         e_film.film_info.types.type.map( item => { return item.id } ).includes(s_genre.remoteId)
-    //     }
-    // })
-    // let f_genre = []
-    // if (strapiGenre.length){
-    //     f_genre.push({id: strapiGenre[0].id.toString()})
-    // }
-
-    const strapiFestivalEdition = STRAPIDATA.FestivalEdition.filter((s_festivalEdition) =>{
-        if(e_film.eventival_categorization && e_film.film_info.types.type ){
-            return e_film.eventival_categorization.categories.includes(s_festivalEdition.name_et)
+    const f_genre = STRAPIDATA.TagGenre.filter((s_genre) => {
+        if(e_film.film_info.types) {
+            return e_film.film_info.types.includes(s_genre.et)
         }
-    })
-    let f_festivalEdition = []
-    if (strapiFestivalEdition.length){
-        f_festivalEdition.push({id: strapiFestivalEdition[0].id.toString()})
-    }
+    }).map(e => { return {id: e.id.toString()} })
 
+    let categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
+    const f_festivalEdition = categorization ? e_film.eventival_categorization.categories.map(e => { console.log('e', e); return {id: ET.categories[e]} }) : []
+    console.log('BAZ', categorization, f_festivalEdition);
 
-    // const strapiPerson = STRAPIDATA.Person.filter((s_person) =>{
+    // const strapiPerson = STRAPIDATA.Person.filter((s_person) => {
 
     //     return s_person.name === e_film.eventival_categorization.sections.name
     // })
     // let f_person = []
-    // if (strapiPerson.length){
+    // if (strapiPerson.length) {
     //     f_person.push({id: strapiPerson[0].id.toString()})
     // }
 
@@ -107,15 +90,13 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         // otherFestivals: '?',
         tags: {
         //     premiere_types: '?',
-        //     genres: [e_film.film_info.types.type],
+            genres: f_genre,
         //     keywords: [e_film.eventival_categorization.tags.tag],
             programmes: f_programme
         },
-        countriesAndLanguages: {
-            countries: f_country,
-            languages: f_language
-        },
-        // subtitles: f_subLang,
+        countries: f_country,
+        languages: f_language,
+        subtitles: f_subLang,
         // credentials: {
         //     rolePerson: {
         //         role_at_film: {
@@ -167,13 +148,15 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
 
     return film_out
 })
+fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_FILMS.yaml'), yaml.safeDump(E_FILMS, { 'indent': '4' }), "utf8")
+
 
 console.log('E_FILMS', E_FILMS[3])
 console.log('E_FILMS', h2p(E_FILMS[3].title_et))
 
 const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
     const strapiFilm = STRAPIDATA.Film.filter((s_film) => {
-        if (e_film.ids && e_film.ids.system_id){
+        if (e_film.ids && e_film.ids.system_id) {
             return s_film.remoteId === e_film.ids.system_id.toString()
         }
     })
@@ -182,13 +165,13 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
         c_films.push({id: strapiFilm[0].id.toString()})
     }
 
-    // const strapiScrPresenter = STRAPIDATA.Organisation.filter((s_presenter) =>{
-    //     if(e_film.film_info && e_film.film_info.relationships && e_film.film_info.relationships.contacts ){
+    // const strapiScrPresenter = STRAPIDATA.Organisation.filter((s_presenter) => {
+    //     if(e_film.film_info && e_film.film_info.relationships && e_film.film_info.relationships.contacts) {
     //         return e_film.film_info.relationships.contacts.map( item => { return item.companies ).includes(s_presenter.name.en)
     //     }
     // })
     // let c_scrPresenter = []
-    // if (strapiScrPresenter.length){
+    // if (strapiScrPresenter.length) {
     //     c_scrPresenter.push({id: strapiScrPresenter[0].id.toString()})
     // }
 
@@ -225,38 +208,30 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
 
     return cassette_out
 }))
+fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_CASSETTES.yaml'), yaml.safeDump(E_CASSETTES, { 'indent': '4' }), "utf8")
 
 
 const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
-    const strapiCassette = STRAPIDATA.Cassette.filter((s_cassette) => {
-        if (e_screening.film && e_screening.film.id){
+    const scr_cassette = STRAPIDATA.Cassette.filter((s_cassette) => {
+        if (e_screening.film && e_screening.film.id) {
             return s_cassette.remoteId === e_screening.film.id.toString()
         }
-    })
-    let scr_cassette = {}
-    if (strapiCassette.length) {
-        scr_cassette = {id: strapiCassette[0].id.toString()}
-    }
+    }).map(cassette => { return {id: cassette.id.toString()} })[0]
 
-    const strapiScreeningType = STRAPIDATA.ScreeningType.filter((s_screeningType) =>{
-        if(e_scteening.type_of_screening){
-            return e_scteening.type_of_screening.includes(s_screeningType.name)
+    const scr_screeningType = STRAPIDATA.ScreeningType.filter((s_screeningType) => {
+        if(e_screening.type_of_screening) {
+            return e_screening.type_of_screening.includes(s_screeningType.name)
         }
-    })
-    let scr_screeningType = []
-    if (strapiScreeningType.length){
-        scr_screeningType.push({id: strapiScreeningType[0].id.toString()})
-    }
+    }).map(screening_type => screening_type.id.toString())
 
-    const strapiScrSubLang = STRAPIDATA.Language.filter((s_scrSubLang) =>{
-        if(e_scteening.film && e_scteening.film.subtitle_languages ){
-            return e_scteening.film.subtitle_languages.map( item => { return item.print} ).includes(s_scrSubLang.code)
+    const scr_subLang = STRAPIDATA.Language.filter((s_scrSubLang) => {
+        if(e_screening.film && e_screening.film.subtitle_languages ) {
+            let languages = e_screening.film.subtitle_languages.print.languages
+            languages = (Array.isArray(languages) ? languages : [languages])
+
+            return languages.includes(s_scrSubLang.code)
         }
-    })
-    let scr_subLang = []
-    if (strapiScrSubLang.length){
-        scr_subLang.push({id: strapiScrSubLang[0].id.toString()})
-    }
+    }).map(subLang => subLang.id.toString())
 
 
     let screening_out = {
@@ -265,7 +240,7 @@ const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
         // ticketingId: stapis?,
         ticketingUrl: e_screening.ticketing_url,
         dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
-        introQaConversation: {
+        introQaConversation: { // e-presentation -> intro, e-qa -> conversation
             yesNo: e_screening.presentation.available, //#(Boolean) 0 v 1
             // type: (Enumeration), intro, Q&A vms
             // mode: (Enumeration), online/live vms
@@ -301,8 +276,8 @@ const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
 
     return screening_out
 }))
+fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_SCREENINGS.yaml'), yaml.safeDump(E_SCREENINGS, { 'indent': '4' }), "utf8")
 
-console.log(E_SCREENINGS);
 
 async function submitFilm(e_film) {
     let options = {
