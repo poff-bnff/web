@@ -191,6 +191,7 @@ PresentedBy: &PresentedBy
 # Programme
 Programme: &Programme
     _path: /programmes
+    remoteId: (UID)
     namePrivate: (text)
     name: *Translated #(Component)
     description: *Translated # (Component, rich)
@@ -676,9 +677,6 @@ QaClip: &QaClip
     url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
     type: Conversation (Enumeration)
 
-Subtitles: &Subtitles
-    language: *Language
-
 FilmMedia: &FilmMedia
     stills: #(Component (repeatable))
         - *StrapiMedia
@@ -720,6 +718,7 @@ CountriesAndLanguages: &CountriesAndLanguages
 Film: &Film
     _path: /films
     id: 1 (number)
+    remoteId: (UID)
     title_et: Nähtamatu elu (short text)
     title_en: Invisible Life of Eurídice Gusmãos (short text)
     title_ru: Департамент здоровьяs (short text)
@@ -732,12 +731,11 @@ Film: &Film
     slug_et: naehtamatu-elu (UID, No spaces)
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
-    remoteId: (UID)
     countriesAndLanguages: *CountriesAndLanguages #(Component)
     festival_editions:
         - *FestivalEdition
     subtitles:
-        - *Subtitles
+        - *Language
     otherFestivals: (text)
     credentials: *CredentialsNew
     presentedBy: *PresentedBy
@@ -789,7 +787,7 @@ Screening: &Screening
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
     subtitles: #(Component (repeatable))
-      - *Subtitles
+      - *Language
     cassette: *Cassette
     bookingUrl: (text)
     remoteId: (UID)
