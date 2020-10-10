@@ -124,9 +124,6 @@ fetch_data()
     echo 'fetch_article_types_from_yaml'
     node ./helpers/fetch_article_type_from_yaml.js
 
-    echo 'fetch_films_from_yaml'
-    node ./helpers/fetch_films_from_yaml.js
-
     echo 'fetch_heroarticle_from_yaml'
     node ./helpers/fetch_heroarticle_from_yaml.js
 
@@ -151,6 +148,12 @@ fetch_data()
     echo 'fetch_menu_from_yaml'
     node ./helpers/fetch_menu_from_yaml.js
 
+    echo 'fetch_programmes_from_yaml'
+    node ./helpers/fetch_programmes_from_yaml.js
+
+    echo 'fetch_cassettes_from_yaml'
+    node ./helpers/fetch_cassettes_from_yaml.js
+
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
     printf '\n----------                  Processing styles                ----------\n\n'
@@ -169,8 +172,13 @@ download_img()
     node ./helpers/download_article_img.js
     node ./helpers/download_footer_img.js
     node ./helpers/download_teams_img.js
+    node ./helpers/download_cassette_films_credentials_img.js
+    node ./helpers/download_organisations_img.js
+    # node ./helpers/download_persons_img.js
     node ./helpers/download_trioblock_img.js
     node ./helpers/download_supporters_page_img.js
+    node ./helpers/download_programmes_presenters_img.js
+    node ./helpers/download_casettes_and_films_img.js
     printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 }
 
