@@ -47,9 +47,9 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
             return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
         }
     })
-    let f_SubLang = []
+    let f_subLang = []
     if (strapiSubLang.length){
-        f_SubLang.push({id: strapiSubLang[0].id.toString()})
+        f_subLang.push({id: strapiSubLang[0].id.toString()})
     }
 
     const strapiProgramme = STRAPIDATA.Programme.filter((s_programme) => {
@@ -115,7 +115,7 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
             countries: f_country,
             languages: f_language
         },
-        // subtitles: f_SubLang,
+        // subtitles: f_subLang,
         // credentials: {
         //     rolePerson: {
         //         role_at_film: {
@@ -181,6 +181,17 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
     if (strapiFilm.length) {
         c_films.push({id: strapiFilm[0].id.toString()})
     }
+
+    // const strapiScrPresenter = STRAPIDATA.Organisation.filter((s_presenter) =>{
+    //     if(e_film.film_info && e_film.film_info.relationships && e_film.film_info.relationships.contacts ){
+    //         return e_film.film_info.relationships.contacts.map( item => { return item.companies ).includes(s_presenter.name.en)
+    //     }
+    // })
+    // let c_scrPresenter = []
+    // if (strapiScrPresenter.length){
+    //     c_scrPresenter.push({id: strapiScrPresenter[0].id.toString()})
+    // }
+
     let cassette_out = {
         remoteId: (e_film.ids ? e_film.ids : {'system_id': ''}).system_id.toString(),
         title_et: h2p((e_film.titles ? e_film.titles : {'title_local': ''}).title_local),
@@ -227,6 +238,27 @@ const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
         scr_cassette = {id: strapiCassette[0].id.toString()}
     }
 
+    const strapiScreeningType = STRAPIDATA.ScreeningType.filter((s_screeningType) =>{
+        if(e_scteening.type_of_screening){
+            return e_scteening.type_of_screening.includes(s_screeningType.name)
+        }
+    })
+    let scr_screeningType = []
+    if (strapiScreeningType.length){
+        scr_screeningType.push({id: strapiScreeningType[0].id.toString()})
+    }
+
+    const strapiScrSubLang = STRAPIDATA.Language.filter((s_scrSubLang) =>{
+        if(e_scteening.film && e_scteening.film.subtitle_languages ){
+            return e_scteening.film.subtitle_languages.map( item => { return item.print} ).includes(s_scrSubLang.code)
+        }
+    })
+    let scr_subLang = []
+    if (strapiScrSubLang.length){
+        scr_subLang.push({id: strapiScrSubLang[0].id.toString()})
+    }
+
+
     let screening_out = {
         code: e_screening.code,
         codeAndTitle: e_screening.code + '; ' + e_screening.film.title_english,
@@ -235,41 +267,38 @@ const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
         dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
         introQaConversation: {
             yesNo: e_screening.presentation.available, //#(Boolean) 0 v 1
-            // type: (Enumeration),
-            // mode: (Enumeration),
-            presenter: [{
-                et: '0',
-                en: '0',
-                ru: '0'
+            // type: (Enumeration), intro, Q&A vms
+            // mode: (Enumeration), online/live vms
+            presenter: [{ //kas e_sreening.presenters on org name ?
+                et: e_screening.qa.guests,
+                en: e_screening.qa.guests,
+                ru: e_screening.qa.guests
             }],
             guest:  [{
-                et: '0',
-                en: '0',
-                ru: '0'
+                et: e_screening.qa.guests,
+                en: e_screening.qa.guests,
+                ru: e_screening.qa.guests
             }],
             duration: e_screening.qa.duration.toString(),
             // clipUrl: (text)
         },
         durationTotal: e_screening.complete_duration_minutes.toString(),
         location: {
-            id: e_screening.venue_id // sealt nimi ja selle alt stapile vastav id
+            // id: ,// strapi Location v6iks sisaldada e cinaema_hall_id remoteIDna? v6i
         },
         // extraInfo: text, // tuleb kolmeskeele, kuidas kuvame? Kas peaks olema teine translated
         ////  e_screenig.additional_info { et, en, ru}
-        screening_types: [{
-            id: e_screening.type_of_screening, // saame nt PRESS vaja id
-        }],
+        screening_types: scr_screeningType,
         // screening_mode: {
-        //     id: /screening-modes
+        //     id: /screening-modes ei leia e infost
         // },
-        // subtitles: [{
-        //     id : language id
-        // }],
+        // subtitles: scr_subLang, peaks lapikumaks tegema, kui kasutame print v44rtust
         cassette: scr_cassette,
         // bookingUrl: (text),
         remoteId: e_screening.id
 
     }
+
     return screening_out
 }))
 
