@@ -48,6 +48,7 @@ bg_color_3 = #f7f7ff
 bg_color_4 = #eeeeff
 clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
+clr_dark_semi = rgba(23,33,33,.5)
 // clr_primary = #ec008c
 clr_primary = #F39133 // PÖFF orange
 clr_primary_text = #F39133 // PÖFF orange
@@ -62,7 +63,7 @@ clr_covid = #bc06c6
 clr_vote = #00aeef
 clr_grey_light = #dddddd
 
-header_height = 110px
+header_height = 100px
 full_height = calc(100vh - header_height)
 clr_header_text = #0E1417
 clr_header_bg = #ffffff
@@ -171,7 +172,7 @@ header
     background-color clr_header_bg
     width 100%
     height auto
-    height 100px
+    // height header_height
     // text-align center
     position fixed
     z-index 900
@@ -425,7 +426,7 @@ footer
 .logo
     margin 1rem
     padding 0
-    width 110px
+    width 150px
 
 .logo_img:hover,
 .logo_img:focus
@@ -452,10 +453,10 @@ footer
   grid-template-areas   "f_img_slider_box"\
                         "f_title_box"\
                         "f_synopsis_box"\
+                        "f_cred_box"\
                         "f_runtime_box"\
                         "f_interactive_box"\
                         "f_screenings_box"\
-                        "f_cred_box"\
                         "f_dir_bio_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
@@ -528,9 +529,7 @@ footer
 .hero_head
     position relative
     // height full_height
-    width 100vw
-    height 31vw
-    // height calc(100vh - 97px)
+    height calc(100vh - 97px)
 
 .hero_headline_box
     position absolute
@@ -630,7 +629,6 @@ a .dark:hover
 
 .hero_image
     width 100vw
-    // height 200px
     height calc(100vh - 97px)
     object-fit cover
     z-index -1
@@ -750,16 +748,16 @@ a .dark:hover
     justify-content center
     justify-items center
     align-items center
-    grid-gap 5rem
+    grid-gap 2rem
 
 row:first-child > .footer_logos
     display grid
-    grid-template-columns repeat(auto-fit, minmax(12rem, 12rem))
-    grid-template-rows 3.6rem
+    grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
+    grid-template-rows 5rem
     justify-content center
     justify-items center
     align-items center
-    grid-gap 5rem
+    grid-gap 2rem
 
 row:nth-child(2) > .footer_logos
     display grid
@@ -768,7 +766,7 @@ row:nth-child(2) > .footer_logos
     justify-content center
     justify-items center
     align-items center
-    grid-gap 5rem
+    grid-gap 2rem
 
 row:nth-child(3) > .footer_logos
     display grid
@@ -777,7 +775,7 @@ row:nth-child(3) > .footer_logos
     justify-content center
     justify-items center
     align-items center
-    grid-gap 5rem
+    grid-gap 2rem
 
 row:nth-child(4) > .footer_logos
     display grid
@@ -786,7 +784,7 @@ row:nth-child(4) > .footer_logos
     justify-content center
     justify-items center
     align-items center
-    grid-gap 5rem
+    grid-gap 2rem
 
 row:nth-child(5) > .footer_logos
     display grid
@@ -806,10 +804,19 @@ row:nth-child(6) > .footer_logos
     align-items center
     grid-gap 2rem
 
+.footer_logo_item_container
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 100%
+    // border 1px solid blue
+
 .footer_logo_item
     width 100%
     max-height 100%
     object-fit contain
+
 
 .supporters,
 .supporters_footer
@@ -838,8 +845,8 @@ row:first-child > .supporter_logos
 
 row:nth-child(2) > .supporter_logos
     display grid
-    grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
-    grid-template-rows 5rem
+    grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
     justify-content center
     justify-items center
     align-items center
@@ -856,7 +863,7 @@ row:nth-child(3) > .supporter_logos
 
 row:nth-child(4) > .supporter_logos
     display grid
-    grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
     grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
     justify-content center
     justify-items center
@@ -881,30 +888,24 @@ row:nth-child(6) > .supporter_logos
     align-items center
     grid-gap 4rem
 
-row:nth-child(7) > .supporter_logos
-    display grid
-    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
-    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
-    justify-content center
-    justify-items center
-    align-items center
-    grid-gap 4rem
+// .supporter_logo_item
+//     width 100%
+//     // height 100%
+//     max-height 100%
+//     object-fit contain
 
-row:nth-child(8) > .supporter_logos
-    display grid
-    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
-    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+.supporter_logo_item_container
+    display flex
     justify-content center
-    justify-items center
     align-items center
-    grid-gap 4rem
+    width 100%
+    height 100%
+    // border 1px solid blue
 
 .supporter_logo_item
     width 100%
-    // height 100%
     max-height 100%
     object-fit contain
-
 
 // .footer_logo_item:first-child
 //     width: 100%
@@ -1077,7 +1078,8 @@ header
 .f_interactive_box
     grid-area f_interactive_box
     display grid
-    grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
+    // grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
+    grid-template-columns 1fr
     grid-template-rows auto
     grid-gap 1rem
     padding 2rem
@@ -1085,6 +1087,7 @@ header
     align-content center
     justify-items center
     align-items center
+    background-color bg_dark_2
 
 .f_interactive_item
     align center
@@ -1094,7 +1097,8 @@ header
 
 .f_dir_bio_box
     grid-area f_dir_bio_box
-    background-color bg_dark_1
+    // background-color bg_dark_1
+    background-color bg_color_1
     padding-left calc(2rem + 1vw)
     padding-right calc(2rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -1124,6 +1128,9 @@ header
 .f_trailer_box
     grid-area f_trailer_box
     width 100%
+    background-color bg_dark_2
+    .section_headline
+        color bg_dark_4
 
 .f_qaclip_box
     grid-area f_qaclip_box
@@ -1799,17 +1806,11 @@ a.btn_popover
     padding-right calc(.1rem + 3vw)
 
 .home_hero_img
-    width 100vw
-    height 31vw
+    width 100%
+    height auto
     object-fit cover
     padding 0
     padding-bottom 1rem
-
-.home_hero_image
-    width 100vw
-    height 31vw
-    object-fit cover
-    padding 0
 
 .hero_p
     font-family font_p
@@ -1893,9 +1894,9 @@ a.btn_popover
         grid-template-areas "f_img_slider_box  f_img_slider_box  f_title_box"\
                             "f_synopsis_box    f_synopsis_box    f_cred_box"\
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
-                            "f_interactive_box    f_interactive_box    f_interactive_box"\
+                            "f_interactive_box f_interactive_box f_interactive_box"\
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
-                            "f_extra_box       f_extra_box       f_extra_box"\
+                            "f_dir_bio_box     f_dir_bio_box     f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
@@ -1969,9 +1970,7 @@ a.btn_popover
     .hero_head
         position relative
         // height full_height
-        // height calc(100vh - 97px)
-        width 100vw
-        height 31vw
+        height calc(100vh - 97px)
 
     // .hero_image
     //     width 100vw
@@ -2041,7 +2040,7 @@ a.btn_popover
     header
         display grid
         grid-template-columns auto 1fr
-        height header_height
+        height 100px
 
     .main_menu_toggle_label
             display none
@@ -2255,7 +2254,7 @@ a.btn_popover
         // display flex
         // justify-content flex-start
         // align-items flex-end
-        width 110px
+        width 160px
         // padding-left 1.2rem
         // padding-bottom .3rem
         // padding-top .4rem
@@ -2377,15 +2376,10 @@ a.btn_popover
             padding-top 1.618rem
 
     .home_hero_img
-        width 100vw
-        height 31vw
+        width 100%
+        height auto
         object-fit cover
         padding 3rem
-
-    .home_hero_image
-        width 100vw
-        height 31vw
-        object-fit cover
 
     // TEXT ALIGNMENT DESKTOP
 
@@ -2432,6 +2426,9 @@ a.btn_popover
 
 .dark_1
     color dark_1
+
+.dark_semi
+    color clr_dark_semi
 
 a .trio_headline
     text-decoration none
