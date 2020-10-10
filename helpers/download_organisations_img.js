@@ -2,19 +2,19 @@ const http = require('http')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const fetch = require('node-fetch')
-
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/strapiData.yaml`, 'utf8'))['Organisation']
 
 const {parallelLimit} = require('async')
 
 var strapiPath = 'http://' + process.env['StrapiHost']
-var savePath = 'assets/img/dynamic/img_programmes_presenters/'
+var savePath = 'assets/img/dynamic/img_org/'
 
 loadYaml(readYaml);
 
 function loadYaml(readYaml) {
     var doc = '';
     try {
-        doc = yaml.safeLoad(fs.readFileSync(`source/_fetchdir/programmes.et.yaml`, 'utf8'))
+        doc = STRAPIDATA
 
     } catch (e) {
         console.log(e);
@@ -67,18 +67,11 @@ function downloadsMaker(url, dest) {
 }
 
 function readYaml(doc) {
-    process.stdout.write('Programmes presenters page pics ')
+    process.stdout.write('Organisations pics ')
     let parallelDownloads = []
     // console.log(doc);
-    if (doc) {
-        for (const ix in doc) {
-            const section = doc[ix]
-            presentedBy = section.presentedBy
-            if (presentedBy === undefined) {
-                continue
-            }
-            for (const i in section.presentedBy.organisations) {
-                const logo = section.presentedBy.organisations[i]
+            for (const i in doc) {
+                const logo = doc[i]
                 if ('logoWhite' in logo && 'url' in logo.logoWhite){
                     let imgPathW = logo.logoWhite.url;
                     let imgFileName = imgPathW.split('/')[imgPathW.split('/').length - 1]
@@ -103,51 +96,7 @@ function readYaml(doc) {
                     parallelDownloads.push( downloadsMaker(url, dest) )
                 }
             }
-        }
-    }
-    if (doc.socialGroup) {
-        for (const ix in doc.socialGroup) {
-            const group = doc.socialGroup[ix]
-            for (const i in group.items) {
-                const items = group.items[i]
-                if ('svgMedia' in items && 'url' in items.svgMedia){
-                    let imgPath = items.svgMedia.url;
-                    let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
-                    let url = `${strapiPath}${imgPath}`
-                    let dest = `${savePath}${imgFileName}`
-                    parallelDownloads.push( downloadsMaker(url, dest) )
-                }
-            }
-        }
-    }
-    if (doc.item) {
-        for (const ix in doc.item) {
-            const item = doc.item[ix]
-            if ('image' in item && 'url' in item.image) {
-                // console.log(item.image);
-                let imgPath = item.image.url;
-                let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
-                let url = `${strapiPath}${imgPath}`
-                let dest = `${savePath}${imgFileName}`
-                parallelDownloads.push( downloadsMaker(url, dest) )
-            }
-        }
 
-        for (const ix in doc.item) {
-            const item = doc.item[ix]
-            for (const i in item.svgItem) {
-                const media = item.svgItem[i]
-                if('svgMedia' in media &&'url' in media.svgMedia) {
-                    // console.log(media.svgMedia.url);
-                    let imgPath = media.svgMedia.url;
-                    let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
-                    let url = `${strapiPath}${imgPath}`
-                    let dest = `${savePath}${imgFileName}`
-                    parallelDownloads.push( downloadsMaker(url, dest) )
-                }
-            }
-        }
-    }
     // console.log(parallelDownloads);
     parallelLimit(
         parallelDownloads,

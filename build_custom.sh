@@ -172,6 +172,9 @@ download_img()
     node ./helpers/download_article_img.js
     node ./helpers/download_footer_img.js
     node ./helpers/download_teams_img.js
+    node ./helpers/download_cassette_films_credentials_img.js
+    node ./helpers/download_organisations_img.js
+    # node ./helpers/download_persons_img.js
     node ./helpers/download_trioblock_img.js
     node ./helpers/download_supporters_page_img.js
     node ./helpers/download_programmes_presenters_img.js
