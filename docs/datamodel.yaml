@@ -711,12 +711,6 @@ CredentialsNew: &CredentialsNew
     roleCompany:
         - *RoleCompany
 
-CountriesAndLanguages: &CountriesAndLanguages
-    countries: #(Component (repeatable))
-        - *Country
-    languages: #(Component (repeatable))
-        - *Language
-
 Film: &Film
     _path: /films
     id: 1 (number)
@@ -733,9 +727,12 @@ Film: &Film
     slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
     slug_ru: departament-zdorovya (UID, No spaces)
     remoteId: (UID)
-    countriesAndLanguages: *CountriesAndLanguages #(Component)
     festival_editions:
         - *FestivalEdition
+    countries: #(Component (repeatable))
+        - *Country
+    languages: #(Component (repeatable))
+        - *Language
     subtitles:
         - *Subtitles
     otherFestivals: (text)
