@@ -85,15 +85,6 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
     }
 
 
-    // const strapiPerson = STRAPIDATA.Person.filter((s_person) =>{
-
-    //     return s_person.name === e_film.eventival_categorization.sections.name
-    // })
-    // let f_person = []
-    // if (strapiPerson.length){
-    //     f_person.push({id: strapiPerson[0].id.toString()})
-    // }
-
     let film_out = {
 
         remoteId: ((e_film.ids && e_film.ids.system_id) ? e_film.ids : {'system_id': ''}).system_id.toString(),
@@ -107,19 +98,20 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         // otherFestivals: '?',
         tags: {
         //     premiere_types: '?',
-        //     genres: [e_film.film_info.types.type],
-        //     keywords: [e_film.eventival_categorization.tags.tag],
+        //     genres: [e_film.film_info.types.type], //infot pole
+        //     keywords: [e_film.eventival_categorization.tags.tag], // kahtlane, iga e_filmi juures Mass Import 2020-10-04
             programmes: f_programme
         },
         countriesAndLanguages: {
             countries: f_country,
             languages: f_language
         },
-        // subtitles: f_subLang,
+        subtitles: f_subLang,
         // credentials: {
-        //     rolePerson: {
+        //     rolePerson: { // stapis amet ja nimi
+        //          order: (num),
         //         role_at_film: {
-        //             id: e_film.publications.en //....
+        //             id: e_film.publications.en // strapis RolesAtFilm.roleNamePrivate
         //         },
         //         person: {
         //             id: '?'
@@ -130,7 +122,7 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         //             id: '?'
         //         },
         //         person: {
-        //             id : saame rolesAtFilm nime
+        //             id :
         //         }
         //     }
         // },
@@ -182,23 +174,25 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
         c_films.push({id: strapiFilm[0].id.toString()})
     }
 
-    // const strapiScrPresenter = STRAPIDATA.Organisation.filter((s_presenter) =>{
+    // const strapiCassettePresenter = STRAPIDATA.Organisation.filter((s_presenter) =>{
     //     if(e_film.film_info && e_film.film_info.relationships && e_film.film_info.relationships.contacts ){
     //         return e_film.film_info.relationships.contacts.map( item => { return item.companies ).includes(s_presenter.name.en)
     //     }
     // })
-    // let c_scrPresenter = []
-    // if (strapiScrPresenter.length){
-    //     c_scrPresenter.push({id: strapiScrPresenter[0].id.toString()})
+    // let c_cassettePresenter = []
+    // if (strapiCassettePresenter.length){
+    //     c_cassettePresenter.push({id: strapiCassettePresenter[0].id.toString()})
     // }
+
+
 
     let cassette_out = {
         remoteId: (e_film.ids ? e_film.ids : {'system_id': ''}).system_id.toString(),
         title_et: h2p((e_film.titles ? e_film.titles : {'title_local': ''}).title_local),
         title_en: h2p((e_film.titles ? e_film.titles : {'title_english': ''}).title_english),
         title_ru: h2p((e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom),
-        // festival_edition: e_film.eventival_categorization.categories.category,
-        // tags: {
+        // festival_edition: e_film.eventival_categorization.categories.category,//sama mis yleval
+        // tags: {//sama mis yleval
         //     premiere_types: '?',
         //     genres: e_film.film_info.types.type,
         //     keywords: e_film.eventival_categorization.tags.tag,
@@ -206,9 +200,7 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
         //         id: e_film.eventival_categorization.sections.section.id
         //     }
         // },
-        // presenters: [{
-        //     id: '0'
-        // }],
+        // presenters: c_cassettePresenter, //pole kindel kas 6ige koht mida e_films lugeda
         films: c_films
     }
     if (e_film.publications) {
@@ -262,7 +254,7 @@ const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
     let screening_out = {
         code: e_screening.code,
         codeAndTitle: e_screening.code + '; ' + e_screening.film.title_english,
-        // ticketingId: stapis?,
+        // ticketingId: lisatakse stapis?,
         ticketingUrl: e_screening.ticketing_url,
         dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
         introQaConversation: {
