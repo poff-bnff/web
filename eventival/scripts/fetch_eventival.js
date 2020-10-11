@@ -141,8 +141,8 @@ const makeList = (obj, keep_prop, list_prop) => {
 const fetch_films = async (e_films) => {
     const endlineAt = 60
     for (const [ix, element] of Object.entries(e_films)) {
-        // if (ix > 50) { continue }
-        // console.log('fetch', element.id, element.title_english, element.title_original)
+        if (ix > 50) { continue }
+        console.log('fetch', element.id, element.title_english, element.title_original)
         const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + element.id + '.xml')
         const eventivalXML = await eventivalFetch(url)
         .catch(e => {
@@ -158,6 +158,12 @@ const fetch_films = async (e_films) => {
         makeList(e_films[ix].eventival_categorization, 'categories', 'category')
         makeList(e_films[ix].eventival_categorization, 'sections', 'section')
         makeList(e_films[ix].eventival_categorization, 'tags', 'tag')
+
+        // let publications = e_films[ix]['publications'] ? e_films[ix]['publications'] : []
+        for (const [lang, publication] of Object.entries(e_films[ix]['publications'])) {
+            makeList(publication, 'crew', 'contact')
+            delete(publication.contacts)
+        }
 
         const cursor_x = parseInt(ix)%endlineAt
         const dot = (ix%10 ? (ix%5 ? '.' : 'i') : '|')
@@ -198,8 +204,8 @@ function my_parser(eventivalXML, root_node) {
         parseNodeValue: true,
         parseAttributeValue: false,
         trimValues: true,
-        cdataTagName: "__cdata",
-        cdataPositionChar: "\\c",
+        // cdataTagName: "__cdata",
+        // cdataPositionChar: "\\c",
         parseTrueNumberOnly: false,
         arrayMode: false,
         stopNodes: ["parse-me-as-string"]

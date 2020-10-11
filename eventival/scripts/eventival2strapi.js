@@ -65,6 +65,7 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         }
     }).map(e => { return {id: e.id.toString()} })
 
+
     let categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
     const f_festivalEdition = categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
@@ -89,7 +90,7 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         languages: f_language,
         subtitles: f_subLang,
         // credentials: {
-        //     rolePerson: { // stapis amet ja nimi
+        //     rolePerson: { // strapis amet ja nimi
         //          order: (num),
         //         role_at_film: {
         //             id: e_film.publications.en // strapis RolesAtFilm.roleNamePrivate
@@ -127,7 +128,7 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
                 if (film_out['synopsis'] === undefined) {
                     film_out['synopsis'] = {}
                 }
-                film_out['synopsis'][lang] = h2p(publication.synopsis_long.__cdata)
+                film_out['synopsis'][lang] = h2p(publication.synopsis_long)
             }
         }
     }
@@ -193,7 +194,7 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
                 if (cassette_out['synopsis'] === undefined) {
                     cassette_out['synopsis'] = {}
                 }
-                cassette_out['synopsis'][lang] = h2p(publication.synopsis_long.__cdata)
+                cassette_out['synopsis'][lang] = h2p(publication.synopsis_long)
             }
         }
     }
@@ -232,7 +233,7 @@ const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
         // ticketingId: lisatakse stapis?,
         ticketingUrl: e_screening.ticketing_url,
         dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
-        // introQaConversation: { // e-presentation -> intro, e-qa -> conversation
+        // introQaConversation: {                // e-presentation -> intro, e-qa -> conversation
         //     yesNo: e_screening.presentation.available, //#(Boolean) 0 v 1
         //     // type: (Enumeration), intro, Q&A vms
         //     // mode: (Enumeration), online/live vms
