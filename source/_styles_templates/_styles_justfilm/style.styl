@@ -426,7 +426,7 @@ footer
 .logo
     margin 1rem
     padding 0
-    width 100px
+    width 90px
 
 .logo_img:hover,
 .logo_img:focus
@@ -639,9 +639,11 @@ a .dark:hover
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
     // grid-gap calc(1.9rem + 1.5vw)
-    grid-gap 0
-    padding-top calc(1.9rem + 1.5vw)
-    padding-bottom calc(1.9rem + 1.5vw)
+    grid-gap 2rem
+    // padding-top calc(1.9rem + 1.5vw)
+    // padding-bottom calc(1.9rem + 1.5vw)
+    padding-top 2rem
+    padding-bottom 2rem
     justify-content center
     align-content center
     justify-items stretch
@@ -656,10 +658,13 @@ a .dark:hover
     height 100%
     background rgba(255,255,255,.96)
     text-align left
-    padding 1rem 2rem 1rem 2rem
-    outline .5px dashed dark_5
+    padding 0
+    // outline .5px dashed dark_5
 
 .trio_headline
+    position absolute
+    bottom 0
+    left 0
     color dark_4
     font-size 1.5rem
     font-family font_h
@@ -674,6 +679,49 @@ a .dark:hover
     padding-top .7rem
     color dark_1
     font-weight 300
+
+.trio_title_headline_box
+    position absolute
+    bottom 0
+    left 0
+    width 72%
+    // background rgba(10,0,3,.6)
+    // background rgba(236,0,140,.6)
+    // background rgba(90,0,60,.7)
+    // background-color clr_primary
+    text-align left
+    // padding 1rem 1rem 1rem 0rem
+
+.trio_title_detailed
+    font-family font_h
+    font-size calc(1.618rem + .5vw)
+    text-decoration none
+    text-align left
+    font-weight 400
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
+.trio_title_detailed span
+    // background-color rgba(255,255,255,.9)
+    background-color white
+    color dark_4
+    display inline
+    padding-left 2rem
+    padding-right 1.2rem
+    padding-top .5rem
+    padding-bottom .2rem
+    font-size calc(1.168rem + .5vw)
+    line-height 1.55
+    box-decoration-break clone
+
+
+
+
 
 
 
@@ -1988,8 +2036,8 @@ a.btn_popover
     //     z-index -1
 
     .trio_block
-        padding-left calc(2rem + 2vw)
-        padding-right calc(2rem + 2vw)
+        padding-left 2rem
+        padding-right 2rem
 
     .viiekas
         width 100vw
@@ -2262,7 +2310,7 @@ a.btn_popover
         // display flex
         // justify-content flex-start
         // align-items flex-end
-        width 100px
+        width 90px
         // padding-left 1.2rem
         // padding-bottom .3rem
         // padding-top .4rem
