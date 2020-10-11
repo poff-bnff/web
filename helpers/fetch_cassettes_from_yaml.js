@@ -87,6 +87,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
             let cassetteCarouselPicsCassette = []
             let cassetteCarouselPicsFilms = []
+            let cassettePostersCassette = []
+            let cassettePostersFilms = []
 
             if(element.films) {
                 var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
@@ -164,6 +166,20 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 element.cassetteCarouselPicsCassette = cassetteCarouselPicsCassette
             }
 
+            // Cassette poster pics
+            if (element.media && element.media.posters && element.media.posters[0]) {
+                for (const posterIx in element.media.posters) {
+                    let poster = element.media.posters[posterIx]
+                    if (poster.hash && poster.ext) {
+                        cassettePostersCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${poster.hash}${poster.ext}`)
+                    }
+                }
+            }
+
+            if (cassettePostersCassette.length > 0) {
+                element.cassettePostersCassette = cassettePostersCassette
+            }
+
             if (element.films && element.films[0]) {
                 for (filmIx in element.films) {
                     let film = element.films[filmIx]
@@ -190,6 +206,20 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
                     if (cassetteCarouselPicsFilms.length > 0) {
                         element.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
+                    }
+
+                    // Film posters pics
+                    if (film.media && film.media.posters && film.media.posters[0]) {
+                        for (const posterIx in film.media.posters) {
+                            let poster = film.media.posters[posterIx]
+                            if (poster.hash && poster.ext) {
+                                    cassettePostersFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${poster.hash}${poster.ext}`)
+                            }
+                        }
+                    }
+
+                    if (cassettePostersFilms.length > 0) {
+                        element.cassettePostersFilms = cassettePostersFilms
                     }
 
                     // Filmi programmid
