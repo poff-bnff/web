@@ -40,6 +40,10 @@ async function loginViaCognito(){
 
     console.log(await response.json());
 
+    // let access_token = response.AuthenticationResult.AccessToken
+    // console.log(response.AuthenticationResult);
+    // storeAuthentication(access_token, id_token)
+
 }
 
 
@@ -80,3 +84,15 @@ function redirectToPreLoginUrl() {
             window.open(pageURL, '_self')
         }
     }
+
+
+async function saveAsFavorite(){
+
+    let response = await fetch(`https://api.poff.ee/favourite/5`, {
+        method: 'PUT',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+        }
+        // body: JSON.stringify(authenticationData)
+    });
+}
