@@ -86,13 +86,17 @@ function redirectToPreLoginUrl() {
     }
 
 
-async function saveAsFavorite(){
+// async function saveAsFavorite(){
 
-    let response = await fetch(`https://api.poff.ee/favourite/5`, {
-        method: 'PUT',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-        }
-        // body: JSON.stringify(authenticationData)
-    });
-}
+//     let favouriteFilm = document.getElementById('favouriteFilm').value
+//     console.log(favouriteFilm)
+
+//     let response = await fetch(`https://api.poff.ee/favourite/${favouriteFilm}`, {
+//         method: 'PUT',
+//         headers: {
+//             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+//         }
+//         // body: JSON.stringify(authenticationData)
+//     });
+// }
+

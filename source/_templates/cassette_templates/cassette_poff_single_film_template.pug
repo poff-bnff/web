@@ -220,6 +220,9 @@ main.grid_film
                 p
                     | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
                 a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
+                p
+                    | Kas film tundub huvitav? Lisa film oma lemmikutesse.
+                a.btn.btn_vote.active(onclick="saveAsFavorite(film.id)" role='button' target='_BLANK') Lisa lemmikutesse
 
         if film.credentials && film.credentials.rolePerson[0]
             - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
