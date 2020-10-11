@@ -694,7 +694,7 @@ RoleCompany: &RoleCompany
     role_at_film: *RolesAtFilm
     organisation: *Organisation
 
-CredentialsNew: &CredentialsNew
+CredentialsNew: &Credentials
     rolePerson:
         - *RolePerson
     roleCompany:
