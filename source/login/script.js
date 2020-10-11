@@ -24,11 +24,18 @@ async function storeAuthentication(access_token, id_token) {
 
 
 async function loginViaCognito(){
+
+    let authenticationData = {userName: document.getElementById("loginUsername").value,
+     password: document.getElementById("loginPassword").value}
+
+     console.log(authenticationData)
+
     let response = await fetch(`https://api.poff.ee/auth/cognito`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
         },
+        body: JSON.stringify(authenticationData)
     });
 
     console.log(await response.json());
