@@ -23,6 +23,19 @@ async function storeAuthentication(access_token, id_token) {
 }
 
 
+async function loginViaCognito(){
+    let response = await fetch(`https://api.poff.ee/auth/cognito`, {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+        },
+    });
+
+    console.log(await response.json());
+
+}
+
+
 async function loadUserProfile() {
     let userProfile
 
