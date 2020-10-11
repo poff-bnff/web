@@ -171,16 +171,6 @@ Organisation: &Organisation
     logoWhite: *StrapiMedia
     logoBlack: *StrapiMedia
     logoColour: *StrapiMedia
-    # industry_articles:
-    #     - *IndustryArticle
-    # just_filmi_articles:
-    #     - *JustFilmiArticle
-    # kinoffi_articles:
-    #     - *KinoffiArticle
-    # poffi_articles:
-    #     - *POFFiArticle
-    # shortsi_articles:
-    #     - *ShortsiArticle
     homepageUrl: (text)
 
 PresentedBy: &PresentedBy
@@ -501,6 +491,7 @@ Location: &Location
     cinema: *Cinema #(Component)
     hall: *Hall #(Component)
     name: (text)
+    remoteId: (UID)
 
 # Menu
 
@@ -779,7 +770,7 @@ Screening: &Screening
       - *IntroConversationQandA
     durationTotal: (Number)
     location: *Location
-    extraInfo: (text)
+    extraInfo: *Translated
     screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
