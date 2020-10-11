@@ -694,7 +694,7 @@ RoleCompany: &RoleCompany
     role_at_film: *RolesAtFilm
     organisation: *Organisation
 
-CredentialsNew: &Credentials
+Credentials: &Credentials
     rolePerson:
         - *RolePerson
     roleCompany:
@@ -725,7 +725,7 @@ Film: &Film
     subtitles:
         - *Language
     otherFestivals: (text)
-    credentials: *CredentialsNew
+    credentials: *Credentials
     presentedBy: *PresentedBy
     world_sales:
         - *Organisation
