@@ -65,6 +65,17 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         }
     }).map(e => { return {id: e.id.toString()} })
 
+    const f_keyword = STRAPIDATA.TagKeyword.filter((s_keyword) => {
+        if(e_film.eventival_categorization.tags) {
+            return e_film.eventival_categorization.tags.includes(s_keyword.et)
+        }
+    }).map(e => { return {id: e.id.toString()} })
+
+    const f_premiereType = STRAPIDATA.TagPremiereType.filter((s_premiereType) => {
+        if(e_film.film_info && e_film.film_info.premiere_type) {
+            return e_film.film_info.premiere_type === s_premiereType.en
+        }
+    }).map(e => { return {id: e.id.toString()} })
 
     let categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
     const f_festivalEdition = categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
@@ -81,9 +92,9 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         festival_edition: f_festivalEdition,
         // otherFestivals: '?',
         tags: {
-        //     premiere_types: '?',
+            premiere_types: f_premiereType,
             genres: f_genre,
-        //     keywords: [e_film.eventival_categorization.tags.tag],
+            keywords: f_keyword,
             programmes: f_programme
         },
         countries: f_country,
@@ -168,7 +179,30 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
     //     c_cassettePresenter.push({id: strapiCassettePresenter[0].id.toString()})
     // }
 
+    const c_programme = STRAPIDATA.Programme.filter((s_programme) => {
+        if(e_film.eventival_categorization && e_film.eventival_categorization.sections ) {
+            let sections = e_film.eventival_categorization.sections
+            return sections.map( item => { return item.id.toString() } ).includes(s_programme.remoteId)
+        }
+    }).map(e => { return {id: e.id.toString()} })
 
+    const c_genre = STRAPIDATA.TagGenre.filter((s_genre) => {
+        if(e_film.film_info.types) {
+            return e_film.film_info.types.includes(s_genre.et)
+        }
+    }).map(e => { return {id: e.id.toString()} })
+
+    const c_keyword = STRAPIDATA.TagKeyword.filter((s_keyword) => {
+        if(e_film.eventival_categorization.tags) {
+            return e_film.eventival_categorization.tags.includes(s_keyword.et)
+        }
+    }).map(e => { return {id: e.id.toString()} })
+
+    const c_premiereType = STRAPIDATA.TagPremiereType.filter((s_premiereType) => {
+        if(e_film.film_info && e_film.film_info.premiere_type) {
+            return e_film.film_info.premiere_type === s_premiereType.en
+        }
+    }).map(e => { return {id: e.id.toString()} })
 
     let cassette_out = {
         remoteId: (e_film.ids ? e_film.ids : {'system_id': ''}).system_id.toString(),
@@ -176,14 +210,12 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
         title_en: h2p((e_film.titles ? e_film.titles : {'title_english': ''}).title_english),
         title_ru: h2p((e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom),
         // festival_edition: e_film.eventival_categorization.categories.category,//sama mis yleval
-        // tags: {//sama mis yleval
-        //     premiere_types: '?',
-        //     genres: e_film.film_info.types.type,
-        //     keywords: e_film.eventival_categorization.tags.tag,
-        //     programmes: {
-        //         id: e_film.eventival_categorization.sections.section.id
-        //     }
-        // },
+        tags: {
+            premiere_types: c_premiereType,
+            genres: c_genre,
+            keywords: c_keyword,
+            programmes: c_programme
+        },
         // presenters: c_cassettePresenter, //pole kindel kas 6ige koht mida e_films lugeda
         films: c_films
     }
@@ -341,7 +373,7 @@ async function submitScreening(e_screening) {
         headers: { 'Content-Type': 'application/json' }
     }
 
-    const strapiScreening = STRAPIDATA.Cassette.filter((screening) => {
+    const strapiScreening = STRAPIDATA.Screening.filter((screening) => {
         return screening.remoteId === e_screening.remoteId
     })
 
@@ -368,8 +400,8 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    // await submitFilms()
-    // await submitCassettes()
+    await submitFilms()
+    await submitCassettes()
     await submitScreenings()
 }
 

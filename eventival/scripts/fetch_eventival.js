@@ -4,6 +4,7 @@ var parser = require('fast-xml-parser');
 const yaml = require('js-yaml')
 const path = require('path')
 const readline = require('readline');
+const { forIn } = require('lodash');
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
@@ -140,15 +141,17 @@ const makeList = (obj, keep_prop, list_prop) => {
 
 const fetch_films = async (e_films) => {
     const endlineAt = 60
-    for (const [ix, element] of Object.entries(e_films)) {
-        if (ix > 50) { continue }
-        // console.log('fetch', element.id, element.title_english, element.title_original)
-        const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + element.id + '.xml')
+    for (const ix in e_films) {
+        // if (ix > 5) { continue }
+        const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + e_films[ix].id + '.xml')
         const eventivalXML = await eventivalFetch(url)
         .catch(e => {
             console.log('E4:', e)
         })
+        // siin ei saa kasutada e_film, sest muidu katkeb seos e_film === e_films[ix]
         e_films[ix] = my_parser(eventivalXML, 'film')
+
+        // console.log('fetch', e_films[ix].id, e_films[ix].title_english, e_films[ix].title_original, e_films[ix].film_info)
         makeList(e_films[ix].film_info, 'languages', 'language')
         makeList(e_films[ix].film_info, 'subtitle_languages', 'subtitle_language')
         makeList(e_films[ix].film_info, 'types', 'type')
@@ -162,6 +165,7 @@ const fetch_films = async (e_films) => {
         // let publications = e_films[ix]['publications'] ? e_films[ix]['publications'] : []
         for (const [lang, publication] of Object.entries(e_films[ix]['publications'])) {
             makeList(publication, 'crew', 'contact')
+            publication.crew = publication.crew.filter(crew => crew.text)
             delete(publication.contacts)
         }
 
