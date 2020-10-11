@@ -790,6 +790,7 @@ Screening: &Screening
     remoteId: (UID)
 
 SixFilms: &SixFilms
+    _path: /six-films
     title: *Translated
     lead: *Translated #(Rich)
     domain: *Domain
