@@ -171,16 +171,6 @@ Organisation: &Organisation
     logoWhite: *StrapiMedia
     logoBlack: *StrapiMedia
     logoColour: *StrapiMedia
-    # industry_articles:
-    #     - *IndustryArticle
-    # just_filmi_articles:
-    #     - *JustFilmiArticle
-    # kinoffi_articles:
-    #     - *KinoffiArticle
-    # poffi_articles:
-    #     - *POFFiArticle
-    # shortsi_articles:
-    #     - *ShortsiArticle
     homepageUrl: (text)
 
 PresentedBy: &PresentedBy
@@ -501,6 +491,7 @@ Location: &Location
     cinema: *Cinema #(Component)
     hall: *Hall #(Component)
     name: (text)
+    remoteId: (UID)
 
 # Menu
 
@@ -703,7 +694,7 @@ RoleCompany: &RoleCompany
     role_at_film: *RolesAtFilm
     organisation: *Organisation
 
-CredentialsNew: &CredentialsNew
+Credentials: &Credentials
     rolePerson:
         - *RolePerson
     roleCompany:
@@ -734,7 +725,7 @@ Film: &Film
     subtitles:
         - *Language
     otherFestivals: (text)
-    credentials: *CredentialsNew
+    credentials: *Credentials
     presentedBy: *PresentedBy
     world_sales:
         - *Organisation
@@ -779,7 +770,7 @@ Screening: &Screening
       - *IntroConversationQandA
     durationTotal: (Number)
     location: *Location
-    extraInfo: (text)
+    extraInfo: *Translated
     screening_types: #(Component (repeatable))
       - *ScreeningType
     screening_mode: *ScreeningMode #(Component)
@@ -788,6 +779,25 @@ Screening: &Screening
     cassette: *Cassette
     bookingUrl: (text)
     remoteId: (UID)
+
+SixFilms: &SixFilms
+    _path: /six-films
+    title: *Translated
+    lead: *Translated #(Rich)
+    domain: *Domain
+    namePrivate: (text)
+    films_et:
+        - *Film
+    films_en:
+        - *Film
+    films_ru:
+        - *Film
+    cassettes_et:
+        - *Cassette
+    cassettes_en:
+        - *Cassette
+    cassettes_ru:
+        - *Cassette
 
 Label: &Label
     name: (text)
