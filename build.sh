@@ -51,6 +51,9 @@ node ./helpers/fetch_programmes_from_yaml.js
 echo 'fetch_cassettes_from_yaml'
 node ./helpers/fetch_cassettes_from_yaml.js
 
+echo 'fetch_six_film_block_from_yaml'
+node ./helpers/fetch_six_film_block_from_yaml.js
+
 printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
 printf '\n----------                  Processing styles                ----------\n\n'
