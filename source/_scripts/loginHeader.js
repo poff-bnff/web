@@ -1,3 +1,13 @@
+// var pageURL = 'https://dev.inscaping.eu'
+// var userprofilePageURL = pageURL + '/userprofile/'
+
+var pageURL = 'http://localhost:4000'
+var userprofilePageURL = pageURL + '/userprofile'
+
+// var pageURL = 'http://localhost:5000';
+// var userprofilePageURL = pageURL + '/userprofile';
+
+
 var userProfile
 
 

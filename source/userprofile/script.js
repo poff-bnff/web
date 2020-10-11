@@ -39,9 +39,9 @@ async function sendUserProfile() {
 
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/picture`, {
-        method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
+        method: 'GET'
+        // headers: {
+        //     Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
     });
     data = await linkResponse.json()
     console.log(data.link)

@@ -1,16 +1,3 @@
-let profileImg = document.getElementById("profileImg");
-let email = document.getElementById("email");
-let psw = document.getElementById("psw");
-let psw2 = document.getElementById("psw2");
-let firstName = document.getElementById("firstName");
-let lastName = document.getElementById("lastName");
-let gender = document.getElementById("gender");
-let dob = document.getElementById("dob");
-let phoneNr = document.getElementById("phoneNr");
-let country = document.getElementById("countrySelection");
-let city = document.getElementById("gds-cr-one");
-
-
 function validateForm() {
     console.log("validate form");
     console.log(country.value);
@@ -56,7 +43,12 @@ async function sendNewUser() {
                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
             body: JSON.stringify(userToSend)
         });
-        userProfile = await response.json()
+        response = await response.json()
+
+     console.log(userProfile)
+    if (response.UserConfirmed === true)
+    console.log('user confirmed');
+    window.open(`${pageURL}/login`, '_self')
 }
 
 const fileSelector = document.getElementById('profileImg');
