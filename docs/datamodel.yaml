@@ -789,6 +789,25 @@ Screening: &Screening
     bookingUrl: (text)
     remoteId: (UID)
 
+SixFilms: &SixFilms
+    _path: /six-films
+    title: *Translated
+    lead: *Translated #(Rich)
+    domain: *Domain
+    namePrivate: (text)
+    films_et:
+        - *Film
+    films_en:
+        - *Film
+    films_ru:
+        - *Film
+    cassettes_et:
+        - *Cassette
+    cassettes_en:
+        - *Cassette
+    cassettes_ru:
+        - *Cassette
+
 Label: &Label
     name: (text)
     value_et: (text)
