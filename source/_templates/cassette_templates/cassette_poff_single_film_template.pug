@@ -141,7 +141,8 @@ main.grid_film
             if typeof film.synopsis !== 'undefined'
                 - var synopsis_md = film.synopsis
                 .synopsis_gi
-                    +format(synopsis_md)
+                    if typeof synopsis_md === 'String'
+                        +format(synopsis_md)
         section.f_cred_box
             .str_info_blokk_cred
 
