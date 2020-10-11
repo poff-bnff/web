@@ -1,32 +1,30 @@
-
 main.grid_film
-    //- Kasseti title ja synopsis
-    //- div
-    //-     if self.title
-    //-         h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
-    //-     if self.synopsis
-    //-         h1.dark_1= self.synopsis
+    //- Kassetti festivali info
 
-    //- KARUSELL cassette piltidega
+    //- KARUSELL kasseti piltidega
+    if self.cassetteCarouselPicsFilms && self.cassetteCarouselPicsFilms.length > 0
+        - var cassetteCarouselPics = self.cassetteCarouselPicsFilms
+    else if self.cassetteCarouselPicsCassette && self.cassetteCarouselPicsCassette.length > 0
+        - var cassetteCarouselPics = self.cassetteCarouselPicsCassette
+    else
+        //- PLACEHOLDER IMG
+        - var cassetteCarouselPics = ['/assets/img/static/placeholder_hd_1.jpg']
+
     section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
         ol.carousel-indicators
-            if self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills[0]
-                    each val, index in self.films[0].media.stills
+            if cassetteCarouselPics
+                if cassetteCarouselPics
+                    each val, index in cassetteCarouselPics
                         li(data-target='#carouselExampleIndicators' data-slide-to = index)
         .carousel-inner.container_frame_16_9
-            if self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills.length
-                    each val, index in self.films[0].media.stills
-                        if index == 0
-                            .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
-                        else
-                            .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
-                else
-                    .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+            if cassetteCarouselPics
+                each val, index in cassetteCarouselPics
+                    if index == 0
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src= val alt = self.title)
+                    else
+                        .carousel-item.container_contents_16_9
+                            img.d-block.container_contents_16_9(src= val alt = self.title)
             else
                 .carousel-item.active.container_contents_16_9
                     img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
@@ -41,46 +39,294 @@ main.grid_film
             svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                 polyline(points='9 18 15 12 9 6')
             span.sr-only Next
-    //- LÕPP! KARUSELL cassette piltidega LÕPP
+    //- LÕPP! KARUSELL kasseti piltidega LÕPP
+
+    .str_info_meta_gi
+        .str_info_meta_item
+            if self.title
+                h1.dark_1= self.title
+
+            if self.synopsis
+                h1.dark_1= self.synopsis
+
+            if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
+                .str_info_meta_label.dark_1= self.label.film.festival
+                .str_info_meta_festival= self.festival_edition.festival.name
+
+            if self.festival_edition && self.festival_edition && self.festival_edition.name
+                //- Kas selleks eraldi labelit vaja vms?
+                .str_info_meta_label.dark_1= self.label.film.festival
+                .str_info_meta_festival= self.festival_edition.name
+
+            if self.tags && self.tags.programmes && self.tags.programmes[0]
+                - var programmeNames = function(item) {
+                -   if(typeof item.name !== 'object') {
+                -       var itemNames = item.name
+                -   }
+                -   return itemNames
+                - }
+                - var programmes = self.tags.programmes.map(programmeNames).join(', ')
+                if programmes.length > 0
+                    .str_info_meta_label.dark_1= self.label.film.programme
+                    .str_info_meta_festival= programmes
+
+            if self.tags && self.tags.genres && self.tags.genres[0]
+                .str_info_meta_label.dark_1= self.label.film.genre
+                .str_info_meta_festival= self.tags.genres.join(', ')
 
 
-    //- Algab kasseti filmide info kuvamine
-    each film in self.films
-        block titleBox
+            if self.tags && self.tags.keywords && self.tags.keywords[0]
+                .str_info_meta_label.dark_1= self.label.film.keywords
+                .str_info_meta_festival= self.tags.keywords.join(', ')
+
+
+    section.f_screenings_box
+        div
+            h1.section_headline= self.label.film.screenings
+
+        .card-deck.m-o.p-0
+            if self.screenings && self.screenings[0]
+                - var sortedScreenings = self.screenings.sort(function(a, b){return new Date(a.dateTime)-new Date(b.dateTime)})
+                each screening in sortedScreenings
+                    .card.card_screening.rounded-0.border-0
+                        .card-header.rounded-0.bg_dark_4
+                            .grid_container_screening_time
+                                div
+                                    svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                        rect(x='3' y='4' width='18' height='18' rx='2' ry='2')
+                                        line(x1='16' y1='2' x2='16' y2='6')
+                                        line(x1='8' y1='2' x2='8' y2='6')
+                                        line(x1='3' y1='10' x2='21' y2='10')
+                                    span.screening_date
+                                        if screening.dateTime
+                                            +screeningDate(screening.dateTime)
+
+                                .text-right
+                                    svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                        circle(cx='12' cy='12' r='10')
+                                        polyline(points='12 6 12 12 16 14')
+                                    span.screening_time
+                                        +screeningTime(screening.dateTime)
+
+                            .container_screening_location
+                                svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                    path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
+                                    circle(cx='12' cy='10' r='3')
+
+                                if screening.location && screening.location.hall && screening.location.hall.name
+                                    if screening.location.hall && screening.location.hall.name
+                                        span.screening_hall= screening.location.hall.name
+                                        if screening.location.hall.cinema && screening.location.hall.cinema.name
+                                            span.screening_venue= ` ${screening.location.hall.cinema.name}`
+                                            if screening.location.hall.cinema.town && screening.location.hall.cinema.town.name && screening.location.hall.cinema.town.country && screening.location.hall.cinema.town.country.name
+                                                span.city= ` ${screening.location.hall.cinema.town.name}, ${screening.location.hall.cinema.town.country.name}`
+
+                                    //- See on privateName tegelikult: Coca-Cola Plaza, iSense saal
+                                    //- if screening.location.name
+                                    //-     h1= screening.location.name
+
+
+                        .card-body.bg_dark_3
+                            .screening_info_blokk
+                                if self.title
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.Name
+                                        span.screening_info_value= self.title
+                                //- if screening.screeningSubtitles
+                                if screening.screeningSubtitles
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.screeningSubtitles
+                                        span.screening_info_value= screening.screeningSubtitles
+                                if screening.screeningIntroGuests
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.screeningIntroGuests
+                                        span.screening_info_value= screening.screeningIntroGuests
+                                if screening.screeningIntroPresenter
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.screeningIntroPresenter
+                                        span.screening_info_value= screening.screeningIntroPresenter
+                                if screening.screeningQaGuests
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.screeningQaGuests
+                                        span.screening_info_value= screening.screeningQaGuests
+                                if screening.screeningQaPresenter
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.screeningQaPresenter
+                                        span.screening_info_value= screening.screeningQaPresenter
+
+                                if screening.durationTotal
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.TotalDuration
+                                        span.screening_info_value
+                                            +dur(screening.durationTotal)
+
+                        .btn-group(role='group' aria-label='')
+
+                            if screening.screening_mode && screening.screening_mode.name && screening.ticketingId && screening.ticketingUrl && screening.screening_mode.name === 'Online'
+                                if screening.bookingUrl
+                                    a.btn.btn_secondary.active(href= screening.bookingUrl role='button') BOOKINGLABEL!
+                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
+                            if screening.screeningTown === 'Tartu'
+                                a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
+                                a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
+
+
+    if self.presenters && self.presenters[0]
+
+        section.f_extra_box
+            each presenter in self.presenters
+                p.dark_1= presenter.name
+
+                .supporter_logo_item_container
+                    - var logoImg = ''
+                    if presenter.logoColour
+                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                    else if presenter.logoBlack
+                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                    else if presenter.logoWhite
+                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+
+                    if presenter.homepageUrl
+                        a(href= presenter.homepageUrl).supporter_logo_item_container
+                            img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
+                    else
+                        img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
+
+
+//- SIIT ALGAB FILMIDE KUVAMINE
+//- SIIT ALGAB FILMIDE KUVAMINE
+//- SIIT ALGAB FILMIDE KUVAMINE
+//- SIIT ALGAB FILMIDE KUVAMINE
+each film in self.films
+    main.grid_film
+        //- Kasseti title ja synopsis
+        //- div
+        //-     if self.title
+        //-         h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
+        //-     if self.synopsis
+        //-         h1.dark_1= self.synopsis
+
+        //- KARUSELL filmi piltidega
+        section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+            ol.carousel-indicators
+                if film.media
+                    if film.media.stills && film.media.stills[0]
+                        each val, index in film.media.stills
+                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
+            .carousel-inner.container_frame_16_9
+                if film.media
+                    if film.media.stills && film.media.stills.length
+                        each val, index in film.media.stills
+                            if index == 0
+                                .carousel-item.active.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                            else
+                                .carousel-item.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+                else
+                    .carousel-item.active.container_contents_16_9
+                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+
+            a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                    polyline(points='15 18 9 12 15 6')
+                span.sr-only Previous
+            a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                    polyline(points='9 18 15 12 9 6')
+                span.sr-only Next
+        //- LÕPP! KARUSELL filmi piltidega LÕPP
+
+
+        //- Algab kasseti filmide info kuvamine
+
+        - var pathParts = self.path.split('/')
+        - var filmPath = pathParts[pathParts.length - 1]
+        section.f_title_box
+
+            .premiere_type &nbsp;
+                if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                    //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                    p.premiere_type= film.tags.premiere_types.join(', ')
+
+            h1.film_title_detailed= film.title
+            .str_info_blokk_1
+
+                each p, locale in self.otherLocalePaths
+                    if self[`title_${locale}`]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film[`title_${locale}`]
+                            .str_info_value= film[`title_${locale}`]
+
+                if film.titleOriginal
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.titleOriginal
+                        .str_info_value= film.titleOriginal
+
+                if film.credentials && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.director
+                        .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
+
+                if film.countriesAndLanguages && film.countriesAndLanguages.countries
+                    - var countriesNames = function(item) {
+                    -   var itemNames = item.name
+                    -   return itemNames
+                    - }
+
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.countries
+                        .str_info_value= film.countriesAndLanguages.countries.map(countriesNames).join(', ')
+
+                if film.year
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.year
+                        .str_info_value= film.year
+
+
         section.f_synopsis_box
 
             //- Kassetti festivali info
             .str_info_meta_gi
                 .str_info_meta_item
-                    if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
-                        .str_info_meta_label.dark_1= self.label.film.festival
-                        .str_info_meta_festival= self.festival_edition.festival.name
+                    if film.tags
 
-                    if self.festival_edition && self.festival_edition && self.festival_edition.name
-                        //- Kas selleks eraldi labelit vaja vms?
-                        .str_info_meta_label.dark_1= self.label.film.festival
-                        .str_info_meta_festival= self.festival_edition.name
+                        if film.tags.programmes && film.tags.programmes[0]
+                            //- Festival editions
+                            - var programmeNames = function(item) {
+                            -   if(typeof item.name !== 'object') {
+                            -       var itemNames = item.name
+                            -   }
+                            -   return itemNames
+                            - }
+                            each programme in film.tags.programmes
+                                if programme.festival_editions
+                                    - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
+                                    if festivalEditions.length > 0
+                                        .str_info_meta_label.dark_1= self.label.film.programme
+                                        .str_info_meta_festival= festivalEditions
 
-                    if film.tags && film.tags.programmes && film.tags.programmes[0]
-                        - var programmeNames = function(item) {
-                        -   if(typeof item.name !== 'object') {
-                        -       var itemNames = item.name
-                        -   }
-                        -   return itemNames
-                        - }
-                        - var programmes = film.tags.programmes.map(programmeNames).join(', ')
-                        if programmes.length > 0
-                            .str_info_meta_label.dark_1= self.label.film.programme
-                            .str_info_meta_festival= programmes
-
-                    if film.tags && film.tags.genres && film.tags.genres[0]
-                        .str_info_meta_label.dark_1= self.label.film.genre
-                        .str_info_meta_festival= film.tags.genres.join(', ')
+                            //- Programmes
+                            - var programmes = film.tags.programmes.map(programmeNames).join(', ')
+                            if programmes.length > 0
+                                .str_info_meta_label.dark_1= self.label.film.programme
+                                .str_info_meta_festival= programmes
 
 
-                    if film.tags && film.tags.keywords && film.tags.keywords[0]
-                        .str_info_meta_label.dark_1= self.label.film.keywords
-                        .str_info_meta_festival= film.tags.keywords.join(', ')
+
+                        if film.tags.genres && film.tags.genres[0]
+                            .str_info_meta_label.dark_1= self.label.film.genre
+                            .str_info_meta_festival= film.tags.genres.join(', ')
+
+
+                        if film.tags.keywords && film.tags.keywords[0]
+                            .str_info_meta_label.dark_1= self.label.film.keywords
+                            .str_info_meta_festival= film.tags.keywords.join(', ')
 
                     //- festival programm zanrid keywordid
 
@@ -204,110 +450,18 @@ main.grid_film
                         if presenter.homepageUrl
                             a(href= presenter.homepageUrl).supporter_logo_item_container
                                 if presenter.logoColour
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                 else if presenter.logoBlack
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                 else if presenter.logoWhite
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
                         else
                             if presenter.logoColour
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                             else if presenter.logoBlack
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                             else if presenter.logoWhite
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
-
-
-        section.f_screenings_box
-            div
-                h1.section_headline= self.label.film.screenings
-
-            .card-deck.m-o.p-0
-                if self.screenings && self.screenings[0]
-                    - var sortedScreenings = self.screenings.sort(function(a, b){return new Date(a.dateTime)-new Date(b.dateTime)})
-                    each screening in sortedScreenings
-                        .card.card_screening.rounded-0.border-0
-                            .card-header.rounded-0.bg_dark_4
-                                .grid_container_screening_time
-                                    div
-                                        svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                                            rect(x='3' y='4' width='18' height='18' rx='2' ry='2')
-                                            line(x1='16' y1='2' x2='16' y2='6')
-                                            line(x1='8' y1='2' x2='8' y2='6')
-                                            line(x1='3' y1='10' x2='21' y2='10')
-                                        span.screening_date
-                                            if screening.dateTime
-                                                +screeningDate(screening.dateTime)
-
-                                    .text-right
-                                        svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                                            circle(cx='12' cy='12' r='10')
-                                            polyline(points='12 6 12 12 16 14')
-                                        span.screening_time
-                                            +screeningTime(screening.dateTime)
-
-                                .container_screening_location
-                                    svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                                        path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
-                                        circle(cx='12' cy='10' r='3')
-
-                                    if screening.location && screening.location.hall && screening.location.hall.name
-                                        if screening.location.hall && screening.location.hall.name
-                                            span.screening_hall= screening.location.hall.name
-                                            if screening.location.hall.cinema && screening.location.hall.cinema.name
-                                                span.screening_venue= ` ${screening.location.hall.cinema.name}`
-                                                if screening.location.hall.cinema.town && screening.location.hall.cinema.town.name && screening.location.hall.cinema.town.country && screening.location.hall.cinema.town.country.name
-                                                    span.city= ` ${screening.location.hall.cinema.town.name}, ${screening.location.hall.cinema.town.country.name}`
-
-                                        //- See on privateName tegelikult: Coca-Cola Plaza, iSense saal
-                                        //- if screening.location.name
-                                        //-     h1= screening.location.name
-
-
-                            .card-body.bg_dark_3
-                                .screening_info_blokk
-                                    if film.title
-                                        .str_info_grid_3
-                                            span.screening_info_label= self.label.screening.Name
-                                            span.screening_info_value= film.title
-                                    //- if screening.screeningSubtitles
-                                    if film.screeningSubtitles
-                                        .str_info_grid_3
-                                            span.screening_info_label= self.label.screening.screeningSubtitles
-                                            span.screening_info_value= screening.screeningSubtitles
-                                    if screening.screeningIntroGuests
-                                        .str_info_grid_3
-                                            span.screening_info_label= self.label.screening.screeningIntroGuests
-                                            span.screening_info_value= screening.screeningIntroGuests
-                                    if screening.screeningIntroPresenter
-                                        .str_info_grid_3
-                                            span.screening_info_label= self.label.screening.screeningIntroPresenter
-                                            span.screening_info_value= screening.screeningIntroPresenter
-                                    if screening.screeningQaGuests
-                                        .str_info_grid_3
-                                            span.screening_info_label= self.label.screening.screeningQaGuests
-                                            span.screening_info_value= screening.screeningQaGuests
-                                    if screening.screeningQaPresenter
-                                        .str_info_grid_3
-                                            span.screening_info_label= self.label.screening.screeningQaPresenter
-                                            span.screening_info_value= screening.screeningQaPresenter
-
-                                    if screening.durationTotal
-                                        .str_info_grid_3
-                                            span.screening_info_label= self.label.screening.TotalDuration
-                                            span.screening_info_value
-                                                +dur(screening.durationTotal)
-
-                            .btn-group(role='group' aria-label='')
-
-                                if screening.screening_mode && screening.screening_mode.name && screening.ticketingId && screening.ticketingUrl && screening.screening_mode.name === 'Online'
-                                    if screening.bookingUrl
-                                        a.btn.btn_secondary.active(href= screening.bookingUrl role='button') BOOKINGLABEL!
-                                    a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
-                                if screening.screeningTown === 'Tartu'
-                                    a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
-                                    a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
-
+                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
         if film.filmQaClip
@@ -330,5 +484,6 @@ main.grid_film
 
         section.f_imgs_box
 
-        block film
+        +tabname(self.title)
+
 

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const path = require('path');
+const path = require('path')
+const util = require('util')
 const rueten = require('./rueten.js')
 
 const sourceDir = path.join(__dirname, '..', 'source')
@@ -8,9 +9,9 @@ const cassetteTemplatesDir = path.join(sourceDir, '_templates', 'cassette_templa
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
-const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
-const STRAPIDATA_PROGRAMMES = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Programme'];
-const STRAPIDATA_SCREENINGS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Screening'];
+const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
+const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
+const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
@@ -69,29 +70,46 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let allData = []
     // data = rueten(data, lang);
     // console.log(data);
+    let slugMissingErrorNumber = 0
+    let slugMissingErrorIDs = []
     for (const originalElement of STRAPIDATA_CASSETTE) {
         const element = JSON.parse(JSON.stringify(originalElement))
+
         let slugEn = element.slug_en
         if (!slugEn) {
             slugEn = element.slug_et
         }
 
-        // rueten func. is run for each element separately instead of whole data, that is
-        // for the purpose of saving slug_en before it will be removed by rueten func.
-        if(element.films) {
-            var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
-        }
-        rueten(element, lang)
-        if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
-            element.films = cassetteFilmsBeforeRueten
-        }
-        // console.log(element.directory);
-        // element = rueten(element, `_${lang}`);
-
         if(typeof slugEn !== 'undefined') {
             element.dirSlug = slugEn
             element.directory = path.join(dirPath, slugEn)
             fs.mkdirSync(element.directory, { recursive: true })
+
+            let cassetteCarouselPicsCassette = []
+            let cassetteCarouselPicsFilms = []
+
+            if(element.films) {
+                var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
+            }
+
+            // Kasseti programmid
+            if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
+                for (const programmeIx in element.tags.programmes) {
+                    let programme = element.tags.programmes[programmeIx];
+
+                    let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
+                    if (typeof programmeFromYAML[0] !== 'undefined') {
+                        element.tags.programmes[programmeIx] = programmeFromYAML[0];
+                    }
+                }
+            }
+
+            // rueten func. is run for each element separately instead of whole data, that is
+            // for the purpose of saving slug_en before it will be removed by rueten func.
+            rueten(element, lang)
+            if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
+                element.films = cassetteFilmsBeforeRueten
+            }
 
             // Screenings
             let screenings = []
@@ -132,6 +150,20 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 }
             }
 
+            // Cassette carousel pics
+            if (element.media && element.media.stills && element.media.stills[0]) {
+                for (const stillIx in element.media.stills) {
+                    let still = element.media.stills[stillIx]
+                    if (still.hash && still.ext) {
+                        cassetteCarouselPicsCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${still.hash}${still.ext}`)
+                    }
+                }
+            }
+
+            if (cassetteCarouselPicsCassette.length > 0) {
+                element.cassetteCarouselPicsCassette = cassetteCarouselPicsCassette
+            }
+
             if (element.films && element.films[0]) {
                 for (filmIx in element.films) {
                     let film = element.films[filmIx]
@@ -144,11 +176,30 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         film.dirSlug = filmSlugEn
                     }
 
+                    // Film carousel pics
+                    if (film.media && film.media.stills && film.media.stills[0]) {
+                        for (const stillIx in film.media.stills) {
+                            let still = film.media.stills[stillIx]
+                            if (still.hash && still.ext) {
+                                if (still.hash.substring(0, 4) === 'F_1_') {
+                                    cassetteCarouselPicsFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}`)
+                                }
+                            }
+                        }
+                    }
+
+                    if (cassetteCarouselPicsFilms.length > 0) {
+                        element.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
+                    }
+
+                    // Filmi programmid
                     if (film.tags && film.tags.programmes && film.tags.programmes[0]) {
                         for (const programmeIx in film.tags.programmes) {
                             let programme = film.tags.programmes[programmeIx];
                             let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
-                            film.tags.programmes[programmeIx] = programmeFromYAML[0];
+                            if (typeof programmeFromYAML[0] !== 'undefined') {
+                                film.tags.programmes[programmeIx] = programmeFromYAML[0];
+                            }
                         }
                     }
 
@@ -160,7 +211,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let rolePerson = film.credentials.rolePerson[roleIx]
 
                             let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
-                            rolePerson.person = personFromYAML[0];
+                            rolePerson.person = rueten(personFromYAML[0], lang);
 
                             if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
                                 rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
@@ -181,18 +232,30 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             allData.push(element);
             element.data = dataFrom;
 
+
+
+
+            // console.log(util.inspect(element, {showHidden: false, depth: null}))
+
+
+
+
             generateYaml(element, lang, copyFile, allData)
 
         } else {
             if(showErrors) {
-                console.log(`- Notification! Cassette ID ${element.id} slug_en or slug_et value missing`);
+                slugMissingErrorNumber++
+                slugMissingErrorIDs.push(element.id)
             }
         }
+    }
+    if(slugMissingErrorNumber > 0) {
+        console.log(`Notification! Value of slug_en or slug_et missing for total of ${slugMissingErrorNumber} cassettes with ID's ${slugMissingErrorIDs.join(', ')}`);
     }
 }
 
 function generateYaml(element, lang, copyFile, allData){
-    let yamlStr = yaml.safeDump(element, { 'indent': '4' });
+    let yamlStr = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
 
     // console.log(element.directory)
 
@@ -205,7 +268,8 @@ function generateYaml(element, lang, copyFile, allData){
             if (fs.existsSync(cassetteIndexTemplate)) {
                 fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
             } else {
-                console.log(`ERROR! Default template ${cassetteIndexTemplate} missing!`);
+                console.log(`ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`);
+                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
             }
         }
 
