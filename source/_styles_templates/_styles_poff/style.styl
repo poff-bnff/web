@@ -446,11 +446,11 @@ footer
 /* Grid-areas .grid_film - mobile 1 column */
 
 .grid_film
-  display grid
-  grid-template-columns 1fr
-  grid-template-rows auto
-  padding-top header_height
-  grid-template-areas   "f_img_slider_box"\
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
                         "f_title_box"\
                         "f_synopsis_box"\
                         "f_cred_box"\
@@ -462,6 +462,23 @@ footer
                         "f_qaclip_box"\
                         "f_trailer_box"\
                         "f_imgs_box"
+
+.grid_cassette
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
+                        "f_title_box"\
+                        "f_synopsis_box"\
+                        "f_cred_box"\
+                        "f_runtime_box"\
+                        "f_screenings_box"\
+                        "f_dir_bio_box"\
+                        "f_extra_box"\
+                        "f_qaclip_box"\
+                        "f_trailer_box"\
+
 
 .grid_films
     display: grid
@@ -1942,6 +1959,17 @@ a.btn_popover
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
+    .grid_cassette
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_img_slider_box  f_img_slider_box  f_title_box"\
+                            "f_synopsis_box    f_synopsis_box    f_cred_box"\
+                            "f_synopsis_box    f_synopsis_box    f_extra_box"\
+                            "f_screenings_box  f_screenings_box  f_screenings_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_trailer_box     f_trailer_box     f_trailer_box"\
+
     .grid_films
         display grid
         // grid-template-columns 1fr 1fr 1fr
@@ -2494,3 +2522,6 @@ strong
 
 .padding_top_0
     padding-top 0px
+
+.bg_white
+    background-color white
