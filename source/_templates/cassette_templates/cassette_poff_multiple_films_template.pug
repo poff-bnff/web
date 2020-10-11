@@ -41,13 +41,13 @@ main.grid_film
             span.sr-only Next
     //- LÕPP! KARUSELL kasseti piltidega LÕPP
 
-    .str_info_meta_gi
-        .str_info_meta_item
+    section.f_title_box
+
             if self.title
-                h1.dark_1= self.title
+                h1.film_title_detailed= self.title
 
             if self.synopsis
-                h1.dark_1= self.synopsis
+                p= self.synopsis
 
             if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
                 .str_info_meta_label.dark_1= self.label.film.festival
