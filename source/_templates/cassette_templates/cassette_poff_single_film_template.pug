@@ -7,7 +7,7 @@ main.grid_film
     //-     if self.synopsis
     //-         h1.dark_1= self.synopsis
 
-    //- KARUSELL cassette piltidega
+    //- KARUSELL filmi piltidega
     section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
         ol.carousel-indicators
             if self.films[0].media
@@ -41,46 +41,94 @@ main.grid_film
             svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                 polyline(points='9 18 15 12 9 6')
             span.sr-only Next
-    //- LÕPP! KARUSELL cassette piltidega LÕPP
+    //- LÕPP! KARUSELL filmi piltidega LÕPP
 
 
     //- Algab kasseti filmide info kuvamine
     each film in self.films
-        block titleBox
+
+        - var pathParts = self.path.split('/')
+        - var filmPath = pathParts[pathParts.length - 1]
+        section.f_title_box
+
+            .premiere_type &nbsp;
+                if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                    //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                    p.premiere_type= film.tags.premiere_types.join(', ')
+
+            h1.film_title_detailed= film.title
+            .str_info_blokk_1
+
+                each p, locale in self.otherLocalePaths
+                    if self[`title_${locale}`]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film[`title_${locale}`]
+                            .str_info_value= film[`title_${locale}`]
+
+                if film.titleOriginal
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.titleOriginal
+                        .str_info_value= film.titleOriginal
+
+                if film.credentials && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.director
+                        .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
+
+                if film.countriesAndLanguages && film.countriesAndLanguages.countries
+                    - var countriesNames = function(item) {
+                    -   var itemNames = item.name
+                    -   return itemNames
+                    - }
+
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.countries
+                        .str_info_value= film.countriesAndLanguages.countries.map(countriesNames).join(', ')
+
+                if film.year
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.year
+                        .str_info_value= film.year
+
+
         section.f_synopsis_box
 
             //- Kassetti festivali info
             .str_info_meta_gi
                 .str_info_meta_item
-                    if self.festival_edition && self.festival_edition.festival && self.festival_edition.festival.name
-                        .str_info_meta_label.dark_1= self.label.film.festival
-                        .str_info_meta_festival= self.festival_edition.festival.name
+                    if film.tags
 
-                    if self.festival_edition && self.festival_edition && self.festival_edition.name
-                        //- Kas selleks eraldi labelit vaja vms?
-                        .str_info_meta_label.dark_1= self.label.film.festival
-                        .str_info_meta_festival= self.festival_edition.name
+                        if film.tags.programmes && film.tags.programmes[0]
+                            //- Festival editions
+                            - var programmeNames = function(item) {
+                            -   if(typeof item.name !== 'object') {
+                            -       var itemNames = item.name
+                            -   }
+                            -   return itemNames
+                            - }
+                            each programme in film.tags.programmes
+                                if programme.festival_editions
+                                    - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
+                                    if festivalEditions.length > 0
+                                        .str_info_meta_label.dark_1= self.label.film.programme
+                                        .str_info_meta_festival= festivalEditions
 
-                    if film.tags && film.tags.programmes && film.tags.programmes[0]
-                        - var programmeNames = function(item) {
-                        -   if(typeof item.name !== 'object') {
-                        -       var itemNames = item.name
-                        -   }
-                        -   return itemNames
-                        - }
-                        - var programmes = film.tags.programmes.map(programmeNames).join(', ')
-                        if programmes.length > 0
-                            .str_info_meta_label.dark_1= self.label.film.programme
-                            .str_info_meta_festival= programmes
-
-                    if film.tags && film.tags.genres && film.tags.genres[0]
-                        .str_info_meta_label.dark_1= self.label.film.genre
-                        .str_info_meta_festival= film.tags.genres.join(', ')
+                            //- Programmes
+                            - var programmes = film.tags.programmes.map(programmeNames).join(', ')
+                            if programmes.length > 0
+                                .str_info_meta_label.dark_1= self.label.film.programme
+                                .str_info_meta_festival= programmes
 
 
-                    if film.tags && film.tags.keywords && film.tags.keywords[0]
-                        .str_info_meta_label.dark_1= self.label.film.keywords
-                        .str_info_meta_festival= film.tags.keywords.join(', ')
+
+                        if film.tags.genres && film.tags.genres[0]
+                            .str_info_meta_label.dark_1= self.label.film.genre
+                            .str_info_meta_festival= film.tags.genres.join(', ')
+
+
+                        if film.tags.keywords && film.tags.keywords[0]
+                            .str_info_meta_label.dark_1= self.label.film.keywords
+                            .str_info_meta_festival= film.tags.keywords.join(', ')
 
                     //- festival programm zanrid keywordid
 
@@ -111,49 +159,49 @@ main.grid_film
                 //- NB!
                 //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes
                 //-     Näiteks: "Composer" all olevad isikud saab kätte film.credentials.rolePersonsByRole.composer.join(', ')
+                if film.credentials && film.credentials.rolePersonsByRole
+                    if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.director
+                            .str_info_value= film.credentials.rolePersonsByRole.director.join(', ')
 
-                if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.director
-                        .str_info_value= film.credentials.rolePersonsByRole.director.join(', ')
+                    if film.credentials.rolePersonsByRole.screenwriter && film.credentials.rolePersonsByRole.screenwriter[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.screenwriter
+                            .str_info_value= film.credentials.rolePersonsByRole.screenwriter.join(', ')
 
-                if film.credentials.rolePersonsByRole.screenwriter && film.credentials.rolePersonsByRole.screenwriter[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.screenwriter
-                        .str_info_value= film.credentials.rolePersonsByRole.screenwriter.join(', ')
+                    if film.credentials.rolePersonsByRole.cast && film.credentials.rolePersonsByRole.cast[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.cast
+                            .str_info_value= film.credentials.rolePersonsByRole.cast.join(', ')
 
-                if film.credentials.rolePersonsByRole.cast && film.credentials.rolePersonsByRole.cast[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.cast
-                        .str_info_value= film.credentials.rolePersonsByRole.cast.join(', ')
+                    if film.credentials.rolePersonsByRole.producer && film.credentials.rolePersonsByRole.producer[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.producer
+                            .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
 
-                if film.credentials.rolePersonsByRole.producer && film.credentials.rolePersonsByRole.producer[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.producer
-                        .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
+                    if film.credentials.rolePersonsByRole.dop && film.credentials.rolePersonsByRole.dop[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.doP
+                            .str_info_value= film.credentials.rolePersonsByRole.dop.join(', ')
 
-                if film.credentials.rolePersonsByRole.dop && film.credentials.rolePersonsByRole.dop[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.doP
-                        .str_info_value= film.credentials.rolePersonsByRole.dop.join(', ')
+                    if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.composer
+                            .str_info_value= film.credentials.rolePersonsByRole.composer.join(', ')
 
-                if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.composer
-                        .str_info_value= film.credentials.rolePersonsByRole.composer.join(', ')
+                    if film.credentials.rolePersonsByRole.editor && film.credentials.rolePersonsByRole.editor[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.editor
+                            .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
 
-                if film.credentials.rolePersonsByRole.editor && film.credentials.rolePersonsByRole.editor[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.editor
-                        .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
-
-                //- Below datamodel needs to be updated and then code amended to be correct
-                if film.credentials.productionCompany
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.production
-                        .str_info_value= film.ProductionCompanyCSV
+                    //- Below datamodel needs to be updated and then code amended to be correct
+                    if film.credentials.productionCompany
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.production
+                            .str_info_value= film.ProductionCompanyCSV
         section.f_runtime_box
-            if film.countriesAndLanguages.languages
+            if film.countriesAndLanguages && film.countriesAndLanguages.languages
                 - var languagesNames = function(item) {
                 -   var itemNames = item.name
                 -   return itemNames
@@ -196,27 +244,23 @@ main.grid_film
         if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
             section.f_extra_box
-                p= film.presentedBy.presentedByText
                 each presenter in film.presentedBy.organisations
                     p.dark_1= presenter.name
 
                     .supporter_logo_item_container
+                        - var logoImg = ''
+                        if presenter.logoColour
+                            - logoImg = `/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                        else if presenter.logoBlack
+                            - logoImg = `/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                        else if presenter.logoWhite
+                            - logoImg = `/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+
                         if presenter.homepageUrl
                             a(href= presenter.homepageUrl).supporter_logo_item_container
-                                if presenter.logoColour
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
-                                else if presenter.logoBlack
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
-                                else if presenter.logoWhite
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
                         else
-                            if presenter.logoColour
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
-                            else if presenter.logoBlack
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
-                            else if presenter.logoWhite
-                                img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_supporters/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
-
+                            img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
 
         section.f_screenings_box
             div
@@ -330,5 +374,4 @@ main.grid_film
 
         section.f_imgs_box
 
-        block film
-
+        +tabname(self.title)
