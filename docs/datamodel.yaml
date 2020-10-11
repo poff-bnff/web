@@ -689,6 +689,7 @@ FilmMedia: &FilmMedia
 
 RolesAtFilm: &RolesAtFilm
     _path: /role-at-films
+    romoteId: (UID)
     roleNamePrivate: (text)
     roleName: *Translated #(Component)
     order: (Number)
@@ -788,25 +789,6 @@ Screening: &Screening
     cassette: *Cassette
     bookingUrl: (text)
     remoteId: (UID)
-
-SixFilms: &SixFilms
-    _path: /six-films
-    title: *Translated
-    lead: *Translated #(Rich)
-    domain: *Domain
-    namePrivate: (text)
-    films_et:
-        - *Film
-    films_en:
-        - *Film
-    films_ru:
-        - *Film
-    cassettes_et:
-        - *Cassette
-    cassettes_en:
-        - *Cassette
-    cassettes_ru:
-        - *Cassette
 
 Label: &Label
     name: (text)
