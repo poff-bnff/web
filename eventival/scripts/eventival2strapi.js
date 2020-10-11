@@ -102,7 +102,7 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         subtitles: f_subLang,
         // credentials: {
         //     rolePerson: { // strapis amet ja nimi
-        //          order: (num),
+        //         order: (num),
         //         role_at_film: {
         //             id: e_film.publications.en // strapis RolesAtFilm.roleNamePrivate
         //         },
@@ -111,6 +111,7 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         //         }
         //     },
         //     roleCompany: {
+        //         order: (num),
         //         role_at_film: {
         //             id: '?'
         //         },
@@ -129,7 +130,9 @@ const E_FILMS = EVENTIVAL_FILMS.map(e_film => {
         //         id: '?'
         //     }
         // },
-        // world_sales: '?'
+        // world_sales: [{
+        //         id: organisation.name.et
+        // }]
     }
 
     if (e_film.publications) {
@@ -204,12 +207,15 @@ const E_CASSETTES = (EVENTIVAL_FILMS.map(e_film => {
         }
     }).map(e => { return {id: e.id.toString()} })
 
+    let categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
+    const c_festivalEdition = categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
+
     let cassette_out = {
         remoteId: (e_film.ids ? e_film.ids : {'system_id': ''}).system_id.toString(),
         title_et: h2p((e_film.titles ? e_film.titles : {'title_local': ''}).title_local),
         title_en: h2p((e_film.titles ? e_film.titles : {'title_english': ''}).title_english),
         title_ru: h2p((e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom),
-        // festival_edition: e_film.eventival_categorization.categories.category,//sama mis yleval
+        festival_edition: c_festivalEdition,
         tags: {
             premiere_types: c_premiereType,
             genres: c_genre,
@@ -262,39 +268,40 @@ const E_SCREENINGS = (EVENTIVAL_SCREENINGS.map(e_screening => {
     let screening_out = {
         code: e_screening.code,
         codeAndTitle: e_screening.code + '; ' + e_screening.film.title_english,
-        // ticketingId: lisatakse stapis?,
         ticketingUrl: e_screening.ticketing_url,
         dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
-        // introQaConversation: {                // e-presentation -> intro, e-qa -> conversation
-        //     yesNo: e_screening.presentation.available, //#(Boolean) 0 v 1
-        //     // type: (Enumeration), intro, Q&A vms
-        //     // mode: (Enumeration), online/live vms
+        // introQaConversation: [{                // e-presentation -> intro, e-qa -> conversation
+        //     yesNo: e_screening.qa.available.toString(), e_screening.presentation.available.toString()
+        //     // type: (Enumeration), intro, conversation
+        //     // mode: j44b tyhjaks, kui qa klipp siis mode online
         //     presenter: [{ //kas e_sreening.presenters on org name ?
-        //         et: e_screening.qa.guests,
-        //         en: e_screening.qa.guests,
-        //         ru: e_screening.qa.guests
+        //         et: e_screening.qa.presenters, e_screening.presentation.presenters
+        //         en: e_screening.qa.presenters,
+        //         ru: e_screening.qa.presenters
         //     }],
         //     guest:  [{
-        //         et: e_screening.qa.guests,
+        //         et: e_screening.qa.guests, e_screening.presentation.guests
         //         en: e_screening.qa.guests,
         //         ru: e_screening.qa.guests
         //     }],
-        //     duration: e_screening.qa.duration.toString(),
+        //     duration: e_screening.qa.duration.toString(), e_screening.presentation.duration.toString()
         //     // clipUrl: (text)
-        // },
+        // }],
         durationTotal: e_screening.complete_duration_minutes.toString(),
         // location: {
-        //     // id: ,// strapi Location v6iks sisaldada e cinaema_hall_id remoteIDna? v6i
+        //     // id: , venue id, strapis location remoteId kui screening online saal siis mode online
         // },
-        // extraInfo: text, // tuleb kolmeskeele, kuidas kuvame? Kas peaks olema teine translated
-        ////  e_screenig.additional_info { et, en, ru}
+        // extraInfo: {
+        //     et: 'text',
+        //     en: 'text',
+        //     ru: 'text'
+        // },
         screening_types: scr_screeningType,
         // screening_mode: {
-        //     id: /screening-modes ei leia e infost
+        //     id: /screening-modes ei leia e infost saab info location j4rgi
         // },
-        // subtitles: scr_subLang, peaks lapikumaks tegema, kui kasutame print v44rtust
+        // subtitles: scr_subLang,
         cassette: scr_cassette,
-        // bookingUrl: (text),
         remoteId: e_screening.id.toString()
 
     }
