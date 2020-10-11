@@ -7,7 +7,7 @@ const { values } = require('lodash')
 
 
 const strapiPath = 'http://' + process.env['StrapiHost']
-const cassetteSavePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_cassettes')
+const cassetteSavePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_films')
 const filmSavePath = path.join(__dirname, '..', 'assets', 'img', 'dynamic', 'img_films')
 
 const delay = (ms) => {

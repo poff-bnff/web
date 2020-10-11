@@ -154,6 +154,9 @@ fetch_data()
     echo 'fetch_cassettes_from_yaml'
     node ./helpers/fetch_cassettes_from_yaml.js
 
+    echo 'fetch_six_film_block_from_yaml'
+    node ./helpers/fetch_six_film_block_from_yaml.js
+
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
     printf '\n----------                  Processing styles                ----------\n\n'
@@ -172,9 +175,12 @@ download_img()
     node ./helpers/download_article_img.js
     node ./helpers/download_footer_img.js
     node ./helpers/download_teams_img.js
+    node ./helpers/download_cassette_films_credentials_img.js
+    node ./helpers/download_organisations_img.js
+    # node ./helpers/download_persons_img.js
     node ./helpers/download_trioblock_img.js
     node ./helpers/download_supporters_page_img.js
-    node ./helpers/download_programmes_presenters_img.js
+    node ./helpers/download_programmes_img.js
     node ./helpers/download_casettes_and_films_img.js
     printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 }
