@@ -125,7 +125,7 @@ main.grid_cassette
 
 
     section.f_screenings_box
-            h1.section_headline= self.label.film.screenings
+        h1.section_headline= self.label.film.screenings
 
         .card-deck.m-o.p-0
             if self.screenings && self.screenings[0]
@@ -213,14 +213,14 @@ main.grid_cassette
                                 a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
                                 a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
-
+h1.section_headline.padding_top_4.padding_bottom_2= self.label.menu.mainFilms
 
 //- SIIT ALGAB FILMIDE KUVAMINE
 //- SIIT ALGAB FILMIDE KUVAMINE
 //- SIIT ALGAB FILMIDE KUVAMINE
 //- SIIT ALGAB FILMIDE KUVAMINE
 each film in self.films
-    main.grid_film
+    main.grid_film.padding_top_0
         //- Kasseti title ja synopsis
         //- div
         //-     if self.title
@@ -435,11 +435,11 @@ each film in self.films
                     .str_info_label= self.label.film.runtime
                     .str_info_value
                         +dur(film.runtime)
-        section.f_interactive_box
-            .f_interactive_item
-                p
-                    | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
-                a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
+        //- section.f_interactive_box
+        //-     .f_interactive_item
+        //-         p
+        //-             | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
+        //-         a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
 
         if film.credentials && film.credentials.rolePerson[0]
             - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
