@@ -1,4 +1,4 @@
-name: justfilm.poff.ee
+name: justfilm.ee
 
 on:
     release:
@@ -14,7 +14,7 @@ jobs:
         -   name: ls -a via ssh
             uses: fifsky/ssh-action@master
             with:
-                command: scp -r domeenid/www.inscaping.eu/web/just_staging/* poff:domeenid/www.poff.ee/web2020/just_live/
+                command: scp -r domeenid/www.inscaping.eu/web/just_staging/* poff:domeenid/www.justfilm.ee/web2020/just_live/
                 host: inscaping.eu
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
