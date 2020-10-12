@@ -27,23 +27,18 @@ for (const ix in languages) {
     var allData = []
     for (const ix in STRAPIDATA_PROGRAMME) {
 
-        for (programmeDomain in STRAPIDATA_PROGRAMME[ix].domains) {
-            if (DOMAIN !== programmeDomain.url) {
-                continue;
-            }
-        }
-
         if (mapping[DOMAIN]) {
             var templateDomainName = mapping[DOMAIN];
         }else{
             console.log('ERROR! Missing domain name for assigning template.');
             continue;
         }
+        let element = JSON.parse(JSON.stringify(STRAPIDATA_PROGRAMME[ix]));
+        let dirSlug = element.slug_en || element.slug_et ? element.slug_en || element.slug_et : null ;
 
-        for (eIx in STRAPIDATA_PROGRAMME[ix].festival_editions) {
-            let element = JSON.parse(JSON.stringify(STRAPIDATA_PROGRAMME[ix]));
+
+        for (eIx in element.festival_editions) {
             var festivalEdition = element.festival_editions[eIx];
-            let dirSlug = festivalEdition.slug_en || festivalEdition.slug_et ? festivalEdition.slug_en || festivalEdition.slug_et : null ;
 
             if(element.presentedBy && element.presentedBy[0]) {
                 for (orgIx in element.presentedBy.organisations) {
@@ -53,24 +48,24 @@ for (const ix in languages) {
                     }
                 }
             }
+        }
 
-            element = rueten(element, lang);
-            element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
-            element.path = festivalEdition.slug;
-            // console.log(element);
+        element = rueten(element, lang);
+        element.path = dirSlug;
+        element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml', 'cassettes': '/_fetchdir/cassettes.' + lang + '.yaml'};
+        // console.log(element);
 
-            if (dirSlug != null && typeof element.path !== 'undefined') {
-                const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
-                const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
+        if (dirSlug != null && typeof element.path !== 'undefined') {
+            const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
+            const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
 
-                allData.push(element)
+            allData.push(element)
 
-                let saveDir = path.join(fetchDataDir, dirSlug);
-                fs.mkdirSync(saveDir, { recursive: true });
+            let saveDir = path.join(fetchDataDir, dirSlug);
+            fs.mkdirSync(saveDir, { recursive: true });
 
-                fs.writeFileSync(yamlPath, oneYaml, 'utf8');
-                fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/programmes_${templateDomainName}_index_template.pug`)
-            }
+            fs.writeFileSync(yamlPath, oneYaml, 'utf8');
+            fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/programmes_${templateDomainName}_index_template.pug`)
         }
 
     }
