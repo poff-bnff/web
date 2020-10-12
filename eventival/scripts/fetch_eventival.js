@@ -199,17 +199,17 @@ const foo = async () => {
     for (const [model, data] of Object.entries(e_data)) {
         const yamlStr = yaml.safeDump(data, { 'indent': '4' })
         fs.writeFileSync(dataMap[model].outyaml, yamlStr, "utf8")
-        if (model === 'films') {
-            let sections = {}
-            for (const ix in data) {
-                const film = data[ix]
-                for (const jx in film.eventival_categorization.sections) {
-                    const section = film.eventival_categorization.sections[jx]
-                    sections[section.id] = section.name
-                }
-            }
-            console.log(sections)
-        }
+        // if (model === 'films') {
+        //     let sections = {}
+        //     for (const ix in data) {
+        //         const film = data[ix]
+        //         for (const jx in film.eventival_categorization.sections) {
+        //             const section = film.eventival_categorization.sections[jx]
+        //             sections[section.id] = section.name
+        //         }
+        //     }
+        //     console.log(sections)
+        // }
     }
 }
 
