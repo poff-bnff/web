@@ -22,7 +22,7 @@ block content
 
 
                         if cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
-                            img.container_contents_16_9(src=`/assets/img/dynamic/img_films/${cassette.dirSlug}/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title)
+                            img.container_contents_16_9(src=`https://assets.poff.ee/img/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title)
                         else if cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
                             img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt = cassette.title)
                         else
