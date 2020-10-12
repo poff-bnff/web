@@ -188,7 +188,7 @@ const fetch_films = async (e_films) => {
                     .map(txt => txt.trim())
                     .map(txt => {
                         return {
-                            type: {strapi_id: strapi_id, name: role},
+                            strapi_role_at_film: strapi_id,
                             text: txt
                         }
                     })
