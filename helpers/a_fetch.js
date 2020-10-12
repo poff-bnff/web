@@ -8,6 +8,7 @@ const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
 fs.mkdirSync(dirPath, { recursive: true })
 
+const DOMAIN = process.env['DOMAIN'] || false
 const modelFile = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(modelFile, 'utf8'))
 
@@ -20,9 +21,12 @@ for (const key in DATAMODEL) {
     }
 }
 
-async function strapiFetch(modelName, token){
+async function strapiFetch(modelName, token) {
 
-    let checkDomain = function(element){
+    let checkDomain = function(element) {
+        if (!DOMAIN) {
+            return true
+        }
         // kui on domain, siis element['domains'] = [domain]
         if (element['domain']){
             element['domains'] = [element['domain']]
