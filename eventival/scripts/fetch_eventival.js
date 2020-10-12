@@ -19,6 +19,12 @@ const categories = [
     { "id": 1839, "name": "Shorts" },
     { "id": 2651, "name": "KinoFF" }
 ]
+const rolesAtFilm = { // hardcoded strapi ID's
+    'directors': 1,
+    'producers': 7,
+    'writers': 2,
+    'cast': 4
+}
 
 const dataMap = {
     'venues': {
@@ -177,10 +183,19 @@ const fetch_films = async (e_films) => {
             })
             // console.log('after', publication.crew);
 
-            publication.directors = h2p(publication.directors).split(',').map(txt => txt.trim())
-            publication.producers = h2p(publication.producers).split(',').map(txt => txt.trim())
-            publication.writers = h2p(publication.writers).split(',').map(txt => txt.trim())
-            publication.cast = h2p(publication.cast).split(',').map(txt => txt.trim())
+            for (const [role, strapi_id] of Object.entries(rolesAtFilm)) {
+                publication[role] = h2p(publication[role]).split(',')
+                    .map(txt => txt.trim())
+                    .map(txt => {
+                        return {
+                            type: {strapi_id: strapi_id, name: role},
+                            text: txt
+                        }
+                    })
+                publication['crew'] = publication['crew'].concat(publication[role])
+                delete publication[role]
+            }
+
             publication.synopsis_long = h2p(publication.synopsis_long)
             delete(publication.contacts)
         }
