@@ -1,7 +1,6 @@
 const yaml = require('js-yaml')
 const fs = require('fs')
 const path = require('path')
-const h2p = require('html2plaintext')
 
 const { strapiQuery } = require("../../helpers/strapiQuery.js")
 
@@ -63,7 +62,7 @@ const prepare = async () => {
     let person_from_strapi = await strapiQuery(options)
     if ( person_from_strapi.length === 0 ) {
         options.path = PERSONS_API
-        options.method = 'POST'
+        options.method = 'GET'
         const person = {firstName: firstname}
         console.log(options, person);
         person_from_strapi = await strapiQuery(options, person)
@@ -118,7 +117,7 @@ const remapEventival = () => {
         const f_festivalEditions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
         // console.log( 'f_festivalEditions', if_categorization, f_festivalEditions );
 
-        // const role_at_film = STRAPIDATA.RolesAtFilm.filter(role => role.NamePrivate === 'Director')[0]
+        // const director_at_film = STRAPIDATA.RolesAtFilm.filter(role => role.NamePrivate === 'Director')[0]
         // let f_director_persons = e_film.publications.en.directors.map(name => {
         //     return ensurePerson(name)
         // })
@@ -197,19 +196,19 @@ const remapEventival = () => {
                     if (film_out['synopsis'] === undefined) {
                         film_out['synopsis'] = {}
                     }
-                    film_out['synopsis'][lang] = h2p(publication.synopsis_long)
+                    film_out['synopsis'][lang] = publication.synopsis_long
                 }
             }
         }
 
-        console.log(film_out);
+        // console.log(film_out);
         return film_out
     })
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_FILMS.yaml'), yaml.safeDump(EVENTIVAL_REMAPPED['E_FILMS'], { 'indent': '4' }), "utf8")
 
 
-    console.log('E_FILMS', EVENTIVAL_REMAPPED['E_FILMS'][3])
-    console.log('E_FILMS', h2p(EVENTIVAL_REMAPPED['E_FILMS'][3].title_et))
+    // console.log('E_FILMS', EVENTIVAL_REMAPPED['E_FILMS'][3])
+    // console.log('E_FILMS', h2p(EVENTIVAL_REMAPPED['E_FILMS'][3].title_et))
 
     EVENTIVAL_REMAPPED['E_CASSETTES'] = (EVENTIVAL_FILMS.map(e_film => {
         const strapiFilm = STRAPIDATA.Film.filter((s_film) => {
@@ -262,9 +261,9 @@ const remapEventival = () => {
 
         let cassette_out = {
             remoteId: (e_film.ids ? e_film.ids : {'system_id': ''}).system_id.toString(),
-            title_et: h2p((e_film.titles ? e_film.titles : {'title_local': ''}).title_local),
-            title_en: h2p((e_film.titles ? e_film.titles : {'title_english': ''}).title_english),
-            title_ru: h2p((e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom),
+            title_et: (e_film.titles ? e_film.titles : {'title_local': ''}).title_local.toString(),
+            title_en: (e_film.titles ? e_film.titles : {'title_english': ''}).title_english.toString(),
+            title_ru: (e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom.toString(),
             festival_editions: c_festivalEditions,
             tags: {
                 premiere_types: c_premiereType,
@@ -282,7 +281,7 @@ const remapEventival = () => {
                     if (cassette_out['synopsis'] === undefined) {
                         cassette_out['synopsis'] = {}
                     }
-                    cassette_out['synopsis'][lang] = h2p(publication.synopsis_long)
+                    cassette_out['synopsis'][lang] = publication.synopsis_long
                 }
             }
         }
@@ -314,10 +313,9 @@ const remapEventival = () => {
             }
         }).map(subLang => subLang.id.toString())
 
-
         let screening_out = {
-            code: e_screening.code,
-            codeAndTitle: e_screening.code + '; ' + e_screening.film.title_english,
+            code: e_screening.code.toString().padStart(6, "0"),
+            codeAndTitle: e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local,
             ticketingUrl: e_screening.ticketing_url,
             dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
             // introQaConversation: [{                // e-presentation -> intro, e-qa -> conversation
@@ -350,7 +348,7 @@ const remapEventival = () => {
             // screening_mode: {
             //     id: /screening-modes ei leia e infost saab info location j4rgi
             // },
-            // subtitles: scr_subLang,
+            subtitles: scr_subLang,
             cassette: scr_cassette,
             remoteId: e_screening.id.toString()
 
