@@ -99,19 +99,19 @@ function redirectToPreLoginUrl() {
         });
     }
 
-    async function showMyFavouriteFilms(){
-        console.log('hello');
+    // async function showMyFavouriteFilms(){
+    //     console.log('hello');
 
-        let response = await fetch(`https://api.poff.ee/favourite`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-            }
-            // body: JSON.stringify(authenticationData)
-        });
+    //     let response = await fetch(`https://api.poff.ee/favourite`, {
+    //         method: 'GET',
+    //         headers: {
+    //             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+    //         }
+    //         // body: JSON.stringify(authenticationData)
+    //     });
 
-        let favouriteFilms = await response.json()
-        myFavouriteFilms.innerHTML = favouriteFilms.films
+    //     let favouriteFilms = await response.json()
+    //     myFavouriteFilms.innerHTML = favouriteFilms.films
 
-    }
+    // }
 

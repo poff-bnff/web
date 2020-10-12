@@ -117,6 +117,8 @@ header
                         li
                             a#logInName(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
                         li
+                            a#myFavouriteFilms(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()') Lemmikud
+                        li
                             a#logOut(style={cursor: 'pointer', display: 'none'} onclick='logOut()')= self.label.menu.mainLogout
 
             //- li.dropdown= 'USER'

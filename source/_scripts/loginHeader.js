@@ -7,13 +7,13 @@ var userprofilePageURL = pageURL + '/userprofile'
 // var pageURL = 'http://localhost:5000';
 // var userprofilePageURL = pageURL + '/userprofile';
 
-
 var userProfile
-
 
 if (localStorage.getItem('ID_TOKEN') !== null){
     document.getElementById('logOut').style.display = 'block'
     document.getElementById('logInName').style.display = 'block'
+    document.getElementById('myFavouriteFilms').style.display = 'block'
+
     loadUserProfileH()
 }
 
@@ -52,7 +52,5 @@ function logOut() {
     console.log('LOGITUD VÄLJA')
     location.reload()
 }
-
-
 
 
