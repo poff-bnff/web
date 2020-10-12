@@ -10,9 +10,9 @@ async function strapiQuery(options, dataObject = false) {
     options.headers['Authorization'] = `Bearer ${TOKEN}`
     options['host'] = process.env['StrapiHost']
 
-    console.log(options, JSON.stringify((dataObject) || ''));
+    // console.log(options, JSON.stringify((dataObject) || ''));
     return new Promise((resolve, reject) => {
-
+        process.stdout.write('.')
         const request = http.request(options, (response) => {
             response.setEncoding('utf8');
             let allData = '';
@@ -24,7 +24,7 @@ async function strapiQuery(options, dataObject = false) {
                 if (response.statusCode === 200) {
                     resolve(strapiData);
                 } else {
-                    console.log('Status', response.statusCode, strapiData);
+                    console.log('Status', response.statusCode, strapiData, JSON.stringify((dataObject) || ''));
                     resolve([]);
                 }
             });
