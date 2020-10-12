@@ -17,6 +17,7 @@ const FILMS_API = `${STRAPI_URL}/films`
 const CASSETTES_API = `${STRAPI_URL}/cassettes`
 const SCREENINGS_API = `${STRAPI_URL}/screenings`
 const PERSONS_API = `${STRAPI_URL}/people`
+const ROLES_API = `${STRAPI_URL}/role-at-films`
 
 const sourceDir =  path.join(__dirname, '..', '..', 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
@@ -37,66 +38,120 @@ const EVENTIVAL_REMAPPED = {}
 
 
 const prepare = async () => {
-    const submitPerson = async (e_person, strapi_persons) => {
-        let options = {
-            headers: { 'Content-Type': 'application/json' }
-        }
-        const strapi_person = strapi_persons.filter((person) => {
-            return person.remoteId === e_person.remoteId
-        })
-
-        if (strapi_person.length) {
-            e_person['id'] = strapi_person[0].id
-            options.path = PERSONS_API + '/' + e_person.id
-            options.method = 'PUT'
-        } else {
-            options.path = PERSONS_API
-            options.method = 'POST'
-        }
-        const person_from_strapi = await strapiQuery(options, e_person)
-        return person_from_strapi
-    }
-
-    const submitPersons = async (e_persons, strapi_persons) => {
-        let from_strapi = []
-        for (const ix in e_persons) {
-            const person_from_strapi = await submitPerson(e_persons[ix], strapi_persons)
-            from_strapi.push(person_from_strapi)
-        }
-        return from_strapi
-    }
-
-    let persons_in_eventival = []
-    for (const ix in EVENTIVAL_FILMS ) {
-        const e_film = EVENTIVAL_FILMS [ix];
-        if (! (e_film.film_info && e_film.film_info.relationships) ) {
-            continue
-        }
-        let e_persons = []
-        const relationships = e_film.film_info.relationships
-        if (relationships.directors) {
-            e_persons = relationships.directors.map(person => {
-                return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
+    const updateStrapiPersons = async () => {
+        const submitPersonByRemoteId = async (e_person, strapi_persons) => {
+            let options = {
+                headers: { 'Content-Type': 'application/json' }
+            }
+            const strapi_person = strapi_persons.filter((person) => {
+                return person.remoteId === e_person.remoteId
             })
+
+            if (strapi_person.length) {
+                e_person['id'] = strapi_person[0].id
+                options.path = PERSONS_API + '/' + e_person.id
+                options.method = 'PUT'
+            } else {
+                options.path = PERSONS_API
+                options.method = 'POST'
+            }
+            const person_from_strapi = await strapiQuery(options, e_person)
+            return person_from_strapi
         }
-        if (relationships.cast) {
-            e_persons = e_persons.concat(
-                relationships.cast.map(person => {
+
+        const submitPersonsByRemoteId = async (e_persons, strapi_persons) => {
+            let from_strapi = []
+            for (const ix in e_persons) {
+                const person_from_strapi = await submitPersonByRemoteId(e_persons[ix], strapi_persons)
+                from_strapi.push(person_from_strapi)
+            }
+            return from_strapi
+        }
+
+        // Add Directors and Cast to Strapi
+        let persons_in_eventival = []
+        for (const ix in EVENTIVAL_FILMS ) {
+            const e_film = EVENTIVAL_FILMS [ix]
+            if (! (e_film.film_info && e_film.film_info.relationships) ) {
+                continue
+            }
+            let e_persons = []
+            const relationships = e_film.film_info.relationships
+            if (relationships.directors) {
+                e_persons = relationships.directors.map(person => {
                     return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
                 })
-            )
+            }
+            if (relationships.cast) {
+                e_persons = e_persons.concat(
+                    relationships.cast.map(person => {
+                        return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
+                    })
+                )
+            }
+            persons_in_eventival = persons_in_eventival.concat(e_persons)
         }
-        persons_in_eventival = persons_in_eventival.concat(e_persons)
+        let options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: PERSONS_API + '?_limit=-1',
+            method: 'GET'
+        }
+        let strapi_persons = await strapiQuery(options)
+        strapi_persons = await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
+        console.log( strapi_persons )
     }
-    let options = {
-        headers: { 'Content-Type': 'application/json' },
-        path: PERSONS_API + '?_limit=-1',
-        method: 'GET'
-    }
-    let strapi_persons = await strapiQuery(options)
-    strapi_persons = await submitPersons(persons_in_eventival, strapi_persons)
-    console.log( strapi_persons )
 
+    const updateStrapiRoles = async () => {
+        let options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: ROLES_API + '?_limit=-1',
+            method: 'GET'
+        }
+        let strapi_roles = await strapiQuery(options)
+
+        for (const e_film of EVENTIVAL_FILMS ) {
+            // skip if there is no roles (no crew) to check
+            if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
+
+            for (const e_crew of e_film.publications.en.crew) {
+                // role already in Strapi
+                if (e_crew.strapi_role_at_film) { continue }
+
+                // role with remoteId already present in Strapi
+                if (e_crew.type && e_crew.type.id) {
+                    let filtered = strapi_roles.filter(s_role => {
+                        return s_role.remoteId === e_crew.type.id.toString()
+                    })
+                    console.log('filterede', filtered);
+                    if (filtered[0]) {
+                        continue
+                    }
+                }
+
+                // we have new role
+                if (e_crew.type && e_crew.type.id && e_crew.type.name) {
+                    let options = {
+                        headers: { 'Content-Type': 'application/json' },
+                        path: ROLES_API,
+                        method: 'POST'
+                    }
+                    let data = {
+                        roleNamePrivate: e_crew.type.name,
+                        roleName: {en: e_crew.type.name},
+                        remoteId: e_crew.type.id.toString()
+                    }
+                    let s_role = await strapiQuery(options, data)
+                    console.log('new role', options, data, s_role)
+                    strapi_roles.push(s_role)
+                }
+            }
+        }
+        return strapi_roles
+    }
+
+    // await updateStrapiPersons()
+    await updateStrapiRoles()
+    // Add ppl from publications to Strapi
 }
 
 const remapEventival = () => {

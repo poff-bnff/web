@@ -12,7 +12,7 @@ async function strapiQuery(options, dataObject = false) {
 
     // console.log(options, JSON.stringify((dataObject) || ''));
     return new Promise((resolve, reject) => {
-        process.stdout.write('.')
+        process.stdout.write({GET:'?', PUT:'+', POST:'o'}[options.method])
         const request = http.request(options, (response) => {
             response.setEncoding('utf8');
             let allData = '';
