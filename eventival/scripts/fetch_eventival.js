@@ -4,7 +4,7 @@ var parser = require('fast-xml-parser');
 const yaml = require('js-yaml')
 const path = require('path')
 const readline = require('readline');
-const h2p = require('html2plaintext')
+const h2p = require('html2plaintext');
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
@@ -142,7 +142,7 @@ const makeList = (obj, keep_prop, list_prop) => {
 const fetch_films = async (e_films) => {
     const endlineAt = 60
     for (const ix in e_films) {
-        // if (ix > 5) { continue }
+        // if (ix > 50) { continue }
         const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + e_films[ix].id + '.xml')
         const eventivalXML = await eventivalFetch(url)
         .catch(e => {
@@ -170,9 +170,17 @@ const fetch_films = async (e_films) => {
 
         for (const [lang, publication] of Object.entries(e_films[ix]['publications'])) {
             makeList(publication, 'crew', 'contact')
-            publication.crew = publication.crew.filter(crew => crew.text)
-            publication.directors = h2p(publication.directors).split(',')
-            publication.producers = h2p(publication.producers).split(',')
+            // console.log('before', publication.crew);
+            publication.crew = publication.crew.filter(crew => crew.text).map(crew => {
+                crew.text = crew.text.split(',').map(txt => txt.trim())
+                return crew
+            })
+            // console.log('after', publication.crew);
+
+            publication.directors = h2p(publication.directors).split(',').map(txt => txt.trim())
+            publication.producers = h2p(publication.producers).split(',').map(txt => txt.trim())
+            publication.writers = h2p(publication.writers).split(',').map(txt => txt.trim())
+            publication.cast = h2p(publication.cast).split(',').map(txt => txt.trim())
             publication.synopsis_long = h2p(publication.synopsis_long)
             delete(publication.contacts)
         }

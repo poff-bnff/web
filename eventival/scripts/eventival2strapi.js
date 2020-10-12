@@ -467,10 +467,15 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
+    console.log('prep')
     await prepare()
+    console.log('remap')
     remapEventival()
+    console.log('submit films')
     await submitFilms()
+    console.log('submit cassettes')
     await submitCassettes()
+    console.log('submit screenings')
     await submitScreenings()
 }
 
