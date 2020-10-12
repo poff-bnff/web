@@ -25,36 +25,6 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
 const EVENTIVAL_REMAPPED = {}
 
-const ensurePerson = async (firstname) => {
-    console.log('ensurePerson');
-    let options = {
-        headers: { 'Content-Type': 'application/json' }
-    }
-    options.path = PERSONS_API + '?firstName=' + escape(firstname)
-    options.method = 'GET'
-    let person_from_strapi = await strapiQuery(options)
-    if ( person_from_strapi.length === 0 ) {
-        options.path = PERSONS_API
-        options.method = 'POST'
-        const person = {firstName: firstname}
-        console.log(options, person);
-        person_from_strapi = await strapiQuery(options, person)
-    }
-    console.log('returning from ensurePerson');
-    return person_from_strapi
-}
-
-const ET = { // eventival translations
-    categories: {
-        "PÖFF" : "1",
-        "Just Film": "3",
-        "Shorts" : "2",
-        "Shortsi alam" : "2",
-        "KinoFF" : "4",
-    }
-}
-
-
 
 const prepare = async () => {
     const submitPerson = async (e_person, strapi_persons) => {
@@ -85,8 +55,6 @@ const prepare = async () => {
         }
         return from_strapi
     }
-
-
 
     let persons_in_eventival = []
     for (const ix in EVENTIVAL_FILMS ) {
