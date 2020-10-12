@@ -71,19 +71,20 @@ main.grid_cassette
                     .str_info_meta_label.dark_1= self.label.film.programme
                     .str_info_meta_festival= programmes
 
-            if self.tags && self.tags.genres && self.tags.genres[0]
+            if self.tags && self.tags.genres && self.tags.genres[0] && typeof self.tags.genres !== 'object'
                 .str_info_meta_label.dark_1= self.label.film.genre
                 .str_info_meta_festival= self.tags.genres.join(', ')
 
 
-            if self.tags && self.tags.keywords && self.tags.keywords[0]
+            if self.tags && self.tags.keywords && self.tags.keywords[0] && typeof self.tags.keywords !== 'object'
                 .str_info_meta_label.dark_1= self.label.film.keywords
                 .str_info_meta_festival= self.tags.keywords.join(', ')
 
         if typeof self.synopsis !== 'undefined'
                 - var synopsis_md = self.synopsis
                 .synopsis_gi
-                    +format(synopsis_md)
+                    if typeof synopsis_md === 'string'
+                        +format(synopsis_md)
                         //- if self.synopsis
                         //-     p= self.synopsis
 
@@ -290,7 +291,7 @@ each film in self.films
                         .str_info_label= self.label.film.titleOriginal
                         .str_info_value= film.titleOriginal
 
-                if film.credentials && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                if film.credentials && film.credentials.rolePersonsByRole && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                     .str_info_grid_3
                         .str_info_label= self.label.film.director
                         .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')

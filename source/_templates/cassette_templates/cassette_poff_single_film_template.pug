@@ -70,7 +70,7 @@ main.grid_film
                         .str_info_label= self.label.film.titleOriginal
                         .str_info_value= film.titleOriginal
 
-                if film.credentials && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                if film.credentials && film.credentials.rolePersonsByRole && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                     .str_info_grid_3
                         .str_info_label= self.label.film.director
                         .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
@@ -121,12 +121,12 @@ main.grid_film
 
 
 
-                        if film.tags.genres && film.tags.genres[0]
+                        if film.tags.genres && film.tags.genres[0] && typeof film.tags.genres !== 'object'
                             .str_info_meta_label.dark_1= self.label.film.genre
                             .str_info_meta_festival= film.tags.genres.join(', ')
 
 
-                        if film.tags.keywords && film.tags.keywords[0]
+                        if film.tags.keywords && film.tags.keywords[0] && typeof film.tags.keywords !== 'object'
                             .str_info_meta_label.dark_1= self.label.film.keywords
                             .str_info_meta_festival= film.tags.keywords.join(', ')
 
@@ -141,7 +141,7 @@ main.grid_film
             if typeof film.synopsis !== 'undefined'
                 - var synopsis_md = film.synopsis
                 .synopsis_gi
-                    if typeof synopsis_md === 'String'
+                    if typeof synopsis_md === 'string'
                         +format(synopsis_md)
         section.f_cred_box
             .str_info_blokk_cred
