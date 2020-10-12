@@ -20,10 +20,10 @@ main.grid_film
                     each val, index in self.films[0].media.stills
                         if index == 0
                             .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
                         else
                             .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${self.films[0].dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
                 else
                     .carousel-item.active.container_contents_16_9
                         img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
@@ -150,7 +150,7 @@ main.grid_film
                 //-     each still in film.media.stills
                 //-         if still.hash && still.ext
                 //-             div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
-                //-                 img(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
+                //-                 img(src=`https://assets.poff.ee/img/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
                 //- else
                 //-     div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
                 //-         img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
@@ -347,7 +347,7 @@ main.grid_film
 
                                 if screening.screening_mode && screening.screening_mode.name && screening.ticketingId && screening.ticketingUrl && screening.screening_mode.name === 'Online'
                                     if screening.bookingUrl
-                                        a.btn.btn_secondary.active(href= screening.bookingUrl role='button') BOOKINGLABEL!
+                                        a.btn.btn_secondary.active(href= screening.bookingUrl role='button') Grupitellimus!
                                     a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
                                 if screening.screeningTown === 'Tartu'
                                     a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
