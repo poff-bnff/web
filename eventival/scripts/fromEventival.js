@@ -148,7 +148,7 @@ const makeList = (obj, keep_prop, list_prop) => {
 const fetch_films = async (e_films) => {
     const endlineAt = 60
     for (const ix in e_films) {
-        // if (ix > 50) { continue }
+        // if (ix > 5) { continue }
         const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, 'films/' + e_films[ix].id + '.xml')
         const eventivalXML = await eventivalFetch(url)
         .catch(e => {
@@ -183,16 +183,12 @@ const fetch_films = async (e_films) => {
             })
             // console.log('after', publication.crew);
 
+            console.log(publication.crew);
             for (const [role, strapi_id] of Object.entries(rolesAtFilm)) {
-                publication[role] = h2p(publication[role]).split(',')
-                    .map(txt => txt.trim())
-                    .map(txt => {
-                        return {
-                            strapi_role_at_film: strapi_id,
-                            text: txt
-                        }
-                    })
-                publication['crew'] = publication['crew'].concat(publication[role])
+                publication.crew.push({
+                    strapi_role_at_film: strapi_id,
+                    text: h2p(publication[role]).split(',').map(txt => txt.trim())
+                })
                 delete publication[role]
             }
 

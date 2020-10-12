@@ -23,6 +23,16 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
+const ET = { // eventival translations
+    categories: {
+        "PÖFF" : "1",
+        "Just Film": "3",
+        "Shorts" : "2",
+        "Shortsi alam" : "2",
+        "KinoFF" : "4",
+    }
+}
+
 const EVENTIVAL_REMAPPED = {}
 
 
@@ -59,13 +69,23 @@ const prepare = async () => {
     let persons_in_eventival = []
     for (const ix in EVENTIVAL_FILMS ) {
         const e_film = EVENTIVAL_FILMS [ix];
-        if (! (e_film.film_info && e_film.film_info.relationships && e_film.film_info.relationships.directors) ) {
+        if (! (e_film.film_info && e_film.film_info.relationships) ) {
             continue
         }
-
-        const e_persons = e_film.film_info.relationships.directors.map(person => {
-            return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
-        })
+        let e_persons = []
+        const relationships = e_film.film_info.relationships
+        if (relationships.directors) {
+            e_persons = relationships.directors.map(person => {
+                return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
+            })
+        }
+        if (relationships.cast) {
+            e_persons = e_persons.concat(
+                relationships.cast.map(person => {
+                    return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
+                })
+            )
+        }
         persons_in_eventival = persons_in_eventival.concat(e_persons)
     }
     let options = {
