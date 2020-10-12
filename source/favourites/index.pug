@@ -1,0 +1,28 @@
+extends /_templates/layout.pug
+
+block content
+
+
+
+    if self.data.cassettes
+        main.grid_films
+            each cassette in self.data.cassettes
+                a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                    .container_frame_16_9
+
+
+
+                        if cassette.media && cassette.media.stills && cassette.media.stills[0]
+                            img.container_contents_16_9(src=`/assets/img/dynamic/img_films/${cassette.dirSlug}/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title)
+                        else
+                            img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = cassette.title)
+
+                    .card_film_title
+                        h3.film_title_locale.dark_1= cassette.title
+                    .card_film_info
+                        each p, locale in self.otherLocalePaths
+                            if cassette[`title_${locale}`]
+                                .str_info_grid_3
+                                    .str_info_label.dark_1= self.label.film[`title_${locale}`]
+                                    .str_info_value.dark_1= cassette[`title_${locale}`]
+
