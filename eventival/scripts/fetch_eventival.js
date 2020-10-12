@@ -4,7 +4,7 @@ var parser = require('fast-xml-parser');
 const yaml = require('js-yaml')
 const path = require('path')
 const readline = require('readline');
-const { forIn } = require('lodash');
+const h2p = require('html2plaintext')
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
@@ -27,19 +27,19 @@ const dataMap = {
         'root': 'venues',
         'iterator': 'venue'
     },
-    'films': {
-        'api': 'films/',
-        'category': 'categories/?/films.xml',
-        'outyaml': path.join(dynamicDir, 'films.yaml'),
-        'root': 'films',
-        'iterator': 'item'
-    },
     // 'films': {
-    //     'api': 'films/publications-locked.xml',
+    //     'api': 'films/',
+    //     'category': 'categories/?/films.xml',
     //     'outyaml': path.join(dynamicDir, 'films.yaml'),
     //     'root': 'films',
     //     'iterator': 'item'
     // },
+    'films': {
+        'api': 'films/publications-locked.xml',
+        'outyaml': path.join(dynamicDir, 'films.yaml'),
+        'root': 'films',
+        'iterator': 'item'
+    },
     'screenings': {
         'api': 'films/screenings.xml',
         'outyaml': path.join(dynamicDir, 'screenings.yaml'),
@@ -163,9 +163,17 @@ const fetch_films = async (e_films) => {
         makeList(e_films[ix].eventival_categorization, 'tags', 'tag')
 
         // let publications = e_films[ix]['publications'] ? e_films[ix]['publications'] : []
+        e_films[ix].title_english = h2p(e_films[ix].title_english)
+        e_films[ix].title_original = h2p(e_films[ix].title_original)
+        e_films[ix].title_local = h2p(e_films[ix].title_local)
+        e_films[ix].title_custom = h2p(e_films[ix].title_custom)
+
         for (const [lang, publication] of Object.entries(e_films[ix]['publications'])) {
             makeList(publication, 'crew', 'contact')
             publication.crew = publication.crew.filter(crew => crew.text)
+            publication.directors = h2p(publication.directors).split(',')
+            publication.producers = h2p(publication.producers).split(',')
+            publication.synopsis_long = h2p(publication.synopsis_long)
             delete(publication.contacts)
         }
 
@@ -191,6 +199,17 @@ const foo = async () => {
     for (const [model, data] of Object.entries(e_data)) {
         const yamlStr = yaml.safeDump(data, { 'indent': '4' })
         fs.writeFileSync(dataMap[model].outyaml, yamlStr, "utf8")
+        if (model === 'films') {
+            let sections = {}
+            for (const ix in data) {
+                const film = data[ix]
+                for (const jx in film.eventival_categorization.sections) {
+                    const section = film.eventival_categorization.sections[jx]
+                    sections[section.id] = section.name
+                }
+            }
+            console.log(sections)
+        }
     }
 }
 
