@@ -37,7 +37,7 @@ const ET = { // eventival translations
 const EVENTIVAL_REMAPPED = {}
 
 
-const prepare = async () => {
+const updateStrapi = async () => {
     const updateStrapiPersons = async () => {
         const submitPersonByRemoteId = async (e_person, strapi_persons) => {
             let options = {
@@ -68,6 +68,14 @@ const prepare = async () => {
             return from_strapi
         }
 
+
+        let options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: PERSONS_API + '?_limit=-1',
+            method: 'GET'
+        }
+        let strapi_persons = await strapiQuery(options)
+
         // Add Directors and Cast to Strapi
         let persons_in_eventival = []
         for (const ix in EVENTIVAL_FILMS ) {
@@ -75,30 +83,15 @@ const prepare = async () => {
             if (! (e_film.film_info && e_film.film_info.relationships) ) {
                 continue
             }
-            let e_persons = []
             const relationships = e_film.film_info.relationships
-            if (relationships.directors) {
-                e_persons = relationships.directors.map(person => {
+            let e_persons = [].concat(relationships.directors || [], relationships.cast || [])
+                .map(person => {
                     return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
                 })
-            }
-            if (relationships.cast) {
-                e_persons = e_persons.concat(
-                    relationships.cast.map(person => {
-                        return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
-                    })
-                )
-            }
-            persons_in_eventival = persons_in_eventival.concat(e_persons)
+            persons_in_eventival = [].concat(persons_in_eventival, e_persons)
         }
-        let options = {
-            headers: { 'Content-Type': 'application/json' },
-            path: PERSONS_API + '?_limit=-1',
-            method: 'GET'
-        }
-        let strapi_persons = await strapiQuery(options)
         strapi_persons = await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
-        console.log( strapi_persons )
+        return strapi_persons
     }
 
     const updateStrapiRoles = async () => {
@@ -149,8 +142,8 @@ const prepare = async () => {
         return strapi_roles
     }
 
-    // await updateStrapiPersons()
-    await updateStrapiRoles()
+    const strapi_persons = await updateStrapiPersons()
+    const strapi_roles = await updateStrapiRoles()
     // Add ppl from publications to Strapi
 }
 
@@ -543,7 +536,7 @@ const submitScreenings = async () => {
 
 const main = async () => {
     console.log('prep')
-    await prepare()
+    await updateStrapi()
     console.log('remap')
     remapEventival()
     console.log('submit films')
