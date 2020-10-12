@@ -53,21 +53,64 @@ const ET = { // eventival translations
         "KinoFF" : "4",
     }
 }
+
+
+
 const prepare = async () => {
+    const submitPerson = async (e_person, strapi_persons) => {
+        let options = {
+            headers: { 'Content-Type': 'application/json' }
+        }
+        const strapi_person = strapi_persons.filter((person) => {
+            return person.remoteId === e_person.remoteId
+        })
+
+        if (strapi_person.length) {
+            e_person['id'] = strapi_person[0].id
+            options.path = PERSONS_API + '/' + e_person.id
+            options.method = 'PUT'
+        } else {
+            options.path = PERSONS_API
+            options.method = 'POST'
+        }
+        const person_from_strapi = await strapiQuery(options, e_person)
+        return person_from_strapi
+    }
+
+    const submitPersons = async (e_persons, strapi_persons) => {
+        let from_strapi = []
+        for (const ix in e_persons) {
+            const person_from_strapi = await submitPerson(e_persons[ix], strapi_persons)
+            from_strapi.push(person_from_strapi)
+        }
+        return from_strapi
+    }
+
+
+
+    let persons_in_eventival = []
+    for (const ix in EVENTIVAL_FILMS ) {
+        const e_film = EVENTIVAL_FILMS [ix];
+        if (! (e_film.film_info && e_film.film_info.relationships && e_film.film_info.relationships.directors) ) {
+            continue
+        }
+
+        const e_persons = e_film.film_info.relationships.directors.map(person => {
+            return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
+        })
+        persons_in_eventival = persons_in_eventival.concat(e_persons)
+    }
     let options = {
         headers: { 'Content-Type': 'application/json' },
-        path: PERSONS_API + '?firstName=' + escape(firstname),
+        path: PERSONS_API + '?_limit=-1',
         method: 'GET'
     }
-    let person_from_strapi = await strapiQuery(options)
-    if ( person_from_strapi.length === 0 ) {
-        options.path = PERSONS_API
-        options.method = 'GET'
-        const person = {firstName: firstname}
-        console.log(options, person);
-        person_from_strapi = await strapiQuery(options, person)
-    }
+    let strapi_persons = await strapiQuery(options)
+    strapi_persons = await submitPersons(persons_in_eventival, strapi_persons)
+    console.log( strapi_persons )
+
 }
+
 const remapEventival = () => {
     EVENTIVAL_REMAPPED['E_FILMS'] = EVENTIVAL_FILMS.map(e_film => {
         const f_language = STRAPIDATA.Language.filter((s_language) => {
@@ -456,7 +499,7 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    // await prepare()
+    await prepare()
     remapEventival()
     await submitFilms()
     await submitCassettes()
@@ -464,4 +507,3 @@ const main = async () => {
 }
 
 main()
-
