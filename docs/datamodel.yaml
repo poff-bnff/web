@@ -688,6 +688,7 @@ RolesAtFilm: &RolesAtFilm
     roleNamePrivate: (text)
     roleName: *Translated #(Component)
     order: (Number)
+    remoteId: (UID)
 
 RolePerson: &RolePerson
     order: (Number)
