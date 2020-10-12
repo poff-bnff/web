@@ -7,7 +7,7 @@ block content
         main.grid_articles
             each val in self.data.programmes
                 if val.name
-                    a(href= `/`).card_article
+                    a(href= `/${lang_path}${val.path}`).card_article
                         .container_frame_16_9
                             //- Kuvame esimest pilti kui on
                             if val.images && val.images[0]
@@ -15,14 +15,14 @@ block content
                             else
                                 img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
 
-                        if val.name
+                        if val.name && typeof val.name !== 'object'
                             .card_article_title
                                 //- p.keywords_left=val.tagKeyword
                                 h3.article_title_locale= val.name
                                 //- h1= 'TÜÜBID: ' + artTypes + ' PUBLISH: ' + val.publish + ' TITLE: ' + val.title + ' - Type slug: ' + artTypeForPath + 'titlelen: ' + val.title.length
 
                         .card_article_lead
-                            if val.description
+                            if val.description && typeof val.description !== 'object'
                                 .article_lead=val.description
                             //- else
                             //-     if val.contents

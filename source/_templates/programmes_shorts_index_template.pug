@@ -5,34 +5,36 @@ include /_templates/mixins.pug
 
 block content
 
+    //- Programmi pildid
     //- Hetkel filmide mingi stiil
     main.grid_film
-        //- Hiljem saab panna reaalsed pildid kui nende andmed kusagilt tulevad, hetkel allpool pandud suvalised static kataloogist
-        - var programme = []
-        - programme.pics = ["Hunt_Kriimsilm_2708d753de.jpg", "hunt_dark_shadow.png", "hunt_dark.png", "placeholder_hd_1.jpg"]
+        - var images = []
+        if self.images && self.images[0]
+            each image in self.images
+                if image.hash && image.ext
+                    - images.push(`${image.hash}${image.ext}`)
 
         section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
             ol.carousel-indicators
-                if programme
-                    if programme.pics
-                        each val, index in programme.pics
-                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
+                if images.length
+                    each val, index in images
+                        li(data-target='#carouselExampleIndicators' data-slide-to = index)
             .carousel-inner.container_frame_16_9
-                if programme
-                    if programme.pics.length
-                        each val, index in programme.pics
+                if images
+                    if images.length
+                        each val, index in images
                             if index == 0
                                 .carousel-item.active.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/static/${val}` alt = self.filmTitle)
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_programmes/${val}` alt = self.filmTitle)
                             else
                                 .carousel-item.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/static/${val}` alt = self.filmTitle)
+                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_programmes/${val}` alt = self.filmTitle)
                     else
                         .carousel-item.active.container_contents_16_9
-                            img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.filmTitle)
                 else
                     .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = self.filmTitle)
+                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.filmTitle)
 
             a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
                 // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -46,11 +48,11 @@ block content
                 span.sr-only Next
 
     //- Programmi nimi
-    if self.name
+    if self.name && typeof self.name !== 'object'
         p.dark_1= self.name
 
     //- Programmi kirjeldus
-    if self.description
+    if self.description && typeof self.description !== 'object'
         p.dark_1= self.description
 
     //- Programmi presentedBy tekst
@@ -124,6 +126,30 @@ block content
                     else if presenter.logoWhite
                         img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
+    if self.data.cassettes.length
+        main.grid_films
+            each cassette in self.data.cassettes
+                if cassette.films && cassette.films[0]
+                    each film in cassette.films
+                        if film.tags && film.tags.programmes && film.tags.programmes[0]
+                            each programme in film.tags.programmes
+                                if self.id === programme.id
+                                        a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                                            .container_frame_16_9
+                                                if cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
+                                                    img.container_contents_16_9(src=`/assets/img/dynamic/img_films/${cassette.dirSlug}/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title)
+                                                else if cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
+                                                    img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt = cassette.title)
+                                                else
+                                                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = cassette.title)
+                                            .card_film_title
+                                                h3.film_title_locale.dark_1= cassette.title
+                                            .card_film_info
+                                                each p, locale in self.otherLocalePaths
+                                                    if cassette[`title_${locale}`]
+                                                        .str_info_grid_3
+                                                            .str_info_label.dark_1= self.label.film[`title_${locale}`]
+                                                            .str_info_value.dark_1= cassette[`title_${locale}`]
 
     //- SIIN ALL SUVALINE ARTIKLITE VÄRK, VÕIB KUSTUTADA
 

@@ -75,11 +75,22 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     for (const originalElement of STRAPIDATA_CASSETTE) {
         const element = JSON.parse(JSON.stringify(originalElement))
 
-        let slugEn = element.slug_en
-        if (!slugEn) {
-            slugEn = element.slug_et
+        let slugEn = undefined
+        // Siit
+        if(element.films && element.films.length === 1) {
+            slugEn = element.films[0].slug_en
+            if (!slugEn) {
+                slugEn = element.films[0].slug_et
+            }
+        } else {
+        // Siiani
+            slugEn = element.slug_en
+            if (!slugEn) {
+                slugEn = element.slug_et
+            }
+        // Ja siit
         }
-
+        // Siiani
         if(typeof slugEn !== 'undefined') {
             element.dirSlug = slugEn
             element.directory = path.join(dirPath, slugEn)
@@ -189,7 +200,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     }
                     rueten(film, lang)
                     if (typeof filmSlugEn !== 'undefined') {
-                        film.dirSlug = filmSlugEn
+                        film.dirSlug = slugEn
                     }
 
                     // Film carousel pics
