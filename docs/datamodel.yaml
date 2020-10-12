@@ -684,7 +684,6 @@ FilmMedia: &FilmMedia
 
 RolesAtFilm: &RolesAtFilm
     _path: /role-at-films
-    romoteId: (UID)
     roleNamePrivate: (text)
     roleName: *Translated #(Component)
     order: (Number)
