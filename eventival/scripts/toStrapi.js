@@ -68,21 +68,17 @@ const updateStrapi = async () => {
             return from_strapi
         }
 
-
-        let options = {
+        const strapi_persons_options = {
             headers: { 'Content-Type': 'application/json' },
             path: PERSONS_API + '?_limit=-1',
             method: 'GET'
         }
-        let strapi_persons = await strapiQuery(options)
 
         // Add Directors and Cast to Strapi
+        let strapi_persons = await strapiQuery(strapi_persons_options)
         let persons_in_eventival = []
-        for (const ix in EVENTIVAL_FILMS ) {
-            const e_film = EVENTIVAL_FILMS [ix]
-            if (! (e_film.film_info && e_film.film_info.relationships) ) {
-                continue
-            }
+        for (const e_film of EVENTIVAL_FILMS ) {
+            if (! (e_film.film_info && e_film.film_info.relationships) ) { continue }
             const relationships = e_film.film_info.relationships
             let e_persons = [].concat(relationships.directors || [], relationships.cast || [])
                 .map(person => {
@@ -90,8 +86,35 @@ const updateStrapi = async () => {
                 })
             persons_in_eventival = [].concat(persons_in_eventival, e_persons)
         }
-        strapi_persons = await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
-        return strapi_persons
+        // await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
+
+        // add all the crew to strapi
+        let crew_names = {}
+        for (const e_film of EVENTIVAL_FILMS ) {
+            if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
+            for (const e_crew of e_film.publications.en.crew) {
+                for (const name of e_crew.text) {
+                    crew_names[name] = {}
+                }
+            }
+        }
+        strapi_persons = await strapiQuery(strapi_persons_options)
+        for (const e_name in crew_names) {
+            let s_person = strapi_persons.filter(s_person => {
+                return e_name === s_person.firstName + (s_person.lastName ? ' ' + s_person.lastName : '')
+            })[0]
+            if (s_person === undefined) {
+                let options = {
+                    headers: { 'Content-Type': 'application/json' },
+                    path: PERSONS_API,
+                    method: 'POST'
+                }
+                let data = { firstName: e_name }
+                let new_person = await strapiQuery(options, data)
+                console.log('==== new person', e_name);
+            }
+        }
+        return await strapiQuery(strapi_persons_options)
     }
 
     const updateStrapiRoles = async () => {
@@ -115,7 +138,6 @@ const updateStrapi = async () => {
                     let filtered = strapi_roles.filter(s_role => {
                         return s_role.remoteId === e_crew.type.id.toString()
                     })
-                    console.log('filterede', filtered);
                     if (filtered[0]) {
                         continue
                     }
@@ -142,9 +164,20 @@ const updateStrapi = async () => {
         return strapi_roles
     }
 
+    const updateFilmCredentials = async (s_persons, s_roles) => {
+        for (const e_film of EVENTIVAL_FILMS ) {
+            // skip if there is no roles (no crew) to check
+            if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
+            for (const e_crew of e_film.publications.en.crew) {
+
+            }
+        }
+    }
+
     const strapi_persons = await updateStrapiPersons()
-    const strapi_roles = await updateStrapiRoles()
+    // const strapi_roles = await updateStrapiRoles()
     // Add ppl from publications to Strapi
+    // await updateFilmCredentials(strapi_persons, strapi_roles)
 }
 
 const remapEventival = () => {
