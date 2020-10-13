@@ -118,7 +118,12 @@ const updateStrapi = async () => {
             const relationships = e_film.film_info.relationships
             let e_persons = [].concat(relationships.directors || [], relationships.cast || [])
                 .map(person => {
-                    return {remoteId: person.id.toString(), firstName: person.name, lastName: person.surname}
+                    return {
+                        remoteId: person.id.toString(),
+                        firstName: (person.name ? person.name : '').trim(),
+                        lastName: (person.surname ? person.surname : '').trim(),
+                        firstNameLastName: (person.name ? person.name : '').trim() + (person.surname ? ' ' + person.surname.trim() : '')
+                    }
                 })
             persons_in_eventival = [].concat(persons_in_eventival, e_persons)
         }
@@ -144,8 +149,8 @@ const updateStrapi = async () => {
                     path: PERSONS_API,
                     method: 'POST'
                 }
-                let data = { firstName: e_name }
-                let new_person = await strapiQuery(options, data)
+                let data = { firstName: e_name.trim(), firstNameLastName: e_name.trim() }
+                await strapiQuery(options, data)
                 console.log('==== new person', e_name);
             }
         }
