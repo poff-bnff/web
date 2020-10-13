@@ -6,6 +6,7 @@ on:
         branches: [ staging_indusrty ]
     workflow_dispatch:
 
+
 jobs:
     deploy:
         name: SCP files to server
@@ -19,9 +20,3 @@ jobs:
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
 
-        -
-            name: Github->Slack notification Webhook action
-            uses: craftech-io/slack-action@v1
-            with:
-                slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
-            if: always()
