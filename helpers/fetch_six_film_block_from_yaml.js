@@ -41,7 +41,9 @@ for (const lang of languages) {
                     const cassetteYAMLPath = path.join(fetchDir, `cassettes.${lang}.yaml`)
                     const CASSETTESYAML = yaml.safeLoad(fs.readFileSync(cassetteYAMLPath, 'utf8'))
                     let thisCassetteFromYAML = CASSETTESYAML.filter( (a) => { return thisCassette.id === a.id })[0];
-                    delete thisCassetteFromYAML.data;
+                    if (thisCassetteFromYAML !== undefined && thisCassetteFromYAML.data) {
+                        delete thisCassetteFromYAML.data
+                    }
                     copyData[key][cassetteIx] = thisCassetteFromYAML
                 }
             // Teistes keeltes kassett kustutatakse
@@ -52,7 +54,11 @@ for (const lang of languages) {
         }
     }
     rueten(copyData, lang)
-    let allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' })
+    if (copyData[0] === undefined) {
+        var allDataYAML = yaml.safeDump([], { 'noRefs': true, 'indent': '4' })
+    } else {
+        var allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' })
+    }
     const outFile = path.join(fetchDir, `sixfilms.${lang}.yaml`)
     fs.writeFileSync(outFile, allDataYAML, 'utf8')
 }

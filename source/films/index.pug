@@ -14,16 +14,16 @@ block content
                             if cassette.media['posters']
                                 //- -console.log(cassette.media['posters'][0]['name'])
                             //-     if self.data.pictures.filmslugs[cassette.path].posters
-                            //-         img.container_contents_16_9(src=`/assets/img/img_films/${cassette.path}/${self.data.pictures.filmslugs[cassette.path].poster}` alt = film[`filmTitle_${self.locale}`])
+                            //-         img.container_contents_16_9(src=`https://assets.poff.ee/img/${self.data.pictures.filmslugs[cassette.path].poster}` alt = film[`filmTitle_${self.locale}`])
                             //-     else
                             //-         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = film[`filmTitle_${self.locale}`])
                             //- else
                             //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = film[`filmTitle_${self.locale}`])
 
 
-                        if cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
+                        if cassette.films && cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
                             img.container_contents_16_9(src=`https://assets.poff.ee/img/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title)
-                        else if cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
+                        else if cassette.films && cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
                             img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt = cassette.title)
                         else
                             img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = cassette.title)
