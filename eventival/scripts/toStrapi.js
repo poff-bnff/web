@@ -218,12 +218,13 @@ const updateStrapi = async () => {
                 method: 'PUT'
             }
             // console.log(options, JSON.stringify(s_film, null, 2))
-            let s_role = await strapiQuery(options, s_film)
+            await strapiQuery(options, {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: null})
+            await strapiQuery(options, s_film)
         }
     }
 
-    // const strapi_persons = await updateStrapiPersons()
-    // const strapi_roles = await updateStrapiRoles()
+    await updateStrapiPersons()
+    await updateStrapiRoles()
     await updateFilmCredentials()
 }
 
@@ -617,14 +618,14 @@ const submitScreenings = async () => {
 const main = async () => {
     console.log('update Strapi')
     await updateStrapi()
-    console.log('remap')
-    remapEventival()
-    console.log('submit films')
-    await submitFilms()
-    console.log('submit cassettes')
-    await submitCassettes()
-    console.log('submit screenings')
-    await submitScreenings()
+    // console.log('remap')
+    // remapEventival()
+    // console.log('submit films')
+    // await submitFilms()
+    // console.log('submit cassettes')
+    // await submitCassettes()
+    // console.log('submit screenings')
+    // await submitScreenings()
 }
 
 main()

@@ -1,4 +1,3 @@
-const { timeout } = require("async")
 const { strapiQuery } = require("../../helpers/strapiQuery.js")
 
 const STRAPI_URL = 'http://139.59.130.149'
