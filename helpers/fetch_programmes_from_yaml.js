@@ -70,6 +70,17 @@ for (const ix in languages) {
 
     }
 
+    const allDataSorted = allData.sort(function(a, b) {
+            // nulls sort after anything else
+            if (a.order === undefined) {
+                return 1;
+            }
+            else if (b.order === undefined) {
+                return -1;
+            } else {
+                return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0);
+            }
+    })
     const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `programmes.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
