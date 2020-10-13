@@ -474,7 +474,7 @@ const remapEventival = () => {
 
         const scr_location = STRAPIDATA.Location.filter((s_scrLocation) => {
             if(e_screening.venue_id) {
-                return e_screening.venue_id.includes(s_scrLocation.remoteId)
+                return e_screening.venue_id === s_scrLocation.remoteId
             }
         }).map(s_scrLocation => s_scrLocation.id.toString())
 
