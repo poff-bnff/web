@@ -96,8 +96,9 @@ header
                                         li
                                             a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
                 else
-                    li
-                        a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
+                    if subMenuItem.customUrl
+                        li
+                            a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
 
             li
