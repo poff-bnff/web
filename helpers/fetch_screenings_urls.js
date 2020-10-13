@@ -28,41 +28,23 @@ async function main() {
         if (error) throw new Error(error);
 
         if (response.body === undefined) {
-            var YAML = yaml.safeDump([], { 'noRefs': true, 'indent': '4' })
+            yaml.safeDump([], { 'noRefs': true, 'indent': '4' })
         } else {
-            var jsonData = JSON.parse(response.body).responseData.concert
-            let allScreeningInfo = []
-            for (iX in jsonData) {
-                let oneScreeningInfo = {}
-                let item = jsonData[iX]
-                for (key in item) {
-                    if (key === 'decoratedTitle') {
-                        oneScreeningInfo.codeAndTitle = item[key]
-                        oneScreeningInfo.code = item[key].split(' / ')[0]
-                    }
-                    if (key === 'shopUrl') {
-                        oneScreeningInfo.ticketingUrl = item[key]
-                    }
-                    if (key === 'id') {
-                        oneScreeningInfo.ticketingId = item[key]
-                    }
-                    if (key === 'salesTime') {
-                        oneScreeningInfo.salesTime = item[key]
-                    }
+            const concerts = JSON.parse(response.body).responseData.concert
+            const screenings = concerts.map(concert => {
+                return {
+                    codeAndTitle: concert.decoratedTitle || null,
+                    code: concert.decoratedTitle ? concert.decoratedTitle.split(' / ')[0] : null,
+                    ticketingUrl: concert.shopUrl || null,
+                    remoteId: concert.id || null,
+                    salesTime: concert.salesTime || null
                 }
-                allScreeningInfo.push(oneScreeningInfo)
-            }
-            if (allScreeningInfo) {
-                var YAML = yaml.safeDump(allScreeningInfo, { 'noRefs': true, 'indent': '4' })
-            }
-        }
-        if (YAML !== undefined) {
-
-            // let yamlKeys = YAML.keys()
+            })
+            var YAML = yaml.safeDump(screenings, { 'noRefs': true, 'indent': '4' })
             const outFile = path.join(fetchDir, `screenings_urls.yaml`)
             fs.writeFileSync(outFile, YAML, 'utf8')
         }
-    });
+    })
 }
 
 main()
