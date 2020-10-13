@@ -8,9 +8,10 @@ on:
         branches: [ master ]
     workflow_dispatch:
         inputs:
-            userName:
+            slackUserId:
                 description: 'Person who pushed the button'
-                required: true
+            privateChannel:
+                description: 'slackBot and users private channel'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
