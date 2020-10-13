@@ -111,24 +111,24 @@ main.grid_film
                                     if programme.festival_editions
                                         - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
                                         if festivalEditions.length > 0
-                                            .str_info_meta_label.dark_1= self.label.film.programme
+                                            .str_info_meta_label.dark_semi= self.label.film.programme
                                             .str_info_meta_festival= festivalEditions
 
                                 //- Programmes
                                 - var programmes = film.tags.programmes.map(programmeNames).join(', ')
                                 if programmes !== undefined && programmes.length > 0
-                                    .str_info_meta_label.dark_1= self.label.film.programme
+                                    .str_info_meta_label.dark_semi= self.label.film.programme
                                     .str_info_meta_festival= programmes
 
 
 
                             if film.tags.genres && film.tags.genres[0] && typeof film.tags.genres !== 'object'
-                                .str_info_meta_label.dark_1= self.label.film.genre
+                                .str_info_meta_label.dark_semi= self.label.film.genre
                                 .str_info_meta_festival= film.tags.genres.join(', ')
 
 
                             if film.tags.keywords && film.tags.keywords[0] && typeof film.tags.keywords !== 'object'
-                                .str_info_meta_label.dark_1= self.label.film.keywords
+                                .str_info_meta_label.dark_semi= self.label.film.keywords
                                 .str_info_meta_festival= film.tags.keywords.join(', ')
 
                         //- festival programm zanrid keywordid
