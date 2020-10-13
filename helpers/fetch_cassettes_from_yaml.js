@@ -272,15 +272,21 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                         for (roleIx in film.credentials.rolePerson) {
                             let rolePerson = film.credentials.rolePerson[roleIx]
+                            if (rolePerson !== undefined) {
+                                if (rolePerson.person && rolePerson.person.id) {
+                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
 
-                            let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
-                            rolePerson.person = rueten(personFromYAML[0], lang);
+                                    rolePerson.person = rueten(personFromYAML[0], lang);
 
-                            if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
-                            }
-                            if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
-                                rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                                    if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`] = []
+                                    }
+                                    if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                                    }
+                                } else {
+                                    // console.log(film.id, ' - ', rolePerson.role_at_film.roleNamePrivate);
+                                }
                             }
                             //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
