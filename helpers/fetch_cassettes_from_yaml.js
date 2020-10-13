@@ -13,6 +13,9 @@ const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
+
+// console.log('LIMIT: ', CASSETTELIMIT);
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
 const whichScreeningTypesToFetch = ['regular', 'first screening']
@@ -72,13 +75,29 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     // console.log(data);
     let slugMissingErrorNumber = 0
     let slugMissingErrorIDs = []
+    let limit = CASSETTELIMIT
+    let counting = 0
     for (const originalElement of STRAPIDATA_CASSETTE) {
+        if (limit !== 0 && counting === limit) break;
         const element = JSON.parse(JSON.stringify(originalElement))
 
-        let slugEn = element.slug_en
-        if (!slugEn) {
-            slugEn = element.slug_et
+        let slugEn = undefined
+        // Siit
+        if(element.films && element.films.length === 1) {
+            slugEn = element.films[0].slug_en
+            if (!slugEn) {
+                slugEn = element.films[0].slug_et
+            }
+        } else {
+        // Siiani
+            slugEn = element.slug_en
+            if (!slugEn) {
+                slugEn = element.slug_et
+            }
+        // Ja siit
         }
+        // Siiani
+        counting++
 
         if(typeof slugEn !== 'undefined') {
             element.dirSlug = slugEn
@@ -87,6 +106,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
             let cassetteCarouselPicsCassette = []
             let cassetteCarouselPicsFilms = []
+            let cassettePostersCassette = []
+            let cassettePostersFilms = []
 
             if(element.films) {
                 var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
@@ -140,14 +161,19 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru'];
             for (key in element) {
-
                 if (key == 'slug') {
                     element.path = `film/${element[key]}`;
+                    element.slug = `${element[key]}`;
                 }
 
                 if (typeof(element[key]) === 'object' && element[key] != null) {
                     // makeCSV(element[key], element, lang);
                 }
+            }
+
+            if (element.path === undefined) {
+                element.path = `film/${slugEn}`;
+                element.slug = slugEn;
             }
 
             // Cassette carousel pics
@@ -164,14 +190,28 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 element.cassetteCarouselPicsCassette = cassetteCarouselPicsCassette
             }
 
+            // Cassette poster pics
+            if (element.media && element.media.posters && element.media.posters[0]) {
+                for (const posterIx in element.media.posters) {
+                    let poster = element.media.posters[posterIx]
+                    if (poster.hash && poster.ext) {
+                        cassettePostersCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${poster.hash}${poster.ext}`)
+                    }
+                }
+            }
+
+            if (cassettePostersCassette.length > 0) {
+                element.cassettePostersCassette = cassettePostersCassette
+            }
+
             if (element.films && element.films[0]) {
                 for (filmIx in element.films) {
                     let film = element.films[filmIx]
                     let filmSlugEn = film.slug_en
+
                     if (!filmSlugEn) {
-                        filmSlugEn = film.slug_et
+                        filmSlugEn = film.slug
                     }
-                    rueten(film, lang)
                     if (typeof filmSlugEn !== 'undefined') {
                         film.dirSlug = filmSlugEn
                     }
@@ -190,6 +230,20 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
                     if (cassetteCarouselPicsFilms.length > 0) {
                         element.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
+                    }
+
+                    // Film posters pics
+                    if (film.media && film.media.posters && film.media.posters[0]) {
+                        for (const posterIx in film.media.posters) {
+                            let poster = film.media.posters[posterIx]
+                            if (poster.hash && poster.ext) {
+                                    cassettePostersFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${poster.hash}${poster.ext}`)
+                            }
+                        }
+                    }
+
+                    if (cassettePostersFilms.length > 0) {
+                        element.cassettePostersFilms = cassettePostersFilms
                     }
 
                     // Filmi programmid
@@ -224,6 +278,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
+                rueten(element.films, lang)
             }
 
 

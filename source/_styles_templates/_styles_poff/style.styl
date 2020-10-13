@@ -75,8 +75,8 @@ breakpoint-xl = 1200px
 breakpoint-xs = 0
 // font_h = 'Barlow Condensed', "sans-serif"
 // font_h = 'Roboto Condensed', sans-serif
-font_h = 'Open Sans Condensed', sans-serif
-// font_h = 'Fira Sans Extra Condensed', sans-serif
+// font_h = 'Open Sans Condensed', sans-serif
+font_h = 'Fira Sans Extra Condensed', sans-serif
 // font_h = 'Sofia Pro Condensed', sans-serif
 
 font_p = 'Source Sans Pro', sans-serif
@@ -440,17 +440,18 @@ footer
 
 .img_dir
     width 100%
+    border-radius 50%
     object-fit cover
 
 /* GRID: MAIN & SECTIONS */
 /* Grid-areas .grid_film - mobile 1 column */
 
 .grid_film
-  display grid
-  grid-template-columns 1fr
-  grid-template-rows auto
-  padding-top header_height
-  grid-template-areas   "f_img_slider_box"\
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
                         "f_title_box"\
                         "f_synopsis_box"\
                         "f_cred_box"\
@@ -462,6 +463,23 @@ footer
                         "f_qaclip_box"\
                         "f_trailer_box"\
                         "f_imgs_box"
+
+.grid_cassette
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
+                        "f_title_box"\
+                        "f_synopsis_box"\
+                        "f_cred_box"\
+                        "f_runtime_box"\
+                        "f_screenings_box"\
+                        "f_dir_bio_box"\
+                        "f_extra_box"\
+                        "f_qaclip_box"\
+                        "f_trailer_box"\
+
 
 .grid_films
     display: grid
@@ -638,9 +656,11 @@ a .dark:hover
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
     // grid-gap calc(1.9rem + 1.5vw)
-    grid-gap 0
-    padding-top calc(1.9rem + 1.5vw)
-    padding-bottom calc(1.9rem + 1.5vw)
+    grid-gap 0rem
+    // padding-top calc(1.9rem + 1.5vw)
+    // padding-bottom calc(1.9rem + 1.5vw)
+    padding-top 2rem
+    padding-bottom 2rem
     justify-content center
     align-content center
     justify-items stretch
@@ -656,7 +676,7 @@ a .dark:hover
     background rgba(255,255,255,.96)
     text-align left
     padding 1rem 2rem 1rem 2rem
-    outline .5px dashed dark_5
+    // outline .5px dashed dark_5
 
 .trio_headline
     color dark_4
@@ -674,7 +694,44 @@ a .dark:hover
     color dark_1
     font-weight 300
 
+.trio_title_headline_box
+    position absolute
+    bottom 0
+    left 0
+    width 72%
+    // background rgba(10,0,3,.6)
+    // background rgba(236,0,140,.6)
+    // background rgba(90,0,60,.7)
+    // background-color clr_primary
+    text-align left
+    // padding 1rem 1rem 1rem 0rem
 
+.trio_title_detailed
+    font-family font_h
+    font-size calc(1.618rem + .5vw)
+    text-decoration none
+    text-align left
+    font-weight 400
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
+.trio_title_detailed span
+    // background-color rgba(255,255,255,.9)
+    background-color white
+    color dark_4
+    display inline
+    padding-left 2rem
+    padding-right 1.2rem
+    padding-top .5rem
+    padding-bottom .2rem
+    font-size calc(1.168rem + .5vw)
+    line-height 1.55
+    box-decoration-break clone
 
 // a
 //     .trio_headline
@@ -731,14 +788,15 @@ a .dark:hover
 
 .viieka_body
     margin 0
-    padding 1rem 1rem 1rem 1rem
+    padding 2rem 1.618rem 2rem 1.618rem
 
 .viieka_headline
     color dark_4
-    font-size 1.5rem
+    font-size calc(1.168rem + .5vw)
     font-family font_h
     font-weight 400
     padding-top .5rem
+    padding-bottom .5rem
     letter-spacing 0.01em
 
 .footer_logos
@@ -887,6 +945,43 @@ row:nth-child(6) > .supporter_logos
     justify-items center
     align-items center
     grid-gap 4rem
+
+row:nth-child(7) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(8) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(9) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(10) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
 
 // .supporter_logo_item
 //     width 100%
@@ -1902,6 +1997,16 @@ a.btn_popover
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
+    .grid_cassette
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_img_slider_box  f_img_slider_box  f_title_box"\
+                            "f_synopsis_box    f_synopsis_box    f_extra_box"\
+                            "f_screenings_box  f_screenings_box  f_screenings_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_trailer_box     f_trailer_box     f_trailer_box"\
+
     .grid_films
         display grid
         // grid-template-columns 1fr 1fr 1fr
@@ -1980,8 +2085,10 @@ a.btn_popover
     //     z-index -1
 
     .trio_block
-        padding-left calc(2rem + 2vw)
-        padding-right calc(2rem + 2vw)
+        padding-left 6rem
+        padding-right 6rem
+        margin-bottom 5rem
+        padding-top 6rem
 
     .viiekas
         width 100vw
@@ -2294,7 +2401,7 @@ a.btn_popover
     .f_interactive_box
     .f_extra_box
         padding-top calc(2rem + 1vw)
-        padding-bottom calc(2rem + 1vw)
+        padding-bottom calc(4rem + 1vw)
 
     .str_info_meta_item
         display block
@@ -2451,5 +2558,11 @@ strong
 .padding_top_4
     padding-top 4rem
 
+.padding_bottom_2
+    padding-bottom 2rem
+
 .padding_top_0
     padding-top 0px
+
+.bg_white
+    background-color white
