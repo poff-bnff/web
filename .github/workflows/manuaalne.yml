@@ -11,8 +11,10 @@ on:
         inputs:
             slackUserId:
                 description: 'Person who pushed the button'
+                default: ""
             privateChannel:
                 description: 'slackBot and users private channel'
+                default: ""
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
