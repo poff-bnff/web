@@ -12,6 +12,9 @@ const EVENTIVAL_FILMS = yaml.safeLoad(fs.readFileSync(FILMS_FN))
 const SCREENINGS_FN = path.join(DYNAMIC_PATH, 'screenings.yaml')
 const EVENTIVAL_SCREENINGS = yaml.safeLoad(fs.readFileSync(SCREENINGS_FN))
 
+const VENUES_FN = path.join(DYNAMIC_PATH, 'venues.yaml')
+const EVENTIVAL_VENUES = yaml.safeLoad(fs.readFileSync(VENUES_FN))
+
 const STRAPI_URL = 'http://139.59.130.149'
 const FILMS_API = `${STRAPI_URL}/films`
 const CASSETTES_API = `${STRAPI_URL}/cassettes`
@@ -370,7 +373,7 @@ const remapEventival = () => {
     // console.log('E_FILMS', EVENTIVAL_REMAPPED['E_FILMS'][3])
     // console.log('E_FILMS', h2p(EVENTIVAL_REMAPPED['E_FILMS'][3].title_et))
 
-    EVENTIVAL_REMAPPED['E_CASSETTES'] = (EVENTIVAL_FILMS.map(e_film => {
+    EVENTIVAL_REMAPPED['E_CASSETTES'] = EVENTIVAL_FILMS.map(e_film => {
         const strapiFilm = STRAPIDATA.Film.filter((s_film) => {
             if (e_film.ids && e_film.ids.system_id) {
                 return s_film.remoteId === e_film.ids.system_id.toString()
@@ -447,11 +450,14 @@ const remapEventival = () => {
         }
 
         return cassette_out
-    }))
+    })
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_CASSETTES.yaml'), yaml.safeDump(EVENTIVAL_REMAPPED['E_CASSETTES'], { 'indent': '4' }), "utf8")
 
 
-    EVENTIVAL_REMAPPED['E_SCREENINGS'] = (EVENTIVAL_SCREENINGS.map(e_screening => {
+    // EVENTIVAL_REMAPPED['E_VENUES'] = EVENTIVAL_VENUES
+    EVENTIVAL_REMAPPED['E_SCREENINGS'] = EVENTIVAL_SCREENINGS
+    .filter(e_screening => e_screening.type_of_screening === 'First Screening')
+    .map(e_screening => {
         const scr_cassette = STRAPIDATA.Cassette.filter((s_cassette) => {
             if (e_screening.film && e_screening.film.id) {
                 return s_cassette.remoteId === e_screening.film.id.toString()
@@ -475,9 +481,13 @@ const remapEventival = () => {
 
         const scr_location = STRAPIDATA.Location.filter((s_scrLocation) => {
             if(e_screening.venue_id) {
-                return e_screening.venue_id === s_scrLocation.remoteId.toString()
+                // console.log(e_screening.venue_id, s_scrLocation.remoteId, e_screening.venue_id.toString() === s_scrLocation.remoteId);
+                return e_screening.venue_id.toString() === s_scrLocation.remoteId
             }
-        }).map(s_scrLocation => s_scrLocation.id.toString())
+        }).map(s_scrLocation => s_scrLocation.id.toString())[0] || null
+        if( !scr_location ){
+            console.log('WARNING: location.remoteId=' + e_screening.venue_id + 'not found in locations.' )
+        }
 
         let screening_out = {
             code: e_screening.code.toString().padStart(6, "0"),
@@ -521,7 +531,7 @@ const remapEventival = () => {
         }
 
         return screening_out
-    }))
+    })
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_SCREENINGS.yaml'), yaml.safeDump(EVENTIVAL_REMAPPED['E_SCREENINGS'], { 'indent': '4' }), "utf8")
 }
 
@@ -607,6 +617,7 @@ async function submitScreening(e_screening) {
         options.path = SCREENINGS_API
         options.method = 'POST'
     }
+    // console.log(options, JSON.stringify(e_screening, null, 4))
     const screening_from_strapi = await strapiQuery(options, e_screening)
     return screening_from_strapi
 }
@@ -622,16 +633,16 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    console.log('update Strapi')
-    await updateStrapi()
-    // console.log('remap')
-    // remapEventival()
+    // console.log('update Strapi')
+    // await updateStrapi()
+    console.log('remap')
+    remapEventival()
     // console.log('submit films')
     // await submitFilms()
     // console.log('submit cassettes')
     // await submitCassettes()
-    // console.log('submit screenings')
-    // await submitScreenings()
+    console.log('submit screenings')
+    await submitScreenings()
 }
 
 main()
