@@ -111,7 +111,7 @@ main.grid_film
                                     if programme.festival_editions
                                         - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
                                         if festivalEditions.length > 0
-                                            .str_info_meta_label.dark_1= self.label.film.festival
+                                            .str_info_meta_label.dark_semi= self.label.film.festival
                                             .str_info_meta_festival= festivalEditions
 
                                 //- Programmes
@@ -311,7 +311,8 @@ main.grid_film
                                                 if screening.location.hall.cinema && screening.location.hall.cinema.name
                                                     span.screening_venue= ` ${screening.location.hall.cinema.name}`
                                                     if screening.location.hall.cinema.town && screening.location.hall.cinema.town.name && screening.location.hall.cinema.town.country && screening.location.hall.cinema.town.country.name
-                                                        span.city= ` ${screening.location.hall.cinema.town.name}, ${screening.location.hall.cinema.town.country.name}`
+                                                        span.city= ` ${screening.location.hall.cinema.town.name}`
+                                                        //- span.city= ` ${screening.location.hall.cinema.town.name}, ${screening.location.hall.cinema.town.country.name}`
 
                                             //- See on privateName tegelikult: Coca-Cola Plaza, iSense saal
                                             //- if screening.location.name
@@ -356,7 +357,7 @@ main.grid_film
 
 
                                     if screening.bookingUrl
-                                        a.btn.btn_secondary.active(href= screening.bookingUrl role='button') Grupitellimus!
+                                        a.btn.btn_secondary.active(href= screening.bookingUrl role='button')= self.label.button.screeningReservation
                                     if screening.ticketingUrl && screening.ticketingId
                                         a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
                                     //- if screening.screeningTown === 'Tartu'

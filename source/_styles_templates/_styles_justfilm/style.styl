@@ -334,6 +334,14 @@ footer
     align-self start
     text-align center
 
+.footer_row_item_text
+    font-family font_h
+    text-align left
+    font-size 1rem
+    color white_96
+    padding-left 2rem
+    padding-right 2rem
+
 .footer_h
     // display inline
     font-family font_h
@@ -1514,9 +1522,11 @@ a.btn_popover
 /* SCREENINGS */
 
 .card_screening
-  max-width 100%
-  margin-left 0
-  margin-right 0
+    min-width 360px
+    max-width 100%
+    margin-left 0
+    margin-right 0
+    margin-bottom 2rem
 //   margin-top calc(3rem + 1vw)
 
 .grid_container_screening_time
@@ -1583,10 +1593,12 @@ a.btn_popover
 
 .btn_secondary
   background-color bg_dark_4
-  color white_semi
+  color white_96
   border-radius 0
   text-transform uppercase
-//   display none
+  &:hover
+      color poff_orange
+
 
 .btn_primary
   background-color clr_primary
@@ -2270,7 +2282,7 @@ a.btn_popover
         display grid
         grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
         grid-template-rows auto
-        grid-gap 1rem
+        grid-gap 3rem
         justify-items center
         align-items center
         background-color bg_dark_1
@@ -2431,8 +2443,8 @@ a.btn_popover
         margin 0
 
     .card_screening
-        min-width 300px
-        max-width 400px
+        min-width 400px
+        max-width 450px
         margin-left 1vw
         margin-right 1vw
 
