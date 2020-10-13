@@ -7,13 +7,6 @@ name: Manual workflow
 on:
     push:
         branches: [ add-new-slack-notification ]
-        inputs:
-            slackUserId:
-                description: 'Person who pushed the button'
-                default: "none"
-            privateChannel:
-                description: 'slackBot and users private channel'
-                default: "none"
     workflow_dispatch:
         inputs:
             slackUserId:
