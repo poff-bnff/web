@@ -183,7 +183,7 @@ const fetch_films = async (e_films) => {
             })
             // console.log('after', publication.crew);
 
-            console.log(publication.crew);
+            // console.log(publication.crew);
             for (const [role, strapi_id] of Object.entries(rolesAtFilm)) {
                 publication.crew.push({
                     strapi_role_at_film: strapi_id,

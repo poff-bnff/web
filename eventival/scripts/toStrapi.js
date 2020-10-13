@@ -24,6 +24,22 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
+const STRAPI_GET_PERSONS_OPTIONS = {
+    headers: { 'Content-Type': 'application/json' },
+    path: PERSONS_API + '?_limit=-1',
+    method: 'GET'
+}
+let STRAPI_GET_ROLES_OPTIONS = {
+    headers: { 'Content-Type': 'application/json' },
+    path: ROLES_API + '?_limit=-1',
+    method: 'GET'
+}
+let STRAPI_GET_FILMS_OPTIONS = {
+    headers: { 'Content-Type': 'application/json' },
+    path: FILMS_API + '?_limit=-1',
+    method: 'GET'
+}
+
 const ET = { // eventival translations
     categories: {
         "PÖFF" : "1",
@@ -36,6 +52,24 @@ const ET = { // eventival translations
 
 const EVENTIVAL_REMAPPED = {}
 
+const s_person_id_by_e_fullname = (e_name, s_persons) => {
+    return s_persons.filter(s_person => {
+        return e_name === s_person.firstName + (s_person.lastName ? ' ' + s_person.lastName : '')
+    })[0].id
+}
+const s_film_id_by_e_remote_id = (remote_id, s_films) => {
+    return s_films.filter(s_film => {
+        return remote_id.toString() === s_film.remoteId
+    })[0].id
+}
+const s_role_id_by_e_crew_type = (e_crew, s_roles) => {
+    if (e_crew.strapi_role_at_film) {
+        return e_crew.strapi_role_at_film
+    }
+    return s_roles.filter(s_role => {
+        return e_crew.type.id.toString() === s_role.remoteId
+    })[0].id
+}
 
 const updateStrapi = async () => {
     const updateStrapiPersons = async () => {
@@ -68,14 +102,8 @@ const updateStrapi = async () => {
             return from_strapi
         }
 
-        const strapi_persons_options = {
-            headers: { 'Content-Type': 'application/json' },
-            path: PERSONS_API + '?_limit=-1',
-            method: 'GET'
-        }
-
         // Add Directors and Cast to Strapi
-        let strapi_persons = await strapiQuery(strapi_persons_options)
+        let strapi_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
         let persons_in_eventival = []
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.film_info && e_film.film_info.relationships) ) { continue }
@@ -86,7 +114,8 @@ const updateStrapi = async () => {
                 })
             persons_in_eventival = [].concat(persons_in_eventival, e_persons)
         }
-        // await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
+        await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
+
 
         // add all the crew to strapi
         let crew_names = {}
@@ -98,11 +127,9 @@ const updateStrapi = async () => {
                 }
             }
         }
-        strapi_persons = await strapiQuery(strapi_persons_options)
+        strapi_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
         for (const e_name in crew_names) {
-            let s_person = strapi_persons.filter(s_person => {
-                return e_name === s_person.firstName + (s_person.lastName ? ' ' + s_person.lastName : '')
-            })[0]
+            let s_person = s_person_id_by_e_fullname(e_name, strapi_persons)
             if (s_person === undefined) {
                 let options = {
                     headers: { 'Content-Type': 'application/json' },
@@ -114,16 +141,11 @@ const updateStrapi = async () => {
                 console.log('==== new person', e_name);
             }
         }
-        return await strapiQuery(strapi_persons_options)
+        return await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
     }
 
     const updateStrapiRoles = async () => {
-        let options = {
-            headers: { 'Content-Type': 'application/json' },
-            path: ROLES_API + '?_limit=-1',
-            method: 'GET'
-        }
-        let strapi_roles = await strapiQuery(options)
+        let strapi_roles = await strapiQuery(STRAPI_GET_ROLES_OPTIONS)
 
         for (const e_film of EVENTIVAL_FILMS ) {
             // skip if there is no roles (no crew) to check
@@ -164,20 +186,40 @@ const updateStrapi = async () => {
         return strapi_roles
     }
 
-    const updateFilmCredentials = async (s_persons, s_roles) => {
-        for (const e_film of EVENTIVAL_FILMS ) {
+    const updateFilmCredentials = async () => {
+        const s_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
+        const s_roles = await strapiQuery(STRAPI_GET_ROLES_OPTIONS)
+        const s_films = await strapiQuery(STRAPI_GET_FILMS_OPTIONS)
+        for (const e_film of EVENTIVAL_FILMS) {
             // skip if there is no roles (no crew) to check
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
+            // console.log(e_film);
+            let s_film = {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: {rolePerson: []}}
             for (const e_crew of e_film.publications.en.crew) {
-
+                const role_id = s_role_id_by_e_crew_type(e_crew, s_roles)
+                s_film.credentials.rolePerson = [].concat(
+                    s_film.credentials.rolePerson, (
+                    e_crew.text.map(name => {
+                        return {
+                            role_at_film: { id: role_id },
+                            person: { id: s_person_id_by_e_fullname(name, s_persons) }
+                        }
+                    })
+                ))
             }
+            let options = {
+                headers: { 'Content-Type': 'application/json' },
+                path: FILMS_API,
+                method: 'PUT'
+            }
+            let s_role = await strapiQuery(options, s_film)
+    // console.log(JSON.stringify(s_film, null, 2));
         }
     }
 
-    const strapi_persons = await updateStrapiPersons()
+    // const strapi_persons = await updateStrapiPersons()
     // const strapi_roles = await updateStrapiRoles()
-    // Add ppl from publications to Strapi
-    // await updateFilmCredentials(strapi_persons, strapi_roles)
+    await updateFilmCredentials()
 }
 
 const remapEventival = () => {
@@ -568,7 +610,7 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    console.log('prep')
+    console.log('update Strapi')
     await updateStrapi()
     console.log('remap')
     remapEventival()
