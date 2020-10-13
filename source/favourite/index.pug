@@ -7,7 +7,7 @@ block content
     if self.data.cassettes
         main.grid_films
             each cassette in self.data.cassettes
-                a.card_film(id= cassette.id  style= {cursor: 'pointer', display:'none'} href= `/${lang_path}film/${cassette.slug}`)
+                a.card_film(id= cassette.id  style= {cursor: 'pointer', display:'none'})
 
 
 
@@ -34,7 +34,7 @@ block content
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
                         .nupp
-                            p(style={color: 'red'} onclick="alert('foooä');return false") X
+                            p(style={color: 'red'} onclick=`removeFilm(${cassette.id});return false`) X
                     .card_film_info
                         each p, locale in self.otherLocalePaths
                             if cassette[`title_${locale}`]
