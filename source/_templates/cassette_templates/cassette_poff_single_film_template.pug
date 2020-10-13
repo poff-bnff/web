@@ -111,24 +111,24 @@ main.grid_film
                                     if programme.festival_editions
                                         - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
                                         if festivalEditions.length > 0
-                                            .str_info_meta_label.dark_1= self.label.film.programme
+                                            .str_info_meta_label.dark_semi= self.label.film.programme
                                             .str_info_meta_festival= festivalEditions
 
                                 //- Programmes
                                 - var programmes = film.tags.programmes.map(programmeNames).join(', ')
                                 if programmes !== undefined && programmes.length > 0
-                                    .str_info_meta_label.dark_1= self.label.film.programme
+                                    .str_info_meta_label.dark_semi= self.label.film.programme
                                     .str_info_meta_festival= programmes
 
 
 
                             if film.tags.genres && film.tags.genres[0] && typeof film.tags.genres !== 'object'
-                                .str_info_meta_label.dark_1= self.label.film.genre
+                                .str_info_meta_label.dark_semi= self.label.film.genre
                                 .str_info_meta_festival= film.tags.genres.join(', ')
 
 
                             if film.tags.keywords && film.tags.keywords[0] && typeof film.tags.keywords !== 'object'
-                                .str_info_meta_label.dark_1= self.label.film.keywords
+                                .str_info_meta_label.dark_semi= self.label.film.keywords
                                 .str_info_meta_festival= film.tags.keywords.join(', ')
 
                         //- festival programm zanrid keywordid
@@ -159,9 +159,11 @@ main.grid_film
                     //- NB!
                     //- NB!
                     //- NB!
-                    //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes
+                    //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes ja tühikuteta
                     //-     Näiteks: "Composer" all olevad isikud saab kätte film.credentials.rolePersonsByRole.composer.join(', ')
-                    if film.credentials && film.credentials.rolePersonsByRole
+                    //-     Näiteks: Director Of Photography film.credentials.rolePersonsByRole.directorofphotography
+
+                    if film && film.credentials && film.credentials.rolePersonsByRole
                         if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.director
@@ -223,7 +225,7 @@ main.grid_film
                         | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
                     a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
 
-            if film.credentials && film.credentials.rolePerson[0]
+            if film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]
                 - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
                 - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
 

@@ -362,8 +362,9 @@ if self.films
                     //-         | Foorum, Põhjusega mässajad
                 if typeof film.synopsis !== 'undefined'
                     - var synopsis_md = film.synopsis
-                    .synopsis_gi
-                        +format(synopsis_md)
+                    if typeof synopsis_md === 'string'
+                        .synopsis_gi
+                            +format(synopsis_md)
             section.f_cred_box
                 .str_info_blokk_cred
 
@@ -443,7 +444,7 @@ if self.films
             //-             | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
             //-         a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
 
-            if film.credentials && film.credentials.rolePerson[0]
+            if film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]
                 - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
                 - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
 
