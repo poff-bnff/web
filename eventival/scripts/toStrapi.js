@@ -203,14 +203,14 @@ const updateStrapi = async () => {
             for (const e_crew of e_film.publications.en.crew) {
                 const role_id = s_role_id_by_e_crew_type(e_crew, s_roles)
                 s_film.credentials.rolePerson = [].concat(
-                    s_film.credentials.rolePerson, (
+                    s_film.credentials.rolePerson,
                     e_crew.text.map(name => {
                         return {
                             role_at_film: { id: role_id },
                             person: { id: s_person_id_by_e_fullname(name, s_persons) }
                         }
-                    })
-                ))
+                    }
+                ).filter(rp => {return rp.person.id}))
             }
             let options = {
                 headers: { 'Content-Type': 'application/json' },
