@@ -590,6 +590,7 @@ Person: &Person
     remoteId: (e_person_id)
     firstName: (text)
     lastName: (text)
+    firstNameLastName: (text)
     picture: *StrapiMedia #(Component)
     gender: *Gender #(Component)
     phoneNr: (text)
