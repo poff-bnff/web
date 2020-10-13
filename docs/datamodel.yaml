@@ -589,6 +589,7 @@ Person: &Person
     _path: /people
     firstName: (text)
     lastName: (text)
+    firstNameLastName: (text)
     picture: *StrapiMedia #(Component)
     gender: *Gender #(Component)
     phoneNr: (text)
