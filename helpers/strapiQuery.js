@@ -12,7 +12,7 @@ async function strapiQuery(options, dataObject = false) {
 
     // console.log(options, JSON.stringify((dataObject) || ''));
     return new Promise((resolve, reject) => {
-        process.stdout.write({GET:'?', PUT:'+', POST:'o'}[options.method])
+        process.stdout.write({GET:'?', PUT:'+', POST:'o', DELETE:'X'}[options.method])
         const request = http.request(options, (response) => {
             response.setEncoding('utf8');
             let allData = '';
@@ -20,11 +20,10 @@ async function strapiQuery(options, dataObject = false) {
                 allData += chunk;
             });
             response.on('end', function () {
-                let strapiData = JSON.parse(allData);
                 if (response.statusCode === 200) {
-                    resolve(strapiData);
+                    resolve(JSON.parse(allData));
                 } else {
-                    console.log('Status', response.statusCode, strapiData, JSON.stringify((dataObject) || ''));
+                    console.log('Status', response.statusCode, JSON.stringify((dataObject) || ''));
                     resolve([]);
                 }
             });
