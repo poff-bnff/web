@@ -22,7 +22,11 @@ const STRAPI_UPDATE_PERSONS_OPTIONS = {
 const foo = async () => {
     strapi_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
     for (const s_person of strapi_persons) {
-        s_person.firstNameLastName = (s_person.firstName || '') + ' ' + (s_person.lastName || '')
+        let firstNameLastName = (s_person.firstName || '') + (s_person.lastName ? ' ' : '') + (s_person.lastName || '')
+        if (s_person.firstNameLastName === firstNameLastName) {
+            continue
+        }
+        s_person.firstNameLastName = firstNameLastName
         let options = STRAPI_UPDATE_PERSONS_OPTIONS
         options.path = options.path.replace('?', s_person.id)
         await strapiQuery(options, s_person)
