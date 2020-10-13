@@ -2,9 +2,9 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const request = require('request');
-const sourceDir =  path.join(__dirname, '..', 'source')
-const fetchDir =  path.join(sourceDir, '_fetchdir')
-const { strapiQuery } = require("./strapiQuery.js")
+const sourceDir = path.join(__dirname, '..', 'source')
+const fetchDir = path.join(sourceDir, '_fetchdir')
+const { getModel } = require("./strapiQuery.js")
 const STRAPI_URL = process.env['StrapiHost']
 const SCREENINGS_API = `${STRAPI_URL}/screenings`
 
@@ -37,7 +37,7 @@ async function main() {
                     code: concert.decoratedTitle ? concert.decoratedTitle.split(' / ')[0] : null,
                     ticketingUrl: concert.shopUrl || null,
                     remoteId: concert.id || null,
-                    salesTime: concert.salesTime || null
+                    // salesTime: concert.salesTime || null
                 }
             })
             var YAML = yaml.safeDump(screenings, { 'noRefs': true, 'indent': '4' })
@@ -45,6 +45,7 @@ async function main() {
             fs.writeFileSync(outFile, YAML, 'utf8')
         }
     })
+    console.log(JSON.stringify(await getModel('Cinema'), null, 4))
 }
 
 main()
