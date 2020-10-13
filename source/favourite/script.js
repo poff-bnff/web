@@ -1,46 +1,33 @@
-let favouriteFilms2;
 
-document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
+document.addEventListener("DOMContentLoaded", loadMyFavouriteFilms, false);
 
-window.addEventListener("load", pageFullyLoaded, false);
+async function loadMyFavouriteFilms(e){
+    console.log('hello');
 
+    var response = await fetch(`https://api.poff.ee/favourite`, {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+        }
+    });
 
-async function theDomHasLoaded(e){
-    await loadMyFavouriteFilms()
-}
+    var favouriteFilms2 = await response.json()
 
-function pageFullyLoaded(e) {
-    loadMyFavs()
-}
+    console.log(response, 'loadmyFavs info ', favouriteFilms2.films)
 
-async function loadMyFavs() {
-    console.log('loadmyFavs info ', favouriteFilms2.films)
-
-    var films = document.getElementsByClassName('card_film')
-    for (let film of films) {
-        let filmId = parseInt(film.id)
-        console.log(filmId);
+    var film_cards = document.getElementsByClassName('card_film')
+    for (var film_card of film_cards) {
+        var filmId = parseInt(film_card.id)
+        // console.log(filmId);
         if (filmId in favouriteFilms2.films) {
-            film.style.display = 'block'
+            film_card.style.display = 'block'
         }
     }
 }
 
 
-
-
-async function loadMyFavouriteFilms() {
+function removeFilm(){
     console.log('hello');
-
-    let response = await fetch(`https://api.poff.ee/favourite`, {
-        method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-        }
-        // body: JSON.stringify(authenticationData)
-    });
-
-    favouriteFilms2 = await response.json()
-    // console.log(favouriteFilms2.films)
-    return favoriteFilms2
 }
+
+
