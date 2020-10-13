@@ -53,9 +53,14 @@ const ET = { // eventival translations
 const EVENTIVAL_REMAPPED = {}
 
 const s_person_id_by_e_fullname = (e_name, s_persons) => {
-    return s_persons.filter(s_person => {
+    const s_person = s_persons.filter(s_person => {
         return e_name === s_person.firstName + (s_person.lastName ? ' ' + s_person.lastName : '')
-    })[0].id
+    })[0]
+    if (s_person === undefined) {
+        console.log('cant locate', e_name);
+        return null
+    }
+    return s_person.id
 }
 const s_film_id_by_e_remote_id = (remote_id, s_films) => {
     return s_films.filter(s_film => {
@@ -130,7 +135,7 @@ const updateStrapi = async () => {
         strapi_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
         for (const e_name in crew_names) {
             let s_person = s_person_id_by_e_fullname(e_name, strapi_persons)
-            if (s_person === undefined) {
+            if (!s_person) {
                 let options = {
                     headers: { 'Content-Type': 'application/json' },
                     path: PERSONS_API,
@@ -209,11 +214,11 @@ const updateStrapi = async () => {
             }
             let options = {
                 headers: { 'Content-Type': 'application/json' },
-                path: FILMS_API,
+                path: FILMS_API + '/' + s_film.id,
                 method: 'PUT'
             }
+            // console.log(options, JSON.stringify(s_film, null, 2))
             let s_role = await strapiQuery(options, s_film)
-    // console.log(JSON.stringify(s_film, null, 2));
         }
     }
 
