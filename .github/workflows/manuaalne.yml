@@ -6,7 +6,7 @@ name: Manual workflow
 # or API.
 on:
     push:
-        branches: [ DeploymentTest ]
+        branches: [ master ]
     workflow_dispatch:
         inputs:
             slackUserId:
