@@ -114,6 +114,7 @@ for (cassetteIx in cassetteData) {
                     const imgFileName = path.basename(imgPath)
                     const url = `${strapiPath}${imgPath}`
                     const dest = path.join(filmImgDir, imgFileName)
+                    // console.log(film.title, film.dirSlug, url, dest);
                     parallelDownloads.push( downloadsMaker(url, dest) )
                 }
             }

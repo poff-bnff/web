@@ -103,8 +103,9 @@ header
                                         li
                                             a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
                 else
-                    li
-                        a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
+                    if mainMenuItem.customUrl
+                        li
+                            a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
             li.user_menu.dropdown
                 a

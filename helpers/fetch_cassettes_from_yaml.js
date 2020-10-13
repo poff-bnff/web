@@ -13,6 +13,9 @@ const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
+
+// console.log('LIMIT: ', CASSETTELIMIT);
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
 const whichScreeningTypesToFetch = ['regular', 'first screening']
@@ -24,9 +27,18 @@ const mapping = {
     'industry.poff.ee': 'industry',
     'shorts.poff.ee': 'shorts'
 }
-
+// STRAPIDATA_PROGRAMMES.map(programme => programme.id)
 const modelName = 'Cassette';
-const STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
+const STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
+    let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
+    if (cassette.tags && cassette.tags.programmes) {
+        let cassette_programme_ids = cassette.tags.programmes.map(programme => programme.id)
+        return cassette_programme_ids.filter(cp_id => programme_ids.includes(cp_id))[0] !== undefined
+    } else {
+        return false
+    }
+})
+
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -72,7 +84,10 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     // console.log(data);
     let slugMissingErrorNumber = 0
     let slugMissingErrorIDs = []
+    let limit = CASSETTELIMIT
+    let counting = 0
     for (const originalElement of STRAPIDATA_CASSETTE) {
+        if (limit !== 0 && counting === limit) break;
         const element = JSON.parse(JSON.stringify(originalElement))
 
         let slugEn = undefined
@@ -91,6 +106,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         // Ja siit
         }
         // Siiani
+        counting++
+
         if(typeof slugEn !== 'undefined') {
             element.dirSlug = slugEn
             element.directory = path.join(dirPath, slugEn)
@@ -153,9 +170,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru'];
             for (key in element) {
-
                 if (key == 'slug') {
                     element.path = `film/${element[key]}`;
+                    element.slug = `${element[key]}`;
                 }
 
                 if (typeof(element[key]) === 'object' && element[key] != null) {
@@ -163,12 +180,17 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 }
             }
 
+            if (element.path === undefined) {
+                element.path = `film/${slugEn}`;
+                element.slug = slugEn;
+            }
+
             // Cassette carousel pics
             if (element.media && element.media.stills && element.media.stills[0]) {
                 for (const stillIx in element.media.stills) {
                     let still = element.media.stills[stillIx]
                     if (still.hash && still.ext) {
-                        cassetteCarouselPicsCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${still.hash}${still.ext}`)
+                        cassetteCarouselPicsCassette.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                     }
                 }
             }
@@ -182,7 +204,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const posterIx in element.media.posters) {
                     let poster = element.media.posters[posterIx]
                     if (poster.hash && poster.ext) {
-                        cassettePostersCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${poster.hash}${poster.ext}`)
+                        cassettePostersCassette.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                     }
                 }
             }
@@ -195,12 +217,12 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (filmIx in element.films) {
                     let film = element.films[filmIx]
                     let filmSlugEn = film.slug_en
+
                     if (!filmSlugEn) {
-                        filmSlugEn = film.slug_et
+                        filmSlugEn = film.slug
                     }
-                    rueten(film, lang)
                     if (typeof filmSlugEn !== 'undefined') {
-                        film.dirSlug = slugEn
+                        film.dirSlug = filmSlugEn
                     }
 
                     // Film carousel pics
@@ -209,7 +231,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let still = film.media.stills[stillIx]
                             if (still.hash && still.ext) {
                                 if (still.hash.substring(0, 4) === 'F_1_') {
-                                    cassetteCarouselPicsFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}`)
+                                    cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                                 }
                             }
                         }
@@ -224,7 +246,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         for (const posterIx in film.media.posters) {
                             let poster = film.media.posters[posterIx]
                             if (poster.hash && poster.ext) {
-                                    cassettePostersFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${poster.hash}${poster.ext}`)
+                                    cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                             }
                         }
                     }
@@ -265,6 +287,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
+                rueten(element.films, lang)
             }
 
 
