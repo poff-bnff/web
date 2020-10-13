@@ -27,9 +27,18 @@ const mapping = {
     'industry.poff.ee': 'industry',
     'shorts.poff.ee': 'shorts'
 }
-
+// STRAPIDATA_PROGRAMMES.map(programme => programme.id)
 const modelName = 'Cassette';
-const STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
+const STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
+    let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
+    if (cassette.tags && cassette.tags.programmes) {
+        let cassette_programme_ids = cassette.tags.programmes.map(programme => programme.id)
+        return cassette_programme_ids.filter(cp_id => programme_ids.includes(cp_id))[0] !== undefined
+    } else {
+        return false
+    }
+})
+
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -181,7 +190,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const stillIx in element.media.stills) {
                     let still = element.media.stills[stillIx]
                     if (still.hash && still.ext) {
-                        cassetteCarouselPicsCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${still.hash}${still.ext}`)
+                        cassetteCarouselPicsCassette.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                     }
                 }
             }
@@ -195,7 +204,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const posterIx in element.media.posters) {
                     let poster = element.media.posters[posterIx]
                     if (poster.hash && poster.ext) {
-                        cassettePostersCassette.push(`/assets/img/dynamic/img_films/${element.dirSlug}/${poster.hash}${poster.ext}`)
+                        cassettePostersCassette.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                     }
                 }
             }
@@ -222,7 +231,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let still = film.media.stills[stillIx]
                             if (still.hash && still.ext) {
                                 if (still.hash.substring(0, 4) === 'F_1_') {
-                                    cassetteCarouselPicsFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}`)
+                                    cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                                 }
                             }
                         }
@@ -237,7 +246,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         for (const posterIx in film.media.posters) {
                             let poster = film.media.posters[posterIx]
                             if (poster.hash && poster.ext) {
-                                    cassettePostersFilms.push(`/assets/img/dynamic/img_films/${film.dirSlug}/${poster.hash}${poster.ext}`)
+                                    cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                             }
                         }
                     }
