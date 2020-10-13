@@ -242,10 +242,10 @@ each film in self.films
                         each val, index in film.media.stills
                             if index == 0
                                 .carousel-item.active.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
                             else
                                 .carousel-item.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${val.hash}${val.ext}` alt = self.title)
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
                     else
                         .carousel-item.active.container_contents_16_9
                             img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
@@ -370,7 +370,7 @@ each film in self.films
                 //-     each still in film.media.stills
                 //-         if still.hash && still.ext
                 //-             div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
-                //-                 img(src=`/assets/img/dynamic/img_films/${film.dirSlug}/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
+                //-                 img(src=`https://assets.poff.ee/img/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
                 //- else
                 //-     div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
                 //-         img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
