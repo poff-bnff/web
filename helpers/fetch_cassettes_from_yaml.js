@@ -13,6 +13,9 @@ const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
+
+// console.log('LIMIT: ', CASSETTELIMIT);
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
 const whichScreeningTypesToFetch = ['regular', 'first screening']
@@ -72,7 +75,10 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     // console.log(data);
     let slugMissingErrorNumber = 0
     let slugMissingErrorIDs = []
+    let limit = CASSETTELIMIT
+    let counting = 0
     for (const originalElement of STRAPIDATA_CASSETTE) {
+        if (limit !== 0 && counting === limit) break;
         const element = JSON.parse(JSON.stringify(originalElement))
 
         let slugEn = undefined
@@ -91,6 +97,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         // Ja siit
         }
         // Siiani
+        counting++
+
         if(typeof slugEn !== 'undefined') {
             element.dirSlug = slugEn
             element.directory = path.join(dirPath, slugEn)
@@ -153,14 +161,19 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru'];
             for (key in element) {
-
                 if (key == 'slug') {
                     element.path = `film/${element[key]}`;
+                    element.slug = `${element[key]}`;
                 }
 
                 if (typeof(element[key]) === 'object' && element[key] != null) {
                     // makeCSV(element[key], element, lang);
                 }
+            }
+
+            if (element.path === undefined) {
+                element.path = `film/${slugEn}`;
+                element.slug = slugEn;
             }
 
             // Cassette carousel pics
@@ -195,12 +208,12 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (filmIx in element.films) {
                     let film = element.films[filmIx]
                     let filmSlugEn = film.slug_en
+
                     if (!filmSlugEn) {
-                        filmSlugEn = film.slug_et
+                        filmSlugEn = film.slug
                     }
-                    rueten(film, lang)
                     if (typeof filmSlugEn !== 'undefined') {
-                        film.dirSlug = slugEn
+                        film.dirSlug = filmSlugEn
                     }
 
                     // Film carousel pics
@@ -265,6 +278,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
+                rueten(element.films, lang)
             }
 
 

@@ -682,20 +682,21 @@ FilmMedia: &FilmMedia
     QaClip: #(Component (repeatable))
         - *QaClip
 
-RolesAtFilm: &RolesAtFilm
+RoleAtFilm: &RoleAtFilm
     _path: /role-at-films
     roleNamePrivate: (text)
     roleName: *Translated #(Component)
     order: (Number)
+    remoteId: (UID)
 
 RolePerson: &RolePerson
     order: (Number)
-    role_at_film: *RolesAtFilm
+    role_at_film: *RoleAtFilm
     person: *Person
 
 RoleCompany: &RoleCompany
     order: (Number)
-    role_at_film: *RolesAtFilm
+    role_at_film: *RoleAtFilm
     organisation: *Organisation
 
 Credentials: &Credentials
