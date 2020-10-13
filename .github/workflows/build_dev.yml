@@ -71,4 +71,4 @@ jobs:
           with:
             slackUserId: ${{ github.event.inputs.slackUserId }}
             privateChannel: ${{ github.event.inputs.privateChannel  }}
-        if: always()
+          if: always()

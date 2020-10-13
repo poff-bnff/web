@@ -26,10 +26,10 @@ jobs:
     - name: Tagasiside
       run: echo "${{ github.event.inputs.userName }} vajutas nuppu"
 
-     - name: feedback to slack
-          id: feedback
-          uses: marianntapfer/post-to-slack@master
-          with:
-            slackUserId: ${{ github.event.inputs.slackUserId }}
-            privateChannel: ${{ github.event.inputs.privateChannel  }}
-        if: always()
+    - name: feedback to slack
+      id: feedback
+      uses: marianntapfer/post-to-slack@master
+      with:
+        slackUserId: ${{ github.event.inputs.slackUserId }}
+        privateChannel: ${{ github.event.inputs.privateChannel  }}
+      if: always()
