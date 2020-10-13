@@ -473,6 +473,12 @@ const remapEventival = () => {
             }
         }).map(subLang => subLang.id.toString())
 
+        const scr_location = STRAPIDATA.Location.filter((s_scrLocation) => {
+            if(e_screening.venue_id) {
+                return e_screening.venue_id === s_scrLocation.remoteId.toString()
+            }
+        }).map(s_scrLocation => s_scrLocation.id.toString())
+
         let screening_out = {
             code: e_screening.code.toString().padStart(6, "0"),
             codeAndTitle: e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local,
@@ -496,9 +502,9 @@ const remapEventival = () => {
             //     // clipUrl: (text)
             // }],
             durationTotal: e_screening.complete_duration_minutes.toString(),
-            // location: {
-            //     // id: , venue id, strapis location remoteId kui screening online saal siis mode online
-            // },
+            location: {
+                id: scr_location, //kui screening online saal siis mode online
+            },
             // extraInfo: {
             //     et: 'text',
             //     en: 'text',
