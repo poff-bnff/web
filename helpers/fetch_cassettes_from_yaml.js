@@ -39,7 +39,6 @@ const STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
     }
 })
 
-
 const allLanguages = ["en", "et", "ru"];
 
 
@@ -91,21 +90,18 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         const element = JSON.parse(JSON.stringify(originalElement))
 
         let slugEn = undefined
-        // Siit
-        if(element.films && element.films.length === 1) {
+        if (element.films && element.films.length === 1) {
             slugEn = element.films[0].slug_en
             if (!slugEn) {
                 slugEn = element.films[0].slug_et
             }
-        } else {
-        // Siiani
+        }
+        if(!slugEn) {
             slugEn = element.slug_en
             if (!slugEn) {
                 slugEn = element.slug_et
             }
-        // Ja siit
         }
-        // Siiani
         counting++
 
         if(typeof slugEn !== 'undefined') {
@@ -128,8 +124,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     let programme = element.tags.programmes[programmeIx];
 
                     let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
-                    if (typeof programmeFromYAML[0] !== 'undefined') {
-                        element.tags.programmes[programmeIx] = programmeFromYAML[0];
+                    if (typeof programmeFromYAML !== 'undefined' && programmeFromYAML[0]) {
+                        element.tags.programmes[programmeIx] = JSON.parse(JSON.stringify(programmeFromYAML[0]))
+                        // console.log(element.tags.programmes[programmeIx]);
                     }
                 }
             }
@@ -264,7 +261,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let programme = film.tags.programmes[programmeIx];
                             let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
                             if (typeof programmeFromYAML[0] !== 'undefined') {
-                                film.tags.programmes[programmeIx] = programmeFromYAML[0];
+                                film.tags.programmes[programmeIx] = JSON.parse(JSON.stringify(programmeFromYAML[0]))
                             }
                         }
                     }
@@ -278,8 +275,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             if (rolePerson !== undefined) {
                                 if (rolePerson.person && rolePerson.person.id) {
                                     let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
-
-                                    rolePerson.person = rueten(personFromYAML[0], lang);
+                                    let personCopy = JSON.parse(JSON.stringify(personFromYAML[0]))
+                                    rolePerson.person = rueten(personCopy, lang);
 
                                     if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
                                         rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`] = []
@@ -307,7 +304,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 // console.log(util.inspect(element, {showHidden: false, depth: null}))
                 generateYaml(element, lang, copyFile, allData)
             } else {
-                console.log('Skipped cassette ', element.id, ', as none of screening types are ', whichScreeningTypesToFetch.join(', '));
+                console.log('Skipped cassette ', element.id, ' slug ', element.slug,', as none of screening types are ', whichScreeningTypesToFetch.join(', '));
             }
 
         } else {
@@ -320,6 +317,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     if(slugMissingErrorNumber > 0) {
         console.log(`Notification! Value of slug_en or slug_et missing for total of ${slugMissingErrorNumber} cassettes with ID's ${slugMissingErrorIDs.join(', ')}`);
     }
+    generateAllDataYAML(allData, lang)
 }
 
 function generateYaml(element, lang, copyFile, allData){
@@ -343,10 +341,14 @@ function generateYaml(element, lang, copyFile, allData){
 
     }
 
-    let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-
-    fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
+    // let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+    // fs.writeFileSync(path.join(fetchDir, `cassettes2.${lang}.yaml`), allDataYAML, 'utf8')
 }
 
+function generateAllDataYAML(allData, lang){
+    let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+    fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
+    console.log('Ready for building are ', allData.length, ' cassettes');
+}
 
 fetchAllData();
