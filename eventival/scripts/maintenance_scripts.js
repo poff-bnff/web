@@ -1,3 +1,4 @@
+const { timeout } = require("async")
 const { strapiQuery } = require("../../helpers/strapiQuery.js")
 
 const STRAPI_URL = 'http://139.59.130.149'
@@ -19,6 +20,7 @@ const STRAPI_UPDATE_PERSONS_OPTIONS = {
     method: 'PUT'
 }
 
+
 const foo = async () => {
     strapi_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
     for (const s_person of strapi_persons) {
@@ -26,12 +28,21 @@ const foo = async () => {
         if (s_person.firstNameLastName === firstNameLastName) {
             continue
         }
+        console.log( s_person.firstNameLastName, '=', firstNameLastName );
+        // console.log(JSON.stringify(s_person, null, 2));
         s_person.firstNameLastName = firstNameLastName
-        let options = STRAPI_UPDATE_PERSONS_OPTIONS
+        let options =  {
+            headers: { 'Content-Type': 'application/json' },
+            path: PERSONS_API + '/?',
+            method: 'PUT'
+        }
         options.path = options.path.replace('?', s_person.id)
+        // console.log(options, JSON.stringify(s_person, null, 2));
         await strapiQuery(options, s_person)
-        console.log( s_person.firstNameLastName, '=', s_person.firstName, '+', s_person.lastName );
     }
 }
 
 foo()
+
+
+// console.log(null || '')
