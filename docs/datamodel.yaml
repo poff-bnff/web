@@ -587,6 +587,7 @@ KinoffiMenu: &KinoffiMenu
 # Person & Team
 Person: &Person
     _path: /people
+    remoteId: (e_person_id)
     firstName: (text)
     lastName: (text)
     picture: *StrapiMedia #(Component)
