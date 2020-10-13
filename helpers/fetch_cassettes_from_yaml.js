@@ -156,6 +156,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     if(!screening.screening_types.map(screeningNames).some(ai => whichScreeningTypesToFetch.includes(ai.toLowerCase()))) {
                         continue
                     }
+                    // Kui vähemalt üks screeningtype õige, siis hasOneCorrectScreening = true
+                    // - st ehitatakse
+                    var hasOneCorrectScreening = true
 
                     delete screening.cassette;
                     screenings.push(rueten(screening, lang))
@@ -298,19 +301,14 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
 
 
-
-            allData.push(element);
-            element.data = dataFrom;
-
-
-
-
-            // console.log(util.inspect(element, {showHidden: false, depth: null}))
-
-
-
-
-            generateYaml(element, lang, copyFile, allData)
+            if (hasOneCorrectScreening === true) {
+                allData.push(element);
+                element.data = dataFrom;
+                // console.log(util.inspect(element, {showHidden: false, depth: null}))
+                generateYaml(element, lang, copyFile, allData)
+            } else {
+                console.log('Skipped cassette ', element.id, ', as none of screening types are ', whichScreeningTypesToFetch.join(', '));
+            }
 
         } else {
             if(showErrors) {
