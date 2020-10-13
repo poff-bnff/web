@@ -5,10 +5,6 @@ on:
         types: [ published ]
         branches: [ staging_shorts ]
     workflow_dispatch:
-        inputs:
-            userName:
-                description: 'Person who pushed the button'
-                required: true
 
 jobs:
     deploy:
@@ -30,10 +26,3 @@ jobs:
                 slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
             if: always()
 
-        # - name: feedback to slack
-        #   id: feedback
-        #   uses: marianntapfer/post-to-slack@master
-        #   with:
-        #     slackUserId: ${{ github.event.inputs.slackUserId }}
-        #     privateChannel: ${{ github.event.inputs.privateChannel  }}
-        # if: always()
