@@ -25,9 +25,9 @@ jobs:
     - name: feedback to slack
       id: feedback
       uses: marianntapfer/post-to-slack@master
-      with:
-        # slackUserId: ${{ github.event.inputs.slackUserId }}
-        # privateChannel: ${{ github.event.inputs.privateChannel  }}
+    #   with:
+    #     slackUserId: ${{ github.event.inputs.slackUserId }}
+    #     privateChannel: ${{ github.event.inputs.privateChannel  }}
       if: always()
 
     # Use the output from the `feedback` step
