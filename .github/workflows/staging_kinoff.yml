@@ -60,7 +60,7 @@ jobs:
             slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
           if: always()
 
-        # - name: feedback to slack
-        #   id: feedback
-        #   uses: marianntapfer/post-to-slack@master
-        #   if: always()
+        - name: feedback to slack
+          id: feedback
+          uses: marianntapfer/post-to-slack@master
+          if: always()

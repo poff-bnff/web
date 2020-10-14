@@ -22,13 +22,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-    - name: feedback to slack
-      id: feedback
-      uses: marianntapfer/post-to-slack@master
+    -   name: feedback to slack
+        id: feedback
+        uses: marianntapfer/post-to-slack@master
     #   with:
     #     slackUserId: ${{ github.event.inputs.slackUserId }}
     #     privateChannel: ${{ github.event.inputs.privateChannel  }}
-      if: always()
+        if: always()
 
     # Use the output from the `feedback` step
     # - name: Get the output
