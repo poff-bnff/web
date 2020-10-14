@@ -331,10 +331,17 @@ main.grid_film
                                                 span.screening_info_label= self.label.screening.Name
                                                 span.screening_info_value= screening.codeAndTitle
                                         //- if screening.screeningSubtitles
-                                        if film.screeningSubtitles
+
+                                        if film.subtitles
+                                            - var subtitlesNames = function(item) {
+                                            -   if(item.name) {
+                                            -       var itemNames = item.name
+                                            -       return itemNames
+                                            -   }
+                                            - }
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.screeningSubtitles
-                                                span.screening_info_value= screening.screeningSubtitles
+                                                span.screening_info_label= self.label.screening.Subtitles
+                                                span.screening_info_value= film.subtitles.map(subtitlesNames).join(', ')
                                         if screening.screeningIntroGuests
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.screeningIntroGuests

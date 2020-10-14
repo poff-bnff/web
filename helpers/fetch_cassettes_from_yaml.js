@@ -15,11 +15,12 @@ const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const STRAPIDATA_FILMS = STRAPIDATA['Film'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
+const CHECKPROGRAMMES = false
 
 // console.log('LIMIT: ', CASSETTELIMIT);
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
-const whichScreeningTypesToFetch = ['regular', 'first screening']
+const whichScreeningTypesToFetch = ['first screening']
 
 const mapping = {
     'poff.ee': 'poff',
@@ -30,15 +31,25 @@ const mapping = {
 }
 // STRAPIDATA_PROGRAMMES.map(programme => programme.id)
 const modelName = 'Cassette';
-const STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
-    let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
-    if (cassette.tags && cassette.tags.programmes) {
-        let cassette_programme_ids = cassette.tags.programmes.map(programme => programme.id)
-        return cassette_programme_ids.filter(cp_id => programme_ids.includes(cp_id))[0] !== undefined
-    } else {
-        return false
+
+if(CHECKPROGRAMMES) {
+    let cassettesWithOutProgrammes = []
+    var STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
+        let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
+        if (cassette.tags && cassette.tags.programmes) {
+            let cassette_programme_ids = cassette.tags.programmes.map(programme => programme.id)
+            return cassette_programme_ids.filter(cp_id => programme_ids.includes(cp_id))[0] !== undefined
+        } else {
+            cassettesWithOutProgrammes.push(cassette.id)
+            return false
+        }
+    })
+    if (cassettesWithOutProgrammes.length) {
+        console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no programmes');
     }
-})
+} else {
+    var STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
+}
 
 const allLanguages = ["en", "et", "ru"];
 
