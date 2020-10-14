@@ -33,17 +33,19 @@ footer
                     if item.image
                         img.footer_logo_item_1(alt=item.name data-src=`/assets/img/dynamic/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/dynamic/img_footer/${item.image.hash}${item.image.ext}`)
                     if item.text
-                        if typeof(item.text) !== 'object'
-                            +format(item.text).footer_h
-                        else
-                            p.footer_h
-                                | !{item.text}
+                        .footer_row_item_text
+                            if typeof(item.text) !== 'object'
+                                +format(item.text).footer_h
+                            else
+                                p.footer_h
+                                    | !{item.text}
 
 
 
     if self.footer.supporters
+        - var sortedSupportersCat = self.footer.supporters.sort(function(a, b){ return a.order-b.order })
         section.supporters_footer
-            each supporters in self.footer.supporters
+            each supporters in sortedSupportersCat
                 row
                     if supporters.name && (typeof(supporters.name) !== 'object')
                         h1.section_headline_footer= supporters.name

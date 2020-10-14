@@ -206,13 +206,18 @@ main.grid_cassette
 
                         .btn-group(role='group' aria-label='')
 
-                            if screening.screening_mode && screening.screening_mode.name && screening.ticketingId && screening.ticketingUrl && screening.screening_mode.name === 'Online'
-                                if screening.bookingUrl
-                                    a.btn.btn_secondary.active(href= screening.bookingUrl role='button') BOOKINGLABEL!
+                            //- if screening.screening_mode && screening.screening_mode.name && screening.ticketingId && screening.ticketingUrl && screening.screening_mode.name === 'Online'
+                            //-     if screening.bookingUrl
+                            //-         a.btn.btn_secondary.active(href= screening.bookingUrl role='button') BOOKINGLABEL!
+                            //-     a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
+                            //- if screening.screeningTown === 'Tartu'
+                            //-     a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
+                            //-     a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
+
+                            if screening.bookingUrl
+                                a.btn.btn_secondary.active(href= screening.bookingUrl role='button')= self.label.button.screeningReservation
+                            if screening.ticketingUrl && screening.ticketingId
                                 a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
-                            if screening.screeningTown === 'Tartu'
-                                a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
-                                a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
 h1.section_headline.padding_top_4.padding_bottom_2= self.label.menu.mainFilms
 
@@ -297,15 +302,17 @@ if self.films
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                    if film.countriesAndLanguages && film.countriesAndLanguages.countries
+                    if film.countries
                         - var countriesNames = function(item) {
-                        -   var itemNames = item.name
-                        -   return itemNames
+                        -   if(item.name) {
+                        -       var itemNames = item.name
+                        -       return itemNames
+                        -   }
                         - }
 
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            .str_info_value= film.countriesAndLanguages.countries.map(countriesNames).join(', ')
+                            .str_info_value= film.countries.map(countriesNames).join(', ')
 
                     if film.year
                         .str_info_grid_3
@@ -424,20 +431,23 @@ if self.films
                                 .str_info_label= self.label.film.production
                                 .str_info_value= film.ProductionCompanyCSV
             section.f_runtime_box
-                if film.countriesAndLanguages && film.countriesAndLanguages.languages
-                    - var languagesNames = function(item) {
-                    -   var itemNames = item.name
-                    -   return itemNames
-                    - }
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.languages
-                        .str_info_value= film.countriesAndLanguages.languages.map(languagesNames).join(', ')
 
                 if film.runtime
                     .str_info_grid_3
                         .str_info_label= self.label.film.runtime
                         .str_info_value
                             +dur(film.runtime)
+
+                if film.languages
+                    - var languagesNames = function(item) {
+                    -   if(item.name) {
+                    -       var itemNames = item.name
+                    -       return itemNames
+                    -   }
+                    - }
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.languages
+                        .str_info_value= film.languages.map(languagesNames).join(', ')
             //- section.f_interactive_box
             //-     .f_interactive_item
             //-         p
