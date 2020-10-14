@@ -79,12 +79,12 @@ breakpoint-xs = 0
 font_h = 'Fira Sans Extra Condensed', sans-serif
 // font_h = 'Sofia Pro Condensed', sans-serif
 
-font_p = 'Source Sans Pro', sans-serif
+// font_p = 'Source Sans Pro', sans-serif
 // font_p = 'Barlow', sans-serif
 // font_p = 'Roboto', sans-serif
 // font_p = 'Lato', sans-serif
 // font_p = 'Barlow Semi Condensed', sans-serif
-// font_p = 'Source Serif Pro', serif
+font_p = 'Source Serif Pro', serif
 // font_p = 'EB Garamond', serif
 // font_p = 'Open Sans', serif
 // font_p = 'Scheherazade', serif
@@ -333,6 +333,14 @@ footer
     justify-self center
     align-self start
     text-align center
+
+.footer_row_item_text
+    font-family font_h
+    text-align left
+    font-size 1rem
+    color white_96
+    padding-left 2rem
+    padding-right 2rem
 
 .footer_h
     // display inline
@@ -778,6 +786,16 @@ a .dark:hover
 // .viieka_item:nth-child(5)
 //     grid-column span 2
 
+.kuueka_item
+    width 100%
+    height 100%
+    background rgba(255,255,255,.96)
+    text-align left
+    // padding 2rem 2rem 2rem 2rem
+    padding 0
+    margin 0
+    border .5px solid clr_grey_light
+
 .viieka_body
     margin 0
     padding 1rem 1rem 1rem 1rem
@@ -966,6 +984,51 @@ row:nth-child(9) > .supporter_logos
     grid-gap 4rem
 
 row:nth-child(10) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(11) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(12) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(13) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(14) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(15) > .supporter_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
     grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
@@ -1244,6 +1307,21 @@ header
     height 100%
     object-fit cover
 
+.container_frame_poster
+    position relative
+    height 0
+    overflow hidden
+    padding-top 144%
+    background bg_dark_4
+
+.container_contents_poster
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
 .svg_icon_prev_next
     height calc(1.5rem + 0.1vw)
     width calc(1.5rem + 0.1vw)
@@ -1377,9 +1455,13 @@ p a
   align-self end
 
 .str_info_grid_3
-  display grid
-  grid-template-columns 1fr 2fr
-  grid-gap 2rem
+    display grid
+    grid-template-columns 1fr 2fr
+    grid-gap 2rem
+
+.str_info_grid_3_films
+    display grid
+    grid-template-columns 1fr 2fr
 
 .str_info_label,
 .str_info_meta_label
@@ -1510,9 +1592,11 @@ a.btn_popover
 /* SCREENINGS */
 
 .card_screening
-  max-width 100%
-  margin-left 0
-  margin-right 0
+    min-width 360px
+    max-width 100%
+    margin-left 0
+    margin-right 0
+    margin-bottom 2rem!important
 //   margin-top calc(3rem + 1vw)
 
 .grid_container_screening_time
@@ -1579,10 +1663,12 @@ a.btn_popover
 
 .btn_secondary
   background-color bg_dark_4
-  color white_semi
+  color white_96
   border-radius 0
   text-transform uppercase
-//   display none
+  &:hover
+      color poff_orange
+
 
 .btn_primary
   background-color clr_primary
@@ -2126,6 +2212,22 @@ a.btn_popover
     .viieka_item:nth-child(5)
         grid-column span 2
 
+    .kuuekas
+        width 100vw
+        display grid
+        grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+        grid-template-rows auto
+        padding 0
+        margin 0
+        grid-gap 1rem
+        padding-left 2rem
+        padding-right 2rem
+        justify-content center
+        align-content center
+        justify-items stretch
+        align-items stretch
+        background-color bg_color_1
+
     // .hero_headline_box
     //     position absolute
     //     bottom 0
@@ -2266,7 +2368,7 @@ a.btn_popover
         display grid
         grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
         grid-template-rows auto
-        grid-gap 1rem
+        grid-gap 3rem
         justify-items center
         align-items center
         background-color bg_dark_1
@@ -2427,10 +2529,11 @@ a.btn_popover
         margin 0
 
     .card_screening
-        min-width 300px
-        max-width 400px
+        min-width 400px
+        max-width 450px
         margin-left 1vw
         margin-right 1vw
+        margin-bottom 2rem
 
     .article_hero_head
         position relative
