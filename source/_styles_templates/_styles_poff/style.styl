@@ -829,7 +829,8 @@ a .dark:hover
 row:first-child > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
-    grid-template-rows 5rem
+    grid-auto-rows minmax(4rem, 5rem)
+    // grid-template-rows 3.6rem
     justify-content center
     justify-items center
     align-items center
@@ -838,7 +839,7 @@ row:first-child > .footer_logos
 row:nth-child(2) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
-    grid-template-rows 3.6rem
+    grid-auto-rows minmax(3rem, 4rem)
     justify-content center
     justify-items center
     align-items center
@@ -847,7 +848,7 @@ row:nth-child(2) > .footer_logos
 row:nth-child(3) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
-    grid-template-rows 3.6rem
+    grid-auto-rows minmax(3rem, 4rem)
     justify-content center
     justify-items center
     align-items center
@@ -856,7 +857,7 @@ row:nth-child(3) > .footer_logos
 row:nth-child(4) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
-    grid-template-rows 3rem
+    grid-auto-rows minmax(2rem, 3rem)
     justify-content center
     justify-items center
     align-items center
@@ -865,7 +866,7 @@ row:nth-child(4) > .footer_logos
 row:nth-child(5) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
-    grid-template-rows 3rem
+    grid-auto-rows minmax(2rem, 3rem)
     justify-content center
     justify-items center
     align-items center
@@ -874,7 +875,7 @@ row:nth-child(5) > .footer_logos
 row:nth-child(6) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
-    grid-template-rows 3rem
+    grid-auto-rows minmax(2rem, 3rem)
     justify-content center
     justify-items center
     align-items center
@@ -992,6 +993,51 @@ row:nth-child(9) > .supporter_logos
     grid-gap 4rem
 
 row:nth-child(10) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(11) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(12) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(13) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(14) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(15) > .supporter_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
     grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
@@ -1404,9 +1450,13 @@ p a
   align-self end
 
 .str_info_grid_3
-  display grid
-  grid-template-columns 1fr 2fr
-  grid-gap 2rem
+    display grid
+    grid-template-columns 1fr 2fr
+    grid-gap 2rem
+
+.str_info_grid_3_films
+    display grid
+    grid-template-columns 1fr 2fr
 
 .str_info_label,
 .str_info_meta_label
@@ -1831,8 +1881,21 @@ a.btn_popover
         // margin-left -1rem
         // margin-right -1rem
         width 100vw
+    h1
+        padding-top 1.618rem
+        font-weight 500
+    h2
+        padding-top 1.618rem
+        font-weight 500
+    h3
+        padding-top 1.618rem
+        font-weight 500
     h4
         padding-top 1.618rem
+        font-weight 500
+    h5
+        padding-top 1.618rem
+        font-weight 500
     h6
         font-family font_p
         font-size 1rem
