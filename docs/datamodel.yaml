@@ -743,7 +743,8 @@ Cassette: &Cassette
     title_ru: (text)
     synopsis: *Translated #(Rich text)
     media: *FilmMedia #(Component)
-    festival_edition: *FestivalEdition
+    festival_editions:
+        - *FestivalEdition
     tags: *Tags
     slug_et: (UID)
     slug_en: (UID)
@@ -753,6 +754,7 @@ Cassette: &Cassette
     films:
         - *Film
     remoteId: (UID)
+
 
 IntroConversationQandA: &IntroConversationQandA
     yesNo: (Boolean)
