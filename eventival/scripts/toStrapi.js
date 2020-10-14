@@ -276,6 +276,12 @@ const remapEventival = () => {
             }
         }).map(e => { return {id: e.id.toString()} })
 
+        const f_trailer = STRAPIDATA.Film.filter((s_film) => {
+            if(e_film.film_info && e_film.film_info.online_trailer_url) {
+                return e_film.ids.system_id === s_film.remoteId
+            }
+        }).map(e => { return {url: e.film_info.online_trailer_url }}) //, { source: }}
+
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories ? true : false
         const f_festivalEditions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
         // console.log( 'f_festivalEditions', if_categorization, f_festivalEditions );
@@ -314,6 +320,12 @@ const remapEventival = () => {
             countries: f_country,
             languages: f_language,
             subtitles: f_subLang,
+            media: {
+                trailer: f_trailer,
+                // stills: [{ StrapiMedia}],
+                // posters: [{StrapiMedia}],
+                // QaClip: [{url: '0'}, {type: '0'}]
+            }
             // credentials: {
             //     rolePerson: f_role_persons,
             // }
