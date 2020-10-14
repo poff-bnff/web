@@ -262,6 +262,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
                             if (typeof programmeFromYAML[0] !== 'undefined') {
                                 film.tags.programmes[programmeIx] = JSON.parse(JSON.stringify(programmeFromYAML[0]))
+                            } else {
+                                console.log('Error! Programme with ID ', programme.id, ', under film with ID ', film.id, ' - domain ', DOMAIN, ' probably not assigned to this programme!');
                             }
                         }
                     }

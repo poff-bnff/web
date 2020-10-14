@@ -21,12 +21,12 @@ const STRAPIDATA_SIXFILMS = STRAPIDATA
 
 const languages = ['en', 'et', 'ru']
 
-
+var failing = false
 for (const lang of languages) {
     if (STRAPIDATA_SIXFILMS.length < 1) {
         console.log(`ERROR! No data to fetch for ${DOMAIN} six films`)
         const outFile = path.join(fetchDir, `sixfilms.${lang}.yaml`)
-        fs.writeFileSync(outFile, '', 'utf8')
+        fs.writeFileSync(outFile, '[]', 'utf8')
         continue
     }
     console.log(`Fetching ${DOMAIN} six films ${lang} data`)
@@ -38,13 +38,20 @@ for (const lang of languages) {
             if (key === `cassettes_${lang}`) {
                 for (cassetteIx in copyData[key]) {
                     let thisCassette = copyData[key][cassetteIx]
-                    const cassetteYAMLPath = path.join(fetchDir, `cassettes.${lang}.yaml`)
-                    const CASSETTESYAML = yaml.safeLoad(fs.readFileSync(cassetteYAMLPath, 'utf8'))
+                    let cassetteYAMLPath = path.join(fetchDir, `cassettes.${lang}.yaml`)
+                    let CASSETTESYAML = yaml.safeLoad(fs.readFileSync(cassetteYAMLPath, 'utf8'))
                     let thisCassetteFromYAML = CASSETTESYAML.filter( (a) => { return thisCassette.id === a.id })[0];
-                    if (thisCassetteFromYAML !== undefined && thisCassetteFromYAML.data) {
-                        delete thisCassetteFromYAML.data
+                    if(thisCassetteFromYAML !== undefined) {
+                        var thisCassetteFromYAMLCopy = JSON.parse(JSON.stringify(thisCassetteFromYAML));
+                    } else {
+                        console.log('ERROR! Cassette ID ', thisCassette.id, ' not associated with domain ', DOMAIN, ', sixfilms not built!')
+                        failing = true
+                        continue
                     }
-                    copyData[key][cassetteIx] = thisCassetteFromYAML
+                    // if (thisCassetteFromYAMLCopy !== undefined && thisCassetteFromYAMLCopy.data) {
+                    //     delete thisCassetteFromYAMLCopy.data
+                    // }
+                    copyData[key][cassetteIx] = thisCassetteFromYAMLCopy
                 }
             // Teistes keeltes kassett kustutatakse
             } else if (key !== `cassettes_${lang}` && key.substring(0, 10) === `cassettes_`) {
@@ -54,7 +61,7 @@ for (const lang of languages) {
         }
     }
     rueten(copyData, lang)
-    if (copyData[0] === undefined) {
+    if (failing || copyData === undefined) {
         var allDataYAML = yaml.safeDump([], { 'noRefs': true, 'indent': '4' })
     } else {
         var allDataYAML = yaml.safeDump(copyData, { 'noRefs': true, 'indent': '4' })
