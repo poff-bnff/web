@@ -30,11 +30,13 @@ block content
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
                     .card_film_info
-                        each p, locale in self.otherLocalePaths
-                            if cassette[`title_${locale}`]
-                                .str_info_grid_3
-                                    .str_info_label.dark_1= self.label.film[`title_${locale}`]
-                                    .str_info_value.dark_1= cassette[`title_${locale}`]
+                        //- .str_info_grid_3
+                        //-     if cassette.tags && cassette.tags.programmes
+                        //-         each programme in cassette.tags.programmes
+                        //-             if programme.name
+                        //-                 - var pr_name = programme.name
+                        //-                 .str_info_label.dark_semi= self.label.film.programme
+                        //-                 .str_info_value.dark_1= pr_name
                         //- if cassette.credentials.director
                         //-     .str_info_grid_3
                         //-         .str_info_label= self.label.cassette.director
