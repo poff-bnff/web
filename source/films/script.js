@@ -1,7 +1,18 @@
 document.addEventListener("DOMContentLoaded", loadMyFavouriteFilms1, false);
 
+
 async function loadMyFavouriteFilms1(e) {
     console.log('ins');
+
+    if (localStorage.getItem('ACCESS_TOKEN') === null){
+        return
+    }
+
+    var film_cards = document.getElementsByClassName('card_film')
+    for (let i of film_cards){
+        document.getElementById(i.id + 'nupp').style.display = 'block'
+    }
+
     let addBtnfilmCard
 
     var response = await fetch(`https://api.poff.ee/favourite`, {
@@ -16,17 +27,9 @@ async function loadMyFavouriteFilms1(e) {
 
     for (let favouriteFilm of favouriteFilms.films){
         addBtnfilmCard = document.getElementById(favouriteFilm + 'nupp')
+        addBtnfilmCard.style.display = 'block'
         addBtnfilmCard.innerHTML = 'FAVO'
     }
-
-
-    // for (var film_card of film_cards) {
-    //     var filmId = film_card.id
-
-    //     if (favouriteFilms.films.includes(filmId)) {
-    //         film_card.style.display = 'block'
-    //     }
-    // }
 }
 
 
@@ -45,7 +48,6 @@ async function saveAsFavorite(movieId) {
                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
             }
         });
-        // console.log(await response.json())
         let reply = await response.json()
 
         if (reply.result === 'success') {

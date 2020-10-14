@@ -30,7 +30,7 @@ block content
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
                             .nupp
-                                p(id= cassette.id+'nupp' style={color: 'red'} onclick=`saveAsFavorite(${cassette.id});return false`) +
+                                p(id= cassette.id+'nupp' style={color: 'red', display:'none'} onclick=`saveAsFavorite(${cassette.id});return false`) +
                     .card_film_info
                         //- .str_info_grid_3
                         //-     if cassette.tags && cassette.tags.programmes

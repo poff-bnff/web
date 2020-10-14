@@ -1,27 +1,25 @@
-document.addEventListener("DOMContentLoaded", loadMyFavouriteFilms, false);
+// document.addEventListener("DOMContentLoaded", loadMyFavouriteFilms, false);
 
-async function loadMyFavouriteFilms(e){
+// async function loadMyFavouriteFilms(e){
+//     console.log('lmff');
+//     var response = await fetch(`https://api.poff.ee/favourite`, {
+//         method: 'GET',
+//         headers: {
+//             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+//         }
+//     });
+//     var favouriteFilms = await response.json()
+//     console.log(favouriteFilms);
 
-    var response = await fetch(`https://api.poff.ee/favourite`, {
-        method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-        }
-    });
+//     var film_cards = document.getElementsByClassName('card_film')
+//     for (var film_card of film_cards) {
+//         var filmId = film_card.id
 
-    var favouriteFilms = await response.json()
-    var film_cards = document.getElementsByClassName('card_film')
-
-
-    for (var film_card of film_cards) {
-        var filmId = film_card.id
-
-        if (favouriteFilms.films.includes(filmId)) {
-            film_card.style.display = 'block'
-        }
-    }
-}
-
+//         if (favouriteFilms.films.includes(filmId)) {
+//             film_card.style.display = 'block'
+//         }
+//     }
+// }
 
 
 async function removeFilm(movieId){
