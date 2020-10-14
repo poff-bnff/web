@@ -10,6 +10,7 @@ on:
                 description: 'Person who pushed the button'
             privateChannel:
                 description: 'slackBot and users private channel'
+
 jobs:
     deploy:
         name: SCP files to server

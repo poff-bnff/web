@@ -30,13 +30,18 @@ block content
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
                     .card_film_info
-                        //- .str_info_grid_3
-                        //-     if cassette.tags && cassette.tags.programmes
-                        //-         each programme in cassette.tags.programmes
-                        //-             if programme.name
-                        //-                 - var pr_name = programme.name
-                        //-                 .str_info_label.dark_semi= self.label.film.programme
-                        //-                 .str_info_value.dark_1= pr_name
+                        .str_info_grid_3
+                            if cassette.films && cassette.films.length
+                                - var filmsProgrammes = []
+                                each film in cassette.films
+                                    if film.tags && film.tags.programmes && film.tags.programmes.length
+                                        each programme in film.tags.programmes
+                                            if programme.name
+                                                - filmsProgrammes.push(programme.name)
+                                if filmsProgrammes.length
+                                    - var uniqueProgrammes = [...new Set(filmsProgrammes)];
+                                    .str_info_label.dark_semi= self.label.film.programme
+                                    .str_info_value.dark_1= uniqueProgrammes.join(', ')
                         //- if cassette.credentials.director
                         //-     .str_info_grid_3
                         //-         .str_info_label= self.label.cassette.director
