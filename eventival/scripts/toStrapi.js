@@ -229,163 +229,89 @@ const remapEventival = async () => {
 
     for (const e_film of EVENTIVAL_FILMS) {
         let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+        if (! strapi_film) {
+            continue
+        }
+        delete strapi_film.credentials
         // ---- BEGIN update strapi film properties
 
-        // ----   END update strapi film properties
-        to_strapi_films.push(strapi_film)
-    }
-    console.log(JSON.stringify(to_strapi_films, null, 4))
-    // return
+        strapi_film.title_et = (e_film.titles ? e_film.titles : {'title_local': ''}).title_local.toString()
+        strapi_film.title_en = (e_film.titles ? e_film.titles : {'title_english': ''}).title_english.toString()
+        strapi_film.title_ru = (e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom.toString()
+        strapi_film.titleOriginal = (e_film.titles ? e_film.titles : {'title_original': ''}).title_original.toString()
+        strapi_film.year = (e_film.film_info && e_film.film_info.completion_date && e_film.film_info.completion_date.year ? e_film.film_info.completion_date.year : null)
+        strapi_film.runtime = ((((e_film.film_info && e_film.film_info.runtime) ? e_film.film_info.runtime : {'seconds' : ''}).seconds)/ 60)
+        strapi_film.media.trailer = [{ url: (e_film.film_info  ? e_film.film_info : {'online_trailer_url' : '' }).online_trailer_url}]
 
-    EVENTIVAL_REMAPPED['E_FILMS'] = EVENTIVAL_FILMS.map(e_film => {
-        const f_languages = STRAPIDATA.Language.filter((s_language) => {
-            if(e_film.film_info && e_film.film_info.languages) {
-                return e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
+
+        strapi_film.tags.premiere_types = STRAPIDATA.TagPremiereType.filter((s_premiereType) => {
+            if(e_film.film_info && e_film.film_info.premiere_type) {
+                return e_film.film_info.premiere_type === s_premiereType.en
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const f_countries = STRAPIDATA.Country.filter((s_country) => {
-            if(e_film.film_info && e_film.film_info.countries) {
-                return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
+        strapi_film.tags.genres = STRAPIDATA.TagGenre.filter((s_genre) => {
+            if(e_film.film_info.types) {
+                return e_film.film_info.types.includes(s_genre.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const f_subLang = STRAPIDATA.Language.filter((s_subLang) => {
-            if(e_film.film_info && e_film.film_info.subtitle_languages) {
-                return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
+        strapi_film.tags.keywords = STRAPIDATA.TagKeyword.filter((s_keyword) => {
+            if(e_film.eventival_categorization.tags) {
+                return e_film.eventival_categorization.tags.includes(s_keyword.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const f_programme = STRAPIDATA.Programme.filter((s_programme) => {
+        strapi_film.tags.programmes = STRAPIDATA.Programme.filter((s_programme) => {
             if(e_film.eventival_categorization && e_film.eventival_categorization.sections ) {
                 let sections = e_film.eventival_categorization.sections
                 return sections.map( item => { return item.id.toString() } ).includes(s_programme.remoteId)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const f_genre = STRAPIDATA.TagGenre.filter((s_genre) => {
-            if(e_film.film_info.types) {
-                return e_film.film_info.types.includes(s_genre.et)
+        const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
+        strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
+
+        strapi_film.countries = STRAPIDATA.Country.filter((s_country) => {
+            if(e_film.film_info && e_film.film_info.countries) {
+                return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const f_keyword = STRAPIDATA.TagKeyword.filter((s_keyword) => {
-            if(e_film.eventival_categorization.tags) {
-                return e_film.eventival_categorization.tags.includes(s_keyword.et)
+        strapi_film.languages = STRAPIDATA.Language.filter((s_language) => {
+            if(e_film.film_info && e_film.film_info.languages) {
+                return e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const f_premiereType = STRAPIDATA.TagPremiereType.filter((s_premiereType) => {
-            if(e_film.film_info && e_film.film_info.premiere_type) {
-                return e_film.film_info.premiere_type === s_premiereType.en
+        strapi_film.subtitles = STRAPIDATA.Language.filter((s_subLang) => {
+            if(e_film.film_info && e_film.film_info.subtitle_languages) {
+                return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
             }
         }).map(e => { return {id: e.id.toString()} })
-
-        const f_trailer = STRAPIDATA.Film.filter((s_film) => {
-            if(e_film.film_info && e_film.film_info.online_trailer_url) {
-                return e_film.ids.system_id === s_film.remoteId
-            }
-        }).map(e => { return {url: e.film_info.online_trailer_url }}) //, { source: }}
-
-        const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories ? true : false
-        const f_festivalEditions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
-        // console.log( 'f_festivalEditions', if_categorization, f_festivalEditions );
-
-        // const director_at_film = STRAPIDATA.RolesAtFilm.filter(role => role.NamePrivate === 'Director')[0]
-        // let f_director_persons = e_film.publications.en.directors.map(name => {
-        //     return ensurePerson(name)
-        // })
-        // console.log( f_director_persons );
-        // const f_role_persons = f_director_persons.map((dire_person, ix) => {
-        //     return {
-        //         order: ix + 1,
-        //         role_at_film: role_at_film.id,
-        //         person: dire_person.id
-        //     }
-        // })
-        // console.log('directors', f_role_persons)
-
-        let film_out = {
-
-            remoteId: ((e_film.ids && e_film.ids.system_id) ? e_film.ids : {'system_id': ''}).system_id.toString(),
-            title_et: (e_film.titles ? e_film.titles : {'title_local': ''}).title_local.toString(),
-            title_en: (e_film.titles ? e_film.titles : {'title_english': ''}).title_english.toString(),
-            title_ru: (e_film.titles ? e_film.titles : {'title_custom': ''}).title_custom.toString(),
-            titleOriginal: (e_film.titles ? e_film.titles : {'title_original': ''}).title_original.toString(),
-            year: (e_film.film_info && e_film.film_info.completion_date && e_film.film_info.completion_date.year ? e_film.film_info.completion_date.year : null),
-            runtime: ((((e_film.film_info && e_film.film_info.runtime) ? e_film.film_info.runtime : {'seconds' : ''}).seconds)/ 60).toString(),
-            festival_editions: f_festivalEditions,
-            // otherFestivals: '?',
-            tags: {
-                premiere_types: f_premiereType,
-                genres: f_genre,
-                keywords: f_keyword,
-                programmes: f_programme
-            },
-            countries: f_countries,
-            languages: f_languages,
-            subtitles: f_subLang,
-            media: {
-                trailer: f_trailer,
-                // stills: [{ StrapiMedia}],
-                // posters: [{StrapiMedia}],
-                // QaClip: [{url: '0'}, {type: '0'}] /sisestatakse otse Strapis
-            }
-            // credentials: {
-            //     rolePerson: f_role_persons,
-            // }
-            // credentials: {
-            //     rolePerson: [{ // strapis amet ja nimi
-            //         order: (num),
-            //         role_at_film: {
-            //             id: e_film.publications.en // strapis RolesAtFilm.roleNamePrivate
-            //         },
-            //         person: {
-            //             id: '?'
-            //         }
-            //     }],
-            //     roleCompany: [{
-            //         order: (num),
-            //         role_at_film: {
-            //             id: '?'
-            //         },
-            //         person: {
-            //             id :
-            //         }
-            //     }]
-            // },
-            // presentedBy: {
-            //     presentedBText: {
-            //         et: '?',
-            //         en: '?',
-            //         ru: '?'
-            //     },
-            //     organisations: {
-            //         id: '?'
-            //     }
-            // },
-            // world_sales: [{
-            //         id: organisation.name.et
-            // }]
-        }
 
         if (e_film.publications) {
             const publications = e_film.publications
             for (const [lang, publication] of Object.entries(publications)) {
                 if ('synopsis_long' in publication) {
-                    if (film_out['synopsis'] === undefined) {
-                        film_out['synopsis'] = {}
+                    if (strapi_film['synopsis'] === undefined) {
+                        strapi_film['synopsis'] = {}
                     }
-                    film_out['synopsis'][lang] = publication.synopsis_long
+                    strapi_film['synopsis'][lang] = publication.synopsis_long
                 }
             }
         }
 
-        // console.log(film_out);
-        return to_strapi_films
-    })
-    fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_FILMS.yaml'), yaml.safeDump(EVENTIVAL_REMAPPED['E_FILMS'], { 'indent': '4' }), "utf8")
+        // ----   END update strapi film properties
+        to_strapi_films.push(strapi_film)
+    }
+    // console.log(JSON.stringify(to_strapi_films, null, 4))
 
+
+
+    fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_FILMS.yaml'), yaml.safeDump(to_strapi_films, { 'indent': '4' }), "utf8")
+
+    // return
 
     // console.log('E_FILMS', EVENTIVAL_REMAPPED['E_FILMS'][3])
     // console.log('E_FILMS', h2p(EVENTIVAL_REMAPPED['E_FILMS'][3].title_et))
