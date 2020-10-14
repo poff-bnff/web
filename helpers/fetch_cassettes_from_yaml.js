@@ -12,6 +12,7 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
+const STRAPIDATA_FILMS = STRAPIDATA['Film'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
 
@@ -114,9 +115,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             let cassettePostersCassette = []
             let cassettePostersFilms = []
 
-            if(element.films) {
-                var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
-            }
+
 
             // Kasseti programmid
             if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
@@ -134,8 +133,15 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             // rueten func. is run for each element separately instead of whole data, that is
             // for the purpose of saving slug_en before it will be removed by rueten func.
             rueten(element, lang)
-            if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
-                element.films = cassetteFilmsBeforeRueten
+
+            if(element.films && element.films.length) {
+                for (const filmIx in element.films) {
+                    let oneFilm = element.films[filmIx]
+                    let filmFromYAML = STRAPIDATA_FILMS.filter( (a) => { return oneFilm.id === a.id });
+                    if (filmFromYAML !== undefined && filmFromYAML[0]) {
+                        element.films[filmIx] = JSON.parse(JSON.stringify(filmFromYAML[0]))
+                    }
+                }
             }
 
             // Screenings
