@@ -651,16 +651,16 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    // console.log('update Strapi')
-    // await updateStrapi()
+    console.log('update Strapi')
+    await updateStrapi()
     console.log('remap')
     remapEventival()
     console.log('submit films')
     await submitFilms()
-//     console.log('submit cassettes')
-//     await submitCassettes()
-//     console.log('submit screenings')
-//     await submitScreenings()
+    console.log('submit cassettes')
+    await submitCassettes()
+    console.log('submit screenings')
+    await submitScreenings()
 }
 
 main()
