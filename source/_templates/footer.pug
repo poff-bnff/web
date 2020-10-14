@@ -43,8 +43,9 @@ footer
 
 
     if self.footer.supporters
+        - var sortedSupportersCat = self.footer.supporters.sort(function(a, b){ return a.order-b.order })
         section.supporters_footer
-            each supporters in self.footer.supporters
+            each supporters in sortedSupportersCat
                 row
                     if supporters.name && (typeof(supporters.name) !== 'object')
                         h1.section_headline_footer= supporters.name

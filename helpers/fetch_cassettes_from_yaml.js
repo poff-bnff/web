@@ -30,15 +30,20 @@ const mapping = {
 }
 // STRAPIDATA_PROGRAMMES.map(programme => programme.id)
 const modelName = 'Cassette';
+let filmsWithOutProgrammes = []
 const STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
     let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
     if (cassette.tags && cassette.tags.programmes) {
         let cassette_programme_ids = cassette.tags.programmes.map(programme => programme.id)
         return cassette_programme_ids.filter(cp_id => programme_ids.includes(cp_id))[0] !== undefined
     } else {
+        filmsWithOutProgrammes.push(cassette.id)
         return false
     }
 })
+if (filmsWithOutProgrammes.length) {
+    console.log('Films with ID', filmsWithOutProgrammes.join(', '), ' have no programmes');
+}
 
 const allLanguages = ["en", "et", "ru"];
 
