@@ -30,7 +30,7 @@ jobs:
       with:
         slackUserId: ${{ github.event.inputs.slackUserId }}
         privateChannel: ${{ github.event.inputs.privateChannel  }}
-       if: always()
+      if: always()
 
     # Use the output from the `feedback` step
     # - name: Get the output
