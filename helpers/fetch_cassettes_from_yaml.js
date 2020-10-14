@@ -15,7 +15,7 @@ const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const STRAPIDATA_FILMS = STRAPIDATA['Film'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
-const CHECKPROGRAMMES = false
+const CHECKPROGRAMMES = true
 
 // console.log('LIMIT: ', CASSETTELIMIT);
 
