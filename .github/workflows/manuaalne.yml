@@ -8,13 +8,11 @@ on:
     push:
         branches: [ add-new-slack-notification ]
     workflow_dispatch:
-        inputs:
-            slackUserId:
-                description: 'Person who pushed the button'
-                default: "none"
-            privateChannel:
-                description: 'slackBot and users private channel'
-                default: "none"
+        # inputs:
+        #     slackUserId:
+        #         description: 'Person who pushed the button'
+        #     privateChannel:
+        #         description: 'slackBot and users private channel'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,8 +26,8 @@ jobs:
       id: feedback
       uses: marianntapfer/post-to-slack@master
       with:
-        slackUserId: ${{ github.event.inputs.slackUserId }}
-        privateChannel: ${{ github.event.inputs.privateChannel  }}
+        # slackUserId: ${{ github.event.inputs.slackUserId }}
+        # privateChannel: ${{ github.event.inputs.privateChannel  }}
       if: always()
 
     # Use the output from the `feedback` step
