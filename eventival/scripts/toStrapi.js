@@ -2,7 +2,7 @@ const yaml = require('js-yaml')
 const fs = require('fs')
 const path = require('path')
 
-const { strapiQuery } = require("../../helpers/strapiQuery.js")
+const { strapiQuery, getModel } = require("../../helpers/strapiQuery.js")
 
 const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
@@ -27,21 +27,6 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
-const STRAPI_GET_PERSONS_OPTIONS = {
-    headers: { 'Content-Type': 'application/json' },
-    path: PERSONS_API + '?_limit=-1',
-    method: 'GET'
-}
-let STRAPI_GET_ROLES_OPTIONS = {
-    headers: { 'Content-Type': 'application/json' },
-    path: ROLES_API + '?_limit=-1',
-    method: 'GET'
-}
-let STRAPI_GET_FILMS_OPTIONS = {
-    headers: { 'Content-Type': 'application/json' },
-    path: FILMS_API + '?_limit=-1',
-    method: 'GET'
-}
 
 const ET = { // eventival translations
     categories: {
@@ -111,7 +96,7 @@ const updateStrapi = async () => {
         }
 
         // Add Directors and Cast to Strapi
-        let strapi_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
+        let strapi_persons = await getModel('Person')
         let persons_in_eventival = []
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.film_info && e_film.film_info.relationships) ) { continue }
@@ -140,7 +125,7 @@ const updateStrapi = async () => {
                 }
             }
         }
-        strapi_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
+        strapi_persons = await getModel('Person')
         for (const e_name in crew_names) {
             let s_person = s_person_id_by_e_fullname(e_name, strapi_persons)
             if (!s_person) {
@@ -154,11 +139,11 @@ const updateStrapi = async () => {
                 console.log('==== new person', e_name);
             }
         }
-        return await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
+        return await getModel('Person')
     }
 
     const updateStrapiRoles = async () => {
-        let strapi_roles = await strapiQuery(STRAPI_GET_ROLES_OPTIONS)
+        let strapi_roles = await getModel('RoleAtFilm')
 
         for (const e_film of EVENTIVAL_FILMS ) {
             // skip if there is no roles (no crew) to check
@@ -200,9 +185,9 @@ const updateStrapi = async () => {
     }
 
     const updateFilmCredentials = async () => {
-        const s_persons = await strapiQuery(STRAPI_GET_PERSONS_OPTIONS)
-        const s_roles = await strapiQuery(STRAPI_GET_ROLES_OPTIONS)
-        const s_films = await strapiQuery(STRAPI_GET_FILMS_OPTIONS)
+        const s_persons = await getModel('Person')
+        const s_roles = await getModel('RoleAtFilm')
+        const s_films = await getModel('Film')
         for (const e_film of EVENTIVAL_FILMS) {
             // skip if there is no roles (no crew) to check
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
@@ -230,21 +215,36 @@ const updateStrapi = async () => {
             await strapiQuery(options, s_film)
         }
     }
-
+    console.log('|–– persons')
     await updateStrapiPersons()
+    console.log('|–– roles')
     await updateStrapiRoles()
+    console.log('|–– credentials')
     await updateFilmCredentials()
 }
 
-const remapEventival = () => {
+const remapEventival = async () => {
+    let strapi_films = await getModel('Film')
+    let to_strapi_films = []
+
+    for (const e_film of EVENTIVAL_FILMS) {
+        let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+        // ---- BEGIN update strapi film properties
+
+        // ----   END update strapi film properties
+        to_strapi_films.push(strapi_film)
+    }
+    console.log(JSON.stringify(to_strapi_films, null, 4))
+    // return
+
     EVENTIVAL_REMAPPED['E_FILMS'] = EVENTIVAL_FILMS.map(e_film => {
-        const f_language = STRAPIDATA.Language.filter((s_language) => {
+        const f_languages = STRAPIDATA.Language.filter((s_language) => {
             if(e_film.film_info && e_film.film_info.languages) {
                 return e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const f_country = STRAPIDATA.Country.filter((s_country) => {
+        const f_countries = STRAPIDATA.Country.filter((s_country) => {
             if(e_film.film_info && e_film.film_info.countries) {
                 return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
             }
@@ -322,8 +322,8 @@ const remapEventival = () => {
                 keywords: f_keyword,
                 programmes: f_programme
             },
-            countries: f_country,
-            languages: f_language,
+            countries: f_countries,
+            languages: f_languages,
             subtitles: f_subLang,
             media: {
                 trailer: f_trailer,
@@ -382,7 +382,7 @@ const remapEventival = () => {
         }
 
         // console.log(film_out);
-        return film_out
+        return to_strapi_films
     })
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_FILMS.yaml'), yaml.safeDump(EVENTIVAL_REMAPPED['E_FILMS'], { 'indent': '4' }), "utf8")
 
@@ -672,16 +672,16 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    console.log('update Strapi')
-    await updateStrapi()
-    console.log('remap')
+    // console.log('update Strapi')
+    // await updateStrapi()
+    console.log('| remap')
     remapEventival()
-    console.log('submit films')
-    await submitFilms()
-    console.log('submit cassettes')
-    await submitCassettes()
-    console.log('submit screenings')
-    await submitScreenings()
+    // console.log('| submit films')
+    // await submitFilms()
+    // console.log('| submit cassettes')
+    // await submitCassettes()
+    // console.log('| submit screenings')
+    // await submitScreenings()
 }
 
 main()
