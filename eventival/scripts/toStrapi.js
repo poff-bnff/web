@@ -224,15 +224,18 @@ const updateStrapi = async () => {
 }
 
 const remapEventival = async () => {
-    let strapi_films = await getModel('Film')
-    let to_strapi_films = []
 
+    const strapi_films = await getModel('Film')
+    let to_strapi_films = []
     for (const e_film of EVENTIVAL_FILMS) {
         let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
         if (! strapi_film) {
             continue
         }
-        delete strapi_film.credentials
+        strapi_film.is_cassette_film = (e_film.eventival_categorization
+                                    && e_film.eventival_categorization.categories
+                                    && e_film.eventival_categorization.categories.includes('Shortsi alam') ? true : false)
+
         // ---- BEGIN update strapi film properties
 
         strapi_film.title_et = (e_film.titles ? e_film.titles : {'title_local': ''}).title_local.toString()
@@ -305,13 +308,38 @@ const remapEventival = async () => {
         // ----   END update strapi film properties
         to_strapi_films.push(strapi_film)
     }
-    // console.log(JSON.stringify(to_strapi_films, null, 4))
-
-
-
+    EVENTIVAL_REMAPPED['E_FILMS'] = to_strapi_films
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_FILMS.yaml'), yaml.safeDump(to_strapi_films, { 'indent': '4' }), "utf8")
 
-    // return
+
+    const strapi_cassettes = await getModel('Cassette')
+    let to_strapi_cassettes = []
+
+    for (const e_cassette of EVENTIVAL_FILMS) {
+        let strapi_cassette = strapi_cassettes.filter(s_cassette => s_cassette.remoteId === e_cassette.ids.system_id.toString())[0]
+        if (! strapi_cassette) {
+            continue
+        }
+        let is_cassette_film = e_cassette.eventival_categorization
+            && e_cassette.eventival_categorization.categories
+            && e_cassette.eventival_categorization.categories.includes('Shortsi alam')
+        if (is_cassette_film) {
+            continue
+        }
+        strapi_cassette.is_film_cassette = (e_cassette.film_info
+            && e_cassette.film_info.texts
+            && e_cassette.film_info.texts.logline
+            && e_cassette.film_info.texts.logline !== '' ? true : false)
+        // ---- BEGIN update strapi cassette properties
+
+
+        // ----   END update strapi cassette properties
+        to_strapi_cassettes.push(strapi_cassette)
+    }
+    EVENTIVAL_REMAPPED['E_CASSETTES'] = to_strapi_cassettes
+    fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_CASSETTES.yaml'), yaml.safeDump(to_strapi_cassettes, { 'indent': '4' }), "utf8")
+
+    return
 
     // console.log('E_FILMS', EVENTIVAL_REMAPPED['E_FILMS'][3])
     // console.log('E_FILMS', h2p(EVENTIVAL_REMAPPED['E_FILMS'][3].title_et))
