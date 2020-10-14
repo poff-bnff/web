@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", loadMyFavouriteFilms, false);
 
 async function loadMyFavouriteFilms(e){
@@ -10,16 +9,19 @@ async function loadMyFavouriteFilms(e){
         }
     });
 
-    var favouriteFilms2 = await response.json()
-
+    var favouriteFilms = await response.json()
     var film_cards = document.getElementsByClassName('card_film')
+
+
     for (var film_card of film_cards) {
-        var filmId = parseInt(film_card.id)
-        if (filmId in favouriteFilms2.films) {
+        var filmId = film_card.id
+
+        if (favouriteFilms.films.includes(filmId)) {
             film_card.style.display = 'block'
         }
     }
 }
+
 
 
 async function removeFilm(movieId){
@@ -34,7 +36,13 @@ async function removeFilm(movieId){
     });
 
     let result = await response.json()
-    console.log(result.todo);
+    console.log(result.movieId);
+
+    if (movieId == result.movieId){
+        let filmCard = document.getElementById(result.movieId)
+        filmCard.style.display = 'none'
+
+    }
 }
 
 

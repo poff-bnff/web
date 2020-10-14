@@ -7,7 +7,7 @@ block content
     if self.data.cassettes
         main.grid_films
             each cassette in self.data.cassettes
-                a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                a.card_film(id= cassette.id href= `/${lang_path}film/${cassette.slug}`)
                     .container_frame_16_9
                         //- each media in cassette.media
                             //- - console.log(cassette.media)
@@ -29,6 +29,8 @@ block content
                             img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = cassette.title)
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
+                            .nupp
+                                p(id= cassette.id+'nupp' style={color: 'red'} onclick=`saveAsFavorite(${cassette.id});return false`) +
                     .card_film_info
                         each p, locale in self.otherLocalePaths
                             if cassette[`title_${locale}`]
