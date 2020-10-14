@@ -11,11 +11,13 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
+const STRAPIDATA_FE = STRAPIDATA['FestivalEdition'];
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const STRAPIDATA_FILMS = STRAPIDATA['Film'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
-const CHECKPROGRAMMES = true
+// true = check if programme is for this domain / false = check if festival edition is for this domain
+const CHECKPROGRAMMES = false
 
 // console.log('LIMIT: ', CASSETTELIMIT);
 
@@ -33,6 +35,7 @@ const mapping = {
 const modelName = 'Cassette';
 
 if(CHECKPROGRAMMES) {
+
     let cassettesWithOutProgrammes = []
     var STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
         let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
@@ -47,6 +50,25 @@ if(CHECKPROGRAMMES) {
     if (cassettesWithOutProgrammes.length) {
         console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no programmes');
     }
+
+} else if (!CHECKPROGRAMMES && DOMAIN !== 'poff.ee') {
+
+    let cassettesWithOutFestivalEditions = []
+
+    var STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
+        let festival_editions = STRAPIDATA_FE.map(edition => edition.id)
+        if (cassette.festival_editions && cassette.festival_editions.length) {
+            let cassette_festival_editions_ids = cassette.festival_editions.map(edition => edition.id)
+            return cassette_festival_editions_ids.filter(cfe_id => festival_editions.includes(cfe_id))[0] !== undefined
+        } else {
+            cassettesWithOutFestivalEditions.push(cassette.id)
+            return false
+        }
+    })
+    if (cassettesWithOutFestivalEditions.length) {
+        console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no festival editions');
+    }
+
 } else {
     var STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
 }
@@ -125,8 +147,6 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             let cassetteCarouselPicsFilms = []
             let cassettePostersCassette = []
             let cassettePostersFilms = []
-
-
 
             // Kasseti programmid
             if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
