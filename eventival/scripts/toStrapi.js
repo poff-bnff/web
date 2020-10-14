@@ -329,7 +329,7 @@ const remapEventival = () => {
                 trailer: f_trailer,
                 // stills: [{ StrapiMedia}],
                 // posters: [{StrapiMedia}],
-                // QaClip: [{url: '0'}, {type: '0'}]
+                // QaClip: [{url: '0'}, {type: '0'}] /sisestatakse otse Strapis
             }
             // credentials: {
             //     rolePerson: f_role_persons,
@@ -515,10 +515,21 @@ const remapEventival = () => {
                 console.log('WARNING: location.remoteId=' + e_screening.venue_id + 'not found in locations.' )
             }
 
+            // const scr_mode = STRAPIDATA.mode.filter((s_scrMode) => {
+            //     if(e_screening.venue_id) {
+            //         // console.log(e_screening.venue_id, s_scrmode.remoteId, e_screening.venue_id.toString() === s_scrmode.remoteId);
+            //         return e_screening.venue_id.toString() === s_scrMode.remoteId && s_scrMode.name === "ONLINE, Virtuaalsaal"
+            //     }
+            // }).map(s_scrMode => s_scrMode.id.toString())[0] || null // pane siia id 1 kui ylemine vastab t6ele siis 2
+            // if( !scr_mode ){
+            //     console.log('WARNING: mode.remoteId=' + e_screening.venue_id + 'not found in modes.' )
+            // }
+
+
             let screening_out = {
                 code: e_screening.code.toString().padStart(6, "0"),
                 codeAndTitle: e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local,
-                ticketingUrl: e_screening.ticketing_url,
+                // ticketingUrl: e_screening.ticketing_url, //tulevad piletilevist
                 dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
                 // introQaConversation: [{                // e-presentation -> intro, e-qa -> conversation
                 //     yesNo: e_screening.qa.available.toString(), e_screening.presentation.available.toString()
