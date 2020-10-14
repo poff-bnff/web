@@ -315,13 +315,15 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                                 if (rolePerson.person && rolePerson.person.id) {
                                     let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
                                     let personCopy = JSON.parse(JSON.stringify(personFromYAML[0]))
+                                    let searchRegExp = new RegExp(' ', 'g');
+
                                     rolePerson.person = rueten(personCopy, lang);
 
                                     if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`] = []
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
                                     }
-                                    if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                                    if (rolePerson.person && rolePerson.person.firstNameLastName) {
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(rolePerson.person.firstNameLastName)
                                     }
                                 } else {
                                     // console.log(film.id, ' - ', rolePerson.role_at_film.roleNamePrivate);
