@@ -227,9 +227,11 @@ main.grid_film
 
             section.f_interactive_box
                 .f_interactive_item
-                    p
+                    p(id= 'favouriteStatus')
                         | Lisa film lemmikuks!
-                    a.btn.btn_vote.active(onclick='saveAsFavourite2()' role='button' target='_BLANK') +
+                    a.btn.btn_vote.active(id= 'nupp' onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
+                    a.btn.btn_vote.active(style= {display: 'none'} id= 'removeFavBtn' onclick=`removeFilm(${self.id})` role='button' target='_BLANK') X
+
 
 
             if film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]
