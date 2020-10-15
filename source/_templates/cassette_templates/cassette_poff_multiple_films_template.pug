@@ -508,15 +508,14 @@ if self.films
                         - youtubeVideoCode = film.filmQaClip.split("=")
                         +youtube(youtubeVideoCode[1])
 
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].url
 
+            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].youTubeCode
                 section.f_trailer_box
                     .section_headline= self.label.film.trailer
-                    .embed-responsive.embed-responsive-16by9.m-0.p-0
-                        if film.media.trailer[0].source === 'YouTube'
-                            - youtubeVideoCode = film.media.trailer[0].url.split("=")
-                            +youtube(youtubeVideoCode[1])
-                        else if film.media.trailer[0].source === 'Vimeo'
+                        each trailer in film.media.trailer
+                            .embed-responsive.embed-responsive-16by9.m-0.p-0
+                                if trailer.youTubeCode && trailer.youTubeCode.length === 11
+                                    +youtube(trailer.youTubeCode)
 
             section.f_imgs_box
 

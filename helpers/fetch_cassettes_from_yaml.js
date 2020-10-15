@@ -302,6 +302,21 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         element.cassettePostersFilms = cassettePostersFilms
                     }
 
+                    // Filmi treiler
+                    if (film.media && film.media.trailer && film.media.trailer[0]) {
+                        for (const trailerIx in film.media.trailer) {
+                            let trailer = film.media.trailer[trailerIx]
+                            if(trailer.url && trailer.url.length > 10) {
+                                let splitYouTubeLink = trailer.url.split("=")[1]
+                                let splitForVideoCode = splitYouTubeLink.split("&")[0]
+                                if (splitForVideoCode.length === 11) {
+                                    trailer.youTubeCode = splitForVideoCode
+                                }
+                            }
+                        }
+                    }
+
+
                     // Filmi programmid
                     if (film.tags && film.tags.programmes && film.tags.programmes[0]) {
                         for (const programmeIx in film.tags.programmes) {
