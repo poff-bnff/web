@@ -1,5 +1,5 @@
 
-main.grid_film
+main.grid_film(id= self.id)
     //- Kasseti title ja synopsis
     //- div
     //-     if self.title
@@ -229,7 +229,7 @@ main.grid_film
                 .f_interactive_item
                     p(id= 'favouriteStatus')
                         | Lisa film lemmikuks!
-                    a.btn.btn_vote.active(id= 'nupp' onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
+                    a.btn.btn_vote.active(style= {display: 'none'} id= 'nupp' onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
                     a.btn.btn_vote.active(style= {display: 'none'} id= 'removeFavBtn' onclick=`removeFilm(${self.id})` role='button' target='_BLANK') X
 
 

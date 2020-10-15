@@ -1,4 +1,6 @@
 var favFilms
+var movieId
+var favouritePages = ['http://localhost:4000/films', 'http://localhost:4000/favourite']
 
 document.addEventListener("DOMContentLoaded", loadMyFavFilms(), false);
 
@@ -9,7 +11,8 @@ function loadMyFavFilms(showFavFilms) {
     }
 
     console.log('loadMyFavFilms');
-    if (window.location.href === 'http://localhost:4000/favourite' || 'http://localhost:4000/films') {
+
+    if (window.location.href.indexOf("/film/") > -1 || favouritePages.includes(window.location.href)) {
         console.log('favourite page');
         fetchFavFilmsFromDB()
     }
@@ -43,7 +46,19 @@ function fetchFavFilmsFromDB() {
 function saveFavFilms(data) {
     console.log('saveFavFilms');
     favFilms = data.films
-    showFavFilms()
+    if (favouritePages.includes(window.location.href)) {
+        showFavFilms()
+        return
+    }
+    if (window.location.href.indexOf('/film/') > -1) {
+        var filmCard = document.getElementsByClassName('grid_film')
+
+        if (favFilms.includes(filmCard[0].id)) {
+            changeFavInfo('put')
+        } else {
+            changeFavInfo('delete')
+        }
+    }
 }
 
 
@@ -100,7 +115,7 @@ function saveFilmAsFavourite(movieId) {
         }).then(function (data) {
             console.log(data)
             if (data.result === 'success') {
-                changeFavInfo(movieId, 'put')
+                changeFavInfo('put')
             }
         }).catch(function (error) {
             console.warn(error);
@@ -108,17 +123,17 @@ function saveFilmAsFavourite(movieId) {
     }
 }
 
-function changeFavInfo(movieId, status) {
-    console.log(status);
+function changeFavInfo(status) {
+    console.log(status)
 
     if (status === 'put') {
-        console.log('putin');
         document.getElementById('favouriteStatus').innerHTML = 'FAVO'
         document.getElementById('nupp').style.display = 'none'
         document.getElementById('removeFavBtn').style.display = 'block'
     }
 
-    if (document.getElementById('favouriteStatus').innerHTML === 'FAVO') {
+    if (status === 'delete') {
+        console.log('tere')
         document.getElementById('favouriteStatus').innerHTML = 'Lisa film lemmikuks!'
         document.getElementById('nupp').style.display = 'block'
         document.getElementById('removeFavBtn').style.display = 'none'
@@ -147,11 +162,17 @@ function removeFilm(movieId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data);
+        console.log(data)
+        console.log(movieId)
+        console.log(data.movieId)
         if (movieId == data.movieId) {
-            var filmCard = document.getElementById(data.movieId)
-            filmCard.style.display = 'none'
-            changeFavInfo()
+            if (window.location.href.indexOf('/film/') > -1) {
+                console.log('if')
+                changeFavInfo('delete')
+            } else {
+                filmCard = document.getElementById(data.movieId)
+                filmCard.style.display = 'none'
+            }
         }
     }).catch(function (error) {
         console.warn(error);

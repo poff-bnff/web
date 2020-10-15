@@ -7,7 +7,7 @@ block content
     if self.data.cassettes
         main.grid_films
             each cassette in self.data.cassettes
-                a.card_film(id= cassette.id  style= {cursor: 'pointer', display:'none'})
+                a.card_film(id= cassette.id  style= {display:'none'} href= `/${lang_path}film/${cassette.slug}`)
 
 
 
