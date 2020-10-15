@@ -389,7 +389,8 @@ if self.films
                     //- NB!
                     //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes
                     //-     Näiteks: "Composer" all olevad isikud saab kätte film.credentials.rolePersonsByRole.composer.join(', ')
-                    if film.credentials && film.credentials.rolePersonsByRole
+
+                    if film && film.credentials && film.credentials.rolePersonsByRole
                         if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.director
