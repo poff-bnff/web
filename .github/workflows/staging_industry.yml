@@ -13,6 +13,7 @@ on:
             privateChannel:
                 description: 'slackBot and users private channel'
 
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
     # This workflow contains a single job called "build"
@@ -66,8 +67,8 @@ jobs:
             slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
           if: always()
 
-        -   name: feedback to slack
-            id: feedback
-            uses: marianntapfer/post-to-slack@master
-            if: always()
+        - name: feedback to slack
+          id: feedback
+          uses: marianntapfer/post-to-slack@master
+          if: always()
 
