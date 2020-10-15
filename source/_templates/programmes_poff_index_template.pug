@@ -139,10 +139,10 @@ block content
     //-                     img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
     if self.data.cassettes.length
-        - var showFilms = false
 
         main.grid_films
             each cassette in self.data.cassettes
+                - var showFilms = false
                 if cassette.tags && cassette.tags.programmes && cassette.tags.programmes[0]
                     each programme in cassette.tags.programmes
                         if self.id === programme.id
