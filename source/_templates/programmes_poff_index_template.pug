@@ -167,7 +167,6 @@ block content
                         .card_film_info
                             each p, locale in self.otherLocalePaths
                                 if cassette.films.length > 1
-
                                     if cassette[`title_${locale}`]
                                         .str_info_grid_3
                                             .str_info_label.dark_semi= self.label.film[`title_${locale}`]
