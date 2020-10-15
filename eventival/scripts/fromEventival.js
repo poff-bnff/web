@@ -4,7 +4,10 @@ var parser = require('fast-xml-parser');
 const yaml = require('js-yaml')
 const path = require('path')
 const readline = require('readline');
-const h2p = require('html2plaintext');
+const html2plaintext = require('html2plaintext');
+const h2p = function (txt) {
+    return html2plaintext(html2plaintext(html2plaintext(txt)))
+}
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 

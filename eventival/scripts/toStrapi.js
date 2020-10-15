@@ -215,10 +215,10 @@ const updateStrapi = async () => {
             await strapiQuery(options, s_film)
         }
     }
-    // console.log('|–– persons')
-    // await updateStrapiPersons()
-    // console.log('|–– roles')
-    // await updateStrapiRoles()
+    console.log('|–– persons')
+    await updateStrapiPersons()
+    console.log('|–– roles')
+    await updateStrapiRoles()
     console.log('|–– credentials')
     await updateFilmCredentials()
 }
@@ -340,33 +340,33 @@ const remapEventival = async () => {
             && e_cassette.film_info.texts.logline !== '' ? true : false)
         // ---- BEGIN update strapi cassette properties
 
-        e_cassette.title_et = (e_cassette.titles ? e_cassette.titles : {'title_local': ''}).title_local.toString()
-        e_cassette.title_en = (e_cassette.titles ? e_cassette.titles : {'title_english': ''}).title_english.toString()
-        e_cassette.title_ru = (e_cassette.titles ? e_cassette.titles : {'title_custom': ''}).title_custom.toString()
+        strapi_cassette.title_et = (e_cassette.titles ? e_cassette.titles : {'title_local': ''}).title_local.toString()
+        strapi_cassette.title_en = (e_cassette.titles ? e_cassette.titles : {'title_english': ''}).title_english.toString()
+        strapi_cassette.title_ru = (e_cassette.titles ? e_cassette.titles : {'title_custom': ''}).title_custom.toString()
 
         const if_categorization = e_cassette.eventival_categorization && e_cassette.eventival_categorization.categories
-        e_cassette.festival_editions = if_categorization ? e_cassette.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
+        strapi_cassette.festival_editions = if_categorization ? e_cassette.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
-        e_cassette.tags = e_cassette.tags || {}
-        e_cassette.tags.genres = STRAPIDATA.TagGenre.filter((s_genre) => {
+        strapi_cassette.tags = e_cassette.tags || {}
+        strapi_cassette.tags.genres = STRAPIDATA.TagGenre.filter((s_genre) => {
             if(e_cassette.film_info.types) {
                 return e_cassette.film_info.types.includes(s_genre.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        e_cassette.tags.keywords = STRAPIDATA.TagKeyword.filter((s_keyword) => {
+        strapi_cassette.tags.keywords = STRAPIDATA.TagKeyword.filter((s_keyword) => {
             if(e_cassette.eventival_categorization.tags) {
                 return e_cassette.eventival_categorization.tags.includes(s_keyword.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        e_cassette.tags.premiere_types = STRAPIDATA.TagPremiereType.filter((s_premiereType) => {
+        strapi_cassette.tags.premiere_types = STRAPIDATA.TagPremiereType.filter((s_premiereType) => {
             if(e_cassette.film_info && e_cassette.film_info.premiere_type) {
                 return e_cassette.film_info.premiere_type === s_premiereType.en
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        e_cassette.tags.programmes = STRAPIDATA.Programme.filter((s_programme) => {
+        strapi_cassette.tags.programmes = STRAPIDATA.Programme.filter((s_programme) => {
             if(e_cassette.eventival_categorization && e_cassette.eventival_categorization.sections ) {
                 let sections = e_cassette.eventival_categorization.sections
                 return sections.map( item => { return item.id.toString() } ).includes(s_programme.remoteId)
@@ -377,7 +377,7 @@ const remapEventival = async () => {
         ? e_cassette.film_info.texts.logline.split(',').map(id => id.trim())
         : [e_cassette.ids.system_id.toString()]
 
-        e_cassette.films = cassette_remote_ids.map(remote_id => {
+        strapi_cassette.films = cassette_remote_ids.map(remote_id => {
             return (STRAPIDATA.Film.filter(s_film => remote_id === s_film.remoteId)[0] || {id: null}).id
         }).map(id => {
             return {id: id}
@@ -410,118 +410,109 @@ const remapEventival = async () => {
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_CASSETTES.yaml'), yaml.safeDump(to_strapi_cassettes, { 'indent': '4' }), "utf8")
 
 
-    // e_screening.code = e_screening.code.toString().padStart(6, "0")
-    // e_screening.codeAndTitle = e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local
-    // // e_screening.ticketingUrl = tuleb piletilevist !!!
-    // e_screening.dateTime = e_screening.start
-    // // e_screening.introQaConversation =
-    // e_screening.durationTotal = e_screening.complete_duration_minutes.toString()
 
-    // e_screening.location = STRAPIDATA.Location.filter((s_scrLocation) => {
-    //     if(e_screening.venue_id) {
-    //         // console.log(e_screening.venue_id, s_scrLocation.remoteId, e_screening.venue_id.toString() === s_scrLocation.remoteId);
-    //         return e_screening.venue_id.toString() === s_scrLocation.remoteId
-    //     }
-    // }).map(s_scrLocation => s_scrLocation.id.toString())[0] || null
-    // if( !scr_location ){
-    //     console.log('WARNING: location.remoteId=' + e_screening.venue_id + 'not found in locations.' )
-    // }
+    const strapi_screenings = await getModel('Screening')
+    let to_strapi_screenings = []
+    // console.log('midagi', EVENTIVAL_SCREENINGS);
+
+    for (const e_screening of EVENTIVAL_SCREENINGS) {
+        // console.log('midagi', e_screening.id);
+
+        let strapi_screening = strapi_screenings.filter(s_screening => e_screening.id.toString() === s_screening.remoteId)[0] || false
+
+        if (! strapi_screening) {
+            continue
+        }
+        if (!e_screening.film || !e_screening.film.id) {
+            continue
+        }
+
+        // ---- BEGIN update strapi screening properties
+
+        strapi_screening.is_first_screening = e_screening.type_of_screening.includes('First Screening')
 
 
 
-    // EVENTIVAL_REMAPPED['E_VENUES'] = EVENTIVAL_VENUES
-    EVENTIVAL_REMAPPED['E_SCREENINGS'] = EVENTIVAL_SCREENINGS
-        .filter(e_screening => e_screening.type_of_screening === 'First Screening')
-        .map(e_screening => {
-            const is_first_screening = e_screening.type_of_screening.includes('First Screening')
-            const scr_cassette = STRAPIDATA.Cassette.filter((s_cassette) => {
-                if (e_screening.film && e_screening.film.id) {
-                    return s_cassette.remoteId === e_screening.film.id.toString()
-                }
-            }).map(cassette => { return {id: cassette.id.toString()} })[0] || null
+        strapi_screening.code = e_screening.code.toString().padStart(6, "0")
+        strapi_screening.codeAndTitle = e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local
+        // e_screening.ticketingUrl = tuleb piletilevist !!!
+        strapi_screening.dateTime = e_screening.start
+        // e_screening.introQaConversation =
+        strapi_screening.durationTotal = e_screening.complete_duration_minutes
 
-            const scr_screeningType = STRAPIDATA.ScreeningType.filter((s_screeningType) => {
-                if(e_screening.type_of_screening) {
-                    return e_screening.type_of_screening.includes(s_screeningType.name)
-                }
-            }).map(screening_type => screening_type.id.toString())
-
-            const scr_subLang = STRAPIDATA.Language.filter((s_scrSubLang) => {
-                if(e_screening.film && e_screening.film.subtitle_languages ) {
-                    let languages = e_screening.film.subtitle_languages.print.language
-                    languages = (Array.isArray(languages) ? languages : [languages])
-
-                    return languages.includes(s_scrSubLang.code)
-                }
-            }).map(subLang => subLang.id.toString())
-
-            const scr_location = STRAPIDATA.Location.filter((s_scrLocation) => {
-                if(e_screening.venue_id) {
-                    // console.log(e_screening.venue_id, s_scrLocation.remoteId, e_screening.venue_id.toString() === s_scrLocation.remoteId);
-                    return e_screening.venue_id.toString() === s_scrLocation.remoteId
-                }
-            }).map(s_scrLocation => s_scrLocation.id.toString())[0] || null
-            if( !scr_location ){
-                console.log('WARNING: location.remoteId=' + e_screening.venue_id + 'not found in locations.' )
+        strapi_screening.location = STRAPIDATA.Location.filter((s_scrLocation) => {
+            if(e_screening.venue_id) {
+                // console.log(e_screening.venue_id, s_scrLocation.remoteId, e_screening.venue_id.toString() === s_scrLocation.remoteId);
+                return e_screening.venue_id.toString() === s_scrLocation.remoteId
             }
+        }).map(s_scrLocation => s_scrLocation.id.toString())[0] || null
+        if( !strapi_screening.location ){
+            console.log('WARNING: location.remoteId=' + e_screening.venue_id + 'not found in locations.' )
+        }
 
-            // const scr_mode = STRAPIDATA.mode.filter((s_scrMode) => {
-            //     if(e_screening.venue_id) {
-            //         // console.log(e_screening.venue_id, s_scrmode.remoteId, e_screening.venue_id.toString() === s_scrmode.remoteId);
-            //         return e_screening.venue_id.toString() === s_scrMode.remoteId && s_scrMode.name === "ONLINE, Virtuaalsaal"
-            //     }
-            // }).map(s_scrMode => s_scrMode.id.toString())[0] || null // pane siia id 1 kui ylemine vastab t6ele siis 2
-            // if( !scr_mode ){
-            //     console.log('WARNING: mode.remoteId=' + e_screening.venue_id + 'not found in modes.' )
-            // }
+        strapi_screening.extraInfo = e_screening.additional_info
 
-
-            let screening_out = {
-                code: e_screening.code.toString().padStart(6, "0"),
-                codeAndTitle: e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local,
-                // ticketingUrl: e_screening.ticketing_url, //tulevad piletilevist
-                dateTime: e_screening.start, // tuleb kujul '2020-11-24 17:00:00'
-                // introQaConversation: [{                // e-presentation -> intro, e-qa -> conversation
-                //     yesNo: e_screening.qa.available.toString(), e_screening.presentation.available.toString()
-                //     // type: (Enumeration), intro, conversation
-                //     // mode: j44b tyhjaks, kui qa klipp siis mode online
-                //     presenter: [{ //kas e_sreening.presenters on org name ?
-                //         et: e_screening.qa.presenters, e_screening.presentation.presenters
-                //         en: e_screening.qa.presenters,
-                //         ru: e_screening.qa.presenters
-                //     }],
-                //     guest:  [{
-                //         et: e_screening.qa.guests, e_screening.presentation.guests
-                //         en: e_screening.qa.guests,
-                //         ru: e_screening.qa.guests
-                //     }],
-                //     duration: e_screening.qa.duration.toString(), e_screening.presentation.duration.toString()
-                //     // clipUrl: (text)
-                // }],
-                durationTotal: e_screening.complete_duration_minutes.toString(),
-                location: {
-                    id: scr_location, //kui screening online saal siis mode online
-                },
-                // extraInfo: {
-                //     et: 'text',
-                //     en: 'text',
-                //     ru: 'text'
-                // },
-                screening_types: scr_screeningType,
-                is_first_screening: is_first_screening,
-                // screening_mode: {
-                //     id: /screening-modes ei leia e infost saab info location j4rgi
-                // },
-                subtitles: scr_subLang,
-                cassette: scr_cassette,
-                remoteId: e_screening.id.toString()
-
+        strapi_screening.screening_types = STRAPIDATA.ScreeningType.filter((s_screeningType) => {
+            if(e_screening.type_of_screening) {
+                return e_screening.type_of_screening.includes(s_screeningType.name)
             }
+        }).map(screening_type => screening_type.id.toString())
 
-            return screening_out
-        })
-    // console.log(JSON.stringify(EVENTIVAL_REMAPPED['E_SCREENINGS'], null, 4))
-    fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_SCREENINGS.yaml'), yaml.safeDump(EVENTIVAL_REMAPPED['E_SCREENINGS'], { 'indent': '4' }), "utf8")
+        // e_screening.screening_mode = ''
+
+        strapi_screening.subtitles = STRAPIDATA.Language.filter((s_scrSubLang) => {
+            if(e_screening.film && e_screening.film.subtitle_languages ) {
+                let languages = e_screening.film.subtitle_languages.print.language
+                languages = (Array.isArray(languages) ? languages : [languages])
+
+                return languages.includes(s_scrSubLang.code)
+            }
+        }).map(subLang => subLang.id.toString())
+
+        strapi_screening.cassette = STRAPIDATA.Cassette.filter((s_cassette) => {
+            if (e_screening.film && e_screening.film.id) {
+                return s_cassette.remoteId === e_screening.film.id.toString()
+            }
+        }).map(cassette => { return {id: cassette.id.toString()} })[0] || null
+
+        strapi_screening.remoteId = e_screening.id.toString()
+        // e_screening.is_first_screening = is_first_screening
+
+        // ----   END update strapi screening properties
+        to_strapi_screenings.push(strapi_screening)
+
+    }
+
+    EVENTIVAL_REMAPPED['E_SCREENINGS'] = to_strapi_screenings
+    const scr_path = path.join(DYNAMIC_PATH, 'E_SCREENINGS.yaml')
+    const scr_yaml = yaml.safeDump(to_strapi_screenings, { 'indent': '4' })
+
+
+    fs.writeFileSync(scr_path, scr_yaml, "utf8")
+
+    // TODO #362
+    // introQaConversation: [{                // e-presentation -> intro, e-qa -> conversation
+    //     yesNo: e_screening.qa.available.toString(), e_screening.presentation.available.toString()
+    //     // type: (Enumeration), intro, conversation
+    //     // mode: j44b tyhjaks, kui qa klipp siis mode online
+    //     presenter: [{ //kas e_sreening.presenters on org name ?
+    //         et: e_screening.qa.presenters, e_screening.presentation.presenters
+    //         en: e_screening.qa.presenters,
+    //         ru: e_screening.qa.presenters
+    //     }],
+    //     guest:  [{
+    //         et: e_screening.qa.guests, e_screening.presentation.guests
+    //         en: e_screening.qa.guests,
+    //         ru: e_screening.qa.guests
+    //     }],
+    //     duration: e_screening.qa.duration.toString(), e_screening.presentation.duration.toString()
+    //     // clipUrl: (text)
+    // }],
+
+    // screening_mode: {
+    //     id: /screening-modes ei leia e infost saab info location j4rgi
+    // },
+
 }
 
 
@@ -555,7 +546,6 @@ const submitFilms = async () => {
     return from_strapi
 }
 
-
 async function submitCassette(e_cassette) {
     let options = {
         headers: { 'Content-Type': 'application/json' }
@@ -585,7 +575,6 @@ const submitCassettes = async () => {
     }
     return from_strapi
 }
-
 
 async function submitScreening(e_screening) {
     let options = {
@@ -622,14 +611,14 @@ const submitScreenings = async () => {
 const main = async () => {
     console.log('update Strapi')
     await updateStrapi()
-    // console.log('| remap')
-    // await remapEventival()
-    // console.log('| submit films')
-    // await submitFilms()
-    // console.log('| submit cassettes')
-    // await submitCassettes()
-    // console.log('| submit screenings')
-    // await submitScreenings()
+    console.log('| remap')
+    await remapEventival()
+    console.log('| submit films')
+    await submitFilms()
+    console.log('| submit cassettes')
+    await submitCassettes()
+    console.log('| submit screenings')
+    await submitScreenings()
 }
 
 main()
