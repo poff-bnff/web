@@ -141,7 +141,8 @@ block content
     if self.data.cassettes.length
 
         main.grid_films
-            each cassette in self.data.cassettes
+
+            each cassette in self.data.cassettes.sort(function(a, b){ if(a.title && b.title) { return ('' + a.title).localeCompare(b.title); } else { return 0; } })
                 - var showFilms = false
                 if cassette.tags && cassette.tags.programmes && cassette.tags.programmes[0]
                     each programme in cassette.tags.programmes
@@ -149,6 +150,7 @@ block content
                             - showFilms = true
                 if cassette.films && cassette.films[0] && showFilms
                     - var film = cassette.films[0]
+
                     a.card_film(href= `/${lang_path}film/${cassette.slug}`)
                         .container_frame_16_9
                             if cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
