@@ -55,7 +55,8 @@ block content
             section.f_synopsis_box
                 .str_info_meta_gi
                 .synopsis_gi
-                    +format(description_md)
+                    if typeof description_md === 'string'
+                        +format(description_md)
         section.f_cred_box.bg_white
         section.f_runtime_box.bg_white
 
