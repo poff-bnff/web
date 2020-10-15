@@ -43,15 +43,28 @@ for (const ix in languages) {
             if(element.presentedBy && element.presentedBy[0]) {
                 for (orgIx in element.presentedBy.organisations) {
                     let organisationFromYAML = STRAPIDATA_ORGANISATIONS.filter( (a) => { return element.presentedBy.organisations[orgIx].id === a.id })
-                    if (organisationFromYAML) {
-                        element.presentedBy.organisations[orgIx] = rueten(organisationFromYAML[0], lang);
+                    let organisationCopy = JSON.parse(JSON.stringify(organisationFromYAML[0]))
+                    if (organisationCopy) {
+                        element.presentedBy.organisations[orgIx] = rueten(organisationCopy, lang);
                     }
                 }
             }
         }
 
         element = rueten(element, lang);
-        element.path = dirSlug;
+
+        for (key in element) {
+            if (key == 'slug') {
+                element.path = element[key];
+                element.slug = element[key];
+            }
+        }
+
+        if (element.path === undefined) {
+            element.path = dirSlug;
+            element.slug = dirSlug;
+        }
+
         element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml', 'cassettes': '/_fetchdir/cassettes.' + lang + '.yaml'};
         // console.log(element);
 

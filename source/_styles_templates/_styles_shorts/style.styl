@@ -471,6 +471,22 @@ footer
                         "f_trailer_box"\
                         "f_imgs_box"
 
+.grid_cassette
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
+                        "f_title_box"\
+                        "f_synopsis_box"\
+                        "f_cred_box"\
+                        "f_runtime_box"\
+                        "f_screenings_box"\
+                        "f_dir_bio_box"\
+                        "f_extra_box"\
+                        "f_qaclip_box"\
+                        "f_trailer_box"\
+
 .grid_films
     display: grid
     grid-template-columns: 1fr
@@ -1738,7 +1754,7 @@ a.btn_popover
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
-    align-content space-between
+    align-content start
     // margin-top 2rem
     background-color white
     margin-bottom 1.618rem
@@ -1752,10 +1768,10 @@ a.btn_popover
     text-decoration none
 
 .card_film_title
-    padding-left: 1.618rem
+    padding-left: 1.2rem
     padding-top: 1.618rem
-    padding-right: 1.618rem
-    padding-bottom: .1rem
+    padding-right: 1.2rem
+    // padding-bottom: .1rem
     text-decoration none
     align-self start
     vertical-align top
@@ -1959,7 +1975,7 @@ a.btn_popover
 
 
 .film_title_locale
-    font-size: 2rem
+    font-size: 1.5rem
     color: white_96
     letter-spacing: 0.04rem
 
@@ -2091,6 +2107,16 @@ a.btn_popover
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
+
+    .grid_cassette
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_img_slider_box  f_img_slider_box  f_title_box"\
+                            "f_synopsis_box    f_synopsis_box    f_extra_box"\
+                            "f_screenings_box  f_screenings_box  f_screenings_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_trailer_box     f_trailer_box     f_trailer_box"\
 
     .grid_films
         display grid
@@ -2673,5 +2699,17 @@ strong
 .padding_top_4
     padding-top 4rem
 
+.padding_bottom_2
+    padding-bottom 2rem
+
 .padding_top_0
     padding-top 0px
+
+.bg_white
+    background-color white
+
+.thin_400
+    font-weight 400
+
+.thin_300
+    font-weight 300

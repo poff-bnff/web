@@ -3,11 +3,14 @@ extends /_templates/layout.pug
 block content
 
 
-
+    - var allFestivalEditions = []
     if self.data.cassettes
         main.grid_films
             each cassette in self.data.cassettes
-                a.card_film(id= cassette.id href= `/${lang_path}film/${cassette.slug}`)
+                if cassette.festival_editions
+                    each edition in cassette.festival_editions
+                        - allFestivalEditions.push(edition.name)
+                a.card_film(href= `/${lang_path}film/${cassette.slug}`)
                     .container_frame_16_9
                         //- each media in cassette.media
                             //- - console.log(cassette.media)
@@ -32,13 +35,18 @@ block content
                             .nupp
                                 p(id= cassette.id+'nupp' style={color: 'red', display:'none'} onclick=`saveFilmAsFavourite(${cassette.id});return false`) +
                     .card_film_info
-                        //- .str_info_grid_3
-                        //-     if cassette.tags && cassette.tags.programmes
-                        //-         each programme in cassette.tags.programmes
-                        //-             if programme.name
-                        //-                 - var pr_name = programme.name
-                        //-                 .str_info_label.dark_semi= self.label.film.programme
-                        //-                 .str_info_value.dark_1= pr_name
+                        .str_info_grid_3
+                            if cassette.films && cassette.films.length
+                                - var filmsProgrammes = []
+                                each film in cassette.films
+                                    if film.tags && film.tags.programmes && film.tags.programmes.length
+                                        each programme in film.tags.programmes
+                                            if programme.name
+                                                - filmsProgrammes.push(programme.name)
+                                if filmsProgrammes.length
+                                    - var uniqueProgrammes = [...new Set(filmsProgrammes)];
+                                    .str_info_label.dark_semi= self.label.film.programme
+                                    .str_info_value.dark_1.thin_300= uniqueProgrammes.join(', ')
                         //- if cassette.credentials.director
                         //-     .str_info_grid_3
                         //-         .str_info_label= self.label.cassette.director
@@ -48,3 +56,5 @@ block content
                         //-         .str_info_label= self.label.cassette.cast
                         //-         .str_info_value= cassette.credentials.cast.join(', ')
 
+            - var uniqueFestivalEditions = [...new Set(allFestivalEditions)]
+            - console.log(uniqueFestivalEditions)

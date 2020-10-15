@@ -7,7 +7,7 @@ include /_templates/mixins.pug
 
         //- .grid_footer_row
 
-        if self.data.supporters
+        if self.data.supporters && self.data.supporters.supporters
             //- if self.data.supporters.title
             //-     section.grid_articles
             //-     h1.section_headline.margin_header= self.data.supporters.title
@@ -16,9 +16,9 @@ include /_templates/mixins.pug
             //-         section
             //-         section.article_contents.dark_1
             //-             p.dark_1= self.data.supporters.intro
-
+            - var sortedSupportersCat = self.data.supporters.supporters.sort(function(a, b){ return a.order-b.order })
             section.supporters
-                each section in self.data.supporters.supporters
+                each section in sortedSupportersCat
                     row
                         if section.name && (typeof(section.name) !== 'object')
                             //- SEKTSIOONI NIMI

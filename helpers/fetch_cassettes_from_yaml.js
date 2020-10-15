@@ -11,14 +11,18 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
+const STRAPIDATA_FE = STRAPIDATA['FestivalEdition'];
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
+const STRAPIDATA_FILMS = STRAPIDATA['Film'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
+// true = check if programme is for this domain / false = check if festival edition is for this domain
+const CHECKPROGRAMMES = false
 
 // console.log('LIMIT: ', CASSETTELIMIT);
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
-const whichScreeningTypesToFetch = ['regular', 'first screening']
+const whichScreeningTypesToFetch = ['first screening']
 
 const mapping = {
     'poff.ee': 'poff',
@@ -29,15 +33,45 @@ const mapping = {
 }
 // STRAPIDATA_PROGRAMMES.map(programme => programme.id)
 const modelName = 'Cassette';
-const STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
-    let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
-    if (cassette.tags && cassette.tags.programmes) {
-        let cassette_programme_ids = cassette.tags.programmes.map(programme => programme.id)
-        return cassette_programme_ids.filter(cp_id => programme_ids.includes(cp_id))[0] !== undefined
-    } else {
-        return false
+
+if(CHECKPROGRAMMES) {
+
+    let cassettesWithOutProgrammes = []
+    var STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
+        let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
+        if (cassette.tags && cassette.tags.programmes) {
+            let cassette_programme_ids = cassette.tags.programmes.map(programme => programme.id)
+            return cassette_programme_ids.filter(cp_id => programme_ids.includes(cp_id))[0] !== undefined
+        } else {
+            cassettesWithOutProgrammes.push(cassette.id)
+            return false
+        }
+    })
+    if (cassettesWithOutProgrammes.length) {
+        console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no programmes');
     }
-})
+
+} else if (!CHECKPROGRAMMES && DOMAIN !== 'poff.ee') {
+
+    let cassettesWithOutFestivalEditions = []
+
+    var STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
+        let festival_editions = STRAPIDATA_FE.map(edition => edition.id)
+        if (cassette.festival_editions && cassette.festival_editions.length) {
+            let cassette_festival_editions_ids = cassette.festival_editions.map(edition => edition.id)
+            return cassette_festival_editions_ids.filter(cfe_id => festival_editions.includes(cfe_id))[0] !== undefined
+        } else {
+            cassettesWithOutFestivalEditions.push(cassette.id)
+            return false
+        }
+    })
+    if (cassettesWithOutFestivalEditions.length) {
+        console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no festival editions');
+    }
+
+} else {
+    var STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
+}
 
 const allLanguages = ["en", "et", "ru"];
 
@@ -114,10 +148,6 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             let cassettePostersCassette = []
             let cassettePostersFilms = []
 
-            if(element.films) {
-                var cassetteFilmsBeforeRueten = JSON.parse(JSON.stringify(element.films))
-            }
-
             // Kasseti programmid
             if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
                 for (const programmeIx in element.tags.programmes) {
@@ -134,8 +164,15 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             // rueten func. is run for each element separately instead of whole data, that is
             // for the purpose of saving slug_en before it will be removed by rueten func.
             rueten(element, lang)
-            if(typeof cassetteFilmsBeforeRueten !== 'undefined') {
-                element.films = cassetteFilmsBeforeRueten
+
+            if(element.films && element.films.length) {
+                for (const filmIx in element.films) {
+                    let oneFilm = element.films[filmIx]
+                    let filmFromYAML = STRAPIDATA_FILMS.filter( (a) => { return oneFilm.id === a.id });
+                    if (filmFromYAML !== undefined && filmFromYAML[0]) {
+                        element.films[filmIx] = JSON.parse(JSON.stringify(filmFromYAML[0]))
+                    }
+                }
             }
 
             // Screenings
@@ -190,6 +227,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const stillIx in element.media.stills) {
                     let still = element.media.stills[stillIx]
                     if (still.hash && still.ext) {
+                        if (still.hash.substring(0, 4) === 'F_1_') {
+                            cassetteCarouselPicsCassette.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                        }
                         cassetteCarouselPicsCassette.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                     }
                 }
@@ -204,6 +244,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const posterIx in element.media.posters) {
                     let poster = element.media.posters[posterIx]
                     if (poster.hash && poster.ext) {
+                        if (poster.hash.substring(0, 2) === 'P_') {
+                            cassettePostersCassette.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                        }
                         cassettePostersCassette.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                     }
                 }
@@ -231,8 +274,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let still = film.media.stills[stillIx]
                             if (still.hash && still.ext) {
                                 if (still.hash.substring(0, 4) === 'F_1_') {
-                                    cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                                    cassetteCarouselPicsFilms.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                                 }
+                                cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                             }
                         }
                     }
@@ -246,7 +290,10 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         for (const posterIx in film.media.posters) {
                             let poster = film.media.posters[posterIx]
                             if (poster.hash && poster.ext) {
-                                    cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                                if (poster.hash.substring(0, 2) === 'P_') {
+                                    cassettePostersFilms.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                                }
+                                cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                             }
                         }
                     }
@@ -278,13 +325,15 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                                 if (rolePerson.person && rolePerson.person.id) {
                                     let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
                                     let personCopy = JSON.parse(JSON.stringify(personFromYAML[0]))
+                                    let searchRegExp = new RegExp(' ', 'g');
+
                                     rolePerson.person = rueten(personCopy, lang);
 
                                     if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`] = []
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
                                     }
-                                    if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                                    if (rolePerson.person && rolePerson.person.firtName && rolePerson.person.lastName) {
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
                                     }
                                 } else {
                                     // console.log(film.id, ' - ', rolePerson.role_at_film.roleNamePrivate);
