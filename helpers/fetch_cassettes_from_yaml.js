@@ -227,6 +227,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const stillIx in element.media.stills) {
                     let still = element.media.stills[stillIx]
                     if (still.hash && still.ext) {
+                        if (still.hash.substring(0, 4) === 'F_1_') {
+                            cassetteCarouselPicsCassette.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                        }
                         cassetteCarouselPicsCassette.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                     }
                 }
@@ -241,6 +244,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const posterIx in element.media.posters) {
                     let poster = element.media.posters[posterIx]
                     if (poster.hash && poster.ext) {
+                        if (poster.hash.substring(0, 2) === 'P_') {
+                            cassettePostersCassette.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                        }
                         cassettePostersCassette.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                     }
                 }
@@ -268,8 +274,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let still = film.media.stills[stillIx]
                             if (still.hash && still.ext) {
                                 if (still.hash.substring(0, 4) === 'F_1_') {
-                                    cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                                    cassetteCarouselPicsFilms.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                                 }
+                                cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                             }
                         }
                     }
@@ -283,7 +290,10 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         for (const posterIx in film.media.posters) {
                             let poster = film.media.posters[posterIx]
                             if (poster.hash && poster.ext) {
-                                    cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                                if (poster.hash.substring(0, 2) === 'P_') {
+                                    cassettePostersFilms.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                                }
+                                cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                             }
                         }
                     }
@@ -322,8 +332,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                                     if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
                                         rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
                                     }
-                                    if (rolePerson.person && rolePerson.person.firstNameLastName) {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(rolePerson.person.firstNameLastName)
+                                    if (rolePerson.person && rolePerson.person.firtName && rolePerson.person.lastName) {
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
                                     }
                                 } else {
                                     // console.log(film.id, ' - ', rolePerson.role_at_film.roleNamePrivate);
