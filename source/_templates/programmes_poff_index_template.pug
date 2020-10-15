@@ -159,8 +159,8 @@ block content
                                                 each p, locale in self.otherLocalePaths
                                                     if cassette[`title_${locale}`]
                                                         .str_info_grid_3
-                                                            .str_info_label.dark_1= self.label.film[`title_${locale}`]
-                                                            .str_info_value.dark_1= cassette[`title_${locale}`]
+                                                            .str_info_label.dark_semi= self.label.film[`title_${locale}`]
+                                                            .str_info_value.dark_1.thin_300= cassette[`title_${locale}`]
 
     //- SIIN ALL SUVALINE ARTIKLITE VÄRK, VÕIB KUSTUTADA
 
