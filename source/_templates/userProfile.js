@@ -13,7 +13,7 @@ let userprofilePageURL = pageURL + '/userprofile/'
 // let userprofilePageURL = pageURL + '/userprofile'
 
 
-loadUserProfile()
+// loadUserProfile()
 
 if (window.location.hash) {
     const [access_token, id_token, token_type, token_expires] = (window.location.hash.substr(1)).split('&')
@@ -47,11 +47,11 @@ async function loadUserProfile(){
         console.log('USER_PROFILE in header: ' + JSON.stringify(USER_PROFILE))
 
         if ('email' in USER_PROFILE){
-            hello.innerHTML = 'Hello, ' + USER_PROFILE.name
-            out.innerHTML = '<a onclick="logOut()">Log out</a>'
+            // hello.innerHTML = 'Hello, ' + USER_PROFILE.name
+            // out.innerHTML = '<a onclick="logOut()">Log out</a>'
 
         } else {
-            hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
+            // hello.innerHTML = `<a href="${pageURL}/login"> Logi sisse</a>`
             return false
         }
         CheckIfProfFilled(USER_PROFILE)
