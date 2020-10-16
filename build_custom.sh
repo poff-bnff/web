@@ -87,6 +87,11 @@ build()
 
     if [ $site_name ]
     then
+
+        printf '\n----------                  Processing styles                ----------\n\n'
+        node ./helpers/copy_styles_acc_to_domain.js
+        printf '\n----------             Finished processing styles            ----------\n'
+
         printf "\nBuilding...\n"
         cp -R assets/* build/assets/
         node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
@@ -166,10 +171,6 @@ fetch_data()
     node ./helpers/xml.js
 
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
-
-    printf '\n----------                  Processing styles                ----------\n\n'
-    node ./helpers/copy_styles_acc_to_domain.js
-    printf '\n----------             Finished processing styles            ----------\n'
 
 }
 

@@ -190,10 +190,10 @@ main.grid_film
                                 .str_info_label= self.label.film.producer
                                 .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
 
-                        if film.credentials.rolePersonsByRole.dop && film.credentials.rolePersonsByRole.dop[0]
+                        if film.credentials.rolePersonsByRole.directorofphotography && film.credentials.rolePersonsByRole.directorofphotography[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.doP
-                                .str_info_value= film.credentials.rolePersonsByRole.dop.join(', ')
+                                .str_info_value= film.credentials.rolePersonsByRole.directorofphotography.join(', ')
 
                         if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
                             .str_info_grid_3
@@ -206,10 +206,10 @@ main.grid_film
                                 .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
 
                         //- Below datamodel needs to be updated and then code amended to be correct
-                        if film.credentials.productionCompany
+                        if film.credentials.rolePersonsByRole.productionCompany && film.credentials.rolePersonsByRole.productionCompany[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.production
-                                .str_info_value= film.ProductionCompanyCSV
+                                .str_info_value= film.credentials.rolePersonsByRole.productionCompany.join(', ')
 
             section.f_runtime_box
 
