@@ -29,7 +29,7 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
 //TODO #366 kellaaeg dynaamiliseks
-const utc2 = '+0400'
+const utc2 = '+0200'
 
 
 const ET = { // eventival translations
