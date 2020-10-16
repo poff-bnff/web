@@ -1,7 +1,6 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
-const rueten = require('./rueten.js')
 
 const sourceDir =  path.join(__dirname, '..', 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
@@ -14,13 +13,11 @@ const sourceFolder =  path.join(__dirname, '../source/');
 // FromStrapi.Fetch('LabelGroups', screeningsToYAMLData)
 
 LangSelect('et')
-LangSelect('en')
-LangSelect('ru')
 
 function LangSelect(lang) {
-    let data = rueten(STRAPIDATA_SCREENINGS, lang);
+    let data = STRAPIDATA_SCREENINGS
     processData(data, lang, CreateYAML);
-    console.log(`Fetching ${DOMAIN} screenings ${lang} data`);
+    console.log(`Fetching ${DOMAIN} screenings data for XML`);
 }
 
 function processData(data, lang, CreateYAML) {
@@ -120,13 +117,13 @@ function processData(data, lang, CreateYAML) {
 
         }
 
-        CreateYAML(rueten(allData, lang), lang);
+        CreateYAML(allData, lang);
     }
 }
 
 function CreateYAML(screenings, lang) {
     // console.log(screenings);
-    const SCREENINGS_YAML_PATH = path.join(fetchDir, `screenings.${lang}.yaml`)
+    const SCREENINGS_YAML_PATH = path.join(fetchDir, `screenings_for_xml.yaml`)
 
     // // console.log(process.cwd());
     let allDataYAML = yaml.safeDump(screenings, { 'noRefs': true, 'indent': '4' });

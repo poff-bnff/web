@@ -185,6 +185,12 @@ fetch_data()
     echo 'fetch_six_film_block_from_yaml'
     node ./helpers/fetch_six_film_block_from_yaml.js
 
+    echo 'fetch_screenings_from_yaml'
+    node ./helpers/fetch_screenings_from_yaml.js
+
+    echo 'assets/xml'
+    node ./helpers/xml.js
+
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
     printf '\n----------                  Processing styles                ----------\n\n'
