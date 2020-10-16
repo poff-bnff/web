@@ -7,11 +7,11 @@ head
         meta(property='og:title' content= self.title)
 
         if self.media && self.media.image && self.media.image[0]
-            - var featuredImg = `/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`
+            - var featuredImg = `http://shorts.poff.ee/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`
         else if self.media && self.media.imageDefault && self.media.imageDefault[0]
-            - var featuredImg = `/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
+            - var featuredImg = `http://shorts.poff.ee/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
         else
-            - var featuredImg = `/assets/img/static/placeholder_hd_1.jpg`
+            - var featuredImg = `http://shorts.poff.ee/assets/img/static/placeholder_hd_1.jpg`
 
         if featuredImg
             meta(property='og:image' content= featuredImg)
@@ -38,4 +38,4 @@ head
     script(src="https://sdk.amazonaws.com/js/aws-sdk-2.748.0.min.js")
 
 
-    title PÖFF : 2020 : BNFF
+    title Shorts @ PÖFF 2020
