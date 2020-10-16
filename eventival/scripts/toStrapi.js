@@ -29,7 +29,7 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
 //TODO #366 kellaaeg dynaamiliseks
-const utc2 = '+0200'
+const utc2 = '+0400'
 
 
 const ET = { // eventival translations
@@ -442,7 +442,11 @@ const remapEventival = async () => {
         strapi_screening.code = e_screening.code.toString().padStart(6, "0")
         strapi_screening.codeAndTitle = e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local
         // e_screening.ticketingUrl = tuleb piletilevist !!!
-        strapi_screening.dateTime = e_screening.start + utc2
+
+        //v4ga v4givaldne ja kandiline
+        let newD = new Date(e_screening.start + utc2)
+        strapi_screening.dateTime = newD
+
         // e_screening.introQaConversation =
         strapi_screening.durationTotal = e_screening.complete_duration_minutes
 
