@@ -53,7 +53,6 @@ for (const screeningIx in SCREENINGS) {
                 }
             } else if (screening.cassette.films.length === 1) {
                 if (screening.cassettePostersFilms && screening.cassettePostersFilms.length) {
-                    if (screening.ticketingId === '322482') {console.log(screening.cassettePostersFilms[0]);}
                     concert.image = screening.cassettePostersFilms[0]
                 } else if (screening.cassetteCarouselPicsFilms && screening.cassetteCarouselPicsFilms.length) {
                     concert.image = screening.cassetteCarouselPicsFilms[0]
