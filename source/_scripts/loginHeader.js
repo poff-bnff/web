@@ -42,7 +42,9 @@ function loadUserProfileH() {
         }
         return Promise.reject(response);
     }).then(function (data) {
+        userProfile = data
         useUserData(data)
+        console.log(userProfile);
 
     }).catch(function (error) {
         console.warn(error);

@@ -1,21 +1,21 @@
-function validateForm() {
-    console.log("validate form");
-    console.log(country.value);
-    if (country.value == "") {
-        console.log(country.value, " countryif");
-        country.classList.add("invalid");
-        country.value = "Elukoha riik";
-    }
-    if (firstName.value == "" || firstName.value.length < 2 || !isNaN(firstName.value)) {
-        document.getElementById("firstName").classList.add("invalid");
-    }
-    if (lastName.value == "" || lastName.length < 2 || !isNaN(lastName.value)) {
-        lastName.classList.add("invalid");
-    }
-    if (city.value == "") {
-        city.classList.add("invalid");
-    }
-}
+// function validateForm() {
+//     console.log("validate form");
+//     console.log(country.value);
+//     if (country.value == "") {
+//         console.log(country.value, " countryif");
+//         country.classList.add("invalid");
+//         country.value = "Elukoha riik";
+//     }
+//     if (firstName.value == "" || firstName.value.length < 2 || !isNaN(firstName.value)) {
+//         document.getElementById("firstName").classList.add("invalid");
+//     }
+//     if (lastName.value == "" || lastName.length < 2 || !isNaN(lastName.value)) {
+//         lastName.classList.add("invalid");
+//     }
+//     if (city.value == "") {
+//         city.classList.add("invalid");
+//     }
+// }
 
 
 

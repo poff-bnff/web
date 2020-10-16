@@ -53,11 +53,11 @@ block content
                         | Elukoht:
                         br
                         label.control-label(for='country') Riik:
-                        select#countrySelection.form-control.gds-cr(country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='')
+                        select#countrySelection.form-control.gds-cr(country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry()')
                     div.form-group
                         label.control-label(for='gds-cr-one') Linn:
-                        select#gds-cr-one.form-control(required='')
-                    button.btn.btn-primary(onclick='validateForm(), sendNewUser()') Salvesta
+                        select#gds-cr-one.form-control(required='' oninput= 'validateCity()')
+                    button.btn.btn-primary(onclick='validateForm()') Salvesta
 
     style.
         .invalid {color: #ee1b2e}

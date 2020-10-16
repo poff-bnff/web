@@ -11,6 +11,11 @@ if (window.location.hash) {
     }
 }
 
+if (location.search){
+    getTokensForCode()
+
+}
+
 // salvesta timestamp
 //kasutaja nimi
 // autentimis päring api vastu (email ja parool, sinna, tagasi token ja timestamp
@@ -86,18 +91,31 @@ function redirectToPreLoginUrl() {
     }
 
 
-async function fbLogin(){
+async function providerLogin(provider){
+    console.log('providerLogin' + provider);
 
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
     }
 
-    let response = await fetch('https://api.poff.ee/auth/facebook', requestOptions)
+    let providers = ['facebook', 'google', 'eventival']
+    let response = await fetch(`https://api.poff.ee/auth/${providers[provider]}`, requestOptions)
 
     let response2 = await response.json()
-    console.log(response2)
-    console.log(response2.fbLoginUrl)
 
-    window.open(response2.fbLoginUrl)
+    window.open(response2.providerUrl, '_self')
+}
+
+
+async function getTokensForCode(){
+    var requestOptions = {
+        method: 'POST',
+        redirect: 'follow'
+    }
+
+    let response = await fetch(`https://api.poff.ee/auth`, requestOptions)
+
+    console.log(await response.json)
+
 }

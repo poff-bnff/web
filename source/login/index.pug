@@ -26,11 +26,13 @@ block content
 
     //- a(href=`https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}login/&identity_provider=Facebook`) Facebook
 
-    a(style= {color: 'blue'} id= 'provider' onclick= `fbLogin()`) Facebook
+    a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
+    br
+    a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
     br
     a(href= `https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}login/&identity_provider=Google`) Google
     br
-    a(href= `https://account.eventival.com/auth/realms/Eventival/protocol/openid-connect/auth?client_id=ev-poff&redirect_uri=localhost:4000/login/&scope=openid+email+profile&response_type=code`) Eventival
+    //- a(href= `https://account.eventival.com/auth/realms/Eventival/protocol/openid-connect/auth?client_id=ev-poff&redirect_uri=http://localhost:4000/login/&scope=openid+email+profile&response_type=code`) Eventival
     br
     button(onclick='loginViaCognito()') Login
     button(onclick='testfSetAccesstoken()') SignUp
