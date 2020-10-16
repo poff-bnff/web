@@ -62,7 +62,6 @@ block content
 
 
 
-
     //- //- Programmi kirjeldus
     //- if self.description && typeof self.description !== 'object'
     //-     p.dark_1= self.description
@@ -146,15 +145,6 @@ block content
                         if film.tags && film.tags.programmes && film.tags.programmes[0]
                             each programme in film.tags.programmes
                                 if self.id === programme.id
-
-                                    //- each cassette in self.data.cassettes.sort(function(a, b){ if(a.title && b.title) { return ('' + a.title).localeCompare(b.title); } else { return 0; } })
-                                    //-     - var showFilms = false
-                                    //-     if cassette.tags && cassette.tags.programmes && cassette.tags.programmes[0]
-                                    //-         each programme in cassette.tags.programmes
-                                    //-             if self.id === programme.id
-                                    //-                 - showFilms = true
-                                    //-     if cassette.films && cassette.films[0] && showFilms
-                                    //-         - var film = cassette.films[0]
 
                                     a.card_film(href= `/${lang_path}film/${cassette.slug}`)
                                         .container_frame_16_9
