@@ -24,13 +24,27 @@ if (localStorage.getItem('ID_TOKEN') === null){
 
 
 function loadUserProfileH() {
+    console.log('loadUserProfileH')
+    var myHeaders = new Headers()
+    myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'))
 
-    var response1 = fetch('https://api.poff.ee/profile', {
+    var requestOptions = {
         method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-        },
+        headers: myHeaders,
+        redirect: 'follow'
+    }
+
+    fetch('https://api.poff.ee/profile', requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        saveFavFilms(data)
+    }).catch(function (error) {
+        console.warn(error);
     });
+
 }
 
 
