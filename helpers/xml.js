@@ -44,17 +44,18 @@ for (const screeningIx in SCREENINGS) {
             if (screening.cassette.films.length > 1) {
                 if (screening.cassettePostersCassette && screening.cassettePostersCassette.length) {
                     concert.image = screening.cassettePostersCassette[0]
-                } else if (screening.cassetteCarouselPicsCassette && screening.cassetteCarouselPicsCassette[0]) {
+                } else if (screening.cassetteCarouselPicsCassette && screening.cassetteCarouselPicsCassette.length) {
                     concert.image = screening.cassetteCarouselPicsCassette[0]
-                } else if (screening.cassettePostersFilms && screening.cassettePostersFilms[0]) {
+                } else if (screening.cassettePostersFilms && screening.cassettePostersFilms.length) {
                     concert.image = screening.cassettePostersFilms[0]
-                } else if (screening.cassetteCarouselPicsFilms && screening.cassetteCarouselPicsFilms[0]) {
+                } else if (screening.cassetteCarouselPicsFilms && screening.cassetteCarouselPicsFilms.length) {
                     concert.image = screening.cassetteCarouselPicsFilms[0]
                 }
             } else if (screening.cassette.films.length === 1) {
-                if (screening.cassettePostersFilms && screening.cassettePostersFilms[0]) {
+                if (screening.cassettePostersFilms && screening.cassettePostersFilms.length) {
+                    if (screening.ticketingId === '322482') {console.log(screening.cassettePostersFilms[0]);}
                     concert.image = screening.cassettePostersFilms[0]
-                } else if (screening.cassetteCarouselPicsFilms && screening.cassetteCarouselPicsFilms[0]) {
+                } else if (screening.cassetteCarouselPicsFilms && screening.cassetteCarouselPicsFilms.length) {
                     concert.image = screening.cassetteCarouselPicsFilms[0]
                 }
             }

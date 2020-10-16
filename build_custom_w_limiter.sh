@@ -141,6 +141,8 @@ fetch_data()
 
     [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
     [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
+    [ -d "assets/xml" ] && rm -r assets/xml/*
+
 
     echo 'Fetch strapiData.yaml from Strapi'
     node ./helpers/a_fetch.js
