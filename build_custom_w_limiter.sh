@@ -115,6 +115,12 @@ build()
 
     if [ $site_name ]
     then
+
+
+        printf '\n----------                  Processing styles                ----------\n\n'
+        node ./helpers/copy_styles_acc_to_domain.js
+        printf '\n----------             Finished processing styles            ----------\n'
+
         printf "\nBuilding...\n"
         cp -R assets/* build/assets/
         node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
@@ -141,6 +147,8 @@ fetch_data()
 
     [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
     [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
+    [ -d "assets/xml" ] && rm -r assets/xml/*
+
 
     echo 'Fetch strapiData.yaml from Strapi'
     node ./helpers/a_fetch.js
@@ -185,11 +193,13 @@ fetch_data()
     echo 'fetch_six_film_block_from_yaml'
     node ./helpers/fetch_six_film_block_from_yaml.js
 
-    printf '\n----------        FINISHED creating separate YAML files      ----------\n'
+    echo 'fetch_screenings_from_yaml'
+    node ./helpers/fetch_screenings_from_yaml.js
 
-    printf '\n----------                  Processing styles                ----------\n\n'
-    node ./helpers/copy_styles_acc_to_domain.js
-    printf '\n----------             Finished processing styles            ----------\n'
+    echo 'assets/xml'
+    node ./helpers/xml.js
+
+    printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
 }
 

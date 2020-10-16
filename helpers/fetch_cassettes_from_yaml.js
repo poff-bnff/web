@@ -11,11 +11,13 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme'];
+const STRAPIDATA_FE = STRAPIDATA['FestivalEdition'];
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'];
 const STRAPIDATA_FILMS = STRAPIDATA['Film'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
-const CHECKPROGRAMMES = true
+// true = check if programme is for this domain / false = check if festival edition is for this domain
+const CHECKPROGRAMMES = false
 
 // console.log('LIMIT: ', CASSETTELIMIT);
 
@@ -33,6 +35,7 @@ const mapping = {
 const modelName = 'Cassette';
 
 if(CHECKPROGRAMMES) {
+
     let cassettesWithOutProgrammes = []
     var STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
         let programme_ids = STRAPIDATA_PROGRAMMES.map(programme => programme.id)
@@ -47,6 +50,25 @@ if(CHECKPROGRAMMES) {
     if (cassettesWithOutProgrammes.length) {
         console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no programmes');
     }
+
+} else if (!CHECKPROGRAMMES && DOMAIN !== 'poff.ee') {
+
+    let cassettesWithOutFestivalEditions = []
+
+    var STRAPIDATA_CASSETTE = STRAPIDATA[modelName].filter(cassette => {
+        let festival_editions = STRAPIDATA_FE.map(edition => edition.id)
+        if (cassette.festival_editions && cassette.festival_editions.length) {
+            let cassette_festival_editions_ids = cassette.festival_editions.map(edition => edition.id)
+            return cassette_festival_editions_ids.filter(cfe_id => festival_editions.includes(cfe_id))[0] !== undefined
+        } else {
+            cassettesWithOutFestivalEditions.push(cassette.id)
+            return false
+        }
+    })
+    if (cassettesWithOutFestivalEditions.length) {
+        console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no festival editions');
+    }
+
 } else {
     var STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
 }
@@ -125,8 +147,6 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             let cassetteCarouselPicsFilms = []
             let cassettePostersCassette = []
             let cassettePostersFilms = []
-
-
 
             // Kasseti programmid
             if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
@@ -207,6 +227,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const stillIx in element.media.stills) {
                     let still = element.media.stills[stillIx]
                     if (still.hash && still.ext) {
+                        if (still.hash.substring(0, 4) === 'F_1_') {
+                            cassetteCarouselPicsCassette.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                        }
                         cassetteCarouselPicsCassette.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                     }
                 }
@@ -221,6 +244,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 for (const posterIx in element.media.posters) {
                     let poster = element.media.posters[posterIx]
                     if (poster.hash && poster.ext) {
+                        if (poster.hash.substring(0, 2) === 'P_') {
+                            cassettePostersCassette.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                        }
                         cassettePostersCassette.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                     }
                 }
@@ -248,8 +274,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             let still = film.media.stills[stillIx]
                             if (still.hash && still.ext) {
                                 if (still.hash.substring(0, 4) === 'F_1_') {
-                                    cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                                    cassetteCarouselPicsFilms.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                                 }
+                                cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                             }
                         }
                     }
@@ -263,7 +290,10 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         for (const posterIx in film.media.posters) {
                             let poster = film.media.posters[posterIx]
                             if (poster.hash && poster.ext) {
-                                    cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                                if (poster.hash.substring(0, 2) === 'P_') {
+                                    cassettePostersFilms.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                                }
+                                cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                             }
                         }
                     }
@@ -271,6 +301,21 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     if (cassettePostersFilms.length > 0) {
                         element.cassettePostersFilms = cassettePostersFilms
                     }
+
+                    // Filmi treiler
+                    if (film.media && film.media.trailer && film.media.trailer[0]) {
+                        for (const trailerIx in film.media.trailer) {
+                            let trailer = film.media.trailer[trailerIx]
+                            if(trailer.url && trailer.url.length > 10) {
+                                let splitYouTubeLink = trailer.url.split("=")[1]
+                                let splitForVideoCode = splitYouTubeLink.split("&")[0]
+                                if (splitForVideoCode.length === 11) {
+                                    trailer.youTubeCode = splitForVideoCode
+                                }
+                            }
+                        }
+                    }
+
 
                     // Filmi programmid
                     if (film.tags && film.tags.programmes && film.tags.programmes[0]) {
@@ -295,13 +340,28 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                                 if (rolePerson.person && rolePerson.person.id) {
                                     let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id });
                                     let personCopy = JSON.parse(JSON.stringify(personFromYAML[0]))
+                                    let searchRegExp = new RegExp(' ', 'g');
+
                                     rolePerson.person = rueten(personCopy, lang);
 
                                     if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`] = []
+                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
                                     }
-                                    if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(' ', '')}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
+                                    if (rolePerson.person) {
+
+
+
+                                        let fullName = undefined
+                                        if (rolePerson.person.firstName) {
+                                            fullName = rolePerson.person.firstName
+                                        }
+                                        if (rolePerson.person.lastName) {
+                                            fullName = `${fullName !== undefined ? fullName : ''} ${rolePerson.person.lastName}`
+                                        }
+
+                                        if (fullName !== undefined && fullName.length > 2) {
+                                            rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(fullName.trim())
+                                        }
                                     }
                                 } else {
                                     // console.log(film.id, ' - ', rolePerson.role_at_film.roleNamePrivate);
