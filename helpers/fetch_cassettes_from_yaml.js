@@ -347,7 +347,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                                     if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
                                         rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
                                     }
-                                    if (rolePerson.person && rolePerson.person.firtName && rolePerson.person.lastName) {
+                                    if (rolePerson.person && rolePerson.person.firstName && rolePerson.person.lastName) {
                                         rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(`${rolePerson.person.firstName} ${rolePerson.person.lastName}`)
                                     }
                                 } else {
