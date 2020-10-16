@@ -19,6 +19,7 @@ async function strapiQuery(options, dataObject = false) {
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
     options['host'] = process.env['StrapiHost']
+    // options.timeout = 30000
 
     // console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
@@ -38,11 +39,20 @@ async function strapiQuery(options, dataObject = false) {
                 }
             })
             response.on('error', function (thisError) {
-                console.log('E', thisError)
+                console.log('\nE:1', thisError)
                 reject(thisError)
             })
         })
-        request.on('error', reject)
+        request.on('error', async function (thisError) {
+            if (thisError.code === 'ETIMEDOUT') {
+                process.stdout.write('r')
+                let resolved = await strapiQuery(options, dataObject)
+                resolve(resolved)
+            } else {
+                console.log('\nE:2', thisError)
+                reject
+            }
+        })
         if (dataObject) {
             request.write(JSON.stringify(dataObject))
         }

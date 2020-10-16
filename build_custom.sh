@@ -113,6 +113,8 @@ fetch_data()
 
     [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
     [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
+    [ -d "assets/xml" ] && rm -r assets/xml/*
+
 
     echo 'Fetch strapiData.yaml from Strapi'
     node ./helpers/a_fetch.js
@@ -156,6 +158,12 @@ fetch_data()
 
     echo 'fetch_six_film_block_from_yaml'
     node ./helpers/fetch_six_film_block_from_yaml.js
+
+    echo 'fetch_screenings_from_yaml'
+    node ./helpers/fetch_screenings_from_yaml.js
+
+    echo 'assets/xml'
+    node ./helpers/xml.js
 
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
