@@ -10,7 +10,6 @@ function loadMyFavFilms() {
     }
 
     if (window.location.href.indexOf("/film/") > -1 || favouritePages.includes(window.location.href)) {
-        console.log('favourite page');
         fetchFavFilmsFromDB()
     }
 }
@@ -24,6 +23,7 @@ function fetchFavFilmsFromDB() {
         headers: myHeaders,
         redirect: 'follow'
     };
+
 
     fetch('https://api.poff.ee/favourite', requestOptions).then(function (response) {
         if (response.ok) {
@@ -57,11 +57,11 @@ function saveFavFilms(data) {
 function showFavFilms() {
     var filmCards = document.getElementsByClassName('card_film')
 
+
     for (var i = 0; i < filmCards.length; i++) {
         var filmId = filmCards[i].id
 
         if (window.location.href === 'http://localhost:4000/favourite' && favFilms.includes(filmId)) {
-            console.log('match')
             filmCards[i].style.display = 'block'
         }
 

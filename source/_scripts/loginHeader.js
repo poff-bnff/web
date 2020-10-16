@@ -26,7 +26,8 @@ if (localStorage.getItem('ID_TOKEN') === null){
 function loadUserProfileH() {
     console.log('loadUserProfileH')
     var myHeaders = new Headers()
-    myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'))
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'))
+
 
     var requestOptions = {
         method: 'GET',
@@ -34,13 +35,15 @@ function loadUserProfileH() {
         redirect: 'follow'
     }
 
+
     fetch('https://api.poff.ee/profile', requestOptions).then(function (response) {
         if (response.ok) {
             return response.json();
         }
         return Promise.reject(response);
     }).then(function (data) {
-        saveFavFilms(data)
+        useUserData(data)
+
     }).catch(function (error) {
         console.warn(error);
     });
@@ -50,6 +53,11 @@ function loadUserProfileH() {
 
 function saveUrl(){
     localStorage.setItem('url', window.location.href)
+}
+
+
+function useUserData(userProf){
+    document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
 }
 
 

@@ -15,7 +15,7 @@ block content
     br
     br
     br
-    h4#number Log in without hosted UI:
+    h4#number Log in with email+password
     label(style={color: 'red'} for='loginUsername') Username:
     input#loginUsername(type='text')
     br
@@ -24,7 +24,9 @@ block content
     br
     p#signUpPassword2
 
-    a(href=`https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}login/&identity_provider=Facebook`) Facebook
+    //- a(href=`https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}login/&identity_provider=Facebook`) Facebook
+
+    a(style= {color: 'blue'} id= 'provider' onclick= `fbLogin()`) Facebook
     br
     a(href= `https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}login/&identity_provider=Google`) Google
     br
@@ -36,13 +38,8 @@ block content
     br
     br
     br
-    label(style={color: 'red'} for='favouriteFilm') Favourite Film:
-    input#favouriteFilm(type='favouriteFilm')
-    button(onclick='saveAsFavorite()') Save Favorite
     br
     br
-    button(onclick='showMyFavouriteFilms()') Show favorites
-    p#myFavouriteFilms(style={color: 'green'})
     br
 
 
