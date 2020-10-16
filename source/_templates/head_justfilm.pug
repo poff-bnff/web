@@ -2,8 +2,20 @@ head
     // Required meta tags
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // For Facebook share
     if self.title
         meta(property='og:title' content= self.title)
+
+        if self.media && self.media.image && self.media.image[0]
+            - var featuredImg = `/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`
+        else if self.media && self.media.imageDefault && self.media.imageDefault[0]
+            - var featuredImg = `/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
+        else
+            - var featuredImg = `/assets/img/static/placeholder_hd_1.jpg`
+
+        if featuredImg
+            meta(property='og:image' content= featuredImg)
+
     // Bootstrap CSS
     link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxvž8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
     // Fondid, fonts.google.com
@@ -28,4 +40,4 @@ head
     link(href='/style.css' rel='stylesheet')
 
 
-    title PÖFF : 2020 : BNFF
+    title Just Film 2020
