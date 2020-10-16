@@ -6,8 +6,6 @@ head
     if self.title
         meta(property='og:title' content= self.title)
 
-        - var domain = process.env['DOMAIN']
-
         if self.media && self.media.image && self.media.image[0]
             - var featuredImg = `/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`
         else if self.media && self.media.imageDefault && self.media.imageDefault[0]
