@@ -737,6 +737,10 @@ Film: &Film
     world_sales:
         - *Organisation
 
+OrderedFilm: &OrderedFilm
+    order: #(number)
+    film: *Film
+
 Cassette: &Cassette
     _path: /cassettes
     title_et: (text)
@@ -752,6 +756,8 @@ Cassette: &Cassette
     slug_ru: (UID)
     presenters:
         - *Organisation
+    orderedFilms:
+        - *OrderedFilm #(Component (repeatable))
     films:
         - *Film
     remoteId: (UID)
