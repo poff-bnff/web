@@ -69,8 +69,6 @@ const dataMap = {
 // console.log(filmsO)
 
 
-
-
 async function eventivalFetch(url) {
     // console.log('Fetch', modelName)
     return new Promise((resolve, reject) => {
@@ -113,25 +111,15 @@ const fetch_lists = async () => {
         console.log('go for', model, 'list')
         let eApis = []
         let jsonList = []
-        if (mapping.category) {
-            for (const category of categories) {
-                eApis.push(mapping.api + mapping.category.replace('?', category.id))
-            }
-        } else {
-            eApis.push(mapping.api)
-        }
-        for (const eApi of eApis) {
-            // console.log(eApi);
-            const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, eApi)
-            const eventivalXML = await eventivalFetch(url)
-                .catch(e => {
-                    console.log('E3:', e)
-                })
-            // console.log('eventivalXML', eventivalXML)
-            const fetched = my_parser(eventivalXML, mapping.root);
-            if (Object.keys(fetched).includes(mapping.iterator)) {
-                jsonList = jsonList.concat(fetched[mapping.iterator])
-            }
+        const url = 'https://' + path.join(eventivalAPI, EVENTIVAL_TOKEN, mapping.api)
+        const eventivalXML = await eventivalFetch(url)
+            .catch(e => {
+                console.log('E3:', e)
+            })
+        // console.log('eventivalXML', eventivalXML)
+        const fetched = my_parser(eventivalXML, mapping.root);
+        if (Object.keys(fetched).includes(mapping.iterator)) {
+            jsonList = jsonList.concat(fetched[mapping.iterator])
         }
         e_data[model] = jsonList
     }
@@ -214,24 +202,24 @@ const fetch_films = async (e_films) => {
 
 }
 
+const decodeScreeningTexts = (e_screenings) => {
+    for (const e_screening of e_screenings) {
+        let e_film = e_screening.film
+        e_film.title_english = h2p(e_film.title_english)
+        e_film.title_original = h2p(e_film.title_original)
+        e_film.title_local = h2p(e_film.title_local)
+        e_film.title_custom = h2p(e_film.title_custom)
+    }
+}
+
 const foo = async () => {
     const e_data = await fetch_lists()
+    decodeScreeningTexts(e_data.screenings)
     console.log('go for all the films ');
     await fetch_films(e_data.films)
     for (const [model, data] of Object.entries(e_data)) {
         const yamlStr = yaml.safeDump(data, { 'indent': '4' })
         fs.writeFileSync(dataMap[model].outyaml, yamlStr, "utf8")
-        // if (model === 'films') {
-        //     let sections = {}
-        //     for (const ix in data) {
-        //         const film = data[ix]
-        //         for (const jx in film.eventival_categorization.sections) {
-        //             const section = film.eventival_categorization.sections[jx]
-        //             sections[section.id] = section.name
-        //         }
-        //     }
-        //     console.log(sections)
-        // }
     }
 }
 
