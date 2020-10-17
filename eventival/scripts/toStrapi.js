@@ -28,9 +28,6 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
-//TODO #366 kellaaeg dynaamiliseks
-const utc2 = '+0200'
-
 
 const ET = { // eventival translations
     categories: {
@@ -39,7 +36,8 @@ const ET = { // eventival translations
         "Shorts" : "2",
         "Shortsi alam" : "2",
         "KinoFF" : "4",
-    }
+    },
+    utc2: '+0200' //TODO #366 kellaaeg dynaamiliseks
 }
 
 const EVENTIVAL_REMAPPED = {}
@@ -322,7 +320,7 @@ const remapEventival = async () => {
     }
     EVENTIVAL_REMAPPED['E_FILMS'] = to_strapi_films
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_FILMS.yaml'), yaml.safeDump(to_strapi_films, { 'indent': '4' }), "utf8")
-    console.log('got films', EVENTIVAL_REMAPPED['E_FILMS'].length)
+    // console.log('got films', EVENTIVAL_REMAPPED['E_FILMS'].length)
 
     const strapi_cassettes = await getModel('Cassette')
     let to_strapi_cassettes = []
@@ -383,10 +381,18 @@ const remapEventival = async () => {
         ? e_cassette.film_info.texts.logline.split(',').map(id => id.trim())
         : [e_cassette.ids.system_id.toString()]
 
+        // TODO #379:
         strapi_cassette.films = cassette_remote_ids.map(remote_id => {
             return (STRAPIDATA.Film.filter(s_film => remote_id === s_film.remoteId)[0] || {id: null}).id
         }).map(id => {
             return {id: id}
+        })
+
+        let film_order_in_cassette = 1
+        strapi_cassette.orderedFilms = cassette_remote_ids.map(remote_id => {
+            return (STRAPIDATA.Film.filter(s_film => remote_id === s_film.remoteId)[0] || {id: null}).id
+        }).map(id => {
+            return {order: film_order_in_cassette++, film: {id: id}}
         })
 
         if (e_cassette.publications) {
@@ -444,7 +450,7 @@ const remapEventival = async () => {
         // e_screening.ticketingUrl = tuleb piletilevist !!!
 
         //v4ga v4givaldne ja kandiline
-        let newD = new Date(e_screening.start + utc2)
+        let newD = new Date(e_screening.start + ET.utc2)
         strapi_screening.dateTime = newD
 
         // e_screening.introQaConversation =
@@ -610,23 +616,22 @@ async function submitScreening(e_screening) {
 
 const submitScreenings = async () => {
     let from_strapi = []
-    for (const ix in EVENTIVAL_REMAPPED['E_SCREENINGS']) {
-        // if (ix > 5) { continue }
-        const screening_from_strapi = await submitScreening(EVENTIVAL_REMAPPED['E_SCREENINGS'][ix])
+    for (e_screening of EVENTIVAL_REMAPPED['E_SCREENINGS']) {
+        const screening_from_strapi = await submitScreening(e_screening)
         from_strapi.push(screening_from_strapi)
     }
     return from_strapi
 }
 
 const main = async () => {
-    // console.log('update Strapi')
-    // await updateStrapi()
+    console.log('update Strapi')
+    await updateStrapi()
     console.log('| remap')
     await remapEventival()
-    // console.log('| submit films')
-    // await submitFilms()
-    // console.log('| submit cassettes')
-    // await submitCassettes()
+    console.log('| submit films')
+    await submitFilms()
+    console.log('| submit cassettes')
+    await submitCassettes()
     console.log('| submit screenings')
     await submitScreenings()
 }
