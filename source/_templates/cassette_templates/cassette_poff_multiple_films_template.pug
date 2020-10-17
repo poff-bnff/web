@@ -209,15 +209,15 @@ main.grid_cassette
                             //- if screening.screening_mode && screening.screening_mode.name && screening.ticketingId && screening.ticketingUrl && screening.screening_mode.name === 'Online'
                             //-     if screening.bookingUrl
                             //-         a.btn.btn_secondary.active(href= screening.bookingUrl role='button') BOOKINGLABEL!
-                            //-     a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
+                            //-     a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button' target='_blank')= self.label.button.screeningBuyTicket
                             //- if screening.screeningTown === 'Tartu'
-                            //-     a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
+                            //-     a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_blank')= self.label.button.covidRegister
                             //-     a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
                             if screening.bookingUrl
-                                a.btn.btn_secondary.active(href= screening.bookingUrl role='button')= self.label.button.screeningReservation
+                                a.btn.btn_secondary.active(href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
                             if screening.ticketingUrl && screening.ticketingId
-                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
+                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button' target='_blank')= self.label.button.screeningBuyTicket
 
 h1.section_headline.padding_top_4.padding_bottom_2= self.label.menu.mainFilms
 
