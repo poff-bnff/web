@@ -195,12 +195,14 @@ const updateStrapi = async () => {
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             // console.log(e_film);
             let s_film = {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: {rolePerson: []}}
+            let cred_order_in_film = 1
             for (const e_crew of e_film.publications.en.crew) {
                 const role_id = s_role_id_by_e_crew_type(e_crew, s_roles)
-                s_film.credentials.rolePerson = [].concat(
+                s_film.credentials.rolePerson = [].concat( // TODO #381
                     s_film.credentials.rolePerson,
                     e_crew.text.map(name => {
                         return {
+                            order: cred_order_in_film++,
                             role_at_film: { id: role_id },
                             person: { id: s_person_id_by_e_fullname(name, s_persons) }
                         }
@@ -341,8 +343,6 @@ const remapEventival = async () => {
             && e_cassette.film_info.texts.logline
             && e_cassette.film_info.texts.logline !== '' ? true : false)
         // ---- BEGIN update strapi cassette properties
-
-        // TODO #365 order kassetile
 
         strapi_cassette.title_et = (e_cassette.titles ? e_cassette.titles : {'title_local': ''}).title_local.toString()
         strapi_cassette.title_en = (e_cassette.titles ? e_cassette.titles : {'title_english': ''}).title_english.toString()
