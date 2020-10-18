@@ -176,7 +176,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             }
 
             // #379 put ordered films to cassette.film
-            s_cassette_copy.films = s_cassette_copy.orderedFilms.map(s_c_film => {
+            let ordered_films = s_cassette_copy.orderedFilms.map(s_c_film => {
                 let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
                 if (s_films && s_films[0]) {
                     s_films[0].ordinal = s_c_film.order
@@ -185,6 +185,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     return null
                 }
             })
+            if (ordered_films !== undefined && ordered_films[0]) {
+                s_cassette_copy.films = JSON.parse(JSON.stringify(ordered_films))
+            }
 
             // Screenings
             let screenings = []

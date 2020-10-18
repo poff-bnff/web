@@ -57,6 +57,13 @@ async function main() {
     const outFile = path.join(fetchDir, `screenings_urls.yaml`)
     fs.writeFileSync(outFile, JSON.stringify(PL_screenings, null, 4), 'utf8')
 
+    PL_screenings = PL_screenings.filter(PL_screening => {
+        if (!PL_screening.id) {
+            console.log('WARNING: Missing in Strapi:', JSON.stringify(PL_screening, null, 4))
+            return false
+        }
+        return true
+    })
 
 
     await putModel('Screening', PL_screenings)
