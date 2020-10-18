@@ -109,7 +109,9 @@ function getData(dirPath, lang, copyFile, showErrors, dataFrom, getDataCB) {
     getDataCB(dirPath, lang, copyFile, dataFrom, showErrors)
 }
 
-
+function JSONcopy(obj) {
+    return JSON.parse(JSON.stringify(obj))
+}
 
 function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let allData = []
@@ -121,7 +123,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let counting = 0
     for (const s_cassette of STRAPIDATA_CASSETTE) {
         if (limit !== 0 && counting === limit) break
-        const s_cassette_copy = JSON.parse(JSON.stringify(s_cassette))
+        counting++
+
+        const s_cassette_copy = JSONcopy(s_cassette)
 
         let slugEn = undefined
         if (s_cassette_copy.films && s_cassette_copy.films.length === 1) {
@@ -136,7 +140,6 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 slugEn = s_cassette_copy.slug_et
             }
         }
-        counting++
 
         if(typeof slugEn !== 'undefined') {
             s_cassette_copy.dirSlug = slugEn
@@ -152,11 +155,9 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             if (s_cassette_copy.tags && s_cassette_copy.tags.programmes && s_cassette_copy.tags.programmes[0]) {
                 for (const programmeIx in s_cassette_copy.tags.programmes) {
                     let programme = s_cassette_copy.tags.programmes[programmeIx]
-
                     let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id })
                     if (typeof programmeFromYAML !== 'undefined' && programmeFromYAML[0]) {
-                        s_cassette_copy.tags.programmes[programmeIx] = JSON.parse(JSON.stringify(programmeFromYAML[0]))
-                        // console.log(s_cassette_copy.tags.programmes[programmeIx])
+                        s_cassette_copy.tags.programmes[programmeIx] = JSONcopy(programmeFromYAML[0])
                     }
                 }
             }
@@ -170,7 +171,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     let oneFilm = s_cassette_copy.films[filmIx]
                     let s_film = STRAPIDATA_FILMS.filter( (a) => { return oneFilm.id === a.id })
                     if (s_film !== undefined && s_film[0]) {
-                        s_cassette_copy.films[filmIx] = JSON.parse(JSON.stringify(s_film[0]))
+                        s_cassette_copy.films[filmIx] = JSONcopy(s_film[0])
                     }
                 }
             }
@@ -192,7 +193,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             // Screenings
             let screenings = []
             for (screeningIx in STRAPIDATA_SCREENINGS) {
-                let screening = JSON.parse(JSON.stringify(STRAPIDATA_SCREENINGS[screeningIx]))
+                let screening = JSONcopy(STRAPIDATA_SCREENINGS[screeningIx])
                 if (screening.cassette && screening.cassette.id === s_cassette_copy.id
                     && screening.screening_types && screening.screening_types[0]) {
 
@@ -217,7 +218,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                 s_cassette_copy.screenings = screenings
             }
 
-            // let s_cassette_copy = JSON.parse(JSON.stringify(s_cassette_copy))
+            // let s_cassette_copy = JSONcopy(s_cassette_copy))
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru']
             for (key in s_cassette_copy) {
@@ -271,21 +272,19 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             }
 
             if (s_cassette_copy.films && s_cassette_copy.films[0]) {
-                for (filmIx in s_cassette_copy.films) {
-                    let film = s_cassette_copy.films[filmIx]
-                    let filmSlugEn = film.slug_en
+                for (scc_film of s_cassette_copy.films) {
+                    let filmSlugEn = scc_film.slug_en
 
                     if (!filmSlugEn) {
-                        filmSlugEn = film.slug
+                        filmSlugEn = scc_film.slug
                     }
                     if (typeof filmSlugEn !== 'undefined') {
-                        film.dirSlug = filmSlugEn
+                        scc_film.dirSlug = filmSlugEn
                     }
 
                     // Film carousel pics
-                    if (film.media && film.media.stills && film.media.stills[0]) {
-                        for (const stillIx in film.media.stills) {
-                            let still = film.media.stills[stillIx]
+                    if (scc_film.media && scc_film.media.stills && scc_film.media.stills[0]) {
+                        for (still of scc_film.media.stills) {
                             if (still.hash && still.ext) {
                                 if (still.hash.substring(0, 4) === 'F_1_') {
                                     cassetteCarouselPicsFilms.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
@@ -300,9 +299,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     }
 
                     // Film posters pics
-                    if (film.media && film.media.posters && film.media.posters[0]) {
-                        for (const posterIx in film.media.posters) {
-                            let poster = film.media.posters[posterIx]
+                    if (scc_film.media && scc_film.media.posters && scc_film.media.posters[0]) {
+                        for (poster of scc_film.media.posters) {
                             if (poster.hash && poster.ext) {
                                 if (poster.hash.substring(0, 2) === 'P_') {
                                     cassettePostersFilms.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
@@ -317,9 +315,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     }
 
                     // Filmi treiler
-                    if (film.media && film.media.trailer && film.media.trailer[0]) {
-                        for (const trailerIx in film.media.trailer) {
-                            let trailer = film.media.trailer[trailerIx]
+                    if (scc_film.media && scc_film.media.trailer && scc_film.media.trailer[0]) {
+                        for (trailer of scc_film.media.trailer) {
                             if(trailer.url && trailer.url.length > 10) {
                                 let splitYouTubeLink = trailer.url.split("=")[1]
                                 let splitForVideoCode = splitYouTubeLink.split("&")[0]
@@ -330,30 +327,28 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         }
                     }
 
-
                     // Filmi programmid
-                    if (film.tags && film.tags.programmes && film.tags.programmes[0]) {
-                        for (const programmeIx in film.tags.programmes) {
-                            let programme = film.tags.programmes[programmeIx]
+                    if (scc_film.tags && scc_film.tags.programmes && scc_film.tags.programmes[0]) {
+                        for (const programmeIx in scc_film.tags.programmes) {
+                            let programme = scc_film.tags.programmes[programmeIx]
                             let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id })
                             if (typeof programmeFromYAML[0] !== 'undefined') {
-                                film.tags.programmes[programmeIx] = JSON.parse(JSON.stringify(programmeFromYAML[0]))
+                                scc_film.tags.programmes[programmeIx] = JSONcopy(programmeFromYAML[0])
                             } else {
-                                console.log('Error! Programme with ID ', programme.id, ', under film with ID ', film.id, ' - domain ', DOMAIN, ' probably not assigned to this programme!')
+                                console.log('Error! Programme with ID ', programme.id, ', under film with ID ', scc_film.id, ' - domain ', DOMAIN, ' probably not assigned to this programme!')
                             }
                         }
                     }
 
-
-                    if(film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]) {
+                    if(scc_film.credentials && scc_film.credentials.rolePerson && scc_film.credentials.rolePerson[0]) {
                         let rolePersonTypes = {}
-                        film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0) })
-                        for (roleIx in film.credentials.rolePerson) {
-                            let rolePerson = film.credentials.rolePerson[roleIx]
+                        scc_film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0) })
+                        for (roleIx in scc_film.credentials.rolePerson) {
+                            let rolePerson = scc_film.credentials.rolePerson[roleIx]
                             if (rolePerson !== undefined) {
                                 if (rolePerson.person && rolePerson.person.id) {
                                     let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })
-                                    let personCopy = JSON.parse(JSON.stringify(personFromYAML[0]))
+                                    let personCopy = JSONcopy(personFromYAML[0])
                                     let searchRegExp = new RegExp(' ', 'g')
 
                                     rolePerson.person = rueten(personCopy, lang)
@@ -362,9 +357,6 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                                         rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
                                     }
                                     if (rolePerson.person) {
-
-
-
                                         let fullName = undefined
                                         if (rolePerson.person.firstName) {
                                             fullName = rolePerson.person.firstName
@@ -383,7 +375,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             }
                             //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
-                        s_cassette_copy.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
+                        scc_film.credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
                 rueten(s_cassette_copy.films, lang)
