@@ -748,10 +748,6 @@ OrderedFilms: &OrderedFilms
     order: (Number)
     film: *Film
 
-OrderedFilm: &OrderedFilm
-    order: #(number)
-    film: *Film
-
 Cassette: &Cassette
     _path: /cassettes
     title_et: (text)
