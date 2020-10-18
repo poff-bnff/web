@@ -119,29 +119,29 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
     let slugMissingErrorIDs = []
     let limit = CASSETTELIMIT
     let counting = 0
-    for (const originalElement of STRAPIDATA_CASSETTE) {
+    for (const s_cassette of STRAPIDATA_CASSETTE) {
         if (limit !== 0 && counting === limit) break;
-        const element = JSON.parse(JSON.stringify(originalElement))
+        const s_cassette_copy = JSON.parse(JSON.stringify(s_cassette))
 
         let slugEn = undefined
-        if (element.films && element.films.length === 1) {
-            slugEn = element.films[0].slug_en
+        if (s_cassette_copy.films && s_cassette_copy.films.length === 1) {
+            slugEn = s_cassette_copy.films[0].slug_en
             if (!slugEn) {
-                slugEn = element.films[0].slug_et
+                slugEn = s_cassette_copy.films[0].slug_et
             }
         }
         if(!slugEn) {
-            slugEn = element.slug_en
+            slugEn = s_cassette_copy.slug_en
             if (!slugEn) {
-                slugEn = element.slug_et
+                slugEn = s_cassette_copy.slug_et
             }
         }
         counting++
 
         if(typeof slugEn !== 'undefined') {
-            element.dirSlug = slugEn
-            element.directory = path.join(dirPath, slugEn)
-            fs.mkdirSync(element.directory, { recursive: true })
+            s_cassette_copy.dirSlug = slugEn
+            s_cassette_copy.directory = path.join(dirPath, slugEn)
+            fs.mkdirSync(s_cassette_copy.directory, { recursive: true })
 
             let cassetteCarouselPicsCassette = []
             let cassetteCarouselPicsFilms = []
@@ -149,37 +149,51 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             let cassettePostersFilms = []
 
             // Kasseti programmid
-            if (element.tags && element.tags.programmes && element.tags.programmes[0]) {
-                for (const programmeIx in element.tags.programmes) {
-                    let programme = element.tags.programmes[programmeIx];
+            if (s_cassette_copy.tags && s_cassette_copy.tags.programmes && s_cassette_copy.tags.programmes[0]) {
+                for (const programmeIx in s_cassette_copy.tags.programmes) {
+                    let programme = s_cassette_copy.tags.programmes[programmeIx];
 
                     let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id });
                     if (typeof programmeFromYAML !== 'undefined' && programmeFromYAML[0]) {
-                        element.tags.programmes[programmeIx] = JSON.parse(JSON.stringify(programmeFromYAML[0]))
-                        // console.log(element.tags.programmes[programmeIx]);
+                        s_cassette_copy.tags.programmes[programmeIx] = JSON.parse(JSON.stringify(programmeFromYAML[0]))
+                        // console.log(s_cassette_copy.tags.programmes[programmeIx]);
                     }
                 }
             }
 
-            // rueten func. is run for each element separately instead of whole data, that is
+            // rueten func. is run for each s_cassette_copy separately instead of whole data, that is
             // for the purpose of saving slug_en before it will be removed by rueten func.
-            rueten(element, lang)
+            rueten(s_cassette_copy, lang)
 
-            if(element.films && element.films.length) {
-                for (const filmIx in element.films) {
-                    let oneFilm = element.films[filmIx]
-                    let filmFromYAML = STRAPIDATA_FILMS.filter( (a) => { return oneFilm.id === a.id });
-                    if (filmFromYAML !== undefined && filmFromYAML[0]) {
-                        element.films[filmIx] = JSON.parse(JSON.stringify(filmFromYAML[0]))
+            if(s_cassette_copy.films && s_cassette_copy.films.length) {
+                for (const filmIx in s_cassette_copy.films) {
+                    let oneFilm = s_cassette_copy.films[filmIx]
+                    let s_film = STRAPIDATA_FILMS.filter( (a) => { return oneFilm.id === a.id });
+                    if (s_film !== undefined && s_film[0]) {
+                        s_cassette_copy.films[filmIx] = JSON.parse(JSON.stringify(s_film[0]))
                     }
                 }
+            }
+
+            // #379 put ordered films to cassette.film
+            let ordered_films = s_cassette_copy.orderedFilms.map(s_c_film => {
+                let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
+                if (s_films && s_films[0]) {
+                    s_films[0].ordinal = s_c_film.order
+                    return s_films[0]
+                } else {
+                    return null
+                }
+            })
+            if (ordered_films !== undefined && ordered_films[0]) {
+                s_cassette_copy.films = JSON.parse(JSON.stringify(ordered_films))
             }
 
             // Screenings
             let screenings = []
             for (screeningIx in STRAPIDATA_SCREENINGS) {
                 let screening = JSON.parse(JSON.stringify(STRAPIDATA_SCREENINGS[screeningIx]));
-                if (screening.cassette && screening.cassette.id === element.id
+                if (screening.cassette && screening.cassette.id === s_cassette_copy.id
                     && screening.screening_types && screening.screening_types[0]) {
 
                     let screeningNames = function(item) {
@@ -200,32 +214,32 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             }
 
             if (screenings.length > 0) {
-                element.screenings = screenings
+                s_cassette_copy.screenings = screenings
             }
 
-            // let element = JSON.parse(JSON.stringify(element));
+            // let s_cassette_copy = JSON.parse(JSON.stringify(s_cassette_copy));
             // let aliases = []
             let languageKeys = ['en', 'et', 'ru'];
-            for (key in element) {
+            for (key in s_cassette_copy) {
                 if (key == 'slug') {
-                    element.path = `film/${element[key]}`;
-                    element.slug = `${element[key]}`;
+                    s_cassette_copy.path = `film/${s_cassette_copy[key]}`;
+                    s_cassette_copy.slug = `${s_cassette_copy[key]}`;
                 }
 
-                if (typeof(element[key]) === 'object' && element[key] != null) {
-                    // makeCSV(element[key], element, lang);
+                if (typeof(s_cassette_copy[key]) === 'object' && s_cassette_copy[key] != null) {
+                    // makeCSV(s_cassette_copy[key], s_cassette_copy, lang);
                 }
             }
 
-            if (element.path === undefined) {
-                element.path = `film/${slugEn}`;
-                element.slug = slugEn;
+            if (s_cassette_copy.path === undefined) {
+                s_cassette_copy.path = `film/${slugEn}`;
+                s_cassette_copy.slug = slugEn;
             }
 
             // Cassette carousel pics
-            if (element.media && element.media.stills && element.media.stills[0]) {
-                for (const stillIx in element.media.stills) {
-                    let still = element.media.stills[stillIx]
+            if (s_cassette_copy.media && s_cassette_copy.media.stills && s_cassette_copy.media.stills[0]) {
+                for (const stillIx in s_cassette_copy.media.stills) {
+                    let still = s_cassette_copy.media.stills[stillIx]
                     if (still.hash && still.ext) {
                         if (still.hash.substring(0, 4) === 'F_1_') {
                             cassetteCarouselPicsCassette.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
@@ -236,13 +250,13 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             }
 
             if (cassetteCarouselPicsCassette.length > 0) {
-                element.cassetteCarouselPicsCassette = cassetteCarouselPicsCassette
+                s_cassette_copy.cassetteCarouselPicsCassette = cassetteCarouselPicsCassette
             }
 
             // Cassette poster pics
-            if (element.media && element.media.posters && element.media.posters[0]) {
-                for (const posterIx in element.media.posters) {
-                    let poster = element.media.posters[posterIx]
+            if (s_cassette_copy.media && s_cassette_copy.media.posters && s_cassette_copy.media.posters[0]) {
+                for (const posterIx in s_cassette_copy.media.posters) {
+                    let poster = s_cassette_copy.media.posters[posterIx]
                     if (poster.hash && poster.ext) {
                         if (poster.hash.substring(0, 2) === 'P_') {
                             cassettePostersCassette.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
@@ -253,12 +267,12 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             }
 
             if (cassettePostersCassette.length > 0) {
-                element.cassettePostersCassette = cassettePostersCassette
+                s_cassette_copy.cassettePostersCassette = cassettePostersCassette
             }
 
-            if (element.films && element.films[0]) {
-                for (filmIx in element.films) {
-                    let film = element.films[filmIx]
+            if (s_cassette_copy.films && s_cassette_copy.films[0]) {
+                for (filmIx in s_cassette_copy.films) {
+                    let film = s_cassette_copy.films[filmIx]
                     let filmSlugEn = film.slug_en
 
                     if (!filmSlugEn) {
@@ -282,7 +296,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     }
 
                     if (cassetteCarouselPicsFilms.length > 0) {
-                        element.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
+                        s_cassette_copy.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
                     }
 
                     // Film posters pics
@@ -299,7 +313,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     }
 
                     if (cassettePostersFilms.length > 0) {
-                        element.cassettePostersFilms = cassettePostersFilms
+                        s_cassette_copy.cassettePostersFilms = cassettePostersFilms
                     }
 
                     // Filmi treiler
@@ -369,27 +383,27 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             }
                             //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
-                        element.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
+                        s_cassette_copy.films[filmIx].credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
-                rueten(element.films, lang)
+                rueten(s_cassette_copy.films, lang)
             }
 
 
 
             if (hasOneCorrectScreening === true) {
-                allData.push(element);
-                element.data = dataFrom;
-                // console.log(util.inspect(element, {showHidden: false, depth: null}))
-                generateYaml(element, lang, copyFile, allData)
+                allData.push(s_cassette_copy);
+                s_cassette_copy.data = dataFrom;
+                // console.log(util.inspect(s_cassette_copy, {showHidden: false, depth: null}))
+                generateYaml(s_cassette_copy, lang, copyFile, allData)
             } else {
-                console.log('Skipped cassette ', element.id, ' slug ', element.slug,', as none of screening types are ', whichScreeningTypesToFetch.join(', '));
+                console.log('Skipped cassette ', s_cassette_copy.id, ' slug ', s_cassette_copy.slug,', as none of screening types are ', whichScreeningTypesToFetch.join(', '));
             }
 
         } else {
             if(showErrors) {
                 slugMissingErrorNumber++
-                slugMissingErrorIDs.push(element.id)
+                slugMissingErrorIDs.push(s_cassette_copy.id)
             }
         }
     }
