@@ -217,11 +217,11 @@ const updateStrapi = async () => {
             await strapiQuery(options, s_film)
         }
     }
-    console.log('|–– persons')
+    console.log('\n|–– persons')
     await updateStrapiPersons()
-    console.log('|–– roles')
+    console.log('\n|–– roles')
     await updateStrapiRoles()
-    console.log('|–– credentials')
+    console.log('\n|–– credentials')
     await updateFilmCredentials()
 }
 
