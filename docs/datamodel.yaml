@@ -706,7 +706,7 @@ Credentials: &Credentials
     roleCompany:
         - *RoleCompany
 
-OrderedCountries: & OrderedCountries
+OrderedCountries: &OrderedCountries
     order: (Number)
     country: *Country
 
@@ -742,9 +742,9 @@ Film: &Film
         - *Organisation
     orderedCountries:
         - *OrderedCountries
-    additInfo: *Translated
+    additInfo: *Translated #(rich text)
 
-OrderedFilms: &OrderedFilms
+OrderedFilm: &OrderedFilm
     order: (Number)
     film: *Film
 
@@ -768,8 +768,6 @@ Cassette: &Cassette
     films:
         - *Film
     remoteId: (UID)
-    orderedFilms:
-        - *OrderedFilms
 
 IntroConversationQandA: &IntroConversationQandA
     yesNo: (Boolean)
