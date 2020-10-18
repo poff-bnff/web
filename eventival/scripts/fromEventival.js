@@ -6,8 +6,18 @@ const path = require('path')
 const readline = require('readline');
 const html2plaintext = require('html2plaintext');
 const h2p = function (txt) {
-    return html2plaintext(html2plaintext(html2plaintext(txt)))
+    return txt.toString().split(/<\/div>|<\/p>|<br>|<br \/>|\n|\r/)
+        .map(t => html2plaintext(html2plaintext(html2plaintext(t)))).join('\n\n')
+        .replace(/\n\n+/g,'\n\n')
 }
+// console.log(h2p(`No equal signs of justice can be drawn between those who are accused of a crime, those who are convicted of a crime and those
+
+
+//                 proven on the basis of a woman’s will.
+
+
+
+//                 ‘As Far as I Know’ is based on a true-life story and talks of a`))
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
@@ -182,6 +192,7 @@ const fetch_films = async (e_films) => {
             }
 
             publication.synopsis_long = h2p(publication.synopsis_long)
+            publication.directors_bio = h2p(publication.directors_bio)
             delete(publication.contacts)
         }
 
@@ -213,6 +224,7 @@ const decodeScreeningTexts = (e_screenings) => {
 const decodeFilmTexts = (e_films) => {
     for (const e_film of e_films) {
         if (e_film.titles) {
+            // console.log(JSON.stringify(e_film.titles, null, 4));
             e_film.titles.title_english = h2p(e_film.titles.title_english)
             e_film.titles.title_original = h2p(e_film.titles.title_original)
             e_film.titles.title_local = h2p(e_film.titles.title_local)
