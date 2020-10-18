@@ -198,7 +198,7 @@ const updateStrapi = async () => {
             let cred_order_in_film = 1
             for (const e_crew of e_film.publications.en.crew) {
                 const role_id = s_role_id_by_e_crew_type(e_crew, s_roles)
-                s_film.credentials.rolePerson = [].concat( // TODO #381
+                s_film.credentials.rolePerson = [].concat(
                     s_film.credentials.rolePerson,
                     e_crew.text.map(name => {
                         return {
@@ -219,11 +219,11 @@ const updateStrapi = async () => {
             await strapiQuery(options, s_film)
         }
     }
-    console.log('|–– persons')
+    console.log('\n|–– persons')
     await updateStrapiPersons()
-    console.log('|–– roles')
+    console.log('\n|–– roles')
     await updateStrapiRoles()
-    console.log('|–– credentials')
+    console.log('\n|–– credentials')
     await updateFilmCredentials()
 }
 
