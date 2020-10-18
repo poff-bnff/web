@@ -98,9 +98,8 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
             let rolePersonTypes = {}
             if(element.credentials && element.credentials.rolePerson && element.credentials.rolePerson[0]) {
-                for (roleIx in element.credentials.rolePerson) {
-                    element.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                    let rolePerson = element.credentials.rolePerson[roleIx]
+                element.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                for (rolePerson of element.credentials.rolePerson) {
                     if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
                         rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`] = []
                     }

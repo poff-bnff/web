@@ -706,6 +706,10 @@ Credentials: &Credentials
     roleCompany:
         - *RoleCompany
 
+OrderedCountries: &OrderedCountries
+    order: (Number)
+    country: *Country
+
 Film: &Film
     _path: /films
     id: 1 (number)
@@ -736,6 +740,13 @@ Film: &Film
     presentedBy: *PresentedBy
     world_sales:
         - *Organisation
+    orderedCountries:
+        - *OrderedCountries
+    additInfo: *Translated #(rich text)
+
+OrderedFilm: &OrderedFilm
+    order: (Number)
+    film: *Film
 
 Cassette: &Cassette
     _path: /cassettes
@@ -752,10 +763,11 @@ Cassette: &Cassette
     slug_ru: (UID)
     presenters:
         - *Organisation
+    orderedFilms:
+        - *OrderedFilm #(Component (repeatable))
     films:
         - *Film
     remoteId: (UID)
-
 
 IntroConversationQandA: &IntroConversationQandA
     yesNo: (Boolean)
