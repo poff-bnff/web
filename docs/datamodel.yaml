@@ -706,6 +706,10 @@ Credentials: &Credentials
     roleCompany:
         - *RoleCompany
 
+OrderedCountries: & OrderedCountries
+    order: (Number)
+    country: *Country
+
 Film: &Film
     _path: /films
     id: 1 (number)
@@ -736,6 +740,13 @@ Film: &Film
     presentedBy: *PresentedBy
     world_sales:
         - *Organisation
+    orderedCountries:
+        - *OrderedCountries
+    additInfo: *Translated
+
+OrderedFilms: &OrderedFilms
+    order: (Number)
+    film: *Film
 
 Cassette: &Cassette
     _path: /cassettes
@@ -755,7 +766,8 @@ Cassette: &Cassette
     films:
         - *Film
     remoteId: (UID)
-
+    orderedFilms:
+        - *OrderedFilms
 
 IntroConversationQandA: &IntroConversationQandA
     yesNo: (Boolean)
