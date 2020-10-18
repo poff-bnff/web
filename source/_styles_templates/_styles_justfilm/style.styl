@@ -50,10 +50,10 @@ clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 clr_dark_semi = rgba(23,33,33,.5)
 // clr_primary = #ec008c
-clr_primary = #F39133 // PÖFF orange
-clr_primary_text = #F39133 // PÖFF orange
+clr_primary = #3A6EB4
+clr_primary_text = #3A6EB4
 clr_primary_semi = rgba(236,0,140,.2)
-clr_primary_light = rgba(195, 22, 28, 0.3)
+clr_primary_light = #4A82C3
 clr_secondary = #F67625
 clr_keyword = #3EADEF
 clr_elisa_stage = #0019af
@@ -1522,6 +1522,7 @@ p a
   font-size 1rem
   text-align left
   line-height 1.618
+  font-weight 300
 
 .str_info_meta_program,
 .str_info_meta_genre,
@@ -1531,6 +1532,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .str_info_meta_keywords
     font-family font_h
@@ -1538,6 +1540,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .keywords_left
     font-family font_h
@@ -1545,6 +1548,8 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
+
 
 
 // POPOVER
@@ -1672,6 +1677,7 @@ a.btn_popover
 .screening_info_label
   text-align right
   color white_semi
+  font-weight 300
 
 .screening_info_value
   text-align left
@@ -1683,7 +1689,7 @@ a.btn_popover
   border-radius 0
   text-transform uppercase
   &:hover
-      color poff_orange
+      color clr_primary_light
 
 
 .btn_primary
@@ -2670,7 +2676,7 @@ a.btn_popover
         color dark_1
         a
             text-decoration none
-            color orange_strong
+            color clr_primary
     ul
         font-family font_p
         font-weight 300
