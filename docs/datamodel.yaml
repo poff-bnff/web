@@ -744,13 +744,10 @@ Film: &Film
         - *OrderedCountries
     additInfo: *Translated #(rich text)
 
-<<<<<<< HEAD
-=======
 OrderedFilm: &OrderedFilm
     order: (Number)
     film: *Film
 
->>>>>>> 77ee4550829498281cedaa6b5e5e53330e395bb1
 Cassette: &Cassette
     _path: /cassettes
     title_et: (text)
