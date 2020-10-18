@@ -765,8 +765,6 @@ Cassette: &Cassette
         - *Organisation
     orderedFilms:
         - *OrderedFilm #(Component (repeatable))
-    films:
-        - *Film
     remoteId: (UID)
 
 IntroConversationQandA: &IntroConversationQandA
