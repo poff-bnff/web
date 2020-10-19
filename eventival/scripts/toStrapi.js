@@ -3,7 +3,6 @@ const fs = require('fs')
 const path = require('path')
 
 const { strapiQuery, getModel } = require("../../helpers/strapiQuery.js")
-const { toUnicode } = require('punycode')
 
 const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
@@ -237,6 +236,14 @@ const remapEventival = async () => {
             }
             return await strapiQuery(options, {remoteId: remoteId})
         }
+        const createStrapiCassette = async (remoteId) => {
+            let options = {
+                headers: { 'Content-Type': 'application/json' },
+                path: CASSETTES_API,
+                method: 'POST'
+            }
+            return await strapiQuery(options, {remoteId: remoteId})
+        }
         const createStrapiScreening = async (remoteId) => {
             let options = {
                 headers: { 'Content-Type': 'application/json' },
@@ -252,6 +259,15 @@ const remapEventival = async () => {
             if (! strapi_film) {
                 console.log('Creating new film in Strapi:', JSON.stringify(e_film.ids.system_id))
                 await createStrapiFilm(e_film.ids.system_id.toString())
+            }
+        }
+
+        let strapi_cassettes = await getModel('Cassette')
+        for (const e_film of EVENTIVAL_FILMS) {
+            let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+            if (! strapi_cassette) {
+                console.log('Creating new cassette in Strapi:', JSON.stringify(e_film.ids.system_id))
+                await createStrapiCassette(e_film.ids.system_id.toString())
             }
         }
 
@@ -328,11 +344,18 @@ const remapEventival = async () => {
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
-        strapi_film.countries = STRAPIDATA.Country.filter((s_country) => {
+        strapi_film.countries = STRAPIDATA.Country.filter(s_country => {
             if(e_film.film_info && e_film.film_info.countries) {
                 return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
             }
         }).map(e => { return {id: e.id.toString()} })
+        let country_order_in_film = 1
+        strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
+            return {
+                order: country_order_in_film++,
+                country: e_country
+            }
+        })
 
         strapi_film.languages = STRAPIDATA.Language.filter((s_language) => {
             if(e_film.film_info && e_film.film_info.languages) {
