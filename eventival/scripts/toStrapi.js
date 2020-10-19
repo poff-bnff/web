@@ -120,6 +120,7 @@ const updateStrapi = async () => {
         }
 
         // Add Directors and Cast to Strapi
+        // TODO #396 Add directors bio and filmography
         let strapi_persons = await getModel('Person')
         let persons_in_eventival = []
         for (const e_film of EVENTIVAL_FILMS ) {
