@@ -62,10 +62,13 @@ for (const lang of languages) {
         }
     }
     // console.log(buffer);
+    const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
+
     if(buffer.length > 0) {
         rueten(buffer, lang)
         let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
-        const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
         fs.writeFileSync(outFile, allDataYAML, 'utf8')
+    } else {
+        fs.writeFileSync(outFile, '[]', 'utf8')
     }
 }
