@@ -65,7 +65,7 @@ if(CHECKPROGRAMMES) {
             return false
         }
     })
-    if (cassettesWithOutFestivalEditions && cassettesWithOutFestivalEditions.length) {
+    if (cassettesWithOutFestivalEditions.length) {
         console.log('Cassettes with IDs', cassettesWithOutFestivalEditions.join(', '), ' have no festival editions')
     }
 
