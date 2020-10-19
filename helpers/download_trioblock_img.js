@@ -76,14 +76,14 @@ function readYaml(lang, doc) {
         if (!values.article.slug) {
             continue;
         }else{
-            fs.mkdirSync(`${savePath}${lang}/${values.article.slug}`, {recursive: true})
+            fs.mkdirSync(`${savePath}${lang}`, {recursive: true})
         }
 
         if (values.block.image) {
             let imgPath = values.block.image.url
             let imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
             let url = `${strapiPath}${imgPath}`
-            let dest = `${savePath}${lang}/${values.article.slug}/${imgFileName}`
+            let dest = `${savePath}${lang}/${imgFileName}`
             parallelDownloads.push( downloadsMaker(url, dest) )
         }
     }
