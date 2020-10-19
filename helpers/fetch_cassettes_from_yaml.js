@@ -47,7 +47,7 @@ if(CHECKPROGRAMMES) {
             return false
         }
     })
-    if (cassettesWithOutProgrammes.length) {
+    if (cassettesWithOutProgrammes && cassettesWithOutProgrammes.length) {
         console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no programmes')
     }
 
