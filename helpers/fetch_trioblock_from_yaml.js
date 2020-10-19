@@ -52,7 +52,7 @@ for (const lang of languages) {
                     'article': copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
                 })
                 delete copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
-            } else {
+            } else if (copyData[key][key2] !== undefined) {
                 buffer.push({
                     'block': copyData[key][key2],
                 })
@@ -62,8 +62,10 @@ for (const lang of languages) {
         }
     }
     // console.log(buffer);
-    rueten(buffer, lang)
-    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
-    const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
-    fs.writeFileSync(outFile, allDataYAML, 'utf8')
+    if(buffer.length > 0) {
+        rueten(buffer, lang)
+        let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
+        const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
+        fs.writeFileSync(outFile, allDataYAML, 'utf8')
+    }
 }
