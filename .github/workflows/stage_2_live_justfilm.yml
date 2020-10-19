@@ -24,8 +24,6 @@ jobs:
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
 
-s
-
         -   name: feedback to slack
             id: feedback
             uses: marianntapfer/post-to-slack@master
