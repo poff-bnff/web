@@ -706,10 +706,15 @@ Credentials: &Credentials
     roleCompany:
         - *RoleCompany
 
+OrderedCountries: &OrderedCountries
+    order: (Number)
+    country: *Country
+
 Film: &Film
     _path: /films
     id: 1 (number)
     remoteId: (UID)
+    order: (number)
     title_et: Nähtamatu elu (short text)
     title_en: Invisible Life of Eurídice Gusmãos (short text)
     title_ru: Департамент здоровьяs (short text)
@@ -735,6 +740,13 @@ Film: &Film
     presentedBy: *PresentedBy
     world_sales:
         - *Organisation
+    orderedCountries:
+        - *OrderedCountries
+    additInfo: *Translated #(rich text)
+
+OrderedFilm: &OrderedFilm
+    order: (Number)
+    film: *Film
 
 Cassette: &Cassette
     _path: /cassettes
@@ -751,10 +763,9 @@ Cassette: &Cassette
     slug_ru: (UID)
     presenters:
         - *Organisation
-    films:
-        - *Film
+    orderedFilms:
+        - *OrderedFilm #(Component (repeatable))
     remoteId: (UID)
-
 
 IntroConversationQandA: &IntroConversationQandA
     yesNo: (Boolean)

@@ -3,6 +3,7 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const { strapiAuth } = require("./strapiAuth.js")
+const { strapiQuery, getModel } = require("./strapiQuery.js")
 
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
@@ -292,28 +293,3 @@ const foo = async () => {
 }
 
 foo()
-
-// const testdata =
-//       {
-//         "id": 12,
-//         "person": {
-//           "id": 22,
-//           "firstName": "Elin",
-//           "lastName": "Laikre",
-//           "gender": 3,
-//           "eMail": "elin.laikre@poff.ee"
-//         },
-//         "roleAtTeam_et": "Raamatupidaja",
-//         "roleAtTeam_en": "Accountant",
-//         "roleAtTeam_ru": "Бухгалтер",
-//         "emailAtTeam": "elin.laikre@poff.ee",
-//         "order": 5,
-//         "pictureAtTeam": [
-//           {
-//           }
-//         ]
-//       }
-
-// TakeOutTrash(testdata, DATAMODEL['TeamMember'], 'root')
-
-// console.log(testdata);
