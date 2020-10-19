@@ -46,15 +46,22 @@ for (const lang of languages) {
                 continue
             }
 
-            buffer.push({
-                'block': copyData[key][key2],
-                'article': copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
-            })
-            delete copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+            if (copyData[key][key2][`${articleMapping[DOMAIN]}_article`] !== undefined) {
+                buffer.push({
+                    'block': copyData[key][key2],
+                    'article': copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+                })
+                delete copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+            } else {
+                buffer.push({
+                    'block': copyData[key][key2],
+                })
+            }
+
             delete copyData[key][key2]
         }
     }
-
+    // console.log(buffer);
     rueten(buffer, lang)
     let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
     const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
