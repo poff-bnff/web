@@ -236,6 +236,14 @@ const remapEventival = async () => {
             }
             return await strapiQuery(options, {remoteId: remoteId})
         }
+        const createStrapiCassette = async (remoteId) => {
+            let options = {
+                headers: { 'Content-Type': 'application/json' },
+                path: CASSETTES_API,
+                method: 'POST'
+            }
+            return await strapiQuery(options, {remoteId: remoteId})
+        }
         const createStrapiScreening = async (remoteId) => {
             let options = {
                 headers: { 'Content-Type': 'application/json' },
@@ -251,6 +259,15 @@ const remapEventival = async () => {
             if (! strapi_film) {
                 console.log('Creating new film in Strapi:', JSON.stringify(e_film.ids.system_id))
                 await createStrapiFilm(e_film.ids.system_id.toString())
+            }
+        }
+
+        let strapi_cassettes = await getModel('Cassette')
+        for (const e_film of EVENTIVAL_FILMS) {
+            let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+            if (! strapi_cassette) {
+                console.log('Creating new cassette in Strapi:', JSON.stringify(e_film.ids.system_id))
+                await createStrapiCassette(e_film.ids.system_id.toString())
             }
         }
 
