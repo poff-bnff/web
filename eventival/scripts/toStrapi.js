@@ -120,12 +120,13 @@ const updateStrapi = async () => {
         }
 
         // Add Directors and Cast to Strapi
+        // TODO #396 Add directors bio and filmography
         let strapi_persons = await getModel('Person')
         let persons_in_eventival = []
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.film_info && e_film.film_info.relationships) ) { continue }
             const relationships = e_film.film_info.relationships
-            let e_persons = [].concat(relationships.cast || [])
+            let e_persons = [].concat(relationships.directors || [], relationships.cast || [])
                 .map(person => {
                     return {
                         remoteId: person.id.toString(),
@@ -134,17 +135,7 @@ const updateStrapi = async () => {
                         firstNameLastName: (person.name ? person.name : '').trim() + (person.surname ? ' ' + person.surname.trim() : '')
                     }
                 })
-            let e_directors = [].concat(relationships.directors || [])
-                .map(person => {
-                    return {
-                        remoteId: person.id.toString(),
-                        firstName: (person.name ? person.name : '').trim(),
-                        lastName: (person.surname ? person.surname : '').trim(),
-                        firstNameLastName: (person.name ? person.name : '').trim() + (person.surname ? ' ' + person.surname.trim() : ''),
-                        profession: 'director'
-                    }
-                })
-            persons_in_eventival = [].concat(persons_in_eventival, e_persons, e_directors)
+            persons_in_eventival = [].concat(persons_in_eventival, e_persons)
         }
         await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
 
