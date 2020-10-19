@@ -10,14 +10,6 @@ const h2p = function (txt) {
         .map(t => html2plaintext(html2plaintext(html2plaintext(t)))).join('\n\n')
         .replace(/\n\n+/g,'\n\n')
 }
-// console.log(h2p(`No equal signs of justice can be drawn between those who are accused of a crime, those who are convicted of a crime and those
-
-
-//                 proven on the basis of a woman’s will.
-
-
-
-//                 ‘As Far as I Know’ is based on a true-life story and talks of a`))
 
 const dynamicDir =  path.join(__dirname, '..', 'dynamic')
 
