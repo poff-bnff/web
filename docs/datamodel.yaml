@@ -599,8 +599,8 @@ Person: &Person
         - *Country
     organisations: #(Component (repeatable))
         - *Organisation
-    biography: (Rich text)
-    filmography: (Rich text)
+    biography: *Translated #(Rich text)
+    filmography: *Translated #(Rich text)
     profession: (text)
 
 TeamMember: &TeamMember

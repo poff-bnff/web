@@ -73,11 +73,8 @@ process.stdout.write('Trioblock pics ')
 function readYaml(lang, doc) {
     let parallelDownloads = []
     for (values of doc) {
-        if (!values.article.slug) {
-            continue;
-        }else{
-            fs.mkdirSync(`${savePath}${lang}`, {recursive: true})
-        }
+
+        fs.mkdirSync(`${savePath}${lang}`, {recursive: true})
 
         if (values.block.image) {
             let imgPath = values.block.image.url
