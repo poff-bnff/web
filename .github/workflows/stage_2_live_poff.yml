@@ -25,12 +25,6 @@ jobs:
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
 
-        -   name: Github->Slack notification Webhook action
-            uses: craftech-io/slack-action@v1
-            with:
-                slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
-            if: always()
-
         -   name: feedback to slack
             id: feedback
             uses: marianntapfer/post-to-slack@master
