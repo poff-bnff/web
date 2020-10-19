@@ -241,20 +241,20 @@ main.grid_film
                 - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
 
             if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
-                section.f_dir_bio_box
+                section.f_dir_box
+                    .f_dir_bio_box
+                        if director.person.picture
+                            .dir_img
+                                img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
+                                .str_info_grid_3
+                                    .str_info_label.text_left.dark_semi= self.label.film.director
+                                    .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
 
-                    if director.person.picture
-                        .dir_img
-                            img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
-                            .str_info_grid_3
-                                .str_info_label.text_left.dark_semi= self.label.film.director
-                                .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
-
-                    .dir_bio.dark_1
-                        if director.person.biography && typeof director.person.biography !== 'object'
-                            p.dark_1= director.person.biography
-                        if director.person.filmography && typeof director.person.filmography !== 'object'
-                            p.dark_1= director.person.filmography
+                        .dir_bio.dark_1
+                            if director.person.biography && typeof director.person.biography !== 'object'
+                                p.dark_1= director.person.biography
+                            if director.person.filmography && typeof director.person.filmography !== 'object'
+                                p.dark_1= director.person.filmography
 
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
