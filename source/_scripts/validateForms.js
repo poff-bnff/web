@@ -204,7 +204,7 @@ function validatePhoneNr() {
         return false
     }
 
-    var phoneRe = /^[+]?[(]?[0-9]{1,4}[)]?[-\s0-9]*$/
+    var phoneRe = /^[+]{1,4}[)]?[-\s0-9]*$/
 
     if (!phoneRe.test(String(phoneNr.value))) {
         phoneNr.classList.remove("valid")
