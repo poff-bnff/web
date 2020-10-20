@@ -4,9 +4,14 @@ name: staging.poff.inscaping.eu/
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-    workflow_dispatch:
     push:
         branches: [ staging_poff ]
+    workflow_dispatch:
+        inputs:
+            slackUserId:
+                description: 'Person who pushed the button'
+            privateChannel:
+                description: 'slackBot and users private channel'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -51,8 +56,8 @@ jobs:
             remote_user: virt84398
             remote_key: ${{ secrets.DEPLOY_KEY }}
 
-        - name: Github->Slack notification Webhook action
-          uses: craftech-io/slack-action@v1
-          with:
-            slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+        - name: feedback to slack
+          id: feedback
+          uses: marianntapfer/post-to-slack@master
           if: always()
+

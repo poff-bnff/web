@@ -43,15 +43,28 @@ for (const ix in languages) {
             if(element.presentedBy && element.presentedBy[0]) {
                 for (orgIx in element.presentedBy.organisations) {
                     let organisationFromYAML = STRAPIDATA_ORGANISATIONS.filter( (a) => { return element.presentedBy.organisations[orgIx].id === a.id })
-                    if (organisationFromYAML) {
-                        element.presentedBy.organisations[orgIx] = rueten(organisationFromYAML[0], lang);
+                    let organisationCopy = JSON.parse(JSON.stringify(organisationFromYAML[0]))
+                    if (organisationCopy) {
+                        element.presentedBy.organisations[orgIx] = rueten(organisationCopy, lang);
                     }
                 }
             }
         }
 
         element = rueten(element, lang);
-        element.path = dirSlug;
+
+        for (key in element) {
+            if (key == 'slug') {
+                element.path = element[key];
+                element.slug = element[key];
+            }
+        }
+
+        if (element.path === undefined) {
+            element.path = dirSlug;
+            element.slug = dirSlug;
+        }
+
         element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml', 'cassettes': '/_fetchdir/cassettes.' + lang + '.yaml'};
         // console.log(element);
 
@@ -70,6 +83,17 @@ for (const ix in languages) {
 
     }
 
+    const allDataSorted = allData.sort(function(a, b) {
+            // nulls sort after anything else
+            if (a.order === undefined) {
+                return 1;
+            }
+            else if (b.order === undefined) {
+                return -1;
+            } else {
+                return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0);
+            }
+    })
     const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `programmes.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');

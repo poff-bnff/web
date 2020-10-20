@@ -9,7 +9,7 @@ echo 'STARTING BUILD'
 [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
 [ -d "assets/img/dynamic" ] && rm -r assets/img/dynamic/*
-
+[ -d "assets/xml" ] && rm -r assets/xml/*
 
 echo 'Fetch strapiData.yaml from Strapi'
 node ./helpers/a_fetch.js
@@ -54,11 +54,14 @@ node ./helpers/fetch_cassettes_from_yaml.js
 echo 'fetch_six_film_block_from_yaml'
 node ./helpers/fetch_six_film_block_from_yaml.js
 
-printf '\n----------        FINISHED creating separate YAML files      ----------\n'
+echo 'fetch_screenings_from_yaml'
+node ./helpers/fetch_screenings_from_yaml.js
 
-printf '\n----------                  Processing styles                ----------\n\n'
-node ./helpers/copy_styles_acc_to_domain.js
-printf '\n----------             Finished processing styles            ----------\n'
+echo 'assets/xml'
+node ./helpers/xml.js
+
+
+printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
 printf '\n----------         Downloading all img from Strapi         ----------\n\n'
 node ./helpers/download_article_img.js
@@ -70,8 +73,13 @@ node ./helpers/download_organisations_img.js
 node ./helpers/download_trioblock_img.js
 node ./helpers/download_supporters_page_img.js
 node ./helpers/download_programmes_img.js
-node ./helpers/download_casettes_and_films_img.js
+# node ./helpers/download_casettes_and_films_img.js
 printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
+
+
+printf '\n----------                  Processing styles                ----------\n\n'
+node ./helpers/copy_styles_acc_to_domain.js
+printf '\n----------             Finished processing styles            ----------\n'
 
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full

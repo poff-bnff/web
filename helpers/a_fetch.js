@@ -2,11 +2,14 @@ const http = require('http')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
+const { strapiAuth } = require("./strapiAuth.js")
+const { strapiQuery, getModel } = require("./strapiQuery.js")
 
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
 fs.mkdirSync(dirPath, { recursive: true })
 
+const DOMAIN = process.env['DOMAIN'] || false
 const modelFile = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(modelFile, 'utf8'))
 
@@ -19,46 +22,12 @@ for (const key in DATAMODEL) {
     }
 }
 
-async function strapiAuth() {
+async function strapiFetch(modelName, token) {
 
-    return new Promise((resolve, reject) => {
-        const postData = {
-            identifier: process.env['StrapiUserName'],
-            password: process.env['StrapiPassword']
+    let checkDomain = function(element) {
+        if (!DOMAIN) {
+            return true
         }
-
-        const options = {
-            hostname: process.env['StrapiHost'],
-            path: '/auth/local',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-
-        const request = http.request(options, (response) => {
-            response.setEncoding('utf8')
-            let tokenStr = ''
-            response.on('data', function (chunk) {
-                tokenStr += chunk
-            })
-
-            response.on('end', function () {
-                tokenStr = JSON.parse(tokenStr)['jwt']
-                resolve(tokenStr)
-            })
-
-        })
-
-        request.on('error', reject)
-        request.write(JSON.stringify(postData))
-        request.end()
-    })
-}
-
-async function strapiFetch(modelName, token){
-
-    let checkDomain = function(element){
         // kui on domain, siis element['domains'] = [domain]
         if (element['domain']){
             element['domains'] = [element['domain']]
@@ -324,28 +293,3 @@ const foo = async () => {
 }
 
 foo()
-
-// const testdata =
-//       {
-//         "id": 12,
-//         "person": {
-//           "id": 22,
-//           "firstName": "Elin",
-//           "lastName": "Laikre",
-//           "gender": 3,
-//           "eMail": "elin.laikre@poff.ee"
-//         },
-//         "roleAtTeam_et": "Raamatupidaja",
-//         "roleAtTeam_en": "Accountant",
-//         "roleAtTeam_ru": "Бухгалтер",
-//         "emailAtTeam": "elin.laikre@poff.ee",
-//         "order": 5,
-//         "pictureAtTeam": [
-//           {
-//           }
-//         ]
-//       }
-
-// TakeOutTrash(testdata, DATAMODEL['TeamMember'], 'root')
-
-// console.log(testdata);

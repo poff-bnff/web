@@ -458,7 +458,7 @@ footer
                         "f_runtime_box"\
                         "f_interactive_box"\
                         "f_screenings_box"\
-                        "f_dir_bio_box"\
+                        "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_trailer_box"\
@@ -475,7 +475,7 @@ footer
                         "f_cred_box"\
                         "f_runtime_box"\
                         "f_screenings_box"\
-                        "f_dir_bio_box"\
+                        "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_trailer_box"\
@@ -656,15 +656,15 @@ a .dark:hover
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
     // grid-gap calc(1.9rem + 1.5vw)
-    grid-gap 0rem
+    grid-gap 2rem
     // padding-top calc(1.9rem + 1.5vw)
     // padding-bottom calc(1.9rem + 1.5vw)
-    padding-top 2rem
+    // padding-top 2rem
     padding-bottom 2rem
-    justify-content center
-    align-content center
-    justify-items stretch
-    align-items stretch
+    // justify-content center
+    // align-content center
+    // justify-items stretch
+    // align-items stretch
     background-color white
 
 .trio_image
@@ -674,8 +674,8 @@ a .dark:hover
     width 100%
     height 100%
     background rgba(255,255,255,.96)
-    text-align left
-    padding 1rem 2rem 1rem 2rem
+    // text-align left
+    // padding 1rem 2rem 1rem 2rem
     // outline .5px dashed dark_5
 
 .trio_headline
@@ -811,7 +811,8 @@ a .dark:hover
 row:first-child > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
-    grid-template-rows 5rem
+    grid-auto-rows minmax(4rem, 5rem)
+    // grid-template-rows 3.6rem
     justify-content center
     justify-items center
     align-items center
@@ -820,7 +821,7 @@ row:first-child > .footer_logos
 row:nth-child(2) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
-    grid-template-rows 3.6rem
+    grid-auto-rows minmax(3rem, 4rem)
     justify-content center
     justify-items center
     align-items center
@@ -829,7 +830,7 @@ row:nth-child(2) > .footer_logos
 row:nth-child(3) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
-    grid-template-rows 3.6rem
+    grid-auto-rows minmax(3rem, 4rem)
     justify-content center
     justify-items center
     align-items center
@@ -838,7 +839,7 @@ row:nth-child(3) > .footer_logos
 row:nth-child(4) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
-    grid-template-rows 3rem
+    grid-auto-rows minmax(2rem, 3rem)
     justify-content center
     justify-items center
     align-items center
@@ -847,7 +848,7 @@ row:nth-child(4) > .footer_logos
 row:nth-child(5) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
-    grid-template-rows 3rem
+    grid-auto-rows minmax(2rem, 3rem)
     justify-content center
     justify-items center
     align-items center
@@ -856,7 +857,7 @@ row:nth-child(5) > .footer_logos
 row:nth-child(6) > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
-    grid-template-rows 3rem
+    grid-auto-rows minmax(2rem, 3rem)
     justify-content center
     justify-items center
     align-items center
@@ -945,6 +946,88 @@ row:nth-child(6) > .supporter_logos
     justify-items center
     align-items center
     grid-gap 4rem
+
+row:nth-child(7) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(8) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(9) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(10) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(11) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(12) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(13) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(14) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(15) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
 
 // .supporter_logo_item
 //     width 100%
@@ -1151,7 +1234,12 @@ header
     align center
     text-align center
 
-
+.f_dir_box
+    grid-area f_dir_box
+    display flex
+    flex-direction column
+    // grid-template-columns 1
+    // grid-template-rows auto
 
 .f_dir_bio_box
     grid-area f_dir_bio_box
@@ -1209,6 +1297,21 @@ header
     background bg_dark_4
 
 .container_contents_16_9
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
+.container_frame_12_5
+    position relative
+    height 0
+    overflow hidden
+    padding-top 41%
+    background bg_dark_4
+
+.container_contents_12_5
     position absolute
     top 0
     left 0
@@ -1330,8 +1433,9 @@ p a
   font-family font_h
   text-transform uppercase
   text-align left
-  color white_semi
+  color clr_primary
   align-self start
+  font-weight 200
 
 .film_title_detailed
   font-family font_h
@@ -1349,9 +1453,13 @@ p a
   align-self end
 
 .str_info_grid_3
-  display grid
-  grid-template-columns 1fr 2fr
-  grid-gap 2rem
+    display grid
+    grid-template-columns 1fr 2fr
+    grid-gap 2rem
+
+.str_info_grid_3_films
+    display grid
+    grid-template-columns 1fr 2fr
 
 .str_info_label,
 .str_info_meta_label
@@ -1360,6 +1468,7 @@ p a
   font-size 1rem
   text-align right
   line-height 1.618
+  font-weight 300
 
 .str_info_value
   font-family font_h
@@ -1395,6 +1504,7 @@ p a
   font-size 1rem
   text-align left
   line-height 1.618
+  font-weight 300
 
 .str_info_meta_program,
 .str_info_meta_genre,
@@ -1404,6 +1514,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .str_info_meta_keywords
     font-family font_h
@@ -1411,6 +1522,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .keywords_left
     font-family font_h
@@ -1418,6 +1530,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 
 // POPOVER
@@ -1543,23 +1656,45 @@ a.btn_popover
 .screening_info_label
   text-align right
   color white_semi
+  font-weight 300
 
 .screening_info_value
   text-align left
   color white_96
 
 .btn_secondary
-  background-color bg_dark_4
-  color white_semi
-  border-radius 0
-  text-transform uppercase
-//   display none
+    background-color bg_dark_4
+    color white_semi
+    border-radius 0
+    text-transform uppercase
 
 .btn_primary
-  background-color clr_primary
-  color white_96
-  border-radius 0
-  text-transform uppercase
+    background-color clr_primary
+    color white_96
+    border-radius 0
+    text-transform uppercase
+
+.btn_trio
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    // width max-content
+    // max-width 90%
+    width 100%
+    // background-color clr_primary
+    color white_96
+    border-radius 0
+    text-transform uppercase
+    font-size 1.618rem
+    line-height 1.5
+    text-align center
+    margin 0
+    padding 0
+    padding-left 1rem
+    padding-right 1rem
+    padding-top .5rem
+    padding-bottom .5rem
 
 .btn_covid
     background-color clr_covid
@@ -1624,7 +1759,7 @@ a.btn_popover
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
-    align-content space-between
+    align-content start
     // margin-top 2rem
     background-color white
     margin-bottom 1.618rem
@@ -1638,10 +1773,10 @@ a.btn_popover
     text-decoration none
 
 .card_film_title
-    padding-left: 1.618rem
+    padding-left: 1.2rem
     padding-top: 1.618rem
-    padding-right: 1.618rem
-    padding-bottom: .1rem
+    padding-right: 1.2rem
+    // padding-bottom: .1rem
     text-decoration none
     align-self start
     vertical-align top
@@ -1776,8 +1911,21 @@ a.btn_popover
         // margin-left -1rem
         // margin-right -1rem
         width 100vw
+    h1
+        padding-top 1.618rem
+        font-weight 500
+    h2
+        padding-top 1.618rem
+        font-weight 500
+    h3
+        padding-top 1.618rem
+        font-weight 500
     h4
         padding-top 1.618rem
+        font-weight 500
+    h5
+        padding-top 1.618rem
+        font-weight 500
     h6
         font-family font_p
         font-size 1rem
@@ -1795,6 +1943,9 @@ a.btn_popover
         margin-top .5rem
         margin-bottom .5rem
         margin-left 1rem
+        font-family font_p
+        font-weight 300
+        font-size 1rem
     iframe
         width 100%
         padding 0
@@ -1832,7 +1983,7 @@ a.btn_popover
 
 
 .film_title_locale
-    font-size: 2rem
+    font-size: 1.5rem
     color: white_96
     letter-spacing: 0.04rem
 
@@ -1954,7 +2105,7 @@ a.btn_popover
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
                             "f_interactive_box f_interactive_box f_interactive_box"\
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
-                            "f_dir_bio_box     f_dir_bio_box     f_extra_box"\
+                            "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
@@ -2048,8 +2199,8 @@ a.btn_popover
     //     z-index -1
 
     .trio_block
-        padding-left 6rem
-        padding-right 6rem
+        padding-left 2rem
+        padding-right 2rem
         margin-bottom 5rem
         padding-top 6rem
 
@@ -2364,7 +2515,7 @@ a.btn_popover
     .f_interactive_box
     .f_extra_box
         padding-top calc(2rem + 1vw)
-        padding-bottom calc(4rem + 1vw)
+        padding-bottom calc(2rem + 1vw)
 
     .str_info_meta_item
         display block
@@ -2529,3 +2680,9 @@ strong
 
 .bg_white
     background-color white
+
+.thin_400
+    font-weight 400
+
+.thin_300
+    font-weight 300

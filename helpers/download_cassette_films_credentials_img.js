@@ -78,7 +78,7 @@ function readYaml(doc) {
             for (films of cassettes.films) {
                 if (films.credentials && films.credentials.rolePerson && films.credentials.rolePerson[0]) {
                     for (person of films.credentials.rolePerson) {
-                        if (person.person.picture && person.person.picture.url) {
+                        if (person && person.person && person.person.picture && person.person.picture.url) {
                             var imgPath = person.person.picture.url
                             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
                         }

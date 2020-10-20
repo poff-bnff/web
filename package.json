@@ -15,12 +15,14 @@
     "fast-xml-parser": "^3.17.4",
     "filereader": "^0.10.3",
     "googleapis": "^59.0.0",
+    "html2plaintext": "^2.1.2",
     "install": "^0.13.0",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "retry": "^0.12.0",
     "rimraf": "^3.0.2",
     "slugify": "^1.4.5",
+    "xmlbuilder2": "^2.4.0",
     "xmlhttprequest": "^1.8.0",
     "yaml": "^1.10.0",
     "yaml-diff": "^0.1.1"
@@ -32,6 +34,7 @@
     "update_justfilm_styles": "DOMAIN='justfilm.ee' node helpers/copy_styles_acc_to_domain.js",
     "update_shorts_styles": "DOMAIN='shorts.poff.ee' node helpers/copy_styles_acc_to_domain.js",
     "Custom-Build": "bash ./build_custom.sh",
+    "Custom-Build-With-Limiter": "bash ./build_custom_w_limiter.sh",
     "Custom-Serve-SSG": "bash ./ssg_serve_custom.sh"
   },
   "repository": {

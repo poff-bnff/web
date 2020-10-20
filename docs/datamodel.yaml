@@ -589,6 +589,7 @@ Person: &Person
     _path: /people
     firstName: (text)
     lastName: (text)
+    firstNameLastName: (text)
     picture: *StrapiMedia #(Component)
     gender: *Gender #(Component)
     phoneNr: (text)
@@ -598,8 +599,8 @@ Person: &Person
         - *Country
     organisations: #(Component (repeatable))
         - *Organisation
-    biography: (Rich text)
-    filmography: (Rich text)
+    biography: *Translated #(Rich text)
+    filmography: *Translated #(Rich text)
     profession: (text)
 
 TeamMember: &TeamMember
@@ -682,20 +683,21 @@ FilmMedia: &FilmMedia
     QaClip: #(Component (repeatable))
         - *QaClip
 
-RolesAtFilm: &RolesAtFilm
+RoleAtFilm: &RoleAtFilm
     _path: /role-at-films
     roleNamePrivate: (text)
     roleName: *Translated #(Component)
     order: (Number)
+    remoteId: (UID)
 
 RolePerson: &RolePerson
     order: (Number)
-    role_at_film: *RolesAtFilm
+    role_at_film: *RoleAtFilm
     person: *Person
 
 RoleCompany: &RoleCompany
     order: (Number)
-    role_at_film: *RolesAtFilm
+    role_at_film: *RoleAtFilm
     organisation: *Organisation
 
 Credentials: &Credentials
@@ -704,10 +706,15 @@ Credentials: &Credentials
     roleCompany:
         - *RoleCompany
 
+OrderedCountries: &OrderedCountries
+    order: (Number)
+    country: *Country
+
 Film: &Film
     _path: /films
     id: 1 (number)
     remoteId: (UID)
+    order: (number)
     title_et: Nähtamatu elu (short text)
     title_en: Invisible Life of Eurídice Gusmãos (short text)
     title_ru: Департамент здоровьяs (short text)
@@ -733,6 +740,13 @@ Film: &Film
     presentedBy: *PresentedBy
     world_sales:
         - *Organisation
+    orderedCountries:
+        - *OrderedCountries
+    additInfo: *Translated #(rich text)
+
+OrderedFilm: &OrderedFilm
+    order: (Number)
+    film: *Film
 
 Cassette: &Cassette
     _path: /cassettes
@@ -741,15 +755,16 @@ Cassette: &Cassette
     title_ru: (text)
     synopsis: *Translated #(Rich text)
     media: *FilmMedia #(Component)
-    festival_edition: *FestivalEdition
+    festival_editions:
+        - *FestivalEdition
     tags: *Tags
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
     presenters:
         - *Organisation
-    films:
-        - *Film
+    orderedFilms:
+        - *OrderedFilm #(Component (repeatable))
     remoteId: (UID)
 
 IntroConversationQandA: &IntroConversationQandA
@@ -1114,7 +1129,7 @@ TrioItemPoff: &TrioItemPoff
     poffi_article: *POFFiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 TrioPOFF: &TrioPOFF
@@ -1134,7 +1149,7 @@ TrioItemJustFilm: &TrioItemJustFilm
     just_filmi_article: *JustFilmiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Triojustfilm: &Triojustfilm
@@ -1154,7 +1169,7 @@ TrioItemShorts: &TrioItemShorts
     shortsi_article: *ShortsiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Trioshorts: &Trioshorts

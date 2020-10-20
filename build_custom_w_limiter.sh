@@ -40,11 +40,38 @@ ask_if_fetch()
         runexit
     elif [ $new_number -lt 3 ] && [ $new_number -gt 0 ]
     then
-        let fetch_number=$new_number
-        ask_if_download_img $site_name $fetch_number
+        if [ $new_number -eq 2 ]
+        then
+            let fetch_number=$new_number
+            ask_if_download_img $site_name $fetch_number
+        elif [ $new_number -eq 1 ]
+        then
+            let fetch_number=$new_number
+            ask_cassette_limit $site_name $fetch_number
+        fi
     else
         echo "Incorrect option, try again!"
         ask_if_fetch $site_name
+    fi
+
+}
+
+ask_cassette_limit()
+{
+    printf '\nEnter how many cassettes to fetch or enter 0 for all.\n'
+    read new_number
+
+    if [ $new_number -eq 0 ]
+    then
+        let limit_number=$new_number
+        ask_if_download_img $site_name $fetch_number $limit_number
+    elif [ $new_number -gt 0 ]
+    then
+        let limit_number=$new_number
+        ask_if_download_img $site_name $fetch_number $limit_number
+    else
+        echo "Incorrect option, try again!"
+        ask_if_fetch $site_name $fetch_number
     fi
 
 }
@@ -60,10 +87,10 @@ ask_if_download_img()
     elif [ $new_number -lt 3 ] && [ $new_number -gt 0 ]
     then
         let download_number=$new_number
-        build $site_name $fetch_number $download_number
+        build $site_name $fetch_number $limit_number $download_number
     else
         echo "Incorrect option, try again!"
-        ask_if_download_img $site_name $fetch_number
+        ask_if_download_img $site_name $fetch_number $limit_number
     fi
 }
 
@@ -71,6 +98,7 @@ build()
 {
     SECONDS=0
     export DOMAIN=$site_name
+    export CASSETTELIMIT=$limit_number
 
     printf "\n----------\nBuilding $DOMAIN \n"
     if [ $fetch_number -eq 1 ]
@@ -87,6 +115,7 @@ build()
 
     if [ $site_name ]
     then
+
 
         printf '\n----------                  Processing styles                ----------\n\n'
         node ./helpers/copy_styles_acc_to_domain.js
