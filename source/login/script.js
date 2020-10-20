@@ -35,7 +35,7 @@ async function loginViaCognito(){
 
      console.log(authenticationData)
 
-    let response = await fetch(`https://api.poff.ee/auth/cognito`, {
+    let response = await fetch(`https://api.poff.ee/auth`, {
         method: 'POST',
         headers: {
             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
@@ -43,11 +43,12 @@ async function loginViaCognito(){
         body: JSON.stringify(authenticationData)
     });
 
-    console.log(await response.json());
+    let response2 = await response.json()
+    console.log(response2.AccessToken)
+    access_token = response2.AccessToken
+    id_token = response2.IdToken
 
-    // let access_token = response.AuthenticationResult.AccessToken
-    // console.log(response.AuthenticationResult);
-    // storeAuthentication(access_token, id_token)
+    storeAuthentication(access_token, id_token)
 
 }
 
@@ -103,6 +104,7 @@ async function providerLogin(provider){
     let response = await fetch(`https://api.poff.ee/auth/${providers[provider]}`, requestOptions)
 
     let response2 = await response.json()
+    console.log(response2)
 
     window.open(response2.providerUrl, '_self')
 }
