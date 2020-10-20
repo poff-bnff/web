@@ -52,9 +52,10 @@ main.grid_film(id= self.id)
             - var filmPath = pathParts[pathParts.length - 1]
             section.f_title_box
 
-                if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
-                    //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
-                    p.premiere_type= film.tags.premiere_types.join(', ')
+                .premiere_type
+                    if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                        //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                        p.premiere_type= film.tags.premiere_types.join(', ')
 
                 h1.film_title_detailed= film.title
                 .str_info_blokk_1
@@ -239,24 +240,32 @@ main.grid_film(id= self.id)
 
 
             if film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]
-                - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
-                - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
+                - var filmDirectors = film.credentials.rolePerson.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })
 
-            if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
-                section.f_dir_bio_box
+                - var filmDirectorsSorted = filmDirectors.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
 
-                    if director.person.picture
-                        .dir_img
-                            img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
-                            .str_info_grid_3
-                                .str_info_label.text_left.dark_semi= self.label.film.director
-                                .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
+            if typeof filmDirectorsSorted !== 'undefined'
+                section.f_dir_box
 
-                    .dir_bio.dark_1
-                        if director.person.biography && typeof director.person.biography !== 'object'
-                            p.dark_1= director.person.biography
-                        if director.person.filmography && typeof director.person.filmography !== 'object'
-                            p.dark_1= director.person.filmography
+                    each director in filmDirectorsSorted.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
+                        //- f_dir_box on nyyd container directorite boxidele
+                        //- Iga Directori kohta nyyd täita see f_dir_bio_box.
+                        .f_dir_bio_box
+                            if director.person
+                                .dir_img
+                                    if director.person.picture
+                                        img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
+                                    if director.person.picture
+                                        if director.person.firstName || director.person.lastName
+                                            .str_info_grid_3
+                                                .str_info_label.text_left.dark_semi= self.label.film.director
+                                                .str_info_value.text_right.dark_1= `${director.person.firstName ? director.person.firstName : ''} ${director.person.lastName ? director.person.lastName : ''}`
+
+                            .dir_bio.dark_1
+                                if director.person.biography && typeof director.person.biography !== 'object'
+                                    p.dark_1= director.person.biography
+                                if director.person.filmography && typeof director.person.filmography !== 'object'
+                                    p.dark_1= director.person.filmography
 
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 

@@ -5,8 +5,8 @@ name: Manual workflow
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-    push:
-        branches: [ add-new-slack-notification ]
+    # push:
+    #     branches: [ add-new-slack-notification ]
     workflow_dispatch:
         inputs:
             slackUserId:
@@ -33,5 +33,3 @@ jobs:
     # Use the output from the `feedback` step
     # - name: Get the output
     #   run: echo "${{ steps.Tagasiside.outputs }}"
-
-
