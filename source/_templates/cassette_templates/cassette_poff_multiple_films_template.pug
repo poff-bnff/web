@@ -278,7 +278,7 @@ if self.films
             - var filmPath = pathParts[pathParts.length - 1]
             section.f_title_box
 
-                .premiere_type &nbsp;
+                .premiere_type
                     if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
                         //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
                         p.premiere_type= film.tags.premiere_types.join(', ')
