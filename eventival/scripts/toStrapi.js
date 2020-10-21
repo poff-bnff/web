@@ -3,7 +3,6 @@ const fs = require('fs')
 const path = require('path')
 
 const { strapiQuery, getModel } = require("../../helpers/strapiQuery.js")
-const { toUnicode } = require('punycode')
 
 const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
@@ -68,6 +67,9 @@ const s_role_id_by_e_crew_type = (e_crew, s_roles) => {
 
 const isUpdateRequired = (old_o, new_o) => {
     const sortedString = (o) => {
+        if(o === undefined) {
+            o = {}
+        }
         return JSON.stringify(yaml.load(yaml.safeDump(o, {'sortKeys': true})))
     }
     const old_s = sortedString(old_o)
@@ -125,7 +127,7 @@ const updateStrapi = async () => {
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.film_info && e_film.film_info.relationships) ) { continue }
             const relationships = e_film.film_info.relationships
-            let e_persons = [].concat(relationships.directors || [], relationships.cast || [])
+            let e_persons = [].concat(relationships.cast || [])
                 .map(person => {
                     return {
                         remoteId: person.id.toString(),
@@ -134,7 +136,17 @@ const updateStrapi = async () => {
                         firstNameLastName: (person.name ? person.name : '').trim() + (person.surname ? ' ' + person.surname.trim() : '')
                     }
                 })
-            persons_in_eventival = [].concat(persons_in_eventival, e_persons)
+            let e_directors = [].concat(relationships.directors || [])
+                .map(person => {
+                    return {
+                        remoteId: person.id.toString(),
+                        firstName: (person.name ? person.name : '').trim(),
+                        lastName: (person.surname ? person.surname : '').trim(),
+                        firstNameLastName: (person.name ? person.name : '').trim() + (person.surname ? ' ' + person.surname.trim() : ''),
+                        profession: 'director'
+                    }
+                })
+            persons_in_eventival = [].concat(persons_in_eventival, e_persons, e_directors)
         }
         await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
 
@@ -259,6 +271,14 @@ const remapEventival = async () => {
             }
             return await strapiQuery(options, {remoteId: remoteId})
         }
+        const createStrapiCassette = async (remoteId) => {
+            let options = {
+                headers: { 'Content-Type': 'application/json' },
+                path: CASSETTES_API,
+                method: 'POST'
+            }
+            return await strapiQuery(options, {remoteId: remoteId})
+        }
         const createStrapiScreening = async (remoteId) => {
             let options = {
                 headers: { 'Content-Type': 'application/json' },
@@ -274,6 +294,15 @@ const remapEventival = async () => {
             if (! strapi_film) {
                 console.log('Creating new film in Strapi:', JSON.stringify(e_film.ids.system_id))
                 await createStrapiFilm(e_film.ids.system_id.toString())
+            }
+        }
+
+        let strapi_cassettes = await getModel('Cassette')
+        for (const e_film of EVENTIVAL_FILMS) {
+            let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+            if (! strapi_cassette) {
+                console.log('Creating new cassette in Strapi:', JSON.stringify(e_film.ids.system_id))
+                await createStrapiCassette(e_film.ids.system_id.toString())
             }
         }
 
@@ -300,7 +329,7 @@ const remapEventival = async () => {
             console.log('Missing film in Strapi:', JSON.stringify(e_film.ids.system_id));
             continue
         }
-        const strapi_film_before = JSON.safeDump(JSON.stringify(strapi_film))
+        const strapi_film_before = JSON.parse(JSON.stringify(strapi_film))
         const is_film_cassette = (e_film.film_info
             && e_film.film_info.texts
             && e_film.film_info.texts.logline
@@ -354,11 +383,19 @@ const remapEventival = async () => {
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
-        strapi_film.countries = STRAPIDATA.Country.filter((s_country) => {
+        //TODO #402: Refactor frontend. Use film.orderedCountries instead of film.countries
+        strapi_film.countries = STRAPIDATA.Country.filter(s_country => {
             if(e_film.film_info && e_film.film_info.countries) {
                 return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
             }
         }).map(e => { return {id: e.id.toString()} })
+        let country_order_in_film = 1
+        strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
+            return {
+                order: country_order_in_film++,
+                country: e_country
+            }
+        })
 
         strapi_film.languages = STRAPIDATA.Language.filter((s_language) => {
             if(e_film.film_info && e_film.film_info.languages) {

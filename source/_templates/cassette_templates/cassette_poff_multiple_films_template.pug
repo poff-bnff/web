@@ -278,7 +278,7 @@ if self.films
             - var filmPath = pathParts[pathParts.length - 1]
             section.f_title_box
 
-                .premiere_type &nbsp;
+                .premiere_type
                     if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
                         //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
                         p.premiere_type= film.tags.premiere_types.join(', ')
@@ -302,17 +302,19 @@ if self.films
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                    if film.countries
+                    if film.orderedCountries
                         - var countriesNames = function(item) {
-                        -   if(item.name) {
-                        -       var itemNames = item.name
+                        -   if(item.country && item.country.name) {
+                        -       var itemNames = item.country.name
                         -       return itemNames
                         -   }
                         - }
 
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            .str_info_value= film.countries.map(countriesNames).join(', ')
+                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            - var mapCountries = sortCountries.map(countriesNames)
+                            .str_info_value= mapCountries.join(', ')
 
                     if film.year
                         .str_info_grid_3
