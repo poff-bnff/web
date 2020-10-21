@@ -236,7 +236,7 @@ const updateStrapi = async () => {
             let cred = s_film.credentials.rolePerson.map(o => {
                 return `${o.order}${o.role_at_film.id}${o.person.id}`
             })
-            const s_creds_before = JSON.stringify(cred, Object.keys(cred).sort())
+            const s_creds_before = JSON.parse(JSON.stringify(cred, Object.keys(cred).sort()))
             // s_creds_before.unshift(s_film.id)
             console.log('ENNE', s_creds_before)
 
@@ -258,12 +258,12 @@ const updateStrapi = async () => {
                 )
             }
 
-            const s_creds_after = JSON.stringify(cred, Object.keys(cred).sort())
+            const s_creds_after = JSON.parse(JSON.stringify(cred, Object.keys(cred).sort()))
             console.log('P4RAST', s_creds_after)
 
             // s_creds_after.unshift(s_film.id)
             if (s_creds_before !== s_creds_after) {
-                console.log('j6udsin siia')
+                console.log('j6udsin siia') // kui JSON.parse ees siis j6uan alati siia, see v6dlus ei toota
                 let options = {
                     headers: { 'Content-Type': 'application/json' },
                     path: FILMS_API + '/' + s_film.id,
