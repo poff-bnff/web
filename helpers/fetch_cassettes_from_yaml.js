@@ -47,7 +47,7 @@ if(CHECKPROGRAMMES) {
             return false
         }
     })
-    if (cassettesWithOutProgrammes.length) {
+    if (cassettesWithOutProgrammes && cassettesWithOutProgrammes.length) {
         console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no programmes')
     }
 
@@ -66,7 +66,7 @@ if(CHECKPROGRAMMES) {
         }
     })
     if (cassettesWithOutFestivalEditions.length) {
-        console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no festival editions')
+        console.log('Cassettes with IDs', cassettesWithOutFestivalEditions.join(', '), ' have no festival editions')
     }
 
 } else {

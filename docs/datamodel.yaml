@@ -1127,7 +1127,7 @@ TrioItemPoff: &TrioItemPoff
     poffi_article: *POFFiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 TrioPOFF: &TrioPOFF
@@ -1147,7 +1147,7 @@ TrioItemJustFilm: &TrioItemJustFilm
     just_filmi_article: *JustFilmiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Triojustfilm: &Triojustfilm
@@ -1167,7 +1167,7 @@ TrioItemShorts: &TrioItemShorts
     shortsi_article: *ShortsiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Trioshorts: &Trioshorts
