@@ -229,13 +229,16 @@ const updateStrapi = async () => {
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             // console.log(e_film);
             let s_film = s_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+
             s_film.credentials = s_film.credentials || {}
             s_film.credentials.rolePerson = s_film.credentials.rolePerson || []
                 // let s_film = {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: {rolePerson: []}}
-            const s_creds_before = JSON.parse(JSON.stringify(s_film.credentials.rolePerson.map(o => {
+            let cred = s_film.credentials.rolePerson.map(o => {
                 return `${o.order}${o.role_at_film.id}${o.person.id}`
-            })))
+            })
+            const s_creds_before = JSON.stringify(cred, Object.keys(cred).sort())
             // s_creds_before.unshift(s_film.id)
+            console.log('ENNE', s_creds_before)
 
             s_film.credentials = {}
             s_film.credentials.rolePerson = []
@@ -255,11 +258,12 @@ const updateStrapi = async () => {
                 )
             }
 
-            const s_creds_after = JSON.parse(JSON.stringify(s_film.credentials.rolePerson.map(o => {
-                return `${o.order}${o.role_at_film.id}${o.person.id}`
-            })))
+            const s_creds_after = JSON.stringify(cred, Object.keys(cred).sort())
+            console.log('P4RAST', s_creds_after)
+
             // s_creds_after.unshift(s_film.id)
-            if (isUpdateRequired(s_creds_before, s_creds_after)) {
+            if (s_creds_before !== s_creds_after) {
+                console.log('j6udsin siia')
                 let options = {
                     headers: { 'Content-Type': 'application/json' },
                     path: FILMS_API + '/' + s_film.id,
@@ -310,7 +314,8 @@ const remapEventival = async () => {
         let strapi_films = await getModel('Film')
         for (const e_film of EVENTIVAL_FILMS) {
             let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
-            if (! strapi_film) {
+            let is_film_cassette = (e_film.film_info && e_film.film_info.texts && e_film.film_info.texts.logline && e_film.film_info.texts.logline !== '' ? true : false)
+            if ((! strapi_film) && (! is_film_cassette)) {
                 console.log('Creating new film in Strapi:', JSON.stringify(e_film.ids.system_id))
                 await createStrapiFilm(e_film.ids.system_id.toString())
             }
@@ -319,7 +324,8 @@ const remapEventival = async () => {
         let strapi_cassettes = await getModel('Cassette')
         for (const e_film of EVENTIVAL_FILMS) {
             let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
-            if (! strapi_cassette) {
+            let shortsi_alam = e_film.eventival_categorization && e_film.eventival_categorization.categorie && e_film.eventival_categorization.categories.includes('Shortsi alam') //tuleks see kontroll ka sisse panna
+            if ((! strapi_cassette) && ( ! shortsi_alam)) {
                 console.log('Creating new cassette in Strapi:', JSON.stringify(e_film.ids.system_id))
                 await createStrapiCassette(e_film.ids.system_id.toString())
             }
