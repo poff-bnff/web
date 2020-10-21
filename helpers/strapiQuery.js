@@ -52,6 +52,10 @@ async function strapiQuery(options, dataObject = false) {
                 process.stdout.write('r')
                 let resolved = await strapiQuery(options, dataObject)
                 resolve(resolved)
+            } else if (thisError.code === 'ECONNRESET') {
+                process.stdout.write('r')
+                let resolved = await strapiQuery(options, dataObject)
+                resolve(resolved)
             } else {
                 console.log('\nE:2', thisError)
                 reject

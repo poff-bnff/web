@@ -422,7 +422,7 @@ const remapEventival = async () => {
         }
 
         // ----   END update strapi film properties
-        const strapi_film_after = JSON.safeDump(JSON.stringify(strapi_film))
+        const strapi_film_after = JSON.parse(JSON.stringify(strapi_film))
         if(isUpdateRequired(strapi_film_before, strapi_film_after)){
             to_strapi_films.push(strapi_film)
         }
