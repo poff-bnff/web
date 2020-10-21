@@ -403,12 +403,6 @@ const remapEventival = async () => {
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
-        //TODO #402: Refactor frontend. Use film.orderedCountries instead of film.countries
-        strapi_film.countries = STRAPIDATA.Country.filter(s_country => {
-            if(e_film.film_info && e_film.film_info.countries) {
-                return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
-            }
-        }).map(e => { return {id: e.id.toString()} })
         let country_order_in_film = 1
         strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
             return {
