@@ -729,8 +729,6 @@ Film: &Film
     slug_ru: departament-zdorovya (UID, No spaces)
     festival_editions:
         - *FestivalEdition
-    countries: #(Component (repeatable))
-        - *Country
     languages: #(Component (repeatable))
         - *Language
     subtitles:
