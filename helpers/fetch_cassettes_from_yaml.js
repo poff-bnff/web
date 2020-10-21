@@ -13,6 +13,7 @@ const STRAPIDATA_PERSONS = STRAPIDATA['Person']
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme']
 const STRAPIDATA_FE = STRAPIDATA['FestivalEdition']
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening']
+const STRAPIDATA_FESTIVAL = STRAPIDATA['Festival']
 const STRAPIDATA_FILMS = STRAPIDATA['Film']
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
@@ -126,6 +127,17 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
         counting++
 
         const s_cassette_copy = JSONcopy(s_cassette)
+
+        if (s_cassette_copy.festival_editions && s_cassette_copy.festival_editions.length) {
+            for (const festEdIx in s_cassette_copy.festival_editions) {
+                var festEd = s_cassette_copy.festival_editions[festEdIx]
+                var festival = JSONcopy(STRAPIDATA_FESTIVAL.filter( (a) => { return festEd.festival === a.id })[0])
+                if (festival) {
+                    s_cassette_copy.festivals = []
+                    s_cassette_copy.festivals.push(festival)
+                }
+            }
+        }
 
         let slugEn = undefined
         if (s_cassette_copy.films && s_cassette_copy.films.length === 1) {
