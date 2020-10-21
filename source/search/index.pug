@@ -11,15 +11,28 @@ block content
     br
     br
     input#search(type='text', placeholder='Search something now!!!')
+    select#festivalsSelect(name='festivals')
+    select#programmesSelect(name='festivalProgrammes')
+
 
     - var allFestivalEditions = []
+    - var allProgrammes = []
+    - var allFestivals = []
+
     if self.data.cassettes
         main.grid_films
             each cassette in self.data.cassettes.sort(function(a, b){ if(a.title && b.title) { return ('' + a.title).localeCompare(b.title, self.locale); } else { return 0; } })
                 if cassette.festival_editions
                     each edition in cassette.festival_editions
                         - allFestivalEditions.push(edition.name)
+                if cassette.festivals
+                    - var festivalsCassette = []
+                    each festival in cassette.festivals
+                        - allFestivals.push(festival.name)
+                        - festivalsCassette.push(festival.name)
                 a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                    input#festivalsCassette(type='hidden', value=`${festivalsCassette}`)
+
                     .container_frame_16_9
                         //- each media in cassette.media
                             //- - console.log(cassette.media)
@@ -53,6 +66,7 @@ block content
                                         each programme in film.tags.programmes
                                             if programme.name
                                                 - filmsProgrammes.push(programme.name)
+                                                - allProgrammes.push(programme.name)
                                 if filmsProgrammes.length
                                     - var uniqueProgrammes = [...new Set(filmsProgrammes)];
                                     .str_info_label.dark_semi= self.label.film.programme
@@ -69,5 +83,11 @@ block content
 
 
 
-            //- - var uniqueFestivalEditions = [...new Set(allFestivalEditions)]
+    - var uniqueFestivalEditions = [...new Set(allFestivalEditions)]
             //- - console.log(uniqueFestivalEditions)
+    - var uniqueFestivals = [...new Set(allFestivals)]
+    - var uniqueProgrammes = [...new Set(allProgrammes)]
+
+    input#festivals(type='hidden', value=`${uniqueFestivals}`)
+    input#festivalEditions(type='hidden', value=`${uniqueFestivalEditions}`)
+    input#festivalProgrammes(type='hidden', value=`${uniqueProgrammes}`)
