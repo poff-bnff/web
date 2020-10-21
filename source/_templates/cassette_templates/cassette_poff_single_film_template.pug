@@ -260,11 +260,11 @@ main.grid_film
                                                 .str_info_label.text_left.dark_semi= self.label.film.director
                                                 .str_info_value.text_right.dark_1= `${director.person.firstName ? director.person.firstName : ''} ${director.person.lastName ? director.person.lastName : ''}`
 
-                            .dir_bio.dark_1
-                                if director.person.biography && typeof director.person.biography !== 'object'
-                                    p.dark_1= director.person.biography
-                                if director.person.filmography && typeof director.person.filmography !== 'object'
-                                    p.dark_1= director.person.filmography
+                                .dir_bio.dark_1
+                                    if director.person.biography && typeof director.person.biography !== 'object'
+                                        p.dark_1= director.person.biography
+                                    if director.person.filmography && typeof director.person.filmography !== 'object'
+                                        p.dark_1= director.person.filmography
 
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
