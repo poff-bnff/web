@@ -459,13 +459,6 @@ const remapEventival = async () => {
         ? e_cassette.film_info.texts.logline.split(',').map(id => id.trim())
         : [e_cassette.ids.system_id.toString()]
 
-        // TODO #379:
-        strapi_cassette.films = cassette_remote_ids.map(remote_id => {
-            return (STRAPIDATA.Film.filter(s_film => remote_id === s_film.remoteId)[0] || {id: null}).id
-        }).map(id => {
-            return {id: id}
-        })
-
         let film_order_in_cassette = 1
         strapi_cassette.orderedFilms = cassette_remote_ids.map(remote_id => {
             return (STRAPIDATA.Film.filter(s_film => remote_id === s_film.remoteId)[0] || {id: null}).id
