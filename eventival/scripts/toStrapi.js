@@ -67,6 +67,9 @@ const s_role_id_by_e_crew_type = (e_crew, s_roles) => {
 
 const isUpdateRequired = (old_o, new_o) => {
     const sortedString = (o) => {
+        if(o === undefined) {
+            o = {}
+        }
         return JSON.stringify(yaml.load(yaml.safeDump(o, {'sortKeys': true})))
     }
     const old_s = sortedString(old_o)
@@ -326,7 +329,7 @@ const remapEventival = async () => {
             console.log('Missing film in Strapi:', JSON.stringify(e_film.ids.system_id));
             continue
         }
-        const strapi_film_before = JSON.safeDump(JSON.stringify(strapi_film))
+        const strapi_film_before = JSON.parse(JSON.stringify(strapi_film))
         const is_film_cassette = (e_film.film_info
             && e_film.film_info.texts
             && e_film.film_info.texts.logline
