@@ -228,29 +228,48 @@ const updateStrapi = async () => {
             // skip if there is no roles (no crew) to check
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             // console.log(e_film);
-            let s_film = {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: {rolePerson: []}}
+            let s_film = s_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+            s_film.credentials = s_film.credentials || {}
+            s_film.credentials.rolePerson = s_film.credentials.rolePerson || []
+                // let s_film = {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: {rolePerson: []}}
+            const s_creds_before = JSON.parse(JSON.stringify(s_film.credentials.rolePerson.map(o => {
+                return `${o.order}${o.role_at_film.id}${o.person.id}`
+            })))
+            // s_creds_before.unshift(s_film.id)
+
+            s_film.credentials = {}
+            s_film.credentials.rolePerson = []
             let cred_order_in_film = 1
             for (const e_crew of e_film.publications.en.crew) {
                 const role_id = s_role_id_by_e_crew_type(e_crew, s_roles)
                 s_film.credentials.rolePerson = [].concat(
                     s_film.credentials.rolePerson,
                     e_crew.text.map(name => {
-                        return {
+                        const roleperson = {
                             order: cred_order_in_film++,
                             role_at_film: { id: role_id },
                             person: { id: s_person_id_by_e_fullname(name, s_persons) }
                         }
-                    }
-                ).filter(rp => {return rp.person.id}))
+                        return roleperson
+                    }).filter(rp => {return rp.person.id})
+                )
             }
-            let options = {
-                headers: { 'Content-Type': 'application/json' },
-                path: FILMS_API + '/' + s_film.id,
-                method: 'PUT'
+
+            const s_creds_after = JSON.parse(JSON.stringify(s_film.credentials.rolePerson.map(o => {
+                return `${o.order}${o.role_at_film.id}${o.person.id}`
+            })))
+            // s_creds_after.unshift(s_film.id)
+            if (isUpdateRequired(s_creds_before, s_creds_after)) {
+                let options = {
+                    headers: { 'Content-Type': 'application/json' },
+                    path: FILMS_API + '/' + s_film.id,
+                    method: 'PUT'
+                }
+                // console.log(options, JSON.stringify(s_film, null, 2))
+                // await strapiQuery(options, {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: null})
+                await strapiQuery(options, s_film)
             }
-            // console.log(options, JSON.stringify(s_film, null, 2))
-            await strapiQuery(options, {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: null})
-            await strapiQuery(options, s_film)
+
         }
     }
     console.log('\n|–– persons')
@@ -329,6 +348,7 @@ const remapEventival = async () => {
             console.log('Missing film in Strapi:', JSON.stringify(e_film.ids.system_id));
             continue
         }
+
         const strapi_film_before = JSON.parse(JSON.stringify(strapi_film))
         const is_film_cassette = (e_film.film_info
             && e_film.film_info.texts
@@ -737,12 +757,12 @@ const main = async () => {
     await updateStrapi()
     console.log('| remap')
     await remapEventival()
-    console.log('| submit films')
-    await submitFilms()
-    console.log('| submit cassettes')
-    await submitCassettes()
-    console.log('| submit screenings')
-    await submitScreenings()
+    // console.log('| submit films')
+    // await submitFilms()
+    // console.log('| submit cassettes')
+    // await submitCassettes()
+    // console.log('| submit screenings')
+    // await submitScreenings()
 }
 
 main()
