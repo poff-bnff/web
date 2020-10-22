@@ -9,6 +9,7 @@ const savePath = 'assets/img/dynamic/img_trioblock/'
 
 loadYaml('et', readYaml);
 loadYaml('en', readYaml);
+loadYaml('ru', readYaml);
 
 function loadYaml(lang, readYaml) {
     var doc = '';
