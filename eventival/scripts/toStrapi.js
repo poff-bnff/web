@@ -310,13 +310,13 @@ const remapEventival = async () => {
         for (const e_film of EVENTIVAL_FILMS) {
             let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
             let is_film_cassette = (e_film.film_info
-                && e_film.film_info.texts
-                && e_film.film_info.texts.logline
-                && e_film.film_info.texts.logline !== '' ? true : false)
+                                 && e_film.film_info.texts
+                                 && e_film.film_info.texts.logline
+                                 && e_film.film_info.texts.logline !== '' ? true : false)
             if( is_film_cassette){
                 continue
             }
-            if ((! strapi_film)) {
+            if (!strapi_film) {
                 console.log('Creating new film in Strapi:', JSON.stringify(e_film.ids.system_id))
                 await createStrapiFilm(e_film.ids.system_id.toString())
             }
@@ -325,13 +325,13 @@ const remapEventival = async () => {
         let strapi_cassettes = await getModel('Cassette')
         for (const e_film of EVENTIVAL_FILMS) {
             let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
-            let is_cassette_film  = e_film.eventival_categorization
-            && e_film.eventival_categorization.categorie
-            && e_film.eventival_categorization.categories.includes('Shortsi alam')
+            let is_cassette_film = e_film.eventival_categorization
+                                && e_film.eventival_categorization.categorie
+                                && e_film.eventival_categorization.categories.includes('Shortsi alam')
             if(is_cassette_film ){
                 continue
             }
-            if ((! strapi_cassette) ) {
+            if (!strapi_cassette) {
                 console.log('Creating new cassette in Strapi:', JSON.stringify(e_film.ids.system_id))
                 await createStrapiCassette(e_film.ids.system_id.toString())
             }
