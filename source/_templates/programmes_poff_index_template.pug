@@ -156,7 +156,7 @@ block content
                                 if cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
                                     img.container_contents_16_9(src=`https://assets.poff.ee/img/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title ? cassette.title : '')
                                 else if cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
-                                    img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt = film.title ? film.title : '')
+                                    img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt = cassette.films[0].title ? cassette.films[0].title : '')
                                 else
                                     img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = cassette.title ? cassette.title : '')
                             .card_film_title
@@ -165,7 +165,7 @@ block content
                                         h3.film_title_locale.dark_1= cassette.title
                                     else
                                         if cassette.films.length === 1
-                                            h3.film_title_locale.dark_1= film.title
+                                            h3.film_title_locale.dark_1= cassette.films[0].title
 
                             .card_film_info
                                 each p, locale in self.otherLocalePaths
@@ -176,7 +176,7 @@ block content
                                                 .str_info_value.dark_1.thin_300= cassette[`title_${locale}`]
 
                                     else if cassette.films.length === 1
-                                        if film[`title_${locale}`]
+                                        if cassette.films[0][`title_${locale}`]
                                             .str_info_grid_3
                                                 .str_info_label.dark_semi= self.label.film[`title_${locale}`]
-                                                .str_info_value.dark_1.thin_300= film[`title_${locale}`]
+                                                .str_info_value.dark_1.thin_300= cassette.films[0][`title_${locale}`]
