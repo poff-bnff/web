@@ -232,13 +232,9 @@ const updateStrapi = async () => {
 
             s_film.credentials = s_film.credentials || {}
             s_film.credentials.rolePerson = s_film.credentials.rolePerson || []
-                // let s_film = {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: {rolePerson: []}}
-            let cred = s_film.credentials.rolePerson.map(o => {
-                return `${o.order}${o.role_at_film.id}${o.person.id}`
-            })
-            const s_creds_before = JSON.parse(JSON.stringify(cred, Object.keys(cred).sort()))
-            // s_creds_before.unshift(s_film.id)
-            console.log('ENNE', s_creds_before)
+            const s_creds_before = s_film.credentials.rolePerson.map(o => {
+                return `${o.order}|${o.role_at_film.id}|${o.person.id}`
+            }).join(',')
 
             s_film.credentials = {}
             s_film.credentials.rolePerson = []
@@ -258,19 +254,18 @@ const updateStrapi = async () => {
                 )
             }
 
-            const s_creds_after = JSON.parse(JSON.stringify(cred, Object.keys(cred).sort()))
-            console.log('P4RAST', s_creds_after)
+            const s_creds_after = s_film.credentials.rolePerson.map(o => {
+                return `${o.order}|${o.role_at_film.id}|${o.person.id}`
+            }).join(',')
 
-            // s_creds_after.unshift(s_film.id)
             if (s_creds_before !== s_creds_after) {
-                console.log('j6udsin siia') // kui JSON.parse ees siis j6uan alati siia, see v6dlus ei toota
+                console.log('  ENNE', s_creds_before)
+                console.log('P4RAST', s_creds_after)
                 let options = {
                     headers: { 'Content-Type': 'application/json' },
                     path: FILMS_API + '/' + s_film.id,
                     method: 'PUT'
                 }
-                // console.log(options, JSON.stringify(s_film, null, 2))
-                // await strapiQuery(options, {id: s_film_id_by_e_remote_id(e_film.ids.system_id, s_films), credentials: null})
                 await strapiQuery(options, s_film)
             }
 
@@ -766,8 +761,8 @@ const submitScreenings = async () => {
 const main = async () => {
     console.log('update Strapi')
     await updateStrapi()
-    console.log('| remap')
-    await remapEventival()
+    // console.log('| remap')
+    // await remapEventival()
     // console.log('| submit films')
     // await submitFilms()
     // console.log('| submit cassettes')
