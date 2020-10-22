@@ -75,9 +75,9 @@ const isUpdateRequired = (old_o, new_o) => {
     const old_s = sortedString(old_o)
     const new_s = sortedString({...old_o, ...new_o})
     if (old_s !== new_s) {
-        console.log('BEFORE:', old_s)
-        console.log('UPDATE:', sortedString(new_o))
-        console.log(' AFTER:', new_s)
+        // console.log('BEFORE:', old_s)
+        // console.log('UPDATE:', sortedString(new_o))
+        // console.log(' AFTER:', new_s)
         return true
     }
     return false
@@ -90,7 +90,7 @@ const updateStrapi = async () => {
                 headers: { 'Content-Type': 'application/json' }
             }
             const strapi_person = strapi_persons.filter((person) => {
-                return person.remoteId === e_person.remoteId
+                return person.remoteId === e_person.remoteId // otsib remoteId aga me pole seda kaasa andnud
             })
 
             if (strapi_person.length) {
@@ -170,7 +170,7 @@ const updateStrapi = async () => {
                     path: PERSONS_API,
                     method: 'POST'
                 }
-                let data = { firstName: e_name.trim(), firstNameLastName: e_name.trim() }
+                let data = { firstName: e_name.trim(), firstNameLastName: e_name.trim() }// peaksime kaasa saatma ka remoteId, mille j4rgi ta hiljem muidu inimese leiab
                 await strapiQuery(options, data)
                 console.log('==== new person', e_name);
             }
@@ -423,13 +423,18 @@ const remapEventival = async () => {
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
+        let strapi_country = await getModel('Country')
         let country_order_in_film = 1
-        strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
-            return {
-                order: country_order_in_film++,
-                country: e_country
-            }
-        })
+        if( e_film.film_info && e_film.film_info.countries){
+            strapi_film.orderedCountries = e_film.film_info.countries.map(e_country => {
+                let countryId = strapi_country.filter(s_country => {
+
+                return {
+                    order: country_order_in_film++,
+                    country: e_country.code === s_country.code // tahan siia id mitte code
+                }
+            }) })
+        }
 
         let strapi_language = await getModel('Language')
         strapi_film.languages = strapi_language.filter(s_language => {
@@ -772,8 +777,8 @@ const main = async () => {
     // await updateStrapi()
     console.log('| remap')
     await remapEventival()
-    // console.log('| submit films')
-    // await submitFilms()
+    console.log('| submit films')
+    await submitFilms()
     // console.log('| submit cassettes')
     // await submitCassettes()
     // console.log('| submit screenings')
