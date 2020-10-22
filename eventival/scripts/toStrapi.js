@@ -230,11 +230,15 @@ const updateStrapi = async () => {
             // console.log(e_film);
             let s_film = s_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
 
+            if(s_film === undefined){
+                continue
+            }
             s_film.credentials = s_film.credentials || {}
             s_film.credentials.rolePerson = s_film.credentials.rolePerson || []
             const s_creds_before = s_film.credentials.rolePerson.map(o => {
                 return `${o.order}|${o.role_at_film.id}|${o.person.id}`
             }).join(',')
+
 
             s_film.credentials = {}
             s_film.credentials.rolePerson = []
@@ -326,7 +330,7 @@ const remapEventival = async () => {
         for (const e_film of EVENTIVAL_FILMS) {
             let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
             let is_cassette_film  = e_film.eventival_categorization
-            && e_film.eventival_categorization.categorie
+            && e_film.eventival_categorization.categories
             && e_film.eventival_categorization.categories.includes('Shortsi alam')
             if(is_cassette_film ){
                 continue
@@ -386,26 +390,30 @@ const remapEventival = async () => {
         if (!strapi_film.media) { strapi_film.media = {} }
         strapi_film.media.trailer = [{ url: (e_film.film_info  ? e_film.film_info : {'online_trailer_url' : '' }).online_trailer_url}]
 
+        let strapi_tagPremiereType = await getModel('TagPremiereType')
         if (!strapi_film.tags) { strapi_film.tags = {} }
-        strapi_film.tags.premiere_types = STRAPIDATA.TagPremiereType.filter((s_premiereType) => {
+        strapi_film.tags.premiere_types = strapi_tagPremiereType.filter(s_premiereType => {
             if(e_film.film_info && e_film.film_info.premiere_type) {
                 return e_film.film_info.premiere_type === s_premiereType.en
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        strapi_film.tags.genres = STRAPIDATA.TagGenre.filter((s_genre) => {
+        let strapi_tagGenre = await getModel('TagGenre')
+        strapi_film.tags.genres = strapi_tagGenre.filter(s_genre => {
             if(e_film.film_info.types) {
                 return e_film.film_info.types.includes(s_genre.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        strapi_film.tags.keywords = STRAPIDATA.TagKeyword.filter((s_keyword) => {
+        let strapi_tagKeyword = await getModel('TagKeyword')
+        strapi_film.tags.keywords = strapi_tagKeyword.filter(s_keyword => {
             if(e_film.eventival_categorization.tags) {
                 return e_film.eventival_categorization.tags.includes(s_keyword.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        strapi_film.tags.programmes = STRAPIDATA.Programme.filter((s_programme) => {
+        let strapi_programme = await getModel('Programme')
+        strapi_film.tags.programmes = strapi_programme.filter(s_programme => {
             if(e_film.eventival_categorization && e_film.eventival_categorization.sections ) {
                 let sections = e_film.eventival_categorization.sections
                 return sections.map( item => { return item.id.toString() } ).includes(s_programme.remoteId)
@@ -423,13 +431,14 @@ const remapEventival = async () => {
             }
         })
 
-        strapi_film.languages = STRAPIDATA.Language.filter((s_language) => {
+        let strapi_language = await getModel('Language')
+        strapi_film.languages = strapi_language.filter(s_language => {
             if(e_film.film_info && e_film.film_info.languages) {
                 return e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        strapi_film.subtitles = STRAPIDATA.Language.filter((s_subLang) => {
+        strapi_film.subtitles = strapi_language.filter(s_subLang => {
             if(e_film.film_info && e_film.film_info.subtitle_languages) {
                 return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
             }
@@ -759,10 +768,10 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    console.log('update Strapi')
-    await updateStrapi()
-    // console.log('| remap')
-    // await remapEventival()
+    // console.log('update Strapi')
+    // await updateStrapi()
+    console.log('| remap')
+    await remapEventival()
     // console.log('| submit films')
     // await submitFilms()
     // console.log('| submit cassettes')
