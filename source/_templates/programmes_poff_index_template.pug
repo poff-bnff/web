@@ -163,9 +163,9 @@ block content
                                 if cassette.films.length > 1
                                     if cassette.title
                                         h3.film_title_locale.dark_1= cassette.title
-                                    else
-                                        if cassette.films.length === 1
-                                            h3.film_title_locale.dark_1= cassette.films[0].title
+                                else
+                                    if cassette.films.length === 1
+                                        h3.film_title_locale.dark_1= cassette.films[0].title
 
                             .card_film_info
                                 each p, locale in self.otherLocalePaths
