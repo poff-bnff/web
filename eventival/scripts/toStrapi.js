@@ -357,6 +357,10 @@ const remapEventival = async () => {
     const strapi_films = await getModel('Film')
     const strapi_tag_genres = await getModel('TagGenre')
     const strapi_tag_keywords = await getModel('TagKeyword')
+    const strapi_programme = await getModel('Programme')
+    const strapi_countries = await getModel('Country')
+    const strapi_languages = await getModel('Language')
+
     let to_strapi_films = []
     for (const e_film of EVENTIVAL_FILMS) {
         let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
@@ -398,21 +402,18 @@ const remapEventival = async () => {
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const strapi_tagGenre = await getModel('TagGenre')
-        strapi_film.tags.genres = strapi_tagGenre.filter(s_genre => {
+        strapi_film.tags.genres = strapi_tag_genres.filter(s_genre => {
             if(e_film.film_info.types) {
                 return e_film.film_info.types.includes(s_genre.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const strapi_tagKeyword = await getModel('TagKeyword')
-        strapi_film.tags.keywords = strapi_tagKeyword.filter(s_keyword => {
+        strapi_film.tags.keywords = strapi_tag_keywords.filter(s_keyword => {
             if(e_film.eventival_categorization.tags) {
                 return e_film.eventival_categorization.tags.includes(s_keyword.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        const strapi_programme = await getModel('Programme')
         strapi_film.tags.programmes = strapi_programme.filter(s_programme => {
             if(e_film.eventival_categorization && e_film.eventival_categorization.sections ) {
                 let sections = e_film.eventival_categorization.sections
@@ -423,29 +424,25 @@ const remapEventival = async () => {
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
-
-        let strapi_country = await getModel('Country')
-        strapi_film.countries = strapi_country.filter(s_country => {
+        let country_order_in_film = 1
+        strapi_film.orderedCountries = strapi_countries.filter(s_country => {
             if(e_film.film_info && e_film.film_info.countries) {
                 return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
             }
-        }).map(e => { return {id: e.id.toString()} })
-        let country_order_in_film = 1
-        strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
+        }).map(e => {
             return {
                 order: country_order_in_film++,
-                country: e_country
+                country: {id: e.id.toString()}
             }
         })
 
-        let strapi_language = await getModel('Language')
-        strapi_film.languages = strapi_language.filter(s_language => {
+        strapi_film.languages = strapi_languages.filter(s_language => {
             if(e_film.film_info && e_film.film_info.languages) {
                 return e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        strapi_film.subtitles = strapi_language.filter(s_subLang => {
+        strapi_film.subtitles = strapi_languages.filter(s_subLang => {
             if(e_film.film_info && e_film.film_info.subtitle_languages) {
                 return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
             }
@@ -689,7 +686,8 @@ const submitFilms = async () => {
             headers: { 'Content-Type': 'application/json' }
         }
 
-        const strapiFilm = STRAPIDATA.Film.filter((film) => {
+        const strapiFilms = await getModel('Film')
+        const strapiFilm = strapiFilms.filter((film) => {
             return film.remoteId === e_film.remoteId
         })
 
