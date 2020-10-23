@@ -3,6 +3,10 @@ const fs = require('fs')
 const path = require('path')
 
 const { strapiQuery, getModel } = require("../../helpers/strapiQuery.js")
+// const baz = async () => {
+//     console.log(await getModel('Person', `firstNameLastName=${escape('Rana Kazkaz')}`))
+// }
+// baz()
 
 const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
@@ -77,39 +81,36 @@ const isUpdateRequired = (old_o, new_o) => {
     return false
 }
 
+const getFullName = (first_name, last_name) => {
+    return (first_name ? first_name : '').trim() + (last_name ? ' ' + last_name.trim() : '')
+}
+
 const updateStrapi = async () => {
     const updateStrapiPersons = async () => {
-        const submitPersonByRemoteId = async (e_person, strapi_persons) => {
+        const submitPersonByName = async (e_person) => {
             let options = {
                 headers: { 'Content-Type': 'application/json' }
             }
-            const strapi_person = strapi_persons.filter((person) => {
-                return person.remoteId === e_person.remoteId // otsib remoteId aga me pole seda kaasa andnud
-            })
+            const strapi_person = getModel('Person', `firstNameLastName=${escape(e_person.name, e_person.surname)}`)[0]
 
-            if (strapi_person.length) {
-                // console.log('BEFORE:', sortedString(strapi_person[0]))
-                e_person['id'] = strapi_person[0].id
-                // console.log('UPDATE:', sortedString(e_person))
-                options.path = PERSONS_API + '/' + e_person.id
+            if (strapi_person) {
+                if(! isUpdateRequired(strapi_person, e_person)) {
+                    return strapi_person
+                }
+                options.path = PERSONS_API + '/' + strapi_person.id
                 options.method = 'PUT'
             } else {
                 options.path = PERSONS_API
                 options.method = 'POST'
             }
-            if(isUpdateRequired(strapi_person[0], e_person)) {
-                const person_from_strapi = await strapiQuery(options, e_person)
-                return person_from_strapi
-            } else {
-                // console.log('NO DIF:', JSON.stringify(strapi_person[0]))
-                return strapi_person[0]
-            }
+            const person_from_strapi = await strapiQuery(options, e_person)
+            return person_from_strapi
         }
 
-        const submitPersonsByRemoteId = async (e_persons, strapi_persons) => {
+        const submitPersonsByName = async (e_persons) => {
             let from_strapi = []
-            for (const ix in e_persons) {
-                const person_from_strapi = await submitPersonByRemoteId(e_persons[ix], strapi_persons)
+            for (e_person of e_persons) {
+                const person_from_strapi = await submitPersonByName(e_person)
                 from_strapi.push(person_from_strapi)
             }
             return from_strapi
@@ -127,7 +128,7 @@ const updateStrapi = async () => {
                         remoteId: person.id.toString(),
                         firstName: (person.name ? person.name : '').trim(),
                         lastName: (person.surname ? person.surname : '').trim(),
-                        firstNameLastName: (person.name ? person.name : '').trim() + (person.surname ? ' ' + person.surname.trim() : '')
+                        firstNameLastName: getFullName(person.name, person.surname)
                     }
                 })
             let e_directors = [].concat(relationships.directors || [])
@@ -136,13 +137,13 @@ const updateStrapi = async () => {
                         remoteId: person.id.toString(),
                         firstName: (person.name ? person.name : '').trim(),
                         lastName: (person.surname ? person.surname : '').trim(),
-                        firstNameLastName: (person.name ? person.name : '').trim() + (person.surname ? ' ' + person.surname.trim() : ''),
+                        firstNameLastName: getFullName(person.name, person.surname),
                         profession: 'director'
                     }
                 })
             persons_in_eventival = [].concat(persons_in_eventival, e_persons, e_directors)
         }
-        await submitPersonsByRemoteId(persons_in_eventival, strapi_persons)
+        await submitPersonsByName(persons_in_eventival)
 
 
         // add all the crew to strapi
