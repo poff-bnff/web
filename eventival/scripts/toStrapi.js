@@ -229,7 +229,9 @@ const updateStrapi = async () => {
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             // console.log(e_film);
             let s_film = s_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
-
+            if (!s_film) {
+                continue
+            }
             s_film.credentials = s_film.credentials || {}
             s_film.credentials.rolePerson = s_film.credentials.rolePerson || []
             const s_creds_before = s_film.credentials.rolePerson.map(o => {
@@ -279,76 +281,74 @@ const updateStrapi = async () => {
     await updateFilmCredentials()
 }
 
-const remapEventival = async () => {
-    const createMissingFilmsAndScreenings = async () => {
-        const createStrapiFilm = async (remoteId) => {
-            let options = {
-                headers: { 'Content-Type': 'application/json' },
-                path: FILMS_API,
-                method: 'POST'
-            }
-            return await strapiQuery(options, {remoteId: remoteId})
+const createMissingFilmsAndScreenings = async () => {
+    const createStrapiFilm = async (remoteId) => {
+        let options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: FILMS_API,
+            method: 'POST'
         }
-        const createStrapiCassette = async (remoteId) => {
-            let options = {
-                headers: { 'Content-Type': 'application/json' },
-                path: CASSETTES_API,
-                method: 'POST'
-            }
-            return await strapiQuery(options, {remoteId: remoteId})
+        return await strapiQuery(options, {remoteId: remoteId})
+    }
+    const createStrapiCassette = async (remoteId) => {
+        let options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: CASSETTES_API,
+            method: 'POST'
         }
-        const createStrapiScreening = async (remoteId) => {
-            let options = {
-                headers: { 'Content-Type': 'application/json' },
-                path: SCREENINGS_API,
-                method: 'POST'
-            }
-            return await strapiQuery(options, {remoteId: remoteId})
+        return await strapiQuery(options, {remoteId: remoteId})
+    }
+    const createStrapiScreening = async (remoteId) => {
+        let options = {
+            headers: { 'Content-Type': 'application/json' },
+            path: SCREENINGS_API,
+            method: 'POST'
         }
+        return await strapiQuery(options, {remoteId: remoteId})
+    }
 
-        let strapi_films = await getModel('Film')
-        for (const e_film of EVENTIVAL_FILMS) {
-            let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
-            let is_film_cassette = (e_film.film_info
-                                 && e_film.film_info.texts
-                                 && e_film.film_info.texts.logline
-                                 && e_film.film_info.texts.logline !== '' ? true : false)
-            if( is_film_cassette){
-                continue
-            }
-            if (!strapi_film) {
-                console.log('Creating new film in Strapi:', JSON.stringify(e_film.ids.system_id))
-                await createStrapiFilm(e_film.ids.system_id.toString())
-            }
+    let strapi_films = await getModel('Film')
+    for (const e_film of EVENTIVAL_FILMS) {
+        let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+        let is_film_cassette = (e_film.film_info
+                             && e_film.film_info.texts
+                             && e_film.film_info.texts.logline
+                             && e_film.film_info.texts.logline !== '' ? true : false)
+        if( is_film_cassette){
+            continue
         }
-
-        let strapi_cassettes = await getModel('Cassette')
-        for (const e_film of EVENTIVAL_FILMS) {
-            let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
-            let is_cassette_film = e_film.eventival_categorization
-                                && e_film.eventival_categorization.categorie
-                                && e_film.eventival_categorization.categories.includes('Shortsi alam')
-            if(is_cassette_film ){
-                continue
-            }
-            if (!strapi_cassette) {
-                console.log('Creating new cassette in Strapi:', JSON.stringify(e_film.ids.system_id))
-                await createStrapiCassette(e_film.ids.system_id.toString())
-            }
-        }
-
-        let strapi_screenings = await getModel('Screening')
-        for (const e_screening of EVENTIVAL_SCREENINGS) {
-            let strapi_screening = strapi_screenings.filter(s_screening => e_screening.id.toString() === s_screening.remoteId)[0] || false
-            if (! strapi_screening) {
-                console.log('Creating screening in Strapi:', JSON.stringify(e_screening.id));
-                await createStrapiScreening(e_screening.id.toString())
-            }
+        if (!strapi_film) {
+            console.log('Creating new film in Strapi:', JSON.stringify(e_film.ids.system_id))
+            await createStrapiFilm(e_film.ids.system_id.toString())
         }
     }
 
-    await createMissingFilmsAndScreenings()
+    let strapi_cassettes = await getModel('Cassette')
+    for (const e_film of EVENTIVAL_FILMS) {
+        let strapi_cassette = strapi_cassettes.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+        let is_cassette_film = e_film.eventival_categorization
+                            && e_film.eventival_categorization.categories
+                            && e_film.eventival_categorization.categories.includes('Shortsi alam')
+        if(is_cassette_film ){
+            continue
+        }
+        if (!strapi_cassette) {
+            console.log('Creating new cassette. Categories:', e_film.eventival_categorization.categories, 'remoteId:', JSON.stringify(e_film.ids.system_id))
+            await createStrapiCassette(e_film.ids.system_id.toString())
+        }
+    }
+console.log([ 'Shortsi alam' ].includes('Shortsi alam'));
+    let strapi_screenings = await getModel('Screening')
+    for (const e_screening of EVENTIVAL_SCREENINGS) {
+        let strapi_screening = strapi_screenings.filter(s_screening => e_screening.id.toString() === s_screening.remoteId)[0] || false
+        if (! strapi_screening) {
+            console.log('Creating screening in Strapi:', JSON.stringify(e_screening.id));
+            await createStrapiScreening(e_screening.id.toString())
+        }
+    }
+}
 
+const remapEventival = async () => {
     //
     // Films
     //
@@ -759,6 +759,8 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
+    console.log('missing films and screenings')
+    await createMissingFilmsAndScreenings()
     console.log('update Strapi')
     await updateStrapi()
     // console.log('| remap')
