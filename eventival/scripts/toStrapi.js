@@ -390,7 +390,7 @@ const remapEventival = async () => {
         if (!strapi_film.media) { strapi_film.media = {} }
         strapi_film.media.trailer = [{ url: (e_film.film_info  ? e_film.film_info : {'online_trailer_url' : '' }).online_trailer_url}]
 
-        let strapi_tagPremiereType = await getModel('TagPremiereType')
+        const strapi_tagPremiereType = await getModel('TagPremiereType')
         if (!strapi_film.tags) { strapi_film.tags = {} }
         strapi_film.tags.premiere_types = strapi_tagPremiereType.filter(s_premiereType => {
             if(e_film.film_info && e_film.film_info.premiere_type) {
@@ -398,21 +398,21 @@ const remapEventival = async () => {
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        let strapi_tagGenre = await getModel('TagGenre')
+        const strapi_tagGenre = await getModel('TagGenre')
         strapi_film.tags.genres = strapi_tagGenre.filter(s_genre => {
             if(e_film.film_info.types) {
                 return e_film.film_info.types.includes(s_genre.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        let strapi_tagKeyword = await getModel('TagKeyword')
+        const strapi_tagKeyword = await getModel('TagKeyword')
         strapi_film.tags.keywords = strapi_tagKeyword.filter(s_keyword => {
             if(e_film.eventival_categorization.tags) {
                 return e_film.eventival_categorization.tags.includes(s_keyword.et)
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        let strapi_programme = await getModel('Programme')
+        const strapi_programme = await getModel('Programme')
         strapi_film.tags.programmes = strapi_programme.filter(s_programme => {
             if(e_film.eventival_categorization && e_film.eventival_categorization.sections ) {
                 let sections = e_film.eventival_categorization.sections
@@ -423,18 +423,20 @@ const remapEventival = async () => {
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
-        let strapi_country = await getModel('Country')
-        let country_order_in_film = 1
-        if( e_film.film_info && e_film.film_info.countries){
-            strapi_film.orderedCountries = e_film.film_info.countries.map(e_country => {
-                let countryId = strapi_country.filter(s_country => {
 
-                return {
-                    order: country_order_in_film++,
-                    country: e_country.code === s_country.code // tahan siia id mitte code
-                }
-            }) })
-        }
+        let strapi_country = await getModel('Country')
+        strapi_film.countries = strapi_country.filter(s_country => {
+            if(e_film.film_info && e_film.film_info.countries) {
+                return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
+            }
+        }).map(e => { return {id: e.id.toString()} })
+        let country_order_in_film = 1
+        strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
+            return {
+                order: country_order_in_film++,
+                country: e_country
+            }
+        })
 
         let strapi_language = await getModel('Language')
         strapi_film.languages = strapi_language.filter(s_language => {
