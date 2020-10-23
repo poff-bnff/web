@@ -1187,7 +1187,7 @@ TrioItemIndustry: &TrioItemIndustry
     industry_article: *IndustryArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Trioindustry: &Trioindustry
@@ -1207,7 +1207,7 @@ TrioItemKinoff: &TrioItemKinoff
     kinoffi_article: *KinoffiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Triokinoff: &Triokinoff
