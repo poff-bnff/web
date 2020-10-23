@@ -174,33 +174,37 @@ main.grid_cassette
                             .screening_info_blokk
                                 if self.title
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.Name
+                                        span.screening_info_label= self.label.screening.name
                                         span.screening_info_value= self.title
                                 //- if screening.screeningSubtitles
                                 if screening.screeningSubtitles
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningSubtitles
+                                        span.screening_info_label= self.label.screening.subtitles
                                         span.screening_info_value= screening.screeningSubtitles
                                 if screening.screeningIntroGuests
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningIntroGuests
+                                        span.screening_info_label= self.label.screening.introGuests
                                         span.screening_info_value= screening.screeningIntroGuests
                                 if screening.screeningIntroPresenter
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningIntroPresenter
+                                        span.screening_info_label= self.label.screening.introPresenter
                                         span.screening_info_value= screening.screeningIntroPresenter
                                 if screening.screeningQaGuests
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningQaGuests
+                                        span.screening_info_label= self.label.screening.qaGuests
                                         span.screening_info_value= screening.screeningQaGuests
                                 if screening.screeningQaPresenter
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningQaPresenter
+                                        span.screening_info_label= self.label.screening.qaPresenter
                                         span.screening_info_value= screening.screeningQaPresenter
+                                if screening.extraInfo
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.extraInfo
+                                        span.screening_info_value= screening.extraInfo
 
                                 if screening.durationTotal
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.TotalDuration
+                                        span.screening_info_label= self.label.screening.totalDuration
                                         span.screening_info_value
                                             +dur(screening.durationTotal)
 
@@ -209,15 +213,15 @@ main.grid_cassette
                             //- if screening.screening_mode && screening.screening_mode.name && screening.ticketingId && screening.ticketingUrl && screening.screening_mode.name === 'Online'
                             //-     if screening.bookingUrl
                             //-         a.btn.btn_secondary.active(href= screening.bookingUrl role='button') BOOKINGLABEL!
-                            //-     a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
+                            //-     a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button' target='_blank')= self.label.button.screeningBuyTicket
                             //- if screening.screeningTown === 'Tartu'
-                            //-     a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
+                            //-     a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_blank')= self.label.button.covidRegister
                             //-     a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
                             if screening.bookingUrl
-                                a.btn.btn_secondary.active(href= screening.bookingUrl role='button')= self.label.button.screeningReservation
+                                a.btn.btn_secondary.active(href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
                             if screening.ticketingUrl && screening.ticketingId
-                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button')= self.label.button.screeningBuyTicket
+                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button' target='_blank')= self.label.button.screeningBuyTicket
 
 h1.section_headline.padding_top_4.padding_bottom_2= self.label.menu.mainFilms
 
@@ -278,7 +282,7 @@ if self.films
             - var filmPath = pathParts[pathParts.length - 1]
             section.f_title_box
 
-                .premiere_type &nbsp;
+                .premiere_type
                     if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
                         //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
                         p.premiere_type= film.tags.premiere_types.join(', ')
@@ -302,17 +306,19 @@ if self.films
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                    if film.countries
+                    if film.orderedCountries
                         - var countriesNames = function(item) {
-                        -   if(item.name) {
-                        -       var itemNames = item.name
+                        -   if(item.country && item.country.name) {
+                        -       var itemNames = item.country.name
                         -       return itemNames
                         -   }
                         - }
 
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            .str_info_value= film.countries.map(countriesNames).join(', ')
+                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            - var mapCountries = sortCountries.map(countriesNames)
+                            .str_info_value= mapCountries.join(', ')
 
                     if film.year
                         .str_info_grid_3
@@ -372,6 +378,14 @@ if self.films
                     if typeof synopsis_md === 'string'
                         .synopsis_gi
                             +format(synopsis_md)
+
+                //- FILM ADDITIONAL INFO (ADDITINFO)
+
+                //- if typeof film.additInfo !== 'undefined'
+                //-     - var additInfo_md = film.additInfo
+                //-     .synopsis_gi
+                //-         if typeof additInfo_md === 'string'
+                //-             +format(additInfo_md)
             section.f_cred_box
                 .str_info_blokk_cred
 
@@ -411,10 +425,10 @@ if self.films
                                 .str_info_label= self.label.film.producer
                                 .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
 
-                        if film.credentials.rolePersonsByRole.dop && film.credentials.rolePersonsByRole.dop[0]
+                        if film.credentials.rolePersonsByRole.directorofphotography && film.credentials.rolePersonsByRole.directorofphotography[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.doP
-                                .str_info_value= film.credentials.rolePersonsByRole.dop.join(', ')
+                                .str_info_value= film.credentials.rolePersonsByRole.directorofphotography.join(', ')
 
                         if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
                             .str_info_grid_3
@@ -427,10 +441,12 @@ if self.films
                                 .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
 
                         //- Below datamodel needs to be updated and then code amended to be correct
-                        if film.credentials.productionCompany
+                        if film.credentials.rolePersonsByRole.productionCompany && film.credentials.rolePersonsByRole.productionCompany[0]
                             .str_info_grid_3
                                 .str_info_label= self.label.film.production
-                                .str_info_value= film.ProductionCompanyCSV
+                                .str_info_value= film.credentials.rolePersonsByRole.productionCompany.join(', ')
+
+
             section.f_runtime_box
 
                 if film.runtime
@@ -459,21 +475,21 @@ if self.films
                 - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
                 - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
 
-            if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
-                section.f_dir_bio_box
+            //- if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
+            //-     section.f_dir_bio_box
 
-                    if director.person.picture
-                        .dir_img
-                            img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
-                            .str_info_grid_3
-                                .str_info_label.text_left.dark_semi= self.label.film.director
-                                .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
+            //-         if director.person.picture
+            //-             .dir_img
+            //-                 img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
+            //-                 .str_info_grid_3
+            //-                     .str_info_label.text_left.dark_semi= self.label.film.director
+            //-                     .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
 
-                    .dir_bio.dark_1
-                        if director.person.biography && typeof director.person.biography !== 'object'
-                            p.dark_1= director.person.biography
-                        if director.person.filmography && typeof director.person.filmography !== 'object'
-                            p.dark_1= director.person.filmography
+            //-         .dir_bio.dark_1
+            //-             if director.person.biography && typeof director.person.biography !== 'object'
+            //-                 p.dark_1= director.person.biography
+            //-             if director.person.filmography && typeof director.person.filmography !== 'object'
+            //-                 p.dark_1= director.person.filmography
 
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
@@ -517,7 +533,7 @@ if self.films
                                 if trailer.youTubeCode && trailer.youTubeCode.length === 11
                                     +youtube(trailer.youTubeCode)
 
-            section.f_imgs_box
+            //- section.f_imgs_box
 
             +tabname(self.title)
 

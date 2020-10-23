@@ -1,16 +1,38 @@
 extends /_templates/layout.pug
+include /_templates/mixins.pug
 
 block content
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    input#search(type='text', placeholder='Search something now!!!')
+    select#festivalsSelect(name='festivals')
+    select#programmesSelect(name='festivalProgrammes')
 
 
     - var allFestivalEditions = []
+    - var allProgrammes = []
+    - var allFestivals = []
+
     if self.data.cassettes
         main.grid_films
             each cassette in self.data.cassettes.sort(function(a, b){ if(a.title && b.title) { return ('' + a.title).localeCompare(b.title, self.locale); } else { return 0; } })
                 if cassette.festival_editions
                     each edition in cassette.festival_editions
                         - allFestivalEditions.push(edition.name)
+                if cassette.festivals
+                    - var festivalsCassette = []
+                    each festival in cassette.festivals
+                        - allFestivals.push(festival.name)
+                        - festivalsCassette.push(festival.name)
                 a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                    input#festivalsCassette(type='hidden', value=`${festivalsCassette}`)
+
                     .container_frame_16_9
                         //- each media in cassette.media
                             //- - console.log(cassette.media)
@@ -34,7 +56,7 @@ block content
                         else
                             img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
                     .card_film_title
-                        h3.film_title_locale.dark_1= cassette.title
+                        h3#title.film_title_locale.dark_1= cassette.title
                     .card_film_info
                         .str_info_grid_3
                             if cassette.films && cassette.films.length
@@ -44,10 +66,11 @@ block content
                                         each programme in film.tags.programmes
                                             if programme.name
                                                 - filmsProgrammes.push(programme.name)
+                                                - allProgrammes.push(programme.name)
                                 if filmsProgrammes.length
                                     - var uniqueProgrammes = [...new Set(filmsProgrammes)];
                                     .str_info_label.dark_semi= self.label.film.programme
-                                    .str_info_value.dark_1.thin_300= uniqueProgrammes.join(', ')
+                                    #programmes.str_info_value.dark_1.thin_300= uniqueProgrammes.join(', ')
                         //- if cassette.credentials.director
                         //-     .str_info_grid_3
                         //-         .str_info_label= self.label.cassette.director
@@ -60,5 +83,11 @@ block content
 
 
 
-            //- - var uniqueFestivalEditions = [...new Set(allFestivalEditions)]
+    - var uniqueFestivalEditions = [...new Set(allFestivalEditions)]
             //- - console.log(uniqueFestivalEditions)
+    - var uniqueFestivals = [...new Set(allFestivals)]
+    - var uniqueProgrammes = [...new Set(allProgrammes)]
+
+    input#festivals(type='hidden', value=`${uniqueFestivals}`)
+    input#festivalEditions(type='hidden', value=`${uniqueFestivalEditions}`)
+    input#festivalProgrammes(type='hidden', value=`${uniqueProgrammes}`)

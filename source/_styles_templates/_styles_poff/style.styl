@@ -458,7 +458,7 @@ footer
                         "f_runtime_box"\
                         "f_interactive_box"\
                         "f_screenings_box"\
-                        "f_dir_bio_box"\
+                        "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_trailer_box"\
@@ -475,7 +475,7 @@ footer
                         "f_cred_box"\
                         "f_runtime_box"\
                         "f_screenings_box"\
-                        "f_dir_bio_box"\
+                        "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_trailer_box"\
@@ -656,15 +656,15 @@ a .dark:hover
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
     // grid-gap calc(1.9rem + 1.5vw)
-    grid-gap 0rem
+    grid-gap 2rem
     // padding-top calc(1.9rem + 1.5vw)
     // padding-bottom calc(1.9rem + 1.5vw)
-    padding-top 2rem
+    // padding-top 2rem
     padding-bottom 2rem
-    justify-content center
-    align-content center
-    justify-items stretch
-    align-items stretch
+    // justify-content center
+    // align-content center
+    // justify-items stretch
+    // align-items stretch
     background-color white
 
 .trio_image
@@ -674,8 +674,8 @@ a .dark:hover
     width 100%
     height 100%
     background rgba(255,255,255,.96)
-    text-align left
-    padding 1rem 2rem 1rem 2rem
+    // text-align left
+    // padding 1rem 2rem 1rem 2rem
     // outline .5px dashed dark_5
 
 .trio_headline
@@ -1048,6 +1048,21 @@ row:nth-child(15) > .supporter_logos
     max-height 100%
     object-fit contain
 
+.presenter_logo_item_container
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 100%
+    // border 1px solid blue
+
+.presenter_logo_item
+    // width 100%z
+    // max-height 100%
+    min-width 10rem
+    max-width 12rem
+    object-fit contain
+
 // .footer_logo_item:first-child
 //     width: 100%
 
@@ -1234,7 +1249,12 @@ header
     align center
     text-align center
 
-
+.f_dir_box
+    grid-area f_dir_box
+    display flex
+    flex-direction column
+    // grid-template-columns 1
+    // grid-template-rows auto
 
 .f_dir_bio_box
     grid-area f_dir_bio_box
@@ -1292,6 +1312,21 @@ header
     background bg_dark_4
 
 .container_contents_16_9
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
+.container_frame_12_5
+    position relative
+    height 0
+    overflow hidden
+    padding-top 41%
+    background bg_dark_4
+
+.container_contents_12_5
     position absolute
     top 0
     left 0
@@ -1413,8 +1448,9 @@ p a
   font-family font_h
   text-transform uppercase
   text-align left
-  color white_semi
+  color clr_primary
   align-self start
+  font-weight 200
 
 .film_title_detailed
   font-family font_h
@@ -1447,6 +1483,7 @@ p a
   font-size 1rem
   text-align right
   line-height 1.618
+  font-weight 300
 
 .str_info_value
   font-family font_h
@@ -1482,6 +1519,7 @@ p a
   font-size 1rem
   text-align left
   line-height 1.618
+  font-weight 300
 
 .str_info_meta_program,
 .str_info_meta_genre,
@@ -1491,6 +1529,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .str_info_meta_keywords
     font-family font_h
@@ -1498,6 +1537,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .keywords_left
     font-family font_h
@@ -1505,6 +1545,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 
 // POPOVER
@@ -1630,23 +1671,45 @@ a.btn_popover
 .screening_info_label
   text-align right
   color white_semi
+  font-weight 300
 
 .screening_info_value
   text-align left
   color white_96
 
 .btn_secondary
-  background-color bg_dark_4
-  color white_semi
-  border-radius 0
-  text-transform uppercase
-//   display none
+    background-color bg_dark_4
+    color white_semi
+    border-radius 0
+    text-transform uppercase
 
 .btn_primary
-  background-color clr_primary
-  color white_96
-  border-radius 0
-  text-transform uppercase
+    background-color clr_primary
+    color white_96
+    border-radius 0
+    text-transform uppercase
+
+.btn_trio
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    // width max-content
+    // max-width 90%
+    width 100%
+    // background-color clr_primary
+    color white_96
+    border-radius 0
+    text-transform uppercase
+    font-size 1.618rem
+    line-height 1.5
+    text-align center
+    margin 0
+    padding 0
+    padding-left 1rem
+    padding-right 1rem
+    padding-top .5rem
+    padding-bottom .5rem
 
 .btn_covid
     background-color clr_covid
@@ -1725,9 +1788,9 @@ a.btn_popover
     text-decoration none
 
 .card_film_title
-    padding-left: 1.2rem
-    padding-top: 1.618rem
-    padding-right: 1.2rem
+    padding-left 1.2rem
+    padding-top 2.4rem
+    padding-right 1.2rem
     // padding-bottom: .1rem
     text-decoration none
     align-self start
@@ -2057,7 +2120,7 @@ a.btn_popover
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
                             "f_interactive_box f_interactive_box f_interactive_box"\
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
-                            "f_dir_bio_box     f_dir_bio_box     f_extra_box"\
+                            "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
@@ -2151,8 +2214,8 @@ a.btn_popover
     //     z-index -1
 
     .trio_block
-        padding-left 6rem
-        padding-right 6rem
+        padding-left 2rem
+        padding-right 2rem
         margin-bottom 5rem
         padding-top 6rem
 
@@ -2467,7 +2530,7 @@ a.btn_popover
     .f_interactive_box
     .f_extra_box
         padding-top calc(2rem + 1vw)
-        padding-bottom calc(4rem + 1vw)
+        padding-bottom calc(2rem + 1vw)
 
     .str_info_meta_item
         display block
