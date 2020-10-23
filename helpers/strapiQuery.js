@@ -69,7 +69,7 @@ async function strapiQuery(options, dataObject = false) {
     })
 }
 
-async function getModel(model) {
+async function getModel(model, filter=null) {
     if (! model in DATAMODEL) {
         console.log('WARNING: no such model: "', model, '".' )
         return false
@@ -78,6 +78,8 @@ async function getModel(model) {
         console.log('WARNING: no path to model: "', model, '".' )
         return false
     }
+    filter = filter ? [filter, '_limit=-1'].join('&') : '_limit=-1'
+    // console.log([false, 'foo'].join('&'));
 
     const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
     const options = {
