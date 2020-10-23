@@ -1064,12 +1064,10 @@ ProductType: &ProductType
 ProductCategory: &ProductCategory
     _path: /product-categories
     namePrivate: (text)
-    name:  #(Component (repeatable))
-        - *Translated
+    name: *Translated #(Component)
     product_type: *ProductType #(Component)
     festival_edition: *FestivalEdition #(Component)
-    description:  #(Component (repeatable))
-        - *Translated
+    description: *Translated #(Component)
     validityPeriod:  #(Component (repeatable))
         - *Period
     salesPeriod:  #(Component (repeatable))
