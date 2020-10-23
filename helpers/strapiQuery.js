@@ -30,11 +30,15 @@ async function strapiQuery(options, dataObject = false) {
             response.on('data', function (chunk) {
                 allData += chunk
             })
-            response.on('end', function () {
+            response.on('end', async function () {
                 if (response.statusCode === 200) {
                     resolve(JSON.parse(allData))
+                // } else if (response.statusCode === 500) {
+                //     console.log('\nStatus', response.statusCode, options, JSON.stringify((dataObject) || ''))
+                //     let resolved = await strapiQuery(options, dataObject)
+                //     resolve(resolved)
                 } else {
-                    console.log('Status', response.statusCode, JSON.stringify((dataObject) || ''))
+                    console.log('\nStatus', response.statusCode, options, JSON.stringify((dataObject) || ''))
                     resolve([])
                 }
             })
@@ -45,6 +49,10 @@ async function strapiQuery(options, dataObject = false) {
         })
         request.on('error', async function (thisError) {
             if (thisError.code === 'ETIMEDOUT') {
+                process.stdout.write('r')
+                let resolved = await strapiQuery(options, dataObject)
+                resolve(resolved)
+            } else if (thisError.code === 'ECONNRESET') {
                 process.stdout.write('r')
                 let resolved = await strapiQuery(options, dataObject)
                 resolve(resolved)
