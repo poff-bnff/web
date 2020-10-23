@@ -49,13 +49,37 @@ for (const ix in languages) {
 
                                 prodCatList.product[catIx].product_category = categoryFromYAMLcopy
 
+
+                                categoryFromYAMLcopy.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
+                                if (categoryFromYAMLcopy[`slug_${lang}`]) {
+                                    categoryFromYAMLcopy.path = `shop/${categoryFromYAMLcopy[`slug_${lang}`]}`;
+                                }
+                                let dirSlug = categoryFromYAMLcopy.slug_en || categoryFromYAMLcopy.slug_et ? categoryFromYAMLcopy.slug_en || categoryFromYAMLcopy.slug_et : null ;
+                                if (dirSlug != null && typeof categoryFromYAMLcopy.path !== 'undefined') {
+
+                                    rueten(categoryFromYAMLcopy, lang)
+                                    const oneYaml = yaml.safeDump(categoryFromYAMLcopy, { 'noRefs': true, 'indent': '4' });
+                                    const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
+
+
+                                    let saveDir = path.join(fetchDataDir, dirSlug);
+                                    fs.mkdirSync(saveDir, { recursive: true });
+
+                                    fs.writeFileSync(yamlPath, oneYaml, 'utf8');
+                                    fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/product_${templateDomainName}_index_template.pug`)
+
+                                } else {
+                                    console.log(`ERROR! Skipped product_cat ${categoryFromYAMLcopy.id} due to missing slug_en/slug_et`);
+                                }
+
+
+
                             }
                         }
                     }
                 }
             }
         }
-        // let dirSlug = element.slug_en || element.slug_et ? element.slug_en || element.slug_et : null ;
 
 
         // for (eIx in element.festival_editions) {
