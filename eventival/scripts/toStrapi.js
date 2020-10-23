@@ -353,12 +353,12 @@ const remapEventival = async () => {
     const strapi_screenings = await getModel('Screening')
     const strapi_tag_genres = await getModel('TagGenre')
     const strapi_tag_keywords = await getModel('TagKeyword')
-    const strapi_tagPremiereType = await getModel('TagPremiereType')
+    const strapi_tag_premiere_type = await getModel('TagPremiereType')
     const strapi_programme = await getModel('Programme')
     const strapi_countries = await getModel('Country')
     const strapi_languages = await getModel('Language')
     const strapi_location = await getModel('Location')
-    const strapi_screeningType= await getModel('ScreeningType')
+    const strapi_screening_type= await getModel('ScreeningType')
 
 
     let to_strapi_films = []
@@ -395,7 +395,7 @@ const remapEventival = async () => {
         strapi_film.media.trailer = [{ url: (e_film.film_info  ? e_film.film_info : {'online_trailer_url' : '' }).online_trailer_url}]
 
         if (!strapi_film.tags) { strapi_film.tags = {} }
-        strapi_film.tags.premiere_types = strapi_tagPremiereType.filter(s_premiereType => {
+        strapi_film.tags.premiere_types = strapi_tag_premiere_type.filter(s_premiereType => {
             if(e_film.film_info && e_film.film_info.premiere_type) {
                 return e_film.film_info.premiere_type === s_premiereType.en
             }
@@ -516,7 +516,7 @@ const remapEventival = async () => {
             }
         }).map(e => { return {id: e.id.toString()} })
 
-        strapi_cassette.tags.premiere_types = strapi_tagPremiereType.filter((s_premiereType) => {
+        strapi_cassette.tags.premiere_types = strapi_tag_premiere_type.filter((s_premiereType) => {
             if(e_cassette.film_info && e_cassette.film_info.premiere_type) {
                 return e_cassette.film_info.premiere_type === s_premiereType.en
             }
@@ -614,7 +614,7 @@ const remapEventival = async () => {
 
         strapi_screening.extraInfo = e_screening.additional_info
 
-        strapi_screening.screening_types = strapi_screeningType.filter((s_screeningType) => {
+        strapi_screening.screening_types = strapi_screening_type.filter((s_screeningType) => {
             if(e_screening.type_of_screening) {
                 return e_screening.type_of_screening.includes(s_screeningType.name)
             }
@@ -775,8 +775,8 @@ const main = async () => {
     await createMissingFilmsAndScreenings()
     console.log('update Strapi')
     await updateStrapi()
-    // console.log('| remap')
-    // await remapEventival()
+    console.log('| remap')
+    await remapEventival()
     // console.log('| submit films')
     // await submitFilms()
     // console.log('| submit cassettes')
