@@ -415,13 +415,19 @@ const remapEventival = async () => {
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
-        let country_order_in_film = 1
-        strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
-            return {
-                order: country_order_in_film++,
-                country: e_country
+        let strapi_country = await getModel('Country')
+        strapi_film.countries = strapi_country.filter(s_country => {
+            if(e_film.film_info && e_film.film_info.countries) {
+                return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
             }
-        })
+        }).map(e => { return {id: e.id.toString()} })
+        // let country_order_in_film = 1
+        // strapi_film.orderedCountries = strapi_film.countries.map(e_country => {
+        //     return {
+        //         order: country_order_in_film++,
+        //         country: e_country
+        //     }
+        // })
 
         strapi_film.languages = STRAPIDATA.Language.filter((s_language) => {
             if(e_film.film_info && e_film.film_info.languages) {
