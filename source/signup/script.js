@@ -25,7 +25,6 @@ async function sendNewUser() {
     //kas Name-id on kõik õiged?
     let userToSend = [
         { Name: "picture", Value: imgPreview.src },
-        { Name: "password", Value: psw.value },
         { Name: "email", Value: email.value },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
@@ -33,6 +32,7 @@ async function sendNewUser() {
         { Name: "birthdate", Value: dob.value },
         { Name: "phone_number", Value: phoneNr.value },
         { Name: "address", Value: `${country.value}, ${city.value}` },
+        { Name: "password", Value: psw.value }
     ];
 
     console.log(userToSend);

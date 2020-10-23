@@ -31,6 +31,7 @@ function fetchFavFilmsFromDB() {
         }
         return Promise.reject(response);
     }).then(function (data) {
+        console.log(data);
         saveFavFilms(data)
     }).catch(function (error) {
         console.warn(error);
@@ -38,13 +39,18 @@ function fetchFavFilmsFromDB() {
 }
 
 function saveFavFilms(data) {
-    favFilms = data.films
+    favFilms = data
     if (favouritePages.includes(window.location.href)) {
         showFavFilms()
         return
     }
     if (window.location.href.indexOf('/film/') > -1) {
         var filmCard = document.getElementsByClassName('grid_film')
+        console.log(filmCard)
+        console.log(filmCard[0].id)
+        console.log(favFilms)
+
+
 
         if (favFilms.includes(filmCard[0].id)) {
             changeFavInfo('put')
@@ -76,6 +82,7 @@ function showFavFilms() {
 }
 
 function saveFilmAsFavourite(movieId) {
+    console.log('saveFilmAsFavourite')
 
     var addBtnfilmCard = document.getElementById('nupp')
 
@@ -100,7 +107,7 @@ function saveFilmAsFavourite(movieId) {
             }
             return Promise.reject(response);
         }).then(function (data) {
-            if (data.result === 'success') {
+            if (data.ok) {
                 changeFavInfo('put', movieId)
             }
         }).catch(function (error) {
@@ -130,6 +137,7 @@ function changeFavInfo(status, movieId) {
 }
 
 function removeFilm(movieId) {
+    console.log('removeFilm');
     var myHeaders = new Headers();
 
     myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
@@ -147,11 +155,12 @@ function removeFilm(movieId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        if (movieId == data.movieId) {
+        if (data.ok) {
+            console.log(data.ok)
             if (window.location.href.indexOf('/film/') > -1) {
                 changeFavInfo('delete')
             } else {
-                filmCard = document.getElementById(data.movieId)
+                filmCard = document.getElementById(movieId)
                 filmCard.style.display = 'none'
             }
         }
