@@ -376,7 +376,8 @@ main.grid_film
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.qaPresenter
                                                 span.screening_info_value= screening.screeningQaPresenter
-                                        if screening.extraInfo
+
+                                        if screening.extraInfo && typeof screening.extraInfo !== 'object'
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.extraInfo
                                                 span.screening_info_value= screening.extraInfo
