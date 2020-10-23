@@ -356,6 +356,10 @@ const remapEventival = async () => {
     const strapi_tag_premiere_type = await getModel('TagPremiereType')
     const strapi_programme = await getModel('Programme')
     const strapi_countries = await getModel('Country')
+    let strapi_countries_by_code = {}
+    for (const c of strapi_countries) {
+        strapi_countries_by_code[c.code] = c
+    }
     const strapi_languages = await getModel('Language')
     const strapi_location = await getModel('Location')
     const strapi_screening_type= await getModel('ScreeningType')
@@ -424,16 +428,13 @@ const remapEventival = async () => {
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
         let country_order_in_film = 1
-        strapi_film.orderedCountries = strapi_countries.filter(s_country => {
-            if(e_film.film_info && e_film.film_info.countries) {
-                return e_film.film_info.countries.map( item => { return item.code } ).includes(s_country.code)
-            }
-        }).map(e => {
-            return {
-                order: country_order_in_film++,
-                country: {id: e.id.toString()}
-            }
-        })
+        strapi_film.orderedCountries = (e_film.film_info && e_film.film_info.countries ? e_film.film_info.countries : [])
+            .map( e_country => {
+                return {
+                    order: country_order_in_film++,
+                    country: strapi_countries_by_code[e_country.code]
+                }
+            })
 
         strapi_film.languages = strapi_languages.filter(s_language => {
             if(e_film.film_info && e_film.film_info.languages) {
