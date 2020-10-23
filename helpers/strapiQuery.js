@@ -84,7 +84,7 @@ async function getModel(model, filter=null) {
     const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
     const options = {
         headers: { 'Content-Type': 'application/json' },
-        path: _path + '?_limit=-1',
+        path: _path + '?' + filter,
         method: 'GET'
     }
     // console.log('=== getModel', options)
