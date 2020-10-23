@@ -2,14 +2,10 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
-
     //- - var myUri = 'https://dev.inscaping.eu/${lang_path}'
     - var myUri = `http://localhost:4000/${lang_path}`
     //- - var myUri = `http://localhost:5000/${lang_path}`
-
     //- - var myUri = `${process.env['DOMAIN']}/${lang_path}`
-
-
     br
     br
     br
@@ -23,16 +19,14 @@ block content
     input#loginPassword(type='password')
     br
     p#signUpPassword2
-
-    //- a(href=`https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}login/&identity_provider=Facebook`) Facebook
-
-    a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
+    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
+    //- br
+    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
+    a(href=`https://api.poff.ee/auth/facebook`) Facebook
     br
-    a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
+    a(href=`https://api.poff.ee/auth/google`) Google
     br
-    a(href= `https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}login/&identity_provider=Google`) Google
-    br
-    //- a(href= `https://account.eventival.com/auth/realms/Eventival/protocol/openid-connect/auth?client_id=ev-poff&redirect_uri=http://localhost:4000/login/&scope=openid+email+profile&response_type=code`) Eventival
+    a(href=`https://api.poff.ee/auth/eventival`) Eventival
     br
     button(onclick='loginViaCognito()') Login
     button(onclick='testfSetAccesstoken()') SignUp
