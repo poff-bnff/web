@@ -9,10 +9,15 @@ header
             img.logo_img(alt='PÖFF' data-src='/assets/img/static/poff24_logo_dark4_o.svg' src='/assets/img/static/poff24_logo_dark4_o.svg')
     input#main_menu_toggle.main_menu_toggle(type='checkbox')
 
-    - var articleMenuItemDomain = 'kinoffi_article'
+    - var articleMenuItemDomain = 'poffi_article'
 
     nav.main_menu
         ul.ul_yx
+            //- li
+            //-     #hello(style='color: red')
+            //-     //- #out(style='color: red')
+            //-     #out(style={color: 'red', cursor: 'pointer'})
+
             li
                 nav.org_menu
                     span.org_item
@@ -112,3 +117,7 @@ header
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
 
+
+
+script
+        include userProfile.js
