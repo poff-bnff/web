@@ -36,10 +36,28 @@ head
     script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js')
     link(href='/style.css' rel='stylesheet')
     script(src="https://sdk.amazonaws.com/js/aws-sdk-2.748.0.min.js")
-
+    //ueserprofile lang dropdown options translations
     link(rel="gettext" type="application/x-po" href="/assets/languages/et/LC_MESSAGES/et.po")
     link(rel="gettext" type="application/x-po" href="/assets/languages/en/LC_MESSAGES/en.po")
     link(rel="gettext" type="application/x-po" href="/assets/languages/ru/LC_MESSAGES/ru.po")
+    // Facebook Pixel Code
+    script.
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '141371263150471');
+        fbq('track', 'PageView');
+        noscript
+        img(height='1' width='1' src='https://www.facebook.com/tr?id=141371263150471&ev=PageView\
+        &noscript=1')
+    // End Facebook Pixel Code
+
+
 
     link(rel='shortcut icon' href='/BNFF.ico')
     link(rel='icon' sizes='16x16 32x32 64x64' href='/assets/img/static/favicons/BNFF.ico')
