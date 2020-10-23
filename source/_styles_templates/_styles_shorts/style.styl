@@ -190,7 +190,12 @@ header
     padding-top 1rem
     padding-bottom 1rem
     display none
-    margin-top 5rem
+    margin-top 4.5rem
+    // height 100vh
+    // max-height 100vh
+    // width 100vw
+    // overflow-y scroll
+    // -webkit-overflow-scrolling:touch
     // text-align right
     // height header_height
 
@@ -226,6 +231,12 @@ header
 .main_menu_toggle:checked~.main_menu
     display flex
     width 100vw
+    height calc(100vh - 100px)
+    max-height 100vh
+    width 100vw
+    overflow-y scroll
+    -webkit-overflow-scrolling:touch
+    padding-bottom 2rem
 
 .main_menu_toggle_label
     position absolute
@@ -465,7 +476,7 @@ footer
                         "f_runtime_box"\
                         "f_interactive_box"\
                         "f_screenings_box"\
-                        "f_dir_bio_box"\
+                        "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_trailer_box"\
@@ -482,7 +493,7 @@ footer
                         "f_cred_box"\
                         "f_runtime_box"\
                         "f_screenings_box"\
-                        "f_dir_bio_box"\
+                        "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_trailer_box"\
@@ -1071,6 +1082,21 @@ row:nth-child(15) > .supporter_logos
     max-height 100%
     object-fit contain
 
+.presenter_logo_item_container
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 100%
+    // border 1px solid blue
+
+.presenter_logo_item
+    // width 100%z
+    // max-height 100%
+    min-width 10rem
+    max-width 12rem
+    object-fit contain
+
 // .footer_logo_item:first-child
 //     width: 100%
 
@@ -1257,7 +1283,11 @@ header
     align center
     text-align center
 
-
+.f_dir_box
+    grid-area f_dir_box
+    display grid
+    grid-template-columns 1
+    grid-template-rows auto
 
 .f_dir_bio_box
     grid-area f_dir_bio_box
@@ -1453,6 +1483,7 @@ p a
   text-align left
   color white_semi
   align-self start
+  font-weight 300
 
 .film_title_detailed
   font-family font_h
@@ -1521,6 +1552,7 @@ p a
   font-size 1rem
   text-align left
   line-height 1.618
+  font-weight 300
 
 .str_info_meta_program,
 .str_info_meta_genre,
@@ -1530,6 +1562,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .str_info_meta_keywords
     font-family font_h
@@ -1537,6 +1570,7 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .keywords_left
     font-family font_h
@@ -1544,6 +1578,8 @@ p a
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
+
 
 
 // POPOVER
@@ -1671,6 +1707,7 @@ a.btn_popover
 .screening_info_label
   text-align right
   color white_semi
+  font-weight 300
 
 .screening_info_value
   text-align left
@@ -1768,9 +1805,9 @@ a.btn_popover
     text-decoration none
 
 .card_film_title
-    padding-left: 1.2rem
-    padding-top: 1.618rem
-    padding-right: 1.2rem
+    padding-left 1.2rem
+    padding-top 2.4rem
+    padding-right 1.2rem
     // padding-bottom: .1rem
     text-decoration none
     align-self start
@@ -2102,7 +2139,7 @@ a.btn_popover
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
                             "f_interactive_box f_interactive_box f_interactive_box"\
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
-                            "f_dir_bio_box     f_dir_bio_box     f_extra_box"\
+                            "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
