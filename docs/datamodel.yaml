@@ -409,7 +409,7 @@ IndustryArticle: &IndustryArticle
         - *WebAuthor
 
 KinoffiArticle: &KinoffiArticle
-    _path: /kinoffi_articles
+    _path: /kinoffi-articles
     created_by:
         firstname: (text)
         lastname: (text)
