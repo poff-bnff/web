@@ -1059,7 +1059,7 @@ PriceAtPeriod: &PriceAtPeriod
 
 ProductType: &ProductType
     _path: /products
-    nae: (text)
+    name: (text)
 
 ProductCategory: &ProductCategory
     _path: /product-categories
@@ -1088,6 +1088,27 @@ ProductPass: &ProductPass
     transaction: *Transaction #(Component)
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
+
+OrderedProduct: &OrderedProduct
+    order: (number)
+    product_category: *ProductCategory
+
+ProdCatList: &ProdCatList
+    namePrivate: (text)
+    product:
+        - *OrderedProduct
+    title: *Translated
+
+Shop: &Shop
+    _path: /shops
+    namePrivate: (text)
+    title: *Translated
+    intro: *Translated #(Rich text)
+    prodCatList:
+        - *ProdCatList
+    shopRules: *Translated #(Rich text)
+    domains:
+        - *Domain
 
 # Hero
 HeroArticlePoff:
