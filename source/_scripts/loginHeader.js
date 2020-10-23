@@ -13,6 +13,7 @@ if (localStorage.getItem('ID_TOKEN') !== null){
     document.getElementById('logOut').style.display = 'block'
     document.getElementById('logInName').style.display = 'block'
     document.getElementById('myFavouriteFilms').style.display = 'block'
+    document.getElementById('userProfile').style.display = 'block'
 
     loadUserProfileH()
 }

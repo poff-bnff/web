@@ -1,6 +1,7 @@
 var email = document.getElementById("email");
 var psw = document.getElementById("psw");
 var psw2 = document.getElementById("psw2");
+var pswds = document.getElementById('pswds');
 var firstName = document.getElementById("firstName");
 var lastName = document.getElementById("lastName");
 var gender = document.getElementById("gender");

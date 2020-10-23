@@ -10,24 +10,29 @@ async function loadUserInfo() {
     });
     let userProfile = await response.json();
 
+    console.log(userProfile)
+    if (userProfile.address) {
+        let address = userProfile.address.split(", ")
+        let riik = address[0]
+        let linn = address[1]
+        console.log(riik)
+        console.log(linn)
+        city.value = linn
+        country.value = riik
+    }
 
     firstName.value = userProfile.name;
     lastName.value = userProfile.family_name;
     email.value = userProfile.email;
     gender.value = userProfile.gender;
-    phoneNr.value = userProfile.phone_number;
+    if (userProfile.phone_number) {
+        phoneNr.value = userProfile.phone_number;
+    }
     dob.value = userProfile.birthdate;
-    city.value = userProfile.address
-    country.value = userProfile.address
 
     // linn ja riik lahuta aadressist
 
-    console.log(userProfile)
-    let address = userProfile.address.split(", ")
-    let riik = address[0]
-    let linn = address[1]
-    console.log(riik)
-    console.log(linn)
+
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -63,24 +68,25 @@ async function sendUserProfile() {
     var file = imgPreview.src;
     console.log(file);
 
-var requestOptions = {
-  method: 'PUT',
-  body: file,
-  redirect: 'follow'
-};
+    var requestOptions = {
+        method: 'PUT',
+        body: file,
+        redirect: 'follow'
+    };
 
-fetch(data.link, requestOptions)
+    fetch(data.link, requestOptions)
 
 
 
     console.log(userToSend);
     let response = await fetch(`https://api.poff.ee/profile`, {
-            method: 'PUT',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
-            body: JSON.stringify(userToSend)
-        });
-        userProfile = await response.json()
+        method: 'PUT',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+        },
+        body: JSON.stringify(userToSend)
+    });
+    userProfile = await response.json()
 
 }
 

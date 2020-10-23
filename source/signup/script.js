@@ -1,21 +1,42 @@
-// function validateForm() {
-//     console.log("validate form");
-//     console.log(country.value);
-//     if (country.value == "") {
-//         console.log(country.value, " countryif");
-//         country.classList.add("invalid");
-//         country.value = "Elukoha riik";
-//     }
-//     if (firstName.value == "" || firstName.value.length < 2 || !isNaN(firstName.value)) {
-//         document.getElementById("firstName").classList.add("invalid");
-//     }
-//     if (lastName.value == "" || lastName.length < 2 || !isNaN(lastName.value)) {
-//         lastName.classList.add("invalid");
-//     }
-//     if (city.value == "") {
-//         city.classList.add("invalid");
-//     }
-// }
+if (localStorage.getItem("ACCESS_TOKEN")) {
+    loadUserInfo();
+}
+
+async function loadUserInfo() {
+    let response = await fetch(`https://api.poff.ee/profile`, {
+        method: "GET",
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+        },
+    });
+    let userProfile = await response.json();
+
+    console.log(userProfile)
+    if (userProfile.address) {
+        let address = userProfile.address.split(", ")
+        let riik = address[0]
+        let linn = address[1]
+        console.log(riik)
+        console.log(linn)
+        city.value = linn
+        country.value = riik
+    }
+
+    firstName.value = userProfile.name;
+    lastName.value = userProfile.family_name;
+    email.value = userProfile.email;
+    gender.value = userProfile.gender;
+    if (userProfile.phone_number) {
+        phoneNr.value = userProfile.phone_number;
+    }
+    dob.value = userProfile.birthdate;
+
+    pswds.style.display = 'none'
+
+    // linn ja riik lahuta aadressist
+
+
+}
 
 
 
@@ -84,6 +105,9 @@ function readImage(file) {
     });
     reader.readAsDataURL(file);
 }
+
+
+
 
 
 // console.log(output.src)

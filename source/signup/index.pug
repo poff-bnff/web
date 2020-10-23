@@ -11,7 +11,14 @@ block content
                 br
                 br
                 br
-                h1.display-4.m-b-2 Registreerimiseks täida ankeet:
+                h1.display-4.m-b-2 Registreerimiseks täida ankeet või vali sulle sobiv autentimisvahend:
+
+                a(href=`https://api.poff.ee/auth/facebook`) Facebook
+                br
+                a(href=`https://api.poff.ee/auth/google`) Google
+                br
+                a(href=`https://api.poff.ee/auth/eventival`) Eventival
+                br
 
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
@@ -23,12 +30,13 @@ block content
                     div.form-group
                         label(for='email') Email:
                         input#email.form-control(type='email', placeholder='Email' name='email' autocomplete="off" oninput="validateEmail()")
-                    div.form-group
-                        label(for='psw') Salasõna:
-                        input#psw.form-control(type='password', placeholder='salasõna' name='psw' autocomplete="off" oninput="validatePsw()" )
-                    div.form-group
-                        label(for='psw2') Salasõna uuesti:
-                        input#psw2.form-control(type='password', placeholder='salasõna uuesti' name='psw2' autocomplete="off" oninput="validatePswRep()")
+                    div#pswds
+                        div.form-group
+                            label(for='psw') Salasõna:
+                            input#psw.form-control(type='password', placeholder='salasõna' name='psw' autocomplete="off" oninput="validatePsw()" )
+                        div.form-group
+                            label(for='psw2') Salasõna uuesti:
+                            input#psw2.form-control(type='password', placeholder='salasõna uuesti' name='psw2' autocomplete="off" oninput="validatePswRep()")
                     div.form-group
                         label(for='firstName') Eesnimi:
                         input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' autocomplete="off" oninput="validateFirstName()")
@@ -62,7 +70,7 @@ block content
     style.
         .invalid {background-color: #f5e4e9}
         .valid {background-color: #e6f7e6}
-        h4 {color: #464646}
+        h4, h1 {color: #464646}
         label {color: black}
         #imgError {color: red}
         .form-group{color: black}

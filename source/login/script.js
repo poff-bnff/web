@@ -11,7 +11,7 @@ if (window.location.hash) {
     }
 }
 
-if (location.search){
+if (location.search) {
     getTokensForCode()
 
 }
@@ -28,12 +28,14 @@ async function storeAuthentication(access_token, id_token) {
 }
 
 
-async function loginViaCognito(){
+async function loginViaCognito() {
 
-    let authenticationData = {userName: document.getElementById("loginUsername").value,
-     password: document.getElementById("loginPassword").value}
+    let authenticationData = {
+        userName: document.getElementById("loginUsername").value,
+        password: document.getElementById("loginPassword").value
+    }
 
-     console.log(authenticationData)
+    console.log(authenticationData)
 
     let response = await fetch(`https://api.poff.ee/auth`, {
         method: 'POST',
@@ -64,35 +66,45 @@ async function loadUserProfile() {
     });
     userProfile = await response.json()
     checkIfUserProfFilled(userProfile)
-    console.log(userProfile)
+
 }
 
 
-function checkIfUserProfFilled(userProfile){
+function checkIfUserProfFilled() {
 
-    if ('profile_filled' in userProfile) {
+    if (userProfile.profile_filled === 'true') {
+        console.log(userProfile.profile_filled)
         console.log('profile filled')
-        redirectToPreLoginUrl()
-    } else {
+        // redirectToPreLoginUrl()
+    }
+    else if (!userProfile.profile_filled === 'false') {
+        console.log(userProfile.profile_filled)
         console.log('profile not filled')
-        window.open(`${pageURL}/userprofile`, '_self')
+        // window.open(`${pageURL}/userprofile`, '_self')
+
+    }
+    else if (userProfile.profile_filled === 'signup') {
+        console.log(userProfile.profile_filled)
+
+        console.log('back to signup')
+        // window.open(`${pageURL}/signup`, '_self')
     }
 }
 
 
 function redirectToPreLoginUrl() {
     if (localStorage.getItem('url')) {
-            let url = localStorage.getItem('url')
-            localStorage.removeItem('url')
-            window.open(url, '_self')
-        }
-        else {
-            window.open(pageURL, '_self')
-        }
+        let url = localStorage.getItem('url')
+        localStorage.removeItem('url')
+        window.open(url, '_self')
     }
+    else {
+        window.open(pageURL, '_self')
+    }
+}
 
 
-async function providerLogin(provider){
+async function providerLogin(provider) {
     console.log('providerLogin' + provider);
 
     var requestOptions = {
@@ -110,7 +122,7 @@ async function providerLogin(provider){
 }
 
 
-async function getTokensForCode(){
+async function getTokensForCode() {
     var requestOptions = {
         method: 'POST',
         redirect: 'follow'
@@ -119,5 +131,19 @@ async function getTokensForCode(){
     let response = await fetch(`https://api.poff.ee/auth`, requestOptions)
 
     console.log(await response.json)
+
+}
+
+async function showMergeInfo() {
+    document.getElementById('mergeInfo2').style.display = 'block'
+
+    var requestOptions = {
+        method: 'POST',
+        redirect: 'follow'
+    }
+
+    let response = await fetch(`https://api.poff.ee/match_user`, requestOptions)
+
+    console.log(await response.json())
 
 }
