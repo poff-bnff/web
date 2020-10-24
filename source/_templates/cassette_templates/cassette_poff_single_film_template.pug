@@ -41,7 +41,7 @@ main.grid_film
             svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                 polyline(points='9 18 15 12 9 6')
             span.sr-only Next
-        a.play_link(href='#carouselExampleIndicators' role='button' data-slide='prev')
+        a.play_link(href='#trailer')
             svg.svg_icon_play(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='white' stroke-linecap='round' stroke-linejoin='round')
                 polygon(points='5 3 19 12 5 21 5 3')
     //- LÕPP! KARUSELL filmi piltidega LÕPP
@@ -51,8 +51,6 @@ main.grid_film
     if self.films
         each film in self.films
 
-            - var pathParts = self.path.split('/')
-            - var filmPath = pathParts[pathParts.length - 1]
             section.f_title_box
 
                 .premiere_type
@@ -413,7 +411,7 @@ main.grid_film
             //-             +youtube(youtubeVideoCode[1])
 
             if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].youTubeCode
-                section.f_trailer_box
+                section#trailer.f_trailer_box
                     .section_headline= self.label.film.trailer
                     each trailer in film.media.trailer
                         .embed-responsive.embed-responsive-16by9.m-0.p-0
