@@ -7,49 +7,52 @@ main.grid_film
     //-     if self.synopsis
     //-         h1.dark_1= self.synopsis
 
-    //- KARUSELL filmi piltidega
-    section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
-        ol.carousel-indicators
-            if self.films && self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills[0]
-                    each val, index in self.films[0].media.stills
-                        li(data-target='#carouselExampleIndicators' data-slide-to = index)
-        .carousel-inner.container_frame_16_9
-            if self.films && self.films[0] && self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills.length
-                    each val, index in self.films[0].media.stills
-                        if index == 0
-                            .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-                        else
-                            .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-                else
-                    .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
-            else
-                .carousel-item.active.container_contents_16_9
-                    img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
-
-        a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-            // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                polyline(points='15 18 9 12 15 6')
-            span.sr-only Previous
-        a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-            // <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                polyline(points='9 18 15 12 9 6')
-            span.sr-only Next
-        a.play_link(href='#trailer')
-            svg.svg_icon_play(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='white' stroke-linecap='round' stroke-linejoin='round')
-                polygon(points='5 3 19 12 5 21 5 3')
-    //- LÕPP! KARUSELL filmi piltidega LÕPP
-
-
-    //- Algab kasseti filmide info kuvamine
     if self.films
         each film in self.films
+
+            //- KARUSELL filmi piltidega
+            section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+                ol.carousel-indicators
+                    if self.films && self.films[0].media
+                        if self.films[0].media.stills && self.films[0].media.stills[0]
+                            each val, index in self.films[0].media.stills
+                                li(data-target='#carouselExampleIndicators' data-slide-to = index)
+                .carousel-inner.container_frame_16_9
+                    if self.films && self.films[0] && self.films[0].media
+                        if self.films[0].media.stills && self.films[0].media.stills.length
+                            each val, index in self.films[0].media.stills
+                                if index == 0
+                                    .carousel-item.active.container_contents_16_9
+                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                                else
+                                    .carousel-item.container_contents_16_9
+                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                        else
+                            .carousel-item.active.container_contents_16_9
+                                img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+
+                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='15 18 9 12 15 6')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='9 18 15 12 9 6')
+                    span.sr-only Next
+                if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].youTubeCode
+                    a.play_link(href='#trailer')
+                        svg.svg_icon_play(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='white' stroke-linecap='round' stroke-linejoin='round')
+                            polygon(points='5 3 19 12 5 21 5 3')
+                            //- LÕPP! KARUSELL filmi piltidega LÕPP
+
+
+                    //- Algab kasseti filmide info kuvamine
+
 
             section.f_title_box
 
