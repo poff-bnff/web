@@ -230,6 +230,9 @@ const updateStrapi = async () => {
             // console.log(e_film);
             let s_film = s_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
 
+            if(s_film === undefined){
+                continue
+            }
             s_film.credentials = s_film.credentials || {}
             s_film.credentials.rolePerson = s_film.credentials.rolePerson || []
             const s_creds_before = s_film.credentials.rolePerson.map(o => {
@@ -767,14 +770,14 @@ const submitScreenings = async () => {
 const main = async () => {
     console.log('update Strapi')
     await updateStrapi()
-    // console.log('| remap')
-    // await remapEventival()
-    // console.log('| submit films')
-    // await submitFilms()
-    // console.log('| submit cassettes')
-    // await submitCassettes()
-    // console.log('| submit screenings')
-    // await submitScreenings()
+    console.log('| remap')
+    await remapEventival()
+    console.log('| submit films')
+    await submitFilms()
+    console.log('| submit cassettes')
+    await submitCassettes()
+    console.log('| submit screenings')
+    await submitScreenings()
 }
 
 main()
