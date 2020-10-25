@@ -44,7 +44,7 @@ const s_person_id_by_e_fullname = (e_name, s_persons) => {
         return e_name === s_person.firstName + (s_person.lastName ? ' ' + s_person.lastName : '')
     })[0]
     if (s_person === undefined) {
-        console.log('cant locate', e_name);
+        console.log('cant locate', e_name)
         return null
     }
     return s_person.id
@@ -207,7 +207,7 @@ const updateStrapi = async () => {
                 }
                 let data = { firstName: e_name.trim(), firstNameLastName: e_name.trim() }// peaksime kaasa saatma ka remoteId, mille j4rgi ta hiljem muidu inimese leiab
                 await strapiQuery(options, data)
-                console.log('==== new person', e_name);
+                console.log('==== new person', e_name)
             }
         }
         return await getModel('Person')
@@ -262,7 +262,7 @@ const updateStrapi = async () => {
         for (const e_film of EVENTIVAL_FILMS) {
             // skip if there is no roles (no crew) to check
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
-            // console.log(e_film);
+            // console.log(e_film)
             let s_film = s_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
 
             if(s_film === undefined){
@@ -374,12 +374,12 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiCassette(e_film.ids.system_id.toString())
         }
     }
-    console.log([ 'Shortsi alam' ].includes('Shortsi alam'));
+    console.log([ 'Shortsi alam' ].includes('Shortsi alam'))
     let strapi_screenings = await getModel('Screening')
     for (const e_screening of EVENTIVAL_SCREENINGS) {
         let strapi_screening = strapi_screenings.filter(s_screening => e_screening.id.toString() === s_screening.remoteId)[0] || false
         if (! strapi_screening) {
-            console.log('Creating screening in Strapi:', JSON.stringify(e_screening.id));
+            console.log('Creating screening in Strapi:', JSON.stringify(e_screening.id))
             await createStrapiScreening(e_screening.id.toString())
         }
     }
@@ -410,7 +410,7 @@ const remapEventival = async () => {
     for (const e_film of EVENTIVAL_FILMS) {
         let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
         if (! strapi_film) {
-            console.log('Missing film in Strapi:', JSON.stringify(e_film.ids.system_id));
+            console.log('Missing film in Strapi:', JSON.stringify(e_film.ids.system_id))
             continue
         }
 
@@ -428,7 +428,7 @@ const remapEventival = async () => {
                                     && e_film.eventival_categorization.categories.includes('Shortsi alam') ? true : false)
 
         // ---- BEGIN update strapi film properties
-        // console.log('Update film in Strapi:', JSON.stringify(e_film.ids.system_id));
+        // console.log('Update film in Strapi:', JSON.stringify(e_film.ids.system_id))
 
         strapi_film.title_et = (e_film.titles ? e_film.titles : {'title_local': ''}).title_local.toString()
         strapi_film.title_en = (e_film.titles ? e_film.titles : {'title_english': ''}).title_english.toString()
@@ -508,8 +508,8 @@ const remapEventival = async () => {
         }
         // const strapi_film_json_after = JSON.stringify(strapi_film)
         // if (strapi_film_json !== strapi_film_json_after) {
-        //     console.log('BEFORE:', strapi_film_json);
-        //     console.log(' AFTER:', strapi_film_json_after);
+        //     console.log('BEFORE:', strapi_film_json)
+        //     console.log(' AFTER:', strapi_film_json_after)
         // }
     }
     EVENTIVAL_REMAPPED['E_FILMS'] = to_strapi_films
@@ -611,21 +611,21 @@ const remapEventival = async () => {
     // Screenings
     //
     let to_strapi_screenings = []
-    // console.log('midagi', EVENTIVAL_SCREENINGS);
+    // console.log('midagi', EVENTIVAL_SCREENINGS)
 
     for (const e_screening of EVENTIVAL_SCREENINGS) {
-        // console.log('midagi', e_screening.id);
+        // console.log('midagi', e_screening.id)
 
         let strapi_screening = strapi_screenings.filter(s_screening => e_screening.id.toString() === s_screening.remoteId)[0] || false
 
         if (! strapi_screening) {
-            console.log('Missing screening in Strapi:', JSON.stringify(e_screening.id));
+            console.log('Missing screening in Strapi:', JSON.stringify(e_screening.id))
             continue
         }
         if (!e_screening.film || !e_screening.film.id) {
             continue
         }
-        // console.log('Update screening in Strapi:', JSON.stringify(e_screening.id));
+        // console.log('Update screening in Strapi:', JSON.stringify(e_screening.id))
 
         // ---- BEGIN update strapi screening properties
 
@@ -646,7 +646,7 @@ const remapEventival = async () => {
 
         strapi_screening.location = strapi_location.filter((s_scrLocation) => {
             if(e_screening.venue_id) {
-                // console.log(e_screening.venue_id, s_scrLocation.remoteId, e_screening.venue_id.toString() === s_scrLocation.remoteId);
+                // console.log(e_screening.venue_id, s_scrLocation.remoteId, e_screening.venue_id.toString() === s_scrLocation.remoteId)
                 return e_screening.venue_id.toString() === s_scrLocation.remoteId
             }
         }).map(s_scrLocation => s_scrLocation.id.toString())[0] || null
