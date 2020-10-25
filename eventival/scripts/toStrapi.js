@@ -779,12 +779,12 @@ const main = async () => {
     await updateStrapi()
     console.log('| remap')
     await remapEventival()
-    // console.log('| submit films')
-    // await submitFilms()
-    // console.log('| submit cassettes')
-    // await submitCassettes()
-    // console.log('| submit screenings')
-    // await submitScreenings()
+    console.log('| submit films')
+    await submitFilms()
+    console.log('| submit cassettes')
+    await submitCassettes()
+    console.log('| submit screenings')
+    await submitScreenings()
 }
 
 main()

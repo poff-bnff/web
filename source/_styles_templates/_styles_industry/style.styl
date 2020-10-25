@@ -1048,6 +1048,21 @@ row:nth-child(15) > .supporter_logos
     max-height 100%
     object-fit contain
 
+.presenter_logo_item_container
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 100%
+    // border 1px solid blue
+
+.presenter_logo_item
+    // width 100%z
+    // max-height 100%
+    min-width 10rem
+    max-width 12rem
+    object-fit contain
+
 // .footer_logo_item:first-child
 //     width: 100%
 
@@ -1285,6 +1300,9 @@ header
 .f_imgs_box
     grid-area f_imgs_box
 
+.carousel-indicators
+    li
+        height 1px
 
 .card-deck
     justify-content center
@@ -1723,6 +1741,20 @@ a.btn_popover
   margin-top -.7rem
   stroke rgba(255, 255, 255, .5)
 
+.play_link
+    position absolute
+    bottom 1rem
+    left 1rem
+    z-index 999
+
+.svg_icon_play
+    height calc(2rem + 0.1vw)
+    width calc(2rem + 0.1vw)
+    margin-right .5rem
+    margin-top -.7rem
+    stroke rgba(255, 255, 255, .9)
+
+
 .svg_icon_white
   margin-right .5rem
   margin-top -.3rem
@@ -1773,9 +1805,9 @@ a.btn_popover
     text-decoration none
 
 .card_film_title
-    padding-left: 1.2rem
-    padding-top: 1.618rem
-    padding-right: 1.2rem
+    padding-left 1.2rem
+    padding-top 2.4rem
+    padding-right 1.2rem
     // padding-bottom: .1rem
     text-decoration none
     align-self start
