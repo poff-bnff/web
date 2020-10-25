@@ -69,7 +69,7 @@ async function strapiQuery(options, dataObject = false) {
     })
 }
 
-async function getModel(model, filter=null) {
+async function getModel(model, filters={}) {
     if (! model in DATAMODEL) {
         console.log('WARNING: no such model: "', model, '".' )
         return false
@@ -79,15 +79,23 @@ async function getModel(model, filter=null) {
         return false
     }
     filter = filter ? [filter, '_limit=-1'].join('&') : '_limit=-1'
-    // console.log([false, 'foo'].join('&'));
+
+    filters['_limit'] = '-1'
+    let filter_str_a = []
+    for (const [key, value] of Object.entries(filters)) {
+        filter_str_a.push(key + '=' + encodeURIComponent(value).replace('%20','+'))
+    }
 
     const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
+
     const options = {
         headers: { 'Content-Type': 'application/json' },
-        path: _path + '?' + filter,
+        path: `${_path}?${filter_str_a.join('&')}`,
         method: 'GET'
     }
-    // console.log('=== getModel', options)
+    if (filters.length) {
+        console.log('=== getModel', filter, options)
+    }
     return await strapiQuery(options)
 }
 
