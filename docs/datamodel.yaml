@@ -1061,6 +1061,12 @@ ProductType: &ProductType
     _path: /products
     name: (text)
 
+Imgs: &Imgs
+    imageDefault: *StrapiMedia
+    image_et: *StrapiMedia
+    image_en: *StrapiMedia
+    image_ru: *StrapiMedia
+
 ProductCategory: &ProductCategory
     _path: /product-categories
     namePrivate: (text)
@@ -1077,6 +1083,10 @@ ProductCategory: &ProductCategory
     priceAtPeriod:  #(Component (repeatable))
         - *PriceAtPeriod
     codePrefix: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    images: *Imgs
 
 ProductPass: &ProductPass
     _path: /festival-passes
