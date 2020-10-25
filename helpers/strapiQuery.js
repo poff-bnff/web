@@ -69,6 +69,10 @@ async function strapiQuery(options, dataObject = false) {
     })
 }
 
+const isObject = item => {
+    return (item && typeof item === 'object' && !Array.isArray(item))
+}
+
 async function getModel(model, filters={}) {
     if (! model in DATAMODEL) {
         console.log('WARNING: no such model: "', model, '".' )
@@ -78,7 +82,9 @@ async function getModel(model, filters={}) {
         console.log('WARNING: no path to model: "', model, '".' )
         return false
     }
-    filter = filter ? [filter, '_limit=-1'].join('&') : '_limit=-1'
+    if (!isObject(filters)) {
+        throw new TypeError('filters should be key-value object')
+    }
 
     filters['_limit'] = '-1'
     let filter_str_a = []
