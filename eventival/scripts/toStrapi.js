@@ -114,9 +114,7 @@ const isUpdateRequired = (old_o, update_o) => {
             }
             return false
         }
-
-        // we shouldnt land here
-        throw new TypeError('Uncovered case')
+        return true
     }
     return isUpdateRequiredRecursive(sortedObject(old_o), sortedObject(update_o))
 }
@@ -126,34 +124,38 @@ const isUpdateRequired = (old_o, update_o) => {
 // console.log('undefineds: ', undefined === undefined)
 
 const getFullName = (first_name, last_name) => {
-    console.log('full name of', first_name, last_name)
     const full_name = (first_name ? first_name : '').trim() + (last_name ? ' ' + last_name.trim() : '')
-    console.log('is', full_name)
     return full_name
 }
 
 const updateStrapi = async () => {
     const updateStrapiPersons = async () => {
         const submitPersonByName = async (e_person) => {
-            console.log('XXXXXX submitPersonByName', e_person)
-            let options = {
-                headers: { 'Content-Type': 'application/json' }
-            }
+            // console.log('XXXXXX submitPersonByName', e_person)
+            let options = { headers: { 'Content-Type': 'application/json' } }
             const full_name = getFullName(e_person.firstName, e_person.lastName)
-            const strapi_person = await getModel('Person', {firstNameLastName: full_name})[0]
-            console.log('Got person', strapi_person)
-            if (strapi_person) {
-                if(! isUpdateRequired(strapi_person, e_person)) {
-                    return strapi_person
+            const strapi_persons = await getModel('Person', {firstNameLastName: full_name})
+            // console.log('From ' + full_name + ' got results', strapi_persons)
+            if (strapi_persons.length) {
+                let update_is_required = true
+                for (const strapi_person of strapi_persons) {
+                    if(! isUpdateRequired(strapi_person, e_person)) {
+                        update_is_required = false
+                    }
                 }
-                options.path = PERSONS_API + '/' + strapi_person.id
-                options.method = 'PUT'
+                if (update_is_required) {
+                    options.path = PERSONS_API + '/' + strapi_person.id
+                    options.method = 'PUT'
+                    console.dir('WARNING, ei tea, millist uuendada.', {existing: strapi_persons, new: e_person})
+                    // const person_from_strapi = await strapiQuery(options, e_person)
+                    return {}
+                }
             } else {
                 options.path = PERSONS_API
                 options.method = 'POST'
+                const person_from_strapi = await strapiQuery(options, e_person)
+                return person_from_strapi
             }
-            const person_from_strapi = await strapiQuery(options, e_person)
-            return person_from_strapi
         }
 
         const submitPersonsByName = async (e_persons) => {
@@ -432,6 +434,8 @@ const remapEventival = async () => {
             continue
         }
         const strapi_film_before = JSON.parse(JSON.stringify(strapi_film))
+
+        // TODO: #430 test updateIfRequired
         let strapi_film_update = {id: strapi_film.id}
 
         // ---- BEGIN update strapi film properties
