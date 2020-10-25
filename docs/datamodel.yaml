@@ -654,6 +654,7 @@ Team: &Team
     slug_en: (UID)
     slug_ru: (UID)
 
+
 # Screening & Film
 ScreeningMode: &ScreeningMode
     _path: /screening-modes
@@ -741,6 +742,7 @@ Film: &Film
     orderedCountries:
         - *OrderedCountries
     additInfo: *Translated #(rich text)
+    foreignUrl: (text)
 
 OrderedFilm: &OrderedFilm
     order: (Number)
@@ -827,6 +829,51 @@ LabelGroup:
     name: (text)
     label: #(Component (repeatable))
         - *Label
+
+#Industry
+FilmInFilmography: &FilmInFilmography
+    order: (Number)
+    film: *Film
+    foreignUrl: (text)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    titleOriginale: (text)
+    year: (Number)
+    synopsis_et: (Rich text)
+    synopsis_en: (Rich text)
+    synopsis_ru: (Rich text)
+    images:
+        - *StrapiMedia
+    trailerUrl: (text)
+
+Filmography: &Filmography
+    text: (Rich text)
+    film:
+        - *FilmInFilmography
+
+IndustryPerson: &IndustryPerson
+    person: *Person
+    profilePicAtInd: *StrapiMedia
+    role_at_films:
+        - *RoleAtFilm
+    emaliAtInd: (Email)
+    phoneAtInd: (text)
+    aboutText: (Rich text) #kas peaks olema kolmes keeles
+    images:
+        - *StrapiMedia
+    clipUrl: (text)
+    website: (text)
+    filmography:
+        - *Filmography
+
+IndustryGroup: &IndustryGroup
+    namePrivate: (text)
+    domain: *Domain
+    name_en: (text)
+    slug_en: (UID)
+    description_en: (Rich text)
+
 
 # Supporters
 SupPoff: &SupPoff
