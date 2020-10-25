@@ -63,22 +63,62 @@ const s_role_id_by_e_crew_type = (e_crew, s_roles) => {
     })[0] || {id:null}).id
 }
 
-const isUpdateRequired = (old_o, new_o) => {
-    const sortedString = (o) => {
+const isObject = item => {
+    return (item && typeof item === 'object' && !Array.isArray(item))
+}
+
+
+/* See on äärmiselt mittetriviaalne ülesanne, nagu selgub...
+Kui objekt sisaldab objekte sisaldavat loendit, annab funktsioon valepositiivseid
+
+var fruits = [{f:"Banana"}, "Orange", "Apple", "Mango"]
+console.log(fruits.includes({f:"Banana"})) ==> false
+if (!old_o.includes(value)) {
+    return true // returns false positive on {f:"Banana"} case
+}
+*/
+const isUpdateRequired = (old_o, update_o) => {
+    const sortedObject = (o) => {
         if(o === undefined) {
-            o = {}
+            o = ''
         }
-        return JSON.stringify(yaml.load(yaml.safeDump(o, {'sortKeys': true})))
+        return yaml.load(yaml.safeDump(o, {'sortKeys': true}))
     }
-    const old_s = sortedString(old_o)
-    const new_s = sortedString({...old_o, ...new_o})
-    if (old_s !== new_s) {
-        // console.log('BEFORE:', old_s)
-        // console.log('UPDATE:', sortedString(new_o))
-        // console.log(' AFTER:', new_s)
-        return true
+    const valueInArray = (update_value, arr) => {
+        for (const old_value of arr) {
+            if (isUpdateRequiredRecursive(old_value, update_value) === false) {
+                return true
+            }
+        }
+        return false
     }
-    return false
+    const isUpdateRequiredRecursive = (old_o, update_o) => {
+        if (old_o === update_o) {
+            return false
+        }
+        if (typeof old_o !== typeof update_o) {
+            return true
+        }
+        if (isObject(update_o)) {
+            for (const key in update_o) {
+                if (isUpdateRequiredRecursive(old_o[key], update_o[key])) {
+                    return true
+                }
+            }
+            return false
+        } else if (Array.isArray(update_o)) {
+            for (const update_value of update_o) {
+                if (!valueInArray(update_value, old_o)) {
+                    return true
+                }
+            }
+            return false
+        }
+
+        // we shouldnt land here
+        throw new TypeError('Uncovered case')
+    }
+    return isUpdateRequiredRecursive(sortedObject(old_o), sortedObject(update_o))
 }
 
 const getFullName = (first_name, last_name) => {
