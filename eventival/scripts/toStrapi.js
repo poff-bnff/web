@@ -121,18 +121,27 @@ const isUpdateRequired = (old_o, update_o) => {
     return isUpdateRequiredRecursive(sortedObject(old_o), sortedObject(update_o))
 }
 
+// console.log('falses: ', false === false)
+// console.log('nulls: ', null === null)
+// console.log('undefineds: ', undefined === undefined)
+
 const getFullName = (first_name, last_name) => {
-    return (first_name ? first_name : '').trim() + (last_name ? ' ' + last_name.trim() : '')
+    console.log('full name of', first_name, last_name)
+    const full_name = (first_name ? first_name : '').trim() + (last_name ? ' ' + last_name.trim() : '')
+    console.log('is', full_name)
+    return full_name
 }
 
 const updateStrapi = async () => {
     const updateStrapiPersons = async () => {
         const submitPersonByName = async (e_person) => {
+            console.log('XXXXXX submitPersonByName', e_person)
             let options = {
                 headers: { 'Content-Type': 'application/json' }
             }
-            const strapi_person = getModel('Person', `firstNameLastName=${escape(e_person.name, e_person.surname)}`)[0]
-
+            const full_name = getFullName(e_person.firstName, e_person.lastName)
+            const strapi_person = await getModel('Person', {firstNameLastName: full_name})[0]
+            console.log('Got person', strapi_person)
             if (strapi_person) {
                 if(! isUpdateRequired(strapi_person, e_person)) {
                     return strapi_person
@@ -408,13 +417,7 @@ const remapEventival = async () => {
 
     let to_strapi_films = []
     for (const e_film of EVENTIVAL_FILMS) {
-        let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
-        if (! strapi_film) {
-            console.log('Missing film in Strapi:', JSON.stringify(e_film.ids.system_id))
-            continue
-        }
 
-        const strapi_film_before = JSON.parse(JSON.stringify(strapi_film))
         const is_film_cassette = (e_film.film_info
             && e_film.film_info.texts
             && e_film.film_info.texts.logline
@@ -423,9 +426,13 @@ const remapEventival = async () => {
             continue
         }
 
-        strapi_film.is_cassette_film = (e_film.eventival_categorization
-                                    && e_film.eventival_categorization.categories
-                                    && e_film.eventival_categorization.categories.includes('Shortsi alam') ? true : false)
+        let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
+        if (! strapi_film) {
+            console.log('Missing film in Strapi:', JSON.stringify(e_film.ids.system_id))
+            continue
+        }
+        const strapi_film_before = JSON.parse(JSON.stringify(strapi_film))
+        let strapi_film_update = {id: strapi_film.id}
 
         // ---- BEGIN update strapi film properties
         // console.log('Update film in Strapi:', JSON.stringify(e_film.ids.system_id))
