@@ -10,6 +10,13 @@ async function loadUserInfo() {
     });
     let userProfile = await response.json();
 
+    if (userProfile.profile_filled) {
+        document.getElementById('profileFilledMessage').style.display = 'block'
+    } else {
+        document.getElementById('profileUnFilledMessage').style.display = 'block'
+
+    }
+
     console.log(userProfile)
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
@@ -30,7 +37,6 @@ async function loadUserInfo() {
     }
     dob.value = userProfile.birthdate;
 
-    // linn ja riik lahuta aadressist
 
 
 }
@@ -79,15 +85,17 @@ async function sendUserProfile() {
 
 
     console.log(userToSend);
-    let response = await fetch(`https://api.poff.ee/profile`, {
+    let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
         headers: {
             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
         },
         body: JSON.stringify(userToSend)
-    });
-    userProfile = await response.json()
+    })).json()
 
+    if (response.status) {
+        document.getElementById('profileSent').style.display = 'block'
+    }
 }
 
 
@@ -122,6 +130,5 @@ function readImage() {
         }
     });
 }
-
 
 

@@ -32,10 +32,6 @@ async function loadUserInfo() {
     dob.value = userProfile.birthdate;
 
     pswds.style.display = 'none'
-
-    // linn ja riik lahuta aadressist
-
-
 }
 
 

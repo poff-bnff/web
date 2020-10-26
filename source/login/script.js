@@ -6,8 +6,10 @@ if (window.location.hash) {
         token_expires,
     ] = window.location.hash.substr(1).split('&')
 
+
     if (access_token && id_token) {
         storeAuthentication(access_token.split('=')[1], id_token.split('=')[1])
+        window.location.hash = ''
     }
 }
 
@@ -24,7 +26,6 @@ async function storeAuthentication(access_token, id_token) {
     localStorage.setItem('ACCESS_TOKEN', access_token)
     localStorage.setItem('ID_TOKEN', id_token)
     await loadUserProfile()
-    window.location.hash = ''
 }
 
 
@@ -56,6 +57,7 @@ async function loginViaCognito() {
 
 
 async function loadUserProfile() {
+    console.log('loadUserProfile');
     let userProfile
 
     let response = await fetch(`https://api.poff.ee/profile`, {
@@ -65,29 +67,26 @@ async function loadUserProfile() {
         },
     });
     userProfile = await response.json()
+    console.log(userProfile);
     checkIfUserProfFilled(userProfile)
 
 }
 
 
-function checkIfUserProfFilled() {
+function checkIfUserProfFilled(userProfile) {
+    console.log('checkIfUserProfFilled');
+    console.log(userProfile.profile_filled);
 
-    if (userProfile.profile_filled === 'true') {
+    if (userProfile.profile_filled) {
         console.log(userProfile.profile_filled)
         console.log('profile filled')
-        // redirectToPreLoginUrl()
+        redirectToPreLoginUrl()
     }
-    else if (!userProfile.profile_filled === 'false') {
+    else if (!userProfile.profile_filled) {
         console.log(userProfile.profile_filled)
         console.log('profile not filled')
-        // window.open(`${pageURL}/userprofile`, '_self')
+        window.open(`${pageURL}/userprofile`, '_self')
 
-    }
-    else if (userProfile.profile_filled === 'signup') {
-        console.log(userProfile.profile_filled)
-
-        console.log('back to signup')
-        // window.open(`${pageURL}/signup`, '_self')
     }
 }
 

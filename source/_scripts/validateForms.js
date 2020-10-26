@@ -15,6 +15,8 @@ var city = document.getElementById("gds-cr-one");
 function validateForm() {
 
     var errors = []
+    document.getElementById('profileSent').style.display = 'none'
+
 
     if (!validateEmail()) {
         errors.push('Missing or invalid email')

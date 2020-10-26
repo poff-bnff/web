@@ -12,7 +12,9 @@ block content
                 br
                 br
                 br
-                h1.display-4.m-b-2 Palun täida kasutaja ankeet:
+                h1.display-4.m-b-2(id= 'profileUnFilledMessage' style= {display: 'none'}) Registreerimise lõpuleviimiseks palun täida kasutaja ankeet:
+                h1.display-4.m-b-2(id= 'profileFilledMessage' style= {display: 'none'}) Sinu kasutajaandmed:
+
 
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
@@ -52,12 +54,15 @@ block content
                         label.control-label(for='gds-cr-one') Linn:
                         select#gds-cr-one.form-control(required='' oninput= 'validateCity()')
                     button.btn.btn-primary(onclick='validateForm()') Salvesta
+                    p#profileSent(style= {display: 'none'}) Andmed salvestatud!
+
 
     style.
         .invalid {background-color: #f5e4e9}
         .valid {background-color: #e6f7e6}
         h4 {color: #464646}
         h1 {color: black}
+        #profileSent {color: black}
         label {color: black}
         #imgError {color: red}
 

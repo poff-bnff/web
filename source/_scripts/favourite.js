@@ -1,5 +1,6 @@
 var favFilms
-var favouritePages = ['http://localhost:4000/films', 'http://localhost:4000/favourite']
+var favouritePages = ['http://localhost:4000/filmid/', 'http://localhost:4000/favourite']
+
 
 document.addEventListener("DOMContentLoaded", loadMyFavFilms(), false);
 
@@ -61,6 +62,8 @@ function saveFavFilms(data) {
 }
 
 function showFavFilms() {
+    console.log('showFavFilms');
+
     var filmCards = document.getElementsByClassName('card_film')
 
 
@@ -70,8 +73,10 @@ function showFavFilms() {
         if (window.location.href === 'http://localhost:4000/favourite' && favFilms.includes(filmId)) {
             filmCards[i].style.display = 'block'
         }
-
-        if (window.location.href === 'http://localhost:4000/films') {
+        else if (window.location.href === 'http://localhost:4000/favourite' && favFilms.length === 0) {
+            document.getElementById('noFavouritesMessage').style.display = 'block'
+        }
+        if (window.location.href === 'http://localhost:4000/filmid/') {
             document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
             if (favFilms.includes(filmId)) {
                 console.log('fav');
@@ -84,9 +89,10 @@ function showFavFilms() {
 function saveFilmAsFavourite(movieId) {
     console.log('saveFilmAsFavourite')
 
-    var addBtnfilmCard = document.getElementById('nupp')
+    var addBtnfilmCard = document.getElementById(movieId + 'nupp')
+    console.log(addBtnfilmCard);
 
-    if (window.location.href === 'http://localhost:4000/films') {
+    if (window.location.href === 'http://localhost:4000/filmid') {
         addBtnfilmCard = document.getElementById(movieId + 'nupp')
     }
 
