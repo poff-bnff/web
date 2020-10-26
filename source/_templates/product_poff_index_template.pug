@@ -16,5 +16,12 @@ block content
         if self.description && typeof self.description !== 'object'
             h1.dark_1= self.description
             br
+            h1.dark_1= self.codePrefix
+            button.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) OSTA
+            br
+            div#paymentLink
+
+
+
 
 
