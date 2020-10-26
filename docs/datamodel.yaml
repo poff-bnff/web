@@ -856,12 +856,12 @@ Filmography: &Filmography
         - *FilmInFilmography
 
 IndustryPersonType: &IndustryPersonType
-    _path: /
+    _path: /industry-person-types
     type: (text)
     description: (Rich text)
 
 IndustryPerson: &IndustryPerson
-    _path: /
+    _path: /industry-people
     person: *Person
     profilePicAtInd: *StrapiMedia
     role_at_films:
@@ -879,23 +879,20 @@ IndustryPerson: &IndustryPerson
         - *IndustryPersonType
 
 IndustryGroup: &IndustryGroup
-    _path: /
+    _path: /industry-groups
     namePrivate: (text)
     domain: *Domain
     name_en: (text)
     slug_en: (UID)
     description_en: (Rich text)
 
-IndustryPersonType: &IndustryPersonType
-    type: (text)
-    description: (Rich text)
-
 IndustryCategory: &IndustryCategory
+    _path: /industry-categories
     name: (text)
     description: (Rich text)
 
 IndustryProject: &IndustryProject
-    _path: /
+    _path: /industry-projects
     title_en: (text)
     titleOriginal: (text)
     countries:
@@ -904,10 +901,12 @@ IndustryProject: &IndustryProject
         - *Language
 
 ProjectType: &ProjectType
+    _path: /project-types
     type: (text)
     description: (Rich text)
 
 ProjectStatus: &ProjectStatus
+    _path: project-status
     status: (text)
     description: (Rich text)
 
