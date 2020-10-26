@@ -3,10 +3,6 @@ const fs = require('fs')
 const path = require('path')
 
 const { strapiQuery, getModel } = require("../../helpers/strapiQuery.js")
-// const baz = async () => {
-//     console.log(await getModel('Person', `firstNameLastName=${escape('Rana Kazkaz')}`))
-// }
-// baz()
 
 const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
