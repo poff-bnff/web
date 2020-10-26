@@ -123,41 +123,29 @@ const updateStrapi = async () => {
             return full_name
         }
 
-        const submitPersonByName = async (e_person) => {
-            // console.log('XXXXXX submitPersonByName', e_person)
+        const submitPersonByRemoteId = async (e_person) => {
             let options = { headers: { 'Content-Type': 'application/json' } }
-            const full_name = getFullName(e_person.firstName, e_person.lastName)
-            const the_strapi_persons = strapi_persons.filter(s_person => s_person.firstNameLastName === full_name)
+            const the_strapi_persons = strapi_persons.filter(s_person => s_person.remoteId === e_person.remoteId)
             // console.log('From ' + full_name + ' got results', the_strapi_persons)
             if (the_strapi_persons.length) {
-                let update_is_required = true
-                for (const strapi_person of the_strapi_persons) {
-                    if(! isUpdateRequired(strapi_person, e_person)) {
-                        update_is_required = false
-                    }
-                }
-                if (update_is_required) {
+                const strapi_person = the_strapi_persons[0]
+                if (isUpdateRequired(strapi_person, e_person)) {
                     options.path = PERSONS_API + '/' + strapi_person.id
                     options.method = 'PUT'
-                    console.dir('WARNING, ei tea, millist uuendada.', {existing: the_strapi_persons, new: e_person})
-                    // const person_from_strapi = await strapiQuery(options, e_person)
-                    return {}
+                    const person_from_strapi = await strapiQuery(options, e_person)
+                    return person_from_strapi
                 }
             } else {
                 options.path = PERSONS_API
                 options.method = 'POST'
-                const person_from_strapi = await strapiQuery(options, e_person)
-                return person_from_strapi
+                await strapiQuery(options, e_person)
             }
         }
 
-        const submitPersonsByName = async (e_persons) => {
-            let from_strapi = []
+        const submitPersonsByRemoteId = async (e_persons) => {
             for (e_person of e_persons) {
-                const person_from_strapi = await submitPersonByName(e_person)
-                from_strapi.push(person_from_strapi)
+                await submitPersonByRemoteId(e_person)
             }
-            return from_strapi
         }
 
         // Add Directors and Cast to Strapi
@@ -187,33 +175,30 @@ const updateStrapi = async () => {
                 })
             persons_in_eventival = [].concat(persons_in_eventival, e_persons, e_directors)
         }
-        await submitPersonsByName(persons_in_eventival)
+        await submitPersonsByRemoteId(persons_in_eventival)
 
 
         // add all the crew to strapi
-        let crew_names = {}
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             for (const e_crew of e_film.publications.en.crew) {
-                for (const name of e_crew.text) {
-                    crew_names[name] = {}
+                for (const e_name of e_crew.text) {
+                    const the_strapi_persons = strapi_persons.filter(s_person => s_person.firstNameLastName === e_name)
+                    if (the_strapi_persons.length) {
+                        // console.log('skipping person', the_strapi_persons[0]);
+                        continue
+                    }
+                    console.log('INFO: Creating new person', e_name);
+                    let options = {
+                        headers: { 'Content-Type': 'application/json' },
+                        path: PERSONS_API,
+                        method: 'POST'
+                    }
+                    await strapiQuery(options, {firstName: e_name, firstNameLastName: e_name})
                 }
             }
         }
         strapi_persons = await getModel('Person')
-        for (const e_name in crew_names) {
-            let s_person = s_person_id_by_e_fullname(e_name, strapi_persons)
-            if (!s_person) {
-                let options = {
-                    headers: { 'Content-Type': 'application/json' },
-                    path: PERSONS_API,
-                    method: 'POST'
-                }
-                let data = { firstName: e_name.trim(), firstNameLastName: e_name.trim() }
-                await strapiQuery(options, data)
-                console.log('==== new person', e_name)
-            }
-        }
     }
 
     const updateStrapiRoles = async () => {
@@ -312,6 +297,7 @@ const updateStrapi = async () => {
 
         }
     }
+
     console.log('\n|–– persons')
     await updateStrapiPersons()
     console.log('\n|–– roles')
@@ -819,18 +805,18 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    console.log('missing films and screenings')
+    console.log('Check for missing films and screenings')
     await createMissingFilmsAndScreenings()
     console.log('update Strapi')
     await updateStrapi()
-    console.log('| remap')
-    await remapEventival()
-    console.log('| submit films')
-    await submitFilms()
-    console.log('| submit cassettes')
-    await submitCassettes()
-    console.log('| submit screenings')
-    await submitScreenings()
+    // console.log('| remap')
+    // await remapEventival()
+    // console.log('| submit films')
+    // await submitFilms()
+    // console.log('| submit cassettes')
+    // await submitCassettes()
+    // console.log('| submit screenings')
+    // await submitScreenings()
 }
 
 main()
