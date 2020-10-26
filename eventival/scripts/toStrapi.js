@@ -503,7 +503,7 @@ const remapEventival = async () => {
         if (e_film.publications) {
             const publications = e_film.publications
             for (const [lang, publication] of Object.entries(publications)) {
-                if ('synopsis_long' in publication) {
+                if ('synopsis_long' in publication && publication.synopsis_long !== '') {
                     if (!strapi_film.synopsis) {
                         strapi_film.synopsis = {}
                     }
