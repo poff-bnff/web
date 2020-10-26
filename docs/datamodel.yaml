@@ -603,7 +603,8 @@ Person: &Person
     biography: *Translated #(Rich text)
     filmography: *Translated #(Rich text)
     profession: (text)
-
+    remoteId: (UID)
+    pageUrl: (text)
 
 TeamMember: &TeamMember
     person: *Person #(Component)
@@ -840,7 +841,7 @@ FilmInFilmography: &FilmInFilmography
     title_et: (text)
     title_en: (text)
     title_ru: (text)
-    titleOriginale: (text)
+    titleOriginal: (text)
     year: (Number)
     synopsis_et: (Rich text)
     synopsis_en: (Rich text)
@@ -885,6 +886,14 @@ IndustryGroup: &IndustryGroup
     slug_en: (UID)
     description_en: (Rich text)
 
+IndustryPersonType: &IndustryPersonType
+    type: (text)
+    description: (Rich text)
+
+IndustryCategory: &IndustryCategory
+    name: (text)
+    description: (Rich text)
+
 IndustryProject: &IndustryProject
     _path: /
     title_en: (text)
@@ -897,6 +906,11 @@ IndustryProject: &IndustryProject
 ProjectType: &ProjectType
     type: (text)
     description: (Rich text)
+
+ProjectStatus: &ProjectStatus
+    status: (text)
+    description: (Rich text)
+
 
 # Supporters
 SupPoff: &SupPoff
