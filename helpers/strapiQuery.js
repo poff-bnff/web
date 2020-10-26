@@ -2,7 +2,9 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const http = require('http')
+const readline = require('readline')
 const { strapiAuth } = require('./strapiAuth.js')
+const { spin } = require("./spinner")
 
 const STRAPI_URL = process.env['StrapiHost']
 console.log(__dirname)
@@ -29,6 +31,8 @@ async function strapiQuery(options, dataObject = false) {
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
+                process.stdout.write(spin())
+                readline.moveCursor(process.stdout, -1, 0)
             })
             response.on('end', async function () {
                 if (response.statusCode === 200) {
@@ -69,7 +73,11 @@ async function strapiQuery(options, dataObject = false) {
     })
 }
 
-async function getModel(model) {
+const isObject = item => {
+    return (item && typeof item === 'object' && !Array.isArray(item))
+}
+
+async function getModel(model, filters={}) {
     if (! model in DATAMODEL) {
         console.log('WARNING: no such model: "', model, '".' )
         return false
@@ -78,14 +86,26 @@ async function getModel(model) {
         console.log('WARNING: no path to model: "', model, '".' )
         return false
     }
+    if (!isObject(filters)) {
+        throw new TypeError('filters should be key-value object')
+    }
+
+    filters['_limit'] = '-1'
+    let filter_str_a = []
+    for (const [key, value] of Object.entries(filters)) {
+        filter_str_a.push(key + '=' + encodeURIComponent(value).replace('%20','+'))
+    }
 
     const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
+
     const options = {
         headers: { 'Content-Type': 'application/json' },
-        path: _path + '?_limit=-1',
+        path: `${_path}?${filter_str_a.join('&')}`,
         method: 'GET'
     }
-    // console.log('=== getModel', options)
+    if (filters.length) {
+        console.log('=== getModel', filter, options)
+    }
     return await strapiQuery(options)
 }
 

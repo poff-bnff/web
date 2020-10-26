@@ -11,8 +11,6 @@ const DOMAIN = 'poff.ee'
 
 const sourceFolder =  path.join(__dirname, '../source/');
 
-// FromStrapi.Fetch('LabelGroups', screeningsToYAMLData)
-
 LangSelect('et')
 
 function LangSelect(lang) {
@@ -24,6 +22,7 @@ function LangSelect(lang) {
 function processData(data, lang, CreateYAML) {
     let allData = []
     if (STRAPIDATA_SCREENINGS.length) {
+        let screeningsMissingCassetteIDs = []
 
         for (screeningIx in STRAPIDATA_SCREENINGS) {
             let screening = STRAPIDATA_SCREENINGS[screeningIx]
@@ -31,6 +30,7 @@ function processData(data, lang, CreateYAML) {
             let cassetteCarouselPicsFilms = []
             let cassettePostersCassette = []
             let cassettePostersFilms = []
+
 
             if (screening.cassette) {
                 let cassette = screening.cassette
@@ -117,10 +117,13 @@ function processData(data, lang, CreateYAML) {
                 allData.push(STRAPIDATA_SCREENINGS[screeningIx])
 
             } else {
-                console.log('Screening with ID ', screening.id, ' - "', screening.codeAndTitle, '"' , ' missing cassette');
+                screeningsMissingCassetteIDs.push(screening.id)
             }
 
+        }
 
+        if (screeningsMissingCassetteIDs.length) {
+            console.log('Screenings with IDs ', screeningsMissingCassetteIDs.join(', '), ' missing cassette');
         }
 
         CreateYAML(allData, lang);
