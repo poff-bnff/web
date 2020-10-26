@@ -30,7 +30,11 @@ block content
 
                                     a(href= `/${lang_path}${product.path}`).card_article
                                         .container_frame_16_9
-                                            img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                                            if product.images
+                                                if product.images.image
+                                                    img.container_contents_16_9(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`)
+                                                else if product.images.imageDefault
+                                                    img.container_contents_16_9(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`)
 
                                         if product.name && typeof product.name !== 'object'
                                             .card_article_title
