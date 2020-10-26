@@ -170,6 +170,9 @@ fetch_data()
     echo 'assets/xml'
     node ./helpers/xml.js
 
+    echo 'fetch_shops_from_yaml'
+    node ./helpers/fetch_shops_from_yaml.js
+
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
 }
