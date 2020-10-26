@@ -209,12 +209,11 @@ const updateStrapi = async () => {
                     path: PERSONS_API,
                     method: 'POST'
                 }
-                let data = { firstName: e_name.trim(), firstNameLastName: e_name.trim() }// peaksime kaasa saatma ka remoteId, mille j4rgi ta hiljem muidu inimese leiab
+                let data = { firstName: e_name.trim(), firstNameLastName: e_name.trim() }
                 await strapiQuery(options, data)
                 console.log('==== new person', e_name)
             }
         }
-        return await getModel('Person')
     }
 
     const updateStrapiRoles = async () => {
@@ -256,7 +255,6 @@ const updateStrapi = async () => {
                 }
             }
         }
-        return strapi_roles
     }
 
     const updateFilmCredentials = async () => {
