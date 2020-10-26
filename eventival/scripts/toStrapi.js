@@ -795,6 +795,8 @@ const submitCassettes = async () => {
 }
 
 const submitScreenings = async () => {
+    const strapi_screenings = await getModel('Screening')
+
     async function submitScreening(e_screening) {
         let options = {
             headers: { 'Content-Type': 'application/json' }
