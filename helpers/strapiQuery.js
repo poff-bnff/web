@@ -2,7 +2,9 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const http = require('http')
+const readline = require('readline')
 const { strapiAuth } = require('./strapiAuth.js')
+const { spin } = require("./spinner")
 
 const STRAPI_URL = process.env['StrapiHost']
 console.log(__dirname)
@@ -29,6 +31,8 @@ async function strapiQuery(options, dataObject = false) {
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
+                process.stdout.write(spin())
+                readline.moveCursor(process.stdout, -1, 0)
             })
             response.on('end', async function () {
                 if (response.statusCode === 200) {

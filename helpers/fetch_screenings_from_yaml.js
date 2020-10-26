@@ -11,8 +11,6 @@ const DOMAIN = 'poff.ee'
 
 const sourceFolder =  path.join(__dirname, '../source/');
 
-// FromStrapi.Fetch('LabelGroups', screeningsToYAMLData)
-
 LangSelect('et')
 
 function LangSelect(lang) {
