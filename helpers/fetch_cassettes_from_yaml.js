@@ -330,10 +330,18 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     if (scc_film.media && scc_film.media.trailer && scc_film.media.trailer[0]) {
                         for (trailer of scc_film.media.trailer) {
                             if(trailer.url && trailer.url.length > 10) {
-                                let splitYouTubeLink = trailer.url.split("=")[1]
-                                let splitForVideoCode = splitYouTubeLink.split("&")[0]
-                                if (splitForVideoCode.length === 11) {
-                                    trailer.youTubeCode = splitForVideoCode
+                                if (trailer.url.includes('vimeo')) {
+                                    let splitVimeoLink = trailer.url.split('/')
+                                    let videoCode = splitVimeoLink[splitVimeoLink.length-1]
+                                    if (videoCode.length === 9) {
+                                        trailer.videoCode = videoCode
+                                    }
+                                } else {
+                                    let splitYouTubeLink = trailer.url.split('=')[1]
+                                    let splitForVideoCode = splitYouTubeLink.split('&')[0]
+                                    if (splitForVideoCode.length === 11) {
+                                        trailer.videoCode = splitForVideoCode
+                                    }
                                 }
                             }
                         }

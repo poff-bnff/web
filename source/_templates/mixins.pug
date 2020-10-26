@@ -1,8 +1,13 @@
 //- lisab õige youtube video treileriks, kasutab film.layout.pug
 mixin youtube(videoId)
-    iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}`
-        frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
-        gyroscope;='' picture-in-picture”='' allowfullscreen='')
+    if videoId.length === 9
+        iframe(width='560' height='315' src=`https://www.vimeo.com/${videoId}`
+            frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
+            gyroscope;='' picture-in-picture”='' allowfullscreen='')
+    else if videoId.length === 11
+        iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}`
+            frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
+            gyroscope;='' picture-in-picture”='' allowfullscreen='')
 
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
 //- sisend kujul (2020-08-10T22:45:00+0300)
