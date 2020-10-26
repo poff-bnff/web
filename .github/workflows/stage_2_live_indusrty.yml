@@ -1,9 +1,9 @@
-name: indusrty.inscaping.eu/
+name: industry.inscaping.eu/
 
 on:
     release:
         types: [ published ]
-        branches: [ staging_indusrty ]
+        branches: [ staging_industry ]
     workflow_dispatch:
         inputs:
             slackUserId:
@@ -19,7 +19,7 @@ jobs:
         -   name: ls -a via ssh
             uses: fifsky/ssh-action@master
             with:
-                command: scp -r domeenid/www.inscaping.eu/web/indusrty_staging/* poff:domeenid/www.poff.ee/web2020/indusrty_live/
+                command: scp -r domeenid/www.inscaping.eu/web/industry_staging/* poff:domeenid/www.poff.ee/web2020/industry_live/
                 host: inscaping.eu
                 user: virt84398
                 key: ${{ secrets.DEPLOY_KEY }}
