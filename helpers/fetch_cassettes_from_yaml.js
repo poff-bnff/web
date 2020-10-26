@@ -332,13 +332,13 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             if(trailer.url && trailer.url.length > 10) {
                                 if (trailer.url.includes('vimeo')) {
                                     let splitVimeoLink = trailer.url.split('/')
-                                    let videoCode = splitVimeoLink[splitVimeoLink.length-1]
+                                    let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
                                     if (videoCode.length === 9) {
                                         trailer.videoCode = videoCode
                                     }
                                 } else {
                                     let splitYouTubeLink = trailer.url.split('=')[1]
-                                    let splitForVideoCode = splitYouTubeLink.split('&')[0]
+                                    let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
                                     if (splitForVideoCode.length === 11) {
                                         trailer.videoCode = splitForVideoCode
                                     }

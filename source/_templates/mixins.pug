@@ -1,7 +1,7 @@
-//- lisab õige youtube video treileriks, kasutab film.layout.pug
-mixin youtube(videoId)
+//- lisab õige video treileriks, kasutab film.layout.pug
+mixin video(videoId)
     if videoId.length === 9
-        iframe(width='560' height='315' src=`https://www.vimeo.com/${videoId}`
+        iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}`
             frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
             gyroscope;='' picture-in-picture”='' allowfullscreen='')
     else if videoId.length === 11
@@ -11,7 +11,6 @@ mixin youtube(videoId)
 
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
 //- sisend kujul (2020-08-10T22:45:00+0300)
-
 mixin localdatetime(dateString)
     - var dom_id = Math.random()
     div(id = 'dt_' + dom_id)
