@@ -763,6 +763,8 @@ const submitFilms = async () => {
 }
 
 const submitCassettes = async () => {
+    const strapi_cassettes = await getModel('Cassette')
+
     async function submitCassette(e_cassette) {
         let options = {
             headers: { 'Content-Type': 'application/json' }
