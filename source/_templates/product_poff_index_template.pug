@@ -7,6 +7,15 @@ block content
 
     main.grid_film
 
+        .container_frame_16_9
+            if self.images
+                if self.images.image
+                    img.container_contents_16_9(alt= self.name ? self.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${self.images.image.hash}${self.images.image.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${self.images.image.hash}${self.images.image.ext}`)
+                else if self.images.imageDefault
+                    img.container_contents_16_9(alt= self.name ? self.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`)
+                else
+                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+
         if self.festival_edition && self.festival_edition.name
             h1.dark_1= self.festival_edition.name
             br

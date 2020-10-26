@@ -2,7 +2,9 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const http = require('http')
+const readline = require('readline')
 const { strapiAuth } = require('./strapiAuth.js')
+const { spin } = require("./spinner")
 
 const STRAPI_URL = process.env['StrapiHost']
 console.log(__dirname)
@@ -29,6 +31,8 @@ async function strapiQuery(options, dataObject = false) {
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
+                process.stdout.write(spin())
+                readline.moveCursor(process.stdout, -1, 0)
             })
             response.on('end', async function () {
                 if (response.statusCode === 200) {
@@ -69,6 +73,10 @@ async function strapiQuery(options, dataObject = false) {
     })
 }
 
+const isObject = item => {
+    return (item && typeof item === 'object' && !Array.isArray(item))
+}
+
 async function getModel(model, filters={}) {
     if (! model in DATAMODEL) {
         console.log('WARNING: no such model: "', model, '".' )
@@ -77,6 +85,9 @@ async function getModel(model, filters={}) {
     if (! '_path' in DATAMODEL[model]) {
         console.log('WARNING: no path to model: "', model, '".' )
         return false
+    }
+    if (!isObject(filters)) {
+        throw new TypeError('filters should be key-value object')
     }
 
     filters['_limit'] = '-1'
