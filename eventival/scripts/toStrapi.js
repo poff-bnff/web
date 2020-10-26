@@ -68,14 +68,10 @@ const isObject = item => {
 }
 
 
-/* See on äärmiselt mittetriviaalne ülesanne, nagu selgub...
-Kui objekt sisaldab objekte sisaldavat loendit, annab funktsioon valepositiivseid
-
-var fruits = [{f:"Banana"}, "Orange", "Apple", "Mango"]
-console.log(fruits.includes({f:"Banana"})) ==> false
-if (!old_o.includes(value)) {
-    return true // returns false positive on {f:"Banana"} case
-}
+/* See on mittetriviaalne ülesanne, nagu selgub...
+Kui objekt sisaldab objekte sisaldavat loendit, tagastab järgnev valenegatiivse:
+    var fruits = [{f:"Banana"}, "Orange", "Apple", "Mango"]
+    console.log(fruits.includes({f:"Banana"})) ==> false
 */
 const isUpdateRequired = (old_o, update_o) => {
     const sortedObject = (o) => {
@@ -119,17 +115,14 @@ const isUpdateRequired = (old_o, update_o) => {
     return isUpdateRequiredRecursive(sortedObject(old_o), sortedObject(update_o))
 }
 
-// console.log('falses: ', false === false)
-// console.log('nulls: ', null === null)
-// console.log('undefineds: ', undefined === undefined)
-
-const getFullName = (first_name, last_name) => {
-    const full_name = (first_name ? first_name : '').trim() + (last_name ? ' ' + last_name.trim() : '')
-    return full_name
-}
 
 const updateStrapi = async () => {
     const updateStrapiPersons = async () => {
+        const getFullName = (first_name, last_name) => {
+            const full_name = (first_name ? first_name : '').trim() + (last_name ? ' ' + last_name.trim() : '')
+            return full_name
+        }
+
         const submitPersonByName = async (e_person) => {
             // console.log('XXXXXX submitPersonByName', e_person)
             let options = { headers: { 'Content-Type': 'application/json' } }
