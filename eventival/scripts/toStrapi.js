@@ -127,11 +127,11 @@ const updateStrapi = async () => {
             // console.log('XXXXXX submitPersonByName', e_person)
             let options = { headers: { 'Content-Type': 'application/json' } }
             const full_name = getFullName(e_person.firstName, e_person.lastName)
-            const strapi_persons = await getModel('Person', {firstNameLastName: full_name})
-            // console.log('From ' + full_name + ' got results', strapi_persons)
-            if (strapi_persons.length) {
+            const the_strapi_persons = strapi_persons.filter(s_person => s_person.firstNameLastName === full_name)
+            // console.log('From ' + full_name + ' got results', the_strapi_persons)
+            if (the_strapi_persons.length) {
                 let update_is_required = true
-                for (const strapi_person of strapi_persons) {
+                for (const strapi_person of the_strapi_persons) {
                     if(! isUpdateRequired(strapi_person, e_person)) {
                         update_is_required = false
                     }
@@ -139,7 +139,7 @@ const updateStrapi = async () => {
                 if (update_is_required) {
                     options.path = PERSONS_API + '/' + strapi_person.id
                     options.method = 'PUT'
-                    console.dir('WARNING, ei tea, millist uuendada.', {existing: strapi_persons, new: e_person})
+                    console.dir('WARNING, ei tea, millist uuendada.', {existing: the_strapi_persons, new: e_person})
                     // const person_from_strapi = await strapiQuery(options, e_person)
                     return {}
                 }
