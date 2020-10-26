@@ -517,22 +517,21 @@ if self.films
                                     img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
-            if film.filmQaClip
+            //- if film.filmQaClip
 
-                section.f_qaclip_box
-                    .section_headline= self.label.film.qaClip
-                    .embed-responsive.embed-responsive-16by9.m-0.p-0
-                        - youtubeVideoCode = film.filmQaClip.split("=")
-                        +youtube(youtubeVideoCode[1])
+            //-     section.f_qaclip_box
+            //-         .section_headline= self.label.film.qaClip
+            //-         .embed-responsive.embed-responsive-16by9.m-0.p-0
+            //-             - youtubeVideoCode = film.filmQaClip.split("=")
+            //-             +youtube(youtubeVideoCode[1])
 
-
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].youTubeCode
+            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
                 section.f_trailer_box
                     .section_headline= self.label.film.trailer
                     each trailer in film.media.trailer
                         .embed-responsive.embed-responsive-16by9.m-0.p-0
-                            if trailer.youTubeCode && trailer.youTubeCode.length === 11
-                                +youtube(trailer.youTubeCode)
+                            if trailer.videoCode
+                                +video(trailer.videoCode)
 
             //- section.f_imgs_box
 
