@@ -225,6 +225,7 @@ ArticleType: &ArticleType
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
+
 # Articles (POFF, Just, Shorts, Industry, Kinoff)
 Media: &Media
     imageDefault: #(Component (repeatable))
@@ -602,6 +603,8 @@ Person: &Person
     biography: *Translated #(Rich text)
     filmography: *Translated #(Rich text)
     profession: (text)
+    remoteId: (UID)
+    pageUrl: (text)
 
 TeamMember: &TeamMember
     person: *Person #(Component)
@@ -653,6 +656,7 @@ Team: &Team
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
+
 
 # Screening & Film
 ScreeningMode: &ScreeningMode
@@ -741,6 +745,7 @@ Film: &Film
     orderedCountries:
         - *OrderedCountries
     additInfo: *Translated #(rich text)
+    foreignUrl: (text)
 
 OrderedFilm: &OrderedFilm
     order: (Number)
@@ -827,6 +832,84 @@ LabelGroup:
     name: (text)
     label: #(Component (repeatable))
         - *Label
+
+#Industry
+FilmInFilmography: &FilmInFilmography
+    order: (Number)
+    film: *Film
+    foreignUrl: (text)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    titleOriginal: (text)
+    year: (Number)
+    synopsis_et: (Rich text)
+    synopsis_en: (Rich text)
+    synopsis_ru: (Rich text)
+    images:
+        - *StrapiMedia
+    trailerUrl: (text)
+
+Filmography: &Filmography
+    text: (Rich text)
+    film:
+        - *FilmInFilmography
+
+IndustryPersonType: &IndustryPersonType
+    _path: /industry-person-types
+    type: (text)
+    description: (Rich text)
+
+IndustryPerson: &IndustryPerson
+    _path: /industry-people
+    person: *Person
+    profilePicAtInd: *StrapiMedia
+    role_at_films:
+        - *RoleAtFilm
+    emaliAtInd: (Email)
+    phoneAtInd: (text)
+    aboutText: (Rich text) #kas peaks olema kolmes keeles
+    images:
+        - *StrapiMedia
+    clipUrl: (text)
+    website: (text)
+    filmography:
+        - *Filmography
+    industry_person_type:
+        - *IndustryPersonType
+
+IndustryGroup: &IndustryGroup
+    _path: /industry-groups
+    namePrivate: (text)
+    domain: *Domain
+    name_en: (text)
+    slug_en: (UID)
+    description_en: (Rich text)
+
+IndustryCategory: &IndustryCategory
+    _path: /industry-categories
+    name: (text)
+    description: (Rich text)
+
+IndustryProject: &IndustryProject
+    _path: /industry-projects
+    title_en: (text)
+    titleOriginal: (text)
+    countries:
+        - *Country
+    languages:
+        - *Language
+
+ProjectType: &ProjectType
+    _path: /project-types
+    type: (text)
+    description: (Rich text)
+
+ProjectStatus: &ProjectStatus
+    _path: project-status
+    status: (text)
+    description: (Rich text)
+
 
 # Supporters
 SupPoff: &SupPoff
@@ -1061,6 +1144,12 @@ ProductType: &ProductType
     _path: /products
     name: (text)
 
+Imgs: &Imgs
+    imageDefault: *StrapiMedia
+    image_et: *StrapiMedia
+    image_en: *StrapiMedia
+    image_ru: *StrapiMedia
+
 ProductCategory: &ProductCategory
     _path: /product-categories
     namePrivate: (text)
@@ -1080,6 +1169,7 @@ ProductCategory: &ProductCategory
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
+    images: *Imgs
 
 ProductPass: &ProductPass
     _path: /festival-passes

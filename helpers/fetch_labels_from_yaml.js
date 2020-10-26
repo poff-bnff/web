@@ -11,8 +11,6 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 
 const sourceFolder =  path.join(__dirname, '../source/');
 
-// FromStrapi.Fetch('LabelGroups', LabelsToYAMLData)
-
 LangSelect('et')
 LangSelect('en')
 LangSelect('ru')
