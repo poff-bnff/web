@@ -49,9 +49,9 @@ bg_color_4 = #eeeeff
 clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 clr_dark_semi = rgba(23,33,33,.5)
-// clr_primary = #ec008c
-clr_primary = #F39133 // PÖFF orange
-clr_primary_text = #F39133 // PÖFF orange
+clr_primary = #3EADEF
+// clr_primary = #164df2
+clr_primary_text = #164df2
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -1333,6 +1333,9 @@ header
 .f_imgs_box
     grid-area f_imgs_box
 
+.carousel-indicators
+    li
+        height 1px
 
 .card-deck
     justify-content center
@@ -1481,7 +1484,7 @@ p a
   font-family font_h
   text-transform uppercase
   text-align left
-  color white_semi
+  color clr_primary
   align-self start
   font-weight 300
 
@@ -1754,6 +1757,20 @@ a.btn_popover
   margin-right .5rem
   margin-top -.7rem
   stroke rgba(255, 255, 255, .5)
+
+.play_link
+    position absolute
+    bottom 1rem
+    left 1rem
+    z-index 999
+
+.svg_icon_play
+    height calc(2rem + 0.1vw)
+    width calc(2rem + 0.1vw)
+    margin-right .5rem
+    margin-top -.7rem
+    stroke rgba(255, 255, 255, .9)
+
 
 .svg_icon_white
   margin-right .5rem

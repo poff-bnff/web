@@ -196,6 +196,9 @@ fetch_data()
     echo 'fetch_screenings_from_yaml'
     node ./helpers/fetch_screenings_from_yaml.js
 
+    echo 'fetch_shops_from_yaml'
+    node ./helpers/fetch_shops_from_yaml.js
+
     echo 'assets/xml'
     node ./helpers/xml.js
 

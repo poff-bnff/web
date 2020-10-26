@@ -1059,17 +1059,15 @@ PriceAtPeriod: &PriceAtPeriod
 
 ProductType: &ProductType
     _path: /products
-    nae: (text)
+    name: (text)
 
 ProductCategory: &ProductCategory
     _path: /product-categories
     namePrivate: (text)
-    name:  #(Component (repeatable))
-        - *Translated
+    name: *Translated #(Component)
     product_type: *ProductType #(Component)
     festival_edition: *FestivalEdition #(Component)
-    description:  #(Component (repeatable))
-        - *Translated
+    description: *Translated #(Component)
     validityPeriod:  #(Component (repeatable))
         - *Period
     salesPeriod:  #(Component (repeatable))
@@ -1079,6 +1077,9 @@ ProductCategory: &ProductCategory
     priceAtPeriod:  #(Component (repeatable))
         - *PriceAtPeriod
     codePrefix: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
 
 ProductPass: &ProductPass
     _path: /festival-passes
@@ -1090,6 +1091,27 @@ ProductPass: &ProductPass
     transaction: *Transaction #(Component)
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
+
+OrderedProduct: &OrderedProduct
+    order: (number)
+    product_category: *ProductCategory
+
+ProdCatList: &ProdCatList
+    namePrivate: (text)
+    product:
+        - *OrderedProduct
+    title: *Translated
+
+Shop: &Shop
+    _path: /shops
+    namePrivate: (text)
+    title: *Translated
+    intro: *Translated #(Rich text)
+    prodCatList:
+        - *ProdCatList
+    shopRules: *Translated #(Rich text)
+    domains:
+        - *Domain
 
 # Hero
 HeroArticlePoff:

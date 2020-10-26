@@ -1,0 +1,20 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+
+
+block content
+
+    main.grid_film
+
+        if self.festival_edition && self.festival_edition.name
+            h1.dark_1= self.festival_edition.name
+            br
+        if self.name && typeof self.name !== 'object'
+            h1.dark_1= self.name
+            br
+        if self.description && typeof self.description !== 'object'
+            h1.dark_1= self.description
+            br
+
+
