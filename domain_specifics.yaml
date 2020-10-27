@@ -1,10 +1,22 @@
 ---
+domain:
+  poff.ee: poff
+  justfilm.ee: justfilm
+  kinoff.poff.ee: kinoff
+  industry.poff.ee: industry
+  shorts.poff.ee: shorts
 article:
   poff.ee: POFFiArticle
   justfilm.ee: JustFilmiArticle
   kinoff.poff.ee: KinoffiArticle
   industry.poff.ee: IndustryArticle
   shorts.poff.ee: ShortsiArticle
+footer:
+  poff.ee: POFFiFooter
+  justfilm.ee: JustFilmFooter
+  kinoff.poff.ee: KinoffiFooter
+  industry.poff.ee: IndustryFooter
+  shorts.poff.ee: ShortsiFooter
 locales:
   poff.ee:
   - et
