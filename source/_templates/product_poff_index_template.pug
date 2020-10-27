@@ -8,6 +8,10 @@ block content
     main.grid_film
 
         if self.festival_edition && self.festival_edition.name
+            br
+            br
+            br
+            br
             h1.dark_1= self.festival_edition.name
             br
         if self.name && typeof self.name !== 'object'
@@ -16,10 +20,16 @@ block content
         if self.description && typeof self.description !== 'object'
             h1.dark_1= self.description
             br
-            h1.dark_1= self.codePrefix
-            button.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) OSTA
             br
-            div#paymentLink
+            br
+            br
+            br
+            br
+            button.btn.btn-primary(onclick=`GetPaymentLinks()`) mine maksma
+            div#paymentLinks
+            br
+            button.btn.btn-primary(onclick=`Buy("${self.codePrefix}")`) OSTA valitud makseviisiga
+            br
 
 
 
