@@ -2,6 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js');
+const util = require("util")
 
 const sourceDir =  path.join(__dirname, '..', 'source');
 const fetchDir =  path.join(sourceDir, '_fetchdir');
@@ -9,7 +10,7 @@ const fetchDataDir =  path.join(fetchDir, 'teamsandjuries');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
 const STRAPIDATA_TEAM = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Team'];
 const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
-const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
+const DOMAIN = process.env['DOMAIN'] || 'kinoff.poff.ee';
 
 const languages = ['en', 'et', 'ru']
 for (const ix in languages) {
@@ -52,28 +53,28 @@ for (const ix in languages) {
         let dirSlug = element.slug_en || element.slug_et ? element.slug_en || element.slug_et : null ;
         element = rueten(element, lang);
         element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
-        element.path = element.slug;
+        if ('slug' in element) {
+            element.path = element.slug;
+        } else {
+            continue
+        }
 
-        if (dirSlug != null && element.path !== undefined) {
-            const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
+        //console.log(util.inspect(element, false, 10))
+        const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
+
+        if (dirSlug != null) {
             const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
             let saveDir = path.join(fetchDataDir, dirSlug);
             fs.mkdirSync(saveDir, { recursive: true });
 
             fs.writeFileSync(yamlPath, oneYaml, 'utf8');
             fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/${templateGroupName}_${templateDomainName}_index_template.pug`)
-            allData.push(element);
         }
+        allData.push(element);
     }
 
+    //console.log(util.inspect(allData, false, 10))
+    const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `teams.${lang}.yaml`);
-
-    if (allData.length) {
-        console.log(typeof allData);
-        const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
-        fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
-    } else {
-        console.log('No data for teams and juries, creating empty YAML');
-        fs.writeFileSync(yamlPath, '[]', 'utf8');
-    }
+    fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
 }
