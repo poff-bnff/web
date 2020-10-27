@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
 
-const rootDir =  path.join(__dirname, '..')
+const rootDir =  path.join(__dirname)
 const templatePath = path.join(rootDir, 'entu-ssg-template.yaml')
 const mappingsPath = path.join(rootDir, 'domain_specifics.yaml')
 const ssgConfPath = path.join(rootDir, 'entu-ssg.yaml')
