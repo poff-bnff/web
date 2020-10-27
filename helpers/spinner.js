@@ -1,3 +1,5 @@
+const readline = require('readline')
+
 const spinners = {
     dots: { interval: 80, frames: ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"] },
     dots2: { interval: 80, frames: ["⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷"] },
@@ -12,7 +14,6 @@ const spinners = {
     dots11: { interval: 100, frames: ["⠁", "⠂", "⠄", "⡀", "⢀", "⠠", "⠐", "⠈"] },
     dots12: { interval: 80, frames: ["⢀⠀", "⡀⠀", "⠄⠀", "⢂⠀", "⡂⠀", "⠅⠀", "⢃⠀", "⡃⠀", "⠍⠀", "⢋⠀", "⡋⠀", "⠍⠁", "⢋⠁", "⡋⠁", "⠍⠉", "⠋⠉", "⠋⠉", "⠉⠙", "⠉⠙", "⠉⠩", "⠈⢙", "⠈⡙", "⢈⠩", "⡀⢙", "⠄⡙", "⢂⠩", "⡂⢘", "⠅⡘", "⢃⠨", "⡃⢐", "⠍⡐", "⢋⠠", "⡋⢀", "⠍⡁", "⢋⠁", "⡋⠁", "⠍⠉", "⠋⠉", "⠋⠉", "⠉⠙", "⠉⠙", "⠉⠩", "⠈⢙", "⠈⡙", "⠈⠩", "⠀⢙", "⠀⡙", "⠀⠩", "⠀⢘", "⠀⡘", "⠀⠨", "⠀⢐", "⠀⡐", "⠀⠠", "⠀⢀", "⠀⡀"] },
     line: { interval: 130, frames: ["-", "\\", "|", "/"] },
-    line2: { interval: 100, frames: ["⠂", "-", "–", "—", "–", "-"] },
     pipe: { interval: 100, frames: ["┤", "┘", "┴", "└", "├", "┌", "┬", "┐"] },
     simpleDots: { interval: 400, frames: [".  ", ".. ", "...", "   "] },
     simpleDotsScrolling: { interval: 200, frames: [".  ", ".. ", "...", " ..", "  .", "   "] },
@@ -34,58 +35,63 @@ const spinners = {
     squareCorners: { interval: 180, frames: ["◰", "◳", "◲", "◱"] },
     circleQuarters: { interval: 120, frames: ["◴", "◷", "◶", "◵"] },
     circleHalves: { interval: 50, frames: ["◐", "◓", "◑", "◒"] },
-    squish: { interval: 100, frames: ["╫", "╪"] },
-    toggle: { interval: 250, frames: ["⊶", "⊷"] },
     toggle2: { interval: 80, frames: ["▫", "▪"] },
     toggle3: { interval: 120, frames: ["□", "■"] },
-    toggle4: { interval: 100, frames: ["■", "□", "▪", "▫"] },
-    toggle5: { interval: 100, frames: ["▮", "▯"] },
-    toggle6: { interval: 300, frames: ["ဝ", "၀"] },
     toggle7: { interval: 80, frames: ["⦾", "⦿"] },
     toggle8: { interval: 100, frames: ["◍", "◌"] },
     toggle9: { interval: 100, frames: ["◉", "◎"] },
     toggle10: { interval: 100, frames: ["㊂", "㊀", "㊁"] },
-    toggle11: { interval: 50, frames: ["⧇", "⧆"] },
-    toggle12: { interval: 120, frames: ["☗", "☖"] },
-    toggle13: { interval: 80, frames: ["=", "*", "-"] },
     arrow: { interval: 100, frames: ["←", "↖", "↑", "↗", "→", "↘", "↓", "↙"] },
-    arrow2: { interval: 80, frames: ["⬆️ ", "↗️ ", "➡️ ", "↘️ ", "⬇️ ", "↙️ ", "⬅️ ", "↖️ "] },
     arrow3: { interval: 120, frames: ["▹▹▹▹▹", "▸▹▹▹▹", "▹▸▹▹▹", "▹▹▸▹▹", "▹▹▹▸▹", "▹▹▹▹▸"] },
     bouncingBar: { interval: 80, frames: ["[    ]", "[=   ]", "[==  ]", "[=== ]", "[ ===]", "[  ==]", "[   =]", "[    ]", "[   =]", "[  ==]", "[ ===]", "[====]", "[=== ]", "[==  ]", "[=   ]"] },
     bouncingBall: { interval: 80, frames: ["( ●    )", "(  ●   )", "(   ●  )", "(    ● )", "(     ●)", "(    ● )", "(   ●  )", "(  ●   )", "( ●    )", "(●     )"] },
     bouncingBall2: { interval: 80, frames: ["(∙●    )", "(∙∙●   )", "(∙∙∙●  )", "( ∙∙∙● )", "(  ∙∙∙●)", "(   ∙∙●)", "(    ∙●)", "(    ●∙)", "(   ●∙∙)", "(  ●∙∙∙)", "( ●∙∙∙ )", "(●∙∙∙  )", "(●∙∙   )", "(●∙    )"] },
-    smiley: { interval: 200, frames: ["😄 ", "😝 "] },
-    monkey: { interval: 300, frames: ["🙈 ", "🙈 ", "🙉 ", "🙊 "] },
-    hearts: { interval: 100, frames: ["💛 ", "💙 ", "💜 ", "💚 ", "❤️ "] },
-    clock: { interval: 100, frames: ["🕛", "🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚"] },
-    earth: { interval: 180, frames: ["🌍 ", "🌎 ", "🌏 "] },
-    moon: { interval: 80, frames: ["🌑 ", "🌒 ", "🌓 ", "🌔 ", "🌕 ", "🌖 ", "🌗 ", "🌘 "] },
-    runner: { interval: 140, frames: ["🚶 ", "🏃 "] },
-    pong: { interval: 80, frames: ["▐⠂       ▌", "▐⠈       ▌", "▐ ⠂      ▌", "▐ ⠠      ▌", "▐  ⡀     ▌", "▐  ⠠     ▌", "▐   ⠂    ▌", "▐   ⠈    ▌", "▐    ⠂   ▌", "▐    ⠠   ▌", "▐     ⡀  ▌", "▐     ⠠  ▌", "▐      ⠂ ▌", "▐      ⠈ ▌", "▐       ⠂▌", "▐       ⠠▌", "▐       ⡀▌", "▐      ⠠ ▌", "▐      ⠂ ▌", "▐     ⠈  ▌", "▐     ⠂  ▌", "▐    ⠠   ▌", "▐    ⡀   ▌", "▐   ⠠    ▌", "▐   ⠂    ▌", "▐  ⠈     ▌", "▐  ⠂     ▌", "▐ ⠠      ▌", "▐ ⡀      ▌", "▐⠠       ▌"] },
     shark: { interval: 120, frames: ["▐|\\____________▌", "▐_|\\___________▌", "▐__|\\__________▌", "▐___|\\_________▌", "▐____|\\________▌", "▐_____|\\_______▌", "▐______|\\______▌", "▐_______|\\_____▌", "▐________|\\____▌", "▐_________|\\___▌", "▐__________|\\__▌", "▐___________|\\_▌", "▐____________|\\▌", "▐____________/|▌", "▐___________/|_▌", "▐__________/|__▌", "▐_________/|___▌", "▐________/|____▌", "▐_______/|_____▌", "▐______/|______▌", "▐_____/|_______▌", "▐____/|________▌", "▐___/|_________▌", "▐__/|__________▌", "▐_/|___________▌", "▐/|____________▌"] },
     dqpb: { interval: 100, frames: ["d", "q", "p", "b"] },
-    weather: { interval: 100, frames: ["☀️ ", "☀️ ", "☀️ ", "🌤 ", "⛅️ ", "🌥 ", "☁️ ", "🌧 ", "🌨 ", "🌧 ", "🌨 ", "🌧 ", "🌨 ", "⛈ ", "🌨 ", "🌧 ", "🌨 ", "☁️ ", "🌥 ", "⛅️ ", "🌤 ", "☀️ ", "☀️ "] },
-    christmas: { interval: 400, frames: ["🌲", "🎄"] },
-    grenade: { interval: 80, frames: ["،   ", "′   ", " ´ ", " ‾ ", "  ⸌", "  ⸊", "  |", "  ⁎", "  ⁕", " ෴ ", "  ⁓", "   ", "   ", "   "] },
     point: { interval: 125, frames: ["∙∙∙", "●∙∙", "∙●∙", "∙∙●", "∙∙∙"] },
-    layer: { interval: 350, frames: ["-", "=", "≡", "="] } };
+    layer: { interval: 350, frames: ["-", "=", "≡", "="] }
+};
 
 
-function* spinner(art) {
-    const symbols = spinners[art].frames
-    const interval = spinners[art].interval
+function* spinner(spinner_name) {
+    const symbols = spinners[spinner_name].frames
+    const interval = spinners[spinner_name].interval
     const t0 = Math.round(new Date().getTime() / interval)
     while (true) {
         yield symbols[(Math.round(new Date().getTime() / interval) - t0) % symbols.length]
     }
 }
-const generator = spinner('layer')
-const spin = () => generator.next().value
+const spinner_name = 'dqpb'
+const generator = spinner(spinner_name)
+const dx = spinners[spinner_name].frames[0].length * -1
+
+const spin = () => {
+    let interval = null
+    return {
+        start: () => {
+            process.stderr.write('\x1B[?25l') // Hide terminal cursor
+            process.stderr.write(generator.next().value)
+            interval = setInterval(() => {
+                readline.moveCursor(process.stderr, dx, 0)
+                process.stderr.write(generator.next().value)
+            }, spinners[spinner_name].interval)
+        },
+        stop: () => {
+            readline.moveCursor(process.stderr, dx, 0)
+            console.log(''.padStart(dx*-1, ' '))
+            clearInterval(interval)
+            process.stderr.write('\x1B[?25h') // Show terminal cursor
+        }
+    }
+}
+
+const my_spinner = spin()
+my_spinner.start()
+setTimeout(() => {
+    my_spinner.stop()
+}, 2000)
 
 
-// setInterval(() => {
-//     console.log(spin())
-// }, 100)
 
 
-exports.spin = spin
+exports.spin = spin()
