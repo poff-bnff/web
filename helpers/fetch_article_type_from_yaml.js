@@ -3,12 +3,15 @@ const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js')
 
-const sourceDir =  path.join(__dirname, '..', 'source')
-const ssgConfigPath = path.join(__dirname, '..', 'entu-ssg.yaml')
+const rootDir =  path.join(__dirname, '..')
+const ssgConfigPath = path.join(rootDir, 'entu-ssg.yaml')
 const SSG_CONF = yaml.safeLoad(fs.readFileSync(ssgConfigPath, 'utf8'))
+
+const sourceDir =  path.join(rootDir, 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const STRAPIDIR = '/uploads/'
 const STRAPIHOSTWITHDIR = `http://${process.env['StrapiHost']}${STRAPIDIR}`;
@@ -24,37 +27,17 @@ const mapping = {
 const modelName = mapping[DOMAIN]
 const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
 
-
-function fetchAllData() {
-    let newDirPath = path.join(sourceDir, "_fetchdir" )
-
-    for (const lang of SSG_CONF.locales) {
-        getData(newDirPath, lang, 1, 1, {
-                screenings: "/film/screenings.en.yaml",
-                articles: "/_fetchdir/articles.en.yaml",
-            },
-            getDataCB
-        )
-    }
-}
-
-function getData( dirPath, lang, writeIndexFile, showErrors, dataFrom, getDataCB ) {
+for (const lang of SSG_CONF.locales) {
     console.log(`Fetching ${DOMAIN} articles ${lang} data`)
 
-    getDataCB(
-        STRAPIDATA_ARTICLE,
-        dirPath,
-        lang,
-        writeIndexFile,
-        dataFrom,
-        showErrors
-    );
-}
-
-
-function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, generateYaml) {
     allData = [];
-    for (const strapiElement of data) {
+    const dirPath = path.join(sourceDir, "_fetchdir" )
+    const dataFrom = {
+        screenings: `/film/screenings.${lang}.yaml`,
+        articles: `/_fetchdir/articles.${lang}.yaml`,
+    }
+
+    for (const strapiElement of STRAPIDATA_ARTICLE) {
         const element = JSON.parse(JSON.stringify(strapiElement))
         let slugEn = element.slug_en || element.slug_et
         if (!slugEn) {
@@ -126,6 +109,3 @@ function getDataCB(data, dirPath, lang, writeIndexFile, dataFrom, showErrors, ge
         }
     }
 }
-
-
-fetchAllData();
