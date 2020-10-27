@@ -891,15 +891,6 @@ IndustryCategory: &IndustryCategory
     name: (text)
     description: (Rich text)
 
-IndustryProject: &IndustryProject
-    _path: /industry-projects
-    title_en: (text)
-    titleOriginal: (text)
-    countries:
-        - *Country
-    languages:
-        - *Language
-
 ProjectType: &ProjectType
     _path: /project-types
     type: (text)
@@ -910,6 +901,49 @@ ProjectStatus: &ProjectStatus
     status: (text)
     description: (Rich text)
 
+TeamCredentials: &TeamCredentials
+    rolePerson:
+        - *RolePerson
+    roleCompany:
+        - *RoleCompany
+
+IndustryProject: &IndustryProject
+    _path: /industry-projects
+    title_en: (text)
+    titleOriginal: (text)
+    countries:
+        - *Country
+    languages:
+        - *Language
+    project_types:
+        - *ProjectType
+    logline: (text)
+    project_statuses:
+        - *ProjectStatus
+    completionDate: (Datetime)
+    numOfSeasons: (Number)
+    numOfEpisodes: (Number)
+    episodeDuration: (Number)
+    broadcasters:
+        - *Organisation
+    plannedPremiere: (Date)
+    country_focus: *Country
+    teamCredentials: *TeamCredentials
+    budget: (Number)
+    financed: (Number)
+    attached_partners:
+        - *Organisation
+    lookingFor: (text)
+    synopsis: (Rich text)
+    directorsNote: (Rich text)
+    contactName: (text)
+    contactCompany: *Organisation
+    contactAddess: (text)
+    contactEmail: (Email)
+    contactWeb: (text)
+    images:
+        - *StrapiMedia
+    clipUrl: (text)
 
 # Supporters
 SupPoff: &SupPoff
