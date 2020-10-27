@@ -35,8 +35,7 @@ block content
                             img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
-                            .nupp
-                                p(id= cassette.id+'nupp' style={color: 'red', display:'none'} onclick=`saveFilmAsFavourite(${cassette.id});return false`) +
+                            p(id= cassette.id+'nupp' style={color: 'red', display:'none'})
                     .card_film_info
                         .str_info_grid_3
                             if cassette.films && cassette.films.length

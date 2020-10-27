@@ -1,4 +1,6 @@
 if (window.location.hash) {
+
+
     const [
         access_token,
         id_token,
@@ -6,8 +8,22 @@ if (window.location.hash) {
         token_expires,
     ] = window.location.hash.substr(1).split('&')
 
+    if ((window.location.hash).includes('Already+found+an+entry+for+username')) {
+        let errorMessage = (window.location.hash).split('+')
+        for (item of errorMessage) {
+            console.log(item)
 
-    if (access_token && id_token) {
+            if (item.includes('google') || item.includes('facebook') || item.includes('eventival')) {
+                item = item.split('_')
+                let provider = item[0]
+                console.log(provider)
+                providerLogin(provider)
+            }
+        }
+        console.log(errorMessage)
+    }
+
+    else if (access_token && id_token) {
         storeAuthentication(access_token.split('=')[1], id_token.split('=')[1])
         window.location.hash = ''
     }
@@ -104,15 +120,16 @@ function redirectToPreLoginUrl() {
 
 
 async function providerLogin(provider) {
-    console.log('providerLogin' + provider);
+    console.log('providerLogin ' + provider);
+
+    window.open(`https://api.poff.ee/auth/${provider}`, '_self')
 
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
     }
 
-    let providers = ['facebook', 'google', 'eventival']
-    let response = await fetch(`https://api.poff.ee/auth/${providers[provider]}`, requestOptions)
+    let response = await fetch(`https://api.poff.ee/auth/${provider}`, requestOptions)
 
     let response2 = await response.json()
     console.log(response2)
