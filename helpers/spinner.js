@@ -69,29 +69,23 @@ const spin = () => {
     let interval = null
     return {
         start: () => {
-            process.stderr.write('\x1B[?25l') // Hide terminal cursor
-            process.stderr.write(generator.next().value)
+            readline.moveCursor(process.stdout, 1, 0)
+            process.stdout.write('\x1B[?25l') // Hide terminal cursor
+            process.stdout.write(generator.next().value)
             interval = setInterval(() => {
-                readline.moveCursor(process.stderr, dx, 0)
-                process.stderr.write(generator.next().value)
+                readline.moveCursor(process.stdout, dx, 0)
+                process.stdout.write(generator.next().value)
             }, spinners[spinner_name].interval)
         },
         stop: () => {
-            readline.moveCursor(process.stderr, dx, 0)
-            console.log(''.padStart(dx*-1, ' '))
+            readline.moveCursor(process.stdout, dx, 0)
+            process.stdout.write(''.padStart(dx*-1, ' '))
+            readline.moveCursor(process.stdout, dx, 0)
             clearInterval(interval)
-            process.stderr.write('\x1B[?25h') // Show terminal cursor
+            process.stdout.write('\x1B[?25h') // Show terminal cursor
+            readline.moveCursor(process.stdout, -1, 0)
         }
     }
 }
-
-const my_spinner = spin()
-my_spinner.start()
-setTimeout(() => {
-    my_spinner.stop()
-}, 2000)
-
-
-
 
 exports.spin = spin()

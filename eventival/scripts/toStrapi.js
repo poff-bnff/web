@@ -3,6 +3,8 @@ const fs = require('fs')
 const path = require('path')
 
 const { strapiQuery, getModel } = require("../../helpers/strapiQuery.js")
+const { timer } = require("../../helpers/timer")
+timer.start(__filename)
 
 const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
@@ -329,6 +331,7 @@ const createMissingFilmsAndScreenings = async () => {
     }
 
     let strapi_films = await getModel('Film')
+
     for (const e_film of EVENTIVAL_FILMS) {
         let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
         let is_film_cassette = (e_film.film_info
@@ -343,6 +346,7 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiFilm(e_film.ids.system_id.toString())
         }
     }
+    // console.log('took', timer.check(__filename, 'sec').interval);
 
     let strapi_cassettes = await getModel('Cassette')
     for (const e_film of EVENTIVAL_FILMS) {
@@ -358,7 +362,8 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiCassette(e_film.ids.system_id.toString())
         }
     }
-    console.log([ 'Shortsi alam' ].includes('Shortsi alam'))
+    // console.log('took', timer.check(__filename, 'sec').interval);
+
     let strapi_screenings = await getModel('Screening')
     for (const e_screening of EVENTIVAL_SCREENINGS) {
         let strapi_screening = strapi_screenings.filter(s_screening => e_screening.id.toString() === s_screening.remoteId)[0] || false
@@ -367,6 +372,7 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiScreening(e_screening.id.toString())
         }
     }
+    // console.log('took', timer.check(__filename, 'sec').interval);
 }
 
 const remapEventival = async () => {
@@ -801,18 +807,20 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
+    const t0 = new Date().getTime()
     console.log('Check for missing films and screenings')
     await createMissingFilmsAndScreenings()
     console.log('update Strapi')
     await updateStrapi()
-    // console.log('| remap')
-    // await remapEventival()
-    // console.log('| submit films')
-    // await submitFilms()
-    // console.log('| submit cassettes')
-    // await submitCassettes()
-    // console.log('| submit screenings')
-    // await submitScreenings()
+    console.log('| remap')
+    await remapEventival()
+    console.log('| submit films')
+    await submitFilms()
+    console.log('| submit cassettes')
+    await submitCassettes()
+    console.log('| submit screenings')
+    await submitScreenings()
+    console.log('Eventival to Strapi took ' + timer.check(__filename, 'sec').total)
 }
 
 main()
