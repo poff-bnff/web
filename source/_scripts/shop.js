@@ -2,30 +2,39 @@
 
 function BuyProduct(categoryId) {
 
-    console.log("ostad passi kategoorias " + categoryId)
+    var feedback = document.getElementById("feedback")
+    if(paymentType === "valimata"){
+        feedback.innerHTML = "Palun vali makseviis"
+    }else{
+        console.log("ostad passi kategoorias " + categoryId)
 
-    var myHeaders = new Headers();
-    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
+        var myHeaders = new Headers();
+        myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
-    var requestOptions = {
-        method: 'PUT',
-        headers: myHeaders,
-        redirect: 'follow'
-    }
-
-    //body payment type
-
-    fetch('https://api.poff.ee/buy/'+ categoryId, requestOptions).then(function (response) {
-        if (response.ok) {
-            return response.json();
+        var requestOptions = {
+            "method": 'PUT',
+            "headers": myHeaders,
+            "redirect": 'follow',
+            "body": JSON.stringify({"paymentMethodId": paymentType}),
+            "content-type": 'application/json'
         }
-        return Promise.reject(response);
-    }).then(function (data) {
-        console.log(data);
+        console.log(requestOptions)
 
-    }).catch(function (error) {
-        console.warn(error);
-    });
+        fetch('https://api.poff.ee/buy/'+ categoryId, requestOptions).then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            return Promise.reject(response);
+        }).then(function (data) {
+            console.log(data);
+            window.open(data.url, '_self')
+
+
+        }).catch(function (error) {
+            console.warn(error);
+        });
+
+    }
 
 }
 
@@ -33,6 +42,7 @@ var paymentType = "valimata"
 
 function SelectPaymentType(id){
     paymentType= id
+
     console.log("sinu valitud makseviis on " + paymentType)
 }
 
@@ -43,6 +53,7 @@ function Buy(productCode){
 function GetPaymentLinks() {
 
     var links = document.getElementById("paymentLinks")
+    var paybutton = document.getElementById("paybutton")
 
     var myHeaders = new Headers();
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
@@ -66,19 +77,18 @@ function GetPaymentLinks() {
         //pangalingid
         for (var i = 0; i < data.banklinks.length; i++){
             if (data.banklinks[i].country === "ee"){
-                var button = '<img src='+ data.banklinks[i].logo +' onClick=SelectPaymentType("'+data.banklinks[i].id+'") >'
-                console.log(data.banklinks[i].logo)
+                var button = '<label><input type="radio" name="test" value="'+data.banklinks[i].id+'"><img src='+ data.banklinks[i].logo +' onClick=SelectPaymentType("'+data.banklinks[i].id+'") ></label>'
                 bankInfo += button
             }
         }
         //credist cards
         for (var i = 0; i < data.cards.length; i++){
-            var button = '<img src='+ data.cards[i].logo +' onClick=SelectPaymentType("'+data.cards[i].id+'") >'
-            console.log(data.cards[i].logo)
+            var button = '<label><input type="radio" name="test" value="'+data.cards[i].id+'"><img src='+ data.cards[i].logo +' onClick=SelectPaymentType("'+data.cards[i].id+'") ></label>'
             bankInfo += button
 
         }
         links.innerHTML = bankInfo
+        paybutton.style.display="block"
 
     }).catch(function (error) {
         console.warn(error);
