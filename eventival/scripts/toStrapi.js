@@ -296,11 +296,11 @@ const updateStrapi = async () => {
         }
     }
 
-    console.log('\n|–– persons')
+    timer.log(__filename, '–– persons')
     await updateStrapiPersons()
-    console.log('\n|–– roles')
+    timer.log(__filename, '–– roles')
     await updateStrapiRoles()
-    console.log('\n|–– credentials')
+    timer.log(__filename, '–– credentials')
     await updateFilmCredentials()
 }
 
@@ -346,7 +346,6 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiFilm(e_film.ids.system_id.toString())
         }
     }
-    // console.log('took', timer.check(__filename, 'sec').interval);
 
     let strapi_cassettes = await getModel('Cassette')
     for (const e_film of EVENTIVAL_FILMS) {
@@ -362,7 +361,6 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiCassette(e_film.ids.system_id.toString())
         }
     }
-    // console.log('took', timer.check(__filename, 'sec').interval);
 
     let strapi_screenings = await getModel('Screening')
     for (const e_screening of EVENTIVAL_SCREENINGS) {
@@ -372,7 +370,6 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiScreening(e_screening.id.toString())
         }
     }
-    // console.log('took', timer.check(__filename, 'sec').interval);
 }
 
 const remapEventival = async () => {
@@ -711,18 +708,18 @@ const remapEventival = async () => {
 
 
 const submitFilms = async () => {
+    const strapi_films = await getModel('Film')
     async function submitFilm(e_film) {
         let options = {
             headers: { 'Content-Type': 'application/json' }
         }
 
-        const strapiFilms = await getModel('Film')
-        const strapiFilm = strapiFilms.filter((film) => {
+        const strapi_film = strapi_films.filter((film) => {
             return film.remoteId === e_film.remoteId
         })
 
-        if (strapiFilm.length) {
-            e_film['id'] = strapiFilm[0].id
+        if (strapi_film.length) {
+            e_film['id'] = strapi_film[0].id
             options.path = FILMS_API + '/' + e_film.id
             options.method = 'PUT'
         } else {
@@ -737,6 +734,7 @@ const submitFilms = async () => {
     for (const e_film of EVENTIVAL_REMAPPED['E_FILMS']) {
         const film_from_strapi = await submitFilm(e_film)
         from_strapi.push(film_from_strapi)
+        strapi_films.push(film_from_strapi)
     }
     return from_strapi
 }
@@ -807,20 +805,19 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    const t0 = new Date().getTime()
-    console.log('Check for missing films and screenings')
+    timer.log(__filename, 'Check for missing films and screenings')
     await createMissingFilmsAndScreenings()
-    console.log('update Strapi')
+    timer.log(__filename, 'update Strapi')
     await updateStrapi()
-    console.log('| remap')
+    timer.log(__filename, 'remap')
     await remapEventival()
-    console.log('| submit films')
+    timer.log(__filename, 'submit films')
     await submitFilms()
-    console.log('| submit cassettes')
+    timer.log(__filename, 'submit cassettes')
     await submitCassettes()
-    console.log('| submit screenings')
+    timer.log(__filename, 'submit screenings')
     await submitScreenings()
-    console.log('Eventival to Strapi took ' + timer.check(__filename, 'sec').total)
+    timer.log(__filename, 'Eventival to Strapi finished')
 }
 
 main()
