@@ -5,14 +5,30 @@ include /_templates/mixins.pug
 block content
 
     if self.data.industryprojects
-
+        br
+        br
+        br
+        br
+        br
+        br
+        br
         each project in self.data.industryprojects
 
             if project.title && project.title.length > 1
                 p.dark_1= project.title
 
+                if project.images && project.images.length
+                    each image in project.images
+                        img(src=`/assets/img/dynamic/img_industry_projects/${image.hash}${image.ext}`)
+                    else
+                        img(src='/assets/img/static/placeholder_hd_1.jpg')
+
+
                 if project.logline
                     p.dark_1= project.logline
+
+                if project.lookingFor
+                    p.dark_1= project.lookingFor
 
                 if project.synopsis && typeof project.synopsis === 'string'
                     p.dark_1
@@ -29,3 +45,7 @@ block content
                         p.dark_1= project.type
                     if project.contactCompany.name
                         p.dark_1= project.contactName
+
+
+                if project.clipUrl
+                    p.dark_1= project.clipUrl
