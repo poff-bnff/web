@@ -1,5 +1,5 @@
 var favFilms
-var favouritePages = ['http://localhost:4000/filmid/', 'http://localhost:4000/favourite']
+var favouritePages = ['http://localhost:4000/favourite', 'http://localhost:4000/filmid/', 'http://localhost:4000/pohivoistlusprogramm/', ]
 
 
 document.addEventListener("DOMContentLoaded", loadMyFavFilms(), false);
@@ -67,6 +67,7 @@ function showFavFilms() {
     var filmCards = document.getElementsByClassName('card_film')
 
 
+
     for (var i = 0; i < filmCards.length; i++) {
         var filmId = filmCards[i].id
 
@@ -76,7 +77,7 @@ function showFavFilms() {
         else if (window.location.href === 'http://localhost:4000/favourite' && favFilms.length === 0) {
             document.getElementById('noFavouritesMessage').style.display = 'block'
         }
-        if (window.location.href === 'http://localhost:4000/filmid/') {
+        if (window.location.href !== 'http://localhost:4000/favourite') {
             document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
             if (favFilms.includes(filmId)) {
                 console.log('fav');
@@ -89,7 +90,7 @@ function showFavFilms() {
 function saveFilmAsFavourite(movieId) {
     console.log('saveFilmAsFavourite')
 
-    var addBtnfilmCard = document.getElementById(movieId + 'nupp')
+    var addBtnfilmCard = document.getElementById('nupp')
     console.log(addBtnfilmCard);
 
     if (window.location.href === 'http://localhost:4000/filmid') {

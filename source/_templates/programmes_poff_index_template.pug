@@ -151,7 +151,7 @@ block content
 
                     if cassette.films && cassette.films[0] && showFilms
 
-                        a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                        a.card_film(id= cassette.id href= `/${lang_path}film/${cassette.slug}`)
                             .container_frame_16_9
                                 if cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
                                     img.container_contents_16_9(src=`https://assets.poff.ee/img/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title ? cassette.title : '')
@@ -163,9 +163,11 @@ block content
                                 if cassette.films.length > 1
                                     if cassette.title
                                         h3.film_title_locale.dark_1= cassette.title
+                                            p(id= cassette.id+'nupp' style={color: 'red', display:'block'})
                                 else
                                     if cassette.films.length === 1
                                         h3.film_title_locale.dark_1= cassette.films[0].title
+                                                p(id= cassette.id+'nupp' style={color: 'red', display:'block'})
 
                             .card_film_info
                                 each p, locale in self.otherLocalePaths

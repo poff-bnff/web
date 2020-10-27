@@ -15,7 +15,10 @@ var city = document.getElementById("gds-cr-one");
 function validateForm() {
 
     var errors = []
+
+    if (document.getElementById('profileSent')){
     document.getElementById('profileSent').style.display = 'none'
+    }
 
 
     if (!validateEmail()) {
