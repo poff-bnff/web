@@ -54,20 +54,26 @@ for (const ix in languages) {
         element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
         element.path = element.slug;
 
-        const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
-
-        if (dirSlug != null) {
+        if (dirSlug != null && element.path !== undefined) {
+            const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
             const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
             let saveDir = path.join(fetchDataDir, dirSlug);
             fs.mkdirSync(saveDir, { recursive: true });
 
             fs.writeFileSync(yamlPath, oneYaml, 'utf8');
             fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/${templateGroupName}_${templateDomainName}_index_template.pug`)
+            allData.push(element);
         }
-    allData.push(element);
     }
 
-    const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `teams.${lang}.yaml`);
-    fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+
+    if (allData.length) {
+        console.log(typeof allData);
+        const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
+        fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+    } else {
+        console.log('No data for teams and juries, creating empty YAML');
+        fs.writeFileSync(yamlPath, '[]', 'utf8');
+    }
 }
