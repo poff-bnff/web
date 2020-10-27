@@ -11,8 +11,6 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const template = yaml.safeLoad(fs.readFileSync(templatePath, 'utf8'))
 const mappings = yaml.safeLoad(fs.readFileSync(mappingsPath, 'utf8'))
 
-console.log({domain: DOMAIN, template: template, locales: mappings.locales[DOMAIN], default: mappings.defaultLocale[DOMAIN]});
-
 template.locales = mappings.locales[DOMAIN]
 template.defaultLocale = mappings.defaultLocale[DOMAIN]
 
