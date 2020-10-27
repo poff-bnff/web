@@ -78,20 +78,20 @@ function GetPaymentLinks() {
         //pangalingid
         for (var i = 0; i < data.banklinks.length; i++){
             if (data.banklinks[i].country === "ee"){
-                var button = '<label><input type="radio" name="payment" value="'+data.banklinks[i].id+'"><img src='+ data.banklinks[i].logo +' onClick=SelectPaymentType("'+data.banklinks[i].id+'") ></label>'
+                var button = '<label><input class="paymentButton" type="radio" name="payment" value="'+data.banklinks[i].id+'"><img src='+ data.banklinks[i].logo +' onClick=SelectPaymentType("'+data.banklinks[i].id+'") ></label>'
                 bankInfo += button
             }
         }
 
         //credist cards
         for (var i = 0; i < data.cards.length; i++){
-            var button = '<label><input type="radio" name="payment" value="'+data.cards[i].id+'"><img src='+ data.cards[i].logo +' onClick=SelectPaymentType("'+data.cards[i].id+'") ></label>'
+            var button = '<label><input class="paymentButton" type="radio" name="payment" value="'+data.cards[i].id+'"><img src='+ data.cards[i].logo +' onClick=SelectPaymentType("'+data.cards[i].id+'") ></label>'
             bankInfo += button
         }
-        
+
         //other
         for (var i = 0; i < data.other.length; i++){
-            var button = '<label><input type="radio" name="payment" value="'+data.other[i].id+'"><img src='+ data.other[i].logo +' onClick=SelectPaymentType("'+data.other[i].id+'") ></label>'
+            var button = '<label><input class="paymentButton" "type="radio" name="payment" value="'+data.other[i].id+'"><img src='+ data.other[i].logo +' onClick=SelectPaymentType("'+data.other[i].id+'") ></label>'
             bankInfo += button
         }
         links.innerHTML = bankInfo
