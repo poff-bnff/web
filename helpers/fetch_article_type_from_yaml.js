@@ -4,8 +4,8 @@ const path = require('path');
 const rueten = require('./rueten.js')
 
 const rootDir =  path.join(__dirname, '..')
-const ssgConfigPath = path.join(rootDir, 'entu-ssg.yaml')
-const SSG_CONF = yaml.safeLoad(fs.readFileSync(ssgConfigPath, 'utf8'))
+const domainSpecificsPath = path.join(rootDir, 'domain_specifics.yaml')
+const DOMAIN_SPECIFICS = yaml.safeLoad(fs.readFileSync(domainSpecificsPath, 'utf8'))
 
 const sourceDir =  path.join(rootDir, 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
@@ -17,17 +17,12 @@ const STRAPIDIR = '/uploads/'
 const STRAPIHOSTWITHDIR = `http://${process.env['StrapiHost']}${STRAPIDIR}`;
 const DEFAULTTEMPLATENAME = 'news'
 
-const mapping = {
-    'poff.ee': 'POFFiArticle',
-    'justfilm.ee': 'JustFilmiArticle',
-    'kinoff.poff.ee': 'KinoffiArticle',
-    'industry.poff.ee': 'IndustryArticle',
-    'shorts.poff.ee': 'ShortsiArticle'
-}
+// console.log(DOMAIN_SPECIFICS)
+const mapping = DOMAIN_SPECIFICS.article
 const modelName = mapping[DOMAIN]
 const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
-
-for (const lang of SSG_CONF.locales) {
+const languages = DOMAIN_SPECIFICS.locales[DOMAIN]
+for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} articles ${lang} data`)
 
     allData = [];
