@@ -6,7 +6,7 @@ header
         //- Defining locale path for multilingual support
         - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
         a(href=`/${lang_path}`)
-            img.logo_img(alt='KINOFF' data-src='/assets/img/static/poff24_logo_dark4_o.svg' src='/assets/img/static/poff24_logo_dark4_o.svg')
+            img.logo_img(alt='KINOFF' data-src='/assets/img/static/kinoff_logo_dark4.svg' src='/assets/img/static/kinoff_logo_dark4.svg')
     input#main_menu_toggle.main_menu_toggle(type='checkbox')
 
     - var articleMenuItemDomain = 'kinoffi_article'
@@ -21,14 +21,18 @@ header
             li
                 nav.org_menu
                     span.org_item
-                        a(href='https://industry.poff.ee')
-                            | Industry@Tallinn
+                        a(href='https://poff.ee')
+                            | PÖFF
                     span.org_item
                         a(href='https://justfilm.ee')
                             | Just Film
                     span.org_item
                         a(href='https://shorts.poff.ee')
                             | PÖFF Shorts
+                    span.org_item
+                        a(href='https://industry.poff.ee')
+                            | Industry@Tallinn
+
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                 if mainMenuItem.subMenuItem && mainMenuItem.name
                     li.dropdown
