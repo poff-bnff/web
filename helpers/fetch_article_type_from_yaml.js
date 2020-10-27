@@ -4,6 +4,8 @@ const path = require('path');
 const rueten = require('./rueten.js')
 
 const sourceDir =  path.join(__dirname, '..', 'source')
+const ssgConfigPath = path.join(__dirname, '..', 'entu-ssg.yaml')
+const SSG_CONF = yaml.safeLoad(fs.readFileSync(ssgConfigPath, 'utf8'))
 const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
@@ -26,48 +28,17 @@ const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
 function fetchAllData() {
     let newDirPath = path.join(sourceDir, "_fetchdir" )
 
-    // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(newDirPath,"en",1,1,{
-            screenings: "/film/screenings.en.yaml",
-            articles: "/_fetchdir/articles.en.yaml",
-        },
-        getDataCB
-    );
-    getData(
-        newDirPath,
-        "et",
-        0,
-        0,
-        {
-            screenings: "/film/screenings.et.yaml",
-            articles: "/_fetchdir/articles.et.yaml",
-        },
-        getDataCB
-    );
-    getData(
-        newDirPath,
-        "ru",
-        0,
-        0,
-        {
-            screenings: "/film/screenings.ru.yaml",
-            articles: "/_fetchdir/articles.ru.yaml",
-        },
-        getDataCB
-    );
+    for (const lang of SSG_CONF.locales) {
+        getData(newDirPath, lang, 1, 1, {
+                screenings: "/film/screenings.en.yaml",
+                articles: "/_fetchdir/articles.en.yaml",
+            },
+            getDataCB
+        )
+    }
 }
 
-function getData(
-    dirPath,
-    lang,
-    writeIndexFile,
-    showErrors,
-    dataFrom,
-    getDataCB
-) {
-    // fs.mkdirSync(dirPath, { recursive: true })
-    // console.log(dirPath)
-
+function getData( dirPath, lang, writeIndexFile, showErrors, dataFrom, getDataCB ) {
     console.log(`Fetching ${DOMAIN} articles ${lang} data`)
 
     getDataCB(
