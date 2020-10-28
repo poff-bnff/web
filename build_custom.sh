@@ -72,6 +72,8 @@ build()
     SECONDS=0
     export DOMAIN=$site_name
 
+    node ./initialise_entu_ssg.js
+
     printf "\n----------\nBuilding $DOMAIN \n"
     if [ $fetch_number -eq 1 ]
     then

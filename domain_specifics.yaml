@@ -1,0 +1,44 @@
+---
+domain:
+  poff.ee: poff
+  justfilm.ee: justfilm
+  kinoff.poff.ee: kinoff
+  industry.poff.ee: industry
+  shorts.poff.ee: shorts
+article:
+  poff.ee: POFFiArticle
+  justfilm.ee: JustFilmiArticle
+  kinoff.poff.ee: KinoffiArticle
+  industry.poff.ee: IndustryArticle
+  shorts.poff.ee: ShortsiArticle
+footer:
+  poff.ee: POFFiFooter
+  justfilm.ee: JustFilmFooter
+  kinoff.poff.ee: KinoffiFooter
+  industry.poff.ee: IndustryFooter
+  shorts.poff.ee: ShortsiFooter
+locales:
+  poff.ee:
+  - et
+  - en
+  - ru
+  justfilm.ee:
+  - et
+  - en
+  - ru
+  kinoff.poff.ee:
+  - et
+  - en
+  - ru
+  industry.poff.ee:
+  - en
+  shorts.poff.ee:
+  - et
+  - en
+defaultLocale:
+  poff.ee: et
+  justfilm.ee: et
+  kinoff.poff.ee: et
+  industry.poff.ee: en
+  shorts.poff.ee: et
+

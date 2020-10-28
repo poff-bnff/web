@@ -11,6 +11,9 @@ echo 'STARTING BUILD'
 [ -d "assets/img/dynamic" ] && rm -r assets/img/dynamic/*
 [ -d "assets/xml" ] && rm -r assets/xml/*
 
+echo initialise entu_ssg.yaml
+node ./initialise_entu_ssg.js
+
 echo 'Fetch strapiData.yaml from Strapi'
 node ./helpers/a_fetch.js
 
