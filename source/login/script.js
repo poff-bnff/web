@@ -163,3 +163,8 @@ async function showMergeInfo() {
     console.log(await response.json())
 
 }
+
+
+function directToSignup() {
+    window.open('http://localhost:4000/signup', '_self')
+}

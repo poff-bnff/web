@@ -1,22 +1,19 @@
 
-if (localStorage.getItem('ACCESS_TOKEN') && (document.getElementById("directToLoginButton"))){
-document.getElementById("directToLoginButton").style.display = 'none'
-document.getElementById("buybutton").style.display = 'block'
-
+if (localStorage.getItem('ACCESS_TOKEN') && (document.getElementById("directToLoginButton"))) {
+        document.getElementById("directToLoginButton").style.display = 'none'
+        document.getElementById("buybutton").style.display = 'block'
 }
 
 
-function directToLogin() {
-    window.open('http://localhost:4000/login','_self')
-}
+
 
 
 function BuyProduct(categoryId) {
 
     var feedback = document.getElementById("feedback")
-    if(paymentType === "valimata"){
+    if (paymentType === "valimata") {
         feedback.innerHTML = "Palun vali makseviis"
-    }else{
+    } else {
         console.log("ostad passi kategoorias " + categoryId)
 
         var myHeaders = new Headers();
@@ -26,12 +23,12 @@ function BuyProduct(categoryId) {
             "method": 'PUT',
             "headers": myHeaders,
             "redirect": 'follow',
-            "body": JSON.stringify({"paymentMethodId": paymentType}),
+            "body": JSON.stringify({ "paymentMethodId": paymentType }),
             "content-type": 'application/json'
         }
         console.log(requestOptions)
 
-        fetch('https://api.poff.ee/buy/'+ categoryId, requestOptions).then(function (response) {
+        fetch('https://api.poff.ee/buy/' + categoryId, requestOptions).then(function (response) {
             if (response.ok) {
                 return response.json();
             }
@@ -51,14 +48,14 @@ function BuyProduct(categoryId) {
 
 var paymentType = "valimata"
 
-function SelectPaymentType(id){
-    paymentType= id
+function SelectPaymentType(id) {
+    paymentType = id
 
     console.log("sinu valitud makseviis on " + paymentType)
 }
 
-function Buy(productCode){
-    console.log("ostad toote "+productCode+" ja maksad " + paymentType)
+function Buy(productCode) {
+    console.log("ostad toote " + productCode + " ja maksad " + paymentType)
 }
 
 function GetPaymentLinks() {
@@ -84,37 +81,55 @@ function GetPaymentLinks() {
         return Promise.reject(response);
     }).then(function (data) {
         console.log(data);
-        var bankInfo= ""
+        var bankInfo = ""
 
         //pangalingid
-        for (var i = 0; i < data.banklinks.length; i++){
-            if (data.banklinks[i].country === "ee"){
-                var button = '<label><input type="radio" name="payment" value="'+data.banklinks[i].id+'"><img src='+ data.banklinks[i].logo +' onClick=SelectPaymentType("'+data.banklinks[i].id+'") ></label>'
+        for (var i = 0; i < data.banklinks.length; i++) {
+            if (data.banklinks[i].country === "ee") {
+                var button = '<label><input type="radio" name="payment" value="' + data.banklinks[i].id + '"><img src=' + data.banklinks[i].logo + ' onClick=SelectPaymentType("' + data.banklinks[i].id + '") ></label>'
                 bankInfo += button
             }
         }
 
         //credist cards
-        for (var i = 0; i < data.cards.length; i++){
-            var button = '<label><input type="radio" name="payment" value="'+data.cards[i].id+'"><img src='+ data.cards[i].logo +' onClick=SelectPaymentType("'+data.cards[i].id+'") ></label>'
+        for (var i = 0; i < data.cards.length; i++) {
+            var button = '<label><input type="radio" name="payment" value="' + data.cards[i].id + '"><img src=' + data.cards[i].logo + ' onClick=SelectPaymentType("' + data.cards[i].id + '") ></label>'
             bankInfo += button
         }
 
         //other
-        for (var i = 0; i < data.other.length; i++){
-            var button = '<label><input type="radio" name="payment" value="'+data.other[i].id+'"><img src='+ data.other[i].logo +' onClick=SelectPaymentType("'+data.other[i].id+'") ></label>'
+        for (var i = 0; i < data.other.length; i++) {
+            var button = '<label><input type="radio" name="payment" value="' + data.other[i].id + '"><img src=' + data.other[i].logo + ' onClick=SelectPaymentType("' + data.other[i].id + '") ></label>'
             bankInfo += button
         }
         links.innerHTML = bankInfo
-        paybutton.style.display="block"
+        paybutton.style.display = "block"
 
     }).catch(function (error) {
         console.warn(error);
     });
-
 }
 
+function checkIfPasswordBuyer(){
+    if (userProfile.picture && userProfile.profile_filled){
+        console.log(true)
+        GetPaymentLinks()
+    } else if (userProfile.profile_filled) {
+        document.getElementById('buybutton').style.display = 'none'
+        document.getElementById('directToaddPicture').style.display = 'block'
+    } else {
+        document.getElementById('buybutton').style.display = 'none'
+        document.getElementById('directToFillProfile').style.display = 'block'
+    }
+}
 
+function directToLogin() {
+    window.open('http://localhost:4000/login', '_self')
+}
+
+function directToUserProfile() {
+    window.open('http://localhost:4000/userprofile', '_self')
+}
 
 
 

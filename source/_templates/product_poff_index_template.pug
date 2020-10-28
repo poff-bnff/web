@@ -35,8 +35,10 @@ block content
             br
             br
             div.payment
-                button#buybutton.btn.btn-primary(onclick=`GetPaymentLinks()`) OSTA
+                button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`) OSTA
                 button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
+                button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
+                button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
                 div#paymentLinks
                 br
                 div.dark_1#feedback
@@ -45,6 +47,8 @@ block content
                 br
     style.
         #buybutton {display: none}
+        #directToaddPicture {display:none}
+        #directToFillProfile {display:none}
         #paybutton {display: none}
         [type=radio]{
             position: absolute;
