@@ -57,8 +57,17 @@ node ./helpers/fetch_six_film_block_from_yaml.js
 echo 'fetch_screenings_from_yaml'
 node ./helpers/fetch_screenings_from_yaml.js
 
+echo 'fetch_shops_from_yaml'
+node ./helpers/fetch_shops_from_yaml.js
+
 echo 'assets/xml'
 node ./helpers/xml.js
+
+echo 'fetch_industry_person_from_yaml'
+node ./helpers/fetch_industry_person_from_yaml.js
+
+echo 'fetch_industry_project_from_yaml'
+node ./helpers/fetch_industry_project_from_yaml.js
 
 
 printf '\n----------        FINISHED creating separate YAML files      ----------\n'
@@ -73,6 +82,9 @@ node ./helpers/download_organisations_img.js
 node ./helpers/download_trioblock_img.js
 node ./helpers/download_supporters_page_img.js
 node ./helpers/download_programmes_img.js
+node ./helpers/download_shops_img.js
+node ./helpers/download_industry_person_img.js
+node ./helpers/download_industry_project_img.js
 # node ./helpers/download_casettes_and_films_img.js
 printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 

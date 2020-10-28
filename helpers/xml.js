@@ -4,8 +4,19 @@ const path = require('path')
 const { create } = require('xmlbuilder2');
 const sourceDir = path.join(__dirname, '..', 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
+const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const assetsDirXML = path.join(sourceDir, '..', 'assets', 'xml')
 const XMLpath = path.join(assetsDirXML, 'xml.xml')
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const STRAPIDATA_DOMAIN = STRAPIDATA['Domain']
+
+const domainMapping = {
+    'poff.ee': 'https://poff.ee/',
+    'justfilm.ee': 'https://justfilm.ee/',
+    'kinoff.poff.ee': 'https://kinoff.ee/',
+    'industry.poff.ee': 'https://industry.poff.ee/',
+    'shorts.poff.ee': 'http://shorts.poff.ee/'
+}
 
 var languages = {'et': 'EST', 'ru': 'RUS', 'en': 'ENG'}
 
@@ -37,6 +48,32 @@ for (const screeningIx in SCREENINGS) {
             if (synopsis !== undefined) {
                 concert[`description${langs[lang]}`] = synopsis
             }
+
+            let slug = undefined
+
+            if (screening.cassette && screening.cassette[`slug_${lang}`]) {
+                slug = screening.cassette[`slug_${lang}`]
+            }
+
+
+            if(typeof slug !== 'undefined') {
+                if (screening.cassette.orderedFilms && screening.cassette.orderedFilms.length) {
+                    for (const filmIx in screening.cassette.orderedFilms) {
+                        let film = screening.cassette.orderedFilms[filmIx].film
+
+                        if (film.festival_editions && film.festival_editions[0]) {
+                            var festivalEdDomain = STRAPIDATA_DOMAIN.filter( (a) => { return film.festival_editions[0].domain === a.id })[0].url
+                            if (festivalEdDomain) {
+
+                                concert[`urls${langs[lang]}`] = `${domainMapping[festivalEdDomain]}${lang === 'et' ? '' : `${lang}/`}film/${slug}`
+                            }
+                        }
+                        // let domainUrl = STRAPIDATA_DOMAIN.filter( (a) => { return oneFilm.id === a.id })
+                    }
+                }
+            }
+
+
         }
 
 
@@ -59,6 +96,7 @@ for (const screeningIx in SCREENINGS) {
                 }
             }
         }
+
 
 
         if (concert) {

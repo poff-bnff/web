@@ -174,33 +174,38 @@ main.grid_cassette
                             .screening_info_blokk
                                 if self.title
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.Name
+                                        span.screening_info_label= self.label.screening.name
                                         span.screening_info_value= self.title
                                 //- if screening.screeningSubtitles
                                 if screening.screeningSubtitles
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningSubtitles
+                                        span.screening_info_label= self.label.screening.subtitles
                                         span.screening_info_value= screening.screeningSubtitles
                                 if screening.screeningIntroGuests
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningIntroGuests
+                                        span.screening_info_label= self.label.screening.introGuests
                                         span.screening_info_value= screening.screeningIntroGuests
                                 if screening.screeningIntroPresenter
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningIntroPresenter
+                                        span.screening_info_label= self.label.screening.introPresenter
                                         span.screening_info_value= screening.screeningIntroPresenter
                                 if screening.screeningQaGuests
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningQaGuests
+                                        span.screening_info_label= self.label.screening.qaGuests
                                         span.screening_info_value= screening.screeningQaGuests
                                 if screening.screeningQaPresenter
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningQaPresenter
+                                        span.screening_info_label= self.label.screening.qaPresenter
                                         span.screening_info_value= screening.screeningQaPresenter
+
+                                if screening.extraInfo && typeof screening.extraInfo !== 'object'
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.extraInfo
+                                        span.screening_info_value= screening.extraInfo
 
                                 if screening.durationTotal
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.TotalDuration
+                                        span.screening_info_label= self.label.screening.totalDuration
                                         span.screening_info_value
                                             +dur(screening.durationTotal)
 
@@ -302,17 +307,19 @@ if self.films
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                    if film.countries
+                    if film.orderedCountries
                         - var countriesNames = function(item) {
-                        -   if(item.name) {
-                        -       var itemNames = item.name
+                        -   if(item.country && item.country.name) {
+                        -       var itemNames = item.country.name
                         -       return itemNames
                         -   }
                         - }
 
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            .str_info_value= film.countries.map(countriesNames).join(', ')
+                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            - var mapCountries = sortCountries.map(countriesNames)
+                            .str_info_value= mapCountries.join(', ')
 
                     if film.year
                         .str_info_grid_3
@@ -372,6 +379,14 @@ if self.films
                     if typeof synopsis_md === 'string'
                         .synopsis_gi
                             +format(synopsis_md)
+
+                //- FILM ADDITIONAL INFO (ADDITINFO)
+
+                //- if typeof film.additInfo !== 'undefined'
+                //-     - var additInfo_md = film.additInfo
+                //-     .synopsis_gi
+                //-         if typeof additInfo_md === 'string'
+                //-             +format(additInfo_md)
             section.f_cred_box
                 .str_info_blokk_cred
 
@@ -502,22 +517,21 @@ if self.films
                                     img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
-            if film.filmQaClip
+            //- if film.filmQaClip
 
-                section.f_qaclip_box
-                    .section_headline= self.label.film.qaClip
-                    .embed-responsive.embed-responsive-16by9.m-0.p-0
-                        - youtubeVideoCode = film.filmQaClip.split("=")
-                        +youtube(youtubeVideoCode[1])
+            //-     section.f_qaclip_box
+            //-         .section_headline= self.label.film.qaClip
+            //-         .embed-responsive.embed-responsive-16by9.m-0.p-0
+            //-             - youtubeVideoCode = film.filmQaClip.split("=")
+            //-             +youtube(youtubeVideoCode[1])
 
-
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].youTubeCode
+            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
                 section.f_trailer_box
                     .section_headline= self.label.film.trailer
-                        each trailer in film.media.trailer
-                            .embed-responsive.embed-responsive-16by9.m-0.p-0
-                                if trailer.youTubeCode && trailer.youTubeCode.length === 11
-                                    +youtube(trailer.youTubeCode)
+                    each trailer in film.media.trailer
+                        .embed-responsive.embed-responsive-16by9.m-0.p-0
+                            if trailer.videoCode
+                                +video(trailer.videoCode)
 
             //- section.f_imgs_box
 

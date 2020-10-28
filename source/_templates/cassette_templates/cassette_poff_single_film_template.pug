@@ -7,49 +7,53 @@ main.grid_film
     //-     if self.synopsis
     //-         h1.dark_1= self.synopsis
 
-    //- KARUSELL filmi piltidega
-    section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
-        ol.carousel-indicators
-            if self.films && self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills[0]
-                    each val, index in self.films[0].media.stills
-                        li(data-target='#carouselExampleIndicators' data-slide-to = index)
-        .carousel-inner.container_frame_16_9
-            if self.films && self.films[0] && self.films[0].media
-                if self.films[0].media.stills && self.films[0].media.stills.length
-                    each val, index in self.films[0].media.stills
-                        if index == 0
-                            .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-                        else
-                            .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-                else
-                    .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
-            else
-                .carousel-item.active.container_contents_16_9
-                    img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
-
-        a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-            // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                polyline(points='15 18 9 12 15 6')
-            span.sr-only Previous
-        a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-            // <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                polyline(points='9 18 15 12 9 6')
-            span.sr-only Next
-    //- LÕPP! KARUSELL filmi piltidega LÕPP
-
-
-    //- Algab kasseti filmide info kuvamine
     if self.films
         each film in self.films
 
-            - var pathParts = self.path.split('/')
-            - var filmPath = pathParts[pathParts.length - 1]
+            //- KARUSELL filmi piltidega
+            section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+                ol.carousel-indicators
+                    if self.films && self.films[0].media
+                        if self.films[0].media.stills && self.films[0].media.stills[0]
+                            each val, index in self.films[0].media.stills
+                                li(data-target='#carouselExampleIndicators' data-slide-to = index)
+                .carousel-inner.container_frame_16_9
+                    if self.films && self.films[0] && self.films[0].media
+                        if self.films[0].media.stills && self.films[0].media.stills.length
+                            each val, index in self.films[0].media.stills
+                                if index == 0
+                                    .carousel-item.active.container_contents_16_9
+                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                                else
+                                    .carousel-item.container_contents_16_9
+                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                        else
+                            .carousel-item.active.container_contents_16_9
+                                img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+
+                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='15 18 9 12 15 6')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='9 18 15 12 9 6')
+                    span.sr-only Next
+                if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
+                    a.play_link(href='#trailer')
+                        svg.svg_icon_play(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='white' stroke-linecap='round' stroke-linejoin='round')
+                            polygon(points='5 3 19 12 5 21 5 3')
+                            //- LÕPP! KARUSELL filmi piltidega LÕPP
+
+
+                    //- Algab kasseti filmide info kuvamine
+
+
             section.f_title_box
 
                 .premiere_type
@@ -76,17 +80,19 @@ main.grid_film
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
                     //- todo #383
-                    if film.countries
+                    if film.orderedCountries
                         - var countriesNames = function(item) {
-                        -   if(item.name) {
-                        -       var itemNames = item.name
+                        -   if(item.country && item.country.name) {
+                        -       var itemNames = item.country.name
                         -       return itemNames
                         -   }
                         - }
 
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            .str_info_value= film.countries.map(countriesNames).join(', ')
+                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            - var mapCountries = sortCountries.map(countriesNames)
+                            .str_info_value= mapCountries.join(', ')
 
                     if film.year
                         .str_info_grid_3
@@ -150,6 +156,14 @@ main.grid_film
                     .synopsis_gi
                         if typeof synopsis_md === 'string'
                             +format(synopsis_md)
+
+                //- FILM ADDITIONAL INFO (ADDITINFO)
+
+                //- if typeof film.additInfo !== 'undefined'
+                //-     - var additInfo_md = film.additInfo
+                //-     .synopsis_gi
+                //-         if typeof additInfo_md === 'string'
+                //-             +format(additInfo_md)
             section.f_cred_box
                 .str_info_blokk_cred
 
@@ -258,32 +272,108 @@ main.grid_film
                                                 .str_info_label.text_left.dark_semi= self.label.film.director
                                                 .str_info_value.text_right.dark_1= `${director.person.firstName ? director.person.firstName : ''} ${director.person.lastName ? director.person.lastName : ''}`
 
-                            .dir_bio.dark_1
-                                if director.person.biography && typeof director.person.biography !== 'object'
-                                    p.dark_1= director.person.biography
-                                if director.person.filmography && typeof director.person.filmography !== 'object'
-                                    p.dark_1= director.person.filmography
+                                .dir_bio.dark_1
+                                    if director.person.biography && typeof director.person.biography !== 'object'
+                                        p.dark_1= director.person.biography
+                                    if director.person.filmography && typeof director.person.filmography !== 'object'
+                                        p.dark_1= director.person.filmography
 
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
                 section.f_extra_box
-                    each presenter in film.presentedBy.organisations
-                        p.dark_1= presenter.name
+                    if film.presentedBy && film.presentedBy.presentedByText
+                        p.dark_1.text_center= film.presentedBy.presentedByText
 
-                        .supporter_logo_item_container
-                            - var logoImg = ''
-                            if presenter.logoColour
-                                - logoImg = `/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`
-                            else if presenter.logoBlack
-                                - logoImg = `/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
-                            else if presenter.logoWhite
-                                - logoImg = `/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+                    if film.presentedBy && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
-                            if presenter.homepageUrl
-                                a(href= presenter.homepageUrl).supporter_logo_item_container
-                                    img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
+                        each presenter in film.presentedBy.organisations
+
+                            //- Artikli kontroll algus, vajab veel artikli kättesaamist ja täiendamist, et olemasolul suunata artiklile!
+                            if presenter.poffi_article
+                                - let articleFromYAML = self.data.articles.filter( (a) => { return presenter.poffi_article.id === a.id })
+                                - let article = articleFromYAML[0]
+                                if article.article_types && article.article_types[0]
+
+                                    if article.publish && article.title && article.title.length > 1
+                                        - var currentTime = new Date()
+                                        if typeof(article.publishFrom) === 'undefined'
+                                            - var publishFrom= new Date(article.created_at)
+                                        else
+                                            - var publishFrom= new Date(article.publishFrom)
+
+                                        if article.publishUntil
+                                            - var publishUntil = new Date(article.publishUntil)
+
+                                        if (currentTime > publishFrom)
+
+                                            if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
+
+                                                //- p= `${article.title} - ${article.publish} - ${article.publishFrom} - ${article.publishUntil} - ${heroPlusTrioNews} - ${article.id} - ${article.article_types[0].name} - (${publishUntil} > ${currentTime}) - (${(!publishUntil || (publishUntil && (publishUntil > currentTime)))})`
+                                                - articlePublished = true
+                                                - articleSlug = article.slug
+                                                each artType in article.article_types
+                                                    - artTypes.push(artType.name.toLowerCase())
+                                                    if artType.name.toLowerCase() === defaultTypeIfExists[0]
+                                                        - artTypeForPath = artType.slug.toLowerCase()
+                                                        - break
+                                                    else
+                                                        - artTypeForPath = artType.slug.toLowerCase()
+                            //- Artikli kontroll lõpp
+
+                            //- Programmi esitleja nimi
+
+                            if presenter.name
+                                p.dark_1.text_center= presenter.name
+
+                            //- KUI ARTIKKEL KEELES OLEMAS JA PUBLISHED JA PEALKIRJAGA JNE
+                            if typeof articlePublished !== 'undefined' && articlePublished === true
+                                .presenter_logo_item_container
+                                    a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`).presenter_logo_item
+                                        if presenter.logoColour
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                        else if presenter.logoBlack
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                        else if presenter.logoWhite
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                            //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
+                            else if presenter.homepageUrl
+                                .presenter_logo_item_container
+                                    a(href= presenter.homepageUrl).presenter_logo_item
+                                        if presenter.logoColour
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                        else if presenter.logoBlack
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                        else if presenter.logoWhite
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                            //- LOGO ILMA LINGITA
                             else
-                                img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
+                                    if presenter.logoColour
+                                        .presenter_logo_item_container
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    else if presenter.logoBlack
+                                        .presenter_logo_item_container
+                                            img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    else if presenter.logoWhite
+                                        .presenter_logo_item_container
+                                            img.presenter_logo_itemx(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+
+                    //- each presenter in film.presentedBy.organisations
+                    //-     p.dark_1= presenter.name
+
+                    //-     .supporter_logo_item_container
+                    //-         - var logoImg = ''
+                    //-         if presenter.logoColour
+                    //-             - logoImg = `/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                    //-         else if presenter.logoBlack
+                    //-             - logoImg = `/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                    //-         else if presenter.logoWhite
+                    //-             - logoImg = `/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+
+                    //-         if presenter.homepageUrl
+                    //-             a(href= presenter.homepageUrl).supporter_logo_item_container
+                    //-                 img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
+                    //-         else
+                    //-             img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
 
             section.f_screenings_box
                 div
@@ -336,7 +426,7 @@ main.grid_film
                                     .screening_info_blokk
                                         if film.title
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.Name
+                                                span.screening_info_label= self.label.screening.name
                                                 span.screening_info_value= screening.codeAndTitle
                                         //- if screening.screeningSubtitles
 
@@ -348,28 +438,33 @@ main.grid_film
                                             -   }
                                             - }
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.Subtitles
+                                                span.screening_info_label= self.label.screening.subtitles
                                                 span.screening_info_value= film.subtitles.map(subtitlesNames).join(', ')
                                         if screening.screeningIntroGuests
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.screeningIntroGuests
+                                                span.screening_info_label= self.label.screening.introGuests
                                                 span.screening_info_value= screening.screeningIntroGuests
                                         if screening.screeningIntroPresenter
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.screeningIntroPresenter
+                                                span.screening_info_label= self.label.screening.introPresenter
                                                 span.screening_info_value= screening.screeningIntroPresenter
                                         if screening.screeningQaGuests
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.screeningQaGuests
+                                                span.screening_info_label= self.label.screening.qaGuests
                                                 span.screening_info_value= screening.screeningQaGuests
                                         if screening.screeningQaPresenter
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.screeningQaPresenter
+                                                span.screening_info_label= self.label.screening.qaPresenter
                                                 span.screening_info_value= screening.screeningQaPresenter
+
+                                        if screening.extraInfo && typeof screening.extraInfo !== 'object'
+                                            .str_info_grid_3
+                                                span.screening_info_label= self.label.screening.extraInfo
+                                                span.screening_info_value= screening.extraInfo
 
                                         if screening.durationTotal
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.TotalDuration
+                                                span.screening_info_label= self.label.screening.totalDuration
                                                 span.screening_info_value
                                                     +dur(screening.durationTotal)
 
@@ -394,13 +489,13 @@ main.grid_film
             //-             - youtubeVideoCode = film.filmQaClip.split("=")
             //-             +youtube(youtubeVideoCode[1])
 
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].youTubeCode
-                section.f_trailer_box
+            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
+                section#trailer.f_trailer_box
                     .section_headline= self.label.film.trailer
-                        each trailer in film.media.trailer
-                            .embed-responsive.embed-responsive-16by9.m-0.p-0
-                                if trailer.youTubeCode && trailer.youTubeCode.length === 11
-                                    +youtube(trailer.youTubeCode)
+                    each trailer in film.media.trailer
+                        .embed-responsive.embed-responsive-16by9.m-0.p-0
+                            if trailer.videoCode
+                                +video(trailer.videoCode)
 
             //- section.f_imgs_box
 
