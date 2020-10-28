@@ -226,6 +226,12 @@ header
 .main_menu_toggle:checked~.main_menu
     display flex
     width 100vw
+    height calc(100vh - 100px)
+    max-height 100vh
+    width 100vw
+    overflow-y scroll
+    -webkit-overflow-scrolling:touch
+    padding-bottom 2rem
 
 .main_menu_toggle_label
     position absolute
@@ -591,19 +597,19 @@ footer
 .hero_headline_box_1
     background rgba(10,0,3,.6)
     text-align left
-    padding 3rem 3rem 3rem 3rem
+    padding 2.4rem 2.4rem 2.4rem 2.4rem
 
 .hero_headline_box_2
     background rgba(255,255,255,.8)
     text-align left
     vertical-align middle
-    padding 3rem 3rem 3rem 3rem
+    padding 2.4rem 2.4rem 2.4rem 2.4rem
     align-self stretch
     // height 100%
 
 .hero_headline
     font-family font_h
-    font-size calc(1.9rem + 1.5vw)
+    font-size calc(1rem + 2.4vw)
     text-decoration none
     text-align left
     font-weight 400
@@ -800,7 +806,7 @@ a .dark:hover
     // padding 2rem 2rem 2rem 2rem
     padding 0
     margin 0
-    // border .5px solid clr_grey_light
+    border .5px solid clr_grey_light
     // border 1px solid red
 
 // .viieka_item:first-child
@@ -1087,7 +1093,9 @@ row:nth-child(15) > .supporter_logos
     // max-height 100%
     min-width 10rem
     max-width 12rem
+    max-height 7rem
     object-fit contain
+    margin-top 1rem
 
 // .footer_logo_item:first-child
 //     width: 100%
@@ -1783,6 +1791,7 @@ a.btn_popover
     width calc(2rem + 0.1vw)
     margin-right .5rem
     margin-top -.7rem
+    // stroke clr_primary
     stroke rgba(255, 255, 255, .9)
 
 .svg_icon_white
@@ -1923,7 +1932,7 @@ a.btn_popover
 
 .article_title_detailed
     font-family font_h
-    font-size calc(1.9rem + 1.5vw)
+    font-size calc(1rem + 2.4vw)
     text-decoration none
     text-align left
     font-weight 400
@@ -2240,12 +2249,12 @@ a.btn_popover
     .hero_headline_box_1
         background rgba(10,0,3,.6)
         text-align left
-        padding 3rem 3rem 3rem 3rem
+        padding 2.4rem 2.4rem 2.4rem 2.4rem
 
     .hero_headline_box_2
         background rgba(255,255,255,.8)
         text-align left
-        padding 3rem 3rem 3rem 3rem
+        padding 2.4rem 2.4rem 2.4rem 2.4rem
         // height 100%
 
     .hero_head
