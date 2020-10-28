@@ -96,11 +96,11 @@ main.grid_cassette
                 .supporter_logo_item_container
                     - var logoImg = ''
                     if presenter.logoColour
-                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                        - logoImg = `https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`
                     else if presenter.logoBlack
-                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                        - logoImg = `https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
                     else if presenter.logoWhite
-                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+                        - logoImg = `https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
 
                     if presenter.homepageUrl
                         a(href= presenter.homepageUrl).supporter_logo_item_container
@@ -481,7 +481,7 @@ if self.films
 
             //-         if director.person.picture
             //-             .dir_img
-            //-                 img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
+            //-                 img.img_dir(src=`https://assets.poff.ee/img/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
             //-                 .str_info_grid_3
             //-                     .str_info_label.text_left.dark_semi= self.label.film.director
             //-                     .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
@@ -503,18 +503,18 @@ if self.films
                             if presenter.homepageUrl
                                 a(href= presenter.homepageUrl).supporter_logo_item_container
                                     if presenter.logoColour
-                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                     else if presenter.logoBlack
-                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                     else if presenter.logoWhite
-                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
                             else
                                 if presenter.logoColour
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                 else if presenter.logoBlack
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                 else if presenter.logoWhite
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
             //- if film.filmQaClip
