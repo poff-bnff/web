@@ -1,4 +1,15 @@
 
+if (localStorage.getItem('ACCESS_TOKEN')){
+document.getElementById("directToLoginButton").style.display = 'none'
+document.getElementById("buybutton").style.display = 'block'
+
+}
+
+
+function directToLogin() {
+    window.open('http://localhost:4000/login','_self')
+}
+
 
 function BuyProduct(categoryId) {
 
@@ -51,7 +62,7 @@ function Buy(productCode){
 }
 
 function GetPaymentLinks() {
-
+    document.getElementById("buybutton").style.display = 'none'
     var links = document.getElementById("paymentLinks")
     var paybutton = document.getElementById("paybutton")
 

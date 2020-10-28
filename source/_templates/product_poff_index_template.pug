@@ -36,13 +36,15 @@ block content
             br
             div.payment
                 button#buybutton.btn.btn-primary(onclick=`GetPaymentLinks()`) OSTA
+                button#directToLoginButton.btn.btn-primary(onclick=`directToLogin()`) Ostmiseks logi sisse
                 div#paymentLinks
                 br
                 div.dark_1#feedback
                 br
-                button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSA
+                button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
                 br
     style.
+        #buybutton {display: none}
         #paybutton {display: none}
         [type=radio]{
             position: absolute;
