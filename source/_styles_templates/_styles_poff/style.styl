@@ -1125,7 +1125,10 @@ row:nth-child(15) > .supporter_logos
     grid-gap 5rem
 
 .team
-    padding-top 98px
+    padding-top header_height
+
+.shop
+    padding-top header_height
 
 
 .sub_team
@@ -1139,7 +1142,30 @@ row:nth-child(15) > .supporter_logos
     padding 2rem
     // padding-top header_height
 
+.shop_items_list
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(17rem, 17rem))
+    justify-content center
+    align-content start
+    justify-items center
+    align-items start
+    grid-gap 2rem
+    padding 2rem
+    // padding-top header_height
+
 .person
+    display flex
+    flex-direction column
+    // background-color bg_dark_3
+    // border solid .5px bg_dark_4
+    width 100%
+    // height auto
+    min-height min-content
+    max-height max-content
+    margin-bottom 1rem
+    margin-top 1rem
+
+.shop_item
     display flex
     flex-direction column
     // background-color bg_dark_3
@@ -1166,8 +1192,41 @@ row:nth-child(15) > .supporter_logos
     width: 100%
     border-radius 57% 43% 57% 43%
 
+.shop_item_head
+    // background-color clr_primary
+    // color bg_dark_4
+    width: 100%
+    // height max-content
+    // height 2.5rem
+    // padding-left 1rem
+    // padding-right 1rem
+    // padding .7rem 1rem .7rem 1rem
+    // align-self flex-start
+
+.shop_item_img
+    width: 100%
 
 .person_body
+    // background-color bg_dark_3
+    min-height min-content
+    max-height max-content
+    padding 1.618rem 1rem 1rem 1rem
+    // padding 1rem
+    // align-self flex-end
+    font-size 1rem
+    line-height 1.2rem
+    a
+        text-decoration none
+        color dark_1
+        // font-weight 600
+    p
+        font-size 1rem
+        line-height 1.2rem
+        color dark_1
+    h4
+        color dark_1
+
+.shop_item_body
     // background-color bg_dark_3
     min-height min-content
     max-height max-content
