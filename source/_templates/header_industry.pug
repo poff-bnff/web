@@ -84,7 +84,7 @@ header
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
 
                                 else
-                                    if subMenuItem.customUrl
+                                    if subMenuItem.customUrl && subMenuItem.name && typeof subMenuItem.name !== 'object'
                                         li
                                             a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
 
