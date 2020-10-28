@@ -34,15 +34,15 @@ block content
                                             .shop_item_head
                                                 if product.images
                                                     if product.images.image
-                                                        img.shop_item_img(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`)
+                                                        img.shop_item_img(alt= product.name ? product.name : '' data-src=`https://assets.poff.ee/img/${product.images.image.hash}${product.images.image.ext}`  src=`https://assets.poff.ee/img/${product.images.image.hash}${product.images.image.ext}`)
                                                     else if product.images.imageDefault
-                                                        img.shop_item_img(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`)
+                                                        img.shop_item_img(alt= product.name ? product.name : '' data-src=`https://assets.poff.ee/img/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`  src=`https://assets.poff.ee/img/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`)
                                                     else
                                                         img.shop_item_img(src='/assets/img/static/placeholder_hd_1.jpg')
 
                                             .shop_item_body
                                                 if product.name && typeof product.name !== 'object'
-                                                    h4.text_center= product.name
+                                                    h4= product.name
 
                                                 //- if product.festival_edition && product.festival_edition && product.festival_edition.name
                                                 //-     .card_article_title
