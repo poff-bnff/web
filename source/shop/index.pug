@@ -55,6 +55,12 @@ block content
                                                 if product.description && typeof product.description !== 'object'
                                                     p=product.description
 
+                                                if product.priceAtPeriod && product.priceAtPeriod[0] && product.priceAtPeriod[0].price
+                                                p
+                                                    +euro(product.priceAtPeriod[0].price)
+
+
+
                 if shop.shopRules
                         if typeof shop.shopRules === 'string'
                             p
