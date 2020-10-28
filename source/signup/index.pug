@@ -67,6 +67,9 @@ block content
                         label.control-label(for='gds-cr-one') Linn:
                         select#gds-cr-one.form-control(required='' oninput= 'validateCity()')
                     button.btn.btn-primary(onclick='validateForm()') Salvesta
+                    p.dark_1#profileSent(style= {display: 'none'}) Andmed salvestatud, kinnituslink saadetud aadressile
+                    a#loginButton(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}login`)= self.label.menu.mainLogin
+
 
     style.
         .invalid {background-color: #f5e4e9}

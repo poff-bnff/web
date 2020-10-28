@@ -55,48 +55,56 @@ async function sendNewUser() {
     console.log(userToSend);
 
     let response = await fetch(`https://api.poff.ee/profile`, {
-            method: 'POST',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
-            body: JSON.stringify(userToSend)
-        });
-        response = await response.json()
+        method: 'POST',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+        },
+        body: JSON.stringify(userToSend)
+    });
+    response = await response.json()
 
-     console.log(userProfile)
-    if (response.UserConfirmed === true)
-    console.log('user confirmed');
-    window.open(`${pageURL}/login`, '_self')
+    console.log(response.UserConfirmed)
+    if (!response.UserConfirmed){
+        console.log('if');
+    document.getElementById('profileSent').style.display = 'block'
+    document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
+    document.getElementById('loginButton').style.display = 'block'
+
+
+
+    // window.open(`${pageURL}/login`, '_self')
+    }
 }
 
 const fileSelector = document.getElementById('profileImg');
 fileSelector.addEventListener('change', (event) => {
-  const fileList = event.target.files;
-  //console.log(fileList);
-  for (const file of fileList) {
-    // Not supported in Safari for iOS.
-    const name = file.name ? file.name : 'NOT SUPPORTED';
-    // Not supported in Firefox for Android or Opera for Android.
-    const type = file.type ? file.type : 'NOT SUPPORTED';
-    // Unknown cross-browser support.
-    const size = file.size ? file.size : 'NOT SUPPORTED';
-    console.log({file, name, type, size});
-    readImage(file)
-  }
+    const fileList = event.target.files;
+    //console.log(fileList);
+    for (const file of fileList) {
+        // Not supported in Safari for iOS.
+        const name = file.name ? file.name : 'NOT SUPPORTED';
+        // Not supported in Firefox for Android or Opera for Android.
+        const type = file.type ? file.type : 'NOT SUPPORTED';
+        // Unknown cross-browser support.
+        const size = file.size ? file.size : 'NOT SUPPORTED';
+        console.log({ file, name, type, size });
+        readImage(file)
+    }
 });
 
 function readImage(file) {
     const output = document.getElementById("imgPreview");
     let error = document.getElementById("imgError");
-    error.innerHTML =''
+    error.innerHTML = ''
     // Check if the file is an image.
     if (file.type && file.type.indexOf('image') === -1) {
-      console.log('File is not an image.', file.type, file);
-      error.innerHTML ='File is not an image.'
-      return;
+        console.log('File is not an image.', file.type, file);
+        error.innerHTML = 'File is not an image.'
+        return;
     }
     const reader = new FileReader();
     reader.addEventListener('load', (event) => {
-      output.src = event.target.result;
+        output.src = event.target.result;
 
     });
     reader.readAsDataURL(file);

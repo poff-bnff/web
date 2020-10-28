@@ -1,5 +1,5 @@
 var favFilms
-var favouritePages = ['http://localhost:4000/favourite', 'http://localhost:4000/filmid/', 'http://localhost:4000/pohivoistlusprogramm/', ]
+var favouritePages = ['http://localhost:4000/favourite', 'http://localhost:4000/filmid/', 'http://localhost:4000/pohivoistlusprogramm/',]
 
 
 document.addEventListener("DOMContentLoaded", loadMyFavFilms(), false);
@@ -144,7 +144,6 @@ function changeFavInfo(status, movieId) {
 }
 
 function removeFilm(movieId) {
-    console.log('removeFilm');
     var myHeaders = new Headers();
 
     myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
@@ -163,12 +162,27 @@ function removeFilm(movieId) {
         return Promise.reject(response);
     }).then(function (data) {
         if (data.ok) {
-            console.log(data.ok)
             if (window.location.href.indexOf('/film/') > -1) {
                 changeFavInfo('delete')
             } else {
+                console.log('else');
                 filmCard = document.getElementById(movieId)
                 filmCard.style.display = 'none'
+
+                console.log(favFilms);
+
+                for (i = 0; i < favFilms.length; i++) {
+                    if (favFilms[i] === movieId.toString()) {
+                        favFilms.pop(favFilms[i])
+                        console.log(favFilms);
+
+                    }
+                }
+
+                if (!favFilms.length) {
+                    document.getElementById('noFavouritesMessage').style.display = 'block'
+                }
+
             }
         }
     }).catch(function (error) {
