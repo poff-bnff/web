@@ -411,4 +411,44 @@ function generateAllDataYAML(allData, lang){
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
     timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
+
+    let filters = {
+        programme: {},
+        language: {}
+    }
+    const cassette_search = allData.map(cassette => {
+        let programmes = []
+        for (const programme of cassette.tags.programmes) {
+            for (const fested of programme.festival_editions) {
+                const key = fested.festival + '_' + programme.id
+                const festival_name = cassette.festivals.filter(festival => festival.id === fested.festival)[0].name
+                programmes.push(key)
+                filters.programme[key] = `${festival_name} ${programme.name}`
+            }
+        }
+        let languages = []
+        for (const films of cassette.films) {
+            for (const language of films.languages || []) {
+                const key = language.code
+                const language_name = language.name
+                languages.push(key)
+                filters.language[key] = language_name
+            }
+        }
+        return {
+            id: cassette.id,
+            text: [
+                cassette.title,
+                cassette.synopsis
+            ].join(' ').toLowerCase(),
+            programmes: programmes,
+            languages: languages
+        }
+    })
+
+    let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `search.${lang}.yaml`), searchYAML, 'utf8')
+
+    let filtersYAML = yaml.safeDump(filters, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `filters.${lang}.yaml`), filtersYAML, 'utf8')
 }

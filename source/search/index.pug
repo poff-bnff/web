@@ -11,9 +11,18 @@ block content
     br
     br
     input#search(type='text', placeholder='Search something now!!!')
-    select#festivalsSelect(name='festivals')
-    select#programmesSelect(name='festivalProgrammes')
+    //- select#festivalsSelect(name='festivals')
+    //- select#programmesSelect(name='festivalProgrammes')
 
+
+    select#programmesSelect(name='Programmes')
+        option(value='') PROGRAMMID:
+        each index, key in self.data.filters.programme
+            option(value=key)= index
+    select#languagesSelect(name='Languages')
+        option(value='') KEEL:
+        each index, key in self.data.filters.language
+            option(value=key)= index
 
     - var allFestivalEditions = []
     - var allProgrammes = []
@@ -21,7 +30,9 @@ block content
 
     if self.data.cassettes
         main.grid_films
+            - var cassettesArray = []
             each cassette in self.data.cassettes.sort(function(a, b){ if(a.title && b.title) { return ('' + a.title).localeCompare(b.title, self.locale); } else { return 0; } })
+                - var oneCassette = []
                 if cassette.festival_editions
                     each edition in cassette.festival_editions
                         - allFestivalEditions.push(edition.name)
@@ -30,7 +41,7 @@ block content
                     each festival in cassette.festivals
                         - allFestivals.push(festival.name)
                         - festivalsCassette.push(festival.name)
-                a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                a.card_film(id=cassette.id href=`/${lang_path}film/${cassette.slug}`)
                     input#festivalsCassette(type='hidden', value=`${festivalsCassette}`)
 
                     .container_frame_16_9
@@ -57,6 +68,9 @@ block content
                             img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
                     .card_film_title
                         h3#title.film_title_locale.dark_1= cassette.title
+                        - oneCassette.push(cassette.title)
+                        - cassettesArray.push(oneCassette)
+
                     .card_film_info
                         .str_info_grid_3
                             if cassette.films && cassette.films.length
@@ -79,8 +93,10 @@ block content
                         //-     .str_info_grid_3
                         //-         .str_info_label= self.label.cassette.cast
                         //-         .str_info_value= cassette.credentials.cast.join(', ')
+            script.
+                var searcharray = !{JSON.stringify(self.data.search)}
 
-
+                var filters = !{JSON.stringify(self.data.filters)}
 
 
     - var uniqueFestivalEditions = [...new Set(allFestivalEditions)]
