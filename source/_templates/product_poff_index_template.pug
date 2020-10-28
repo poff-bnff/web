@@ -17,6 +17,10 @@ block content
                     img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
 
         if self.festival_edition && self.festival_edition.name
+            br
+            br
+            br
+            br
             h1.dark_1= self.festival_edition.name
             br
         if self.name && typeof self.name !== 'object'
@@ -25,5 +29,38 @@ block content
         if self.description && typeof self.description !== 'object'
             h1.dark_1= self.description
             br
+            br
+            br
+            br
+            br
+            br
+            div.payment
+                button#buybutton.btn.btn-primary(onclick=`GetPaymentLinks()`) OSTA
+                div#paymentLinks
+                br
+                div.dark_1#feedback
+                br
+                button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSA
+                br
+    style.
+        #paybutton {display: none}
+        [type=radio]{
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        [type=radio] + img {
+            cursor: pointer;
+        }
+        [type=radio]:checked + img {
+            outline: 4px solid #fd7e14;
+        }
+
+
+
+
+
+
 
 

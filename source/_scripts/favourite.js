@@ -123,6 +123,8 @@ function saveFilmAsFavourite(movieId) {
     }
 }
 
+
+
 function changeFavInfo(status, movieId) {
 
     if (status === 'put' && favouritePages.includes(window.location.href)) {
