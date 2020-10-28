@@ -5,60 +5,61 @@ block content
 
     if self.data.shops
         each shop in self.data.shops
+            section.shop
+                //- Poe title
+                if shop.title
+                    h1.section_headline= shop.title
 
-            //- Poe title
-            if shop.title
-                h1.section_headline= shop.title
+                //- Poe intro
+                if shop.intro
+                    p.dark_1= shop.intro
 
-            //- Poe intro
-            if shop.intro
-                h2.sub_section_headline= shop.intro
+                if shop.prodCatList && shop.prodCatList
 
-            if shop.prodCatList && shop.prodCatList
-                each prodCatList in shop.prodCatList
+                    each prodCatList in shop.prodCatList
+                        .shop_product_list
+                            //- ProdCatList title
+                            if prodCatList.title
+                                h3.sub_section_headline= prodCatList.title
 
-                    //- ProdCatList title
-                    if prodCatList.title
-                        h3.sub_section_headline= prodCatList.title
+                            main.grid_articles
 
-                    main.grid_articles
+                                if prodCatList.product
+                                    each productCat in prodCatList.product.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                                        if productCat.product_category
+                                            - var product = productCat.product_category
 
-                        if prodCatList.product
-                            each productCat in prodCatList.product.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                                if productCat.product_category
-                                    - var product = productCat.product_category
+                                            a(href= `/${lang_path}${product.path}`).card_article
+                                                .container_frame_16_9
+                                                    if product.images
+                                                        if product.images.image
+                                                            img.container_contents_16_9(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`)
+                                                        else if product.images.imageDefault
+                                                            img.container_contents_16_9(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`)
+                                                        else
+                                                            img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
 
-                                    a(href= `/${lang_path}${product.path}`).card_article
-                                        .container_frame_16_9
-                                            if product.images
-                                                if product.images.image
-                                                    img.container_contents_16_9(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.image.hash}${product.images.image.ext}`)
-                                                else if product.images.imageDefault
-                                                    img.container_contents_16_9(alt= product.name ? product.name : '' data-src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`  src=`/assets/img/dynamic/img_shop/${self.locale}/${product.images.imageDefault.hash}${product.images.imageDefault.ext}`)
-                                                else
-                                                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                                                if product.name && typeof product.name !== 'object'
+                                                    .card_article_title
+                                                        h3.article_title_locale= product.name
 
-                                        if product.name && typeof product.name !== 'object'
-                                            .card_article_title
-                                                h3.article_title_locale= product.name
+                                                if product.festival_edition && product.festival_edition && product.festival_edition.name
+                                                    .card_article_title
+                                                        h3.article_title_locale= product.festival_edition.name
 
-                                        if product.festival_edition && product.festival_edition && product.festival_edition.name
-                                            .card_article_title
-                                                h3.article_title_locale= product.festival_edition.name
+                                                if product.product_type && product.product_type && product.product_type.name
+                                                    .card_article_title
+                                                        h3.article_title_locale= product.product_type.name
 
-                                        if product.product_type && product.product_type && product.product_type.name
-                                            .card_article_title
-                                                h3.article_title_locale= product.product_type.name
+                                                .card_article_lead
+                                                    if shop.description && typeof shop.description !== 'object'
+                                                        .article_lead=shop.description
 
-                                        .card_article_lead
-                                            if shop.description && typeof shop.description !== 'object'
-                                                .article_lead=shop.description
-
-            if shop.shopRules
-                    if typeof shop.shopRules === 'string'
-                        h3
-                            +format(shop.shopRules)
+                    if shop.shopRules
+                            if typeof shop.shopRules === 'string'
+                                h3
+                                    +format(shop.shopRules)
 
 
-//- e pood, pealkiri, intro text, toodete leotelu osa, millel samuti pealkiri ja siis listitud tooted, - seos Product_Category’dega
-//- ja alla veel shopRules text osa, igaks juhuks
+    //- e pood, pealkiri, intro text, toodete leotelu osa, millel samuti pealkiri ja siis listitud tooted, - seos Product_Category’dega
+    //- ja alla veel shopRules text osa, igaks juhuks

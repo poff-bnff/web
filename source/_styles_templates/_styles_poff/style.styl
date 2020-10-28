@@ -1125,10 +1125,24 @@ row:nth-child(15) > .supporter_logos
     grid-gap 5rem
 
 .team
-    padding-top 98px
+    padding-top 100px
+
+.shop
+    padding-top 100px
 
 
 .sub_team
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(17rem, 17rem))
+    justify-content center
+    align-content start
+    justify-items center
+    align-items start
+    grid-gap 2rem
+    padding 2rem
+    // padding-top header_height
+
+.shop_product_list
     display grid
     grid-template-columns repeat(auto-fill, minmax(17rem, 17rem))
     justify-content center
