@@ -1,5 +1,5 @@
 
-if (localStorage.getItem('ACCESS_TOKEN')){
+if (localStorage.getItem('ACCESS_TOKEN') && (document.getElementById("directToLoginButton"))){
 document.getElementById("directToLoginButton").style.display = 'none'
 document.getElementById("buybutton").style.display = 'block'
 

@@ -36,7 +36,7 @@ block content
             br
             div.payment
                 button#buybutton.btn.btn-primary(onclick=`GetPaymentLinks()`) OSTA
-                button#directToLoginButton.btn.btn-primary(onclick=`directToLogin()`) Ostmiseks logi sisse
+                button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
                 div#paymentLinks
                 br
                 div.dark_1#feedback
