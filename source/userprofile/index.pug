@@ -46,7 +46,7 @@ block content
                         label(for='phoneNr') Telefoni number:
                         input#phoneNr.form-control(type='tel' placeholder='Telefoni number' name='phoneNr' oninput='validatePhoneNr()' autocomplete="off")
                     div.form-group
-                        | Elukoht:
+                        .dark_1 Elukoht:
                         br
                         label.control-label(for='country') Riik:
                         select#countrySelection.form-control.gds-cr(class='valid' country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry()')

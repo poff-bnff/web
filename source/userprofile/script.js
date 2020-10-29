@@ -34,8 +34,7 @@ async function loadUserInfo() {
     }
     dob.value = userProfile.birthdate;
     if(userProfile.picture){
-        // imgPreview.src = userProfile.picture
-        console.log("profiili salvestatud pildi link on: " + userProfile.picture)
+        imgPreview.src = userProfile.picture
     }
 }
 
@@ -56,8 +55,7 @@ async function sendUserProfile() {
     console.log(data.link)
 
     let userToSend = [
-        // { Name: "picture", Value: await data.link },
-        { Name: "picture", Value: "link" },
+        { Name: "picture", Value: await data.link },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
@@ -92,7 +90,8 @@ async function sendUserProfile() {
 
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
-        window.open(localStorage.getItem('url'), '_self')
+        //
+        // window.open(localStorage.getItem('url'), '_self')
     }
 }
 
