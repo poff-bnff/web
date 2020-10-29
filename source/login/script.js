@@ -166,5 +166,33 @@ async function showMergeInfo() {
 
 
 function directToSignup() {
-    window.open('http://localhost:4000/signup', '_self')
+    window.open(`http://localhost:4000/${lang_path}signup`, '_self')
+}
+
+
+function doResetPassword() {
+    console.log('reset');
+    document.getElementById('password').style.display = 'none'
+    document.getElementById('pswdResetMessage').style.display = 'block'
+
+    if (loginUsername.value) {
+        sendResetCode()
+    }
+}
+
+async function sendResetCode(){
+
+    let authenticationData = {
+        userName: document.getElementById("loginUsername").value
+    }
+
+    var requestOptions = {
+        method: 'POST',
+        redirect: 'follow',
+        body: JSON.stringify(authenticationData)
+    }
+
+    let response = await fetch(`https://api.poff.ee/profile/pswd`, requestOptions)
+
+    console.log(await response.json())
 }
