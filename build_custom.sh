@@ -72,6 +72,8 @@ build()
     SECONDS=0
     export DOMAIN=$site_name
 
+    node ./initialise_entu_ssg.js
+
     printf "\n----------\nBuilding $DOMAIN \n"
     if [ $fetch_number -eq 1 ]
     then
@@ -173,6 +175,12 @@ fetch_data()
     echo 'fetch_shops_from_yaml'
     node ./helpers/fetch_shops_from_yaml.js
 
+    echo 'fetch_industry_person_from_yaml'
+    node ./helpers/fetch_industry_person_from_yaml.js
+
+    echo 'fetch_industry_project_from_yaml'
+    node ./helpers/fetch_industry_project_from_yaml.js
+
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
 }
@@ -194,6 +202,8 @@ download_img()
     node ./helpers/download_supporters_page_img.js
     node ./helpers/download_programmes_img.js
     node ./helpers/download_shops_img.js
+    node ./helpers/download_industry_person_img.js
+    node ./helpers/download_industry_project_img.js
     # node ./helpers/download_casettes_and_films_img.js
     printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
 }

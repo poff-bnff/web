@@ -1,0 +1,31 @@
+
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+
+    if self.data.industryprojects
+
+        each project in self.data.industryprojects
+
+            if project.title && project.title.length > 1
+                p.dark_1= project.title
+
+                if project.logline
+                    p.dark_1= project.logline
+
+                if project.synopsis && typeof project.synopsis === 'string'
+                    p.dark_1
+                        +format(project.synopsis)
+
+                if project.directorsNote && typeof project.directorsNote === 'string'
+                    p.dark_1
+                        +format(project.directorsNote)
+
+                if project.contactCompany
+                    if project.contactCompany.homepageUrl
+
+                    if project.contactCompany.type
+                        p.dark_1= project.type
+                    if project.contactCompany.name
+                        p.dark_1= project.contactName
