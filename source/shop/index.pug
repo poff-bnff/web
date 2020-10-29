@@ -58,6 +58,12 @@ block content
                                             .shop_item_footer
                                                 h4= product.priceAtPeriod[0].price
 
+                                                if product.priceAtPeriod && product.priceAtPeriod[0] && product.priceAtPeriod[0].price
+                                                p
+                                                    +euro(product.priceAtPeriod[0].price)
+
+
+
                 if shop.shopRules
                         if typeof shop.shopRules === 'string'
                             p

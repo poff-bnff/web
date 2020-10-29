@@ -25,5 +25,8 @@ block content
         if self.description && typeof self.description !== 'object'
             h1.dark_1= self.description
             br
+        if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
+            h1.dark_1
+                +euro(self.priceAtPeriod[0].price)
 
 
