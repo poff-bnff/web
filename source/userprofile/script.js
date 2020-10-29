@@ -50,15 +50,14 @@ async function sendUserProfile() {
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/picture`, {
         method: 'GET'
-        // headers: {
-        //     Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
     });
     data = await linkResponse.json()
     console.log("saadud link on: ")
     console.log(data.link)
 
     let userToSend = [
-        { Name: "picture", Value: await data.link },
+        // { Name: "picture", Value: await data.link },
+        { Name: "picture", Value: "link" },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
@@ -68,42 +67,22 @@ async function sendUserProfile() {
         { Name: "address", Value: `${country.value}, ${city.value}` },
     ];
 
-
     //saadab pildi link-ile
     var file = imgPreview.src;
-    console.log("file on...."+file);
+    console.log(file);
 
-    SendImgToS3(data.link)
+    var requestOptions = {
+        method: 'PUT',
+        body: file,
+        redirect: 'follow'
+    };
 
-    function SendImgToS3(myLink, myImg){
-
-        var requestOptions = {
-            method: 'PUT',
-            body: myImg,
-            redirect: 'follow'
-        };
-
-        fetch(myLink, requestOptions).then(function (response) {
-            if (response.ok) {
-                console.log(response.json())
-                return response.json();
-            }
-            return Promise.reject(response);
-        }).then(function (data) {
-            userProfile = data
-            console.log("cognitos olev profiil:")
-            console.log(userProfile);
-
-        }).catch(function (error) {
-            console.warn(error);
-        });
-
-    }
+    fetch(data.link, requestOptions)
 
 
     console.log("kasutaja profiil mida saadan");
     console.log(userToSend)
-    let response = await (fetch(`https://api.poff.ee/profile`, {
+    let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
         headers: {
             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
@@ -114,7 +93,6 @@ async function sendUserProfile() {
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
         window.open(localStorage.getItem('url'), '_self')
-        localStorage.removeItem('url')
     }
 }
 
