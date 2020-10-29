@@ -35,7 +35,8 @@ block content
                             +format(description_md)
 
         section.f_cred_box
-            h4= self.priceAtPeriod[0].price
+            h4
+                +euro(self.priceAtPeriod[0].price)
 
             div.payment
                 button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`)= self.label.userprofile.pass
