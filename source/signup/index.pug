@@ -31,11 +31,12 @@ block content
                     div.form-group
                         label(for='email')= self.label.userprofile.email
                         input#email.form-control(type='email', placeholder='Email' name='email' autocomplete="off" oninput="validateEmail()")
-                        div.invalid(style='visibility:hidden')= self.label.userprofile.eMailMessage
+                        div#emailHelp(style='visibility:hidden')= self.label.userprofile.eMailHelp
                     div#pswds
                         div.form-group
                             label(for='psw')= self.label.userprofile.password
                             input#psw.form-control(type='password', placeholder='salasõna' name='psw' autocomplete="off" oninput="validatePsw()" )
+                            div#pswHelp(style='visibility:hidden')
                         div.form-group
                             label(for='psw2')= self.label.userprofile.passwordRepeat
                             input#psw2.form-control(type='password', placeholder='salasõna uuesti' name='psw2' autocomplete="off" oninput="validatePswRep()")
@@ -75,7 +76,7 @@ block content
 
     style.
         .invalid {background-color: #f5e4e9}
-        div.invalid { display: block; background-color: #f5e4e9; color: black}
+
         .valid {background-color: #e6f7e6}
         h4, h1 {color: #464646}
         label {color: black}

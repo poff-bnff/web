@@ -81,13 +81,13 @@ function validateEmail() {
     var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
     if (!emailRe.test(String(email.value).toLowerCase())) {
-        email.classList.remove("valid")
-        email.classList.add("invalid")
+        emailHelp.classList.remove("valid")
+        emailHelp.classList.add("invalid")
         return false
     }
     else {
-        email.classList.remove("invalid")
-        email.classList.add("valid")
+        emailHelp.classList.remove("invalid")
+        emailHelp.classList.add("valid")
 
 
         return true
@@ -97,8 +97,8 @@ function validateEmail() {
 function validatePsw() {
 
     if (psw.value === "") {
-        psw.classList.remove("valid")
-        psw.classList.add("invalid")
+        pswHelp.classList.remove("valid")
+        pswHelp.classList.add("invalid")
         validatePswRep()
         return false
     }
@@ -106,14 +106,14 @@ function validatePsw() {
     var pswdRe = /^(?=.*[a-z])(?=.*[A-Z])\S{8,99}$/
 
     if (!pswdRe.test(String(psw.value))) {
-        psw.classList.remove("valid")
-        psw.classList.add("invalid")
+        pswHelp.classList.remove("valid")
+        pswHelp.classList.add("invalid")
         validatePswRep()
         return true
     }
     else {
-        psw.classList.remove("invalid")
-        psw.classList.add("valid")
+        pswHelp.classList.remove("invalid")
+        pswHelp.classList.add("valid")
         validatePswRep()
         return true
     }
