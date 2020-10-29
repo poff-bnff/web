@@ -45,6 +45,9 @@ block content
                 br
                 button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
                 br
+        if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
+            h1.dark_1
+                +euro(self.priceAtPeriod[0].price)
     style.
         #buybutton {display: none}
         #directToaddPicture {display:none}

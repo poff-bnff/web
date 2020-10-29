@@ -144,3 +144,5 @@ mixin tabname(currenttitle)
 mixin format(text)
     | !{ self.md(text) }
 
+mixin euro(number)
+    | #{number.toFixed(2)}€

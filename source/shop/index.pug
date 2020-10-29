@@ -42,7 +42,7 @@ block content
 
                                             .shop_item_body
                                                 if product.name && typeof product.name !== 'object'
-                                                    h4.text_center= product.name
+                                                    h4= product.name
 
                                                 //- if product.festival_edition && product.festival_edition && product.festival_edition.name
                                                 //-     .card_article_title
@@ -53,7 +53,16 @@ block content
                                                 //-         h3.article_title_locale= product.product_type.name
 
                                                 if product.description && typeof product.description !== 'object'
-                                                    p=product.description
+                                                    p= product.description
+
+                                            .shop_item_footer
+                                                h4= product.priceAtPeriod[0].price
+
+                                                if product.priceAtPeriod && product.priceAtPeriod[0] && product.priceAtPeriod[0].price
+                                                p
+                                                    +euro(product.priceAtPeriod[0].price)
+
+
 
                 if shop.shopRules
                         if typeof shop.shopRules === 'string'
