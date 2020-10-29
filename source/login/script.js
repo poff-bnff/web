@@ -150,20 +150,6 @@ async function getTokensForCode() {
 
 }
 
-async function showMergeInfo() {
-    document.getElementById('mergeInfo2').style.display = 'block'
-
-    var requestOptions = {
-        method: 'POST',
-        redirect: 'follow'
-    }
-
-    let response = await fetch(`https://api.poff.ee/match_user`, requestOptions)
-
-    console.log(await response.json())
-
-}
-
 
 function directToSignup() {
     window.open('http://localhost:4000/signup', '_self')
