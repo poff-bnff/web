@@ -512,6 +512,16 @@ footer
                         "f_qaclip_box"\
                         "f_trailer_box"\
 
+.grid_product
+        display grid
+        grid-template-columns 1fr
+        grid-template-rows auto
+        padding-top header_height
+        grid-template-areas "product_img_box"\
+                            "f_title_box"\
+                            "f_synopsis_box"\
+                            "f_cred_box"
+
 
 .grid_films
     display: grid
@@ -1282,6 +1292,9 @@ row:nth-child(15) > .supporter_logos
         color dark_1
     h4
         color dark_1
+
+// .product_img_box
+//     max-height 400px
 
 .schedule
     padding-top header_height
@@ -2291,6 +2304,14 @@ a.btn_popover
         //                     "f_dir_bio_box     f_dir_bio_box     f_extra_box"\
         //                     "f_trailer_box     f_trailer_box     f_trailer_box"\
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
+    .grid_product
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "product_img_box   f_title_box      f_title_box "\
+                            "f_synopsis_box    f_synopsis_box   f_cred_box"
         padding-top header_height
 
     .grid_articles
