@@ -67,7 +67,7 @@ for (const lang of languages) {
         // for the purpose of saving slug_en before it will be removed by rueten func.
         rueten(element, lang);
 
-
+        //TODO #444
         if (element.contents && element.contents[0]) {
             let searchRegExp = new RegExp(STRAPIHOSTWITHDIR, 'g');
             let replaceWith = `/assets/img/dynamic/img_articles/${lang}/${element.slug}/`;
