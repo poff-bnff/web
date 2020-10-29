@@ -4,6 +4,7 @@ include /_templates/mixins.pug
 block content
     //- - var myUri = 'https://dev.inscaping.eu/${lang_path}'
     - var myUri = `http://localhost:4000/${lang_path}`
+    - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
     //- - var myUri = `http://localhost:5000/${lang_path}`
     //- - var myUri = `${process.env['DOMAIN']}/${lang_path}`
     br
@@ -15,8 +16,10 @@ block content
     label(style={color: 'red'} for='loginUsername') Email:
     input#loginUsername(type='text')
     br
-    label(style={color: 'red'} for='loginPassword') Password:
-    input#loginPassword(type='password')
+    p#pswdResetMessage(style={display:'none'}) Enter your email and click reset password. Code will be sent to email.
+    div#password
+        label(style={color: 'red'} for='loginPassword') Password:
+        input#loginPassword(type='password')
     br
     p#signUpPassword2
     //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
