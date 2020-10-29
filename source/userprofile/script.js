@@ -96,6 +96,7 @@ async function sendUserProfile() {
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
         window.open(localStorage.getItem('url'), '_self')
+        localStorage.removeItem('url')
     }
 }
 
