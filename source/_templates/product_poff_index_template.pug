@@ -5,35 +5,38 @@ include /_templates/mixins.pug
 
 block content
 
-    main.grid_film
+    main.grid_product
 
-        .container_frame_16_9
+        .product_img_box
             if self.images
                 if self.images.image
-                    img.container_contents_16_9(alt= self.name ? self.name : '' data-src=`https://assets.poff.ee/img/${self.images.image.hash}${self.images.image.ext}`  src=`https://assets.poff.ee/img/${self.images.image.hash}${self.images.image.ext}`)
+                    img.shop_item_img(alt= self.name ? self.name : '' data-src=`https://assets.poff.ee/img/${self.images.image.hash}${self.images.image.ext}`  src=`https://assets.poff.ee/img/${self.images.image.hash}${self.images.image.ext}`)
                 else if self.images.imageDefault
-                    img.container_contents_16_9(alt= self.name ? self.name : '' data-src=`https://assets.poff.ee/img/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`  src=`https://assets.poff.ee/img/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`)
+                    img.shop_item_img(alt= self.name ? self.name : '' data-src=`https://assets.poff.ee/img/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`  src=`https://assets.poff.ee/img/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`)
                 else
                     img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
 
-        if self.festival_edition && self.festival_edition.name
-            br
-            br
-            br
-            br
-            h1.dark_1= self.festival_edition.name
-            br
-        if self.name && typeof self.name !== 'object'
-            h1.dark_1= self.name
-            br
-        if self.description && typeof self.description !== 'object'
-            h1.dark_1= self.description
-            br
-            br
-            br
-            br
-            br
-            br
+                    img.shop_item_img(src='/assets/img/static/placeholder_hd_1.jpg')
+
+        .f_title_box
+            //- if self.festival_edition && self.festival_edition.name
+            //-     h1.dark_1= self.festival_edition.name
+            //-     br
+            if self.name && typeof self.name !== 'object'
+                h1.film_title_detailed= self.name
+
+        section.f_synopsis_box
+                .str_info_meta_gi
+                    .str_info_meta_item
+                if self.description && typeof self.description !== 'undefined'
+                    - var description_md = self.description
+                    .synopsis_gi
+                        if typeof description_md === 'string'
+                            +format(description_md)
+
+        section.f_cred_box
+            h4= self.priceAtPeriod[0].price
+
             div.payment
                 button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`) OSTA
                 button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
@@ -65,7 +68,6 @@ block content
         [type=radio]:checked + img {
             outline: 4px solid #fd7e14;
         }
-
 
 
 
