@@ -15,7 +15,6 @@ block content
                     img.shop_item_img(alt= self.name ? self.name : '' data-src=`https://assets.poff.ee/img/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`  src=`https://assets.poff.ee/img/${self.images.imageDefault.hash}${self.images.imageDefault.ext}`)
                 else
                     img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
-
                     img.shop_item_img(src='/assets/img/static/placeholder_hd_1.jpg')
 
         .f_title_box
@@ -35,8 +34,9 @@ block content
                             +format(description_md)
 
         section.f_cred_box
-            h4= self.priceAtPeriod[0].price
-
+            if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
+                h4
+                    +euro(self.priceAtPeriod[0].price)
             div.payment
                 button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`) OSTA
                 button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
@@ -48,9 +48,6 @@ block content
                 br
                 button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
                 br
-        if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
-            h1.dark_1
-                +euro(self.priceAtPeriod[0].price)
     style.
         #buybutton {display: none}
         #directToaddPicture {display:none}
