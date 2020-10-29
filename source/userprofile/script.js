@@ -34,7 +34,9 @@ async function loadUserInfo() {
     }
     dob.value = userProfile.birthdate;
     if(userProfile.picture){
-        imgPreview.src = userProfile.picture
+        // imgPreview.src = userProfile.picture
+        // helloo asemele cognito id
+        imgPreview.src = "https://prod-poff-profile-pictures.s3.eu-central-1.amazonaws.com/helloo"
     }
 }
 
@@ -48,10 +50,13 @@ async function sendUserProfile() {
 
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/picture`, {
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+        },
     });
     data = await linkResponse.json()
-    console.log("saadud link on: ")
+    //console.log("saadud link on: ")
     console.log(data.link)
 
     let userToSend = [
@@ -65,9 +70,10 @@ async function sendUserProfile() {
         { Name: "address", Value: `${country.value}, ${city.value}` },
     ];
 
-    //saadab pildi link-ile
+    // saadab pildi link-ile
     var file = imgPreview.src;
-    console.log(file);
+
+    //console.log(file);
 
     var requestOptions = {
         method: 'PUT',
@@ -76,7 +82,6 @@ async function sendUserProfile() {
     };
 
     fetch(data.link, requestOptions)
-
 
     console.log("kasutaja profiil mida saadan");
     console.log(userToSend)
