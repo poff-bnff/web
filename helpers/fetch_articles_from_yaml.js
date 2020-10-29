@@ -74,7 +74,7 @@ for (const lang of allLanguages) {
                     }
                 }
                 let searchRegExp = new RegExp(STRAPIHOSTWITHDIR, 'g');
-                let replaceWith = `/assets/img/dynamic/img_articles/${lang}/${element.slug}/`;
+                let replaceWith = `https://assets.poff.ee/img/`;
                 const replaceImgPath = element.contents.replace(searchRegExp, replaceWith);
                 element.contents = replaceImgPath;
                 // timer.log(__filename, contentImgs);
