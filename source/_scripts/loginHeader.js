@@ -25,7 +25,7 @@ if (localStorage.getItem('ID_TOKEN') === null){
 
 
 function loadUserProfileH() {
-    console.log('loadUserProfileH')
+    console.log('laen cognitost kasutaja profiili....')
     var myHeaders = new Headers()
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'))
 
@@ -45,6 +45,7 @@ function loadUserProfileH() {
     }).then(function (data) {
         userProfile = data
         useUserData(data)
+        console.log("cognitos olev profiil:")
         console.log(userProfile);
 
     }).catch(function (error) {

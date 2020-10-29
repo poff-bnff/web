@@ -16,14 +16,11 @@ async function loadUserInfo() {
         document.getElementById('profileUnFilledMessage').style.display = 'block'
 
     }
-
-    console.log(userProfile)
+    console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
-        console.log(riik)
-        console.log(linn)
         city.value = linn
         country.value = riik
     }
@@ -36,9 +33,10 @@ async function loadUserInfo() {
         phoneNr.value = userProfile.phone_number;
     }
     dob.value = userProfile.birthdate;
-
-
-
+    if(userProfile.picture){
+        // imgPreview.src = userProfile.picture
+        console.log("profiili salvestatud pildi link on: " + userProfile.picture)
+    }
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -47,7 +45,7 @@ if (localStorage.getItem("ACCESS_TOKEN")) {
 }
 
 async function sendUserProfile() {
-    console.log('sendUserProfile');
+    console.log('sending user profile.....');
 
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/picture`, {
@@ -56,6 +54,7 @@ async function sendUserProfile() {
         //     Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')},
     });
     data = await linkResponse.json()
+    console.log("saadud link on: ")
     console.log(data.link)
 
     let userToSend = [
@@ -72,20 +71,39 @@ async function sendUserProfile() {
 
     //saadab pildi link-ile
     var file = imgPreview.src;
-    console.log(file);
+    console.log("file on...."+file);
 
-    var requestOptions = {
-        method: 'PUT',
-        body: file,
-        redirect: 'follow'
-    };
+    SendImgToS3(data.link)
 
-    fetch(data.link, requestOptions)
+    function SendImgToS3(myLink, myImg){
+
+        var requestOptions = {
+            method: 'PUT',
+            body: myImg,
+            redirect: 'follow'
+        };
+
+        fetch(myLink, requestOptions).then(function (response) {
+            if (response.ok) {
+                console.log(response.json())
+                return response.json();
+            }
+            return Promise.reject(response);
+        }).then(function (data) {
+            userProfile = data
+            console.log("cognitos olev profiil:")
+            console.log(userProfile);
+
+        }).catch(function (error) {
+            console.warn(error);
+        });
+
+    }
 
 
-
-    console.log(userToSend);
-    let response = await (await fetch(`https://api.poff.ee/profile`, {
+    console.log("kasutaja profiil mida saadan");
+    console.log(userToSend)
+    let response = await (fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
         headers: {
             Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
