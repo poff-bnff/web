@@ -88,8 +88,6 @@ function validateEmail() {
     else {
         emailHelp.classList.remove("invalid")
         emailHelp.classList.add("valid")
-
-
         return true
     }
 }
@@ -103,7 +101,7 @@ function validatePsw() {
         return false
     }
 
-    var pswdRe = /^(?=.*[a-z])(?=.*[A-Z])\S{8,99}$/
+    var pswdRe = /^.{8,}$/
 
     if (!pswdRe.test(String(psw.value))) {
         pswHelp.classList.remove("valid")
@@ -121,18 +119,18 @@ function validatePsw() {
 
 function validatePswRep() {
     if (psw2.value === "") {
-        psw2.classList.remove("valid")
-        psw2.classList.add("invalid")
+        psw2Help.classList.remove("valid")
+        psw2Help.classList.add("invalid")
         return false
     }
 
     if (psw.value !== psw2.value) {
-        psw2.classList.remove("valid")
-        psw2.classList.add("invalid")
+        psw2Help.classList.remove("valid")
+        psw2Help.classList.add("invalid")
         return false
     } else {
-        psw2.classList.remove("invalid")
-        psw2.classList.add("valid")
+        psw2Help.classList.remove("invalid")
+        psw2Help.classList.add("valid")
 
         return true
     }
@@ -141,12 +139,12 @@ function validatePswRep() {
 function validateFirstName() {
 
     if (firstName.value == "" || firstName.value.length < 2 || !isNaN(firstName.value)) {
-        firstName.classList.remove("valid")
-        firstName.classList.add("invalid")
+        firstNameHelp.classList.remove("valid")
+        firstNameHelp.classList.add("invalid")
         return false
     }
-    firstName.classList.remove("invalid")
-    firstName.classList.add("valid")
+    firstNameHelp.classList.remove("invalid")
+    firstNameHelp.classList.add("valid")
 
     return true
 }
@@ -154,12 +152,12 @@ function validateFirstName() {
 function validateLastName() {
 
     if (lastName.value === "" || lastName.value.length < 2 || !isNaN(lastName.value)) {
-        lastName.classList.remove("valid")
-        lastName.classList.add("invalid")
+        lastNameHelp.classList.remove("valid")
+        lastNameHelp.classList.add("invalid")
         return false
     }
-    lastName.classList.remove("invalid")
-    lastName.classList.add("valid")
+    lastNameHelp.classList.remove("invalid")
+    lastNameHelp.classList.add("valid")
 
     return true
 }
@@ -168,14 +166,14 @@ function validateLastName() {
 function validateGender() {
 
     if (gender.value === "") {
-        gender.classList.remove("valid")
-        gender.classList.add("invalid")
+        genderHelp.classList.remove("valid")
+        genderHelp.classList.add("invalid")
         return false
     }
 
     if (gender.value !== "") {
-        gender.classList.remove("invalid")
-        gender.classList.add("valid")
+        genderHelp.classList.remove("invalid")
+        genderHelp.classList.add("valid")
 
         return true
     }
@@ -183,21 +181,21 @@ function validateGender() {
 
 function validateBDay() {
     if (dob.value === "") {
-        dob.classList.remove("valid")
-        dob.classList.add("invalid")
+        dobHelp.classList.remove("valid")
+        dobHelp.classList.add("invalid")
         return false
     }
 
     var userAge = getAge(dob.value)
 
     if (userAge > 12 && userAge < 116) {
-        dob.classList.remove("invalid")
-        dob.classList.add("valid")
+        dobHelp.classList.remove("invalid")
+        dobHelp.classList.add("valid")
 
         return true
     } else {
-        dob.classList.remove("valid")
-        dob.classList.add("invalid")
+        dobHelp.classList.remove("valid")
+        dobHelp.classList.add("invalid")
 
         return false
     }
@@ -205,23 +203,21 @@ function validateBDay() {
 
 function validatePhoneNr() {
     if (phoneNr.value === "") {
-        phoneNr.classList.remove("valid")
-        phoneNr.classList.add("invalid")
+        phoneNrHelp.classList.remove("valid")
+        phoneNrHelp.classList.add("invalid")
         return false
     }
 
     var phoneRe = /^[0-9]*\S{5,18}$/
 
-
-
     if (!phoneRe.test(String(phoneNr.value))) {
-        phoneNr.classList.remove("valid")
-        phoneNr.classList.add("invalid")
+        phoneNrHelp.classList.remove("valid")
+        phoneNrHelp.classList.add("invalid")
         return true
     }
     else {
-        phoneNr.classList.remove("invalid")
-        phoneNr.classList.add("valid")
+        phoneNrHelp.classList.remove("invalid")
+        phoneNrHelp.classList.add("valid")
         return true
     }
 
@@ -230,15 +226,15 @@ function validatePhoneNr() {
 function validateCountry() {
 
     if (country.value === "") {
-        country.classList.remove("valid")
-        country.classList.add("invalid")
+        country.classList.remove("c_valid")
+        country.classList.add("c_invalid")
         country.value = "Elukoha riik"
         return false
     }
 
     if (country.value) {
-        country.classList.remove("invalid")
-        country.classList.add("valid")
+        country.classList.remove("c_invalid")
+        country.classList.add("c_valid")
 
         return true
     }
@@ -247,14 +243,14 @@ function validateCountry() {
 function validateCity() {
 
     if (city.value === "") {
-        city.classList.remove("valid")
-        city.classList.add("invalid")
+        city.classList.remove("c_valid")
+        city.classList.add("c_invalid")
         return false
     }
 
     if (city.value) {
-        city.classList.remove("invalid")
-        city.classList.add("valid")
+        city.classList.remove("c_invalid")
+        city.classList.add("c_valid")
 
         return true
     }
