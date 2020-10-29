@@ -73,7 +73,7 @@ block content
                     div.form-group
                         label.control-label(for='gds-cr-one')= self.label.userprofile.city
                         select#gds-cr-one.form-control(required='' oninput= 'validateCity()' value="")
-                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.saveButton
+                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.register
                     p.dark_1#profileSent(style= {display: 'none'})= self.label.userprofile.confirmMessage
                     a#loginButton(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}login`)= self.label.menu.mainLogin
 
