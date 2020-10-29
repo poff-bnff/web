@@ -38,15 +38,15 @@ block content
             h4= self.priceAtPeriod[0].price
 
             div.payment
-                button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`) OSTA
-                button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
-                button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
-                button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
+                button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`)= self.label.userprofile.pass
+                button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`)= self.label.userprofile.passHelp
+                button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profilePicHelp
+                button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profileAddInfoHelp
                 div#paymentLinks
                 br
                 div.dark_1#feedback
                 br
-                button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
+                button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`)= self.label.userprofile.payment
                 br
         if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
             h1.dark_1
