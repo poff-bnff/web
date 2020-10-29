@@ -2,14 +2,17 @@ head
     // Required meta tags
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    include ../_templates/head_common.pug
+
     // For Facebook share
     if self.title
         meta(property='og:title' content= self.title)
 
         if self.media && self.media.image && self.media.image[0]
-            - var featuredImg = `https://assets.poff.ee/img//${self.media.image[0].hash}${self.media.image[0].ext}`
+            - var featuredImg = `https://assets.poff.ee/img/${self.media.image[0].hash}${self.media.image[0].ext}`
         else if self.media && self.media.imageDefault && self.media.imageDefault[0]
-            - var featuredImg = `https://assets.poff.ee/img//${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
+            - var featuredImg = `https://assets.poff.ee/img/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
         else
             - var featuredImg = `https://justfilm.ee/assets/img/static/placeholder_hd_1.jpg`
 
