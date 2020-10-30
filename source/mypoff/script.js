@@ -1,6 +1,7 @@
 
 
 async function loadPassInfo() {
+    return 'ab12345678'
     let response = await fetch(`https://api.poff.ee/product`, {
         method: "GET",
         headers: {
