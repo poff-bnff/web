@@ -47,9 +47,9 @@ block content
     a#loginE(href=`https://api.poff.ee/auth/eventival`) Eventival
     br
     br
-    button(onclick='loginViaCognito()')= self.label.userprofile.signIn
-    button(onclick='directToSignup()')= self.label.userprofile.register
-    button(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+    button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
+    button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
+    button#resetPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
     br
     br
     p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
