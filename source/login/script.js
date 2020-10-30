@@ -150,6 +150,7 @@ async function getTokensForCode() {
 
 }
 
+
 async function showMergeInfo() {
     document.getElementById('mergeInfo2').style.display = 'block'
 
