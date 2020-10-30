@@ -2,6 +2,9 @@ head
     // Required meta tags
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    include ../_templates/head_common.pug
+
     // For Facebook share
     if self.title
         meta(property='og:title' content= self.title)
@@ -45,12 +48,9 @@ head
         if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
         n.queue=[];t=b.createElement(e);t.async=!0;
         t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window,document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
+        s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '869845863196210');
         fbq('track', 'PageView');
-        noscript
-        img(height='1' width='1' src='https://www.facebook.com/tr?id=8698458631962101&ev=PageView&noscript=1')
     // End Facebook Pixel Code
 
 
