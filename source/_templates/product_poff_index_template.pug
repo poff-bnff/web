@@ -17,12 +17,12 @@ block content
                     img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
                     img.shop_item_img(src='/assets/img/static/placeholder_hd_1.jpg')
 
-        .f_title_box
+        .product_title_box
             //- if self.festival_edition && self.festival_edition.name
             //-     h1.dark_1= self.festival_edition.name
             //-     br
             if self.name && typeof self.name !== 'object'
-                h1.film_title_detailed= self.name
+                h1.product_title_detailed= self.name
 
         section.f_synopsis_box
                 .str_info_meta_gi
@@ -38,15 +38,15 @@ block content
                 h4
                     +euro(self.priceAtPeriod[0].price)
             div.payment
-                button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`) OSTA
-                button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
-                button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
-                button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
+                button#buybutton.btn.btn_primary(onclick=`checkIfPasswordBuyer()`) OSTA
+                button#directToLoginButton.btn.btn_primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
+                button#directToaddPicture.btn.btn_primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
+                button#directToFillProfile.btn.btn_primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
                 div#paymentLinks
                 br
                 div.dark_1#feedback
                 br
-                button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
+                button#paybutton.btn.btn_primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
                 br
             h4
                 +euro(self.priceAtPeriod[0].price)
