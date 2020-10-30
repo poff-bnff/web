@@ -81,6 +81,7 @@ function validateEmail() {
     var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
     if (!emailRe.test(String(email.value).toLowerCase())) {
+
         emailHelp.classList.remove("valid")
         emailHelp.classList.add("invalid")
         return false
@@ -88,6 +89,7 @@ function validateEmail() {
     else {
         emailHelp.classList.remove("invalid")
         emailHelp.classList.add("valid")
+
         return true
     }
 }
@@ -97,6 +99,8 @@ function validatePsw() {
     if (psw.value === "") {
         pswHelp.classList.remove("valid")
         pswHelp.classList.add("invalid")
+
+
         validatePswRep()
         return false
     }
@@ -106,12 +110,14 @@ function validatePsw() {
     if (!pswdRe.test(String(psw.value))) {
         pswHelp.classList.remove("valid")
         pswHelp.classList.add("invalid")
+
         validatePswRep()
         return true
     }
     else {
         pswHelp.classList.remove("invalid")
         pswHelp.classList.add("valid")
+
         validatePswRep()
         return true
     }
@@ -121,6 +127,7 @@ function validatePswRep() {
     if (psw2.value === "") {
         psw2Help.classList.remove("valid")
         psw2Help.classList.add("invalid")
+
         return false
     }
 
@@ -131,6 +138,7 @@ function validatePswRep() {
     } else {
         psw2Help.classList.remove("invalid")
         psw2Help.classList.add("valid")
+
 
         return true
     }
@@ -146,6 +154,7 @@ function validateFirstName() {
     firstNameHelp.classList.remove("invalid")
     firstNameHelp.classList.add("valid")
 
+
     return true
 }
 
@@ -159,6 +168,7 @@ function validateLastName() {
     lastNameHelp.classList.remove("invalid")
     lastNameHelp.classList.add("valid")
 
+
     return true
 }
 
@@ -166,14 +176,18 @@ function validateLastName() {
 function validateGender() {
 
     if (gender.value === "") {
+
         genderHelp.classList.remove("valid")
         genderHelp.classList.add("invalid")
+
+
         return false
     }
 
     if (gender.value !== "") {
         genderHelp.classList.remove("invalid")
         genderHelp.classList.add("valid")
+
 
         return true
     }
@@ -183,6 +197,7 @@ function validateBDay() {
     if (dob.value === "") {
         dobHelp.classList.remove("valid")
         dobHelp.classList.add("invalid")
+
         return false
     }
 
@@ -197,14 +212,17 @@ function validateBDay() {
         dobHelp.classList.remove("valid")
         dobHelp.classList.add("invalid")
 
+
         return false
     }
 }
 
 function validatePhoneNr() {
     if (phoneNr.value === "") {
+
         phoneNrHelp.classList.remove("valid")
         phoneNrHelp.classList.add("invalid")
+
         return false
     }
 
@@ -218,6 +236,7 @@ function validatePhoneNr() {
     else {
         phoneNrHelp.classList.remove("invalid")
         phoneNrHelp.classList.add("valid")
+
         return true
     }
 
@@ -228,6 +247,7 @@ function validateCountry() {
     if (country.value === "") {
         country.classList.remove("c_valid")
         country.classList.add("c_invalid")
+
         country.value = "Elukoha riik"
         return false
     }
@@ -235,6 +255,7 @@ function validateCountry() {
     if (country.value) {
         country.classList.remove("c_invalid")
         country.classList.add("c_valid")
+
 
         return true
     }
@@ -245,6 +266,7 @@ function validateCity() {
     if (city.value === "") {
         city.classList.remove("c_valid")
         city.classList.add("c_invalid")
+
         return false
     }
 

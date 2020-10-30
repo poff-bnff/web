@@ -17,6 +17,7 @@ block content
                 h1.display-4.m-b-2(id= 'profileFilledMessage' style= {display: 'none'})= self.label.userprofile.userprofileTitle
 
 
+
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group(name= "userForm" onsubmit="return sendUserProfile()")
@@ -68,6 +69,7 @@ block content
         .valid {background-color: #e6f7e6; display: none}
         .c_invalid {background-color: #f5e4e9}
         .c_valid {background-color: #e6f7e6}
+
         h4 {color: #464646}
         h1 {color: black}
         #profileSent {color: black}
