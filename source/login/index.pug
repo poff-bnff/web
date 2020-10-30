@@ -4,6 +4,7 @@ include /_templates/mixins.pug
 block content
     //- - var myUri = 'https://dev.inscaping.eu/${lang_path}'
     - var myUri = `http://localhost:4000/${lang_path}`
+
     - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
     //- - var myUri = `http://localhost:5000/${lang_path}`
     //- - var myUri = `${process.env['DOMAIN']}/${lang_path}`
@@ -12,8 +13,9 @@ block content
     br
     br
     br
-    h4#number Log in with email+password
-    label(style={color: 'red'} for='loginUsername') Email:
+
+    h4#number= self.label.userprofile.enterHelp
+    label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
     input#loginUsername(type='text')
     br
     p#pswdResetMessage(style={display:'none'}) Enter your email and click reset password. Code will be sent to email.
@@ -23,7 +25,7 @@ block content
 
 
     div#password
-        label(style={color: 'red'} for='loginPassword') Password:
+        label(style={color: 'red'} for='loginPassword')= self.label.userprofile.password
         input#loginPassword(type='password')
         br
     div#passwordRep(style={display: 'none'})
@@ -44,11 +46,10 @@ block content
     br
     a#loginE(href=`https://api.poff.ee/auth/eventival`) Eventival
     br
-    button#loginBtn(onclick='loginViaCognito()') Login
-    button#signUpBtn(onclick='directToSignup()') SignUp
-    button#resetPasswordBtn(onclick='doResetPassword()') Reset password
     br
-    br
+    button(onclick='loginViaCognito()')= self.label.userprofile.signIn
+    button(onclick='directToSignup()')= self.label.userprofile.register
+    button(onclick='doResetPassword()')= self.label.userprofile.resetPassword
     br
     br
     p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
@@ -61,7 +62,6 @@ block content
         h1 {color: #464646}
         h4 {color: #464646}
         p {color: #464646}
-
 
 
 

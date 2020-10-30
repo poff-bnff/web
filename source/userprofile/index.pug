@@ -5,6 +5,7 @@ block content
     .main.container
         .row
             .col-md-6.col-md-offset-3
+            if self.label.userprofile
                 br
                 br
                 br
@@ -12,54 +13,63 @@ block content
                 br
                 br
                 br
-                h1.display-4.m-b-2(id= 'profileUnFilledMessage' style= {display: 'none'}) Registreerimise lõpuleviimiseks palun täida kasutaja ankeet:
-                h1.display-4.m-b-2(id= 'profileFilledMessage' style= {display: 'none'}) Sinu kasutajaandmed:
+                h1.display-4.m-b-2(id= 'profileUnFilledMessage' style= {display: 'none'})= self.label.userprofile.registerAddTitle
+                h1.display-4.m-b-2(id= 'profileFilledMessage' style= {display: 'none'})= self.label.userprofile.userprofileTitle
+
 
 
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group(name= "userForm" onsubmit="return sendUserProfile()")
-                        label(for='profileImg') Profiili pilt (kohustuslik passiostjale):
+                        label(for='profileImg')= self.label.userprofile.pictureTitle
                         div#imgError
                         input#profileImg.form-control(type='file', value='fileUpload' name='profileImg' oninput="readImage()")
                     div.form-group
-                        label(for='email') Email:
-                        input#email.form-control(type='email', placeholder='Email' name='email' autocomplete="off" oninput="validateEmail()")
+                        label(for='email')= self.label.userprofile.email
+                        input#email.form-control(type='email', placeholder=`${self.label.userprofile.email}` name='email' autocomplete="off" oninput="validateEmail()")
+                        div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
                     div.form-group
-                        label(for='firstName') Eesnimi:
-                        input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' autocomplete="off" oninput="validateFirstName()")
+                        label(for='firstName')= self.label.userprofile.firstName
+                        input#firstName.form-control(type='text', placeholder=`${self.label.userprofile.firstName}` name='firstName' autocomplete="off" oninput="validateFirstName()")
+                        div#firstNameHelp(class='valid')= self.label.userprofile.firstNameHelp
                     div.form-group
-                        label(for='lastName') Perekonnanimi:
-                        input#lastName.form-control(type='text', placeholder='Perenimi' name='lastName' autocomplete="off" oninput='validateLastName()')
-
+                        label(for='lastName')= self.label.userprofile.lastName
+                        input#lastName.form-control(type='text', placeholder=`${self.label.userprofile.lastName}` name='lastName' autocomplete="off" oninput='validateLastName()')
+                        div#lastNameHelp(class='valid')= self.label.userprofile.lastNameHelp
                     div.form-group
-                        label(for='gender') Sugu:
+                        label(for='gender')= self.label.userprofile.gender
                         select#gender(name='gender' oninput='validateGender()')
-                            option(value='male') Mees
-                            option(value='female') Naine
-                            option(value='other') Muu
-                            option(class='invalid' value="" selected="") vali
+                            option(value='male')= self.label.userprofile.genderM
+                            option(value='female')= self.label.userprofile.genderF
+                            option(value='other')= self.label.userprofile.genderO
+                            option(class='invalid' value="" selected="")= self.label.userprofile.select
+                        div#genderHelp(class='valid')= self.label.userprofile.genderHelp
                     div.form-group
-                        label(for='dob') Sünnikuupäev:
-                        input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob', max="2007-01-01", min="1905-01-01", oninput="validateBDay()")
+                        label(for='dob')= self.label.userprofile.birthday
+                        input#dob.form-control(type='date' name='dob', max="2007-01-01", min="1905-01-01", oninput="validateBDay()")
+                        div#dobHelp(class='valid')= self.label.userprofile.ageHelp
                     div.form-group
-                        label(for='phoneNr') Telefoni number:
-                        input#phoneNr.form-control(type='tel' placeholder='Telefoni number' name='phoneNr' oninput='validatePhoneNr()' autocomplete="off")
+                        label(for='phoneNr')= self.label.userprofile.phone
+                        input#phoneNr.form-control(type='tel' placeholder=`${self.label.userprofile.phone}` name='phoneNr' oninput='validatePhoneNr()' autocomplete="off")
+                        div#phoneNrHelp(class='valid')= self.label.userprofile.phoneNumHelp
                     div.form-group
-                        .dark_1 Elukoht:
+                        label= self.label.userprofile.address
                         br
-                        label.control-label(for='country') Riik:
-                        select#countrySelection.form-control.gds-cr(class='valid' country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry()')
+                        label.control-label(for='country')= self.label.userprofile.country
+                        select#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry()')
                     div.form-group
-                        label.control-label(for='gds-cr-one') Linn:
+                        label.control-label(for='gds-cr-one')= self.label.userprofile.city
                         select#gds-cr-one.form-control(required='' oninput= 'validateCity()')
-                    button.btn.btn-primary(onclick='validateForm()') Salvesta
-                    p#profileSent(style= {display: 'none'}) Andmed salvestatud!
+                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.saveButton
+                    p#profileSent(style= {display: 'none'})= self.label.userprofile.dataSaved
 
 
     style.
-        .invalid {background-color: #f5e4e9}
-        .valid {background-color: #e6f7e6}
+        .invalid {background-color: #f5e4e9; display: block; color: black}
+        .valid {background-color: #e6f7e6; display: none}
+        .c_invalid {background-color: #f5e4e9}
+        .c_valid {background-color: #e6f7e6}
+
         h4 {color: #464646}
         h1 {color: black}
         #profileSent {color: black}
