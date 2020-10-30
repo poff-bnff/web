@@ -14,15 +14,17 @@ block content
     br
     br
     h4#loginMessage= self.label.userprofile.enterHelp
-    p#currentUsername(style={display:'none'})
-    p#pswdResetMessage(style={display:'none'}) Enter your email and click reset password. Code will be sent to email.
-    p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email
-    p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x
+    p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
+    p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
+    p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
+    p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
     p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
+    p#currentUsername(style={display:'none'})
 
     div#userName
         label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
         input#loginUsername(type='text')
+
     div#password
         label(style={color: 'red'} for='loginPassword')= self.label.userprofile.password
         input#loginPassword(type='password')
@@ -48,7 +50,9 @@ block content
     br
     button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
     button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
-    button#resetPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+    button#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+    button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
+    button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
     br
     br
     p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
