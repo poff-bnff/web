@@ -175,6 +175,7 @@ function doResetPassword() {
 
     if (!loginUsername.value){
     console.log('reset');
+    document.getElementById('loginMessage').style.display = 'none'
     document.getElementById('password').style.display = 'none'
     document.getElementById('loginFB').style.display = 'none'
     document.getElementById('loginG').style.display = 'none'
@@ -190,14 +191,15 @@ function doResetPassword() {
         document.getElementById('resetPasswordBtn').style.display = 'none'
         document.getElementById('pswdResetEnterNewMessage').style.display = 'none'
         document.getElementById('pswdResetCompletedMessage').style.display = 'block'
+        document.getElementById('loginBtn').style.display = 'block'
         document.getElementById('loginPassword').value = ''
-
-
-
-
     }
 
     else if (loginUsername.value) {
+        document.getElementById('userName').style.display = 'none'
+        document.getElementById('currentUsername').style.display = 'none'
+        document.getElementById('currentUsername').innerHTML = loginUsername.value
+
         console.log('sendResetCode');
         console.log(loginUsername.value);
         sendResetCode()

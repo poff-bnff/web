@@ -13,17 +13,16 @@ block content
     br
     br
     br
-
-    h4#number= self.label.userprofile.enterHelp
-    label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
-    input#loginUsername(type='text')
-    br
+    h4#loginMessage= self.label.userprofile.enterHelp
+    p#currentUsername(style={display:'none'})
     p#pswdResetMessage(style={display:'none'}) Enter your email and click reset password. Code will be sent to email.
     p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email
     p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x
     p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
 
-
+    div#userName
+        label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
+        input#loginUsername(type='text')
     div#password
         label(style={color: 'red'} for='loginPassword')= self.label.userprofile.password
         input#loginPassword(type='password')
