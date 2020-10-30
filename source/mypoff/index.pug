@@ -44,6 +44,8 @@ block content
                                             .shop_item_body
                                                 if product.name && typeof product.name !== 'object'
                                                     h4= product.name
+                                                    div(id="qrcode_" + prodCatList.id) QR
+
 
                                                 //- if product.festival_edition && product.festival_edition && product.festival_edition.name
                                                 //-     .card_article_title
@@ -66,9 +68,9 @@ block content
 
 
                 if shop.shopRules
-                        if typeof shop.shopRules === 'string'
-                            p
-                                +format(shop.shopRules)
+                    if typeof shop.shopRules === 'string'
+                        p
+                            +format(shop.shopRules)
 
 
     //- e pood, pealkiri, intro text, toodete leotelu osa, millel samuti pealkiri ja siis listitud tooted, - seos Product_Category’dega
