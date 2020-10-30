@@ -171,14 +171,39 @@ function directToSignup() {
 
 
 function doResetPassword() {
+
+    if (!loginUsername.value){
     console.log('reset');
     document.getElementById('password').style.display = 'none'
-    document.getElementById('pswdResetMessage').style.display = 'block'
+    document.getElementById('loginFB').style.display = 'none'
+    document.getElementById('loginG').style.display = 'none'
+    document.getElementById('loginE').style.display = 'none'
+    document.getElementById('loginBtn').style.display = 'none'
+    document.getElementById('signUpBtn').style.display = 'none'
 
-    if (loginUsername.value) {
+    document.getElementById('pswdResetMessage').style.display = 'block'
+    }
+    else if (loginPasswordRep.value){
+        console.log('resetting');
+        document.getElementById('passwordRep').style.display = 'none'
+        document.getElementById('resetPasswordBtn').style.display = 'none'
+        document.getElementById('pswdResetEnterNewMessage').style.display = 'none'
+        document.getElementById('pswdResetCompletedMessage').style.display = 'block'
+        document.getElementById('loginPassword').value = ''
+
+
+
+
+    }
+
+    else if (loginUsername.value) {
+        console.log('sendResetCode');
+        console.log(loginUsername.value);
         sendResetCode()
     }
+
 }
+
 
 async function sendResetCode(){
 
@@ -195,4 +220,22 @@ async function sendResetCode(){
     let response = await fetch(`https://api.poff.ee/profile/pswd`, requestOptions)
 
     console.log(await response.json())
+
+    document.getElementById('resetPasswordBtn').style.display = 'none'
+    document.getElementById('resetCodeBox').style.display = 'block'
+    document.getElementById('pswdResetMessage').style.display = 'none'
+    document.getElementById('pswdResetCodeMessage').style.display = 'block'
+
+}
+
+function askForNewPassword(){
+    document.getElementById('resetPasswordBtn').style.display = 'block'
+    document.getElementById('password').style.display = 'block'
+    document.getElementById('passwordRep').style.display = 'block'
+    document.getElementById('resetCodeBox').style.display = 'none'
+    document.getElementById('pswdResetCodeMessage').style.display = 'none'
+    document.getElementById('pswdResetEnterNewMessage').style.display = 'block'
+
+
+
 }

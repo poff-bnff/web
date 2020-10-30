@@ -17,23 +17,36 @@ block content
     input#loginUsername(type='text')
     br
     p#pswdResetMessage(style={display:'none'}) Enter your email and click reset password. Code will be sent to email.
+    p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email
+    p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x
+    p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
+
+
     div#password
         label(style={color: 'red'} for='loginPassword') Password:
         input#loginPassword(type='password')
+        br
+    div#passwordRep(style={display: 'none'})
+        label(style={color: 'red'} for='loginPasswordRep') Password again:
+        input#loginPasswordRep(type='password')
     br
+    div#resetCodeBox(style={display:'none'})
+        label(style={color: 'red'} for='resetCode') Code:
+        input#resetCode(type='text')
+        button(onclick = 'askForNewPassword()') Send
     p#signUpPassword2
     //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
     //- br
     //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
-    a(href=`https://api.poff.ee/auth/facebook`) Facebook
+    a#loginFB(href=`https://api.poff.ee/auth/facebook`) Facebook
     br
-    a(href=`https://api.poff.ee/auth/google`) Google
+    a#loginG(href=`https://api.poff.ee/auth/google`) Google
     br
-    a(href=`https://api.poff.ee/auth/eventival`) Eventival
+    a#loginE(href=`https://api.poff.ee/auth/eventival`) Eventival
     br
-    button(onclick='loginViaCognito()') Login
-    button(onclick='directToSignup()') SignUp
-    button(onclick='doResetPassword()') Reset password
+    button#loginBtn(onclick='loginViaCognito()') Login
+    button#signUpBtn(onclick='directToSignup()') SignUp
+    button#resetPasswordBtn(onclick='doResetPassword()') Reset password
     br
     br
     br
