@@ -30,28 +30,28 @@ block content
 
                     div.form-group
                         label(for='email')= self.label.userprofile.email
-                        input#email.form-control(type='email', placeholder=`${self.label.userprofile.email}` name='email' autocomplete="off" oninput="validateEmail()")
+                        input#email.form-control(type='email', placeholder=`${self.label.userprofile.email}` name='email' autocomplete="off" oninput="validateEmail(this.id)")
                         div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
                     div#pswds
                         div.form-group
                             label(for='psw')= self.label.userprofile.password
-                            input#psw.form-control(type='password', placeholder=`${self.label.userprofile.password}` name='psw' autocomplete="off" oninput="validatePsw()" )
+                            input#psw.form-control(type='password', placeholder=`${self.label.userprofile.password}` name='psw' autocomplete="off" oninput="validatePsw(this.id)" )
                             div#pswHelp(class='valid')= self.label.userprofile.passwordHelp
                         div.form-group
                             label(for='psw2')= self.label.userprofile.passwordRepeat
-                            input#psw2.form-control(type='password', placeholder=`${self.label.userprofile.passwordRepeat}`  name='psw2' autocomplete="off" oninput="validatePswRep()")
+                            input#psw2.form-control(type='password', placeholder=`${self.label.userprofile.passwordRepeat}`  name='psw2' autocomplete="off" oninput="validatePswRep("psw", "psw2")")
                             div#psw2Help(class='valid')= self.label.userprofile.password2Help
                     div.form-group
                         label(for='firstName')= self.label.userprofile.firstName
-                        input#firstName.form-control(type='text', placeholder=`${self.label.userprofile.firstName}` name='firstName' autocomplete="off" oninput="validateFirstName()")
+                        input#firstName.form-control(type='text', placeholder=`${self.label.userprofile.firstName}` name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
                         div#firstNameHelp(class='valid')= self.label.userprofile.firstNameHelp
                     div.form-group
                         label(for='lastName')= self.label.userprofile.lastName
-                        input#lastName.form-control(type='text', placeholder=`${self.label.userprofile.lastName}` name='lastName' autocomplete="off" oninput='validateLastName()')
+                        input#lastName.form-control(type='text', placeholder=`${self.label.userprofile.lastName}` name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
                         div#lastNameHelp(class='valid')= self.label.userprofile.lastNameHelp
                     div.form-group
                         label(for='gender')= self.label.userprofile.gender
-                        select#gender(name='gender' oninput='validateGender()' onclick='styleGenderList()')
+                        select#gender(name='gender' oninput='validateGender(this.id)' onclick='styleGenderList()')
                             option(value='male' )= self.label.userprofile.genderM
                             option(value='female' )= self.label.userprofile.genderF
                             option(value='other' )= self.label.userprofile.genderO
@@ -59,20 +59,20 @@ block content
                         div#genderHelp(class='valid')= self.label.userprofile.genderHelp
                     div.form-group
                         label(for='dob')= self.label.userprofile.birthday
-                        input#dob.form-control(type='date' name='dob', max="2007-01-01", min="1905-01-01", oninput="validateBDay()")
+                        input#dob.form-control(type='date' name='dob', max="2007-01-01", min="1905-01-01", oninput="validateBDay(this.id)")
                         div#dobHelp(class='valid')= self.label.userprofile.ageHelp
                     div.form-group
                         label(for='phoneNr')= self.label.userprofile.phone
-                        input#phoneNr.form-control(type='tel', placeholder=`${self.label.userprofile.phone}` name='phoneNr' oninput='validatePhoneNr()' autocomplete="off")
+                        input#phoneNr.form-control(type='tel', placeholder=`${self.label.userprofile.phone}` name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
                         div#phoneNrHelp(class='valid')= self.label.userprofile.phoneNumHelp
                     div.form-group
                         label= self.label.userprofile.address
                         br
                         label.control-label(for='country')= self.label.userprofile.country
-                        select#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry()')
+                        select#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='gds-cr-one' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry(this.id)')
                     div.form-group
                         label.control-label(for='gds-cr-one')= self.label.userprofile.city
-                        select#gds-cr-one.form-control(required='' oninput= 'validateCity()' value="")
+                        select#gds-cr-one.form-control(required='' oninput= 'validateCity(this.id)' value="")
                     button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.register
                     p.dark_1#profileSent(style= {display: 'none'})= self.label.userprofile.confirmMessage
                     a#loginButton(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}login`)= self.label.menu.mainLogin
