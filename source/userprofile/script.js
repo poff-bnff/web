@@ -182,3 +182,56 @@ function readImage() {
     });
 }
 
+
+
+function validateForm() {
+
+    var errors = []
+
+    if (document.getElementById('profileSent')){
+    document.getElementById('profileSent').style.display = 'none'
+    }
+
+    if (!validateEmail('email')) {
+        errors.push('Missing or invalid email')
+    }
+
+    if (!validateFirstName("firstName")) {
+        errors.push('Missing firstname')
+    }
+
+    if (!validateLastName("lastName")) {
+        errors.push('Missing lastname')
+    }
+
+    if (!validateGender("gender")) {
+        errors.push('Missing gender')
+    }
+
+    if (!validateBDay("dob")) {
+        errors.push('Missing or invalid date of birth')
+    }
+
+    if (!validatePhoneNr("phoneNr")) {
+        errors.push('Missing phonenumber')
+    }
+
+    if (!validateCountry("countrySelection")) {
+        errors.push('Missing country')
+    }
+
+    if (!validateCity("gds-cr-one")) {
+        errors.push('Missing city')
+    }
+
+    console.log(errors)
+    if (errors.length === 0) {
+
+        if (window.location.href === userprofilePageURL) {
+            sendUserProfile()
+        } else {
+            sendNewUser()
+        }
+    }
+}
+
