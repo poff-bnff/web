@@ -533,6 +533,13 @@ footer
 //                         "f_extra_box"\
 //                         "f_imgs_box"
 
+.grid_ss
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    background-color bg_color_1
+
 .grid_articles
     display: grid
     grid-template-columns: 1fr
@@ -2030,35 +2037,46 @@ a.btn_popover
 .article_hero_head
     position relative
     grid-column 1 / 4
-    height calc(100vh - 97px)
+    height calc(100vh - 100px)
 
 .article_hero_image
     width 100vw
-    height calc(100vh - 97px)
+    height calc(100vh - 100px)
     object-fit cover
     z-index -1
 
 .about_hero_head
     position relative
     grid-column 1 / 4
-    height calc(80vh - 97px)
+    height calc(80vh - 100px)
 
 .ss_hero_head
     position relative
-    grid-column 1 / 4
-    height calc(80vh - 97px)
+    // grid-column 1 / 4
+    width 100vw
+    display grid
+    grid-template-columns 1fr
+    // height 100vw
+    // height calc(80vh - 100px)
+
+.ss_hero_square
+    width 80vh
+    height 80vh
 
 .about_hero_image
     width 100vw
-    height calc(80vh - 97px)
+    height calc(80vh - 100px)
     object-fit cover
     z-index -1
 
 .ss_hero_image
-    width 100vw
-    height calc(80vh - 97px)
+    width 100%
+    // width calc(80vh - 100px)
+    // height calc(80vh - 100px)
+    // width 100vw
+    // height calc(80vh - 97px)
     object-fit cover
-    z-index -1
+    // z-index -1
 
 .article_hero_headline_box
     position absolute
@@ -2086,8 +2104,8 @@ a.btn_popover
 
 .ss_hero_headline_box
     position absolute
-    bottom calc(30vh - 6rem)
-    left 0
+    bottom 30px
+    right 0vw
     width 67vw
     // background rgba(10,0,3,.6)
     // background rgba(236,0,140,.6)
@@ -2126,7 +2144,7 @@ a.btn_popover
 
 .ss_title_detailed
     font-family font_h
-    font-size calc(1.9rem + 1.5vw)
+    font-size calc(1.9rem + 2.4vw)
     text-decoration none
     text-align left
     font-weight 300
@@ -2152,13 +2170,17 @@ a.btn_popover
 
 .ss_title_detailed span
     // background-color rgba(255,255,255,.9)
-    background-color white
-    color dark_4
+    // background-color white
+    // color dark_4
+    background-color bg_dark_2
+    color clr_primary
     display inline
     padding-left 3rem
-    padding-right 1.2rem
-    padding-top .5rem
-    font-size 3rem
+    padding-right 3rem
+    padding-top .7rem
+    padding-bottom .5rem
+    // font-size 3rem
+    font-size calc(1.9rem + 2.4vw)
     line-height 1.55
     box-decoration-break clone
 
@@ -2406,6 +2428,13 @@ a.btn_popover
         //                     "f_trailer_box     f_trailer_box     f_trailer_box"\
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
+
+    .grid_ss
+        display grid
+        grid-template-columns 2
+        grid-template-rows auto
+        grid-gap 4rem
+
 
     .grid_product
         display grid
@@ -2691,6 +2720,15 @@ a.btn_popover
         justify-items center
         align-items center
         background-color bg_dark_1
+
+    .ss_hero_head
+        position relative
+        grid-column 1 / 4
+        width 100vw
+        display grid
+        grid-template-columns 1fr 1fr
+        // height 100vw
+        // height calc(80vh - 100px)
 
 
     // nav
@@ -2993,6 +3031,9 @@ strong
 
 .padding_top_0
     padding-top 0px
+
+.padding_top_header
+    padding-top header_height
 
 .bg_white
     background-color white
