@@ -3,7 +3,7 @@ fetchMyPasses()
 async function fetchMyPasses(){
     console.log('fetchMyPasses');
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer" + localStorage.getItem('ACCESS_TOKEN'));
+    myHeaders.append("Authorization", "Bearer " + localStorage.getItem('ACCESS_TOKEN'));
 
     var requestOptions = {
       method: 'GET',
