@@ -78,10 +78,10 @@ function readYaml(lang, doc) {
         for (shop of doc) {
             if (shop.prodCatList) {
                 for (prodCatList of shop.prodCatList) {
-                    if (prodCatList.product) {
-                        for (product of prodCatList.product) {
-                            if (product.product_category && product.product_category.images) {
-                                let images = product.product_category.images
+                    if (prodCatList.orderedProductCategories) {
+                        for (orderedProductCategory of prodCatList.orderedProductCategories) {
+                            if (orderedProductCategory.product_category && orderedProductCategory.product_category.images) {
+                                let images = orderedProductCategory.product_category.images
                                 fs.mkdirSync(`${savePath}${lang}`, {recursive: true})
 
                                 if (images.imageDefault) {
