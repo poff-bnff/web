@@ -21,8 +21,8 @@ async function loadUserInfo() {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
-        city.value = linn
-        country.value = riik
+        citySelection.value = linn
+        countrySelection.value = riik
     }
 
     firstName.value = userProfile.name;
@@ -77,9 +77,9 @@ async function sendUserProfile() {
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
         { Name: "birthdate", Value: dob.value },
-        { Name: "phone_number", Value: phoneNr.value },
+        { Name: "phone_number", Value: '+' + phoneNr.value },
         { Name: "email", Value: email.value },
-        { Name: "address", Value: `${country.value}, ${city.value}` },
+        { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
     ];
 
 
@@ -220,7 +220,7 @@ function validateForm() {
         errors.push('Missing country')
     }
 
-    if (!validateCity("gds-cr-one")) {
+    if (!validateCity("citySelection")) {
         errors.push('Missing city')
     }
 

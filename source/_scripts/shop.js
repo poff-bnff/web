@@ -113,6 +113,7 @@ function GetPaymentLinks() {
 function checkIfPasswordBuyer(){
     if (userProfile.picture && userProfile.profile_filled){
         console.log(true)
+        saveLangpath(langpath)
         GetPaymentLinks()
     } else if (userProfile.profile_filled) {
         document.getElementById('buybutton').style.display = 'none'
@@ -131,5 +132,8 @@ function directToUserProfile() {
     window.open('http://localhost:4000/userprofile', '_self')
 }
 
+function saveLangpath(langpath){
+    console.log(langpath);
+}
 
 

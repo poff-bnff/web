@@ -19,7 +19,6 @@ function validatePsw(element_id) {
     if (psw.value === "") {
         pswHelp.classList.remove("valid")
         pswHelp.classList.add("invalid")
-        validatePswRep()
         return false
     }
 
@@ -28,14 +27,12 @@ function validatePsw(element_id) {
     if (!pswdRe.test(String(psw.value))) {
         pswHelp.classList.remove("valid")
         pswHelp.classList.add("invalid")
-        validatePswRep()
         return true
     }
     else {
         pswHelp.classList.remove("invalid")
         pswHelp.classList.add("valid")
 
-        validatePswRep()
         return true
     }
 }
@@ -129,7 +126,8 @@ function validatePhoneNr(element_id) {
         return false
     }
 
-    var phoneRe = /^[0-9]*\S{5,18}$/
+    // because of https://bit.ly/37WS3X5
+    var phoneRe = /^[0-9]{7,15}$/
 
     if (!phoneRe.test(String(phoneNr.value))) {
         phoneNrHelp.classList.remove("valid")
@@ -167,7 +165,7 @@ function validateCity(element_id) {
         city.classList.add("c_invalid")
         return false
     }
-
+    console.log(city.value);
     if (city.value) {
         city.classList.remove("c_invalid")
         city.classList.add("c_valid")

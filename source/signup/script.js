@@ -11,15 +11,15 @@ async function loadUserInfo() {
     });
     let userProfile = await response.json();
 
-    console.log(userProfile)
+    console.log('userProfile', userProfile)
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
         console.log(riik)
         console.log(linn)
-        city.value = linn
-        country.value = riik
+        citySelection.value = linn
+        countrySelection.value = riik
     }
 
     firstName.value = userProfile.name;
@@ -47,8 +47,8 @@ async function sendNewUser() {
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
         { Name: "birthdate", Value: dob.value },
-        { Name: "phone_number", Value: phoneNr.value },
-        { Name: "address", Value: `${country.value}, ${city.value}` },
+        { Name: "phone_number", Value: '+' + phoneNr.value },
+        { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
         { Name: "password", Value: psw.value }
     ];
 
@@ -155,7 +155,7 @@ function validateForm() {
         errors.push('Missing country')
     }
 
-    if (!validateCity("gds-cr-one")) {
+    if (!validateCity("citySelection")) {
         errors.push('Missing city')
     }
 
