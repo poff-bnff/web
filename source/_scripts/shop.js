@@ -1,5 +1,6 @@
 
 if (localStorage.getItem('ACCESS_TOKEN') && (document.getElementById("directToLoginButton"))) {
+    console.log('loggedin');
         document.getElementById("directToLoginButton").style.display = 'none'
         document.getElementById("buybutton").style.display = 'block'
 }
