@@ -944,6 +944,7 @@ IndustryProject: &IndustryProject
     images:
         - *StrapiMedia
     clipUrl: (text)
+    slug: (UID)
 
 # Supporters
 SupPoff: &SupPoff
