@@ -2043,7 +2043,18 @@ a.btn_popover
     grid-column 1 / 4
     height calc(80vh - 97px)
 
+.ss_hero_head
+    position relative
+    grid-column 1 / 4
+    height calc(80vh - 97px)
+
 .about_hero_image
+    width 100vw
+    height calc(80vh - 97px)
+    object-fit cover
+    z-index -1
+
+.ss_hero_image
     width 100vw
     height calc(80vh - 97px)
     object-fit cover
@@ -2062,6 +2073,18 @@ a.btn_popover
     padding 2rem 2rem 2rem 2rem
 
 .about_hero_headline_box
+    position absolute
+    bottom calc(30vh - 6rem)
+    left 0
+    width 67vw
+    // background rgba(10,0,3,.6)
+    // background rgba(236,0,140,.6)
+    // background rgba(90,0,60,.7)
+    // background-color clr_primary
+    text-align left
+    padding 2rem 2rem 2rem 0rem
+
+.ss_hero_headline_box
     position absolute
     bottom calc(30vh - 6rem)
     left 0
@@ -2101,7 +2124,33 @@ a.btn_popover
         text-decoration: none
         // color white_96
 
+.ss_title_detailed
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 300
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
 .about_title_detailed span
+    // background-color rgba(255,255,255,.9)
+    background-color white
+    color dark_4
+    display inline
+    padding-left 3rem
+    padding-right 1.2rem
+    padding-top .5rem
+    font-size 3rem
+    line-height 1.55
+    box-decoration-break clone
+
+.ss_title_detailed span
     // background-color rgba(255,255,255,.9)
     background-color white
     color dark_4
