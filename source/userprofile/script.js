@@ -36,9 +36,17 @@ async function loadUserInfo() {
     if(userProfile.picture){
         // imgPreview.src = userProfile.picture
         console.log("profiili salvestatud pildi link on: " + userProfile.picture)
-        // helloo asemele cognito id
+
+        showUserPicture(userProfile.picture)
+
+
         // imgPreview.src = "https://prod-poff-profile-pictures.s3.eu-central-1.amazonaws.com/helloo"
     }
+}
+
+async function showUserPicture(pictureUrl){
+let pic = await fetch(pictureUrl)
+console.log(pic);
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -61,8 +69,10 @@ async function sendUserProfile() {
     //console.log("saadud link on: ")
     console.log(data.link)
 
+    let pictureLink = ((await data.link).split('?'))[0]
+
     let userToSend = [
-        { Name: "picture", Value: await data.link },
+        { Name: "picture", Value: pictureLink },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
@@ -224,3 +234,4 @@ function validateForm() {
         }
     }
 }
+

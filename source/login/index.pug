@@ -13,37 +13,46 @@ block content
     br
     br
     br
+    h4#loginMessage= self.label.userprofile.enterHelp
+    p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
+    p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
+    p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
+    p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
+    p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
+    p#currentUsername(style={display:'none'})
 
-    h4#number= self.label.userprofile.enterHelp
-    label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
-    input#loginUsername(type='text')
-    br
-    p#pswdResetMessage(style={display:'none'}) Enter your email and click reset password. Code will be sent to email.
+    div#userName
+        label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
+        input#loginUsername(type='text')
+
     div#password
         label(style={color: 'red'} for='loginPassword')= self.label.userprofile.password
         input#loginPassword(type='password')
+        br
+    div#passwordRep(style={display: 'none'})
+        label(style={color: 'red'} for='loginPasswordRep') Password again:
+        input#loginPasswordRep(type='password')
     br
+    div#resetCodeBox(style={display:'none'})
+        label(style={color: 'red'} for='resetCode') Code:
+        input#resetCode(type='text')
+        button(onclick = 'askForNewPassword()') Send
     p#signUpPassword2
     //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
     //- br
     //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
-    a(href=`https://api.poff.ee/auth/facebook`) Facebook
-
-
+    a#loginFB(href=`https://api.poff.ee/auth/facebook`) Facebook
     br
-    a(href=`https://api.poff.ee/auth/google`) Google
+    a#loginG(href=`https://api.poff.ee/auth/google`) Google
     br
-    a(href=`https://api.poff.ee/auth/eventival`) Eventival
+    a#loginE(href=`https://api.poff.ee/auth/eventival`) Eventival
     br
-    button(onclick='loginViaCognito()') Login
-    button(onclick='directToSignup()') SignUp
-    button(onclick='doResetPassword()') Reset password
     br
-    a(href=`https://api.poff.ee/auth/eventival`) Eventival
-    br
-    button(onclick='loginViaCognito()')= self.label.userprofile.signIn
-    button(onclick='directToSignup()')= self.label.userprofile.register
-    button(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+    button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
+    button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
+    button#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+    button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
+    button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
     br
     br
     p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
