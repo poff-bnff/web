@@ -27,6 +27,7 @@ white_96 = rgba(255, 255, 255, 0.96)
 white_semi = rgba(255, 255, 255, 0.5)
 poff_orange = #F39133
 poff_orange_2 = #F36C3F
+poff_orange_3 = #fa8538
 orange_strong = #F67625
 ghost_blue = #3EADEF
 elisa_blue = #0019af
@@ -119,21 +120,6 @@ body
 
 // main
 //     height 100vh
-
-.bg_dark_1
-    background-color bg_dark_1
-
-.bg_dark_2
-    background-color bg_dark_2
-
-.bg_dark_3
-    background-color bg_dark_3
-
-.bg_dark_4
-    background-color bg_dark_4
-
-.ghost_blue
-    color ghost_blue
 
 .font_weight_200
     font-weight 200
@@ -289,6 +275,16 @@ header
     // text-align center
     // padding-top .1rem
 
+.user_menu
+    position absolute
+    // display inline
+    bottom 0
+    height 1rem
+    // right 0
+    // padding-right 1rem
+    // text-align center
+    // padding-top .1rem
+
 .org_item
     // display inline
     font-size 14px
@@ -301,9 +297,17 @@ header
         text-decoration none
         font-size 14px
 
-// .ul_kaks:first-child
-//     padding-top 5rem
-//     padding-right 50vw
+.user_menu_item
+    // display inline
+    // font-size 14px
+    font-family font_h
+    color dark_4
+    padding-left 1rem
+    padding-right 1rem
+    // padding-right 1rem
+    a
+        text-decoration none
+        // font-size 14px
 
 // HEADER & NAV --------------------
 
@@ -1140,6 +1144,15 @@ row:nth-child(15) > .supporter_logos
 .shop
     padding-top header_height
 
+.shop_intro_box
+    display flex
+    justify-content center
+    padding 3rem
+
+.shop_intro
+    column-count auto
+    column-width 65ch
+    color dark_1
 
 .sub_team
     display grid
@@ -1257,7 +1270,7 @@ row:nth-child(15) > .supporter_logos
         color dark_1
 
 .shop_item_footer
-    min-height 26px
+    min-height 24px
     max-height max-content
     padding 0rem 1rem 1rem 1rem
     // padding 1rem
@@ -1298,6 +1311,17 @@ header
     padding-bottom calc(1rem + 1vw)
     display grid
     grid-template-columns 1fr
+
+.product_title_box
+    grid-area f_title_box
+    background-color bg_dark_1
+    padding-left calc(1rem + 3.6vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+    display grid
+    grid-template-columns 1fr
+
 
 .f_synopsis_box
     grid-area f_synopsis_box
@@ -1578,6 +1602,20 @@ p a
   padding-top 1rem
   padding-bottom 1rem
   align-self center
+
+.product_title_detailed
+    font-family font_h
+    font-size calc(1rem + 3.6vw)
+    text-decoration none
+    text-align left
+    font-weight 400
+    line-height 1.618
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    align-self center
+
+
 
 .str_info_blokk_1
   align-self end
@@ -2290,11 +2328,13 @@ a.btn_popover
 
     .grid_product
         display grid
-        grid-template-columns 1fr 1fr 1fr
+        grid-template-columns minmax(15rem, 24rem) 1fr 1fr
         grid-template-rows auto
-        grid-template-areas "product_img_box   f_title_box      f_title_box "\
-                            "f_synopsis_box    f_synopsis_box   f_cred_box"
+        grid-template-areas "product_img_box  f_title_box  f_title_box"\
+                            "f_synopsis_box   f_synopsis_box f_cred_box"
         padding-top header_height
+        // padding-left 6rem
+        // padding-right 6rem
 
     .grid_articles
         display: grid
@@ -2497,6 +2537,25 @@ a.btn_popover
         height 1rem
         // padding-top .1rem
 
+    .user_menu
+        position fixed
+        // display inline
+        top 0
+        right 0
+        padding-right 1rem
+        height 1rem
+        // padding-top .1rem
+
+    .lang_menu
+        position fixed
+        // display inline
+        top 0
+        right 0
+        padding-left 1.5rem
+        padding-right 2rem
+        height 1rem
+        // padding-top .1rem
+
     .org_item
         // display inline
         font-size 14px
@@ -2508,6 +2567,20 @@ a.btn_popover
         a
             text-decoration none
             font-size 14px
+
+    .user_menu_item
+        display inline
+        // font-size 14px
+        font-family font_h
+        color dark_4
+        test-align right
+        padding-left 1rem
+        padding-right 1rem
+        // padding-right 1rem
+        border 1px solid red
+        a
+            text-decoration none
+            // font-size 14px
 
     // .grid_footer_row
     //     grid-area footer
@@ -2838,3 +2911,18 @@ strong
 
 .thin_300
     font-weight 300
+
+.bg_dark_1
+    background-color bg_dark_1
+
+.bg_dark_2
+    background-color bg_dark_2
+
+.bg_dark_3
+    background-color bg_dark_3
+
+.bg_dark_4
+    background-color bg_dark_4
+
+.ghost_blue
+    color ghost_blue
