@@ -540,6 +540,13 @@ footer
     grid-template-rows: auto
     padding-top header_height
 
+.grid_sponsor_stories
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-columns: auto
+    grid-template-rows: auto
+    padding-top header_height
+
 .grid_flickr
     display grid
     grid-template-columns repeat(auto-fill, minmax(450px, 1fr))
@@ -1456,6 +1463,21 @@ header
     height 100%
     object-fit cover
 
+.container_frame_square
+    position relative
+    height 0
+    overflow hidden
+    padding-top 100%
+    background bg_dark_4
+
+.container_contents_square
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
 .container_frame_12_5
     position relative
     height 0
@@ -1947,8 +1969,18 @@ a.btn_popover
     margin-bottom 1.618rem
     border .5px solid clr_grey_light
 
+.card_sponsor
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    align-content start
+    // margin-top 2rem
+    background-color white
+    margin-bottom 2.4rem
+
 .card_film:hover,
-.card_article:hover
+.card_article:hover,
+.card_sponsor:hover
     // opacity 1.8
     transform scale(1.01, 1.01)
     // transform-origin left top
@@ -2340,6 +2372,16 @@ a.btn_popover
         display: grid
         // grid-template-columns 1fr 1fr 1fr
         grid-template-columns repeat(auto-fill, minmax(420px, 1fr))
+        grid-template-rows auto
+        grid-gap 2rem
+        padding 2rem
+        padding-top header_height
+        // height 100vh
+
+    .grid_sponsor_stories
+        display: grid
+        // grid-template-columns 1fr 1fr 1fr
+        grid-template-columns repeat(auto-fill, minmax(500px, 1fr))
         grid-template-rows auto
         grid-gap 2rem
         padding 2rem
