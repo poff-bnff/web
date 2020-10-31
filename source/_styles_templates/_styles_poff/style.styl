@@ -540,6 +540,13 @@ footer
     grid-template-rows: auto
     padding-top header_height
 
+.grid_sponsor_stories
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-columns: auto
+    grid-template-rows: auto
+    padding-top header_height
+
 .grid_flickr
     display grid
     grid-template-columns repeat(auto-fill, minmax(450px, 1fr))
@@ -1456,6 +1463,21 @@ header
     height 100%
     object-fit cover
 
+.container_frame_square
+    position relative
+    height 0
+    overflow hidden
+    padding-top 100%
+    background bg_dark_4
+
+.container_contents_square
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
 .container_frame_12_5
     position relative
     height 0
@@ -1947,8 +1969,18 @@ a.btn_popover
     margin-bottom 1.618rem
     border .5px solid clr_grey_light
 
+.card_sponsor
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    align-content start
+    // margin-top 2rem
+    background-color white
+    margin-bottom 2.4rem
+
 .card_film:hover,
-.card_article:hover
+.card_article:hover,
+.card_sponsor:hover
     // opacity 1.8
     transform scale(1.01, 1.01)
     // transform-origin left top
@@ -2011,7 +2043,18 @@ a.btn_popover
     grid-column 1 / 4
     height calc(80vh - 97px)
 
+.ss_hero_head
+    position relative
+    grid-column 1 / 4
+    height calc(80vh - 97px)
+
 .about_hero_image
+    width 100vw
+    height calc(80vh - 97px)
+    object-fit cover
+    z-index -1
+
+.ss_hero_image
     width 100vw
     height calc(80vh - 97px)
     object-fit cover
@@ -2030,6 +2073,18 @@ a.btn_popover
     padding 2rem 2rem 2rem 2rem
 
 .about_hero_headline_box
+    position absolute
+    bottom calc(30vh - 6rem)
+    left 0
+    width 67vw
+    // background rgba(10,0,3,.6)
+    // background rgba(236,0,140,.6)
+    // background rgba(90,0,60,.7)
+    // background-color clr_primary
+    text-align left
+    padding 2rem 2rem 2rem 0rem
+
+.ss_hero_headline_box
     position absolute
     bottom calc(30vh - 6rem)
     left 0
@@ -2069,7 +2124,33 @@ a.btn_popover
         text-decoration: none
         // color white_96
 
+.ss_title_detailed
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 300
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
 .about_title_detailed span
+    // background-color rgba(255,255,255,.9)
+    background-color white
+    color dark_4
+    display inline
+    padding-left 3rem
+    padding-right 1.2rem
+    padding-top .5rem
+    font-size 3rem
+    line-height 1.55
+    box-decoration-break clone
+
+.ss_title_detailed span
     // background-color rgba(255,255,255,.9)
     background-color white
     color dark_4
@@ -2340,6 +2421,16 @@ a.btn_popover
         display: grid
         // grid-template-columns 1fr 1fr 1fr
         grid-template-columns repeat(auto-fill, minmax(420px, 1fr))
+        grid-template-rows auto
+        grid-gap 2rem
+        padding 2rem
+        padding-top header_height
+        // height 100vh
+
+    .grid_sponsor_stories
+        display: grid
+        // grid-template-columns 1fr 1fr 1fr
+        grid-template-columns repeat(auto-fill, minmax(500px, 1fr))
         grid-template-rows auto
         grid-gap 2rem
         padding 2rem
