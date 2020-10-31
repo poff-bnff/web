@@ -39,15 +39,15 @@ for (const ix in languages) {
         if (element.prodCatList && element.prodCatList.length) {
             for (const catListIx in element.prodCatList) {
                 let prodCatList = element.prodCatList[catListIx]
-                if (prodCatList.product && prodCatList.product.length) {
-                    for (const catIx in prodCatList.product) {
-                        let category = prodCatList.product[catIx].product_category
+                if (prodCatList.orderedProductCategories && prodCatList.orderedProductCategories.length) {
+                    for (const catIx in prodCatList.orderedProductCategories) {
+                        let category = prodCatList.orderedProductCategories[catIx].product_category
                         if (typeof category !== 'undefined') {
                             let categoryFromYAML = STRAPIDATA_PROD_CATEGORIES.filter( (a) => { return category.id === a.id})
                             if (categoryFromYAML.length) {
                                 let categoryFromYAMLcopy = JSON.parse(JSON.stringify(categoryFromYAML[0]))
 
-                                prodCatList.product[catIx].product_category = categoryFromYAMLcopy
+                                prodCatList.orderedProductCategories[catIx].product_category = categoryFromYAMLcopy
 
 
                                 categoryFromYAMLcopy.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
@@ -71,9 +71,6 @@ for (const ix in languages) {
                                 } else {
                                     console.log(`ERROR! Skipped product_cat ${categoryFromYAMLcopy.id} due to missing slug_en/slug_et`);
                                 }
-
-
-
                             }
                         }
                     }
@@ -81,66 +78,10 @@ for (const ix in languages) {
             }
         }
 
-
-        // for (eIx in element.festival_editions) {
-        //     var festivalEdition = element.festival_editions[eIx];
-
-        //     if(element.presentedBy && element.presentedBy[0]) {
-        //         for (orgIx in element.presentedBy.organisations) {
-        //             let organisationFromYAML = STRAPIDATA_ORGANISATIONS.filter( (a) => { return element.presentedBy.organisations[orgIx].id === a.id })
-        //             let organisationCopy = JSON.parse(JSON.stringify(organisationFromYAML[0]))
-        //             if (organisationCopy) {
-        //                 element.presentedBy.organisations[orgIx] = rueten(organisationCopy, lang);
-        //             }
-        //         }
-        //     }
-        // }
-
         element = rueten(element, lang);
-
-        // for (key in element) {
-        //     if (key == 'slug') {
-        //         element.path = element[key];
-        //         element.slug = element[key];
-        //     }
-        // }
-
-        // if (element.path === undefined) {
-        //     element.path = dirSlug;
-        //     element.slug = dirSlug;
-        // }
-
-        // element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml', 'cassettes': '/_fetchdir/cassettes.' + lang + '.yaml'};
-        // console.log(element);
-
-        // if (dirSlug != null && typeof element.path !== 'undefined') {
-
-
-            // const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
-            // const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
-
-            allData.push(element)
-
-            // let saveDir = path.join(fetchDataDir, dirSlug);
-            // fs.mkdirSync(saveDir, { recursive: true });
-
-            // fs.writeFileSync(yamlPath, oneYaml, 'utf8');
-            // fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/programmes_${templateDomainName}_index_template.pug`)
-        // }
-
+        allData.push(element)
     }
 
-    // const allDataSorted = allData.sort(function(a, b) {
-    //         // nulls sort after anything else
-    //         if (a.order === undefined) {
-    //             return 1;
-    //         }
-    //         else if (b.order === undefined) {
-    //             return -1;
-    //         } else {
-    //             return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0);
-    //         }
-    // })
     const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `shops.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
