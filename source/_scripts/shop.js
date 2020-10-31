@@ -112,8 +112,6 @@ function GetPaymentLinks() {
 
 function checkIfPasswordBuyer(){
     if (userProfile.picture && userProfile.profile_filled){
-        console.log(true)
-        saveLangpath(langpath)
         GetPaymentLinks()
     } else if (userProfile.profile_filled) {
         document.getElementById('buybutton').style.display = 'none'
