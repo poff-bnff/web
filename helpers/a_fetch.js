@@ -3,6 +3,8 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const { strapiAuth } = require("./strapiAuth.js")
+const { strapiQuery, getModel } = require("./strapiQuery.js")
+const { spin } = require("./spinner")
 
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
@@ -54,6 +56,12 @@ async function strapiFetch(modelName, token) {
     if (! '_path' in DATAMODEL[modelName]) {
         throw new Error ('Missing _path in model')
     }
+    /* TODO #437 asenda strapist tirimine strapiQuery ja getModel'iga
+    process.stdout.write('\nFetching ' + modelName + ' ')
+    const strapiData = await getModel(modelName)
+    strapiData = strapiData.filter(checkDomain)
+    resolve(strapiData)
+    */
     let dataPath = DATAMODEL[modelName]['_path']
 
     return new Promise((resolve, reject) => {
@@ -68,15 +76,17 @@ async function strapiFetch(modelName, token) {
         }
 
         process.stdout.write('Fetching ' + modelName + ' ')
+        spin.start()
 
         const request = http.request(options, (response) => {
             response.setEncoding('utf8')
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
-                process.stdout.write('.')
+                // process.stdout.write('.')
             })
             response.on('end', function () {
+                spin.stop()
                 if (response.statusCode === 200) {
                     let strapiData = JSON.parse(allData)
 
@@ -86,13 +96,14 @@ async function strapiFetch(modelName, token) {
 
                     strapiData = strapiData.filter(checkDomain)
                     resolve(strapiData)
-                    console.log('.')
+                    // console.log('.')
                 } else {
                     console.log(response.statusCode)
                     resolve([])
                 }
             })
             response.on('error', function (thisError) {
+                spin.stop()
                 console.log(thisError)
                 reject(thisError)
             })
@@ -292,28 +303,3 @@ const foo = async () => {
 }
 
 foo()
-
-// const testdata =
-//       {
-//         "id": 12,
-//         "person": {
-//           "id": 22,
-//           "firstName": "Elin",
-//           "lastName": "Laikre",
-//           "gender": 3,
-//           "eMail": "elin.laikre@poff.ee"
-//         },
-//         "roleAtTeam_et": "Raamatupidaja",
-//         "roleAtTeam_en": "Accountant",
-//         "roleAtTeam_ru": "Бухгалтер",
-//         "emailAtTeam": "elin.laikre@poff.ee",
-//         "order": 5,
-//         "pictureAtTeam": [
-//           {
-//           }
-//         ]
-//       }
-
-// TakeOutTrash(testdata, DATAMODEL['TeamMember'], 'root')
-
-// console.log(testdata);

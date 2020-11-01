@@ -12,7 +12,7 @@ footer
                         if item.svgCode
                             a(href=item.url target='_blank') !{item.svgCode}
                         else if item.svgMedia
-                            img.footer_logo_item(alt=item.name data-src=`/assets/img/dynamic/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}` src=`/assets/img/dynamic/img_footer/${item.svgMedia.hash}${item.svgMedia.ext}`)
+                            img.footer_logo_item(alt=item.name data-src=`https://assets.poff.ee/img/${item.svgMedia.hash}${item.svgMedia.ext}` src=`/https://assets.poff.ee/img/${item.svgMedia.hash}${item.svgMedia.ext}`)
 
 
         if self.footer.item
@@ -29,21 +29,23 @@ footer
                                     - var urlToDisplay = `/${lang_path}${svgItem.url}`
                                 a(href=urlToDisplay target='_blank') !{svgItem.svgCode}
                             else if svgItem.svgMedia
-                                img.footer_logo_item(alt=svgItem.name data-src=`/assets/img/dynamic/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`/assets/img/dynamic/img_footer/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
+                                img.footer_logo_item(alt=svgItem.name data-src=`https://assets.poff.ee/img/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}` src=`https://assets.poff.ee/img/${svgItem.svgMedia.hash}${svgItem.svgMedia.ext}`)
                     if item.image
-                        img.footer_logo_item_1(alt=item.name data-src=`/assets/img/dynamic/img_footer/${item.image.hash}${item.image.ext}`  src=`/assets/img/dynamic/img_footer/${item.image.hash}${item.image.ext}`)
+                        img.footer_logo_item_1(alt=item.name data-src=`https://assets.poff.ee/img/${item.image.hash}${item.image.ext}`  src=`https://assets.poff.ee/img/${item.image.hash}${item.image.ext}`)
                     if item.text
-                        if typeof(item.text) !== 'object'
-                            +format(item.text).footer_h
-                        else
-                            p.footer_h
-                                | !{item.text}
+                        .footer_row_item_text
+                            if typeof(item.text) !== 'object'
+                                +format(item.text).footer_h
+                            else
+                                p.footer_h
+                                    | !{item.text}
 
 
 
     if self.footer.supporters
+        - var sortedSupportersCat = self.footer.supporters.sort(function(a, b){ return a.order-b.order })
         section.supporters_footer
-            each supporters in self.footer.supporters
+            each supporters in sortedSupportersCat
                 row
                     if supporters.name && (typeof(supporters.name) !== 'object')
                         h1.section_headline_footer= supporters.name
@@ -53,18 +55,18 @@ footer
                                 if supporter.customUrl
                                     a(href= supporter.customUrl).footer_logo_item_container
                                         if supporter.logoWhite
-                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                            img.footer_logo_item(alt=supporter.url data-src=`https://assets.poff.ee/img/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
                                         else if supporter.logoBlack
-                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
+                                            img.footer_logo_item(alt=supporter.url data-src=`https://assets.poff.ee/img/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
                                         else if supporter.logoColour
-                                            img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
+                                            img.footer_logo_item(alt=supporter.url data-src=`https://assets.poff.ee/img/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`https://assets.poff.ee/img/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
                                 else
                                     if supporter.logoWhite
-                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
+                                        img.footer_logo_item(alt=supporter.url data-src=`https://assets.poff.ee/img/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${supporter.logoWhite.hash}${supporter.logoWhite.ext}`)
                                     else if supporter.logoBlack
-                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
+                                        img.footer_logo_item(alt=supporter.url data-src=`https://assets.poff.ee/img/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${supporter.logoBlack.hash}${supporter.logoBlack.ext}`)
                                     else if supporter.logoColour
-                                        img.footer_logo_item(alt=supporter.url data-src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`/assets/img/dynamic/img_footer/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
+                                        img.footer_logo_item(alt=supporter.url data-src=`https://assets.poff.ee/img/${supporter.logoColour.hash}${supporter.logoColour.ext}`  src=`https://assets.poff.ee/img/${supporter.logoColour.hash}${supporter.logoColour.ext}`)
 
 
 
@@ -121,7 +123,10 @@ footer
 
 // Optional JavaScript
 // jQuery first, then Popper.js, then Bootstrap JS
-script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
+//script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
+link(rel='stylesheet' href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
 script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
 script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous')
 script(src='/script.js')

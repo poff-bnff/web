@@ -43,7 +43,8 @@ ask_if_fetch()
         if [ $new_number -eq 2 ]
         then
             let fetch_number=$new_number
-            ask_if_download_img $site_name $fetch_number
+            # ask_if_download_img $site_name $fetch_number
+            build $site_name $fetch_number
         elif [ $new_number -eq 1 ]
         then
             let fetch_number=$new_number
@@ -64,11 +65,13 @@ ask_cassette_limit()
     if [ $new_number -eq 0 ]
     then
         let limit_number=$new_number
-        ask_if_download_img $site_name $fetch_number $limit_number
+        # ask_if_download_img $site_name $fetch_number $limit_number
+        build $site_name $fetch_number $limit_number
     elif [ $new_number -gt 0 ]
     then
         let limit_number=$new_number
-        ask_if_download_img $site_name $fetch_number $limit_number
+        # ask_if_download_img $site_name $fetch_number $limit_number
+        build $site_name $fetch_number $limit_number
     else
         echo "Incorrect option, try again!"
         ask_if_fetch $site_name $fetch_number
@@ -76,29 +79,31 @@ ask_cassette_limit()
 
 }
 
-ask_if_download_img()
-{
-    printf '\n----------\nSelect: \n1 to download all images\n2 to not download all images\n0 to EXIT\n'
-    read new_number
+# ask_if_download_img()
+# {
+#     printf '\n----------\nSelect: \n1 to download all images\n2 to not download all images\n0 to EXIT\n'
+#     read new_number
 
-    if [ $new_number -eq 0 ]
-    then
-        runexit
-    elif [ $new_number -lt 3 ] && [ $new_number -gt 0 ]
-    then
-        let download_number=$new_number
-        build $site_name $fetch_number $limit_number $download_number
-    else
-        echo "Incorrect option, try again!"
-        ask_if_download_img $site_name $fetch_number $limit_number
-    fi
-}
+#     if [ $new_number -eq 0 ]
+#     then
+#         runexit
+#     elif [ $new_number -lt 3 ] && [ $new_number -gt 0 ]
+#     then
+#         let download_number=$new_number
+#         build $site_name $fetch_number $limit_number $download_number
+#     else
+#         echo "Incorrect option, try again!"
+#         ask_if_download_img $site_name $fetch_number $limit_number
+#     fi
+# }
 
 build()
 {
     SECONDS=0
     export DOMAIN=$site_name
     export CASSETTELIMIT=$limit_number
+
+    node ./initialise_entu_ssg.js
 
     printf "\n----------\nBuilding $DOMAIN \n"
     if [ $fetch_number -eq 1 ]
@@ -107,14 +112,20 @@ build()
         fetch_data
     fi
 
-    if [ $download_number -eq 1 ]
-    then
-        printf "\nStarting to download new images:\n"
-        download_img
-    fi
+    # if [ $download_number -eq 1 ]
+    # then
+    #     printf "\nStarting to download new images:\n"
+    #     download_img
+    # fi
 
     if [ $site_name ]
     then
+
+
+        printf '\n----------                  Processing styles                ----------\n\n'
+        node ./helpers/copy_styles_acc_to_domain.js
+        printf '\n----------             Finished processing styles            ----------\n'
+
         printf "\nBuilding...\n"
         cp -R assets/* build/assets/
         node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
@@ -141,6 +152,8 @@ fetch_data()
 
     [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
     [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
+    [ -d "assets/xml" ] && rm -r assets/xml/*
+
 
     echo 'Fetch strapiData.yaml from Strapi'
     node ./helpers/a_fetch.js
@@ -185,32 +198,47 @@ fetch_data()
     echo 'fetch_six_film_block_from_yaml'
     node ./helpers/fetch_six_film_block_from_yaml.js
 
+    echo 'fetch_screenings_from_yaml'
+    node ./helpers/fetch_screenings_from_yaml.js
+
+    echo 'fetch_shops_from_yaml'
+    node ./helpers/fetch_shops_from_yaml.js
+
+    echo 'assets/xml'
+    node ./helpers/xml.js
+
+    echo 'fetch_industry_person_from_yaml'
+    node ./helpers/fetch_industry_person_from_yaml.js
+
+    echo 'fetch_industry_project_from_yaml'
+    node ./helpers/fetch_industry_project_from_yaml.js
+
+
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
-    printf '\n----------                  Processing styles                ----------\n\n'
-    node ./helpers/copy_styles_acc_to_domain.js
-    printf '\n----------             Finished processing styles            ----------\n'
-
 }
 
-download_img()
-{
-    [ -d "build/assets" ] && rm -r build/*
-    [ ! -d "build/assets" ] && mkdir -p build/assets
-    [ -d "assets/img/dynamic" ] && rm -r assets/img/dynamic/*
+# download_img()
+# {
+#     [ -d "build/assets" ] && rm -r build/*
+#     [ ! -d "build/assets" ] && mkdir -p build/assets
+#     [ -d "assets/img/dynamic" ] && rm -r assets/img/dynamic/*
 
-    printf '\n----------         Downloading all img from Strapi         ----------\n\n'
-    node ./helpers/download_article_img.js
-    node ./helpers/download_footer_img.js
-    node ./helpers/download_teams_img.js
-    node ./helpers/download_cassette_films_credentials_img.js
-    node ./helpers/download_organisations_img.js
-    # node ./helpers/download_persons_img.js
-    node ./helpers/download_trioblock_img.js
-    node ./helpers/download_supporters_page_img.js
-    node ./helpers/download_programmes_img.js
-    node ./helpers/download_casettes_and_films_img.js
-    printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
-}
+#     printf '\n----------         Downloading all img from Strapi         ----------\n\n'
+#     node ./helpers/download_article_img.js
+#     node ./helpers/download_footer_img.js
+#     node ./helpers/download_teams_img.js
+#     node ./helpers/download_cassette_films_credentials_img.js
+#     node ./helpers/download_organisations_img.js
+#     # node ./helpers/download_persons_img.js
+#     node ./helpers/download_trioblock_img.js
+#     node ./helpers/download_supporters_page_img.js
+#     node ./helpers/download_programmes_img.js
+#     node ./helpers/download_shops_img.js
+#     node ./helpers/download_industry_person_img.js
+#     node ./helpers/download_industry_project_img.js
+#     # node ./helpers/download_casettes_and_films_img.js
+#     printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
+# }
 
 ask_what_to_build

@@ -9,14 +9,18 @@ block content
         section.grid_hero
             include /_templates/home_templates/hero_just.pug
 
+        //- section.kuuekas
+        include /_templates/home_templates/sixfilms_just.pug
+
+        include /_templates/home_templates/sponsor_banner.pug
+
         section.trio_block
             include /_templates/home_templates/trio_block_just.pug
 
-        section.viiekas
-            include /_templates/home_templates/viiekas_just.pug
-
         //- section.viiekas
-        //-     include /_templates/home_templates/sixfilms_just.pug
+        //-     include /_templates/home_templates/viiekas_just.pug
+
+
 
     else if process.env['DOMAIN'] === 'shorts.poff.ee'
 
