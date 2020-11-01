@@ -3,7 +3,11 @@ const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js');
 
-const sourceDir =  path.join(__dirname, '..', 'source');
+const rootDir =  path.join(__dirname, '..')
+const domainSpecificsPath = path.join(rootDir, 'domain_specifics.yaml')
+const DOMAIN_SPECIFICS = yaml.safeLoad(fs.readFileSync(domainSpecificsPath, 'utf8'))
+
+const sourceDir =  path.join(rootDir, 'source');
 const fetchDir =  path.join(sourceDir, '_fetchdir');
 const fetchDataDir =  path.join(fetchDir, 'products');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
@@ -12,17 +16,10 @@ const STRAPIDATA_PROD_CATEGORIES = yaml.safeLoad(fs.readFileSync(strapiDataPath,
 const STRAPIDATA_PROD_PASSES = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['ProductPass'];
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
 
-const languages = ['en', 'et', 'ru']
-const mapping = {
-    'poff.ee': 'poff',
-    'justfilm.ee': 'justfilm',
-    'kinoff.poff.ee': 'kinoff',
-    'industry.poff.ee': 'industry',
-    'shorts.poff.ee': 'shorts'
-}
+const mapping = DOMAIN_SPECIFICS.domain
+const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 
-for (const ix in languages) {
-    const lang = languages[ix];
+for (const lang of allLanguages) {
     console.log(`Fetching ${DOMAIN} shops ${lang} data`);
 
     var allData = []
@@ -49,7 +46,6 @@ for (const ix in languages) {
 
                                 prodCatList.orderedProductCategories[catIx].product_category = categoryFromYAMLcopy
 
-
                                 categoryFromYAMLcopy.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
                                 if (categoryFromYAMLcopy[`slug_${lang}`]) {
                                     categoryFromYAMLcopy.path = `${categoryFromYAMLcopy[`slug_${lang}`]}`;
@@ -60,7 +56,6 @@ for (const ix in languages) {
                                     rueten(categoryFromYAMLcopy, lang)
                                     const oneYaml = yaml.safeDump(categoryFromYAMLcopy, { 'noRefs': true, 'indent': '4' });
                                     const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
-
 
                                     let saveDir = path.join(fetchDataDir, dirSlug);
                                     fs.mkdirSync(saveDir, { recursive: true });
