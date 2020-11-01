@@ -944,6 +944,7 @@ IndustryProject: &IndustryProject
     images:
         - *StrapiMedia
     clipUrl: (text)
+    slug: (UID)
 
 # Supporters
 SupPoff: &SupPoff
@@ -1222,7 +1223,7 @@ OrderedProduct: &OrderedProduct
 
 ProdCatList: &ProdCatList
     namePrivate: (text)
-    product:
+    orderedProductCategories:
         - *OrderedProduct
     title: *Translated
 

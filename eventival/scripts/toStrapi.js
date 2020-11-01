@@ -3,6 +3,8 @@ const fs = require('fs')
 const path = require('path')
 
 const { strapiQuery, getModel } = require("../../helpers/strapiQuery.js")
+const { timer } = require("../../helpers/timer")
+timer.start(__filename)
 
 const DYNAMIC_PATH = path.join(__dirname, '..', 'dynamic')
 
@@ -175,22 +177,24 @@ const updateStrapi = async () => {
 
 
         // add all the crew to strapi
+        strapi_persons = await getModel('Person')
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             for (const e_crew of e_film.publications.en.crew) {
                 for (const e_name of e_crew.text) {
                     const the_strapi_persons = strapi_persons.filter(s_person => s_person.firstNameLastName === e_name)
                     if (the_strapi_persons.length) {
-                        // console.log('skipping person', the_strapi_persons[0]);
+                        // console.log('skipping person', the_strapi_persons[0])
                         continue
                     }
-                    console.log('INFO: Creating new person', e_name);
+                    console.log('INFO: Creating new person', e_name)
                     let options = {
                         headers: { 'Content-Type': 'application/json' },
                         path: PERSONS_API,
                         method: 'POST'
                     }
-                    await strapiQuery(options, {firstName: e_name, firstNameLastName: e_name})
+                    const new_person = await strapiQuery(options, {firstName: e_name, firstNameLastName: e_name})
+                    strapi_persons.push(new_person)
                 }
             }
         }
@@ -294,11 +298,11 @@ const updateStrapi = async () => {
         }
     }
 
-    console.log('\n|–– persons')
+    timer.log(__filename, '–– persons')
     await updateStrapiPersons()
-    console.log('\n|–– roles')
+    timer.log(__filename, '–– roles')
     await updateStrapiRoles()
-    console.log('\n|–– credentials')
+    timer.log(__filename, '–– credentials')
     await updateFilmCredentials()
 }
 
@@ -329,6 +333,7 @@ const createMissingFilmsAndScreenings = async () => {
     }
 
     let strapi_films = await getModel('Film')
+
     for (const e_film of EVENTIVAL_FILMS) {
         let strapi_film = strapi_films.filter(s_film => s_film.remoteId === e_film.ids.system_id.toString())[0]
         let is_film_cassette = (e_film.film_info
@@ -358,7 +363,7 @@ const createMissingFilmsAndScreenings = async () => {
             await createStrapiCassette(e_film.ids.system_id.toString())
         }
     }
-    console.log([ 'Shortsi alam' ].includes('Shortsi alam'))
+
     let strapi_screenings = await getModel('Screening')
     for (const e_screening of EVENTIVAL_SCREENINGS) {
         let strapi_screening = strapi_screenings.filter(s_screening => e_screening.id.toString() === s_screening.remoteId)[0] || false
@@ -705,18 +710,18 @@ const remapEventival = async () => {
 
 
 const submitFilms = async () => {
+    const strapi_films = await getModel('Film')
     async function submitFilm(e_film) {
         let options = {
             headers: { 'Content-Type': 'application/json' }
         }
 
-        const strapiFilms = await getModel('Film')
-        const strapiFilm = strapiFilms.filter((film) => {
+        const strapi_film = strapi_films.filter((film) => {
             return film.remoteId === e_film.remoteId
         })
 
-        if (strapiFilm.length) {
-            e_film['id'] = strapiFilm[0].id
+        if (strapi_film.length) {
+            e_film['id'] = strapi_film[0].id
             options.path = FILMS_API + '/' + e_film.id
             options.method = 'PUT'
         } else {
@@ -731,6 +736,7 @@ const submitFilms = async () => {
     for (const e_film of EVENTIVAL_REMAPPED['E_FILMS']) {
         const film_from_strapi = await submitFilm(e_film)
         from_strapi.push(film_from_strapi)
+        strapi_films.push(film_from_strapi)
     }
     return from_strapi
 }
@@ -801,18 +807,19 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    console.log('Check for missing films and screenings')
+    timer.log(__filename, 'Check for missing films and screenings')
     await createMissingFilmsAndScreenings()
-    console.log('update Strapi')
+    timer.log(__filename, 'update Strapi')
     await updateStrapi()
-    // console.log('| remap')
-    // await remapEventival()
-    // console.log('| submit films')
-    // await submitFilms()
-    // console.log('| submit cassettes')
-    // await submitCassettes()
-    // console.log('| submit screenings')
-    // await submitScreenings()
+    timer.log(__filename, 'remap')
+    await remapEventival()
+    timer.log(__filename, 'submit films')
+    await submitFilms()
+    timer.log(__filename, 'submit cassettes')
+    await submitCassettes()
+    timer.log(__filename, 'submit screenings')
+    await submitScreenings()
+    timer.log(__filename, 'Eventival to Strapi finished')
 }
 
 main()
