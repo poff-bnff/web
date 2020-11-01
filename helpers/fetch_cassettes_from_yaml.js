@@ -82,6 +82,8 @@ deleteFolderRecursive(cassettesPath)
 
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const lang of allLanguages) {
+    let cassettesWithOutFilms = []
+
     const dataFrom = { 'articles': `/_fetchdir/articles.${lang}.yaml` }
     fs.mkdirSync(cassettesPath, { recursive: true })
     timer.log(__filename, `Fetching ${DOMAIN} cassettes ${lang} data`)
@@ -161,15 +163,17 @@ for (const lang of allLanguages) {
             // #379 put ordered films to cassette.film
             let ordered_films = s_cassette_copy.orderedFilms.map(s_c_film => {
                 if (!s_c_film.film) {
-                    console.log('ERROR: Cassette with no ordered film', s_cassette_copy);
-                    throw new Error('Cassette with no ordered film')
-                }
-                let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
-                if (s_films && s_films[0]) {
-                    s_films[0].ordinal = s_c_film.order
-                    return s_films[0]
+                    // console.log('ERROR: Cassette with no ordered film', s_cassette_copy.id);
+                    cassettesWithOutFilms.push(s_cassette_copy.id)
+                    // throw new Error('Cassette with no ordered film')
                 } else {
-                    return null
+                    let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
+                    if (s_films && s_films[0]) {
+                        s_films[0].ordinal = s_c_film.order
+                        return s_films[0]
+                    } else {
+                        return null
+                    }
                 }
             })
             if (ordered_films !== undefined && ordered_films[0]) {
@@ -391,6 +395,10 @@ for (const lang of allLanguages) {
     }
     if(slugMissingErrorNumber > 0) {
         timer.log(__filename, `Notification! Value of slug_en or slug_et missing for total of ${slugMissingErrorNumber} cassettes with ID's ${slugMissingErrorIDs.join(', ')}`)
+    }
+    if(cassettesWithOutFilms.length) {
+        uniqueIDs = [...new Set(cassettesWithOutFilms)]
+        timer.log(__filename, `ERROR! No films under cassettes with ID's ${uniqueIDs.join(', ')}`)
     }
     generateAllDataYAML(allData, lang)
 }
