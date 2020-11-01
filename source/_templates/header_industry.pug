@@ -29,16 +29,42 @@ header
                     span.org_item
                         a(href='https://shorts.poff.ee')
                             | PÖFF Shorts
+
+
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                if mainMenuItem.subMenuItem && mainMenuItem.name
+
+                //- Kui on peamenüü itemil artikkel:
+                if mainMenuItem[articleMenuItemDomain] && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
+                    if self.data.articles
+                        - let mainMenuArticleFromYAML = self.data.articles.filter( (a) => { return mainMenuItem[articleMenuItemDomain].id === a.id })
+                        - let mainArticle = mainMenuArticleFromYAML[0]
+                        if mainArticle.article_types && mainArticle.article_types[0] && mainArticle.publish === true && mainArticle.title
+                            - var mainArticleTypePath = ''
+                            li
+                                each artType in mainArticle.article_types
+                                    if artType.name.toLowerCase() === 'about'
+                                        - mainArticleTypePath = artType.slug
+                                    else if artType.name.toLowerCase() === 'interview'
+                                        - mainArticleTypePath = artType.slug
+                                    else if artType.name.toLowerCase() === 'sponsor_story'
+                                        - mainArticleTypePath = artType.slug
+                                    else if artType.name.toLowerCase() === 'news'
+                                        - mainArticleTypePath = artType.slug
+                                    else
+                                        - mainArticleTypePath = mainArticle.article_types[0].slug
+
+                                a(href= `/${lang_path}${mainArticleTypePath}/${mainMenuItem[articleMenuItemDomain].slug}`)= mainMenuItem.name
+
+                //- Kui peamenüü itemil pole artiklit ja on vähemalt mõni alammenüü
+                else if mainMenuItem.subMenuItem && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
                     li.dropdown
                         a= mainMenuItem.name
                         ul.ul_kaks
                             each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
                                 if subMenuItem[articleMenuItemDomain]
                                     if self.data.articles
-                                        - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem[articleMenuItemDomain].id === a.id })
-                                        - let article = articleFromYAML[0]
+                                        - let mainMenuArticleFromYAML = self.data.articles.filter( (a) => { return subMenuItem[articleMenuItemDomain].id === a.id })
+                                        - let article = mainMenuArticleFromYAML[0]
 
                                         if article.article_types && article.article_types[0] && article.publish === true && article.title
                                             - var articleTypePath = ''
@@ -56,47 +82,15 @@ header
                                                         - articleTypePath = article.article_types[0].slug
 
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
-                                                    //- /////////////////////////////
-                                                    //-             nav.main_menu
-                                                    //-                 ul.ul_yx
-                                                    //-                     each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                                                    //-                         if mainMenuItem.subMenuItem && mainMenuItem.name
-                                                    //-                             li.dropdown
-                                                    //-                                 a= `${mainMenuItem.name}`
-                                                    //-                                 ul.ul_kaks
-                                                    //-                                     each subMenuItem in mainMenuItem.subMenuItem.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                                                    //-                                         if subMenuItem[articleMenuItemDomain]
-                                                    //-                                             if self.data.articles
-                                                    //-                                                 - let articleFromYAML = self.data.articles.filter( (a) => { return subMenuItem[articleMenuItemDomain].id === a.id })
-                                                    //-                                                 - let article = articleFromYAML[0]
-                                                    //-                                                     if article.article_types && article.article_types[0] && article.publish === true && article.title
-                                                    //-                                                         li
-                                                    //-                                                             - var articleTypePath = ''
-                                                    //-                                                             each artType in article.article_types
-                                                    //-                                                                 if artType.name.toLowerCase() === 'about'
-                                                    //-                                                                     - articleTypePath = artType[`slug_${self.locale}`]
-                                                    //-                                                                 else if artType.name.toLowerCase() === 'interview'
-                                                    //-                                                                     - articleTypePath = artType[`slug_${self.locale}`]
-                                                    //-                                                                 else if artType.name.toLowerCase() === 'sponsorstory'
-                                                    //-                                                                     - articleTypePath = artType[`slug_${self.locale}`]
-                                                    //-                                                                 else if artType.name.toLowerCase() === 'news'
-                                                    //-                                                                     - articleTypePath = artType[`slug_${self.locale}`]
-                                                    //-                                                                 else
-                                                    //-                                                                     - articleTypePath = article.article_types[0][`slug_${self.locale}`]
 
-                                                    //-                                                             a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
-                                                    //-         ////////////////////////////////
-
-
-                                        //- - let article_type = article.article_types[0]
-                                        //- li
-                                        //-     a(href= `/${lang_path}${article_type}/${subMenuItem[articleMenuItemDomain].slug}`)= `---> ${subMenuItem.name}`
                                 else
-                                    if subMenuItem.customUrl
+                                    if subMenuItem.customUrl && subMenuItem.name && typeof subMenuItem.name !== 'object'
                                         li
                                             a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
+
+                //- Kui peamenüü itemil pole artiklit, pole alammenüüsid ja on customUrl
                 else
-                    if mainMenuItem.customUrl
+                    if mainMenuItem.customUrl && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
                         li
                             a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
@@ -116,8 +110,3 @@ header
 
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
-
-
-
-script
-        include userProfile.js
