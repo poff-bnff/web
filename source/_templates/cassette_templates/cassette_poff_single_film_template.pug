@@ -244,12 +244,12 @@ main.grid_film(id= self.id)
                         .str_info_label= self.label.film.languages
                         .str_info_value= film.languages.map(languagesNames).join(', ')
 
-            section.f_interactive_box
-                .f_interactive_item
-                    p(id= 'favouriteStatus')
-                        | Lemmikuks lisamiseks logi sisse!
-                    a.btn.btn_vote.active(style= {display: 'none'} id= 'nupp' onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
-                    a.btn.btn_vote.active(style= {display: 'none'} id= 'removeFavBtn' onclick=`removeFilm(${self.id})` role='button' target='_BLANK') X
+            //- section.f_interactive_box
+            //-     .f_interactive_item
+            //-         p(id= 'favouriteStatus')
+            //-             | Lemmikuks lisamiseks logi sisse!
+            //-         a.btn.btn_vote.active(style= {display: 'none'} id= 'nupp' onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
+            //-         a.btn.btn_vote.active(style= {display: 'none'} id= 'removeFavBtn' onclick=`removeFilm(${self.id})` role='button' target='_BLANK') X
 
 
 
