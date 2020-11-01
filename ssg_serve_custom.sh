@@ -21,7 +21,7 @@ ask_what_to_serve()
     elif [ $new_number -lt 6 ] && [ $new_number -gt 0 ]
     then
         let site_number=$new_number-1
-        site_name=${BUILDOPTION[site_number]}
+        site_name="poff.ee"
         printf "\n----------\nStarting to serve $site_name\nPress CTRL+C to exit serve process and return to menu\n"
         serve $site_name
     else
@@ -30,9 +30,12 @@ ask_what_to_serve()
     fi
 }
 
+
+
 serve()
 {
     SECONDS=0
+    site_name="poff.ee"
     export DOMAIN=$site_name
 
 
@@ -47,8 +50,6 @@ serve()
     minutes=$((duration/60))
     seconds=$((duration%60))
     printf "SERVE WAS CANCELLED AFTER $minutes m $seconds s.\n\n"
-
-    ask_what_to_serve
 
 }
 

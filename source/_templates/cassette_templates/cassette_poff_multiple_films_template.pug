@@ -96,11 +96,11 @@ main.grid_cassette
                 .supporter_logo_item_container
                     - var logoImg = ''
                     if presenter.logoColour
-                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`
+                        - logoImg = `https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`
                     else if presenter.logoBlack
-                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
+                        - logoImg = `https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
                     else if presenter.logoWhite
-                        - logoImg = `/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
+                        - logoImg = `https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
 
                     if presenter.homepageUrl
                         a(href= presenter.homepageUrl).supporter_logo_item_container
@@ -174,33 +174,38 @@ main.grid_cassette
                             .screening_info_blokk
                                 if self.title
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.Name
+                                        span.screening_info_label= self.label.screening.name
                                         span.screening_info_value= self.title
                                 //- if screening.screeningSubtitles
                                 if screening.screeningSubtitles
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningSubtitles
+                                        span.screening_info_label= self.label.screening.subtitles
                                         span.screening_info_value= screening.screeningSubtitles
                                 if screening.screeningIntroGuests
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningIntroGuests
+                                        span.screening_info_label= self.label.screening.introGuests
                                         span.screening_info_value= screening.screeningIntroGuests
                                 if screening.screeningIntroPresenter
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningIntroPresenter
+                                        span.screening_info_label= self.label.screening.introPresenter
                                         span.screening_info_value= screening.screeningIntroPresenter
                                 if screening.screeningQaGuests
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningQaGuests
+                                        span.screening_info_label= self.label.screening.qaGuests
                                         span.screening_info_value= screening.screeningQaGuests
                                 if screening.screeningQaPresenter
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.screeningQaPresenter
+                                        span.screening_info_label= self.label.screening.qaPresenter
                                         span.screening_info_value= screening.screeningQaPresenter
+
+                                if screening.extraInfo && typeof screening.extraInfo !== 'object'
+                                    .str_info_grid_3
+                                        span.screening_info_label= self.label.screening.extraInfo
+                                        span.screening_info_value= screening.extraInfo
 
                                 if screening.durationTotal
                                     .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.TotalDuration
+                                        span.screening_info_label= self.label.screening.totalDuration
                                         span.screening_info_value
                                             +dur(screening.durationTotal)
 
@@ -278,7 +283,7 @@ if self.films
             - var filmPath = pathParts[pathParts.length - 1]
             section.f_title_box
 
-                .premiere_type &nbsp;
+                .premiere_type
                     if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
                         //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
                         p.premiere_type= film.tags.premiere_types.join(', ')
@@ -302,17 +307,19 @@ if self.films
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                    if film.countries
+                    if film.orderedCountries
                         - var countriesNames = function(item) {
-                        -   if(item.name) {
-                        -       var itemNames = item.name
+                        -   if(item.country && item.country.name) {
+                        -       var itemNames = item.country.name
                         -       return itemNames
                         -   }
                         - }
 
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            .str_info_value= film.countries.map(countriesNames).join(', ')
+                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                            - var mapCountries = sortCountries.map(countriesNames)
+                            .str_info_value= mapCountries.join(', ')
 
                     if film.year
                         .str_info_grid_3
@@ -372,6 +379,14 @@ if self.films
                     if typeof synopsis_md === 'string'
                         .synopsis_gi
                             +format(synopsis_md)
+
+                //- FILM ADDITIONAL INFO (ADDITINFO)
+
+                //- if typeof film.additInfo !== 'undefined'
+                //-     - var additInfo_md = film.additInfo
+                //-     .synopsis_gi
+                //-         if typeof additInfo_md === 'string'
+                //-             +format(additInfo_md)
             section.f_cred_box
                 .str_info_blokk_cred
 
@@ -461,21 +476,21 @@ if self.films
                 - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
                 - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
 
-            if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
-                section.f_dir_bio_box
+            //- if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
+            //-     section.f_dir_bio_box
 
-                    if director.person.picture
-                        .dir_img
-                            img.img_dir(src=`/assets/img/dynamic/img_persons/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
-                            .str_info_grid_3
-                                .str_info_label.text_left.dark_semi= self.label.film.director
-                                .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
+            //-         if director.person.picture
+            //-             .dir_img
+            //-                 img.img_dir(src=`https://assets.poff.ee/img/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
+            //-                 .str_info_grid_3
+            //-                     .str_info_label.text_left.dark_semi= self.label.film.director
+            //-                     .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
 
-                    .dir_bio.dark_1
-                        if director.person.biography && typeof director.person.biography !== 'object'
-                            p.dark_1= director.person.biography
-                        if director.person.filmography && typeof director.person.filmography !== 'object'
-                            p.dark_1= director.person.filmography
+            //-         .dir_bio.dark_1
+            //-             if director.person.biography && typeof director.person.biography !== 'object'
+            //-                 p.dark_1= director.person.biography
+            //-             if director.person.filmography && typeof director.person.filmography !== 'object'
+            //-                 p.dark_1= director.person.filmography
 
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
@@ -488,38 +503,37 @@ if self.films
                             if presenter.homepageUrl
                                 a(href= presenter.homepageUrl).supporter_logo_item_container
                                     if presenter.logoColour
-                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                     else if presenter.logoBlack
-                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                     else if presenter.logoWhite
-                                        img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                        img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
                             else
                                 if presenter.logoColour
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                 else if presenter.logoBlack
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                 else if presenter.logoWhite
-                                    img.supporter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
-            if film.filmQaClip
+            //- if film.filmQaClip
 
-                section.f_qaclip_box
-                    .section_headline= self.label.film.qaClip
-                    .embed-responsive.embed-responsive-16by9.m-0.p-0
-                        - youtubeVideoCode = film.filmQaClip.split("=")
-                        +youtube(youtubeVideoCode[1])
+            //-     section.f_qaclip_box
+            //-         .section_headline= self.label.film.qaClip
+            //-         .embed-responsive.embed-responsive-16by9.m-0.p-0
+            //-             - youtubeVideoCode = film.filmQaClip.split("=")
+            //-             +youtube(youtubeVideoCode[1])
 
-
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].youTubeCode
+            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
                 section.f_trailer_box
                     .section_headline= self.label.film.trailer
-                        each trailer in film.media.trailer
-                            .embed-responsive.embed-responsive-16by9.m-0.p-0
-                                if trailer.youTubeCode && trailer.youTubeCode.length === 11
-                                    +youtube(trailer.youTubeCode)
+                    each trailer in film.media.trailer
+                        .embed-responsive.embed-responsive-16by9.m-0.p-0
+                            if trailer.videoCode
+                                +video(trailer.videoCode)
 
-            section.f_imgs_box
+            //- section.f_imgs_box
 
             +tabname(self.title)
 

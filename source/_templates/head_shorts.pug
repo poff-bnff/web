@@ -2,14 +2,17 @@ head
     // Required meta tags
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    include ../_templates/head_common.pug
+
     // For Facebook share
     if self.title
         meta(property='og:title' content= self.title)
 
         if self.media && self.media.image && self.media.image[0]
-            - var featuredImg = `http://shorts.poff.ee/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`
+            - var featuredImg = `https://assets.poff.ee/img/${self.media.image[0].hash}${self.media.image[0].ext}`
         else if self.media && self.media.imageDefault && self.media.imageDefault[0]
-            - var featuredImg = `http://shorts.poff.ee/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
+            - var featuredImg = `https://assets.poff.ee/img/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
         else
             - var featuredImg = `http://shorts.poff.ee/assets/img/static/placeholder_hd_1.jpg`
 
@@ -36,6 +39,19 @@ head
     script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js')
     link(href='/style.css' rel='stylesheet')
     script(src="https://sdk.amazonaws.com/js/aws-sdk-2.748.0.min.js")
+
+    // Facebook Pixel Code
+    script.
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '869845863196210');
+        fbq('track', 'PageView');
+    // End Facebook Pixel Code
 
 
     title Shorts @ PÖFF 2020

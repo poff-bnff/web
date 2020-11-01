@@ -6,11 +6,11 @@ block content
     - var allFestivalEditions = []
     if self.data.cassettes
         main.grid_films
-            each cassette in self.data.cassettes
+            each cassette in self.data.cassettes.sort(function(a, b){ if(a.title && b.title) { return ('' + a.title).localeCompare(b.title, self.locale); } else { return 0; } })
                 if cassette.festival_editions
                     each edition in cassette.festival_editions
                         - allFestivalEditions.push(edition.name)
-                a.card_film(href= `/${lang_path}film/${cassette.slug}`)
+                a.card_film(id= cassette.id href= `/${lang_path}film/${cassette.slug}`)
                     .container_frame_16_9
                         //- each media in cassette.media
                             //- - console.log(cassette.media)
@@ -35,6 +35,7 @@ block content
                             img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
+                            p(id= cassette.id+'nupp' style={color: 'red', display:'none'})
                     .card_film_info
                         .str_info_grid_3
                             if cassette.films && cassette.films.length
