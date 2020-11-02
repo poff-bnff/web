@@ -95,6 +95,7 @@ for (const lang of allLanguages) {
     let limit = CASSETTELIMIT
     let counting = 0
     for (const s_cassette of STRAPIDATA_CASSETTE) {
+        var hasOneCorrectScreening = false
         if (limit !== 0 && counting === limit) break
         counting++
 
@@ -222,7 +223,7 @@ for (const lang of allLanguages) {
                     }
                     // Kui vähemalt üks screeningtype õige, siis hasOneCorrectScreening = true
                     // - st ehitatakse
-                    var hasOneCorrectScreening = true
+                    hasOneCorrectScreening = true
 
                     delete screening.cassette
                     screenings.push(rueten(screening, lang))
