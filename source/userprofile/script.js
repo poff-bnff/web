@@ -33,13 +33,25 @@ async function loadUserInfo() {
         phoneNr.value = userProfile.phone_number;
     }
     dob.value = userProfile.birthdate;
-    if(userProfile.picture) {
-        fetch(userProfile.picture)
-        .then(async function(response) {
-            imgPreview.src = await response.text()
-        })
-    }
 
+
+    if(userProfile.picture) {
+        let res = await fetch(`https://api.poff.ee/profile/picture`, {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+            },
+        });
+        let profilePicture = await res.json();
+        console.log(profilePicture.url)
+
+        imgPreview.src=profilePicture.url
+
+        // fetch(profilePicture.url)
+        // .then(async function(response) {
+        //     imgPreview.src = await response.text()
+        // })
+    }
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -51,11 +63,9 @@ async function sendUserProfile() {
     console.log('updating user profile.....');
 
     let profile_pic_to_send= "no profile picture"
-    alert("saadab profiili")
 
     if (imgPreview.src !== "/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg"){
         //küsib lingi kuhu pilti postitada
-        alert("küsib linki")
         let linkResponse = await fetch(`https://api.poff.ee/picture`, {
 
             method: 'GET',
