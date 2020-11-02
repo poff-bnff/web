@@ -1,5 +1,5 @@
 // var pageURL = 'https://dev.inscaping.eu'
-// var userprofilePageURL = pageURL + '/userprofile/'s
+// var userprofilePageURL = pageURL + '/userprofile/'
 
 var pageURL = 'http://localhost:4000'
 var userprofilePageURL = pageURL + '/userprofile'
@@ -81,62 +81,3 @@ function logOut() {
     location.reload()
 }
 
-//user profile-i kokku panemine võiks toimuda
-
-// function MakeProfile(){
-
-//     console.log('making user profile.....');
-//     //profiili pilti üritab salvestada ainult kui pole kriimsilm
-//     var pictureLink= "no profile picture"
-
-//     if (!imgPreview.src.search("/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")){
-//         //küsib lingi kuhu pilti postitada
-//         GetS3Link()
-//         PostPicToS3()
-//     }
-
-
-//             function GetS3Link(){
-//                 // let linkResponse = await fetch(`https://api.poff.ee/picture`, {
-//                 //     method: 'GET',
-//                 //     headers: {
-//                 //         Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
-//                 //     },
-//                 // });
-//                 // data = await linkResponse.json()
-
-//                 // // console.log("saadud link on: ")
-//                 // // console.log(data.link)
-
-//                 // pictureLink = ((await data.link).split('?'))[0]
-//                 return "link"
-//             }
-
-//             //postitab pildi S3-e
-//             function PostPicToS3(){
-//                 // var file = imgPreview.src;
-//                 // var requestOptions = {
-//                 //     method: 'PUT',
-//                 //     body: file,
-//                 //     redirect: 'follow'
-//                 // };
-//                 // fetch(data.link, requestOptions)
-//             }
-
-//     var userToSend = [
-//         { Name: "picture", Value: pictureLink },
-//         { Name: "name", Value: firstName.value },
-//         { Name: "family_name", Value: lastName.value },
-//         { Name: "gender", Value: gender.value },
-//         { Name: "birthdate", Value: dob.value },
-//         { Name: "phone_number", Value: '+' + phoneNr.value },
-//         { Name: "email", Value: email.value },
-//         { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
-//     ];
-//     if(psw.value){
-//         userToSend.append({ Name: "password", Value: psw.value })
-//     }
-
-//     return userToSend
-
-// }

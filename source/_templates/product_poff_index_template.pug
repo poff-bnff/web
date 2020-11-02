@@ -33,23 +33,38 @@ block content
                         if typeof description_md === 'string'
                             +format(description_md)
 
+        script.
+
+            function documentLoaded(){
+                console.log('test');
+
+
+                if (localStorage.getItem('ACCESS_TOKEN') && (document.getElementById("directToLoginButton"))) {
+                    console.log('loggedin');
+                    document.getElementById("directToLoginButton").style.display = 'none'
+                    document.getElementById("buybutton").style.display = 'block'
+                }
+            }
+            document.addEventListener('DOMContentLoaded', documentLoaded)
+
         section.f_cred_box
             if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
                 h4
                     +euro(self.priceAtPeriod[0].price)
             div.payment
-                button#buybutton.btn.btn_primary(onclick=`checkIfPasswordBuyer()`) OSTA
-                button#directToLoginButton.btn.btn_primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
-                button#directToaddPicture.btn.btn_primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
-                button#directToFillProfile.btn.btn_primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
+                button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`)= self.label.userprofile.pass
+                button#directToLoginButton.btn.btn-primary(onclick= 'saveUrl()')= self.label.userprofile.passHelp
+                button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profilePicHelp
+                button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profileAddInfoHelp
                 div#paymentLinks
                 br
                 div.dark_1#feedback
                 br
-                button#paybutton.btn.btn_primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
+                button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`)= self.label.userprofile.payment
                 br
-            h4
-                +euro(self.priceAtPeriod[0].price)
+            if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
+                h1.dark_1
+                    +euro(self.priceAtPeriod[0].price)
     style.
         #buybutton {display: none}
         #directToaddPicture {display:none}
@@ -67,45 +82,5 @@ block content
         [type=radio]:checked + img {
             outline: 4px solid #fd7e14;
         }
-
-
-
-
-
-
-
-    div.payment
-        button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`)= self.label.userprofile.pass
-        button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`)= self.label.userprofile.passHelp
-        button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profilePicHelp
-        button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profileAddInfoHelp
-        div#paymentLinks
-        br
-        div.dark_1#feedback
-        br
-        button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`)= self.label.userprofile.payment
-        br
-    if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
-        h1.dark_1
-            +euro(self.priceAtPeriod[0].price)
-
-    style.
-        #buybutton {display: none}
-        #directToaddPicture {display:none}
-        #directToFillProfile {display:none}
-        #paybutton {display: none}
-        [type=radio]{
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        [type=radio] + img {
-            cursor: pointer;
-        }
-        [type=radio]:checked + img {
-            outline: 4px solid #fd7e14;
-        }
-
-    script.
-        var langpath = !{(self.locale)}
+    //- script.
+    //-     var langpath = !{(self.locale)}
