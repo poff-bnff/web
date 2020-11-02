@@ -125,11 +125,12 @@ main.grid_cassette
         //-                 +dur(film.runtime)
 
 
-    section.f_screenings_box
-        h1.section_headline= self.label.film.screenings
 
-        .card-deck.m-o.p-0
-            if self.screenings && self.screenings[0]
+    if self.screenings && self.screenings[0]
+        section.f_screenings_box
+            h1.section_headline= self.label.film.screenings
+
+            .card-deck.m-o.p-0
                 - var sortedScreenings = self.screenings.sort(function(a, b){return new Date(a.dateTime)-new Date(b.dateTime)})
                 each screening in sortedScreenings
                     .card.card_screening.rounded-0.border-0
@@ -234,317 +235,321 @@ main.grid_cassette
                         +video(trailer.videoCode)
 
 
-h1.section_headline.padding_top_4.padding_bottom_2= self.label.menu.mainFilms
+
 
 //- SIIT ALGAB FILMIDE KUVAMINE
 //- SIIT ALGAB FILMIDE KUVAMINE
 //- SIIT ALGAB FILMIDE KUVAMINE
 //- SIIT ALGAB FILMIDE KUVAMINE
 if self.films
-    each film in self.films
-        main.grid_film.padding_top_0
-            //- Kasseti title ja synopsis
-            //- div
-            //-     if self.title
-            //-         h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
-            //-     if self.synopsis
-            //-         h1.dark_1= self.synopsis
+    h1.section_headline.padding_top_4.padding_bottom_2= self.label.menu.mainFilms
+    if !self.films.length
+        h1.section_headline.padding_top_4.padding_bottom_2= '...'
+    else
+        each film in self.films
+            main.grid_film.padding_top_0
+                //- Kasseti title ja synopsis
+                //- div
+                //-     if self.title
+                //-         h1.dark_1= 'ÜHEFILMIKASSETT!!!!!!!!!!!!!!!!!! ' + self.title
+                //-     if self.synopsis
+                //-         h1.dark_1= self.synopsis
 
-            //- KARUSELL filmi piltidega
-            section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
-                ol.carousel-indicators
-                    if film.media
-                        if film.media.stills && film.media.stills[0]
-                            each val, index in film.media.stills
-                                li(data-target='#carouselExampleIndicators' data-slide-to = index)
-                .carousel-inner.container_frame_16_9
-                    if film.media
-                        if film.media.stills && film.media.stills.length
-                            each val, index in film.media.stills
-                                if index == 0
-                                    .carousel-item.active.container_contents_16_9
-                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-                                else
-                                    .carousel-item.container_contents_16_9
-                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                //- KARUSELL filmi piltidega
+                section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+                    ol.carousel-indicators
+                        if film.media
+                            if film.media.stills && film.media.stills[0]
+                                each val, index in film.media.stills
+                                    li(data-target='#carouselExampleIndicators' data-slide-to = index)
+                    .carousel-inner.container_frame_16_9
+                        if film.media
+                            if film.media.stills && film.media.stills.length
+                                each val, index in film.media.stills
+                                    if index == 0
+                                        .carousel-item.active.container_contents_16_9
+                                            img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                                    else
+                                        .carousel-item.container_contents_16_9
+                                            img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                            else
+                                .carousel-item.active.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
                         else
                             .carousel-item.active.container_contents_16_9
                                 img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
-                    else
-                        .carousel-item.active.container_contents_16_9
-                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
 
-                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-                    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                        polyline(points='15 18 9 12 15 6')
-                    span.sr-only Previous
-                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-                    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                        polyline(points='9 18 15 12 9 6')
-                    span.sr-only Next
-            //- LÕPP! KARUSELL filmi piltidega LÕPP
+                    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                        // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            polyline(points='15 18 9 12 15 6')
+                        span.sr-only Previous
+                    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                        // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            polyline(points='9 18 15 12 9 6')
+                        span.sr-only Next
+                //- LÕPP! KARUSELL filmi piltidega LÕPP
 
 
-            //- Algab kasseti filmide info kuvamine
+                //- Algab kasseti filmide info kuvamine
 
-            - var pathParts = self.path.split('/')
-            - var filmPath = pathParts[pathParts.length - 1]
-            section.f_title_box
+                - var pathParts = self.path.split('/')
+                - var filmPath = pathParts[pathParts.length - 1]
+                section.f_title_box
 
-                .premiere_type
-                    if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
-                        //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
-                        p.premiere_type= film.tags.premiere_types.join(', ')
+                    .premiere_type
+                        if film.tags && film.tags.premiere_types && film.tags.premiere_types[0]
+                            //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                            p.premiere_type= film.tags.premiere_types.join(', ')
 
-                h1.film_title_detailed= film.title
-                .str_info_blokk_1
+                    h1.film_title_detailed= film.title
+                    .str_info_blokk_1
 
-                    each p, locale in self.otherLocalePaths
-                        if self[`title_${locale}`]
+                        each p, locale in self.otherLocalePaths
+                            if self[`title_${locale}`]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film[`title_${locale}`]
+                                    .str_info_value= film[`title_${locale}`]
+
+                        if film.titleOriginal
                             .str_info_grid_3
-                                .str_info_label= self.label.film[`title_${locale}`]
-                                .str_info_value= film[`title_${locale}`]
+                                .str_info_label= self.label.film.titleOriginal
+                                .str_info_value= film.titleOriginal
 
-                    if film.titleOriginal
+                        if film.credentials && film.credentials.rolePersonsByRole && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.director
+                                .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
+
+                        if film.orderedCountries
+                            - var countriesNames = function(item) {
+                            -   if(item.country && item.country.name) {
+                            -       var itemNames = item.country.name
+                            -       return itemNames
+                            -   }
+                            - }
+
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.countries
+                                - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                                - var mapCountries = sortCountries.map(countriesNames)
+                                .str_info_value= mapCountries.join(', ')
+
+                        if film.year
+                            .str_info_grid_3
+                                .str_info_label= self.label.film.year
+                                .str_info_value= film.year
+
+
+                section.f_synopsis_box
+
+                    //- Kassetti festivali info
+                    .str_info_meta_gi
+                        .str_info_meta_item
+                            if film.tags
+
+                                if film.tags.programmes && film.tags.programmes[0]
+                                    //- Festival editions
+                                    - var programmeNames = function(item) {
+                                    -   if(typeof item.name !== 'object') {
+                                    -       var itemNames = item.name
+                                    -   }
+                                    -   return itemNames
+                                    - }
+                                    each programme in film.tags.programmes
+                                        if programme.festival_editions
+                                            - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
+                                            if festivalEditions.length > 0
+                                                .str_info_meta_label.dark_1= self.label.film.programme
+                                                .str_info_meta_festival= festivalEditions
+
+                                    //- Programmes
+                                    - var programmes = film.tags.programmes.map(programmeNames).join(', ')
+                                    if programmes.length > 0
+                                        .str_info_meta_label.dark_1= self.label.film.programme
+                                        .str_info_meta_festival= programmes
+
+
+
+                                if film.tags.genres && film.tags.genres[0]
+                                    .str_info_meta_label.dark_1= self.label.film.genre
+                                    .str_info_meta_festival= film.tags.genres.join(', ')
+
+
+                                if film.tags.keywords && film.tags.keywords[0]
+                                    .str_info_meta_label.dark_1= self.label.film.keywords
+                                    .str_info_meta_festival= film.tags.keywords.join(', ')
+
+                            //- festival programm zanrid keywordid
+
+
+                        //- .str_info_meta_item
+                        //-     .str_info_meta_label
+                        //-         | Programm
+                        //-     .str_info_meta_program
+                        //-         | Foorum, Põhjusega mässajad
+                    if typeof film.synopsis !== 'undefined'
+                        - var synopsis_md = film.synopsis
+                        if typeof synopsis_md === 'string'
+                            .synopsis_gi
+                                +format(synopsis_md)
+
+                    //- FILM ADDITIONAL INFO (ADDITINFO)
+
+                    //- if typeof film.additInfo !== 'undefined'
+                    //-     - var additInfo_md = film.additInfo
+                    //-     .synopsis_gi
+                    //-         if typeof additInfo_md === 'string'
+                    //-             +format(additInfo_md)
+                section.f_cred_box
+                    .str_info_blokk_cred
+
+                        //- if film.media && film.media.stills && film.media.stills[0]
+                        //-     each still in film.media.stills
+                        //-         if still.hash && still.ext
+                        //-             div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
+                        //-                 img(src=`https://assets.poff.ee/img/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
+                        //- else
+                        //-     div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
+                        //-         img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
+
+                        //- NB!
+                        //- NB!
+                        //- NB!
+                        //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes
+                        //-     Näiteks: "Composer" all olevad isikud saab kätte film.credentials.rolePersonsByRole.composer.join(', ')
+
+                        if film && film.credentials && film.credentials.rolePersonsByRole
+                            if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.director
+                                    .str_info_value= film.credentials.rolePersonsByRole.director.join(', ')
+
+                            if film.credentials.rolePersonsByRole.screenwriter && film.credentials.rolePersonsByRole.screenwriter[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.screenwriter
+                                    .str_info_value= film.credentials.rolePersonsByRole.screenwriter.join(', ')
+
+                            if film.credentials.rolePersonsByRole.cast && film.credentials.rolePersonsByRole.cast[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.cast
+                                    .str_info_value= film.credentials.rolePersonsByRole.cast.join(', ')
+
+                            if film.credentials.rolePersonsByRole.producer && film.credentials.rolePersonsByRole.producer[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.producer
+                                    .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
+
+                            if film.credentials.rolePersonsByRole.directorofphotography && film.credentials.rolePersonsByRole.directorofphotography[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.doP
+                                    .str_info_value= film.credentials.rolePersonsByRole.directorofphotography.join(', ')
+
+                            if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.composer
+                                    .str_info_value= film.credentials.rolePersonsByRole.composer.join(', ')
+
+                            if film.credentials.rolePersonsByRole.editor && film.credentials.rolePersonsByRole.editor[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.editor
+                                    .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
+
+                            //- Below datamodel needs to be updated and then code amended to be correct
+                            if film.credentials.rolePersonsByRole.productionCompany && film.credentials.rolePersonsByRole.productionCompany[0]
+                                .str_info_grid_3
+                                    .str_info_label= self.label.film.production
+                                    .str_info_value= film.credentials.rolePersonsByRole.productionCompany.join(', ')
+
+
+                section.f_runtime_box
+
+                    if film.runtime
                         .str_info_grid_3
-                            .str_info_label= self.label.film.titleOriginal
-                            .str_info_value= film.titleOriginal
+                            .str_info_label= self.label.film.runtime
+                            .str_info_value
+                                +dur(film.runtime)
 
-                    if film.credentials && film.credentials.rolePersonsByRole && film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
-                        .str_info_grid_3
-                            .str_info_label= self.label.film.director
-                            .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
-
-                    if film.orderedCountries
-                        - var countriesNames = function(item) {
-                        -   if(item.country && item.country.name) {
-                        -       var itemNames = item.country.name
+                    if film.languages
+                        - var languagesNames = function(item) {
+                        -   if(item.name) {
+                        -       var itemNames = item.name
                         -       return itemNames
                         -   }
                         - }
-
                         .str_info_grid_3
-                            .str_info_label= self.label.film.countries
-                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                            - var mapCountries = sortCountries.map(countriesNames)
-                            .str_info_value= mapCountries.join(', ')
+                            .str_info_label= self.label.film.languages
+                            .str_info_value= film.languages.map(languagesNames).join(', ')
+                //- section.f_interactive_box
+                //-     .f_interactive_item
+                //-         p
+                //-             | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
+                //-         a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
 
-                    if film.year
-                        .str_info_grid_3
-                            .str_info_label= self.label.film.year
-                            .str_info_value= film.year
+                if film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]
+                    - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
+                    - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
 
+                //- if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
+                //-     section.f_dir_bio_box
 
-            section.f_synopsis_box
+                //-         if director.person.picture
+                //-             .dir_img
+                //-                 img.img_dir(src=`https://assets.poff.ee/img/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
+                //-                 .str_info_grid_3
+                //-                     .str_info_label.text_left.dark_semi= self.label.film.director
+                //-                     .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
 
-                //- Kassetti festivali info
-                .str_info_meta_gi
-                    .str_info_meta_item
-                        if film.tags
+                //-         .dir_bio.dark_1
+                //-             if director.person.biography && typeof director.person.biography !== 'object'
+                //-                 p.dark_1= director.person.biography
+                //-             if director.person.filmography && typeof director.person.filmography !== 'object'
+                //-                 p.dark_1= director.person.filmography
 
-                            if film.tags.programmes && film.tags.programmes[0]
-                                //- Festival editions
-                                - var programmeNames = function(item) {
-                                -   if(typeof item.name !== 'object') {
-                                -       var itemNames = item.name
-                                -   }
-                                -   return itemNames
-                                - }
-                                each programme in film.tags.programmes
-                                    if programme.festival_editions
-                                        - var festivalEditions = programme.festival_editions.map(programmeNames).join(', ')
-                                        if festivalEditions.length > 0
-                                            .str_info_meta_label.dark_1= self.label.film.programme
-                                            .str_info_meta_festival= festivalEditions
+                if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
-                                //- Programmes
-                                - var programmes = film.tags.programmes.map(programmeNames).join(', ')
-                                if programmes.length > 0
-                                    .str_info_meta_label.dark_1= self.label.film.programme
-                                    .str_info_meta_festival= programmes
+                    section.f_extra_box
+                        p= film.presentedBy.presentedByText
+                        each presenter in film.presentedBy.organisations
+                            p.dark_1= presenter.name
 
-
-
-                            if film.tags.genres && film.tags.genres[0]
-                                .str_info_meta_label.dark_1= self.label.film.genre
-                                .str_info_meta_festival= film.tags.genres.join(', ')
-
-
-                            if film.tags.keywords && film.tags.keywords[0]
-                                .str_info_meta_label.dark_1= self.label.film.keywords
-                                .str_info_meta_festival= film.tags.keywords.join(', ')
-
-                        //- festival programm zanrid keywordid
-
-
-                    //- .str_info_meta_item
-                    //-     .str_info_meta_label
-                    //-         | Programm
-                    //-     .str_info_meta_program
-                    //-         | Foorum, Põhjusega mässajad
-                if typeof film.synopsis !== 'undefined'
-                    - var synopsis_md = film.synopsis
-                    if typeof synopsis_md === 'string'
-                        .synopsis_gi
-                            +format(synopsis_md)
-
-                //- FILM ADDITIONAL INFO (ADDITINFO)
-
-                //- if typeof film.additInfo !== 'undefined'
-                //-     - var additInfo_md = film.additInfo
-                //-     .synopsis_gi
-                //-         if typeof additInfo_md === 'string'
-                //-             +format(additInfo_md)
-            section.f_cred_box
-                .str_info_blokk_cred
-
-                    //- if film.media && film.media.stills && film.media.stills[0]
-                    //-     each still in film.media.stills
-                    //-         if still.hash && still.ext
-                    //-             div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
-                    //-                 img(src=`https://assets.poff.ee/img/${still.hash}${still.ext}` alt = film.titles style="width:100%; height:100%;")
-                    //- else
-                    //-     div(style="width:30%; height:10%; padding-bottom:20px; padding-top:20px;")
-                    //-         img(src=`/assets/img/static/placeholder_hd_1.jpg` alt = film.titles style="width:100%; height:100%;")
-
-                    //- NB!
-                    //- NB!
-                    //- NB!
-                    //- NB! Credentials võetakse strapis oleva roleNamePrivate järgi väiketähtedes
-                    //-     Näiteks: "Composer" all olevad isikud saab kätte film.credentials.rolePersonsByRole.composer.join(', ')
-
-                    if film && film.credentials && film.credentials.rolePersonsByRole
-                        if film.credentials.rolePersonsByRole.director && film.credentials.rolePersonsByRole.director[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.director
-                                .str_info_value= film.credentials.rolePersonsByRole.director.join(', ')
-
-                        if film.credentials.rolePersonsByRole.screenwriter && film.credentials.rolePersonsByRole.screenwriter[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.screenwriter
-                                .str_info_value= film.credentials.rolePersonsByRole.screenwriter.join(', ')
-
-                        if film.credentials.rolePersonsByRole.cast && film.credentials.rolePersonsByRole.cast[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.cast
-                                .str_info_value= film.credentials.rolePersonsByRole.cast.join(', ')
-
-                        if film.credentials.rolePersonsByRole.producer && film.credentials.rolePersonsByRole.producer[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.producer
-                                .str_info_value= film.credentials.rolePersonsByRole.producer.join(', ')
-
-                        if film.credentials.rolePersonsByRole.directorofphotography && film.credentials.rolePersonsByRole.directorofphotography[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.doP
-                                .str_info_value= film.credentials.rolePersonsByRole.directorofphotography.join(', ')
-
-                        if film.credentials.rolePersonsByRole.composer && film.credentials.rolePersonsByRole.composer[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.composer
-                                .str_info_value= film.credentials.rolePersonsByRole.composer.join(', ')
-
-                        if film.credentials.rolePersonsByRole.editor && film.credentials.rolePersonsByRole.editor[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.editor
-                                .str_info_value= film.credentials.rolePersonsByRole.editor.join(', ')
-
-                        //- Below datamodel needs to be updated and then code amended to be correct
-                        if film.credentials.rolePersonsByRole.productionCompany && film.credentials.rolePersonsByRole.productionCompany[0]
-                            .str_info_grid_3
-                                .str_info_label= self.label.film.production
-                                .str_info_value= film.credentials.rolePersonsByRole.productionCompany.join(', ')
-
-
-            section.f_runtime_box
-
-                if film.runtime
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.runtime
-                        .str_info_value
-                            +dur(film.runtime)
-
-                if film.languages
-                    - var languagesNames = function(item) {
-                    -   if(item.name) {
-                    -       var itemNames = item.name
-                    -       return itemNames
-                    -   }
-                    - }
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.languages
-                        .str_info_value= film.languages.map(languagesNames).join(', ')
-            //- section.f_interactive_box
-            //-     .f_interactive_item
-            //-         p
-            //-             | Kas oled filmi juba näinud? Osale publiku lemmikfilmi hääletuses.
-            //-         a.btn.btn_vote.active(href='https://forms.gle/ew2vrQRTEb83BNxR7' role='button' target='_BLANK')= self.label.button.filmAudienceVote
-
-            if film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]
-                - var sortCredentialsByOrder = film.credentials.rolePerson.sort(function(a, b){return a.role_at_film.order-b.role_at_film.order})
-                - var director = sortCredentialsByOrder.filter( (a) => { return 'Director' === a.role_at_film.roleNamePrivate })[0]
-
-            //- if typeof director !== 'undefined' && director.person && director.person.firstName && director.person.lastName
-            //-     section.f_dir_bio_box
-
-            //-         if director.person.picture
-            //-             .dir_img
-            //-                 img.img_dir(src=`https://assets.poff.ee/img/${director.person.picture.hash}${director.person.picture.ext}` alt = film.titles)
-            //-                 .str_info_grid_3
-            //-                     .str_info_label.text_left.dark_semi= self.label.film.director
-            //-                     .str_info_value.text_right.dark_1= `${director.person.firstName} ${director.person.lastName}`
-
-            //-         .dir_bio.dark_1
-            //-             if director.person.biography && typeof director.person.biography !== 'object'
-            //-                 p.dark_1= director.person.biography
-            //-             if director.person.filmography && typeof director.person.filmography !== 'object'
-            //-                 p.dark_1= director.person.filmography
-
-            if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
-
-                section.f_extra_box
-                    p= film.presentedBy.presentedByText
-                    each presenter in film.presentedBy.organisations
-                        p.dark_1= presenter.name
-
-                        .supporter_logo_item_container
-                            if presenter.homepageUrl
-                                a(href= presenter.homepageUrl).supporter_logo_item_container
+                            .supporter_logo_item_container
+                                if presenter.homepageUrl
+                                    a(href= presenter.homepageUrl).supporter_logo_item_container
+                                        if presenter.logoColour
+                                            img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                        else if presenter.logoBlack
+                                            img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                        else if presenter.logoWhite
+                                            img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                else
                                     if presenter.logoColour
                                         img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                     else if presenter.logoBlack
                                         img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                     else if presenter.logoWhite
                                         img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
-                            else
-                                if presenter.logoColour
-                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
-                                else if presenter.logoBlack
-                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
-                                else if presenter.logoWhite
-                                    img.supporter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
-            //- if film.filmQaClip
+                //- if film.filmQaClip
 
-            //-     section.f_qaclip_box
-            //-         .section_headline= self.label.film.qaClip
-            //-         .embed-responsive.embed-responsive-16by9.m-0.p-0
-            //-             - youtubeVideoCode = film.filmQaClip.split("=")
-            //-             +youtube(youtubeVideoCode[1])
+                //-     section.f_qaclip_box
+                //-         .section_headline= self.label.film.qaClip
+                //-         .embed-responsive.embed-responsive-16by9.m-0.p-0
+                //-             - youtubeVideoCode = film.filmQaClip.split("=")
+                //-             +youtube(youtubeVideoCode[1])
 
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
-                section.f_trailer_box
-                    .section_headline= self.label.film.trailer
-                    each trailer in film.media.trailer
-                        .embed-responsive.embed-responsive-16by9.m-0.p-0
-                            if trailer.videoCode
-                                +video(trailer.videoCode)
+                if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
+                    section.f_trailer_box
+                        .section_headline= self.label.film.trailer
+                        each trailer in film.media.trailer
+                            .embed-responsive.embed-responsive-16by9.m-0.p-0
+                                if trailer.videoCode
+                                    +video(trailer.videoCode)
 
-            //- section.f_imgs_box
+                //- section.f_imgs_box
 
-            +tabname(self.title)
+                +tabname(self.title)
 
 
