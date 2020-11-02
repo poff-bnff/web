@@ -529,6 +529,9 @@ const remapEventival = async () => {
         strapi_cassette.title_en = (e_cassette.titles ? e_cassette.titles : {'title_english': ''}).title_english.toString()
         strapi_cassette.title_ru = (e_cassette.titles ? e_cassette.titles : {'title_custom': ''}).title_custom.toString()
 
+        if (!strapi_cassette.media) { strapi_cassette.media = {} }
+        strapi_cassette.media.trailer = [{ url: (e_cassette.film_info  ? e_cassette.film_info : {'online_trailer_url' : '' }).online_trailer_url}]
+
         const if_categorization = e_cassette.eventival_categorization && e_cassette.eventival_categorization.categories
         strapi_cassette.festival_editions = if_categorization ? e_cassette.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
