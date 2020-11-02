@@ -26,10 +26,10 @@ block content
 
                         section.shop_items_list
 
-                            if prodCatList.product
-                                each productCat in prodCatList.product.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                                    if productCat.product_category
-                                        - var product = productCat.product_category
+                            if prodCatList.orderedProductCategories
+                                each orderedProductCategory in prodCatList.orderedProductCategories.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                                    if orderedProductCategory.product_category
+                                        - var product = orderedProductCategory.product_category
 
                                         a(href= `/${lang_path}${product.path}`).shop_item
                                             .shop_item_head

@@ -11,15 +11,15 @@ async function loadUserInfo() {
     });
     let userProfile = await response.json();
 
-    console.log(userProfile)
+    console.log('userProfile', userProfile)
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
         console.log(riik)
         console.log(linn)
-        city.value = linn
-        country.value = riik
+        citySelection.value = linn
+        countrySelection.value = riik
     }
 
     firstName.value = userProfile.name;
@@ -47,8 +47,8 @@ async function sendNewUser() {
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
         { Name: "birthdate", Value: dob.value },
-        { Name: "phone_number", Value: phoneNr.value },
-        { Name: "address", Value: `${country.value}, ${city.value}` },
+        { Name: "phone_number", Value: '+' + phoneNr.value },
+        { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
         { Name: "password", Value: psw.value }
     ];
 
@@ -111,6 +111,64 @@ function readImage(file) {
 }
 
 
+function validateForm() {
+
+    var errors = []
+
+    if (document.getElementById('profileSent')){
+    document.getElementById('profileSent').style.display = 'none'
+    }
+
+    if (!validateEmail("email")) {
+        errors.push('Missing or invalid email')
+
+    }
+    if (psw && !validatePsw("psw")) {
+        errors.push('Missing or invalid password')
+    }
+
+    if (psw2 && !validatePswRep("psw", "psw2")) {
+        errors.push('Missing or invalid password repeat')
+    }
+
+    if (!validateFirstName("firstName")) {
+        errors.push('Missing firstname')
+    }
+
+    if (!validateLastName("lastName")) {
+        errors.push('Missing lastname')
+    }
+
+    if (!validateGender("gender")) {
+        errors.push('Missing gender')
+    }
+
+    if (!validateBDay("dob")) {
+        errors.push('Missing or invalid date of birth')
+    }
+
+    if (!validatePhoneNr("phoneNr")) {
+        errors.push('Missing phonenumber')
+    }
+
+    if (!validateCountry("countrySelection")) {
+        errors.push('Missing country')
+    }
+
+    if (!validateCity("citySelection")) {
+        errors.push('Missing city')
+    }
+
+    console.log(errors)
+    if (errors.length === 0) {
+
+        if (window.location.href === userprofilePageURL) {
+            sendUserProfile()
+        } else {
+            sendNewUser()
+        }
+    }
+}
 
 
 

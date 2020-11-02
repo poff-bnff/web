@@ -21,8 +21,8 @@ async function loadUserInfo() {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
-        city.value = linn
-        country.value = riik
+        citySelection.value = linn
+        countrySelection.value = riik
     }
 
     firstName.value = userProfile.name;
@@ -36,9 +36,17 @@ async function loadUserInfo() {
     if(userProfile.picture){
         // imgPreview.src = userProfile.picture
         console.log("profiili salvestatud pildi link on: " + userProfile.picture)
-        // helloo asemele cognito id
+
+        showUserPicture(userProfile.picture)
+
+
         // imgPreview.src = "https://prod-poff-profile-pictures.s3.eu-central-1.amazonaws.com/helloo"
     }
+}
+
+async function showUserPicture(pictureUrl){
+let pic = await fetch(pictureUrl)
+console.log(pic);
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -61,15 +69,17 @@ async function sendUserProfile() {
     //console.log("saadud link on: ")
     console.log(data.link)
 
+    let pictureLink = ((await data.link).split('?'))[0]
+
     let userToSend = [
-        { Name: "picture", Value: await data.link },
+        { Name: "picture", Value: pictureLink },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
         { Name: "birthdate", Value: dob.value },
-        { Name: "phone_number", Value: phoneNr.value },
+        { Name: "phone_number", Value: '+' + phoneNr.value },
         { Name: "email", Value: email.value },
-        { Name: "address", Value: `${country.value}, ${city.value}` },
+        { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
     ];
 
 
@@ -172,4 +182,56 @@ function readImage() {
     });
 }
 
+
+
+function validateForm() {
+
+    var errors = []
+
+    if (document.getElementById('profileSent')){
+    document.getElementById('profileSent').style.display = 'none'
+    }
+
+    if (!validateEmail('email')) {
+        errors.push('Missing or invalid email')
+    }
+
+    if (!validateFirstName("firstName")) {
+        errors.push('Missing firstname')
+    }
+
+    if (!validateLastName("lastName")) {
+        errors.push('Missing lastname')
+    }
+
+    if (!validateGender("gender")) {
+        errors.push('Missing gender')
+    }
+
+    if (!validateBDay("dob")) {
+        errors.push('Missing or invalid date of birth')
+    }
+
+    if (!validatePhoneNr("phoneNr")) {
+        errors.push('Missing phonenumber')
+    }
+
+    if (!validateCountry("countrySelection")) {
+        errors.push('Missing country')
+    }
+
+    if (!validateCity("citySelection")) {
+        errors.push('Missing city')
+    }
+
+    console.log(errors)
+    if (errors.length === 0) {
+
+        if (window.location.href === userprofilePageURL) {
+            sendUserProfile()
+        } else {
+            sendNewUser()
+        }
+    }
+}
 

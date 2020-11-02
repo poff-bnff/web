@@ -46,28 +46,36 @@ async function storeAuthentication(access_token, id_token) {
 
 
 async function loginViaCognito() {
+    unfilledErrorMsg.style.display = 'none'
 
-    let authenticationData = {
-        userName: document.getElementById("loginUsername").value,
-        password: document.getElementById("loginPassword").value
+
+    if (loginUsername.value && loginPassword.value) {
+
+        let authenticationData = {
+            userName: document.getElementById("loginUsername").value,
+            password: document.getElementById("loginPassword").value
+        }
+
+        console.log(authenticationData)
+
+        let response = await fetch(`https://api.poff.ee/auth`, {
+            method: 'POST',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+            },
+            body: JSON.stringify(authenticationData)
+        });
+
+        let response2 = await response.json()
+        console.log(response2.AccessToken)
+        access_token = response2.AccessToken
+        id_token = response2.IdToken
+
+        storeAuthentication(access_token, id_token)
+    } else {
+        unfilledErrorMsg.style.display = 'block'
+
     }
-
-    console.log(authenticationData)
-
-    let response = await fetch(`https://api.poff.ee/auth`, {
-        method: 'POST',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-        },
-        body: JSON.stringify(authenticationData)
-    });
-
-    let response2 = await response.json()
-    console.log(response2.AccessToken)
-    access_token = response2.AccessToken
-    id_token = response2.IdToken
-
-    storeAuthentication(access_token, id_token)
 
 }
 
@@ -173,18 +181,63 @@ function directToSignup() {
 
 function doResetPassword() {
     console.log('reset');
+    forgotPasswordBtn.style.display = 'none'
+    sendPswdResetCodeBtn.style.display = 'block'
+    document.getElementById('loginMessage').style.display = 'none'
     document.getElementById('password').style.display = 'none'
-    document.getElementById('pswdResetMessage').style.display = 'block'
+    document.getElementById('loginFB').style.display = 'none'
+    document.getElementById('loginG').style.display = 'none'
+    document.getElementById('loginE').style.display = 'none'
+    document.getElementById('loginBtn').style.display = 'none'
+    document.getElementById('signUpBtn').style.display = 'none'
 
-    if (loginUsername.value) {
-        sendResetCode()
-    }
+    document.getElementById('pswdResetMessage').style.display = 'block'
 }
 
-async function sendResetCode(){
 
-    let authenticationData = {
-        userName: document.getElementById("loginUsername").value
+function doSaveNewPswd() {
+    console.log('resetting');
+    resetPasswordBtn.style.display = 'none'
+    document.getElementById('passwordRep').style.display = 'none'
+    document.getElementById('forgotPasswordBtn').style.display = 'none'
+    document.getElementById('pswdResetEnterNewMessage').style.display = 'none'
+    document.getElementById('pswdResetCompletedMessage').style.display = 'block'
+    document.getElementById('loginBtn').style.display = 'block'
+    document.getElementById('loginPassword').value = ''
+    sendResetCode()
+
+}
+
+
+
+function doSendResetCode() {
+    document.getElementById('userName').style.display = 'none'
+    document.getElementById('currentUsername').style.display = 'block'
+    document.getElementById('currentUsername').innerHTML = loginUsername.value
+    sendPswdResetCodeBtn.style.display = 'none'
+
+    console.log('sendResetCode');
+    console.log(loginUsername.value);
+    sendResetCode()
+}
+
+
+async function sendResetCode() {
+    let authenticationData
+
+    console.log(loginUsername.value);
+    console.log(resetCode.value);
+
+
+    if (resetCode.value) {
+        authenticationData = {
+            code: resetCode.value
+        }
+    }
+    else if (loginUsername.value) {
+        authenticationData = {
+            userName: document.getElementById("loginUsername").value
+        }
     }
 
     var requestOptions = {
@@ -196,4 +249,23 @@ async function sendResetCode(){
     let response = await fetch(`https://api.poff.ee/profile/pswd`, requestOptions)
 
     console.log(await response.json())
+
+    if (resetCode.value) {
+        return
+    }
+
+    document.getElementById('forgotPasswordBtn').style.display = 'none'
+    document.getElementById('resetCodeBox').style.display = 'block'
+    document.getElementById('pswdResetMessage').style.display = 'none'
+    document.getElementById('pswdResetCodeMessage').style.display = 'block'
+
+}
+
+function askForNewPassword() {
+    document.getElementById('password').style.display = 'block'
+    document.getElementById('passwordRep').style.display = 'block'
+    document.getElementById('resetCodeBox').style.display = 'none'
+    document.getElementById('pswdResetCodeMessage').style.display = 'none'
+    document.getElementById('pswdResetEnterNewMessage').style.display = 'block'
+    resetPasswordBtn.style.display = 'block'
 }

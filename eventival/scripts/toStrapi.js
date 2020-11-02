@@ -177,22 +177,24 @@ const updateStrapi = async () => {
 
 
         // add all the crew to strapi
+        strapi_persons = await getModel('Person')
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             for (const e_crew of e_film.publications.en.crew) {
                 for (const e_name of e_crew.text) {
                     const the_strapi_persons = strapi_persons.filter(s_person => s_person.firstNameLastName === e_name)
                     if (the_strapi_persons.length) {
-                        // console.log('skipping person', the_strapi_persons[0]);
+                        // console.log('skipping person', the_strapi_persons[0])
                         continue
                     }
-                    console.log('INFO: Creating new person', e_name);
+                    console.log('INFO: Creating new person', e_name)
                     let options = {
                         headers: { 'Content-Type': 'application/json' },
                         path: PERSONS_API,
                         method: 'POST'
                     }
-                    await strapiQuery(options, {firstName: e_name, firstNameLastName: e_name})
+                    const new_person = await strapiQuery(options, {firstName: e_name, firstNameLastName: e_name})
+                    strapi_persons.push(new_person)
                 }
             }
         }

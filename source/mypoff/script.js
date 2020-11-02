@@ -1,23 +1,22 @@
 
+fetchMyPasses()
 
-async function loadPassInfo() {
-    return 'ab12345678'
-    let response = await fetch(`https://api.poff.ee/product`, {
-        method: "GET",
-        headers: {
-            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-        },
-    });
-    let passInfo = await response.json()
-    console.log(passInfo)
+async function fetchMyPasses(){
+    console.log('fetchMyPasses');
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer " + localStorage.getItem('ACCESS_TOKEN'));
 
-    let passCode= []
-    if(passInfo.code){
-        passCode.push(passInfo.code)
-        console.log(passInfo.code);
-    }
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
 
+    let response = await fetch("https://api.poff.ee/product", requestOptions)
+
+    console.log(await response.json());
 }
+
 
 
 

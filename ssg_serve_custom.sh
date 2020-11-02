@@ -59,4 +59,4 @@ runexit()
     exit
 }
 
-serve
+ask_what_to_serve
