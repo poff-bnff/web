@@ -1,6 +1,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
+const slugify = require('slugify');
 const rueten = require('./rueten.js');
 
 const sourceDir =  path.join(__dirname, '..', 'source');
@@ -9,9 +10,14 @@ const fetchDataDir =  path.join(fetchDir, 'industrypersons');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
 const STRAPIDATA_IN_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['IndustryPerson'];
 const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
+
+const rootDir =  path.join(__dirname, '..')
+const domainSpecificsPath = path.join(rootDir, 'domain_specifics.yaml')
+const DOMAIN_SPECIFICS = yaml.safeLoad(fs.readFileSync(domainSpecificsPath, 'utf8'))
+
 const DOMAIN = process.env['DOMAIN'] || 'industry.poff.ee';
 
-const languages = ['en', 'et', 'ru']
+const languages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const ix in languages) {
     const lang = languages[ix];
     console.log(`Fetching ${DOMAIN} industry persons ${lang} data`);
@@ -31,6 +37,9 @@ for (const ix in languages) {
         // } else {
         //     var templateDomainName = 'poff';
         // }
+
+        var templateDomainName = 'industry';
+
 
         // if (element.groupType) {
         //     var templateGroupName = element.groupType.toLowerCase();
@@ -58,17 +67,51 @@ for (const ix in languages) {
         // element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
         // element.path = element.slug;
 
-        // const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
+        if (element.person) {
+            let personFirstName = element.person.firstName || ''
+            let personLastName = element.person.lastName || ''
+            var personNameWithID = `${personFirstName} ${personLastName} ${element.person.id}`
+        }
 
-        // if (dirSlug != null) {
-        //     const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
-        //     let saveDir = path.join(fetchDataDir, dirSlug);
-        //     fs.mkdirSync(saveDir, { recursive: true });
+        if (personNameWithID && personNameWithID.length > 5) {
+            var dirSlug = slugify(personNameWithID)
+            element.slug = dirSlug
+            element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
+            element.path = element.slug;
+        } else {
+            var dirSlug = null
+        }
 
-        //     fs.writeFileSync(yamlPath, oneYaml, 'utf8');
-        //     fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/${templateGroupName}_${templateDomainName}_index_template.pug`)
-        // }
-    allData.push(element);
+
+        if (element.clipUrl) {
+            if(element.clipUrl && element.clipUrl.length > 10) {
+                if (element.clipUrl.includes('vimeo')) {
+                    let splitVimeoLink = element.clipUrl.split('/')
+                    let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
+                    if (videoCode.length === 9) {
+                        element.clipUrlCode = videoCode
+                    }
+                } else {
+                    let splitYouTubeLink = element.clipUrl.split('=')[1]
+                    let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
+                    if (splitForVideoCode.length === 11) {
+                        element.clipUrlCode = splitForVideoCode
+                    }
+                }
+            }
+        }
+
+        const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
+
+        if (dirSlug != null) {
+            const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
+            let saveDir = path.join(fetchDataDir, dirSlug);
+            fs.mkdirSync(saveDir, { recursive: true });
+
+            fs.writeFileSync(yamlPath, oneYaml, 'utf8');
+            fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industryperson_${templateDomainName}_index_template.pug`)
+            allData.push(element);
+        }
     }
 
     const yamlPath = path.join(fetchDir, `industrypersons.${lang}.yaml`);
