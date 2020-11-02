@@ -36,11 +36,14 @@ block content
 
                                         div.shop_item.dark_1(id= `template_${product.codePrefix}`, style="display: none")
                                             h4= product.name
-                                            div(id="qrcode_" + prodCatList.id) QR
+                                            div.qrCode(style='width: 30px')
                                             div= product.description
-                                            div.passikood kood
+                                            div.passCode kood
                                             div
                                                  +euro(product.priceAtPeriod[0].price)
+                                            div.fullName nimi
+                                            img.profilePic
+
 
                         section.my_passes(id='my_passes')
 
