@@ -146,6 +146,27 @@ for (const lang of allLanguages) {
                 }
             }
 
+            // Kasseti treiler
+            if (s_cassette_copy.media && s_cassette_copy.media.trailer && s_cassette_copy.media.trailer[0]) {
+                for (trailer of s_cassette_copy.media.trailer) {
+                    if(trailer.url && trailer.url.length > 10) {
+                        if (trailer.url.includes('vimeo')) {
+                            let splitVimeoLink = trailer.url.split('/')
+                            let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
+                            if (videoCode.length === 9) {
+                                trailer.videoCode = videoCode
+                            }
+                        } else {
+                            let splitYouTubeLink = trailer.url.split('=')[1]
+                            let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
+                            if (splitForVideoCode.length === 11) {
+                                trailer.videoCode = splitForVideoCode
+                            }
+                        }
+                    }
+                }
+            }
+
             // rueten func. is run for each s_cassette_copy separately instead of whole data, that is
             // for the purpose of saving slug_en before it will be removed by rueten func.
             rueten(s_cassette_copy, lang)
