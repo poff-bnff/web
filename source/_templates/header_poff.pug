@@ -110,7 +110,7 @@ header
                         li
                             a#logInName(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
                         li
-                            a#userProfile(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()' href=`/${lang_path}userprofile`) Minu profiil
+                            a#userProfile(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`) Minu profiil
                         li
                             a#myFavouriteFilms(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()') Lemmikud
                         li
