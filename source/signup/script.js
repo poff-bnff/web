@@ -37,11 +37,16 @@ async function loadUserInfo() {
 
 
 async function sendNewUser() {
-    //siin panen kokku listi objektidest mida saata cognitosse
-    //Kas järjekord on oluline?
-    //kas Name-id on kõik õiged?
+    console.log('sending new user profile.....');
+
+    let profile_pic_to_send= "no profile picture"
+
+    if (!imgPreview.src.search("/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")){
+        profile_pic_to_send=imgPreview.src
+    }
+
     let userToSend = [
-        { Name: "picture", Value: imgPreview.src },
+        { Name: "picture", Value: profile_pic_to_send },
         { Name: "email", Value: email.value },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
@@ -69,8 +74,6 @@ async function sendNewUser() {
     document.getElementById('profileSent').style.display = 'block'
     document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
     document.getElementById('loginButton').style.display = 'block'
-
-
 
     // window.open(`${pageURL}/login`, '_self')
     }
@@ -161,12 +164,7 @@ function validateForm() {
 
     console.log(errors)
     if (errors.length === 0) {
-
-        if (window.location.href === userprofilePageURL) {
-            sendUserProfile()
-        } else {
-            sendNewUser()
-        }
+        sendNewUser()
     }
 }
 

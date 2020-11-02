@@ -33,20 +33,13 @@ async function loadUserInfo() {
         phoneNr.value = userProfile.phone_number;
     }
     dob.value = userProfile.birthdate;
-    if(userProfile.picture){
-        // imgPreview.src = userProfile.picture
-        console.log("profiili salvestatud pildi link on: " + userProfile.picture)
-
-        showUserPicture(userProfile.picture)
-
-
-        // imgPreview.src = "https://prod-poff-profile-pictures.s3.eu-central-1.amazonaws.com/helloo"
+    if(userProfile.picture) {
+        fetch(userProfile.picture)
+        .then(async function(response) {
+            imgPreview.src = await response.text()
+        })
     }
-}
 
-async function showUserPicture(pictureUrl){
-let pic = await fetch(pictureUrl)
-console.log(pic);
 }
 
 //laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
@@ -55,24 +48,41 @@ if (localStorage.getItem("ACCESS_TOKEN")) {
 }
 
 async function sendUserProfile() {
-    console.log('sending user profile.....');
+    console.log('updating user profile.....');
 
-    //küsib lingi kuhu pilti postitada
-    let linkResponse = await fetch(`https://api.poff.ee/picture`, {
+    let profile_pic_to_send= "no profile picture"
+    alert("saadab profiili")
 
-        method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
-        },
-    });
-    data = await linkResponse.json()
-    //console.log("saadud link on: ")
-    console.log(data.link)
+    if (imgPreview.src !== "/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg"){
+        //küsib lingi kuhu pilti postitada
+        alert("küsib linki")
+        let linkResponse = await fetch(`https://api.poff.ee/picture`, {
 
-    let pictureLink = ((await data.link).split('?'))[0]
+            method: 'GET',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+            },
+        });
+        data = await linkResponse.json()
+        //console.log("saadud link on: ")
+        console.log(data.link)
+
+        profile_pic_to_send = ((await data.link).split('?'))[0]
+
+        var file = imgPreview.src;
+
+        var requestOptions = {
+            method: 'PUT',
+            body: file,
+            redirect: 'follow'
+        };
+        fetch(data.link, requestOptions)
+
+    }
+
 
     let userToSend = [
-        { Name: "picture", Value: pictureLink },
+        { Name: "picture", Value: profile_pic_to_send },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
@@ -82,54 +92,6 @@ async function sendUserProfile() {
         { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
     ];
 
-
-//     //saadab pildi link-ile
-//     var file = imgPreview.src;
-//     console.log("file on...."+file);
-
-//     SendImgToS3(data.link)
-
-//     function SendImgToS3(myLink, myImg){
-
-//         var requestOptions = {
-//             method: 'PUT',
-//             body: myImg,
-//             redirect: 'follow'
-//         };
-
-//         fetch(myLink, requestOptions).then(function (response) {
-//             if (response.ok) {
-//                 console.log(response.json())
-//                 return response.json();
-//             }
-//             return Promise.reject(response);
-//         }).then(function (data) {
-//             userProfile = data
-//             console.log("cognitos olev profiil:")
-//             console.log(userProfile);
-
-//         }).catch(function (error) {
-//             console.warn(error);
-//         });
-
-//     }
-
-
-//     console.log("kasutaja profiil mida saadan");
-//     console.log(userToSend)
-//     let response = await (fetch(`https://api.poff.ee/profile`, {
-    // saadab pildi link-ile
-    var file = imgPreview.src;
-
-    //console.log(file);
-
-    var requestOptions = {
-        method: 'PUT',
-        body: file,
-        redirect: 'follow'
-    };
-
-    fetch(data.link, requestOptions)
 
     console.log("kasutaja profiil mida saadan");
     console.log(userToSend)
@@ -143,10 +105,13 @@ async function sendUserProfile() {
 
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
-        window.open(localStorage.getItem('url'), '_self')
-        localStorage.removeItem('url')
+        if (localStorage.getItem('url')){
+            window.open(localStorage.getItem('url'), '_self')
+            localStorage.removeItem('url')
+        }
 
     }
+
 }
 
 
@@ -188,8 +153,8 @@ function validateForm() {
 
     var errors = []
 
-    if (document.getElementById('profileSent')){
-    document.getElementById('profileSent').style.display = 'none'
+    if (document.getElementById('profileSent')) {
+        document.getElementById('profileSent').style.display = 'none'
     }
 
     if (!validateEmail('email')) {
@@ -226,12 +191,7 @@ function validateForm() {
 
     console.log(errors)
     if (errors.length === 0) {
-
-        if (window.location.href === userprofilePageURL) {
-            sendUserProfile()
-        } else {
-            sendNewUser()
-        }
+        sendUserProfile()
     }
 }
 

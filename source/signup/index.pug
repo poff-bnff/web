@@ -63,7 +63,6 @@ block content
                         div#dobHelp(class='valid')= self.label.userprofile.ageHelp
                     div.form-group
                         label(for='phoneNr')= self.label.userprofile.phone
-                        before +
                         input#phoneNr.form-control(type='tel', placeholder=`${self.label.userprofile.phone}` name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
                         div#phoneNrHelp(class='valid')= self.label.userprofile.phoneNumHelp
                     div.form-group
@@ -84,7 +83,6 @@ block content
         .valid {background-color: #e6f7e6; display: none}
         .c_invalid {background-color: #f5e4e9}
         .c_valid {background-color: #e6f7e6}
-
         h4, h1 {color: #464646}
         label {color: black}
         #imgError {color: red}
