@@ -77,39 +77,39 @@ function processData(data, lang, CreateYAML) {
                             if (typeof oneFilm[0] !== 'undefined') {
                                 film.film = JSON.parse(JSON.stringify(oneFilm[0]))
                             }
-                        }
-                        // Film carousel pics
-                        if (film.film.media && film.film.media.stills && film.film.media.stills[0]) {
-                            for (const stillIx in film.film.media.stills) {
-                                let still = film.film.media.stills[stillIx]
-                                if (still.hash && still.ext) {
-                                    if (still.hash.substring(0, 4) === 'F_1_') {
-                                        cassetteCarouselPicsFilms.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                            // Film carousel pics
+                            if (film.film.media && film.film.media.stills && film.film.media.stills[0]) {
+                                for (const stillIx in film.film.media.stills) {
+                                    let still = film.film.media.stills[stillIx]
+                                    if (still.hash && still.ext) {
+                                        if (still.hash.substring(0, 4) === 'F_1_') {
+                                            cassetteCarouselPicsFilms.unshift(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
+                                        }
+                                        cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                                     }
-                                    cassetteCarouselPicsFilms.push(`https://assets.poff.ee/img/${still.hash}${still.ext}`)
                                 }
                             }
-                        }
 
-                        if (cassetteCarouselPicsFilms.length > 0) {
-                            screening.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
-                        }
+                            if (cassetteCarouselPicsFilms.length > 0) {
+                                screening.cassetteCarouselPicsFilms = cassetteCarouselPicsFilms
+                            }
 
-                        // Film posters pics
-                        if (film.film.media && film.film.media.posters && film.film.media.posters[0]) {
-                            for (const posterIx in film.film.media.posters) {
-                                let poster = film.film.media.posters[posterIx]
-                                if (poster.hash && poster.ext) {
-                                    if (poster.hash.substring(0, 2) === 'P_') {
-                                        cassettePostersFilms.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                            // Film posters pics
+                            if (film.film.media && film.film.media.posters && film.film.media.posters[0]) {
+                                for (const posterIx in film.film.media.posters) {
+                                    let poster = film.film.media.posters[posterIx]
+                                    if (poster.hash && poster.ext) {
+                                        if (poster.hash.substring(0, 2) === 'P_') {
+                                            cassettePostersFilms.unshift(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
+                                        }
+                                        cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                                     }
-                                    cassettePostersFilms.push(`https://assets.poff.ee/img/${poster.hash}${poster.ext}`)
                                 }
                             }
-                        }
 
-                        if (cassettePostersFilms.length > 0) {
-                            screening.cassettePostersFilms = cassettePostersFilms
+                            if (cassettePostersFilms.length > 0) {
+                                screening.cassettePostersFilms = cassettePostersFilms
+                            }
                         }
 
                     }

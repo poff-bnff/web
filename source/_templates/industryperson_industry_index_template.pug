@@ -1,0 +1,63 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+
+        if self.person && `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`.length > 5
+            section.team
+                h1.section_headline INDUSTRY PERSON
+                    h1.sub_section_headline= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
+                    .sub_team
+
+                        .person
+                            .person_head
+                                - var assetsDir = 'https://assets.poff.ee/img/'
+                                if self.profilePicAtInd
+                                    - var personPic = assetsDir + self.profilePicAtInd.hash + self.profilePicAtInd.ext
+                                else if self.person.picture
+                                    - var personPic = assetsDir + self.person.picture.hash + self.person.picture.ext
+                                else
+                                    - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
+                                img.person_img(src=personPic alt=`${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`)
+
+
+                                .person_body.text_center
+                                    h4.text_center= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
+                                    p
+                                        span= (self.roleAtJury)
+                                        br
+                                        span= (self.person.profession)
+                                        br
+                                        if self.emailAtTeam
+                                            span= (self.emailAtTeam)
+                                        else
+                                            span= (self.person.eMail)
+                                        br
+                                        if self.phoneAtInd
+                                            span= (self.phoneAtInd)
+                                        else
+                                            span= (self.person.phoneNr)
+                                        br
+                                        span= (self.website)
+                                        br
+                                        span= (self.aboutText)
+                                        br
+                                        br
+                                        if self.filmography
+                                            each filmography in self.filmography
+                                                if filmography
+                                                    if filmography.text
+                                                        span
+                                                            +format(filmography.text)
+                                                        span.dark_1 FILMS
+                                                        br
+                                                        each film in filmography.film
+                                                            if film.film.title
+                                                                span
+                                                                    a(href=film.foreignUrl)= `${film.film.title} (${film.film.year}) - `
+                                                                    a(href=film.trailerUrl) Trailer
+                                        br
+
+                                        if self.clipUrlCode
+                                            span
+                                                +video(self.clipUrlCode)
