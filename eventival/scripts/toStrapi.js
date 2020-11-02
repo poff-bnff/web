@@ -648,6 +648,7 @@ const remapEventival = async () => {
 
         strapi_screening.extraInfo = e_screening.additional_info
 
+        e_screening.type_of_screening = e_screening.type_of_screening || 'Regular'
         strapi_screening.screening_types = strapi_screening_type.filter((s_screeningType) => {
             if(e_screening.type_of_screening) {
                 return e_screening.type_of_screening.includes(s_screeningType.name)
