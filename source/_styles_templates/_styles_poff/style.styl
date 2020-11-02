@@ -1311,6 +1311,11 @@ row:nth-child(15) > .supporter_logos
 header
     grid-area header
 
+.poffi_banner_box
+    margin-top 0rem
+    margin-bottom 5rem
+    padding 0
+
 .f_img_slider_box
     grid-area f_img_slider_box
     background bg_dark_1
@@ -1493,6 +1498,21 @@ header
     background bg_dark_4
 
 .container_contents_12_5
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
+.container_frame_poffi_banner
+    position relative
+    height 0
+    overflow hidden
+    padding-top 20%
+    background bg_dark_4
+
+.container_contents_poffi_banner
     position absolute
     top 0
     left 0
@@ -2962,6 +2982,10 @@ a.btn_popover
         text-align right
     .m_center_d_left
         text-align left
+
+    .poffi_banner_box
+        padding-left 2rem
+        padding-right 2rem
 
 /* OVERRIDES */
 
