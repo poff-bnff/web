@@ -79,3 +79,4 @@ function logOut() {
     console.log('LOGITUD VÄLJA')
     location.reload()
 }
+
