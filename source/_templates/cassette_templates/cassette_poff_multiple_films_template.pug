@@ -224,6 +224,16 @@ main.grid_cassette
                             if screening.ticketingUrl && screening.ticketingId
                                 a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button' target='_blank')= self.label.button.screeningBuyTicket
 
+
+    if self.media && self.media.trailer && self.media.trailer[0] && self.media.trailer[0].videoCode
+        section#trailer.f_trailer_box
+            .section_headline= self.label.film.trailer
+            each trailer in self.media.trailer
+                .embed-responsive.embed-responsive-16by9.m-0.p-0
+                    if trailer.videoCode
+                        +video(trailer.videoCode)
+
+
 h1.section_headline.padding_top_4.padding_bottom_2= self.label.menu.mainFilms
 
 //- SIIT ALGAB FILMIDE KUVAMINE
