@@ -83,6 +83,7 @@ deleteFolderRecursive(cassettesPath)
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const lang of allLanguages) {
     let cassettesWithOutFilms = []
+    let cassettesWithOutSpecifiedScreeningType = []
 
     const dataFrom = { 'articles': `/_fetchdir/articles.${lang}.yaml` }
     fs.mkdirSync(cassettesPath, { recursive: true })
@@ -412,7 +413,7 @@ for (const lang of allLanguages) {
                 // timer.log(__filename, util.inspect(s_cassette_copy, {showHidden: false, depth: null}))
                 generateYaml(s_cassette_copy, lang)
             } else {
-                timer.log(__filename, `Skipped cassette ${s_cassette_copy.id} slug ${s_cassette_copy.slug}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
+                cassettesWithOutSpecifiedScreeningType.push(s_cassette_copy.id)
             }
 
         } else {
@@ -426,6 +427,10 @@ for (const lang of allLanguages) {
     if(cassettesWithOutFilms.length) {
         uniqueIDs = [...new Set(cassettesWithOutFilms)]
         timer.log(__filename, `ERROR! No films under cassettes with ID's ${uniqueIDs.join(', ')}`)
+    }
+    if (cassettesWithOutSpecifiedScreeningType.length) {
+        uniqueIDs2 = [...new Set(cassettesWithOutSpecifiedScreeningType)]
+        timer.log(__filename, `Skipped cassettes with IDs ${uniqueIDs2.join(', ')}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
     }
     generateAllDataYAML(allData, lang)
 }
