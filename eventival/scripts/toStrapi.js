@@ -26,11 +26,11 @@ const ROLES_API = `${STRAPI_URL}/role-at-films`
 
 const ET = { // eventival translations
     categories: {
-        "PÖFF" : "1",
-        "Just Film": "3",
-        "Shorts" : "2",
-        "Shortsi alam" : "2",
-        "KinoFF" : "4",
+        "PÖFF" : 1,
+        "Just Film": 3,
+        "Shorts" : 2,
+        "Shortsi alam" : 2,
+        "KinoFF" : 4,
     },
     utc2: '+0200' //TODO #366 kellaaeg dynaamiliseks
 }
@@ -91,9 +91,17 @@ const isUpdateRequired = (old_o, update_o) => {
             return false
         }
         if (typeof old_o !== typeof update_o) {
+            console.log('typeof old_o !== typeof update_o', old_o, update_o);
             return true
         }
         if (isObject(update_o)) {
+            if (Object.keys(update_o) === ['id']) {
+                const is_true = update_o.id !== old_o.id
+                if (is_true) {
+                    console.log('object with sole id', update_o);
+                }
+                return is_true
+            }
             for (const key in update_o) {
                 if (isUpdateRequiredRecursive(old_o[key], update_o[key])) {
                     return true
@@ -177,22 +185,24 @@ const updateStrapi = async () => {
 
 
         // add all the crew to strapi
+        strapi_persons = await getModel('Person')
         for (const e_film of EVENTIVAL_FILMS ) {
             if (! (e_film.publications && e_film.publications.en && e_film.publications.en.crew) ) { continue }
             for (const e_crew of e_film.publications.en.crew) {
                 for (const e_name of e_crew.text) {
                     const the_strapi_persons = strapi_persons.filter(s_person => s_person.firstNameLastName === e_name)
                     if (the_strapi_persons.length) {
-                        // console.log('skipping person', the_strapi_persons[0]);
+                        // console.log('skipping person', the_strapi_persons[0])
                         continue
                     }
-                    console.log('INFO: Creating new person', e_name);
+                    console.log('INFO: Creating new person', e_name)
                     let options = {
                         headers: { 'Content-Type': 'application/json' },
                         path: PERSONS_API,
                         method: 'POST'
                     }
-                    await strapiQuery(options, {firstName: e_name, firstNameLastName: e_name})
+                    const new_person = await strapiQuery(options, {firstName: e_name, firstNameLastName: e_name})
+                    strapi_persons.push(new_person)
                 }
             }
         }
@@ -411,9 +421,6 @@ const remapEventival = async () => {
         }
         const strapi_film_before = JSON.parse(JSON.stringify(strapi_film))
 
-        // TODO: #430 test updateIfRequired
-        let strapi_film_update = {id: strapi_film.id}
-
         // ---- BEGIN update strapi film properties
         // console.log('Update film in Strapi:', JSON.stringify(e_film.ids.system_id))
 
@@ -431,26 +438,26 @@ const remapEventival = async () => {
             if(e_film.film_info && e_film.film_info.premiere_type) {
                 return e_film.film_info.premiere_type === s_premiereType.en
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         strapi_film.tags.genres = strapi_tag_genres.filter(s_genre => {
             if(e_film.film_info.types) {
                 return e_film.film_info.types.includes(s_genre.et)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         strapi_film.tags.keywords = strapi_tag_keywords.filter(s_keyword => {
             if(e_film.eventival_categorization.tags) {
                 return e_film.eventival_categorization.tags.includes(s_keyword.et)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         strapi_film.tags.programmes = strapi_programme.filter(s_programme => {
             if(e_film.eventival_categorization && e_film.eventival_categorization.sections ) {
                 let sections = e_film.eventival_categorization.sections
                 return sections.map( item => { return item.id.toString() } ).includes(s_programme.remoteId)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         const if_categorization = e_film.eventival_categorization && e_film.eventival_categorization.categories
         strapi_film.festival_editions = if_categorization ? e_film.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
@@ -468,13 +475,13 @@ const remapEventival = async () => {
             if(e_film.film_info && e_film.film_info.languages) {
                 return e_film.film_info.languages.map( item => { return item.code } ).includes(s_language.code)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         strapi_film.subtitles = strapi_languages.filter(s_subLang => {
             if(e_film.film_info && e_film.film_info.subtitle_languages) {
                 return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         if (e_film.publications) {
             const publications = e_film.publications
@@ -529,6 +536,9 @@ const remapEventival = async () => {
         strapi_cassette.title_en = (e_cassette.titles ? e_cassette.titles : {'title_english': ''}).title_english.toString()
         strapi_cassette.title_ru = (e_cassette.titles ? e_cassette.titles : {'title_custom': ''}).title_custom.toString()
 
+        if (!strapi_cassette.media) { strapi_cassette.media = {} }
+        strapi_cassette.media.trailer = [{ url: (e_cassette.film_info  ? e_cassette.film_info : {'online_trailer_url' : '' }).online_trailer_url}]
+
         const if_categorization = e_cassette.eventival_categorization && e_cassette.eventival_categorization.categories
         strapi_cassette.festival_editions = if_categorization ? e_cassette.eventival_categorization.categories.map(e => { return {id: ET.categories[e]} }) : []
 
@@ -537,26 +547,26 @@ const remapEventival = async () => {
             if(e_cassette.film_info.types) {
                 return e_cassette.film_info.types.includes(s_genre.et)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         strapi_cassette.tags.keywords = strapi_tag_keywords.filter((s_keyword) => {
             if(e_cassette.eventival_categorization.tags) {
                 return e_cassette.eventival_categorization.tags.includes(s_keyword.et)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         strapi_cassette.tags.premiere_types = strapi_tag_premiere_type.filter((s_premiereType) => {
             if(e_cassette.film_info && e_cassette.film_info.premiere_type) {
                 return e_cassette.film_info.premiere_type === s_premiereType.en
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         strapi_cassette.tags.programmes = strapi_programme.filter((s_programme) => {
             if(e_cassette.eventival_categorization && e_cassette.eventival_categorization.sections ) {
                 let sections = e_cassette.eventival_categorization.sections
                 return sections.map( item => { return item.id.toString() } ).includes(s_programme.remoteId)
             }
-        }).map(e => { return {id: e.id.toString()} })
+        }).map(e => { return {id: e.id} })
 
         const cassette_remote_ids = strapi_cassette.is_film_cassette
         ? e_cassette.film_info.texts.logline.split(',').map(id => id.trim())
@@ -585,7 +595,7 @@ const remapEventival = async () => {
         //     if(e_film.film_info && e_film.film_info.submitter && e_film.film_info.submitter.companies ){
         //         return e_film.film_info.submitter.companies.map( item => { return item.companies ).includes(s_presenter.name.en)
         //     }
-        // }).map(e => { return {id: e.id.toString()} })
+        // }).map(e => { return {id: e.id} })
 
 
         // ----   END update strapi cassette properties
@@ -643,6 +653,7 @@ const remapEventival = async () => {
 
         strapi_screening.extraInfo = e_screening.additional_info
 
+        e_screening.type_of_screening = e_screening.type_of_screening || 'Regular'
         strapi_screening.screening_types = strapi_screening_type.filter((s_screeningType) => {
             if(e_screening.type_of_screening) {
                 return e_screening.type_of_screening.includes(s_screeningType.name)
@@ -715,10 +726,17 @@ const submitFilms = async () => {
         }
 
         const strapi_film = strapi_films.filter((film) => {
+            if(film === undefined) {
+                console.log(strapi_films.pop());
+                process.exit(2)
+            }
             return film.remoteId === e_film.remoteId
         })
 
         if (strapi_film.length) {
+            // if (!isUpdateRequired(strapi_film[0], e_film)) {
+            //     return
+            // }
             e_film['id'] = strapi_film[0].id
             options.path = FILMS_API + '/' + e_film.id
             options.method = 'PUT'
@@ -726,19 +744,13 @@ const submitFilms = async () => {
             options.path = FILMS_API
             options.method = 'POST'
         }
-        const film_from_strapi = await strapiQuery(options, e_film)
-        return film_from_strapi
+        await strapiQuery(options, e_film)
     }
 
-    let from_strapi = []
     for (const e_film of EVENTIVAL_REMAPPED['E_FILMS']) {
-        const film_from_strapi = await submitFilm(e_film)
-        from_strapi.push(film_from_strapi)
-        strapi_films.push(film_from_strapi)
+        await submitFilm(e_film)
     }
-    return from_strapi
 }
-
 const submitCassettes = async () => {
     const strapi_cassettes = await getModel('Cassette')
 

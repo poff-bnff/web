@@ -1,25 +1,38 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
+const rueten = require('./rueten.js');
+
+const rootDir =  path.join(__dirname, '..')
+const domainSpecificsPath = path.join(rootDir, 'domain_specifics.yaml')
+const DOMAIN_SPECIFICS = yaml.safeLoad(fs.readFileSync(domainSpecificsPath, 'utf8'))
 
 const sourceDir =  path.join(__dirname, '..', 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA_SCREENINGS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Screening']
 const STRAPIDATA_FILMS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Film']
-const DOMAIN = 'poff.ee'
+const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
 
 const sourceFolder =  path.join(__dirname, '../source/');
 
-LangSelect('et')
+const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
+
+for (const lang of allLanguages) {
+    LangSelect(lang)
+}
 
 function LangSelect(lang) {
     let data = STRAPIDATA_SCREENINGS
     processData(data, lang, CreateYAML);
-    console.log(`Fetching ${DOMAIN} screenings data for XML`);
+    console.log(`Fetching ${DOMAIN} screenings ${lang} data`);
 }
 
 function processData(data, lang, CreateYAML) {
+
+    const cassettesPath = path.join(fetchDir, `cassettes.${lang}.yaml`)
+    const CASSETTES = yaml.safeLoad(fs.readFileSync(cassettesPath, 'utf8'))
+
     let allData = []
     if (STRAPIDATA_SCREENINGS.length) {
         let screeningsMissingCassetteIDs = []
@@ -33,6 +46,12 @@ function processData(data, lang, CreateYAML) {
 
 
             if (screening.cassette) {
+                let cassetteFromYAML = CASSETTES.filter( (a) => { return screening.cassette.id === a.id})
+
+                if (cassetteFromYAML.length) {
+                    STRAPIDATA_SCREENINGS[screeningIx].cassette = JSON.parse(JSON.stringify(cassetteFromYAML[0]))
+                }
+
                 let cassette = screening.cassette
 
                 // Cassette carousel pics
@@ -68,6 +87,7 @@ function processData(data, lang, CreateYAML) {
                 if (cassettePostersCassette.length > 0) {
                     screening.cassettePostersCassette = cassettePostersCassette
                 }
+
 
                 if(cassette.orderedFilms) {
                     for(filmIx in cassette.orderedFilms) {
@@ -132,11 +152,22 @@ function processData(data, lang, CreateYAML) {
 
 function CreateYAML(screenings, lang) {
     // console.log(screenings);
-    const SCREENINGS_YAML_PATH = path.join(fetchDir, `screenings_for_xml.yaml`)
+    if (lang === 'et') {
+        const SCREENINGS_YAML_XML_PATH = path.join(fetchDir, `screenings_for_xml.yaml`)
+
+        // // console.log(process.cwd());
+        let allDataYAML = yaml.safeDump(screenings, { 'noRefs': true, 'indent': '4' });
+        fs.writeFileSync(SCREENINGS_YAML_XML_PATH, allDataYAML, 'utf8');
+    }
+
+    const SCREENINGS_YAML_PATH = path.join(fetchDir, `screenings.${lang}.yaml`)
+
+    let screeningsCopy = rueten(JSON.parse(JSON.stringify(screenings)), lang)
 
     // // console.log(process.cwd());
-    let allDataYAML = yaml.safeDump(screenings, { 'noRefs': true, 'indent': '4' });
+    let allDataYAML = yaml.safeDump(screeningsCopy, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(SCREENINGS_YAML_PATH, allDataYAML, 'utf8');
+
 }
 
 
