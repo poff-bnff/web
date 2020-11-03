@@ -175,7 +175,7 @@ Organisation: &Organisation
 
 PresentedBy: &PresentedBy
     presentedByText: *Translated
-    organisations:
+    organisations: #(Component (repeatable))
         - *Organisation
 
 # Programme
@@ -735,14 +735,14 @@ Film: &Film
         - *FestivalEdition
     languages: #(Component (repeatable))
         - *Language
-    subtitles:
+    subtitles: #(Component (repeatable))
         - *Language
     otherFestivals: (text)
     credentials: *Credentials
     presentedBy: *PresentedBy
-    world_sales:
+    world_sales: #(Component (repeatable))
         - *Organisation
-    orderedCountries:
+    orderedCountries: #(Component (repeatable))
         - *OrderedCountries
     additInfo: *Translated #(rich text)
     foreignUrl: (text)
@@ -758,16 +758,16 @@ Cassette: &Cassette
     title_ru: (text)
     synopsis: *Translated #(Rich text)
     media: *FilmMedia #(Component)
-    festival_editions:
+    festival_editions: #(Component (repeatable))
         - *FestivalEdition
     tags: *Tags
     slug_et: (UID)
     slug_en: (UID)
     slug_ru: (UID)
-    presenters:
+    presenters: #(Component (repeatable))
         - *Organisation
-    orderedFilms:
-        - *OrderedFilm #(Component (repeatable))
+    orderedFilms: #(Component (repeatable))
+        - *OrderedFilm
     remoteId: (UID)
 
 IntroConversationQandA: &IntroConversationQandA
@@ -788,7 +788,7 @@ Screening: &Screening
     ticketingId: (Number)
     ticketingUrl: (text)
     dateTime: (Datetime)
-    introQaConversation:
+    introQaConversation: #(Component (repeatable))
       - *IntroConversationQandA
     durationTotal: (Number)
     location: *Location
@@ -808,17 +808,17 @@ SixFilms: &SixFilms
     lead: *Translated #(Rich)
     domain: *Domain
     namePrivate: (text)
-    films_et:
+    films_et: #(Component (repeatable))
         - *Film
-    films_en:
+    films_en: #(Component (repeatable))
         - *Film
-    films_ru:
+    films_ru: #(Component (repeatable))
         - *Film
-    cassettes_et:
+    cassettes_et: #(Component (repeatable))
         - *Cassette
-    cassettes_en:
+    cassettes_en: #(Component (repeatable))
         - *Cassette
-    cassettes_ru:
+    cassettes_ru: #(Component (repeatable))
         - *Cassette
 
 Label: &Label
@@ -852,7 +852,7 @@ FilmInFilmography: &FilmInFilmography
 
 Filmography: &Filmography
     text: (Rich text)
-    film:
+    film: #(Component (repeatable))
         - *FilmInFilmography
 
 IndustryPersonType: &IndustryPersonType
@@ -864,18 +864,18 @@ IndustryPerson: &IndustryPerson
     _path: /industry-people
     person: *Person
     profilePicAtInd: *StrapiMedia
-    role_at_films:
+    role_at_films: #(Component (repeatable))
         - *RoleAtFilm
     emaliAtInd: (Email)
     phoneAtInd: (text)
     aboutText: (Rich text) #kas peaks olema kolmes keeles
-    images:
+    images: #(Component (repeatable))
         - *StrapiMedia
     clipUrl: (text)
     website: (text)
-    filmography:
+    filmography: #(Component (repeatable))
         - *Filmography
-    industry_person_type:
+    industry_person_type: #(Component (repeatable))
         - *IndustryPersonType
 
 IndustryGroup: &IndustryGroup
@@ -902,36 +902,36 @@ ProjectStatus: &ProjectStatus
     description: (Rich text)
 
 TeamCredentials: &TeamCredentials
-    rolePerson:
+    rolePerson: #(Component (repeatable))
         - *RolePerson
-    roleCompany:
+    roleCompany: #(Component (repeatable))
         - *RoleCompany
 
 IndustryProject: &IndustryProject
     _path: /industry-projects
     title_en: (text)
     titleOriginal: (text)
-    countries:
+    countries: #(Component (repeatable))
         - *Country
-    languages:
+    languages: #(Component (repeatable))
         - *Language
-    project_types:
+    project_types: #(Component (repeatable))
         - *ProjectType
     logline: (text)
-    project_statuses:
+    project_statuses: #(Component (repeatable))
         - *ProjectStatus
     completionDate: (Datetime)
     numOfSeasons: (Number)
     numOfEpisodes: (Number)
     episodeDuration: (Number)
-    broadcasters:
+    broadcasters: #(Component (repeatable))
         - *Organisation
     plannedPremiere: (Date)
     country_focus: *Country
     teamCredentials: *TeamCredentials
     budget: (Number)
     financed: (Number)
-    attached_partners:
+    attached_partners: #(Component (repeatable))
         - *Organisation
     lookingFor: (text)
     synopsis: (Rich text)
@@ -941,10 +941,37 @@ IndustryProject: &IndustryProject
     contactAddess: (text)
     contactEmail: (Email)
     contactWeb: (text)
-    images:
+    images: #(Component (repeatable))
         - *StrapiMedia
     clipUrl: (text)
     slug: (UID)
+
+Channel: &Channel
+    _path: /channels
+    namePrivate: (text)
+    name: *Translated
+    description: *Translated #(Rich)
+    embedCode: (text)
+
+IndustryEvent: &IndustryEvent
+    _path: /industry-events
+    titlePrivate: (text)
+    startTime: (Datetime)
+    title_en: (text)
+    slug_en: (UID)
+    duration: (Number)
+    images: #(Component (repeatable))
+        - *StrapiMedia
+    location: *Location #ei sisalda kirjeldust
+    lead: (Rich text)
+    description: (Rich text)
+    industry_categories: #(Component (repeatable))
+        - *IndustryCategory
+    project_type: *ProjectType
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish: (Boolean)
+    channel: *Channel
 
 # Supporters
 SupPoff: &SupPoff
@@ -958,7 +985,7 @@ SupPoff: &SupPoff
 SupSecPoff: &SupSecPoff
     name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupPoff
 
 POFFSupporter: &POFFSupporter
@@ -967,7 +994,7 @@ POFFSupporter: &POFFSupporter
     intro: *Translated
     # namePrivate: (text, private)
     domain: *Domain
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecPoff
 
 SupJust: &SupJust
@@ -981,7 +1008,7 @@ SupJust: &SupJust
 SupSecJust: &SupSecJust
     name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupJust
 
 JustSupporter: &JustSupporter
@@ -990,7 +1017,7 @@ JustSupporter: &JustSupporter
     domain: *Domain
     title: *Translated
     intro: *Translated
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecJust
 
 SupShorts: &SupShorts
@@ -1004,7 +1031,7 @@ SupShorts: &SupShorts
 SupSecShorts: &SupSecShorts
     name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupShorts
 
 ShortsSupporter: &ShortsSupporter
@@ -1013,7 +1040,7 @@ ShortsSupporter: &ShortsSupporter
     domain: *Domain
     title: *Translated
     intro: *Translated
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecShorts
 
 SupIndustry: &SupIndustry
@@ -1027,7 +1054,7 @@ SupIndustry: &SupIndustry
 SupSecIndustry: &SupSecIndustry
     name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupIndustry
 
 IndustrySupporter: &IndustrySupporter
@@ -1036,7 +1063,7 @@ IndustrySupporter: &IndustrySupporter
     domain: *Domain
     title: *Translated
     intro: *Translated
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecIndustry
 
 SupKinoff: &SupKinoff
@@ -1050,7 +1077,7 @@ SupKinoff: &SupKinoff
 SupSecKinoff: &SupSecKinoff
     name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupKinoff
 
 KinoffiSupporter: &KinoffiSupporter
@@ -1059,7 +1086,7 @@ KinoffiSupporter: &KinoffiSupporter
     domain: *Domain
     title: *Translated
     intro: *Translated
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecKinoff
 
 # Footer
@@ -1223,7 +1250,7 @@ OrderedProduct: &OrderedProduct
 
 ProdCatList: &ProdCatList
     namePrivate: (text)
-    product:
+    orderedProductCategories:
         - *OrderedProduct
     title: *Translated
 
@@ -1232,10 +1259,10 @@ Shop: &Shop
     namePrivate: (text)
     title: *Translated
     intro: *Translated #(Rich text)
-    prodCatList:
+    prodCatList: #(Component (repeatable))
         - *ProdCatList
     shopRules: *Translated #(Rich text)
-    domains:
+    domains: #(Component (repeatable))
         - *Domain
 
 # Hero

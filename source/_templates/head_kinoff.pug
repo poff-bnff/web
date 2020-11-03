@@ -2,6 +2,9 @@ head
     // Required meta tags
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    include ../_templates/head_common.pug
+
     // For Facebook share
     if self.title
         meta(property='og:title' content= self.title)
@@ -38,7 +41,7 @@ head
     script(src="https://sdk.amazonaws.com/js/aws-sdk-2.748.0.min.js")
 
 
-    link(rel='shortcut icon' href='/BNFF.ico')
+    link(rel='shortcut icon' href='/assets/img/static/favicons/BNFF.ico')
     link(rel='icon' sizes='16x16 32x32 64x64' href='/assets/img/static/favicons/BNFF.ico')
     link(rel='icon' type='image/png' sizes='196x196' href='/assets/img/static/favicons/BNFF-192.png')
     link(rel='icon' type='image/png' sizes='160x160' href='/assets/img/static/favicons/BNFF-160.png')
