@@ -13,10 +13,17 @@ header
 
     nav.main_menu
         ul.ul_yx
-            //- li
-            //-     #hello(style='color: red')
-            //-     //- #out(style='color: red')
-            //-     #out(style={color: 'red', cursor: 'pointer'})
+            li
+                nav.lang_menu
+                    //- | prefiks&nbsp;
+                    //- .clr_primary= self.label.film.languageSelect + 'rr'
+                    each p, locale in self.otherLocalePaths
+                        //- span.clr_white_semi= self.label.film.languageSelect + ':  '
+                        //- if self.publish && (self[`publish_${locale}`] === false)
+                        //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
+                        //- a(href=(p !== '/' ? p + '/' : '/'))= locale
+
+                        a(href=(p !== '/' ? p + '/' : '/'))= locale
 
             li
                 nav.org_menu
@@ -82,7 +89,7 @@ header
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
 
                                 else
-                                    if subMenuItem.customUrl
+                                    if subMenuItem.customUrl && subMenuItem.name && typeof subMenuItem.name !== 'object'
                                         li
                                             a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
 
@@ -92,18 +99,32 @@ header
                         li
                             a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
+            //- li.user_menu.dropdown
+            //-     a
+            //-         | MINU PÖFF
+            //-         ul.ul_kaks
+            //-             li
+            //-                 a#logIn(style={cursor: 'pointer', display: 'none'} onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+            //-             li
+            //-                 a#signUp(style={cursor: 'pointer', display: 'none'} onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
+            //-             li
+            //-                 a#logInName(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
+            //-             li
+            //-                 a#userProfile(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()' href=`/${lang_path}userprofile`) Minu profiil
+            //-             li
+            //-                 a#myFavouriteFilms(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()') Lemmikud
+            //-             li
+            //-                 a#logOut(style={cursor: 'pointer', display: 'none'} onclick='logOut()')= self.label.menu.mainLogout
 
-            li
-                nav.lang_menu
-                    //- | prefiks&nbsp;
-                    //- .clr_primary= self.label.film.languageSelect + 'rr'
-                    each p, locale in self.otherLocalePaths
-                        //- span.clr_white_semi= self.label.film.languageSelect + ':  '
-                        //- if self.publish && (self[`publish_${locale}`] === false)
-                        //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
-                        //- a(href=(p !== '/' ? p + '/' : '/'))= locale
+            //- li.dropdown= 'USER'
+            //-     ul.user_menu.ul_kaks
+            //-         li.user_menu_item
+            //-             a#logIn(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+            //-         li.user_menu_item
+            //-             #hello Hello
+            //-         li.user_menu_item
+            //-             #logOut(onclick='logOut()')= self.label.menu.mainLogout
 
-                        a(href=(p !== '/' ? p + '/' : '/'))= locale
 
 
     label.main_menu_toggle_label(for='main_menu_toggle')
@@ -111,5 +132,4 @@ header
 
 
 
-script
-        include userProfile.js
+

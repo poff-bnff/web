@@ -1250,7 +1250,7 @@ OrderedProduct: &OrderedProduct
 
 ProdCatList: &ProdCatList
     namePrivate: (text)
-    product: #(Component (repeatable))
+    orderedProductCategories:
         - *OrderedProduct
     title: *Translated
 
