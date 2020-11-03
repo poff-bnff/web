@@ -78,25 +78,28 @@ const isUpdateRequired = (old_o, update_o) => {
         }
         return yaml.load(yaml.safeDump(o, {'sortKeys': true}))
     }
-    const valueInArray = (update_value, arr) => {
-        for (const old_value of arr) {
+
+    const valueInArray = (old_arr, update_value) => {
+        for (const old_value of old_arr) {
             try {
                 if (isUpdateRequiredRecursive(old_value, update_value) === false) {
                     return true
                 }
             } catch (error) {
-                console.log(JSON.stringify({old: old_o, new: update_o}))
+                // console.log(JSON.stringify({old: old_o, new: update_o}))
                 throw new TypeError(error)
             }
         }
         return false
     }
+
     const isUpdateRequiredRecursive = (old_o, update_o) => {
+        // console.log(JSON.stringify({old_o, update_o}, null, 4))
         if (old_o === update_o) {
             return false
         }
         if (typeof old_o !== typeof update_o) {
-            console.log('typeof old_o !== typeof update_o', old_o, update_o);
+            // console.log('typeof old_o !== typeof update_o', old_o, update_o);
             return true
         }
         if (old_o === null && update_o !== null) {
@@ -104,27 +107,29 @@ const isUpdateRequired = (old_o, update_o) => {
         }
 
         if (isObject(update_o)) {
-            if (Object.keys(update_o) === ['id']) {
-                const is_true = update_o.id !== old_o.id
-                if (is_true) {
-                    console.log('object with sole id', update_o);
+            // console.log('Object.keys(update_o)', Object.keys(update_o), ['id'], Object.keys(update_o).toString() === ['id'].toString())
+            if (Object.keys(update_o).toString() === ['id'].toString()) {
+                if (update_o.id === old_o.id) {
+                    return false
                 }
-                return is_true
+                return true
             }
             for (const key in update_o) {
                 try {
+                    // console.log('key', key, old_o[key], update_o[key])
                     if (isUpdateRequiredRecursive(old_o[key], update_o[key])) {
                         return true
                     }
                 } catch (error) {
-                    console.log(JSON.stringify({old: old_o, new: update_o}))
+                    // console.log(JSON.stringify({old: old_o, new: update_o}))
                     throw new TypeError(error)
                 }
             }
             return false
         } else if (Array.isArray(update_o)) {
+            // console.log('ARRAY Object.keys(update_o)', Object.keys(update_o), ['id'], Object.keys(update_o).toString() === ['id'].toString())
             for (const update_value of update_o) {
-                if (!valueInArray(update_value, old_o)) {
+                if (!valueInArray(old_o, update_value)) {
                     return true
                 }
             }
@@ -132,6 +137,7 @@ const isUpdateRequired = (old_o, update_o) => {
         }
         return true
     }
+
     try {
         return isUpdateRequiredRecursive(sortedObject(old_o), sortedObject(update_o))
     } catch (error) {
@@ -423,6 +429,7 @@ const remapEventival = async () => {
 
 
     let to_strapi_films = []
+    // console.log('In E_FILMS')
     for (const e_film of EVENTIVAL_FILMS) {
 
         const is_film_cassette = (e_film.film_info
@@ -533,7 +540,7 @@ const remapEventival = async () => {
     // Cassettes
     //
     let to_strapi_cassettes = []
-
+    // console.log('In E_CASSETTES')
     for (const e_cassette of EVENTIVAL_FILMS) {
         let strapi_cassette = strapi_cassettes.filter(s_cassette => s_cassette.remoteId === e_cassette.ids.system_id.toString())[0]
         if (! strapi_cassette) {
@@ -635,7 +642,7 @@ const remapEventival = async () => {
     // Screenings
     //
     let to_strapi_screenings = []
-
+    // console.log('In E__SCREENINGS')
     for (const e_screening of EVENTIVAL_SCREENINGS) {
         // console.log('midagi', e_screening.id)
 
@@ -841,10 +848,10 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    // timer.log(__filename, 'Check for missing films and screenings')
-    // await createMissingFilmsAndScreenings()
-    // timer.log(__filename, 'update Strapi')
-    // await updateStrapi()
+    timer.log(__filename, 'Check for missing films and screenings')
+    await createMissingFilmsAndScreenings()
+    timer.log(__filename, 'update Strapi')
+    await updateStrapi()
     timer.log(__filename, 'remap')
     await remapEventival()
     timer.log(__filename, 'submit films')
