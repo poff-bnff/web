@@ -64,37 +64,8 @@ if (localStorage.getItem("ACCESS_TOKEN")) {
 async function sendUserProfile() {
     console.log('updating user profile.....');
 
-    let profile_pic_to_send= "no profile picture"
-
-    if (imgPreview.src !== "/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg"){
-        //küsib lingi kuhu pilti postitada
-        let linkResponse = await fetch(`https://api.poff.ee/picture`, {
-
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
-            },
-        });
-        data = await linkResponse.json()
-        //console.log("saadud link on: ")
-        console.log(data.link)
-
-        profile_pic_to_send = ((await data.link).split('?'))[0]
-
-        var file = imgPreview.src;
-
-        var requestOptions = {
-            method: 'PUT',
-            body: file,
-            redirect: 'follow'
-        };
-        fetch(data.link, requestOptions)
-
-    }
-
-
     let userToSend = [
-        { Name: "picture", Value: profile_pic_to_send },
+        { Name: "picture", Value: "empty" },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
@@ -103,7 +74,6 @@ async function sendUserProfile() {
         { Name: "email", Value: email.value },
         { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
     ];
-
 
     console.log("kasutaja profiil mida saadan");
     console.log(userToSend)
@@ -148,6 +118,35 @@ function validateaAndPreview(file){
 
 function uploadPic(){
     console.log("uploading pilti S3")
+    let profile_pic_to_send= "no profile picture"
+
+    if (imgPreview.src !== "/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg"){
+        //küsib lingi kuhu pilti postitada
+        let linkResponse = await fetch(`https://api.poff.ee/picture`, {
+
+            method: 'GET',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+            },
+        });
+        data = await linkResponse.json()
+
+
+        //console.log("saadud link on: ")
+        console.log(data.link)
+
+        profile_pic_to_send = ((await data.link).split('?'))[0]
+
+        var file = imgPreview.src;
+
+        var requestOptions = {
+            method: 'PUT',
+            body: file,
+            redirect: 'follow'
+        };
+        fetch(data.link, requestOptions)
+
+    }
 }
 
 
