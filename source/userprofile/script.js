@@ -1,7 +1,5 @@
-const { profile } = require("console");
-
-var imgPreview = document.getElementById("imgPreview");
-var profileImg = document.getElementById("profileImg");
+let imgPreview = document.getElementById("imgPreview");
+let profile_pic_to_send = "no profile picture saved"
 
 async function loadUserInfo() {
     let response = await fetch(`https://api.poff.ee/profile`, {
@@ -36,8 +34,9 @@ async function loadUserInfo() {
     }
     dob.value = userProfile.birthdate;
 
-
-    if(userProfile.picture) {
+    // kui kasutajal on pilt salvestatud
+    // if(userProfile.picture !=="no profile picture saved") {
+    // }
         let res = await fetch(`https://api.poff.ee/profile/picture`, {
             method: "GET",
             headers: {
@@ -48,35 +47,34 @@ async function loadUserInfo() {
         console.log(profilePicture.url)
 
         imgPreview.src=profilePicture.url
-
-        // fetch(profilePicture.url)
-        // .then(async function(response) {
-        //     imgPreview.src = await response.text()
-        // })
-    }
 }
 
-//laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
 if (localStorage.getItem("ACCESS_TOKEN")) {
     loadUserInfo();
 }
 
 async function sendUserProfile() {
     console.log('updating user profile.....');
+    let picture = 'no profile picture saved'
+    if(profile_pic_to_send !== "no profile picture saved"){
+        picture ='this users pic is in S3'
+    }
 
     let userToSend = [
-        { Name: "picture", Value: "empty" },
-        { Name: "name", Value: firstName.value },
-        { Name: "family_name", Value: lastName.value },
-        { Name: "gender", Value: gender.value },
-        { Name: "birthdate", Value: dob.value },
-        { Name: "phone_number", Value: '+' + phoneNr.value },
-        { Name: "email", Value: email.value },
-        { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
+        {Name: "picture",Value: picture },
+        {Name: "name",Value: firstName.value},
+        {Name: "family_name", Value: lastName.value },
+        {Name: "gender",Value: gender.value},
+        { Name: "birthdate",Value: dob.value},
+        {Name: "phone_number",Value: '+' + phoneNr.value},
+        {Name: "email",Value: email.value},
+        {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
     console.log("kasutaja profiil mida saadan");
     console.log(userToSend)
+
+
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
         headers: {
@@ -87,7 +85,7 @@ async function sendUserProfile() {
 
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
-        if (localStorage.getItem('url')){
+        if (localStorage.getItem('url')) {
             window.open(localStorage.getItem('url'), '_self')
             localStorage.removeItem('url')
         }
@@ -97,56 +95,55 @@ async function sendUserProfile() {
 }
 
 
-function validateaAndPreview(file){
-    var imgPreview = document.getElementById("imgPreview");
-    var error = document.getElementById("imgError");
+function validateaAndPreview(file) {
+    let error = document.getElementById("imgError");
     console.log(file)
     // Check if the file is an image.
     if (!file.type.includes("image")) {
         console.log("File is not an image.", file.type, file);
         error.innerHTML = "File is not an image.";
-    }else{
-        console.log(file.type)
-        console.log(file.name)
+    } else {
+        //näitab pildi eelvaadet
         var reader = new FileReader();
-        reader.onload = function(){
+        reader.onload = function () {
             imgPreview.src = reader.result;
         };
         reader.readAsDataURL(file);
+        profile_pic_to_send = file
     }
 }
 
-function uploadPic(){
-    console.log("uploading pilti S3")
-    let profile_pic_to_send= "no profile picture"
-
-    if (imgPreview.src !== "/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg"){
+async function uploadPic() {
+    //küsib lingi
+    if (imgPreview.src !== "/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg") {
         //küsib lingi kuhu pilti postitada
         let linkResponse = await fetch(`https://api.poff.ee/picture`, {
-
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
             },
         });
         data = await linkResponse.json()
-
-
-        //console.log("saadud link on: ")
+        console.log("saadud link on: ")
         console.log(data.link)
 
-        profile_pic_to_send = ((await data.link).split('?'))[0]
+        console.log("uploading this file to S3....")
+        console.log(profile_pic_to_send)
 
-        var file = imgPreview.src;
-
-        var requestOptions = {
+        //saadab pildi
+        let requestOptions = {
             method: 'PUT',
-            body: file,
+            headers: {
+                'Content-Type': "image/png",
+                'ACL': 'private'
+            },
+            body: profile_pic_to_send,
             redirect: 'follow'
         };
         fetch(data.link, requestOptions)
 
     }
+
 }
 
 
@@ -198,4 +195,3 @@ function validateForm() {
         sendUserProfile()
     }
 }
-
