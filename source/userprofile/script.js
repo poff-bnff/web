@@ -1,3 +1,5 @@
+const { profile } = require("console");
+
 var imgPreview = document.getElementById("imgPreview");
 var profileImg = document.getElementById("profileImg");
 
@@ -125,37 +127,30 @@ async function sendUserProfile() {
 }
 
 
-function readImage() {
-    const fileSelector = document.getElementById("profileImg");
-    const imgPreview = document.getElementById("imgPreview");
-    let error = document.getElementById("imgError");
-
-    fileSelector.addEventListener("change", (event) => {
-        const fileList = event.target.files;
-        //console.log(fileList);
-        for (const file of fileList) {
-            // Not supported in Safari for iOS.
-            const name = file.name ? file.name : "NOT SUPPORTED";
-            // Not supported in Firefox for Android or Opera for Android.
-            const type = file.type ? file.type : "NOT SUPPORTED";
-            // Unknown cross-browser support.
-            const size = file.size ? file.size : "NOT SUPPORTED";
-            console.log({ file, name, type, size });
-            error.innerHTML = "";
-            // Check if the file is an image.
-            if (file.type && file.type.indexOf("image") === -1) {
-                console.log("File is not an image.", file.type, file);
-                error.innerHTML = "File is not an image.";
-                return;
-            }
-            const reader = new FileReader();
-            reader.addEventListener("load", (event) => {
-                imgPreview.src = event.target.result;
-            });
-            reader.readAsDataURL(file);
-        }
-    });
+function validateaAndPreview(file){
+    var imgPreview = document.getElementById("imgPreview");
+    var error = document.getElementById("imgError");
+    console.log(file)
+    // Check if the file is an image.
+    if (!file.type.includes("image")) {
+        console.log("File is not an image.", file.type, file);
+        error.innerHTML = "File is not an image.";
+    }else{
+        console.log(file.type)
+        console.log(file.name)
+        var reader = new FileReader();
+        reader.onload = function(){
+            imgPreview.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+    }
 }
+
+function uploadPic(){
+    console.log("uploading pilti S3")
+}
+
+
 
 
 
