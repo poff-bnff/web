@@ -83,6 +83,7 @@ deleteFolderRecursive(cassettesPath)
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const lang of allLanguages) {
     let cassettesWithOutFilms = []
+    let cassettesWithOutSpecifiedScreeningType = []
 
     const dataFrom = { 'articles': `/_fetchdir/articles.${lang}.yaml` }
     fs.mkdirSync(cassettesPath, { recursive: true })
@@ -95,6 +96,7 @@ for (const lang of allLanguages) {
     let limit = CASSETTELIMIT
     let counting = 0
     for (const s_cassette of STRAPIDATA_CASSETTE) {
+        var hasOneCorrectScreening = false
         if (limit !== 0 && counting === limit) break
         counting++
 
@@ -146,6 +148,27 @@ for (const lang of allLanguages) {
                 }
             }
 
+            // Kasseti treiler
+            if (s_cassette_copy.media && s_cassette_copy.media.trailer && s_cassette_copy.media.trailer[0]) {
+                for (trailer of s_cassette_copy.media.trailer) {
+                    if(trailer.url && trailer.url.length > 10) {
+                        if (trailer.url.includes('vimeo')) {
+                            let splitVimeoLink = trailer.url.split('/')
+                            let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
+                            if (videoCode.length === 9) {
+                                trailer.videoCode = videoCode
+                            }
+                        } else {
+                            let splitYouTubeLink = trailer.url.split('=')[1]
+                            let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
+                            if (splitForVideoCode.length === 11) {
+                                trailer.videoCode = splitForVideoCode
+                            }
+                        }
+                    }
+                }
+            }
+
             // rueten func. is run for each s_cassette_copy separately instead of whole data, that is
             // for the purpose of saving slug_en before it will be removed by rueten func.
             rueten(s_cassette_copy, lang)
@@ -161,13 +184,17 @@ for (const lang of allLanguages) {
             }
 
             // #379 put ordered films to cassette.film
-            let ordered_films = s_cassette_copy.orderedFilms.map(s_c_film => {
+            let ordered_films = s_cassette_copy.orderedFilms
+                .filter( (isFilm) => { if (isFilm.film) { return 1 } else { console.log(`ERROR! Empty film under cassette with ID ${s_cassette_copy.id}`) } })
+                .map(s_c_film => {
+
                 if (!s_c_film.film) {
                     // console.log('ERROR: Cassette with no ordered film', s_cassette_copy.id);
                     cassettesWithOutFilms.push(s_cassette_copy.id)
                     // throw new Error('Cassette with no ordered film')
                 } else {
                     let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
+
                     if (s_films && s_films[0]) {
                         s_films[0].ordinal = s_c_film.order
                         return s_films[0]
@@ -197,7 +224,7 @@ for (const lang of allLanguages) {
                     }
                     // Kui vähemalt üks screeningtype õige, siis hasOneCorrectScreening = true
                     // - st ehitatakse
-                    var hasOneCorrectScreening = true
+                    hasOneCorrectScreening = true
 
                     delete screening.cassette
                     screenings.push(rueten(screening, lang))
@@ -263,6 +290,7 @@ for (const lang of allLanguages) {
 
             if (s_cassette_copy.films && s_cassette_copy.films[0]) {
                 for (scc_film of s_cassette_copy.films) {
+                    // console.log(scc_film);
                     let filmSlugEn = scc_film.slug_en
 
                     if (!filmSlugEn) {
@@ -385,7 +413,7 @@ for (const lang of allLanguages) {
                 // timer.log(__filename, util.inspect(s_cassette_copy, {showHidden: false, depth: null}))
                 generateYaml(s_cassette_copy, lang)
             } else {
-                timer.log(__filename, `Skipped cassette ${s_cassette_copy.id} slug ${s_cassette_copy.slug}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
+                cassettesWithOutSpecifiedScreeningType.push(s_cassette_copy.id)
             }
 
         } else {
@@ -399,6 +427,10 @@ for (const lang of allLanguages) {
     if(cassettesWithOutFilms.length) {
         uniqueIDs = [...new Set(cassettesWithOutFilms)]
         timer.log(__filename, `ERROR! No films under cassettes with ID's ${uniqueIDs.join(', ')}`)
+    }
+    if (cassettesWithOutSpecifiedScreeningType.length) {
+        uniqueIDs2 = [...new Set(cassettesWithOutSpecifiedScreeningType)]
+        timer.log(__filename, `Skipped cassettes with IDs ${uniqueIDs2.join(', ')}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
     }
     generateAllDataYAML(allData, lang)
 }
