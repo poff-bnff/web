@@ -458,7 +458,12 @@ function generateAllDataYAML(allData, lang){
 
     let filters = {
         programme: {},
-        language: {}
+        language: {},
+        country: {},
+        subtitle: {},
+        premieretype: {},
+        town: {},
+        cinema: {}
     }
     const cassette_search = allData.map(cassette => {
         let programmes = []
@@ -476,22 +481,68 @@ function generateAllDataYAML(allData, lang){
             }
         }
         let languages = []
+        let countries = []
+        let cast_n_crew = []
         for (const films of cassette.films) {
             for (const language of films.languages || []) {
-                const key = language.code
+                const langKey = language.code
                 const language_name = language.name
-                languages.push(key)
-                filters.language[key] = language_name
+                languages.push(langKey)
+                filters.language[langKey] = language_name
             }
+            for (const country of films.orderedCountries || []) {
+                const countryKey = country.country.code
+                const country_name = country.country.name
+                countries.push(countryKey)
+                filters.country[countryKey] = country_name
+            }
+            for (const key in films.credentials.rolePersonsByRole) {
+                for (const crew of films.credentials.rolePersonsByRole[key]) {
+                    cast_n_crew.push(crew)
+                }
+            }
+        }
+        let subtitles = []
+        let towns = []
+        let cinemas = []
+        for (const screenings of cassette.screenings) {
+            for (const subtitle of screenings.subtitles || []) {
+                const subtKey = subtitle.code
+                const subtitle_name = subtitle.name
+                subtitles.push(subtKey)
+                filters.subtitle[subtKey] = subtitle_name
+            }
+
+            const townKey = screenings.location.hall.cinema.town.id
+            const town_name = screenings.location.hall.cinema.town.name
+            towns.push(parseInt(townKey))
+            filters.town[townKey] = town_name
+
+            const cinemaKey = screenings.location.hall.cinema.id
+            const cinema_name = screenings.location.hall.cinema.name
+            cinemas.push(parseInt(cinemaKey))
+            filters.cinema[cinemaKey] = cinema_name
+        }
+        let premieretypes = []
+        for (const types of cassette.tags.premiere_types || []) {
+                const type_name = types
+                premieretypes.push(type_name)
+                filters.premieretype[type_name] = type_name
         }
         return {
             id: cassette.id,
             text: [
                 cassette.title,
-                cassette.synopsis
+                cassette.synopsis,
+                cast_n_crew
             ].join(' ').toLowerCase(),
             programmes: programmes,
-            languages: languages
+            languages: languages,
+            countries: countries,
+            subtitles: subtitles,
+            premieretypes: premieretypes,
+            towns: towns,
+            cinemas: cinemas
         }
     })
 
