@@ -28,23 +28,24 @@ function toggleAll(ids) {
         }
     })
 
-    toggleFilters()
+    toggleFilters(programme_select, 'programmes')
 }
 
-function toggleFilters() {
-    for (const option of programme_select.options) {
+function toggleFilters(selectelement, cassettearray) {
+
+    for (const option of selectelement.options) {
         const value = option.value
 
         if (value !== '') {
             let count = searcharray
-            .filter(cassette => cassette.programmes.includes(value))
-            // .filter(cassette => cassette.languages.includes(language_select.value ? language_select.value : ''))
-            // .filter(cassette => cassette.countries.includes(country_select.value))
-            // .filter(cassette => cassette.subtitles.includes(subtitle_select.value))
-            // .filter(cassette => cassette.towns.includes(parseInt(town_select.value)))
-            // .filter(cassette => cassette.cinemas.includes(parseInt(cinema_select.value)))
-            // .filter((cassette) => { return premieretype_select.value ? cassette.premieretypes.includes(premieretype_select.value : true }))
-            // .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true }).length
+            .filter(cassette => cassette[cassettearray].includes(value))
+            .filter((cassette) => { return language_select.value ? cassette.languages.includes(language_select.value) : true })
+            .filter((cassette) => { return country_select.value ? cassette.countries.includes(country_select.value) : true })
+            .filter((cassette) => { return subtitle_select.value ? cassette.subtitles.includes(subtitle_select.value) : true })
+            .filter((cassette) => { return town_select.value ? cassette.towns.includes(parseInt(town_select.value)) : true })
+            .filter((cassette) => { return cinema_select.value ? cassette.cinemas.includes(parseInt(cinema_select.value)) : true })
+            .filter((cassette) => { return premieretype_select.value ? cassette.premieretypes.includes(premieretype_select.value) : true })
+            .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true }).length
             // option.innerHTML += `${count} ${value}`
             option.disabled = count ? false : true
         } else {
