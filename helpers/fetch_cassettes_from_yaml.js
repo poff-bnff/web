@@ -457,12 +457,17 @@ function generateAllDataYAML(allData, lang){
     }
     const cassette_search = allData.map(cassette => {
         let programmes = []
-        for (const programme of cassette.tags.programmes) {
-            for (const fested of programme.festival_editions) {
-                const key = fested.festival + '_' + programme.id
-                const festival_name = cassette.festivals.filter(festival => festival.id === fested.festival)[0].name
-                programmes.push(key)
-                filters.programme[key] = `${festival_name} ${programme.name}`
+        if (typeof cassette.tags.programmes !== 'undefined') {
+            for (const programme of cassette.tags.programmes) {
+                for (const fested of programme.festival_editions) {
+                    const key = fested.festival + '_' + programme.id
+                    const festival = cassette.festivals.filter(festival => festival.id === fested.festival)
+                    if (festival[0]) {
+                        var festival_name = festival[0].name
+                    }
+                    programmes.push(key)
+                    filters.programme[key] = `${festival_name} ${programme.name}`
+                }
             }
         }
         let languages = []
