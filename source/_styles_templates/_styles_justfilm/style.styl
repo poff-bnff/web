@@ -1159,6 +1159,17 @@ row:nth-child(15) > .supporter_logos
     padding 2rem
     // padding-top header_height
 
+.sub_team_jury
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(50rem, 1fr))
+    justify-content center
+    align-content start
+    justify-items center
+    align-items start
+    grid-gap 6rem
+    padding 2rem
+    // padding-top header_height
+
 .person
     display flex
     flex-direction column
@@ -1170,6 +1181,20 @@ row:nth-child(15) > .supporter_logos
     max-height max-content
     margin-bottom 1rem
     margin-top 1rem
+
+.person_jury
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(24rem, 1fr))
+    grid-template-rows auto
+    grid-gap 3rem
+    // background-color bg_dark_3
+    // border solid .5px bg_dark_4
+    width 100%
+    // height auto
+    // min-height min-content
+    // max-height max-content
+    // margin-bottom 1rem
+    // margin-top 1rem
 
 .person_head
     // background-color clr_primary
@@ -1561,7 +1586,7 @@ p a
 .synopsis_gi
 .dir_bio
   font-family font_p
-  color white_96
+  color dark_1
   font-size 1rem
   text-align left
   line-height 1.618
