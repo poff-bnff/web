@@ -1,23 +1,31 @@
 
 const search_input = document.getElementById('search');
-const programme_select = document.getElementById('programmesSelect');
-const language_select = document.getElementById('languagesSelect');
-const country_select = document.getElementById('countriesSelect');
-const subtitle_select = document.getElementById('subtitlesSelect');
-const premieretype_select = document.getElementById('premieretypesSelect');
-const town_select = document.getElementById('townsSelect');
-const cinema_select = document.getElementById('cinemasSelect');
+const selectors = {
+    programmes: document.getElementById('programmes_select'),
+    languages: document.getElementById('languages_select'),
+    countries: document.getElementById('countries_select'),
+    subtitles: document.getElementById('subtitles_select'),
+    premieretypes: document.getElementById('premieretypes_select'),
+    towns: document.getElementById('towns_select'),
+    cinemas: document.getElementById('cinemas_select')
+}
+
 const nonetoshow = document.getElementById('nonetoshow');
 
-function toggleAll(ids) {
 
 
+function toggleAll(exclude_selector_name) {
+
+    ids = execute_filters()
+
+    // kuva/peida 'pole vasteid'
     if (ids.length) {
         nonetoshow.style.display = "none"
     } else {
         nonetoshow.style.display = "grid"
     }
 
+    // kuva/peida kassette
     let cards = document.querySelectorAll('[class="card_film"]')
     cards.forEach(card => {
         // console.log(typeof ids[0], ' - ',typeof card.id);
@@ -28,75 +36,117 @@ function toggleAll(ids) {
         }
     })
 
-    toggleFilters(programme_select, 'programmes')
+    // filtreeri filtreid
+    toggleFilters(exclude_selector_name)
 }
 
-function toggleFilters(selectelement, cassettearray) {
+function toggleFilters(exclude_selector_name) {
 
-    for (const option of selectelement.options) {
-        const value = option.value
+    for (selector_name in selectors) {
+        // console.log(exclude_selector_name, ' - ', selector_name);
 
-        if (value !== '') {
+        if (exclude_selector_name === selector_name) {
+            continue
+        }
+
+        for (const option of selectors[selector_name].options) {
+            const value = option.value
+            if (value === '') {
+                option.disabled = false // garanteerib tyhivaliku olemasolu
+                continue
+            }
+
+            // console.log(`value is this '${value}' - ${typeof value}`);
             let count = searcharray
-            .filter(cassette => cassette[cassettearray].includes(value))
-            .filter((cassette) => { return language_select.value ? cassette.languages.includes(language_select.value) : true })
-            .filter((cassette) => { return country_select.value ? cassette.countries.includes(country_select.value) : true })
-            .filter((cassette) => { return subtitle_select.value ? cassette.subtitles.includes(subtitle_select.value) : true })
-            .filter((cassette) => { return town_select.value ? cassette.towns.includes(parseInt(town_select.value)) : true })
-            .filter((cassette) => { return cinema_select.value ? cassette.cinemas.includes(parseInt(cinema_select.value)) : true })
-            .filter((cassette) => { return premieretype_select.value ? cassette.premieretypes.includes(premieretype_select.value) : true })
-            .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true }).length
+            .filter(cassette => {
+                const compare_with = selector_name === 'programmes' ? value : selectors.programmes.value;
+                return compare_with === '' ? true : cassette.programmes.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'languages' ? value : selectors.languages.value;
+                return compare_with === '' ? true : cassette.languages.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'countries' ? value : selectors.countries.value;
+                return compare_with === '' ? true : cassette.countries.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'subtitles' ? value : selectors.subtitles.value;
+                return compare_with === '' ? true : cassette.subtitles.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'towns' ? value : selectors.towns.value;
+                return compare_with === '' ? true : cassette.towns.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'cinemas' ? value : selectors.cinemas.value;
+                return compare_with === '' ? true : cassette.cinemas.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'premieretypes' ? value : selectors.premieretypes.value;
+                return compare_with === '' ? true : cassette.premieretypes.includes( compare_with )
+            })
+
+            .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true })
+            .length
+            // .filter((cassette) => { return selectors.countries.value ? cassette.countries.includes(selectors.countries.value) : true })
+            // .filter((cassette) => { return selectors.subtitles.value ? cassette.subtitles.includes(selectors.subtitles.value) : true })
+            // .filter((cassette) => { return selectors.towns.value ? cassette.towns.includes(selectors.towns.value) : true })
+            // .filter((cassette) => { return selectors.cinemas.value ? cassette.cinemas.includes(selectors.cinemas.value) : true })
+            // .filter((cassette) => { return selectors.premieretypes.value ? cassette.premieretypes.includes(selectors.premieretypes.value) : true })
+            // .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true })
             // option.innerHTML += `${count} ${value}`
             option.disabled = count ? false : true
-        } else {
-            option.disabled = false
+
         }
+
     }
-    // console.log(programme_select.options.value);
+
+    // console.log(programmes.options.value);
 
 }
 
 search_input.addEventListener('keyup', e => {
-    toggleAll(execute_filters());
+    toggleAll();
 });
 
-programme_select.addEventListener('change', e => {
-    toggleAll(execute_filters());
+selectors.programmes.addEventListener('change', e => {
+    toggleAll('programmes');
 });
 
-language_select.addEventListener('change', e => {
-    toggleAll(execute_filters());
+selectors.languages.addEventListener('change', e => {
+    toggleAll('languages');
 });
 
-country_select.addEventListener('change', e => {
-    toggleAll(execute_filters());
+selectors.countries.addEventListener('change', e => {
+    toggleAll('countries');
 });
 
-subtitle_select.addEventListener('change', e => {
-    toggleAll(execute_filters());
+selectors.subtitles.addEventListener('change', e => {
+    toggleAll('subtitles');
 });
 
-premieretype_select.addEventListener('change', e => {
-    toggleAll(execute_filters());
+selectors.premieretypes.addEventListener('change', e => {
+    toggleAll('premieretypes');
 });
 
-town_select.addEventListener('change', e => {
-    toggleAll(execute_filters());
+selectors.towns.addEventListener('change', e => {
+    toggleAll('towns');
 });
 
-cinema_select.addEventListener('change', e => {
-    toggleAll(execute_filters());
+selectors.cinemas.addEventListener('change', e => {
+    toggleAll('cinemas');
 });
 
 function unselect_all() {
     search_input.value = '';
-    programme_select.selectedIndex = 0;
-    language_select.selectedIndex = 0;
-    country_select.selectedIndex = 0;
-    subtitle_select.selectedIndex = 0;
-    premieretype_select.selectedIndex = 0;
-    town_select.selectedIndex = 0;
-    cinema_select.selectedIndex = 0;
+    selectors.programmes.selectedIndex = 0;
+    selectors.languages.selectedIndex = 0;
+    selectors.countries.selectedIndex = 0;
+    selectors.subtitles.selectedIndex = 0;
+    selectors.premieretypes.selectedIndex = 0;
+    selectors.towns.selectedIndex = 0;
+    selectors.cinemas.selectedIndex = 0;
     nonetoshow.selectedIndex = 0;
     toggleAll(execute_filters());
 }
@@ -104,50 +154,50 @@ function unselect_all() {
 function execute_filters() {
     let filtered = searcharray
         .filter(cassette => {
-            if (programme_select.value) {
-                return cassette.programmes.includes(programme_select.value)
+            if (selectors.programmes.value) {
+                return cassette.programmes.includes(selectors.programmes.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (language_select.value) {
-                return cassette.languages.includes(language_select.value)
+            if (selectors.languages.value) {
+                return cassette.languages.includes(selectors.languages.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (country_select.value) {
-                return cassette.countries.includes(country_select.value)
+            if (selectors.countries.value) {
+                return cassette.countries.includes(selectors.countries.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (subtitle_select.value) {
-                return cassette.subtitles.includes(subtitle_select.value)
+            if (selectors.subtitles.value) {
+                return cassette.subtitles.includes(selectors.subtitles.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (premieretype_select.value) {
-                return cassette.premieretypes.includes(premieretype_select.value)
+            if (selectors.premieretypes.value) {
+                return cassette.premieretypes.includes(selectors.premieretypes.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (town_select.value) {
-                return cassette.towns.includes(parseInt(town_select.value))
+            if (selectors.towns.value) {
+                return cassette.towns.includes(selectors.towns.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (cinema_select.value) {
-                return cassette.cinemas.includes(parseInt(cinema_select.value))
+            if (selectors.cinemas.value) {
+                return cassette.cinemas.includes(selectors.cinemas.value)
             } else {
                 return true
             }
@@ -159,6 +209,6 @@ function execute_filters() {
     return filtered
 }
 
-console.log('foo'.includes(undefined));
+// console.log('foo'.includes(undefined));
 
 
