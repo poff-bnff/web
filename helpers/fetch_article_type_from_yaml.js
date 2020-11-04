@@ -76,31 +76,35 @@ for (const lang of languages) {
         }
 
         // console.log(element)
-        for (artType of element.article_types) {
+        if (element.article_types) {
+            for (artType of element.article_types) {
 
-            // console.log(dirPath, artType, slugEn)
-            element.directory = path.join(dirPath, artType.name, slugEn)
+                // console.log(dirPath, artType, slugEn)
+                element.directory = path.join(dirPath, artType.name, slugEn)
 
-            fs.mkdirSync(element.directory, { recursive: true });
-            //let languageKeys = ['en', 'et', 'ru'];
-            for (key in element) {
+                fs.mkdirSync(element.directory, { recursive: true });
+                //let languageKeys = ['en', 'et', 'ru'];
+                for (key in element) {
 
-                if (key === "slug") {
-                    element.path = path.join(artType.slug, element[key])
-                    element.articleType = artType.label
+                    if (key === "slug") {
+                        element.path = path.join(artType.slug, element[key])
+                        element.articleType = artType.label
+                    }
+                }
+                allData.push(element);
+                element.data = dataFrom;
+
+                let yamlStr = yaml.safeDump(element, { 'indent': '4' });
+
+                fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
+                if (fs.existsSync(`${sourceDir}/_templates/article_${artType.name}_index_template.pug`)) {
+                    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`)
+                } else {
+                    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${DEFAULTTEMPLATENAME}_index_template.pug`)
                 }
             }
-            allData.push(element);
-            element.data = dataFrom;
-
-            let yamlStr = yaml.safeDump(element, { 'indent': '4' });
-
-            fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-            if (fs.existsSync(`${sourceDir}/_templates/article_${artType.name}_index_template.pug`)) {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`)
-            } else {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${DEFAULTTEMPLATENAME}_index_template.pug`)
-            }
+        } else {
+            console.log(`ERROR! Article ID ${element.id} missing article_type`);
         }
     }
 }
