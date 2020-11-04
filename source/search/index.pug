@@ -15,39 +15,39 @@ block content
     //- select#programmesSelect(name='festivalProgrammes')
 
 
-    select#programmesSelect(name='Programmes')
+    select#programmes_select(name='Programmes')
         option(value='') PROGRAMMID:
-        each index, key in self.data.filters.programme
+        each index, key in self.data.filters.programmes
             option(value=key)= index
 
-    select#languagesSelect(name='Languages')
+    select#languages_select(name='Languages')
         option(value='') KEEL:
-        each index, key in self.data.filters.language
+        each index, key in self.data.filters.languages
             option(value=key)= index
 
-    select#countriesSelect(name='Countries')
+    select#countries_select(name='Countries')
         option(value='') RIIK:
-        each index, key in self.data.filters.country
+        each index, key in self.data.filters.countries
             option(value=key)= index
 
-    select#subtitlesSelect(name='Subtitles')
+    select#subtitles_select(name='Subtitles')
         option(value='') SUBTIITRID:
-        each index, key in self.data.filters.subtitle
+        each index, key in self.data.filters.subtitles
             option(value=key)= index
 
-    select#premieretypesSelect(name='Premieretypes')
+    select#premieretypes_select(name='Premieretypes')
         option(value='') ESILINASTUSED:
-        each index, key in self.data.filters.premieretype
+        each index, key in self.data.filters.premieretypes
             option(value=key)= index
 
-    select#townsSelect(name='Towns')
+    select#towns_select(name='Towns')
         option(value='') LINNAD:
-        each index, key in self.data.filters.town
+        each index, key in self.data.filters.towns
             option(value=key)= index
 
-    select#cinemasSelect(name='Cinemas')
+    select#cinemas_select(name='Cinemas')
         option(value='') KINOD:
-        each index, key in self.data.filters.cinema
+        each index, key in self.data.filters.cinemas
             option(value=key)= index
 
     button(onclick='unselect_all()') X
