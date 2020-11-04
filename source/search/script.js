@@ -1,13 +1,13 @@
 
 const search_input = document.getElementById('search');
 const selectors = {
-    programmes_select: document.getElementById('programmes_select'),
-    languages_select: document.getElementById('languages_select'),
-    countries_select: document.getElementById('countries_select'),
-    subtitles_select: document.getElementById('subtitles_select'),
-    premieretypes_select: document.getElementById('premieretypes_select'),
-    towns_select: document.getElementById('towns_select'),
-    cinemas_select: document.getElementById('cinemas_select')
+    programmes: document.getElementById('programmes_select'),
+    languages: document.getElementById('languages_select'),
+    countries: document.getElementById('countries_select'),
+    subtitles: document.getElementById('subtitles_select'),
+    premieretypes: document.getElementById('premieretypes_select'),
+    towns: document.getElementById('towns_select'),
+    cinemas: document.getElementById('cinemas_select')
 }
 
 const nonetoshow = document.getElementById('nonetoshow');
@@ -59,26 +59,41 @@ function toggleFilters(exclude_selector_name) {
             // console.log(`value is this '${value}' - ${typeof value}`);
             let count = searcharray
             .filter(cassette => {
-                return (selector_name === 'programmes_select' ? value : selectors.programmes_select.value) === '' ? true : (
-                    cassette.programmes.includes(
-                        selector_name === 'programmes_select' ? value : selectors.programmes_select.value
-                    )
-                )
+                const compare_with = selector_name === 'programmes' ? value : selectors.programmes.value;
+                return compare_with === '' ? true : cassette.programmes.includes( compare_with )
             })
             .filter(cassette => {
-                return (selector_name === 'languages_select' ? value : selectors.languages_select.value) === '' ? true : (
-                    cassette.languages.includes(
-                        selector_name === 'languages_select' ? value : selectors.languages_select.value
-                    )
-                )
+                const compare_with = selector_name === 'languages' ? value : selectors.languages.value;
+                return compare_with === '' ? true : cassette.languages.includes( compare_with )
             })
+            .filter(cassette => {
+                const compare_with = selector_name === 'countries' ? value : selectors.countries.value;
+                return compare_with === '' ? true : cassette.countries.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'subtitles' ? value : selectors.subtitles.value;
+                return compare_with === '' ? true : cassette.subtitles.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'towns' ? value : selectors.towns.value;
+                return compare_with === '' ? true : cassette.towns.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'cinemas' ? value : selectors.cinemas.value;
+                return compare_with === '' ? true : cassette.cinemas.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'premieretypes' ? value : selectors.premieretypes.value;
+                return compare_with === '' ? true : cassette.premieretypes.includes( compare_with )
+            })
+
             .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true })
             .length
-            // .filter((cassette) => { return selectors.countries_select.value ? cassette.countries.includes(selectors.countries_select.value) : true })
-            // .filter((cassette) => { return selectors.subtitles_select.value ? cassette.subtitles.includes(selectors.subtitles_select.value) : true })
-            // .filter((cassette) => { return selectors.towns_select.value ? cassette.towns.includes(selectors.towns_select.value) : true })
-            // .filter((cassette) => { return selectors.cinemas_select.value ? cassette.cinemas.includes(selectors.cinemas_select.value) : true })
-            // .filter((cassette) => { return selectors.premieretypes_select.value ? cassette.premieretypes.includes(selectors.premieretypes_select.value) : true })
+            // .filter((cassette) => { return selectors.countries.value ? cassette.countries.includes(selectors.countries.value) : true })
+            // .filter((cassette) => { return selectors.subtitles.value ? cassette.subtitles.includes(selectors.subtitles.value) : true })
+            // .filter((cassette) => { return selectors.towns.value ? cassette.towns.includes(selectors.towns.value) : true })
+            // .filter((cassette) => { return selectors.cinemas.value ? cassette.cinemas.includes(selectors.cinemas.value) : true })
+            // .filter((cassette) => { return selectors.premieretypes.value ? cassette.premieretypes.includes(selectors.premieretypes.value) : true })
             // .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true })
             // option.innerHTML += `${count} ${value}`
             option.disabled = count ? false : true
@@ -87,7 +102,7 @@ function toggleFilters(exclude_selector_name) {
 
     }
 
-    // console.log(programmes_select.options.value);
+    // console.log(programmes.options.value);
 
 }
 
@@ -95,43 +110,43 @@ search_input.addEventListener('keyup', e => {
     toggleAll();
 });
 
-selectors.programmes_select.addEventListener('change', e => {
-    toggleAll('programmes_select');
+selectors.programmes.addEventListener('change', e => {
+    toggleAll('programmes');
 });
 
-selectors.languages_select.addEventListener('change', e => {
-    toggleAll('languages_select');
+selectors.languages.addEventListener('change', e => {
+    toggleAll('languages');
 });
 
-selectors.countries_select.addEventListener('change', e => {
-    toggleAll('countries_select');
+selectors.countries.addEventListener('change', e => {
+    toggleAll('countries');
 });
 
-selectors.subtitles_select.addEventListener('change', e => {
-    toggleAll('subtitles_select');
+selectors.subtitles.addEventListener('change', e => {
+    toggleAll('subtitles');
 });
 
-selectors.premieretypes_select.addEventListener('change', e => {
-    toggleAll('premieretypes_select');
+selectors.premieretypes.addEventListener('change', e => {
+    toggleAll('premieretypes');
 });
 
-selectors.towns_select.addEventListener('change', e => {
-    toggleAll('towns_select');
+selectors.towns.addEventListener('change', e => {
+    toggleAll('towns');
 });
 
-selectors.cinemas_select.addEventListener('change', e => {
-    toggleAll('cinemas_select');
+selectors.cinemas.addEventListener('change', e => {
+    toggleAll('cinemas');
 });
 
 function unselect_all() {
     search_input.value = '';
-    programmes_select.selectedIndex = 0;
-    languages_select.selectedIndex = 0;
-    countries_select.selectedIndex = 0;
-    subtitles_select.selectedIndex = 0;
-    premieretypes_select.selectedIndex = 0;
-    towns_select.selectedIndex = 0;
-    cinemas_select.selectedIndex = 0;
+    selectors.programmes.selectedIndex = 0;
+    selectors.languages.selectedIndex = 0;
+    selectors.countries.selectedIndex = 0;
+    selectors.subtitles.selectedIndex = 0;
+    selectors.premieretypes.selectedIndex = 0;
+    selectors.towns.selectedIndex = 0;
+    selectors.cinemas.selectedIndex = 0;
     nonetoshow.selectedIndex = 0;
     toggleAll(execute_filters());
 }
@@ -139,50 +154,50 @@ function unselect_all() {
 function execute_filters() {
     let filtered = searcharray
         .filter(cassette => {
-            if (programmes_select.value) {
-                return cassette.programmes.includes(programmes_select.value)
+            if (selectors.programmes.value) {
+                return cassette.programmes.includes(selectors.programmes.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (languages_select.value) {
-                return cassette.languages.includes(languages_select.value)
+            if (selectors.languages.value) {
+                return cassette.languages.includes(selectors.languages.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (countries_select.value) {
-                return cassette.countries.includes(countries_select.value)
+            if (selectors.countries.value) {
+                return cassette.countries.includes(selectors.countries.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (subtitles_select.value) {
-                return cassette.subtitles.includes(subtitles_select.value)
+            if (selectors.subtitles.value) {
+                return cassette.subtitles.includes(selectors.subtitles.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (premieretypes_select.value) {
-                return cassette.premieretypes.includes(premieretypes_select.value)
+            if (selectors.premieretypes.value) {
+                return cassette.premieretypes.includes(selectors.premieretypes.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (towns_select.value) {
-                return cassette.towns.includes(parseInt(towns_select.value))
+            if (selectors.towns.value) {
+                return cassette.towns.includes(selectors.towns.value)
             } else {
                 return true
             }
         })
         .filter(cassette => {
-            if (cinemas_select.value) {
-                return cassette.cinemas.includes(parseInt(cinemas_select.value))
+            if (selectors.cinemas.value) {
+                return cassette.cinemas.includes(selectors.cinemas.value)
             } else {
                 return true
             }
