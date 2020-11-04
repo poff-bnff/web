@@ -1159,33 +1159,41 @@ row:nth-child(15) > .supporter_logos
 
 .sub_team_jury
     display grid
-    grid-template-columns 1
+    grid-template-columns repeat(auto-fill, minmax(20rem, 60rem))
     grid-template-rows auto
     justify-content center
-    align-content start
+    align-content center
     justify-items center
-    align-items start
+    align-items center
     grid-gap 6rem
     padding 2rem
     // padding-top header_height
 
 .person_jury
     display grid
-    grid-template-columns repeat(auto-fill, minmax(24rem, 26rem))
+    grid-template-columns repeat(auto-fill, minmax(24rem, 1fr))
     grid-template-rows auto
-    justify-content center
-    align-content start
-    justify-items center
-    align-items start
     grid-gap 3rem
     // background-color bg_dark_3
     // border solid .5px bg_dark_4
-    // width 100%
+    width 100%
     // height auto
     // min-height min-content
     // max-height max-content
-    margin-bottom 1rem
-    margin-top 1rem
+    // margin-bottom 1rem
+    // margin-top 1rem
+
+.person_head_jury
+    // background-color clr_primary
+    // color bg_dark_4
+    width: 100%
+    padding 2rem
+    // height max-content
+    // height 2.5rem
+    // padding-left 1rem
+    // padding-right 1rem
+    // padding .7rem 1rem .7rem 1rem
+    // align-self flex-start
 
 .person
     display flex
