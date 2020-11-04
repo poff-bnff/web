@@ -5,7 +5,6 @@ block content
     //- - var myUri = 'https://dev.inscaping.eu/${lang_path}'
     - var myUri = `http://localhost:4000/${lang_path}`
 
-    - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
     //- - var myUri = `http://localhost:5000/${lang_path}`
     //- - var myUri = `${process.env['DOMAIN']}/${lang_path}`
     br
@@ -66,6 +65,8 @@ block content
         h4 {color: #464646}
         p {color: #464646}
 
+    script.
+        var langpath = "!{(self.locale)}"
 
 
 
