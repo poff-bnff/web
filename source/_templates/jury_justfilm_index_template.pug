@@ -20,7 +20,7 @@ block content
                                 each juryMember in subTeam.juryMember
                                     if juryMember.person
                                         .person_jury
-                                            .person_head
+                                            .person_head_jury
                                                 - var assetsDir = 'https://assets.poff.ee/img/'
                                                 if juryMember.pictureAtTeam && juryMember.pictureAtTeam[0].hash
                                                     - var personPic = assetsDir + juryMember.pictureAtTeam[0].hash + juryMember.pictureAtTeam[0].ext
