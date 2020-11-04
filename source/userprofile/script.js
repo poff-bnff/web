@@ -17,6 +17,13 @@ async function loadUserInfo() {
 
     }
     console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
+    email.innerHTML = userProfile.email
+    if(userProfile.name)firstName.value = userProfile.name
+    if(userProfile.family_name)lastName.value = userProfile.family_name
+    if(userProfile.gender)gender.value = userProfile.gender
+    if (userProfile.phone_number)phoneNr.value = userProfile.phone_number
+    if(userProfile.birthdate)dob.value = userProfile.birthdate
+
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
@@ -25,28 +32,20 @@ async function loadUserInfo() {
         countrySelection.value = riik
     }
 
-    firstName.value = userProfile.name;
-    lastName.value = userProfile.family_name;
-    email.value = userProfile.email;
-    gender.value = userProfile.gender;
-    if (userProfile.phone_number) {
-        phoneNr.value = userProfile.phone_number;
-    }
-    dob.value = userProfile.birthdate;
+    if(userProfile.picture){
+        if(userProfile.picture !=="no profile picture saved"){
+            let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
+                method: "GET",
+                headers: {
+                    Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+                },
+            });
+            let profilePicture = await res.json();
+            imgPreview.src=profilePicture.url
+        }
 
-    // kui kasutajal on pilt salvestatud
-    // if(userProfile.picture !=="no profile picture saved") {
-    // }
-    let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
-        method: "GET",
-        headers: {
-            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-        },
-    });
-    let profilePicture = await res.json();
-    console.log(profilePicture.url)
-    console.log(profilePicture.url)
-    imgPreview.src=profilePicture.url
+    }
+
 
 }
 
@@ -68,7 +67,6 @@ async function sendUserProfile() {
         {Name: "gender",Value: gender.value},
         { Name: "birthdate",Value: dob.value},
         {Name: "phone_number",Value: '+' + phoneNr.value},
-        {Name: "email",Value: email.value},
         {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
@@ -158,10 +156,6 @@ function validateForm() {
 
     if (document.getElementById('profileSent')) {
         document.getElementById('profileSent').style.display = 'none'
-    }
-
-    if (!validateEmail('email')) {
-        errors.push('Missing or invalid email')
     }
 
     if (!validateFirstName("firstName")) {

@@ -24,7 +24,7 @@ block content
                         input#profileImg(type='file' name='filename' onchange ='validateaAndPreview(this.files[0])')
                     div.form-group
                         label(for='email')= self.label.userprofile.email
-                        input#email.form-control(type='email', placeholder=`${self.label.userprofile.email}` name='email' autocomplete="off" oninput="validateEmail(this.id)")
+                        div#email.dark(name='email')
                         div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
                     div.form-group
                         label(for='firstName')= self.label.userprofile.firstName
