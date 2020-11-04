@@ -39,10 +39,10 @@ async function loadUserInfo() {
 async function sendNewUser() {
     console.log('sending new user profile.....');
 
-    let profile_pic_to_send= "no profile picture"
+    let profile_pic_to_send= "no profile picture saved"
 
     if (!imgPreview.src.search("/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")){
-        profile_pic_to_send=imgPreview.src
+        profile_pic_to_send= "profile picture saved to S3"
     }
 
     let userToSend = [
