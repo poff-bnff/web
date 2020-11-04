@@ -517,14 +517,14 @@ function generateAllDataYAML(allData, lang){
                 filters.subtitles[subtKey] = subtitle_name
             }
 
-            const townKey = screenings.location.hall.cinema.town.id
+            const townKey = `_${screenings.location.hall.cinema.town.id}`
             const town_name = screenings.location.hall.cinema.town.name
-            towns.push(parseInt(townKey))
+            towns.push(townKey)
             filters.towns[townKey] = town_name
 
-            const cinemaKey = screenings.location.hall.cinema.id
+            const cinemaKey = `_${screenings.location.hall.cinema.id}`
             const cinema_name = screenings.location.hall.cinema.name
-            cinemas.push(parseInt(cinemaKey))
+            cinemas.push(cinemaKey)
             filters.cinemas[cinemaKey] = cinema_name
         }
         let premieretypes = []
@@ -550,9 +550,45 @@ function generateAllDataYAML(allData, lang){
         }
     })
 
+    // sorted1 = [].slice.call(filters.programmes).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.languages).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.countries).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.subtitles).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.premieretypes).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.towns).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.cinemas).sort((a, b) => a.localeCompare(b, lang))
+    function mSort(to_sort) {
+        let sortable = []
+        for (var item in to_sort) {
+            sortable.push([item, to_sort[item]]);
+        }
+
+        sortable = sortable.sort(function(a, b) {
+            const locale_sort = a[1].localeCompare(b[1], lang)
+            return locale_sort
+        });
+
+        var objSorted = {}
+        for (let index = 0; index < sortable.length; index++) {
+            const item = sortable[index];
+            objSorted[item[0]]=item[1]
+        }
+        return objSorted
+    }
+
+    let sorted_filters = {
+        programmes: mSort(filters.programmes),
+        languages: mSort(filters.languages),
+        countries: mSort(filters.countries),
+        subtitles: mSort(filters.subtitles),
+        premieretypes: mSort(filters.premieretypes),
+        towns: mSort(filters.towns),
+        cinemas: mSort(filters.cinemas),
+    }
+
     let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `search.${lang}.yaml`), searchYAML, 'utf8')
 
-    let filtersYAML = yaml.safeDump(filters, { 'noRefs': true, 'indent': '4' })
+    let filtersYAML = yaml.safeDump(sorted_filters, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `filters.${lang}.yaml`), filtersYAML, 'utf8')
 }

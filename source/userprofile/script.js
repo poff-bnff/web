@@ -17,6 +17,13 @@ async function loadUserInfo() {
 
     }
     console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
+    email.innerHTML = userProfile.email
+    if(userProfile.name)firstName.value = userProfile.name
+    if(userProfile.family_name)lastName.value = userProfile.family_name
+    if(userProfile.gender)gender.value = userProfile.gender
+    if (userProfile.phone_number)phoneNr.value = userProfile.phone_number
+    if(userProfile.birthdate)dob.value = userProfile.birthdate
+
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
@@ -25,28 +32,19 @@ async function loadUserInfo() {
         countrySelection.value = riik
     }
 
-    firstName.value = userProfile.name;
-    lastName.value = userProfile.family_name;
-    email.value = userProfile.email;
-    gender.value = userProfile.gender;
-    if (userProfile.phone_number) {
-        phoneNr.value = userProfile.phone_number;
-    }
-    dob.value = userProfile.birthdate;
+    if(userProfile.picture){
+        if(userProfile.picture !=="no profile picture saved"){
+            let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
+                method: "GET",
+                headers: {
+                    Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+                },
+            });
+            let profilePicture = await res.json();
+            imgPreview.src=profilePicture.url
+        }
 
-    // kui kasutajal on pilt salvestatud
-    // if(userProfile.picture !=="no profile picture saved") {
-    // }
-    let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
-        method: "GET",
-        headers: {
-            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-        },
-    });
-    let profilePicture = await res.json();
-    console.log(profilePicture.url)
-    console.log(profilePicture.url)
-    imgPreview.src=profilePicture.url
+    }
 
 }
 
@@ -68,7 +66,6 @@ async function sendUserProfile() {
         {Name: "gender",Value: gender.value},
         { Name: "birthdate",Value: dob.value},
         {Name: "phone_number",Value: '+' + phoneNr.value},
-        {Name: "email",Value: email.value},
         {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
@@ -83,6 +80,11 @@ async function sendUserProfile() {
         },
         body: JSON.stringify(userToSend)
     })).json()
+
+
+    if(profile_pic_to_send !== "no profile picture saved"){
+        await uploadPic()
+    }
 
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
@@ -116,35 +118,33 @@ function validateaAndPreview(file) {
 }
 
 async function uploadPic() {
-    //küsib lingi"no profile picture saved"
-    if (profile_pic_to_send !== "no profile picture saved") {
-        //küsib lingi kuhu pilti postitada
-        let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
-            },
-        });
-        data = await linkResponse.json()
-        console.log("saadud link on: ")
-        console.log(data.link)
 
-        console.log("uploading this file to S3....")
-        console.log(profile_pic_to_send)
+    //küsib lingi kuhu pilti postitada
+    let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+        },
+    });
+    data = await linkResponse.json()
+    console.log("saadud link on: ")
+    console.log(data.link)
 
-        //saadab pildi
-        let requestOptions = {
-            method: 'PUT',
-            headers: {
-                'Content-Type': "image/png",
-                'ACL': 'private'
-            },
-            body: profile_pic_to_send,
-            redirect: 'follow'
-        };
-        fetch(data.link, requestOptions)
+    console.log("uploading this file to S3....")
+    console.log(profile_pic_to_send)
 
-    }
+    //saadab pildi
+    let requestOptions = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': "image/png",
+            'ACL': 'private'
+        },
+        body: profile_pic_to_send,
+        redirect: 'follow'
+    };
+    await fetch(data.link, requestOptions)
+
 
 }
 
@@ -158,10 +158,6 @@ function validateForm() {
 
     if (document.getElementById('profileSent')) {
         document.getElementById('profileSent').style.display = 'none'
-    }
-
-    if (!validateEmail('email')) {
-        errors.push('Missing or invalid email')
     }
 
     if (!validateFirstName("firstName")) {
