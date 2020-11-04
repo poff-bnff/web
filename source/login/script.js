@@ -175,7 +175,7 @@ async function showMergeInfo() {
 
 
 function directToSignup() {
-    window.open(`http://${location.host}/signup`, '_self')
+    window.open(`${location.origin}/signup`, '_self')
 }
 
 
