@@ -68,12 +68,21 @@ async function sendNewUser() {
     });
     response = await response.json()
 
-    console.log(response.UserConfirmed)
-    if (!response.UserConfirmed){
-        console.log('if');
-    document.getElementById('profileSent').style.display = 'block'
-    document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
-    document.getElementById('loginButton').style.display = 'block'
+    console.log(response)
+
+    if(response.Payload){
+        console.log(response.Payload)
+        let providers = JSON.parse(response.Payload)
+
+        document.getElementById('profileSent').style.display = 'block'
+        document.getElementById('profileSent').innerHTML = 'Sul on juba pöffi lehel konto olemas' + providers
+        document.getElementById('loginButton').style.display = 'block'
+    }
+
+    if (!response.UserConfirmed && !response.Payload){
+        document.getElementById('profileSent').style.display = 'block'
+        document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
+        document.getElementById('loginButton').style.display = 'block'
 
     // window.open(`${pageURL}/login`, '_self')
     }
