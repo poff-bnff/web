@@ -36,6 +36,10 @@ header
                     span.org_item
                         a(href='https://shorts.poff.ee')
                             | PÖFF Shorts
+                    span.org_item
+                        a(href='https://kinoff.ee')
+                            | Kinoff
+
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
 
                 //- Kui on peamenüü itemil artikkel:
@@ -99,22 +103,22 @@ header
                         li
                             a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
-            //- li.user_menu.dropdown
-            //-     a
-            //-         | MINU PÖFF
-            //-         ul.ul_kaks
-            //-             li
-            //-                 a#logIn(style={cursor: 'pointer', display: 'none'} onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
-            //-             li
-            //-                 a#signUp(style={cursor: 'pointer', display: 'none'} onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
-            //-             li
-            //-                 a#logInName(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
-            //-             li
-            //-                 a#userProfile(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()' href=`/${lang_path}userprofile`) Minu profiil
-            //-             li
-            //-                 a#myFavouriteFilms(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()') Lemmikud
-            //-             li
-            //-                 a#logOut(style={cursor: 'pointer', display: 'none'} onclick='logOut()')= self.label.menu.mainLogout
+            li.user_menu.dropdown
+                a
+                    | MINU PÖFF
+                    ul.ul_kaks
+                        li
+                            a#logIn(style={cursor: 'pointer', display: 'none'} onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+                        li
+                            a#signUp(style={cursor: 'pointer', display: 'none'} onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
+                        li
+                            a#logInName(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
+                        li
+                            a#userProfile(style={cursor: 'pointer', display: 'none'} onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`) Minu profiil
+                        li
+                            a#myFavouriteFilms(style={cursor: 'pointer', display: 'none'} href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()') Lemmikud
+                        li
+                            a#logOut(style={cursor: 'pointer', display: 'none'} onclick='logOut()')= self.label.menu.mainLogout
 
             //- li.dropdown= 'USER'
             //-     ul.user_menu.ul_kaks
