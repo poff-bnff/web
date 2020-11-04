@@ -104,22 +104,23 @@ fileSelector.addEventListener('change', (event) => {
     }
 });
 
-function readImage(file) {
-    const output = document.getElementById("imgPreview");
+function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    error.innerHTML = ''
+    console.log(file)
     // Check if the file is an image.
-    if (file.type && file.type.indexOf('image') === -1) {
-        console.log('File is not an image.', file.type, file);
-        error.innerHTML = 'File is not an image.'
-        return;
+    if (!file.type.includes("image")) {
+        console.log("File is not an image.", file.type, file);
+        error.innerHTML = "File is not an image.";
+    } else {
+        error.innerHTML = "";
+        //näitab pildi eelvaadet
+        var reader = new FileReader();
+        reader.onload = function () {
+            imgPreview.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        profile_pic_to_send = file
     }
-    const reader = new FileReader();
-    reader.addEventListener('load', (event) => {
-        output.src = event.target.result;
-
-    });
-    reader.readAsDataURL(file);
 }
 
 

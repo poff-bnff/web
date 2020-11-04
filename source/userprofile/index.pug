@@ -58,7 +58,7 @@ block content
                     div.form-group
                         label.control-label(for='citySelection')= self.label.userprofile.city
                         select#citySelection.form-control(required='' oninput= 'validateCity("citySelection")')
-                    button.btn.btn-primary(onclick='validateForm(); uploadPic()')= self.label.userprofile.saveButton
+                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.saveButton
                     p#profileSent(style= {display: 'none'})= self.label.userprofile.dataSaved
 
 

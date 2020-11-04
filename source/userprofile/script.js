@@ -46,7 +46,6 @@ async function loadUserInfo() {
 
     }
 
-
 }
 
 if (localStorage.getItem("ACCESS_TOKEN")) {
@@ -82,6 +81,11 @@ async function sendUserProfile() {
         body: JSON.stringify(userToSend)
     })).json()
 
+
+    if(profile_pic_to_send !== "no profile picture saved"){
+        await uploadPic()
+    }
+
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
         if (localStorage.getItem('url')) {
@@ -114,35 +118,33 @@ function validateaAndPreview(file) {
 }
 
 async function uploadPic() {
-    //küsib lingi"no profile picture saved"
-    if (profile_pic_to_send !== "no profile picture saved") {
-        //küsib lingi kuhu pilti postitada
-        let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
-            },
-        });
-        data = await linkResponse.json()
-        console.log("saadud link on: ")
-        console.log(data.link)
 
-        console.log("uploading this file to S3....")
-        console.log(profile_pic_to_send)
+    //küsib lingi kuhu pilti postitada
+    let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+        },
+    });
+    data = await linkResponse.json()
+    console.log("saadud link on: ")
+    console.log(data.link)
 
-        //saadab pildi
-        let requestOptions = {
-            method: 'PUT',
-            headers: {
-                'Content-Type': "image/png",
-                'ACL': 'private'
-            },
-            body: profile_pic_to_send,
-            redirect: 'follow'
-        };
-        fetch(data.link, requestOptions)
+    console.log("uploading this file to S3....")
+    console.log(profile_pic_to_send)
 
-    }
+    //saadab pildi
+    let requestOptions = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': "image/png",
+            'ACL': 'private'
+        },
+        body: profile_pic_to_send,
+        redirect: 'follow'
+    };
+    await fetch(data.link, requestOptions)
+
 
 }
 
