@@ -1,4 +1,4 @@
-var pageURL = 'http://' + location.host
+var pageURL = location.origin
 var userprofilePageURL = pageURL + '/userprofile'
 
 var userProfile
