@@ -31,7 +31,7 @@ const CHECKPROGRAMMES = false
 // timer.log(__filename, `LIMIT: ${CASSETTELIMIT}`)
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
-const whichScreeningTypesToFetch = ['first screening']
+const whichScreeningTypesToFetch = ['first screening', 'regular', 'online kino']
 
 const mapping = DOMAIN_SPECIFICS.domain
 
