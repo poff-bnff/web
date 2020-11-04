@@ -49,6 +49,7 @@ async function loadUserInfo() {
 }
 
 if (localStorage.getItem("ACCESS_TOKEN")) {
+
     loadUserInfo();
 }
 
