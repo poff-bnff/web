@@ -16,14 +16,12 @@ block content
                 h1.display-4.m-b-2(id= 'profileUnFilledMessage' style= {display: 'none'})= self.label.userprofile.registerAddTitle
                 h1.display-4.m-b-2(id= 'profileFilledMessage' style= {display: 'none'})= self.label.userprofile.userprofileTitle
 
-
-
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
-                    div.form-group(name= "userForm" onsubmit="return sendUserProfile()")
+                    div.form-group
                         label(for='profileImg')= self.label.userprofile.pictureTitle
                         div#imgError
-                        input#profileImg.form-control(type='file', value='fileUpload' name='profileImg' oninput="readImage()")
+                        input#profileImg(type='file' name='filename' onchange ='validateaAndPreview(this.files[0])')
                     div.form-group
                         label(for='email')= self.label.userprofile.email
                         input#email.form-control(type='email', placeholder=`${self.label.userprofile.email}` name='email' autocomplete="off" oninput="validateEmail(this.id)")
@@ -60,7 +58,7 @@ block content
                     div.form-group
                         label.control-label(for='citySelection')= self.label.userprofile.city
                         select#citySelection.form-control(required='' oninput= 'validateCity("citySelection")')
-                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.saveButton
+                    button.btn.btn-primary(onclick='validateForm(); uploadPic()')= self.label.userprofile.saveButton
                     p#profileSent(style= {display: 'none'})= self.label.userprofile.dataSaved
 
 
@@ -69,11 +67,11 @@ block content
         .valid {background-color: #e6f7e6; display: none}
         .c_invalid {background-color: #f5e4e9}
         .c_valid {background-color: #e6f7e6}
-
         h4 {color: #464646}
         h1 {color: black}
         #profileSent {color: black}
         label {color: black}
         #imgError {color: red}
+
 
 

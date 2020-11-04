@@ -75,7 +75,7 @@ async function strapiFetch(modelName, token) {
             }
         }
 
-        process.stdout.write('Fetching ' + modelName + ' ')
+        process.stdout.write(modelName)
         spin.start()
 
         const request = http.request(options, (response) => {
@@ -98,7 +98,7 @@ async function strapiFetch(modelName, token) {
                     resolve(strapiData)
                     // console.log('.')
                 } else {
-                    console.log(response.statusCode)
+                    process.stdout.write(' [E:' + response.statusCode + ']')
                     resolve([])
                 }
             })
@@ -251,11 +251,18 @@ const foo = async () => {
     // Esimese sammuna 1. rikastame Strapist tulnud andmeid, mis liigse sygavuse tõttu on jäänud tulemata.
     // Rikastame kõiki alamkomponente, millel mudelis on _path defineeritud
     //
+    console.log('Fetching from Strapi:')
+    let is_first_model = true
     for (const modelName in DATAMODEL) {
         if (DATAMODEL.hasOwnProperty(modelName)) {
             let model = DATAMODEL[modelName]
             // '_path' muutujas on kirjas tee andmete küsimiseks
             if (model.hasOwnProperty('_path')) {
+                if (is_first_model) {
+                    is_first_model = false
+                } else {
+                    process.stdout.write(', ')
+                }
                 let modelData = await strapiFetch(modelName, token)
                 // otsime kirjet mudelis =value
                 for (const property_name in model) {
@@ -273,11 +280,13 @@ const foo = async () => {
                 }
                 strapiData[modelName] = modelData
                 // console.log('done replacing', modelName)
+                process.stdout.write(' (' + modelData.length + ')')
             }
         }
     }
 
-
+    process.stdout.write('\nCleaning StrapiData')
+    spin.start()
     for (const modelName in strapiData) {
         if (strapiData.hasOwnProperty(modelName)) {
             const modelData = strapiData[modelName]
@@ -295,6 +304,8 @@ const foo = async () => {
             }
         }
     }
+    spin.stop()
+    console.log('.')
 
     let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
     // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })
