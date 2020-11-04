@@ -146,18 +146,24 @@ function processData(data, lang, CreateYAML) {
             console.log('Screenings with IDs ', screeningsMissingCassetteIDs.join(', '), ' missing cassette');
         }
 
-        CreateYAML(allData, lang);
     }
+    CreateYAML(allData, lang);
+
 }
 
 function CreateYAML(screenings, lang) {
+
     // console.log(screenings);
-    if (lang === 'et') {
+    if (lang === DOMAIN_SPECIFICS.defaultLocale[DOMAIN]) {
         const SCREENINGS_YAML_XML_PATH = path.join(fetchDir, `screenings_for_xml.yaml`)
 
         // // console.log(process.cwd());
-        let allDataYAML = yaml.safeDump(screenings, { 'noRefs': true, 'indent': '4' });
-        fs.writeFileSync(SCREENINGS_YAML_XML_PATH, allDataYAML, 'utf8');
+        if (screenings.length) {
+            let allDataYAML = yaml.safeDump(screenings, { 'noRefs': true, 'indent': '4' });
+            fs.writeFileSync(SCREENINGS_YAML_XML_PATH, allDataYAML, 'utf8');
+        } else {
+            fs.writeFileSync(SCREENINGS_YAML_XML_PATH, '[]', 'utf8');
+        }
     }
 
     const SCREENINGS_YAML_PATH = path.join(fetchDir, `screenings.${lang}.yaml`)
@@ -169,5 +175,3 @@ function CreateYAML(screenings, lang) {
     fs.writeFileSync(SCREENINGS_YAML_PATH, allDataYAML, 'utf8');
 
 }
-
-
