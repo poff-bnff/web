@@ -37,16 +37,17 @@ async function loadUserInfo() {
     // kui kasutajal on pilt salvestatud
     // if(userProfile.picture !=="no profile picture saved") {
     // }
-        let res = await fetch(`https://api.poff.ee/profile/picture`, {
-            method: "GET",
-            headers: {
-                Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
-            },
-        });
-        let profilePicture = await res.json();
-        console.log(profilePicture.url)
+    let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
+        method: "GET",
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+        },
+    });
+    let profilePicture = await res.json();
+    console.log(profilePicture.url)
+    console.log(profilePicture.url)
+    imgPreview.src=profilePicture.url
 
-        imgPreview.src=profilePicture.url
 }
 
 if (localStorage.getItem("ACCESS_TOKEN")) {
@@ -103,6 +104,7 @@ function validateaAndPreview(file) {
         console.log("File is not an image.", file.type, file);
         error.innerHTML = "File is not an image.";
     } else {
+        error.innerHTML = "";
         //näitab pildi eelvaadet
         var reader = new FileReader();
         reader.onload = function () {
@@ -114,10 +116,10 @@ function validateaAndPreview(file) {
 }
 
 async function uploadPic() {
-    //küsib lingi
-    if (imgPreview.src !== "/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg") {
+    //küsib lingi"no profile picture saved"
+    if (profile_pic_to_send !== "no profile picture saved") {
         //küsib lingi kuhu pilti postitada
-        let linkResponse = await fetch(`https://api.poff.ee/picture`, {
+        let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
