@@ -83,6 +83,7 @@ deleteFolderRecursive(cassettesPath)
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const lang of allLanguages) {
     let cassettesWithOutFilms = []
+    let cassettesWithOutSpecifiedScreeningType = []
 
     const dataFrom = { 'articles': `/_fetchdir/articles.${lang}.yaml` }
     fs.mkdirSync(cassettesPath, { recursive: true })
@@ -412,7 +413,7 @@ for (const lang of allLanguages) {
                 // timer.log(__filename, util.inspect(s_cassette_copy, {showHidden: false, depth: null}))
                 generateYaml(s_cassette_copy, lang)
             } else {
-                timer.log(__filename, `Skipped cassette ${s_cassette_copy.id} slug ${s_cassette_copy.slug}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
+                cassettesWithOutSpecifiedScreeningType.push(s_cassette_copy.id)
             }
 
         } else {
@@ -426,6 +427,10 @@ for (const lang of allLanguages) {
     if(cassettesWithOutFilms.length) {
         uniqueIDs = [...new Set(cassettesWithOutFilms)]
         timer.log(__filename, `ERROR! No films under cassettes with ID's ${uniqueIDs.join(', ')}`)
+    }
+    if (cassettesWithOutSpecifiedScreeningType.length) {
+        uniqueIDs2 = [...new Set(cassettesWithOutSpecifiedScreeningType)]
+        timer.log(__filename, `Skipped cassettes with IDs ${uniqueIDs2.join(', ')}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
     }
     generateAllDataYAML(allData, lang)
 }
@@ -450,4 +455,104 @@ function generateAllDataYAML(allData, lang){
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
     timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
+
+    // todo: #478 filtrid tuleb compareLocale sortida juba koostamisel.
+    let filters = {
+        programmes: {},
+        languages: {},
+        countries: {},
+        subtitles: {},
+        premieretypes: {},
+        towns: {},
+        cinemas: {}
+    }
+    const cassette_search = allData.map(cassette => {
+        let programmes = []
+        if (typeof cassette.tags.programmes !== 'undefined') {
+            for (const programme of cassette.tags.programmes) {
+                // console.log(programme.festival_editions, 'CASSETTE ', cassette.id);
+                if (typeof programme.festival_editions !== 'undefined') {
+                    for (const fested of programme.festival_editions) {
+                        const key = fested.festival + '_' + programme.id
+                        const festival = cassette.festivals.filter(festival => festival.id === fested.festival)
+                        if (festival[0]) {
+                            var festival_name = festival[0].name
+                        }
+                        programmes.push(key)
+                        filters.programmes[key] = `${festival_name} ${programme.name}`
+                    }
+                }
+            }
+        }
+        let languages = []
+        let countries = []
+        let cast_n_crew = []
+        for (const films of cassette.films) {
+            for (const language of films.languages || []) {
+                const langKey = language.code
+                const language_name = language.name
+                languages.push(langKey)
+                filters.languages[langKey] = language_name
+            }
+            for (const country of films.orderedCountries || []) {
+                const countryKey = country.country.code
+                const country_name = country.country.name
+                countries.push(countryKey)
+                filters.countries[countryKey] = country_name
+            }
+            for (const key in films.credentials.rolePersonsByRole) {
+                for (const crew of films.credentials.rolePersonsByRole[key]) {
+                    cast_n_crew.push(crew)
+                }
+            }
+        }
+        let subtitles = []
+        let towns = []
+        let cinemas = []
+        for (const screenings of cassette.screenings) {
+            for (const subtitle of screenings.subtitles || []) {
+                const subtKey = subtitle.code
+                const subtitle_name = subtitle.name
+                subtitles.push(subtKey)
+                filters.subtitles[subtKey] = subtitle_name
+            }
+
+            const townKey = screenings.location.hall.cinema.town.id
+            const town_name = screenings.location.hall.cinema.town.name
+            towns.push(parseInt(townKey))
+            filters.towns[townKey] = town_name
+
+            const cinemaKey = screenings.location.hall.cinema.id
+            const cinema_name = screenings.location.hall.cinema.name
+            cinemas.push(parseInt(cinemaKey))
+            filters.cinemas[cinemaKey] = cinema_name
+        }
+        let premieretypes = []
+        for (const types of cassette.tags.premiere_types || []) {
+                const type_name = types
+                premieretypes.push(type_name)
+                filters.premieretypes[type_name] = type_name
+        }
+        return {
+            id: cassette.id,
+            text: [
+                cassette.title,
+                cassette.synopsis,
+                cast_n_crew
+            ].join(' ').toLowerCase(),
+            programmes: programmes,
+            languages: languages,
+            countries: countries,
+            subtitles: subtitles,
+            premieretypes: premieretypes,
+            towns: towns,
+            cinemas: cinemas
+        }
+    })
+
+    let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `search.${lang}.yaml`), searchYAML, 'utf8')
+
+    let filtersYAML = yaml.safeDump(filters, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `filters.${lang}.yaml`), filtersYAML, 'utf8')
 }
