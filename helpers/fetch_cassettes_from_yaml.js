@@ -487,23 +487,30 @@ function generateAllDataYAML(allData, lang){
         let languages = []
         let countries = []
         let cast_n_crew = []
-        for (const films of cassette.films) {
-            for (const language of films.languages || []) {
+        for (const film of cassette.films) {
+            for (const language of film.languages || []) {
                 const langKey = language.code
                 const language_name = language.name
                 languages.push(langKey)
                 filters.languages[langKey] = language_name
             }
-            for (const country of films.orderedCountries || []) {
+            for (const country of film.orderedCountries || []) {
                 const countryKey = country.country.code
                 const country_name = country.country.name
                 countries.push(countryKey)
                 filters.countries[countryKey] = country_name
             }
-            for (const key in films.credentials.rolePersonsByRole) {
-                for (const crew of films.credentials.rolePersonsByRole[key]) {
-                    cast_n_crew.push(crew)
+
+            film.credentials = film.credentials || []
+            try {
+                for (const key in film.credentials.rolePersonsByRole) {
+                    for (const crew of film.credentials.rolePersonsByRole[key]) {
+                        cast_n_crew.push(crew)
+                    }
                 }
+            } catch (error) {
+                console.log('bad creds on film', JSON.stringify({film: film, creds:film.credentials}, null, 4));
+                throw new Error(error)
             }
         }
         let subtitles = []
@@ -564,8 +571,13 @@ function generateAllDataYAML(allData, lang){
         }
 
         sortable = sortable.sort(function(a, b) {
-            const locale_sort = a[1].localeCompare(b[1], lang)
-            return locale_sort
+            try {
+                const locale_sort = a[1].localeCompare(b[1], lang)
+                return locale_sort
+            } catch (error) {
+                console.log('failed to sort', JSON.stringify({a, b}, null, 4));
+                throw new Error(error)
+            }
         });
 
         var objSorted = {}
