@@ -456,6 +456,7 @@ function generateAllDataYAML(allData, lang){
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
     timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
 
+    // todo: #478 filtrid tuleb compareLocale sortida juba koostamisel.
     let filters = {
         programme: {},
         language: {},
