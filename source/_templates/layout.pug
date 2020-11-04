@@ -1,10 +1,11 @@
 doctype html
 html(lang= self.locale)
 
+
     //- POFF
     if process.env['DOMAIN'] === 'poff.ee'
         include ../_templates/head_poff.pug
-        body
+        body(onload='reloadImageOnError()')
             include ../_templates/header_poff.pug
             block content
             include ../_templates/footer.pug
