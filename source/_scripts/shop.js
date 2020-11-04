@@ -113,11 +113,11 @@ function checkIfPasswordBuyer() {
 }
 
 function directToLogin() {
-    window.open('http://localhost:4000/login', '_self')
+    window.open(`http://${location.host}/login`, '_self')
 }
 
 function directToUserProfile() {
-    window.open('http://localhost:4000/userprofile', '_self')
+    window.open(`http://${location.host}/userprofile`, '_self')
 }
 
 function saveLangpath(langpath) {

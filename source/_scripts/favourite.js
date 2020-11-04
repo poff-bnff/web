@@ -93,7 +93,7 @@ function saveFilmAsFavourite(movieId) {
     var addBtnfilmCard = document.getElementById('nupp')
     console.log(addBtnfilmCard);
 
-    if (window.location.href === 'http://localhost:4000/filmid') {
+    if (window.location.href === `http://${location.host}/filmid`) {
         addBtnfilmCard = document.getElementById(movieId + 'nupp')
     }
 
