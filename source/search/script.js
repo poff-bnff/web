@@ -1,144 +1,214 @@
 
 const search_input = document.getElementById('search');
-const festival_select = document.getElementById('festivalsSelect');
-const programme_select = document.getElementById('programmesSelect');
-const results = document.getElementById('results');
-
-let search_term = ''
-let festival_term = ''
-let programme_term = ''
-let cassettes;
-
-var selectFestivals = document.querySelector('#festivalsSelect');
-var festivals = document.getElementById('festivals').value.split(',')
-
-selectFestivals.options.add(new Option('Festival:'));
-for(const festIx in festivals){
-    console.log(festivals[festIx]);
-    selectFestivals.options.add(new Option(festivals[festIx]));
+const selectors = {
+    programmes: document.getElementById('programmes_select'),
+    languages: document.getElementById('languages_select'),
+    countries: document.getElementById('countries_select'),
+    subtitles: document.getElementById('subtitles_select'),
+    premieretypes: document.getElementById('premieretypes_select'),
+    towns: document.getElementById('towns_select'),
+    cinemas: document.getElementById('cinemas_select')
 }
 
-var selectProgrammes = document.querySelector('#programmesSelect');
-var programmes = document.getElementById('festivalProgrammes').value.split(',')
-
-selectProgrammes.options.add(new Option('Programm:'));
-for(const progIx in programmes.sort(function(a, b){ if(a && b) { return ('' + a).localeCompare(b); } else { return 0; } })){
-    selectProgrammes.options.add(new Option(programmes[progIx]));
-}
-
-const showFilms = async () => {
-
-    let oneFilm = document.querySelectorAll('[class="card_film"]');
-
-    for (let film of oneFilm) {
-
-        let title = film.querySelector('#title') ? film.querySelector('#title').innerHTML.toLowerCase() : ''
-        let programme = film.querySelector('#programmes') ? film.querySelector('#programmes').innerHTML.toLowerCase() : ''
-        let festival = film.querySelector('#festivalsCassette') ? film.querySelector('#festivalsCassette').value.toLowerCase() : ''
-
-        let searchVal = false
-        let chooseFestVal = false
-        let chooseProgVal = false
-        if (search_term.length > 0) {
-            searchVal = search_term.length > 0 ? true : false
-        }
-        if (festival_term !== 'Festival:') {
-            chooseFestVal = festival_term !== '' ? true : false
-        }
-        if (programme_term !== 'Programm:') {
-            chooseProgVal = programme_term !== '' ? true : false
-        }
-
-        let displayPerSearch = title.includes(search_term.toLowerCase()) || programme.includes(search_term.toLowerCase())
-        let displayPerFest = festival.includes(festival_term.toLowerCase())
-        let displayPerProg = programme.includes(programme_term.toLowerCase())
+const nonetoshow = document.getElementById('nonetoshow');
 
 
-        if (!searchVal && !chooseFestVal && !chooseProgVal) {
-            film.style.display = "grid";
-        } else if (searchVal) {
-            if(chooseFestVal && !chooseProgVal) {
-                displayPerFest && displayPerSearch ? film.style.display = "grid" : film.style.display = "none"
-            }else if(chooseProgVal && !chooseFestVal) {
-                displayPerProg && displayPerSearch ? film.style.display = "grid" : film.style.display = "none"
-            }else if(chooseProgVal && chooseFestVal) {
-                displayPerProg && displayPerSearch && displayPerFest ? film.style.display = "grid" : film.style.display = "none"
-            }else{
-                displayPerSearch ? film.style.display = "grid" : film.style.display = "none";
-            }
-        } else {
-            if(chooseFestVal && !chooseProgVal) {
-                displayPerFest ? film.style.display = "grid" : film.style.display = "none"
-            }else if(chooseProgVal && !chooseFestVal) {
-                displayPerProg ? film.style.display = "grid" : film.style.display = "none"
-            }else if(chooseProgVal && chooseFestVal) {
-                displayPerProg && displayPerFest ? film.style.display = "grid" : film.style.display = "none"
-            }else{
-                film.style.display = "none";
-            }
-        }
 
-        // if(displayPerFest || displayPerProg) {
-        //     if ((displayPerSearch && displayPerFest && displayPerProg)) {
-        //        film.style.display = "grid";
-        //     } else {
+function toggleAll(exclude_selector_name) {
 
-        //     }
-        // }
+    ids = execute_filters()
 
-        // if (displayPerSearch) {
-        //     console.log(displayPerSearch, 'search');
-        //     if (displayPerFest || festival_term === 'Festival:') {
-        //         console.log(displayPerSearch, 'fest');
-        //         film.style.display = "grid";
-        //     } else {
-        //         film.style.display = "none";
-        //     }
-
-        //     if (displayPerProg || programme_term === 'Programm:') {
-        //         console.log(displayPerProg, 'prog');
-        //         film.style.display = "grid";
-        //     } else {
-        //         film.style.display = "none";
-        //     }
-        // } else {
-        //     film.style.display = "none";
-
-        // }
-
-        // if (displayPerProg) {
-        //     film.style.display = "grid";
-        // } else {
-        //     film.style.display = "none";
-        // }
-
-
-        // if (title.includes(search_term.toLowerCase()) || programme.includes(search_term.toLowerCase()) || festival.includes(festival_term.toLowerCase()) || festival_term === 'Festival:') {
-        //     console.log('onküllllll');
-        //     film.style.display = "grid";
-        // } else {
-        //     if (search_term.toLowerCase().length > 0 || festival_term.toLowerCase().length > 0) {
-        //         film.style.display = "none";
-        //     } else {
-        //         film.style.display = "grid";
-        //     }
-        // }
+    // kuva/peida 'pole vasteid'
+    if (ids.length) {
+        nonetoshow.style.display = "none"
+    } else {
+        nonetoshow.style.display = "grid"
     }
 
-};
+    // kuva/peida kassette
+    let cards = document.querySelectorAll('[class="card_film"]')
+    cards.forEach(card => {
+        // console.log(typeof ids[0], ' - ',typeof card.id);
+        if (ids.includes(card.id)) {
+            card.style.display = "grid"
+        } else {
+            card.style.display = "none"
+        }
+    })
 
-showFilms();
+    // filtreeri filtreid
+    toggleFilters(exclude_selector_name)
+}
+
+function toggleFilters(exclude_selector_name) {
+
+    for (selector_name in selectors) {
+        // console.log(exclude_selector_name, ' - ', selector_name);
+
+        if (exclude_selector_name === selector_name) {
+            continue
+        }
+
+        for (const option of selectors[selector_name].options) {
+            const value = option.value
+            if (value === '') {
+                option.disabled = false // garanteerib tyhivaliku olemasolu
+                continue
+            }
+
+            // console.log(`value is this '${value}' - ${typeof value}`);
+            let count = searcharray
+            .filter(cassette => {
+                const compare_with = selector_name === 'programmes' ? value : selectors.programmes.value;
+                return compare_with === '' ? true : cassette.programmes.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'languages' ? value : selectors.languages.value;
+                return compare_with === '' ? true : cassette.languages.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'countries' ? value : selectors.countries.value;
+                return compare_with === '' ? true : cassette.countries.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'subtitles' ? value : selectors.subtitles.value;
+                return compare_with === '' ? true : cassette.subtitles.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'towns' ? value : selectors.towns.value;
+                return compare_with === '' ? true : cassette.towns.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'cinemas' ? value : selectors.cinemas.value;
+                return compare_with === '' ? true : cassette.cinemas.includes( compare_with )
+            })
+            .filter(cassette => {
+                const compare_with = selector_name === 'premieretypes' ? value : selectors.premieretypes.value;
+                return compare_with === '' ? true : cassette.premieretypes.includes( compare_with )
+            })
+
+            .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true })
+            .length
+            // .filter((cassette) => { return selectors.countries.value ? cassette.countries.includes(selectors.countries.value) : true })
+            // .filter((cassette) => { return selectors.subtitles.value ? cassette.subtitles.includes(selectors.subtitles.value) : true })
+            // .filter((cassette) => { return selectors.towns.value ? cassette.towns.includes(selectors.towns.value) : true })
+            // .filter((cassette) => { return selectors.cinemas.value ? cassette.cinemas.includes(selectors.cinemas.value) : true })
+            // .filter((cassette) => { return selectors.premieretypes.value ? cassette.premieretypes.includes(selectors.premieretypes.value) : true })
+            // .filter((cassette) => { return search_input.value ? cassette.text.includes(search_input.value.toLowerCase()) : true })
+            // option.innerHTML += `${count} ${value}`
+            option.disabled = count ? false : true
+
+        }
+
+    }
+
+    // console.log(programmes.options.value);
+
+}
 
 search_input.addEventListener('keyup', e => {
-    search_term = e.target.value;
+    toggleAll();
+});
 
-    showFilms();
+selectors.programmes.addEventListener('change', e => {
+    toggleAll('programmes');
 });
-festival_select.addEventListener('change', e => {
-    festival_term = e.target.value;
-    showFilms();
+
+selectors.languages.addEventListener('change', e => {
+    toggleAll('languages');
 });
-programme_select.addEventListener('change', e => {
-    programme_term = e.target.value;
-    showFilms();
+
+selectors.countries.addEventListener('change', e => {
+    toggleAll('countries');
 });
+
+selectors.subtitles.addEventListener('change', e => {
+    toggleAll('subtitles');
+});
+
+selectors.premieretypes.addEventListener('change', e => {
+    toggleAll('premieretypes');
+});
+
+selectors.towns.addEventListener('change', e => {
+    toggleAll('towns');
+});
+
+selectors.cinemas.addEventListener('change', e => {
+    toggleAll('cinemas');
+});
+
+function unselect_all() {
+    search_input.value = '';
+    selectors.programmes.selectedIndex = 0;
+    selectors.languages.selectedIndex = 0;
+    selectors.countries.selectedIndex = 0;
+    selectors.subtitles.selectedIndex = 0;
+    selectors.premieretypes.selectedIndex = 0;
+    selectors.towns.selectedIndex = 0;
+    selectors.cinemas.selectedIndex = 0;
+    nonetoshow.selectedIndex = 0;
+    toggleAll(execute_filters());
+}
+
+function execute_filters() {
+    let filtered = searcharray
+        .filter(cassette => {
+            if (selectors.programmes.value) {
+                return cassette.programmes.includes(selectors.programmes.value)
+            } else {
+                return true
+            }
+        })
+        .filter(cassette => {
+            if (selectors.languages.value) {
+                return cassette.languages.includes(selectors.languages.value)
+            } else {
+                return true
+            }
+        })
+        .filter(cassette => {
+            if (selectors.countries.value) {
+                return cassette.countries.includes(selectors.countries.value)
+            } else {
+                return true
+            }
+        })
+        .filter(cassette => {
+            if (selectors.subtitles.value) {
+                return cassette.subtitles.includes(selectors.subtitles.value)
+            } else {
+                return true
+            }
+        })
+        .filter(cassette => {
+            if (selectors.premieretypes.value) {
+                return cassette.premieretypes.includes(selectors.premieretypes.value)
+            } else {
+                return true
+            }
+        })
+        .filter(cassette => {
+            if (selectors.towns.value) {
+                return cassette.towns.includes(selectors.towns.value)
+            } else {
+                return true
+            }
+        })
+        .filter(cassette => {
+            if (selectors.cinemas.value) {
+                return cassette.cinemas.includes(selectors.cinemas.value)
+            } else {
+                return true
+            }
+        })
+        .filter(cassette => cassette.text.includes(search_input.value.toLowerCase()))
+        .map(element => element.id.toString());
+    // console.log(filtered);
+    // console.log(filtered.map(element => element.id));
+    return filtered
+}
+
+// console.log('foo'.includes(undefined));
+
+

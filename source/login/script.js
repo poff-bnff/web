@@ -231,12 +231,14 @@ async function sendResetCode() {
 
     if (resetCode.value) {
         authenticationData = {
-            code: resetCode.value
+            loginUsername: loginUsername.value,
+            code: resetCode.value,
+            newPswd: loginPasswordRep.value
         }
     }
     else if (loginUsername.value) {
         authenticationData = {
-            userName: document.getElementById("loginUsername").value
+            loginUsername: document.getElementById("loginUsername").value
         }
     }
 

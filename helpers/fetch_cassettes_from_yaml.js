@@ -83,6 +83,7 @@ deleteFolderRecursive(cassettesPath)
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const lang of allLanguages) {
     let cassettesWithOutFilms = []
+    let cassettesWithOutSpecifiedScreeningType = []
 
     const dataFrom = { 'articles': `/_fetchdir/articles.${lang}.yaml` }
     fs.mkdirSync(cassettesPath, { recursive: true })
@@ -95,6 +96,7 @@ for (const lang of allLanguages) {
     let limit = CASSETTELIMIT
     let counting = 0
     for (const s_cassette of STRAPIDATA_CASSETTE) {
+        var hasOneCorrectScreening = false
         if (limit !== 0 && counting === limit) break
         counting++
 
@@ -146,6 +148,27 @@ for (const lang of allLanguages) {
                 }
             }
 
+            // Kasseti treiler
+            if (s_cassette_copy.media && s_cassette_copy.media.trailer && s_cassette_copy.media.trailer[0]) {
+                for (trailer of s_cassette_copy.media.trailer) {
+                    if(trailer.url && trailer.url.length > 10) {
+                        if (trailer.url.includes('vimeo')) {
+                            let splitVimeoLink = trailer.url.split('/')
+                            let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
+                            if (videoCode.length === 9) {
+                                trailer.videoCode = videoCode
+                            }
+                        } else {
+                            let splitYouTubeLink = trailer.url.split('=')[1]
+                            let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
+                            if (splitForVideoCode.length === 11) {
+                                trailer.videoCode = splitForVideoCode
+                            }
+                        }
+                    }
+                }
+            }
+
             // rueten func. is run for each s_cassette_copy separately instead of whole data, that is
             // for the purpose of saving slug_en before it will be removed by rueten func.
             rueten(s_cassette_copy, lang)
@@ -161,13 +184,17 @@ for (const lang of allLanguages) {
             }
 
             // #379 put ordered films to cassette.film
-            let ordered_films = s_cassette_copy.orderedFilms.map(s_c_film => {
+            let ordered_films = s_cassette_copy.orderedFilms
+                .filter( (isFilm) => { if (isFilm.film) { return 1 } else { console.log(`ERROR! Empty film under cassette with ID ${s_cassette_copy.id}`) } })
+                .map(s_c_film => {
+
                 if (!s_c_film.film) {
                     // console.log('ERROR: Cassette with no ordered film', s_cassette_copy.id);
                     cassettesWithOutFilms.push(s_cassette_copy.id)
                     // throw new Error('Cassette with no ordered film')
                 } else {
                     let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
+
                     if (s_films && s_films[0]) {
                         s_films[0].ordinal = s_c_film.order
                         return s_films[0]
@@ -197,7 +224,7 @@ for (const lang of allLanguages) {
                     }
                     // Kui vähemalt üks screeningtype õige, siis hasOneCorrectScreening = true
                     // - st ehitatakse
-                    var hasOneCorrectScreening = true
+                    hasOneCorrectScreening = true
 
                     delete screening.cassette
                     screenings.push(rueten(screening, lang))
@@ -263,6 +290,7 @@ for (const lang of allLanguages) {
 
             if (s_cassette_copy.films && s_cassette_copy.films[0]) {
                 for (scc_film of s_cassette_copy.films) {
+                    // console.log(scc_film);
                     let filmSlugEn = scc_film.slug_en
 
                     if (!filmSlugEn) {
@@ -385,7 +413,7 @@ for (const lang of allLanguages) {
                 // timer.log(__filename, util.inspect(s_cassette_copy, {showHidden: false, depth: null}))
                 generateYaml(s_cassette_copy, lang)
             } else {
-                timer.log(__filename, `Skipped cassette ${s_cassette_copy.id} slug ${s_cassette_copy.slug}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
+                cassettesWithOutSpecifiedScreeningType.push(s_cassette_copy.id)
             }
 
         } else {
@@ -399,6 +427,10 @@ for (const lang of allLanguages) {
     if(cassettesWithOutFilms.length) {
         uniqueIDs = [...new Set(cassettesWithOutFilms)]
         timer.log(__filename, `ERROR! No films under cassettes with ID's ${uniqueIDs.join(', ')}`)
+    }
+    if (cassettesWithOutSpecifiedScreeningType.length) {
+        uniqueIDs2 = [...new Set(cassettesWithOutSpecifiedScreeningType)]
+        timer.log(__filename, `Skipped cassettes with IDs ${uniqueIDs2.join(', ')}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
     }
     generateAllDataYAML(allData, lang)
 }
@@ -423,4 +455,104 @@ function generateAllDataYAML(allData, lang){
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
     timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
+
+    // todo: #478 filtrid tuleb compareLocale sortida juba koostamisel.
+    let filters = {
+        programmes: {},
+        languages: {},
+        countries: {},
+        subtitles: {},
+        premieretypes: {},
+        towns: {},
+        cinemas: {}
+    }
+    const cassette_search = allData.map(cassette => {
+        let programmes = []
+        if (typeof cassette.tags.programmes !== 'undefined') {
+            for (const programme of cassette.tags.programmes) {
+                // console.log(programme.festival_editions, 'CASSETTE ', cassette.id);
+                if (typeof programme.festival_editions !== 'undefined') {
+                    for (const fested of programme.festival_editions) {
+                        const key = fested.festival + '_' + programme.id
+                        const festival = cassette.festivals.filter(festival => festival.id === fested.festival)
+                        if (festival[0]) {
+                            var festival_name = festival[0].name
+                        }
+                        programmes.push(key)
+                        filters.programmes[key] = `${festival_name} ${programme.name}`
+                    }
+                }
+            }
+        }
+        let languages = []
+        let countries = []
+        let cast_n_crew = []
+        for (const films of cassette.films) {
+            for (const language of films.languages || []) {
+                const langKey = language.code
+                const language_name = language.name
+                languages.push(langKey)
+                filters.languages[langKey] = language_name
+            }
+            for (const country of films.orderedCountries || []) {
+                const countryKey = country.country.code
+                const country_name = country.country.name
+                countries.push(countryKey)
+                filters.countries[countryKey] = country_name
+            }
+            for (const key in films.credentials.rolePersonsByRole) {
+                for (const crew of films.credentials.rolePersonsByRole[key]) {
+                    cast_n_crew.push(crew)
+                }
+            }
+        }
+        let subtitles = []
+        let towns = []
+        let cinemas = []
+        for (const screenings of cassette.screenings) {
+            for (const subtitle of screenings.subtitles || []) {
+                const subtKey = subtitle.code
+                const subtitle_name = subtitle.name
+                subtitles.push(subtKey)
+                filters.subtitles[subtKey] = subtitle_name
+            }
+
+            const townKey = screenings.location.hall.cinema.town.id
+            const town_name = screenings.location.hall.cinema.town.name
+            towns.push(parseInt(townKey))
+            filters.towns[townKey] = town_name
+
+            const cinemaKey = screenings.location.hall.cinema.id
+            const cinema_name = screenings.location.hall.cinema.name
+            cinemas.push(parseInt(cinemaKey))
+            filters.cinemas[cinemaKey] = cinema_name
+        }
+        let premieretypes = []
+        for (const types of cassette.tags.premiere_types || []) {
+                const type_name = types
+                premieretypes.push(type_name)
+                filters.premieretypes[type_name] = type_name
+        }
+        return {
+            id: cassette.id,
+            text: [
+                cassette.title,
+                cassette.synopsis,
+                cast_n_crew
+            ].join(' ').toLowerCase(),
+            programmes: programmes,
+            languages: languages,
+            countries: countries,
+            subtitles: subtitles,
+            premieretypes: premieretypes,
+            towns: towns,
+            cinemas: cinemas
+        }
+    })
+
+    let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `search.${lang}.yaml`), searchYAML, 'utf8')
+
+    let filtersYAML = yaml.safeDump(filters, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `filters.${lang}.yaml`), filtersYAML, 'utf8')
 }
