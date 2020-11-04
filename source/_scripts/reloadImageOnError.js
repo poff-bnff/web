@@ -5,7 +5,10 @@ function reloadImageOnError() {
         var _image = images[i]
         // console.log(_image);
 
+        console.log(_image.src)
         _image.onerror = function foo() {
+            console.log('IMG', _image.src)
+
             var reloaded = this.getAttribute('reloaded') || 0
             if (reloaded > 1000) {
                 return
