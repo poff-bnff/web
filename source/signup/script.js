@@ -84,7 +84,6 @@ async function sendNewUser() {
         document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
         document.getElementById('loginButton').style.display = 'block'
 
-    // window.open(`${pageURL}/login`, '_self')
     }
 }
 
@@ -179,8 +178,6 @@ function validateForm() {
 }
 
 
-
-// console.log(output.src)
 
 
 

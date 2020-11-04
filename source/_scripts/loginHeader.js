@@ -73,5 +73,7 @@ function logOut() {
 
     console.log('LOGITUD VÄLJA')
     location.reload()
+
+    window.open(location.origin, '_self')
 }
 
