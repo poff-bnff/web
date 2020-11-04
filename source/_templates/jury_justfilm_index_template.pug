@@ -36,7 +36,8 @@ block content
                                                 h4= `${juryMember.person.firstName} ${juryMember.person.lastName}`
                                                 //- p.premiere_type.text_center= val.personOrganisation
                                                 p= (juryMember.roleAtJury)
-                                                p= (juryMember.country.name)
+                                                if juryMember.country
+                                                    p= (juryMember.country.name)
 
                                                 if typeof juryMember.about !== 'undefined'
                                                     - var synopsis_md = juryMember.about
