@@ -86,8 +86,6 @@ async function sendNewUser() {
         if(!providers.includes("eventival")){
             document.getElementById('ev').style.display = 'none'
         }
-        document.getElementById('providers').innerHTML = providers
-        // document.getElementById('loginButton').style.display = 'block'
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
