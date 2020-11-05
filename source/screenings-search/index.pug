@@ -5,8 +5,6 @@ block content
 
     .grid_search
 
-            h3#loading.sub_section_headline(style='display: grid;') LOADING
-            content#content(style='display: none;')
             //- Milliseid screening type kuvada, kõikide kuvamiseks []
             //- Ühe, nt first screening kuvamiseks:
             //- - const whichScreeningTypesToDisplay = ['first screening']
@@ -68,6 +66,9 @@ block content
             button(onclick='unselect_all()')= self.label.filters.empty
 
             h3#nonetoshow.sub_section_headline(style='display: none;')
+
+    h3#loading.sub_section_headline(style='display: grid;') LOADING
+            content#content(style='display: none;')
 
     if self.data.screenings
         main.grid_films
