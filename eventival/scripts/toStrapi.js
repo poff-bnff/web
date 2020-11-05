@@ -39,7 +39,9 @@ const EVENTIVAL_REMAPPED = {}
 
 const s_person_id_by_e_fullname = (e_name, s_persons) => {
     const s_person = s_persons.filter(s_person => {
-        return e_name === s_person.firstName + (s_person.lastName ? ' ' + s_person.lastName : '')
+        const full_name = (s_person.firstName ? s_person.firstName : '').trim() + (s_person.lastName ? ' ' + s_person.lastName.trim() : '')
+        return e_name === full_name
+
     })[0]
     if (s_person === undefined) {
         console.log('cant locate', e_name)
