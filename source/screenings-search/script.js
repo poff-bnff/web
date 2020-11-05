@@ -16,13 +16,21 @@ const nonetoshow = document.getElementById('nonetoshow');
 
 document.onreadystatechange = () => {
     const loading = document.getElementById('loading');
+    const content = document.getElementById('content');
     if (document.readyState === 'complete') {
         loading.style.display = "none"
         content.style.display = ""
+
+        for (img of document.images) {
+            img_src = img.src || ''
+            if (img_src.includes('thumbnail_')) {
+                    img.src = img_src.replace('thumbnail_', '')
+            }
+        }
     }
 };
 
-function select_next_or_previous(which, id){
+function select_next_or_previous(which, id) {
     var select = document.getElementById(id);
     if (which === '+') {
         select.selectedIndex++;
@@ -76,44 +84,44 @@ function toggleFilters(exclude_selector_name) {
 
             // console.log(`value is this '${value}' - ${typeof value}`);
             let count = searcharray
-            .filter(screening => {
-                const compare_with = selector_name === 'programmes' ? value : selectors.programmes.value;
-                return compare_with === '' ? true : screening.programmes.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'languages' ? value : selectors.languages.value;
-                return compare_with === '' ? true : screening.languages.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'countries' ? value : selectors.countries.value;
-                return compare_with === '' ? true : screening.countries.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'subtitles' ? value : selectors.subtitles.value;
-                return compare_with === '' ? true : screening.subtitles.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'towns' ? value : selectors.towns.value;
-                return compare_with === '' ? true : screening.towns.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'cinemas' ? value : selectors.cinemas.value;
-                return compare_with === '' ? true : screening.cinemas.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'premieretypes' ? value : selectors.premieretypes.value;
-                return compare_with === '' ? true : screening.premieretypes.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'dates' ? value : selectors.dates.value;
-                return compare_with === '' ? true : screening.dates.includes( compare_with )
-            })
-            .filter(screening => {
-                const compare_with = selector_name === 'times' ? value : selectors.times.value;
-                return compare_with === '' ? true : screening.times.includes( compare_with )
-            })
-            .filter((screening) => { return search_input.value ? screening.text.includes(search_input.value.toLowerCase()) : true })
-            .length
+                .filter(screening => {
+                    const compare_with = selector_name === 'programmes' ? value : selectors.programmes.value;
+                    return compare_with === '' ? true : screening.programmes.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'languages' ? value : selectors.languages.value;
+                    return compare_with === '' ? true : screening.languages.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'countries' ? value : selectors.countries.value;
+                    return compare_with === '' ? true : screening.countries.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'subtitles' ? value : selectors.subtitles.value;
+                    return compare_with === '' ? true : screening.subtitles.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'towns' ? value : selectors.towns.value;
+                    return compare_with === '' ? true : screening.towns.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'cinemas' ? value : selectors.cinemas.value;
+                    return compare_with === '' ? true : screening.cinemas.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'premieretypes' ? value : selectors.premieretypes.value;
+                    return compare_with === '' ? true : screening.premieretypes.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'dates' ? value : selectors.dates.value;
+                    return compare_with === '' ? true : screening.dates.includes(compare_with)
+                })
+                .filter(screening => {
+                    const compare_with = selector_name === 'times' ? value : selectors.times.value;
+                    return compare_with === '' ? true : screening.times.includes(compare_with)
+                })
+                .filter((screening) => { return search_input.value ? screening.text.includes(search_input.value.toLowerCase()) : true })
+                .length
 
 
             option.disabled = count ? false : true
