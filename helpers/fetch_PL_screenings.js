@@ -61,6 +61,13 @@ async function main() {
     const outFile = path.join(fetchDir, `screenings_urls.yaml`)
     fs.writeFileSync(outFile, JSON.stringify(PL_screenings, null, 4), 'utf8')
 
+    const PL_codes = PL_screenings.map(pl_s => pl_s.code)
+    const online_screenings = s_screenings.filter(s => !PL_codes.includes(s.code))
+        .map(s => [s.code, s.codeAndTitle])
+    const online_screenings_file = path.join(fetchDir, `online_screenings.yaml`)
+    fs.writeFileSync(online_screenings_file, JSON.stringify(online_screenings, null, 4), 'utf8')
+// console.log(['a','b'].includes('a'))
+
     PL_screenings = PL_screenings.filter(PL_screening => {
         if (!PL_screening.id) {
             console.log('WARNING: Missing in Strapi:', JSON.stringify(PL_screening, null, 4))
