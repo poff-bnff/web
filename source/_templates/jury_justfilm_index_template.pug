@@ -20,7 +20,7 @@ block content
                                 each juryMember in subTeam.juryMember
                                     if juryMember.person
                                         .person_jury
-                                            .person_head
+                                            .person_head_jury
                                                 - var assetsDir = 'https://assets.poff.ee/img/'
                                                 if juryMember.pictureAtTeam && juryMember.pictureAtTeam[0].hash
                                                     - var personPic = assetsDir + juryMember.pictureAtTeam[0].hash + juryMember.pictureAtTeam[0].ext
@@ -35,13 +35,15 @@ block content
                                             .person_body
                                                 h4= `${juryMember.person.firstName} ${juryMember.person.lastName}`
                                                 //- p.premiere_type.text_center= val.personOrganisation
-                                                p= (juryMember.roleAtJury)
-                                                p= (juryMember.country.name)
+                                                if juryMember.roleAtJury
+                                                    p= (juryMember.roleAtJury)
+                                                if juryMember.country
+                                                    p= (juryMember.country.name)
 
                                                 if typeof juryMember.about !== 'undefined'
-                                                    - var synopsis_md = juryMember.about
-                                                    if typeof synopsis_md === 'string'
-                                                        +format(synopsis_md)
+                                                    - var about_md = juryMember.about
+                                                    if typeof about_md === 'string'
+                                                        +format(about_md)
 
                                                 //- p= (juryMember.about)
                                                     //- span= (juryMember.roleAtJury)

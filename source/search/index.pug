@@ -15,67 +15,39 @@ block content
     //- select#programmesSelect(name='festivalProgrammes')
 
 
-    select#programmesSelect(name='Programmes')
-        -
-            const programmes_sort = Object.fromEntries(
-                Object.entries(self.data.filters.programme).sort(function([,a],[,b]){ return ('' + a).localeCompare(b, self.locale); })
-            );
+    select#programmes_select(name='Programmes')
         option(value='') PROGRAMMID:
-        each index, key in programmes_sort
+        each index, key in self.data.filters.programmes
             option(value=key)= index
 
-    select#languagesSelect(name='Languages')
-        -
-            const languages_sort = Object.fromEntries(
-                Object.entries(self.data.filters.language).sort(function([,a],[,b]){ return ('' + a).localeCompare(b, self.locale); })
-            );
+    select#languages_select(name='Languages')
         option(value='') KEEL:
-        each index, key in languages_sort
+        each index, key in self.data.filters.languages
             option(value=key)= index
 
-    select#countriesSelect(name='Countries')
-        -
-            const countries_sort = Object.fromEntries(
-                Object.entries(self.data.filters.country).sort(function([,a],[,b]){ return ('' + a).localeCompare(b, self.locale); })
-            );
+    select#countries_select(name='Countries')
         option(value='') RIIK:
-        each index, key in countries_sort
+        each index, key in self.data.filters.countries
             option(value=key)= index
 
-    select#subtitlesSelect(name='Subtitles')
-        -
-            const subtitles_sort = Object.fromEntries(
-                Object.entries(self.data.filters.subtitle).sort(function([,a],[,b]){ return ('' + a).localeCompare(b, self.locale); })
-            );
+    select#subtitles_select(name='Subtitles')
         option(value='') SUBTIITRID:
-        each index, key in subtitles_sort
+        each index, key in self.data.filters.subtitles
             option(value=key)= index
 
-    select#premieretypesSelect(name='Premieretypes')
-        -
-            const premieretypes_sort = Object.fromEntries(
-                Object.entries(self.data.filters.premieretype).sort(function([,a],[,b]){ return ('' + a).localeCompare(b, self.locale); })
-            );
+    select#premieretypes_select(name='Premieretypes')
         option(value='') ESILINASTUSED:
-        each index, key in premieretypes_sort
+        each index, key in self.data.filters.premieretypes
             option(value=key)= index
 
-    select#townsSelect(name='Towns')
-        -
-            const towns_sort = Object.fromEntries(
-                Object.entries(self.data.filters.town).sort(function([,a],[,b]){ return ('' + a).localeCompare(b, self.locale); })
-            );
+    select#towns_select(name='Towns')
         option(value='') LINNAD:
-        each index, key in towns_sort
+        each index, key in self.data.filters.towns
             option(value=key)= index
 
-    select#cinemasSelect(name='Cinemas')
-        -
-            const cinemas_sort = Object.fromEntries(
-                Object.entries(self.data.filters.cinema).sort(function(a,b){ return ('' + a).localeCompare(b, self.locale); })
-            );
+    select#cinemas_select(name='Cinemas')
         option(value='') KINOD:
-        each index, key in cinemas_sort
+        each index, key in self.data.filters.cinemas
             option(value=key)= index
 
     button(onclick='unselect_all()') X
