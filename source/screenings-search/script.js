@@ -16,10 +16,12 @@ const nonetoshow = document.getElementById('nonetoshow');
 
 document.onreadystatechange = () => {
     const loading = document.getElementById('loading');
-    const content = document.getElementById('content');
+    // const content = document.getElementById('content');
+    const filters = document.getElementById('filters');
     if (document.readyState === 'complete') {
+        filters.style.display = "grid"
         loading.style.display = "none"
-        content.style.display = ""
+        // content.style.display = ""
 
         for (img of document.images) {
             img_src = img.src || ''
