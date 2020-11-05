@@ -3,7 +3,37 @@ var userprofilePageURL = pageURL + '/userprofile'
 var userProfile
 var validToken = false
 
-if(localStorage.getItem('ACCESS_TOKEN')){
+
+
+function buyerCheck() {
+
+    if(!validToken) {
+        //sisselogimata
+        document.getElementById('directToLoginButton').style.display = 'block'
+        console.log("sisselogimata kasutaja on poes")
+    }else{
+        document.getElementById('directToLoginButton').style.display = 'none'
+
+        if(userProfile.profile_filled && userProfile.picture === "this users picture is in S3"){
+            //kõik olemas saab osta
+            document.getElementById('buybutton').style.display = 'block'
+            console.log("kasutaja saab osta")
+        }else {
+            if(!userProfile.profile_filled){
+                //profiil täitmata
+                document.getElementById('directToFillProfile').style.display = 'block'
+                console.log("pooliku profiiliga kasutaja on poes")
+            }else{
+                //profiil täidetud, aga pilt puudu
+                document.getElementById('directToaddPicture').style.display = 'block'
+                console.log("pildita kasutaja on poes")
+
+            }
+        }
+    }
+}
+
+    if(localStorage.getItem('ACCESS_TOKEN')){
     var token = localStorage.getItem('ACCESS_TOKEN')
     try{
         var base64Url = token.split('.')[1];
@@ -77,14 +107,17 @@ function loadUserProfileH() {
 
 
 function saveUrl(){
-    if(window.location.href !== loacation.origin + "userprofile"){
-        localStorage.setItem('url', window.location.href)
-    }
+    localStorage.setItem('url', window.location.href)
 }
 
 
 function useUserData(userProf){
     document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
+    try{
+        buyerCheck()
+    }catch(err){
+
+    }
 }
 
 

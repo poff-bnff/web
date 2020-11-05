@@ -1,5 +1,8 @@
-
-fetchMyPasses()
+if(validToken){
+    fetchMyPasses()
+}else {
+    console.log("sisselogimata")
+}
 
 async function fetchMyPasses() {
     console.log('fetchMyPasses')

@@ -1,3 +1,5 @@
+
+
 function BuyProduct(categoryId) {
 
     var feedback = document.getElementById("feedback")
@@ -62,8 +64,6 @@ function GetPaymentLinks() {
         redirect: 'follow'
     }
 
-    //body payment type
-
     fetch('https://api.poff.ee/buy', requestOptions).then(function (response) {
         if (response.ok) {
             return response.json();
@@ -100,17 +100,6 @@ function GetPaymentLinks() {
     });
 }
 
-function checkIfPasswordBuyer() {
-    if (userProfile.picture && userProfile.profile_filled) {
-        GetPaymentLinks()
-    } else if (userProfile.profile_filled) {
-        document.getElementById('buybutton').style.display = 'none'
-        document.getElementById('directToaddPicture').style.display = 'block'
-    } else {
-        document.getElementById('buybutton').style.display = 'none'
-        document.getElementById('directToFillProfile').style.display = 'block'
-    }
-}
 
 function directToLogin() {
     window.open(location.origin + '/login', '_self')
