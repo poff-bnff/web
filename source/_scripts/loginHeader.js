@@ -3,7 +3,7 @@ var userprofilePageURL = pageURL + '/userprofile'
 var userProfile
 var validToken = false
 
-if(localStorage.getItem('ACCESS_TOKEN')){
+if (localStorage.getItem('ACCESS_TOKEN')) {
     var token = localStorage.getItem('ACCESS_TOKEN')
     try{
         var base64Url = token.split('.')[1];
@@ -33,18 +33,26 @@ if(localStorage.getItem('ACCESS_TOKEN')){
 console.log("valid token?",validToken)
 
 
-if (validToken){
-    document.getElementById('logOut').style.display = 'block'
-    document.getElementById('logInName').style.display = 'block'
-    document.getElementById('myFavouriteFilms').style.display = 'block'
-    document.getElementById('userProfile').style.display = 'block'
+if (validToken) {
+    try {
+        document.getElementById('logOut').style.display = 'block'
+        document.getElementById('logInName').style.display = 'block'
+        document.getElementById('myFavouriteFilms').style.display = 'block'
+        document.getElementById('userProfile').style.display = 'block'
+    } catch (error) {
+        null
+    }
 
     loadUserProfileH()
 }
 
-if (!validToken){
-    document.getElementById('logIn').style.display = 'block'
-    document.getElementById('signUp').style.display = 'block'
+if (!validToken) {
+    try {
+        document.getElementById('logIn').style.display = 'block'
+        document.getElementById('signUp').style.display = 'block'
+    } catch (error) {
+        null
+    }
 }
 
 
@@ -77,14 +85,18 @@ function loadUserProfileH() {
 
 
 function saveUrl(){
-    if(window.location.href !== loacation.origin + "userprofile"){
+    if (window.location.href !== loacation.origin + "userprofile"){
         localStorage.setItem('url', window.location.href)
     }
 }
 
 
-function useUserData(userProf){
-    document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
+function useUserData(userProf) {
+    try {
+        document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
+    } catch (error) {
+        null
+    }
 }
 
 
