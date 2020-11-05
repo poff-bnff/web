@@ -81,7 +81,7 @@ function GetPaymentLinks() {
             }
         }
 
-        //credist cards
+        //credit cards
         for (var i = 0; i < data.cards.length; i++) {
             var button = '<label><input type="radio" name="payment" value="' + data.cards[i].id + '"><img src=' + data.cards[i].logo + ' onClick=SelectPaymentType("' + data.cards[i].id + '") ></label>'
             bankInfo += button

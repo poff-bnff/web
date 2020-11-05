@@ -63,18 +63,26 @@ function buyerCheck() {
 console.log("valid token?",validToken)
 
 
-if (validToken){
-    document.getElementById('logOut').style.display = 'block'
-    document.getElementById('logInName').style.display = 'block'
-    document.getElementById('myFavouriteFilms').style.display = 'block'
-    document.getElementById('userProfile').style.display = 'block'
+if (validToken) {
+    try {
+        document.getElementById('logOut').style.display = 'block'
+        document.getElementById('logInName').style.display = 'block'
+        document.getElementById('myFavouriteFilms').style.display = 'block'
+        document.getElementById('userProfile').style.display = 'block'
+    } catch (error) {
+        null
+    }
 
     loadUserProfileH()
 }
 
-if (!validToken){
-    document.getElementById('logIn').style.display = 'block'
-    document.getElementById('signUp').style.display = 'block'
+if (!validToken) {
+    try {
+        document.getElementById('logIn').style.display = 'block'
+        document.getElementById('signUp').style.display = 'block'
+    } catch (error) {
+        null
+    }
 }
 
 
@@ -112,7 +120,11 @@ function saveUrl(){
 
 
 function useUserData(userProf){
-    document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
+    try{
+        document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
+    }catch(err){
+
+    }
     try{
         buyerCheck()
     }catch(err){
