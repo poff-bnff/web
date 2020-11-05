@@ -3,81 +3,74 @@ include /_templates/mixins.pug
 
 block content
 
+    .grid_search
 
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    h3#loading.sub_section_headline(style='display: grid;') LOADING
-    content#content(style='display: none;')
-        //- Milliseid screening type kuvada, kõikide kuvamiseks []
-        //- Ühe, nt first screening kuvamiseks:
-        //- - const whichScreeningTypesToDisplay = ['first screening']
-        //- Mitme kuvamiseks:
-        - const whichScreeningTypesToDisplay = ['first screening', 'regular', 'online kino']
-        //- - const whichScreeningTypesToDisplay = []
+            h3#loading.sub_section_headline(style='display: grid;') LOADING
+            content#content(style='display: none;')
+            //- Milliseid screening type kuvada, kõikide kuvamiseks []
+            //- Ühe, nt first screening kuvamiseks:
+            //- - const whichScreeningTypesToDisplay = ['first screening']
+            //- Mitme kuvamiseks:
+            - const whichScreeningTypesToDisplay = ['first screening', 'regular', 'online kino']
+            //- - const whichScreeningTypesToDisplay = []
 
-        input#search(type='text', placeholder='Search something now!!!')
+            input#search(type='text', placeholder= self.label.filters.search)
 
-        select#programmes_select(name='Programmes')
-            option(value='') PROGRAMMID:
-            each index, key in self.data.filters.programmes
-                option(value=key)= index
+            select#programmes_select(name='Programmes')
+                option(value='')= self.label.filters.programmes
+                each index, key in self.data.filters.programmes
+                    option(value=key)= index
 
-        select#languages_select(name='Languages')
-            option(value='') KEEL:
-            each index, key in self.data.filters.languages
-                option(value=key)= index
+            select#languages_select(name='Languages')
+                option(value='')= self.label.filters.languages
+                each index, key in self.data.filters.languages
+                    option(value=key)= index
 
-        select#countries_select(name='Countries')
-            option(value='') RIIK:
-            each index, key in self.data.filters.countries
-                option(value=key)= index
+            select#countries_select(name='Countries')
+                option(value='')= self.label.filters.countries
+                each index, key in self.data.filters.countries
+                    option(value=key)= index
 
-        select#subtitles_select(name='Subtitles')
-            option(value='') SUBTIITRID:
-            each index, key in self.data.filters.subtitles
-                option(value=key)= index
+            select#subtitles_select(name='Subtitles')
+                option(value='')= self.label.filters.subtitles
+                each index, key in self.data.filters.subtitles
+                    option(value=key)= index
 
-        select#premieretypes_select(name='Premieretypes')
-            option(value='') ESILINASTUSED:
-            each index, key in self.data.filters.premieretypes
-                option(value=key)= index
+            select#premieretypes_select(name='Premieretypes')
+                option(value='')= self.label.filters.premieres
+                each index, key in self.data.filters.premieretypes
+                    option(value=key)= index
 
-        select#towns_select(name='Towns')
-            option(value='') LINNAD:
-            each index, key in self.data.filters.towns
-                option(value=key)= index
+            select#towns_select(name='Towns')
+                option(value='')= self.label.filters.towns
+                each index, key in self.data.filters.towns
+                    option(value=key)= index
 
-        select#cinemas_select(name='Cinemas')
-            option(value='') KINOD:
-            each index, key in self.data.filters.cinemas
-                option(value=key)= index
+            select#cinemas_select(name='Cinemas')
+                option(value='')= self.label.filters.cinemas
+                each index, key in self.data.filters.cinemas
+                    option(value=key)= index
 
-        button(onclick='select_next_or_previous(`-`, `dates_select`)')= `<`
-        select#dates_select(name='Dates')
-            option(value='') KUUPÄEVAD:
-            each index, key in self.data.filters.dates
-                option(value=key)= index
-        button(onclick='select_next_or_previous(`+`, `dates_select`)')= `>`
+            button(onclick='select_next_or_previous(`-`, `dates_select`)')= `<`
+            select#dates_select(name='Dates')
+                option(value='')= self.label.filters.dates
+                each index, key in self.data.filters.dates
+                    option(value=key)= index
+            button(onclick='select_next_or_previous(`+`, `dates_select`)')= `>`
 
-        button(onclick='select_next_or_previous(`-`, `times_select`)')= `<`
-        select#times_select(name='Times')
-            option(value='') AJAD:
-            each index, key in self.data.filters.times
-                option(value=key)= index
-        button(onclick='select_next_or_previous(`+`, `times_select`)')= `>`
+            button(onclick='select_next_or_previous(`-`, `times_select`)')= `<`
+            select#times_select(name='Times')
+                option(value='')= self.label.filters.time
+                each index, key in self.data.filters.times
+                    option(value=key)= index
+            button(onclick='select_next_or_previous(`+`, `times_select`)')= `>`
 
-        button(onclick='unselect_all()') X
+            button(onclick='unselect_all()')= self.label.filters.empty
 
-        h3#nonetoshow.sub_section_headline(style='display: none;') POLE VALIKULE VASTAVAT KUVADA
+            h3#nonetoshow.sub_section_headline(style='display: none;')
 
-        if self.data.screenings
-            main.grid_films
+    if self.data.screenings
+        main.grid_films
                 -
                     var sortFunction = function(a, b) {
                         if (a.dateTime) {
