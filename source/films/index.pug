@@ -29,6 +29,8 @@ block content
                                 img.container_contents_16_9(src= cassette.cassetteCarouselPicsCassette[0] alt= cassette.title)
                             else if cassette.cassetteCarouselPicsFilms && cassette.cassetteCarouselPicsFilms[0]
                                 img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt= cassette.title)
+                            else
+                                img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
                         else if cassette.films && cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
                             img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt= cassette.title)
                         else
