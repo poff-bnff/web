@@ -253,6 +253,4 @@ function execute_filters() {
     return filtered
 }
 
-// console.log('foo'.includes(undefined));
-
 

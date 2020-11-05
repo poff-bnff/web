@@ -315,7 +315,7 @@ function CreateYAML(screenings, lang) {
                 filters.premieretypes[type_name] = type_name
         }
         return {
-            id: cassette.id,
+            id: screenings.id,
             text: [
                 cassette.title,
                 cassette.synopsis,
