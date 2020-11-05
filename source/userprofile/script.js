@@ -1,5 +1,5 @@
 let imgPreview = document.getElementById("imgPreview");
-let profile_pic_to_send = "no profile picture saved"
+let profile_pic_to_send = "empty"
 
 async function loadUserInfo() {
     let response = await fetch(`https://api.poff.ee/profile`, {
@@ -48,19 +48,30 @@ async function loadUserInfo() {
 
 }
 
-if (localStorage.getItem("ACCESS_TOKEN")) {
+if (validToken) {
     loadUserInfo();
+}else{
+    document.getElementById('notLoggedIn').style.display = 'block'
+    document.getElementById('thisUserProfile').style.display = 'none'
 }
 
 async function sendUserProfile() {
-    console.log('updating user profile.....');
-    let picture = 'no profile picture saved'
-    if(profile_pic_to_send !== "no profile picture saved"){
-        picture ='this users pic is in S3'
+    console.log('updating user profile.....')
+
+    //profile_pic_to_send= no profile picture saved
+    //Kui pilt saadetakse siis profile_pic_to_send= this users picture is in S3
+
+    let pictureInfo ="no profile picture saved"
+
+    if(profile_pic_to_send !== "empty"){
+        pictureInfo ='this users picture is in S3'
+        await uploadPic()
+    }else if(userProfile.picture === 'this users picture is in S3'){
+        pictureInfo = 'this users picture is in S3'
     }
 
     let userToSend = [
-        {Name: "picture",Value: picture },
+        {Name: "picture",Value: pictureInfo },
         {Name: "name",Value: firstName.value},
         {Name: "family_name", Value: lastName.value },
         {Name: "gender",Value: gender.value},
@@ -69,9 +80,7 @@ async function sendUserProfile() {
         {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
-    console.log("kasutaja profiil mida saadan");
-    console.log(userToSend)
-
+    console.log("kasutaja profiil mida saadan ", userToSend);
 
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
@@ -82,9 +91,6 @@ async function sendUserProfile() {
     })).json()
 
 
-    if(profile_pic_to_send !== "no profile picture saved"){
-        await uploadPic()
-    }
 
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
@@ -119,6 +125,8 @@ function validateaAndPreview(file) {
 
 async function uploadPic() {
 
+    console.log("uploading this file to S3....")
+    console.log(profile_pic_to_send)
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
         method: 'GET',
@@ -130,8 +138,6 @@ async function uploadPic() {
     console.log("saadud link on: ")
     console.log(data.link)
 
-    console.log("uploading this file to S3....")
-    console.log(profile_pic_to_send)
 
     //saadab pildi
     let requestOptions = {
@@ -144,7 +150,6 @@ async function uploadPic() {
         redirect: 'follow'
     };
     await fetch(data.link, requestOptions)
-
 
 }
 
