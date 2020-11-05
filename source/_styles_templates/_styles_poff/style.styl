@@ -518,6 +518,13 @@ footer
     grid-template-rows: auto
     padding-top header_height
 
+.grid_search
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-columns: auto
+    grid-template-rows: auto
+    padding-top 150px
+
 .grid_article
   display grid
   grid-template-columns 1fr
@@ -1309,6 +1316,16 @@ row:nth-child(15) > .supporter_logos
 
 .schedule
     padding-top header_height
+
+input, select
+    height 2rem
+    width 20rem
+    background-color white
+    border .5px solid clr_grey_light
+    border-radius 3px
+    -moz-appearance none
+    -webkit-appearance none
+    appearance none
 
 header
     grid-area header
@@ -2436,6 +2453,15 @@ a.btn_popover
         grid-gap 1rem
         padding 1rem
         padding-top header_height
+
+    .grid_search
+        display grid
+        // grid-template-columns 1fr 1fr 1fr
+        grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
+        grid-template-rows auto
+        grid-gap 3rem
+        padding 3rem
+        padding-top 150px
 
     .grid_article
         display grid
