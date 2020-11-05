@@ -29,6 +29,9 @@ async function main() {
             yaml.safeDump([], { 'noRefs': true, 'indent': '4' })
         } else {
             const concerts = JSON.parse(response.body).responseData.concert
+            const concertsFile = path.join(fetchDir, `PL_info.yaml`)
+            fs.writeFileSync(concertsFile, JSON.stringify(concerts, null, 4), 'utf8')
+
             PL_screenings = concerts.map(concert => {
                 return {
                     codeAndTitle: concert.decoratedTitle || null,
@@ -41,6 +44,7 @@ async function main() {
             // var YAML = yaml.safeDump(PL_screenings, { 'noRefs': true, 'indent': '4' })
             // const outFile = path.join(fetchDir, `screenings_urls.yaml`)
             // fs.writeFileSync(outFile, YAML, 'utf8')
+
         }
     })
     // console.log(null === null)
@@ -60,6 +64,11 @@ async function main() {
     PL_screenings = PL_screenings.filter(PL_screening => {
         if (!PL_screening.id) {
             console.log('WARNING: Missing in Strapi:', JSON.stringify(PL_screening, null, 4))
+            return false
+        }
+        const s_screening = s_screenings.filter(_screening => _screening.id === PL_screening.id)[0]
+        if(PL_screening.codeAndTitle === s_screening.codeAndTitle && PL_screening.ticketingUrl === s_screening.ticketingUrl && PL_screening.ticketingId === s_screening.ticketingId){
+            // console.log('Screening up to date');
             return false
         }
         return true

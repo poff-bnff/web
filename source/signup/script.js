@@ -39,10 +39,10 @@ async function loadUserInfo() {
 async function sendNewUser() {
     console.log('sending new user profile.....');
 
-    let profile_pic_to_send= "no profile picture"
+    let profile_pic_to_send= "no profile picture saved"
 
     if (!imgPreview.src.search("/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")){
-        profile_pic_to_send=imgPreview.src
+        profile_pic_to_send= "profile picture saved to S3"
     }
 
     let userToSend = [
@@ -68,14 +68,22 @@ async function sendNewUser() {
     });
     response = await response.json()
 
-    console.log(response.UserConfirmed)
-    if (!response.UserConfirmed){
-        console.log('if');
-    document.getElementById('profileSent').style.display = 'block'
-    document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
-    document.getElementById('loginButton').style.display = 'block'
+    console.log(response)
 
-    // window.open(`${pageURL}/login`, '_self')
+    if(response.Payload){
+        console.log(response.Payload)
+        let providers = JSON.parse(response.Payload)
+
+        document.getElementById('profileSent').style.display = 'block'
+        document.getElementById('profileSent').innerHTML = 'Sul on juba pöffi lehel konto olemas' + providers
+        document.getElementById('loginButton').style.display = 'block'
+    }
+
+    if (!response.UserConfirmed && !response.Payload){
+        document.getElementById('profileSent').style.display = 'block'
+        document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
+        document.getElementById('loginButton').style.display = 'block'
+
     }
 }
 
@@ -95,22 +103,23 @@ fileSelector.addEventListener('change', (event) => {
     }
 });
 
-function readImage(file) {
-    const output = document.getElementById("imgPreview");
+function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    error.innerHTML = ''
+    console.log(file)
     // Check if the file is an image.
-    if (file.type && file.type.indexOf('image') === -1) {
-        console.log('File is not an image.', file.type, file);
-        error.innerHTML = 'File is not an image.'
-        return;
+    if (!file.type.includes("image")) {
+        console.log("File is not an image.", file.type, file);
+        error.innerHTML = "File is not an image.";
+    } else {
+        error.innerHTML = "";
+        //näitab pildi eelvaadet
+        var reader = new FileReader();
+        reader.onload = function () {
+            imgPreview.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        profile_pic_to_send = file
     }
-    const reader = new FileReader();
-    reader.addEventListener('load', (event) => {
-        output.src = event.target.result;
-
-    });
-    reader.readAsDataURL(file);
 }
 
 
@@ -169,8 +178,6 @@ function validateForm() {
 }
 
 
-
-// console.log(output.src)
 
 
 
