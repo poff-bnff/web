@@ -62,6 +62,11 @@ async function main() {
             console.log('WARNING: Missing in Strapi:', JSON.stringify(PL_screening, null, 4))
             return false
         }
+        const s_screening = s_screenings.filter(_screening => _screening.id === PL_screening.id)[0]
+        if(PL_screening.codeAndTitle === s_screening.codeAndTitle && PL_screening.ticketingUrl === s_screening.ticketingUrl && PL_screening.ticketingId === s_screening.ticketingId){
+            // console.log('Screening up to date');
+            return false
+        }
         return true
     })
 
