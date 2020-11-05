@@ -1,4 +1,4 @@
-if (localStorage.getItem("ACCESS_TOKEN")) {
+if (validToken) {
     loadUserInfo();
 }
 
@@ -87,21 +87,6 @@ async function sendNewUser() {
     }
 }
 
-const fileSelector = document.getElementById('profileImg');
-fileSelector.addEventListener('change', (event) => {
-    const fileList = event.target.files;
-    //console.log(fileList);
-    for (const file of fileList) {
-        // Not supported in Safari for iOS.
-        const name = file.name ? file.name : 'NOT SUPPORTED';
-        // Not supported in Firefox for Android or Opera for Android.
-        const type = file.type ? file.type : 'NOT SUPPORTED';
-        // Unknown cross-browser support.
-        const size = file.size ? file.size : 'NOT SUPPORTED';
-        console.log({ file, name, type, size });
-        readImage(file)
-    }
-});
 
 function validateaAndPreview(file) {
     let error = document.getElementById("imgError");

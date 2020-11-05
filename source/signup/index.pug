@@ -13,13 +13,16 @@ block content
                 br
                 br
                 h1.display-4.m-b-2= self.label.userprofile.registerTitle
-
-                a(href=`https://api.poff.ee/auth/facebook`) Facebook
-                br
-                a(href=`https://api.poff.ee/auth/google`) Google
-                br
-                a(href=`https://api.poff.ee/auth/eventival`) Eventival
-                br
+                    br
+                    a(href=`https://api.poff.ee/auth/facebook`)
+                        button.btn.btn-primary(onclick='https://api.poff.ee/auth/facebook') Facebook
+                    br
+                    a(href=`https://api.poff.ee/auth/google`)
+                        button.btn.btn-primary(onclick='https://api.poff.ee/auth/google') Google
+                    br
+                    a(href=`https://api.poff.ee/auth/eventival`)
+                        button.btn.btn-primary(onclick='https://api.poff.ee/auth/eventival') Eventival
+                    br
 
                 div.form
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
