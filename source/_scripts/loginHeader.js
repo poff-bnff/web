@@ -1,32 +1,39 @@
 var pageURL = location.origin
 var userprofilePageURL = pageURL + '/userprofile'
-
 var userProfile
-
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-};
+var validToken = false
 
 if(localStorage.getItem('ACCESS_TOKEN')){
-    var parsedToken = parseJwt(localStorage.getItem("ACCESS_TOKEN"))
+    var token = localStorage.getItem('ACCESS_TOKEN')
+    try{
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        // var parsedToken = JSON.parse(jsonPayload)
+        // console.log("token: ", parsedToken)
+        var expDate = JSON.parse(jsonPayload).exp * 1000
+        var now = new Date().getTime()
 
-    if(parsedToken.exp){
-        console.log("token exp on " + parsedToken.exp)
+        console.log("token aegub: " + expDate)
+        console.log("praegu on: " + now)
+
+        if(now < expDate){
+            validToken = true
+        }else{
+            validToken = false
+        }
     }
-    console.log("token: ")
-    console.log(parsedToken)
-
+    catch(err){
+        //console.log(err)
+        validToken = false
+    }
 }
+console.log("valid token?",validToken)
 
 
-
-if (localStorage.getItem('ID_TOKEN') !== null){
+if (validToken){
     document.getElementById('logOut').style.display = 'block'
     document.getElementById('logInName').style.display = 'block'
     document.getElementById('myFavouriteFilms').style.display = 'block'
@@ -35,7 +42,7 @@ if (localStorage.getItem('ID_TOKEN') !== null){
     loadUserProfileH()
 }
 
-if (localStorage.getItem('ID_TOKEN') === null){
+if (!validToken){
     document.getElementById('logIn').style.display = 'block'
     document.getElementById('signUp').style.display = 'block'
 }
@@ -70,15 +77,15 @@ function loadUserProfileH() {
 
 
 function saveUrl(){
-    localStorage.setItem('url', window.location.href)
+    if(window.location.href !== loacation.origin + "userprofile"){
+        localStorage.setItem('url', window.location.href)
+    }
 }
 
 
 function useUserData(userProf){
     document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
 }
-
-
 
 
 function logOut() {

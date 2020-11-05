@@ -13,10 +13,14 @@ block content
                 br
                 br
                 br
-                h1.display-4.m-b-2(id= 'profileUnFilledMessage' style= {display: 'none'})= self.label.userprofile.registerAddTitle
-                h1.display-4.m-b-2(id= 'profileFilledMessage' style= {display: 'none'})= self.label.userprofile.userprofileTitle
+                h1.display-4.m-b-2#profileUnFilledMessage(style= {display: 'none'})= self.label.userprofile.registerAddTitle
+                h1.display-4.m-b-2#profileFilledMessage(style= {display: 'none'})= self.label.userprofile.userprofileTitle
+                h1.display-4.m-b-2#notLoggedIn(style= {display: 'none'}) Oma profiili nägemiseks
+                    a(style={cursor: 'pointer'} href=`/${lang_path}login`)
+                        h1.display-4.m-b-2= self.label.menu.mainLogin
 
-                div.form
+
+                div.form#thisUserProfile
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group
                         label(for='profileImg')= self.label.userprofile.pictureTitle
