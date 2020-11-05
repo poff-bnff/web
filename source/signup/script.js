@@ -71,18 +71,34 @@ async function sendNewUser() {
     console.log(response)
 
     if(response.Payload){
+        //konto juba olemas
         console.log(response.Payload)
         let providers = JSON.parse(response.Payload)
-
-        document.getElementById('profileSent').style.display = 'block'
-        document.getElementById('profileSent').innerHTML = 'Sul on juba pöffi lehel konto olemas' + providers
-        document.getElementById('loginButton').style.display = 'block'
+        document.getElementById('profileInSystem').style.display = 'block'
+        document.getElementById('signupForm').style.display = 'none'
+        document.getElementById('registerTitle').style.display = 'none'
+        if(!providers.includes("facebook")){
+            document.getElementById('fb').style.display = 'none'
+        }
+        if(!providers.includes("google")){
+            document.getElementById('go').style.display = 'none'
+        }
+        if(!providers.includes("eventival")){
+            document.getElementById('ev').style.display = 'none'
+        }
+        document.getElementById('providers').innerHTML = providers
+        // document.getElementById('loginButton').style.display = 'block'
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     if (!response.UserConfirmed && !response.Payload){
+        //konto loomine õnnestus
+        document.getElementById('signupForm').style.display = 'none'
+        document.getElementById('registerTitle').style.display = 'none'
         document.getElementById('profileSent').style.display = 'block'
-        document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
+        document.getElementById('profileDetails').innerHTML =  email.value
         document.getElementById('loginButton').style.display = 'block'
+        window.scrollTo({top: 0, behavior: 'smooth'});
 
     }
 }

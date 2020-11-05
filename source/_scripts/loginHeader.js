@@ -132,7 +132,6 @@ function useUserData(userProf){
     }
 }
 
-
 function logOut() {
     localStorage.removeItem('ACCESS_TOKEN')
     localStorage.removeItem('ID_TOKEN')

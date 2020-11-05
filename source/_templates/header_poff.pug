@@ -104,8 +104,7 @@ header
                             a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
             li.user_menu.dropdown
-                a
-                    |MINU PÖFF
+                a= self.label.menu.mainUserMenu
                     ul.ul_kaks
                         li#logIn(style={cursor: 'pointer', display: 'none'})
                             a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
@@ -116,7 +115,7 @@ header
                         li#userProfile(style={cursor: 'pointer', display: 'none'})
                             a(onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
                         li#myFavouriteFilms(style={cursor: 'pointer', display: 'none'})
-                            a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= sel.label.label.menu.mainFavo
+                            a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainFavo
                         li#logOut(style={cursor: 'pointer', display: 'none'} )
                             a(onclick='logOut()')= self.label.menu.mainLogout
 
