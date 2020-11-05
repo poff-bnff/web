@@ -5,49 +5,49 @@ block content
 
     .grid_search
 
-        input#search(type='text', placeholder='Search something now!!!')
+        input#search(type='text', placeholder='Search something now!!!').font_p
         //- select#festivalsSelect(name='festivals')
         //- select#programmesSelect(name='festivalProgrammes')
 
 
-        select#programmes_select(name='Programmes')
-            option(value='') PROGRAMMID:
+        select#programmes_select(name='Programmes').font_p
+            option(value='') PROGRAMMID
             each index, key in self.data.filters.programmes
                 option(value=key)= index
 
-        select#languages_select(name='Languages')
-            option(value='') KEEL:
+        select#languages_select(name='Languages').font_p
+            option(value='') KEELED
             each index, key in self.data.filters.languages
                 option(value=key)= index
 
-        select#countries_select(name='Countries')
-            option(value='') RIIK:
+        select#countries_select(name='Countries').font_p
+            option(value='') RIIGID
             each index, key in self.data.filters.countries
                 option(value=key)= index
 
-        select#subtitles_select(name='Subtitles')
-            option(value='') SUBTIITRID:
+        select#subtitles_select(name='Subtitles').font_p
+            option(value='') SUBTIITRID
             each index, key in self.data.filters.subtitles
                 option(value=key)= index
 
-        select#premieretypes_select(name='Premieretypes')
-            option(value='') ESILINASTUSED:
+        select#premieretypes_select(name='Premieretypes').font_p
+            option(value='') ESILINASTUSED
             each index, key in self.data.filters.premieretypes
                 option(value=key)= index
 
-        select#towns_select(name='Towns')
-            option(value='') LINNAD:
+        select#towns_select(name='Towns').font_p
+            option(value='') LINNAD
             each index, key in self.data.filters.towns
                 option(value=key)= index
 
-        select#cinemas_select(name='Cinemas')
-            option(value='') KINOD:
+        select#cinemas_select(name='Cinemas').font_p
+            option(value='') KINOD
             each index, key in self.data.filters.cinemas
                 option(value=key)= index
 
         button(onclick='unselect_all()') X
 
-        h3#nonetoshow.sub_section_headline(style='display: none;') POLE VALIKULE VASTAVAT KUVADA
+        h3#nonetoshow.sub_section_headline(style='display: none;')
 
     - var allFestivalEditions = []
     - var allProgrammes = []
