@@ -6,12 +6,13 @@ function loadMyFavFilms() {
     console.log("FAVO: oled sisse loginud")
     document.getElementById('loginForFavo').style.display = 'none'
     fetchFavFilmsFromDB()
-    document.getElementById('noFavouritesMessage').style.display = 'block'
 }
 
 function loadFavButtons(){
-    document.getElementById('favouriteStatus').style.display = 'block'
-
+    console.log('loadFavButtons')
+    document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
+    document.getElementById('notFavouriteStatus').style.display = 'block'
+    document.getElementById('nupp').style.display = 'block'
 }
 
 
@@ -125,19 +126,22 @@ function saveFilmAsFavourite(movieId) {
 
 function changeFavInfo(status, movieId) {
 
+
     if (status === 'put' && favouritePages.includes(window.location.href)) {
         document.getElementById(movieId + 'nupp').innerHTML = 'FAVO'
         return
     }
 
     if (status === 'put') {
-        document.getElementById('favouriteStatus').innerHTML = 'FAVO'
+        document.getElementById('notFavouriteStatus').style.display = 'none'
+        document.getElementById('favouriteStatus').style.display = 'block'
         document.getElementById('nupp').style.display = 'none'
         document.getElementById('removeFavBtn').style.display = 'block'
     }
 
     if (status === 'delete') {
-        document.getElementById('favouriteStatus').innerHTML = 'Lisa film lemmikuks!'
+        document.getElementById('notFavouriteStatus').style.display = 'block'
+        document.getElementById('favouriteStatus').style.display = 'none'
         document.getElementById('nupp').style.display = 'block'
         document.getElementById('removeFavBtn').style.display = 'none'
     }
