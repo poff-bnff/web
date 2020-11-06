@@ -223,7 +223,7 @@ main.grid_cassette
                             if screening.bookingUrl
                                 a.btn.btn_secondary.active(href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
                             if screening.ticketingUrl
-                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button' target='_blank')= self.label.button.screeningBuyTicket
+                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}` role='button' target='_blank')= self.label.button.screeningBuyTicket
 
 
     if self.media && self.media.trailer && self.media.trailer[0] && self.media.trailer[0].videoCode

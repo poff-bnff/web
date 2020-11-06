@@ -477,7 +477,7 @@ main.grid_film(id= self.id)
                                     if screening.bookingUrl
                                         a.btn.btn_secondary.active(href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
                                     if screening.ticketingUrl
-                                        a.btn.btn_primary.active(href= `${screening.ticketingUrl}/${screening.ticketingId}` role='button' target='_blank')= self.label.button.screeningBuyTicket
+                                        a.btn.btn_primary.active(href= `${screening.ticketingUrl}` role='button' target='_blank')= self.label.button.screeningBuyTicket
                                     //- if screening.screeningTown === 'Tartu'
                                     //-     a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
                                     //-     a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
