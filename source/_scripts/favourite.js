@@ -4,7 +4,6 @@ var favouritePages = [location.origin + '/favourite', location.origin + '/filmid
 
 function loadMyFavFilms() {
     console.log("FAVO: oled sisse loginud")
-    document.getElementById('loginForFavo').style.display = 'none'
     fetchFavFilmsFromDB()
 }
 
