@@ -428,7 +428,6 @@ const remapEventival = async () => {
     const strapi_languages = await getModel('Language')
     const strapi_location = await getModel('Location')
     const strapi_screening_type= await getModel('ScreeningType')
-    const strapi_persons = await getModel('Person')
 
 
     let to_strapi_films = []
@@ -713,20 +712,44 @@ const remapEventival = async () => {
 
         strapi_screening.remoteId = e_screening.id.toString()
 
-        // if (e_screening.presentation.available){
-        //     console.log("presentation", e_screening.id)
-        //     strapi_screening.introQaConversation.yesNo = e_screening.presentation.available.toString()
-        //     console.log('sain ', strapi_screening.introQaConversation.yesNo, 'e info ', e_screening.presentation.available);
-        //     strapi_screening.introQaConversation.type = 'Intro'
-        //     // strapi_screening.introQaConversation.mode =
-        //     strapi_screening.introQaConversation.presenter = strapi_persons.filter(s_person => {
-        //         if( e_screening.presentation.presenters ) {
-        //             return e_screening.presentation.presenter === s_person.firstNameLastName
-        //         }
-        //     }).map( presenter => { return { et: presenter.firstNameLastName }} )
-        //     console.log(strapi_screening.introQaConversation.presenter);
-        //     strapi_screening.introQaConversation.duration = e_screening.presentation.duration
-        // }
+        // make sure obj.keep_prop.list_prop is a list
+        // and replace obj.keep_prop with obj.keep_prop.list_prop
+        const makeList = (obj, keep_prop, list_prop) => {
+            const list_a = obj[keep_prop][list_prop]
+            if (list_a === undefined) {
+                obj[keep_prop] = []
+                return
+            }
+            obj[keep_prop] = (Array.isArray(list_a) ? list_a : [list_a])
+        }
+
+        makeList(e_screening.presentation, 'presenters', 'person')
+        makeList(e_screening.presentation, 'guests', 'person')
+        makeList(e_screening.qa, 'presenters', 'person')
+        makeList(e_screening.qa, 'guests', 'person')
+
+
+        strapi_screening.introQaConversation = []
+        if (e_screening.presentation.available) {
+            strapi_screening.introQaConversation.push({
+                yesNo: true,
+                presenter: e_screening.presentation.presenters.map(qap => {return {et: qap.name}}),
+                guest: e_screening.presentation.guests.map(qap => {return {et: qap.name}}),
+                type: 'Inrto',
+                duration: e_screening.presentation.duration
+            })
+        }
+
+        if (e_screening.qa.available) {
+            strapi_screening.introQaConversation.push({
+                yesNo: true,
+                presenter: e_screening.qa.presenters.map(qap => {return {et: qap.name}}),
+                guest: e_screening.qa.guests.map(qap => {return {et: qap.name}}),
+                type: 'Conversation',
+                duration: e_screening.qa.duration
+            })
+        }
+
         // e_screening.is_first_screening = is_first_screening
 
         // ----   END update strapi screening properties
