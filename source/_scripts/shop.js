@@ -7,6 +7,8 @@ function BuyProduct(categoryId) {
         feedback.innerHTML = "Palun vali makseviis"
     } else {
         console.log("ostad passi kategoorias " + categoryId)
+        saveUrl()
+
 
         var myHeaders = new Headers();
         myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
