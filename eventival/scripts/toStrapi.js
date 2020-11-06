@@ -428,6 +428,7 @@ const remapEventival = async () => {
     const strapi_languages = await getModel('Language')
     const strapi_location = await getModel('Location')
     const strapi_screening_type= await getModel('ScreeningType')
+    const strapi_persons = await getModel('Person')
 
 
     let to_strapi_films = []
@@ -711,6 +712,21 @@ const remapEventival = async () => {
         }).map(cassette => { return {id: cassette.id} })[0] || null
 
         strapi_screening.remoteId = e_screening.id.toString()
+
+        // if (e_screening.presentation.available){
+        //     console.log("presentation", e_screening.id)
+        //     strapi_screening.introQaConversation.yesNo = e_screening.presentation.available.toString()
+        //     console.log('sain ', strapi_screening.introQaConversation.yesNo, 'e info ', e_screening.presentation.available);
+        //     strapi_screening.introQaConversation.type = 'Intro'
+        //     // strapi_screening.introQaConversation.mode =
+        //     strapi_screening.introQaConversation.presenter = strapi_persons.filter(s_person => {
+        //         if( e_screening.presentation.presenters ) {
+        //             return e_screening.presentation.presenter === s_person.firstNameLastName
+        //         }
+        //     }).map( presenter => { return { et: presenter.firstNameLastName }} )
+        //     console.log(strapi_screening.introQaConversation.presenter);
+        //     strapi_screening.introQaConversation.duration = e_screening.presentation.duration
+        // }
         // e_screening.is_first_screening = is_first_screening
 
         // ----   END update strapi screening properties
