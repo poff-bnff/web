@@ -248,6 +248,8 @@ main.grid_film(id= self.id)
                 .f_interactive_item
                     p#favouriteStatus
                         | Lemmikuks lisamiseks logi sisse!
+                    p#idFavo Lemmik
+
                     a.btn.btn_vote.active(style= {display: 'none'} id= 'nupp' onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
                     a.btn.btn_vote.active(style= {display: 'none'} id= 'removeFavBtn' onclick=`removeFilm(${self.id})` role='button' target='_BLANK') X
 

@@ -1,4 +1,4 @@
-console.log(document.referrer)
+console.log("eelmine leht oli", document.referrer)
 
 if (window.location.hash) {
 

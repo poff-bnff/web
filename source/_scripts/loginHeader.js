@@ -117,6 +117,8 @@ function saveUrl(){
 }
 
 
+
+
 function useUserData(userProf){
     try{
         document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
@@ -130,6 +132,11 @@ function useUserData(userProf){
     }
     try{
         loadMyFavFilms()
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        loadFavButtons()
     }catch(err){
         console.log(err)
     }

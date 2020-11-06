@@ -3,12 +3,17 @@ var favouritePages = [location.origin + '/favourite', location.origin + '/filmid
 
 
 function loadMyFavFilms() {
-    console.log("FAVO: ", token)
     console.log("FAVO: oled sisse loginud")
     document.getElementById('loginForFavo').style.display = 'none'
     fetchFavFilmsFromDB()
     document.getElementById('noFavouritesMessage').style.display = 'block'
 }
+
+function loadFavButtons(){
+    document.getElementById('favouriteStatus').style.display = 'block'
+
+}
+
 
 function fetchFavFilmsFromDB() {
     var myHeaders = new Headers();
