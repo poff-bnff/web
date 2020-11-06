@@ -175,7 +175,7 @@ async function showMergeInfo() {
 
 
 function directToSignup() {
-    window.open(`http://localhost:4000/${lang_path}signup`, '_self')
+    window.open(`${location.origin}/signup`, '_self')
 }
 
 
@@ -231,12 +231,14 @@ async function sendResetCode() {
 
     if (resetCode.value) {
         authenticationData = {
-            code: resetCode.value
+            loginUsername: loginUsername.value,
+            code: resetCode.value,
+            newPswd: loginPasswordRep.value
         }
     }
     else if (loginUsername.value) {
         authenticationData = {
-            userName: document.getElementById("loginUsername").value
+            loginUsername: document.getElementById("loginUsername").value
         }
     }
 

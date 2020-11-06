@@ -1,13 +1,3 @@
-
-if (localStorage.getItem('ACCESS_TOKEN') && (document.getElementById("directToLoginButton"))) {
-        document.getElementById("directToLoginButton").style.display = 'none'
-        document.getElementById("buybutton").style.display = 'block'
-}
-
-
-
-
-
 function BuyProduct(categoryId) {
 
     var feedback = document.getElementById("feedback")
@@ -110,9 +100,8 @@ function GetPaymentLinks() {
     });
 }
 
-function checkIfPasswordBuyer(){
-    if (userProfile.picture && userProfile.profile_filled){
-        console.log(true)
+function checkIfPasswordBuyer() {
+    if (userProfile.picture && userProfile.profile_filled) {
         GetPaymentLinks()
     } else if (userProfile.profile_filled) {
         document.getElementById('buybutton').style.display = 'none'
@@ -124,12 +113,15 @@ function checkIfPasswordBuyer(){
 }
 
 function directToLogin() {
-    window.open('http://localhost:4000/login', '_self')
+    window.open(location.origin + '/login', '_self')
 }
 
 function directToUserProfile() {
-    window.open('http://localhost:4000/userprofile', '_self')
+    window.open(location.origin + '/userprofile', '_self')
 }
 
+function saveLangpath(langpath) {
+    console.log(langpath);
+}
 
 

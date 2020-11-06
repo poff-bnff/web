@@ -39,7 +39,9 @@ const EVENTIVAL_REMAPPED = {}
 
 const s_person_id_by_e_fullname = (e_name, s_persons) => {
     const s_person = s_persons.filter(s_person => {
-        return e_name === s_person.firstName + (s_person.lastName ? ' ' + s_person.lastName : '')
+        const full_name = (s_person.firstName ? s_person.firstName : '').trim() + (s_person.lastName ? ' ' + s_person.lastName.trim() : '')
+        return e_name === full_name
+
     })[0]
     if (s_person === undefined) {
         console.log('cant locate', e_name)
@@ -78,39 +80,58 @@ const isUpdateRequired = (old_o, update_o) => {
         }
         return yaml.load(yaml.safeDump(o, {'sortKeys': true}))
     }
-    const valueInArray = (update_value, arr) => {
-        for (const old_value of arr) {
-            if (isUpdateRequiredRecursive(old_value, update_value) === false) {
-                return true
+
+    const valueInArray = (old_arr, update_value) => {
+        for (const old_value of old_arr) {
+            try {
+                if (isUpdateRequiredRecursive(old_value, update_value) === false) {
+                    return true
+                }
+            } catch (error) {
+                // console.log(JSON.stringify({old: old_o, new: update_o}))
+                throw new TypeError(error)
             }
         }
         return false
     }
+
     const isUpdateRequiredRecursive = (old_o, update_o) => {
+        // console.log(JSON.stringify({old_o, update_o}, null, 4))
         if (old_o === update_o) {
             return false
         }
         if (typeof old_o !== typeof update_o) {
-            console.log('typeof old_o !== typeof update_o', old_o, update_o);
+            // console.log('typeof old_o !== typeof update_o', old_o, update_o);
             return true
         }
+        if (old_o === null && update_o !== null) {
+            return true
+        }
+
         if (isObject(update_o)) {
-            if (Object.keys(update_o) === ['id']) {
-                const is_true = update_o.id !== old_o.id
-                if (is_true) {
-                    console.log('object with sole id', update_o);
+            // console.log('Object.keys(update_o)', Object.keys(update_o), ['id'], Object.keys(update_o).toString() === ['id'].toString())
+            if (Object.keys(update_o).toString() === ['id'].toString()) {
+                if (update_o.id === old_o.id) {
+                    return false
                 }
-                return is_true
+                return true
             }
             for (const key in update_o) {
-                if (isUpdateRequiredRecursive(old_o[key], update_o[key])) {
-                    return true
+                try {
+                    // console.log('key', key, old_o[key], update_o[key])
+                    if (isUpdateRequiredRecursive(old_o[key], update_o[key])) {
+                        return true
+                    }
+                } catch (error) {
+                    // console.log(JSON.stringify({old: old_o, new: update_o}))
+                    throw new TypeError(error)
                 }
             }
             return false
         } else if (Array.isArray(update_o)) {
+            // console.log('ARRAY Object.keys(update_o)', Object.keys(update_o), ['id'], Object.keys(update_o).toString() === ['id'].toString())
             for (const update_value of update_o) {
-                if (!valueInArray(update_value, old_o)) {
+                if (!valueInArray(old_o, update_value)) {
                     return true
                 }
             }
@@ -118,7 +139,13 @@ const isUpdateRequired = (old_o, update_o) => {
         }
         return true
     }
-    return isUpdateRequiredRecursive(sortedObject(old_o), sortedObject(update_o))
+
+    try {
+        return isUpdateRequiredRecursive(sortedObject(old_o), sortedObject(update_o))
+    } catch (error) {
+        console.log(JSON.stringify({old: old_o, new: update_o}))
+        throw new TypeError(error)
+    }
 }
 
 
@@ -404,6 +431,7 @@ const remapEventival = async () => {
 
 
     let to_strapi_films = []
+    // console.log('In E_FILMS')
     for (const e_film of EVENTIVAL_FILMS) {
 
         const is_film_cassette = (e_film.film_info
@@ -514,7 +542,7 @@ const remapEventival = async () => {
     // Cassettes
     //
     let to_strapi_cassettes = []
-
+    // console.log('In E_CASSETTES')
     for (const e_cassette of EVENTIVAL_FILMS) {
         let strapi_cassette = strapi_cassettes.filter(s_cassette => s_cassette.remoteId === e_cassette.ids.system_id.toString())[0]
         if (! strapi_cassette) {
@@ -530,6 +558,10 @@ const remapEventival = async () => {
             && e_cassette.film_info.texts
             && e_cassette.film_info.texts.logline
             && e_cassette.film_info.texts.logline !== '' ? true : false)
+
+
+        const strapi_cassette_before = JSON.parse(JSON.stringify(strapi_cassette))
+
         // ---- BEGIN update strapi cassette properties
 
         strapi_cassette.title_et = (e_cassette.titles ? e_cassette.titles : {'title_local': ''}).title_local.toString()
@@ -599,7 +631,11 @@ const remapEventival = async () => {
 
 
         // ----   END update strapi cassette properties
-        to_strapi_cassettes.push(strapi_cassette)
+        const strapi_cassette_after = JSON.parse(JSON.stringify(strapi_cassette))
+        if(isUpdateRequired(strapi_cassette_before, strapi_cassette_after)){
+            to_strapi_cassettes.push(strapi_cassette)
+        }
+
     }
     EVENTIVAL_REMAPPED['E_CASSETTES'] = to_strapi_cassettes
     fs.writeFileSync(path.join(DYNAMIC_PATH, 'E_CASSETTES.yaml'), yaml.safeDump(to_strapi_cassettes, { 'indent': '4' }), "utf8")
@@ -608,8 +644,7 @@ const remapEventival = async () => {
     // Screenings
     //
     let to_strapi_screenings = []
-    // console.log('midagi', EVENTIVAL_SCREENINGS)
-
+    // console.log('In E__SCREENINGS')
     for (const e_screening of EVENTIVAL_SCREENINGS) {
         // console.log('midagi', e_screening.id)
 
@@ -623,18 +658,16 @@ const remapEventival = async () => {
             continue
         }
         // console.log('Update screening in Strapi:', JSON.stringify(e_screening.id))
+        const strapi_screening_before = JSON.parse(JSON.stringify(strapi_screening))
 
         // ---- BEGIN update strapi screening properties
 
-        strapi_screening.is_first_screening = e_screening.type_of_screening.includes('First Screening')
-
-
+        // strapi_screening.is_first_screening = e_screening.type_of_screening.includes('First Screening')
 
         strapi_screening.code = e_screening.code.toString().padStart(6, "0")
         strapi_screening.codeAndTitle = e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local
         // e_screening.ticketingUrl = tuleb piletilevist !!!
 
-        //v4ga v4givaldne ja kandiline
         let newD = new Date(e_screening.start + ET.utc2)
         strapi_screening.dateTime = newD
 
@@ -646,7 +679,7 @@ const remapEventival = async () => {
                 // console.log(e_screening.venue_id, s_scrLocation.remoteId, e_screening.venue_id.toString() === s_scrLocation.remoteId)
                 return e_screening.venue_id.toString() === s_scrLocation.remoteId
             }
-        }).map(s_scrLocation => s_scrLocation.id.toString())[0] || null
+        }).map(s_scrLocation => {return {id: s_scrLocation.id}})[0] || null
         if( !strapi_screening.location ){
             console.log('WARNING: location.remoteId=' + e_screening.venue_id + 'not found in locations.' )
         }
@@ -658,7 +691,7 @@ const remapEventival = async () => {
             if(e_screening.type_of_screening) {
                 return e_screening.type_of_screening.includes(s_screeningType.name)
             }
-        }).map(screening_type => screening_type.id.toString())
+        }).map(screening_type => {return {id: screening_type.id}})
 
         // e_screening.screening_mode = ''
 
@@ -669,19 +702,25 @@ const remapEventival = async () => {
 
                 return languages.includes(s_scrSubLang.code)
             }
-        }).map(subLang => subLang.id.toString())
+        }).map(subLang => {return {id: subLang.id}})
 
         strapi_screening.cassette = strapi_cassettes.filter((s_cassette) => {
             if (e_screening.film && e_screening.film.id) {
                 return s_cassette.remoteId === e_screening.film.id.toString()
             }
-        }).map(cassette => { return {id: cassette.id.toString()} })[0] || null
+        }).map(cassette => { return {id: cassette.id} })[0] || null
 
         strapi_screening.remoteId = e_screening.id.toString()
         // e_screening.is_first_screening = is_first_screening
 
         // ----   END update strapi screening properties
-        to_strapi_screenings.push(strapi_screening)
+
+        const strapi_screening_after = JSON.parse(JSON.stringify(strapi_screening))
+        if(isUpdateRequired(strapi_screening_before, strapi_screening_after)){
+            // console.log(JSON.stringify({strapi_screening_before, strapi_screening_after}));
+            // process.exit(0)
+            to_strapi_screenings.push(strapi_screening)
+        }
 
     }
 
@@ -775,12 +814,9 @@ const submitCassettes = async () => {
         return cassette_from_strapi
     }
 
-    let from_strapi = []
     for (const e_cassette of EVENTIVAL_REMAPPED['E_CASSETTES']) {
-        const cassette_from_strapi = await submitCassette(e_cassette)
-        from_strapi.push(cassette_from_strapi)
+        await submitCassette(e_cassette)
     }
-    return from_strapi
 }
 
 const submitScreenings = async () => {
@@ -808,12 +844,9 @@ const submitScreenings = async () => {
         return screening_from_strapi
     }
 
-    let from_strapi = []
     for (e_screening of EVENTIVAL_REMAPPED['E_SCREENINGS']) {
-        const screening_from_strapi = await submitScreening(e_screening)
-        from_strapi.push(screening_from_strapi)
+        await submitScreening(e_screening)
     }
-    return from_strapi
 }
 
 const main = async () => {
