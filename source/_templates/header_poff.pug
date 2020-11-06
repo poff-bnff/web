@@ -118,6 +118,8 @@ header
                             a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainFavo
                         li#logOut(style={cursor: 'pointer', display: 'none'} )
                             a(onclick='logOut()')= self.label.menu.mainLogout
+                        li#Shop(style={cursor: 'pointer'} )
+                            a(href=`/${lang_path}shop`) Shop
 
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
