@@ -45,7 +45,7 @@ block content
             each index, key in self.data.filters.cinemas
                 option(value=key)= index
 
-        button(onclick='unselect_all()')= self.label.filters.empty
+        button.clear(onclick='unselect_all()')= self.label.filters.empty
 
         h3#nonetoshow.sub_section_headline(style='display: none;')
 
