@@ -33,7 +33,19 @@ function buyerCheck() {
     }
 }
 
-    if(localStorage.getItem('ACCESS_TOKEN')){
+function loadMyFavFilms() {
+    console.log('validToken is fully loaded')
+    if (validToken) {
+        console.log("FAVO: oled sisse loginud")
+        document.getElementById('noFavouritesMessage').style.display = 'block'
+    }
+    if(!validToken){
+        console.log("FAVO: pole sisse loginud")
+        document.getElementById('loginForFavo').style.display = 'block'
+    }
+}
+
+if(localStorage.getItem('ACCESS_TOKEN')){
     var token = localStorage.getItem('ACCESS_TOKEN')
     try{
         var base64Url = token.split('.')[1];
@@ -72,7 +84,6 @@ if (validToken) {
     } catch (error) {
         null
     }
-
     loadUserProfileH()
 }
 
@@ -123,10 +134,15 @@ function useUserData(userProf){
     try{
         document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
     }catch(err){
-
     }
     try{
         buyerCheck()
+    }catch(err){
+
+    }
+    try{
+
+        loadMyFavFilms()
     }catch(err){
 
     }
