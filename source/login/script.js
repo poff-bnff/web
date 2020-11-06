@@ -1,3 +1,5 @@
+console.log(document.referrer)
+
 if (window.location.hash) {
 
 
@@ -271,3 +273,11 @@ function askForNewPassword() {
     document.getElementById('pswdResetEnterNewMessage').style.display = 'block'
     resetPasswordBtn.style.display = 'block'
 }
+
+
+window.addEventListener("keydown", function (event) {
+    if (event.key === "Enter"){
+        console.log("ENTER")
+        loginViaCognito()
+    }
+})

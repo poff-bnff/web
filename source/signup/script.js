@@ -176,7 +176,9 @@ function validateForm() {
     }
 }
 
-
-
-
-
+window.addEventListener("keydown", function (event) {
+    if (event.key === "Enter"){
+        console.log("ENTER")
+        validateForm()
+    }
+})

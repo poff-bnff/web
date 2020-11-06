@@ -7,8 +7,7 @@ block content
         each shop in self.data.shops
 
             section.shop
-
-
+            h3#userNotLoggedIn.sub_section_headline Passide loetelu nägemiseks logi sisse
 
                 //- Poe title
                 if shop.title
@@ -21,7 +20,6 @@ block content
 
                 if shop.prodCatList && shop.prodCatList
                     each prodCatList in shop.prodCatList
-
 
                         //- ProdCatList title
                         if prodCatList.title

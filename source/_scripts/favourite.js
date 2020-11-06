@@ -1,26 +1,14 @@
 var favFilms
 var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
 
-// document.addEventListener("load", loadMyFavFilms());
 
-
-
-// // window.addEventListener('load', (event) => {
-// //     console.log('page is fully loaded');
-// //     loadMyFavFilms()
-// //   });
-
-// function loadMyFavFilms() {
-//     console.log('validToken is fully loaded')
-//     if (validToken) {
-//         console.log("FAVO: oled sisse loginud")
-//         document.getElementById('noFavouritesMessage').style.display = 'block'
-//     }
-//     if(!validToken){
-//         console.log("FAVO: pole sisse loginud")
-//         document.getElementById('loginForFavo').style.display = 'block'
-//     }
-// }
+function loadMyFavFilms() {
+    console.log("FAVO: ", token)
+    console.log("FAVO: oled sisse loginud")
+    document.getElementById('loginForFavo').style.display = 'none'
+    fetchFavFilmsFromDB()
+    document.getElementById('noFavouritesMessage').style.display = 'block'
+}
 
 function fetchFavFilmsFromDB() {
     var myHeaders = new Headers();

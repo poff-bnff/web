@@ -33,17 +33,6 @@ function buyerCheck() {
     }
 }
 
-function loadMyFavFilms() {
-    console.log('validToken is fully loaded')
-    if (validToken) {
-        console.log("FAVO: oled sisse loginud")
-        document.getElementById('noFavouritesMessage').style.display = 'block'
-    }
-    if(!validToken){
-        console.log("FAVO: pole sisse loginud")
-        document.getElementById('loginForFavo').style.display = 'block'
-    }
-}
 
 if(localStorage.getItem('ACCESS_TOKEN')){
     var token = localStorage.getItem('ACCESS_TOKEN')
@@ -82,7 +71,6 @@ if (validToken) {
         document.getElementById('myFavouriteFilms').style.display = 'block'
         document.getElementById('userProfile').style.display = 'block'
     } catch (error) {
-        null
     }
     loadUserProfileH()
 }
@@ -95,7 +83,6 @@ if (!validToken) {
         null
     }
 }
-
 
 function loadUserProfileH() {
     console.log('laen cognitost kasutaja profiili....')
@@ -134,17 +121,17 @@ function useUserData(userProf){
     try{
         document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
     }catch(err){
+        null
     }
     try{
         buyerCheck()
     }catch(err){
-
+        null
     }
     try{
-
         loadMyFavFilms()
     }catch(err){
-
+        console.log(err)
     }
 }
 
