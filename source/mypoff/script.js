@@ -1,9 +1,8 @@
 if(validToken){
     fetchMyPasses()
 }else {
-    document.getElementById("userLoggedIn").style.display ="none"
-    document.getElementById("userNotLoggedIn").style.display="block"
     console.log("sisselogimata")
+    window.open(`${location.origin}/login`, '_self')
 }
 
 async function fetchMyPasses() {

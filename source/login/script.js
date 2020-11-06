@@ -1,7 +1,22 @@
 console.log("eelmine leht oli", document.referrer)
 
-if (window.location.hash) {
 
+if(document.referrer === `${location.origin}/userprofile`){
+    console.log("tulid profiilist")
+    document.getElementById('fromUserProfile').style.display = 'block'
+}
+if(document.referrer === `${location.origin}/minupoff`){
+    console.log("tulid oma passidest")
+    // console.log(self.mypoff.path)
+    document.getElementById('fromMyPoff').style.display = 'block'
+}
+if(document.referrer === `${location.origin}/favourite`){
+    console.log("tulid Lemmikutest")
+    document.getElementById('fromFavo').style.display = 'block'
+}
+
+
+if (window.location.hash) {
 
     const [
         access_token,

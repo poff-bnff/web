@@ -51,10 +51,7 @@ async function loadUserInfo() {
 if (validToken) {
     loadUserInfo();
 }else{
-    // document.getElementById('fromUserProfile').style.display = 'block'
     window.open(`${location.origin}/login`, '_self')
-    // document.getElementById('notLoggedIn').style.display = 'block'
-    // document.getElementById('thisUserProfile').style.display = 'none'
 }
 
 async function sendUserProfile() {
