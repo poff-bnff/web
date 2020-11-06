@@ -134,8 +134,10 @@ function useUserData(userProf){
         loadMyFavFilms()
     }catch(err){
         console.log(err)
+        null
     }
     try{
+        console.log('loadFavbTry');
         loadFavButtons()
     }catch(err){
         console.log(err)
