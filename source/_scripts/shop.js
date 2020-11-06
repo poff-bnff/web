@@ -22,7 +22,9 @@ function BuyProduct(categoryId) {
         }
         console.log(requestOptions)
 
-        fetch('https://api.poff.ee/buy/' + categoryId, requestOptions).then(function (response) {
+        var return_url = window.location.protocol + '//' + window.location.hostname + !{shop_return_url}
+
+        fetch('https://api.poff.ee/buy/' + categoryId + '?return_url=' + return_url, requestOptions).then(function (response) {
             if (response.ok) {
                 return response.json();
             }
