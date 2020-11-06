@@ -3,25 +3,4 @@ script(type="text/javascript").
     //- import * as Sentry from "@sentry/browser";
     //- import { Integrations } from "@sentry/tracing";
 
-    Sentry.init({
-        dsn: 'https://f34cf9e2a3d64bbb94040e5fc465a3a2@o469046.ingest.sentry.io/5497781',
-        //- integrations: [
-        //-     new Integrations.BrowserTracing(),
-        //- ],
-
-        // We recommend adjusting this value in production, or using tracesSampler
-        // for finer control
-        //- tracesSampleRate: 1.0,
-        maxBreadcrumbs: 50,
-        debug: true,
-    });
-    function testSentry() {
-        try {
-            aFunctionThatMightFail();
-        } catch (err) {
-            Sentry.captureException(err);
-        }
-        return 'tested'
-    }
-
 script(src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js')
