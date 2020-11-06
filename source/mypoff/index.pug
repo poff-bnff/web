@@ -8,8 +8,6 @@ block content
 
             section.shop
 
-
-
                 //- Poe title
                 if shop.title
                     h1.section_headline= shop.title
@@ -21,7 +19,6 @@ block content
 
                 if shop.prodCatList && shop.prodCatList
                     each prodCatList in shop.prodCatList
-
 
                         //- ProdCatList title
                         if prodCatList.title
@@ -42,7 +39,7 @@ block content
                                             div
                                                  +euro(product.priceAtPeriod[0].price)
                                             div.fullName nimi
-                                            img.profilePic
+                                            img.profilePic(height="150px")
 
 
                         section.my_passes(id='my_passes')
@@ -53,6 +50,7 @@ block content
                     if typeof shop.shopRules === 'string'
                         p
                             +format(shop.shopRules)
+
 
 
     //- e pood, pealkiri, intro text, toodete leotelu osa, millel samuti pealkiri ja siis listitud tooted, - seos Product_Category’dega
