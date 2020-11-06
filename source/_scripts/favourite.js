@@ -2,18 +2,18 @@ var favFilms
 var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
 
 
-document.addEventListener("DOMContentLoaded", loadMyFavFilms(), false);
-
 function loadMyFavFilms() {
-
-    if (localStorage.getItem('ACCESS_TOKEN') === null) {
-        return
-    }
-
-    if (window.location.href.indexOf("/film/") > -1 || favouritePages.includes(window.location.href)) {
-        fetchFavFilmsFromDB()
-    }
+    console.log("FAVO: oled sisse loginud")
+    document.getElementById('loginForFavo').style.display = 'none'
+    fetchFavFilmsFromDB()
+    document.getElementById('noFavouritesMessage').style.display = 'block'
 }
+
+function loadFavButtons(){
+    document.getElementById('favouriteStatus').style.display = 'block'
+
+}
+
 
 function fetchFavFilmsFromDB() {
     var myHeaders = new Headers();
@@ -65,8 +65,6 @@ function showFavFilms() {
     console.log('showFavFilms');
 
     var filmCards = document.getElementsByClassName('card_film')
-
-
 
     for (var i = 0; i < filmCards.length; i++) {
         var filmId = filmCards[i].id
