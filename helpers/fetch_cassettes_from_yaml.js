@@ -599,8 +599,8 @@ function generateAllDataYAML(allData, lang){
     }
 
     let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(path.join(fetchDir, `search.${lang}.yaml`), searchYAML, 'utf8')
+    fs.writeFileSync(path.join(fetchDir, `search_films.${lang}.yaml`), searchYAML, 'utf8')
 
     let filtersYAML = yaml.safeDump(sorted_filters, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(path.join(fetchDir, `filters.${lang}.yaml`), filtersYAML, 'utf8')
+    fs.writeFileSync(path.join(fetchDir, `filters_films.${lang}.yaml`), filtersYAML, 'utf8')
 }

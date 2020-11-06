@@ -2,63 +2,61 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    input#search(type='text', placeholder='Search something now!!!')
-    //- select#festivalsSelect(name='festivals')
-    //- select#programmesSelect(name='festivalProgrammes')
+
+    .grid_search
+
+        input#search(type='text', placeholder= self.label.filters.search)
+        //- select#festivalsSelect(name='festivals')
+        //- select#programmesSelect(name='festivalProgrammes')
 
 
-    select#programmes_select(name='Programmes')
-        option(value='') PROGRAMMID:
-        each index, key in self.data.filters.programmes
-            option(value=key)= index
+        select#programmes_select(name='Programmes')
+            option(value='')= self.label.filters.programmes
+            each index, key in self.data.filters.programmes
+                option(value=key)= index
 
-    select#languages_select(name='Languages')
-        option(value='') KEEL:
-        each index, key in self.data.filters.languages
-            option(value=key)= index
+        select#languages_select(name='Languages')
+            option(value='')= self.label.filters.languages
+            each index, key in self.data.filters.languages
+                option(value=key)= index
 
-    select#countries_select(name='Countries')
-        option(value='') RIIK:
-        each index, key in self.data.filters.countries
-            option(value=key)= index
+        select#countries_select(name='Countries')
+            option(value='')= self.label.filters.countries
+            each index, key in self.data.filters.countries
+                option(value=key)= index
 
-    select#subtitles_select(name='Subtitles')
-        option(value='') SUBTIITRID:
-        each index, key in self.data.filters.subtitles
-            option(value=key)= index
+        select#subtitles_select(name='Subtitles')
+            option(value='')= self.label.filters.subtitles
+            each index, key in self.data.filters.subtitles
+                option(value=key)= index
 
-    select#premieretypes_select(name='Premieretypes')
-        option(value='') ESILINASTUSED:
-        each index, key in self.data.filters.premieretypes
-            option(value=key)= index
+        select#premieretypes_select(name='Premieretypes')
+            option(value='')= self.label.filters.premieres
+            each index, key in self.data.filters.premieretypes
+                option(value=key)= index
 
-    select#towns_select(name='Towns')
-        option(value='') LINNAD:
-        each index, key in self.data.filters.towns
-            option(value=key)= index
+        select#towns_select(name='Towns')
+            option(value='')= self.label.filters.towns
+            each index, key in self.data.filters.towns
+                option(value=key)= index
 
-    select#cinemas_select(name='Cinemas')
-        option(value='') KINOD:
-        each index, key in self.data.filters.cinemas
-            option(value=key)= index
+        select#cinemas_select(name='Cinemas')
+            option(value='')= self.label.filters.cinemas
+            each index, key in self.data.filters.cinemas
+                option(value=key)= index
 
-    button(onclick='unselect_all()') X
+        button.clear(onclick='unselect_all()')= self.label.filters.empty
 
-    h3#nonetoshow.sub_section_headline(style='display: none;') POLE VALIKULE VASTAVAT KUVADA
+        h3#nonetoshow.sub_section_headline(style='display: none;')
+
 
     - var allFestivalEditions = []
     - var allProgrammes = []
     - var allFestivals = []
 
     if self.data.cassettes
+
+
         main.grid_films
             - var cassettesArray = []
             each cassette in self.data.cassettes.sort(function(a, b){ if(a.title && b.title) { return ('' + a.title).localeCompare(b.title, self.locale); } else { return 0; } })
@@ -75,23 +73,14 @@ block content
                     input#festivalsCassette(type='hidden', value=`${festivalsCassette}`)
 
                     .container_frame_16_9
-                        //- each media in cassette.media
-                            //- - console.log(cassette.media)
-                            if cassette.media['posters']
-                                //- -console.log(cassette.media['posters'][0]['name'])
-                            //-     if self.data.pictures.filmslugs[cassette.path].posters
-                            //-         img.container_contents_16_9(src=`https://assets.poff.ee/img/${self.data.pictures.filmslugs[cassette.path].poster}` alt = film[`filmTitle_${self.locale}`])
-                            //-     else
-                            //-         img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = film[`filmTitle_${self.locale}`])
-                            //- else
-                            //-     img.container_contents_16_9(src='/assets/img/global/placeholder_hd_1.jpg' alt = film[`filmTitle_${self.locale}`])
-
 
                         if cassette.films && cassette.films.length > 1
                             if cassette.cassetteCarouselPicsCassette && cassette.cassetteCarouselPicsCassette[0]
                                 img.container_contents_16_9(src= cassette.cassetteCarouselPicsCassette[0] alt= cassette.title)
                             else if cassette.cassetteCarouselPicsFilms && cassette.cassetteCarouselPicsFilms[0]
                                 img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt= cassette.title)
+                            else
+                                img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
                         else if cassette.films && cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
                             img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt= cassette.title)
                         else
