@@ -32,6 +32,8 @@ block content
                             button.btn.btn-primary(onclick='https://api.poff.ee/auth/google') Google
                         a#ev(href=`https://api.poff.ee/auth/eventival`)
                             button.btn.btn-primary(onclick='https://api.poff.ee/auth/eventival') Eventival
+                        a#loginButton(style={display: 'none'} href=`/${lang_path}login`)
+                            button.btn.btn-primary Logi sisse
 
                 div.form#signupForm
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
