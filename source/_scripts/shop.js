@@ -34,9 +34,9 @@ function BuyProduct(categoryId) {
         var fullHost = window.location.href.slice(0, window.location.href.indexOf("/", 8))
 
         var return_url = fullHost + '/' + langpath + mypoff
-        console.log('return_url ', return_url)
+        var cancel_url = window.location.href
 
-        fetch('https://api.poff.ee/buy/' + categoryId + '?return_url=' + return_url, requestOptions).then(function (response) {
+        fetch('https://api.poff.ee/buy/' + categoryId + '?return_url=' + return_url + '&cancel_url=' + cancel_url, requestOptions).then(function (response) {
             if (response.ok) {
                 return response.json();
             }
