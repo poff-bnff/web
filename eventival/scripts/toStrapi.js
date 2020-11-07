@@ -711,6 +711,45 @@ const remapEventival = async () => {
         }).map(cassette => { return {id: cassette.id} })[0] || null
 
         strapi_screening.remoteId = e_screening.id.toString()
+
+        // make sure obj.keep_prop.list_prop is a list
+        // and replace obj.keep_prop with obj.keep_prop.list_prop
+        const makeList = (obj, keep_prop, list_prop) => {
+            const list_a = obj[keep_prop][list_prop]
+            if (list_a === undefined) {
+                obj[keep_prop] = []
+                return
+            }
+            obj[keep_prop] = (Array.isArray(list_a) ? list_a : [list_a])
+        }
+
+        makeList(e_screening.presentation, 'presenters', 'person')
+        makeList(e_screening.presentation, 'guests', 'person')
+        makeList(e_screening.qa, 'presenters', 'person')
+        makeList(e_screening.qa, 'guests', 'person')
+
+
+        strapi_screening.introQaConversation = []
+        if (e_screening.presentation.available) {
+            strapi_screening.introQaConversation.push({
+                yesNo: true,
+                presenter: e_screening.presentation.presenters.map(qap => {return {et: qap.name}}),
+                guest: e_screening.presentation.guests.map(qap => {return {et: qap.name}}),
+                type: 'Intro',
+                duration: e_screening.presentation.duration
+            })
+        }
+
+        if (e_screening.qa.available) {
+            strapi_screening.introQaConversation.push({
+                yesNo: true,
+                presenter: e_screening.qa.presenters.map(qap => {return {et: qap.name}}),
+                guest: e_screening.qa.guests.map(qap => {return {et: qap.name}}),
+                type: 'QandA',
+                duration: e_screening.qa.duration
+            })
+        }
+
         // e_screening.is_first_screening = is_first_screening
 
         // ----   END update strapi screening properties

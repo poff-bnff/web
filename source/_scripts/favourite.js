@@ -2,18 +2,19 @@ var favFilms
 var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
 
 
-document.addEventListener("DOMContentLoaded", loadMyFavFilms(), false);
-
 function loadMyFavFilms() {
-
-    if (localStorage.getItem('ACCESS_TOKEN') === null) {
-        return
-    }
-
-    if (window.location.href.indexOf("/film/") > -1 || favouritePages.includes(window.location.href)) {
-        fetchFavFilmsFromDB()
-    }
+    console.log("FAVO: oled sisse loginud")
+    document.getElementById('loginForFavo').style.display = 'none'
+    fetchFavFilmsFromDB()
 }
+
+function loadFavButtons(){
+    console.log('loadFavButtons')
+    document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
+    document.getElementById('notFavouriteStatus').style.display = 'block'
+    document.getElementById('nupp').style.display = 'block'
+}
+
 
 function fetchFavFilmsFromDB() {
     var myHeaders = new Headers();
@@ -65,8 +66,6 @@ function showFavFilms() {
     console.log('showFavFilms');
 
     var filmCards = document.getElementsByClassName('card_film')
-
-
 
     for (var i = 0; i < filmCards.length; i++) {
         var filmId = filmCards[i].id
@@ -127,19 +126,22 @@ function saveFilmAsFavourite(movieId) {
 
 function changeFavInfo(status, movieId) {
 
+
     if (status === 'put' && favouritePages.includes(window.location.href)) {
         document.getElementById(movieId + 'nupp').innerHTML = 'FAVO'
         return
     }
 
     if (status === 'put') {
-        document.getElementById('favouriteStatus').innerHTML = 'FAVO'
+        document.getElementById('notFavouriteStatus').style.display = 'none'
+        document.getElementById('favouriteStatus').style.display = 'block'
         document.getElementById('nupp').style.display = 'none'
         document.getElementById('removeFavBtn').style.display = 'block'
     }
 
     if (status === 'delete') {
-        document.getElementById('favouriteStatus').innerHTML = 'Lisa film lemmikuks!'
+        document.getElementById('notFavouriteStatus').style.display = 'block'
+        document.getElementById('favouriteStatus').style.display = 'none'
         document.getElementById('nupp').style.display = 'block'
         document.getElementById('removeFavBtn').style.display = 'none'
     }

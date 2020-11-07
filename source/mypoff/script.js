@@ -1,5 +1,9 @@
-
-fetchMyPasses()
+if(validToken){
+    fetchMyPasses()
+}else {
+    console.log("sisselogimata")
+    window.open(`${location.origin}/login`, '_self')
+}
 
 async function fetchMyPasses() {
     console.log('fetchMyPasses')

@@ -88,25 +88,7 @@ main.grid_cassette
                         //- if self.synopsis
                         //-     p= self.synopsis
 
-    if self.presenters && self.presenters[0]
-        section.f_extra_box
-            each presenter in self.presenters
-                p.dark_1= presenter.name
 
-                .supporter_logo_item_container
-                    - var logoImg = ''
-                    if presenter.logoColour
-                        - logoImg = `https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`
-                    else if presenter.logoBlack
-                        - logoImg = `https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`
-                    else if presenter.logoWhite
-                        - logoImg = `https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`
-
-                    if presenter.homepageUrl
-                        a(href= presenter.homepageUrl).supporter_logo_item_container
-                            img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
-                    else
-                        img.supporter_logo_item(alt=presenter.name data-src= logoImg src= logoImg)
 
         //- section.f_runtime_box
         //-     if film.countriesAndLanguages && film.countriesAndLanguages.languages
@@ -224,6 +206,104 @@ main.grid_cassette
                                 a.btn.btn_secondary.active(href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
                             if screening.ticketingUrl
                                 a.btn.btn_primary.active(href= `${screening.ticketingUrl}` role='button' target='_blank')= self.label.button.screeningBuyTicket
+
+
+
+
+    if self.tags && self.tags.programmes && self.tags.programmes.map(a => a.presentedBy || false).length
+        -
+            var presenters = self.tags.programmes.map((a) => {
+                if (a.presentedBy) {
+                    delete a.presentedBy.id
+                    return a.presentedBy
+                } else {
+                    return false
+                }
+            })
+            var presentedBy = [...new Map(presenters.map(item => [item['presentedByText'], item])).values()]
+    else
+        - var presentedBy = []
+
+    if presentedBy.length
+        section.f_extra_box
+
+            each onePresentedBy in presentedBy
+                if onePresentedBy.organisations && onePresentedBy.organisations.length
+
+                    if onePresentedBy.presentedByText
+                        p.dark_1.text_center= onePresentedBy.presentedByText
+
+                    each presenter in onePresentedBy.organisations
+
+
+                        //- Artikli kontroll algus, vajab veel artikli kättesaamist ja täiendamist, et olemasolul suunata artiklile!
+                        if presenter.poffi_article
+                            - var articleFromYAML = self.data.articles.filter( (a) => { return presenter.poffi_article.id === a.id })
+                            - var article = articleFromYAML[0]
+                            if article.article_types && article.article_types[0]
+
+                                if article.publish && article.title && article.title.length > 1
+                                    - var currentTime = new Date()
+                                    if typeof(article.publishFrom) === 'undefined'
+                                        - var publishFrom= new Date(article.created_at)
+                                    else
+                                        - var publishFrom= new Date(article.publishFrom)
+
+                                    if article.publishUntil
+                                        - var publishUntil = new Date(article.publishUntil)
+
+                                    if (currentTime > publishFrom)
+
+                                        if (!publishUntil || (publishUntil && (publishUntil > currentTime)))
+
+                                            //- p= `${article.title} - ${article.publish} - ${article.publishFrom} - ${article.publishUntil} - ${heroPlusTrioNews} - ${article.id} - ${article.article_types[0].name} - (${publishUntil} > ${currentTime}) - (${(!publishUntil || (publishUntil && (publishUntil > currentTime)))})`
+                                            - articlePublished = true
+                                            - articleSlug = article.slug
+                                            each artType in article.article_types
+                                                - artTypes.push(artType.name.toLowerCase())
+                                                if artType.name.toLowerCase() === defaultTypeIfExists[0]
+                                                    - artTypeForPath = artType.slug.toLowerCase()
+                                                    - break
+                                                else
+                                                    - artTypeForPath = artType.slug.toLowerCase()
+                        //- Artikli kontroll lõpp
+
+                        //- Programmi esitleja nimi
+
+                        if presenter.name
+                            p.dark_1.text_center= presenter.name
+
+                        //- KUI ARTIKKEL KEELES OLEMAS JA PUBLISHED JA PEALKIRJAGA JNE
+                        if typeof articlePublished !== 'undefined' && articlePublished === true
+                            .presenter_logo_item_container
+                                a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`).presenter_logo_item
+                                    if presenter.logoColour
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    else if presenter.logoBlack
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    else if presenter.logoWhite
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                        //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
+                        else if presenter.homepageUrl
+                            .presenter_logo_item_container
+                                a(href= presenter.homepageUrl).presenter_logo_item
+                                    if presenter.logoColour
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    else if presenter.logoBlack
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    else if presenter.logoWhite
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                        //- LOGO ILMA LINGITA
+                        else
+                                if presenter.logoColour
+                                    .presenter_logo_item_container
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                else if presenter.logoBlack
+                                    .presenter_logo_item_container
+                                        img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                else if presenter.logoWhite
+                                    .presenter_logo_item_container
+                                        img.presenter_logo_itemx(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
     if self.media && self.media.trailer && self.media.trailer[0] && self.media.trailer[0].videoCode
