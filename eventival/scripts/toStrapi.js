@@ -735,7 +735,7 @@ const remapEventival = async () => {
                 yesNo: true,
                 presenter: e_screening.presentation.presenters.map(qap => {return {et: qap.name}}),
                 guest: e_screening.presentation.guests.map(qap => {return {et: qap.name}}),
-                type: 'Inrto',
+                type: 'Intro',
                 duration: e_screening.presentation.duration
             })
         }
@@ -745,7 +745,7 @@ const remapEventival = async () => {
                 yesNo: true,
                 presenter: e_screening.qa.presenters.map(qap => {return {et: qap.name}}),
                 guest: e_screening.qa.guests.map(qap => {return {et: qap.name}}),
-                type: 'Conversation',
+                type: 'QandA',
                 duration: e_screening.qa.duration
             })
         }
