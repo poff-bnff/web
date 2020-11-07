@@ -92,6 +92,7 @@ for (const lang of allLanguages) {
     // data = rueten(data, lang)
     // timer.log(__filename, data)
     let slugMissingErrorNumber = 0
+    var templateMissingMessageDisplayed = false
     let slugMissingErrorIDs = []
     let limit = CASSETTELIMIT
     let counting = 0
@@ -445,13 +446,32 @@ function generateYaml(element, lang){
         if (fs.existsSync(cassetteIndexTemplate)) {
             fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
         } else {
-            timer.log(__filename, `ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
+            if (!templateMissingMessageDisplayed) {
+                timer.log(__filename, `ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
+                templateMissingMessageDisplayed = true
+            }
             fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
         }
     }
 }
 
 function generateAllDataYAML(allData, lang){
+
+
+    for (cassette of allData) {
+
+        function picSplit(txt) {
+            return txt.replace('assets.poff.ee/img/', 'assets.poff.ee/img/thumbnail_')
+        }
+
+        cassette.cassetteCarouselPicsCassetteThumbs = (cassette.cassetteCarouselPicsCassette || []).map(txt => picSplit(txt))
+        cassette.cassetteCarouselPicsFilmsThumbs = (cassette.cassetteCarouselPicsFilms || []).map(txt => picSplit(txt))
+        cassette.cassettePostersCassetteThumbs = (cassette.cassettePostersCassette || []).map(txt => picSplit(txt))
+        cassette.cassettePostersFilmsThumbs = (cassette.cassettePostersFilms || []).map(txt => picSplit(txt))
+
+    }
+
+
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
     timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
