@@ -22,7 +22,19 @@ function BuyProduct(categoryId) {
         }
         console.log(requestOptions)
 
-        var return_url = window.location.protocol + '//' + window.location.hostname + !{shop_return_url}
+        var mypoff
+        if (langpath === 'en/'){
+            mypoff = 'mypoff'
+        } else if (langpath === 'ru/'){
+            mypoff = 'moipoff'
+        } else {
+            mypoff = 'minupoff'
+        }
+
+        var fullHost = window.location.href.slice(0, window.location.href.indexOf("/", 8))
+
+        var return_url = fullHost + '/' + langpath + mypoff
+        console.log('return_url ', return_url)
 
         fetch('https://api.poff.ee/buy/' + categoryId + '?return_url=' + return_url, requestOptions).then(function (response) {
             if (response.ok) {
