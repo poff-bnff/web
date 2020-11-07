@@ -372,36 +372,26 @@ for (const lang of allLanguages) {
                         scc_film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0) })
                         for (roleIx in scc_film.credentials.rolePerson) {
                             let rolePerson = scc_film.credentials.rolePerson[roleIx]
-                            if (rolePerson !== undefined) {
-                                if (rolePerson.person && rolePerson.person.id) {
-                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })
-                                    let personCopy = JSONcopy(personFromYAML[0])
-                                    let searchRegExp = new RegExp(' ', 'g')
+                            if (rolePerson === undefined) { continue }
+                            if (rolePerson.person) {
+                                let searchRegExp = new RegExp(' ', 'g')
+                                const role_name_lc = rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')
+                                rolePersonTypes[role_name_lc] = rolePersonTypes[role_name_lc] || []
 
-                                    rolePerson.person = rueten(personCopy, lang)
-
-                                    if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
+                                if (rolePerson.person.firstNameLastName) {
+                                    rolePersonTypes[role_name_lc].push(rolePerson.person.firstNameLastName)
+                                } else if (rolePerson.person.id) {
+                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })[0]
+                                    if (personFromYAML.fullName) {
+                                        rolePersonTypes[role_name_lc].push(personFromYAML.fullName)
                                     }
-                                    if (rolePerson.person) {
-                                        let fullName = undefined
-                                        if (rolePerson.person.firstName) {
-                                            fullName = rolePerson.person.firstName
-                                        }
-                                        if (rolePerson.person.lastName) {
-                                            fullName = `${fullName !== undefined ? fullName : ''} ${rolePerson.person.lastName}`
-                                        }
-
-                                        if (fullName !== undefined && fullName.length > 2) {
-                                            rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(fullName.trim())
-                                        }
-                                    }
-                                } else {
-                                    // timer.log(__filename, film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                                 }
+                            } else {
+                                // timer.log(__filename, film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                             }
                             //- - timer.log(__filename, 'SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
+                        // console.log('foo2', scc_film.id, rolePersonTypes);
                         scc_film.credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
