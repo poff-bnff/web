@@ -445,22 +445,28 @@ main.grid_film(id= self.id)
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.subtitles
                                                 span.screening_info_value= film.subtitles.map(subtitlesNames).join(', ')
-                                        if screening.screeningIntroGuests
+
+
+                                        - var iqnac = screening.introQaConversation
+                                        //- Screening Intro
+                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.guest }).length > 0
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.introGuests
-                                                span.screening_info_value= screening.screeningIntroGuests
-                                        if screening.screeningIntroPresenter
+                                                span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].guest.join(', ')
+                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.presenter }).length > 0
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.introPresenter
-                                                span.screening_info_value= screening.screeningIntroPresenter
-                                        if screening.screeningQaGuests
+                                                span.screening_info_label= self.label.screening.introPresenters
+                                                span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].presenter.join(', ')
+                                        //- Screening QandA
+                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.guest }).length > 0
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.qaGuests
-                                                span.screening_info_value= screening.screeningQaGuests
-                                        if screening.screeningQaPresenter
+                                                span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].guest.join(', ')
+                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.presenter }).length > 0
                                             .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.qaPresenter
-                                                span.screening_info_value= screening.screeningQaPresenter
+                                                span.screening_info_label= self.label.screening.introPresenters
+                                                span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].presenter.join(', ')
+
 
                                         if screening.extraInfo && typeof screening.extraInfo !== 'object'
                                             .str_info_grid_3
