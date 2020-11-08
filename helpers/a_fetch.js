@@ -2,11 +2,15 @@ const http = require('http')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
+const { strapiAuth } = require("./strapiAuth.js")
+const { strapiQuery, getModel } = require("./strapiQuery.js")
+const { spin } = require("./spinner")
 
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
 fs.mkdirSync(dirPath, { recursive: true })
 
+const DOMAIN = process.env['DOMAIN'] || false
 const modelFile = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(modelFile, 'utf8'))
 
@@ -19,46 +23,12 @@ for (const key in DATAMODEL) {
     }
 }
 
-async function strapiAuth() {
+async function strapiFetch(modelName, token) {
 
-    return new Promise((resolve, reject) => {
-        const postData = {
-            identifier: process.env['StrapiUserName'],
-            password: process.env['StrapiPassword']
+    let checkDomain = function(element) {
+        if (!DOMAIN) {
+            return true
         }
-
-        const options = {
-            hostname: process.env['StrapiHost'],
-            path: '/auth/local',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-
-        const request = http.request(options, (response) => {
-            response.setEncoding('utf8')
-            let tokenStr = ''
-            response.on('data', function (chunk) {
-                tokenStr += chunk
-            })
-
-            response.on('end', function () {
-                tokenStr = JSON.parse(tokenStr)['jwt']
-                resolve(tokenStr)
-            })
-
-        })
-
-        request.on('error', reject)
-        request.write(JSON.stringify(postData))
-        request.end()
-    })
-}
-
-async function strapiFetch(modelName, token){
-
-    let checkDomain = function(element){
         // kui on domain, siis element['domains'] = [domain]
         if (element['domain']){
             element['domains'] = [element['domain']]
@@ -86,6 +56,12 @@ async function strapiFetch(modelName, token){
     if (! '_path' in DATAMODEL[modelName]) {
         throw new Error ('Missing _path in model')
     }
+    /* TODO #437 asenda strapist tirimine strapiQuery ja getModel'iga
+    process.stdout.write('\nFetching ' + modelName + ' ')
+    const strapiData = await getModel(modelName)
+    strapiData = strapiData.filter(checkDomain)
+    resolve(strapiData)
+    */
     let dataPath = DATAMODEL[modelName]['_path']
 
     return new Promise((resolve, reject) => {
@@ -99,16 +75,18 @@ async function strapiFetch(modelName, token){
             }
         }
 
-        process.stdout.write('Fetching ' + modelName + ' ')
+        process.stdout.write(modelName)
+        spin.start()
 
         const request = http.request(options, (response) => {
             response.setEncoding('utf8')
             let allData = ''
             response.on('data', function (chunk) {
                 allData += chunk
-                process.stdout.write('.')
+                // process.stdout.write('.')
             })
             response.on('end', function () {
+                spin.stop()
                 if (response.statusCode === 200) {
                     let strapiData = JSON.parse(allData)
 
@@ -118,13 +96,14 @@ async function strapiFetch(modelName, token){
 
                     strapiData = strapiData.filter(checkDomain)
                     resolve(strapiData)
-                    console.log('.')
+                    // console.log('.')
                 } else {
-                    console.log(response.statusCode)
+                    process.stdout.write(' [E:' + response.statusCode + ']')
                     resolve([])
                 }
             })
             response.on('error', function (thisError) {
+                spin.stop()
                 console.log(thisError)
                 reject(thisError)
             })
@@ -135,12 +114,21 @@ async function strapiFetch(modelName, token){
     })
 }
 
+const isEmpty = (p) => {
+    return typeof p === 'undefined'
+    || p === false
+    || p === null
+    || p === ''
+    || (Array.isArray(p) && p.length === 0)
+    || (Object.keys(p).length === 0 && p.constructor === Object)
+}
+
 
 function TakeOutTrash (data, model, dataPath) {
     const isObject = (o) => { return typeof o === 'object' && o !== null }
     const isArray = (a) => { return Array.isArray(a) }
-    const isEmpty = (p) => { return !p || p == null || p === '' || p === [] } // "== null" checks for both null and for undefined
 
+    // console.log('Grooming', dataPath, data)
     // console.log('Grooming', dataPath, data, model)
     // eeldame, et nii data kui model on objektid
 
@@ -149,6 +137,7 @@ function TakeOutTrash (data, model, dataPath) {
     for (const key of keysToCheck) {
         if (isEmpty(data[key])) { delete(data[key]); continue }
         // console.log(key, model)
+        // console.log('key', key)
         if (['id', '_path', '_model'].includes(key)) {
             report.nobrainers.push(key)
             // console.log('Definately keep', key, 'in', dataPath)
@@ -161,21 +150,34 @@ function TakeOutTrash (data, model, dataPath) {
             continue
         }
         report.keepers.push(key)
-        // console.log('Keep', key, 'in', dataPath)
-        const nextData = data[key]
+        // console.log('Keep', key, 'in', dataPath, data[key])
+        let nextData = data[key]
         const nextModel = model[key]
 
         if (isArray(nextData) ^ isArray(nextModel)) { // bitwise OR - XOR: true ^ false === false ^ true === true
-            console.log(nextData, nextModel)
+            console.log('next', nextData, key)
             throw new Error('Data vs model mismatch. Both should be array or none of them.')
         }
         if (isArray(nextData) && isArray(nextModel)) {
+            let filtered = []
             for (const nd of nextData) {
-                if (isEmpty(nd)) { continue }
+                // console.log('nd,', nd, key);
+                if (isEmpty(nd)) {
+                    // console.log(nd, 'on tyhi')
+                    continue
+                }
+                // console.log('lisan', nd);
+                filtered.push(nd)
                 TakeOutTrash(nd, nextModel[0], key)
             }
+            if(filtered.length === 0) {
+                // console.log('on tyhi kyll');
+                delete(data[key])
+            } else {
+                data[key] = filtered
+            }
         } else if (isObject(nextData) && isObject(nextModel)) {
-            TakeOutTrash(nextData, nextModel, key)
+            TakeOutTrash(data[key], nextModel, key)
         }
     }
     // console.log('Reporting', dataPath, report)
@@ -249,11 +251,18 @@ const foo = async () => {
     // Esimese sammuna 1. rikastame Strapist tulnud andmeid, mis liigse sygavuse tõttu on jäänud tulemata.
     // Rikastame kõiki alamkomponente, millel mudelis on _path defineeritud
     //
+    console.log('Fetching from Strapi:')
+    let is_first_model = true
     for (const modelName in DATAMODEL) {
         if (DATAMODEL.hasOwnProperty(modelName)) {
             let model = DATAMODEL[modelName]
             // '_path' muutujas on kirjas tee andmete küsimiseks
             if (model.hasOwnProperty('_path')) {
+                if (is_first_model) {
+                    is_first_model = false
+                } else {
+                    process.stdout.write(', ')
+                }
                 let modelData = await strapiFetch(modelName, token)
                 // otsime kirjet mudelis =value
                 for (const property_name in model) {
@@ -271,11 +280,13 @@ const foo = async () => {
                 }
                 strapiData[modelName] = modelData
                 // console.log('done replacing', modelName)
+                process.stdout.write(' (' + modelData.length + ')')
             }
         }
     }
 
-
+    process.stdout.write('\nCleaning StrapiData')
+    spin.start()
     for (const modelName in strapiData) {
         if (strapiData.hasOwnProperty(modelName)) {
             const modelData = strapiData[modelName]
@@ -293,6 +304,8 @@ const foo = async () => {
             }
         }
     }
+    spin.stop()
+    console.log('.')
 
     let yamlStr = yaml.safeDump(JSON.parse(JSON.stringify(strapiData)), { 'noRefs': true, 'indent': '4' })
     // let yamlStr = yaml.safeDump(strapiData, { 'noRefs': true, 'indent': '4' })

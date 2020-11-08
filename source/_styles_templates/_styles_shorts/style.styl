@@ -39,7 +39,7 @@ bg_dark_1 = #0E1417
 bg_dark_2 = #192024
 bg_dark_3 = #1C272E
 bg_dark_4 = #29333A
-bg_light_1 = #eeeeee
+bg_light_1 = #ffffff
 bg_light_2 = #dddddd
 bg_light_3 = #cccccc
 bg_color_1 = #ffffff
@@ -48,21 +48,25 @@ bg_color_3 = #f7f7ff
 bg_color_4 = #eeeeff
 clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
-// clr_primary = #ec008c
-clr_primary = #F39133 // PÖFF orange
+clr_dark_semi = rgba(23,33,33,.5)
+clr_primary = #3EADEF
+// clr_primary = #164df2
+clr_primary_text = #164df2
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
 clr_keyword = #3EADEF
 clr_elisa_stage = #0019af
-clr_header_bg = #0E1417
 clr_tartuff_red = #c92c33
 clr_popover = #0E1417
 clr_covid = #bc06c6
 clr_vote = #00aeef
+clr_grey_light = #dddddd
 
-header_height = 97px
+header_height = 100px
 full_height = calc(100vh - header_height)
+clr_header_text = #0E1417
+clr_header_bg = #ffffff
 
 breakpoint-lg = 992px
 breakpoint-md = 768px
@@ -106,7 +110,7 @@ body
     font-size 16px
     line-height 1.618rem
     color white_96
-    background-color bg_dark_1
+    background-color bg_light_1
     font-family font_h
     margin 0
     // padding-left 0
@@ -131,6 +135,11 @@ body
 .ghost_blue
     color ghost_blue
 
+.font_weight_200
+    font-weight 200
+
+.font_weight_300
+    font-weight 300
 
 .font_weight_400
     font-weight 400
@@ -144,6 +153,9 @@ body
 .font_weight_700
     font-weight 700
 
+h3
+    font-weight 400
+
 h4
     font-size 1.4rem
     font-family font_h
@@ -152,33 +164,170 @@ h4
 .dark
     color dark_1
 
-/* Header & Nav styles */
+// HEADER & NAV --------------------
 
 header
+    display grid
+    grid-template-columns auto 1fr
     background-color clr_header_bg
     width 100%
-    text-align center
+    height auto
+    // height header_height
+    // text-align center
     position fixed
     z-index 900
-    display flex
-    justify-content flex-start
+    // display flex
+    // justify-content flex-start
 
 .main_menu
     position absolute
-    text-align left
+    font-family font_h
+    font-weight 300
+    text-align center
     left 0
     background-color clr_header_bg
     width 100%
     padding-top 1rem
     padding-bottom 1rem
     display none
+    margin-top 5rem
+    // text-align right
+    // height header_height
+
+.main_menu ul
+    margin 0
+    padding 0
+    list-style none
+    // border dashed red
+    width 100%
+
+.main_menu li
+    margin-top .5rem
+    margin-bottom .5rem
+    // margin-left 1rem
+    // border dashed blue
+
+.main_menu a
+    color clr_header_text
+    font-size 1rem
+    text-decoration none
+    text-transform uppercase
+
+.main_menu a:hover
+    color clr_primary_text
+    text-decoration none
+
+.main_menu_toggle
+    display none
+
+// .main_menu_toggle:checked~main_menu
+//     display block
+
+.main_menu_toggle:checked~.main_menu
+    display flex
+    width 100vw
+    height calc(100vh - 100px)
+    max-height 100vh
+    width 100vw
+    overflow-y scroll
+    -webkit-overflow-scrolling:touch
+    padding-bottom 2rem
+
+.main_menu_toggle_label
+    position absolute
+    top 0
+    right 0
+    margin-right 1rem
+    height 100%
+    display flex
+    align-items center
+
+.main_menu_toggle_label span,
+.main_menu_toggle_label span::before,
+.main_menu_toggle_label span::after
+    display block
+    background clr_header_text
+    height 1px
+    width 1.6rem
+    border-radius 2px
+    position relative
+
+.main_menu_toggle_label span::before,
+.main_menu_toggle_label span::after
+    content ""
+    position absolute
+
+.main_menu_toggle_label span::before
+    bottom 7px
+
+.main_menu_toggle_label span::after
+    top 7px
+
+.ul_kaks
+    text-align right
+    text-transform none
+    // margin-top 3rem
+    // padding-top 5rem
+    // border dashed blue
+
+
+.ul_kaks li
+    padding-right 30vw
+
+
+.ul_kaks a
+    color dark_4
+    text-transform none
+
+.org_menu
+    displey none
+    position absolute
+    // display inline
+    bottom 0
+    height 1rem
+    // right 0
+    // padding-right 1rem
+    // text-align center
+    // padding-top .1rem
+
+.org_item
+    // display inline
+    font-size 14px
+    font-family font_h
+    color dark_4
+    padding-left 1rem
+    padding-right 1rem
+    // padding-right 1rem
+    a
+        text-decoration none
+        font-size 14px
+
+// .ul_kaks:first-child
+//     padding-top 5rem
+//     padding-right 50vw
+
+// HEADER & NAV --------------------
+
+
+// .main_menu
+//     position absolute
+//     text-align left
+//     left 0
+//     background-color clr_header_bg
+//     width 100%
+//     padding-top 1rem
+//     padding-bottom 1rem
+//     display none
 
 footer
     grid-area footer
     border-top 1px solid rgba(255,255,255,.1)
     padding 10vw
+    background-color bg_dark_1
+    min-height calc(100vh - 97px)
 
 .grid_footer_row
+    grid-area footer
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
@@ -192,6 +341,14 @@ footer
     align-self start
     text-align center
 
+.footer_row_item_text
+    font-family font_h
+    text-align left
+    font-size 1rem
+    color white_96
+    padding-left 2rem
+    padding-right 2rem
+
 .footer_h
     // display inline
     font-family font_h
@@ -202,75 +359,89 @@ footer
     text-decoration none
     text-transform uppercase
 
-
-nav
-    ul
-        padding 0
-        margin 0
-        list-style none
-    li
-        margin-top .5rem
-        margin-bottom .5rem
-        margin-left 1rem
-        a
-            color white_96
-            font-size 1rem
-            text-decoration none
-            text-transform uppercase
-            &:hover
-            &:focus
-                color clr_primary
-                // color ghost_blue
-                text-decoration none
-                opacity 0.99
-                transform scale(1.07, 1.07)
+.footer_p
+    // display inline
+    font-family font_p
+    // font-size 1.618rem
+    // font-weight 500
+    color white_96
+    font-size 1rem
+    line-height 1.618
+    text-align left
+    text-decoration none
+    text-transform uppercase
 
 
-.main_menu_toggle
-    display none
-    &:checked
-        & ~ main_menu
-            display block
+// VANA NAV
+// nav
+//     ul
+//         padding 0
+//         margin 0
+//         list-style none
+//     li
+//         margin-top .5rem
+//         margin-bottom .5rem
+//         margin-left 1rem
+//         a
+//             color white_96
+//             font-size 1rem
+//             text-decoration none
+//             text-transform uppercase
+//             &:hover
+//             &:focus
+//                 color clr_primary
+//                 // color ghost_blue
+//                 text-decoration none
+//                 opacity 0.99
+//                 transform scale(1.07, 1.07)
 
-.main_menu_toggle_label
-    position absolute
-    top 0
-    right 0
-    margin-right 1rem
-    height 100%
-    display flex
-    align-items center
-    span
-        &::before
-            bottom 7px
-        &::after
-            top 7px
 
-.main_menu_toggle_label span,
-.main_menu_toggle_label span::before,
-.main_menu_toggle_label span::after
-    display block
-    background white_96
-    height 1px
-    width 1.6rem
-    border-radius 2px
-    position relative
+// .main_menu_toggle
+//     display none
+//     &:checked
+//         & ~ main_menu
+//             display block
 
-.main_menu_toggle_label span::before,
-.main_menu_toggle_label span::after
-    content ""
-    position absolute
+// .main_menu_toggle_label
+//     position absolute
+//     top 0
+//     right 0
+//     margin-right 1rem
+//     height 100%
+//     display flex
+//     align-items center
+//     span
+//         &::before
+//             bottom 7px
+//         &::after
+//             top 7px
+
+// .main_menu_toggle_label span,
+// .main_menu_toggle_label span::before,
+// .main_menu_toggle_label span::after
+//     display block
+//     background white_96
+//     height 1px
+//     width 1.6rem
+//     border-radius 2px
+//     position relative
+
+// .main_menu_toggle_label span::before,
+// .main_menu_toggle_label span::after
+//     content ""
+//     position absolute
 
 .lang_menu
     color white_96
     a
         color ghost_blue
-        padding-left 1rem
+        padding-left .6rem
+        padding-right .6rem
 
 .logo
     margin 1rem
     padding 0
-    width 170px
+    width 150px
 
 .logo_img:hover,
 .logo_img:focus
@@ -297,15 +468,31 @@ nav
   grid-template-areas   "f_img_slider_box"\
                         "f_title_box"\
                         "f_synopsis_box"\
+                        "f_cred_box"\
                         "f_runtime_box"\
                         "f_interactive_box"\
                         "f_screenings_box"\
-                        "f_cred_box"\
-                        "f_dir_bio_box"\
+                        "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_trailer_box"\
                         "f_imgs_box"
+
+.grid_cassette
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
+                        "f_title_box"\
+                        "f_synopsis_box"\
+                        "f_cred_box"\
+                        "f_runtime_box"\
+                        "f_screenings_box"\
+                        "f_dir_box"\
+                        "f_extra_box"\
+                        "f_qaclip_box"\
+                        "f_trailer_box"\
 
 .grid_films
     display: grid
@@ -340,8 +527,8 @@ nav
 
 .grid_flickr
     display grid
-    grid-template-columns repeat(auto-fit, minmax(450px, 1fr))
-    // repeat(auto-fit, minmax(450px, 1fr))
+    grid-template-columns repeat(auto-fill, minmax(450px, 1fr))
+    // repeat(auto-fill, minmax(450px, 1fr))
     grid-template-rows auto
     margin 0
     padding 0
@@ -371,9 +558,9 @@ nav
     padding-top header_height
 
 .hero_head
-    position relative
-    // height full_height
-    height calc(100vh - 97px)
+        position relative
+        // height full_height
+        height calc(100vh - 97px)
 
 .hero_headline_box
     position absolute
@@ -391,22 +578,22 @@ nav
 .hero_headline_box_1
     background rgba(10,0,3,.6)
     text-align left
-    padding 3rem 3rem 3rem 3rem
+    padding 2.4rem 2.4rem 2.4rem 2.4rem
 
 .hero_headline_box_2
     background rgba(255,255,255,.8)
     text-align left
     vertical-align middle
-    padding 3rem 3rem 3rem 3rem
+    padding 2.4rem 2.4rem 2.4rem 2.4rem
     align-self stretch
     // height 100%
 
 .hero_headline
     font-family font_h
-    font-size calc(1.9rem + 1.5vw)
+    font-size calc(1rem + 2.4vw)
     text-decoration none
     text-align left
-    font-weight 600
+    font-weight 400
     line-height 1.4
     letter-spacing 0.04rem
     // padding-top 1rem
@@ -482,13 +669,15 @@ a .dark:hover
     display grid
     grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
     // grid-gap calc(1.9rem + 1.5vw)
-    grid-gap 0
-    padding-top calc(1.9rem + 1.5vw)
-    padding-bottom calc(1.9rem + 1.5vw)
-    justify-content center
-    align-content center
-    justify-items stretch
-    align-items stretch
+    grid-gap 2rem
+    // padding-top calc(1.9rem + 1.5vw)
+    // padding-bottom calc(1.9rem + 1.5vw)
+    // padding-top 2rem
+    padding-bottom 2rem
+    // justify-content center
+    // align-content center
+    // justify-items stretch
+    // align-items stretch
     background-color white
 
 .trio_image
@@ -498,15 +687,15 @@ a .dark:hover
     width 100%
     height 100%
     background rgba(255,255,255,.96)
-    text-align left
-    padding 1rem 2rem 1rem 2rem
-    outline .5px dashed dark_5
+    // text-align left
+    // padding 1rem 2rem 1rem 2rem
+    // outline .5px dashed dark_5
 
 .trio_headline
     color dark_4
     font-size 1.5rem
     font-family font_h
-    font-weight 500
+    font-weight 400
     padding-top .5rem
     letter-spacing 0.01em
 
@@ -517,6 +706,50 @@ a .dark:hover
     padding-top .7rem
     color dark_1
     font-weight 300
+
+.trio_title_headline_box
+    position absolute
+    bottom 0
+    left 0
+    width 72%
+    // background rgba(10,0,3,.6)
+    // background rgba(236,0,140,.6)
+    // background rgba(90,0,60,.7)
+    // background-color clr_primary
+    text-align left
+    // padding 1rem 1rem 1rem 0rem
+
+.trio_title_detailed
+    font-family font_h
+    font-size calc(1.618rem + .5vw)
+    text-decoration none
+    text-align left
+    font-weight 400
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
+.trio_title_detailed span
+    // background-color rgba(255,255,255,.9)
+    background-color white
+    color dark_4
+    display inline
+    padding-left 2rem
+    padding-right 1.2rem
+    padding-top .5rem
+    padding-bottom .2rem
+    font-size calc(1.168rem + .5vw)
+    line-height 1.55
+    box-decoration-break clone
+
+
+
+
+
 
 
 
@@ -561,6 +794,7 @@ a .dark:hover
     // padding 2rem 2rem 2rem 2rem
     padding 0
     margin 0
+    border .5px solid clr_grey_light
     // border 1px solid red
 
 // .viieka_item:first-child
@@ -572,6 +806,16 @@ a .dark:hover
 // .viieka_item:nth-child(5)
 //     grid-column span 2
 
+.kuueka_item
+    width 100%
+    height 100%
+    background rgba(255,255,255,.96)
+    text-align left
+    // padding 2rem 2rem 2rem 2rem
+    padding 0
+    margin 0
+    border .5px solid clr_grey_light
+
 .viieka_body
     margin 0
     padding 1rem 1rem 1rem 1rem
@@ -580,51 +824,283 @@ a .dark:hover
     color dark_4
     font-size 1.5rem
     font-family font_h
-    font-weight 500
+    font-weight 400
     padding-top .5rem
     letter-spacing 0.01em
 
 .footer_logos
     display grid
-    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
+    grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
+    grid-auto-rows minmax(2rem, 3rem)
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logos:first-child
-    display grid
-    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
-    justify-content center
-    justify-items center
-    align-items center
-    grid-gap 2rem
-
-.footer_logos:nth-child(2)
+row:first-child > .footer_logos
     display grid
     grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
+    grid-auto-rows minmax(4rem, 5rem)
+    // grid-template-rows 3.6rem
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
-.footer_logos:nth-child(3)
+row:nth-child(2) > .footer_logos
     display grid
-    grid-template-columns repeat(auto-fit, minmax(10rem, 12rem))
+    grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
+    grid-auto-rows minmax(3rem, 4rem)
     justify-content center
     justify-items center
     align-items center
     grid-gap 2rem
 
+row:nth-child(3) > .footer_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
+    grid-auto-rows minmax(3rem, 4rem)
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
 
-.footer_logo_item:first-child
-    width: 70%
+row:nth-child(4) > .footer_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
+    grid-auto-rows minmax(2rem, 3rem)
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
 
-.footer_logo_item:nth-child(2)
-    width: 70%
+row:nth-child(5) > .footer_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
+    grid-auto-rows minmax(2rem, 3rem)
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
 
-.footer_logo_item:nth-child(3)
-    width: 70%
+row:nth-child(6) > .footer_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(6rem, 6rem))
+    grid-auto-rows minmax(2rem, 3rem)
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 2rem
+
+.footer_logo_item_container
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 100%
+    // border 1px solid blue
+
+.footer_logo_item
+    width 100%
+    max-height 100%
+    object-fit contain
+
+
+.supporters,
+.supporters_footer
+    padding-top 3rem
+    padding-bottom 10rem
+    padding-left 10vw
+    padding-right 10vw
+
+// .supporter_logos
+//     display grid
+//     grid-template-columns repeat(auto-fit, minmax(12rem, 15rem))
+//     grid-template-rows 3rem
+//     justify-content center
+//     justify-items center
+//     align-items center
+//     grid-gap 2rem
+
+row:first-child > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
+    grid-template-rows 5rem
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 5rem
+
+row:nth-child(2) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(3) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(10rem, 10rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(4) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(5) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(6) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(7) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(8) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(9) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(10) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(11) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(12) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(13) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(14) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+row:nth-child(15) > .supporter_logos
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(7rem, 7rem))
+    grid-template-rows repeat(auto-fit, minmax(3rem, 4rem))
+    justify-content center
+    justify-items center
+    align-items center
+    grid-gap 4rem
+
+// .supporter_logo_item
+//     width 100%
+//     // height 100%
+//     max-height 100%
+//     object-fit contain
+
+.supporter_logo_item_container
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 100%
+    // border 1px solid blue
+
+.supporter_logo_item
+    width 100%
+    max-height 100%
+    object-fit contain
+
+.presenter_logo_item_container
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    height 100%
+    // border 1px solid blue
+
+.presenter_logo_item
+    // width 100%z
+    // max-height 100%
+    min-width 10rem
+    max-width 12rem
+    max-height 7rem
+    object-fit contain
+    margin-top 1rem
+
+// .footer_logo_item:first-child
+//     width: 100%
+
+// .footer_logo_item:nth-child(2)
+//     width: 70%
+
+// .footer_logo_item:nth-child(3)
+//     width: 70%
 
 .footer_logo_item_1
     // background-color bg_dark_3
@@ -639,7 +1115,7 @@ a .dark:hover
 
 .footer_logos_1
     display grid
-    grid-template-columns repeat(auto-fit, minmax(24rem, 26rem))
+    grid-template-columns repeat(auto-fill, minmax(24rem, 26rem))
     justify-content center
     justify-items center
     align-items center
@@ -647,7 +1123,7 @@ a .dark:hover
 
 .footer_logos_2
     display grid
-    grid-template-columns repeat(auto-fit, minmax(15rem, 20rem))
+    grid-template-columns repeat(auto-fill, minmax(15rem, 20rem))
     justify-content center
     justify-items center
     align-items center
@@ -656,7 +1132,7 @@ a .dark:hover
 
 .footer_logos_3
     display grid
-    grid-template-columns repeat(auto-fit, minmax(10rem, 12rem))
+    grid-template-columns repeat(auto-fill, minmax(10rem, 12rem))
     justify-content center
     justify-items center
     align-items center
@@ -668,7 +1144,7 @@ a .dark:hover
 
 .sub_team
     display grid
-    grid-template-columns repeat(auto-fit, minmax(17rem, 17rem))
+    grid-template-columns repeat(auto-fill, minmax(17rem, 17rem))
     justify-content center
     align-content start
     justify-items center
@@ -676,6 +1152,44 @@ a .dark:hover
     grid-gap 2rem
     padding 2rem
     // padding-top header_height
+
+.sub_team_jury
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(20rem, 60rem))
+    grid-template-rows auto
+    justify-content center
+    align-content center
+    justify-items center
+    align-items center
+    grid-gap 6rem
+    padding 2rem
+    // padding-top header_height
+
+.person_jury
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(24rem, 1fr))
+    grid-template-rows auto
+    grid-gap 3rem
+    // background-color bg_dark_3
+    // border solid .5px bg_dark_4
+    width 100%
+    // height auto
+    // min-height min-content
+    // max-height max-content
+    // margin-bottom 1rem
+    // margin-top 1rem
+
+.person_head_jury
+    // background-color clr_primary
+    // color bg_dark_4
+    width: 100%
+    padding 2rem
+    // height max-content
+    // height 2.5rem
+    // padding-left 1rem
+    // padding-right 1rem
+    // padding .7rem 1rem .7rem 1rem
+    // align-self flex-start
 
 .person
     display flex
@@ -715,11 +1229,14 @@ a .dark:hover
     line-height 1.2rem
     a
         text-decoration none
-        color white_96
+        color dark_1
         // font-weight 600
     p
         font-size 1rem
         line-height 1.2rem
+        color dark_1
+    h4
+        color dark_1
 
 .schedule
     padding-top header_height
@@ -785,7 +1302,8 @@ header
 .f_interactive_box
     grid-area f_interactive_box
     display grid
-    grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+    // grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
+    grid-template-columns 1fr
     grid-template-rows auto
     grid-gap 1rem
     padding 2rem
@@ -793,16 +1311,22 @@ header
     align-content center
     justify-items center
     align-items center
+    background-color bg_dark_2
 
 .f_interactive_item
     align center
     text-align center
 
-
+.f_dir_box
+    grid-area f_dir_box
+    display grid
+    grid-template-columns 1
+    grid-template-rows auto
 
 .f_dir_bio_box
     grid-area f_dir_bio_box
-    background-color bg_dark_1
+    // background-color bg_dark_1
+    background-color bg_color_1
     padding-left calc(2rem + 1vw)
     padding-right calc(2rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -832,6 +1356,9 @@ header
 .f_trailer_box
     grid-area f_trailer_box
     width 100%
+    background-color bg_dark_2
+    .section_headline
+        color bg_dark_4
 
 .f_qaclip_box
     grid-area f_qaclip_box
@@ -840,6 +1367,9 @@ header
 .f_imgs_box
     grid-area f_imgs_box
 
+.carousel-indicators
+    li
+        height 1px
 
 .card-deck
     justify-content center
@@ -852,6 +1382,36 @@ header
     background bg_dark_4
 
 .container_contents_16_9
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
+.container_frame_12_5
+    position relative
+    height 0
+    overflow hidden
+    padding-top 41%
+    background bg_dark_4
+
+.container_contents_12_5
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
+.container_frame_poster
+    position relative
+    height 0
+    overflow hidden
+    padding-top 144%
+    background bg_dark_4
+
+.container_contents_poster
     position absolute
     top 0
     left 0
@@ -879,9 +1439,9 @@ header
         width calc(1.5rem + 0.1vw)
         margin-right 1rem
         margin-left 1rem
-        stroke clr_primary
+        stroke white_semi
         stroke-width 1
-        transform scale(1.2,1.2)
+        transform scale(.96,.96)
 /* TEXT */
 
 a .svg_icon_footer
@@ -905,6 +1465,9 @@ p
   font-weight 300
   margin-bottom calc((1rem * 1.618) / 2)
 
+p a
+    text-decoration none
+
 // br
 //     display block
 //     line-height 5rem
@@ -913,7 +1476,7 @@ p
   font-family font_h
   font-size calc(1.618rem + 3vw)
   line-height 1
-  font-weight 700
+  font-weight 400
   color bg_dark_4
   letter-spacing 0.04em
   text-align center
@@ -928,7 +1491,7 @@ p
   font-family font_h
   font-size calc(4rem + 5vw)
   line-height 1
-  font-weight 700
+  font-weight 400
   color bg_dark_4
   letter-spacing 0.04em
   text-align center
@@ -936,11 +1499,12 @@ p
   padding-right calc(1rem + 1vw)
   margin-bottom -.6em
 
-.section_headline_footer
+.section_headline_footer,
+.section_headline_supporter
     font-family font_h
     font-size calc(1.618rem + 1.618vw)
-    line-height 1
-    font-weight 700
+    line-height 1.168
+    font-weight 500
     color bg_dark_4
     letter-spacing 0.04em
     text-align center
@@ -948,15 +1512,15 @@ p
     padding 0
     padding-left calc(1rem + 1vw)
     padding-right calc(1rem + 1vw)
-    margin-top .6em
-    margin-bottom .2em
+    margin-top 6rem
+    margin-bottom 3rem
 
 .sub_section_headline
   font-family font_h
   font-size calc(1.618rem + 1.618vw)
   line-height 1
-  font-weight 700
-  color white_96
+  font-weight 400
+  color dark_1
   letter-spacing 0.04em
   text-align center
   margin 0
@@ -965,24 +1529,20 @@ p
   padding-right calc(1rem + 1vw)
   margin-top .6em
 
-.main_menu_toggle
-  &:checked
-    & ~ .main_menu
-      display flex
-
 .premiere_type
   font-family font_h
   text-transform uppercase
   text-align left
-  color white_semi
+  color clr_primary
   align-self start
+  font-weight 300
 
 .film_title_detailed
   font-family font_h
   font-size calc(1rem + 2.4vw)
   text-decoration none
   text-align left
-  font-weight 600
+  font-weight 400
   line-height 1.3
   letter-spacing 0.04rem
   padding-top 1rem
@@ -993,9 +1553,13 @@ p
   align-self end
 
 .str_info_grid_3
-  display grid
-  grid-template-columns 1fr 2fr
-  grid-gap 2rem
+    display grid
+    grid-template-columns 1fr 2fr
+    grid-gap 2rem
+
+.str_info_grid_3_films
+    display grid
+    grid-template-columns 1fr 2fr
 
 .str_info_label,
 .str_info_meta_label
@@ -1004,6 +1568,7 @@ p
   font-size 1rem
   text-align right
   line-height 1.618
+  font-weight 300
 
 .str_info_value
   font-family font_h
@@ -1039,6 +1604,7 @@ p
   font-size 1rem
   text-align left
   line-height 1.618
+  font-weight 300
 
 .str_info_meta_program,
 .str_info_meta_genre,
@@ -1048,6 +1614,7 @@ p
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .str_info_meta_keywords
     font-family font_h
@@ -1055,6 +1622,7 @@ p
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
 
 .keywords_left
     font-family font_h
@@ -1062,6 +1630,8 @@ p
     font-size 1rem
     text-align left
     line-height 1.618
+    font-weight 300
+
 
 
 // POPOVER
@@ -1125,9 +1695,11 @@ a.btn_popover
 /* SCREENINGS */
 
 .card_screening
-  max-width 100%
-  margin-left 0
-  margin-right 0
+    min-width 360px
+    max-width 100%
+    margin-left 0
+    margin-right 0
+    margin-bottom 2rem!important
 //   margin-top calc(3rem + 1vw)
 
 .grid_container_screening_time
@@ -1142,7 +1714,7 @@ a.btn_popover
 .screening_date
   text-align left
   font-size calc(1.25rem + 0.1vw)
-  font-weight 500
+  font-weight 400
   color white_96
   letter-spacing 0.04em
 
@@ -1156,14 +1728,14 @@ a.btn_popover
 .screening_time
   text-align right
   font-size calc(1.25rem + 0.1vw)
-  font-weight 500
+  font-weight 400
   color ghost_blue
   letter-spacing 0.04em
 
 .screening_hall
   text-align left
   font-size calc(1.25rem + 0.1vw)
-  font-weight 500
+  font-weight 400
   color white_96
   letter-spacing 0.04em
 
@@ -1187,23 +1759,48 @@ a.btn_popover
 .screening_info_label
   text-align right
   color white_semi
+  font-weight 300
 
 .screening_info_value
   text-align left
   color white_96
 
 .btn_secondary
-  background-color bg_dark_4
-  color white_semi
-  border-radius 0
-  text-transform uppercase
-//   display none
+    background-color bg_dark_4
+    color white_96
+    border-radius 0
+    text-transform uppercase
+    &:hover
+        color poff_orange
+
 
 .btn_primary
-  background-color clr_primary
-  color white_96
-  border-radius 0
-  text-transform uppercase
+    background-color clr_primary
+    color white_96
+    border-radius 0
+    text-transform uppercase
+
+.btn_trio
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    // width max-content
+    // max-width 90%
+    width 100%
+    // background-color clr_primary
+    color white_96
+    border-radius 0
+    text-transform uppercase
+    font-size 1.618rem
+    line-height 1.5
+    text-align center
+    margin 0
+    padding 0
+    padding-left 1rem
+    padding-right 1rem
+    padding-top .5rem
+    padding-bottom .5rem
 
 .btn_covid
     background-color clr_covid
@@ -1231,6 +1828,20 @@ a.btn_popover
   margin-right .5rem
   margin-top -.7rem
   stroke rgba(255, 255, 255, .5)
+
+.play_link
+    position absolute
+    bottom 1rem
+    left 1rem
+    z-index 999
+
+.svg_icon_play
+    height calc(2rem + 0.1vw)
+    width calc(2rem + 0.1vw)
+    margin-right .5rem
+    margin-top -.7rem
+    stroke rgba(255, 255, 255, .9)
+
 
 .svg_icon_white
   margin-right .5rem
@@ -1268,10 +1879,11 @@ a.btn_popover
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
-    align-content space-between
+    align-content start
     // margin-top 2rem
     background-color white
-    margin-bottom 2rem
+    margin-bottom 1.618rem
+    border .5px solid clr_grey_light
 
 .card_film:hover,
 .card_article:hover
@@ -1281,10 +1893,10 @@ a.btn_popover
     text-decoration none
 
 .card_film_title
-    padding-left: 1.618rem
-    padding-top: 1.618rem
-    padding-right: 1.618rem
-    padding-bottom: .1rem
+    padding-left 1.2rem
+    padding-top 2.4rem
+    padding-right 1.2rem
+    // padding-bottom: .1rem
     text-decoration none
     align-self start
     vertical-align top
@@ -1332,6 +1944,17 @@ a.btn_popover
     object-fit cover
     z-index -1
 
+.about_hero_head
+    position relative
+    grid-column 1 / 4
+    height calc(80vh - 97px)
+
+.about_hero_image
+    width 100vw
+    height calc(80vh - 97px)
+    object-fit cover
+    z-index -1
+
 .article_hero_headline_box
     position absolute
     bottom 0
@@ -1344,12 +1967,24 @@ a.btn_popover
     text-align left
     padding 2rem 2rem 2rem 2rem
 
+.about_hero_headline_box
+    position absolute
+    bottom calc(30vh - 6rem)
+    left 0
+    width 67vw
+    // background rgba(10,0,3,.6)
+    // background rgba(236,0,140,.6)
+    // background rgba(90,0,60,.7)
+    // background-color clr_primary
+    text-align left
+    padding 2rem 2rem 2rem 0rem
+
 .article_title_detailed
     font-family font_h
-    font-size calc(1.9rem + 1.5vw)
+    font-size calc(1rem + 2.4vw)
     text-decoration none
     text-align left
-    font-weight 600
+    font-weight 400
     line-height 1.4
     letter-spacing 0.04rem
     padding-top 1rem
@@ -1358,13 +1993,68 @@ a.btn_popover
         text-decoration: none
         // color white_96
 
+.about_title_detailed
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 300
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
+.about_title_detailed span
+    // background-color rgba(255,255,255,.9)
+    background-color white
+    color dark_4
+    display inline
+    padding-left 3rem
+    padding-right 1.2rem
+    padding-top .5rem
+    font-size 3rem
+    line-height 1.55
+    box-decoration-break clone
+
 .article_meta
     padding 1rem
     text-align center
 
 .article_contents
     padding 1rem
-
+    img
+        // padding-left -1rem
+        // padding-right -1rem
+        // margin-left -1rem
+        // margin-right -1rem
+        width 100vw
+    h1
+        padding-top 1.618rem
+        font-weight 500
+    h2
+        padding-top 1.618rem
+        font-weight 500
+    h3
+        padding-top 1.618rem
+        font-weight 500
+    h4
+        padding-top 1.618rem
+        font-weight 500
+    h5
+        padding-top 1.618rem
+        font-weight 500
+    h6
+        font-family font_p
+        font-size 1rem
+        font-style italic
+        font-weight 300
+        color dark_4
+        text-align left
+        aligh left
+        margin-top -1.618rem
     ul
         padding 0
         margin 0
@@ -1375,10 +2065,14 @@ a.btn_popover
         margin-left 1rem
     iframe
         width 100%
+        padding 0
+        margin 0
         margin-top 1.618rem
         margin-bottom 1.618rem
     img
         width 100%
+        padding 0
+        margin 0
         margin-top 1.618rem
         margin-bottom 1.618rem
 
@@ -1401,16 +2095,17 @@ a.btn_popover
     color dark_1
     font-size 1rem
     line-height 1.5rem
+    font-weight 300
     display inline
 
 
 .film_title_locale
-    font-size: 2rem
+    font-size: 1.5rem
     color: white_96
     letter-spacing: 0.04rem
 
 .article_title_locale
-    font-size 2rem
+    font-size 1.4rem
     color dark_4
     letter-spacing 0.04rem
 
@@ -1437,11 +2132,16 @@ a.btn_popover
     padding-right calc(.1rem + 3vw)
 
 .home_hero_img
-    width 100%
-    height auto
+        width 100%
+        height auto
+        object-fit cover
+        padding 3rem
+
+.home_hero_image
+    width 100vw
+    height 31vw
     object-fit cover
-    padding 0
-    padding-bottom 1rem
+    // padding 3rem
 
 .hero_p
     font-family font_p
@@ -1525,18 +2225,37 @@ a.btn_popover
         grid-template-areas "f_img_slider_box  f_img_slider_box  f_title_box"\
                             "f_synopsis_box    f_synopsis_box    f_cred_box"\
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
-                            "f_interactive_box    f_interactive_box    f_interactive_box"\
+                            "f_interactive_box f_interactive_box f_interactive_box"\
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
-                            "f_extra_box       f_extra_box       f_extra_box"\
+                            "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
+    .grid_cassette
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_img_slider_box  f_img_slider_box  f_title_box"\
+                            "f_synopsis_box    f_synopsis_box    f_extra_box"\
+                            "f_screenings_box  f_screenings_box  f_screenings_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_trailer_box     f_trailer_box     f_trailer_box"\
+
     .grid_films
         display grid
         // grid-template-columns 1fr 1fr 1fr
-        grid-template-columns repeat(auto-fit, minmax(450px, 1fr))
+        grid-template-columns repeat(auto-fill, minmax(450px, 1fr))
+        grid-template-rows auto
+        grid-gap 1rem
+        padding 1rem
+        padding-top header_height
+
+    .grid_programmes
+        display grid
+        // grid-template-columns 1fr 1fr 1fr
+        grid-template-columns repeat(auto-fill, minmax(700px, 1fr))
         grid-template-rows auto
         grid-gap 1rem
         padding 1rem
@@ -1559,7 +2278,7 @@ a.btn_popover
     .grid_articles
         display: grid
         // grid-template-columns 1fr 1fr 1fr
-        grid-template-columns repeat(auto-fit, minmax(420px, 1fr))
+        grid-template-columns repeat(auto-fill, minmax(420px, 1fr))
         grid-template-rows auto
         grid-gap 2rem
         padding 2rem
@@ -1590,12 +2309,12 @@ a.btn_popover
     .hero_headline_box_1
         background rgba(10,0,3,.6)
         text-align left
-        padding 3rem 3rem 3rem 3rem
+        padding 2.4rem 2.4rem 2.4rem 2.4rem
 
     .hero_headline_box_2
         background rgba(255,255,255,.8)
         text-align left
-        padding 3rem 3rem 3rem 3rem
+        padding 2.4rem 2.4rem 2.4rem 2.4rem
         // height 100%
 
     .hero_head
@@ -1611,8 +2330,10 @@ a.btn_popover
     //     z-index -1
 
     .trio_block
-        padding-left calc(2rem + 2vw)
-        padding-right calc(2rem + 2vw)
+        padding-left 2rem
+        padding-right 2rem
+        margin-bottom 5rem
+        padding-top 6rem
 
     .viiekas
         width 100vw
@@ -1641,6 +2362,22 @@ a.btn_popover
     .viieka_item:nth-child(5)
         grid-column span 2
 
+    .kuuekas
+        width 100vw
+        display grid
+        grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+        grid-template-rows auto
+        padding 0
+        margin 0
+        grid-gap 1rem
+        padding-left 2rem
+        padding-right 2rem
+        justify-content center
+        align-content center
+        justify-items stretch
+        align-items stretch
+        background-color bg_color_1
+
     // .hero_headline_box
     //     position absolute
     //     bottom 0
@@ -1668,54 +2405,150 @@ a.btn_popover
         grid-gap 2rem
         padding calc(2rem + 2vw)
 
-    .main_menu_toggle_label
-        display none
-
     header
         display grid
         grid-template-columns auto 1fr
+        height 100px
 
-    footer
-        grid-area footer
-        border-top 1px solid rgba(255,255,255,.1)
+    .main_menu_toggle_label
+            display none
+
+    .main_menu
+        grid-column 2 / 3
+        display flex
+        justify-content flex-end
+        align-items flex-end
+        // justify-items flex-end
+        // align-content flex-end
+        position static
         margin 0
         padding 0
-        // padding 10vw
-        padding 3rem 5rem 3rem 5rem
+        padding-right 1.2rem
+        // border dashed red
+
+    .main_menu ul
+        display flex
+        justify-content flex-end
+        align-items flex-end
+        /* border: 1px solid red; */
+
+    .main_menu li
+        /* margin-bottom: 0; */
+        height 100%
+        margin 0
+        padding-left 1.5rem
+        padding-right 1.5rem
+        padding-top 1rem
+        padding-bottom 1rem
+        // border 1px solid rgba(255, 255, 255, 0)
+        /* background-color: red; */
+
+    .main_menu ul li.dropdown
+        position relative
+
+    .main_menu ul li.dropdown ul
+        background-color clr_header_bg
+        position absolute
+        right 0
+        padding-left 0
+        width max-content
+        /* display: block; */
+        display none
+
+    .main_menu ul li.dropdown:hover ul
+        display block
+        margin-bottom 5rem
+        /* margin-top: 1rem; */
+
+    .main_menu ul li.dropdown ul li a
+        text-transform uppercase
+
+    .main_menu li:hover
+        background-color clr_header_bg
+        // border-top 1px solid clr_primary
+        /* border-right: 1px solid var(--clr_primary); */
+
+    .main_menu li a:hover
+        color clr_primary_text
+
+    .ul_kaks
+        text-align right
+        padding 0
+        margin 0
+        li
+            padding-top .5rem
+            padding-bottom .5rem
+        li:first-child
+            padding-top 1.618rem
+        li:last-child
+            padding-bottom 1.618rem
+
+    .org_menu
+        display inline-block
+        position fixed
+        // display inline
+        top 0
+        left 0
+        padding-left 1rem
+        height 1rem
+        // padding-top .1rem
+
+    .org_item
+        // display inline
+        font-size 14px
+        font-family font_h
+        color dark_4
+        padding-left 1rem
+        padding-right 1rem
+        // padding-right 1rem
+        a
+            text-decoration none
+            font-size 14px
+
+    // .grid_footer_row
+    //     grid-area footer
+    //     border-top 1px solid rgba(255,255,255,.1)
+    //     margin 0
+    //     padding 0
+    //     // padding 10vw
+    //     padding 3rem 5rem 3rem 5rem
+    //     background-color bg_dark_1
 
     .grid_footer_row
+        grid-area footer
         display grid
-        grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+        grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
         grid-template-rows auto
-        grid-gap 1rem
+        grid-gap 3rem
         justify-items center
         align-items center
+        background-color bg_dark_1
 
 
-    nav
-        ul
-            display flex
-            justify-content flex-end
-            align-items flex-end
-        li
-            height 100%
-            margin 0
-            padding-left 1.2rem
-            padding-right 1.2rem
-            padding-top 1rem
-            padding-bottom 1rem
-            border 1px solid rgba(255, 255, 255, 0)
-            // &:hover
-            // &:focus
-            //     background-color bg_dark_3
-            //     border-top 1px solid clr_primary
-            //     // opacity 0.99
-            //     transform scale(1.02, 1.02)
+    // nav
+    //     ul
+    //         display flex
+    //         justify-content flex-end
+    //         align-items flex-end
+    //     li
+    //         height 100%
+    //         margin 0
+    //         padding-left 1.2rem
+    //         padding-right 1.2rem
+    //         padding-top 1rem
+    //         padding-bottom 1rem
+    //         border 1px solid rgba(255, 255, 255, 0)
+    //         // &:hover
+    //         // &:focus
+    //         //     background-color bg_dark_3
+    //         //     border-top 1px solid clr_primary
+    //         //     // opacity 0.99
+    //         //     transform scale(1.02, 1.02)
 
-            a
-                // color ghost_blue
-                &:hover
-                    color poff_orange
+    //         a
+    //             // color ghost_blue
+    //             &:hover
+    //                 color poff_orange
 
     // nav
     //     ul
@@ -1756,41 +2589,51 @@ a.btn_popover
     //                     color white_96
 
 
-    .main_menu
-        grid-column 2 / 3
-        display flex
-        justify-content flex-end
-        align-items flex-end
-        position static
-        border 1px white
-        margin 0
-        padding 0
-        padding-right 1.2rem
+    // .main_menu
+    //     grid-column 2 / 3
+    //     display flex
+    //     justify-content flex-end
+    //     align-items flex-end
+    //     position static
+    //     border 1px white
+    //     margin 0
+    //     padding 0
+    //     padding-right 1.2rem
 
-        ul
-            li.dropdown
-                ul
-                    background-color bg_dark_2
-                    position absolute
-                    left 0
-                    padding-left 0
-                    width max-content
-                    display none
-                    li
-                        a
-                            text-transform none
-                &:hover
-                    ul
-                        display block
+    //     ul
+    //         li.dropdown
+    //             ul
+    //                 background-color bg_dark_2
+    //                 position absolute
+    //                 left 0
+    //                 padding-left 0
+    //                 width max-content
+    //                 display none
+    //                 li
+    //                     a
+    //                         text-transform none
+    //             &:hover
+    //                 ul
+    //                     display block
 
     .logo
         grid-column 1 / 2
-        justify-content flex-start
-        align-items flex-end
-        width 210px
-        padding-left 1.2rem
-        padding-bottom .3rem
-        padding-top .4rem
+        justify-self start
+        align-self end
+        // display flex
+        // justify-content flex-start
+        // align-items flex-end
+        width 150px
+        // padding-left 1.2rem
+        // padding-bottom .3rem
+        // padding-top .4rem
+        // border 1px solid blue
+        padding 0
+        margin 0
+        margin-top .5rem
+        margin-left 2rem
+        margin-bottom 1.2rem
+        // padding-bottom .2rem
 
     .film
         display grid
@@ -1837,10 +2680,11 @@ a.btn_popover
         margin 0
 
     .card_screening
-        min-width 300px
-        max-width 400px
+        min-width 400px
+        max-width 450px
         margin-left 1vw
         margin-right 1vw
+        margin-bottom 2rem
 
     .article_hero_head
         position relative
@@ -1850,6 +2694,17 @@ a.btn_popover
     .article_hero_image
         width 100vw
         height calc(100vh - 97px)
+        object-fit cover
+        z-index -1
+
+    .about_hero_head
+        position relative
+        grid-column 1 / 4
+        height calc(80vh - 97px)
+
+    .about_hero_image
+        width 100%
+        height calc(80vh - 97px)
         object-fit cover
         z-index -1
 
@@ -1874,12 +2729,33 @@ a.btn_popover
         padding 0
         // padding-top calc(2rem + 3vw)
         padding-bottom calc(2rem + 3vw)
+        img
+            // position relative
+            // left 0%
+            width 60vw
+            max-width 66vw
+            // max-width 100vw
+            // grid-column 2 / span 3
+            // column-span 2
+        iframe
+            width 60vw
+            max-width 66vw
+            height 34vw
+            max-height 34vw
+        h4
+            padding-top 1.618rem
 
     .home_hero_img
         width 100%
         height auto
         object-fit cover
         padding 3rem
+
+    .home_hero_image
+        width 100vw
+        height 31vw
+        object-fit cover
+        // padding 3rem
 
     // TEXT ALIGNMENT DESKTOP
 
@@ -1891,10 +2767,10 @@ a.btn_popover
 /* OVERRIDES */
 
 .text_left
-  text-align left
+    text-align left
 
 .text_right
-  text-align right
+    text-align right
 
 .text_center
     text-align center
@@ -1903,7 +2779,7 @@ a.btn_popover
     text-transform uppercase
 
 .bold
-    font-weight 600
+    font-weight 500
 
 .lh2
     line-height 4rem
@@ -1917,12 +2793,18 @@ a.btn_popover
 .grid_article
     p
         color dark_1
+        a
+            text-decoration none
+            color orange_strong
     ul
         font-family font_p
         font-weight 300
 
 .dark_1
     color dark_1
+
+.dark_semi
+    color clr_dark_semi
 
 a .trio_headline
     text-decoration none
@@ -1938,3 +2820,24 @@ a:hover
 // a
 //     text-decoration none!important
     // font-weight 600
+
+strong
+    font-weight 500
+
+.padding_top_4
+    padding-top 4rem
+
+.padding_bottom_2
+    padding-bottom 2rem
+
+.padding_top_0
+    padding-top 0px
+
+.bg_white
+    background-color white
+
+.thin_400
+    font-weight 400
+
+.thin_300
+    font-weight 300

@@ -2,6 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
 const rueten = require('./rueten.js');
+const util = require("util")
 
 const sourceDir =  path.join(__dirname, '..', 'source');
 const fetchDir =  path.join(sourceDir, '_fetchdir');
@@ -9,7 +10,7 @@ const fetchDataDir =  path.join(fetchDir, 'teamsandjuries');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
 const STRAPIDATA_TEAM = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Team'];
 const STRAPIDATA_PERSONS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Person'];
-const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
+const DOMAIN = process.env['DOMAIN'] || 'kinoff.poff.ee';
 
 const languages = ['en', 'et', 'ru']
 for (const ix in languages) {
@@ -24,14 +25,19 @@ for (const ix in languages) {
             var templateDomainName = 'justfilm';
         } else if (DOMAIN === 'shorts.poff.ee') {
             var templateDomainName = 'shorts';
+        } else if (DOMAIN === 'kinoff.poff.ee') {
+            var templateDomainName = 'kinoff';
+        } else if (DOMAIN === 'industry.poff.ee') {
+            var templateDomainName = 'industry';
         } else {
             var templateDomainName = 'poff';
         }
 
-        if (element.groupType === 'festivalTeam') {
-            var templateGroupName = 'team';
+        if (element.groupType) {
+            var templateGroupName = element.groupType.toLowerCase();
         } else {
-            var templateGroupName = 'jury';
+            console.log('ERROR!: Team templateGroupName missing for team with ID no ', element.id);
+            continue;
         }
 
         for (const subTeamIx in element.subTeam) {
@@ -47,8 +53,13 @@ for (const ix in languages) {
         let dirSlug = element.slug_en || element.slug_et ? element.slug_en || element.slug_et : null ;
         element = rueten(element, lang);
         element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
-        element.path = element.slug;
+        if ('slug' in element) {
+            element.path = element.slug;
+        } else {
+            continue
+        }
 
+        //console.log(util.inspect(element, false, 10))
         const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
 
         if (dirSlug != null) {
@@ -59,9 +70,10 @@ for (const ix in languages) {
             fs.writeFileSync(yamlPath, oneYaml, 'utf8');
             fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/${templateGroupName}_${templateDomainName}_index_template.pug`)
         }
-    allData.push(element);
+        allData.push(element);
     }
 
+    //console.log(util.inspect(allData, false, 10))
     const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `teams.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');

@@ -21,9 +21,6 @@ node ./helpers/fetch_articles_from_yaml.js
 echo 'fetch_article_types_from_yaml'
 node ./helpers/fetch_article_type_from_yaml.js
 
-echo 'fetch_films_from_yaml'
-node ./helpers/fetch_films_from_yaml.js
-
 echo 'fetch_heroarticle_from_yaml'
 node ./helpers/fetch_heroarticle_from_yaml.js
 
@@ -32,6 +29,9 @@ node ./helpers/fetch_trioblock_from_yaml.js
 
 echo 'fetch_teams_from_yaml'
 node ./helpers/fetch_teams_from_yaml.js
+
+echo 'fetch_supporter_page_from_yaml'
+node ./helpers/fetch_supporter_page_from_yaml.js
 
 # labels, footer and menu are fetched to global
 # labels uses static global (first to fetch)
@@ -44,6 +44,9 @@ node ./helpers/fetch_footer_from_yaml.js
 
 echo 'fetch_menu_from_yaml'
 node ./helpers/fetch_menu_from_yaml.js
+
+echo 'fetch_cassettes_from_yaml'
+node ./helpers/fetch_cassettes_from_yaml.js
 
 printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
