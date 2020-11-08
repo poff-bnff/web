@@ -12,24 +12,32 @@ block content
 
         .login_password
 
-            h4.dark_1#loginMessage= self.label.userprofile.loginPw
+            h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginPw
 
             div#userName
-                label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
-                input#loginUsername(type='text')
+                label.login_label(for='loginUsername')= self.label.userprofile.email
+                input.login_input#loginUsername(type='text')
 
             div#password
-                label(style={color: 'red'} for='loginPassword')= self.label.userprofile.password
-                input#loginPassword(type='password')
+                label.login_label(for='loginPassword')= self.label.userprofile.password
+                input.login_input#loginPassword(type='password')
 
             div#passwordRep(style={display: 'none'})
-                label(style={color: 'red'} for='loginPasswordRep') Password again:
-                input#loginPasswordRep(type='password')
+                label.login_label( for='loginPasswordRep') Password again:
+                input.ogin_input#loginPasswordRep(type='password')
+
+            button.login_btn#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
+
+            button.login_btn#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+
+            button.login_btn#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
+
+            button.login_btn#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
 
             div#resetCodeBox(style={display:'none'})
-                label(style={color: 'red'} for='resetCode') Code:
-                input#resetCode(type='text')
-                button(onclick = 'askForNewPassword()') Send
+                label.login_label(style={color: 'red'} for='resetCode') Code:
+                input.login_input#resetCode(type='text')
+                button.login_btn(onclick = 'askForNewPassword()') Send
 
             p#signUpPassword2
 
@@ -42,18 +50,25 @@ block content
 
         .login_some
 
+            h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginSome
+
             a#loginFB(href=`https://api.poff.ee/auth/facebook`)
-                p= Facebook
+                .button.btn_primary
+                    | Facebook
 
             a#loginG(href=`https://api.poff.ee/auth/google`)
-                p= Google
+                p
+                    | Google
 
             a#loginE(href=`https://api.poff.ee/auth/eventival`)
-                p= Eventival
+                p
+                    | Eventival
 
         .login_register
 
-            button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
+            h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginRegister
+
+            button.login_btn#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
 
 
             //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
@@ -62,13 +77,7 @@ block content
 
 
 
-            button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
 
-            button#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
-
-            button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
-
-            button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
 
             p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
 
