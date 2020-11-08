@@ -560,7 +560,7 @@
         country_region= geodatasource_data;
 
     }
-    
+
     var initialiseRegion = function() {
         for (var i=0; i<country_region.length; i++) {
             var regionData = {

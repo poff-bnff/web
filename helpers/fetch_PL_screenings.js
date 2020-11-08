@@ -29,6 +29,9 @@ async function main() {
             yaml.safeDump([], { 'noRefs': true, 'indent': '4' })
         } else {
             const concerts = JSON.parse(response.body).responseData.concert
+            const concertsFile = path.join(fetchDir, `PL_info.yaml`)
+            fs.writeFileSync(concertsFile, JSON.stringify(concerts, null, 4), 'utf8')
+
             PL_screenings = concerts.map(concert => {
                 return {
                     codeAndTitle: concert.decoratedTitle || null,
@@ -41,6 +44,7 @@ async function main() {
             // var YAML = yaml.safeDump(PL_screenings, { 'noRefs': true, 'indent': '4' })
             // const outFile = path.join(fetchDir, `screenings_urls.yaml`)
             // fs.writeFileSync(outFile, YAML, 'utf8')
+
         }
     })
     // console.log(null === null)
@@ -57,9 +61,21 @@ async function main() {
     const outFile = path.join(fetchDir, `screenings_urls.yaml`)
     fs.writeFileSync(outFile, JSON.stringify(PL_screenings, null, 4), 'utf8')
 
+    const PL_codes = PL_screenings.map(pl_s => pl_s.code)
+    const online_screenings = s_screenings.filter(s => !PL_codes.includes(s.code))
+        .map(s => [s.code, s.codeAndTitle])
+    const online_screenings_file = path.join(fetchDir, `online_screenings.yaml`)
+    fs.writeFileSync(online_screenings_file, JSON.stringify(online_screenings, null, 4), 'utf8')
+// console.log(['a','b'].includes('a'))
+
     PL_screenings = PL_screenings.filter(PL_screening => {
         if (!PL_screening.id) {
             console.log('WARNING: Missing in Strapi:', JSON.stringify(PL_screening, null, 4))
+            return false
+        }
+        const s_screening = s_screenings.filter(_screening => _screening.id === PL_screening.id)[0]
+        if(PL_screening.codeAndTitle === s_screening.codeAndTitle && PL_screening.ticketingUrl === s_screening.ticketingUrl && PL_screening.ticketingId === s_screening.ticketingId){
+            // console.log('Screening up to date');
             return false
         }
         return true
