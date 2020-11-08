@@ -1,3 +1,5 @@
+
+
 function BuyProduct(categoryId) {
 
     var feedback = document.getElementById("feedback")
@@ -62,8 +64,6 @@ function GetPaymentLinks() {
         redirect: 'follow'
     }
 
-    //body payment type
-
     fetch('https://api.poff.ee/buy', requestOptions).then(function (response) {
         if (response.ok) {
             return response.json();
@@ -81,7 +81,7 @@ function GetPaymentLinks() {
             }
         }
 
-        //credist cards
+        //credit cards
         for (var i = 0; i < data.cards.length; i++) {
             var button = '<label><input type="radio" name="payment" value="' + data.cards[i].id + '"><img src=' + data.cards[i].logo + ' onClick=SelectPaymentType("' + data.cards[i].id + '") ></label>'
             bankInfo += button
@@ -100,24 +100,13 @@ function GetPaymentLinks() {
     });
 }
 
-function checkIfPasswordBuyer() {
-    if (userProfile.picture && userProfile.profile_filled) {
-        GetPaymentLinks()
-    } else if (userProfile.profile_filled) {
-        document.getElementById('buybutton').style.display = 'none'
-        document.getElementById('directToaddPicture').style.display = 'block'
-    } else {
-        document.getElementById('buybutton').style.display = 'none'
-        document.getElementById('directToFillProfile').style.display = 'block'
-    }
-}
 
 function directToLogin() {
-    window.open('http://localhost:4000/login', '_self')
+    window.open(location.origin + '/login', '_self')
 }
 
 function directToUserProfile() {
-    window.open('http://localhost:4000/userprofile', '_self')
+    window.open(location.origin + '/userprofile', '_self')
 }
 
 function saveLangpath(langpath) {

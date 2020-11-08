@@ -7,8 +7,8 @@ block content
     //- Ühe, nt first screening kuvamiseks:
     //- - const whichScreeningTypesToDisplay = ['first screening']
     //- Mitme kuvamiseks:
-    //- - const whichScreeningTypesToDisplay = ['first screening', 'regular']
-    - const whichScreeningTypesToDisplay = []
+    - const whichScreeningTypesToDisplay = ['first screening', 'regular', 'online kino']
+    //- - const whichScreeningTypesToDisplay = []
 
     if self.data.screenings
         main.grid_films
@@ -47,6 +47,8 @@ block content
                                     img.container_contents_16_9(src= screening.cassetteCarouselPicsCassette[0] alt= cassette.title)
                                 else if screening.cassetteCarouselPicsFilms && screening.cassetteCarouselPicsFilms[0]
                                     img.container_contents_16_9(src= screening.cassetteCarouselPicsFilms[0] alt= cassette.title)
+                                else
+                                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
                             else if cassette.films && cassette.films.length === 1 && screening.cassetteCarouselPicsFilms
                                 img.container_contents_16_9(src= screening.cassetteCarouselPicsFilms[0] alt= cassette.title)
                             else

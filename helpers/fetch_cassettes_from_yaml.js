@@ -31,7 +31,7 @@ const CHECKPROGRAMMES = false
 // timer.log(__filename, `LIMIT: ${CASSETTELIMIT}`)
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
-const whichScreeningTypesToFetch = ['first screening']
+const whichScreeningTypesToFetch = ['first screening', 'regular', 'online kino']
 
 const mapping = DOMAIN_SPECIFICS.domain
 
@@ -92,6 +92,7 @@ for (const lang of allLanguages) {
     // data = rueten(data, lang)
     // timer.log(__filename, data)
     let slugMissingErrorNumber = 0
+    var templateMissingMessageDisplayed = false
     let slugMissingErrorIDs = []
     let limit = CASSETTELIMIT
     let counting = 0
@@ -371,36 +372,26 @@ for (const lang of allLanguages) {
                         scc_film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0) })
                         for (roleIx in scc_film.credentials.rolePerson) {
                             let rolePerson = scc_film.credentials.rolePerson[roleIx]
-                            if (rolePerson !== undefined) {
-                                if (rolePerson.person && rolePerson.person.id) {
-                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })
-                                    let personCopy = JSONcopy(personFromYAML[0])
-                                    let searchRegExp = new RegExp(' ', 'g')
+                            if (rolePerson === undefined) { continue }
+                            if (rolePerson.person) {
+                                let searchRegExp = new RegExp(' ', 'g')
+                                const role_name_lc = rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')
+                                rolePersonTypes[role_name_lc] = rolePersonTypes[role_name_lc] || []
 
-                                    rolePerson.person = rueten(personCopy, lang)
-
-                                    if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
+                                if (rolePerson.person.firstNameLastName) {
+                                    rolePersonTypes[role_name_lc].push(rolePerson.person.firstNameLastName)
+                                } else if (rolePerson.person.id) {
+                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })[0]
+                                    if (personFromYAML.fullName) {
+                                        rolePersonTypes[role_name_lc].push(personFromYAML.fullName)
                                     }
-                                    if (rolePerson.person) {
-                                        let fullName = undefined
-                                        if (rolePerson.person.firstName) {
-                                            fullName = rolePerson.person.firstName
-                                        }
-                                        if (rolePerson.person.lastName) {
-                                            fullName = `${fullName !== undefined ? fullName : ''} ${rolePerson.person.lastName}`
-                                        }
-
-                                        if (fullName !== undefined && fullName.length > 2) {
-                                            rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(fullName.trim())
-                                        }
-                                    }
-                                } else {
-                                    // timer.log(__filename, film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                                 }
+                            } else {
+                                // timer.log(__filename, film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                             }
                             //- - timer.log(__filename, 'SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
+                        // console.log('foo2', scc_film.id, rolePersonTypes);
                         scc_film.credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
@@ -445,13 +436,32 @@ function generateYaml(element, lang){
         if (fs.existsSync(cassetteIndexTemplate)) {
             fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
         } else {
-            timer.log(__filename, `ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
+            if (!templateMissingMessageDisplayed) {
+                timer.log(__filename, `ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
+                templateMissingMessageDisplayed = true
+            }
             fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
         }
     }
 }
 
 function generateAllDataYAML(allData, lang){
+
+
+    for (cassette of allData) {
+
+        function picSplit(txt) {
+            return txt.replace('assets.poff.ee/img/', 'assets.poff.ee/img/thumbnail_')
+        }
+
+        cassette.cassetteCarouselPicsCassetteThumbs = (cassette.cassetteCarouselPicsCassette || []).map(txt => picSplit(txt))
+        cassette.cassetteCarouselPicsFilmsThumbs = (cassette.cassetteCarouselPicsFilms || []).map(txt => picSplit(txt))
+        cassette.cassettePostersCassetteThumbs = (cassette.cassettePostersCassette || []).map(txt => picSplit(txt))
+        cassette.cassettePostersFilmsThumbs = (cassette.cassettePostersFilms || []).map(txt => picSplit(txt))
+
+    }
+
+
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
     timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
@@ -487,23 +497,30 @@ function generateAllDataYAML(allData, lang){
         let languages = []
         let countries = []
         let cast_n_crew = []
-        for (const films of cassette.films) {
-            for (const language of films.languages || []) {
+        for (const film of cassette.films) {
+            for (const language of film.languages || []) {
                 const langKey = language.code
                 const language_name = language.name
                 languages.push(langKey)
                 filters.languages[langKey] = language_name
             }
-            for (const country of films.orderedCountries || []) {
+            for (const country of film.orderedCountries || []) {
                 const countryKey = country.country.code
                 const country_name = country.country.name
                 countries.push(countryKey)
                 filters.countries[countryKey] = country_name
             }
-            for (const key in films.credentials.rolePersonsByRole) {
-                for (const crew of films.credentials.rolePersonsByRole[key]) {
-                    cast_n_crew.push(crew)
+
+            film.credentials = film.credentials || []
+            try {
+                for (const key in film.credentials.rolePersonsByRole) {
+                    for (const crew of film.credentials.rolePersonsByRole[key]) {
+                        cast_n_crew.push(crew)
+                    }
                 }
+            } catch (error) {
+                console.log('bad creds on film', JSON.stringify({film: film, creds:film.credentials}, null, 4));
+                throw new Error(error)
             }
         }
         let subtitles = []
@@ -517,14 +534,14 @@ function generateAllDataYAML(allData, lang){
                 filters.subtitles[subtKey] = subtitle_name
             }
 
-            const townKey = screenings.location.hall.cinema.town.id
+            const townKey = `_${screenings.location.hall.cinema.town.id}`
             const town_name = screenings.location.hall.cinema.town.name
-            towns.push(parseInt(townKey))
+            towns.push(townKey)
             filters.towns[townKey] = town_name
 
-            const cinemaKey = screenings.location.hall.cinema.id
+            const cinemaKey = `_${screenings.location.hall.cinema.id}`
             const cinema_name = screenings.location.hall.cinema.name
-            cinemas.push(parseInt(cinemaKey))
+            cinemas.push(cinemaKey)
             filters.cinemas[cinemaKey] = cinema_name
         }
         let premieretypes = []
@@ -550,9 +567,50 @@ function generateAllDataYAML(allData, lang){
         }
     })
 
-    let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(path.join(fetchDir, `search.${lang}.yaml`), searchYAML, 'utf8')
+    // sorted1 = [].slice.call(filters.programmes).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.languages).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.countries).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.subtitles).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.premieretypes).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.towns).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.cinemas).sort((a, b) => a.localeCompare(b, lang))
+    function mSort(to_sort) {
+        let sortable = []
+        for (var item in to_sort) {
+            sortable.push([item, to_sort[item]]);
+        }
 
-    let filtersYAML = yaml.safeDump(filters, { 'noRefs': true, 'indent': '4' })
-    fs.writeFileSync(path.join(fetchDir, `filters.${lang}.yaml`), filtersYAML, 'utf8')
+        sortable = sortable.sort(function(a, b) {
+            try {
+                const locale_sort = a[1].localeCompare(b[1], lang)
+                return locale_sort
+            } catch (error) {
+                console.log('failed to sort', JSON.stringify({a, b}, null, 4));
+                throw new Error(error)
+            }
+        });
+
+        var objSorted = {}
+        for (let index = 0; index < sortable.length; index++) {
+            const item = sortable[index];
+            objSorted[item[0]]=item[1]
+        }
+        return objSorted
+    }
+
+    let sorted_filters = {
+        programmes: mSort(filters.programmes),
+        languages: mSort(filters.languages),
+        countries: mSort(filters.countries),
+        subtitles: mSort(filters.subtitles),
+        premieretypes: mSort(filters.premieretypes),
+        towns: mSort(filters.towns),
+        cinemas: mSort(filters.cinemas),
+    }
+
+    let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `search_films.${lang}.yaml`), searchYAML, 'utf8')
+
+    let filtersYAML = yaml.safeDump(sorted_filters, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `filters_films.${lang}.yaml`), filtersYAML, 'utf8')
 }

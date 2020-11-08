@@ -945,6 +945,8 @@ IndustryProject: &IndustryProject
         - *StrapiMedia
     clipUrl: (text)
     slug: (UID)
+    tag_genres:
+        - *TagGenre
 
 Channel: &Channel
     _path: /channels

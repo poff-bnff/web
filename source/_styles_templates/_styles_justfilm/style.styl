@@ -280,6 +280,7 @@ header
     text-transform none
 
 .org_menu
+    display none
     position absolute
     // display inline
     bottom 0
@@ -1161,7 +1162,7 @@ row:nth-child(15) > .supporter_logos
 
 .sub_team_jury
     display grid
-    grid-template-columns 1
+    grid-template-columns repeat(auto-fill, minmax(20rem, 60rem))
     grid-template-rows auto
     justify-content center
     align-content center
@@ -2474,6 +2475,7 @@ a.btn_popover
             padding-bottom 1.618rem
 
     .org_menu
+        display inline-block
         position fixed
         // display inline
         top 0
