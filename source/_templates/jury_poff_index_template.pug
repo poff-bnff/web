@@ -22,10 +22,10 @@ block content
                                         .person_jury
                                             .person_head_jury
                                                 - var assetsDir = 'https://assets.poff.ee/img/'
-                                                if juryMember.pictureAtJury && juryMember.pictureAtJury[0] && juryMember.pictureAtJury[0].hash
-                                                    - var personPic = assetsDir + juryMember.pictureAtJury[0].hash + juryMember.pictureAtJury[0].ext
-                                                else if juryMember.person.picture && juryMember.person.picture[0] && juryMember.person.picture[0].hash
-                                                    - var personPic = assetsDir + juryMember.person.picture[0].hash + juryMember.person.picture[0].ext
+                                                if juryMember.pictureAtJury && juryMember.pictureAtJury && juryMember.pictureAtJury.hash
+                                                    - var personPic = assetsDir + juryMember.pictureAtJury.hash + juryMember.pictureAtJury.ext
+                                                else if juryMember.person.picture && juryMember.person.picture && juryMember.person.picture.hash
+                                                    - var personPic = assetsDir + juryMember.person.picture.hash + juryMember.person.picture.ext
                                                 else
                                                     - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
                                                 img.person_img(src=personPic alt=`${juryMember.person.firstName} ${juryMember.person.lastName}`)
