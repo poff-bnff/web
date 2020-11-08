@@ -67,7 +67,7 @@ mixin screeningTime(dateString)
     script.
         (function()
         {
-
+            //- todo: #506 Deprecation warning: moment.lang is deprecated. Use moment.locale instead.
             moment.lang('en', {
                 longDateFormat : {
                     LT: "hh:mm A",
@@ -144,3 +144,5 @@ mixin tabname(currenttitle)
 mixin format(text)
     | !{ self.md(text) }
 
+mixin euro(number)
+    | #{number.toFixed(2)} €

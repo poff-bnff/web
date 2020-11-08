@@ -24,10 +24,10 @@ block content
                         each val, index in images
                             if index == 0
                                 .carousel-item.active.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_programmes/${val}` alt = self.filmTitle)
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val}` alt = self.filmTitle)
                             else
                                 .carousel-item.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`/assets/img/dynamic/img_programmes/${val}` alt = self.filmTitle)
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val}` alt = self.filmTitle)
                     else
                         .carousel-item.active.container_contents_16_9
                             img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.filmTitle)
@@ -110,32 +110,32 @@ block content
                         .presenter_logo_item_container
                             a(href= `/${lang_path}${artTypeForPath}/${articleSlug}`).presenter_logo_item
                                 if presenter.logoColour
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                 else if presenter.logoBlack
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                 else if presenter.logoWhite
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
                     //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
                     else if presenter.homepageUrl
                         .presenter_logo_item_container
                             a(href= presenter.homepageUrl).presenter_logo_item
                                 if presenter.logoColour
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                                 else if presenter.logoBlack
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                                 else if presenter.logoWhite
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
                     //- LOGO ILMA LINGITA
                     else
                             if presenter.logoColour
                                 .presenter_logo_item_container
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`  src=`https://assets.poff.ee/img/${presenter.logoColour.hash}${presenter.logoColour.ext}`)
                             else if presenter.logoBlack
                                 .presenter_logo_item_container
-                                    img.presenter_logo_item(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
+                                    img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`  src=`https://assets.poff.ee/img/${presenter.logoBlack.hash}${presenter.logoBlack.ext}`)
                             else if presenter.logoWhite
                                 .presenter_logo_item_container
-                                    img.presenter_logo_itemx(alt=presenter.name data-src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`/assets/img/dynamic/img_org/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
+                                    img.presenter_logo_itemx(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
         section.f_runtime_box.bg_white
 
@@ -153,12 +153,19 @@ block content
 
                         a.card_film(href= `/${lang_path}film/${cassette.slug}`)
                             .container_frame_16_9
-                                if cassette.films.length > 1 && cassette.media && cassette.media.stills && cassette.media.stills[0]
-                                    img.container_contents_16_9(src=`https://assets.poff.ee/img/${cassette.media.stills[0].hash}${cassette.media.stills[0].ext}` alt = cassette.title ? cassette.title : '')
-                                else if cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
-                                    img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt = cassette.films[0].title ? cassette.films[0].title : '')
+
+                                if cassette.films && cassette.films.length > 1
+                                    if cassette.cassetteCarouselPicsCassette && cassette.cassetteCarouselPicsCassette[0]
+                                        img.container_contents_16_9(src= cassette.cassetteCarouselPicsCassette[0] alt= cassette.title)
+                                    else if cassette.cassetteCarouselPicsFilms && cassette.cassetteCarouselPicsFilms[0]
+                                        img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt= cassette.title)
+                                else if cassette.films && cassette.films.length === 1 && cassette.cassetteCarouselPicsFilms
+                                    img.container_contents_16_9(src= cassette.cassetteCarouselPicsFilms[0] alt= cassette.title)
                                 else
-                                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = cassette.title ? cassette.title : '')
+                                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt= cassette.title)
+
+
+
                             .card_film_title
                                 if cassette.films.length > 1
                                     if cassette.title

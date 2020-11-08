@@ -24,6 +24,12 @@ header
                     span.org_item
                         a(href='https://shorts.poff.ee')
                             | PÖFF Shorts
+                    span.org_item
+                        a(href='https://kinoff.ee')
+                            | Kinoff
+                    span.org_item
+                        a(href='https://kino.poff.ee')
+                            | Kino@PÖFF
 
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
 
@@ -78,7 +84,7 @@ header
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
 
                                 else
-                                    if subMenuItem.customUrl
+                                    if subMenuItem.customUrl && subMenuItem.name && typeof subMenuItem.name !== 'object'
                                         li
                                             a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
 
