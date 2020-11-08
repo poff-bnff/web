@@ -12,7 +12,23 @@ const selectors = {
 
 const nonetoshow = document.getElementById('nonetoshow');
 
+document.onreadystatechange = () => {
+    const loading = document.getElementById('loading');
+    // const content = document.getElementById('content');
+    const filters = document.getElementById('filters');
+    if (document.readyState === 'complete') {
+        filters.style.display = "grid"
+        loading.style.display = "none"
+        // content.style.display = ""
 
+        for (img of document.images) {
+            img_src = img.src || ''
+            if (img_src.includes('thumbnail_')) {
+                    img.src = img_src.replace('thumbnail_', '')
+            }
+        }
+    }
+};
 
 function toggleAll(exclude_selector_name) {
 

@@ -12,6 +12,8 @@ const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA_SCREENINGS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Screening']
 const STRAPIDATA_FILMS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Film']
+const STRAPIDATA_FESTIVALS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Festival']
+
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
 
 const sourceFolder =  path.join(__dirname, '../source/');
@@ -244,10 +246,11 @@ function CreateYAML(screenings, lang) {
                 if (typeof programme.festival_editions !== 'undefined') {
                     for (const fested of programme.festival_editions) {
                         const key = fested.festival + '_' + programme.id
-                        const festival = cassette.festivals.filter(festival => festival.id === fested.festival)
+                        const festival = STRAPIDATA_FESTIVALS.filter((a) => { return a.id === fested.festival })
                         if (festival[0]) {
-                            var festival_name = festival[0].name
+                            var festival_name = festival[0][`name_${lang}`]
                         }
+
                         programmes.push(key)
                         filters.programmes[key] = `${festival_name} ${programme.name}`
                     }

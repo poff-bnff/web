@@ -92,6 +92,7 @@ for (const lang of allLanguages) {
     // data = rueten(data, lang)
     // timer.log(__filename, data)
     let slugMissingErrorNumber = 0
+    var templateMissingMessageDisplayed = false
     let slugMissingErrorIDs = []
     let limit = CASSETTELIMIT
     let counting = 0
@@ -371,36 +372,26 @@ for (const lang of allLanguages) {
                         scc_film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0) })
                         for (roleIx in scc_film.credentials.rolePerson) {
                             let rolePerson = scc_film.credentials.rolePerson[roleIx]
-                            if (rolePerson !== undefined) {
-                                if (rolePerson.person && rolePerson.person.id) {
-                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })
-                                    let personCopy = JSONcopy(personFromYAML[0])
-                                    let searchRegExp = new RegExp(' ', 'g')
+                            if (rolePerson === undefined) { continue }
+                            if (rolePerson.person) {
+                                let searchRegExp = new RegExp(' ', 'g')
+                                const role_name_lc = rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')
+                                rolePersonTypes[role_name_lc] = rolePersonTypes[role_name_lc] || []
 
-                                    rolePerson.person = rueten(personCopy, lang)
-
-                                    if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
+                                if (rolePerson.person.firstNameLastName) {
+                                    rolePersonTypes[role_name_lc].push(rolePerson.person.firstNameLastName)
+                                } else if (rolePerson.person.id) {
+                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })[0]
+                                    if (personFromYAML.fullName) {
+                                        rolePersonTypes[role_name_lc].push(personFromYAML.fullName)
                                     }
-                                    if (rolePerson.person) {
-                                        let fullName = undefined
-                                        if (rolePerson.person.firstName) {
-                                            fullName = rolePerson.person.firstName
-                                        }
-                                        if (rolePerson.person.lastName) {
-                                            fullName = `${fullName !== undefined ? fullName : ''} ${rolePerson.person.lastName}`
-                                        }
-
-                                        if (fullName !== undefined && fullName.length > 2) {
-                                            rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(fullName.trim())
-                                        }
-                                    }
-                                } else {
-                                    // timer.log(__filename, film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                                 }
+                            } else {
+                                // timer.log(__filename, film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                             }
                             //- - timer.log(__filename, 'SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
+                        // console.log('foo2', scc_film.id, rolePersonTypes);
                         scc_film.credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
@@ -445,13 +436,32 @@ function generateYaml(element, lang){
         if (fs.existsSync(cassetteIndexTemplate)) {
             fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
         } else {
-            timer.log(__filename, `ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
+            if (!templateMissingMessageDisplayed) {
+                timer.log(__filename, `ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
+                templateMissingMessageDisplayed = true
+            }
             fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
         }
     }
 }
 
 function generateAllDataYAML(allData, lang){
+
+
+    for (cassette of allData) {
+
+        function picSplit(txt) {
+            return txt.replace('assets.poff.ee/img/', 'assets.poff.ee/img/thumbnail_')
+        }
+
+        cassette.cassetteCarouselPicsCassetteThumbs = (cassette.cassetteCarouselPicsCassette || []).map(txt => picSplit(txt))
+        cassette.cassetteCarouselPicsFilmsThumbs = (cassette.cassetteCarouselPicsFilms || []).map(txt => picSplit(txt))
+        cassette.cassettePostersCassetteThumbs = (cassette.cassettePostersCassette || []).map(txt => picSplit(txt))
+        cassette.cassettePostersFilmsThumbs = (cassette.cassettePostersFilms || []).map(txt => picSplit(txt))
+
+    }
+
+
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
     timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
