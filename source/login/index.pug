@@ -2,39 +2,59 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
+    br
+    br
+    br
+    br
+    br
+    h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
+    h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
+    h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
 
-    - var myUri = 'https://dev.inscaping.eu'
-    //- - var myUri = 'http://localhost:4000'
-    //- - var myUri = 'http://localhost:5000'
+    h4#loginMessage= self.label.userprofile.enterHelp
+    p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
+    p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
+    p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
+    p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
+    p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
+    p#currentUsername(style={display:'none'})
 
+    div#userName
+        label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
+        input#loginUsername(type='text')
+
+    div#password
+        label(style={color: 'red'} for='loginPassword')= self.label.userprofile.password
+        input#loginPassword(type='password')
+        br
+    div#passwordRep(style={display: 'none'})
+        label(style={color: 'red'} for='loginPasswordRep') Password again:
+        input#loginPasswordRep(type='password')
     br
-    br
-    br
-    br
-    br
-    h4#number Log in without hosted UI:
-    label(style={color: 'red'} for='loginUsername') Username:
-    input#loginUsername(type='text')
-    br
-    label(style={color: 'red'} for='loginPassword') Password:
-    input#loginPassword(type='password')
-    br
+    div#resetCodeBox(style={display:'none'})
+        label(style={color: 'red'} for='resetCode') Code:
+        input#resetCode(type='text')
+        button(onclick = 'askForNewPassword()') Send
     p#signUpPassword2
-
-    a(href=`https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}/login/&identity_provider=Facebook`) Facebook
+    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
+    //- br
+    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
+    a#loginFB(href=`https://api.poff.ee/auth/facebook`) Facebook
     br
-    a(href= `https://poffuserlogin.auth.eu-central-1.amazoncognito.com/oauth2/authorize?response_type=token&client_id=55092v28eip9fdakv3hv3j548u&redirect_uri=${myUri}/login/&identity_provider=Google`) Google
+    a#loginG(href=`https://api.poff.ee/auth/google`) Google
     br
-    button(onclick='loginViaCognito()') Login
-    button(onclick='testfSetAccesstoken()') SignUp
-    p#doSignUp
-    br
-    br
+    a#loginE(href=`https://api.poff.ee/auth/eventival`) Eventival
     br
     br
+    button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
+    button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
+    button#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+    button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
+    button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
     br
     br
-    p#favoritefilm(style={color: 'green'})
+    p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
+    br
     br
 
 
@@ -44,10 +64,8 @@ block content
         h4 {color: #464646}
         p {color: #464646}
 
-    script
-        include login.js
-
-
+    script.
+        var langpath = "!{(self.locale)}"
 
 
 

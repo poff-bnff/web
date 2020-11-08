@@ -226,6 +226,12 @@ header
 .main_menu_toggle:checked~.main_menu
     display flex
     width 100vw
+    height calc(100vh - 100px)
+    max-height 100vh
+    width 100vw
+    overflow-y scroll
+    -webkit-overflow-scrolling:touch
+    padding-bottom 2rem
 
 .main_menu_toggle_label
     position absolute
@@ -274,6 +280,7 @@ header
     text-transform none
 
 .org_menu
+    display none
     position absolute
     // display inline
     bottom 0
@@ -572,19 +579,19 @@ footer
 .hero_headline_box_1
     background rgba(10,0,3,.6)
     text-align left
-    padding 3rem 3rem 3rem 3rem
+    padding 2.4rem 2.4rem 2.4rem 2.4rem
 
 .hero_headline_box_2
     background rgba(255,255,255,.8)
     text-align left
     vertical-align middle
-    padding 3rem 3rem 3rem 3rem
+    padding 2.4rem 2.4rem 2.4rem 2.4rem
     align-self stretch
     // height 100%
 
 .hero_headline
     font-family font_h
-    font-size calc(1.9rem + 1.5vw)
+    font-size calc(1rem + 2.4vw)
     text-decoration none
     text-align left
     font-weight 400
@@ -1089,7 +1096,9 @@ row:nth-child(15) > .supporter_logos
     // max-height 100%
     min-width 10rem
     max-width 12rem
+    max-height 7rem
     object-fit contain
+    margin-top 1rem
 
 // .footer_logo_item:first-child
 //     width: 100%
@@ -1151,6 +1160,18 @@ row:nth-child(15) > .supporter_logos
     padding 2rem
     // padding-top header_height
 
+.sub_team_jury
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(20rem, 60rem))
+    grid-template-rows auto
+    justify-content center
+    align-content center
+    justify-items center
+    align-items center
+    grid-gap 6rem
+    padding 2rem
+    // padding-top header_height
+
 .person
     display flex
     flex-direction column
@@ -1163,10 +1184,36 @@ row:nth-child(15) > .supporter_logos
     margin-bottom 1rem
     margin-top 1rem
 
+.person_jury
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(24rem, 1fr))
+    grid-template-rows auto
+    grid-gap 3rem
+    // background-color bg_dark_3
+    // border solid .5px bg_dark_4
+    width 100%
+    // height auto
+    // min-height min-content
+    // max-height max-content
+    // margin-bottom 1rem
+    // margin-top 1rem
+
 .person_head
     // background-color clr_primary
     // color bg_dark_4
     width: 100%
+    // height max-content
+    // height 2.5rem
+    // padding-left 1rem
+    // padding-right 1rem
+    // padding .7rem 1rem .7rem 1rem
+    // align-self flex-start
+
+.person_head_jury
+    // background-color clr_primary
+    // color bg_dark_4
+    width: 100%
+    padding 2rem
     // height max-content
     // height 2.5rem
     // padding-left 1rem
@@ -1333,6 +1380,9 @@ header
 .f_imgs_box
     grid-area f_imgs_box
 
+.carousel-indicators
+    li
+        height 1px
 
 .card-deck
     justify-content center
@@ -1550,7 +1600,7 @@ p a
 .synopsis_gi
 .dir_bio
   font-family font_p
-  color white_96
+  color dark_1
   font-size 1rem
   text-align left
   line-height 1.618
@@ -1770,6 +1820,20 @@ a.btn_popover
   margin-top -.7rem
   stroke rgba(255, 255, 255, .5)
 
+.play_link
+    position absolute
+    bottom 1rem
+    left 1rem
+    z-index 999
+
+.svg_icon_play
+    height calc(2rem + 0.1vw)
+    width calc(2rem + 0.1vw)
+    margin-right .5rem
+    margin-top -.7rem
+    stroke rgba(255, 255, 255, .9)
+
+
 .svg_icon_white
   margin-right .5rem
   margin-top -.3rem
@@ -1908,7 +1972,7 @@ a.btn_popover
 
 .article_title_detailed
     font-family font_h
-    font-size calc(1.9rem + 1.5vw)
+    font-size calc(1rem + 2.4vw)
     text-decoration none
     text-align left
     font-weight 400
@@ -2237,12 +2301,12 @@ a.btn_popover
     .hero_headline_box_1
         background rgba(10,0,3,.6)
         text-align left
-        padding 3rem 3rem 3rem 3rem
+        padding 2.4rem 2.4rem 2.4rem 2.4rem
 
     .hero_headline_box_2
         background rgba(255,255,255,.8)
         text-align left
-        padding 3rem 3rem 3rem 3rem
+        padding 2.4rem 2.4rem 2.4rem 2.4rem
         // height 100%
 
     .hero_head
@@ -2376,7 +2440,7 @@ a.btn_popover
     .main_menu ul li.dropdown ul
         background-color clr_header_bg
         position absolute
-        left 0
+        right 0
         padding-left 0
         width max-content
         /* display: block; */
@@ -2399,7 +2463,7 @@ a.btn_popover
         color clr_primary_text
 
     .ul_kaks
-        text-align left
+        text-align right
         padding 0
         margin 0
         li
@@ -2411,6 +2475,7 @@ a.btn_popover
             padding-bottom 1.618rem
 
     .org_menu
+        display inline-block
         position fixed
         // display inline
         top 0

@@ -30,9 +30,12 @@ ask_what_to_serve()
     fi
 }
 
+
+
 serve()
 {
     SECONDS=0
+
     export DOMAIN=$site_name
 
 
@@ -47,9 +50,7 @@ serve()
     minutes=$((duration/60))
     seconds=$((duration%60))
     printf "SERVE WAS CANCELLED AFTER $minutes m $seconds s.\n\n"
-
     ask_what_to_serve
-
 }
 
 runexit()
