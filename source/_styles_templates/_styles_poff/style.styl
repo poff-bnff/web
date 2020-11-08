@@ -543,6 +543,18 @@ footer
 //                         "f_extra_box"\
 //                         "f_imgs_box"
 
+.grid_login
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    background-color bg_color_1
+
+.login_head
+    position relative
+    grid-column 1 / 4
+
+
 .grid_ss
     display grid
     grid-template-columns 1fr
@@ -2560,6 +2572,13 @@ a.btn_popover
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
+    .grid_login
+        display grid
+        grid-template-columns minmax(200px, 1fr) minmax(72ch, 1fr) 1fr
+        grid-template-rows auto
+        grid-gap 4rem
+        padding-top header_height
+
     .grid_ss
         display grid
         grid-template-columns 2
@@ -3127,7 +3146,7 @@ a.btn_popover
 .margin_bottom_2
     margin-bottom 2rem
 
-.grid_article
+.grid_article, .grid_login
     p
         color dark_1
         a
