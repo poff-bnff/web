@@ -1,5 +1,8 @@
-
 const search_input = document.getElementById('search');
+const nonetoshow = document.getElementById('nonetoshow');
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
 const selectors = {
     programmes: document.getElementById('programmes_select'),
     languages: document.getElementById('languages_select'),
@@ -10,13 +13,27 @@ const selectors = {
     cinemas: document.getElementById('cinemas_select')
 }
 
-const nonetoshow = document.getElementById('nonetoshow');
+function urlSelect() {
+    if (urlParams.getAll.length) {
+        for (const [ix, params] of urlParams) {
+            if (selectors[ix]) {
+                for (const option of selectors[ix].options) {
+                    if (option.innerHTML === params) {
+                        selectors[ix].value = option.value
+                    }
+                }
+            }
+        }
+        toggleAll();
+    }
+}
 
 document.onreadystatechange = () => {
     const loading = document.getElementById('loading');
     // const content = document.getElementById('content');
     const filters = document.getElementById('filters');
     if (document.readyState === 'complete') {
+        urlSelect()
         filters.style.display = "grid"
         loading.style.display = "none"
         // content.style.display = ""
