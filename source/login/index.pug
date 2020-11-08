@@ -3,21 +3,16 @@ include /_templates/mixins.pug
 
 block content
     section.grid_login
-        .login_password
-            h4.dark_1#loginMessage= self.label.userprofile.loginPw
+
+        .login_head
 
             h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
             h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
             h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
 
-            h4.dark_1#loginMessage= self.label.userprofile.loginPw
+        .login_password
 
-            p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
-            p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
-            p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
-            p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
-            p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
-            p#currentUsername(style={display:'none'})
+            h4.dark_1#loginMessage= self.label.userprofile.loginPw
 
             div#userName
                 label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
@@ -38,20 +33,41 @@ block content
 
             p#signUpPassword2
 
+            p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
+            p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
+            p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
+            p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
+            p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
+            p#currentUsername(style={display:'none'})
+
+        .login_some
+
+            a#loginFB(href=`https://api.poff.ee/auth/facebook`)
+                p= Facebook
+
+            a#loginG(href=`https://api.poff.ee/auth/google`)
+                p= Google
+
+            a#loginE(href=`https://api.poff.ee/auth/eventival`)
+                p= Eventival
+
+        .login_register
+
+            button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
+
+
             //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
             //- br
             //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
 
-            a#loginFB(href=`https://api.poff.ee/auth/facebook`) Facebook
-            br
-            a#loginG(href=`https://api.poff.ee/auth/google`) Google
-            br
-            a#loginE(href=`https://api.poff.ee/auth/eventival`) Eventival
+
 
             button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
-            button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
+
             button#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+
             button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
+
             button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
 
             p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
