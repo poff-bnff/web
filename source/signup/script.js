@@ -1,4 +1,4 @@
-if (localStorage.getItem("ACCESS_TOKEN")) {
+if (validToken) {
     loadUserInfo();
 }
 
@@ -11,15 +11,15 @@ async function loadUserInfo() {
     });
     let userProfile = await response.json();
 
-    console.log(userProfile)
+    console.log('userProfile', userProfile)
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
         console.log(riik)
         console.log(linn)
-        city.value = linn
-        country.value = riik
+        citySelection.value = linn
+        countrySelection.value = riik
     }
 
     firstName.value = userProfile.name;
@@ -37,18 +37,23 @@ async function loadUserInfo() {
 
 
 async function sendNewUser() {
-    //siin panen kokku listi objektidest mida saata cognitosse
-    //Kas järjekord on oluline?
-    //kas Name-id on kõik õiged?
+    console.log('sending new user profile.....');
+
+    let profile_pic_to_send= "no profile picture saved"
+
+    if (!imgPreview.src.search("/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")){
+        profile_pic_to_send= "profile picture saved to S3"
+    }
+
     let userToSend = [
-        { Name: "picture", Value: imgPreview.src },
+        { Name: "picture", Value: profile_pic_to_send },
         { Name: "email", Value: email.value },
         { Name: "name", Value: firstName.value },
         { Name: "family_name", Value: lastName.value },
         { Name: "gender", Value: gender.value },
         { Name: "birthdate", Value: dob.value },
-        { Name: "phone_number", Value: phoneNr.value },
-        { Name: "address", Value: `${country.value}, ${city.value}` },
+        { Name: "phone_number", Value: '+' + phoneNr.value },
+        { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
         { Name: "password", Value: psw.value }
     ];
 
@@ -63,58 +68,117 @@ async function sendNewUser() {
     });
     response = await response.json()
 
-    console.log(response.UserConfirmed)
-    if (!response.UserConfirmed){
-        console.log('if');
-    document.getElementById('profileSent').style.display = 'block'
-    document.getElementById('profileSent').innerHTML = 'Andmed salvestatud, kinnituslink saadetud aadressile ' + email.value
-    document.getElementById('loginButton').style.display = 'block'
+    console.log(response)
 
+    if(response.Payload){
+        //konto juba olemas
+        console.log(response.Payload)
+        let providers = JSON.parse(response.Payload)
+        document.getElementById('profileInSystem').style.display = 'block'
+        document.getElementById('signupForm').style.display = 'none'
+        document.getElementById('registerTitle').style.display = 'none'
+        if(!providers.includes("facebook")){
+            document.getElementById('fb').style.display = 'none'
+        }
+        if(!providers.includes("google")){
+            document.getElementById('go').style.display = 'none'
+        }
+        if(!providers.includes("eventival")){
+            document.getElementById('ev').style.display = 'none'
+        }
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
 
+    if (!response.UserConfirmed && !response.Payload){
+        //konto loomine õnnestus
+        document.getElementById('signupForm').style.display = 'none'
+        document.getElementById('registerTitle').style.display = 'none'
+        document.getElementById('profileSent').style.display = 'block'
+        document.getElementById('profileDetails').innerHTML =  email.value
+        document.getElementById('loginButton').style.display = 'block'
+        window.scrollTo({top: 0, behavior: 'smooth'});
 
-    // window.open(`${pageURL}/login`, '_self')
     }
 }
 
-const fileSelector = document.getElementById('profileImg');
-fileSelector.addEventListener('change', (event) => {
-    const fileList = event.target.files;
-    //console.log(fileList);
-    for (const file of fileList) {
-        // Not supported in Safari for iOS.
-        const name = file.name ? file.name : 'NOT SUPPORTED';
-        // Not supported in Firefox for Android or Opera for Android.
-        const type = file.type ? file.type : 'NOT SUPPORTED';
-        // Unknown cross-browser support.
-        const size = file.size ? file.size : 'NOT SUPPORTED';
-        console.log({ file, name, type, size });
-        readImage(file)
-    }
-});
 
-function readImage(file) {
-    const output = document.getElementById("imgPreview");
+function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    error.innerHTML = ''
+    console.log(file)
     // Check if the file is an image.
-    if (file.type && file.type.indexOf('image') === -1) {
-        console.log('File is not an image.', file.type, file);
-        error.innerHTML = 'File is not an image.'
-        return;
+    if (!file.type.includes("image")) {
+        console.log("File is not an image.", file.type, file);
+        error.innerHTML = "File is not an image.";
+    } else {
+        error.innerHTML = "";
+        //näitab pildi eelvaadet
+        var reader = new FileReader();
+        reader.onload = function () {
+            imgPreview.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        profile_pic_to_send = file
     }
-    const reader = new FileReader();
-    reader.addEventListener('load', (event) => {
-        output.src = event.target.result;
-
-    });
-    reader.readAsDataURL(file);
 }
 
 
+function validateForm() {
 
+    var errors = []
 
+    if (document.getElementById('profileSent')){
+    document.getElementById('profileSent').style.display = 'none'
+    }
 
-// console.log(output.src)
+    if (!validateEmail("email")) {
+        errors.push('Missing or invalid email')
 
+    }
+    if (psw && !validatePsw("psw")) {
+        errors.push('Missing or invalid password')
+    }
 
+    if (psw2 && !validatePswRep("psw", "psw2")) {
+        errors.push('Missing or invalid password repeat')
+    }
 
+    if (!validateFirstName("firstName")) {
+        errors.push('Missing firstname')
+    }
+
+    if (!validateLastName("lastName")) {
+        errors.push('Missing lastname')
+    }
+
+    if (!validateGender("gender")) {
+        errors.push('Missing gender')
+    }
+
+    if (!validateBDay("dob")) {
+        errors.push('Missing or invalid date of birth')
+    }
+
+    if (!validatePhoneNr("phoneNr")) {
+        errors.push('Missing phonenumber')
+    }
+
+    if (!validateCountry("countrySelection")) {
+        errors.push('Missing country')
+    }
+
+    if (!validateCity("citySelection")) {
+        errors.push('Missing city')
+    }
+
+    console.log(errors)
+    if (errors.length === 0) {
+        sendNewUser()
+    }
+}
+
+window.addEventListener("keydown", function (event) {
+    if (event.key === "Enter"){
+        console.log("ENTER")
+        validateForm()
+    }
+})

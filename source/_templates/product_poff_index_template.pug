@@ -1,8 +1,6 @@
 extends /_templates/layout.pug
 include /_templates/mixins.pug
 
-
-
 block content
 
     main.grid_product
@@ -38,56 +36,16 @@ block content
                 h4
                     +euro(self.priceAtPeriod[0].price)
             div.payment
-                button#buybutton.btn.btn_primary(onclick=`checkIfPasswordBuyer()`) OSTA
-                button#directToLoginButton.btn.btn_primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
-                button#directToaddPicture.btn.btn_primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
-                button#directToFillProfile.btn.btn_primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
+                button#buybutton.btn.btn-primary(onclick = 'GetPaymentLinks()')= self.label.userprofile.pass
+                button#directToLoginButton.btn.btn-primary(onclick='directToLogin(), saveUrl()')= self.label.userprofile.passHelp
+                button#directToaddPicture.btn.btn-primary(onclick='directToUserProfile(), saveUrl()')= self.label.userprofile.profilePicHelp
+                button#directToFillProfile.btn.btn-primary(onclick='directToUserProfile(), saveUrl()')= self.label.userprofile.profileAddInfoHelp
                 div#paymentLinks
                 br
-                div.dark_1#feedback
-                br
-                button#paybutton.btn.btn_primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
-                br
-            h4
-                +euro(self.priceAtPeriod[0].price)
-    style.
-        #buybutton {display: none}
-        #directToaddPicture {display:none}
-        #directToFillProfile {display:none}
-        #paybutton {display: none}
-        [type=radio]{
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        [type=radio] + img {
-            cursor: pointer;
-        }
-        [type=radio]:checked + img {
-            outline: 4px solid #fd7e14;
-        }
-
-
-
-
-
-
-
-            div.payment
-                button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`)= self.label.userprofile.pass
-                button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`)= self.label.userprofile.passHelp
-                button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profilePicHelp
-                button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`)= self.label.userprofile.profileAddInfoHelp
-                div#paymentLinks
-                br
-                div.dark_1#feedback
+                div#feedback
                 br
                 button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`)= self.label.userprofile.payment
                 br
-        if self.priceAtPeriod && self.priceAtPeriod[0] && self.priceAtPeriod[0].price
-            h1.dark_1
-                +euro(self.priceAtPeriod[0].price)
     style.
         #buybutton {display: none}
         #directToaddPicture {display:none}
@@ -105,4 +63,7 @@ block content
         [type=radio]:checked + img {
             outline: 4px solid #fd7e14;
         }
+
+
+
 
