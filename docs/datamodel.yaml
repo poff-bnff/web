@@ -1,135 +1,36 @@
-# POFF
-# Just
-# Shorts
-# Industry
-# Kinoff
+WebPermission: &WebPermission
+    _path: /web-permissions
+    type: (text)
+    name: (text)
+    action: (text)
+    enabled: (Boolean)
+    controller: (text)
+    policy: (text)
+
+WebRole: &WebRole
+    _path: /web-roles
+    name: (text)
+    description: (text)
+    type: (text)
+    web_permission: *WebPermission
+
+WebUser:
+    _path: /web-users
+    username: (text)
+    emali: (Email)
+    password: (Password)
+    resetPasswordToken: (text)
+    provider: (text)
+    confirmed: (Boolean)
+    blocked: (Boolean)
+    web_role: *WebRole
 
 Translated: &Translated
     et: (text)
     en: (text)
     ru: (text)
 
-Gender: &Gender
-    _path: /genders
-    et: (text)
-    en: (text)
-    ru: (text)
-
-TagGenre: &TagGenre
-    _path: /tag-genres
-    et: (text)
-    en: (text)
-    ru: (text)
-
-TagKeyword: &TagKeyword
-    _path: /tag-keywords
-    et: (text)
-    en: (text)
-    ru: (text)
-
-TagPremiereType: &TagPremiereType
-    _path: /tag-premiere-types
-    et: (text)
-    en: (text)
-    ru: (text)
-
-TagProgramme: &TagProgramme
-    _path: /tag-programmes
-    et: (text)
-    en: (text)
-    ru: (text)
-
-ArticleType: &ArticleType
-    _path: /article-types
-    name: (text)
-    label_et: (text)
-    label_en: (text)
-    label_ru: (text)
-    slug_et: (UID)
-    slug_en: (UID)
-    slug_ru: (UID)
-
-Domain: &Domain
-    _path: /domains
-    url: (text)
-    ipAdress: (text)
-    server: (text)
-
-Publishing: &Publishing
-    publish_et: (Boolean)
-    from: (Datetime)
-    until: (Datetime)
-    publish_en: (Boolean)
-    publish_ru: (Boolean)
-    article_types: #(Component (repeatable))
-        - *ArticleType
-
-Tags: &Tags
-    genres: #(Component (repeatable))
-      - *TagGenre
-    keywords: #(Component (repeatable))
-      - *TagKeyword
-    premiere_types: #(Component (repeatable))
-      - *TagPremiereType
-    programmes: #(Component (repeatable))
-      - *TagProgramme
-
-Language: &Language
-    _path: /languages
-    id: 8 (number)
-    code: et (short text, min len 2, max len 3, lowercase)
-    name_et: Eesti (short text)
-    name_en: Estonian (short text)
-    name_ru: Эстонский (short text)
-
-Country: &Country
-    _path: /countries
-    id: 1 (number)
-    code: EE (short text, min len 2, max len 3, uppercase)
-    name_et: Eesti (short text)
-    name_en: Estonia (short text)
-    name_ru: Эстония (short text)
-
-Town: &Town
-    _path: /towns
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
-    country: *Country #(Component)
-
-Cinema: &Cinema
-    _path: /cinemas
-    town: *Town #(Component)
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
-
-Hall: &Hall
-    _path: /halls
-    name_et: (text)
-    number: (Number)
-    numberOfSeats: (Number)
-    cinema: *Cinema
-    floor: (Enumeration)
-    name_en: (text)
-    name_ru: (text)
-
-Location: &Location
-    _path: /locations
-    country: *Country #(Component)
-    town: *Town #(Component)
-    cinema: *Cinema #(Component)
-    hall: *Hall #(Component)
-    name: (text)
-
-Button: &Button
-    text_et: (text)
-    text_en: (text)
-    text_ru: (text)
-    url_et: (text)
-    url_en: (text)
-    url_ru: (text)
-
+# StrapiMedia
 Large: &Large
     # ext: (text)
     url:  (text)
@@ -195,6 +96,137 @@ StrapiMedia: &StrapiMedia
     # provider: (text)
     # provider_metadata: (text)
 
+# Domain
+Domain: &Domain
+    _path: /domains
+    url: (text)
+    ipAdress: (text)
+    server: (text)
+
+Gender: &Gender
+    _path: /genders
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagGenre: &TagGenre
+    _path: /tag-genres
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagKeyword: &TagKeyword
+    _path: /tag-keywords
+    et: (text)
+    en: (text)
+    ru: (text)
+
+TagPremiereType: &TagPremiereType
+    _path: /tag-premiere-types
+    et: (text)
+    en: (text)
+    ru: (text)
+
+# Festival
+Festival: &Festival
+    _path: /festivals
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    description_et: (Rich text)
+    description_en: (Rich text)
+    description_ru: (Rich text)
+    logo: *StrapiMedia
+    images: #(Component (repeatable))
+        - *StrapiMedia
+    clipUrl: (text)
+
+FestivalEdition: &FestivalEdition
+    _path: /festival-editions
+    number: (Number)
+    year: (Number)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    description_et: (Rich text)
+    description_en: (Rich text)
+    description_ru: (Rich text)
+    startDate: (Datetime)
+    endDate: (Datetime)
+    domain: *Domain #(Component)
+    festival: *Festival #(Component)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+
+# Organisation
+Organisation: &Organisation
+    _path: /organisations
+    namePrivate: (text)
+    name: *Translated # (Component)
+    description: *Translated # (Component)
+    images: #(Component (repeatable))
+        - *StrapiMedia
+    type: (Enumeration)
+    logoWhite: *StrapiMedia
+    logoBlack: *StrapiMedia
+    logoColour: *StrapiMedia
+    homepageUrl: (text)
+
+PresentedBy: &PresentedBy
+    presentedByText: *Translated
+    organisations: #(Component (repeatable))
+        - *Organisation
+
+# Programme
+Programme: &Programme
+    _path: /programmes
+    remoteId: (UID)
+    namePrivate: (text)
+    name: *Translated #(Component)
+    description: *Translated # (Component, rich)
+    festival_editions: #(Component (repeatable))
+        - *FestivalEdition
+    images:
+        - *StrapiMedia
+    presentedByText: *Translated #(Component)
+    presenters: #(Component (repeatable))
+        - *Organisation
+    domains:
+        - *Domain #(Component)
+    order: (Number)
+    presentedBy: *PresentedBy #(Component)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+
+
+Tags: &Tags
+    genres: #(Component (repeatable))
+      - *TagGenre
+    keywords: #(Component (repeatable))
+      - *TagKeyword
+    premiere_types: #(Component (repeatable))
+      - *TagPremiereType
+    programmes: #(Component (repeatable))
+      - *Programme
+
+WebAuthor: &WebAuthor
+    _path: /web-authors
+    namePrivate: (text)
+    name: *Translated
+
+ArticleType: &ArticleType
+    _path: /article-types
+    name: (text)
+    label_et: (text)
+    label_en: (text)
+    label_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+
+# Articles (POFF, Just, Shorts, Industry, Kinoff)
 Media: &Media
     imageDefault: #(Component (repeatable))
         - *StrapiMedia
@@ -209,12 +241,13 @@ Media: &Media
     clipUrl_en: (text)
     clipUrl_ru: (text)
 
-WebAuthor: &WebAuthor
-    _path: /web-authors
-    namePrivate: (text)
-    name: *Translated
-
-# Articles
+Button: &Button
+    text_et: (text)
+    text_en: (text)
+    text_ru: (text)
+    url_et: (text)
+    url_en: (text)
+    url_ru: (text)
 
 POFFiArticle: &POFFiArticle
     _path: /pof-fi-articles
@@ -247,31 +280,14 @@ POFFiArticle: &POFFiArticle
         - *ArticleType
     tag_premiere_types: #(Component (repeatable))
         - *TagPremiereType
-    tag_programmes: #(Component (repeatable))
-        - *TagProgramme
+    programmes: #(Component (repeatable))
+        - *Programme
     tag_genres: #(Component (repeatable))
         - *TagGenre
     tag_keywords: #(Component (repeatable))
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-
-PoffiSubMenuItem: &PoffiSubMenuItem
-    name: *Translated #(Component)
-    poffi_article: *POFFiArticle
-    order: (Number)
-    customUrl: *Translated #(Component)
-    namePrivate: (text)
-
-POFFiMenu: &POFFiMenu
-    _path: /pof-fi-menus
-    #namePrivate: (text, private field)
-    name: *Translated #(Component)
-    poffi_article: *POFFiArticle
-    customUrl: *Translated #(Component)
-    order: (Number)
-    subMenuItem: #(Component (repeatable))
-        - *PoffiSubMenuItem
 
 JustFilmiArticle: &JustFilmiArticle
     _path: /just-filmi-articles
@@ -304,31 +320,14 @@ JustFilmiArticle: &JustFilmiArticle
         - *ArticleType
     tag_premiere_types: #(Component (repeatable))
         - *TagPremiereType
-    tag_programmes: #(Component (repeatable))
-        - *TagProgramme
+    programmes: #(Component (repeatable))
+        - *Programme
     tag_genres: #(Component (repeatable))
         - *TagGenre
     tag_keywords: #(Component (repeatable))
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-
-JustFilmiSubMenuItem: &JustFilmiSubMenuItem
-    name: *Translated #(Component)
-    just_filmi_article: *JustFilmiArticle
-    order: (Number)
-    customUrl: *Translated #(Component)
-    namePrivate: (text)
-
-JustFilmiMenu: &JustFilmiMenu
-    _path: /just-filmi-menus
-    #namePrivate: (text, private field)
-    name: *Translated #(Component)
-    just_filmi_article: *JustFilmiArticle
-    customUrl: *Translated #(Component)
-    order: (Number)
-    subMenuItem: #(Component (repeatable))
-        - *JustFilmiSubMenuItem
 
 ShortsiArticle: &ShortsiArticle
     _path: /shortsi-articles
@@ -361,31 +360,14 @@ ShortsiArticle: &ShortsiArticle
         - *ArticleType
     tag_premiere_types: #(Component (repeatable))
         - *TagPremiereType
-    tag_programmes: #(Component (repeatable))
-        - *TagProgramme
+    programmes: #(Component (repeatable))
+        - *Programme
     tag_genres: #(Component (repeatable))
         - *TagGenre
     tag_keywords: #(Component (repeatable))
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
-
-ShortsiSubMenuItem: &ShortsiSubMenuItem
-    name: *Translated #(Component)
-    shortsi_article: *JustFilmiArticle
-    order: (Number)
-    customUrl: *Translated #(Component)
-    namePrivate: (text)
-
-ShortsiMenu: &ShortsiMenu
-    _path: /shortsi-menus
-    #namePrivate: (text, private field)
-    name: *Translated #(Component)
-    shortsi_article: *ShortsiArticle
-    customUrl: *Translated #(Component)
-    order: (Number)
-    subMenuItem: #(Component (repeatable))
-        - *ShortsiSubMenuItem
 
 IndustryArticle: &IndustryArticle
     _path: /industry-articles
@@ -418,14 +400,156 @@ IndustryArticle: &IndustryArticle
         - *ArticleType
     tag_premiere_types: #(Component (repeatable))
         - *TagPremiereType
-    tag_programmes: #(Component (repeatable))
-        - *TagProgramme
+    programmes: #(Component (repeatable))
+        - *Programme
     tag_genres: #(Component (repeatable))
         - *TagGenre
     tag_keywords: #(Component (repeatable))
         - *TagKeyword
     web_authors: #(Component (repeatable))
         - *WebAuthor
+
+KinoffiArticle: &KinoffiArticle
+    _path: /kinoffi-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (text)
+    slug_en: (text)
+    slug_ru: (text)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media #(Component)
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    programmes: #(Component (repeatable))
+        - *Programme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+    web_authors: #(Component (repeatable))
+        - *WebAuthor
+
+Language: &Language
+    _path: /languages
+    id: 8 (number)
+    code: et (short text, min len 2, max len 3, lowercase)
+    name_et: Eesti (short text)
+    name_en: Estonian (short text)
+    name_ru: Эстонский (short text)
+
+Country: &Country
+    _path: /countries
+    id: 1 (number)
+    code: EE (short text, min len 2, max len 3, uppercase)
+    name_et: Eesti (short text)
+    name_en: Estonia (short text)
+    name_ru: Эстония (short text)
+
+Town: &Town
+    _path: /towns
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+    country: *Country #(Component)
+
+Cinema: &Cinema
+    _path: /cinemas
+    town: *Town #(Component)
+    name_et: (text)
+    name_en: (text)
+    name_ru: (text)
+
+Hall: &Hall
+    _path: /halls
+    name_et: (text)
+    number: (Number)
+    numberOfSeats: (Number)
+    cinema: *Cinema
+    floor: (Enumeration)
+    name_en: (text)
+    name_ru: (text)
+
+Location: &Location
+    _path: /locations
+    country: *Country #(Component)
+    town: *Town #(Component)
+    cinema: *Cinema #(Component)
+    hall: *Hall #(Component)
+    name: (text)
+    remoteId: (UID)
+
+# Menu
+
+PoffiSubMenuItem: &PoffiSubMenuItem
+    name: *Translated #(Component)
+    poffi_article: *POFFiArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
+
+POFFiMenu: &POFFiMenu
+    _path: /pof-fi-menus
+    #namePrivate: (text, private field)
+    name: *Translated #(Component)
+    poffi_article: *POFFiArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *PoffiSubMenuItem
+
+JustFilmiSubMenuItem: &JustFilmiSubMenuItem
+    name: *Translated #(Component)
+    just_filmi_article: *JustFilmiArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
+
+JustFilmiMenu: &JustFilmiMenu
+    _path: /just-filmi-menus
+    #namePrivate: (text, private field)
+    name: *Translated #(Component)
+    just_filmi_article: *JustFilmiArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *JustFilmiSubMenuItem
+
+ShortsiSubMenuItem: &ShortsiSubMenuItem
+    name: *Translated #(Component)
+    shortsi_article: *JustFilmiArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
+
+ShortsiMenu: &ShortsiMenu
+    _path: /shortsi-menus
+    #namePrivate: (text, private field)
+    name: *Translated #(Component)
+    shortsi_article: *ShortsiArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *ShortsiSubMenuItem
 
 IndustrySubMenuItem: &IndustrySubMenuItem
     name: *Translated #(Component)
@@ -444,215 +568,29 @@ IndustryMenu: &IndustryMenu
     subMenuItem: #(Component (repeatable))
         - *IndustrySubMenuItem
 
-# KinoffiArticle: &KinoffiArticle
-#     _path: /
-#     created_by:
-#         firstname: (text)
-#         lastname: (text)
-#     created_at: (datetime)
-#     #titlePrivate: (text, private field)
-#     title_et: (text)
-#     title_en: (text)
-#     title_ru: (text)
-#     slug_et: (text)
-#     slug_en: (text)
-#     slug_ru: (text)
-#     lead_et: (Rich text)
-#     lead_en: (Rich text)
-#     lead_ru: (Rich text)
-#     contents_et: (Rich text)
-#     contents_en: (Rich text)
-#     contents_ru: (Rich text)
-#     media: *Media #(Component)
-#     publishFrom: (Datetime)
-#     publishUntil: (Datetime)
-#     publish_et: (boolean)
-#     publish_en: (boolean)
-#     publish_ru: (boolean)
-#     button: #(Component (repeatable))
-#         - *Button
-#     article_types: #(Component (repeatable))
-#         - *ArticleType
-#     tag_premiere_types: #(Component (repeatable))
-#         - *TagPremiereType
-#     tag_programmes: #(Component (repeatable))
-#         - *TagProgramme
-#     tag_genres: #(Component (repeatable))
-#         - *TagGenre
-#     tag_keywords: #(Component (repeatable))
-#         - *TagKeyword
-#     web_authors: #(Component (repeatable))
-#         - *WebAuthor
+KinoffiSubMenuItem: &KinoffiSubMenuItem
+    name: *Translated #(Component)
+    kinoffi_article: *KinoffiArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
 
-# KinoffiSubMenuItem: &KinoffiSubMenuItem
-#     name: *Translated #(Component)
-#     kinoffi_article: *KinoffiArticle
-#     order: (Number)
-#     customUrl: *Translated #(Component)
-#     namePrivate: (text)
+KinoffiMenu: &KinoffiMenu
+    _path: /kinoffi-menus
+    #namePrivate: (text, private field)
+    name: *Translated #(Component)
+    kinoffi_article: *KinoffiArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *KinoffiSubMenuItem
 
-# KinoffiMenu: &KinoffiMenu
-#     _path: /
-#     #namePrivate: (text, private field)
-#     name: *Translated #(Component)
-#     kinoffi_article: *KinoffiArticle
-#     customUrl: *Translated #(Component)
-#     order: (Number)
-#     subMenuItem: #(Component (repeatable))
-
-
-#  Festival
-Festival: &Festival
-    _path: /festivals
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
-    description_et: (Rich text)
-    description_en: (Rich text)
-    description_ru: (Rich text)
-    logo: *StrapiMedia
-    images: #(Component (repeatable))
-        - *StrapiMedia
-    clipUrl: (text)
-
-FestivalEdition: &FestivalEdition
-    _path: /festival-editions
-    number: (Number)
-    year: (Number)
-    name_et: (text)
-    name_en: (text)
-    name_ru: (text)
-    description_et: (Rich text)
-    description_en: (Rich text)
-    description_ru: (Rich text)
-    startDate: (Datetime)
-    endDate: (Datetime)
-    domain: *Domain #(Component)
-    festival: *Festival #(Component)
-
-Organisation: &Organisation
-    _path: /organisations
-    name: (text)
-    nameTranslated: # (Component (repeatable))
-        - *Translated
-    description: *Translated # (Component)
-    images: #(Component (repeatable))
-        - *StrapiMedia
-    type: (Enumeration)
-    logo: *StrapiMedia
-
-ScreeningMode: &ScreeningMode
-    _path: /screening-modes
-    name: (text)
-
-ScreeningType: &ScreeningType
-    _path: /screening-types
-    name: (text)
-    validFrom: (Datetime)
-    validTo: (Datetime)
-
-Trailer: &Trailer
-    url: https://www.youtube.com/watch?v=NRF-Pba3QrE (Text)
-    source: YouTube (Enumeration)
-
-QaClip: &QaClip
-    url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
-    type: Conversation (Enumeration)
-
-FilmMedia: &FilmMedia
-    stills: #(Component (repeatable))
-    - *StrapiMedia
-    posters: #(Component (repeatable))
-    - *StrapiMedia
-    trailer: #(Component (repeatable))
-        - *Trailer
-    QaClip: #(Component (repeatable))
-        - *QaClip
-
-FilmCredentials: &FilmCredentials
-    director: #(Component (repeatable))
-        - *Translated
-    screenwriter: #(Component (repeatable))
-        - *Translated
-    doP: #(Component (repeatable))
-        - *Translated
-    cast: #(Component (repeatable))
-        - *Translated
-    composer: #(Component (repeatable))
-        - *Translated
-    editor: #(Component (repeatable))
-        - *Translated
-    producer: #(Component (repeatable))
-        - *Translated
-    coProducer: #(Component (repeatable))
-        - *Translated
-    ProductionCompany: *Organisation #(Component)
-
-CountriesAndLanguages: &CountriesAndLanguages
-    countries: #(Component (repeatable))
-        - *Country
-    languages: #(Component (repeatable))
-        - *Language
-
-# Film
-Film: &Film
-    _path: /films
-    id: 1 (number)
-    title_et: Nähtamatu elu (short text)
-    title_en: Invisible Life of Eurídice Gusmãos (short text)
-    title_ru: Департамент здоровьяs (short text)
-    titleOriginal: A Vida Invisivel (short text)
-    year: 2019 (number)
-    runtime: 139 (number)
-    credentials: *FilmCredentials #(Component)
-    synopsis: *Translated #(Component)
-    media: *FilmMedia #(Component)
-    tags: *Tags #(Component)
-    slug_et: naehtamatu-elu (UID, No spaces)
-    slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
-    slug_ru: departament-zdorovya (UID, No spaces)
-    filmId: 2020 (UID)
-    countriesAndLanguages: *CountriesAndLanguages #(Component)
-
-IntroConversationQandA: &IntroConversationQandA
-    yesNo: (Boolean)
-    type: (Enumeration)
-    mode: (Enumeration)
-    presenter: #(Component (repeatable))
-        - *Translated
-    guest: #(Component (repeatable))
-        - *Translated
-    duration: (Number)
-    clipUrl: (text)
-
-Subtitles: &Subtitles
-    language: *Language
-
-Screening: &Screening
-    _path: /screenings
-    screeningId: (Number)
-    films: #(Component (repeatable))
-      - *Film
-    code: (Number)
-    codeAndFilmTitle: (text)
-    ticketingId: (Number)
-    ticketingUrl: (text)
-    dateTime: (Datetime)
-    introQaConversation:
-      - *IntroConversationQandA
-    durationTotal: (Number)
-    location: *Location
-    subtitles: #(Component (repeatable))
-      - *Subtitles
-    extraInfo: (text)
-    screening_types: #(Component (repeatable))
-      - *ScreeningType
-    screening_mode: *ScreeningMode #(Component)
-
+# Person & Team
 Person: &Person
     _path: /people
     firstName: (text)
     lastName: (text)
+    firstNameLastName: (text)
     picture: *StrapiMedia #(Component)
     gender: *Gender #(Component)
     phoneNr: (text)
@@ -662,9 +600,11 @@ Person: &Person
         - *Country
     organisations: #(Component (repeatable))
         - *Organisation
-    biography: (Rich text)
-    filmography: (Rich text)
+    biography: *Translated #(Rich text)
+    filmography: *Translated #(Rich text)
     profession: (text)
+    remoteId: (UID)
+    pageUrl: (text)
 
 TeamMember: &TeamMember
     person: *Person #(Component)
@@ -717,6 +657,170 @@ Team: &Team
     slug_en: (UID)
     slug_ru: (UID)
 
+
+# Screening & Film
+ScreeningMode: &ScreeningMode
+    _path: /screening-modes
+    name: (text)
+
+ScreeningType: &ScreeningType
+    _path: /screening-types
+    name: (text)
+    validFrom: (Datetime)
+    validTo: (Datetime)
+
+Trailer: &Trailer
+    url: https://www.youtube.com/watch?v=NRF-Pba3QrE (Text)
+    source: YouTube (Enumeration)
+
+QaClip: &QaClip
+    url: https://www.youtube.com/watch?v=rCztl76AmrQ (Text)
+    type: Conversation (Enumeration)
+
+FilmMedia: &FilmMedia
+    stills: #(Component (repeatable))
+        - *StrapiMedia
+    posters: #(Component (repeatable))
+        - *StrapiMedia
+    trailer: #(Component (repeatable))
+        - *Trailer
+    QaClip: #(Component (repeatable))
+        - *QaClip
+
+RoleAtFilm: &RoleAtFilm
+    _path: /role-at-films
+    roleNamePrivate: (text)
+    roleName: *Translated #(Component)
+    order: (Number)
+    remoteId: (UID)
+
+RolePerson: &RolePerson
+    order: (Number)
+    role_at_film: *RoleAtFilm
+    person: *Person
+
+RoleCompany: &RoleCompany
+    order: (Number)
+    role_at_film: *RoleAtFilm
+    organisation: *Organisation
+
+Credentials: &Credentials
+    rolePerson:
+        - *RolePerson
+    roleCompany:
+        - *RoleCompany
+
+OrderedCountries: &OrderedCountries
+    order: (Number)
+    country: *Country
+
+Film: &Film
+    _path: /films
+    id: 1 (number)
+    remoteId: (UID)
+    order: (number)
+    title_et: Nähtamatu elu (short text)
+    title_en: Invisible Life of Eurídice Gusmãos (short text)
+    title_ru: Департамент здоровьяs (short text)
+    titleOriginal: A Vida Invisivel (short text)
+    year: 2019 (number)
+    runtime: 139 (number)
+    synopsis: *Translated #(Component, rich)
+    media: *FilmMedia #(Component, not from eventival)
+    tags: *Tags #(Component)
+    slug_et: naehtamatu-elu (UID, No spaces)
+    slug_en: invisible-life-of-euridice-gusmao (UID, No spaces)
+    slug_ru: departament-zdorovya (UID, No spaces)
+    festival_editions:
+        - *FestivalEdition
+    languages: #(Component (repeatable))
+        - *Language
+    subtitles: #(Component (repeatable))
+        - *Language
+    otherFestivals: (text)
+    credentials: *Credentials
+    presentedBy: *PresentedBy
+    world_sales: #(Component (repeatable))
+        - *Organisation
+    orderedCountries: #(Component (repeatable))
+        - *OrderedCountries
+    additInfo: *Translated #(rich text)
+    foreignUrl: (text)
+
+OrderedFilm: &OrderedFilm
+    order: (Number)
+    film: *Film
+
+Cassette: &Cassette
+    _path: /cassettes
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    synopsis: *Translated #(Rich text)
+    media: *FilmMedia #(Component)
+    festival_editions: #(Component (repeatable))
+        - *FestivalEdition
+    tags: *Tags
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    presenters: #(Component (repeatable))
+        - *Organisation
+    orderedFilms: #(Component (repeatable))
+        - *OrderedFilm
+    remoteId: (UID)
+
+IntroConversationQandA: &IntroConversationQandA
+    yesNo: (Boolean)
+    type: (Enumeration)
+    mode: (Enumeration)
+    presenter: #(Component (repeatable))
+        - *Translated
+    guest: #(Component (repeatable))
+        - *Translated
+    duration: (Number)
+    clipUrl: (text)
+
+Screening: &Screening
+    _path: /screenings
+    code: (Number)
+    codeAndTitle: (text)
+    ticketingId: (Number)
+    ticketingUrl: (text)
+    dateTime: (Datetime)
+    introQaConversation: #(Component (repeatable))
+      - *IntroConversationQandA
+    durationTotal: (Number)
+    location: *Location
+    extraInfo: *Translated
+    screening_types: #(Component (repeatable))
+      - *ScreeningType
+    screening_mode: *ScreeningMode #(Component)
+    subtitles: #(Component (repeatable))
+      - *Language
+    cassette: *Cassette
+    bookingUrl: (text)
+    remoteId: (UID)
+
+SixFilms: &SixFilms
+    _path: /six-films
+    title: *Translated
+    lead: *Translated #(Rich)
+    domain: *Domain
+    namePrivate: (text)
+    films_et: #(Component (repeatable))
+        - *Film
+    films_en: #(Component (repeatable))
+        - *Film
+    films_ru: #(Component (repeatable))
+        - *Film
+    cassettes_et: #(Component (repeatable))
+        - *Cassette
+    cassettes_en: #(Component (repeatable))
+        - *Cassette
+    cassettes_ru: #(Component (repeatable))
+        - *Cassette
+
 Label: &Label
     name: (text)
     value_et: (text)
@@ -729,19 +833,161 @@ LabelGroup:
     label: #(Component (repeatable))
         - *Label
 
+#Industry
+FilmInFilmography: &FilmInFilmography
+    order: (Number)
+    film: *Film
+    foreignUrl: (text)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    titleOriginal: (text)
+    year: (Number)
+    synopsis_et: (Rich text)
+    synopsis_en: (Rich text)
+    synopsis_ru: (Rich text)
+    images:
+        - *StrapiMedia
+    trailerUrl: (text)
+
+Filmography: &Filmography
+    text: (Rich text)
+    film: #(Component (repeatable))
+        - *FilmInFilmography
+
+IndustryPersonType: &IndustryPersonType
+    _path: /industry-person-types
+    type: (text)
+    description: (Rich text)
+
+IndustryPerson: &IndustryPerson
+    _path: /industry-people
+    person: *Person
+    profilePicAtInd: *StrapiMedia
+    role_at_films: #(Component (repeatable))
+        - *RoleAtFilm
+    emaliAtInd: (Email)
+    phoneAtInd: (text)
+    aboutText: (Rich text) #kas peaks olema kolmes keeles
+    images: #(Component (repeatable))
+        - *StrapiMedia
+    clipUrl: (text)
+    website: (text)
+    filmography: #(Component (repeatable))
+        - *Filmography
+    industry_person_type: #(Component (repeatable))
+        - *IndustryPersonType
+
+IndustryGroup: &IndustryGroup
+    _path: /industry-groups
+    namePrivate: (text)
+    domain: *Domain
+    name_en: (text)
+    slug_en: (UID)
+    description_en: (Rich text)
+
+IndustryCategory: &IndustryCategory
+    _path: /industry-categories
+    name: (text)
+    description: (Rich text)
+
+ProjectType: &ProjectType
+    _path: /project-types
+    type: (text)
+    description: (Rich text)
+
+ProjectStatus: &ProjectStatus
+    _path: project-status
+    status: (text)
+    description: (Rich text)
+
+TeamCredentials: &TeamCredentials
+    rolePerson: #(Component (repeatable))
+        - *RolePerson
+    roleCompany: #(Component (repeatable))
+        - *RoleCompany
+
+IndustryProject: &IndustryProject
+    _path: /industry-projects
+    title_en: (text)
+    titleOriginal: (text)
+    countries: #(Component (repeatable))
+        - *Country
+    languages: #(Component (repeatable))
+        - *Language
+    project_types: #(Component (repeatable))
+        - *ProjectType
+    logline: (text)
+    project_statuses: #(Component (repeatable))
+        - *ProjectStatus
+    completionDate: (Datetime)
+    numOfSeasons: (Number)
+    numOfEpisodes: (Number)
+    episodeDuration: (Number)
+    broadcasters: #(Component (repeatable))
+        - *Organisation
+    plannedPremiere: (Date)
+    country_focus: *Country
+    teamCredentials: *TeamCredentials
+    budget: (Number)
+    financed: (Number)
+    attached_partners: #(Component (repeatable))
+        - *Organisation
+    lookingFor: (text)
+    synopsis: (Rich text)
+    directorsNote: (Rich text)
+    contactName: (text)
+    contactCompany: *Organisation
+    contactAddess: (text)
+    contactEmail: (Email)
+    contactWeb: (text)
+    images: #(Component (repeatable))
+        - *StrapiMedia
+    clipUrl: (text)
+    slug: (UID)
+    tag_genres:
+        - *TagGenre
+
+Channel: &Channel
+    _path: /channels
+    namePrivate: (text)
+    name: *Translated
+    description: *Translated #(Rich)
+    embedCode: (text)
+
+IndustryEvent: &IndustryEvent
+    _path: /industry-events
+    titlePrivate: (text)
+    startTime: (Datetime)
+    title_en: (text)
+    slug_en: (UID)
+    duration: (Number)
+    images: #(Component (repeatable))
+        - *StrapiMedia
+    location: *Location #ei sisalda kirjeldust
+    lead: (Rich text)
+    description: (Rich text)
+    industry_categories: #(Component (repeatable))
+        - *IndustryCategory
+    project_type: *ProjectType
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish: (Boolean)
+    channel: *Channel
+
 # Supporters
 SupPoff: &SupPoff
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     poffi_article: *POFFiArticle
 
 SupSecPoff: &SupSecPoff
     name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupPoff
 
 POFFSupporter: &POFFSupporter
@@ -750,22 +996,21 @@ POFFSupporter: &POFFSupporter
     intro: *Translated
     # namePrivate: (text, private)
     domain: *Domain
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecPoff
 
 SupJust: &SupJust
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     just_filmi_article: *JustFilmiArticle
 
 SupSecJust: &SupSecJust
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupJust
 
 JustSupporter: &JustSupporter
@@ -774,22 +1019,21 @@ JustSupporter: &JustSupporter
     domain: *Domain
     title: *Translated
     intro: *Translated
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecJust
 
 SupShorts: &SupShorts
     name: (text)
     customUrl: (text)
     logoWhite: *StrapiMedia
-    logoColor: *StrapiMedia
+    logoColour: *StrapiMedia
     logoBlack: *StrapiMedia
     shortsi_article: *ShortsiArticle
 
 SupSecShorts: &SupSecShorts
-    name:
-        - *Translated
+    name: *Translated
     order: (Number)
-    supporter:
+    supporter: #(Component (repeatable))
         - *SupShorts
 
 ShortsSupporter: &ShortsSupporter
@@ -798,8 +1042,54 @@ ShortsSupporter: &ShortsSupporter
     domain: *Domain
     title: *Translated
     intro: *Translated
-    supporters:
+    supporters: #(Component (repeatable))
         - *SupSecShorts
+
+SupIndustry: &SupIndustry
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColour: *StrapiMedia
+    logoBlack: *StrapiMedia
+    industry_article: *IndustryArticle
+
+SupSecIndustry: &SupSecIndustry
+    name: *Translated
+    order: (Number)
+    supporter: #(Component (repeatable))
+        - *SupIndustry
+
+IndustrySupporter: &IndustrySupporter
+    _path: /industry-supporters
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters: #(Component (repeatable))
+        - *SupSecIndustry
+
+SupKinoff: &SupKinoff
+    name: (text)
+    customUrl: (text)
+    logoWhite: *StrapiMedia
+    logoColour: *StrapiMedia
+    logoBlack: *StrapiMedia
+    kinoffi_article: *KinoffiArticle
+
+SupSecKinoff: &SupSecKinoff
+    name: *Translated
+    order: (Number)
+    supporter: #(Component (repeatable))
+        - *SupKinoff
+
+KinoffiSupporter: &KinoffiSupporter
+    _path: /kinoffi-supporters
+    # namePrivate: (text, private)
+    domain: *Domain
+    title: *Translated
+    intro: *Translated
+    supporters: #(Component (repeatable))
+        - *SupSecKinoff
 
 # Footer
 SocialItem: &SocialItem
@@ -859,43 +1149,27 @@ ShortsiFooter: &ShortsiFooter
     supporters: #(Component (repeatable))
         - *SupSecShorts
 
-# vana kraam
-FooterLogoShorts: &FooterLogoShorts
-    shortsi_article: *ShortsiArticle
-    url: (text)
-    imgWhite: *StrapiMedia
-    imgColor: *StrapiMedia
-    imgBlack: *StrapiMedia
-
-FooterLogoJustFilm: &FooterLogoJustFilm
-    pof_fi_article: *POFFiArticle
-    url: (text)
-    imgWhite: *StrapiMedia
-    imgColor: *StrapiMedia
-    imgBlack: *StrapiMedia
-
-LogoSectionJustFilm: &LogoSectionJustFilm
-    name: *Translated #(Component)
-    order: (Number)
-    logo: #(Component (repeatable))
-        - *FooterLogoJustFilm
-
-Footer:
-    _path: /footers
-    socialGroup: #(Component (repeatable))
-        - *SocialGroup
-    item: #(Component (repeatable))
-        - *FooterItemNav
-    logosSections: #(Component (repeatable))
-        - *LogoSectionJustFilm
+IndustryFooter: &IndustryFooter
+    _path: /industry-footers
     namePrivate: (text)
     domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecIndustry
 
-# Roll
-Roll: &Roll
-    _path: /rolls
+KinoffiFooter: &KinoffiFooter
+    _path: /kinoffi-footers
     namePrivate: (text)
-    name: *Translated #(Component)
+    domain: *Domain #(Component)
+    socialGroup: #(Component )
+        *SocialGroup
+    item: #(Component (repeatable))
+        - *FooterItemNav
+    supporters: #(Component (repeatable))
+        - *SupSecKinoff
 
 # Product & Payment
 Payment: &Payment
@@ -930,19 +1204,23 @@ PriceAtPeriod: &PriceAtPeriod
     startDateTime: (Datetime)
     endDateTime: (Datetime)
 
-Product_Type: &Product_Type
+ProductType: &ProductType
     _path: /products
     name: (text)
 
-Product_Category: &Product_Category
+Imgs: &Imgs
+    imageDefault: *StrapiMedia
+    image_et: *StrapiMedia
+    image_en: *StrapiMedia
+    image_ru: *StrapiMedia
+
+ProductCategory: &ProductCategory
     _path: /product-categories
     namePrivate: (text)
-    name:  #(Component (repeatable))
-        - *Translated
-    product_type: *Product_Type #(Component)
+    name: *Translated #(Component)
+    product_type: *ProductType #(Component)
     festival_edition: *FestivalEdition #(Component)
-    description:  #(Component (repeatable))
-        - *Translated
+    description: *Translated #(Component)
     validityPeriod:  #(Component (repeatable))
         - *Period
     salesPeriod:  #(Component (repeatable))
@@ -952,11 +1230,15 @@ Product_Category: &Product_Category
     priceAtPeriod:  #(Component (repeatable))
         - *PriceAtPeriod
     codePrefix: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    images: *Imgs
 
-Product_Pass: &Product_Pass
+ProductPass: &ProductPass
     _path: /festival-passes
-    product_type: *Product_Type #(Component)
-    product_category: *Product_Category #(Component)
+    product_type: *ProductType #(Component)
+    product_category: *ProductCategory #(Component)
     owner: *Person #(Component)
     code: (text)
     active: (Boolean)
@@ -964,29 +1246,33 @@ Product_Pass: &Product_Pass
     ticketingRight: #(Component (repeatable))
         - *TicketingRight
 
-# Single Types
-TrioBlockItemPoff: &TrioBlockItemPoff
-    title: *Translated #(Component)
-    lead: *Translated #(Component)
-    customUrl: (text)
-    order: (Number)
-    image: *StrapiMedia #(Component)
+OrderedProduct: &OrderedProduct
+    order: (number)
+    product_category: *ProductCategory
 
+ProdCatList: &ProdCatList
+    namePrivate: (text)
+    orderedProductCategories:
+        - *OrderedProduct
+    title: *Translated
+
+Shop: &Shop
+    _path: /shops
+    namePrivate: (text)
+    title: *Translated
+    intro: *Translated #(Rich text)
+    prodCatList: #(Component (repeatable))
+        - *ProdCatList
+    shopRules: *Translated #(Rich text)
+    domains: #(Component (repeatable))
+        - *Domain
+
+# Hero
 HeroArticlePoff:
     _path: /article-hero
     article_et: *POFFiArticle #(Component)
     article_en: *POFFiArticle #(Component)
     article_ru: *POFFiArticle #(Component)
-
-TrioBlockPoff:
-    _path: /trio-block-poeff
-    blockName: *Translated
-    poffi_article_1: *POFFiArticle #(Component)
-    poffi_article_2: *POFFiArticle #(Component)
-    poffi_article_3: *POFFiArticle #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff #(Component)
-    trioBlockItem_3: *TrioBlockItemPoff #(Component)
 
 HeroArticleJustFilm:
     _path: /hero-article-just-film
@@ -994,37 +1280,30 @@ HeroArticleJustFilm:
     article_en: *JustFilmiArticle #(Component)
     article_ru: *JustFilmiArticle #(Component)
 
-TrioBlockJustFilm:
-    _path: /trio-block-just-film
-    blockName: *Translated
-    just_filmi_article_1: *JustFilmiArticle #(Component)
-    just_filmi_article_2: *JustFilmiArticle #(Component)
-    just_filmi_article_3: *JustFilmiArticle #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff #(Component)
-    trioBlockItem_3: *TrioBlockItemPoff #(Component)
-
 HeroArticleShorts:
     _path: /hero-article-shorts
     article_et: *ShortsiArticle #(Component)
     article_en: *ShortsiArticle #(Component)
     article_ru: *ShortsiArticle #(Component)
 
-TrioBlockShorts:
-    _path: /trio-block-shorts
-    blockName: *Translated #(Component)
-    trioBlockItem_1: *TrioBlockItemPoff #(Component)
-    trioBlockItem_2: *TrioBlockItemPoff #(Component)
-    trioBlockItem_3: *TrioBlockItemPoff #(Component)
-    shortsi_article_1: *ShortsiArticle #(Component)
-    shortsi_article_2: *ShortsiArticle #(Component)
-    shortsi_article_3: *ShortsiArticle #(Component)
+HeroArticleIndustry:
+    _path: /hero-article-industry
+    article_et: *IndustryArticle #(Component)
+    article_en: *IndustryArticle #(Component)
+    article_ru: *IndustryArticle #(Component)
 
+HeroArticleKinoff:
+    _path: /hero-article-kinoff
+    article_et: *KinoffiArticle #(Component)
+    article_en: *KinoffiArticle #(Component)
+    article_ru: *KinoffiArticle #(Component)
+
+# Trio
 TrioItemPoff: &TrioItemPoff
     poffi_article: *POFFiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 TrioPOFF: &TrioPOFF
@@ -1044,7 +1323,7 @@ TrioItemJustFilm: &TrioItemJustFilm
     just_filmi_article: *JustFilmiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Triojustfilm: &Triojustfilm
@@ -1064,7 +1343,7 @@ TrioItemShorts: &TrioItemShorts
     shortsi_article: *ShortsiArticle #(Component)
     title: (text)
     lead: (text)
-    customURL: (text)
+    customUrl: (text)
     image: *StrapiMedia #(Component)
 
 Trioshorts: &Trioshorts
@@ -1080,42 +1359,42 @@ TrioShorts: &TrioShorts
     trioShorts_en: *Trioshorts #(Component)
     trioShorts_ru: *Trioshorts #(Component)
 
-# TrioItemIndustry: &TrioItemIndustry
-#     Industry_article: *IndustryArticle #(Component)
-#     title: (text)
-#     lead: (text)
-#     customURL: (text)
-#     image: *StrapiMedia #(Component)
+TrioItemIndustry: &TrioItemIndustry
+    industry_article: *IndustryArticle #(Component)
+    title: (text)
+    lead: (text)
+    customUrl: (text)
+    image: *StrapiMedia #(Component)
 
-# Trioindustry: &Trioindustry
-#     name: (text)
-#     lead: (text)
-#     trioItem_1: *TrioItemIndustry #(Component)
-#     trioItem_2: *TrioItemIndustry #(Component)
-#     trioItem_3: *TrioItemIndustry #(Component)
+Trioindustry: &Trioindustry
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemIndustry #(Component)
+    trioItem_2: *TrioItemIndustry #(Component)
+    trioItem_3: *TrioItemIndustry #(Component)
 
-# TrioIndustry: &TrioIndustry
-#     _path: /
-#     trioIndustry_et: *Trioindustry #(Component)
-#     trioIndustry_en: *Trioindustry #(Component)
-#     trioIndustry_ru: *Trioindustry #(Component)
+TrioIndustry: &TrioIndustry
+    _path: /trio-industry
+    trioIndustry_et: *Trioindustry #(Component)
+    trioIndustry_en: *Trioindustry #(Component)
+    trioIndustry_ru: *Trioindustry #(Component)
 
-# TrioItemKinoff: &TrioItemKinoff
-#     kinoffi_article: *KinoffiArticle #(Component)
-#     title: (text)
-#     lead: (text)
-#     customURL: (text)
-#     image: *StrapiMedia #(Component)
+TrioItemKinoff: &TrioItemKinoff
+    kinoffi_article: *KinoffiArticle #(Component)
+    title: (text)
+    lead: (text)
+    customUrl: (text)
+    image: *StrapiMedia #(Component)
 
-# Triokinoff: &Triokinoff
-#     name: (text)
-#     lead: (text)
-#     trioItem_1: *TrioItemKinoff #(Component)
-#     trioItem_2: *TrioItemKinoff #(Component)
-#     trioItem_3: *TrioItemKinoff #(Component)
+Triokinoff: &Triokinoff
+    name: (text)
+    lead: (text)
+    trioItem_1: *TrioItemKinoff #(Component)
+    trioItem_2: *TrioItemKinoff #(Component)
+    trioItem_3: *TrioItemKinoff #(Component)
 
-# TrioKinoff: &TrioKinoff
-#     _path: /
-#     trioKinoff_et: *Triokinoff #(Component)
-#     trioKinoff_en: *Triokinoff #(Component)
-#     trioKinoff_ru: *Triokinoff #(Component)
+TrioKinoff: &TrioKinoff
+    _path: /trio-kinoff
+    trioKinoff_et: *Triokinoff #(Component)
+    trioKinoff_en: *Triokinoff #(Component)
+    trioKinoff_ru: *Triokinoff #(Component)

@@ -1,12 +1,16 @@
-//- lisab õige youtube video treileriks, kasutab film.layout.pug
-mixin youtube(videoId)
-    iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}`
-        frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
-        gyroscope;='' picture-in-picture”='' allowfullscreen='')
+//- lisab õige video treileriks, kasutab film.layout.pug
+mixin video(videoId)
+    if videoId.length === 9
+        iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}`
+            frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
+            gyroscope;='' picture-in-picture”='' allowfullscreen='')
+    else if videoId.length === 11
+        iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}`
+            frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
+            gyroscope;='' picture-in-picture”='' allowfullscreen='')
 
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
 //- sisend kujul (2020-08-10T22:45:00+0300)
-
 mixin localdatetime(dateString)
     - var dom_id = Math.random()
     div(id = 'dt_' + dom_id)
@@ -63,7 +67,7 @@ mixin screeningTime(dateString)
     script.
         (function()
         {
-
+            //- todo: #506 Deprecation warning: moment.lang is deprecated. Use moment.locale instead.
             moment.lang('en', {
                 longDateFormat : {
                     LT: "hh:mm A",
@@ -140,3 +144,5 @@ mixin tabname(currenttitle)
 mixin format(text)
     | !{ self.md(text) }
 
+mixin euro(number)
+    | #{number.toFixed(2)} €

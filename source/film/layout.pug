@@ -229,15 +229,15 @@ block content
 
                                 if screening.screeningHall == 'Online'
                                     a.btn.btn_secondary.active(href='#' role='button') &nbsp;
-                                    a.btn.btn_primary.active(href=screening.screeningOnlineUrl role='button')= self.label.button.screeningBuyTicket
+                                    a.btn.btn_primary.active(href=screening.screeningOnlineUrl role='button' target='_blank')= self.label.button.screeningBuyTicket
                                 if screening.screeningTown == 'Tartu'
-                                    a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_BLANK')= self.label.button.covidRegister
+                                    a.btn.btn_covid.active(href='https://forms.gle/UU4sFENoWyZ3PjSF8' role='button' target='_blank')= self.label.button.covidRegister
                                     a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
         //- Sample img for showing presenter logo/pic - can be deleted
         //- if self.data.pictures.filmslugs[filmPath].presenter
         //-     section.f_extra_box
-        //-             img.presenter_img(src=`/assets/img/dynamic/img_films/${filmPath}/${self.data.pictures.filmslugs[filmPath].presenter}`)
+        //-             img.presenter_img(src=`https://assets.poff.ee/img/${filmPath}/${self.data.pictures.filmslugs[filmPath].presenter}`)
 
         if self.filmQaClip
 

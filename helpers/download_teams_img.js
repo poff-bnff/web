@@ -77,7 +77,7 @@ function readYaml(doc) {
                 if (subTeam.teamMember) {
                     for (teamMember of subTeam.teamMember) {
                         // console.log(teamMember.pictureAtTeam)
-                        if (teamMember.pictureAtTeam && teamMember.pictureAtTeam.length > 0) {
+                        if (teamMember.pictureAtTeam && teamMember.pictureAtTeam.length > 0 && teamMember.pictureAtTeam[0].url) {
                             var imgPath = teamMember.pictureAtTeam[0].url
                             var imgFileName = imgPath.split('/')[imgPath.split('/').length - 1]
                         } else if (teamMember.person && teamMember.person.picture) {

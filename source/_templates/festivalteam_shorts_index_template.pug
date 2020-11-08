@@ -12,7 +12,7 @@ block content
 
 
     section.team
-        h1.section_headline= self.label.all.festivalTeam
+        //- h1.section_headline= self.label.all.festivalTeam
 
             //- section.sub_team
         //- if self.data.teams
@@ -31,8 +31,8 @@ block content
                                 if teamMember.person
                                     .person
                                         .person_head
-                                            - var assetsDir = '/assets/img/dynamic/img_persons/'
-                                            if teamMember.pictureAtTeam
+                                            - var assetsDir = 'https://assets.poff.ee/img/'
+                                            if teamMember.pictureAtTeam && teamMember.pictureAtTeam[0].hash
                                                 - var personPic = assetsDir + teamMember.pictureAtTeam[0].hash + teamMember.pictureAtTeam[0].ext
                                             else if teamMember.person.picture
                                                 - var personPic = assetsDir + teamMember.person.picture.hash + teamMember.person.picture.ext

@@ -1,49 +1,48 @@
 doctype html
 html(lang= self.locale)
 
-    if process.env['DOMAIN'] === 'justfilm.ee'
 
-        //- JUSTFILM
-        include ../_templates/head_justfilm.pug
-
-        body
-            // HEADER
-
-            include ../_templates/header_justfilm.pug
-
-            // Sisu
-
-            block content
-
-            include ../_templates/footer.pug
-
-    else if process.env['DOMAIN'] === 'shorts.poff.ee'
-
-        //- SHORTS
-        include ../_templates/head_shorts.pug
-
-        body
-            // HEADER
-
-            include ../_templates/header_shorts.pug
-
-            // Sisu
-
-            block content
-
-            include ../_templates/footer.pug
-
-    else
-        //- POFF
+    //- POFF
+    if process.env['DOMAIN'] === 'poff.ee'
         include ../_templates/head_poff.pug
-
-        body
-            // HEADER
-
+        body(onload='reloadImageOnError()')
             include ../_templates/header_poff.pug
-
-            // Sisu
-
             block content
-
             include ../_templates/footer.pug
+
+    //- JUSTFILM
+    else if process.env['DOMAIN'] === 'justfilm.ee'
+        include ../_templates/head_justfilm.pug
+        body(onload='reloadImageOnError()')
+            include ../_templates/header_justfilm.pug
+            block content
+            include ../_templates/footer.pug
+
+    //- SHORTS
+    else if process.env['DOMAIN'] === 'shorts.poff.ee'
+        include ../_templates/head_shorts.pug
+        body(onload='reloadImageOnError()')
+            include ../_templates/header_shorts.pug
+            block content
+            include ../_templates/footer.pug
+
+    //- KINOFF
+    else if process.env['DOMAIN'] === 'kinoff.poff.ee'
+        include ../_templates/head_kinoff.pug
+        body(onload='reloadImageOnError()')
+            include ../_templates/header_kinoff.pug
+            block content
+            include ../_templates/footer.pug
+
+    //- INDUSTRY
+    else if process.env['DOMAIN'] === 'industry.poff.ee'
+        include ../_templates/head_industry.pug
+        body(onload='reloadImageOnError()')
+            include ../_templates/header_industry.pug
+            block content
+            include ../_templates/footer.pug
+
+    //- no domain specified
+    else
+        body
+            h1 Temporarily in confused state - domain? what domain?

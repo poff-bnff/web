@@ -12,15 +12,15 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const mapping = {
     'poff.ee': 'HeroArticlePoff',
     'justfilm.ee': 'HeroArticleJustFilm',
+    'kinoff.poff.ee': 'HeroArticleKinoff',
+    'industry.poff.ee': 'HeroArticleIndustry',
     'shorts.poff.ee': 'HeroArticleShorts'
 }
+
 const STRAPIDATA_HERO = STRAPIDATA[mapping[DOMAIN]][0]
+const languages = ['en', 'et', 'ru']
 
-LangSelect('et');
-LangSelect('en');
-LangSelect('ru');
-
-function LangSelect(lang) {
+for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} heroarticle ${lang} data`);
     var buffer = {}
     for (key in STRAPIDATA_HERO) {

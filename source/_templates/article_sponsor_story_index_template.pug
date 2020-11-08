@@ -23,45 +23,45 @@ block content
                     if self.title
                         +tabname(self.title)
 
-                    section.grid_article
-                        section.article_hero_head
-                            if self.media && self.media.image && self.media.image[0]
-                                img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.image[0].hash}${self.media.image[0].ext}`).article_hero_image
-                            else if self.media && self.media.imageDefault && self.media.imageDefault[0]
-                                img(src=`/assets/img/dynamic/img_articles/${self.locale}/${self.slug}/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`).article_hero_image
-                            else
-                                img(src='/assets/img/static/placeholder_hd_1.jpg').article_hero_image
-                        if self.title
-                            .article_hero_headline_box
-                                h1= 'KONTROLL'
-                                .article_title_detailed= self.title
+                    section.padding_top_header
+                        section.ss_hero_head
+                            .container_frame_square
+                                if self.media && self.media.image && self.media.image[0]
+                                    img(src=`https://assets.poff.ee/img/${self.media.image[0].hash}${self.media.image[0].ext}`).ss_hero_image.container_contents_square
+                                else if self.media && self.media.imageDefault && self.media.imageDefault[0]
+                                    img(src=`https://assets.poff.ee/img/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`).ss_hero_image.container_contents_square
+                                else
+                                    img(src='/assets/img/static/placeholder_hd_1.jpg').ss_hero_image.container_contents_square
+                            if self.title
+                                .ss_hero_headline_box
+                                    .ss_title_detailed
+                                        span= self.title
 
-                    section.grid_article
+                    section.grid_article.padding_top_4
                         section.article_meta
                             .str_info_meta_gi
+                                    //- if self.articleType
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1= self.articleType
 
-                                    if self.articleType
-                                        .str_info_meta_item
-                                            .str_info_meta_value= self.articleType
+                                    //- if self.web_authors
+                                    //-     .str_info_meta_item
+                                    //-         - var authors = []
+                                    //-         each author in self.web_authors
+                                    //-             - authors.push(author.name)
+                                    //-         .str_info_meta_value.dark_1= authors.join(', ')
+                                    //- else
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1= `${self.created_by.firstname} ${self.created_by.lastname}`
 
-                                    if self.web_authors
-                                        .str_info_meta_item
-                                            - var authors = []
-                                            each author in self.web_authors
-                                                - authors.push(author.name)
-                                            .str_info_meta_value= authors.join(', ')
-                                    else
-                                        .str_info_meta_item
-                                            .str_info_meta_value= `${self.created_by.firstname} ${self.created_by.lastname}`
-
-                                    if self.publishFrom
-                                        .str_info_meta_item
-                                            .str_info_meta_value
-                                                +localdatetime(self.publishFrom)
-                                    else
-                                        .str_info_meta_item
-                                            .str_info_meta_value
-                                                +localdatetime(self.created_at)
+                                    //- if self.publishFrom
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1
+                                    //-             +localdatetime(self.publishFrom)
+                                    //- else
+                                    //-     .str_info_meta_item
+                                    //-         .str_info_meta_value.dark_1
+                                    //-             +localdatetime(self.created_at)
 
                                     .str_info_meta_item
                                         - var tagsList = []
@@ -75,15 +75,17 @@ block content
                                             - self.tag_keywords.forEach(element => tagsList.push(element));
 
                                         if tagsList.length > 0
-                                            .str_info_meta_keywords= tagsList.join(', ')
+                                            .str_info_meta_keywords.ghost_blue= tagsList.join(', ')
 
 
-                        section.article_contents
-                            if self.lead
-                                p.font_weight_600= self.lead
+                        section.article_contents.dark_1
+                            if typeof(self.lead) !== 'object'
+                                +format(self.lead).font_weight_600.dark_1
+                            //- if self.lead
+                            //-     p.font_weight_500.dark_1= self.lead
                             //- p= self.articleContents_et
                             if typeof(self.contents) !== 'object'
-                                +format(self.contents)
+                                +format(self.contents).dark_1
 
 
                         section.article_extra

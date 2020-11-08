@@ -5,172 +5,78 @@ block content
     .main.container
         .row
             .col-md-6.col-md-offset-3
+            if self.label.userprofile
                 br
                 br
                 br
                 br
                 br
-                h1.display-4.m-b-2 Palun täida kasutaja ankeet:
+                br
+                br
+                br
+                br
+                br
+                br
+                h1.display-4.m-b-2#profileFilledMessage(style= {display: 'none'})= self.label.userprofile.userprofileTitle
 
-                form(method='POST' action='/register')
+
+
+                div.form#thisUserProfile
+                    img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group
-                        label(for='profileImg') Profiili pilt (kohustuslik passiostjale):
-                        input#profileImg.form-control(type='file', value='fileupload' name='profileImg')
+                        label(for='profileImg')= self.label.userprofile.pictureTitle
+                        div#imgError
+                        input#profileImg(type='file' name='filename' onchange ='validateaAndPreview(this.files[0])')
                     div.form-group
-                        label(for='firstName') Eesnimi:
-                        input#firstName.form-control(type='text', placeholder='Eesnimi' name='firstName' required=true)
+                        label(for='email')= self.label.userprofile.email
+                        div#email.dark(name='email')
+                        div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
                     div.form-group
-                        label(for='lastName') Perekonnanimi:
-                        input#lastName.form-control(type='text', placeholder='Perenimi' name='lastName' required=true)
+                        label(for='firstName')= self.label.userprofile.firstName
+                        input#firstName.form-control(type='text', placeholder=`${self.label.userprofile.firstName}` name='firstName' autocomplete="off" oninput="validateFirstName(this.id)")
+                        div#firstNameHelp(class='valid')= self.label.userprofile.firstNameHelp
                     div.form-group
-                        label(for='gender') Sugu:
+                        label(for='lastName')= self.label.userprofile.lastName
+                        input#lastName.form-control(type='text', placeholder=`${self.label.userprofile.lastName}` name='lastName' autocomplete="off" oninput='validateLastName(this.id)')
+                        div#lastNameHelp(class='valid')= self.label.userprofile.lastNameHelp
+                    div.form-group
+                        label(for='gender')= self.label.userprofile.gender
+                        select#gender(name='gender' oninput='validateGender(this.id)')
+                            option(value='male')= self.label.userprofile.genderM
+                            option(value='female')= self.label.userprofile.genderF
+                            option(value='other')= self.label.userprofile.genderO
+                            option(class='invalid' value="" selected="")= self.label.userprofile.select
+                        div#genderHelp(class='valid')= self.label.userprofile.genderHelp
+                    div.form-group
+                        label(for='dob')= self.label.userprofile.birthday
+                        input#dob.form-control(type='date' name='dob', placeholder ="yyyy-mm-dd" max="2007-01-01", min="1905-01-01", oninput="validateBDay(this.id)")
+                        div#dobHelp(class='valid')= self.label.userprofile.ageHelp
+                    div.form-group
+                        label(for='phoneNr')= self.label.userprofile.phone
+                        input#phoneNr.form-control(type='tel' placeholder=`${self.label.userprofile.phone}` name='phoneNr' oninput='validatePhoneNr(this.id)' autocomplete="off")
+                        div#phoneNrHelp(class='valid')= self.label.userprofile.phoneNumHelp
+                    div.form-group
+                        label= self.label.userprofile.address
                         br
-                        label(for='male') Mees:
-                            input(type='radio', name='gender' value="male")
-                        label(for='female') Naine:
-                            input(type='radio', name='gender' value="female")
-                        label(for='other') Muu:
-                            input(type='radio', name='gender' value="other")
+                        label.control-label(for='country')= self.label.userprofile.country
+                        select#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='citySelection' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry("countrySelection")')
                     div.form-group
-                        label(for='dob') Sünnikuupäev:
-                        input#dob.form-control(type='date', placeholder='Sünnikuupäev' name='dob')
-                    div.form-group
-                        label(for='phoneNr') Telefoni number:
-                        input#phoneNr.form-control(type='tel', placeholder='Telefoni number' name='phoneNr')
-                    div.form-group
-                        label(for='email') Email:
-                        input#email.form-control(type='email', placeholder='Email' name='email')
-                    div.form-group
-                        label(for='country') Elukoha riik:
-                        input#country.form-control(type='text', placeholder='Elukoha riik' name='country')
-                    div.form-group
-                        label(for='city') Elukoha linn:
-                        input#city.form-control(type='text', placeholder='Elukoha linn' name='city')
-                    button.btn.btn-primary(type='submit') Salvesta
+                        label.control-label(for='citySelection')= self.label.userprofile.city
+                        select#citySelection.form-control(required='' oninput= 'validateCity("citySelection")')
+                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.saveButton
+                    p#profileSent(style= {display: 'none'})= self.label.userprofile.dataSaved
 
-    a(href='https://pfftestdom1.auth.eu-central-1.amazoncognito.com/logout?client_id=1q24246tqd48cpepne3vnunmiq&logout_uri=https://dev.inscaping.eu/login/' onclick='logOut()')#logOutLink Log out
 
     style.
-        h1 {color: #464646}
+        .invalid {background-color: #f5e4e9; display: block; color: black}
+        .valid {background-color: #e6f7e6; display: none}
+        .c_invalid {background-color: #f5e4e9}
+        .c_valid {background-color: #e6f7e6}
         h4 {color: #464646}
+        h1 {color: black}
+        #profileSent {color: black}
         label {color: black}
-    script.
-        var url = window.location;
-        const ACCESS_TOKEN = "ACCESS_TOKEN";
-        const ID_TOKEN = "ID_TOKEN";
-        const REFRESH_TOKEN = "REFRESH_TOKEN";
-
-        let userProfile = await loadInfoFromIdtkn();
-        console.log(userProfile);
-
-        //- if (localStorage.getItem('ID_TOKEN')){
-        //-     hello.innerHTML = 'Hello, ' + name;
-        //-     favoritefilm.innerHTML = '<button onclick="addFavoriteFilm()">Add film to favorites</button>';
-
-        //- } else {
-        //-     hello.innerHTML = 'Not logged in'
-        //- }
-
-        var tokens = (window.location.hash.substr(1)).split('&');
-        console.log(tokens);
-        if (tokens[3]) {
-            storeAuthentication(tokens);
-        } else {
-            console.log('Not sent ')
-        }
-
-        async function storeAuthentication(tokens) {
-            localStorage.setItem(ACCESS_TOKEN, tokens[0].substr(13));
-            localStorage.setItem(ID_TOKEN, tokens[1].substr(9));
-            await loadInfoFromIdtkn();
-            window.location.hash = '';
-            location.reload();
-        }
-
-        function getAccessToken() {
-            token.innerHTML = localStorage.getItem(`ACCESS_TOKEN`);
-            return localStorage.getItem(`ACCESS_TOKEN`);
-        }
-
-        function logOut() {
-            localStorage.removeItem(ACCESS_TOKEN);
-            localStorage.removeItem(REFRESH_TOKEN);
-            localStorage.removeItem(ID_TOKEN);
-            console.log('LOGITUD VÄLJA');
-            location.reload();
-        }
+        #imgError {color: red}
 
 
 
-        async function loadCognitoUser(){
-            console.log(localStorage.getItem(ACCESS_TOKEN));
-            var myHeaders = new Headers();
-
-            myHeaders.append('Authorization', `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`);
-
-            var requestOptions = {
-                method: 'GET',
-                headers: myHeaders,
-                redirect: 'follow'
-            };
-
-            console.log(requestOptions.headers);
-
-            await fetch("https://pfftestdom1.auth.eu-central-1.amazoncognito.com/oauth2/userInfo", requestOptions)
-                .then(response => response.text())
-                .then(result => {
-                    console.log(result);
-                    const JSONresult = JSON.parse(result);
-                    console.log(JSONresult.name);
-                    //hello.innerHTML = 'Hello1, ' + JSONresult.name + '(token+userInfo request)';
-                })
-                .catch(error => console.log('error', error));
-        }
-
-
-        function showUserInfo(){
-
-            var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({region: 'eu-central-1'});
-
-            var params = {
-                AccessToken: localStorage.getItem('ACCESS_TOKEN') /* required */
-            };
-            cognitoidentityserviceprovider.getUser(params, function(err, data) {
-                if (err) console.log(err, err.stack); // an error occurred
-            else     console.log(data);           // successful response
-            });
-        }
-
-
-        async function loadInfoFromIdtkn(){
-            console.log('loadInfoFromIdtk');
-            let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/tkns`, {
-                    method: 'GET',
-                    headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')}
-
-                });
-                let name1 = await response.json();
-                name = name1.message;
-                console.log(name1);
-        }
-
-
-        async function addFavoriteFilm(){
-            console.log('addFavoriteFilm');
-
-            let favoriteEntry = {
-                user: 'test123',
-                film: 'funnyFilm'
-            }
-
-
-            let response = await fetch(`https://cp676uts33.execute-api.eu-central-1.amazonaws.com/dev/verif`, {
-                    method: 'POST',
-                    headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem('ID_TOKEN')},
-                        body: JSON.stringify(favoriteEntry)
-                        //- body: JSON.stringify(data)
-                    });
-                    console.log(await response.json());
-             }
