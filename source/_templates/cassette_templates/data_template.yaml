@@ -25,14 +25,42 @@ synopsisBox:
   synopsis_md: ''
 runtime: ''
 languages: []
-directors: []
-#   -
-#     portrait: ''
-#     name: ''
-#     biography: ''
-#     filmography: ''
-presenters:
+directors:
   -
-    text: ''
-    organisations:
-      -
+    portrait: ''
+    name: ''
+    biography: ''
+    filmography: ''
+presenters: # film tags -> programmes
+  -
+    text: '' # presentedByText
+    logos: # organisations
+     -
+       logo: '' # -> logo
+       url: '' # -> homepageUrl
+screenings:
+  -
+    date: ''
+    time: ''
+    name: ''
+    duration: ''
+    subtitle_languages: []
+    booking_url: ''
+    ticketing_url: ''
+    location:
+        hall_name: ''
+        cinema_name: ''
+        town_name: ''
+    qna:
+        presenters: []
+        guests: []
+        duration: ''
+    intro:
+        presenters: []
+        guests: []
+        duration: ''
+    conversation:
+        presenters: []
+        guests: []
+        duration: ''
+
