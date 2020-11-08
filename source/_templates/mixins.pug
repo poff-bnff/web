@@ -2,12 +2,24 @@
 mixin video(videoId)
     if videoId.length === 9
         iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}`
-            frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
-            gyroscope;='' picture-in-picture”='' allowfullscreen='')
+            frameborder='0' allow='accelerometer' autoplay='' encrypted-media=''
+            gyroscope='' picture-in-picture”='' allowfullscreen='')
     else if videoId.length === 11
         iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}`
-            frameborder='0' allow='accelerometer' autoplay;='' encrypted-media;=''
-            gyroscope;='' picture-in-picture”='' allowfullscreen='')
+            frameborder='0' allow='accelerometer' autoplay='' encrypted-media=''
+            gyroscope='' picture-in-picture='' rel='0' allowfullscreen)
+
+
+//- autoplay video
+mixin videoAp(videoId)
+    if videoId.length === 9
+        iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}`
+            frameborder='0' allow='accelerometer' autoplay='1' encrypted-media=''
+            gyroscope='' picture-in-picture='' allowfullscreen='')
+    else if videoId.length === 11
+        iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}`
+            frameborder='0' allow='accelerometer' autoplay='1' encrypted-media=''
+            gyroscope='' picture-in-picture='' rel='0' controls='0' loop='1' mute='1' allowfullscreen)
 
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
 //- sisend kujul (2020-08-10T22:45:00+0300)
