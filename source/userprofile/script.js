@@ -1,5 +1,5 @@
-var imgPreview = document.getElementById("imgPreview");
-var profileImg = document.getElementById("profileImg");
+let imgPreview = document.getElementById("imgPreview");
+let profile_pic_to_send = "empty"
 
 async function loadUserInfo() {
     let response = await fetch(`https://api.poff.ee/profile`, {
@@ -17,122 +17,70 @@ async function loadUserInfo() {
 
     }
     console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
+    email.innerHTML = userProfile.email
+    if(userProfile.name)firstName.value = userProfile.name
+    if(userProfile.family_name)lastName.value = userProfile.family_name
+    if(userProfile.gender)gender.value = userProfile.gender
+    if (userProfile.phone_number)phoneNr.value = userProfile.phone_number
+    if(userProfile.birthdate)dob.value = userProfile.birthdate
+
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
-        city.value = linn
-        country.value = riik
+        citySelection.value = linn
+        countrySelection.value = riik
     }
 
-    firstName.value = userProfile.name;
-    lastName.value = userProfile.family_name;
-    email.value = userProfile.email;
-    gender.value = userProfile.gender;
-    if (userProfile.phone_number) {
-        phoneNr.value = userProfile.phone_number;
-    }
-    dob.value = userProfile.birthdate;
     if(userProfile.picture){
-        // imgPreview.src = userProfile.picture
-        console.log("profiili salvestatud pildi link on: " + userProfile.picture)
+        if(userProfile.picture !=="no profile picture saved"){
+            let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
+                method: "GET",
+                headers: {
+                    Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+                },
+            });
+            let profilePicture = await res.json();
+            imgPreview.src=profilePicture.url
+        }
 
-        showUserPicture(userProfile.picture)
-
-
-        // imgPreview.src = "https://prod-poff-profile-pictures.s3.eu-central-1.amazonaws.com/helloo"
     }
+
 }
 
-async function showUserPicture(pictureUrl){
-let pic = await fetch(pictureUrl)
-console.log(pic);
-}
-
-//laeb ankeeti kasutaja juba sisestatud andmed ainult siis kui keegi on sisse loginud
-if (localStorage.getItem("ACCESS_TOKEN")) {
+if (validToken) {
     loadUserInfo();
+}else{
+    window.open(`${location.origin}/login`, '_self')
 }
 
 async function sendUserProfile() {
-    console.log('sending user profile.....');
+    console.log('updating user profile.....')
 
-    //küsib lingi kuhu pilti postitada
-    let linkResponse = await fetch(`https://api.poff.ee/picture`, {
+    //profile_pic_to_send= no profile picture saved
+    //Kui pilt saadetakse siis profile_pic_to_send= this users picture is in S3
 
-        method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
-        },
-    });
-    data = await linkResponse.json()
-    //console.log("saadud link on: ")
-    console.log(data.link)
+    let pictureInfo ="no profile picture saved"
 
-    let pictureLink = ((await data.link).split('?'))[0]
+    if(profile_pic_to_send !== "empty"){
+        pictureInfo ='this users picture is in S3'
+        await uploadPic()
+    }else if(userProfile.picture === 'this users picture is in S3'){
+        pictureInfo = 'this users picture is in S3'
+    }
 
     let userToSend = [
-        { Name: "picture", Value: pictureLink },
-        { Name: "name", Value: firstName.value },
-        { Name: "family_name", Value: lastName.value },
-        { Name: "gender", Value: gender.value },
-        { Name: "birthdate", Value: dob.value },
-        { Name: "phone_number", Value: phoneNr.value },
-        { Name: "email", Value: email.value },
-        { Name: "address", Value: `${country.value}, ${city.value}` },
+        {Name: "picture",Value: pictureInfo },
+        {Name: "name",Value: firstName.value},
+        {Name: "family_name", Value: lastName.value },
+        {Name: "gender",Value: gender.value},
+        { Name: "birthdate",Value: dob.value},
+        {Name: "phone_number",Value: '+' + phoneNr.value},
+        {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
+    console.log("kasutaja profiil mida saadan ", userToSend);
 
-//     //saadab pildi link-ile
-//     var file = imgPreview.src;
-//     console.log("file on...."+file);
-
-//     SendImgToS3(data.link)
-
-//     function SendImgToS3(myLink, myImg){
-
-//         var requestOptions = {
-//             method: 'PUT',
-//             body: myImg,
-//             redirect: 'follow'
-//         };
-
-//         fetch(myLink, requestOptions).then(function (response) {
-//             if (response.ok) {
-//                 console.log(response.json())
-//                 return response.json();
-//             }
-//             return Promise.reject(response);
-//         }).then(function (data) {
-//             userProfile = data
-//             console.log("cognitos olev profiil:")
-//             console.log(userProfile);
-
-//         }).catch(function (error) {
-//             console.warn(error);
-//         });
-
-//     }
-
-
-//     console.log("kasutaja profiil mida saadan");
-//     console.log(userToSend)
-//     let response = await (fetch(`https://api.poff.ee/profile`, {
-    // saadab pildi link-ile
-    var file = imgPreview.src;
-
-    //console.log(file);
-
-    var requestOptions = {
-        method: 'PUT',
-        body: file,
-        redirect: 'follow'
-    };
-
-    fetch(data.link, requestOptions)
-
-    console.log("kasutaja profiil mida saadan");
-    console.log(userToSend)
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
         headers: {
@@ -141,44 +89,111 @@ async function sendUserProfile() {
         body: JSON.stringify(userToSend)
     })).json()
 
+
+
     if (response.status) {
         document.getElementById('profileSent').style.display = 'block'
-        window.open(localStorage.getItem('url'), '_self')
-        localStorage.removeItem('url')
+        if (localStorage.getItem('url')) {
+            window.open(localStorage.getItem('url'), '_self')
+            localStorage.removeItem('url')
+        }
 
+    }
+
+}
+
+
+function validateaAndPreview(file) {
+    let error = document.getElementById("imgError");
+    console.log(file)
+    // Check if the file is an image.
+    if (!file.type.includes("image")) {
+        console.log("File is not an image.", file.type, file);
+        error.innerHTML = "File is not an image.";
+    } else {
+        error.innerHTML = "";
+        //näitab pildi eelvaadet
+        var reader = new FileReader();
+        reader.onload = function () {
+            imgPreview.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        profile_pic_to_send = file
     }
 }
 
+async function uploadPic() {
 
-function readImage() {
-    const fileSelector = document.getElementById("profileImg");
-    const imgPreview = document.getElementById("imgPreview");
-    let error = document.getElementById("imgError");
-
-    fileSelector.addEventListener("change", (event) => {
-        const fileList = event.target.files;
-        //console.log(fileList);
-        for (const file of fileList) {
-            // Not supported in Safari for iOS.
-            const name = file.name ? file.name : "NOT SUPPORTED";
-            // Not supported in Firefox for Android or Opera for Android.
-            const type = file.type ? file.type : "NOT SUPPORTED";
-            // Unknown cross-browser support.
-            const size = file.size ? file.size : "NOT SUPPORTED";
-            console.log({ file, name, type, size });
-            error.innerHTML = "";
-            // Check if the file is an image.
-            if (file.type && file.type.indexOf("image") === -1) {
-                console.log("File is not an image.", file.type, file);
-                error.innerHTML = "File is not an image.";
-                return;
-            }
-            const reader = new FileReader();
-            reader.addEventListener("load", (event) => {
-                imgPreview.src = event.target.result;
-            });
-            reader.readAsDataURL(file);
-        }
+    console.log("uploading this file to S3....")
+    console.log(profile_pic_to_send)
+    //küsib lingi kuhu pilti postitada
+    let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
+        },
     });
+    data = await linkResponse.json()
+    console.log("saadud link on: ")
+    console.log(data.link)
+
+
+    //saadab pildi
+    let requestOptions = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': "image/png",
+            'ACL': 'private'
+        },
+        body: profile_pic_to_send,
+        redirect: 'follow'
+    };
+    await fetch(data.link, requestOptions)
+
 }
 
+
+
+
+
+function validateForm() {
+
+    var errors = []
+
+    if (document.getElementById('profileSent')) {
+        document.getElementById('profileSent').style.display = 'none'
+    }
+
+    if (!validateFirstName("firstName")) {
+        errors.push('Missing firstname')
+    }
+
+    if (!validateLastName("lastName")) {
+        errors.push('Missing lastname')
+    }
+
+    if (!validateGender("gender")) {
+        errors.push('Missing gender')
+    }
+
+    if (!validateBDay("dob")) {
+        errors.push('Missing or invalid date of birth')
+    }
+
+    if (!validatePhoneNr("phoneNr")) {
+        errors.push('Missing phonenumber')
+    }
+
+    if (!validateCountry("countrySelection")) {
+        errors.push('Missing country')
+    }
+
+    if (!validateCity("citySelection")) {
+        errors.push('Missing city')
+    }
+
+    console.log(errors)
+    if (errors.length === 0) {
+        sendUserProfile()
+    }
+}
