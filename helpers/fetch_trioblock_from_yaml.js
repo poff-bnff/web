@@ -19,8 +19,8 @@ const mapping = {
 const articleMapping = {
     'poff.ee': 'poffi',
     'justfilm.ee': 'just_filmi',
-    'kinoff.poff.ee': 'kinoffi_article',
-    'industry.poff.ee': 'industry_article',
+    'kinoff.poff.ee': 'kinoffi',
+    'industry.poff.ee': 'industry',
     'shorts.poff.ee': 'shortsi'
 }
 const STRAPIDATA_TRIO = STRAPIDATA[mapping[DOMAIN]]

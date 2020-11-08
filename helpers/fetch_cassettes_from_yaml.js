@@ -1,10 +1,17 @@
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
-const util = require('util')
+const { deleteFolderRecursive, JSONcopy } = require("./helpers.js")
 const rueten = require('./rueten.js')
 
-const sourceDir = path.join(__dirname, '..', 'source')
+const { timer } = require("./timer")
+timer.start(__filename)
+
+const rootDir =  path.join(__dirname, '..')
+const domainSpecificsPath = path.join(rootDir, 'domain_specifics.yaml')
+const DOMAIN_SPECIFICS = yaml.safeLoad(fs.readFileSync(domainSpecificsPath, 'utf8'))
+
+const sourceDir = path.join(rootDir, 'source')
 const cassetteTemplatesDir = path.join(sourceDir, '_templates', 'cassette_templates')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
@@ -13,24 +20,21 @@ const STRAPIDATA_PERSONS = STRAPIDATA['Person']
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme']
 const STRAPIDATA_FE = STRAPIDATA['FestivalEdition']
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening']
+const STRAPIDATA_FESTIVAL = STRAPIDATA['Festival']
 const STRAPIDATA_FILMS = STRAPIDATA['Film']
+
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
 // true = check if programme is for this domain / false = check if festival edition is for this domain
 const CHECKPROGRAMMES = false
 
-// console.log('LIMIT: ', CASSETTELIMIT)
+// timer.log(__filename, `LIMIT: ${CASSETTELIMIT}`)
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
-const whichScreeningTypesToFetch = ['first screening']
+const whichScreeningTypesToFetch = ['first screening', 'regular', 'online kino']
 
-const mapping = {
-    'poff.ee': 'poff',
-    'justfilm.ee': 'justfilm',
-    'kinoff.poff.ee': 'kinoff',
-    'industry.poff.ee': 'industry',
-    'shorts.poff.ee': 'shorts'
-}
+const mapping = DOMAIN_SPECIFICS.domain
+
 // STRAPIDATA_PROGRAMMES.map(programme => programme.id)
 const modelName = 'Cassette'
 
@@ -48,7 +52,7 @@ if(CHECKPROGRAMMES) {
         }
     })
     if (cassettesWithOutProgrammes && cassettesWithOutProgrammes.length) {
-        console.log('Cassettes with IDs', cassettesWithOutProgrammes.join(', '), ' have no programmes')
+        timer.log(__filename, `Cassettes with IDs ${cassettesWithOutProgrammes.join(', ')} have no programmes`)
     }
 
 } else if (!CHECKPROGRAMMES && DOMAIN !== 'poff.ee') {
@@ -66,66 +70,49 @@ if(CHECKPROGRAMMES) {
         }
     })
     if (cassettesWithOutFestivalEditions.length) {
-        console.log('Cassettes with IDs', cassettesWithOutFestivalEditions.join(', '), ' have no festival editions')
+        timer.log(__filename, `Cassettes with IDs ${cassettesWithOutFestivalEditions.join(', ')} have no festival editions`)
     }
 
 } else {
     var STRAPIDATA_CASSETTE = STRAPIDATA[modelName]
 }
 
-const allLanguages = ["en", "et", "ru"]
+const cassettesPath = path.join(fetchDir, 'cassettes')
+deleteFolderRecursive(cassettesPath)
 
+const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
+for (const lang of allLanguages) {
+    let cassettesWithOutFilms = []
+    let cassettesWithOutSpecifiedScreeningType = []
 
-function fetchAllData(){
-    const cassettesPath = path.join(fetchDir, 'cassettes')
-    deleteFolderRecursive(cassettesPath)
-
-    // getData(new directory path, language, copy file, show error when slug_en missing, files to load data from, connectionOptions, CallBackFunction)
-    getData(cassettesPath, "en", 1, 1, {'articles': '/_fetchdir/articles.en.yaml'}, getDataCB)
-    getData(cassettesPath, "et", 0, 0, {'articles': '/_fetchdir/articles.et.yaml'}, getDataCB)
-    getData(cassettesPath, "ru", 0, 0, {'articles': '/_fetchdir/articles.ru.yaml'}, getDataCB)
-}
-
-function deleteFolderRecursive(path) {
-    if( fs.existsSync(path) ) {
-        fs.readdirSync(path).forEach(function(file,index){
-            var curPath = path + "/" + file
-            if(fs.lstatSync(curPath).isDirectory()) { // recurse
-                deleteFolderRecursive(curPath)
-            } else { // delete file
-                fs.unlinkSync(curPath)
-            }
-        })
-        fs.rmdirSync(path)
-    }
-  }
-
-function getData(dirPath, lang, copyFile, showErrors, dataFrom, getDataCB) {
-
-    fs.mkdirSync(dirPath, { recursive: true })
-
-    console.log(`Fetching ${DOMAIN} cassettes ${lang} data`)
-
-    getDataCB(dirPath, lang, copyFile, dataFrom, showErrors)
-}
-
-function JSONcopy(obj) {
-    return JSON.parse(JSON.stringify(obj))
-}
-
-function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
+    const dataFrom = { 'articles': `/_fetchdir/articles.${lang}.yaml` }
+    fs.mkdirSync(cassettesPath, { recursive: true })
+    timer.log(__filename, `Fetching ${DOMAIN} cassettes ${lang} data`)
     let allData = []
     // data = rueten(data, lang)
-    // console.log(data)
+    // timer.log(__filename, data)
     let slugMissingErrorNumber = 0
+    var templateMissingMessageDisplayed = false
     let slugMissingErrorIDs = []
     let limit = CASSETTELIMIT
     let counting = 0
     for (const s_cassette of STRAPIDATA_CASSETTE) {
+        var hasOneCorrectScreening = false
         if (limit !== 0 && counting === limit) break
         counting++
 
         const s_cassette_copy = JSONcopy(s_cassette)
+
+        if (s_cassette_copy.festival_editions && s_cassette_copy.festival_editions.length) {
+            for (const festEdIx in s_cassette_copy.festival_editions) {
+                var festEd = s_cassette_copy.festival_editions[festEdIx]
+                var festival = JSONcopy(STRAPIDATA_FESTIVAL.filter( (a) => { return festEd.festival === a.id })[0])
+                if (festival) {
+                    s_cassette_copy.festivals = []
+                    s_cassette_copy.festivals.push(festival)
+                }
+            }
+        }
 
         let slugEn = undefined
         if (s_cassette_copy.films && s_cassette_copy.films.length === 1) {
@@ -143,7 +130,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
         if(typeof slugEn !== 'undefined') {
             s_cassette_copy.dirSlug = slugEn
-            s_cassette_copy.directory = path.join(dirPath, slugEn)
+            s_cassette_copy.directory = path.join(cassettesPath, slugEn)
             fs.mkdirSync(s_cassette_copy.directory, { recursive: true })
 
             let cassetteCarouselPicsCassette = []
@@ -158,6 +145,27 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     let programmeFromYAML = STRAPIDATA_PROGRAMMES.filter( (a) => { return programme.id === a.id })
                     if (typeof programmeFromYAML !== 'undefined' && programmeFromYAML[0]) {
                         s_cassette_copy.tags.programmes[programmeIx] = JSONcopy(programmeFromYAML[0])
+                    }
+                }
+            }
+
+            // Kasseti treiler
+            if (s_cassette_copy.media && s_cassette_copy.media.trailer && s_cassette_copy.media.trailer[0]) {
+                for (trailer of s_cassette_copy.media.trailer) {
+                    if(trailer.url && trailer.url.length > 10) {
+                        if (trailer.url.includes('vimeo')) {
+                            let splitVimeoLink = trailer.url.split('/')
+                            let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
+                            if (videoCode.length === 9) {
+                                trailer.videoCode = videoCode
+                            }
+                        } else {
+                            let splitYouTubeLink = trailer.url.split('=')[1]
+                            let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
+                            if (splitForVideoCode.length === 11) {
+                                trailer.videoCode = splitForVideoCode
+                            }
+                        }
                     }
                 }
             }
@@ -177,13 +185,23 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
             }
 
             // #379 put ordered films to cassette.film
-            let ordered_films = s_cassette_copy.orderedFilms.map(s_c_film => {
-                let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
-                if (s_films && s_films[0]) {
-                    s_films[0].ordinal = s_c_film.order
-                    return s_films[0]
+            let ordered_films = s_cassette_copy.orderedFilms
+                .filter( (isFilm) => { if (isFilm.film) { return 1 } else { console.log(`ERROR! Empty film under cassette with ID ${s_cassette_copy.id}`) } })
+                .map(s_c_film => {
+
+                if (!s_c_film.film) {
+                    // console.log('ERROR: Cassette with no ordered film', s_cassette_copy.id);
+                    cassettesWithOutFilms.push(s_cassette_copy.id)
+                    // throw new Error('Cassette with no ordered film')
                 } else {
-                    return null
+                    let s_films = STRAPIDATA_FILMS.filter( (s_film) => { return s_c_film.film.id === s_film.id } )
+
+                    if (s_films && s_films[0]) {
+                        s_films[0].ordinal = s_c_film.order
+                        return s_films[0]
+                    } else {
+                        return null
+                    }
                 }
             })
             if (ordered_films !== undefined && ordered_films[0]) {
@@ -207,7 +225,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     }
                     // Kui vähemalt üks screeningtype õige, siis hasOneCorrectScreening = true
                     // - st ehitatakse
-                    var hasOneCorrectScreening = true
+                    hasOneCorrectScreening = true
 
                     delete screening.cassette
                     screenings.push(rueten(screening, lang))
@@ -273,6 +291,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
 
             if (s_cassette_copy.films && s_cassette_copy.films[0]) {
                 for (scc_film of s_cassette_copy.films) {
+                    // console.log(scc_film);
                     let filmSlugEn = scc_film.slug_en
 
                     if (!filmSlugEn) {
@@ -318,10 +337,18 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                     if (scc_film.media && scc_film.media.trailer && scc_film.media.trailer[0]) {
                         for (trailer of scc_film.media.trailer) {
                             if(trailer.url && trailer.url.length > 10) {
-                                let splitYouTubeLink = trailer.url.split("=")[1]
-                                let splitForVideoCode = splitYouTubeLink.split("&")[0]
-                                if (splitForVideoCode.length === 11) {
-                                    trailer.youTubeCode = splitForVideoCode
+                                if (trailer.url.includes('vimeo')) {
+                                    let splitVimeoLink = trailer.url.split('/')
+                                    let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
+                                    if (videoCode.length === 9) {
+                                        trailer.videoCode = videoCode
+                                    }
+                                } else {
+                                    let splitYouTubeLink = trailer.url.split('=')[1]
+                                    let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
+                                    if (splitForVideoCode.length === 11) {
+                                        trailer.videoCode = splitForVideoCode
+                                    }
                                 }
                             }
                         }
@@ -335,7 +362,7 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                             if (typeof programmeFromYAML[0] !== 'undefined') {
                                 scc_film.tags.programmes[programmeIx] = JSONcopy(programmeFromYAML[0])
                             } else {
-                                console.log('Error! Programme with ID ', programme.id, ', under film with ID ', scc_film.id, ' - domain ', DOMAIN, ' probably not assigned to this programme!')
+                                timer.log(__filename, `Error! Programme with ID ${programme.id}, under film with ID ${scc_film.id} - domain ${DOMAIN} probably not assigned to this programme!`)
                             }
                         }
                     }
@@ -345,95 +372,245 @@ function getDataCB(dirPath, lang, copyFile, dataFrom, showErrors) {
                         scc_film.credentials.rolePerson.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0) })
                         for (roleIx in scc_film.credentials.rolePerson) {
                             let rolePerson = scc_film.credentials.rolePerson[roleIx]
-                            if (rolePerson !== undefined) {
-                                if (rolePerson.person && rolePerson.person.id) {
-                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })
-                                    let personCopy = JSONcopy(personFromYAML[0])
-                                    let searchRegExp = new RegExp(' ', 'g')
+                            if (rolePerson === undefined) { continue }
+                            if (rolePerson.person) {
+                                let searchRegExp = new RegExp(' ', 'g')
+                                const role_name_lc = rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')
+                                rolePersonTypes[role_name_lc] = rolePersonTypes[role_name_lc] || []
 
-                                    rolePerson.person = rueten(personCopy, lang)
-
-                                    if(typeof rolePersonTypes[rolePerson.role_at_film.roleNamePrivate.toLowerCase()] === 'undefined') {
-                                        rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`] = []
+                                if (rolePerson.person.firstNameLastName) {
+                                    rolePersonTypes[role_name_lc].push(rolePerson.person.firstNameLastName)
+                                } else if (rolePerson.person.id) {
+                                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })[0]
+                                    if (personFromYAML.fullName) {
+                                        rolePersonTypes[role_name_lc].push(personFromYAML.fullName)
                                     }
-                                    if (rolePerson.person) {
-                                        let fullName = undefined
-                                        if (rolePerson.person.firstName) {
-                                            fullName = rolePerson.person.firstName
-                                        }
-                                        if (rolePerson.person.lastName) {
-                                            fullName = `${fullName !== undefined ? fullName : ''} ${rolePerson.person.lastName}`
-                                        }
-
-                                        if (fullName !== undefined && fullName.length > 2) {
-                                            rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')}`].push(fullName.trim())
-                                        }
-                                    }
-                                } else {
-                                    // console.log(film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                                 }
+                            } else {
+                                // timer.log(__filename, film.id, ' - ', rolePerson.role_at_film.roleNamePrivate)
                             }
-                            //- - console.log('SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
+                            //- - timer.log(__filename, 'SEEEE ', rolePersonTypes[`${rolePerson.role_at_film.roleNamePrivate.toLowerCase()}`], ' - ', rolePerson.role_at_film.roleNamePrivate.toLowerCase(), ' - ', rolePersonTypes)
                         }
+                        // console.log('foo2', scc_film.id, rolePersonTypes);
                         scc_film.credentials.rolePersonsByRole = rolePersonTypes
                     }
                 }
                 rueten(s_cassette_copy.films, lang)
             }
 
-
-
             if (hasOneCorrectScreening === true) {
                 allData.push(s_cassette_copy)
                 s_cassette_copy.data = dataFrom
-                // console.log(util.inspect(s_cassette_copy, {showHidden: false, depth: null}))
-                generateYaml(s_cassette_copy, lang, copyFile, allData)
+                // timer.log(__filename, util.inspect(s_cassette_copy, {showHidden: false, depth: null}))
+                generateYaml(s_cassette_copy, lang)
             } else {
-                console.log('Skipped cassette ', s_cassette_copy.id, ' slug ', s_cassette_copy.slug,', as none of screening types are ', whichScreeningTypesToFetch.join(', '))
+                cassettesWithOutSpecifiedScreeningType.push(s_cassette_copy.id)
             }
 
         } else {
-            if(showErrors) {
-                slugMissingErrorNumber++
-                slugMissingErrorIDs.push(s_cassette_copy.id)
-            }
+            slugMissingErrorNumber++
+            slugMissingErrorIDs.push(s_cassette_copy.id)
         }
     }
     if(slugMissingErrorNumber > 0) {
-        console.log(`Notification! Value of slug_en or slug_et missing for total of ${slugMissingErrorNumber} cassettes with ID's ${slugMissingErrorIDs.join(', ')}`)
+        timer.log(__filename, `Notification! Value of slug_en or slug_et missing for total of ${slugMissingErrorNumber} cassettes with ID's ${slugMissingErrorIDs.join(', ')}`)
+    }
+    if(cassettesWithOutFilms.length) {
+        uniqueIDs = [...new Set(cassettesWithOutFilms)]
+        timer.log(__filename, `ERROR! No films under cassettes with ID's ${uniqueIDs.join(', ')}`)
+    }
+    if (cassettesWithOutSpecifiedScreeningType.length) {
+        uniqueIDs2 = [...new Set(cassettesWithOutSpecifiedScreeningType)]
+        timer.log(__filename, `Skipped cassettes with IDs ${uniqueIDs2.join(', ')}, as none of screening types are ${whichScreeningTypesToFetch.join(', ')}`)
     }
     generateAllDataYAML(allData, lang)
 }
 
-function generateYaml(element, lang, copyFile, allData){
+function generateYaml(element, lang){
     let yamlStr = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' })
-
-    // console.log(element.directory)
 
     fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8')
 
-    if (copyFile) {
-
-        if (mapping[DOMAIN]) {
-            let cassetteIndexTemplate = path.join(cassetteTemplatesDir, `cassette_${mapping[DOMAIN]}_index_template.pug`)
-            if (fs.existsSync(cassetteIndexTemplate)) {
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
-            } else {
-                console.log(`ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
-                fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
+    if (mapping[DOMAIN]) {
+        let cassetteIndexTemplate = path.join(cassetteTemplatesDir, `cassette_${mapping[DOMAIN]}_index_template.pug`)
+        if (fs.existsSync(cassetteIndexTemplate)) {
+            fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_${mapping[DOMAIN]}_index_template.pug`)
+        } else {
+            if (!templateMissingMessageDisplayed) {
+                timer.log(__filename, `ERROR! Template ${cassetteIndexTemplate} missing! Using poff.ee template`)
+                templateMissingMessageDisplayed = true
             }
+            fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
         }
-
     }
-
-    // let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
-    // fs.writeFileSync(path.join(fetchDir, `cassettes2.${lang}.yaml`), allDataYAML, 'utf8')
 }
 
 function generateAllDataYAML(allData, lang){
+
+
+    for (cassette of allData) {
+
+        function picSplit(txt) {
+            return txt.replace('assets.poff.ee/img/', 'assets.poff.ee/img/thumbnail_')
+        }
+
+        cassette.cassetteCarouselPicsCassetteThumbs = (cassette.cassetteCarouselPicsCassette || []).map(txt => picSplit(txt))
+        cassette.cassetteCarouselPicsFilmsThumbs = (cassette.cassetteCarouselPicsFilms || []).map(txt => picSplit(txt))
+        cassette.cassettePostersCassetteThumbs = (cassette.cassettePostersCassette || []).map(txt => picSplit(txt))
+        cassette.cassettePostersFilmsThumbs = (cassette.cassettePostersFilms || []).map(txt => picSplit(txt))
+
+    }
+
+
     let allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' })
     fs.writeFileSync(path.join(fetchDir, `cassettes.${lang}.yaml`), allDataYAML, 'utf8')
-    console.log('Ready for building are ', allData.length, ' cassettes')
-}
+    timer.log(__filename, `Ready for building are ${allData.length} cassettes`)
 
-fetchAllData()
+    // todo: #478 filtrid tuleb compareLocale sortida juba koostamisel.
+    let filters = {
+        programmes: {},
+        languages: {},
+        countries: {},
+        subtitles: {},
+        premieretypes: {},
+        towns: {},
+        cinemas: {}
+    }
+    const cassette_search = allData.map(cassette => {
+        let programmes = []
+        if (typeof cassette.tags.programmes !== 'undefined') {
+            for (const programme of cassette.tags.programmes) {
+                // console.log(programme.festival_editions, 'CASSETTE ', cassette.id);
+                if (typeof programme.festival_editions !== 'undefined') {
+                    for (const fested of programme.festival_editions) {
+                        const key = fested.festival + '_' + programme.id
+                        const festival = cassette.festivals.filter(festival => festival.id === fested.festival)
+                        if (festival[0]) {
+                            var festival_name = festival[0].name
+                        }
+                        programmes.push(key)
+                        filters.programmes[key] = `${festival_name} ${programme.name}`
+                    }
+                }
+            }
+        }
+        let languages = []
+        let countries = []
+        let cast_n_crew = []
+        for (const film of cassette.films) {
+            for (const language of film.languages || []) {
+                const langKey = language.code
+                const language_name = language.name
+                languages.push(langKey)
+                filters.languages[langKey] = language_name
+            }
+            for (const country of film.orderedCountries || []) {
+                const countryKey = country.country.code
+                const country_name = country.country.name
+                countries.push(countryKey)
+                filters.countries[countryKey] = country_name
+            }
+
+            film.credentials = film.credentials || []
+            try {
+                for (const key in film.credentials.rolePersonsByRole) {
+                    for (const crew of film.credentials.rolePersonsByRole[key]) {
+                        cast_n_crew.push(crew)
+                    }
+                }
+            } catch (error) {
+                console.log('bad creds on film', JSON.stringify({film: film, creds:film.credentials}, null, 4));
+                throw new Error(error)
+            }
+        }
+        let subtitles = []
+        let towns = []
+        let cinemas = []
+        for (const screenings of cassette.screenings) {
+            for (const subtitle of screenings.subtitles || []) {
+                const subtKey = subtitle.code
+                const subtitle_name = subtitle.name
+                subtitles.push(subtKey)
+                filters.subtitles[subtKey] = subtitle_name
+            }
+
+            const townKey = `_${screenings.location.hall.cinema.town.id}`
+            const town_name = screenings.location.hall.cinema.town.name
+            towns.push(townKey)
+            filters.towns[townKey] = town_name
+
+            const cinemaKey = `_${screenings.location.hall.cinema.id}`
+            const cinema_name = screenings.location.hall.cinema.name
+            cinemas.push(cinemaKey)
+            filters.cinemas[cinemaKey] = cinema_name
+        }
+        let premieretypes = []
+        for (const types of cassette.tags.premiere_types || []) {
+                const type_name = types
+                premieretypes.push(type_name)
+                filters.premieretypes[type_name] = type_name
+        }
+        return {
+            id: cassette.id,
+            text: [
+                cassette.title,
+                cassette.synopsis,
+                cast_n_crew
+            ].join(' ').toLowerCase(),
+            programmes: programmes,
+            languages: languages,
+            countries: countries,
+            subtitles: subtitles,
+            premieretypes: premieretypes,
+            towns: towns,
+            cinemas: cinemas
+        }
+    })
+
+    // sorted1 = [].slice.call(filters.programmes).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.languages).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.countries).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.subtitles).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.premieretypes).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.towns).sort((a, b) => a.localeCompare(b, lang))
+    // [].slice.call(filters.cinemas).sort((a, b) => a.localeCompare(b, lang))
+    function mSort(to_sort) {
+        let sortable = []
+        for (var item in to_sort) {
+            sortable.push([item, to_sort[item]]);
+        }
+
+        sortable = sortable.sort(function(a, b) {
+            try {
+                const locale_sort = a[1].localeCompare(b[1], lang)
+                return locale_sort
+            } catch (error) {
+                console.log('failed to sort', JSON.stringify({a, b}, null, 4));
+                throw new Error(error)
+            }
+        });
+
+        var objSorted = {}
+        for (let index = 0; index < sortable.length; index++) {
+            const item = sortable[index];
+            objSorted[item[0]]=item[1]
+        }
+        return objSorted
+    }
+
+    let sorted_filters = {
+        programmes: mSort(filters.programmes),
+        languages: mSort(filters.languages),
+        countries: mSort(filters.countries),
+        subtitles: mSort(filters.subtitles),
+        premieretypes: mSort(filters.premieretypes),
+        towns: mSort(filters.towns),
+        cinemas: mSort(filters.cinemas),
+    }
+
+    let searchYAML = yaml.safeDump(cassette_search, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `search_films.${lang}.yaml`), searchYAML, 'utf8')
+
+    let filtersYAML = yaml.safeDump(sorted_filters, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `filters_films.${lang}.yaml`), filtersYAML, 'utf8')
+}
