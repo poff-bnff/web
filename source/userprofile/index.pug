@@ -13,10 +13,15 @@ block content
                 br
                 br
                 br
-                h1.display-4.m-b-2(id= 'profileUnFilledMessage' style= {display: 'none'})= self.label.userprofile.registerAddTitle
-                h1.display-4.m-b-2(id= 'profileFilledMessage' style= {display: 'none'})= self.label.userprofile.userprofileTitle
+                br
+                br
+                br
+                br
+                h1.display-4.m-b-2#profileFilledMessage(style= {display: 'none'})= self.label.userprofile.userprofileTitle
 
-                div.form
+
+
+                div.form#thisUserProfile
                     img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group
                         label(for='profileImg')= self.label.userprofile.pictureTitle
@@ -24,7 +29,7 @@ block content
                         input#profileImg(type='file' name='filename' onchange ='validateaAndPreview(this.files[0])')
                     div.form-group
                         label(for='email')= self.label.userprofile.email
-                        input#email.form-control(type='email', placeholder=`${self.label.userprofile.email}` name='email' autocomplete="off" oninput="validateEmail(this.id)")
+                        div#email.dark(name='email')
                         div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
                     div.form-group
                         label(for='firstName')= self.label.userprofile.firstName
@@ -44,7 +49,7 @@ block content
                         div#genderHelp(class='valid')= self.label.userprofile.genderHelp
                     div.form-group
                         label(for='dob')= self.label.userprofile.birthday
-                        input#dob.form-control(type='date' name='dob', max="2007-01-01", min="1905-01-01", oninput="validateBDay(this.id)")
+                        input#dob.form-control(type='date' name='dob', placeholder ="yyyy-mm-dd" max="2007-01-01", min="1905-01-01", oninput="validateBDay(this.id)")
                         div#dobHelp(class='valid')= self.label.userprofile.ageHelp
                     div.form-group
                         label(for='phoneNr')= self.label.userprofile.phone
@@ -58,7 +63,7 @@ block content
                     div.form-group
                         label.control-label(for='citySelection')= self.label.userprofile.city
                         select#citySelection.form-control(required='' oninput= 'validateCity("citySelection")')
-                    button.btn.btn-primary(onclick='validateForm(); uploadPic()')= self.label.userprofile.saveButton
+                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.saveButton
                     p#profileSent(style= {display: 'none'})= self.label.userprofile.dataSaved
 
 

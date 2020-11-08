@@ -2,16 +2,15 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
-    //- - var myUri = 'https://dev.inscaping.eu/${lang_path}'
-    - var myUri = `http://localhost:4000/${lang_path}`
+    br
+    br
+    br
+    br
+    br
+    h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
+    h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
+    h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
 
-    //- - var myUri = `http://localhost:5000/${lang_path}`
-    //- - var myUri = `${process.env['DOMAIN']}/${lang_path}`
-    br
-    br
-    br
-    br
-    br
     h4#loginMessage= self.label.userprofile.enterHelp
     p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
     p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.

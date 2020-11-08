@@ -1,0 +1,73 @@
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+
+
+block content
+
+    main.grid_film
+
+
+        if self.title && self.title.length > 1
+            //- KARUSELL piltidega
+            section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+                ol.carousel-indicators
+                    if self.images && self.images[0]
+                        each val, index in self.images
+                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
+                .carousel-inner.container_frame_16_9
+                    if self.images && self.images[0]
+                        each val, index in self.images
+                            if index == 0
+                                .carousel-item.active.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                            else
+                                .carousel-item.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                        else
+                            .carousel-item.active.container_contents_16_9
+                                img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+
+                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='15 18 9 12 15 6')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='9 18 15 12 9 6')
+                    span.sr-only Next
+            //- LÕPP! KARUSELL piltidega LÕPP
+
+            section.f_title_box
+
+                .premiere_type
+                    if self.project_type && self.project_type.type
+                        p.premiere_type= self.project_type.type
+                h1.film_title_detailed= self.title
+
+                if self.startTime && typeof self.startTime === 'string'
+                    p.dark_1
+                        +localdate(self.startTime)
+
+                if self.location && self.location.hall && self.location.hall.name
+                    if self.location.hall && self.location.hall.name
+                        span.screening_hall= self.location.hall.name
+                        if self.location.hall.cinema && self.location.hall.cinema.name
+                            span.screening_venue= ` ${self.location.hall.cinema.name}`
+                            if self.location.hall.cinema.town && self.location.hall.cinema.town.name && self.location.hall.cinema.town.country && self.location.hall.cinema.town.country.name
+                                span.city= ` ${self.location.hall.cinema.town.name}`
+
+            section.f_synopsis_box
+                .synopsis_gi
+                    if self.lead && typeof self.lead === 'string'
+                        p.dark_1
+                            +format(self.lead)
+
+                    if self.description && typeof self.description === 'string'
+                        p.dark_1
+                            +format(self.description)

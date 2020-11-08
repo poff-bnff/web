@@ -1,9 +1,21 @@
+if(validToken){
+    fetchMyPasses()
+}else {
+    console.log("sisselogimata")
+    window.open(`${location.origin}/login`, '_self')
+}
 
+async function fetchMyPasses() {
+    console.log('fetchMyPasses')
 
-fetchMyPasses()
+    let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
+        method: "GET",
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("ACCESS_TOKEN"),
+        },
+    });
+    let profilePicture = await res.json();
 
-async function fetchMyPasses(){
-    console.log('fetchMyPasses');
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + localStorage.getItem('ACCESS_TOKEN'));
 
@@ -38,7 +50,7 @@ async function fetchMyPasses(){
 
         for (const childNode of my_pass_element.childNodes) {
             if(childNode.className === 'profilePic')
-                childNode.setAttribute('src', userProfile.picture)
+                childNode.setAttribute('src', profilePicture.url)
         }
 
         my_pass_element.setAttribute('ix', ix)
@@ -56,3 +68,5 @@ async function fetchMyPasses(){
         }
     }
 }
+
+

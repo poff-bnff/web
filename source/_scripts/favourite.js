@@ -1,19 +1,20 @@
 var favFilms
-var favouritePages = ['http://localhost:4000/favourite', 'http://localhost:4000/filmid/', 'http://localhost:4000/pohivoistlusprogramm/',]
+var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
 
-
-document.addEventListener("DOMContentLoaded", loadMyFavFilms(), false);
 
 function loadMyFavFilms() {
-
-    if (localStorage.getItem('ACCESS_TOKEN') === null) {
-        return
-    }
-
-    if (window.location.href.indexOf("/film/") > -1 || favouritePages.includes(window.location.href)) {
-        fetchFavFilmsFromDB()
-    }
+    console.log("FAVO: oled sisse loginud")
+    document.getElementById('loginForFavo').style.display = 'none'
+    fetchFavFilmsFromDB()
 }
+
+function loadFavButtons(){
+    console.log('loadFavButtons')
+    document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
+    document.getElementById('notFavouriteStatus').style.display = 'block'
+    document.getElementById('nupp').style.display = 'block'
+}
+
 
 function fetchFavFilmsFromDB() {
     var myHeaders = new Headers();
@@ -66,18 +67,16 @@ function showFavFilms() {
 
     var filmCards = document.getElementsByClassName('card_film')
 
-
-
     for (var i = 0; i < filmCards.length; i++) {
         var filmId = filmCards[i].id
 
-        if (window.location.href === 'http://localhost:4000/favourite' && favFilms.includes(filmId)) {
+        if (window.location.href === location.origin + '/favourite' && favFilms.includes(filmId)) {
             filmCards[i].style.display = 'block'
         }
-        else if (window.location.href === 'http://localhost:4000/favourite' && favFilms.length === 0) {
+        else if (window.location.href === location.origin + '/favourite' && favFilms.length === 0) {
             document.getElementById('noFavouritesMessage').style.display = 'block'
         }
-        if (window.location.href !== 'http://localhost:4000/favourite') {
+        if (window.location.href !== location.origin + '/favourite') {
             document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
             if (favFilms.includes(filmId)) {
                 console.log('fav');
@@ -93,7 +92,7 @@ function saveFilmAsFavourite(movieId) {
     var addBtnfilmCard = document.getElementById('nupp')
     console.log(addBtnfilmCard);
 
-    if (window.location.href === 'http://localhost:4000/filmid') {
+    if (window.location.href === location.origin + '/filmid') {
         addBtnfilmCard = document.getElementById(movieId + 'nupp')
     }
 
@@ -127,19 +126,22 @@ function saveFilmAsFavourite(movieId) {
 
 function changeFavInfo(status, movieId) {
 
+
     if (status === 'put' && favouritePages.includes(window.location.href)) {
         document.getElementById(movieId + 'nupp').innerHTML = 'FAVO'
         return
     }
 
     if (status === 'put') {
-        document.getElementById('favouriteStatus').innerHTML = 'FAVO'
+        document.getElementById('notFavouriteStatus').style.display = 'none'
+        document.getElementById('favouriteStatus').style.display = 'block'
         document.getElementById('nupp').style.display = 'none'
         document.getElementById('removeFavBtn').style.display = 'block'
     }
 
     if (status === 'delete') {
-        document.getElementById('favouriteStatus').innerHTML = 'Lisa film lemmikuks!'
+        document.getElementById('notFavouriteStatus').style.display = 'block'
+        document.getElementById('favouriteStatus').style.display = 'none'
         document.getElementById('nupp').style.display = 'block'
         document.getElementById('removeFavBtn').style.display = 'none'
     }
