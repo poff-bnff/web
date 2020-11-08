@@ -31,13 +31,24 @@ function urlSelect() {
     }
 }
 
-// function setSearchparams() {
-//     for (const option of selectors[ix].options) {
-//         if (option.value !== '') {
-//             queryString
-//         }
-//     }
-// }
+function setSearchParams() {
+    let urlParameters = ''
+    let firstParamDone = false
+    for (const selector in selectors) {
+        if (selectors[selector].selectedIndex !== 0) {
+            let selectedText = selectors[selector].options[selectors[selector].selectedIndex].innerHTML
+            urlParameters += !firstParamDone ? `?${selector}=${selectedText}` : `&${selector}=${selectedText}`
+            firstParamDone = true
+        }
+    }
+
+    let page = `${window.location.protocol}//${window.location.host}${window.location.pathname}`
+    if (urlParameters.length) {
+        window.history.pushState('', '', `${page}${urlParameters}`);
+    } else {
+        window.history.pushState('', document.title, page);
+    }
+}
 
 document.onreadystatechange = () => {
     const loading = document.getElementById('loading');
@@ -69,6 +80,7 @@ function select_next_or_previous(which, id) {
 }
 
 function toggleAll(exclude_selector_name) {
+    setSearchParams()
 
     ids = execute_filters()
 
