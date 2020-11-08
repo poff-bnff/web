@@ -20,7 +20,7 @@ const STRAPIDATA_PERSONS = STRAPIDATA['Person']
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme']
 const STRAPIDATA_FE = STRAPIDATA['FestivalEdition']
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening']
-const STRAPIDATA_FESTIVAL = STRAPIDATA['Festival']
+const STRAPIDATA_FESTIVALS = STRAPIDATA['Festival']
 const STRAPIDATA_FILMS = STRAPIDATA['Film']
 
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
@@ -106,7 +106,7 @@ for (const lang of allLanguages) {
         if (s_cassette_copy.festival_editions && s_cassette_copy.festival_editions.length) {
             for (const festEdIx in s_cassette_copy.festival_editions) {
                 var festEd = s_cassette_copy.festival_editions[festEdIx]
-                var festival = JSONcopy(STRAPIDATA_FESTIVAL.filter( (a) => { return festEd.festival === a.id })[0])
+                var festival = JSONcopy(STRAPIDATA_FESTIVALS.filter( (a) => { return festEd.festival === a.id })[0])
                 if (festival) {
                     s_cassette_copy.festivals = []
                     s_cassette_copy.festivals.push(festival)
@@ -484,9 +484,9 @@ function generateAllDataYAML(allData, lang){
                 if (typeof programme.festival_editions !== 'undefined') {
                     for (const fested of programme.festival_editions) {
                         const key = fested.festival + '_' + programme.id
-                        const festival = cassette.festivals.filter(festival => festival.id === fested.festival)
+                        const festival = STRAPIDATA_FESTIVALS.filter((a) => { return a.id === fested.festival })
                         if (festival[0]) {
-                            var festival_name = festival[0].name
+                            var festival_name = festival[0][`name_${lang}`]
                         }
                         programmes.push(key)
                         filters.programmes[key] = `${festival_name} ${programme.name}`
