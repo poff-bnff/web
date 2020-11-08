@@ -573,7 +573,7 @@
         var selectedCountryIndex = (showEmptyCountryOption) ? countryElement.selectedIndex - 1 : countryElement.selectedIndex;
         var customRegionOptionString = regionElement.getAttribute("region-data-default-option");
         var defaultRegionOptionString = customRegionOptionString ? customRegionOptionString : regionString;
-        
+
         if (countryElement.value === "") {
             initialiseRegionField(regionElement);
         } else {

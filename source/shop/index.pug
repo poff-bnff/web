@@ -21,8 +21,8 @@ block content
                     each prodCatList in shop.prodCatList
 
                         //- ProdCatList title
-                        if prodCatList.title
-                            h3.sub_section_headline= prodCatList.title
+                        //- if prodCatList.title
+                        //-     h3.sub_section_headline= prodCatList.title
 
                         section.shop_items_list
 
@@ -53,8 +53,8 @@ block content
                                                 //-     .card_article_title
                                                 //-         h3.article_title_locale= product.product_type.name
 
-                                                if product.description && typeof product.description !== 'object'
-                                                    p= product.description
+                                                //- if product.description && typeof product.description !== 'object'
+                                                //-     p= product.description
 
                                             .shop_item_footer
                                                 //- h4= product.priceAtPeriod[0].price

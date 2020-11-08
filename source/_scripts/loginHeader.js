@@ -1,42 +1,99 @@
-// var pageURL = 'https://dev.inscaping.eu'
-// var userprofilePageURL = pageURL + '/userprofile/'
-return
-
-var pageURL = 'http://localhost:4000'
+var pageURL = location.origin
 var userprofilePageURL = pageURL + '/userprofile'
-
-// var pageURL = 'http://localhost:5000';
-// var userprofilePageURL = pageURL + '/userprofile';
-
 var userProfile
+var validToken = false
 
-if (localStorage.getItem('ID_TOKEN') !== null){
-    document.getElementById('logOut').style.display = 'block'
-    document.getElementById('logInName').style.display = 'block'
-    document.getElementById('myFavouriteFilms').style.display = 'block'
-    document.getElementById('userProfile').style.display = 'block'
 
+
+function buyerCheck() {
+
+    if(!validToken) {
+        //sisselogimata
+        document.getElementById('directToLoginButton').style.display = 'block'
+        console.log("sisselogimata kasutaja on poes")
+    }else{
+        document.getElementById('directToLoginButton').style.display = 'none'
+
+        if(userProfile.profile_filled && userProfile.picture === "this users picture is in S3"){
+            //kõik olemas saab osta
+            document.getElementById('buybutton').style.display = 'block'
+            console.log("kasutaja saab osta")
+        }else {
+            if(!userProfile.profile_filled){
+                //profiil täitmata
+                document.getElementById('directToFillProfile').style.display = 'block'
+                console.log("pooliku profiiliga kasutaja on poes")
+            }else{
+                //profiil täidetud, aga pilt puudu
+                document.getElementById('directToaddPicture').style.display = 'block'
+                console.log("pildita kasutaja on poes")
+
+            }
+        }
+    }
+}
+
+
+if(localStorage.getItem('ACCESS_TOKEN')){
+    var token = localStorage.getItem('ACCESS_TOKEN')
+    try{
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        // var parsedToken = JSON.parse(jsonPayload)
+        // console.log("token: ", parsedToken)
+        var expDate = JSON.parse(jsonPayload).exp * 1000
+        var now = new Date().getTime()
+
+        console.log("token aegub: " + expDate)
+        console.log("praegu on: " + now)
+
+        if(now < expDate){
+            validToken = true
+        }else{
+            validToken = false
+        }
+    }
+    catch(err){
+        //console.log(err)
+        validToken = false
+    }
+}
+console.log("valid token?",validToken)
+
+
+if (validToken) {
+    try {
+        document.getElementById('logOut').style.display = 'block'
+        document.getElementById('logInName').style.display = 'block'
+        document.getElementById('myFavouriteFilms').style.display = 'block'
+        document.getElementById('userProfile').style.display = 'block'
+    } catch (error) {
+    }
     loadUserProfileH()
 }
 
-if (localStorage.getItem('ID_TOKEN') === null){
-    document.getElementById('logIn').style.display = 'block'
-    document.getElementById('signUp').style.display = 'block'
+if (!validToken) {
+    try {
+        document.getElementById('logIn').style.display = 'block'
+        document.getElementById('signUp').style.display = 'block'
+    } catch (error) {
+        null
+    }
 }
-
 
 function loadUserProfileH() {
     console.log('laen cognitost kasutaja profiili....')
     var myHeaders = new Headers()
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'))
 
-
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
     }
-
 
     fetch('https://api.poff.ee/profile', requestOptions).then(function (response) {
         if (response.ok) {
@@ -52,7 +109,6 @@ function loadUserProfileH() {
     }).catch(function (error) {
         console.warn(error);
     });
-
 }
 
 
@@ -61,10 +117,32 @@ function saveUrl(){
 }
 
 
-function useUserData(userProf){
-    document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
-}
 
+
+function useUserData(userProf){
+    try{
+        document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
+    }catch(err){
+        null
+    }
+    try{
+        buyerCheck()
+    }catch(err){
+        null
+    }
+    try{
+        loadMyFavFilms()
+    }catch(err){
+        console.log(err)
+        null
+    }
+    try{
+        console.log('loadFavbTry');
+        loadFavButtons()
+    }catch(err){
+        console.log(err)
+    }
+}
 
 function logOut() {
     localStorage.removeItem('ACCESS_TOKEN')
@@ -78,5 +156,7 @@ function logOut() {
 
     console.log('LOGITUD VÄLJA')
     location.reload()
+
+    window.open(location.origin, '_self')
 }
 
