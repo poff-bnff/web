@@ -733,8 +733,8 @@ const remapEventival = async () => {
         if (e_screening.presentation.available) {
             strapi_screening.introQaConversation.push({
                 yesNo: true,
-                presenter: e_screening.presentation.presenters.map(qap => {return {et: qap.name}}),
-                guest: e_screening.presentation.guests.map(qap => {return {et: qap.name}}),
+                presenter: e_screening.presentation.presenters.map(qap => {return {et: qap.name, en: qap.name, ru: qap.name}}),
+                guest: e_screening.presentation.guests.map(qap => {return {et: qap.name, en: qap.name, ru: qap.name}}),
                 type: 'Intro',
                 duration: e_screening.presentation.duration
             })
@@ -743,8 +743,8 @@ const remapEventival = async () => {
         if (e_screening.qa.available) {
             strapi_screening.introQaConversation.push({
                 yesNo: true,
-                presenter: e_screening.qa.presenters.map(qap => {return {et: qap.name}}),
-                guest: e_screening.qa.guests.map(qap => {return {et: qap.name}}),
+                presenter: e_screening.qa.presenters.map(qap => {return {et: qap.name, en: qap.name, ru: qap.name}}),
+                guest: e_screening.qa.guests.map(qap => {return {et: qap.name, en: qap.name, ru: qap.name}}),
                 type: 'QandA',
                 duration: e_screening.qa.duration
             })
