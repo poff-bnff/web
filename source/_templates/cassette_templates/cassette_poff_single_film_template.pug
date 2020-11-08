@@ -449,24 +449,29 @@ main.grid_film(id= self.id)
 
                                         - var iqnac = screening.introQaConversation
                                         //- Screening Intro
-                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.guest }).length > 0
+                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.guest }).length > 0 && typeof iqnac.filter(i => { return i.type === 'Intro' && i.guest })[0].guest[0] !== 'object'
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.introGuests
                                                 span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].guest.join(', ')
-                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.presenter }).length > 0
+                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.presenter }).length > 0 && typeof iqnac.filter(i => { return i.type === 'Intro' && i.presenter })[0].presented[0] !== 'object'
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.introPresenters
                                                 span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].presenter.join(', ')
                                         //- Screening QandA
-                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.guest }).length > 0
+                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.guest }).length > 0 && typeof iqnac.filter(i => { return i.type === 'QandA' && i.guest })[0].guest[0] !== 'object'
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.qaGuests
                                                 span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].guest.join(', ')
-                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.presenter }).length > 0
+                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.presenter }).length > 0 && typeof iqnac.filter(i => { return i.type === 'QandA' && i.presenter })[0].presenter[0] !== 'object'
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.introPresenters
                                                 span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].presenter.join(', ')
 
+                                        if iqnac && iqnac[0].duration
+                                            .str_info_grid_3
+                                                span.screening_info_label= self.label.screening.qaDuration
+                                                span.screening_info_value
+                                                    +dur(iqnac[0].duration)
 
                                         if screening.extraInfo && typeof screening.extraInfo !== 'object'
                                             .str_info_grid_3
