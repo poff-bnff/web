@@ -1,0 +1,53 @@
+
+extends /_templates/layout.pug
+include /_templates/mixins.pug
+
+block content
+
+    if self.data.industryprojects
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        each project in self.data.industryprojects
+
+            if project.title && project.title.length > 1 && project.slug
+                a(href=`/${lang_path}${project.slug}`)
+                    p.dark_1= project.title
+
+                    if project.images && project.images.length
+                        each image in project.images
+                            img(src=`https://assets.poff.ee/img/${image.hash}${image.ext}`)
+                    else
+                        img(src='/assets/img/static/placeholder_hd_1.jpg')
+
+
+                    if project.logline
+                        p.dark_1= project.logline
+
+                    if project.lookingFor
+                        p.dark_1= project.lookingFor
+
+                    if project.synopsis && typeof project.synopsis === 'string'
+                        p.dark_1
+                            +format(project.synopsis)
+
+                    if project.directorsNote && typeof project.directorsNote === 'string'
+                        p.dark_1
+                            +format(project.directorsNote)
+
+                    if project.contactCompany
+                        if project.contactCompany.homepageUrl
+
+                        if project.contactCompany.type
+                            p.dark_1= project.type
+                        if project.contactCompany.name
+                            p.dark_1= project.contactName
+
+
+                    if project.clipUrlCode
+                        p.dark_1
+                            +video(project.clipUrlCode)

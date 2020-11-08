@@ -9,7 +9,10 @@ echo 'STARTING BUILD'
 [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
 [ -d "assets/img/dynamic" ] && rm -r assets/img/dynamic/*
+[ -d "assets/xml" ] && rm -r assets/xml/*
 
+echo initialise entu_ssg.yaml
+node ./initialise_entu_ssg.js
 
 echo 'Fetch strapiData.yaml from Strapi'
 node ./helpers/a_fetch.js
@@ -20,9 +23,6 @@ node ./helpers/fetch_articles_from_yaml.js
 
 echo 'fetch_article_types_from_yaml'
 node ./helpers/fetch_article_type_from_yaml.js
-
-echo 'fetch_films_from_yaml'
-node ./helpers/fetch_films_from_yaml.js
 
 echo 'fetch_heroarticle_from_yaml'
 node ./helpers/fetch_heroarticle_from_yaml.js
@@ -48,19 +48,57 @@ node ./helpers/fetch_footer_from_yaml.js
 echo 'fetch_menu_from_yaml'
 node ./helpers/fetch_menu_from_yaml.js
 
+echo 'fetch_programmes_from_yaml'
+node ./helpers/fetch_programmes_from_yaml.js
+
+echo 'fetch_cassettes_from_yaml'
+node ./helpers/fetch_cassettes_from_yaml.js
+
+echo 'fetch_six_film_block_from_yaml'
+node ./helpers/fetch_six_film_block_from_yaml.js
+
+echo 'fetch_screenings_from_yaml'
+node ./helpers/fetch_screenings_from_yaml.js
+
+echo 'fetch_shops_from_yaml'
+node ./helpers/fetch_shops_from_yaml.js
+
+echo 'assets/xml'
+node ./helpers/xml.js
+
+echo 'fetch_industry_person_from_yaml'
+node ./helpers/fetch_industry_person_from_yaml.js
+
+echo 'fetch_industry_project_from_yaml'
+node ./helpers/fetch_industry_project_from_yaml.js
+
+echo 'fetch_industry_event_from_yaml'
+node ./helpers/fetch_industry_event_from_yaml.js
+
+
 printf '\n----------        FINISHED creating separate YAML files      ----------\n'
+
+printf '\n----------         Downloading all img from Strapi         ----------\n\n'
+# node ./helpers/download_article_img.js
+# node ./helpers/download_footer_img.js
+# node ./helpers/download_teams_img.js
+# node ./helpers/download_cassette_films_credentials_img.js
+# node ./helpers/download_organisations_img.js
+# # node ./helpers/download_persons_img.js
+# node ./helpers/download_trioblock_img.js
+# node ./helpers/download_supporters_page_img.js
+# node ./helpers/download_programmes_img.js
+# node ./helpers/download_shops_img.js
+# node ./helpers/download_industry_person_img.js
+# node ./helpers/download_industry_project_img.js
+# # node ./helpers/download_casettes_and_films_img.js
+printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
+
 
 printf '\n----------                  Processing styles                ----------\n\n'
 node ./helpers/copy_styles_acc_to_domain.js
 printf '\n----------             Finished processing styles            ----------\n'
 
-printf '\n----------         Downloading all img from Strapi         ----------\n\n'
-node ./helpers/download_article_img.js
-node ./helpers/download_footer_img.js
-node ./helpers/download_teams_img.js
-node ./helpers/download_trioblock_img.js
-node ./helpers/download_supporters_page_img.js
-printf '\n\n----------     Finished downloading all img from Strapi    ----------\n\n'
-
 cp -R assets/* build/assets/
 node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
+

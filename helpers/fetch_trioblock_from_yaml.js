@@ -12,11 +12,15 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const mapping = {
     'poff.ee': 'TrioPÖFF',
     'justfilm.ee': 'TrioJustFilm',
+    'kinoff.poff.ee': 'TrioKinoff',
+    'industry.poff.ee': 'TrioIndustry',
     'shorts.poff.ee': 'TrioShorts'
 }
 const articleMapping = {
     'poff.ee': 'poffi',
     'justfilm.ee': 'just_filmi',
+    'kinoff.poff.ee': 'kinoffi',
+    'industry.poff.ee': 'industry',
     'shorts.poff.ee': 'shortsi'
 }
 const STRAPIDATA_TRIO = STRAPIDATA[mapping[DOMAIN]]
@@ -42,17 +46,29 @@ for (const lang of languages) {
                 continue
             }
 
-            buffer.push({
-                'block': copyData[key][key2],
-                'article': copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
-            })
-            delete copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+            if (copyData[key][key2][`${articleMapping[DOMAIN]}_article`] !== undefined) {
+                buffer.push({
+                    'block': copyData[key][key2],
+                    'article': copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+                })
+                delete copyData[key][key2][`${articleMapping[DOMAIN]}_article`]
+            } else if (copyData[key][key2] !== undefined) {
+                buffer.push({
+                    'block': copyData[key][key2],
+                })
+            }
+
             delete copyData[key][key2]
         }
     }
-
-    rueten(buffer, lang)
-    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
+    // console.log(buffer);
     const outFile = path.join(fetchDir, `articletrioblock.${lang}.yaml`)
-    fs.writeFileSync(outFile, allDataYAML, 'utf8')
+
+    if(buffer.length > 0) {
+        rueten(buffer, lang)
+        let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
+        fs.writeFileSync(outFile, allDataYAML, 'utf8')
+    } else {
+        fs.writeFileSync(outFile, '[]', 'utf8')
+    }
 }
