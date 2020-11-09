@@ -121,19 +121,40 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 runtime: s_film.runtime || null,
                 languages: distill_datapieces(s_film.languages, `name_${lang}`),
                 directors: distill_directors(s_film, lang),
-                presenters: [
-                    {
-                        text: "",
-                        logos: [
-                            {
-                                logo: "",
-                                url: ""
-                            }
-                        ]
-                    }
-                ]
+                presenters: distill_presenters(s_film, lang)
             }
         })
+
+        function distill_presenters(s_film, lang) {
+            try {
+                return s_film.presentedBy.map(presby => {
+                    return {
+                        text: distill_datapiece(presby.presentedByText, lang),
+                        logos: distill_logos(presby)
+                    }
+
+                })
+            } catch (error) {
+                timer.log(__filename, `INFO: no presenters for film ${s_film.id}, in ${lang}`)
+                return []
+            }
+
+            function distill_logos(presby) {
+                try {
+                    return presby.organisation.map(org => {
+                        return {
+                            logoWhite: org.logoWhite,
+                            logoBlack: org.logoBlack,
+                            logoColour: org.logoColour,
+                            url: org.homepageUrl
+                        }
+                    })
+                } catch (error) {
+                    timer.log(__filename, `INFO: no organisation for presenter`)
+                    return []
+                }
+            }
+        }
 
         function distill_premiere_types(s_film, lang) {
             try {
