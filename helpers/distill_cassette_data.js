@@ -131,26 +131,32 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
         function distill_presenters(s_film, lang) {
             try {
-                return s_film.presentedBy.map(presby => {
-                    return {
-                        text: distill_datapiece(presby.presentedByText, lang),
-                        logos: distill_logos(presby)
-                    }
-
-                })
+                return {
+                    text: distill_presented_by_text(s_film.presentedBy),
+                    logos: distill_logos(s_film.presentedBy)
+                }
             } catch (error) {
                 timer.log(__filename, `INFO: no presenters for film ${s_film.id}, in ${lang}`)
                 return []
             }
 
-            function distill_logos(presby) {
+            function distill_presented_by_text(presented_by) {
                 try {
-                    return presby.organisation.map(org => {
+                    return distill_datapiece(presented_by.presentedByText, lang)
+                } catch (error) {
+                    timer.log(__filename, `INFO: no presentedBy text in ${lang}`)
+                    return null
+                }
+            }
+
+            function distill_logos(presented_by) {
+                try {
+                    return presented_by.organisations.map(org => {
                         return {
-                            logoWhite: org.logoWhite,
-                            logoBlack: org.logoBlack,
-                            logoColour: org.logoColour,
-                            url: org.homepageUrl
+                            logoWhite: create_asset_path(org.logoWhite),
+                            logoBlack: create_asset_path(org.logoBlack),
+                            logoColour: create_asset_path(org.logoColour),
+                            url: org.homepageUrl || null
                         }
                     })
                 } catch (error) {
@@ -198,20 +204,21 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
         function distill_directors(s_film, lang) {
             try {
-                return STRAPIDATA_PERSONS.filter(p => {
-                    return s_film.credentials.rolePerson.filter(rp => {
-                        return rp.role_at_film.roleNamePrivate === 'Director'
-                    }).map(rp => {
-                        return rp.person.id
-                    }).includes(p.id)
-                    .map(p => {
-                        return {
-                            portrait: `https://assets.poff.ee/img/${p.picture.hash}${p.picture.ext}`,
-                            name: p.firstNameLastName || null,
-                            biography: distill_datapiece(p.biography, lang),
-                            filmography: distill_datapiece(p.filmography, lang)
-                        }
-                    })
+                const role_person_ids = s_film.credentials.rolePerson.filter(rp => {
+                    return rp.role_at_film.roleNamePrivate === 'Director'
+                }).map(rp => {
+                    return rp.person.id
+                })
+
+                return STRAPIDATA_PERSONS.filter(s_person => {
+                    return role_person_ids.includes(s_person.id)
+                }).map(s_person => {
+                    return {
+                        portrait: create_asset_path(s_person.picture),
+                        name: s_person.firstNameLastName || null,
+                        biography: distill_datapiece(s_person.biography, lang),
+                        filmography: distill_datapiece(s_person.filmography, lang)
+                    }
                 })
             } catch (error) {
                 timer.log(__filename, `INFO: no directors for film ${s_film.id}, in ${lang}`)
@@ -270,7 +277,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         function distill_film_stills(s_film) {
             try {
                 return s_film.media.stills.map(still => {
-                    return `https://assets.poff.ee/img/${still.hash}${still.ext}`
+                    return create_asset_path(still)
                 })
             } catch (error) {
                 timer.log(__filename, `INFO: no stills for film ${s_film.id}`)
@@ -377,7 +384,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
     function distill_datapiece(data, piece) {
         try {
-            return data[piece]
+            return data[piece].toString() // toString makes sure to error on undefined
         } catch (error) {
             // timer.log(__filename, `INFO: no ${piece} in datapiece`)
             return null
@@ -391,6 +398,14 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
             // timer.log(__filename, `INFO: no ${piece} in datapieces`)
             return []
         }
+    }
+}
+
+function create_asset_path(media) {
+    try {
+        return `https://assets.poff.ee/img/${media.hash}${media.ext}`
+    } catch (error) {
+        return null
     }
 }
 
@@ -498,6 +513,11 @@ const cassette_search = allData.map(cassette => {
         cinemas: cinemas
     }
 })
+
+
+
+
+
 
 // sorted1 = [].slice.call(filters.programmes).sort((a, b) => a.localeCompare(b, lang))
 // [].slice.call(filters.languages).sort((a, b) => a.localeCompare(b, lang))
