@@ -32,19 +32,29 @@ block content
                                     - var product = orderedProductCategory.product_category
 
                                     .card_mypass.dark_1(id= `template_${product.codePrefix}`, style="display: none")
-                                        h4.text_center= product.name
+                                        //- h4.text_center= product.name
+                                        .card_mypass_head= product.name
+
                                         div.qrCode
                                             //- (style='width: 30px')
                                         div.passCode kood
-                                        div
-                                            +euro(product.priceAtPeriod[0].price)
+
+                                        img.profilePic
                                         div.fullName nimi
-                                        img.profilePic(height="150px")
 
-                                        div= product.description
+                                        //- div
+                                        //-     +euro(product.priceAtPeriod[0].price)
+
+                                        if typeof product.description !== 'undefined'
+                                            - var desc_md = product.description
+                                            .pass_desc
+                                                if typeof desc_md === 'string'
+                                                    +format(desc_md).dark_4
+
+                                        //- p.dark_4= product.description
 
 
-                        section.shop_items_list(id='my_passes')
+                        section.mypasses_items_list(id='my_passes')
 
 
 
