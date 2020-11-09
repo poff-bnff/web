@@ -645,7 +645,7 @@ footer
 
 .mypasses_items_list
     display grid
-    grid-template-columns repeat(auto-fill, minmax(17rem, 17rem))
+    grid-template-columns repeat(auto-fill, minmax(20rem, 20rem))
     justify-content center
     align-content start
     justify-items center
@@ -665,16 +665,41 @@ footer
     background-color white
     margin-bottom 1.618rem
     border .5px solid clr_grey_light
+    border-radius 5px
     justify-content center
     justify-items center
     align-items center
     align-content start
+    padding 0
+
+.card_mypass_head
+    width 100%
     padding 2rem
+    background-color bg_dark_4
+    color clr_primary
+    font-family font_h
+    font-size 2rem
 
 .qrCode
     width 100%
+    padding 4rem
     img
-        width 70%
+        width 100%
+
+.passCode, .fullName
+    text-align center
+    font-size 1.2rem
+
+.profilePic
+    width 100%
+    padding 2rem
+
+.pass_desc
+    width 100%
+    padding 2rem
+    background-color bg_dark_4
+    color white_96
+    margin-top 2rem
 
 .grid_ss
     display grid

@@ -244,14 +244,14 @@ main.grid_film(id= self.id)
                         .str_info_label= self.label.film.languages
                         .str_info_value= film.languages.map(languagesNames).join(', ')
 
-            //- section.f_interactive_box
-            //-     .f_interactive_item
-            //-         p#loggedOutFavouriteStatus Lemmikuks lisamiseks logi sisse!
-            //-         p#notFavouriteStatus(style= {display: 'none'}) Lisa film lemmikuks!
-            //-         p#favouriteStatus(style= {display: 'none'}) FAVO
+            section.f_interactive_box
+                .f_interactive_item
+                    p#loggedOutFavouriteStatus Lemmikuks lisamiseks logi sisse!
+                    p#notFavouriteStatus(style= {display: 'none'}) Lisa film lemmikuks!
+                    p#favouriteStatus(style= {display: 'none'}) FAVO
 
-            //-         a.btn.btn_vote.active#nupp(style= {display: 'none'} onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
-            //-         a.btn.btn_vote.active#removeFavBtn(style= {display: 'none'} onclick=`removeFilm(${self.id})` role='button' target='_BLANK') X
+                    a.btn.btn_vote.active#nupp(style= {display: 'none'} onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK') +
+                    a.btn.btn_vote.active#removeFavBtn(style= {display: 'none'} onclick=`removeFilm(${self.id})` role='button' target='_BLANK') X
 
 
             if film.credentials && film.credentials.rolePerson && film.credentials.rolePerson[0]

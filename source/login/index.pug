@@ -5,9 +5,9 @@ block content
 
     section.login_head
 
-        h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
-        h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
-        h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
+        h4#fromUserProfile(style={display:'none'})= self.label.userprofile.redirectFromUserprofileMessage
+        h4#fromMyPoff(style={display:'none'})= self.label.userprofile.redirectFromMyPoffMessage
+        h4#fromFavo(style={display:'none'})= self.label.userprofile.redirectFromFavouritesMessage
 
     section.grid_login
 
@@ -24,29 +24,29 @@ block content
                 input.login_input#loginPassword(type='password')
 
             div#passwordRep(style={display: 'none'})
-                label.login_label( for='loginPasswordRep') Password again:
+                label.login_label( for='loginPasswordRep')= self.label.userprofile.passwordRepeat
                 input.ogin_input#loginPasswordRep(type='password')
 
             button.login_btn_primary#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
 
             button.login_btn_secondary#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
 
-            button.login_btn_secondary#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
+            button.login_btn_secondary#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()')= self.label.userprofile.sendResetCodeButton
 
-            button.login_btn_secondary#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
+            button.login_btn_secondary#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()')= self.label.userprofile.resetPswdButton
 
             div#resetCodeBox(style={display:'none'})
-                label.login_label(style={color: 'red'} for='resetCode') Code:
+                label.login_label(style={color: 'red'} for='resetCode')= self.label.userprofile.resetCodeLabel
                 input.login_input#resetCode(type='text')
-                button.login_btn(onclick = 'askForNewPassword()') Send
+                button.login_btn(onclick = 'askForNewPassword()')= self.label.userprofile.resetCodeButton
 
             p#signUpPassword2
 
-            p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
-            p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
-            p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
-            p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
-            p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
+            p#unfilledErrorMsg(style={display:'none'})= self.label.userprofile.unfilledPasswordOfEmailHelp
+            p#pswdResetMessage(style={display:'none'})= self.label.userprofile.pswdResetHelp
+            p#pswdResetCodeMessage(style={display:'none'})= self.label.userprofile.resetCodeHelp
+            p#pswdResetEnterNewMessage(style={display:'none'})= self.label.userprofile.resetPswdNewPswdHelp
+            p#pswdResetCompletedMessage(style={display:'none'})= self.label.userprofile.pswdResetCompleteHelp
             p#currentUsername(style={display:'none'})
             p#noSuchUser(style={display:'none'})
                 | User doesn't exist!
@@ -75,16 +75,6 @@ block content
 
             button.login_btn_secondary#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
 
-
-            //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
-            //- br
-            //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
-
-
-
-
-
-            p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
 
 
 

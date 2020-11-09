@@ -974,6 +974,7 @@ IndustryEvent: &IndustryEvent
     publishUntil: (Datetime)
     publish: (Boolean)
     channel: *Channel
+    durationTime: (Time)
 
 # Supporters
 SupPoff: &SupPoff
