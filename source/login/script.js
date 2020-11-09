@@ -88,6 +88,7 @@ async function loginViaCognito() {
 
         if (!response2.user) {
             document.getElementById('noSuchUser').style.display = 'block'
+            return
         }
         console.log(response2)
         console.log('authResponse ', response2.AccessToken)
