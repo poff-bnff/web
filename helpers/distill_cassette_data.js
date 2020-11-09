@@ -46,6 +46,7 @@ for (const s_cassette of STRAPIDATA_CASSETTE) {
     if (CASSETTELIMIT && cassette_counter++ > CASSETTELIMIT) {
         break
     }
+    timer.log(__filename, `CASSETTE ${s_cassette.id}`)
 
     const cassette_path = path.join(cassettes_path, s_cassette.slug_en)
     fs.mkdirSync(cassette_path, { recursive: true })
@@ -53,10 +54,13 @@ for (const s_cassette of STRAPIDATA_CASSETTE) {
     const cassette_pug_path = path.join(cassette_path, 'index.pug')
     fs.writeFileSync(cassette_pug_path, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
 
-
-    const s_films = STRAPIDATA_FILMS.filter(s_film => {
-        s_cassette.orderedFilms.map(o_f => { return o_f.id }).includes(s_film.id)
+    const s_films = s_cassette.orderedFilms
+    .sort((a, b) => a.order < b.order)
+    .map(o_f => {
+        return STRAPIDATA_FILMS.filter(s_film => { return s_film.id === o_f.film.id })[0]
     })
+
+    // console.log(util.inspect(s_films));
     const s_screenings = STRAPIDATA_SCREENINGS.filter(s_screening => {
         try {
             return s_screening.cassette.id === s_cassette.id
@@ -72,9 +76,8 @@ for (const s_cassette of STRAPIDATA_CASSETTE) {
             const cassette_yaml = yaml.safeDump(data_to_dump, { 'noRefs': true, 'indent': '4' })
             fs.writeFileSync(cassette_data_path, cassette_yaml, 'utf8')
         } catch (error) {
-            console.log(util.inspect(data_to_dump, true, 5))
-            timer.log(__filename, `ERROR with dumping cassette ${s_cassette.id} data to ${cassette_data_path}`)
-            throw error
+            console.log(error)
+            throw new Error(util.inspect(data_to_dump, false, 8))
         }
     }
 }
@@ -88,6 +91,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
     function distill_cassette_films(s_cassette, s_films, lang) {
         return s_films.map(s_film => {
+            timer.log(__filename, `${lang}, CASSETTE ${s_cassette.id}, FILM ${s_film.id}`)
             return {
                 titleBox: {
                     title: s_film[`title_${lang}`] || null,
@@ -99,7 +103,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 year: s_film['year'] || null,
                 premierTypes: distill_premiere_types(s_film, lang),
                 cassetteCarouselPicsFilms: distill_film_stills(s_film),
-                cassetteTrailers: distill_cassette_trailers(s_cassette),
+                cassetteTrailers: distill_film_trailers(s_film),
                 countryNames: distill_ordered_countries(s_film, lang),
                 credentials: {
                     directorofphotography: distill_credentials(s_film, 'Director of Photography'),
@@ -113,10 +117,10 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 },
                 synopsisBox: {
                     festivalEditionNames: distill_festival_editions(s_cassette, lang),
-                    programmeNames: distill_datapieces(s_film.tags.programmes, `slug_${lang}`),
-                    genres: s_film.tags.genres.map(pt => pt[lang]),
-                    keywords: s_film.tags.keywords.map(kw  => kw[lang]),
-                    synopsis_md: s_film.synopsis[lang] || s_film.synopsis.en || null
+                    programmeNames: distill_programme_names(s_film, lang),
+                    genres: distill_film_genres(s_film, lang),
+                    keywords: distill_film_keywords(s_film, lang),
+                    synopsis_md: distill_film_synopsis(s_film, lang)
                 },
                 runtime: s_film.runtime || null,
                 languages: distill_datapieces(s_film.languages, `name_${lang}`),
@@ -156,6 +160,33 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
             }
         }
 
+        function distill_film_synopsis(s_film, lang) {
+            try {
+                return s_film.synopsis[lang] || s_film.synopsis.en || null
+            } catch (error) {
+                timer.log(__filename, `INFO: no synopsis for film ${s_film.id}, in ${lang}`)
+                return null
+            }
+        }
+
+        function distill_film_keywords(s_film, lang) {
+            try {
+                return s_film.tags.keywords.map(kw => kw[lang])
+            } catch (error) {
+                timer.log(__filename, `INFO: no keywords for film ${s_film.id}, in ${lang}`)
+                return null
+            }
+        }
+
+        function distill_film_genres(s_film, lang) {
+            try {
+                return s_film.tags.genres.map(pt => pt[lang])
+            } catch (error) {
+                timer.log(__filename, `INFO: no genres for film ${s_film.id}, in ${lang}`)
+                return null
+            }
+        }
+
         function distill_premiere_types(s_film, lang) {
             try {
                 return distill_datapieces(s_film.tags.premiere_types, lang)
@@ -176,7 +207,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     .map(p => {
                         return {
                             portrait: `https://assets.poff.ee/img/${p.picture.hash}${p.picture.ext}`,
-                            name: p.firstNameLastName,
+                            name: p.firstNameLastName || null,
                             biography: distill_datapiece(p.biography, lang),
                             filmography: distill_datapiece(p.filmography, lang)
                         }
@@ -202,7 +233,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         function distill_credentials(s_film, role_name) {
             try {
                 return s_film.credentials.rolePerson.filter(rp => {
-                    return rp.role_at_film.roleNamePrivate === role_name
+                    return rp.role_at_film.roleNamePrivate === role_name && rp.person.firstNameLastName
                 }).map(rp => {
                     return rp.person.firstNameLastName
                 })
@@ -215,12 +246,23 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         function distill_ordered_countries(s_film, lang) {
             try {
                 return s_film.orderedCountries.sort((a, b) => {
-                    return a.order > b.order
+                    return a.order < b.order
                 }).map(oc => {
-                    return oc[`name_${lang}`]
+                    return oc.country[`name_${lang}`]
                 })
             } catch (error) {
                 timer.log(__filename, `INFO: no countries for film ${s_film.id}, in ${lang}`)
+                return []
+            }
+        }
+
+        function distill_film_trailers(s_film) {
+            try {
+                return s_film.media.trailer.map(trailer => {
+                    return split('=', trailer.url)[1]
+                })
+            } catch (error) {
+                timer.log(__filename, `INFO: no trailers for film ${s_film.id}`)
                 return []
             }
         }
@@ -231,7 +273,16 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     return `https://assets.poff.ee/img/${still.hash}${still.ext}`
                 })
             } catch (error) {
-                timer.log(__filename, `INFO: no stills for film ${s_film.id}, in ${lang}`)
+                timer.log(__filename, `INFO: no stills for film ${s_film.id}`)
+                return []
+            }
+        }
+
+        function distill_programme_names(s_film, lang) {
+            try {
+                return distill_datapieces(s_film.tags.programmes, `slug_${lang}`)
+            } catch (error) {
+                timer.log(__filename, `INFO: no programme names for film ${s_film.id}, in ${lang}`)
                 return []
             }
         }
@@ -328,14 +379,16 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         try {
             return data[piece]
         } catch (error) {
+            // timer.log(__filename, `INFO: no ${piece} in datapiece`)
             return null
         }
     }
 
     function distill_datapieces(data, piece) {
         try {
-            return data.map(d => d[piece])
+            return data.map(d => d[piece].toString()) // toString makes sure to error on undefined
         } catch (error) {
+            // timer.log(__filename, `INFO: no ${piece} in datapieces`)
             return []
         }
     }
