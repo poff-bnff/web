@@ -1,16 +1,16 @@
 console.log("eelmine leht oli", document.referrer)
 
 
-if(document.referrer === `${location.origin}/userprofile`){
+if (document.referrer === `${location.origin}/userprofile`) {
     console.log("tulid profiilist")
     document.getElementById('fromUserProfile').style.display = 'block'
 }
-if(document.referrer === `${location.origin}/minupoff`){
+if (document.referrer === `${location.origin}/minupoff`) {
     console.log("tulid oma passidest")
     // console.log(self.mypoff.path)
     document.getElementById('fromMyPoff').style.display = 'block'
 }
-if(document.referrer === `${location.origin}/favourite`){
+if (document.referrer === `${location.origin}/favourite`) {
     console.log("tulid Lemmikutest")
     document.getElementById('fromFavo').style.display = 'block'
 }
@@ -84,7 +84,12 @@ async function loginViaCognito() {
         });
 
         let response2 = await response.json()
-        console.log(response2.AccessToken)
+
+        if (!response2.user) {
+            document.getElementById('noSuchUser').style.display = 'block'
+        }
+        console.log(response2)
+        console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
         id_token = response2.IdToken
 
@@ -118,17 +123,17 @@ function checkIfUserProfFilled(userProfile) {
     console.log('checkIfUserProfFilled');
     console.log(userProfile.profile_filled);
 
-    if (userProfile.profile_filled) {
-        console.log(userProfile.profile_filled)
-        console.log('profile filled')
-        redirectToPreLoginUrl()
-    }
-    else if (!userProfile.profile_filled) {
-        console.log(userProfile.profile_filled)
-        console.log('profile not filled')
-        window.open(`${pageURL}/userprofile`, '_self')
+    // if (userProfile.profile_filled) {
+    //     console.log(userProfile.profile_filled)
+    //     console.log('profile filled')
+    //     redirectToPreLoginUrl()
+    // }
+    // else if (!userProfile.profile_filled) {
+    //     console.log(userProfile.profile_filled)
+    //     console.log('profile not filled')
+    //     window.open(`${pageURL}/userprofile`, '_self')
 
-    }
+    // }
 }
 
 
@@ -291,7 +296,7 @@ function askForNewPassword() {
 
 
 window.addEventListener("keydown", function (event) {
-    if (event.key === "Enter"){
+    if (event.key === "Enter") {
         console.log("ENTER")
         loginViaCognito()
     }
