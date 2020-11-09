@@ -2,13 +2,14 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
+
+    section.login_head
+
+        h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
+        h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
+        h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
+
     section.grid_login
-
-        .login_head
-
-            h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
-            h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
-            h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
 
         .login_password
 
@@ -26,13 +27,13 @@ block content
                 label.login_label( for='loginPasswordRep') Password again:
                 input.ogin_input#loginPasswordRep(type='password')
 
-            button.login_btn#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
+            button.login_btn_primary#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
 
-            button.login_btn#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+            button.login_btn_secondary#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
 
-            button.login_btn#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
+            button.login_btn_secondary#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
 
-            button.login_btn#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
+            button.login_btn_secondary#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
 
             div#resetCodeBox(style={display:'none'})
                 label.login_label(style={color: 'red'} for='resetCode') Code:
@@ -53,22 +54,22 @@ block content
             h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginSome
 
             a#loginFB(href=`https://api.poff.ee/auth/facebook`)
-                .button.btn_primary
+                .button.login_btn_social
                     | Facebook
 
             a#loginG(href=`https://api.poff.ee/auth/google`)
-                p
+                .button.login_btn_social
                     | Google
 
             a#loginE(href=`https://api.poff.ee/auth/eventival`)
-                p
+                .button.login_btn_social
                     | Eventival
 
         .login_register
 
             h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginRegister
 
-            button.login_btn#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
+            button.login_btn_secondary#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
 
 
             //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook

@@ -8,21 +8,21 @@ block content
 
             section.shop
 
-                //- Poe title
-                if shop.title
-                    h1.section_headline= shop.title
+                //- //- Poe title
+                //- if shop.title
+                //-     h1.section_headline= shop.title
 
                 //- Poe intro
-                if shop.intro
-                    .shop_intro_box
-                        p.shop_intro= shop.intro
+                //- if shop.intro
+                //-     .shop_intro_box
+                //-         p.shop_intro= shop.intro
 
                 if shop.prodCatList && shop.prodCatList
                     each prodCatList in shop.prodCatList
 
                         //- ProdCatList title
-                        if prodCatList.title
-                            h3.sub_section_headline= prodCatList.title
+                        //- if prodCatList.title
+                        //-     h3.sub_section_headline= prodCatList.title
 
                         section.shop_items_list
 
@@ -31,25 +31,26 @@ block content
                                     if orderedProductCategory.product_category
                                         - var product = orderedProductCategory.product_category
 
-                                        div.shop_item.dark_1(id= `template_${product.codePrefix}`, style="display: none")
+                                        .card_pass.dark_1(id= `template_${product.codePrefix}`, style="display: none")
                                             h4= product.name
-                                            div.qrCode(style='width: 30px')
-                                            div= product.description
+                                            div.qrCode(style='width: 20px')
                                             div.passCode kood
                                             div
-                                                 +euro(product.priceAtPeriod[0].price)
+                                                +euro(product.priceAtPeriod[0].price)
                                             div.fullName nimi
                                             img.profilePic(height="150px")
+
+                                            div= product.description
 
 
                         section.my_passes(id='my_passes')
 
 
 
-                if shop.shopRules
-                    if typeof shop.shopRules === 'string'
-                        p
-                            +format(shop.shopRules)
+                //- if shop.shopRulesygtf
+                //-     if typeof shop.shopRules === 'string'
+                //-         p
+                //-             +format(shop.shopRules)
 
 
 
