@@ -700,8 +700,8 @@ footer
 .card_mypass_head
     width 100%
     padding 2rem
-    background-color bg_dark_4
-    color clr_primary
+    background-color clr_primary
+    color white_96
     font-family font_h
     font-size 2rem
 
@@ -2913,6 +2913,7 @@ a.btn_popover
         display grid
         grid-template-columns auto 1fr
         height 100px
+        position relative
 
     .main_menu_toggle_label
             display none
@@ -2999,14 +3000,16 @@ a.btn_popover
         height 1rem
         // padding-top .1rem
 
-    // .user_menu
-    //     position fixed
-    //     // display inline
-    //     top 0
-    //     right 0
-    //     padding-right 1rem
-    //     height 1rem
-    //     // padding-top .1rem
+    .user_menu
+        // display inline-block
+        position absolute
+        // display inline
+        top 0
+        left 0
+        padding-left 1rem
+        padding-bottom 0
+        margin-bottom 0
+        height 1rem
 
     .lang_menu
         position fixed
