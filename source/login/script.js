@@ -69,7 +69,7 @@ async function loginViaCognito() {
     if (loginUsername.value && loginPassword.value) {
 
         let authenticationData = {
-            userName: document.getElementById("loginUsername").value,
+            loginUsername: document.getElementById("loginUsername").value,
             password: document.getElementById("loginPassword").value
         }
 
@@ -123,17 +123,17 @@ function checkIfUserProfFilled(userProfile) {
     console.log('checkIfUserProfFilled');
     console.log(userProfile.profile_filled);
 
-    // if (userProfile.profile_filled) {
-    //     console.log(userProfile.profile_filled)
-    //     console.log('profile filled')
-    //     redirectToPreLoginUrl()
-    // }
-    // else if (!userProfile.profile_filled) {
-    //     console.log(userProfile.profile_filled)
-    //     console.log('profile not filled')
-    //     window.open(`${pageURL}/userprofile`, '_self')
+    if (userProfile.profile_filled) {
+        console.log(userProfile.profile_filled)
+        console.log('profile filled')
+        redirectToPreLoginUrl()
+    }
+    else if (!userProfile.profile_filled) {
+        console.log(userProfile.profile_filled)
+        console.log('profile not filled')
+        window.open(`${pageURL}/userprofile`, '_self')
 
-    // }
+    }
 }
 
 

@@ -1,4 +1,5 @@
 
+console.log('referrer ', document.referrer)
 
 function BuyProduct(categoryId) {
 
