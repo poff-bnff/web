@@ -70,7 +70,7 @@ async function loginViaCognito() {
     if (loginUsername.value && loginPassword.value) {
 
         let authenticationData = {
-            userName: document.getElementById("loginUsername").value,
+            loginUsername: document.getElementById("loginUsername").value,
             password: document.getElementById("loginPassword").value
         }
 
@@ -85,7 +85,13 @@ async function loginViaCognito() {
         });
 
         let response2 = await response.json()
-        console.log(response2.AccessToken)
+
+        if (!response2.user) {
+            document.getElementById('noSuchUser').style.display = 'block'
+            return
+        }
+        console.log(response2)
+        console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
         id_token = response2.IdToken
 
