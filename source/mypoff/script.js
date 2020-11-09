@@ -1,8 +1,9 @@
+
 if(validToken){
     fetchMyPasses()
 }else {
-    console.log("sisselogimata")
-    window.open(`${location.origin}/login`, '_self')
+    window.open(`${location.origin}/${langpath}login`, '_self')
+    saveUrl()
 }
 
 async function fetchMyPasses() {

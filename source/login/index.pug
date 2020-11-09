@@ -7,16 +7,16 @@ block content
     br
     br
     br
-    h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
-    h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
-    h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
+    h4#fromUserProfile(style={display:'none'})= self.label.userprofile.redirectFromUserprofileMessage
+    h4#fromMyPoff(style={display:'none'})= self.label.userprofile.redirectFromMyPoffMessage
+    h4#fromFavo(style={display:'none'})= self.label.userprofile.redirectFromFavouritesMessage
 
     h4#loginMessage= self.label.userprofile.enterHelp
-    p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
-    p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
-    p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
-    p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
-    p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
+    p#unfilledErrorMsg(style={display:'none'})= self.label.userprofile.unfilledPasswordOfEmailHelp
+    p#pswdResetMessage(style={display:'none'})= self.label.userprofile.pswdResetHelp
+    p#pswdResetCodeMessage(style={display:'none'})= self.label.userprofile.resetCodeHelp
+    p#pswdResetEnterNewMessage(style={display:'none'})= self.label.userprofile.resetPswdNewPswdHelp
+    p#pswdResetCompletedMessage(style={display:'none'})= self.label.userprofile.pswdResetCompleteHelp
     p#currentUsername(style={display:'none'})
 
     div#userName
@@ -28,17 +28,14 @@ block content
         input#loginPassword(type='password')
         br
     div#passwordRep(style={display: 'none'})
-        label(style={color: 'red'} for='loginPasswordRep') Password again:
+        label(style={color: 'red'} for='loginPasswordRep')= self.label.userprofile.passwordRepeat
         input#loginPasswordRep(type='password')
     br
     div#resetCodeBox(style={display:'none'})
-        label(style={color: 'red'} for='resetCode') Code:
+        label(style={color: 'red'} for='resetCode')= self.label.userprofile.resetCodeLabel
         input#resetCode(type='text')
-        button(onclick = 'askForNewPassword()') Send
+        button(onclick = 'askForNewPassword()')= self.label.userprofile.resetCodeButton
     p#signUpPassword2
-    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
-    //- br
-    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
     a#loginFB(href=`https://api.poff.ee/auth/facebook`) Facebook
     br
     a#loginG(href=`https://api.poff.ee/auth/google`) Google
@@ -49,11 +46,10 @@ block content
     button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
     button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
     button#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
-    button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
-    button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
+    button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()')= self.label.userprofile.sendResetCodeButton
+    button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()')= self.label.userprofile.resetPswdButton
     br
     br
-    p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
     br
     br
 
@@ -63,9 +59,6 @@ block content
         h1 {color: #464646}
         h4 {color: #464646}
         p {color: #464646}
-
-    //- script.
-    //-     var langpath = "!{(self.locale)}"
 
 
 

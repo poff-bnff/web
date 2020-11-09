@@ -1,6 +1,13 @@
 let imgPreview = document.getElementById("imgPreview");
 let profile_pic_to_send = "empty"
 
+if (validToken) {
+    loadUserInfo();
+}else{
+    window.open(`${location.origin}/${langpath}login`, '_self')
+    saveUrl()
+}
+
 async function loadUserInfo() {
     let response = await fetch(`https://api.poff.ee/profile`, {
         method: "GET",
@@ -46,12 +53,6 @@ async function loadUserInfo() {
 
     }
 
-}
-
-if (validToken) {
-    loadUserInfo();
-}else{
-    window.open(`${location.origin}/login`, '_self')
 }
 
 async function sendUserProfile() {

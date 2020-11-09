@@ -1,16 +1,17 @@
 console.log("eelmine leht oli", document.referrer)
+console.log(langpath)
 
-
-if(document.referrer === `${location.origin}/userprofile`){
+//info kasutajale kui suunatakse tagasi lemmikutest, profiili vaatest või minu
+if([`${location.origin}/userprofile`, `${location.origin}/en/userprofile`, `${location.origin}/ru/userprofile`].includes(document.referrer)){
     console.log("tulid profiilist")
     document.getElementById('fromUserProfile').style.display = 'block'
 }
-if(document.referrer === `${location.origin}/minupoff`){
+if([`${location.origin}/minupoff`, `${location.origin}/en/mypoff`, `${location.origin}/ru/moipoff`].includes(document.referrer)){
     console.log("tulid oma passidest")
     // console.log(self.mypoff.path)
     document.getElementById('fromMyPoff').style.display = 'block'
 }
-if(document.referrer === `${location.origin}/favourite`){
+if([`${location.origin}/favourite`, `${location.origin}/en/favourite`, `${location.origin}/ru/favourite`].includes(document.referrer)){
     console.log("tulid Lemmikutest")
     document.getElementById('fromFavo').style.display = 'block'
 }
@@ -172,21 +173,6 @@ async function getTokensForCode() {
     let response = await fetch(`https://api.poff.ee/auth`, requestOptions)
 
     console.log(await response.json)
-
-}
-
-
-async function showMergeInfo() {
-    document.getElementById('mergeInfo2').style.display = 'block'
-
-    var requestOptions = {
-        method: 'POST',
-        redirect: 'follow'
-    }
-
-    let response = await fetch(`https://api.poff.ee/match_user`, requestOptions)
-
-    console.log(await response.json())
 
 }
 
