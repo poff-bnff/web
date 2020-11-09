@@ -10,7 +10,7 @@ function loadMyFavFilms() {
 function loadFavButtons(){
     console.log('loadFavButtons')
     document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
-    document.getElementById('notFavouriteStatus').style.display = 'block'
+    // document.getElementById('notFavouriteStatus').style.display = 'block'
     document.getElementById('nupp').style.display = 'block'
 }
 
@@ -95,7 +95,7 @@ function saveFilmAsFavourite(movieId) {
         addBtnfilmCard = document.getElementById(movieId + 'nupp')
     }
 
-    if (addBtnfilmCard.innerHTML === '+') {
+    if (true) {
 
         var myHeaders = new Headers();
         myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
@@ -132,15 +132,11 @@ function changeFavInfo(status, movieId) {
     }
 
     if (status === 'put') {
-        document.getElementById('notFavouriteStatus').style.display = 'none'
-        document.getElementById('favouriteStatus').style.display = 'block'
         document.getElementById('nupp').style.display = 'none'
         document.getElementById('removeFavBtn').style.display = 'block'
     }
 
     if (status === 'delete') {
-        document.getElementById('notFavouriteStatus').style.display = 'block'
-        document.getElementById('favouriteStatus').style.display = 'none'
         document.getElementById('nupp').style.display = 'block'
         document.getElementById('removeFavBtn').style.display = 'none'
     }
