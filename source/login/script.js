@@ -276,9 +276,9 @@ function askForNewPassword() {
 }
 
 
-window.addEventListener("keydown", function (event) {
-    if (event.key === "Enter"){
-        console.log("ENTER")
-        loginViaCognito()
-    }
-})
+// window.addEventListener("keydown", function (event) {
+//     if (event.key === "Enter"){
+//         console.log("ENTER")
+//         loginViaCognito()
+//     }
+// })
