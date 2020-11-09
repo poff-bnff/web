@@ -2,29 +2,14 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
-    .main.container
-        .row
-            .col-md-6.col-md-offset-3
+    section.userprofile
             if self.label.userprofile
-                br
-                br
-                br
-                br
-                br
-                br
-                br
-                br
-                br
-                br
-                br
-                h1.display-4.m-b-2#profileFilledMessage(style= {display: 'none'})= self.label.userprofile.userprofileTitle
-                h1.display-4.m-b-2#profileUnFilledMessage(style= {display: 'none'})= self.label.userprofile.registerAddTitle
 
-
-
+                .sub_section_headline.text_left.p_l_0#profileFilledMessage(style= {display: 'none'})= self.label.userprofile.userprofileTitle
+                .sub_section_headline.text_left.p_l_0#profileUnFilledMessage(style= {display: 'none'})= self.label.userprofile.registerAddTitle
 
                 div.form#thisUserProfile
-                    img#imgPreview(height="150px", alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
+                    img#imgPreview(alt="user profile pic", src="/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg")
                     div.form-group
                         label.login_label(for='profileImg')= self.label.userprofile.pictureTitle
                         div#imgError
@@ -43,7 +28,7 @@ block content
                         div#lastNameHelp(class='valid')= self.label.userprofile.lastNameHelp
                     div.form-group
                         label.login_label(for='gender')= self.label.userprofile.gender
-                        select#gender(name='gender' oninput='validateGender(this.id)')
+                        select.login_input#gender(name='gender' oninput='validateGender(this.id)')
                             option.login_input(value='male')= self.label.userprofile.genderM
                             option.login_input(value='female')= self.label.userprofile.genderF
                             option.login_input(value='other')= self.label.userprofile.genderO
@@ -61,11 +46,11 @@ block content
                         label.login_label= self.label.userprofile.address
                         br
                         label.control-label.login_label(for='country')= self.label.userprofile.country
-                        select#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='citySelection' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry("countrySelection")')
+                        select.login_input#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='citySelection' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry("countrySelection")')
                     div.form-group
                         label.control-label.login_label(for='citySelection')= self.label.userprofile.city
-                        select#citySelection.form-control(required='' oninput= 'validateCity("citySelection")')
-                    button.btn.btn-primary(onclick='validateForm()')= self.label.userprofile.saveButton
+                        select.login_input#citySelection.form-control(required='' oninput= 'validateCity("citySelection")')
+                    button.btn.btn_primary(onclick='validateForm()')= self.label.userprofile.saveButton
                     p#profileSent(style= {display: 'none'})= self.label.userprofile.dataSaved
 
 
