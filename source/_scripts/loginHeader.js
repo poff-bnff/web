@@ -68,7 +68,6 @@ if (validToken) {
     try {
         document.getElementById('logOut').style.display = 'block'
         document.getElementById('logInName').style.display = 'block'
-        document.getElementById('myFavouriteFilms').style.display = 'block'
         document.getElementById('userProfile').style.display = 'block'
     } catch (error) {
     }
@@ -121,7 +120,7 @@ function saveUrl(){
 
 function useUserData(userProf){
     try{
-        document.getElementById('logInName').innerHTML = 'Tere, ' + userProf.name
+        document.getElementById('tervitus').innerHTML = document.getElementById('tervitus').innerHTML + ', ' + userProf.name
     }catch(err){
         null
     }
