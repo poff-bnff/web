@@ -2,19 +2,19 @@ section#carouselExampleIndicators.poffi_banner_box.carousel.slide(data-ride='car
 
         ol.carousel-indicators
             li(data-target='#carouselExampleIndicators' data-slide-to = 0)
-            //- li(data-target='#carouselExampleIndicators' data-slide-to = 1)
+            li(data-target='#carouselExampleIndicators' data-slide-to = 1)
 
         if lang_path === 'en/'
             .carousel-inner.container_frame_poffi_banner
-                //- a(href= `/en/films`).carousel-item.container_contents_poffi_banner
-                //-     img.d-block.container_contents_poffi_banner(src=`https://assets.poff.ee/img/banner_soodusmyyk_en_2.jpg`)
+                a(href= `/en/films`).carousel-item.container_contents_poffi_banner
+                    img.d-block.container_contents_poffi_banner(src=`https://assets.poff.ee/img/banner_soodusmyyk_en_2.jpg`)
                 a(href= `/artikkel/turvajuhised-ja-nouanded/`).carousel-item.active.container_contents_poffi_banner
                     img.d-block.container_contents_poffi_banner(src=`https://assets.poff.ee/img/banner_mask_en.jpg`)
 
         else
             .carousel-inner.container_frame_poffi_banner
-                //- a(href= `/filmid`).carousel-item.container_contents_poffi_banner
-                //-     img.d-block.container_contents_poffi_banner(src=`https://assets.poff.ee/img/banner_soodusmyyk_et_2.jpg`)
+                a(href= `/filmid`).carousel-item.container_contents_poffi_banner
+                    img.d-block.container_contents_poffi_banner(src=`https://assets.poff.ee/img/banner_soodusmyyk_et_2.jpg`)
                 a(href= `/artikkel/turvajuhised-ja-nouanded/`).carousel-item.active.container_contents_poffi_banner
                     img.d-block.container_contents_poffi_banner(src=`https://assets.poff.ee/img/mask_et.jpg`)
 
