@@ -34,25 +34,25 @@ header
     nav.main_menu
         ul.ul_yx
 
-            li.user_menu.dropdown
-                a= self.label.menu.mainUserMenu
-                    ul.ul_kaks
-                        li#logIn(style={cursor: 'pointer', display: 'none'})
-                            a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
-                        li#signUp(style={cursor: 'pointer', display: 'none'})
-                            a(onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
-                        li#logInName.dark_1(style={display: 'none'})
-                            a#tervitus(onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
-                        li#userProfile(style={cursor: 'pointer', display: 'none'})
-                            a(onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
-                        li#myFavouriteFilms(style={cursor: 'pointer'})
-                            a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainShortlist
-                        li#myPasses(style={cursor: 'pointer'} )
-                            a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
-                        li#Shop(style={cursor: 'pointer'} )
-                            a(href=`/${lang_path}shop`)= self.label.menu.mainShop
-                        li#logOut(style={cursor: 'pointer', display: 'none'} )
-                            a(onclick='logOut()')= self.label.menu.mainLogout
+            //- li.user_menu.dropdown
+            //-     a= self.label.menu.mainUserMenu
+            //-         ul.ul_kaks
+            //-             li#logIn(style={cursor: 'pointer', display: 'none'})
+            //-                 a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+            //-             li#signUp(style={cursor: 'pointer', display: 'none'})
+            //-                 a(onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
+            //-             li#logInName.dark_1(style={display: 'none'})
+            //-                 a#tervitus(onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
+            //-             li#userProfile(style={cursor: 'pointer', display: 'none'})
+            //-                 a(onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
+            //-             li#myFavouriteFilms(style={cursor: 'pointer'})
+            //-                 a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainShortlist
+            //-             li#myPasses(style={cursor: 'pointer'} )
+            //-                 a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
+            //-             li#Shop(style={cursor: 'pointer'} )
+            //-                 a(href=`/${lang_path}shop`)= self.label.menu.mainShop
+            //-             li#logOut(style={cursor: 'pointer', display: 'none'} )
+            //-                 a(onclick='logOut()')= self.label.menu.mainLogout
 
             li
                 nav.lang_menu
@@ -147,25 +147,25 @@ header
                         li
                             a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
-            //- li.user_menu.dropdown
-            //-     a= self.label.menu.mainUserMenu
-            //-         ul.ul_kaks
-            //-             li#logIn(style={cursor: 'pointer', display: 'none'})
-            //-                 a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
-            //-             li#signUp(style={cursor: 'pointer', display: 'none'})
-            //-                 a(onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
-            //-             li#logInName.dark_1(style={display: 'none'})
-            //-                 a#tervitus(onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
-            //-             li#userProfile(style={cursor: 'pointer', display: 'none'})
-            //-                 a(onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
-            //-             li#myFavouriteFilms(style={cursor: 'pointer'})
-            //-                 a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainShortlist
-            //-             li#myPasses(style={cursor: 'pointer'} )
-            //-                 a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
-            //-             li#Shop(style={cursor: 'pointer'} )
-            //-                 a(href=`/${lang_path}shop`)= self.label.menu.mainShop
-            //-             li#logOut(style={cursor: 'pointer', display: 'none'} )
-            //-                 a(onclick='logOut()')= self.label.menu.mainLogout
+            li.user_menu.dropdown
+                a= self.label.menu.mainUserMenu
+                    ul.ul_kaks
+                        li#logIn(style={cursor: 'pointer', display: 'none'})
+                            a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
+                        li#signUp(style={cursor: 'pointer', display: 'none'})
+                            a(onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
+                        li#logInName.dark_1(style={display: 'none'})
+                            a#tervitus(onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
+                        li#userProfile(style={cursor: 'pointer', display: 'none'})
+                            a(onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
+                        li#myFavouriteFilms(style={cursor: 'pointer'})
+                            a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainShortlist
+                        li#myPasses(style={cursor: 'pointer'} )
+                            a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
+                        //- li#Shop(style={cursor: 'pointer'} )
+                        //-     a(href=`/${lang_path}shop`)= self.label.menu.mainShop
+                        li#logOut(style={cursor: 'pointer', display: 'none'} )
+                            a(onclick='logOut()')= self.label.menu.mainLogout
 
 
     label.main_menu_toggle_label(for='main_menu_toggle')
