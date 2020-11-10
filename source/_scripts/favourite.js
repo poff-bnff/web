@@ -1,4 +1,3 @@
-var favFilms
 var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
 
 
@@ -16,6 +15,7 @@ function loadFavButtons(){
 
 
 function fetchFavFilmsFromDB() {
+
     var myHeaders = new Headers();
     myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
@@ -40,9 +40,10 @@ function fetchFavFilmsFromDB() {
 }
 
 function saveFavFilms(data) {
-    favFilms = data
+
+    var favFilms = data
     if (favouritePages.includes(window.location.href)) {
-        showFavFilms()
+        showFavFilms(favFilms)
         return
     }
     if (window.location.href.indexOf('/film/') > -1) {
@@ -61,21 +62,26 @@ function saveFavFilms(data) {
     }
 }
 
-function showFavFilms() {
-    // console.log('showFavFilms');
+function showFavFilms(favFilms) {
+    console.log('showFavFilms');
 
     var filmCards = document.getElementsByClassName('card_film')
 
+
     for (var i = 0; i < filmCards.length; i++) {
+        console.log(1);
         var filmId = filmCards[i].id
 
-        if (window.location.href === location.origin + '/favourite' && favFilms.includes(filmId)) {
+        if (favFilms.includes(filmId)) {
+            console.log(2);
             filmCards[i].style.display = 'block'
         }
-        else if (window.location.href === location.origin + '/favourite' && favFilms.length === 0) {
+        else if (favFilms.length === 0) {
+            console.log(3);
             document.getElementById('noFavouritesMessage').style.display = 'block'
         }
         if (window.location.href !== location.origin + '/favourite') {
+            console.log(4);
             document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
             if (favFilms.includes(filmId)) {
                 // console.log('fav');
