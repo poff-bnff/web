@@ -129,6 +129,8 @@ build()
         printf "\nBuilding...\n"
         [ -d "build" ] && rm -r build/*
         [ ! -d "build" ] && mkdir -p build
+        [ ! -d "build/assets" ] && mkdir -p build/assets
+
 
         cp -R assets/* build/assets/
         node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
