@@ -106,7 +106,7 @@ async function sendUserProfile() {
 
 function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    // console.log(file)
+    console.log(file)
     // Check if the file is an image.
     if (!file.type.includes("image")) {
         // console.log("File is not an image.", file.type, file);
