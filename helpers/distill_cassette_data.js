@@ -92,7 +92,21 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
     function distill_cassette_films(s_cassette, s_films, lang) {
         return s_films.map(s_film => {
             timer.log(__filename, `${lang}, CASSETTE ${s_cassette.id}, FILM ${s_film.id}`)
+
+            const synopsis_md = distill_film_synopsis(s_film, lang)
             return {
+                search: {
+                    id: s_film.id,
+                    text: synopsis_md,
+                    programmes: '',
+                    languages: distill_datapieces(s_film.languages, 'code'),
+                    countries: '',
+                    subtitles: '',
+                    premieretypes: '',
+                    towns: '',
+                    cinemas: ''
+                },
+                id: s_film.id,
                 titleBox: {
                     title: s_film[`title_${lang}`] || null,
                     original: s_film['title_original'] || null,
@@ -120,7 +134,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     programmeNames: distill_programme_names(s_film, lang),
                     genres: distill_film_genres(s_film, lang),
                     keywords: distill_film_keywords(s_film, lang),
-                    synopsis_md: distill_film_synopsis(s_film, lang)
+                    synopsis_md: synopsis_md
                 },
                 runtime: s_film.runtime || null,
                 languages: distill_datapieces(s_film.languages, `name_${lang}`),
@@ -287,7 +301,8 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
         function distill_programme_names(s_film, lang) {
             try {
-                return distill_datapieces(s_film.tags.programmes, `slug_${lang}`)
+                const programme_names_translated = getProgramNamesById(s_film.tags.programmes)
+                return distill_datapieces(programme_names_translated, lang)
             } catch (error) {
                 timer.log(__filename, `INFO: no programme names for film ${s_film.id}, in ${lang}`)
                 return []
@@ -301,9 +316,9 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
             return s_screenings.map(s_screening => {
                 const screening_moment = moment(s_screening.dateTime)
                 return {
-                    date: screening_moment.format('Do MMM') + ', ' + screening_moment.format('dddd'),
-                    time: screening_moment.format('HH:mm'),
-                    datetime: s_screening.dateTime,
+                    date: (screening_moment.format('Do MMM') + ', ' + screening_moment.format('dddd')) || null,
+                    time: screening_moment.format('HH:mm') || null,
+                    datetime: s_screening.dateTime || null,
                     name: s_cassette[`title_${lang}`] || s_cassette[`title_en`] || null,
                     duration: s_screening.durationTotal || null,
                     subtitle_languages: distill_datapieces(s_screening.subtitles, `name_${lang}`),
@@ -360,22 +375,22 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     return []
                 }
                 return {
-                    presenters: distill_participants(filtered_iqac, 'presenter'),
-                    guests: distill_participants(filtered_iqac, 'guest'),
-                    duration: filtered_iqac.duration || null
+                    presenters: distill_participants(filtered_iqac[0], 'presenter'),
+                    guests: distill_participants(filtered_iqac[0], 'guest'),
+                    duration: filtered_iqac[0].duration || null
                 }
             } catch {
                 return []
             }
 
             function distill_participants(filtered_iqac, role) {
+                console.log(filtered_iqac, role);
                 try {
-                    return filtered_iqac.map(iqc => {
-                        return iqc[role].map(iqc_p => {
-                            return iqc_p.et
-                        })
+                    return filtered_iqac[role].map(iqc_p => {
+                        return iqc_p.et
                     })
                 } catch (error) {
+                    timer.log(__filename, `INFO: no role ${role} for IQnAC ${util.inspect(filtered_iqac, false, 4)}`)
                     return []
                 }
             }
@@ -391,14 +406,18 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         }
     }
 
-    function distill_datapieces(data, piece) {
+    function distill_datapieces(data_array, piece) {
         try {
-            return data.map(d => d[piece].toString()) // toString makes sure to error on undefined
+            return data_array.map(d => d[piece].toString()) // toString makes sure to error on undefined
         } catch (error) {
             // timer.log(__filename, `INFO: no ${piece} in datapieces`)
             return []
         }
     }
+}
+
+function getProgramNamesById(s_film) {
+    return s_film.tags.programmes.id
 }
 
 function create_asset_path(media) {
