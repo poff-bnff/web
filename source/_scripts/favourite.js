@@ -1,4 +1,4 @@
-var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
+var favouritePages = [location.origin + '/favourite/', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
 
 
 function loadMyFavFilms() {
