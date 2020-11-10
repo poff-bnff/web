@@ -1,18 +1,18 @@
-console.log("eelmine leht oli", document.referrer)
-console.log(langpath)
+// console.log("eelmine leht oli", document.referrer)
+// console.log(langpath)
 
 //info kasutajale kui suunatakse tagasi lemmikutest, profiili vaatest või minu
 if([`${location.origin}/userprofile`, `${location.origin}/en/userprofile`, `${location.origin}/ru/userprofile`].includes(document.referrer)){
-    console.log("tulid profiilist")
+    // console.log("tulid profiilist")
     document.getElementById('fromUserProfile').style.display = 'block'
 }
 if([`${location.origin}/minupoff`, `${location.origin}/en/mypoff`, `${location.origin}/ru/moipoff`].includes(document.referrer)){
-    console.log("tulid oma passidest")
+    // console.log("tulid oma passidest")
     // console.log(self.mypoff.path)
     document.getElementById('fromMyPoff').style.display = 'block'
 }
 if([`${location.origin}/favourite`, `${location.origin}/en/favourite`, `${location.origin}/ru/favourite`].includes(document.referrer)){
-    console.log("tulid Lemmikutest")
+    // console.log("tulid Lemmikutest")
     document.getElementById('fromFavo').style.display = 'block'
 }
 
@@ -29,16 +29,16 @@ if (window.location.hash) {
     if ((window.location.hash).includes('Already+found+an+entry+for+username')) {
         let errorMessage = (window.location.hash).split('+')
         for (item of errorMessage) {
-            console.log(item)
+            // console.log(item)
 
             if (item.includes('google') || item.includes('facebook') || item.includes('eventival')) {
                 item = item.split('_')
                 let provider = item[0]
-                console.log(provider)
+                // console.log(provider)
                 providerLogin(provider)
             }
         }
-        console.log(errorMessage)
+        // console.log(errorMessage)
     }
 
     else if (access_token && id_token) {
@@ -74,7 +74,7 @@ async function loginViaCognito() {
             password: document.getElementById("loginPassword").value
         }
 
-        console.log(authenticationData)
+        // console.log(authenticationData)
 
         let response = await fetch(`https://api.poff.ee/auth`, {
             method: 'POST',
@@ -90,8 +90,8 @@ async function loginViaCognito() {
             document.getElementById('noSuchUser').style.display = 'block'
             return
         }
-        console.log(response2)
-        console.log('authResponse ', response2.AccessToken)
+        // console.log(response2)
+        // console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
         id_token = response2.IdToken
 
@@ -105,7 +105,7 @@ async function loginViaCognito() {
 
 
 async function loadUserProfile() {
-    console.log('loadUserProfile');
+    // console.log('loadUserProfile');
     let userProfile
 
     let response = await fetch(`https://api.poff.ee/profile`, {
@@ -115,24 +115,24 @@ async function loadUserProfile() {
         },
     });
     userProfile = await response.json()
-    console.log(userProfile);
+    // console.log(userProfile);
     checkIfUserProfFilled(userProfile)
 
 }
 
 
 function checkIfUserProfFilled(userProfile) {
-    console.log('checkIfUserProfFilled');
-    console.log(userProfile.profile_filled);
+    // console.log('checkIfUserProfFilled');
+    // console.log(userProfile.profile_filled);
 
     if (userProfile.profile_filled) {
-        console.log(userProfile.profile_filled)
-        console.log('profile filled')
+        // console.log(userProfile.profile_filled)
+        // console.log('profile filled')
         redirectToPreLoginUrl()
     }
     else if (!userProfile.profile_filled) {
-        console.log(userProfile.profile_filled)
-        console.log('profile not filled')
+        // console.log(userProfile.profile_filled)
+        // console.log('profile not filled')
         window.open(`${pageURL}/userprofile`, '_self')
 
     }
@@ -152,7 +152,7 @@ function redirectToPreLoginUrl() {
 
 
 async function providerLogin(provider) {
-    console.log('providerLogin ' + provider);
+    // console.log('providerLogin ' + provider);
 
     window.open(`https://api.poff.ee/auth/${provider}`, '_self')
 
@@ -164,7 +164,7 @@ async function providerLogin(provider) {
     let response = await fetch(`https://api.poff.ee/auth/${provider}`, requestOptions)
 
     let response2 = await response.json()
-    console.log(response2)
+    // console.log(response2)
 
     window.open(response2.providerUrl, '_self')
 }
@@ -178,7 +178,7 @@ async function getTokensForCode() {
 
     let response = await fetch(`https://api.poff.ee/auth`, requestOptions)
 
-    console.log(await response.json)
+    // console.log(await response.json)
 
 }
 
@@ -189,7 +189,7 @@ function directToSignup() {
 
 
 function doResetPassword() {
-    console.log('reset');
+    // console.log('reset');
     forgotPasswordBtn.style.display = 'none'
     sendPswdResetCodeBtn.style.display = 'block'
     document.getElementById('loginMessage').style.display = 'none'
@@ -205,7 +205,7 @@ function doResetPassword() {
 
 
 function doSaveNewPswd() {
-    console.log('resetting');
+    // console.log('resetting');
     resetPasswordBtn.style.display = 'none'
     document.getElementById('passwordRep').style.display = 'none'
     document.getElementById('forgotPasswordBtn').style.display = 'none'
@@ -225,8 +225,8 @@ function doSendResetCode() {
     document.getElementById('currentUsername').innerHTML = loginUsername.value
     sendPswdResetCodeBtn.style.display = 'none'
 
-    console.log('sendResetCode');
-    console.log(loginUsername.value);
+    // console.log('sendResetCode');
+    // console.log(loginUsername.value);
     sendResetCode()
 }
 
@@ -234,8 +234,8 @@ function doSendResetCode() {
 async function sendResetCode() {
     let authenticationData
 
-    console.log(loginUsername.value);
-    console.log(resetCode.value);
+    // console.log(loginUsername.value);
+    // console.log(resetCode.value);
 
 
     if (resetCode.value) {
@@ -259,7 +259,7 @@ async function sendResetCode() {
 
     let response = await fetch(`https://api.poff.ee/profile/pswd`, requestOptions)
 
-    console.log(await response.json())
+    // console.log(await response.json())
 
     if (resetCode.value) {
         return
@@ -281,10 +281,3 @@ function askForNewPassword() {
     resetPasswordBtn.style.display = 'block'
 }
 
-
-// window.addEventListener("keydown", function (event) {
-//     if (event.key === "Enter"){
-//         console.log("ENTER")
-//         loginViaCognito()
-//     }
-// })

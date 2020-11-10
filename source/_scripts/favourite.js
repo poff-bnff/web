@@ -3,12 +3,12 @@ var favouritePages = [location.origin + '/favourite', location.origin + '/filmid
 
 
 function loadMyFavFilms() {
-    console.log("FAVO: oled sisse loginud")
+    // console.log("FAVO: oled sisse loginud")
     fetchFavFilmsFromDB()
 }
 
 function loadFavButtons(){
-    console.log('loadFavButtons')
+    // console.log('loadFavButtons')
     document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
     // document.getElementById('notFavouriteStatus').style.display = 'block'
     document.getElementById('nupp').style.display = 'block'
@@ -32,7 +32,7 @@ function fetchFavFilmsFromDB() {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data);
+        // console.log(data);
         saveFavFilms(data)
     }).catch(function (error) {
         console.warn(error);
@@ -47,9 +47,9 @@ function saveFavFilms(data) {
     }
     if (window.location.href.indexOf('/film/') > -1) {
         var filmCard = document.getElementsByClassName('grid_film')
-        console.log(filmCard)
-        console.log(filmCard[0].id)
-        console.log(favFilms)
+        // console.log(filmCard)
+        // console.log(filmCard[0].id)
+        // console.log(favFilms)
 
 
 
@@ -62,7 +62,7 @@ function saveFavFilms(data) {
 }
 
 function showFavFilms() {
-    console.log('showFavFilms');
+    // console.log('showFavFilms');
 
     var filmCards = document.getElementsByClassName('card_film')
 
@@ -78,7 +78,7 @@ function showFavFilms() {
         if (window.location.href !== location.origin + '/favourite') {
             document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
             if (favFilms.includes(filmId)) {
-                console.log('fav');
+                // console.log('fav');
                 document.getElementById(filmCards[i].id + 'nupp').innerHTML = 'FAVO'
             }
         }
@@ -86,10 +86,10 @@ function showFavFilms() {
 }
 
 function saveFilmAsFavourite(movieId) {
-    console.log('saveFilmAsFavourite')
+    // console.log('saveFilmAsFavourite')
 
     var addBtnfilmCard = document.getElementById('nupp')
-    console.log(addBtnfilmCard);
+    // console.log(addBtnfilmCard);
 
     if (window.location.href === location.origin + '/filmid') {
         addBtnfilmCard = document.getElementById(movieId + 'nupp')
@@ -164,16 +164,16 @@ function removeFilm(movieId) {
             if (window.location.href.indexOf('/film/') > -1) {
                 changeFavInfo('delete')
             } else {
-                console.log('else');
+                // console.log('else');
                 filmCard = document.getElementById(movieId)
                 filmCard.style.display = 'none'
 
-                console.log(favFilms);
+                // console.log(favFilms);
 
                 for (i = 0; i < favFilms.length; i++) {
                     if (favFilms[i] === movieId.toString()) {
                         favFilms.pop(favFilms[i])
-                        console.log(favFilms);
+                        // console.log(favFilms);
 
                     }
                 }
