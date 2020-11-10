@@ -86,10 +86,19 @@ async function loginViaCognito() {
 
         let response2 = await response.json()
 
+
+
+        if (response2.email && !response2.confirmed) {
+            document.getElementById('unConfirmed').style.display = 'block'
+            return
+        }
+
         if (!response2.user) {
             document.getElementById('noSuchUser').style.display = 'block'
             return
         }
+
+
         console.log(response2)
         console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken

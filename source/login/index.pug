@@ -50,10 +50,10 @@ block content
             p#pswdResetEnterNewMessage(style={display:'none'})= self.label.userprofile.resetPswdNewPswdHelp
             p#pswdResetCompletedMessage(style={display:'none'})= self.label.userprofile.pswdResetCompleteHelp
             p#currentUsername(style={display:'none'})
-            p#noSuchUser(style={display:'none'})
-                | User doesn't exist!
-                br
-                | Please register or try again with correct email.
+            p#noSuchUser(style={display:'none'}) User doesn't exist! Please register or try again with correct email.
+            p#unConfirmed(style={display:'none'}) Please confirm your email.
+            p#wrongPswd(style={display:'none'}) Wrong password.
+
 
         .login_some
 
