@@ -80,7 +80,7 @@ async function sendUserProfile() {
         {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
-    // console.log("kasutaja profiil mida saadan ", userToSend);
+    console.log("kasutaja profiil mida saadan ", userToSend);
 
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
@@ -106,7 +106,7 @@ async function sendUserProfile() {
 
 function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    // console.log(file)
+    console.log(file)
     // Check if the file is an image.
     if (!file.type.includes("image")) {
         // console.log("File is not an image.", file.type, file);
@@ -179,6 +179,10 @@ function validateForm() {
 
     if (!validateBDay("dob")) {
         errors.push('Missing or invalid date of birth')
+    }
+
+    if (!validateDate("dob")) {
+        errors.push('Missing or invalid date of birth wrong format')
     }
 
     if (!validatePhoneNr("phoneNr")) {
