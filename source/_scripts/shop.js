@@ -1,5 +1,5 @@
 
-console.log('referrer ', document.referrer)
+// console.log('referrer ', document.referrer)
 
 function BuyProduct(categoryId) {
 
@@ -7,7 +7,7 @@ function BuyProduct(categoryId) {
     if (paymentType === "valimata") {
         feedback.innerHTML = "Palun vali makseviis"
     } else {
-        console.log("ostad passi kategoorias " + categoryId)
+        // console.log("ostad passi kategoorias " + categoryId)
         saveUrl()
 
 
@@ -21,7 +21,7 @@ function BuyProduct(categoryId) {
             "body": JSON.stringify({ "paymentMethodId": paymentType }),
             "content-type": 'application/json'
         }
-        console.log(requestOptions)
+        // console.log(requestOptions)
 
         var mypoff
         if (langpath === 'en/'){
@@ -43,7 +43,7 @@ function BuyProduct(categoryId) {
             }
             return Promise.reject(response);
         }).then(function (data) {
-            console.log(data);
+            // console.log(data);
             window.open(data.url, '_self')
 
 
@@ -60,11 +60,11 @@ var paymentType = "valimata"
 function SelectPaymentType(id) {
     paymentType = id
 
-    console.log("sinu valitud makseviis on " + paymentType)
+    // console.log("sinu valitud makseviis on " + paymentType)
 }
 
 function Buy(productCode) {
-    console.log("ostad toote " + productCode + " ja maksad " + paymentType)
+    // console.log("ostad toote " + productCode + " ja maksad " + paymentType)
 }
 
 function GetPaymentLinks() {
@@ -87,7 +87,7 @@ function GetPaymentLinks() {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data);
+        // console.log(data);
         var bankInfo = ""
 
         //pangalingid
@@ -126,8 +126,5 @@ function directToUserProfile() {
     window.open(location.origin + '/userprofile', '_self')
 }
 
-function saveLangpath(langpath) {
-    console.log(langpath);
-}
 
 
