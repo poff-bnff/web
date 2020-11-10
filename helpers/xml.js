@@ -2,6 +2,7 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const { create } = require('xmlbuilder2');
+const images = require('./images.js');
 const sourceDir = path.join(__dirname, '..', 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
@@ -9,8 +10,9 @@ const assetsDirXML = path.join(sourceDir, '..', 'assets', 'xml')
 const XMLpath = path.join(assetsDirXML, 'xml.xml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_DOMAIN = STRAPIDATA['Domain']
-const STRAPIDATA_CASSETTE = STRAPIDATA['Cassette']
 const STRAPIDATA_FILM = STRAPIDATA['Film']
+const SCREENINGS = STRAPIDATA['Screening']
+
 
 const domainMapping = {
     'poff.ee': 'https://poff.ee/',
@@ -20,9 +22,6 @@ const domainMapping = {
     'shorts.poff.ee': 'http://shorts.poff.ee/'
 }
 
-const SCREENINGS_YAML = path.join(fetchDir, `screenings_for_xml.yaml`)
-const SCREENINGS = yaml.safeLoad(fs.readFileSync(SCREENINGS_YAML, 'utf8'))
-
 const languages = ['et', 'en', 'ru']
 const langs = {'et': 'EST', 'ru': 'RUS', 'en': 'ENG'}
 
@@ -30,13 +29,14 @@ let data = {'info': {'concerts': {'concert': []}}}
 
 for (const screeningIx in SCREENINGS) {
     const screening = SCREENINGS[screeningIx]
-    screening.cassette = STRAPIDATA_CASSETTE.filter((cassette) => { return screening.cassette.id === cassette.id })[0]
 
-    if (screening.cassette.orderedFilms) {
+    if (screening.cassette && screening.cassette.orderedFilms) {
         for (filmIx in screening.cassette.orderedFilms) {
             let oneFilm = screening.cassette.orderedFilms[filmIx].film
             screening.cassette.orderedFilms[filmIx].film = STRAPIDATA_FILM.filter((film) => { return oneFilm.id === film.id })[0]
         }
+        images(screening)
+
     }
 
 

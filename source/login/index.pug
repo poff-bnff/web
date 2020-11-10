@@ -2,70 +2,86 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
-    br
-    br
-    br
-    br
-    br
-    h4#fromUserProfile(style={display:'none'}) Oma profiili nägemiseks logi sisse
-    h4#fromMyPoff(style={display:'none'}) Oma Passide nägemiseks logi sisse
-    h4#fromFavo(style={display:'none'}) Oma Lemmikute nägemiseks logi sisse
 
-    h4#loginMessage= self.label.userprofile.enterHelp
-    p#unfilledErrorMsg(style={display:'none'}) Missing email or/and password
-    p#pswdResetMessage(style={display:'none'}) Enter your email and click 'send code'. Code will be sent to your email.
-    p#pswdResetCodeMessage(style={display:'none'}) Enter your reset code sent to email:
-    p#pswdResetEnterNewMessage(style={display:'none'}) Enter your new password 2x for account:
-    p#pswdResetCompletedMessage(style={display:'none'}) Login with your new password
-    p#currentUsername(style={display:'none'})
+    section.login_head
 
-    div#userName
-        label(style={color: 'red'} for='loginUsername')= self.label.userprofile.email
-        input#loginUsername(type='text')
+        h4#fromUserProfile(style={display:'none'})= self.label.userprofile.redirectFromUserprofileMessage
+        h4#fromMyPoff(style={display:'none'})= self.label.userprofile.redirectFromMyPoffMessage
+        h4#fromFavo(style={display:'none'})= self.label.userprofile.redirectFromFavouritesMessage
 
-    div#password
-        label(style={color: 'red'} for='loginPassword')= self.label.userprofile.password
-        input#loginPassword(type='password')
-        br
-    div#passwordRep(style={display: 'none'})
-        label(style={color: 'red'} for='loginPasswordRep') Password again:
-        input#loginPasswordRep(type='password')
-    br
-    div#resetCodeBox(style={display:'none'})
-        label(style={color: 'red'} for='resetCode') Code:
-        input#resetCode(type='text')
-        button(onclick = 'askForNewPassword()') Send
-    p#signUpPassword2
-    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(0)') Facebook
-    //- br
-    //- a(style= {color: 'blue'} id= 'provider' onclick= 'providerLogin(2)') Eventival
-    a#loginFB(href=`https://api.poff.ee/auth/facebook`) Facebook
-    br
-    a#loginG(href=`https://api.poff.ee/auth/google`) Google
-    br
-    a#loginE(href=`https://api.poff.ee/auth/eventival`) Eventival
-    br
-    br
-    button#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
-    button#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
-    button#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
-    button#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()') Send code
-    button#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()') Save new password
-    br
-    br
-    p.mergeInfo(id= 'mergeInfo2' style= {display: 'none'}) Merge
-    br
-    br
+    section.grid_login
+
+        .login_password
+
+            h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginPw
+
+            div#userName
+                label.login_label(for='loginUsername')= self.label.userprofile.email
+                input.login_input#loginUsername(type='text', oninput='validateEmail(this.id)')
+                div#emailHelp(class='valid')= self.label.userprofile.eMailHelp
 
 
+            div#password
+                label.login_label(for='loginPassword')= self.label.userprofile.password
+                input.login_input#loginPassword(type='password')
+
+            div#passwordRep(style={display: 'none'})
+                label.login_label( for='loginPasswordRep')= self.label.userprofile.passwordRepeat
+                input.ogin_input#loginPasswordRep(type='password')
+
+            button.login_btn_primary#loginBtn(onclick='loginViaCognito()')= self.label.userprofile.signIn
+
+            button.login_btn_secondary#forgotPasswordBtn(onclick='doResetPassword()')= self.label.userprofile.resetPassword
+
+            button.login_btn_secondary#sendPswdResetCodeBtn(style={display: 'none'} onclick='doSendResetCode()')= self.label.userprofile.sendResetCodeButton
+
+            button.login_btn_secondary#resetPasswordBtn(style={display: 'none'} onclick='doSaveNewPswd()')= self.label.userprofile.resetPswdButton
+
+            div#resetCodeBox(style={display:'none'})
+                label.login_label(style={color: 'red'} for='resetCode')= self.label.userprofile.resetCodeLabel
+                input.login_input#resetCode(type='text')
+                button.login_btn(onclick = 'askForNewPassword()')= self.label.userprofile.resetCodeButton
+
+            p#signUpPassword2
+
+            p#unfilledErrorMsg(style={display:'none'})= self.label.userprofile.unfilledPasswordOfEmailHelp
+            p#pswdResetMessage(style={display:'none'})= self.label.userprofile.pswdResetHelp
+            p#pswdResetCodeMessage(style={display:'none'})= self.label.userprofile.resetCodeHelp
+            p#pswdResetEnterNewMessage(style={display:'none'})= self.label.userprofile.resetPswdNewPswdHelp
+            p#pswdResetCompletedMessage(style={display:'none'})= self.label.userprofile.pswdResetCompleteHelp
+            p#currentUsername(style={display:'none'})
+            p#noSuchUser(style={display:'none'})= self.label.userprofile.loginNoUser
+            p#unConfirmed(style={display:'none'}) Please confirm your email.
+            p#wrongPswd(style={display:'none'}) Wrong password.
+
+
+        .login_some
+
+            h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginSome
+
+            a#loginFB(href=`https://api.poff.ee/auth/facebook`)
+                .button.login_btn_social
+                    | Facebook
+
+            a#loginG(href=`https://api.poff.ee/auth/google`)
+                .button.login_btn_social
+                    | Google
+
+            a#loginE(href=`https://api.poff.ee/auth/eventival`)
+                .button.login_btn_social
+                    | Eventival
+
+        .login_register
+
+            h4.dark_1.login_headline#loginMessage= self.label.userprofile.loginRegister
+
+            button.login_btn_secondary#signUpBtn(onclick='directToSignup()')= self.label.userprofile.register
 
     style.
-        h1 {color: #464646}
-        h4 {color: #464646}
-        p {color: #464646}
+        .invalid {background-color: #f5e4e9; display: block; color: black}
+        .valid {background-color: #e6f7e6; display: none}
 
-    script.
-        var langpath = "!{(self.locale)}"
+
 
 
 
