@@ -65,9 +65,12 @@ async function storeAuthentication(access_token, id_token) {
 
 async function loginViaCognito() {
     unfilledErrorMsg.style.display = 'none'
+    unConfirmed.style.display = 'none'
+    wrongPswd.style.display = 'none'
 
 
-    if (loginUsername.value && loginPassword.value) {
+
+    if (loginUsername.value && loginPassword.value && validateEmail('loginUsername')) {
 
         let authenticationData = {
             loginUsername: document.getElementById("loginUsername").value,
@@ -85,20 +88,23 @@ async function loginViaCognito() {
         });
 
         let response2 = await response.json()
+        console.log(response2)
 
 
 
         if (response2.email && !response2.confirmed) {
+            console.log(1)
             document.getElementById('unConfirmed').style.display = 'block'
             return
         }
 
-        if (!response2.user) {
-            document.getElementById('noSuchUser').style.display = 'block'
+        if (response2.email && !response2.user) {
+            console.log(2)
+            console.log(document.getElementById('noSuchUser'))
             return
         }
-        // console.log(response2)
-        // console.log('authResponse ', response2.AccessToken)
+        console.log(response2)
+        console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
         id_token = response2.IdToken
 
