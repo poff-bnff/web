@@ -1,8 +1,8 @@
-const fs = require('fs');
-const readline = require('readline');
-const { google } = require('googleapis');
+const fs = require('fs')
+const readline = require('readline')
+const { google } = require('googleapis')
 
-process.chdir(__dirname);
+process.chdir(__dirname)
 
 
 async function connect() {
@@ -10,7 +10,7 @@ async function connect() {
     // t88kataloogiks skripti kataloog
 
     // If modifying these scopes, delete token.json.
-    const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+    const SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
     // The file token.json stores the user's access and refresh tokens, and is
     // created automatically when the authorization flow completes for the first
     // time.
@@ -54,12 +54,12 @@ async function connect() {
         rl.question('Enter the code from that page here: ', async (code) => {
             rl.close()
             await oAuth2Client.getToken(code, (err, token) => {
-                if (err) return console.error('Error while trying to retrieve access token', err);
+                if (err) return console.error('Error while trying to retrieve access token', err)
                 // Store the token to disk for later program executions
                 fs.writeFileSync(TOKEN_PATH, JSON.stringify(token))
                 return token
-            });
-        });
+            })
+        })
     }
 }
 
