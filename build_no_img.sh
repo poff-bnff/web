@@ -6,6 +6,7 @@
 echo 'STARTING BUILD'
 [ -d "build" ] && rm -r build/*
 [ ! -d "build" ] && mkdir -p build
+[ ! -d "build/assets" ] && mkdir -p build/assets
 [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
 # [ -d "assets/img/dynamic" ] && rm -r assets/img/dynamic/*
