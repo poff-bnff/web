@@ -103,6 +103,12 @@ async function loginViaCognito() {
             document.getElementById('noSuchUser').style.display = 'block'
             return
         }
+
+        if (response2.message === 'Internal Server Error'){
+            document.getElementById('wrongPswd').style.display = 'block'
+            return
+        }
+
         console.log(response2)
         console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
