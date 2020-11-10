@@ -1,5 +1,6 @@
 
 function validateEmail(element_id) {
+    console.log('emailv')
     var email = document.getElementById(element_id)
     var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (!emailRe.test(String(email.value).toLowerCase())) {

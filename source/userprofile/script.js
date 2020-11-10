@@ -1,6 +1,13 @@
 let imgPreview = document.getElementById("imgPreview");
 let profile_pic_to_send = "empty"
 
+if (validToken) {
+    loadUserInfo();
+}else{
+    window.open(`${location.origin}/${langpath}login`, '_self')
+    saveUrl()
+}
+
 async function loadUserInfo() {
     let response = await fetch(`https://api.poff.ee/profile`, {
         method: "GET",
@@ -16,7 +23,7 @@ async function loadUserInfo() {
         document.getElementById('profileUnFilledMessage').style.display = 'block'
 
     }
-    console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
+    // console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
     email.innerHTML = userProfile.email
     if(userProfile.name)firstName.value = userProfile.name
     if(userProfile.family_name)lastName.value = userProfile.family_name
@@ -48,14 +55,8 @@ async function loadUserInfo() {
 
 }
 
-if (validToken) {
-    loadUserInfo();
-}else{
-    window.open(`${location.origin}/login`, '_self')
-}
-
 async function sendUserProfile() {
-    console.log('updating user profile.....')
+    // console.log('updating user profile.....')
 
     //profile_pic_to_send= no profile picture saved
     //Kui pilt saadetakse siis profile_pic_to_send= this users picture is in S3
@@ -79,7 +80,7 @@ async function sendUserProfile() {
         {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
-    console.log("kasutaja profiil mida saadan ", userToSend);
+    // console.log("kasutaja profiil mida saadan ", userToSend);
 
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
@@ -105,10 +106,10 @@ async function sendUserProfile() {
 
 function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    console.log(file)
+    // console.log(file)
     // Check if the file is an image.
     if (!file.type.includes("image")) {
-        console.log("File is not an image.", file.type, file);
+        // console.log("File is not an image.", file.type, file);
         error.innerHTML = "File is not an image.";
     } else {
         error.innerHTML = "";
@@ -124,8 +125,8 @@ function validateaAndPreview(file) {
 
 async function uploadPic() {
 
-    console.log("uploading this file to S3....")
-    console.log(profile_pic_to_send)
+    // console.log("uploading this file to S3....")
+    // console.log(profile_pic_to_send)
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
         method: 'GET',
@@ -134,8 +135,8 @@ async function uploadPic() {
         },
     });
     data = await linkResponse.json()
-    console.log("saadud link on: ")
-    console.log(data.link)
+    // console.log("saadud link on: ")
+    // console.log(data.link)
 
 
     //saadab pildi
@@ -192,8 +193,15 @@ function validateForm() {
         errors.push('Missing city')
     }
 
-    console.log(errors)
+    // console.log(errors)
     if (errors.length === 0) {
         sendUserProfile()
     }
 }
+
+window.addEventListener("keydown", function (event) {
+    if (event.key === "Enter"){
+        // console.log("ENTER")
+        validateForm()
+    }
+})
