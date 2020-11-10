@@ -155,6 +155,9 @@ function validateForm() {
     if (!validateBDay("dob")) {
         errors.push('Missing or invalid date of birth')
     }
+    if (!validateDate("dob")) {
+        errors.push('Missing or invalid date of birth wrong format')
+    }
 
     if (!validatePhoneNr("phoneNr")) {
         errors.push('Missing phonenumber')

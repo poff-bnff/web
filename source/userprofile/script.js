@@ -80,7 +80,7 @@ async function sendUserProfile() {
         {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
     ];
 
-    // console.log("kasutaja profiil mida saadan ", userToSend);
+    console.log("kasutaja profiil mida saadan ", userToSend);
 
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
@@ -179,6 +179,10 @@ function validateForm() {
 
     if (!validateBDay("dob")) {
         errors.push('Missing or invalid date of birth')
+    }
+
+    if (!validateDate("dob")) {
+        errors.push('Missing or invalid date of birth wrong format')
     }
 
     if (!validatePhoneNr("phoneNr")) {
