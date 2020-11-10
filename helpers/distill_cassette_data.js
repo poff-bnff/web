@@ -384,7 +384,6 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
             }
 
             function distill_participants(filtered_iqac, role) {
-                console.log(filtered_iqac, role);
                 try {
                     return filtered_iqac[role].map(iqc_p => {
                         return iqc_p.et
