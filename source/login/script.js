@@ -40,6 +40,10 @@ if (window.location.hash) {
         }
         // console.log(errorMessage)
     }
+    else if ((window.location.hash).includes('User+is+not+confirmed')){
+        unConfirmed.style.display = 'block'
+        window.location.hash = ''
+    }
 
     else if (access_token && id_token) {
         storeAuthentication(access_token.split('=')[1], id_token.split('=')[1])
