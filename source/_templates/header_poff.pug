@@ -148,7 +148,7 @@ header
                             a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
             li.user_menu.dropdown
-                a= self.label.menu.mainUserMenu
+                a.user_menu= self.label.menu.mainUserMenu
                     ul.ul_kaks
                         li#logIn(style={cursor: 'pointer', display: 'none'})
                             a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
