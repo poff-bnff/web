@@ -49,11 +49,11 @@ block content
                         div#lastNameHelp(class='valid')= self.label.userprofile.lastNameHelp
                     div.form-group
                         label.login_label(for='gender')= self.label.userprofile.gender
-                        select#gender(name='gender' oninput='validateGender(this.id)' onclick='styleGenderList()')
-                            option(value='male' )= self.label.userprofile.genderM
-                            option(value='female' )= self.label.userprofile.genderF
-                            option(value='other' )= self.label.userprofile.genderO
-                            option(class='invalid' value="" selected="")= self.label.userprofile.select
+                        select.login_input#gender(name='gender' oninput='validateGender(this.id)' onclick='styleGenderList()')
+                            option.login_input(value='male' )= self.label.userprofile.genderM
+                            option.login_input(value='female' )= self.label.userprofile.genderF
+                            option.login_input(value='other' )= self.label.userprofile.genderO
+                            option.login_input(class='invalid' value="" selected="")= self.label.userprofile.select
                         div#genderHelp(class='valid')= self.label.userprofile.genderHelp
                     div.form-group
                         label.login_label(for='dob')= self.label.userprofile.birthday
@@ -67,10 +67,10 @@ block content
                         label.login_label= self.label.userprofile.address
                         br
                         label.control-label.login_label(for='country')= self.label.userprofile.country
-                        select#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='citySelection' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry(this.id)')
+                        select.login_input#countrySelection.form-control.gds-cr(class='c_valid' country-data-region-id='citySelection' country-data-default-value='EE' data-language=self.locale required='' oninput= 'validateCountry(this.id)')
                     div.form-group
                         label.control-label.login_label(for='citySelection')= self.label.userprofile.city
-                        select#citySelection.form-control(required='' oninput= 'validateCity(this.id)' value="")
+                        select.login_input#citySelection.form-control(required='' oninput= 'validateCity(this.id)' value="")
                     button.btn.btn_primary(onclick='validateForm()')= self.label.userprofile.register
 
 
