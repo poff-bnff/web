@@ -4,3 +4,21 @@ script(type="text/javascript").
     //- import { Integrations } from "@sentry/tracing";
 
 script(src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js')
+
+// For Facebook share
+if self.title
+    meta(property='og:title' content= self.title)
+
+    if self.media && self.media.image && self.media.image[0]
+        - var featuredImg = `https://assets.poff.ee/img/${self.media.image[0].hash}${self.media.image[0].ext}`
+    else if self.media && self.media.imageDefault && self.media.imageDefault[0]
+        - var featuredImg = `https://assets.poff.ee/img/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
+    else if self.cassetteCarouselPicsFilms && self.cassetteCarouselPicsFilms.length > 0
+        - var featuredImg = self.cassetteCarouselPicsFilms[0]
+    else if self.cassetteCarouselPicsCassette && self.cassetteCarouselPicsCassette.length > 0
+        - var featuredImg = self.cassetteCarouselPicsCassette[0]
+    else
+        - var featuredImg = `https://poff.ee/assets/img/static/placeholder_hd_1.jpg`
+
+    if featuredImg
+        meta(property='og:image' content= featuredImg)
