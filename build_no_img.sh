@@ -4,7 +4,8 @@
 # node ./helpers/compile_article_pictures.js
 
 echo 'STARTING BUILD'
-[ -d "build/assets" ] && rm -r build/*
+[ -d "build" ] && rm -r build/*
+[ ! -d "build" ] && mkdir -p build
 [ ! -d "build/assets" ] && mkdir -p build/assets
 [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
