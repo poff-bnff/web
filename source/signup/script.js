@@ -11,13 +11,11 @@ async function loadUserInfo() {
     });
     let userProfile = await response.json();
 
-    console.log('userProfile', userProfile)
+    // console.log('userProfile', userProfile)
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
         let riik = address[0]
         let linn = address[1]
-        console.log(riik)
-        console.log(linn)
         citySelection.value = linn
         countrySelection.value = riik
     }
@@ -37,7 +35,7 @@ async function loadUserInfo() {
 
 
 async function sendNewUser() {
-    console.log('sending new user profile.....');
+    // console.log('sending new user profile.....');
 
     let profile_pic_to_send= "no profile picture saved"
 
@@ -57,7 +55,7 @@ async function sendNewUser() {
         { Name: "password", Value: psw.value }
     ];
 
-    console.log(userToSend);
+    // console.log(userToSend);
 
     let response = await fetch(`https://api.poff.ee/profile`, {
         method: 'POST',
@@ -68,11 +66,11 @@ async function sendNewUser() {
     });
     response = await response.json()
 
-    console.log(response)
+    // console.log(response)
 
     if(response.Payload){
         //konto juba olemas
-        console.log(response.Payload)
+        // console.log(response.Payload)
         let providers = JSON.parse(response.Payload)
         document.getElementById('profileInSystem').style.display = 'block'
         document.getElementById('signupForm').style.display = 'none'
@@ -104,10 +102,10 @@ async function sendNewUser() {
 
 function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    console.log(file)
+    // console.log(file)
     // Check if the file is an image.
     if (!file.type.includes("image")) {
-        console.log("File is not an image.", file.type, file);
+        // console.log("File is not an image.", file.type, file);
         error.innerHTML = "File is not an image.";
     } else {
         error.innerHTML = "";
@@ -170,7 +168,7 @@ function validateForm() {
         errors.push('Missing city')
     }
 
-    console.log(errors)
+    // console.log(errors)
     if (errors.length === 0) {
         sendNewUser()
     }
@@ -178,7 +176,7 @@ function validateForm() {
 
 window.addEventListener("keydown", function (event) {
     if (event.key === "Enter"){
-        console.log("ENTER")
+        // console.log("ENTER")
         validateForm()
     }
 })

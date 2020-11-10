@@ -278,15 +278,15 @@ header
     // text-align center
     // padding-top .1rem
 
-.user_menu
-    position absolute
-    // display inline
-    bottom 0
-    height 1rem
-    // right 0
-    // padding-right 1rem
-    // text-align center
-    // padding-top .1rem
+// .user_menu
+//     position absolute
+//     // display inline
+//     bottom 0
+//     height 1rem
+//     // right 0
+//     // padding-right 1rem
+//     // text-align center
+//     // padding-top .1rem
 
 .org_item
     // display inline
@@ -564,6 +564,26 @@ footer
         font-weight 300
         color dark_1
 
+.login_bottom
+    padding-bottom 150px
+
+.userprofile
+    padding-top 120px
+    padding-left 2rem
+    padding-right 2rem
+    padding-bottom 5rem
+
+#thisUserProfile
+    padding-top 2rem
+
+
+.userdata
+    display grid
+    grid-template-columns 1
+    grid-template-rows auto
+    grid-gap 0rem
+
+
 .login_password, .login_some, .login_register
     width 100%
     padding-left 3rem
@@ -643,6 +663,11 @@ footer
     padding-bottom .2rem
     text-align center
 
+#imgPreview
+    width 100%
+    max-width 17rem
+    border-radius 3%
+
 .mypasses_items_list
     display grid
     grid-template-columns repeat(auto-fill, minmax(20rem, 20rem))
@@ -675,8 +700,8 @@ footer
 .card_mypass_head
     width 100%
     padding 2rem
-    background-color bg_dark_4
-    color clr_primary
+    background-color clr_primary
+    color white_96
     font-family font_h
     font-size 2rem
 
@@ -692,7 +717,8 @@ footer
 
 .profilePic
     width 100%
-    padding 2rem
+    padding 1rem
+    border-radius 57% 43% 57% 43%
 
 .pass_desc
     width 100%
@@ -1333,7 +1359,7 @@ row:nth-child(15) > .supporter_logos
 
 .shop_intro
     column-count auto
-    column-width 65ch
+    column-width 60ch
     color dark_1
 
 .sub_team
@@ -2974,13 +3000,15 @@ a.btn_popover
         // padding-top .1rem
 
     .user_menu
-        position fixed
+        // display inline-block
+        position absolute
         // display inline
         top 0
-        right 0
-        padding-right 1rem
+        left 0
+        padding-left 1rem
+        padding-bottom 0
+        margin-bottom 0
         height 1rem
-        // padding-top .1rem
 
     .lang_menu
         position fixed
@@ -3390,3 +3418,6 @@ strong
 
 .small_1
     font-size 1rem
+
+.p_l_0
+    padding-left 0
