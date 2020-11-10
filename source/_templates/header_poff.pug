@@ -161,9 +161,12 @@ header
                         li#myFavouriteFilms(style={cursor: 'pointer'})
                             a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainShortlist
                         li#myPasses(style={cursor: 'pointer'} )
-                            a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
-                        //- li#Shop(style={cursor: 'pointer'} )
-                        //-     a(href=`/${lang_path}shop`)= self.label.menu.mainShop
+                            if lang_path === ''
+                                a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
+                            if lang_path === 'en/'
+                                a(href=`/${lang_path}mypoff`)= self.label.menu.mainPass
+                            if lang_path === 'ru/'
+                                a(href=`/${lang_path}moipoff`)= self.label.menu.mainPass
                         li#logOut(style={cursor: 'pointer', display: 'none'} )
                             a(onclick='logOut()')= self.label.menu.mainLogout
 
