@@ -1,22 +1,21 @@
-var favFilms
-var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
+var favouritePages = [location.origin + '/favourite/', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
 
 
 function loadMyFavFilms() {
-    console.log("FAVO: oled sisse loginud")
-    document.getElementById('loginForFavo').style.display = 'none'
+    // console.log("FAVO: oled sisse loginud")
     fetchFavFilmsFromDB()
 }
 
 function loadFavButtons(){
-    console.log('loadFavButtons')
+    // console.log('loadFavButtons')
     document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
-    document.getElementById('notFavouriteStatus').style.display = 'block'
+    // document.getElementById('notFavouriteStatus').style.display = 'block'
     document.getElementById('nupp').style.display = 'block'
 }
 
 
 function fetchFavFilmsFromDB() {
+
     var myHeaders = new Headers();
     myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
@@ -33,7 +32,7 @@ function fetchFavFilmsFromDB() {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data);
+        // console.log(data);
         saveFavFilms(data)
     }).catch(function (error) {
         console.warn(error);
@@ -41,16 +40,17 @@ function fetchFavFilmsFromDB() {
 }
 
 function saveFavFilms(data) {
-    favFilms = data
+
+    var favFilms = data
     if (favouritePages.includes(window.location.href)) {
-        showFavFilms()
+        showFavFilms(favFilms)
         return
     }
     if (window.location.href.indexOf('/film/') > -1) {
         var filmCard = document.getElementsByClassName('grid_film')
-        console.log(filmCard)
-        console.log(filmCard[0].id)
-        console.log(favFilms)
+        // console.log(filmCard)
+        // console.log(filmCard[0].id)
+        // console.log(favFilms)
 
 
 
@@ -62,24 +62,29 @@ function saveFavFilms(data) {
     }
 }
 
-function showFavFilms() {
+function showFavFilms(favFilms) {
     console.log('showFavFilms');
 
     var filmCards = document.getElementsByClassName('card_film')
 
+
     for (var i = 0; i < filmCards.length; i++) {
+        console.log(1);
         var filmId = filmCards[i].id
 
-        if (window.location.href === location.origin + '/favourite' && favFilms.includes(filmId)) {
+        if (favFilms.includes(filmId)) {
+            console.log(2);
             filmCards[i].style.display = 'block'
         }
-        else if (window.location.href === location.origin + '/favourite' && favFilms.length === 0) {
+        else if (favFilms.length === 0) {
+            console.log(3);
             document.getElementById('noFavouritesMessage').style.display = 'block'
         }
         if (window.location.href !== location.origin + '/favourite') {
+            console.log(4);
             document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
             if (favFilms.includes(filmId)) {
-                console.log('fav');
+                // console.log('fav');
                 document.getElementById(filmCards[i].id + 'nupp').innerHTML = 'FAVO'
             }
         }
@@ -87,16 +92,16 @@ function showFavFilms() {
 }
 
 function saveFilmAsFavourite(movieId) {
-    console.log('saveFilmAsFavourite')
+    // console.log('saveFilmAsFavourite')
 
     var addBtnfilmCard = document.getElementById('nupp')
-    console.log(addBtnfilmCard);
+    // console.log(addBtnfilmCard);
 
     if (window.location.href === location.origin + '/filmid') {
         addBtnfilmCard = document.getElementById(movieId + 'nupp')
     }
 
-    if (addBtnfilmCard.innerHTML === '+') {
+    if (true) {
 
         var myHeaders = new Headers();
         myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
@@ -133,15 +138,11 @@ function changeFavInfo(status, movieId) {
     }
 
     if (status === 'put') {
-        document.getElementById('notFavouriteStatus').style.display = 'none'
-        document.getElementById('favouriteStatus').style.display = 'block'
         document.getElementById('nupp').style.display = 'none'
         document.getElementById('removeFavBtn').style.display = 'block'
     }
 
     if (status === 'delete') {
-        document.getElementById('notFavouriteStatus').style.display = 'block'
-        document.getElementById('favouriteStatus').style.display = 'none'
         document.getElementById('nupp').style.display = 'block'
         document.getElementById('removeFavBtn').style.display = 'none'
     }
@@ -169,16 +170,16 @@ function removeFilm(movieId) {
             if (window.location.href.indexOf('/film/') > -1) {
                 changeFavInfo('delete')
             } else {
-                console.log('else');
+                // console.log('else');
                 filmCard = document.getElementById(movieId)
                 filmCard.style.display = 'none'
 
-                console.log(favFilms);
+                // console.log(favFilms);
 
                 for (i = 0; i < favFilms.length; i++) {
                     if (favFilms[i] === movieId.toString()) {
                         favFilms.pop(favFilms[i])
-                        console.log(favFilms);
+                        // console.log(favFilms);
 
                     }
                 }
