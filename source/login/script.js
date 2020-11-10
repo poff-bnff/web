@@ -98,9 +98,9 @@ async function loginViaCognito() {
             return
         }
 
-        if (response2.email && !response2.user) {
+        if (response2.noUserEmail && !response2.user) {
             console.log(2)
-            console.log(document.getElementById('noSuchUser'))
+            document.getElementById('noSuchUser').style.display = 'block'
             return
         }
         console.log(response2)
