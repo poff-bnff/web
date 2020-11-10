@@ -70,7 +70,7 @@ async function loginViaCognito() {
 
 
 
-    if (loginUsername.value && loginPassword.value && validateEmail(loginUsername.value)) {
+    if (loginUsername.value && loginPassword.value && validateEmail('loginUsername')) {
 
         let authenticationData = {
             loginUsername: document.getElementById("loginUsername").value,
@@ -98,14 +98,13 @@ async function loginViaCognito() {
             return
         }
 
-        if (!response2.user) {
+        if (response2.email && !response2.user) {
             console.log(2)
             console.log(document.getElementById('noSuchUser'))
-            document.getElementById('noSuchUser').style.display = 'block'
             return
         }
-        // console.log(response2)
-        // console.log('authResponse ', response2.AccessToken)
+        console.log(response2)
+        console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
         id_token = response2.IdToken
 
