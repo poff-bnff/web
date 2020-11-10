@@ -278,15 +278,15 @@ header
     // text-align center
     // padding-top .1rem
 
-.user_menu
-    position absolute
-    // display inline
-    bottom 0
-    height 1rem
-    // right 0
-    // padding-right 1rem
-    // text-align center
-    // padding-top .1rem
+// .user_menu
+//     position absolute
+//     // display inline
+//     bottom 0
+//     height 1rem
+//     // right 0
+//     // padding-right 1rem
+//     // text-align center
+//     // padding-top .1rem
 
 .org_item
     // display inline
@@ -542,6 +542,190 @@ footer
 //                         "f_trailer_box"\
 //                         "f_extra_box"\
 //                         "f_imgs_box"
+
+.grid_login
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+    grid-template-rows auto
+    padding-top header_height
+    background-color bg_color_1
+    justify-content center
+    justify-items center
+    align-items start
+    align-content start
+
+.login_head
+    padding-top 150px
+    // grid-column 1 / 4
+    // padding-top 3rem
+    h4
+        text-align center
+        font-size 2rem
+        font-weight 300
+        color dark_1
+
+.login_bottom
+    padding-bottom 150px
+
+.userprofile
+    padding-top 120px
+    padding-left 2rem
+    padding-right 2rem
+    padding-bottom 5rem
+
+#thisUserProfile
+    padding-top 2rem
+
+
+.userdata
+    display grid
+    grid-template-columns 1
+    grid-template-rows auto
+    grid-gap 0rem
+
+
+.login_password, .login_some, .login_register
+    width 100%
+    padding-left 3rem
+    padding-right 3rem
+    padding-bottom 6rem
+    display grid
+    justify-content center
+    justify-items center
+    align-items center
+    align-content start
+
+.login_some
+    display grid
+    repeat(auto-fill, minmax(100px, 1fr))
+    grid-template-rows auto
+    grid-gap 1rem
+    justify-content center
+    justify-items center
+    align-items center
+    align-content start
+
+.login_label
+    font-family font_p
+    padding-bottom 0
+    padding-top .6rem
+    margin-bottom 0
+    font-size 1rem
+    font-weight 300
+    color #666666
+
+.login_input
+    font-family font_p
+    padding-bottom 0
+    font-size 1rem
+    font-weight 400
+    color dark_3
+    width 17rem
+    display block
+
+.login_headline
+    font-weight 300
+    color dark_3
+
+.login_btn_primary
+    background-color clr_primary
+    color white_96
+    border-radius 3
+    text-transform uppercase
+    margin 1rem
+    border none
+    padding-left 1rem
+    padding-right 1rem
+    padding-top .3rem
+
+.login_btn_secondary
+    background-color #999999
+    color white_96
+    border-radius 3
+    text-transform uppercase
+    margin 1rem
+    border none
+    padding-left 1rem
+    padding-right 1rem
+    padding-top .3rem
+
+.login_btn_social
+    background-color clr_primary
+    color white_96
+    border-radius 3
+    // text-transform uppercase
+    width 9rem
+    margin 1rem
+    border none
+    padding-left 1rem
+    padding-right 1rem
+    padding-top .3rem
+    padding-bottom .2rem
+    text-align center
+
+#imgPreview, #profileImg
+    width 100%
+    max-width 17rem
+    border-radius 3%
+
+.mypasses_items_list
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(20rem, 20rem))
+    justify-content center
+    align-content start
+    justify-items center
+    align-items start
+    grid-gap 2rem
+    padding 2rem
+    // padding-top header_height
+
+.card_mypass
+    // display flex
+    // flex-direction column
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    align-content start
+    // margin-top 2rem
+    background-color white
+    margin-bottom 1.618rem
+    border .5px solid clr_grey_light
+    border-radius 5px
+    justify-content center
+    justify-items center
+    align-items center
+    align-content start
+    padding 0
+
+.card_mypass_head
+    width 100%
+    padding 2rem
+    background-color clr_primary
+    color white_96
+    font-family font_h
+    font-size 2rem
+
+.qrCode
+    width 100%
+    padding 4rem
+    img
+        width 100%
+
+.passCode, .fullName
+    text-align center
+    font-size 1.2rem
+
+.profilePic
+    width 100%
+    padding 1rem
+    border-radius 57% 43% 57% 43%
+
+.pass_desc
+    width 100%
+    padding 2rem
+    background-color bg_dark_4
+    color white_96
+    margin-top 2rem
 
 .grid_ss
     display grid
@@ -1175,7 +1359,7 @@ row:nth-child(15) > .supporter_logos
 
 .shop_intro
     column-count auto
-    column-width 65ch
+    column-width 60ch
     color dark_1
 
 .sub_team
@@ -1371,6 +1555,23 @@ input, select
     color dark_4
     padding .2rem .5rem .1rem .5rem
     margin 0
+
+.input_file
+    eight 2rem
+    width 100%
+    background-color white
+    border none
+    // border-radius 3px
+    -moz-appearance none
+    -webkit-appearance none
+    appearance none
+    font-size 1rem
+    font-family font_h
+    font-weight 300
+    color dark_4
+    padding .2rem .5rem .1rem .5rem
+    margin 0
+
 
 option
     font-size 1rem
@@ -2560,6 +2761,13 @@ a.btn_popover
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
+    // .grid_login
+    //     display grid
+    //     grid-template-columns 1fr 1fr 1fr
+    //     grid-template-rows auto
+    //     grid-gap 1rem
+    //     padding-top header_height
+
     .grid_ss
         display grid
         grid-template-columns 2
@@ -2732,8 +2940,8 @@ a.btn_popover
         /* margin-bottom: 0; */
         height 100%
         margin 0
-        padding-left 1.5rem
-        padding-right 1.5rem
+        padding-left 1rem
+        padding-right 1rem
         padding-top 1rem
         padding-bottom 1rem
         // border 1px solid rgba(255, 255, 255, 0)
@@ -2791,14 +2999,17 @@ a.btn_popover
         height 1rem
         // padding-top .1rem
 
-    .user_menu
-        position fixed
-        // display inline
-        top 0
-        right 0
-        padding-right 1rem
-        height 1rem
-        // padding-top .1rem
+    // .user_menu
+    //     color clr_primary
+        // // display inline-block
+        // position absolute
+        // // display inline
+        // top 0
+        // left 0
+        // padding-left 1rem
+        // padding-bottom 0
+        // margin-bottom 0
+        // height 1rem
 
     .lang_menu
         position fixed
@@ -3127,7 +3338,7 @@ a.btn_popover
 .margin_bottom_2
     margin-bottom 2rem
 
-.grid_article
+.grid_article, .grid_login
     p
         color dark_1
         a
@@ -3139,6 +3350,15 @@ a.btn_popover
 
 .dark_1
     color dark_1
+
+.dark_2
+    color dark_2
+
+.dark_3
+    color dark_3
+
+.dark_4
+    color dark_4
 
 .dark_semi
     color clr_dark_semi
@@ -3199,3 +3419,11 @@ strong
 
 .small_1
     font-size 1rem
+
+.p_l_0
+    padding-left 0
+
+.user_menu
+        color clr_primary
+.p_1
+    margin 1rem
