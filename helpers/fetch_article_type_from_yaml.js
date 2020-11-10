@@ -40,28 +40,35 @@ for (const lang of languages) {
             throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
 
+        let publishFrom = undefined
+        let publishUntil = undefined
+
         var currentTime = new Date()
         if (typeof(element.publishFrom) === 'undefined') {
-            var publishFrom= new Date(element.created_at)
+            publishFrom= new Date(element.created_at)
         } else {
-            var publishFrom= new Date(element.publishFrom)
+            publishFrom= new Date(element.publishFrom)
         }
         if (element.publishUntil) {
-            var publishUntil = new Date(element.publishUntil)
+            publishUntil = new Date(element.publishUntil)
         }
+
         if (currentTime < publishFrom) {
+            console.log(`Skipped article ID ${element.id} which publishFrom is ${publishFrom}, current time ${currentTime}`);
             continue;
         }
         if (publishUntil !== 'undefined' && publishUntil < currentTime) {
+            console.log(`Skipped article ID ${element.id} which publishUntil is ${publishUntil}, current time ${currentTime}`);
             continue;
         }
+
         if (element[`publish_${lang}`] === undefined || element[`publish_${lang}`] === false) {
             continue;
         }
         if (element[`title_${lang}`] < 1) {
+            console.log(`Skipped article ID ${element.id} which is missing title`);
             continue;
         }
-
 
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
