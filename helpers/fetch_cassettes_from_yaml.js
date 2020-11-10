@@ -374,6 +374,9 @@ for (const lang of allLanguages) {
                             let rolePerson = scc_film.credentials.rolePerson[roleIx]
                             if (rolePerson === undefined) { continue }
                             if (rolePerson.person) {
+                                if (rolePerson.role_at_film.roleNamePrivate === 'Director') {
+                                    scc_film.credentials.rolePerson[roleIx].person = STRAPIDATA_PERSONS.filter(person => rolePerson.person.id === person.id)[0]
+                                }
                                 let searchRegExp = new RegExp(' ', 'g')
                                 const role_name_lc = rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')
                                 rolePersonTypes[role_name_lc] = rolePersonTypes[role_name_lc] || []
