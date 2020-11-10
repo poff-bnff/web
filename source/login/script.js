@@ -40,6 +40,10 @@ if (window.location.hash) {
         }
         // console.log(errorMessage)
     }
+    else if ((window.location.hash).includes('User+is+not+confirmed')){
+        unConfirmed.style.display = 'block'
+        window.location.hash = ''
+    }
 
     else if (access_token && id_token) {
         storeAuthentication(access_token.split('=')[1], id_token.split('=')[1])
@@ -65,9 +69,12 @@ async function storeAuthentication(access_token, id_token) {
 
 async function loginViaCognito() {
     unfilledErrorMsg.style.display = 'none'
+    unConfirmed.style.display = 'none'
+    wrongPswd.style.display = 'none'
 
 
-    if (loginUsername.value && loginPassword.value) {
+
+    if (loginUsername.value && loginPassword.value && validateEmail('loginUsername')) {
 
         let authenticationData = {
             loginUsername: document.getElementById("loginUsername").value,
@@ -85,20 +92,29 @@ async function loginViaCognito() {
         });
 
         let response2 = await response.json()
+        console.log(response2)
 
 
 
         if (response2.email && !response2.confirmed) {
+            console.log(1)
             document.getElementById('unConfirmed').style.display = 'block'
             return
         }
 
-        if (!response2.user) {
+        if (response2.noUserEmail && !response2.user) {
+            console.log(2)
             document.getElementById('noSuchUser').style.display = 'block'
             return
         }
-        // console.log(response2)
-        // console.log('authResponse ', response2.AccessToken)
+
+        if (response2.message === 'Internal Server Error'){
+            document.getElementById('wrongPswd').style.display = 'block'
+            return
+        }
+
+        console.log(response2)
+        console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
         id_token = response2.IdToken
 
