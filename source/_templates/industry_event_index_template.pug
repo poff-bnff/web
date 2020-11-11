@@ -56,7 +56,8 @@ block content
                         +localdate(self.startTime)
 
                 if self.durationTime
-                    p.dark_1= self.durationTime
+                    p
+                        +indEvDur(self.durationTime)
 
                 if self.location && self.location.hall && self.location.hall.name
                     if self.location.hall && self.location.hall.name
