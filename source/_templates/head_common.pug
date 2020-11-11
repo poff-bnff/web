@@ -5,8 +5,8 @@ script(type="text/javascript").
 
 script(src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js')
 
-// For Facebook share
 if self.title
+    //- Facebook
     meta(property='og:title' content= self.title)
 
     if self.media && self.media.image && self.media.image[0]
@@ -20,5 +20,14 @@ if self.title
     else
         - var featuredImg = `https://poff.ee/assets/img/static/placeholder_hd_1.jpg`
 
-    if featuredImg
-        meta(property='og:image' content= featuredImg)
+    meta(property='og:image' content= featuredImg)
+
+    //- Twitter
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:site" content="@TallinnBNFF")
+    meta(name="twitter:text:title" content=self.title)
+    meta(name="twitter:image" content=featuredImg)
+    meta(name="twitter:image:alt" content=self.title)
+    meta(name="twitter:title" content=self.title)
+    if self.lead
+        meta(name="twitter:description" content=self.lead)
