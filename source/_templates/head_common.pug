@@ -31,3 +31,5 @@ if self.title
     meta(name="twitter:title" content=self.title)
     if self.lead
         meta(name="twitter:description" content=self.lead)
+    else if self.synopsis
+        meta(name="twitter:description" content=self.synopsis)
