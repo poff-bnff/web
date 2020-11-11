@@ -1,5 +1,4 @@
-var favouritePages = [location.origin + '/favourite/', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
-
+var favouritePages = ['/favourite']
 
 function loadMyFavFilms() {
     // console.log("FAVO: oled sisse loginud")
@@ -42,7 +41,7 @@ function fetchFavFilmsFromDB() {
 function saveFavFilms(data) {
 
     var favFilms = data
-    if (favouritePages.includes(window.location.href)) {
+    if (favouritePages.includes(window.location.pathname.slice(0,10))) {
         showFavFilms(favFilms)
         return
     }
@@ -79,6 +78,7 @@ function showFavFilms(favFilms) {
         else if (favFilms.length === 0) {
             console.log(3);
             document.getElementById('noFavouritesMessage').style.display = 'block'
+            return
         }
         if (window.location.href !== location.origin + '/favourite') {
             console.log(4);
