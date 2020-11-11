@@ -21,7 +21,6 @@ function loadMyFavFilms() {
         }
         return Promise.reject(response)
     }).then(function (shortlist_array) {
-        // console.log(shortlist_array);
         showFavFilms(shortlist_array)
         console.log(shortlist_array)
         toggleFavButtons(shortlist_array)
@@ -62,65 +61,8 @@ function toggleFavButtons(shortlist_array) {
         }
     }
 
-
-    // console.log('loadFavButtons')
-    // document.getElementById('notFavouriteStatus').style.display = 'block'
-    // document.getElementById('addToShortListButton').style.display = 'block'
 }
 
-
-// function saveFavFilms(shortlist_array) {
-
-//     var favFilms = data
-//     if (favouritePages.includes(window.location.pathname.slice(0, 10)) || favouritePages.includes(window.location.pathname.slice(0, 11))) {
-//         showFavFilms(favFilms)
-//         return
-//     }
-//     if (window.location.href.indexOf('/film/') > -1) {
-//         var filmCard = document.getElementsByClassName('grid_film')
-//         // console.log(filmCard)
-//         // console.log(filmCard[0].id)
-//         // console.log(favFilms)
-
-
-
-//         if (favFilms.includes(filmCard[0].id)) {
-//             changeFavInfo('put')
-//         } else {
-//             changeFavInfo('delete')
-//         }
-//     }
-// }
-
-function showFavFilms(shortlist_array) {
-    console.log('showShortlist');
-
-    var filmCards = document.getElementsByClassName('card_film')
-
-
-    for (var i = 0; i < filmCards.length; i++) {
-        console.log(1);
-        var filmId = filmCards[i].id
-
-        if (shortlist_array.includes(filmId)) {
-            console.log(2);
-            // filmCards[i].style.display = 'block'
-        }
-        //         else if (favFilms.length === 0 && document.getElementById('noFavouritesMessage')) {
-        //             console.log(3);
-        //             document.getElementById('noFavouritesMessage').style.display = 'block'
-        //             return
-        //         }
-        //         if (window.location.href !== location.origin + '/favourite') {
-        //             console.log(4);
-        //             document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
-        //             if (favFilms.includes(filmId)) {
-        //                 // console.log('fav');
-        //                 document.getElementById(filmCards[i].id + 'nupp').innerHTML = 'FAVO'
-        //             }
-        //         }
-    }
-}
 
 function saveFilmAsFavourite(movieId) {
     console.log('saveFilmAsFavourite')
@@ -160,26 +102,6 @@ function saveFilmAsFavourite(movieId) {
 }
 
 
-
-// function changeFavInfo(status, movieId) {
-
-
-//     if (status === 'put' && favouritePages.includes(window.location.href)) {
-//         document.getElementById(movieId + 'nupp').innerHTML = 'FAVO'
-//         return
-//     }
-
-//     if (status === 'put') {
-//         document.getElementById('nupp').style.display = 'none'
-//         document.getElementById('removeFavBtn').style.display = 'block'
-//     }
-
-//     if (status === 'delete') {
-//         document.getElementById('nupp').style.display = 'block'
-//         document.getElementById('removeFavBtn').style.display = 'none'
-//     }
-// }
-
 function removeFilm(movieId) {
     var myHeaders = new Headers();
 
@@ -213,28 +135,6 @@ function removeFilm(movieId) {
             catch (err) {
                 null
             }
-
-            // changeFavInfo('delete')
-            // else {
-            // console.log('else');
-            // filmCard = document.getElementById(movieId)
-            // filmCard.style.display = 'none'
-
-            // console.log(favFilms);
-
-            // for (i = 0; i < favFilms.length; i++) {
-            // if (favFilms[i] === movieId.toString()) {
-            //     favFilms.pop(favFilms[i])
-            //     // console.log(favFilms);
-
-            // }
-            // }
-
-            // if (!favFilms.length) {
-            // document.getElementById('noFavouritesMessage').style.display = 'block'
-            // }
-
-            // }
         }
     }).catch(function (error) {
         console.warn(error);
