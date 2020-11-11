@@ -1,3 +1,5 @@
+const util = require('util')
+
 const timer = () => {
     const timeUnit = (ms, unit) => {
         return {
@@ -31,7 +33,7 @@ const timer = () => {
 
     const log = (name, message) => {
         const time_unit = check(name, 'sec').total
-        console.log(time_unit, message)
+        console.log(time_unit, util.inspect({name, message}, false, 15))
     }
 
     let timers = {}
