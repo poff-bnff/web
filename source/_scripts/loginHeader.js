@@ -144,12 +144,6 @@ function useUserData(userProf){
         // console.log(err)
         null
     }
-    try{
-        // console.log('loadFavbTry');
-        loadFavButtons()
-    }catch(err){
-        // console.log(err)
-    }
 }
 
 function logOut() {
