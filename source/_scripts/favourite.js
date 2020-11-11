@@ -1,4 +1,5 @@
-var favouritePages = ['/favourite']
+var favouritePages = ['/favourite', '/otsi_filmi']
+
 
 function loadMyFavFilms() {
     // console.log("FAVO: oled sisse loginud")
@@ -41,7 +42,7 @@ function fetchFavFilmsFromDB() {
 function saveFavFilms(data) {
 
     var favFilms = data
-    if (favouritePages.includes(window.location.pathname.slice(0,10))) {
+    if (favouritePages.includes(window.location.pathname.slice(0,10)) || favouritePages.includes(window.location.pathname.slice(0,11))) {
         showFavFilms(favFilms)
         return
     }
@@ -71,11 +72,11 @@ function showFavFilms(favFilms) {
         console.log(1);
         var filmId = filmCards[i].id
 
-        if (favFilms.includes(filmId)) {
+        if (favouritePages.includes(window.location.pathname.slice(0,10)) && favFilms.includes(filmId)) {
             console.log(2);
             filmCards[i].style.display = 'block'
         }
-        else if (favFilms.length === 0) {
+        else if (favFilms.length === 0 && document.getElementById('noFavouritesMessage')) {
             console.log(3);
             document.getElementById('noFavouritesMessage').style.display = 'block'
             return
