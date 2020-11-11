@@ -875,7 +875,7 @@ IndustryPerson: &IndustryPerson
     website: (text)
     filmography: #(Component (repeatable))
         - *Filmography
-    industry_person_type: #(Component (repeatable))
+    industry_person_types: #(Component (repeatable))
         - *IndustryPersonType
     lookingFor: (text)
     contactAtEvent: (text)
