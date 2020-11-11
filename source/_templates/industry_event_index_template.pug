@@ -55,6 +55,9 @@ block content
                     p.dark_1
                         +localdate(self.startTime)
 
+                if self.durationTime
+                    p.dark_1= self.durationTime
+
                 if self.location && self.location.hall && self.location.hall.name
                     if self.location.hall && self.location.hall.name
                         span.screening_hall= self.location.hall.name
