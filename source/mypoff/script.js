@@ -1,6 +1,6 @@
 
 if(validToken){
-    fetchMyPasses()
+    // fetchMyPasses()
 }else {
     window.open(`${location.origin}/${langpath}login`, '_self')
     saveUrl()
@@ -46,6 +46,7 @@ async function fetchMyPasses() {
 
         for (const childNode of my_pass_element.childNodes) {
             if(childNode.className === 'fullName')
+            console.log(1);
                 childNode.innerHTML = userProfile.name + ' ' + userProfile.family_name
         }
 
