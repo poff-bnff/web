@@ -28,10 +28,6 @@ function toggleDate (updown, days) {
     toggleCards()
 }
 
-function testFunc(bla, bla2) {
-    alert(bla2)
-}
-
 let cards = document.querySelectorAll('[class="card_film"]')
 
 function toggleCards() {
