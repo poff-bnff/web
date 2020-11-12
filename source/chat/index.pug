@@ -224,14 +224,14 @@ block content
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
-        //client side
-        window.addEventListener('DOMContentLoaded', (event) => {
+
+        document.addEventListener('userProfileLoaded', function (e) {
+            console.log('chat')
             console.log(userProfile)
-            setTimeout(main, 1000)
-        });
+            main(userProfile)
+        })
 
-
-        function main() {
+        function main(userProfile) {
             const chatForm = document.getElementById('chat-form')
             const chatMessages = document.querySelector('.chat-messages')
             const roomName = document.getElementById('room-name')
@@ -239,13 +239,12 @@ block content
 
 
             // Get username and room from URL
-            const { username, room } = {username: userProfile.username, room: 'jututuba'}
-            console.log('username', userProfile.username)
+            const room = 'jututuba'
 
             socket = io('http://192.241.148.13'); // In case your front is not served from the same domain as your server, you have to pass the URL of your server.
 
             // Join chatroom
-            socket.emit('joinRoom', { username, room })
+            socket.emit('joinRoom', { userProfile, room })
 
             // Get room and users
             socket.on('roomUsers', ({ room, users }) => {
