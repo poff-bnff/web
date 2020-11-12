@@ -119,10 +119,19 @@ function saveUrl(){
 
 
 function useUserData(userProf){
-    try{
-        document.getElementById('tervitus').innerHTML = document.getElementById('tervitus').innerHTML + ', ' + userProf.name
-    }catch(err){
-        null
+    if(userProf.name){
+        try{
+            document.getElementById('tervitus').innerHTML = document.getElementById('tervitus').innerHTML + ', ' + userProf.name
+        }catch(err){
+            null
+        }
+    }else{
+        try{
+            document.getElementById('tervitus').innerHTML = document.getElementById('tervitus').innerHTML + ', ' + userProf.email
+        }catch(err){
+            null
+        }
+
     }
     try{
         buyerCheck()
@@ -134,12 +143,6 @@ function useUserData(userProf){
     }catch(err){
         // console.log(err)
         null
-    }
-    try{
-        // console.log('loadFavbTry');
-        loadFavButtons()
-    }catch(err){
-        // console.log(err)
     }
 }
 

@@ -4,8 +4,9 @@ include /_templates/mixins.pug
 
 
 block content
+    - var assetsDir = 'https://assets.poff.ee/img/'
 
-    main.grid_film
+    main.grid_ind_event
 
 
         if self.title && self.title.length > 1
@@ -20,10 +21,10 @@ block content
                         each val, index in self.images
                             if index == 0
                                 .carousel-item.active.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                                    img.d-block.container_contents_16_9(src=`${assetsDir}${val.hash}${val.ext}` alt = self.title)
                             else
                                 .carousel-item.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                                    img.d-block.container_contents_16_9(src=`${assetsDir}${val.hash}${val.ext}` alt = self.title)
                         else
                             .carousel-item.active.container_contents_16_9
                                 img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
@@ -54,6 +55,10 @@ block content
                     p.dark_1
                         +localdate(self.startTime)
 
+                if self.durationTime
+                    p
+                        +indEvDur(self.durationTime)
+
                 if self.location && self.location.hall && self.location.hall.name
                     if self.location.hall && self.location.hall.name
                         span.screening_hall= self.location.hall.name
@@ -71,3 +76,44 @@ block content
                     if self.description && typeof self.description === 'string'
                         p.dark_1
                             +format(self.description)
+
+
+            //- iga eventiga seotud projekti kohta sooviks lehele title_en, project_types, linki projekti lehele
+            main.grid_films
+
+                if self.industry_projects
+                    each indProj in self.industry_projects
+                        if indProj.slug
+                            a(href=`/${indProj.slug}`)
+                                if indProj.title
+                                    h3.dark_1= indProj.title
+
+                                if indProj.project_types
+                                    h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
+
+
+
+            //- iga personi kohta tema pilti, nime, role_at_films, industry_person_type ja linki tema lehele
+            main.grid_films
+
+                if self.industry_people
+                    each indPerson in self.industry_people
+                        if indPerson.slug
+                            a(href=`/${indPerson.slug}`)
+                                if indPerson.role_at_films
+                                    h3.dark_1= indPerson.role_at_films.map(role => role.roleName).join(', ')
+
+                                if indPerson.industry_person_types
+                                    h3.dark_1= indPerson.industry_person_types.map(type => type.type).join(', ')
+
+                                h1.dark_1= `${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`
+
+                                if indPerson.profilePicAtInd
+                                    - var personPic = assetsDir + indPerson.profilePicAtInd.hash + indPerson.profilePicAtInd.ext
+                                else if indPerson.person.picture
+                                    - var personPic = assetsDir + indPerson.person.picture.hash + indPerson.person.picture.ext
+                                else
+                                    - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
+                                img.person_img(src=personPic alt=`${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`)
+
+
