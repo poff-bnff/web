@@ -303,7 +303,7 @@ main.grid_film(id= self.id)
                     each onePresentedBy in presentedBy
                         if onePresentedBy.organisations && onePresentedBy.organisations.length
 
-                            if onePresentedBy.presentedByText
+                            if onePresentedBy.presentedByText && typeof onePresentedBy.presentedByText !== 'object'
                                 p.dark_1.text_center= onePresentedBy.presentedByText
 
                             each presenter in onePresentedBy.organisations
