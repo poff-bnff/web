@@ -101,6 +101,9 @@ function loadUserProfileH() {
         return Promise.reject(response);
     }).then(function (data) {
         userProfile = data
+        var user_ready_event = new CustomEvent('Userprofile available')
+        document.dispatchEvent(user_ready_event)
+
         useUserData(data)
         // console.log("cognitos olev profiil:")
         // console.log(userProfile);
