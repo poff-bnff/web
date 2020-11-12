@@ -141,7 +141,7 @@ function tokenize(arr, id, lang) {
 
 function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
     const cassette = {
-        path: s_cassette[`slug_${lang}`] || null,
+        path: 'film/' + s_cassette[`slug_${lang}`] || null,
         data: {
             articles: `/_fetchdir/articles.${lang}.yaml`
         },
