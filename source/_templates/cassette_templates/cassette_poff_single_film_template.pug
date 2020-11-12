@@ -113,13 +113,14 @@ main.grid_film(id=self.id)
 
                             if film.tags.programmes && film.tags.programmes[0]
                                 //- Festival editions
-                                - var programmeNames = function(item) {
-                                -   if(typeof item.name !== 'object') {
-                                -       var itemNames = item.name
-                                -   }
-                                -   return itemNames
-                                - }
-                                - var festivalEditions = []
+                                -
+                                    var programmeNames = function(item) {
+                                    if(typeof item.name !== 'object') {
+                                        var itemNames = item.name
+                                    }
+                                        return itemNames
+                                    }
+                                    var festivalEditions = []
                                 each programme in film.tags.programmes
                                     if programme.festival_editions && programme.festival_editions.length
                                         each festivalEdition in programme.festival_editions
@@ -131,7 +132,7 @@ main.grid_film(id=self.id)
                                     .str_info_meta_festival= uniqueFestivalEditions.join(', ')
 
                                 //- Programmes
-                                - var programmes = film.tags.programmes.map(programmeNames).join(', ')
+                                - var programmes = film.tags.programmes.filter(a => a.name).map(programmeNames).join(', ')
                                 if programmes !== undefined && programmes.length > 0
                                     .str_info_meta_label.dark_semi= self.label.film.programme
                                     .str_info_meta_festival= programmes
