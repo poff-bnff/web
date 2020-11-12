@@ -1,9 +1,7 @@
-const http = require('http')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
-const { strapiAuth } = require("./strapiAuth.js")
-const { strapiQuery, getModel } = require("./strapiQuery.js")
+const { getModel } = require("./strapiQuery.js")
 const { spin } = require("./spinner")
 
 const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
@@ -23,95 +21,29 @@ for (const key in DATAMODEL) {
     }
 }
 
-async function strapiFetch(modelName, token) {
+let checkDomain = function(element) {
+    if (!DOMAIN) {
+        return true
+    }
+    // kui on domain, siis element['domains'] = [domain]
+    if (element['domain']){
+        element['domains'] = [element['domain']]
+    }
 
-    let checkDomain = function(element) {
-        if (!DOMAIN) {
+    if (element['domains'] === undefined) {
+        // console.log(3)
+        return true
+    }
+
+    for(let ix in element['domains']){
+        let el = element['domains'][ix]
+        // console.log(ix, el)
+        if (el['url'] === process.env['DOMAIN']){
             return true
         }
-        // kui on domain, siis element['domains'] = [domain]
-        if (element['domain']){
-            element['domains'] = [element['domain']]
-        }
-
-        if (element['domains'] === undefined) {
-            // console.log(3)
-            return true
-        }
-
-        for(let ix in element['domains']){
-            let el = element['domains'][ix]
-            // console.log(ix, el)
-            if (el['url'] === process.env['DOMAIN']){
-                return true
-            }
-        }
-
-        return false
     }
 
-    if (DATAMODEL[modelName] === undefined){
-        throw new Error('Model ' + modelName + ' not in data model.')
-    }
-    if (! '_path' in DATAMODEL[modelName]) {
-        throw new Error ('Missing _path in model')
-    }
-    /* TODO #437 asenda strapist tirimine strapiQuery ja getModel'iga
-    process.stdout.write('\nFetching ' + modelName + ' ')
-    const strapiData = await getModel(modelName)
-    strapiData = strapiData.filter(checkDomain)
-    resolve(strapiData)
-    */
-    let dataPath = DATAMODEL[modelName]['_path']
-
-    return new Promise((resolve, reject) => {
-        let options = {
-            host: process.env['StrapiHost'],
-            path: dataPath +'?_limit=-1',
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
-            }
-        }
-
-        process.stdout.write(modelName)
-        spin.start()
-
-        const request = http.request(options, (response) => {
-            response.setEncoding('utf8')
-            let allData = ''
-            response.on('data', function (chunk) {
-                allData += chunk
-                // process.stdout.write('.')
-            })
-            response.on('end', function () {
-                spin.stop()
-                if (response.statusCode === 200) {
-                    let strapiData = JSON.parse(allData)
-
-                    if (!Array.isArray(strapiData)){
-                        strapiData = [strapiData]
-                    }
-
-                    strapiData = strapiData.filter(checkDomain)
-                    resolve(strapiData)
-                    // console.log('.')
-                } else {
-                    process.stdout.write(' [E:' + response.statusCode + ']')
-                    resolve([])
-                }
-            })
-            response.on('error', function (thisError) {
-                spin.stop()
-                console.log(thisError)
-                reject(thisError)
-            })
-        })
-        request.on('error', reject)
-        request.end()
-
-    })
+    return false
 }
 
 const isEmpty = (p) => {
@@ -243,7 +175,6 @@ const foo = async () => {
         }
     }
 
-    const token = await strapiAuth()
     let strapiData = {}
     // datamodel on meie kirjeldatud andmemudel
     // otsime sellest mudelist ühte mudelit =model
@@ -263,7 +194,21 @@ const foo = async () => {
                 } else {
                     process.stdout.write(', ')
                 }
-                let modelData = await strapiFetch(modelName, token)
+
+                let modelData = await getModel(modelName)
+
+
+                if (!Array.isArray(modelData)){
+                    modelData = [modelData]
+                }
+
+                // andmete varundamine GitHubi
+                let jsonStr = JSON.stringify(modelData, null, 2)
+                fs.writeFileSync(`${__dirname}/../strapidata/${modelName}.json`, jsonStr, 'utf8')
+
+
+                modelData = modelData.filter(checkDomain)
+
                 // otsime kirjet mudelis =value
                 for (const property_name in model) {
                     if (model.hasOwnProperty(property_name)) {
