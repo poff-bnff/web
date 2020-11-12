@@ -230,7 +230,7 @@ main.grid_cassette
             each onePresentedBy in presentedBy
                 if onePresentedBy.organisations && onePresentedBy.organisations.length
 
-                    if onePresentedBy.presentedByText
+                    if onePresentedBy.presentedByText && typeof onePresentedBy.presentedByText !== 'object'
                         p.dark_1.text_center= onePresentedBy.presentedByText
 
                     each presenter in onePresentedBy.organisations
@@ -590,7 +590,8 @@ else
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
                 section.f_extra_box
-                    p= film.presentedBy.presentedByText
+                    if film.presentedBy.presentedByText && typeof film.presentedBy.presentedByText !== 'object'
+                        p= film.presentedBy.presentedByText
                     each presenter in film.presentedBy.organisations
                         p.dark_1= presenter.name
 
