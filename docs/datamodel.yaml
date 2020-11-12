@@ -899,7 +899,7 @@ ProjectType: &ProjectType
     description: (Rich text)
 
 ProjectStatus: &ProjectStatus
-    _path: project-status
+    _path: /project-statuses
     status: (text)
     description: (Rich text)
 
