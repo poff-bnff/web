@@ -34,7 +34,7 @@ const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
                 timer.log(__filename, {'ERROR': 'festival edition not found in Strapi', s_fested, p_festival_edition})
                 throw new Error()
             }
-            return s_festival_editions
+            return s_festival_editions[0]
         })
     const d_programme = {
         id: s_programme.id,
