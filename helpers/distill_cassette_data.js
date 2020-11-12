@@ -29,7 +29,12 @@ const STRAPIDATA_FESTIVALEDITIONS = STRAPIDATA['FestivalEdition']
 const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
     const festival_editions = (s_programme.festival_editions || [])
         .map(p_festival_edition => {
-            return STRAPIDATA_FESTIVALEDITIONS.filter(s_fested => p_festival_edition.id === s_fested.id)[0]
+            const s_festival_editions = STRAPIDATA_FESTIVALEDITIONS.filter(s_fested => p_festival_edition.id === s_fested.id)
+            if (s_festival_editions.length === 0) {
+                timer.log(__filename, {'ERROR': 'festival edition not found in Strapi', s_fested, p_festival_edition})
+                throw new Error()
+            }
+            return s_festival_editions
         })
     const d_programme = {
         id: s_programme.id,
@@ -136,6 +141,10 @@ function tokenize(arr, id, lang) {
 
 function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
     const cassette = {
+        path: s_cassette[`slug_${lang}`] || null,
+        data: {
+            articles: `/_fetchdir/articles.${lang}.yaml`
+        },
         id: s_cassette.id,
         films: distill_cassette_films(s_cassette, s_films, lang),
         screenings: distill_cassette_screenings(s_cassette, s_screenings, lang)
