@@ -51,8 +51,8 @@ clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 clr_dark_semi = rgba(23,33,33,.5)
 // clr_primary = #ec008c
-clr_primary = #F39133 // PÖFF orange
-clr_primary_text = #F39133 // PÖFF orange
+clr_primary = #4fc4bf
+clr_primary_text = #4fc4bf // PÖFF orange
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -468,6 +468,24 @@ footer
 /* Grid-areas .grid_film - mobile 1 column */
 
 .grid_film
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
+                        "f_title_box"\
+                        "f_synopsis_box"\
+                        "f_cred_box"\
+                        "f_runtime_box"\
+                        "f_interactive_box"\
+                        "f_screenings_box"\
+                        "f_dir_box"\
+                        "f_extra_box"\
+                        "f_qaclip_box"\
+                        "f_trailer_box"\
+                        "f_imgs_box"
+
+.grid_ind_event
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
@@ -2515,6 +2533,22 @@ a.btn_popover
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
+
+    .grid_ind_event
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_title_box       f_img_slider_box  f_img_slider_box"\
+                            "f_synopsis_box    f_synopsis_box    f_cred_box"\
+                            "f_synopsis_box    f_synopsis_box    f_runtime_box"\
+                            "f_interactive_box f_interactive_box f_interactive_box"\
+                            "f_screenings_box  f_screenings_box  f_screenings_box"\
+                            "f_dir_box         f_dir_box         f_extra_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_trailer_box     f_trailer_box     f_trailer_box"\
+                            "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
 
     .grid_cassette
         display grid
