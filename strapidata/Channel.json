@@ -1,98 +1,5 @@
 [
   {
-    "id": 2,
-    "namePrivate": "Industry channel 2",
-    "embedCode": null,
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-11T18:42:45.633Z",
-    "updated_at": "2020-11-11T18:42:45.673Z",
-    "name": {
-      "id": 28401,
-      "et": "Industry esimene kanal e esimene ruum",
-      "en": "Industry channel 2",
-      "ru": null
-    },
-    "description": {
-      "id": 8508,
-      "et": "teine kanal  ",
-      "en": "second channel",
-      "ru": null
-    }
-  },
-  {
-    "id": 3,
-    "namePrivate": "Industry channel 3",
-    "embedCode": null,
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-11T18:43:27.904Z",
-    "updated_at": "2020-11-11T18:43:27.938Z",
-    "name": {
-      "id": 28402,
-      "et": "Industry kanal 3",
-      "en": "Industry channel 3",
-      "ru": null
-    },
-    "description": {
-      "id": 8509,
-      "et": "kolmas kanal",
-      "en": "third channel",
-      "ru": null
-    }
-  },
-  {
-    "id": 1,
-    "namePrivate": "Industry channel 1",
-    "embedCode": null,
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-11T18:41:19.374Z",
-    "updated_at": "2020-11-11T18:43:34.058Z",
-    "name": {
-      "id": 28400,
-      "et": "Industry esimene kanal e esimene ruum",
-      "en": "Industry channel 1",
-      "ru": null
-    },
-    "description": {
-      "id": 8507,
-      "et": "esimene kanal",
-      "en": "First channel",
-      "ru": null
-    }
-  },
-  {
     "id": 4,
     "namePrivate": "Industry TEST channel",
     "embedCode": null,
@@ -120,6 +27,99 @@
       "id": 8510,
       "et": "test",
       "en": "test",
+      "ru": null
+    }
+  },
+  {
+    "id": 1,
+    "namePrivate": "01 Industry channel ",
+    "embedCode": null,
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-11T18:41:19.374Z",
+    "updated_at": "2020-11-12T13:41:24.115Z",
+    "name": {
+      "id": 28400,
+      "et": "Industry esimene kanal e esimene ruum",
+      "en": "Industry channel 1",
+      "ru": null
+    },
+    "description": {
+      "id": 8507,
+      "et": "esimene kanal",
+      "en": "First channel",
+      "ru": null
+    }
+  },
+  {
+    "id": 2,
+    "namePrivate": "02 Industry channel",
+    "embedCode": null,
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-11T18:42:45.633Z",
+    "updated_at": "2020-11-12T13:41:33.014Z",
+    "name": {
+      "id": 28401,
+      "et": "Industry esimene kanal e esimene ruum",
+      "en": "Industry channel 2",
+      "ru": null
+    },
+    "description": {
+      "id": 8508,
+      "et": "teine kanal  ",
+      "en": "second channel",
+      "ru": null
+    }
+  },
+  {
+    "id": 3,
+    "namePrivate": "03 Industry channel",
+    "embedCode": null,
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-11T18:43:27.904Z",
+    "updated_at": "2020-11-12T13:41:44.130Z",
+    "name": {
+      "id": 28402,
+      "et": "Industry kanal 3",
+      "en": "Industry channel 3",
+      "ru": null
+    },
+    "description": {
+      "id": 8509,
+      "et": "kolmas kanal",
+      "en": "third channel",
       "ru": null
     }
   }

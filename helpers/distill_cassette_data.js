@@ -46,13 +46,18 @@ const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
     }
 
     d_programme.search = festival_editions.map(festival_edition => {
-        return {
-            ix: festival_edition.id + '_' + s_programme.id,
-            value: {
-                et: d_programme.name.et ? festival_edition.festival.name_et + ' ' + d_programme.name.et : null,
-                en: d_programme.name.en ? festival_edition.festival.name_en + ' ' + d_programme.name.en : null,
-                ru: d_programme.name.ru ? festival_edition.festival.name_et + ' ' + d_programme.name.ru : null,
+        try {
+            return {
+                ix: festival_edition.id + '_' + s_programme.id,
+                value: {
+                    et: d_programme.name.et ? festival_edition.festival.name_et + ' ' + d_programme.name.et : null,
+                    en: d_programme.name.en ? festival_edition.festival.name_en + ' ' + d_programme.name.en : null,
+                    ru: d_programme.name.ru ? festival_edition.festival.name_et + ' ' + d_programme.name.ru : null,
+                }
             }
+        } catch (error) {
+            timer.log('debug', {festival_edition, error})
+            throw error
         }
     })
     return d_programme
@@ -124,7 +129,7 @@ function tokenize(arr, id, lang) {
         }).flat().map(t => t.toLowerCase())
         return [...(new Set(words))].join(' ')
     } catch (error) {
-        timer.log(__filename, `INFO: no freetext search for film ${id}, in ${lang}`)
+        timer.log(__filename, {INFO: 'no freetext search for', id, lang})
         return ''
     }
 }
@@ -142,24 +147,23 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         cassette.search = {
             text: tokenize(
                 cassette.films.map(film => {
-                    return [film.synopsis_md,
-                            film.credentials['Director of Photography'],
-                            film.credentials['Editor'],
-                            film.credentials['Production Company'],
-                            film.credentials['Director'],
-                            film.credentials['Producer'],
-                            film.credentials['Screenwriter'],
-                            film.credentials['Music'],
-                            film.credentials['Cast']
+                    return [film.synopsisBox.synopsis_md,
+                            film.credentials.directorofphotography,
+                            film.credentials.editor,
+                            film.credentials.productioncompany,
+                            film.credentials.director,
+                            film.credentials.producer,
+                            film.credentials.screenwriter,
+                            film.credentials.music,
+                            film.credentials.cast
                     ]
-                })
+                }), cassette.id, lang
             ),
             programmes: cassette.films.map(film => {
-                timer.log('debug', {film})
                 return film._programmeIx
-            }).flat(0),
-            languages: cassette.films.map(film => film._languageCodes),
-            countries: cassette.films.map(film => film._countryCodes),
+            }).flat(),
+            languages: cassette.films.map(film => film._languageCodes).flat(),
+            countries: cassette.films.map(film => film._countryCodes).flat(),
             // subtiitreid peab täiendama screeningute juures olevaga
             subtitles: [],
             premieretypes: '',
@@ -184,7 +188,6 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 'Cast': distill_credentials(s_film, 'Cast')
             }
             const countries = distill_ordered_countries(s_film, lang)
-            timer.log('debug', {countries, s_film})
             return {
                 id: s_film.id,
                 titleBox: {
@@ -213,7 +216,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     cast: credentials['Cast']
                 },
                 _programmeIx: distill_programme_selectors(s_film),
-                synopsis: {
+                synopsisBox: {
                     festivalEditionNames: distill_festival_editions(s_cassette, lang),
                     programmeNames: distill_programmes(s_film, lang),
                     genres: distill_film_genres(s_film, lang),
@@ -485,7 +488,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                         return iqc_p.et
                     })
                 } catch (error) {
-                    timer.log(__filename, {INFO: 'INFO: no role for IQnAC', role, filtered_iqac})
+                    // timer.log(__filename, {INFO: 'INFO: no role for IQnAC', role, filtered_iqac})
                     return []
                 }
             }
