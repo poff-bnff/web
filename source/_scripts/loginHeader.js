@@ -2,7 +2,12 @@ var pageURL = location.origin
 var userprofilePageURL = pageURL + '/userprofile'
 var userProfile
 var validToken = false
+var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 
+document.addEventListener('userProfileLoaded', function (e) {
+    useUserData(userProfile)
+    console.log('loaded')
+})
 
 
 function buyerCheck() {
@@ -101,10 +106,7 @@ function loadUserProfileH() {
         return Promise.reject(response);
     }).then(function (data) {
         userProfile = data
-        var user_ready_event = new CustomEvent('Userprofile available')
-        document.dispatchEvent(user_ready_event)
-
-        useUserData(data)
+        document.dispatchEvent(userProfileLoadedEvent)
         // console.log("cognitos olev profiil:")
         // console.log(userProfile);
 
@@ -112,6 +114,7 @@ function loadUserProfileH() {
         console.warn(error);
     });
 }
+
 
 
 function saveUrl(){

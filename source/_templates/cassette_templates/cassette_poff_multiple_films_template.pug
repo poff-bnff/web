@@ -60,13 +60,15 @@ main.grid_cassette
                 .str_info_meta_festival= self.festival_edition.name
 
             if self.tags && self.tags.programmes && self.tags.programmes[0]
-                - var programmeNames = function(item) {
-                -   if(typeof item.name !== 'object') {
-                -       var itemNames = item.name
-                -   }
-                -   return itemNames
-                - }
-                - var programmes = self.tags.programmes.map(programmeNames).join(', ')
+                -
+                    var programmeNames = function(item) {
+                    if(typeof item.name !== 'object') {
+                        var itemNames = item.name
+                    }
+                        return itemNames
+                    }
+                    var festivalEditions = []
+                - var programmes = self.tags.programmes.filter(a => a.name).map(programmeNames).join(', ')
                 if programmes !== undefined && programmes.length > 0
                     .str_info_meta_label.dark_1= self.label.film.programme
                     .str_info_meta_festival= programmes
@@ -230,7 +232,7 @@ main.grid_cassette
             each onePresentedBy in presentedBy
                 if onePresentedBy.organisations && onePresentedBy.organisations.length
 
-                    if onePresentedBy.presentedByText
+                    if onePresentedBy.presentedByText && typeof onePresentedBy.presentedByText !== 'object'
                         p.dark_1.text_center= onePresentedBy.presentedByText
 
                     each presenter in onePresentedBy.organisations
@@ -590,7 +592,8 @@ else
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
                 section.f_extra_box
-                    p= film.presentedBy.presentedByText
+                    if film.presentedBy.presentedByText && typeof film.presentedBy.presentedByText !== 'object'
+                        p= film.presentedBy.presentedByText
                     each presenter in film.presentedBy.organisations
                         p.dark_1= presenter.name
 
