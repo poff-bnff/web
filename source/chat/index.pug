@@ -28,10 +28,10 @@ mixin chat(name)
             .chat-form-container
                 form#chat-form
                     input#msg(type='text' placeholder='Enter Message' required='' autocomplete='off')
-                button.btn
-                    i.fas.fa-paper-plane
-                    |  Send
-                    a.btn(href='index.html') Leave Room
+                    button.btn
+                        i.fas.fa-paper-plane
+                        |  Send
+                a.btn(href='/chat') Leave Room
 
         style.
             :root {
@@ -160,58 +160,6 @@ mixin chat(name)
                 flex: 1;
             }
 
-            /* Join Page */
-            .join-container {
-                max-width: 500px;
-                margin: 80px auto;
-                color: #fff;
-            }
-
-            .join-header {
-                text-align: center;
-                padding: 20px;
-                background: var(--dark-color-a);
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-            }
-
-            .join-main {
-                padding: 30px 40px;
-                background: var(--dark-color-b);
-            }
-
-            .join-main p {
-                margin-bottom: 20px;
-            }
-
-            .join-main .form-control {
-                margin-bottom: 20px;
-            }
-
-            .join-main label {
-                display: block;
-                margin-bottom: 5px;
-            }
-
-            .join-main input[type='text'] {
-                font-size: 16px;
-                padding: 5px;
-                height: 40px;
-                width: 100%;
-            }
-
-            .join-main select {
-                font-size: 16px;
-                padding: 5px;
-                height: 40px;
-                width: 100%;
-            }
-
-            .join-main .btn {
-                margin-top: 20px;
-                width: 100%;
-            }
-
             @media (max-width: 700px) {
                 .chat-main {
                     display: block;
@@ -263,7 +211,7 @@ mixin chat(name)
 
                 // Message submit
                 chatForm.addEventListener('submit', e => {
-                    e.preventDefault();
+                    e.preventDefault()
 
                     // Get message text
                     let msg = e.target.elements.msg.value
@@ -274,15 +222,16 @@ mixin chat(name)
                     }
 
                     // Emit message to server
-                    socket.emit('chatMessage', msg)
+                    socket.emit('chatMessage', {msg, room, userProfile})
 
                     // Clear input
                     e.target.elements.msg.value = ''
                     e.target.elements.msg.focus()
-                });
+                })
 
                 // Output message to DOM
                 function outputMessage(message) {
+                    if ()
                     const div = document.createElement('div')
                     div.classList.add('message')
 

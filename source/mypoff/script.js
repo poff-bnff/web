@@ -34,6 +34,7 @@ async function fetchMyPasses() {
     console.log(my_passes_element);
     var ix = 0
     for (my_pass of my_passes) {
+        console.log(my_pass, 'minu pass')
         ix ++
 
         var pass_template = document.getElementById('template_' + my_pass.categoryId)
