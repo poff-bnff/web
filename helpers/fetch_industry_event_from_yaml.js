@@ -31,6 +31,11 @@ for (const lang of allLanguages) {
 
         let element = JSON.parse(JSON.stringify(STRAPIDATA_INDUSTRY_EVENT[ix]));
 
+        if (!element.startTime) {
+            console.log(`ERROR! Industry event ID ${element.id} missing startTime`);
+            continue
+        }
+
         if (element[`slug_${lang}`]) {
             let dirSlug = element[`slug_${lang}`]
             element.path = `events/${dirSlug}`
@@ -58,6 +63,8 @@ for (const lang of allLanguages) {
 
             element = rueten(element, lang);
             allData.push(element)
+        } else {
+            console.log(`ERROR! Industry event ID ${element.id} missing slug`);
         }
     }
 
