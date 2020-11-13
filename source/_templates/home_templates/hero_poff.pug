@@ -22,7 +22,11 @@ if self.data.heroArticle
                 //- else
                 //-     img(src='/assets/img/static/placeholder_hd_1.jpg').hero_image
 
-                +videoAp('R-1jQhGnDN0')
+                if self.data.heroArticle.media.clipUrlDefault
+                    +videoAp(self.data.heroArticle.media.clipUrlDefault)
+
+                //- +videoAp('R-1jQhGnDN0')
+
                 .hero_headline_box
                     .hero_headline_box_1
                         .hero_headline
