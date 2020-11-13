@@ -1,5 +1,5 @@
 function loadMyFavFilms() {
-    console.log("FAVO: oled sisse loginud")
+    // console.log("FAVO: oled sisse loginud")
     try {
         document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
     } catch (error) {
@@ -13,15 +13,15 @@ function loadMyFavFilms() {
 }
 
 function toggleFavButtons(shortlist_array) {
-    console.log('toggleFavButtons')
+    // console.log('toggleFavButtons')
 
     var isshortlisted_buttons = document.getElementsByClassName('isshortlisted')
-    console.log(isshortlisted_buttons)
-    console.log(shortlist_array)
+    // console.log(isshortlisted_buttons)
+    // console.log(shortlist_array)
 
     for (i = 0; i < isshortlisted_buttons.length; i++) {
         var film_id = isshortlisted_buttons[i].id.split('_')[0]
-        console.log(film_id, shortlist_array.includes(film_id));
+        // console.log(film_id, shortlist_array.includes(film_id));
         if (shortlist_array.includes(film_id)) {
             isshortlisted_buttons[i].style.display = 'block'
             document.getElementById(film_id + '_cassette_id').style.display = 'block'
@@ -33,7 +33,7 @@ function toggleFavButtons(shortlist_array) {
     }
 
     var notshortlisted_buttons = document.getElementsByClassName('notshortlisted')
-    console.log(notshortlisted_buttons);
+    // console.log(notshortlisted_buttons);
 
     for (i = 0; i < notshortlisted_buttons.length; i++) {
         var film_id = notshortlisted_buttons[i].id.split('_')[0]
@@ -49,7 +49,7 @@ function toggleFavButtons(shortlist_array) {
 
 
 function saveFilmAsFavourite(movieId) {
-    console.log('saveFilmAsFavourite')
+    // console.log('saveFilmAsFavourite')
 
     // var addBtnfilmCard = document.getElementById('nupp')
     // console.log(addBtnfilmCard);
