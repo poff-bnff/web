@@ -14,7 +14,7 @@
       "username": null
     },
     "created_at": "2020-11-11T08:24:08.313Z",
-    "updated_at": "2020-11-13T08:30:49.473Z",
+    "updated_at": "2020-11-13T09:28:51.826Z",
     "domain": {
       "id": 1,
       "Url": null,
@@ -881,25 +881,37 @@
             "poffi_article": null,
             "logoWhite": null,
             "logoColour": {
-              "id": 1032,
-              "name": "Media Europe Loves Cinema.png",
+              "id": 1436,
+              "name": "IND_PARTNER_creative_europe_media.jpg",
               "alternativeText": "",
               "caption": "",
-              "width": 222,
-              "height": 135,
-              "formats": null,
-              "hash": "Media_Europe_Loves_Cinema_dfd52dcce0",
-              "ext": ".png",
-              "mime": "image/png",
-              "size": 16.33,
-              "url": "/uploads/Media_Europe_Loves_Cinema_dfd52dcce0.png",
+              "width": 500,
+              "height": 129,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "/uploads/thumbnail_IND_PARTNER_creative_europe_media_c6c1ff997f.jpg",
+                  "hash": "thumbnail_IND_PARTNER_creative_europe_media_c6c1ff997f",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_IND_PARTNER_creative_europe_media.jpg",
+                  "path": null,
+                  "size": 4.27,
+                  "width": 245,
+                  "height": 63
+                }
+              },
+              "hash": "IND_PARTNER_creative_europe_media_c6c1ff997f",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 28.38,
+              "url": "/uploads/IND_PARTNER_creative_europe_media_c6c1ff997f.jpg",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "created_by": 16,
-              "updated_by": 16,
-              "created_at": "2020-10-12T08:06:24.832Z",
-              "updated_at": "2020-10-12T08:06:24.896Z"
+              "created_by": 26,
+              "updated_by": 26,
+              "created_at": "2020-10-22T13:14:26.735Z",
+              "updated_at": "2020-10-22T13:14:26.914Z"
             },
             "logoBlack": null
           },
