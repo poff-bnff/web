@@ -220,27 +220,26 @@ main.grid_film(id=self.id)
                     a.btn.btn_primary.notshortlisted(id=self.id+'_not_shortlisted', style= {display: 'none'} onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK')= self.label.film.addShortlist
                     a.btn.btn_secondary.isshortlisted(id=self.id+'_is_shortlisted', style= {display: 'none'} onclick=`removeFilm(${self.id})` role='button' target='_BLANK')= self.label.film.removeShortlist
 
-            if typeof filmDirectorsSorted !== 'undefined'
-                section.f_dir_box
+            section.f_dir_box
 
-                    each director in film.directors
-                        //- f_dir_box on nyyd container directorite boxidele
-                        //- Iga Directori kohta nyyd täita see f_dir_bio_box.
-                        .f_dir_bio_box
-                            if director.person
-                                .dir_img
-                                    if director.portrait
-                                        img.img_dir(src=director.portrait alt=director.name)
-                                        if director.name
-                                            .str_info_grid_3
-                                                .str_info_label.text_left.dark_semi= self.label.film.director
-                                                .str_info_value.text_right.dark_1= director.name
+                each director in film.directors
+                    //- f_dir_box on nyyd container directorite boxidele
+                    //- Iga Directori kohta nyyd täita see f_dir_bio_box.
+                    .f_dir_bio_box
+                        if director
+                            .dir_img
+                                if director.portrait
+                                    img.img_dir(src=director.portrait alt=director.name)
+                                    if director.name
+                                        .str_info_grid_3
+                                            .str_info_label.text_left.dark_semi= self.label.film.director
+                                            .str_info_value.text_right.dark_1= director.name
 
-                                .dir_bio.dark_1
-                                    if director.biography && typeof director.biography !== 'object'
-                                        p.dark_1= director.biography
-                                    if director.filmography && typeof director.filmography !== 'object'
-                                        p.dark_1= director.filmography
+                            .dir_bio.dark_1
+                                if director.biography && typeof director.biography !== 'object'
+                                    p.dark_1= director.biography
+                                if director.filmography && typeof director.filmography !== 'object'
+                                    p.dark_1= director.filmography
 
             if film.presentedBy
                 - var presentedBy = [film.presentedBy]
@@ -365,21 +364,21 @@ main.grid_film(id=self.id)
                                             svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                                                 circle(cx='12' cy='12' r='10')
                                                 polyline(points='12 6 12 12 16 14')
-                                            span.screening_time
-                                                +screeningTime(screening.dateTime)
+                                            span.screening_time= screening.time
+                                                //- +screeningTime(screening.dateTime)
 
                                     .container_screening_location
                                         svg.svg_icon(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                                             path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
                                             circle(cx='12' cy='10' r='3')
 
-                                        if screening.location && screening.location.hall && screening.location.hall.name
-                                            if screening.location.hall && screening.location.hall.name
-                                                span.screening_hall= screening.location.hall.name
-                                                if screening.location.hall.cinema && screening.location.hall.cinema.name
-                                                    span.screening_venue= ` ${screening.location.hall.cinema.name}`
-                                                    if screening.location.hall.cinema.town && screening.location.hall.cinema.town.name && screening.location.hall.cinema.town.country && screening.location.hall.cinema.town.country.name
-                                                        span.city= ` ${screening.location.hall.cinema.town.name}`
+                                        if screening.location
+                                            if screening.location.hall_name
+                                                span.screening_hall= screening.location.hall_name
+                                                if screening.location.cinema_name && screening.location.cinema_name
+                                                    span.screening_venue= ` ${screening.location.cinema_name}`
+                                                    if screening.location.town_name && screening.location.town_name
+                                                        span.city= ` ${screening.location.town_name}`
                                                         //- span.city= ` ${screening.location.hall.cinema.town.name}, ${screening.location.hall.cinema.town.country.name}`
 
                                             //- See on privateName tegelikult: Coca-Cola Plaza, iSense saal
@@ -395,16 +394,10 @@ main.grid_film(id=self.id)
                                                 span.screening_info_value= screening.codeAndTitle
                                         //- if screening.screeningSubtitles
 
-                                        if film.subtitles
-                                            - var subtitlesNames = function(item) {
-                                            -   if(item.name) {
-                                            -       var itemNames = item.name
-                                            -       return itemNames
-                                            -   }
-                                            - }
+                                        if screening.subtitles
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.subtitles
-                                                span.screening_info_value= film.subtitles.map(subtitlesNames).join(', ')
+                                                span.screening_info_value= screening.subtitles.join(', ')
 
 
                                         - var iqnac = screening.introQaConversation
