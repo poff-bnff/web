@@ -6,6 +6,7 @@ fetch(albums_url)
         var DOM_albums = document.getElementById('flickr-albums')
         for (album of albums) {
             var DOM_album = album_template.cloneNode(true)
+            DOM_album.style.display = 'grid'
             // DOM_album.id = album.url
             DOM_album.setAttribute('href', `HTTPS://${album.url}`)
             DOM_album.childNodes[0].setAttribute('src', `https://${album.pic}`)
