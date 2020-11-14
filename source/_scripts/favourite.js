@@ -164,8 +164,8 @@ function saveScreeningAsFavourite(screeningId, screeningTitle, screeningTime) {
         return Promise.reject(response);
     }).then(function (data) {
         if (data.ok) {
-            document.getElementById(movieId + '_not_savedscreening').style.display = 'none'
-            document.getElementById(movieId + '_is_savedscreening').style.display = 'block'
+            document.getElementById(screeningId + '_not_savedscreening').style.display = 'none'
+            document.getElementById(screeningId + '_is_savedscreening').style.display = 'block'
         }
     }).catch(function (error) {
         console.warn(error);
@@ -212,44 +212,43 @@ function removeFilm(movieId) {
     });
 }
 
-function removeScreening(screeningId, screeningTitle) {
+function removeScreening(screeningId) {
     console.log('saveFilmAsFavourite screeningId ', screeningId)
-    console.log('saveFilmAsFavourite screeningTitle ', screeningTitle)
 
-    // var myHeaders = new Headers();
+    var myHeaders = new Headers();
 
-    // myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
+    myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
-    // var requestOptions = {
-    //     method: 'DELETE',
-    //     headers: myHeaders,
-    //     redirect: 'follow'
-    // };
+    var requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
 
 
-    // fetch('https://api.poff.ee/favourite/' + movieId, requestOptions).then(function (response) {
-    //     if (response.ok) {
-    //         return response.json();
-    //     }
-    //     return Promise.reject(response);
-    // }).then(function (data) {
-    //     console.log(data)
-    //     if (data.ok) {
-    //         try {
-    //             document.getElementById(movieId + '_not_shortlisted').style.display = 'block'
-    //             document.getElementById(movieId + '_is_shortlisted').style.display = 'none'
-    //         }
-    //         catch (err) {
-    //             null
-    //         }
-    //         try {
-    //             document.getElementById(movieId + '_cassette_id').style.display = 'none'
-    //         }
-    //         catch (err) {
-    //             null
-    //         }
-    //     }
-    // }).catch(function (error) {
-    //     console.warn(error);
-    // });
+    fetch('https://api.poff.ee/favourite/' + 'screening_' + screeningId, requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        console.log(data)
+        if (data.ok) {
+            try {
+                document.getElementById(screeningId + '_not_savedscreening').style.display = 'block'
+                document.getElementById(screeningId + '_is_savedscreening').style.display = 'none'
+            }
+            catch (err) {
+                null
+            }
+            try {
+                // document.getElementById(movieId + '_cassette_id').style.display = 'none'
+            }
+            catch (err) {
+                null
+            }
+        }
+    }).catch(function (error) {
+        console.warn(error);
+    });
 }
