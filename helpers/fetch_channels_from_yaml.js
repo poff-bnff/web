@@ -29,9 +29,12 @@ function processData(lang, CreateYAML) {
     // console.log(util.inspect(copyData));
     let buffer = [];
     for (index in copyData) {
-        // console.log('index', index);
+        // console.log(index, copyData[index]);
         // console.log('domain', domain);
         // console.log('copydatadomeen', copyData[index].domain);
+        if (copyData[index].namePrivate && copyData[index].namePrivate === 'Industry TEST channel') {
+            continue
+        }
         buffer.push(rueten(copyData[index], lang))
     }
     CreateYAML(buffer, lang);
@@ -40,7 +43,7 @@ function processData(lang, CreateYAML) {
 }
 
 function CreateYAML(buffer, lang) {
-    let allDataYAML = yaml.safeDump(buffer, { 'noRefs': true, 'indent': '4' })
+    let allDataYAML = yaml.safeDump(buffer.sort((a, b) => a.namePrivate.localeCompare(b.namePrivate)), { 'noRefs': true, 'indent': '4' })
     const outFile = path.join(fetchDir, `channels.${lang}.yaml`)
     fs.writeFileSync(outFile, allDataYAML, 'utf8')
 }

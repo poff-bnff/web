@@ -438,16 +438,23 @@ main.grid_film(id=self.id)
                                                 span.screening_info_value= screening.codeAndTitle
                                         //- if screening.screeningSubtitles
 
-                                        if film.subtitles
-                                            - var subtitlesNames = function(item) {
-                                            -   if(item.name) {
-                                            -       var itemNames = item.name
-                                            -       return itemNames
-                                            -   }
-                                            - }
+                                        -
+                                            var subtitlesNames = function(item) {
+                                                if(item.name) {
+                                                    var itemNames = item.name
+                                                    return itemNames
+                                                }
+                                            }
+
+                                        if screening.subtitles
+                                            - var subtitles = screening.subtitles.map(subtitlesNames)
+                                        else if film.subtitles
+                                            - var subtitles = film.subtitles.map(subtitlesNames)
+
+                                        if subtitles && subtitles.length
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.subtitles
-                                                span.screening_info_value= film.subtitles.map(subtitlesNames).join(', ')
+                                                span.screening_info_value= subtitles.join(', ')
 
 
                                         - var iqnac = screening.introQaConversation
