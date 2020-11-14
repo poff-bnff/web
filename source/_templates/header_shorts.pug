@@ -85,7 +85,7 @@ header
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
 
                                 else
-                                    if subMenuItem.customUrl && subMenuItem.name && typeof subMenuItem.name !== 'object'
+                                    if subMenuItem.customUrl && subMenuItem.customUrl.length && subMenuItem.name && typeof subMenuItem.name !== 'object'
                                         li
                                             if subMenuItem.customUrl.substring(0, 4) === 'http'
                                                 a(href= `${subMenuItem.customUrl}`)= `${subMenuItem.name}`
@@ -94,7 +94,7 @@ header
 
                 //- Kui peamenüü itemil pole artiklit, pole alammenüüsid ja on customUrl
                 else
-                    if mainMenuItem.customUrl && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
+                    if mainMenuItem.customUrl && mainMenuItem.customUrl.length && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
                         li
                             if mainMenuItem.customUrl.substring(0, 4) === 'http'
                                 a(href= `${mainMenuItem.customUrl}`)= `${mainMenuItem.name}`
