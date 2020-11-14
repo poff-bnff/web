@@ -68,8 +68,7 @@ function toggleSavedScreeningsButtons(savedScreenings) {
         console.log(screening_id, savedScreeningIds.includes(screening_id))
         if (savedScreeningIds.includes(screening_id)) {
             isSavedScreening_buttons[i].style.display = 'block'
-            // document.getElementById(film_id + '_cassette_id').style.display = 'block'
-        }
+            document.getElementById(screening_id + '_screening_id').style.display = 'block'        }
         else {
             isSavedScreening_buttons[i].style.display = 'none'
         }

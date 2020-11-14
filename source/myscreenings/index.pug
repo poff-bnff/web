@@ -98,7 +98,7 @@ block content
                         if cassette.festival_editions
                             each edition in cassette.festival_editions
                                 - allFestivalEditions.push(edition.name)
-                        a.card_film(id= screening.id href= `/${lang_path}film/${cassette.slug}`)
+                        a.card_film(id= screening.id + '_screening_id'  style= {display:'none'} href= `/${lang_path}film/${cassette.slug}`)
                             .container_frame_16_9
 
                                 //- PILDID
@@ -156,7 +156,7 @@ block content
 
                                     //- Kuvame kassetipealkirja
                                     h3.film_title_locale.dark_1.padding_bottom_2= cassette.title
-                                        p(id= cassette.id+'nupp' style={color: 'red', display:'block'}) X
+                                        p.issavedscreening(id=screening.id+'_is_savedscreening' style={color: 'red', display:'block'}) X
 
                                     //- Kuvame screeningtypes
                                     //- if screening.screening_types
