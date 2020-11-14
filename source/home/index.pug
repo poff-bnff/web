@@ -20,7 +20,9 @@ block content
         //- section.viiekas
         //-     include /_templates/home_templates/viiekas_just.pug
 
-
+        h3.section_headline ALBUMID
+        section.trio_block#flickr-albums
+            include /_templates/home_templates/flickr_albums.pug
 
     else if process.env['DOMAIN'] === 'shorts.poff.ee'
 
@@ -36,6 +38,10 @@ block content
         section.viiekas
             include /_templates/home_templates/viiekas_shorts.pug
 
+        h3.section_headline ALBUMID
+        section.trio_block#flickr-albums
+            include /_templates/home_templates/flickr_albums.pug
+
     else if process.env['DOMAIN'] === 'kinoff.poff.ee'
 
         - var whichTypesToDisplay = ['news']
@@ -49,6 +55,10 @@ block content
 
         section.viiekas
             include /_templates/home_templates/viiekas_kinoff.pug
+
+        h3.section_headline ALBUMID
+        section.trio_block#flickr-albums
+            include /_templates/home_templates/flickr_albums.pug
 
     else if process.env['DOMAIN'] === 'industry.poff.ee'
 
@@ -82,4 +92,6 @@ block content
         section.viiekas
             include /_templates/home_templates/viiekas_poff.pug
 
-    include /_templates/home_templates/flickr_albums.pug
+        h3.section_headline ALBUMID
+        section.trio_block#flickr-albums
+            include /_templates/home_templates/flickr_albums.pug

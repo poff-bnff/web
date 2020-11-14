@@ -9,8 +9,10 @@ fetch(albums_url)
             DOM_album.style.display = 'grid'
             // DOM_album.id = album.url
             DOM_album.setAttribute('href', `HTTPS://${album.url}`)
-            DOM_album.childNodes[0].setAttribute('src', `https://${album.pic}`)
-            DOM_album.childNodes[1].innerHTML = album.title
+            DOM_album.childNodes[0].childNodes[0].setAttribute('src', `https://${album.pic}`)
+            DOM_album.childNodes[0].style.display = 'grid'
+            DOM_album.childNodes[0].childNodes[1].childNodes[0].childNodes[0].innerHTML = album.title
+            console.log(DOM_album.childNodes);
 
             DOM_albums.appendChild(DOM_album)
         }
