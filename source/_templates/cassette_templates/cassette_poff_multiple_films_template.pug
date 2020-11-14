@@ -60,13 +60,15 @@ main.grid_cassette
                 .str_info_meta_festival= self.festival_edition.name
 
             if self.tags && self.tags.programmes && self.tags.programmes[0]
-                - var programmeNames = function(item) {
-                -   if(typeof item.name !== 'object') {
-                -       var itemNames = item.name
-                -   }
-                -   return itemNames
-                - }
-                - var programmes = self.tags.programmes.map(programmeNames).join(', ')
+                -
+                    var programmeNames = function(item) {
+                    if(typeof item.name !== 'object') {
+                        var itemNames = item.name
+                    }
+                        return itemNames
+                    }
+                    var festivalEditions = []
+                - var programmes = self.tags.programmes.filter(a => a.name).map(programmeNames).join(', ')
                 if programmes !== undefined && programmes.length > 0
                     .str_info_meta_label.dark_1= self.label.film.programme
                     .str_info_meta_festival= programmes
@@ -153,44 +155,70 @@ main.grid_cassette
                                     //-     h1= screening.location.name
 
 
-                        .card-body.bg_dark_3
-                            .screening_info_blokk
-                                if self.title
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.name
-                                        span.screening_info_value= self.title
-                                //- if screening.screeningSubtitles
-                                if screening.screeningSubtitles
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.subtitles
-                                        span.screening_info_value= screening.screeningSubtitles
-                                if screening.screeningIntroGuests
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.introGuests
-                                        span.screening_info_value= screening.screeningIntroGuests
-                                if screening.screeningIntroPresenter
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.introPresenter
-                                        span.screening_info_value= screening.screeningIntroPresenter
-                                if screening.screeningQaGuests
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.qaGuests
-                                        span.screening_info_value= screening.screeningQaGuests
-                                if screening.screeningQaPresenter
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.qaPresenter
-                                        span.screening_info_value= screening.screeningQaPresenter
+                                .card-body.bg_dark_3
+                                    .screening_info_blokk
+                                        if screening.codeAndTitle
+                                            .str_info_grid_3
+                                                span.screening_info_label= self.label.screening.name
+                                                span.screening_info_value= screening.codeAndTitle
+                                        //- if screening.screeningSubtitles
 
-                                if screening.extraInfo && typeof screening.extraInfo !== 'object'
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.extraInfo
-                                        span.screening_info_value= screening.extraInfo
+                                        if screening.subtitles
+                                            - var subtitlesNames = function(item) {
+                                            -   if(item.name) {
+                                            -       var itemNames = item.name
+                                            -       return itemNames
+                                            -   }
+                                            - }
+                                            .str_info_grid_3
+                                                span.screening_info_label= self.label.screening.subtitles
+                                                span.screening_info_value= screening.subtitles.map(subtitlesNames).join(', ')
 
-                                if screening.durationTotal
-                                    .str_info_grid_3
-                                        span.screening_info_label= self.label.screening.totalDuration
-                                        span.screening_info_value
-                                            +dur(screening.durationTotal)
+
+                                        - var iqnac = screening.introQaConversation
+                                        //- Screening Intro
+                                        if iqnac
+                                            - var introGuests = iqnac.filter(i => { return i.type === 'Intro' && i.guest })
+                                            if introGuests.length > 0 && typeof introGuests[0].guest[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.introGuests
+                                                    span.screening_info_value= introGuests[0].guest.join(', ')
+
+                                            - var introPresenters = iqnac.filter(i => { return i.type === 'Intro' && i.presenter })
+                                            if introPresenters.length > 0 && typeof introPresenters[0].presenter[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.introPresenter
+                                                    span.screening_info_value= introPresenters[0].presenter.join(', ')
+
+                                            //- Screening QandA
+                                            - var qaGuests = iqnac.filter(i => { return i.type === 'QandA' && i.guest })
+                                            if qaGuests.length > 0 && typeof qaGuests[0].guest[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaGuests
+                                                    span.screening_info_value= qaGuests[0].guest.join(', ')
+
+                                            - var qaPresenter = iqnac.filter(i => { return i.type === 'QandA' && i.presenter })
+                                            if qaPresenter.length > 0 && typeof qaPresenter[0].presenter[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaPresenter
+                                                    span.screening_info_value= qaPresenter[0].presenter.join(', ')
+
+                                            if iqnac[0].duration
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaDuration
+                                                    span.screening_info_value
+                                                        +dur(iqnac[0].duration)
+
+                                        if screening.extraInfo && typeof screening.extraInfo !== 'object'
+                                            .str_info_grid_3
+                                                span.screening_info_label= self.label.screening.extraInfo
+                                                span.screening_info_value= screening.extraInfo
+
+                                        if screening.durationTotal
+                                            .str_info_grid_3
+                                                span.screening_info_label= self.label.screening.totalDuration
+                                                span.screening_info_value
+                                                    +dur(screening.durationTotal)
 
                         .btn-group(role='group' aria-label='')
 
@@ -230,7 +258,7 @@ main.grid_cassette
             each onePresentedBy in presentedBy
                 if onePresentedBy.organisations && onePresentedBy.organisations.length
 
-                    if onePresentedBy.presentedByText
+                    if onePresentedBy.presentedByText && typeof onePresentedBy.presentedByText !== 'object'
                         p.dark_1.text_center= onePresentedBy.presentedByText
 
                     each presenter in onePresentedBy.organisations
@@ -590,7 +618,8 @@ else
             if film.presentedBy && film.presentedBy.presentedByText && film.presentedBy.organisations && film.presentedBy.organisations[0]
 
                 section.f_extra_box
-                    p= film.presentedBy.presentedByText
+                    if film.presentedBy.presentedByText && typeof film.presentedBy.presentedByText !== 'object'
+                        p= film.presentedBy.presentedByText
                     each presenter in film.presentedBy.organisations
                         p.dark_1= presenter.name
 
@@ -619,6 +648,11 @@ else
             //-         .embed-responsive.embed-responsive-16by9.m-0.p-0
             //-             - youtubeVideoCode = film.filmQaClip.split("=")
             //-             +youtube(youtubeVideoCode[1])
+
+            .f_vialog_box
+                //- <a name="chat"><iframe width="100%" height="540" src="https://my.vialog.app/poff.ee/241" frameborder="0" allow="microphone; camera"></iframe></a>
+                a(name='chat')
+                    iframe(width='100%' height='540' src=`https://my.vialog.app/poff.ee/${film.id}` frameborder='0' allow='microphone; camera')
 
             if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
                 section.f_trailer_box

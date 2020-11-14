@@ -12,12 +12,17 @@ const fetchDir =  path.join(sourceDir, '_fetchdir');
 const fetchDataDir =  path.join(fetchDir, 'industryevents');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
 const STRAPIDATA_INDUSTRY_EVENT = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['IndustryEvent'];
-const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
+const DOMAIN = process.env['DOMAIN'] || 'industry.poff.ee';
 
 const mapping = DOMAIN_SPECIFICS.domain
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 
 for (const lang of allLanguages) {
+    const industryPersonsPath = path.join(fetchDir, `industrypersons.${lang}.yaml`)
+    const industryPersonsYaml = yaml.safeLoad(fs.readFileSync(industryPersonsPath, 'utf8'));
+    const industryProjectsPath = path.join(fetchDir, `industryprojects.${lang}.yaml`)
+    const industryProjectsYaml = yaml.safeLoad(fs.readFileSync(industryProjectsPath, 'utf8'));
+
     console.log(`Fetching ${DOMAIN} Industry Event ${lang} data`);
 
     var allData = []
@@ -26,10 +31,26 @@ for (const lang of allLanguages) {
 
         let element = JSON.parse(JSON.stringify(STRAPIDATA_INDUSTRY_EVENT[ix]));
 
+        if (!element.startTime) {
+            console.log(`ERROR! Industry event ID ${element.id} missing startTime`);
+            continue
+        }
+
         if (element[`slug_${lang}`]) {
             let dirSlug = element[`slug_${lang}`]
             element.path = `events/${dirSlug}`
             element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
+
+            if (element.industry_people) {
+                element.industry_people = element.industry_people.map(people => {
+                    return industryPersonsYaml.filter(a => a.id === people.id)[0]
+                })
+            }
+            if (element.industry_projects) {
+                element.industry_projects = element.industry_projects.map(projects => {
+                    return industryProjectsYaml.filter(a => a.id === projects.id)[0] || projects
+                })
+            }
             const oneYaml = yaml.safeDump(rueten(element, lang), { 'noRefs': true, 'indent': '4' });
             const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
 
@@ -42,6 +63,8 @@ for (const lang of allLanguages) {
 
             element = rueten(element, lang);
             allData.push(element)
+        } else {
+            console.log(`ERROR! Industry event ID ${element.id} missing slug`);
         }
     }
 

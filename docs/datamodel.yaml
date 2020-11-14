@@ -875,8 +875,10 @@ IndustryPerson: &IndustryPerson
     website: (text)
     filmography: #(Component (repeatable))
         - *Filmography
-    industry_person_type: #(Component (repeatable))
+    industry_person_types: #(Component (repeatable))
         - *IndustryPersonType
+    lookingFor: (text)
+    contactAtEvent: (text)
 
 IndustryGroup: &IndustryGroup
     _path: /industry-groups
@@ -897,7 +899,7 @@ ProjectType: &ProjectType
     description: (Rich text)
 
 ProjectStatus: &ProjectStatus
-    _path: project-status
+    _path: /project-statuses
     status: (text)
     description: (Rich text)
 
@@ -961,7 +963,6 @@ IndustryEvent: &IndustryEvent
     startTime: (Datetime)
     title_en: (text)
     slug_en: (UID)
-    duration: (Number)
     images: #(Component (repeatable))
         - *StrapiMedia
     location: *Location #ei sisalda kirjeldust
@@ -975,6 +976,10 @@ IndustryEvent: &IndustryEvent
     publish: (Boolean)
     channel: *Channel
     durationTime: (Time)
+    industry_people:
+        - *IndustryPerson
+    industry_projects:
+        - *IndustryProject
 
 # Supporters
 SupPoff: &SupPoff

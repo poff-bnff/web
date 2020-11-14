@@ -51,8 +51,8 @@ clr_popover = #192024
 bg_dark_3_semi = rgba(12,27,22,.8)
 clr_dark_semi = rgba(23,33,33,.5)
 // clr_primary = #ec008c
-clr_primary = #F39133 // PÖFF orange
-clr_primary_text = #F39133 // PÖFF orange
+clr_primary = #4fc4bf
+clr_primary_text = #4fc4bf // PÖFF orange
 clr_primary_semi = rgba(236,0,140,.2)
 clr_primary_light = rgba(195, 22, 28, 0.3)
 clr_secondary = #F67625
@@ -468,6 +468,25 @@ footer
 /* Grid-areas .grid_film - mobile 1 column */
 
 .grid_film
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_img_slider_box"\
+                        "f_title_box"\
+                        "f_synopsis_box"\
+                        "f_cred_box"\
+                        "f_runtime_box"\
+                        "f_interactive_box"\
+                        "f_screenings_box"\
+                        "f_dir_box"\
+                        "f_extra_box"\
+                        "f_qaclip_box"\
+                        "f_vialog_box"\
+                        "f_trailer_box"\
+                        "f_imgs_box"
+
+.grid_ind_event
     display grid
     grid-template-columns 1fr
     grid-template-rows auto
@@ -1450,6 +1469,7 @@ header
     padding-bottom calc(1rem + 1vw)
     display grid
     grid-template-columns 1
+    grid-template-rows auto
     grid-gap 2rem
     background-color bg_color_1
     p
@@ -1503,6 +1523,14 @@ header
     grid-area f_dir_box
     display flex
     flex-direction column
+    // grid-template-columns 1
+    // grid-template-rows auto
+
+.f_vialog_box
+    grid-area f_vialog_box
+    display flex
+    flex-direction column
+    padding 2rem
     // grid-template-columns 1
     // grid-template-rows auto
 
@@ -1910,10 +1938,11 @@ a.btn_popover
 /* SCREENINGS */
 
 .card_screening
-  max-width 100%
-  margin-left 0
-  margin-right 0
-//   margin-top calc(3rem + 1vw)
+    min-width 360px
+    max-width 100%
+    margin-left 0
+    margin-right 0
+    margin-bottom 2rem!important
 
 .grid_container_screening_time
   display grid
@@ -2261,6 +2290,20 @@ a.btn_popover
         text-decoration: none
         // color white_96
 
+#vialog
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 300
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
 .ss_title_detailed
     font-family font_h
     font-size calc(1.9rem + 2.4vw)
@@ -2511,9 +2554,26 @@ a.btn_popover
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
                             "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_vialog_box      f_vialog_box      f_vialog_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
+
+    .grid_ind_event
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_title_box       f_img_slider_box  f_img_slider_box"\
+                            "f_synopsis_box    f_synopsis_box    f_cred_box"\
+                            "f_synopsis_box    f_synopsis_box    f_runtime_box"\
+                            "f_interactive_box f_interactive_box f_interactive_box"\
+                            "f_screenings_box  f_screenings_box  f_screenings_box"\
+                            "f_dir_box         f_dir_box         f_extra_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_trailer_box     f_trailer_box     f_trailer_box"\
+                            "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
 
     .grid_cassette
         display grid
@@ -3020,10 +3080,11 @@ a.btn_popover
         margin 0
 
     .card_screening
-        min-width 300px
-        max-width 400px
+        min-width 400px
+        max-width 450px
         margin-left 1vw
         margin-right 1vw
+        margin-bottom 2rem
 
     .article_hero_head
         position relative
