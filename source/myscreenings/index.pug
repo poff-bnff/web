@@ -156,7 +156,7 @@ block content
 
                                     //- Kuvame kassetipealkirja
                                     h3.film_title_locale.dark_1.padding_bottom_2= cassette.title
-                                        p.btn.btn_secondary.issavedscreening(id=screening.id+'_is_savedscreening', onclick=`removeScreening(${screening.id});return false`, style={color: 'red', display:'block'}) X
+                                        p.btn.btn_secondary.issavedscreening(id=screening.id+'_is_savedscreening', onclick=`removeScreening(${screening.id});return false`)= self.label.film.removeSavedScreening
 
                                     //- Kuvame screeningtypes
                                     //- if screening.screening_types

@@ -51,7 +51,7 @@ function toggleFavButtons(shortlist_array) {
 function toggleSavedScreeningsButtons(savedScreenings) {
 
     var savedScreeningIds = []
-    for (j = 0; j < savedScreenings.length; j++){
+    for (j = 0; j < savedScreenings.length; j++) {
         savedScreeningIds.push(savedScreenings[j].screeningId)
     }
 
@@ -60,13 +60,17 @@ function toggleSavedScreeningsButtons(savedScreenings) {
     console.log('savedScreenings ', savedScreenings)
 
     var isSavedScreening_buttons = document.getElementsByClassName('issavedscreening')
-    // console.log(shortlist_array)
+    console.log(isSavedScreening_buttons)
 
     for (i = 0; i < isSavedScreening_buttons.length; i++) {
         var screening_id = isSavedScreening_buttons[i].id.split('_')[0]
         if (savedScreeningIds.includes(screening_id)) {
             isSavedScreening_buttons[i].style.display = 'block'
-            document.getElementById(screening_id + '_screening_id').style.display = 'block'        }
+            try{
+            document.getElementById(screening_id + '_screening_id').style.display = 'block'
+            }
+            catch(err){null}
+        }
         else {
             isSavedScreening_buttons[i].style.display = 'none'
         }
@@ -232,8 +236,9 @@ function removeScreening(screeningId) {
         console.log(data)
         if (data.ok) {
             try {
-                document.getElementById(screeningId + '_not_savedscreening').style.display = 'block'
+                console.log(screeningId + '_is_savedscreening')
                 document.getElementById(screeningId + '_is_savedscreening').style.display = 'none'
+                document.getElementById(screeningId + '_not_savedscreening').style.display = 'block'
             }
             catch (err) {
                 null

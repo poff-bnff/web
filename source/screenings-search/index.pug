@@ -168,7 +168,7 @@ block content
 
                                     //- Kuvame kassetipealkirja
                                     h3.film_title_locale.dark_1.padding_bottom_2= cassette.title
-                                        p(id= cassette.id+'nupp' style={color: 'red', display:'none'})
+                                        p.btn.btn_secondary.issavedscreening(id=screening.id+'_is_savedscreening', onclick=`removeScreening(${screening.id});return false` style={display:'none'})= self.label.film.removeSavedScreening
 
                                     //- Kuvame screeningtypes
                                     //- if screening.screening_types
