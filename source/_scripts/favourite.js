@@ -60,12 +60,10 @@ function toggleSavedScreeningsButtons(savedScreenings) {
     console.log('savedScreenings ', savedScreenings)
 
     var isSavedScreening_buttons = document.getElementsByClassName('issavedscreening')
-    console.log('isSavedScreening_buttons ', isSavedScreening_buttons)
     // console.log(shortlist_array)
 
     for (i = 0; i < isSavedScreening_buttons.length; i++) {
         var screening_id = isSavedScreening_buttons[i].id.split('_')[0]
-        console.log(screening_id, savedScreeningIds.includes(screening_id))
         if (savedScreeningIds.includes(screening_id)) {
             isSavedScreening_buttons[i].style.display = 'block'
             document.getElementById(screening_id + '_screening_id').style.display = 'block'        }
@@ -212,7 +210,7 @@ function removeFilm(movieId) {
 }
 
 function removeScreening(screeningId) {
-    console.log('saveFilmAsFavourite screeningId ', screeningId)
+    console.log('removeScreening ', screeningId)
 
     var myHeaders = new Headers();
 
@@ -241,7 +239,7 @@ function removeScreening(screeningId) {
                 null
             }
             try {
-                // document.getElementById(movieId + '_cassette_id').style.display = 'none'
+                document.getElementById(screeningId + '_screening_id').style.display = 'none'
             }
             catch (err) {
                 null
