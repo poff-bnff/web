@@ -1,365 +1,5 @@
 [
   {
-    "id": 2,
-    "name": "film",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-08-28T13:20:35.527Z",
-    "updated_at": "2020-11-10T08:26:00.126Z",
-    "label": [
-      {
-        "id": 236,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Pealkirja originaal",
-        "value_en": "Original title",
-        "value_ru": null,
-        "name": "titleOriginal"
-      },
-      {
-        "id": 237,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Pealkiri eesti keeles",
-        "value_en": "Local title",
-        "value_ru": null,
-        "name": "title_et"
-      },
-      {
-        "id": 238,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Ingliskeelne pealkiri",
-        "value_en": "Title in English",
-        "value_ru": null,
-        "name": "title_en"
-      },
-      {
-        "id": 239,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Venekeelne pealkiri",
-        "value_en": "Title in Russian",
-        "value_ru": null,
-        "name": "title_ru"
-      },
-      {
-        "id": 240,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Pealkiri inglise keeles",
-        "value_en": "Title in Estonian",
-        "value_ru": null,
-        "name": "titleSec"
-      },
-      {
-        "id": 241,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Riik",
-        "value_en": "Country",
-        "value_ru": null,
-        "name": "countries"
-      },
-      {
-        "id": 242,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Keel",
-        "value_en": "Language",
-        "value_ru": null,
-        "name": "languages"
-      },
-      {
-        "id": 243,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Aasta",
-        "value_en": "Year",
-        "value_ru": null,
-        "name": "year"
-      },
-      {
-        "id": 244,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Anna filmile oma hääl",
-        "value_en": "Vote for the film",
-        "value_ru": null,
-        "name": "audienceVote"
-      },
-      {
-        "id": 245,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kestus",
-        "value_en": "Runtime",
-        "value_ru": null,
-        "name": "runtime"
-      },
-      {
-        "id": 246,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Režissöör",
-        "value_en": "Director",
-        "value_ru": null,
-        "name": "director"
-      },
-      {
-        "id": 247,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Stsenarist",
-        "value_en": "Screenwriter",
-        "value_ru": null,
-        "name": "screenwriter"
-      },
-      {
-        "id": 248,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Operaator",
-        "value_en": "DoP",
-        "value_ru": null,
-        "name": "doP"
-      },
-      {
-        "id": 249,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Monteerija",
-        "value_en": "Editor",
-        "value_ru": null,
-        "name": "editor"
-      },
-      {
-        "id": 250,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Helilooja",
-        "value_en": "Composer",
-        "value_ru": null,
-        "name": "composer"
-      },
-      {
-        "id": 251,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Osades",
-        "value_en": "Cast",
-        "value_ru": null,
-        "name": "cast"
-      },
-      {
-        "id": 252,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Produktsioon",
-        "value_en": "Production",
-        "value_ru": null,
-        "name": "production"
-      },
-      {
-        "id": 253,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Sünopsis",
-        "value_en": "Synopsis",
-        "value_ru": null,
-        "name": "synopsis"
-      },
-      {
-        "id": 254,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Treiler",
-        "value_en": "Trailer",
-        "value_ru": null,
-        "name": "trailer"
-      },
-      {
-        "id": 255,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Festival",
-        "value_en": "Festival",
-        "value_ru": null,
-        "name": "festival"
-      },
-      {
-        "id": 256,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Esilinastus",
-        "value_en": "Premiere",
-        "value_ru": null,
-        "name": "premiereType"
-      },
-      {
-        "id": 257,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Programm",
-        "value_en": "Programme",
-        "value_ru": null,
-        "name": "programme"
-      },
-      {
-        "id": 258,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Žanr",
-        "value_en": "Genre",
-        "value_ru": null,
-        "name": "genre"
-      },
-      {
-        "id": 259,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Märksõnad",
-        "value_en": "Keywords",
-        "value_ru": null,
-        "name": "keywords"
-      },
-      {
-        "id": 260,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Teised festivalid",
-        "value_en": "Other festivals",
-        "value_ru": null,
-        "name": "otherFestivals"
-      },
-      {
-        "id": 261,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Auhinnad",
-        "value_en": "Awards",
-        "value_ru": null,
-        "name": "awards"
-      },
-      {
-        "id": 262,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Seansid",
-        "value_en": "Screenings",
-        "value_ru": null,
-        "name": "screenings"
-      },
-      {
-        "id": 263,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Q&A ehk vestlus filmitegijaga",
-        "value_en": "Q&A with the filmmaker",
-        "value_ru": null,
-        "name": "qaClip"
-      },
-      {
-        "id": 267,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Keeled",
-        "value_en": "Languages",
-        "value_ru": null,
-        "name": "languageSelect"
-      },
-      {
-        "id": 268,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Produtsent",
-        "value_en": "Producer",
-        "value_ru": null,
-        "name": "producer"
-      },
-      {
-        "id": 269,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kaasprodutsent",
-        "value_en": "Coproducer",
-        "value_ru": null,
-        "name": "coProducer"
-      },
-      {
-        "id": 380,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Lisa film minu shortlisti",
-        "value_en": "Add film to my shortlist",
-        "value_ru": "Add film to my shortlist",
-        "name": "addShortlist"
-      },
-      {
-        "id": 381,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Eemalda film shortlistist",
-        "value_en": "Remove film from shortlist",
-        "value_ru": "Remove film from shortlist",
-        "name": "removeShortlist"
-      },
-      {
-        "id": 382,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Filmi Shortlisti lisamiseks logi palun sisse",
-        "value_en": "Log in to add film to shortlist",
-        "value_ru": "Log in to add film to shortlist",
-        "name": "shortlistHelp"
-      }
-    ]
-  },
-  {
     "id": 6,
     "name": "userprofile",
     "created_by": {
@@ -1130,6 +770,386 @@
     ]
   },
   {
+    "id": 2,
+    "name": "film",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 4,
+      "firstname": "Siim",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "created_at": "2020-08-28T13:20:35.527Z",
+    "updated_at": "2020-11-12T15:50:26.929Z",
+    "label": [
+      {
+        "id": 236,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Pealkirja originaal",
+        "value_en": "Original title",
+        "value_ru": null,
+        "name": "titleOriginal"
+      },
+      {
+        "id": 237,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Pealkiri eesti keeles",
+        "value_en": "Local title",
+        "value_ru": null,
+        "name": "title_et"
+      },
+      {
+        "id": 238,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Ingliskeelne pealkiri",
+        "value_en": "Title in English",
+        "value_ru": null,
+        "name": "title_en"
+      },
+      {
+        "id": 239,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Venekeelne pealkiri",
+        "value_en": "Title in Russian",
+        "value_ru": null,
+        "name": "title_ru"
+      },
+      {
+        "id": 240,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Pealkiri inglise keeles",
+        "value_en": "Title in Estonian",
+        "value_ru": null,
+        "name": "titleSec"
+      },
+      {
+        "id": 241,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Riik",
+        "value_en": "Country",
+        "value_ru": null,
+        "name": "countries"
+      },
+      {
+        "id": 242,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Keel",
+        "value_en": "Language",
+        "value_ru": null,
+        "name": "languages"
+      },
+      {
+        "id": 243,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Aasta",
+        "value_en": "Year",
+        "value_ru": null,
+        "name": "year"
+      },
+      {
+        "id": 244,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Anna filmile oma hääl",
+        "value_en": "Vote for the film",
+        "value_ru": null,
+        "name": "audienceVote"
+      },
+      {
+        "id": 245,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kestus",
+        "value_en": "Runtime",
+        "value_ru": null,
+        "name": "runtime"
+      },
+      {
+        "id": 246,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Režissöör",
+        "value_en": "Director",
+        "value_ru": null,
+        "name": "director"
+      },
+      {
+        "id": 247,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Stsenarist",
+        "value_en": "Screenwriter",
+        "value_ru": null,
+        "name": "screenwriter"
+      },
+      {
+        "id": 248,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Operaator",
+        "value_en": "DoP",
+        "value_ru": null,
+        "name": "doP"
+      },
+      {
+        "id": 249,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Monteerija",
+        "value_en": "Editor",
+        "value_ru": null,
+        "name": "editor"
+      },
+      {
+        "id": 250,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Helilooja",
+        "value_en": "Composer",
+        "value_ru": null,
+        "name": "composer"
+      },
+      {
+        "id": 251,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Osades",
+        "value_en": "Cast",
+        "value_ru": null,
+        "name": "cast"
+      },
+      {
+        "id": 252,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Produktsioon",
+        "value_en": "Production",
+        "value_ru": null,
+        "name": "production"
+      },
+      {
+        "id": 253,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Sünopsis",
+        "value_en": "Synopsis",
+        "value_ru": null,
+        "name": "synopsis"
+      },
+      {
+        "id": 254,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Treiler",
+        "value_en": "Trailer",
+        "value_ru": null,
+        "name": "trailer"
+      },
+      {
+        "id": 255,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Festival",
+        "value_en": "Festival",
+        "value_ru": null,
+        "name": "festival"
+      },
+      {
+        "id": 256,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Esilinastus",
+        "value_en": "Premiere",
+        "value_ru": null,
+        "name": "premiereType"
+      },
+      {
+        "id": 257,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Programm",
+        "value_en": "Programme",
+        "value_ru": null,
+        "name": "programme"
+      },
+      {
+        "id": 258,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Žanr",
+        "value_en": "Genre",
+        "value_ru": null,
+        "name": "genre"
+      },
+      {
+        "id": 259,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Märksõnad",
+        "value_en": "Keywords",
+        "value_ru": null,
+        "name": "keywords"
+      },
+      {
+        "id": 260,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Teised festivalid",
+        "value_en": "Other festivals",
+        "value_ru": null,
+        "name": "otherFestivals"
+      },
+      {
+        "id": 261,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Auhinnad",
+        "value_en": "Awards",
+        "value_ru": null,
+        "name": "awards"
+      },
+      {
+        "id": 262,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Seansid",
+        "value_en": "Screenings",
+        "value_ru": null,
+        "name": "screenings"
+      },
+      {
+        "id": 263,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Q&A ehk vestlus filmitegijaga",
+        "value_en": "Q&A with the filmmaker",
+        "value_ru": null,
+        "name": "qaClip"
+      },
+      {
+        "id": 267,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Keeled",
+        "value_en": "Languages",
+        "value_ru": null,
+        "name": "languageSelect"
+      },
+      {
+        "id": 268,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Produtsent",
+        "value_en": "Producer",
+        "value_ru": null,
+        "name": "producer"
+      },
+      {
+        "id": 269,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kaasprodutsent",
+        "value_en": "Coproducer",
+        "value_ru": null,
+        "name": "coProducer"
+      },
+      {
+        "id": 380,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Lisa film minu shortlisti",
+        "value_en": "Add film to my shortlist",
+        "value_ru": "Add film to my shortlist",
+        "name": "addShortlist"
+      },
+      {
+        "id": 381,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Eemalda film shortlistist",
+        "value_en": "Remove film from shortlist",
+        "value_ru": "Remove film from shortlist",
+        "name": "removeShortlist"
+      },
+      {
+        "id": 382,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Filmi Shortlisti lisamiseks logi palun sisse",
+        "value_en": "Log in to add film to shortlist",
+        "value_ru": "Log in to add film to shortlist",
+        "name": "shortlistHelp"
+      },
+      {
+        "id": 389,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "minukava+",
+        "value_en": "minukava+",
+        "value_ru": null,
+        "name": "addSavedScreening"
+      },
+      {
+        "id": 390,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "minukava-",
+        "value_en": "minukava-",
+        "value_ru": null,
+        "name": "removeSavedScreening"
+      }
+    ]
+  },
+  {
     "id": 3,
     "name": "all",
     "created_by": {
@@ -1270,136 +1290,6 @@
     ]
   },
   {
-    "id": 7,
-    "name": "filters",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-05T20:45:47.073Z",
-    "updated_at": "2020-11-05T22:11:31.482Z",
-    "label": [
-      {
-        "id": 353,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Programmid",
-        "value_en": "Programmes",
-        "value_ru": "Программы",
-        "name": "programmes"
-      },
-      {
-        "id": 354,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Keeled",
-        "value_en": "Languages",
-        "value_ru": "Языки",
-        "name": "languages"
-      },
-      {
-        "id": 355,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Riigid",
-        "value_en": "Countries",
-        "value_ru": "Страны",
-        "name": "countries"
-      },
-      {
-        "id": 356,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Subtiitrid",
-        "value_en": "Subtitles",
-        "value_ru": "Субтитры",
-        "name": "subtitles"
-      },
-      {
-        "id": 357,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Esilinastused",
-        "value_en": "Premieres",
-        "value_ru": "Премьеры",
-        "name": "premieres"
-      },
-      {
-        "id": 358,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Linnad",
-        "value_en": "Towns",
-        "value_ru": "Города",
-        "name": "towns"
-      },
-      {
-        "id": 359,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kinod",
-        "value_en": "Cinemas",
-        "value_ru": "Кинотеатры",
-        "name": "cinemas"
-      },
-      {
-        "id": 360,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Otsi",
-        "value_en": "Search",
-        "value_ru": "Ускать",
-        "name": "search"
-      },
-      {
-        "id": 361,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kuupäevad",
-        "value_en": "Dates",
-        "value_ru": "Дни",
-        "name": "dates"
-      },
-      {
-        "id": 362,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kellaajad",
-        "value_en": "Times",
-        "value_ru": "Время",
-        "name": "times"
-      },
-      {
-        "id": 363,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Tühjenda filtrid",
-        "value_en": "Empry filters",
-        "value_ru": "Очищать фильтры",
-        "name": "empty"
-      }
-    ]
-  },
-  {
     "id": 5,
     "name": "menu",
     "created_by": {
@@ -1409,13 +1299,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 2,
-      "firstname": "Mariann",
-      "lastname": "Tapfer",
+      "id": 4,
+      "firstname": "Siim",
+      "lastname": "Sutt",
       "username": null
     },
     "created_at": "2020-09-08T09:07:05.424Z",
-    "updated_at": "2020-11-09T13:59:26.447Z",
+    "updated_at": "2020-11-13T11:07:39.481Z",
     "label": [
       {
         "id": 292,
@@ -1576,6 +1466,146 @@
         "value_en": "Shop",
         "value_ru": null,
         "name": "mainShop"
+      },
+      {
+        "id": 391,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "minu seansid",
+        "value_en": "my screenings",
+        "value_ru": "moi seanss",
+        "name": "mainMyScreenings"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "filters",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 5,
+      "firstname": "Martin",
+      "lastname": "Pennaste",
+      "username": null
+    },
+    "created_at": "2020-11-05T20:45:47.073Z",
+    "updated_at": "2020-11-13T13:16:40.501Z",
+    "label": [
+      {
+        "id": 353,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Programmid",
+        "value_en": "Programmes",
+        "value_ru": "Программы",
+        "name": "programmes"
+      },
+      {
+        "id": 354,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Keeled",
+        "value_en": "Languages",
+        "value_ru": "Языки",
+        "name": "languages"
+      },
+      {
+        "id": 355,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Riigid",
+        "value_en": "Countries",
+        "value_ru": "Страны",
+        "name": "countries"
+      },
+      {
+        "id": 356,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Subtiitrid",
+        "value_en": "Subtitles",
+        "value_ru": "Субтитры",
+        "name": "subtitles"
+      },
+      {
+        "id": 357,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Esilinastused",
+        "value_en": "Premieres",
+        "value_ru": "Премьеры",
+        "name": "premieres"
+      },
+      {
+        "id": 358,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Linnad",
+        "value_en": "Towns",
+        "value_ru": "Города",
+        "name": "towns"
+      },
+      {
+        "id": 359,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kinod",
+        "value_en": "Cinemas",
+        "value_ru": "Кинотеатры",
+        "name": "cinemas"
+      },
+      {
+        "id": 360,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Otsi",
+        "value_en": "Search",
+        "value_ru": "Ускать",
+        "name": "search"
+      },
+      {
+        "id": 361,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kuupäevad",
+        "value_en": "Dates",
+        "value_ru": "Дни",
+        "name": "dates"
+      },
+      {
+        "id": 362,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kellaajad",
+        "value_en": "Times",
+        "value_ru": "Время",
+        "name": "times"
+      },
+      {
+        "id": 363,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Tühjenda filtrid",
+        "value_en": "Empty filters",
+        "value_ru": "Очищать фильтры",
+        "name": "empty"
       }
     ]
   },
