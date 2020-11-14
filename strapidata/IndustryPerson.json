@@ -1,5 +1,123 @@
 [
   {
+    "id": 3,
+    "person": {
+      "id": 4073,
+      "created_by": 28,
+      "updated_by": 28,
+      "created_at": "2020-11-13T09:36:00.852Z",
+      "updated_at": "2020-11-13T09:36:00.926Z",
+      "firstName": "Danny",
+      "lastName": "Elfman",
+      "gender": 2,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": {
+        "id": 8516,
+        "et": "",
+        "en": "Danny Elfman, a four-time Oscar nominee, has established himself as one of the most versatile and accomplished film composers in the industry for over 30 years. He has collaborated with directors such as Tim Burton, Gus Van Sant, Sam Raimi, Peter Jackson, Ang Lee, Rob Minkoff, Guillermo del Toro, and David O´ Russell. Beginning with his first score on Tim Burton´s Pee-wee´s Big Adventure, Elfman has scored over 100 films, including: Milk (Oscar-nominated), Good Will Hunting (Oscar-nominated), Big Fish (Oscar-nominated), Men in Black (Oscar-nominated), Edward Scissorhands, Batman, To Die For, The Nightmare Before Christmas, Alice in Wonderland, Silver Linings Playbook, American Hustle, Justice League, Spiderman, A Simple Plan, Midnight Run, Sommersby, Dolores Claiborne. Most recently he has provided music for, Tim Burton film Dumbo for Disney, and The Grinch for Universal, and is currently working on the upcoming film The Voyage of Dr. Doolittle (2020), starring Robert Downey, Jr.",
+        "ru": null
+      },
+      "filmography": {
+        "id": 8517,
+        "et": null,
+        "en": null,
+        "ru": null
+      },
+      "profession": null,
+      "firstNameLastName": "Danny Elfman",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-13T09:47:03.603Z",
+    "updated_at": "2020-11-13T09:47:03.629Z",
+    "clipUrl": null,
+    "website": "https://www.dannyelfman.com/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "filmography": [],
+    "profilePicAtInd": {
+      "id": 3203,
+      "name": "fullsizeoutput_d9a3.jpeg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 562,
+      "height": 562,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpeg",
+          "url": "/uploads/thumbnail_fullsizeoutput_d9a3_40c6e0ae8c.jpeg",
+          "hash": "thumbnail_fullsizeoutput_d9a3_40c6e0ae8c",
+          "mime": "image/jpeg",
+          "name": "thumbnail_fullsizeoutput_d9a3.jpeg",
+          "path": null,
+          "size": 4.97,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "fullsizeoutput_d9a3_40c6e0ae8c",
+      "ext": ".jpeg",
+      "mime": "image/jpeg",
+      "size": 79.1,
+      "url": "/uploads/fullsizeoutput_d9a3_40c6e0ae8c.jpeg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 28,
+      "updated_by": 28,
+      "created_at": "2020-11-13T09:46:41.580Z",
+      "updated_at": "2020-11-13T09:46:41.924Z"
+    },
+    "images": [],
+    "role_at_films": [
+      {
+        "id": 5,
+        "roleNamePrivate": "Composer",
+        "created_by": 6,
+        "updated_by": 3,
+        "created_at": "2020-10-06T10:24:09.170Z",
+        "updated_at": "2020-10-11T09:10:20.643Z",
+        "order": 5,
+        "remoteId": "2123",
+        "roleName": {
+          "id": 4001,
+          "et": "Helilooja",
+          "en": "Composer",
+          "ru": "Композитор"
+        }
+      }
+    ],
+    "industry_person_types": [
+      {
+        "id": 10,
+        "type": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-13T09:37:55.735Z",
+        "updated_at": "2020-11-13T09:37:55.746Z"
+      }
+    ]
+  },
+  {
     "id": 2,
     "person": {
       "id": 2677,

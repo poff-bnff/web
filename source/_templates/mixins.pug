@@ -1,5 +1,5 @@
 //- lisab õige video treileriks, kasutab film.layout.pug
-mixin video(videoId)
+mixin video(videoId='')
     if videoId.length === 9
         iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}`
             frameborder='0' allow='accelerometer' autoplay='' encrypted-media=''
@@ -11,8 +11,8 @@ mixin video(videoId)
 
 
 //- autoplay video
-mixin videoAp(clipUrlDefault)
-    - var videoId = clipUrlDefault.split('=')[1]
+mixin videoAp(clipUrlDefault='')
+    - var videoId = clipUrlDefault.split('=')[1] || ''
     if videoId.length === 9
         iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}?background=1`
             frameborder='0' allow='accelerometer' encrypted-media=''
@@ -146,7 +146,7 @@ mixin dur(mins)
             eDisplayMoment1.innerHTML = t;
         })();
 
-mixin indEvDur(strapiTime)
+mixin indEvDur(strapiTime='')
     - var dom_id = Math.random()
     span(id = 'dt_' + dom_id)
 
