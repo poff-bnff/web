@@ -502,6 +502,13 @@ footer
     grid-template-rows: auto
     padding-top header_height
 
+.grid_search
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-columns: auto
+    grid-template-rows: auto
+    padding-top 150px
+
 .grid_article
   display grid
   grid-template-columns 1fr
@@ -1257,6 +1264,76 @@ header
     margin-bottom 3rem
     padding 0
 
+.schedule
+    padding-top header_height
+
+input, select
+    height 2rem
+    width 100%
+    background-color white
+    border 1px solid clr_grey_light
+    border-radius 3px
+    -moz-appearance none
+    -webkit-appearance none
+    appearance none
+    font-size 1rem
+    font-family font_h
+    font-weight 300
+    color dark_4
+    padding .2rem .5rem .1rem .5rem
+    margin 0
+
+.input_file
+    eight 2rem
+    width 100%
+    background-color white
+    border none
+    // border-radius 3px
+    -moz-appearance none
+    -webkit-appearance none
+    appearance none
+    font-size 1rem
+    font-family font_h
+    font-weight 300
+    color dark_4
+    padding .2rem .5rem .1rem .5rem
+    margin 0
+
+
+option
+    font-size 1rem
+    font-family font_h
+    font-weight 300
+    color dark_4
+    // color dark_4
+    margin 0
+
+.screening_head
+    padding .5rem 1rem .5rem 1rem
+    background-color bg_dark_4
+
+.svg_icon_small
+    // height calc(1.5rem + 0.1vw)
+    // width calc(1.5rem + 0.1vw)
+    // margin-right .5rem
+    // margin-top -.7rem
+    // stroke rgba(255, 255, 255, .5)
+    height 1.5rem
+    width 1.5rem
+    margin-right .5rem
+    margin-top -.2rem
+    stroke rgba(255, 255, 255, .5)
+
+.small_1
+    font-size 1rem
+
+
+.clear
+    background-color clr_primary
+    color white_96
+    border none
+    outline none
+    padding-top .2rem
 
 .f_img_slider_box
     grid-area f_img_slider_box
@@ -2268,6 +2345,18 @@ a.btn_popover
         grid-gap 1rem
         padding 1rem
         padding-top header_height
+
+    .grid_search
+        display grid
+        // grid-template-columns 1fr 1fr 1fr
+        grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
+        grid-template-rows auto
+        grid-gap 1rem
+        padding-left 6rem
+        padding-right 6rem
+        padding-top 150px
+        margin-bottom -2rem
+        z-index 999
 
     .grid_programmes
         display grid
