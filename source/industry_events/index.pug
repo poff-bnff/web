@@ -60,6 +60,8 @@ block content
                                                     span.dark_1.screening_venue= ` ${event.location.hall.cinema.name}`
                                                     if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
                                                         span.dark_1.city= ` ${event.location.hall.cinema.town.name}`
+                                        if event.videoUrl
+                                            h1.film_title_locale.dark_1= event.videoUrl
 
                                         //- section.f_synopsis_box
                                         //-     if event.lead && typeof event.lead === 'string'
