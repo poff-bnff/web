@@ -26,15 +26,16 @@ const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening']
 const STRAPIDATA_FILMS = STRAPIDATA['Film']
 const STRAPIDATA_FESTIVALS = STRAPIDATA['Festival']
 const STRAPIDATA_FESTIVALEDITIONS = STRAPIDATA['FestivalEdition']
+
 const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
-    const festival_editions = (s_programme.festival_editions || [])
+    const festivals = (s_programme.festival_editions || [])
         .map(p_festival_edition => {
-            const s_festival_editions = STRAPIDATA_FESTIVALEDITIONS.filter(s_fested => p_festival_edition.id === s_fested.id)
-            if (s_festival_editions.length === 0) {
-                timer.log(__filename, {'ERROR': 'festival edition not found in Strapi', s_fested, p_festival_edition})
+            const s_festivals = STRAPIDATA_FESTIVALS.filter(s_festival => p_festival_edition.festival === s_festival.id)
+            if (s_festivals.length === 0) {
+                timer.log(__filename, {'ERROR': 'festival not found in Strapi', 's_programme': s_programme, STRAPIDATA_FESTIVALS})
                 throw new Error()
             }
-            return s_festival_editions[0]
+            return s_festivals[0]
         })
     const d_programme = {
         id: s_programme.id,
@@ -50,14 +51,14 @@ const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
         }
     }
 
-    d_programme.search = festival_editions.map(festival_edition => {
+    d_programme.search = festivals.map(festival => {
         try {
             return {
-                ix: festival_edition.id + '_' + s_programme.id,
+                ix: festival.id + '_' + s_programme.id,
                 value: {
-                    et: d_programme.name.et ? festival_edition.festival.name_et + ' ' + d_programme.name.et : null,
-                    en: d_programme.name.en ? festival_edition.festival.name_en + ' ' + d_programme.name.en : null,
-                    ru: d_programme.name.ru ? festival_edition.festival.name_et + ' ' + d_programme.name.ru : null,
+                    et: d_programme.name.et ? festival.name_et + ' ' + d_programme.name.et : null,
+                    en: d_programme.name.en ? festival.name_en + ' ' + d_programme.name.en : null,
+                    ru: d_programme.name.ru ? festival.name_et + ' ' + d_programme.name.ru : null,
                 }
             }
         } catch (error) {
@@ -68,7 +69,7 @@ const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
     return d_programme
 })
 
-const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 0
+const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 10
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
 const whichScreeningTypesToFetch = ['first screening', 'regular', 'online kino']
@@ -96,7 +97,8 @@ for (const s_cassette of STRAPIDATA_CASSETTE) {
     fs.mkdirSync(cassette_path, { recursive: true })
 
     const cassette_pug_path = path.join(cassette_path, 'index.pug')
-    fs.writeFileSync(cassette_pug_path, `include /_templates/cassette_templates/cassette_poff_index_template.pug`)
+    // fs.writeFileSync(cassette_pug_path, `include /_templates/cassette_templates/temp_cassette_single_film_template.pug`)
+    fs.writeFileSync(cassette_pug_path, `include /_templates/cassette_templates/temp_cassette_single_film_template.pug`)
 
     const s_films = s_cassette.orderedFilms
         .sort((a, b) => a.order < b.order)
@@ -164,6 +166,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                             film.credentials.producer,
                             film.credentials.screenwriter,
                             film.credentials.music,
+                            film.credentials.composer,
                             film.credentials.cast
                     ]
                 }), cassette.id, lang
@@ -194,6 +197,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 'Producer': distill_credentials(s_film, 'Producer'),
                 'Screenwriter': distill_credentials(s_film, 'Screenwriter'),
                 'Music': distill_credentials(s_film, 'Music'),
+                'Composer': distill_credentials(s_film, 'Composer'),
                 'Cast': distill_credentials(s_film, 'Cast')
             }
             const countries = distill_ordered_countries(s_film, lang)
@@ -201,7 +205,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 id: s_film.id,
                 titleBox: {
                     title: s_film[`title_${lang}`] || null,
-                    original: s_film['title_original'] || null,
+                    original: s_film['titleOriginal'] || null,
                     en: s_film['title_en'] || null,
                     et: s_film['title_et'] || null,
                     ru: s_film['title_ru'] || null
@@ -222,6 +226,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     producer: credentials['Producer'],
                     screenwriter: credentials['Screenwriter'],
                     music: credentials['Music'],
+                    composer: credentials['Composer'],
                     cast: credentials['Cast']
                 },
                 _programmeIx: distill_programme_selectors(s_film),
@@ -397,10 +402,17 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         function distill_programme_selectors(s_film) {
             try {
                 return (s_film.tags.programmes || []).map(s_programme => {
-                    return DISTILLED_PROGRAMMES.filter(d_programme => d_programme.id === s_programme.id)[0].search.map(d_search => d_search.ix)
-                }).flat(1)
+                    try {
+                        const d_programme = DISTILLED_PROGRAMMES.filter(d_programme => d_programme.id === s_programme.id)[0]
+                        return d_programme.search.map(d_search => d_search.ix)
+                    } catch (error) {
+                        timer.log(__filename, {INFO: 'no programme selectors for film', DISTILLED_PROGRAMMES, s_programme, film_id: s_film.id, error})
+                        throw error
+                    }
+                }).flat()
             } catch (error) {
-                timer.log(__filename, {INFO: 'no programme selectors for film', 'film id': s_film.id, error})
+                // timer.log(__filename, {INFO: 'no programme selectors for film', 'film.tags.programmes': s_film.tags.programmes, DISTILLED_PROGRAMMES: DISTILLED_PROGRAMMES[0], error})
+                throw error
                 return []
             }
         }
@@ -428,10 +440,11 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     time: screening_moment.format('HH:mm') || null,
                     datetime: s_screening.dateTime || null,
                     name: s_cassette[`title_${lang}`] || s_cassette[`title_en`] || null,
+                    codeAndTitle: s_screening.codeAndTitle,
                     duration: s_screening.durationTotal || null,
                     subtitle_languages: distill_datapieces(s_screening.subtitles, `name_${lang}`),
-                    booking_url: s_screening.booking_url || null,
-                    ticketing_url: s_screening.ticketing_url || null,
+                    booking_url: s_screening.bookingUrl || null,
+                    ticketing_url: s_screening.ticketingUrl || null,
                     location: {
                         hall_name: distill_hall_name(s_screening, lang),
                         cinema_name: distill_cinema_name(s_screening, lang),
@@ -441,7 +454,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     intro: distill_intro_qanda_conversation(s_screening, 'Intro'),
                     conversation: distill_intro_qanda_conversation(s_screening, 'Conversation')
                 }
-            }).sort((a, b) => { return new Date(a.dateTime) - new Date(b.dateTime) })
+            }).sort((a, b) => { return new Date(a.datetime) - new Date(b.datetime) })
         } catch (error) {
             timer.log(__filename, {INFO: 'no screenings for cassette', 'cassette id': s_cassette.id, lang})
             return []
