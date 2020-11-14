@@ -65,13 +65,7 @@ block content
 
     //-     h3#nonetoshow.sub_section_headline(style='display: none;')
 
-    content#content
-        br
-        br
-        br
-        br
-        br
-        br
+    section#content.schedule
 
         if self.data.events
             -
@@ -84,9 +78,10 @@ block content
                 var uniqueDate = [...new Set(dates)]
                 var count = 1
             each date in uniqueDate
-                h3.section_headline= `${date} / Day ${count}`
+                h3.calendar_headline= `${date}`
+                //- h3.calendar_headline= `${date} / Day ${count}`
                 - count++
-                main.grid_films
+                section.grid_events
                     -
                         var sortFunction = function(a, b) {
                             return (a.startTime > b.startTime) ? 1 : ((b.startTime > a.startTime) ? -1 : 0)

@@ -68,6 +68,7 @@ block content
                                 span.city= ` ${self.location.hall.cinema.town.name}`
 
             section.f_synopsis_box
+                .str_info_meta_gi
                 .synopsis_gi
                     if self.lead && typeof self.lead === 'string'
                         p.dark_1
@@ -76,6 +77,8 @@ block content
                     if self.description && typeof self.description === 'string'
                         p.dark_1
                             +format(self.description)
+
+            section.f_cred_box
 
 
             //- iga eventiga seotud projekti kohta sooviks lehele title_en, project_types, linki projekti lehele
