@@ -369,13 +369,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
+      "id": 14,
+      "firstname": "Heleen",
+      "lastname": "Sutt",
       "username": null
     },
     "created_at": "2020-10-13T23:08:08.320Z",
-    "updated_at": "2020-11-09T14:17:40.562Z",
+    "updated_at": "2020-11-14T11:54:13.257Z",
     "name": {
       "id": 4071,
       "et": "Filmid",
@@ -471,6 +471,42 @@
           "et": "20. Just Filmi kataloog",
           "en": "Just Film catalogue",
           "ru": "Just Film catalogue"
+        },
+        "customUrl": null
+      },
+      {
+        "id": 15,
+        "just_filmi_article": {
+          "id": 21,
+          "created_by": 14,
+          "updated_by": 14,
+          "created_at": "2020-11-14T11:53:46.873Z",
+          "updated_at": "2020-11-14T11:53:46.954Z",
+          "title_et": "Ajakava",
+          "slug_et": "ajakava",
+          "title_en": "Just Film Timetables",
+          "slug_en": "just-film-timetables",
+          "title_ru": "Just Filmi ajakavad",
+          "slug_ru": "just-filmi-ajakavad",
+          "lead_et": "Just Filmi Tallinna ja Tartu ajakavad!",
+          "lead_en": "Just Film Tallinn timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nJust Film Tartu timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
+          "lead_ru": "Just Filmi Tallinna ja Tartu ajakavad!",
+          "contents_et": "Tutvu Just Filmi programmi Tallinna ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nTutvu Just Filmi programmi Tartu ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
+          "contents_en": null,
+          "contents_ru": "Just Film Tallinn timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nJust Film Tartu timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
+          "publishFrom": null,
+          "publishUntil": null,
+          "publish_et": true,
+          "publish_en": true,
+          "publish_ru": true
+        },
+        "order": 2,
+        "namePrivate": "Ajakava",
+        "name": {
+          "id": 28957,
+          "et": "Ajakava",
+          "en": "Ajakava",
+          "ru": "Ajakava"
         },
         "customUrl": null
       }
