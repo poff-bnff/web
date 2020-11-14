@@ -25291,13 +25291,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 26,
-      "firstname": "Andres",
-      "lastname": "Lestal",
+      "id": 30,
+      "firstname": "Egle",
+      "lastname": "Loor",
       "username": null
     },
     "created_at": "2020-10-22T11:49:13.839Z",
-    "updated_at": "2020-10-27T11:42:37.994Z",
+    "updated_at": "2020-11-14T14:11:18.974Z",
     "domain": {
       "id": 5,
       "Url": null,
@@ -26187,6 +26187,63 @@
                 "updated_by": 6,
                 "created_at": "2020-09-05T20:16:13.352Z",
                 "updated_at": "2020-09-05T20:16:13.924Z"
+              }
+            ]
+          },
+          {
+            "id": 412,
+            "person": null,
+            "eMailAtTeam": null,
+            "phoneNrAtTeam": null,
+            "roleAtTeam_et": "Industry@Tallinn & Baltic Event Producer",
+            "roleAtTeam_en": "Industry@Tallinn & Baltic Event Producer",
+            "roleAtTeam_ru": null,
+            "emailAtTeam": "laura.roosaar@poff.ee",
+            "phoneAtTeam": "+372 5656 6635",
+            "order": null,
+            "professions_et": null,
+            "professions_en": null,
+            "professions_ru": null,
+            "country": null,
+            "roleAtJury_et": null,
+            "roleAtJury_en": null,
+            "roleAtJury_ru": null,
+            "about_et": null,
+            "about_en": null,
+            "about_ru": null,
+            "pictureAtTeam": [
+              {
+                "id": 3239,
+                "name": "ind.lauraroosaar.jpeg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 200,
+                "height": 185,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpeg",
+                    "url": "/uploads/thumbnail_42nkna_Vc_2048e52d_5af4189edf.jpeg",
+                    "hash": "thumbnail_42nkna_Vc_2048e52d_5af4189edf",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_42nknaVc-2048e52d.jpeg",
+                    "path": null,
+                    "size": 6.04,
+                    "width": 169,
+                    "height": 156
+                  }
+                },
+                "hash": "42nkna_Vc_2048e52d_5af4189edf",
+                "ext": ".jpeg",
+                "mime": "image/jpeg",
+                "size": 8.14,
+                "url": "/uploads/42nkna_Vc_2048e52d_5af4189edf.jpeg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 30,
+                "updated_by": 30,
+                "created_at": "2020-11-14T14:08:13.988Z",
+                "updated_at": "2020-11-14T14:08:27.671Z"
               }
             ]
           }
