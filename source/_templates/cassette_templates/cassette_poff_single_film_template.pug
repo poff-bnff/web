@@ -428,7 +428,7 @@ main.grid_film(id=self.id)
 
                                 .card-body.bg_dark_3
                                     .screening_info_blokk
-                                        if film.title
+                                        if screening.codeAndTitle
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.name
                                                 span.screening_info_value= screening.codeAndTitle
@@ -448,29 +448,37 @@ main.grid_film(id=self.id)
 
                                         - var iqnac = screening.introQaConversation
                                         //- Screening Intro
-                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.guest }).length > 0 && typeof iqnac.filter(i => { return i.type === 'Intro' && i.guest })[0].guest[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.introGuests
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].guest.join(', ')
-                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.presenter }).length > 0 && typeof iqnac.filter(i => { return i.type === 'Intro' && i.presenter })[0].presented[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.introPresenters
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].presenter.join(', ')
-                                        //- Screening QandA
-                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.guest }).length > 0 && typeof iqnac.filter(i => { return i.type === 'QandA' && i.guest })[0].guest[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.qaGuests
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].guest.join(', ')
-                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.presenter }).length > 0 && typeof iqnac.filter(i => { return i.type === 'QandA' && i.presenter })[0].presenter[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.introPresenters
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].presenter.join(', ')
+                                        if iqnac
+                                            - var introGuests = iqnac.filter(i => { return i.type === 'Intro' && i.guest })
+                                            if introGuests.length > 0 && typeof introGuests[0].guest[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.introGuests
+                                                    span.screening_info_value= introGuests[0].guest.join(', ')
 
-                                        if iqnac && iqnac[0].duration
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.qaDuration
-                                                span.screening_info_value
-                                                    +dur(iqnac[0].duration)
+                                            - var introPresenters = iqnac.filter(i => { return i.type === 'Intro' && i.presenter })
+                                            if introPresenters.length > 0 && typeof introPresenters[0].presenter[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.introPresenter
+                                                    span.screening_info_value= introPresenters[0].presenter.join(', ')
+
+                                            //- Screening QandA
+                                            - var qaGuests = iqnac.filter(i => { return i.type === 'QandA' && i.guest })
+                                            if qaGuests.length > 0 && typeof qaGuests[0].guest[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaGuests
+                                                    span.screening_info_value= qaGuests[0].guest.join(', ')
+
+                                            - var qaPresenter = iqnac.filter(i => { return i.type === 'QandA' && i.presenter })
+                                            if qaPresenter.length > 0 && typeof qaPresenter[0].presenter[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaPresenter
+                                                    span.screening_info_value= qaPresenter[0].presenter.join(', ')
+
+                                            if iqnac[0].duration
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaDuration
+                                                    span.screening_info_value
+                                                        +dur(iqnac[0].duration)
 
                                         if screening.extraInfo && typeof screening.extraInfo !== 'object'
                                             .str_info_grid_3
