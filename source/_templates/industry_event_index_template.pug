@@ -52,8 +52,9 @@ block content
                 h1.film_title_detailed= self.title
 
                 if self.startTime && typeof self.startTime === 'string'
-                    p.dark_1
-                        +localdate(self.startTime)
+                    p
+                        +screeningDate(self.startTime)
+                        //- +localdate(self.startTime)
 
                 if self.durationTime
                     p
@@ -79,6 +80,14 @@ block content
                             +format(self.description)
 
             section.f_cred_box
+
+
+            section#trailer.f_trailer_box
+                .section_headline= self.label.film.trailer
+                    .embed-responsive.embed-responsive-16by9.m-0.p-0
+                        //- if trailer.videoCode
+                        //-     +video(trailer.videoCode)
+
 
 
             //- iga eventiga seotud projekti kohta sooviks lehele title_en, project_types, linki projekti lehele
