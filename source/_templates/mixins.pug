@@ -28,15 +28,41 @@ mixin videoVl(videoUrl='')
 
 
 
-//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kellaaeg, kuvatakse kasutaja arvuti seadete formaadis (nt 12:00 PM)
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kellaaeg (nt 12:00 PM)
 //- Industry events tarbeks peamiselt
-mixin timeEET(dateStringUTC)
+mixin screeningTimeEET(dateStringUTC)
     - var dom_id = Math.random()
     div(id = 'dt_' + dom_id)
 
     script.
         (function()
         {
+
+            moment.updateLocale('en', {
+                longDateFormat : {
+                    LT: "hh:mm A",
+                    L: "MM/DD/YYYY",
+                    l: "M/D/YYYY",
+                    LL: "MMMM Do YYYY",
+                    ll: "MMM D YYYY",
+                    LLL: "MMMM Do YYYY LT",
+                    lll: "MMM D YYYY LT",
+                    LLLL: "dddd, MMMM Do YYYY LT",
+                    llll: "ddd, MMM D YYYY LT"
+                }
+            });
+
+            moment.updateLocale('et', {
+                longDateFormat: {
+                    LT: 'HH:mm',
+                    LTS: 'H:mm:ss',
+                    L: 'DD.MM.YYYY',
+                    LL: 'D. MMMM YYYY',
+                    LLL: 'D. MMMM YYYY H:mm',
+                    LLLL: 'dddd, D. MMMM YYYY H:mm'
+                }
+            });
+
             moment.locale('#{self.locale}');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
             var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('LT');
@@ -44,9 +70,9 @@ mixin timeEET(dateStringUTC)
 
         })();
 
-//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET päeva nimetus ja kuupäev, kuvatakse kasutaja arvuti seadete formaadis (nt Tue 11/10/2020)
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kuupäev kuu nime ja päeva nimega, (nt 10th Nov, Tuesday)
 //- Industry events tarbeks peamiselt
-mixin dateEET(dateStringUTC)
+mixin screeningDateEET(dateStringUTC)
     - var dom_id = Math.random()
     div(id = 'dt_' + dom_id)
 
@@ -56,10 +82,10 @@ mixin dateEET(dateStringUTC)
             moment.locale('#{self.locale}');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
 
-            var date_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('L');
-            var weekDay_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('ddd');
+            var weekDay_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('Do MMM');
+            var date_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('dddd');
 
-            eDisplayMoment1.innerHTML = weekDay_EET + ' ' +  date_EET;
+            eDisplayMoment1.innerHTML = weekDay_EET + ', ' +  date_EET;
 
         })();
 
