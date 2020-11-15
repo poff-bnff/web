@@ -84,19 +84,10 @@ main.grid_film(id=self.id)
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
                     //- todo #383
-                    if film.orderedCountries
-                        - var countriesNames = function(item) {
-                        -   if(item.country && item.country.name) {
-                        -       var itemNames = item.country.name
-                        -       return itemNames
-                        -   }
-                        - }
-
+                    if film.orderedCountriesDisplay
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                            - var mapCountries = sortCountries.map(countriesNames)
-                            .str_info_value= mapCountries.join(', ')
+                            .str_info_value= film.orderedCountriesDisplay
 
                     if film.year
                         .str_info_grid_3
