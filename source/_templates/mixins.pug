@@ -28,6 +28,43 @@ mixin videoVl(videoUrl='')
 
 
 
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kellaaeg, kuvatakse kasutaja arvuti seadete formaadis (nt 12:00 PM)
+//- Industry events tarbeks peamiselt
+mixin timeEET(dateStringUTC)
+    - var dom_id = Math.random()
+    div(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('LT');
+            eDisplayMoment1.innerHTML = time_EET;
+
+        })();
+
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET päeva nimetus ja kuupäev, kuvatakse kasutaja arvuti seadete formaadis (nt Tue 11/10/2020)
+//- Industry events tarbeks peamiselt
+mixin dateEET(dateStringUTC)
+    - var dom_id = Math.random()
+    div(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+
+            var date_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('L');
+            var weekDay_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('ddd');
+
+            eDisplayMoment1.innerHTML = weekDay_EET + ' ' +  date_EET;
+
+        })();
+
+
+
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
 //- sisend kujul (2020-08-10T22:45:00+0300)
 mixin localdatetime(dateString)
