@@ -109,15 +109,21 @@ block content
                             }
 
                         a.card_film(id= event.id href= `/${lang_path}events/${event.slug}`)
-                            .container_frame_16_9
 
-                                //- PILDID
-                                if event.images && event.images[0]
-                                    img.container_contents_16_9(src=`https://assets.poff.ee/img/${event.images[0].hash}${event.images[0].ext}` alt = event.title)
-                                else
-                                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                            .card_film_title
 
-                            .screening_head
+                                    h3.film_title_locale.dark_1.padding_bottom_2= event.title
+                                        p(id= event.id+'nupp' style={color: 'red', display:'none'})
+
+                            //- .container_frame_16_9
+
+                            //-     //- PILDID
+                            //-     if event.images && event.images[0]
+                            //-         img.container_contents_16_9(src=`https://assets.poff.ee/img/${event.images[0].hash}${event.images[0].ext}` alt = event.title)
+                            //-     else
+                            //-         img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+
+                            .event_card_footer
                                 .grid_container_screening_time
                                     div
                                         svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
@@ -135,22 +141,23 @@ block content
                                             polyline(points='12 6 12 12 16 14')
                                         span.screening_time.small_1
                                             +screeningTime(event.startTime)
+                                        span.screening_time.small_1 &nbsp;EET
 
-                                .container_screening_location
-                                    svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                                        path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
-                                        circle(cx='12' cy='10' r='3')
+                                //- .container_screening_location
+                                //-     svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                //-         path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
+                                //-         circle(cx='12' cy='10' r='3')
 
-                                    if event.location && event.location.hall && event.location.hall.name
-                                        if event.location.hall && event.location.hall.name
-                                            span.screening_hall.small_1= event.location.hall.name
-                                            if event.location.hall.cinema && event.location.hall.cinema.name
-                                                span.screening_venue.small_1= ` ${event.location.hall.cinema.name}`
-                                                if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
-                                                    span.city.small_1= ` ${event.location.hall.cinema.town.name}`
+                                //-     if event.location && event.location.hall && event.location.hall.name
+                                //-         if event.location.hall && event.location.hall.name
+                                //-             span.screening_hall.small_1= event.location.hall.name
+                                //-             if event.location.hall.cinema && event.location.hall.cinema.name
+                                //-                 span.screening_venue.small_1= ` ${event.location.hall.cinema.name}`
+                                //-                 if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
+                                //-                     span.city.small_1= ` ${event.location.hall.cinema.town.name}`
 
 
-                            .card_film_title
+                            //- .card_film_title
 
                                     //- Eeldame, et screeningul on datetime
                                     //- if event.dateTime
@@ -158,8 +165,8 @@ block content
                                     //- h3.film_title_locale.dark_1= `${event.id} - ${event.dateTime}`
 
                                     //- Kuvame kassetipealkirja
-                                    h3.film_title_locale.dark_1.padding_bottom_2= event.title
-                                        p(id= event.id+'nupp' style={color: 'red', display:'none'})
+                                    //- h3.film_title_locale.dark_1.padding_bottom_2= event.title
+                                    //-     p(id= event.id+'nupp' style={color: 'red', display:'none'})
 
                                     //- Kuvame screeningtypes
                                     //- if event.screening_types

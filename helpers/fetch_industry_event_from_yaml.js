@@ -17,6 +17,28 @@ const DOMAIN = process.env['DOMAIN'] || 'industry.poff.ee';
 const mapping = DOMAIN_SPECIFICS.domain
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 
+function convert_to_UTC(datetime) {
+    datetime = datetime ? new Date(datetime) : new Date()
+    try {
+        return new Date(
+            Date.UTC(
+                datetime.getUTCFullYear(),
+                datetime.getUTCMonth(),
+                datetime.getUTCDate(),
+                datetime.getUTCHours(),
+                datetime.getUTCMinutes(),
+                datetime.getUTCSeconds(),
+                datetime.getUTCMilliseconds()
+            )
+        )
+    } catch (error) {
+        throw new Error('Invalid input date')
+    }
+
+}
+
+const currentTimeUTC = convert_to_UTC()
+
 for (const lang of allLanguages) {
     const industryPersonsPath = path.join(fetchDir, `industrypersons.${lang}.yaml`)
     const industryPersonsYaml = yaml.safeLoad(fs.readFileSync(industryPersonsPath, 'utf8'));
@@ -28,11 +50,22 @@ for (const lang of allLanguages) {
     var allData = []
     for (const ix in STRAPIDATA_INDUSTRY_EVENT) {
 
-
         let element = JSON.parse(JSON.stringify(STRAPIDATA_INDUSTRY_EVENT[ix]));
 
         if (!element.startTime) {
             console.log(`ERROR! Industry event ID ${element.id} missing startTime`);
+            continue
+        }
+
+        if (!element.publish) {
+            continue
+        }
+
+        if (element.publishFrom && convert_to_UTC(element.publishFrom) > currentTimeUTC) {
+            continue
+        }
+
+        if (element.publishUntil && convert_to_UTC(element.publishUntil) < currentTimeUTC) {
             continue
         }
 
@@ -71,6 +104,7 @@ for (const lang of allLanguages) {
 
     if (allData.length) {
         dataToYAML = allData.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+        console.log(`${dataToYAML.length} Industry Events ready for building`);
     }
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
