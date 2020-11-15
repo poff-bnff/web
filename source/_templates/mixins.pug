@@ -28,7 +28,7 @@ mixin videoVl(videoUrl='')
 
 
 
-//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kellaaeg, kuvatakse kasutaja arvuti seadete formaadis (nt 12:00 PM)
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kellaaeg (nt 12:00 PM)
 //- Industry events tarbeks peamiselt
 mixin screeningTimeEET(dateStringUTC)
     - var dom_id = Math.random()
@@ -70,7 +70,7 @@ mixin screeningTimeEET(dateStringUTC)
 
         })();
 
-//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET päeva nimetus ja kuupäev, kuvatakse kasutaja arvuti seadete formaadis (nt Tue 11/10/2020)
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kuupäev kuu nime ja päeva nimega, (nt 10th Nov, Tuesday)
 //- Industry events tarbeks peamiselt
 mixin screeningDateEET(dateStringUTC)
     - var dom_id = Math.random()
