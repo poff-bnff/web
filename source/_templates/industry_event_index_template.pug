@@ -68,9 +68,13 @@ block content
             section.f_title_box
 
                 .premiere_type
-                    if self.project_type
+                    if self.industry_categories
                         //- && self.project_type.type
-                        p.premiere_type= self.project_type.type
+                        p.premiere_type= self.industry_categories.map(cat => cat.name).join(', ')
+                //- .premiere_type
+                //-     if self.project_type
+                //-         //- && self.project_type.type
+                //-         p.premiere_type= self.project_type.type
                 h1.film_title_detailed= self.title
 
                 if self.startTime && typeof self.startTime === 'string'
@@ -162,29 +166,30 @@ block content
                                 if indProj.project_types
                                     h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
 
+    section.team
+        if self.industry_people
+            h1.section_headline= 'SIIA NÄITEKS LABEL PERSOONIDE KOHTA'
+            h1.sub_section_headline= 'Või veel midagi'
+            .sub_team
+                each indPerson in self.industry_people
+                    if indPerson.slug
+                        .person
+                            .person_head
+                                a(href=`/${indPerson.slug}`)
+                                    if indPerson.profilePicAtInd
+                                        - var personPic = assetsDir + indPerson.profilePicAtInd.hash + indPerson.profilePicAtInd.ext
+                                    else if indPerson.person.picture
+                                        - var personPic = assetsDir + indPerson.person.picture.hash + indPerson.person.picture.ext
+                                    else
+                                        - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
+                                    img.person_img(src=personPic alt=`${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`)
 
-
-            //- iga personi kohta tema pilti, nime, role_at_films, industry_person_type ja linki tema lehele
-            main.grid_films
-
-                if self.industry_people
-                    each indPerson in self.industry_people
-                        if indPerson.slug
-                            a(href=`/${indPerson.slug}`)
-                                if indPerson.role_at_films
-                                    h3.dark_1= indPerson.role_at_films.map(role => role.roleName).join(', ')
-
-                                if indPerson.industry_person_types
-                                    h3.dark_1= indPerson.industry_person_types.map(type => type.type).join(', ')
-
-                                h1.dark_1= `${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`
-
-                                if indPerson.profilePicAtInd
-                                    - var personPic = assetsDir + indPerson.profilePicAtInd.hash + indPerson.profilePicAtInd.ext
-                                else if indPerson.person.picture
-                                    - var personPic = assetsDir + indPerson.person.picture.hash + indPerson.person.picture.ext
-                                else
-                                    - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
-                                img.person_img(src=personPic alt=`${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`)
-
+                                    .person_body.text_center
+                                        h4.text_center= `${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`
+                                        p
+                                            if indPerson.role_at_films
+                                                span= indPerson.role_at_films.map(role => role.roleName).join(', ')
+                                                br
+                                            if indPerson.industry_person_types
+                                                span= indPerson.industry_person_types.map(type => type.type).join(', ')
 
