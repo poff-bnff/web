@@ -47,9 +47,13 @@ block content
             section.f_title_box
 
                 .premiere_type
-                    if self.project_type
+                    if self.industry_categories
                         //- && self.project_type.type
-                        p.premiere_type= self.project_type.type
+                        p.premiere_type= self.industry_categories.map(cat => cat.name).join(', ')
+                //- .premiere_type
+                //-     if self.project_type
+                //-         //- && self.project_type.type
+                //-         p.premiere_type= self.project_type.type
                 h1.film_title_detailed= self.title
 
                 if self.startTime && typeof self.startTime === 'string'
