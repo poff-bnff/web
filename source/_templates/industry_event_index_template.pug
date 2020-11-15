@@ -47,27 +47,54 @@ block content
             section.f_title_box
 
                 .premiere_type
-                    if self.project_type && self.project_type.type
+                    if self.project_type
+                        //- && self.project_type.type
                         p.premiere_type= self.project_type.type
                 h1.film_title_detailed= self.title
 
                 if self.startTime && typeof self.startTime === 'string'
-                    p.dark_1
-                        +localdate(self.startTime)
 
-                if self.durationTime
-                    p
-                        +indEvDur(self.durationTime)
+                    .str_info_blokk_1
 
-                if self.location && self.location.hall && self.location.hall.name
-                    if self.location.hall && self.location.hall.name
-                        span.screening_hall= self.location.hall.name
-                        if self.location.hall.cinema && self.location.hall.cinema.name
-                            span.screening_venue= ` ${self.location.hall.cinema.name}`
-                            if self.location.hall.cinema.town && self.location.hall.cinema.town.name && self.location.hall.cinema.town.country && self.location.hall.cinema.town.country.name
-                                span.city= ` ${self.location.hall.cinema.town.name}`
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.eventDate
+                            .str_info_value
+                                +screeningDate(self.startTime)
+
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.eventTimeEet
+                            .str_info_value
+                                +screeningTime(self.startTime)
+
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.eventTimeUser
+                            .str_info_value
+                                +screeningTime(self.startTime)
+
+
+
+                //- if self.startTime && typeof self.startTime === 'string'
+                //-     p
+                //-         +screeningDate(self.startTime)
+                //-         //- +localdate(self.startTime)
+                //-     p
+                //-         +screeningTime(self.startTime)
+
+                //- if self.durationTime
+                //-     p
+                //-         +indEvDur(self.durationTime)
+
+                //- LOCATION
+                //- if self.location && self.location.hall && self.location.hall.name
+                //-     if self.location.hall && self.location.hall.name
+                //-         span.screening_hall= self.location.hall.name
+                //-         if self.location.hall.cinema && self.location.hall.cinema.name
+                //-             span.screening_venue= ` ${self.location.hall.cinema.name}`
+                //-             if self.location.hall.cinema.town && self.location.hall.cinema.town.name && self.location.hall.cinema.town.country && self.location.hall.cinema.town.country.name
+                //-                 span.city= ` ${self.location.hall.cinema.town.name}`
 
             section.f_synopsis_box
+                .str_info_meta_gi
                 .synopsis_gi
                     if self.lead && typeof self.lead === 'string'
                         p.dark_1
@@ -76,6 +103,25 @@ block content
                     if self.description && typeof self.description === 'string'
                         p.dark_1
                             +format(self.description)
+
+            section.f_cred_box
+
+
+            section#trailer.f_trailer_box
+                .section_headline= self.label.film.trailer
+                //- .embed-responsive.embed-responsive-16by9.m-0.p-0
+                .videolevels_embed_container
+                    if self.videoUrl
+                        .videolevels_embed_contents
+                            +videoVl(self.videoUrl)
+
+
+                    //- iframe(src='https://videolevels.com/embed/Pn3hnm2lVrU') style='position: absolute; top:0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform'
+
+
+                    //- if trailer.videoCode
+                    //-     +video(trailer.videoCode)
+
 
 
             //- iga eventiga seotud projekti kohta sooviks lehele title_en, project_types, linki projekti lehele

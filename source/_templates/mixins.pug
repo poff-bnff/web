@@ -21,6 +21,13 @@ mixin videoAp(clipUrlDefault='')
         iframe(width='100%' height='100%' src=`https://www.youtube.com/embed/${videoId}?autoplay=1&origin=https://poff.ee"&mute=1&controls=0&showinfo=0&modestbranding=0&loop=1&rel=0&autohide=1&playlist=${videoId}`
             frameborder='0' allowfullscreen)
 
+mixin videoVl(videoUrl='')
+    - var videoId = videoUrl.split('/bc/')[1] || ''
+        iframe(width='100%' height='100%' src=`https://videolevels.com/embed/${videoId}`
+            frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform')
+
+
+
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
 //- sisend kujul (2020-08-10T22:45:00+0300)
 mixin localdatetime(dateString)
