@@ -47,7 +47,8 @@ block content
             section.f_title_box
 
                 .premiere_type
-                    if self.project_type && self.project_type.type
+                    if self.project_type
+                        //- && self.project_type.type
                         p.premiere_type= self.project_type.type
                 h1.film_title_detailed= self.title
 
@@ -62,6 +63,11 @@ block content
 
                         .str_info_grid_3
                             .str_info_label= self.label.industry.eventTimeEet
+                            .str_info_value
+                                +screeningTime(self.startTime)
+
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.eventTimeUser
                             .str_info_value
                                 +screeningTime(self.startTime)
 
@@ -103,9 +109,18 @@ block content
 
             section#trailer.f_trailer_box
                 .section_headline= self.label.film.trailer
-                    .embed-responsive.embed-responsive-16by9.m-0.p-0
-                        //- if trailer.videoCode
-                        //-     +video(trailer.videoCode)
+                //- .embed-responsive.embed-responsive-16by9.m-0.p-0
+                .videolevels_embed_container
+                    if self.videoUrl
+                        .videolevels_embed_contents
+                            +videoVl(self.videoUrl)
+
+
+                    //- iframe(src='https://videolevels.com/embed/Pn3hnm2lVrU') style='position: absolute; top:0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform'
+
+
+                    //- if trailer.videoCode
+                    //-     +video(trailer.videoCode)
 
 
 
