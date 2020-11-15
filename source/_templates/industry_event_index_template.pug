@@ -99,7 +99,7 @@ block content
                             +videoVl(self.videoUrl)
                     .default_16_9_container
                     .login_16_9_container.login_some
-                        a(href=`/login`)
+                        a(href=`/login` onclick = 'saveUrl()')
                             img.eventival_logo_img(alt='PÖFF' data-src='/assets/img/static/eventival_logo.svg' src='/assets/img/static/eventival_logo.svg')
                 .elisa_stage
                     img.elisa_powered(src='https://assets.poff.ee/img/poff24_elisa_stage.svg')
