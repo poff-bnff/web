@@ -77,6 +77,12 @@ if (validToken) {
     } catch (error) {
     }
     loadUserProfileH()
+
+    try {
+        document.getElementById('login_cond').style.display = 'none'
+    } catch (error) {
+    }
+    loadUserProfileH()
 }
 
 if (!validToken) {
@@ -165,6 +171,6 @@ function logOut() {
     // console.log('LOGITUD VÄLJA')
     location.reload()
 
-    window.open(location.origin, '_self')
+    // window.open(location.origin, '_self')
 }
 

@@ -98,7 +98,8 @@ block content
                         .videolevels_embed_contents#videolevels_video(style="display:none;")
                             +videoVl(self.videoUrl)
                     .default_16_9_container
-                    .login_16_9_container.login_some
+                    .login_16_9_container.login_some#login_cond
+                        h4.login_headline#loginMessage Login via Eventival
                         a(href=`/login` onclick = 'saveUrl()')
                             img.eventival_logo_img(alt='PÖFF' data-src='/assets/img/static/eventival_logo.svg' src='/assets/img/static/eventival_logo.svg')
                 .elisa_stage
@@ -162,7 +163,7 @@ block content
             //-                     if indProj.project_types
             //-                         h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
 
-    section.team
+    section
         if self.industry_people
             //- h1.section_headline= 'SIIA NÄITEKS LABEL PERSOONIDE KOHTA'
             //- h1.sub_section_headline= 'Või veel midagi'
