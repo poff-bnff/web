@@ -142,18 +142,18 @@ block content
                                         span.screening_time.small_1
                                             +screeningTime(event.startTime)
 
-                                .container_screening_location
-                                    svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                                        path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
-                                        circle(cx='12' cy='10' r='3')
+                                //- .container_screening_location
+                                //-     svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                //-         path(d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z')
+                                //-         circle(cx='12' cy='10' r='3')
 
-                                    if event.location && event.location.hall && event.location.hall.name
-                                        if event.location.hall && event.location.hall.name
-                                            span.screening_hall.small_1= event.location.hall.name
-                                            if event.location.hall.cinema && event.location.hall.cinema.name
-                                                span.screening_venue.small_1= ` ${event.location.hall.cinema.name}`
-                                                if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
-                                                    span.city.small_1= ` ${event.location.hall.cinema.town.name}`
+                                //-     if event.location && event.location.hall && event.location.hall.name
+                                //-         if event.location.hall && event.location.hall.name
+                                //-             span.screening_hall.small_1= event.location.hall.name
+                                //-             if event.location.hall.cinema && event.location.hall.cinema.name
+                                //-                 span.screening_venue.small_1= ` ${event.location.hall.cinema.name}`
+                                //-                 if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
+                                //-                     span.city.small_1= ` ${event.location.hall.cinema.town.name}`
 
 
                             //- .card_film_title
