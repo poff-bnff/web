@@ -52,23 +52,40 @@ block content
                 h1.film_title_detailed= self.title
 
                 if self.startTime && typeof self.startTime === 'string'
-                    p
-                        +screeningDate(self.startTime)
-                        //- +localdate(self.startTime)
-                    p
-                        +screeningTime(self.startTime)
 
-                if self.durationTime
-                    p
-                        +indEvDur(self.durationTime)
+                    .str_info_blokk_1
 
-                if self.location && self.location.hall && self.location.hall.name
-                    if self.location.hall && self.location.hall.name
-                        span.screening_hall= self.location.hall.name
-                        if self.location.hall.cinema && self.location.hall.cinema.name
-                            span.screening_venue= ` ${self.location.hall.cinema.name}`
-                            if self.location.hall.cinema.town && self.location.hall.cinema.town.name && self.location.hall.cinema.town.country && self.location.hall.cinema.town.country.name
-                                span.city= ` ${self.location.hall.cinema.town.name}`
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.eventDate
+                            .str_info_value
+                                +screeningDate(self.startTime)
+
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.eventTimeEet
+                            .str_info_value
+                                +screeningTime(self.startTime)
+
+
+
+                //- if self.startTime && typeof self.startTime === 'string'
+                //-     p
+                //-         +screeningDate(self.startTime)
+                //-         //- +localdate(self.startTime)
+                //-     p
+                //-         +screeningTime(self.startTime)
+
+                //- if self.durationTime
+                //-     p
+                //-         +indEvDur(self.durationTime)
+
+                //- LOCATION
+                //- if self.location && self.location.hall && self.location.hall.name
+                //-     if self.location.hall && self.location.hall.name
+                //-         span.screening_hall= self.location.hall.name
+                //-         if self.location.hall.cinema && self.location.hall.cinema.name
+                //-             span.screening_venue= ` ${self.location.hall.cinema.name}`
+                //-             if self.location.hall.cinema.town && self.location.hall.cinema.town.name && self.location.hall.cinema.town.country && self.location.hall.cinema.town.country.name
+                //-                 span.city= ` ${self.location.hall.cinema.town.name}`
 
             section.f_synopsis_box
                 .str_info_meta_gi
