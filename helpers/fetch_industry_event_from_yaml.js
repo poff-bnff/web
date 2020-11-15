@@ -36,6 +36,10 @@ for (const lang of allLanguages) {
             continue
         }
 
+        if (!element.publish) {
+            continue
+        }
+
         if (element[`slug_${lang}`]) {
             let dirSlug = element[`slug_${lang}`]
             element.path = `events/${dirSlug}`
@@ -71,6 +75,7 @@ for (const lang of allLanguages) {
 
     if (allData.length) {
         dataToYAML = allData.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+        console.log(`${dataToYAML.length} Industry Events ready for building`);
     }
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
