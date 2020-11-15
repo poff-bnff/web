@@ -233,7 +233,7 @@ for (const lang of allLanguages) {
             }
 
             if (screenings.length > 0) {
-                s_cassette_copy.screenings = screenings
+                s_cassette_copy.screenings = screenings.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime))
             }
 
             // let s_cassette_copy = JSONcopy(s_cassette_copy))
