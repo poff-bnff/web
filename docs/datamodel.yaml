@@ -962,6 +962,7 @@ IndustryEvent: &IndustryEvent
     titlePrivate: (text)
     startTime: (Datetime)
     title_en: (text)
+    videoUrl: (text)
     slug_en: (UID)
     images: #(Component (repeatable))
         - *StrapiMedia
