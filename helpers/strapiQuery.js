@@ -118,7 +118,7 @@ async function getModel(model, filters={}) {
     }
     const strapi_data = await strapiQuery(options)
     if (full_model_fetch) {
-        console.log(`. [${new Date().getTime() - t0}ms]`)
+        process.stdout.write(`. [${new Date().getTime() - t0}ms]`)
     }
     return strapi_data
 }

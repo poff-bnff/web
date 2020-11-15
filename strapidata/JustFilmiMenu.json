@@ -359,6 +359,38 @@
     ]
   },
   {
+    "id": 1,
+    "just_filmi_article": null,
+    "order": 1,
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 14,
+      "firstname": "Heleen",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "created_at": "2020-09-22T08:26:39.670Z",
+    "updated_at": "2020-10-14T17:05:36.052Z",
+    "name": {
+      "id": 3910,
+      "et": "Hundufeed",
+      "en": "News",
+      "ru": "Новости"
+    },
+    "customUrl": {
+      "id": 3911,
+      "et": "uudised",
+      "en": "news",
+      "ru": "novosti"
+    },
+    "subMenuItem": []
+  },
+  {
     "id": 6,
     "just_filmi_article": null,
     "order": 2,
@@ -375,7 +407,7 @@
       "username": null
     },
     "created_at": "2020-10-13T23:08:08.320Z",
-    "updated_at": "2020-11-09T14:17:40.562Z",
+    "updated_at": "2020-11-14T16:24:24.741Z",
     "name": {
       "id": 4071,
       "et": "Filmid",
@@ -397,9 +429,9 @@
         },
         "customUrl": {
           "id": 7679,
-          "et": "filmid",
-          "en": "films",
-          "ru": "filmy"
+          "et": "otsi_filmi",
+          "en": "search_film",
+          "ru": "iskat_film"
         }
       },
       {
@@ -473,39 +505,25 @@
           "ru": "Just Film catalogue"
         },
         "customUrl": null
+      },
+      {
+        "id": 15,
+        "just_filmi_article": null,
+        "order": 2,
+        "namePrivate": "Ajakava",
+        "name": {
+          "id": 28957,
+          "et": "Ajakava",
+          "en": "Ajakava",
+          "ru": "Ajakava"
+        },
+        "customUrl": {
+          "id": 29134,
+          "et": "otsi_seanssi",
+          "en": "search_screening",
+          "ru": "iskat_seanss"
+        }
       }
     ]
-  },
-  {
-    "id": 1,
-    "just_filmi_article": null,
-    "order": 1,
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "created_at": "2020-09-22T08:26:39.670Z",
-    "updated_at": "2020-10-14T17:05:36.052Z",
-    "name": {
-      "id": 3910,
-      "et": "Hundufeed",
-      "en": "News",
-      "ru": "Новости"
-    },
-    "customUrl": {
-      "id": 3911,
-      "et": "uudised",
-      "en": "news",
-      "ru": "novosti"
-    },
-    "subMenuItem": []
   }
 ]

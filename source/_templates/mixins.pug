@@ -1,5 +1,5 @@
 //- lisab õige video treileriks, kasutab film.layout.pug
-mixin video(videoId)
+mixin video(videoId='')
     if videoId.length === 9
         iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}`
             frameborder='0' allow='accelerometer' autoplay='' encrypted-media=''
@@ -11,13 +11,14 @@ mixin video(videoId)
 
 
 //- autoplay video
-mixin videoAp(videoId)
+mixin videoAp(clipUrlDefault='')
+    - var videoId = clipUrlDefault.split('=')[1] || ''
     if videoId.length === 9
         iframe(width='560' height='315' src=`https://player.vimeo.com/video/${videoId}?background=1`
             frameborder='0' allow='accelerometer' encrypted-media=''
             gyroscope='' picture-in-picture='' allowfullscreen='')
     else if videoId.length === 11
-        iframe(width='560' height='315' src=`https://www.youtube.com/embed/${videoId}?autoplay=1&origin=https://poff.ee"&mute=1&controls=0&showinfo=0&modestbranding=1&loop=1&rel=0&autohide=1`
+        iframe(width='100%' height='100%' src=`https://www.youtube.com/embed/${videoId}?autoplay=1&origin=https://poff.ee"&mute=1&controls=0&showinfo=0&modestbranding=0&loop=1&rel=0&autohide=1&playlist=${videoId}`
             frameborder='0' allowfullscreen)
 
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
@@ -145,7 +146,7 @@ mixin dur(mins)
             eDisplayMoment1.innerHTML = t;
         })();
 
-mixin indEvDur(strapiTime)
+mixin indEvDur(strapiTime='')
     - var dom_id = Math.random()
     span(id = 'dt_' + dom_id)
 

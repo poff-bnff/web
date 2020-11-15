@@ -84,19 +84,10 @@ main.grid_film(id=self.id)
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
                     //- todo #383
-                    if film.orderedCountries
-                        - var countriesNames = function(item) {
-                        -   if(item.country && item.country.name) {
-                        -       var itemNames = item.country.name
-                        -       return itemNames
-                        -   }
-                        - }
-
+                    if film.orderedCountriesDisplay
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                            - var mapCountries = sortCountries.map(countriesNames)
-                            .str_info_value= mapCountries.join(', ')
+                            .str_info_value= film.orderedCountriesDisplay
 
                     if film.year
                         .str_info_grid_3
@@ -389,8 +380,8 @@ main.grid_film(id=self.id)
 
                 .card-deck.m-o.p-0
                     if self.screenings && self.screenings[0]
-                        - var sortedScreenings = self.screenings.sort(function(a, b){return new Date(a.dateTime)-new Date(b.dateTime)})
-                        each screening in sortedScreenings
+                        //- - var sortedScreenings = self.screenings.sort(function(a, b){return new Date(a.dateTime)-new Date(b.dateTime)})
+                        each screening in self.screenings
                             .card.card_screening.rounded-0.border-0
                                 .card-header.rounded-0.bg_dark_4
                                     .grid_container_screening_time
@@ -432,49 +423,64 @@ main.grid_film(id=self.id)
 
                                 .card-body.bg_dark_3
                                     .screening_info_blokk
-                                        if film.title
+                                        if screening.codeAndTitle
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.name
                                                 span.screening_info_value= screening.codeAndTitle
                                         //- if screening.screeningSubtitles
 
-                                        if film.subtitles
-                                            - var subtitlesNames = function(item) {
-                                            -   if(item.name) {
-                                            -       var itemNames = item.name
-                                            -       return itemNames
-                                            -   }
-                                            - }
+                                        -
+                                            var subtitlesNames = function(item) {
+                                                if(item.name) {
+                                                    var itemNames = item.name
+                                                    return itemNames
+                                                }
+                                            }
+
+                                        if screening.subtitles
+                                            - var subtitles = screening.subtitles.map(subtitlesNames)
+                                        else if film.subtitles
+                                            - var subtitles = film.subtitles.map(subtitlesNames)
+
+                                        if subtitles && subtitles.length
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.subtitles
-                                                span.screening_info_value= film.subtitles.map(subtitlesNames).join(', ')
+                                                span.screening_info_value= subtitles.join(', ')
 
 
                                         - var iqnac = screening.introQaConversation
                                         //- Screening Intro
-                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.guest }).length > 0 && typeof iqnac.filter(i => { return i.type === 'Intro' && i.guest })[0].guest[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.introGuests
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].guest.join(', ')
-                                        if iqnac && iqnac.filter(i => { return i.type === 'Intro' && i.presenter }).length > 0 && typeof iqnac.filter(i => { return i.type === 'Intro' && i.presenter })[0].presented[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.introPresenters
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'Intro')[0].presenter.join(', ')
-                                        //- Screening QandA
-                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.guest }).length > 0 && typeof iqnac.filter(i => { return i.type === 'QandA' && i.guest })[0].guest[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.qaGuests
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].guest.join(', ')
-                                        if iqnac && iqnac.filter(i => { return i.type === 'QandA' && i.presenter }).length > 0 && typeof iqnac.filter(i => { return i.type === 'QandA' && i.presenter })[0].presenter[0] !== 'object'
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.introPresenters
-                                                span.screening_info_value= iqnac.filter(a => a.type === 'QandA')[0].presenter.join(', ')
+                                        if iqnac
+                                            - var introGuests = iqnac.filter(i => { return i.type === 'Intro' && i.guest })
+                                            if introGuests.length > 0 && typeof introGuests[0].guest[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.introGuests
+                                                    span.screening_info_value= introGuests[0].guest.join(', ')
 
-                                        if iqnac && iqnac[0].duration
-                                            .str_info_grid_3
-                                                span.screening_info_label= self.label.screening.qaDuration
-                                                span.screening_info_value
-                                                    +dur(iqnac[0].duration)
+                                            - var introPresenters = iqnac.filter(i => { return i.type === 'Intro' && i.presenter })
+                                            if introPresenters.length > 0 && typeof introPresenters[0].presenter[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.introPresenter
+                                                    span.screening_info_value= introPresenters[0].presenter.join(', ')
+
+                                            //- Screening QandA
+                                            - var qaGuests = iqnac.filter(i => { return i.type === 'QandA' && i.guest })
+                                            if qaGuests.length > 0 && typeof qaGuests[0].guest[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaGuests
+                                                    span.screening_info_value= qaGuests[0].guest.join(', ')
+
+                                            - var qaPresenter = iqnac.filter(i => { return i.type === 'QandA' && i.presenter })
+                                            if qaPresenter.length > 0 && typeof qaPresenter[0].presenter[0] !== 'object'
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaPresenter
+                                                    span.screening_info_value= qaPresenter[0].presenter.join(', ')
+
+                                            if iqnac[0].duration
+                                                .str_info_grid_3
+                                                    span.screening_info_label= self.label.screening.qaDuration
+                                                    span.screening_info_value
+                                                        +dur(iqnac[0].duration)
 
                                         if screening.extraInfo && typeof screening.extraInfo !== 'object'
                                             .str_info_grid_3
