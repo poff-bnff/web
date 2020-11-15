@@ -174,16 +174,6 @@ for (const lang of allLanguages) {
             // for the purpose of saving slug_en before it will be removed by rueten func.
             rueten(s_cassette_copy, lang)
 
-            if(s_cassette_copy.films && s_cassette_copy.films.length) {
-                for (const filmIx in s_cassette_copy.films) {
-                    let oneFilm = s_cassette_copy.films[filmIx]
-                    let s_film = STRAPIDATA_FILMS.filter( (a) => { return oneFilm.id === a.id })
-                    if (s_film !== undefined && s_film[0]) {
-                        s_cassette_copy.films[filmIx] = JSONcopy(s_film[0])
-                    }
-                }
-            }
-
             // #379 put ordered films to cassette.film
             let ordered_films = s_cassette_copy.orderedFilms
                 .filter( (isFilm) => { if (isFilm.film) { return 1 } else { console.log(`ERROR! Empty film under cassette with ID ${s_cassette_copy.id}`) } })
@@ -206,6 +196,22 @@ for (const lang of allLanguages) {
             })
             if (ordered_films !== undefined && ordered_films[0]) {
                 s_cassette_copy.films = JSON.parse(JSON.stringify(ordered_films))
+            }
+
+            if (s_cassette_copy.films && s_cassette_copy.films.length) {
+                for (const onefilm of s_cassette_copy.films) {
+                    if (onefilm.orderedCountries) {
+                        let orderedCountries = onefilm.orderedCountries
+                            .sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                        onefilm.orderedCountries = orderedCountries
+                        if (orderedCountries.length) {
+                            onefilm.orderedCountriesDisplay = orderedCountries
+                                .map(country => country.country[`name_${lang}`])
+                                .join(', ')
+                        }
+
+                    }
+                }
             }
 
             // Screenings
@@ -233,7 +239,7 @@ for (const lang of allLanguages) {
             }
 
             if (screenings.length > 0) {
-                s_cassette_copy.screenings = screenings
+                s_cassette_copy.screenings = screenings.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime))
             }
 
             // let s_cassette_copy = JSONcopy(s_cassette_copy))

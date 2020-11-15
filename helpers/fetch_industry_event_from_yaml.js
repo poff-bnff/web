@@ -67,8 +67,11 @@ for (const lang of allLanguages) {
             console.log(`ERROR! Industry event ID ${element.id} missing slug`);
         }
     }
+    let dataToYAML = []
 
-    let dataToYAML = allData || []
+    if (allData.length) {
+        dataToYAML = allData.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+    }
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
