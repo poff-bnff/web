@@ -37,7 +37,7 @@ block content
                     svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
                         polyline(points='9 18 15 12 9 6')
                     span.sr-only Next
-                if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
+                if film.cassetteTrailers.length
                     a.play_link(href='#trailer')
                         svg.svg_icon_play(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='white' stroke-linecap='round' stroke-linejoin='round')
                             polygon(points='5 3 19 12 5 21 5 3')
@@ -388,10 +388,10 @@ block content
                                                 span.screening_info_value
                                                     +dur(iqnac[0].duration)
 
-                                        if screening.extraInfo && typeof screening.extraInfo !== 'object'
+                                        if screening.extra_info && typeof screening.extra_info !== 'object'
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.extraInfo
-                                                span.screening_info_value= screening.extraInfo
+                                                span.screening_info_value= screening.extra_info
 
                                         if screening.duration
                                             .str_info_grid_3
@@ -411,13 +411,12 @@ block content
                 a(name='chat')
                     iframe(width='100%' height='540' src=`https://my.vialog.app/poff.ee/${film.id}` frameborder='0' allow='microphone; camera')
 
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
+            if film.cassetteTrailers.length
                 section#trailer.f_trailer_box
                     .section_headline= self.label.film.trailer
-                    each trailer in film.media.trailer
+                    each trailer in film.cassetteTrailers
                         .embed-responsive.embed-responsive-16by9.m-0.p-0
-                            if trailer.videoCode
-                                +video(trailer.videoCode)
+                            +video(trailer)
 
             //- section.f_imgs_box
 

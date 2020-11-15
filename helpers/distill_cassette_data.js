@@ -213,7 +213,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 year: s_film['year'] || null,
                 premierTypes: distill_premiere_types(s_film, lang),
                 cassetteCarouselPicsFilms: distill_film_stills(s_film),
-                cassetteTrailers: distill_film_trailers(s_film),
+                cassetteTrailers: distill_film_trailers(s_film).filter(trailer => trailer),
                 countryNames: countries.map(country => country.name),
                 _countryCodes: countries.map(country => country.code),
                 languageNames: distill_datapieces(s_film.languages, `name_${lang}`),
