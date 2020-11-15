@@ -16,12 +16,6 @@ block content
                 document.getElementById('videolevels_video').remove()
             }
         })
-        document.addEventListener('userProfileLoaded', function (e) {
-            console.log({'FOO'})
-        })
-        document.addEventListener('userProfileLoaded', function (e) {
-            console.log({'BAZ'})
-        })
 
 
     - var assetsDir = 'https://assets.poff.ee/img/'
@@ -103,8 +97,10 @@ block content
                     if self.videoUrl
                         .videolevels_embed_contents#videolevels_video(style="display:none;")
                             +videoVl(self.videoUrl)
-                .default_16_9_container
-                .login_16_9_container
+                    .default_16_9_container
+                    .login_16_9_container.login_some
+                        a(href=`/login`)
+                            img.eventival_logo_img(alt='PÖFF' data-src='/assets/img/static/eventival_logo.svg' src='/assets/img/static/eventival_logo.svg')
                 .elisa_stage
                     img.elisa_powered(src='https://assets.poff.ee/img/poff24_elisa_stage.svg')
 
@@ -154,22 +150,22 @@ block content
 
 
             //- iga eventiga seotud projekti kohta sooviks lehele title_en, project_types, linki projekti lehele
-            main.grid_films
+            //- main.grid_films
 
-                if self.industry_projects
-                    each indProj in self.industry_projects
-                        if indProj.slug
-                            a(href=`/${indProj.slug}`)
-                                if indProj.title
-                                    h3.dark_1= indProj.title
+            //-     if self.industry_projects
+            //-         each indProj in self.industry_projects
+            //-             if indProj.slug
+            //-                 a(href=`/${indProj.slug}`)
+            //-                     if indProj.title
+            //-                         h3.dark_1= indProj.title
 
-                                if indProj.project_types
-                                    h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
+            //-                     if indProj.project_types
+            //-                         h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
 
     section.team
         if self.industry_people
-            h1.section_headline= 'SIIA NÄITEKS LABEL PERSOONIDE KOHTA'
-            h1.sub_section_headline= 'Või veel midagi'
+            //- h1.section_headline= 'SIIA NÄITEKS LABEL PERSOONIDE KOHTA'
+            //- h1.sub_section_headline= 'Või veel midagi'
             .sub_team
                 each indPerson in self.industry_people
                     if indPerson.slug
