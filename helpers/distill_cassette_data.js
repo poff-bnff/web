@@ -379,12 +379,30 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
         function distill_film_trailers(s_film) {
             try {
-                return s_film.media.trailer.map(trailer => {
-                    return split('=', trailer.url)[1]
+                return s_film.media.trailer.filter(t => t.url && t.url.length).map(trailer => {
+                    return get_url_trailer_code(trailer.url)
                 })
             } catch (error) {
                 timer.log(__filename, `INFO: no trailers for film ${s_film.id}`)
                 return []
+            }
+
+            function get_url_trailer_code(url='') {
+                if(url && url.length > 10) {
+                    if (url.includes('vimeo')) {
+                        let splitVimeoLink = url.split('/')
+                        let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
+                        if (videoCode.length === 9) {
+                            return videoCode
+                        }
+                    } else {
+                        let splitYouTubeLink = url.split('=')[1]
+                        let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
+                        if (splitForVideoCode.length === 11) {
+                            return splitForVideoCode
+                        }
+                    }
+                }
             }
         }
 
@@ -452,7 +470,8 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     },
                     qna: distill_intro_qanda_conversation(s_screening, 'QandA'),
                     intro: distill_intro_qanda_conversation(s_screening, 'Intro'),
-                    conversation: distill_intro_qanda_conversation(s_screening, 'Conversation')
+                    conversation: distill_intro_qanda_conversation(s_screening, 'Conversation'),
+                    extra_info: s_screening['extraInfo'][lang] || null
                 }
             }).sort((a, b) => { return new Date(a.datetime) - new Date(b.datetime) })
         } catch (error) {
