@@ -445,7 +445,7 @@ main.grid_film(id=self.id)
                                         if subtitles && subtitles.length
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.subtitles
-                                                span.screening_info_value= subtitles.join(', ').sort()
+                                                span.screening_info_value= subtitles.sort().join(', ')
 
 
                                         - var iqnac = screening.introQaConversation
