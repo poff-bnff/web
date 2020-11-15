@@ -82,7 +82,6 @@ if (validToken) {
         document.getElementById('login_cond').style.display = 'none'
     } catch (error) {
     }
-    loadUserProfileH()
 }
 
 if (!validToken) {
