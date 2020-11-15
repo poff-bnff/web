@@ -4,9 +4,30 @@ include /_templates/mixins.pug
 
 
 block content
+    script.
+        document.addEventListener('userProfileLoaded', function (e) {
+            console.log({userProfile})
+
+            if (userProfile.industryAccessLevel) {
+                console.log('näitan')
+                document.getElementById('videolevels_video').style.display = 'block'
+            } else {
+                console.log('ei näita')
+                document.getElementById('videolevels_video').remove()
+            }
+        })
+        document.addEventListener('userProfileLoaded', function (e) {
+            console.log({'FOO'})
+        })
+        document.addEventListener('userProfileLoaded', function (e) {
+            console.log({'BAZ'})
+        })
+
+
     - var assetsDir = 'https://assets.poff.ee/img/'
 
     main.grid_ind_event
+
 
 
         if self.title && self.title.length > 1
@@ -76,8 +97,10 @@ block content
                 //- .embed-responsive.embed-responsive-16by9.m-0.p-0
                 .videolevels_embed_container
                     if self.videoUrl
-                        .videolevels_embed_contents
+                        .videolevels_embed_contents#videolevels_video(style="display:none;")
                             +videoVl(self.videoUrl)
+                .default_16_9_container
+                .login_16_9_container
                 .elisa_stage
                     img.elisa_powered(src='https://assets.poff.ee/img/poff24_elisa_stage.svg')
 
@@ -115,6 +138,7 @@ block content
                             +format(self.description)
 
             section.f_cred_box
+            section.f_runtime_box
 
 
                     //- iframe(src='https://videolevels.com/embed/Pn3hnm2lVrU') style='position: absolute; top:0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform'
