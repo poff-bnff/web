@@ -82,8 +82,8 @@ mixin screeningDateEET(dateStringUTC)
             moment.locale('#{self.locale}');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
 
-            var weekDay_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('Do MMM');
-            var date_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('dddd');
+            var weekDay_EET = moment.parseZone(new Date('#{dateStringUTC}')).tz('Europe/Tallinn').format('Do MMM');
+            var date_EET = moment.parseZone(new Date('#{dateStringUTC}')).tz('Europe/Tallinn').format('dddd');
 
             eDisplayMoment1.innerHTML = weekDay_EET + ', ' +  date_EET;
 
@@ -134,8 +134,8 @@ mixin screeningDate(dateString)
         {
             moment.locale('#{self.locale}');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
-            var NowMoment1 = moment('#{dateString}').format('Do MMM');
-            var weekDay= moment('#{dateString}').format('dddd');
+            var NowMoment1 = moment(new Date('#{dateString}')).format('Do MMM');
+            var weekDay= moment(new Date('#{dateString}')).format('dddd');
             eDisplayMoment1.innerHTML = NowMoment1 + ', ' + weekDay;
 
         })();
@@ -150,7 +150,7 @@ mixin screeningTime(dateString)
         (function()
         {
             //- todo: #506 Deprecation warning: moment.lang is deprecated. Use moment.locale instead.
-            moment.lang('en', {
+            moment.updateLocale('en', {
                 longDateFormat : {
                     LT: "hh:mm A",
                     L: "MM/DD/YYYY",
@@ -164,7 +164,7 @@ mixin screeningTime(dateString)
                 }
             });
 
-            moment.lang('et', {
+            moment.updateLocale('et', {
                 longDateFormat: {
                     LT: 'HH:mm',
                     LTS: 'H:mm:ss',
