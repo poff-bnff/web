@@ -7,11 +7,7 @@ mixin chat(outputRoomName)
                 .chat-sidebar
                     h3
                         i.fas.fa-comments
-                        |  Room Name:
                     h2#room-name
-                    h3
-                        i.fas.fa-users
-                        |  Users
                     ul#users
                 .chat-messages
             .chat-form-container
@@ -21,29 +17,48 @@ mixin chat(outputRoomName)
                         i.fas.fa-paper-plane
                         |  Send
 
+        .moderated-chat-container
 
+            main.chat-main(id=outputRoomName+'-chat-mod')
+                .chat-sidebar
+                    h3
+                        i.fas.fa-comments
+                    h2#room-name-mod
+                    ul#users-mod
+                .mod-chat-messages
+            .chat-form-container-mod
+                form(id='chat-form')
+                    input#msg-mod(type='text' placeholder='Enter Message' required='' autocomplete='off')
+                    button.btn
+                        i.fas.fa-paper-plane
+                        |  Send
 
 
     style.
+
         :root {
-            --dark-color-a: #394fdc;
-            --dark-color-b: #394fdc;
+            --dark-color-a: #949494;
+            --dark-color-b: #808080;
             --light-color: #e6e9ff;
             --success-color: #5cb85c;
             --error-color: #d9534f;
-            --mod-colo: #B88AAC;
+            --background-color: #f5f5f5;
         }
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+        .main-chat-container,
+        .moderated-chat-container{
+            background: var(--background-color);
+
+        }
+
+        }
+
 
         body {
-            font-family: Verdana, sans-serif;
-            font-size: 16px;
-            background: var(--light-color);
-            margin: 20px;
         }
 
         ul {
@@ -67,7 +82,6 @@ mixin chat(outputRoomName)
 
         .chat-container {
             max-width: 90%;
-            background: #fff;
             margin: 30px auto;
             overflow: hidden;
         }
@@ -165,6 +179,8 @@ mixin chat(outputRoomName)
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
+        const outputRoomName = '#{outputRoomName}'
+        const outputRoomName_mod = '#{outputRoomName}' + '-mod'
 
         document.addEventListener('userProfileLoaded', function (e) {
             main(userProfile)
@@ -172,14 +188,16 @@ mixin chat(outputRoomName)
         const is_moderator = true
 
         function main(userProfile) {
-            const chatForm = document.getElementById('chat-form')
-            const chatMessages = document.querySelector('.chat-messages')
-            const roomName = document.getElementById('room-name')
-            const userList = document.getElementById('users')
-
+            const chat_form = document.getElementById('chat-form')
+            const chat_form_mod = document.getElementById('chat-form-mod')
+            const chat_messages = document.querySelector('.chat-messages')
+            const mod_chat_messages = document.querySelector('.mod-chat-messages')
+            const room_name = document.getElementById('room-name')
+            const room_name_mod = document.getElementById('room-name-mod')
+            const user_list = document.getElementById('users')
+            const user_list_mod = document.getElementById('users-mod')
 
             // Get username and room from URL
-            const outputRoomName = 'jutueetuba'
             //- const acre = 'moderator'
 
             socket = io('http://192.241.148.13'); // In case your front is not served from the same domain as your server, you have to pass the URL of your server.
@@ -189,7 +207,7 @@ mixin chat(outputRoomName)
 
             // Get outputRoomName and users
             socket.on('roomUsers', (room_users) => {
-                setOutputRoomName(room_users.room)
+                setOutputRoomName(room_name, room_users.room)
                 setOutputUsers(room_users.users)
             });
 
@@ -199,16 +217,35 @@ mixin chat(outputRoomName)
                 outputMessage(message)
 
                 // Scroll down
-                chatMessages.scrollTop = chatMessages.scrollHeight
+                chat_messages.scrollTop = chat_messages.scrollHeight
             });
 
-            //- let id = 0                // Message submit
-            chatForm.addEventListener('submit', e => {
-                e.preventDefault()
 
-                //- // Generate message id
-                //- let msgId = outputRoomName + id
-                //- id++
+            ///MODERATED
+            modSocket = io('http://192.241.148.13'); // In case your front is not served from the same domain as your server, you have to pass the URL of your server.
+
+            // Join chatroom
+            modSocket.emit('joinRoom', { userProfile: userProfile, room: outputRoomName_mod })
+
+            // Get outputRoomName and users
+            modSocket.on('roomUsers', (room_users) => {
+                setOutputRoomName(room_name_mod, room_users.room)
+                //- setOutputUsers([])
+            });
+
+            // Message from server
+            modSocket.on('message', message => {
+                console.log(message)
+                outputMessage(message)
+
+                // Scroll down
+                chat_messages.scrollTop = chat_messages.scrollHeight
+            });
+
+
+            //- let id = 0                // Message submit
+            chat_form.addEventListener('submit', e => {
+                e.preventDefault()
 
                 // Get message text
                 let msg = e.target.elements.msg.value
@@ -220,6 +257,25 @@ mixin chat(outputRoomName)
 
                 // Emit message to server
                 socket.emit('chatMessage', {msg, outputRoomName, userProfile})
+
+                // Clear input
+                e.target.elements.msg.value = ''
+                e.target.elements.msg.focus()
+            })
+
+            chat_form_mod.addEventListener('submit', e => {
+                e.preventDefault()
+
+                // Get message text
+                let msg = e.target.elements.msg.value
+                msg = msg.trim()
+
+                if (!msg){
+                    return false
+                }
+
+                // Emit message to server
+                modSocket.emit('chatMessage', {msg, outputRoomName_mod, userProfile})
 
                 // Clear input
                 e.target.elements.msg.value = ''
@@ -249,17 +305,24 @@ mixin chat(outputRoomName)
             }
 
             // Add outputRoomName name to DOM
-            function setOutputRoomName(outputRoomName) {
-                roomName.innerText = outputRoomName;
+            function setOutputRoomName(room, name) {
+                room.innerText = name;
             }
+
+            //- // Add outputRoomName name to DOM
+            //- function setOutputRoomName(outputRoomName_mod) {
+            //-     room_name_mod.innerText = outputRoomName_mod;
+            //- }
 
             // Add users to DOM
             function setOutputUsers(users) {
-                userList.innerHTML = ''
+                user_list.innerHTML = ''
                 users.forEach(user=>{
                     const li = document.createElement('li')
-                    li.innerText = user.username
-                    userList.appendChild(li)
+                    console.log(user)
+                    li.innerText = user.name
+                    user_list.appendChild(li)
                 });
             }
+
         }
