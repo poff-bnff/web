@@ -172,7 +172,7 @@ main.grid_cassette
                                             - }
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.subtitles
-                                                span.screening_info_value= screening.subtitles.map(subtitlesNames).join(', ')
+                                                span.screening_info_value= screening.subtitles.map(subtitlesNames).sort().join(', ')
 
 
                                         - var iqnac = screening.introQaConversation
@@ -231,11 +231,11 @@ main.grid_cassette
                             //-     a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
                             if screening.bookingUrl
-                                a.btn.btn_secondary.active(href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
+                                a.btn.btn_secondary.active(scrn-datetime=screening.dateTime btn-type='screening' id=`date_${screening.dateTime}` href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
                             if screening.ticketingUrl
-                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}` role='button' target='_blank')= self.label.button.screeningBuyTicket
+                                a.btn.btn_primary.active(scrn-datetime=screening.dateTime btn-type='screening' id=`date_${screening.dateTime}` href= `${screening.ticketingUrl}` role='button' target='_blank')= self.label.button.screeningBuyTicket
 
-
+        +rmOldScreeningButtons
 
 
     if self.tags && self.tags.programmes && self.tags.programmes.map(a => a.presentedBy || false).length
