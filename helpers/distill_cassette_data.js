@@ -69,7 +69,7 @@ const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
     return d_programme
 })
 
-const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT']) || 10
+const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT'])
 
 // Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
 const whichScreeningTypesToFetch = ['first screening', 'regular', 'online kino']
@@ -78,12 +78,15 @@ const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const MAPPED_DOMAIN = DOMAIN_SPECIFICS.domain[DOMAIN]
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 
-deleteFolderRecursive(cassettes_path)
+// deleteFolderRecursive(cassettes_path)
 
 timer.log(__filename, `Distilling ${DOMAIN} cassettes.`)
 
 let cassette_counter = 0
 for (const s_cassette of STRAPIDATA_CASSETTE) {
+    if (s_cassette.orderedFilms.length > 1) {
+        continue
+    }
     if (!s_cassette.slug_en) {
         timer.log(__filename, 'MISSING: no slug_en for cassette ' + s_cassette.id)
         continue
@@ -217,6 +220,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 countryNames: countries.map(country => country.name),
                 _countryCodes: countries.map(country => country.code),
                 languageNames: distill_datapieces(s_film.languages, `name_${lang}`),
+                subtitle_languages: distill_datapieces(s_film.subtitles, `name_${lang}`),
                 _languageCodes: distill_datapieces(s_film.languages, 'code'),
                 credentials: {
                     directorofphotography: credentials['Director of Photography'],
