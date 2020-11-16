@@ -14,6 +14,9 @@ block content
             } else {
                 console.log('ei näita')
                 document.getElementById('videolevels_video').remove()
+                document.getElementById('notificationBar').style.display = 'block'
+                document.getElementById('notificationBar').innerHTML = "Your profile doesn't have sufficient rights to view this event"
+
             }
         })
 

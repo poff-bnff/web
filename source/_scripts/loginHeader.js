@@ -139,6 +139,10 @@ function useUserData(userProf){
     }else{
         try{
             document.getElementById('tervitus').innerHTML = document.getElementById('tervitus').innerHTML + ', ' + userProf.email
+            if (!userProfile.industryAccessLevel && userProfile.statusMessage){
+                document.getElementById('notificationBar').style.display = 'block'
+                document.getElementById('notificationBar').innerHTML = userProfile.statusMessage 
+            }
         }catch(err){
             null
         }
