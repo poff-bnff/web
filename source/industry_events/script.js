@@ -62,3 +62,22 @@ date_af_2.addEventListener('click', e => { toggleDate('+', 2) } )
 // }
 
 toggleDate()
+
+function calendarfile(id) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(document.getElementById(`cal_${id}`).value));
+    element.setAttribute('download', `IndustryEvent_${id}.ics`);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+    console.log('done');
+  }
+
+
+
+  // Start file download.
+//   download("hello.txt","This is the content of my file :)")
