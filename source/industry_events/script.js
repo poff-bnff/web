@@ -74,7 +74,6 @@ function calendarfile(id) {
     element.click();
 
     document.body.removeChild(element);
-    console.log('done');
   }
 
 
