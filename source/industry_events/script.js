@@ -66,7 +66,7 @@ toggleDate()
 function calendarfile(id) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(document.getElementById(`cal_${id}`).value));
-    element.setAttribute('download', `IndustryEvent_${id}.ics`);
+    // element.setAttribute('download', `IndustryEvent_${id}.ics`);
 
     element.style.display = 'none';
     document.body.appendChild(element);
