@@ -3,7 +3,7 @@ include /_templates/mixins.pug
 
 block content
 
-    h3#loading.sub_section_headline(style='display: grid; padding-top: 110px;') LOADING
+    h3#loading.sub_section_headline(style='display: grid; padding-top: 110px;')= self.label.filters.loading
 
     .grid_search#filters(style='display: none;')
 

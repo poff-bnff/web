@@ -55,13 +55,13 @@ block content
                 p#unConfirmed(style={display:'none'})= self.label.userprofile.unconfirmedEmail
                 p#wrongPswd(style={display:'none'})= self.label.userprofile.pswdFalseHelp
         else
-            br
-            br
-            br
-            br
-            br
-            br
-            br
+            //- br
+            //- br
+            //- br
+            //- br
+            //- br
+            //- br
+            //- br
 
         .login_some
             if process.env['DOMAIN'] !== 'industry.poff.ee'
@@ -79,8 +79,9 @@ block content
                         | Google
 
             a#loginE(href=`https://api.poff.ee/auth/eventival`)
-                .button.login_btn_social
-                    | Eventival
+                img.eventival_logo_img(alt='PÖFF' data-src='/assets/img/static/eventival_logo.svg' src='/assets/img/static/eventival_logo.svg')
+                //- .button.login_btn_social
+                //-     | Eventival
 
         if process.env['DOMAIN'] !== 'industry.poff.ee'
             .login_register
