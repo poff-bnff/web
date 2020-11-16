@@ -111,7 +111,7 @@ for (const lang of allLanguages) {
                         end: eventend,
                         timestamp: convert_to_UTC(element.startTime),
                         description: element.description,
-                        location: element.location.hall.cinema.name + `: http://industry.poff.ee/events/${element.slug}`,
+                        location: element.location && element.location.hall && element.location.hall.cinema ? element.location.hall.cinema.name + `: http://industry.poff.ee/events/${element.slug}` : undefined,
                         summary: element.title,
                         organizer: {
                             name: 'Industry@Tallinn & Baltic Event',
@@ -120,6 +120,7 @@ for (const lang of allLanguages) {
                     }
                 ]
             }).toString())
+
             // console.log(eventstart, ' - ', eventend, ' durtime:', element.durationTime, element.durationTime ? element.durationTime.substring(3, 5) : 'none');
 
             const oneYaml = yaml.safeDump(rueten(element, lang), { 'noRefs': true, 'indent': '4' });
