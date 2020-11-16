@@ -87,28 +87,31 @@ for (const lang of allLanguages) {
                 })
             }
 
-            const oneYaml = yaml.safeDump(rueten(element, lang), { 'noRefs': true, 'indent': '4' });
-            const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
-
-            let saveDir = path.join(fetchDataDir, dirSlug);
-            fs.mkdirSync(saveDir, { recursive: true });
-
-            fs.writeFileSync(yamlPath, oneYaml, 'utf8');
-            fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industry_event_index_template.pug`)
-
             element = rueten(element, lang);
 
 
             // https://github.com/sebbo2002/ical-generator#readme
+            let eventstart = convert_to_UTC(element.startTime)
+            let eventend = new Date(eventstart)
+            if(element.durationTime) {
+                if (element.durationTime.split(':')[1] !== '00') {
+                    eventend.setUTCMinutes(eventend.getUTCMinutes()+parseInt(element.durationTime.split(':')[1]))
+                }
+                if (element.durationTime.split(':')[0] !== '00') {
+                    eventend.setUTCHours(eventend.getUTCHours()+parseInt(element.durationTime.split(':')[0]))
+                }
+                // console.log(eventend, eventend.getUTCMinutes(), parseInt(element.durationTime.substring(3, 5)));
+            }
             element.calendar_data = escape(ical({
                 domain: 'industry.poff.ee',
                 prodId: '//industry.poff.ee//Industry@Tallinn//EN',
                 events: [
                     {
                         start: convert_to_UTC(element.startTime),
+                        end: eventend,
                         timestamp: convert_to_UTC(element.startTime),
                         description: element.description,
-                        location: element.location.hall.cinema.name + `: http://industry.poff.ee/events/${element.slug}`,
+                        location: element.location && element.location.hall && element.location.hall.cinema ? element.location.hall.cinema.name + `: http://industry.poff.ee/events/${element.slug}` : undefined,
                         summary: element.title,
                         organizer: {
                             name: 'Industry@Tallinn & Baltic Event',
@@ -117,6 +120,17 @@ for (const lang of allLanguages) {
                     }
                 ]
             }).toString())
+
+            // console.log(eventstart, ' - ', eventend, ' durtime:', element.durationTime, element.durationTime ? element.durationTime.substring(3, 5) : 'none');
+
+            const oneYaml = yaml.safeDump(rueten(element, lang), { 'noRefs': true, 'indent': '4' });
+            const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
+
+            let saveDir = path.join(fetchDataDir, dirSlug);
+            fs.mkdirSync(saveDir, { recursive: true });
+
+            fs.writeFileSync(yamlPath, oneYaml, 'utf8');
+            fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industry_event_index_template.pug`)
 
             allData.push(element)
         } else {
