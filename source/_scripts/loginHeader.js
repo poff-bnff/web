@@ -6,8 +6,7 @@ var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 
 document.addEventListener('userProfileLoaded', function (e) {
     useUserData(userProfile)
-    fetchMyPasses()
-    console.log('loaded')
+    console.log('User profile is loaded')
 })
 
 
@@ -78,6 +77,11 @@ if (validToken) {
     } catch (error) {
     }
     loadUserProfileH()
+
+    try {
+        document.getElementById('login_cond').style.display = 'none'
+    } catch (error) {
+    }
 }
 
 if (!validToken) {
@@ -166,6 +170,6 @@ function logOut() {
     // console.log('LOGITUD VÄLJA')
     location.reload()
 
-    window.open(location.origin, '_self')
+    // window.open(location.origin, '_self')
 }
 

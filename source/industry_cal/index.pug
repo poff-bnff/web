@@ -128,7 +128,7 @@ block content
                             //-     else
                             //-         img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
 
-                            .screening_head
+                            .event_card_footer
                                 .grid_container_screening_time
                                     div
                                         svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
@@ -146,6 +146,7 @@ block content
                                             polyline(points='12 6 12 12 16 14')
                                         span.screening_time.small_1
                                             +screeningTime(event.startTime)
+                                        span.screening_time.small_1 &nbsp;EET
 
                                 //- .container_screening_location
                                 //-     svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')

@@ -430,6 +430,16 @@ footer
                         "f_trailer_box"\
                         "f_imgs_box"
 
+.grid_ind_event
+        display grid
+        grid-template-columns 1fr
+        grid-template-rows auto
+        padding-top header_height
+        grid-template-areas "f_title_box"\
+                            "f_trailer_box"\
+                            "f_synopsis_box"\
+                            "f_cred_box"\
+
 .grid_cassette
     display grid
     grid-template-columns 1fr
@@ -507,7 +517,8 @@ footer
     align-content start
 
 .login_head
-    padding-top 150px
+    // padding-top 150px
+    padding-top header_height
     // grid-column 1 / 4
     // padding-top 3rem
     h4
@@ -555,7 +566,7 @@ footer
     justify-content center
     justify-items center
     align-items center
-    align-content start
+    align-content center
 
 .login_label
     font-family font_p
@@ -1309,6 +1320,7 @@ row:nth-child(15) > .supporter_logos
 .team
     padding-top header_height
 
+
 .shop
     padding-top header_height
 
@@ -1545,6 +1557,12 @@ option
     padding .5rem 1rem .5rem 1rem
     background-color bg_dark_4
 
+.event_card_footer
+    padding .5rem 1rem .5rem 1rem
+    background-color bg_dark_4
+    align-self end
+
+
 .svg_icon_small
     // height calc(1.5rem + 0.1vw)
     // width calc(1.5rem + 0.1vw)
@@ -1619,7 +1637,7 @@ header
 
 .f_cred_box
     grid-area f_cred_box
-    background-color bg_dark_3
+    background-color white
     padding-left calc(2rem + 1vw)
     padding-right calc(2rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -1629,7 +1647,7 @@ header
 
 .f_runtime_box
     grid-area f_runtime_box
-    background-color bg_dark_4
+    background-color white
     padding-left calc(2rem + 1vw)
     padding-right calc(2rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -1711,9 +1729,21 @@ header
     width 100%
     padding 0
     margin 0
-    background-color bg_dark_2
+    background-color bg_dark_1
     .section_headline
         color bg_dark_4
+
+.elisa_stage
+    padding .5rem
+    // background-image: url(https://assets.poff.ee/img/poff24_elisa_stage.svg)
+
+.elisa_powered
+    margin .5rem
+    min-width 120px
+    max-width 200px
+
+
+
 
 .f_qaclip_box
     grid-area f_qaclip_box
@@ -1866,7 +1896,7 @@ p a
     font-weight 400
     color bg_dark_4
     letter-spacing 0.04em
-    text-align center
+    text-align left
     margin 0
     padding 0
     padding-left 2rem
@@ -2127,7 +2157,7 @@ a.btn_popover
   text-align right
   font-size calc(1.25rem + 0.1vw)
   font-weight 400
-  color ghost_blue
+  color clr_primary
   letter-spacing 0.04em
 
 .screening_hall
@@ -2279,6 +2309,7 @@ a.btn_popover
     background-color white
     margin-bottom 1.618rem
     border .5px solid clr_grey_light
+    align-content space-between
 
 .card_sponsor
     display grid
@@ -2714,8 +2745,27 @@ a.btn_popover
     left 0
     width 100%
     height 100%
+    z-index 600
 
+.eventival_logo_img
+    width 150px
+    margin 1rem
 
+.default_16_9_container
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index 400
+
+.login_16_9_container
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index 500
 
 
 /* MEDIA query: for large screens */
@@ -2740,11 +2790,10 @@ a.btn_popover
         display grid
         grid-template-columns 1fr 1fr 1fr
         grid-template-rows auto
-        grid-template-areas "f_title_box       f_img_slider_box  f_img_slider_box"\
+        grid-template-areas "f_title_box       f_trailer_box     f_trailer_box"\
                             "f_synopsis_box    f_synopsis_box    f_cred_box"\
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
                             "f_interactive_box f_interactive_box f_interactive_box"\
-                            "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_vialog_box      f_vialog_box      f_vialog_box"\
