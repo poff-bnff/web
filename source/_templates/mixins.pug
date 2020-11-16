@@ -21,6 +21,76 @@ mixin videoAp(clipUrlDefault='')
         iframe(width='100%' height='100%' src=`https://www.youtube.com/embed/${videoId}?autoplay=1&origin=https://poff.ee"&mute=1&controls=0&showinfo=0&modestbranding=0&loop=1&rel=0&autohide=1&playlist=${videoId}`
             frameborder='0' allowfullscreen)
 
+mixin videoVl(videoUrl='')
+    - var videoId = videoUrl.split('/bc/')[1] || ''
+        iframe(width='100%' height='100%' src=`https://videolevels.com/embed/${videoId}`
+            frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform')
+
+
+
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kellaaeg (nt 12:00 PM)
+//- Industry events tarbeks peamiselt
+mixin screeningTimeEET(dateStringUTC)
+    - var dom_id = Math.random()
+    div(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+
+            moment.updateLocale('en', {
+                longDateFormat : {
+                    LT: "hh:mm A",
+                    L: "MM/DD/YYYY",
+                    l: "M/D/YYYY",
+                    LL: "MMMM Do YYYY",
+                    ll: "MMM D YYYY",
+                    LLL: "MMMM Do YYYY LT",
+                    lll: "MMM D YYYY LT",
+                    LLLL: "dddd, MMMM Do YYYY LT",
+                    llll: "ddd, MMM D YYYY LT"
+                }
+            });
+
+            moment.updateLocale('et', {
+                longDateFormat: {
+                    LT: 'HH:mm',
+                    LTS: 'H:mm:ss',
+                    L: 'DD.MM.YYYY',
+                    LL: 'D. MMMM YYYY',
+                    LLL: 'D. MMMM YYYY H:mm',
+                    LLLL: 'dddd, D. MMMM YYYY H:mm'
+                }
+            });
+
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('LT');
+            eDisplayMoment1.innerHTML = time_EET;
+
+        })();
+
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kuupäev kuu nime ja päeva nimega, (nt 10th Nov, Tuesday)
+//- Industry events tarbeks peamiselt
+mixin screeningDateEET(dateStringUTC)
+    - var dom_id = Math.random()
+    div(id = 'dt_' + dom_id)
+
+    script.
+        (function()
+        {
+            moment.locale('#{self.locale}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+
+            var weekDay_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('Do MMM');
+            var date_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('dddd');
+
+            eDisplayMoment1.innerHTML = weekDay_EET + ', ' +  date_EET;
+
+        })();
+
+
+
 //- tekitab formaadis (nt E 21.08.2020 12:00) kohaliku kuupäeva. kasutuses article.index.pug
 //- sisend kujul (2020-08-10T22:45:00+0300)
 mixin localdatetime(dateString)
