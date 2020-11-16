@@ -1,44 +1,48 @@
 
 mixin chat(outputRoomName)
     .chat-container(id=outputRoomName+'-chat-container')
+        .main-chat-container
 
-        main.chat-main(id=outputRoomName+'-chat-main')
-            .chat-sidebar
-                h3
-                    i.fas.fa-comments
-                    |  Room Name:
-                h2#room-name
-                h3
-                    i.fas.fa-users
-                    |  Users
-                ul#users
-            .chat-messages
-        .chat-form-container
-            form(id='chat-form')
-                input#msg(type='text' placeholder='Enter Message' required='' autocomplete='off')
-                button.btn
-                    i.fas.fa-paper-plane
-                    |  Send
-            a.btn(href='/chat') Leave Room
+            main.chat-main(id=outputRoomName+'-chat-main')
+                .chat-sidebar
+                    h3
+                        i.fas.fa-comments
+                        |  Room Name:
+                    h2#room-name
+                    h3
+                        i.fas.fa-users
+                        |  Users
+                    ul#users
+                .chat-messages
+            .chat-form-container
+                form(id='chat-form')
+                    input#msg(type='text' placeholder='Enter Message' required='' autocomplete='off')
+                    button.btn
+                        i.fas.fa-paper-plane
+                        |  Send
+                a.btn(href='/chat') Leave Room
 
-        main.chat-main(id=outputRoomName+'-chat-main-moderated')
-            .chat-sidebar
-                h3
-                    i.fas.fa-comments
-                    |  Room Name:
-                h2#room-name
-                h3
-                    i.fas.fa-users
-                    |  Users
-                ul#users
-            .chat-messages
-        .chat-form-container
-            form(id='chat-form-moderated')
-                input#msg(type='text' placeholder='Enter Message' required='' autocomplete='off')
-                button.btn
-                    i.fas.fa-paper-plane
-                    |  Send
-            a.btn(href='/chat') Leave Room
+        .moderated-chat-container
+            main.chat-main(id=outputRoomName+'-chat-main-moderated')
+                .chat-sidebar
+                    h3
+                        i.fas.fa-comments
+                        |  Room Name:
+                    h2#modroom-name
+                    h3
+                        i.fas.fa-users
+                        |  Users
+                    ul#modusers
+                .chat-messages
+            .chat-form-container
+                form(id='chat-form-moderated')
+                    input#modmsg(type='text' placeholder='Enter Message' required='' autocomplete='off')
+                    button.btn
+                        i.fas.fa-paper-plane
+                        //- |  Send
+                a.btn(href='/chat') Leave Room
+
+
 
 
     style.
@@ -48,6 +52,7 @@ mixin chat(outputRoomName)
             --light-color: #e6e9ff;
             --success-color: #5cb85c;
             --error-color: #d9534f;
+            --mod-colo: #B88AAC;
         }
         * {
             box-sizing: border-box;
@@ -177,6 +182,7 @@ mixin chat(outputRoomName)
                 display: none;
             }
         }
+
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
