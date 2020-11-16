@@ -112,8 +112,13 @@ block content
 
                             .card_film_title
 
-                                    h3.film_title_locale.dark_1.padding_bottom_2= event.title
-                                        p(id= event.id+'nupp' style={color: 'red', display:'none'})
+                                h3.film_title_locale.dark_1.padding_bottom_2= event.title
+                                    p(id= event.id+'nupp' style={color: 'red', display:'none'})
+
+                                    //- Add to calendar button
+                                    p.btn.btn_secondary.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false` style='display: none')= 'Add to calendar'
+                                    //- Selle peidetud inputi sees on data
+                                    p(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
 
                             //- .container_frame_16_9
 

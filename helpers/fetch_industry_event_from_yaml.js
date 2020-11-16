@@ -1,6 +1,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const path = require('path');
+const ical = require('ical-generator');
 const rueten = require('./rueten.js');
 
 const rootDir =  path.join(__dirname, '..')
@@ -38,6 +39,7 @@ function convert_to_UTC(datetime) {
 }
 
 const currentTimeUTC = convert_to_UTC()
+
 
 for (const lang of allLanguages) {
     const industryPersonsPath = path.join(fetchDir, `industrypersons.${lang}.yaml`)
@@ -84,6 +86,7 @@ for (const lang of allLanguages) {
                     return industryProjectsYaml.filter(a => a.id === projects.id)[0] || projects
                 })
             }
+
             const oneYaml = yaml.safeDump(rueten(element, lang), { 'noRefs': true, 'indent': '4' });
             const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
 
@@ -93,8 +96,28 @@ for (const lang of allLanguages) {
             fs.writeFileSync(yamlPath, oneYaml, 'utf8');
             fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industry_event_index_template.pug`)
 
-
             element = rueten(element, lang);
+
+
+            // https://github.com/sebbo2002/ical-generator#readme
+            element.calendar_data = escape(ical({
+                domain: 'industry.poff.ee',
+                prodId: '//industry.poff.ee//Industry@Tallinn//EN',
+                events: [
+                    {
+                        start: convert_to_UTC(element.startTime),
+                        timestamp: convert_to_UTC(element.startTime),
+                        description: element.description,
+                        location: element.location.hall.cinema.name + `: http://industry.poff.ee/events/${element.slug}`,
+                        summary: element.title,
+                        organizer: {
+                            name: 'Industry@Tallinn & Baltic Event',
+                            email: 'industry@poff.ee'
+                        }
+                    }
+                ]
+            }).toString())
+
             allData.push(element)
         } else {
             console.log(`ERROR! Industry event ID ${element.id} missing slug`);
