@@ -230,7 +230,7 @@ for (const lang of allLanguages) {
                         continue
                     }
                     if (!(screening.location && screening.location.hall && screening.location.hall.cinema && screening.location.hall.cinema.town)) {
-                        console.log(`ERROR! Screening ID ${screening.id} under cassette ID ${cassette.id} missing location.hall.cinema.town, skipped.`);
+                        console.log(`ERROR! Screening ID ${screening.id} under cassette ID ${s_cassette_copy.id} missing location.hall.cinema.town, skipped.`);
                         continue
                     }
                     // Kui vähemalt üks screeningtype õige, siis hasOneCorrectScreening = true
