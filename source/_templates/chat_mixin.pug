@@ -20,27 +20,6 @@ mixin chat(outputRoomName)
                     button.btn
                         i.fas.fa-paper-plane
                         |  Send
-                a.btn(href='/chat') Leave Room
-
-        .moderated-chat-container
-            main.chat-main(id=outputRoomName+'-chat-main-moderated')
-                .chat-sidebar
-                    h3
-                        i.fas.fa-comments
-                        |  Room Name:
-                    h2#modroom-name
-                    h3
-                        i.fas.fa-users
-                        |  Users
-                    ul#modusers
-                .chat-messages
-            .chat-form-container
-                form(id='chat-form-moderated')
-                    input#modmsg(type='text' placeholder='Enter Message' required='' autocomplete='off')
-                    button.btn
-                        i.fas.fa-paper-plane
-                        //- |  Send
-                a.btn(href='/chat') Leave Room
 
 
 
@@ -187,6 +166,9 @@ mixin chat(outputRoomName)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
 
+        document.addEventListener('userProfileLoaded', function (e) {
+            main(userProfile)
+        })
         const is_moderator = true
 
         function main(userProfile) {
@@ -197,18 +179,18 @@ mixin chat(outputRoomName)
 
 
             // Get username and room from URL
-            const outputRoomName = 'jututuba'
+            const outputRoomName = 'jutueetuba'
             //- const acre = 'moderator'
 
             socket = io('http://192.241.148.13'); // In case your front is not served from the same domain as your server, you have to pass the URL of your server.
 
             // Join chatroom
-            socket.emit('joinRoom', { userProfile, outputRoomName })
+            socket.emit('joinRoom', { userProfile: userProfile, room: outputRoomName })
 
             // Get outputRoomName and users
-            socket.on('roomUsers', ({ outputRoomName, users }) => {
-                outputRoomName(outputRoomName)
-                outputUsers(users)
+            socket.on('roomUsers', (room_users) => {
+                setOutputRoomName(room_users.room)
+                setOutputUsers(room_users.users)
             });
 
             // Message from server
@@ -245,36 +227,6 @@ mixin chat(outputRoomName)
             })
 
             // Message select for modretor
-            if (is_moderator){
-                chatForm.addEventListener('click', e => {
-                    e.preventDefault()
-
-                    // Generate current message id
-                    //- let msgId = outputRoomName + id
-                    //- id++
-
-                    // Read previosliy entered message id, find it in server and bring back formated message here
-                    let restoredMessage =
-
-                    // Emit id to server // selected message
-                    socket.emit('moderatedMessage', ({ restoredMessage, outputRoomName })) //outputRoomName ka
-
-
-                    //- // Get message text
-                    //- let msg = e.target.elements.msg.value
-                    //- msg = msg.trim()
-
-                    //- if (!msg){
-                    //-     return false
-                    //- }
-
-                    //- // Emit message to server
-                    //- socket.emit('chatMessage', {msgId, msg, outputRoomName, userProfile})
-
-                    //- // Clear input
-                    //- e.target.elements.msg.value = ''
-                    //- e.target.elements.msg.focus()
-            })}
 
             // Output message to DOM
             function outputMessage(message) {
@@ -297,12 +249,12 @@ mixin chat(outputRoomName)
             }
 
             // Add outputRoomName name to DOM
-            function outputRoomName(outputRoomName) {
+            function setOutputRoomName(outputRoomName) {
                 roomName.innerText = outputRoomName;
             }
 
             // Add users to DOM
-            function outputUsers(users) {
+            function setOutputUsers(users) {
                 userList.innerHTML = ''
                 users.forEach(user=>{
                     const li = document.createElement('li')
