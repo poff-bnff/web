@@ -115,10 +115,6 @@ block content
                                 h3.film_title_locale.dark_1.padding_bottom_2= event.title
                                     p(id= event.id+'nupp' style={color: 'red', display:'none'})
 
-                                    //- Add to calendar button
-                                    p.btn.btn_secondary.add_to_calendar_button(id = event.id + '_notInMyCalendar' onclick=`addToMyCal('${event.id}');return false` style='display: none')= 'Add to calendar'
-                                    p.btn.btn_secondary.remove_from_calendar_button(id = event.id + '_inMyCalendar' onclick = `removeEvent('${event.id}');return false` onmouseover='changeToRemove(this.id);return false' onmouseout='revertRemove(this.id);return false' style='display: none')= 'In my calendar'
-
                                     //- Selle peidetud inputi sees on data
                                     //- p(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
 
@@ -152,7 +148,9 @@ block content
 
                             .event_card_footer
                                 .grid_container_screening_time
-                                    span.screening_date.small_1.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false`)= 'Add to calendar'
+                                    span.screening_date.small_1.add_to_calendar_button(id = event.id + '_notInMyCalendar' onclick=`addToMyCal('${event.id}');return false` style='display: none')= 'Add to calendar'
+                                    span.screening_date.small_1.remove_from_calendar_button(id = event.id + '_inMyCalendar' onclick = `removeEvent('${event.id}');return false` onmouseover='changeToRemove(this.id);return false' onmouseout='revertRemove(this.id);return false' style='display: none')= 'In my calendar'
+                                    //- span.screening_date.small_1.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false`)= 'Add to calendar'
                                     //- Selle peidetud inputi sees on data
                                     span(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
 
