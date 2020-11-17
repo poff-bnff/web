@@ -151,6 +151,7 @@
         // Output message to DOM
         function outputMessage(message) {
             let messageElement = messageTemplateElement.cloneNode(true)
+            messageElement.style.display = 'block'
             messageElement.firstChild.innerText = message.username + ' ' + message.time
             messageElement.lastChild.innerText = message.text
             chatMessagesElement.appendChild(messageElement)
