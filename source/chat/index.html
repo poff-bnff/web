@@ -112,8 +112,17 @@
         socket.on('roomUsers', (users) => {
             setUserList(users)
         })
+        // Add users to DOM
+        function setUserList(users) {
+            userListElement.innerHTML = ''
+            users.forEach(user => {
+                const li = document.createElement('li')
+                li.innerText = user.username
+                userListElement.appendChild(li)
+            })
+        }
 
-        socket.on('message', (message) => {
+        socket.on('messageToClient', (message) => {
             console.log(message)
             outputMessage(message)
             // Scroll down
@@ -125,16 +134,16 @@
             e.preventDefault()
 
             // Get message text
-            let msg = messageInputElement.value.trim()
-            if (!msg) {
+            let message_text = messageInputElement.value.trim()
+            if (!message_text) {
                 return false
             }
 
             // Emit message to server
-            socket.emit('chatMessage', {
-                userId: userProfile.sub,
-                roomName: room_name,
-                message: msg
+            socket.emit('messageToServer', {
+                user_id: userProfile.sub,
+                room_name: room_name,
+                message: message_text
             })
 
             // Clear input
@@ -145,20 +154,11 @@
         // Output message to DOM
         function outputMessage(message) {
             let messageElement = messageTemplateElement.cloneNode(true)
-            messageElement.firstChild.innerText = message.username
+            messageElement.firstChild.innerText = message.username + ' ' + message.time
             messageElement.lastChild.innerText = message.text
             chatMessagesElement.appendChild(messageElement)
         }
 
-        // Add users to DOM
-        function setUserList(users) {
-            userListElement.innerHTML = ''
-            users.forEach(user => {
-                const li = document.createElement('li')
-                li.innerText = user.username
-                userListElement.appendChild(li)
-            })
-        }
     }
 
 </script>
