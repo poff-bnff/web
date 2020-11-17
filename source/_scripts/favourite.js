@@ -55,17 +55,21 @@ function toggleFavButtons(shortlist_array) {
 
 function toggleMyCalButtons (myCalEvents){
     console.log(myCalEvents)
-    var events = document.getElementsByClassName('card_film')
-    console.log(events)
 
-    for (i=0; i<events.length; i++){
-        if (myCalEvents.includes(events[i].id)){
-        document.getElementById(events[i].id + '_inMyCalendar').style.display = 'block'
-        events[i].style.display = 'block'
+    var isMyEventBtns = document.getElementsByClassName('remove_from_calendar_button')
+    
+
+    for (i=0; i<isMyEventBtns.length; i++){
+        var eventId = isMyEventBtns[i].id.split('_')[0]
+     
+        if (myCalEvents.includes(eventId)){
+            console.log(2)
+            document.getElementById(eventId + '_inMyCalendar').style.display = 'block'
+            document.getElementById(eventId).style.display = 'block'
         } 
         else {
             try{
-            document.getElementById(events[i].id + '_notInMyCalendar').style.display = 'block'
+            document.getElementById(eventId + '_notInMyCalendar').style.display = 'block'
             }
             catch(err){null}
         } 
