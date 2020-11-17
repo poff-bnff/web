@@ -1054,139 +1054,6 @@
     ]
   },
   {
-    "id": 7,
-    "person": {
-      "id": 4093,
-      "created_by": 35,
-      "updated_by": 35,
-      "created_at": "2020-11-14T16:01:50.379Z",
-      "updated_at": "2020-11-14T16:01:50.401Z",
-      "firstName": "Sullivan",
-      "lastName": "Le Postec",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": "Scriptwriter",
-      "firstNameLastName": "Sullivan Le Postec",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": {
-        "id": 3247,
-        "name": "2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
-        "alternativeText": "",
-        "caption": "",
-        "width": 500,
-        "height": 500,
-        "formats": {
-          "thumbnail": {
-            "ext": ".jpg",
-            "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
-            "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
-            "mime": "image/jpeg",
-            "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
-            "path": null,
-            "size": 7.32,
-            "width": 156,
-            "height": 156
-          }
-        },
-        "hash": "2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
-        "ext": ".jpg",
-        "mime": "image/jpeg",
-        "size": 67.84,
-        "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-14T16:00:41.368Z",
-        "updated_at": "2020-11-14T16:00:41.500Z"
-      }
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": null,
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-14T16:04:40.784Z",
-    "updated_at": "2020-11-15T09:57:28.725Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Sullivan Le Postec",
-    "filmography": [],
-    "profilePicAtInd": {
-      "id": 3247,
-      "name": "2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 500,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
-          "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
-          "mime": "image/jpeg",
-          "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
-          "path": null,
-          "size": 7.32,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 67.84,
-      "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 35,
-      "updated_by": 35,
-      "created_at": "2020-11-14T16:00:41.368Z",
-      "updated_at": "2020-11-14T16:00:41.500Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      }
-    ]
-  },
-  {
     "id": 5,
     "person": {
       "id": 4091,
@@ -1449,6 +1316,139 @@
         "updated_by": 28,
         "created_at": "2020-11-13T09:37:55.735Z",
         "updated_at": "2020-11-13T09:37:55.746Z"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "person": {
+      "id": 4093,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-14T16:01:50.379Z",
+      "updated_at": "2020-11-14T16:01:50.401Z",
+      "firstName": "Sullivan",
+      "lastName": "Le Postec",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Scriptwriter",
+      "firstNameLastName": "Sullivan Le Postec",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": {
+        "id": 3247,
+        "name": "2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 500,
+        "height": 500,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
+            "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
+            "mime": "image/jpeg",
+            "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
+            "path": null,
+            "size": 7.32,
+            "width": 156,
+            "height": 156
+          }
+        },
+        "hash": "2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 67.84,
+        "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T16:00:41.368Z",
+        "updated_at": "2020-11-14T16:00:41.500Z"
+      }
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "In 2017, Sullivan Le Postec created his first series, Les Engagés (known as Woke internationally). Two critically acclaimed seasons (10x10mn) of the digital drama have aired on the French public broadcaster's web fiction platform. In 2021 the series will be back with Les Engagés: XAOC, a brand-new adventure that will take the characters in unexpected directions for 3x45mn episodes. For the first time, Sullivan will be directing too.\n\nSullivan started out as a TV critic and journalist. For more than ten years, he wrote for different publications, printed or online. He then began the transition to become a TV writer himself, penning episodes for Dernier Recours (2013) and the second season of TF1's Falco (2013). In 2014, after a year in Berlin, he graduated from Serial Eyes, Europe's premier postgraduate training programme for television writers and producers.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-14T16:04:40.784Z",
+    "updated_at": "2020-11-17T10:35:00.622Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Sullivan Le Postec",
+    "filmography": [],
+    "profilePicAtInd": {
+      "id": 3247,
+      "name": "2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 500,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
+          "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
+          "mime": "image/jpeg",
+          "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_SullivanLePostec - Petra Hrubosova.jpg",
+          "path": null,
+          "size": 7.32,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 67.84,
+      "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Sullivan_Le_Postec_Petra_Hrubosova_087f1ad349.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-14T16:00:41.368Z",
+      "updated_at": "2020-11-14T16:00:41.500Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
