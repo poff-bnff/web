@@ -152,12 +152,12 @@
             messageElement.id = ''
             messageElement.style.display = 'block'
             const messageMetaElement = document.createElement('div')
-            messageMetaElement.innerText = message.username + ' ' + message.time
-            const messageTextElement = document.createElement('div')
+            messageMetaElement.innerText = message.user_name + ' ' + message.time
+            const messageTextElement = document.createElement('span')
             messageTextElement.innerText = message.text
             chatMessagesElement.appendChild(messageElement)
             messageElement.appendChild(messageMetaElement)
-            messageElement.appendChild(messageTextElement)
+            messageMetaElement.appendChild(messageTextElement)
         }
 
     }
