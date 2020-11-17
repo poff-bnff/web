@@ -1,17 +1,26 @@
 
-mixin chat(room_name)
-    div(id='chat-container-' + room_name class='chat-container')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
-        div(id='chat-message-template-' + room_name class='chat-message' style='display:none')
-        div(id='chat-main-' + room_name class='chat-main')
-            div(id='chat-sidebar-' + room_name  class='chat-sidebar')
-                h2(id='chat-room-name-'+ room_name)
-                ul(id='chat-user-list-'+ room_name)
-            div(id='chat-messages-'+ room_name class='chat-messages')
+mixin chat(room_name, is_moderated=false)
 
-        div(id='chat-form-container-'+ room_name class='chat-form-container')
-            form(id='chat-form-' + room_name)
-                input(id='chat-message-input-'+room_name class='chat-message-input' type='text' placeholder='Enter Message' required='' autocomplete='off')
+    - var room_suffix = ''
+    if is_moderated
+        pre ongi modereeritud
+        - console.log('is_moderated')
+        - room_suffix = '-moderated'
+    else
+        pre polegi mod
+
+    div(id='chat-container-' + room_name + room_suffix class='chat-container')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
+        div(id='chat-message-template-' + room_name + room_suffix class='chat-message' style='display:none')
+        div(id='chat-main-' + room_name + room_suffix class='chat-main')
+            div(id='chat-sidebar-' + room_name + room_suffix  class='chat-sidebar')
+                h2(id='chat-room-name-'+ room_name + room_suffix)
+                ul(id='chat-user-list-'+ room_name + room_suffix)
+            div(id='chat-messages-'+ room_name + room_suffix class='chat-messages')
+
+        div(id='chat-form-container-'+ room_name + room_suffix class='chat-form-container')
+            form(id='chat-form-' + room_name + room_suffix)
+                input(id='chat-message-input-' + room_name + room_suffix class='chat-message-input' type='text' placeholder='Enter Message' required='' autocomplete='off')
                 button.btn
                     i.chat-message-button
                     | Send
@@ -108,7 +117,8 @@ mixin chat(room_name)
             padding: 30px;
             max-height: 500px;
             overflow-y: scroll;
-            background-color: var(--background-color);
+            background-color: var(--light-color);
+            color: black;
         }
 
         .chat-messages .message {
@@ -160,25 +170,30 @@ mixin chat(room_name)
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
-        const room_name = '#{room_name}'
 
         document.addEventListener('userProfileLoaded', function (e) {
-            main(userProfile, room_name)
+            main(userProfile, '#{room_name}', #{is_moderated})
         })
 
-        const is_moderator = true
+        function main(userProfile, room_name, is_moderated) {
 
-        function main(userProfile, room_name) {
+            let room_suffix = ''
+            if (is_moderated) {
+                room_suffix = '-moderated'
+            }
+
             const CHAT_SERVER = 'http://192.241.148.13'
             const socket = io(CHAT_SERVER)
 
-            const chatFormElement = document.getElementById(['chat-form', room_name].join('-'))
-            const chatMessagesElement = document.getElementById(['chat-messages', room_name].join('-'))
-            const roomNameElement = document.getElementById(['chat-room-name', room_name].join('-'))
-            const userListElement = document.getElementById(['chat-user-list', room_name].join('-'))
-            const messageInputElement = document.getElementById(['chat-message-input', room_name].join('-'))
-            const messageTemplateElement = document.getElementById(['chat-message-template', room_name].join('-'))
+            const chatFormElement = document.getElementById(['chat-form', room_name + room_suffix].join('-'))
+            const chatMessagesElement = document.getElementById(['chat-messages', room_name + room_suffix].join('-'))
+            const roomNameElement = document.getElementById(['chat-room-name', room_name + room_suffix].join('-'))
+            const userListElement = document.getElementById(['chat-user-list', room_name + room_suffix].join('-'))
+            const messageInputElement = document.getElementById(['chat-message-input', room_name + room_suffix].join('-'))
+            const messageTemplateElement = document.getElementById(['chat-message-template', room_name + room_suffix].join('-'))
 
+            console.log(roomNameElement)
+            console.log(userListElement)
             roomNameElement.innerText = room_name
 
             // Join chatroom
@@ -186,6 +201,7 @@ mixin chat(room_name)
                 user_id: userProfile.sub,
                 user_name: userProfile.name,
                 room_name: room_name,
+                is_moderated: is_moderated,
                 userProfile: userProfile
             })
 
@@ -210,6 +226,7 @@ mixin chat(room_name)
             })
 
             // Message submit
+
             chatFormElement.addEventListener('submit', e => {
                 e.preventDefault()
 
@@ -232,8 +249,10 @@ mixin chat(room_name)
                 messageInputElement.focus()
             })
 
+
             // Output message to DOM
             function outputMessage(message) {
+
                 var messageElement = messageTemplateElement.cloneNode(true)
                 messageElement.id = ''
                 messageElement.style.display = 'block'
@@ -241,9 +260,20 @@ mixin chat(room_name)
                 messageMetaElement.innerText = message.user_name + ' ' + message.time
                 const messageTextElement = document.createElement('span')
                 messageTextElement.innerText = message.text
+
+                const messageButtonElement = document.createElement('button')
+                messageButtonElement.innerHTML = 'send to moderated'
+
                 chatMessagesElement.appendChild(messageElement)
                 messageElement.appendChild(messageMetaElement)
                 messageMetaElement.appendChild(messageTextElement)
+                messageButtonElement.appendChild(messageTextElement)
+                messageButtonElement.onclick = moderateMessage(message.id)
+
+            }
+
+            function moderateMessage(id){
+                console.log(id)
             }
 
         }
