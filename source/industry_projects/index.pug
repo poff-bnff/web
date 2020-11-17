@@ -3,20 +3,24 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 block content
+    section#content.schedule
 
-    if self.data.industryprojects
-        section.grid_films
+
+        if self.data.industryprojects
+
             each project in self.data.industryprojects
 
                 if project.title && project.title.length > 1 && project.slug
                     a(href=`/${lang_path}${project.slug}`)
                         p.dark_1= project.title
 
+
                         if project.images && project.images.length
                             each image in project.images
                                 img(src=`https://assets.poff.ee/img/${image.hash}${image.ext}`)
                         else
                             img(src='/assets/img/static/placeholder_hd_1.jpg')
+
 
 
                         if project.logline
@@ -40,7 +44,6 @@ block content
                                 p.dark_1= project.type
                             if project.contactCompany.name
                                 p.dark_1= project.contactName
-
 
                         if project.clipUrlCode
                             p.dark_1
