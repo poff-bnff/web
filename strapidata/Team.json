@@ -6428,9 +6428,9 @@
             "person": {
               "id": 14,
               "created_by": 6,
-              "updated_by": 6,
+              "updated_by": 19,
               "created_at": "2020-08-28T06:25:21.189Z",
-              "updated_at": "2020-09-06T08:55:03.479Z",
+              "updated_at": "2020-11-15T11:30:08.120Z",
               "firstName": "Anna-Liiza",
               "lastName": "Irbaš",
               "gender": 3,
@@ -6440,7 +6440,7 @@
               "biography": null,
               "filmography": null,
               "profession": null,
-              "firstNameLastName": "Anna-Liiza Irbaš",
+              "firstNameLastName": "Anna-Liiza Izbaš",
               "remoteId": null,
               "pageUrl": null,
               "picture": {
@@ -25291,13 +25291,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 26,
-      "firstname": "Andres",
-      "lastname": "Lestal",
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
       "username": null
     },
     "created_at": "2020-10-22T11:49:13.839Z",
-    "updated_at": "2020-10-27T11:42:37.994Z",
+    "updated_at": "2020-11-16T11:23:44.198Z",
     "domain": {
       "id": 5,
       "Url": null,
@@ -25315,7 +25315,7 @@
     },
     "groupType": "festivalTeam",
     "name_et": "",
-    "name_en": "Industry Team",
+    "name_en": "Team",
     "name_ru": "",
     "slug_et": "",
     "slug_en": "industry-team",
@@ -25323,8 +25323,13 @@
     "subTeam": [
       {
         "id": 45,
-        "order": null,
-        "name": null,
+        "order": 1,
+        "name": {
+          "id": 29321,
+          "et": null,
+          "en": "Industry@Tallinn & Baltic Event",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 358,
@@ -26189,14 +26194,76 @@
                 "updated_at": "2020-09-05T20:16:13.924Z"
               }
             ]
+          },
+          {
+            "id": 412,
+            "person": null,
+            "eMailAtTeam": null,
+            "phoneNrAtTeam": null,
+            "roleAtTeam_et": "Industry@Tallinn & Baltic Event Producer",
+            "roleAtTeam_en": "Industry@Tallinn & Baltic Event Producer",
+            "roleAtTeam_ru": null,
+            "emailAtTeam": "laura.roosaar@poff.ee",
+            "phoneAtTeam": "+372 5656 6635",
+            "order": null,
+            "professions_et": null,
+            "professions_en": null,
+            "professions_ru": null,
+            "country": null,
+            "roleAtJury_et": null,
+            "roleAtJury_en": null,
+            "roleAtJury_ru": null,
+            "about_et": null,
+            "about_en": null,
+            "about_ru": null,
+            "pictureAtTeam": [
+              {
+                "id": 3239,
+                "name": "ind.lauraroosaar.jpeg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 200,
+                "height": 185,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpeg",
+                    "url": "/uploads/thumbnail_42nkna_Vc_2048e52d_5af4189edf.jpeg",
+                    "hash": "thumbnail_42nkna_Vc_2048e52d_5af4189edf",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_42nknaVc-2048e52d.jpeg",
+                    "path": null,
+                    "size": 6.04,
+                    "width": 169,
+                    "height": 156
+                  }
+                },
+                "hash": "42nkna_Vc_2048e52d_5af4189edf",
+                "ext": ".jpeg",
+                "mime": "image/jpeg",
+                "size": 8.14,
+                "url": "/uploads/42nkna_Vc_2048e52d_5af4189edf.jpeg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 30,
+                "updated_by": 30,
+                "created_at": "2020-11-14T14:08:13.988Z",
+                "updated_at": "2020-11-14T14:08:27.671Z"
+              }
+            ]
           }
         ],
         "juryMember": []
       },
       {
         "id": 46,
-        "order": null,
-        "name": null,
+        "order": 2,
+        "name": {
+          "id": 29322,
+          "et": null,
+          "en": "Creative Gate",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 345,
@@ -26419,8 +26486,13 @@
       },
       {
         "id": 47,
-        "order": null,
-        "name": null,
+        "order": 3,
+        "name": {
+          "id": 29323,
+          "et": null,
+          "en": "Co-Production Market",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 347,
@@ -26535,8 +26607,13 @@
       },
       {
         "id": 48,
-        "order": null,
-        "name": null,
+        "order": 4,
+        "name": {
+          "id": 29324,
+          "et": null,
+          "en": "Works in Progress",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 348,
@@ -26651,8 +26728,13 @@
       },
       {
         "id": 49,
-        "order": null,
-        "name": null,
+        "order": 5,
+        "name": {
+          "id": 29325,
+          "et": null,
+          "en": "Music Meets Film",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 349,
@@ -26876,7 +26958,12 @@
       {
         "id": 50,
         "order": null,
-        "name": null,
+        "name": {
+          "id": 29326,
+          "et": null,
+          "en": "Black Night Stars",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 351,
@@ -27099,8 +27186,13 @@
       },
       {
         "id": 51,
-        "order": null,
-        "name": null,
+        "order": 6,
+        "name": {
+          "id": 29327,
+          "et": null,
+          "en": "BlackRoom",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 353,
@@ -27181,8 +27273,13 @@
       },
       {
         "id": 52,
-        "order": null,
-        "name": null,
+        "order": 7,
+        "name": {
+          "id": 29328,
+          "et": null,
+          "en": "TV Beats",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 354,
@@ -27297,8 +27394,13 @@
       },
       {
         "id": 53,
-        "order": null,
-        "name": null,
+        "order": 8,
+        "name": {
+          "id": 29329,
+          "et": null,
+          "en": "European Genre Forum",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 355,
@@ -27413,8 +27515,13 @@
       },
       {
         "id": 54,
-        "order": null,
-        "name": null,
+        "order": 9,
+        "name": {
+          "id": 29330,
+          "et": null,
+          "en": "European Film Forum",
+          "ru": null
+        },
         "teamMember": [
           {
             "id": 356,

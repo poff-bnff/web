@@ -349,153 +349,6 @@
     "organisations": []
   },
   {
-    "id": 21,
-    "created_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "created_at": "2020-11-14T11:53:46.873Z",
-    "updated_at": "2020-11-14T11:53:46.954Z",
-    "title_et": "Ajakava",
-    "slug_et": "ajakava",
-    "title_en": "Just Film Timetables",
-    "slug_en": "just-film-timetables",
-    "title_ru": "Just Filmi ajakavad",
-    "slug_ru": "just-filmi-ajakavad",
-    "lead_et": "Just Filmi Tallinna ja Tartu ajakavad!",
-    "lead_en": "Just Film Tallinn timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nJust Film Tartu timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
-    "lead_ru": "Just Filmi Tallinna ja Tartu ajakavad!",
-    "contents_et": "Tutvu Just Filmi programmi Tallinna ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nTutvu Just Filmi programmi Tartu ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
-    "contents_en": null,
-    "contents_ru": "Just Film Tallinn timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nJust Film Tartu timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
-    "publishFrom": null,
-    "publishUntil": null,
-    "publish_et": true,
-    "publish_en": true,
-    "publish_ru": true,
-    "media": {
-      "id": 277,
-      "clipUrlDefault": null,
-      "clipUrl_et": null,
-      "clipUrl_en": null,
-      "clipUrl_ru": null,
-      "imageDefault": [
-        {
-          "id": 685,
-          "name": "F_1_Wendy.jpg",
-          "alternativeText": "",
-          "caption": "",
-          "width": 1920,
-          "height": 1080,
-          "formats": {
-            "thumbnail": {
-              "ext": ".jpg",
-              "url": "/uploads/thumbnail_F_1_Wendy_b79a227fbb.jpg",
-              "hash": "thumbnail_F_1_Wendy_b79a227fbb",
-              "mime": "image/jpeg",
-              "name": "thumbnail_F_1_Wendy.jpg",
-              "path": null,
-              "size": 8.3,
-              "width": 245,
-              "height": 138
-            }
-          },
-          "hash": "F_1_Wendy_b79a227fbb",
-          "ext": ".jpg",
-          "mime": "image/jpeg",
-          "size": 234,
-          "url": "/uploads/F_1_Wendy_b79a227fbb.jpg",
-          "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
-          "created_by": 6,
-          "updated_by": 6,
-          "created_at": "2020-10-11T16:43:09.391Z",
-          "updated_at": "2020-10-11T16:43:09.847Z"
-        }
-      ],
-      "image_et": [],
-      "image_en": [],
-      "image_ru": []
-    },
-    "button": [],
-    "article_types": [
-      {
-        "id": 2,
-        "name": "news",
-        "created_by": 6,
-        "updated_by": 1,
-        "created_at": "2020-08-18T13:49:51.616Z",
-        "updated_at": "2020-09-21T10:57:52.599Z",
-        "article": null,
-        "et": "Uudised",
-        "en": "News",
-        "ru": "Новости",
-        "slug_et": "uudis",
-        "slug_en": "news",
-        "slug_ru": "novost",
-        "name_et": "Uudis",
-        "name_en": "News",
-        "name_ru": "Новость",
-        "label_et": "Uudis",
-        "label_en": "News",
-        "label_ru": "Новость",
-        "Description": null
-      },
-      {
-        "id": 5,
-        "name": "about",
-        "created_by": 6,
-        "updated_by": 1,
-        "created_at": "2020-09-01T12:17:53.527Z",
-        "updated_at": "2020-09-21T10:54:13.651Z",
-        "article": null,
-        "et": "Artikkel",
-        "en": "About",
-        "ru": "Артикл",
-        "slug_et": "artikkel",
-        "slug_en": "about",
-        "slug_ru": "artikl",
-        "name_et": "Artikkel",
-        "name_en": "About",
-        "name_ru": "Артикл",
-        "label_et": "Artikkel",
-        "label_en": "About",
-        "label_ru": "Артикл",
-        "Description": null
-      }
-    ],
-    "tag_premiere_types": [],
-    "programmes": [],
-    "tag_genres": [],
-    "tag_keywords": [],
-    "web_authors": [
-      {
-        "id": 3,
-        "namePrivate": "Justi Hundu",
-        "created_by": 6,
-        "updated_by": 6,
-        "created_at": "2020-09-04T10:41:16.303Z",
-        "updated_at": "2020-09-04T10:41:16.384Z",
-        "name": {
-          "id": 3858,
-          "et": "Justi Hundu",
-          "en": "Wolfie",
-          "ru": "Волчонок"
-        }
-      }
-    ],
-    "organisations": []
-  },
-  {
     "id": 11,
     "created_by": {
       "id": 14,
@@ -504,13 +357,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
+      "id": 18,
+      "firstname": "Jaana",
+      "lastname": "Kalinistova",
       "username": null
     },
     "created_at": "2020-09-23T07:40:14.058Z",
-    "updated_at": "2020-10-27T12:46:15.067Z",
+    "updated_at": "2020-11-16T08:54:54.006Z",
     "title_et": "Ekskursioonid Just Filmile",
     "slug_et": "ekskursioonid-just-filmile",
     "title_en": null,
@@ -522,7 +375,7 @@
     "lead_ru": null,
     "contents_et": "Just Filmile saavad tulla kõik, olenemata sellest, kus Eestimaa osas nad ka ei asu.\nJust Filmi meeskond pakub koolidele võimalust tulla festivalile ekskursiooni raames. Just Filmi meeskond võtab enda peale nii transpordi broneerimise kui ka filmisoovituste jagamise.\n\nSiin on 4 imelihtsat sammu, kuidas organiseerida omale bussiekskursioon Just Filmile:\n\nSAMM 1\nVõta ühendust meie meeskonnaga. Sind aitab Heleen Sutt (heleen.sutt@poff.ee, 5205592). Esimesena paneme paika, mis päeval ja mis kell võiksite tulla Just Filmi raames kinno ning teeme teile hinnapakkumise.\n\nSAMM 2\nKui aeg ja film on välja valitud, siis broneerime teile bussi ja kohad kinosaalis. Õpetajatele on ekskursioonil osalemine tasuta.\n\nSAMM 3\nKes soovib Tallinnas ekskursioonil viibida kauem, siis ka selline võimalus on olemas. Selleks tuleb ekskursiooni tellijal tasuda bussi lisaootetundide eest.\n\nSAMM 4\nEksursioonipäeva hommikul on buss kokkulepitud ajal kooli ees, sõidutab teid mugavalt kinno ja soovi korral ka muuseumisse. Pärast filmi lõppu viib buss kõik õpilased ja õpetajad kooli juurde tagasi.\n\n\n##### Filmimuuseumi pakkumine Just Filmi ekskursioonilistele\n\nProgramm \"Filmi sisse minek\" Just Filmi erihinnaga **4.50 õpilane**.\n\nFilmimuuseum pakub lastele võimalust kiigata filmitöö telgitagustesse. Kes on režissöör? Kuidas tehakse grimmi? Mis tunne on olla kaamera ees? Ja palju muud põnevat... Illusioonide ruumis saab ise oma käega proovida, kuidas saadi pildid liikuma kaamerate-eelsel ajastul. Programm kestab ca 1,5 tundi ja sobib kõikidele kooliastmetele.\n\nBroneerimine [tellimus@ajaloomuuseum.ee](tellimus@ajaloomuuseum.ee)\nLisainfo ja tellimuste haldur Tatjana Runge 5255976.\n\n![haridusprogrammid.jpg](http://139.59.130.149/uploads/haridusprogrammid_31d6169479.jpg)\n\n\n\nLisainfo ekskursioonide kohta:\n\nHeleen Sutt\nheleen.sutt@poff.ee\n520 5592",
     "contents_en": null,
-    "contents_ru": "Каждый может посетить фестиваль Just Film, независимо от того, в какой части Эстонии он живет. Команда Just Film предлагает школам возможность приехать на фестиваль в рамках экскурсий. Команда берет на себя бронирование транспорта, а также поможет с выбором фильмов.\n\nВот 4 простых шага для организации автобусной экскурсии на Just Film:\n\nШАГ 1\nСвяжитесь с нашей командой. Вам будет помогать Heleen Sutt (heleen.sutt@poff.ee, 5205592). Для начала мы с вами определим подходящий день и время для приезда на кинофестиваль и составим для вас ценовое предложение.\n\nШАГ 2\nКак только время и фильм будут выбраны, мы закажем автобус и забронируем места в кинозале. Участие в экскурсии для учителей бесплатное.\n\nШАГ 3\nЕсли вы хотите остаться в Таллинне подольше, то такая возможность есть. В таком случае заказчику экскурсии будет необходимо оплатить дополнительные часы ожидания автобуса.\n\nШАГ 4\nУтром, в день экскурсии автобус прибудет к школе в оговоренное время, и вас удобно доставят в кинотеатр и, если хотите, в музей. После фильма автобус доставить всех учеников и учителей обратно в школу.\n\nДополнительная информация:\nHeleen Sutt\nheleen.sutt@poff.ee\n520 5592",
+    "contents_ru": "Каждый может посетить фестиваль Just Film, независимо от того, в какой части Эстонии он живет. Команда Just Film предлагает школам возможность приехать на фестиваль в рамках экскурсий. Команда берет на себя бронирование транспорта, а также поможет с выбором фильмов.\n\nВот 4 простых шага для организации автобусной экскурсии на Just Film:\n\nШАГ 1\nСвяжитесь с нашей командой. Вам будет помогать Heleen Sutt (heleen.sutt@poff.ee, 5205592). Для начала мы с вами определим подходящий день и время для приезда на кинофестиваль и составим для вас ценовое предложение.\n\nШАГ 2\nКак только время и фильм будут выбраны, мы закажем автобус и забронируем места в кинозале. Участие в экскурсии для учителей бесплатное.\n\nШАГ 3\nЕсли вы хотите остаться в Таллинне подольше, то такая возможность есть. В таком случае заказчику экскурсии будет необходимо оплатить дополнительные часы ожидания автобуса.\n\nШАГ 4\nУтром, в день экскурсии автобус прибудет к школе в оговоренное время, и вас удобно доставят в кинотеатр и, если хотите, в музей. После фильма автобус доставить всех учеников и учителей обратно в школу.\n\n##### Предложение Музея кино для участинков экскурсий Just Film\n\nПрограмма \"Побывай в кино\" (\"Filmi sisse minek\") по специальной цене для Just Film **4.50 евро/ученик**.\n\nМузей кино предлагает детям возможность заглянуть за кадр фильма. Кто такой режиссер? Как накладывается гримм? Каково оказаться перед объективом камеры? И много другого захватывающего... В комнате иллюзий можно самостоятельно попробовать и создать движущиеся картинки так, как это делали до появления видеокамер. Продолжительность программы 1,5 часа, и она подходит для всех школьных ступеней.\n\nБронирование [tellimus@ajaloomuuseum.ee](tellimus@ajaloomuuseum.ee)\nДополнительная информация и администратор заказов Татьяна Рунге 525 5976.\n\n![haridusprogrammid.jpg](http://139.59.130.149/uploads/haridusprogrammid_31d6169479.jpg)\n\n\nДополнительная информация:\nHeleen Sutt\nheleen.sutt@poff.ee\n520 5592",
     "publishFrom": null,
     "publishUntil": null,
     "publish_et": true,
@@ -771,6 +624,119 @@
     "media": null,
     "button": [],
     "article_types": [
+      {
+        "id": 5,
+        "name": "about",
+        "created_by": 6,
+        "updated_by": 1,
+        "created_at": "2020-09-01T12:17:53.527Z",
+        "updated_at": "2020-09-21T10:54:13.651Z",
+        "article": null,
+        "et": "Artikkel",
+        "en": "About",
+        "ru": "Артикл",
+        "slug_et": "artikkel",
+        "slug_en": "about",
+        "slug_ru": "artikl",
+        "name_et": "Artikkel",
+        "name_en": "About",
+        "name_ru": "Артикл",
+        "label_et": "Artikkel",
+        "label_en": "About",
+        "label_ru": "Артикл",
+        "Description": null
+      }
+    ],
+    "tag_premiere_types": [],
+    "programmes": [],
+    "tag_genres": [],
+    "tag_keywords": [],
+    "web_authors": [
+      {
+        "id": 3,
+        "namePrivate": "Justi Hundu",
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-09-04T10:41:16.303Z",
+        "updated_at": "2020-09-04T10:41:16.384Z",
+        "name": {
+          "id": 3858,
+          "et": "Justi Hundu",
+          "en": "Wolfie",
+          "ru": "Волчонок"
+        }
+      }
+    ],
+    "organisations": []
+  },
+  {
+    "id": 21,
+    "created_by": {
+      "id": 14,
+      "firstname": "Heleen",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "updated_by": {
+      "id": 14,
+      "firstname": "Heleen",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "created_at": "2020-11-14T11:53:46.873Z",
+    "updated_at": "2020-11-16T08:44:55.100Z",
+    "title_et": "Ajakava",
+    "slug_et": "ajakava",
+    "title_en": "Just Film Timetables",
+    "slug_en": "just-film-timetables",
+    "title_ru": "Just Filmi ajakavad",
+    "slug_ru": "just-filmi-ajakavad",
+    "lead_et": "Tutvu Just Filmi programmi Tallinna ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nTutvu Just Filmi programmi Tartu ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
+    "lead_en": "Just Film Tallinn timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nJust Film Tartu timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
+    "lead_ru": "",
+    "contents_et": "",
+    "contents_en": null,
+    "contents_ru": "",
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish_et": true,
+    "publish_en": true,
+    "publish_ru": false,
+    "media": {
+      "id": 277,
+      "clipUrlDefault": null,
+      "clipUrl_et": null,
+      "clipUrl_en": null,
+      "clipUrl_ru": null,
+      "imageDefault": [],
+      "image_et": [],
+      "image_en": [],
+      "image_ru": []
+    },
+    "button": [],
+    "article_types": [
+      {
+        "id": 2,
+        "name": "news",
+        "created_by": 6,
+        "updated_by": 1,
+        "created_at": "2020-08-18T13:49:51.616Z",
+        "updated_at": "2020-09-21T10:57:52.599Z",
+        "article": null,
+        "et": "Uudised",
+        "en": "News",
+        "ru": "Новости",
+        "slug_et": "uudis",
+        "slug_en": "news",
+        "slug_ru": "novost",
+        "name_et": "Uudis",
+        "name_en": "News",
+        "name_ru": "Новость",
+        "label_et": "Uudis",
+        "label_en": "News",
+        "label_ru": "Новость",
+        "Description": null
+      },
       {
         "id": 5,
         "name": "about",
@@ -1372,6 +1338,131 @@
     "publish_en": null,
     "publish_ru": true,
     "media": null,
+    "button": [],
+    "article_types": [
+      {
+        "id": 2,
+        "name": "news",
+        "created_by": 6,
+        "updated_by": 1,
+        "created_at": "2020-08-18T13:49:51.616Z",
+        "updated_at": "2020-09-21T10:57:52.599Z",
+        "article": null,
+        "et": "Uudised",
+        "en": "News",
+        "ru": "Новости",
+        "slug_et": "uudis",
+        "slug_en": "news",
+        "slug_ru": "novost",
+        "name_et": "Uudis",
+        "name_en": "News",
+        "name_ru": "Новость",
+        "label_et": "Uudis",
+        "label_en": "News",
+        "label_ru": "Новость",
+        "Description": null
+      }
+    ],
+    "tag_premiere_types": [],
+    "programmes": [],
+    "tag_genres": [],
+    "tag_keywords": [],
+    "web_authors": [
+      {
+        "id": 3,
+        "namePrivate": "Justi Hundu",
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-09-04T10:41:16.303Z",
+        "updated_at": "2020-09-04T10:41:16.384Z",
+        "name": {
+          "id": 3858,
+          "et": "Justi Hundu",
+          "en": "Wolfie",
+          "ru": "Волчонок"
+        }
+      }
+    ],
+    "organisations": []
+  },
+  {
+    "id": 22,
+    "created_by": {
+      "id": 15,
+      "firstname": "Epp",
+      "lastname": "Kõuhkna",
+      "username": null
+    },
+    "updated_by": {
+      "id": 15,
+      "firstname": "Epp",
+      "lastname": "Kõuhkna",
+      "username": null
+    },
+    "created_at": "2020-11-14T14:09:22.918Z",
+    "updated_at": "2020-11-14T15:06:23.605Z",
+    "title_et": "Emotsiooniderohke filmiõhtu parimas seltskonnas",
+    "slug_et": "emotsiooniderohke-just-filmi-filmiohtu-parimas-seltskonnas",
+    "title_en": null,
+    "slug_en": "just-filmi-article-9",
+    "title_ru": null,
+    "slug_ru": "just-filmi-article-10",
+    "lead_et": "**Eelmisel aastal alustasime uue traditsiooniga - Just Filmi filmiõhtu ning sel aastal tuli ta taas.**",
+    "lead_en": null,
+    "lead_ru": null,
+    "contents_et": "Traditsioon sai alguse soovist tutvustada noorte- ja lastefilmide festivali Just Film olemust, sisu ja missiooni veel laiemale publikule. \n\nJust Filmilt leiab kindlasti palju meelelahutuslikke koguperefilme igas vanuses lastele, aga nende kõrval on vähemalt sama või isegi tähtsamal kohal filmid noortele, täiskasvanutele ja ka vanematele. Filmivalik algab keskkonnateemalistest dokumentaalidest lõpetades lugudega noortest, kes peavad igapäevaselt toime tulema muredega nagu narkomaanist vanemad, koolikiusamine või sotsiaalmeedia mõjud vaimsele tervisele. \n\nNeid filme näidates on Just Filmi eesmärk tekitada arutelusid sõprade ja perede seltsis, sest mis võiks maalida veel parema pildi ja tekitada sügavaid emotsioone kui üks hästi tehtud linateos?\n\nSelles õhtus oli palju emotsioone - alustasime põneva Mamma pannkookide väljakutsega, kus iga tiim pidi kaunistama road just enda äranägemise ja ilumeele järgi. Õhtu lõpus vaatasime koos filmi \"Minu elu koomikuna\", mis räägib loo koolikiusamisest ja sellest, kuidas iga meie tegu kogu ülejäänud elu meiega kaasas käib ja meid mõjutab.Kinosaalist lahkudes jagus emotsioone ja mõttevahetusi veel pikaks ajaks.\n\nFilmiõhtu pildigaleriiga saab tutvuda [siin](https://www.flickr.com/photos/poffihunt/albums/72157716850541081).\n\nAitäh ja järgmise korrani!\n",
+    "contents_en": null,
+    "contents_ru": null,
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish_et": true,
+    "publish_en": null,
+    "publish_ru": null,
+    "media": {
+      "id": 287,
+      "clipUrlDefault": null,
+      "clipUrl_et": null,
+      "clipUrl_en": null,
+      "clipUrl_ru": null,
+      "imageDefault": [
+        {
+          "id": 3240,
+          "name": "50592938271_9b143c393b_k copy-min.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 2048,
+          "height": 1365,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_50592938271_9b143c393b_k_copy_min_1ef9cbb5f3.jpg",
+              "hash": "thumbnail_50592938271_9b143c393b_k_copy_min_1ef9cbb5f3",
+              "mime": "image/jpeg",
+              "name": "thumbnail_50592938271_9b143c393b_k copy-min.jpg",
+              "path": null,
+              "size": 11.67,
+              "width": 234,
+              "height": 156
+            }
+          },
+          "hash": "50592938271_9b143c393b_k_copy_min_1ef9cbb5f3",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 588,
+          "url": "/uploads/50592938271_9b143c393b_k_copy_min_1ef9cbb5f3.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 15,
+          "updated_by": 15,
+          "created_at": "2020-11-14T14:09:17.783Z",
+          "updated_at": "2020-11-14T14:09:18.044Z"
+        }
+      ],
+      "image_et": [],
+      "image_en": [],
+      "image_ru": []
+    },
     "button": [],
     "article_types": [
       {

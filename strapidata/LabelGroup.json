@@ -770,6 +770,146 @@
     ]
   },
   {
+    "id": 3,
+    "name": "all",
+    "created_by": {
+      "id": 4,
+      "firstname": "Siim",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "updated_by": {
+      "id": 4,
+      "firstname": "Siim",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "created_at": "2020-09-08T08:59:45.993Z",
+    "updated_at": "2020-09-08T09:08:36.435Z",
+    "label": [
+      {
+        "id": 270,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Languages",
+        "value_en": "Languages",
+        "value_ru": "Языки",
+        "name": "selectLocale"
+      },
+      {
+        "id": 271,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Esitlejad",
+        "value_en": "Presenters",
+        "value_ru": null,
+        "name": "presenters"
+      },
+      {
+        "id": 272,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Sponsor",
+        "value_en": "Sponsor",
+        "value_ru": "Спонсоры",
+        "name": "sponsors"
+      },
+      {
+        "id": 273,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Toetajad",
+        "value_en": "Supporters",
+        "value_ru": "Друзья",
+        "name": "supporters"
+      },
+      {
+        "id": 274,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Festivali meeskond",
+        "value_en": "Festival team",
+        "value_ru": "Команда фестиваля",
+        "name": "festivalTeam"
+      },
+      {
+        "id": 275,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Ametlikud partnerid",
+        "value_en": "Official partners",
+        "value_ru": "Официальные партнеры",
+        "name": "officialPartners"
+      },
+      {
+        "id": 276,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Partnerid",
+        "value_en": "Partners",
+        "value_ru": "Партнёры",
+        "name": "partners"
+      },
+      {
+        "id": 277,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Täname",
+        "value_en": null,
+        "value_ru": null,
+        "name": "thanksTo"
+      },
+      {
+        "id": 278,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Seansside kalender",
+        "value_en": "Screenings calendar",
+        "value_ru": null,
+        "name": "screeningsCalendar"
+      },
+      {
+        "id": 279,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Ürituste kalender",
+        "value_en": "Events calendar",
+        "value_ru": null,
+        "name": "eventsCalendar"
+      },
+      {
+        "id": 280,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Mis juhtus?",
+        "value_en": "What happened?",
+        "value_ru": null,
+        "name": "eventsGalleries"
+      },
+      {
+        "id": 281,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Festivali meeskond",
+        "value_en": "Festival team",
+        "value_ru": "Команда фестиваля",
+        "name": "team"
+      }
+    ]
+  },
+  {
     "id": 2,
     "name": "film",
     "created_by": {
@@ -785,7 +925,7 @@
       "username": null
     },
     "created_at": "2020-08-28T13:20:35.527Z",
-    "updated_at": "2020-11-12T15:50:26.929Z",
+    "updated_at": "2020-11-14T15:59:28.072Z",
     "label": [
       {
         "id": 236,
@@ -1132,8 +1272,8 @@
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "minukava+",
-        "value_en": "minukava+",
+        "value_et": "Lisa seanss minu kavva",
+        "value_en": "Add screening to my screenings",
         "value_ru": null,
         "name": "addSavedScreening"
       },
@@ -1142,150 +1282,10 @@
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "minukava-",
-        "value_en": "minukava-",
+        "value_et": "Eemalda seanss minu kavast",
+        "value_en": "Remove screening from my screenings",
         "value_ru": null,
         "name": "removeSavedScreening"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "all",
-    "created_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "created_at": "2020-09-08T08:59:45.993Z",
-    "updated_at": "2020-09-08T09:08:36.435Z",
-    "label": [
-      {
-        "id": 270,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Languages",
-        "value_en": "Languages",
-        "value_ru": "Языки",
-        "name": "selectLocale"
-      },
-      {
-        "id": 271,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Esitlejad",
-        "value_en": "Presenters",
-        "value_ru": null,
-        "name": "presenters"
-      },
-      {
-        "id": 272,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Sponsor",
-        "value_en": "Sponsor",
-        "value_ru": "Спонсоры",
-        "name": "sponsors"
-      },
-      {
-        "id": 273,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Toetajad",
-        "value_en": "Supporters",
-        "value_ru": "Друзья",
-        "name": "supporters"
-      },
-      {
-        "id": 274,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Festivali meeskond",
-        "value_en": "Festival team",
-        "value_ru": "Команда фестиваля",
-        "name": "festivalTeam"
-      },
-      {
-        "id": 275,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Ametlikud partnerid",
-        "value_en": "Official partners",
-        "value_ru": "Официальные партнеры",
-        "name": "officialPartners"
-      },
-      {
-        "id": 276,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Partnerid",
-        "value_en": "Partners",
-        "value_ru": "Партнёры",
-        "name": "partners"
-      },
-      {
-        "id": 277,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Täname",
-        "value_en": null,
-        "value_ru": null,
-        "name": "thanksTo"
-      },
-      {
-        "id": 278,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Seansside kalender",
-        "value_en": "Screenings calendar",
-        "value_ru": null,
-        "name": "screeningsCalendar"
-      },
-      {
-        "id": 279,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Ürituste kalender",
-        "value_en": "Events calendar",
-        "value_ru": null,
-        "name": "eventsCalendar"
-      },
-      {
-        "id": 280,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Mis juhtus?",
-        "value_en": "What happened?",
-        "value_ru": null,
-        "name": "eventsGalleries"
-      },
-      {
-        "id": 281,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Festivali meeskond",
-        "value_en": "Festival team",
-        "value_ru": "Команда фестиваля",
-        "name": "team"
       }
     ]
   },
@@ -1305,7 +1305,7 @@
       "username": null
     },
     "created_at": "2020-09-08T09:07:05.424Z",
-    "updated_at": "2020-11-13T11:07:39.481Z",
+    "updated_at": "2020-11-14T16:10:21.721Z",
     "label": [
       {
         "id": 292,
@@ -1472,10 +1472,60 @@
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "minu seansid",
+        "value_et": "minu kava",
         "value_en": "my screenings",
         "value_ru": "moi seanss",
         "name": "mainMyScreenings"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "industry",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-15T11:10:21.601Z",
+    "updated_at": "2020-11-15T11:11:02.090Z",
+    "label": [
+      {
+        "id": 392,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Date",
+        "value_en": "Date",
+        "value_ru": "Date",
+        "name": "eventDate"
+      },
+      {
+        "id": 393,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Time EET",
+        "value_en": "Time EET",
+        "value_ru": "Time EET",
+        "name": "eventTimeEet"
+      },
+      {
+        "id": 394,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "User time",
+        "value_en": "User time",
+        "value_ru": "User time",
+        "name": "eventTimeUser"
       }
     ]
   },
@@ -1495,7 +1545,7 @@
       "username": null
     },
     "created_at": "2020-11-05T20:45:47.073Z",
-    "updated_at": "2020-11-13T13:16:40.501Z",
+    "updated_at": "2020-11-16T05:02:59.729Z",
     "label": [
       {
         "id": 353,
@@ -1606,6 +1656,16 @@
         "value_en": "Empty filters",
         "value_ru": "Очищать фильтры",
         "name": "empty"
+      },
+      {
+        "id": 395,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Laetakse...",
+        "value_en": "Loading...",
+        "value_ru": "Загрузка...",
+        "name": "loading"
       }
     ]
   },
