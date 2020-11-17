@@ -116,9 +116,9 @@ block content
                                     p(id= event.id+'nupp' style={color: 'red', display:'none'})
 
                                     //- Add to calendar button
-                                    p.btn.btn_secondary.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false` style='display: none')= 'Add to calendar'
+                                    //- p.btn.btn_secondary.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false`)= 'Add to calendar'
                                     //- Selle peidetud inputi sees on data
-                                    p(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
+                                    //- p(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
 
                             //- .container_frame_16_9
 
@@ -145,8 +145,25 @@ block content
                                             circle(cx='12' cy='12' r='10')
                                             polyline(points='12 6 12 12 16 14')
                                         span.screening_time.small_1
-                                            +screeningTime(event.startTime)
+                                            +screeningTimeEET(event.startTime)
                                         span.screening_time.small_1 &nbsp;EET
+
+                            .event_card_footer
+                                .grid_container_screening_time
+                                    span.screening_date.small_1.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false`)= 'Add to calendar'
+                                    //- Selle peidetud inputi sees on data
+                                    span(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
+
+
+                                    .text-right
+                                        svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                            circle(cx='12' cy='12' r='10')
+                                            polyline(points='12 6 12 12 16 14')
+                                        span.screening_time.small_1
+                                            +screeningTime(event.startTime)
+                                        span.screening_time.small_1 &nbsp;User
+
+
 
                                 //- .container_screening_location
                                 //-     svg.svg_icon_small(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')

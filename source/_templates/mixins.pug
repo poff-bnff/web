@@ -82,7 +82,7 @@ mixin screeningTimeEET(dateStringUTC)
             });
 
             moment.locale('#{self.locale}');
-            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
             var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('LT');
             eDisplayMoment1.innerHTML = time_EET;
 
@@ -98,7 +98,7 @@ mixin screeningDateEET(dateStringUTC)
         (function()
         {
             moment.locale('#{self.locale}');
-            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
+            var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
 
             var weekDay_EET = moment.parseZone(new Date('#{dateStringUTC}')).tz('Europe/Tallinn').format('Do MMM');
             var date_EET = moment.parseZone(new Date('#{dateStringUTC}')).tz('Europe/Tallinn').format('dddd');
