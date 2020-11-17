@@ -9,7 +9,6 @@ mixin rmOldScreeningButtons()
                 for (button of buttons) {
                     var screeningDate = new Date(button.getAttribute('scrn-datetime'))
                     if (currentDate > screeningDate) {
-                        console.log(currentDate, ' - ', screeningDate)
                         button.style.display = 'none'
                     }
                 }
