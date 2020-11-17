@@ -1,6 +1,6 @@
 
 if (validToken) {
-    // fetchMyPasses()
+    fetchMyPasses()
 } else {
     window.open(`${location.origin}/${langpath}login`, '_self')
     saveUrl()
