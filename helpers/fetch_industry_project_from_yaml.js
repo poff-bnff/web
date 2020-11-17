@@ -95,7 +95,7 @@ for (const ix in languages) {
             genres: {},
         }
 
-        const screenings_search = allData.map(projects => {
+        const projects_search = allData.map(projects => {
 
             let types = []
             let project = projects
@@ -188,7 +188,7 @@ for (const ix in languages) {
             genres: mSort(filters.genres),
         }
 
-        let searchYAML = yaml.safeDump(screenings_search, { 'noRefs': true, 'indent': '4' })
+        let searchYAML = yaml.safeDump(projects_search, { 'noRefs': true, 'indent': '4' })
         fs.writeFileSync(path.join(fetchDir, `search_projects.${lang}.yaml`), searchYAML, 'utf8')
 
         let filtersYAML = yaml.safeDump(sorted_filters, { 'noRefs': true, 'indent': '4' })
