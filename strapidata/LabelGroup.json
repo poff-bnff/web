@@ -910,136 +910,6 @@
     ]
   },
   {
-    "id": 7,
-    "name": "filters",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 5,
-      "firstname": "Martin",
-      "lastname": "Pennaste",
-      "username": null
-    },
-    "created_at": "2020-11-05T20:45:47.073Z",
-    "updated_at": "2020-11-13T13:16:40.501Z",
-    "label": [
-      {
-        "id": 353,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Programmid",
-        "value_en": "Programmes",
-        "value_ru": "Программы",
-        "name": "programmes"
-      },
-      {
-        "id": 354,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Keeled",
-        "value_en": "Languages",
-        "value_ru": "Языки",
-        "name": "languages"
-      },
-      {
-        "id": 355,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Riigid",
-        "value_en": "Countries",
-        "value_ru": "Страны",
-        "name": "countries"
-      },
-      {
-        "id": 356,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Subtiitrid",
-        "value_en": "Subtitles",
-        "value_ru": "Субтитры",
-        "name": "subtitles"
-      },
-      {
-        "id": 357,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Esilinastused",
-        "value_en": "Premieres",
-        "value_ru": "Премьеры",
-        "name": "premieres"
-      },
-      {
-        "id": 358,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Linnad",
-        "value_en": "Towns",
-        "value_ru": "Города",
-        "name": "towns"
-      },
-      {
-        "id": 359,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kinod",
-        "value_en": "Cinemas",
-        "value_ru": "Кинотеатры",
-        "name": "cinemas"
-      },
-      {
-        "id": 360,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Otsi",
-        "value_en": "Search",
-        "value_ru": "Ускать",
-        "name": "search"
-      },
-      {
-        "id": 361,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kuupäevad",
-        "value_en": "Dates",
-        "value_ru": "Дни",
-        "name": "dates"
-      },
-      {
-        "id": 362,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kellaajad",
-        "value_en": "Times",
-        "value_ru": "Время",
-        "name": "times"
-      },
-      {
-        "id": 363,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Tühjenda filtrid",
-        "value_en": "Empty filters",
-        "value_ru": "Очищать фильтры",
-        "name": "empty"
-      }
-    ]
-  },
-  {
     "id": 2,
     "name": "film",
     "created_by": {
@@ -1606,6 +1476,226 @@
         "value_en": "my screenings",
         "value_ru": "moi seanss",
         "name": "mainMyScreenings"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "industry",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-15T11:10:21.601Z",
+    "updated_at": "2020-11-15T11:11:02.090Z",
+    "label": [
+      {
+        "id": 392,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Date",
+        "value_en": "Date",
+        "value_ru": "Date",
+        "name": "eventDate"
+      },
+      {
+        "id": 393,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Time EET",
+        "value_en": "Time EET",
+        "value_ru": "Time EET",
+        "name": "eventTimeEet"
+      },
+      {
+        "id": 394,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "User time",
+        "value_en": "User time",
+        "value_ru": "User time",
+        "name": "eventTimeUser"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "filters",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 5,
+      "firstname": "Martin",
+      "lastname": "Pennaste",
+      "username": null
+    },
+    "created_at": "2020-11-05T20:45:47.073Z",
+    "updated_at": "2020-11-17T11:45:46.392Z",
+    "label": [
+      {
+        "id": 353,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Programmid",
+        "value_en": "Programmes",
+        "value_ru": "Программы",
+        "name": "programmes"
+      },
+      {
+        "id": 354,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Keeled",
+        "value_en": "Languages",
+        "value_ru": "Языки",
+        "name": "languages"
+      },
+      {
+        "id": 355,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Riigid",
+        "value_en": "Countries",
+        "value_ru": "Страны",
+        "name": "countries"
+      },
+      {
+        "id": 356,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Subtiitrid",
+        "value_en": "Subtitles",
+        "value_ru": "Субтитры",
+        "name": "subtitles"
+      },
+      {
+        "id": 357,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Esilinastused",
+        "value_en": "Premieres",
+        "value_ru": "Премьеры",
+        "name": "premieres"
+      },
+      {
+        "id": 358,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Linnad",
+        "value_en": "Towns",
+        "value_ru": "Города",
+        "name": "towns"
+      },
+      {
+        "id": 359,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kinod",
+        "value_en": "Cinemas",
+        "value_ru": "Кинотеатры",
+        "name": "cinemas"
+      },
+      {
+        "id": 360,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Otsi",
+        "value_en": "Search",
+        "value_ru": "Ускать",
+        "name": "search"
+      },
+      {
+        "id": 361,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kuupäevad",
+        "value_en": "Dates",
+        "value_ru": "Дни",
+        "name": "dates"
+      },
+      {
+        "id": 362,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kellaajad",
+        "value_en": "Times",
+        "value_ru": "Время",
+        "name": "times"
+      },
+      {
+        "id": 363,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Tühjenda filtrid",
+        "value_en": "Empty filters",
+        "value_ru": "Очищать фильтры",
+        "name": "empty"
+      },
+      {
+        "id": 395,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Laetakse...",
+        "value_en": "Loading...",
+        "value_ru": "Загрузка...",
+        "name": "loading"
+      },
+      {
+        "id": 396,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Project types",
+        "value_en": "Project types",
+        "value_ru": "Project types",
+        "name": "projectTypes"
+      },
+      {
+        "id": 397,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Statuses",
+        "value_en": "Statuses",
+        "value_ru": "Statuses",
+        "name": "statuses"
+      },
+      {
+        "id": 398,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Genres",
+        "value_en": "Genres",
+        "value_ru": "Genres",
+        "name": "genres"
       }
     ]
   },

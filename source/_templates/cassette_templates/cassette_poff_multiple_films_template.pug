@@ -115,8 +115,8 @@ main.grid_cassette
             h1.section_headline= self.label.film.screenings
 
             .card-deck.m-o.p-0
-                - var sortedScreenings = self.screenings.sort(function(a, b){return new Date(a.dateTime)-new Date(b.dateTime)})
-                each screening in sortedScreenings
+                //- - var sortedScreenings = self.screenings.sort(function(a, b){return new Date(a.dateTime)-new Date(b.dateTime)})
+                each screening in self.screenings
                     .card.card_screening.rounded-0.border-0
                         .card-header.rounded-0.bg_dark_4
                             .grid_container_screening_time
@@ -172,7 +172,7 @@ main.grid_cassette
                                             - }
                                             .str_info_grid_3
                                                 span.screening_info_label= self.label.screening.subtitles
-                                                span.screening_info_value= screening.subtitles.map(subtitlesNames).join(', ')
+                                                span.screening_info_value= screening.subtitles.map(subtitlesNames).sort().join(', ')
 
 
                                         - var iqnac = screening.introQaConversation
@@ -231,11 +231,11 @@ main.grid_cassette
                             //-     a.btn.btn_primary.active( role='button')= self.label.button.screeningFree
 
                             if screening.bookingUrl
-                                a.btn.btn_secondary.active(href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
+                                a.btn.btn_secondary.active(scrn-datetime=screening.dateTime btn-type='screening' id=`date_${screening.dateTime}` href= screening.bookingUrl role='button' target='_blank')= self.label.button.screeningReservation
                             if screening.ticketingUrl
-                                a.btn.btn_primary.active(href= `${screening.ticketingUrl}` role='button' target='_blank')= self.label.button.screeningBuyTicket
+                                a.btn.btn_primary.active(scrn-datetime=screening.dateTime btn-type='screening' id=`date_${screening.dateTime}` href= `${screening.ticketingUrl}` role='button' target='_blank')= self.label.button.screeningBuyTicket
 
-
+        +rmOldScreeningButtons
 
 
     if self.tags && self.tags.programmes && self.tags.programmes.map(a => a.presentedBy || false).length
@@ -430,19 +430,10 @@ else
                             .str_info_label= self.label.film.director
                             .str_info_value.clr_primary= film.credentials.rolePersonsByRole.director.join(', ')
 
-                    if film.orderedCountries
-                        - var countriesNames = function(item) {
-                        -   if(item.country && item.country.name) {
-                        -       var itemNames = item.country.name
-                        -       return itemNames
-                        -   }
-                        - }
-
+                    if film.orderedCountriesDisplay
                         .str_info_grid_3
                             .str_info_label= self.label.film.countries
-                            - var sortCountries = film.orderedCountries.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
-                            - var mapCountries = sortCountries.map(countriesNames)
-                            .str_info_value= mapCountries.join(', ')
+                            .str_info_value= film.orderedCountriesDisplay
 
                     if film.year
                         .str_info_grid_3
