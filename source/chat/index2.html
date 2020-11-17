@@ -1,0 +1,167 @@
+<HTML>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>PÖFF : chat : BNFF</title>
+</head>
+
+
+<BODY>
+    <div id="chat-container-puu" class="chat-container">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+        <div id="chat-message-template-puu" class="chat-message" style="display:none">
+        </div>
+
+        <div id="chat-main-puu" class="chat-main">
+            <div id="chat-sidebar-puu" class="chat-sidebar">
+                <h2 id="chat-room-name-puu">Viie uksega tuba</h2>
+                <ul id="chat-user-list-puu">
+                </ul>
+            </div>
+            <div id="chat-messages-puu" class="chat-messages">
+            </div>
+        </div>
+
+        <div id="chat-form-container-puu" class="chat-form-container">
+            <form id="chat-form-puu">
+                <input id="chat-message-input-puu" class="chat-message-input" type="text" placeholder="Enter Message" required="" autocomplete="off">
+                <button class="btn"><i class="chat-message-button"></i>Send</button>
+            </form>
+        </div>
+    </div>
+</BODY>
+
+<script>
+    const userProfile = {
+        "sub": "minusub2",
+        "profile_filled": true,
+        "industryAccessLevel": true,
+        "eventivalProfile": {
+            "photo": "https://vp.eventival.com/files/7/people/2142026/photo/600562_normal.jpg",
+            "name": "Mariann",
+            "lastName": "Tapfer",
+            "professions": [
+                {
+                    "industry": {
+                        "_text": "Film Industry"
+                    },
+                    "section": {
+                        "_text": "Film Festival"
+                    },
+                    "profession": {
+                        "_text": "Consultant"
+                    }
+                }
+            ],
+            "badges": [
+                {
+                    "valid": {
+                        "from": "2020-11-12 00:00:00 GMT+0200",
+                        "to": "2020-11-29 00:00:00 GMT+0200"
+                    },
+                    "type": "Industry PRO"
+                },
+                {
+                    "valid": {
+                        "from": "2020-11-13 00:00:00 GMT+0200",
+                        "to": "2020-11-29 00:00:00 GMT+0200"
+                    },
+                    "type": "STAFF"
+                }
+            ]
+        },
+        "name": "BAAAAZ",
+        "email": "m@ww.ee"
+    }
+
+    // document.addEventListener('userProfileLoaded', function (e) {
+    //     console.log('chat')
+    //     console.log(userProfile)
+        main(userProfile, 'puu')
+    // })
+
+    function main(userProfile, room_name) {
+        const CHAT_SERVER = 'http://192.241.148.13'
+        const socket = io(CHAT_SERVER)
+
+        const chatFormElement = document.getElementById(['chat-form', room_name].join('-'))
+        const chatMessagesElement = document.getElementById(['chat-messages', room_name].join('-'))
+        const roomNameElement = document.getElementById(['chat-room-name', room_name].join('-'))
+        const userListElement = document.getElementById(['chat-user-list', room_name].join('-'))
+        const messageInputElement = document.getElementById(['chat-message-input', room_name].join('-'))
+        const messageTemplateElement = document.getElementById(['chat-message-template', room_name].join('-'))
+
+        roomNameElement.innerText = room_name
+
+        // Join chatroom
+        socket.emit('joinRoom', {
+            user_id: userProfile.sub,
+            user_name: userProfile.name,
+            room_name: room_name,
+            userProfile: userProfile
+        })
+
+        socket.on('roomUsers', (users) => {
+            setUserList(users.users)
+        })
+        // Add users to DOM
+        function setUserList(users) {
+            userListElement.innerHTML = ''
+            users.forEach(user => {
+                const li = document.createElement('li')
+                li.innerText = user
+                userListElement.appendChild(li)
+            })
+        }
+
+        socket.on('messageToClient', (message) => {
+            console.log('Got message:', message)
+            outputMessage(message)
+            // Scroll down
+            chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+        })
+
+        // Message submit
+        chatFormElement.addEventListener('submit', e => {
+            e.preventDefault()
+
+            // Get message text
+            let message_text = messageInputElement.value.trim()
+            if (!message_text) {
+                return false
+            }
+
+            // Emit message to server
+            console.log('Send message', message_text)
+            socket.emit('messageToServer', {
+                user_id: userProfile.sub,
+                room_name: room_name,
+                message: message_text
+            })
+
+            // Clear input
+            messageInputElement.value = ''
+            messageInputElement.focus()
+        })
+
+        // Output message to DOM
+        function outputMessage(message) {
+            var messageElement = messageTemplateElement.cloneNode(true)
+            messageElement.id = ''
+            messageElement.style.display = 'block'
+            const messageMetaElement = document.createElement('div')
+            messageMetaElement.innerText = message.user_name + ' ' + message.time
+            const messageTextElement = document.createElement('span')
+            messageTextElement.innerText = message.text
+            chatMessagesElement.appendChild(messageElement)
+            messageElement.appendChild(messageMetaElement)
+            messageMetaElement.appendChild(messageTextElement)
+        }
+
+    }
+
+</script>
+
+</HTML>
