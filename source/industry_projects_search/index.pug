@@ -52,39 +52,38 @@ block content
                             if project.images && project.images.length
                                 img.container_contents_16_9(src=`https://assets.poff.ee/img/${project.images[0].hash}${project.images[0].ext}`)
                             else
-                                img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                                img.container_contents_16_9(src='/assets/img/static/industry_placeholder_dark4.jpg')
 
 
-                        .card_film_info
-                            .str_info_grid_3
-                                .card_film_title
-                                    h3.film_title_locale.dark_1= project.title
-                                if project.logline
-                                    .str_info_value.dark_1.thin_300= project.logline
+                        .card_film_title
+                            .card_film_title
+                                h3.film_title_locale.dark_1= project.title
+                            if project.logline
+                                .str_info_value.dark_1.thin_300= project.logline
 
-                                //- if project.lookingFor
-                                //-     .str_info_value.dark_1.thin_300= project.lookingFor
+                            //- if project.lookingFor
+                            //-     .str_info_value.dark_1.thin_300= project.lookingFor
 
-                                //- if project.synopsis && typeof project.synopsis === 'string'
-                                //-     .str_info_value.dark_1.thin_300
-                                //-         +format(project.synopsis)
+                            //- if project.synopsis && typeof project.synopsis === 'string'
+                            //-     .str_info_value.dark_1.thin_300
+                            //-         +format(project.synopsis)
 
-                                //- if project.directorsNote && typeof project.directorsNote === 'string'
-                                //-     .str_info_value.dark_1.thin_300
-                                //-         +format(project.directorsNote)
+                            //- if project.directorsNote && typeof project.directorsNote === 'string'
+                            //-     .str_info_value.dark_1.thin_300
+                            //-         +format(project.directorsNote)
 
-                                //- if project.contactCompany
-                                //-     if project.contactCompany.homepageUrl
+                            //- if project.contactCompany
+                            //-     if project.contactCompany.homepageUrl
 
-                                //-     if project.contactCompany.type
-                                //-         .str_info_value.dark_1.thin_300= project.type
-                                //-     if project.contactCompany.name
-                                //-         .str_info_value.dark_1.thin_300= project.contactName
+                            //-     if project.contactCompany.type
+                            //-         .str_info_value.dark_1.thin_300= project.type
+                            //-     if project.contactCompany.name
+                            //-         .str_info_value.dark_1.thin_300= project.contactName
 
 
-                                //- if project.clipUrlCode
-                                //-     .str_info_value.dark_1.thin_300
-                                //-         +video(project.clipUrlCode)
+                            //- if project.clipUrlCode
+                            //-     .str_info_value.dark_1.thin_300
+                            //-         +video(project.clipUrlCode)
             script.
                 var searcharray = !{JSON.stringify(self.data.search)}
 
