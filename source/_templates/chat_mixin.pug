@@ -1,37 +1,20 @@
 
-mixin chat(outputRoomName)
-    .chat-container(id=outputRoomName+'-chat-container')
-        .main-chat-container
+mixin chat(room_name)
+    #chat-container-r5d.chat-container
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
+        #chat-message-template-r5d.chat-message(style='display:none')
+        #chat-main-r5d.chat-main
+            #chat-sidebar-r5d.chat-sidebar
+                h2#chat-room-name-r5d Viie uksega tuba
+                ul#chat-user-list-r5d
+            #chat-messages-r5d.chat-messages
 
-            main.chat-main(id=outputRoomName+'-chat-main')
-                .chat-sidebar
-                    h3
-                        i.fas.fa-comments
-                    h2#room-name
-                    ul#users
-                .chat-messages
-            .chat-form-container
-                form(id='chat-form')
-                    input#msg(type='text' placeholder='Enter Message' required='' autocomplete='off')
-                    button.btn
-                        i.fas.fa-paper-plane
-                        |  Send
-
-        .moderated-chat-container
-
-            main.chat-main(id=outputRoomName+'-chat-mod')
-                .chat-sidebar
-                    h3
-                        i.fas.fa-comments
-                    h2#room-name-mod
-                    ul#users-mod
-                .mod-chat-messages
-            .chat-form-container-mod
-                form(id='chat-form')
-                    input#msg-mod(type='text' placeholder='Enter Message' required='' autocomplete='off')
-                    button.btn
-                        i.fas.fa-paper-plane
-                        |  Send
+        #chat-form-container-r5d.chat-form-container
+            form#chat-form-r5d
+                input#chat-message-input-r5d.chat-message-input(type='text' placeholder='Enter Message' required='' autocomplete='off')
+                button.btn
+                    i.chat-message-button
+                    | Send
 
 
     style.
@@ -183,7 +166,7 @@ mixin chat(outputRoomName)
         const outputRoomName_mod = '#{outputRoomName}' + '-mod'
 
         document.addEventListener('userProfileLoaded', function (e) {
-            main(userProfile)
+            main(userProfile, room_name)
         })
         const is_moderator = true
 
