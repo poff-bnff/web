@@ -171,6 +171,7 @@ mixin chat(room_name, is_moderated=false)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
 
+
         document.addEventListener('userProfileLoaded', function (e) {
             main(userProfile, '#{room_name}', #{is_moderated})
         })
@@ -260,20 +261,24 @@ mixin chat(room_name, is_moderated=false)
                 messageMetaElement.innerText = message.user_name + ' ' + message.time
                 const messageTextElement = document.createElement('span')
                 messageTextElement.innerText = message.text
-
-                const messageButtonElement = document.createElement('button')
-                messageButtonElement.innerHTML = 'send to moderated'
+                const moderateButtonElement = document.createElement('button')
+                moderateButtonElement.innerText = "send to moderated"
 
                 chatMessagesElement.appendChild(messageElement)
                 messageElement.appendChild(messageMetaElement)
                 messageMetaElement.appendChild(messageTextElement)
-                messageButtonElement.appendChild(messageTextElement)
-                messageButtonElement.onclick = moderateMessage(message.id)
+
+                moderateButtonElement.onclick = function() {moderateMessage(message.id)}
+                messageMetaElement.appendChild(moderateButtonElement)
 
             }
 
             function moderateMessage(id){
-                console.log(id)
+                console.log("modereeri messsage id-ga: ", id)
+                socket.emit('moderate', {
+                    message_id: id,
+                })
             }
+
 
         }
