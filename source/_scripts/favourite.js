@@ -60,6 +60,7 @@ function toggleMyCalButtons (myCalEvents){
 
     for (i=0; i<events.length; i++){
         if (myCalEvents.includes(events[i].id)){
+        document.getElementById(events[i].id + '_inMyCalendar').style.display = 'block'
         events[i].style.display = 'block'
         } 
         else {
