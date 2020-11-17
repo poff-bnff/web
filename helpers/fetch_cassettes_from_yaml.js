@@ -229,6 +229,10 @@ for (const lang of allLanguages) {
                     if(!screening.screening_types.map(screeningNames).some(ai => whichScreeningTypesToFetch.includes(ai.toLowerCase()))) {
                         continue
                     }
+                    if (!(screening.location && screening.location.hall && screening.location.hall.cinema && screening.location.hall.cinema.town)) {
+                        console.log(`ERROR! Screening ID ${screening.id} under cassette ID ${s_cassette_copy.id} missing location.hall.cinema.town, skipped.`);
+                        continue
+                    }
                     // Kui vähemalt üks screeningtype õige, siis hasOneCorrectScreening = true
                     // - st ehitatakse
                     hasOneCorrectScreening = true
