@@ -9,29 +9,9 @@ function showMyEvents (){
 }
 
 
-function changeToRemove(eventId){
-    console.log('changeToRemove ' + eventId)
-    document.getElementById(eventId).innerHTML = 'remove'
-    document.getElementById(eventId).style.color = 'red'
-    // document.getElementById(eventId).setAttribute("onclick", "javascript: sayHello(this.id);return false")
-
-
-}
-
-function revertRemove(eventId){
-    console.log('changeToRemove ' + eventId)
-    document.getElementById(eventId).innerHTML = 'In my calendar'
-    document.getElementById(eventId).style.color = 'gray'
-
-}
-
-function sayHello(){
-    console.log('hello')
-}
-
-
 
 function calendarfile(id) {
+
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + document.getElementById(`cal_${id}`).innerText);
     // data:text/calendar;charset=utf-8

@@ -116,7 +116,9 @@ block content
                                     p(id= event.id+'nupp' style={color: 'red', display:'none'})
 
                                     //- Add to calendar button
-                                    p.btn.btn_secondary.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false` style='display: none')= 'Add to calendar'
+                                    p.btn.btn_secondary.add_to_calendar_button(id = event.id + '_notInMyCalendar' onclick=`addToMyCal('${event.id}');return false` style='display: none')= 'Add to calendar'
+                                    p.btn.btn_secondary.remove_from_calendar_button(id = event.id + '_inMyCalendar' onclick = `removeEvent('${event.id}');return false` onmouseover='changeToRemove(this.id);return false' onmouseout='revertRemove(this.id);return false' style='display: none')= 'In my calendar'
+
                                     //- Selle peidetud inputi sees on data
                                     p(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
 
