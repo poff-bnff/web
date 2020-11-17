@@ -5,11 +5,16 @@ function loadMyFavFilms() {
     } catch (error) {
         null
     }
-
-    toggleFavButtons(userProfile.shortlist.map(function(item){return item.cassette_id}))
-
-
-
+    try {
+        toggleFavButtons(userProfile.shortlist.map(function(item){return item.cassette_id}))
+    } catch (error) {
+        null
+    }
+    try {
+        toggleMyCalButtons(userProfile.myCal)
+    } catch (error) {
+        null
+    }
 }
 
 function toggleFavButtons(shortlist_array) {
@@ -45,6 +50,20 @@ function toggleFavButtons(shortlist_array) {
         }
     }
 
+}
+
+
+function toggleMyCalButtons (myCalEvents){
+    console.log(myCalEvents)
+    var events = document.getElementsByClassName('card_film')
+    console.log(events)
+
+    for (i=0; i<events.length; i++){
+        if (myCalEvents.includes(events[i].id)){
+        console.log('favo')
+        events[i].style.display = 'block'
+        }
+    }
 }
 
 
