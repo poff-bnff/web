@@ -35,7 +35,7 @@
 
 <script>
     const userProfile = {
-        "sub": "c8dffade-14ef-4c09-b298-a1226ee13271",
+        "sub": "minusub",
         "profile_filled": true,
         "industryAccessLevel": true,
         "eventivalProfile": {
@@ -72,7 +72,7 @@
                 }
             ]
         },
-        "name": "sahtel",
+        "name": "pahtel",
         "email": "m@ww.ee"
     }
 
@@ -97,9 +97,9 @@
 
         // Join chatroom
         socket.emit('joinRoom', {
-            userId: userProfile.sub,
-            userName: userProfile.name,
-            roomName: room_name,
+            user_id: userProfile.sub,
+            user_name: userProfile.name,
+            room_name: room_name,
             userProfile: userProfile
         })
 
