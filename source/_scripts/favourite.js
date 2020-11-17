@@ -210,3 +210,45 @@ function removeScreening(screeningId, screeningTitle) {
     //     console.warn(error);
     // });
 }
+
+
+function removeEvent(eventId) {
+    console.log('removeEvent eventId ', eventId)
+
+    var myHeaders = new Headers();
+
+    myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
+
+    var requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+
+    fetch('https://api.poff.ee/favourite/' + 'event_' + eventId.split('_')[0], requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        console.log(data)
+        if (data.ok) {
+            try {
+                document.getElementById(movieId + '_not_shortlisted').style.display = 'block'
+                document.getElementById(movieId + '_is_shortlisted').style.display = 'none'
+            }
+            catch (err) {
+                null
+            }
+            try {
+                document.getElementById(eventId.split('_')[0]).style.display = 'none'
+            }
+            catch (err) {
+                null
+            }
+        }
+    }).catch(function (error) {
+        console.warn(error);
+    });
+}
