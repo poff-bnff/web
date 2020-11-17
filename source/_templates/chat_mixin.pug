@@ -1,17 +1,17 @@
 
 mixin chat(room_name)
-    #chat-container-r5d.chat-container
+    div(id='chat-container-' + room_name class='chat-container')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
-        #chat-message-template-r5d.chat-message(style='display:none')
-        #chat-main-r5d.chat-main
-            #chat-sidebar-r5d.chat-sidebar
-                h2#chat-room-name-r5d Viie uksega tuba
-                ul#chat-user-list-r5d
-            #chat-messages-r5d.chat-messages
+        div(id='chat-message-template-' + room_name class='chat-message' style='display:none')
+        div(id='chat-main-' + room_name class='chat-main')
+            div(id='chat-sidebar-' + room_name  class='chat-sidebar')
+                h2(id='chat-room-name-'+ room_name)
+                ul(id='chat-user-list-'+ room_name)
+            div(id='chat-messages-'+ room_name class='chat-messages')
 
-        #chat-form-container-r5d.chat-form-container
-            form#chat-form-r5d
-                input#chat-message-input-r5d.chat-message-input(type='text' placeholder='Enter Message' required='' autocomplete='off')
+        div(id='chat-form-container-'+ room_name class='chat-form-container')
+            form(id='chat-form-' + room_name)
+                input(id='chat-message-input-'+room_name class='chat-message-input' type='text' placeholder='Enter Message' required='' autocomplete='off')
                 button.btn
                     i.chat-message-button
                     | Send
@@ -25,7 +25,7 @@ mixin chat(room_name)
             --light-color: #e6e9ff;
             --success-color: #5cb85c;
             --error-color: #d9534f;
-            --background-color: #f5f5f5;
+            --background-color: #adadb3;
         }
         * {
             box-sizing: border-box;
@@ -37,9 +37,6 @@ mixin chat(room_name)
             background: var(--background-color);
 
         }
-
-        }
-
 
         body {
         }
@@ -111,12 +108,13 @@ mixin chat(room_name)
             padding: 30px;
             max-height: 500px;
             overflow-y: scroll;
+            background-color: var(--background-color);
         }
 
         .chat-messages .message {
             padding: 10px;
             margin-bottom: 15px;
-            background-color: var(--light-color);
+            background-color: var(--background-color);
             border-radius: 5px;
             overflow-wrap: break-word;
         }
@@ -162,150 +160,90 @@ mixin chat(room_name)
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
-        const outputRoomName = '#{outputRoomName}'
-        const outputRoomName_mod = '#{outputRoomName}' + '-mod'
+        const room_name = '#{room_name}'
 
         document.addEventListener('userProfileLoaded', function (e) {
             main(userProfile, room_name)
         })
+
         const is_moderator = true
 
-        function main(userProfile) {
-            const chat_form = document.getElementById('chat-form')
-            const chat_form_mod = document.getElementById('chat-form-mod')
-            const chat_messages = document.querySelector('.chat-messages')
-            const mod_chat_messages = document.querySelector('.mod-chat-messages')
-            const room_name = document.getElementById('room-name')
-            const room_name_mod = document.getElementById('room-name-mod')
-            const user_list = document.getElementById('users')
-            const user_list_mod = document.getElementById('users-mod')
+        function main(userProfile, room_name) {
+            const CHAT_SERVER = 'http://192.241.148.13'
+            const socket = io(CHAT_SERVER)
 
-            // Get username and room from URL
-            //- const acre = 'moderator'
+            const chatFormElement = document.getElementById(['chat-form', room_name].join('-'))
+            const chatMessagesElement = document.getElementById(['chat-messages', room_name].join('-'))
+            const roomNameElement = document.getElementById(['chat-room-name', room_name].join('-'))
+            const userListElement = document.getElementById(['chat-user-list', room_name].join('-'))
+            const messageInputElement = document.getElementById(['chat-message-input', room_name].join('-'))
+            const messageTemplateElement = document.getElementById(['chat-message-template', room_name].join('-'))
 
-            socket = io('http://192.241.148.13'); // In case your front is not served from the same domain as your server, you have to pass the URL of your server.
+            roomNameElement.innerText = room_name
 
             // Join chatroom
-            socket.emit('joinRoom', { userProfile: userProfile, room: outputRoomName })
+            socket.emit('joinRoom', {
+                user_id: userProfile.sub,
+                user_name: userProfile.name,
+                room_name: room_name,
+                userProfile: userProfile
+            })
 
-            // Get outputRoomName and users
-            socket.on('roomUsers', (room_users) => {
-                setOutputRoomName(room_name, room_users.room)
-                setOutputUsers(room_users.users)
-            });
+            socket.on('roomUsers', (users) => {
+                setUserList(users.users)
+            })
+            // Add users to DOM
+            function setUserList(users) {
+                userListElement.innerHTML = ''
+                users.forEach(user => {
+                    const li = document.createElement('li')
+                    li.innerText = user
+                    userListElement.appendChild(li)
+                })
+            }
 
-            // Message from server
-            socket.on('message', message => {
-                console.log(message)
+            socket.on('messageToClient', (message) => {
+                console.log('Got message:', message)
                 outputMessage(message)
-
                 // Scroll down
-                chat_messages.scrollTop = chat_messages.scrollHeight
-            });
+                chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+            })
 
-
-            ///MODERATED
-            modSocket = io('http://192.241.148.13'); // In case your front is not served from the same domain as your server, you have to pass the URL of your server.
-
-            // Join chatroom
-            modSocket.emit('joinRoom', { userProfile: userProfile, room: outputRoomName_mod })
-
-            // Get outputRoomName and users
-            modSocket.on('roomUsers', (room_users) => {
-                setOutputRoomName(room_name_mod, room_users.room)
-                //- setOutputUsers([])
-            });
-
-            // Message from server
-            modSocket.on('message', message => {
-                console.log(message)
-                outputMessage(message)
-
-                // Scroll down
-                chat_messages.scrollTop = chat_messages.scrollHeight
-            });
-
-
-            //- let id = 0                // Message submit
-            chat_form.addEventListener('submit', e => {
+            // Message submit
+            chatFormElement.addEventListener('submit', e => {
                 e.preventDefault()
 
                 // Get message text
-                let msg = e.target.elements.msg.value
-                msg = msg.trim()
-
-                if (!msg){
+                let message_text = messageInputElement.value.trim()
+                if (!message_text) {
                     return false
                 }
 
                 // Emit message to server
-                socket.emit('chatMessage', {msg, outputRoomName, userProfile})
+                console.log('Send message', message_text)
+                socket.emit('messageToServer', {
+                    user_id: userProfile.sub,
+                    room_name: room_name,
+                    message: message_text
+                })
 
                 // Clear input
-                e.target.elements.msg.value = ''
-                e.target.elements.msg.focus()
+                messageInputElement.value = ''
+                messageInputElement.focus()
             })
-
-            chat_form_mod.addEventListener('submit', e => {
-                e.preventDefault()
-
-                // Get message text
-                let msg = e.target.elements.msg.value
-                msg = msg.trim()
-
-                if (!msg){
-                    return false
-                }
-
-                // Emit message to server
-                modSocket.emit('chatMessage', {msg, outputRoomName_mod, userProfile})
-
-                // Clear input
-                e.target.elements.msg.value = ''
-                e.target.elements.msg.focus()
-            })
-
-            // Message select for modretor
 
             // Output message to DOM
             function outputMessage(message) {
-
-                const div = document.createElement('div')
-                div.classList.add('message')
-
-                const p = document.createElement('p')
-                p.classList.add('meta')
-                p.innerText = message.username
-                p.innerHTML += `<span>${message.time} UTC </span>`
-                div.appendChild(p)
-
-                const para = document.createElement('p')
-                para.classList.add('text')
-                para.innerText = message.text
-                div.appendChild(para)
-
-                document.querySelector('.chat-messages').appendChild(div)
-            }
-
-            // Add outputRoomName name to DOM
-            function setOutputRoomName(room, name) {
-                room.innerText = name;
-            }
-
-            //- // Add outputRoomName name to DOM
-            //- function setOutputRoomName(outputRoomName_mod) {
-            //-     room_name_mod.innerText = outputRoomName_mod;
-            //- }
-
-            // Add users to DOM
-            function setOutputUsers(users) {
-                user_list.innerHTML = ''
-                users.forEach(user=>{
-                    const li = document.createElement('li')
-                    console.log(user)
-                    li.innerText = user.name
-                    user_list.appendChild(li)
-                });
+                var messageElement = messageTemplateElement.cloneNode(true)
+                messageElement.id = ''
+                messageElement.style.display = 'block'
+                const messageMetaElement = document.createElement('div')
+                messageMetaElement.innerText = message.user_name + ' ' + message.time
+                const messageTextElement = document.createElement('span')
+                messageTextElement.innerText = message.text
+                chatMessagesElement.appendChild(messageElement)
+                messageElement.appendChild(messageMetaElement)
+                messageMetaElement.appendChild(messageTextElement)
             }
 
         }
