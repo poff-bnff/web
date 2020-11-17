@@ -12,8 +12,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
         <div id="chat-message-template-r5d" class="chat-message" style="display:none">
-            <div class="chat-message-meta">Chat Bot 23:59</div>
-            <div class="chat-message-text">Lorem ipsum dolor sit amet.</div>
         </div>
 
         <div id="chat-main-r5d" class="chat-main">
@@ -74,7 +72,7 @@
                 }
             ]
         },
-        "name": "Mihkel",
+        "name": "sahtel",
         "email": "m@ww.ee"
     }
 
@@ -150,11 +148,16 @@
 
         // Output message to DOM
         function outputMessage(message) {
-            let messageElement = messageTemplateElement.cloneNode(true)
+            var messageElement = messageTemplateElement.cloneNode(true)
+            messageElement.id = ''
             messageElement.style.display = 'block'
-            messageElement.firstChild.innerText = message.username + ' ' + message.time
-            messageElement.lastChild.innerText = message.text
+            const messageMetaElement = document.createElement('div')
+            messageMetaElement.innerText = message.username + ' ' + message.time
+            const messageTextElement = document.createElement('div')
+            messageTextElement.innerText = message.text
             chatMessagesElement.appendChild(messageElement)
+            messageElement.appendChild(messageMetaElement)
+            messageElement.appendChild(messageTextElement)
         }
 
     }
