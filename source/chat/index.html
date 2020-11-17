@@ -23,10 +23,6 @@
                 </ul>
             </div>
             <div id="chat-messages-r5d" class="chat-messages">
-                <div id="chat-message-r5d" class="chat-message">
-                    <div class="meta">Chat Bot 09:11</div>
-                    <div class="text">Welcome to Chat!</div>
-                </div>
             </div>
         </div>
 
@@ -41,7 +37,7 @@
 
 <script>
     const userProfile = {
-        "username": "c8dffade-14ef-4c09-b298-a1226ee13271",
+        "sub": "c8dffade-14ef-4c09-b298-a1226ee13271",
         "profile_filled": true,
         "industryAccessLevel": true,
         "eventivalProfile": {
@@ -78,8 +74,8 @@
                 }
             ]
         },
-        "name": "Mariann",
-        "email": "tapferm@gmail.com"
+        "name": "Mihkel",
+        "email": "m@ww.ee"
     }
 
     // document.addEventListener('userProfileLoaded', function (e) {
@@ -110,20 +106,20 @@
         })
 
         socket.on('roomUsers', (users) => {
-            setUserList(users)
+            setUserList(users.users)
         })
         // Add users to DOM
         function setUserList(users) {
             userListElement.innerHTML = ''
             users.forEach(user => {
                 const li = document.createElement('li')
-                li.innerText = user.username
+                li.innerText = user
                 userListElement.appendChild(li)
             })
         }
 
         socket.on('messageToClient', (message) => {
-            console.log(message)
+            console.log('Got message:', message)
             outputMessage(message)
             // Scroll down
             chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
@@ -140,6 +136,7 @@
             }
 
             // Emit message to server
+            console.log('Send message', message_text)
             socket.emit('messageToServer', {
                 user_id: userProfile.sub,
                 room_name: room_name,
