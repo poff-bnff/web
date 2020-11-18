@@ -4,6 +4,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 
+if (!validToken) {
+    window.open(`${location.origin}/${langpath}login`, '_self')
+    saveUrl()
+}
+
 const selectors = {
     programmes: document.getElementById('programmes_select'),
     languages: document.getElementById('languages_select'),
