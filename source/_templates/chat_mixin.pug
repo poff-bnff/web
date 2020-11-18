@@ -1,14 +1,12 @@
 
-mixin chat(room_name, is_moderated=false)
+mixin chat(room_name, is_moderated_room=false)
 
-    - var room_suffix = ''
-    if is_moderated
-        pre mod
+    - var room_suffix = '-plain'
+    if is_moderated_room
         - room_suffix = '-moderated'
     else
-        pre not mod
 
-    div(id='chat-container-' + room_name + room_suffix class='chat-container' class='dark_1')
+    div(id='chat-container-' + room_name + room_suffix class='chat-container moderated-' + is_moderated_room)
         script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
         div(id='chat-message-template-' + room_name + room_suffix class='chat-message' style='display:none')
         div(id='chat-main-' + room_name + room_suffix class='chat-main')
@@ -26,28 +24,34 @@ mixin chat(room_name, is_moderated=false)
 
 
     style.
-        .chat-container{
+        .chat-container.moderated-false{
             padding: 30px;
             background: #D3D3D3;
+            border: blue solid 5px;
+        }
+        .chat-container.moderated-true{
+            padding: 30px;
+            background: #D3D366;
+            border: red solid 5px;
         }
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
-
-
         document.addEventListener('userProfileLoaded', function (e) {
-            main(userProfile, '#{room_name}', #{is_moderated})
+            main(userProfile, '#{room_name}', #{is_moderated_room})
         })
 
-        function main(userProfile, room_name, is_moderated) {
-
-            let room_suffix = ''
-            if (is_moderated) {
+        function main(userProfile, room_name, is_moderated_room) {
+            let room_suffix = '-plain'
+            if (is_moderated_room) {
                 room_suffix = '-moderated'
             }
 
             const CHAT_SERVER = 'http://192.241.148.13'
             const socket = io(CHAT_SERVER)
+            socket.on('ping', () =>{
+                socket.emit('pong', {})
+            })
 
             const chatFormElement = document.getElementById(['chat-form', room_name + room_suffix].join('-'))
             const chatMessagesElement = document.getElementById(['chat-messages', room_name + room_suffix].join('-'))
@@ -55,25 +59,11 @@ mixin chat(room_name, is_moderated=false)
             const userListElement = document.getElementById(['chat-user-list', room_name + room_suffix].join('-'))
             const messageInputElement = document.getElementById(['chat-message-input', room_name + room_suffix].join('-'))
             const messageTemplateElement = document.getElementById(['chat-message-template', room_name + room_suffix].join('-'))
-            let lastMessage
 
-            console.log(roomNameElement)
+
+            console.log(chatMessagesElement)
             console.log(userListElement)
             roomNameElement.innerText = room_name
-
-            let now = function (){
-                let now = new Date()
-                return `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
-            }
-
-            socket.on('ping', () =>{
-                console.log(now(), "=>PING", socket.id)
-                socket.emit('pong', {})
-            })
-
-            //- socket.on('pong', () =>{
-            //-     console.log(now(), "=>PONG", socket.id)
-            //- })
 
 
             // Join chatroom
@@ -81,7 +71,7 @@ mixin chat(room_name, is_moderated=false)
                 user_id: userProfile.sub,
                 user_name: userProfile.name,
                 room_name: room_name,
-                is_moderated: is_moderated,
+                is_moderated: is_moderated_room,
                 userProfile: userProfile
             })
 
@@ -98,48 +88,43 @@ mixin chat(room_name, is_moderated=false)
                 })
             }
             socket.on('messageToClient', (message) => {
-                console.log({M: 'Got message', message, is_moderated})
-
-                if (!is_moderated){
-                    if(!document.getElementById(message.id + message.is_moderated)){
+                //- console.log({M: 'Got message', message, is_moderated_room})
+                if (is_moderated_room) {
+                    let moderatedMessageElement = document.getElementById('moderated-' + message.id)
+                    if (message.is_moderated) {
+                        if(moderatedMessageElement) {
+                            console.log('Allready displaying moderated message', message, 'in', room_name, moderatedMessageElement)
+                        } else {
+                            outputMessage(message)
+                        }
+                    }
+                } else {
+                    let plainMessageElement = document.getElementById('plain-' + message.id)
+                    if (plainMessageElement) {
+                        plainMessageElement.is_moderated = message.is_moderated
+                        plainMessageElement.style.is_moderated = message.is_moderated
+                    } else {
                         outputMessage(message)
-                        // Scroll down
-                        chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
                     }
                 }
-
-                if(is_moderated && message.is_moderated){
-
-                    outputMessage(message)
-                    // Scroll down
-                    chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
-
-                    //- if(!document.getElementById(message.id+message.is_moderated)){
-                    //-     outputMessage(message)
-                    //-     // Scroll down
-                    //-     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
-                    //- }
-                }
-
             })
 
             // Message submit
+            let latestMessage
             chatFormElement.addEventListener('submit', e => {
                 e.preventDefault()
 
                 // Get message text
-                let message_text = messageInputElement.value.trim()
-                if (!message_text) {
+                let latestMessage = messageInputElement.value.trim()
+                if (!latestMessage) {
                     return false
                 }
-                lastMessage = message_text
-
                 // Emit message to server
-                console.log('Send message', message_text)
+                console.log('Send message', latestMessage)
                 socket.emit('messageToServer', {
                     user_id: userProfile.sub,
                     room_name: room_name,
-                    message: message_text
+                    message: latestMessage
                 })
 
                 // Clear input
@@ -152,7 +137,9 @@ mixin chat(room_name, is_moderated=false)
             function outputMessage(message) {
 
                 var messageElement = messageTemplateElement.cloneNode(true)
-                messageElement.id = message.id+message.is_moderated
+                messageElement.id = (is_moderated_room ? 'moderated-' : 'plain-') + message.id
+                messageElement.style.is_moderated = message.is_moderated
+                messageElement.is_moderated = message.is_moderated
                 messageElement.style.display = 'block'
                 const messageMetaElement = document.createElement('div')
                 messageMetaElement.innerText = message.user_name + ' ' + message.time
@@ -162,20 +149,18 @@ mixin chat(room_name, is_moderated=false)
                 chatMessagesElement.appendChild(messageElement)
                 messageElement.appendChild(messageMetaElement)
                 messageMetaElement.appendChild(messageTextElement)
-                if(!is_moderated){
+                if(!message.is_moderated && !is_moderated_room){
                     const moderateButtonElement = document.createElement('button')
                     moderateButtonElement.innerText = "send to moderated"
-                    moderateButtonElement.onclick = function() {moderateMessage(message.id)}
+                    moderateButtonElement.onclick = function() {moderateMessage(message.id); this.remove()}
                     messageMetaElement.appendChild(moderateButtonElement)
                 }
-
             }
 
             function moderateMessage(id){
-                console.log("modereeri messsage id-ga: ", id)
+                console.log('moderate message', id)
                 socket.emit('moderate', id)
             }
-
 
             //REJOIN
             socket.on('Rejoin, please', () => {
@@ -190,10 +175,7 @@ mixin chat(room_name, is_moderated=false)
                 socket.emit('messageToServer', {
                     user_id: userProfile.sub,
                     room_name: room_name,
-                    message: lastMessage
+                    message: latestMessage
                 })
-                console.log(lastMessage)
             })
-
-
         }
