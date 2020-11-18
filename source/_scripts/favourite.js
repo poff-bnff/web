@@ -1,12 +1,21 @@
 function loadMyFavFilms() {
-    // console.log("FAVO: oled sisse loginud")
+    console.log("FAVO: oled sisse loginud")
     try {
         document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
     } catch (error) {
         null
     }
+    try {
+        toggleFavButtons(userProfile.shortlist.map(function (item) { return item.cassette_id }))
+    } catch (error) {
+        null
+    }
+    try {
+    toggleSavedScreeningsButtons(userProfile.savedscreenings)
+    } catch (error) {
+        null
+    }
 
-    toggleFavButtons(userProfile.shortlist.map(function(item){return item.cassette_id}))
 
 
 
@@ -42,6 +51,50 @@ function toggleFavButtons(shortlist_array) {
         }
         else {
             notshortlisted_buttons[i].style.display = 'block'
+        }
+    }
+
+}
+
+function toggleSavedScreeningsButtons(savedScreenings) {
+    // console.log('toggleSavedScreeningsButtons')
+
+    var savedScreeningIds = []
+    for (j = 0; j < savedScreenings.length; j++) {
+        savedScreeningIds.push(savedScreenings[j].screeningId)
+    }
+
+    // console.log('savedScreeningIds ', savedScreeningIds)
+    // console.log('toggleSavedScreeningsButtons')
+    // console.log('savedScreenings ', savedScreenings)
+
+    var isSavedScreening_buttons = document.getElementsByClassName('issavedscreening')
+    // console.log(isSavedScreening_buttons)
+
+    for (i = 0; i < isSavedScreening_buttons.length; i++) {
+        var screening_id = isSavedScreening_buttons[i].id.split('_')[0]
+        if (savedScreeningIds.includes(screening_id)) {
+            isSavedScreening_buttons[i].style.display = 'block'
+            try{
+            document.getElementById(screening_id + '_screening_id').style.display = 'block'
+            }
+            catch(err){null}
+        }
+        else {
+            isSavedScreening_buttons[i].style.display = 'none'
+        }
+    }
+
+    var notSavedScreening_buttons = document.getElementsByClassName('notsavedscreening')
+    // console.log(notshortlisted_buttons);
+
+    for (i = 0; i < notSavedScreening_buttons.length; i++) {
+        var screening_id = notSavedScreening_buttons[i].id.split('_')[0]
+        if (savedScreeningIds.includes(screening_id)) {
+            notSavedScreening_buttons[i].style.display = 'none'
+        }
+        else {
+            notSavedScreening_buttons[i].style.display = 'block'
         }
     }
 
@@ -86,9 +139,9 @@ function saveFilmAsFavourite(movieId) {
 }
 
 function saveScreeningAsFavourite(screeningId, screeningTitle, screeningTime) {
-    console.log('screeningId ', screeningId)
-    console.log('screeningTitle ', screeningTitle)
-    console.log('screeningTime ', screeningTime)
+    // console.log('screeningId ', screeningId)
+    // console.log('screeningTitle ', screeningTitle)
+    // console.log('screeningTime ', screeningTime)
 
     var screening = {
         id: screeningId,
@@ -97,36 +150,36 @@ function saveScreeningAsFavourite(screeningId, screeningTitle, screeningTime) {
     }
 
 
-        // var myHeaders = new Headers();
-        // myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
+    // var myHeaders = new Headers();
+    // myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
-        var requestOptions = {
-            method: 'PUT',
-            // headers: myHeaders,
-            redirect: 'follow',
-            headers: {
-                Authorization : 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
-                'Content-Type': 'application/json'
-              },
-            body: JSON.stringify(screening)
+    var requestOptions = {
+        method: 'PUT',
+        // headers: myHeaders,
+        redirect: 'follow',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(screening)
 
-        };
+    };
 
-        console.log(requestOptions)
+    // console.log(requestOptions)
 
-        fetch('https://api.poff.ee/favourite/' + screeningId, requestOptions).then(function (response) {
-            if (response.ok) {
-                return response.json();
-            }
-            return Promise.reject(response);
-        }).then(function (data) {
-            if (data.ok) {
-                document.getElementById(movieId + '_not_shortlisted').style.display = 'none'
-                document.getElementById(movieId + '_is_shortlisted').style.display = 'block'
-            }
-        }).catch(function (error) {
-            console.warn(error);
-        });
+    fetch('https://api.poff.ee/favourite/' + screeningId, requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        if (data.ok) {
+            document.getElementById(screeningId + '_not_savedscreening').style.display = 'none'
+            document.getElementById(screeningId + '_is_savedscreening').style.display = 'block'
+        }
+    }).catch(function (error) {
+        console.warn(error);
+    });
 }
 
 
@@ -148,7 +201,7 @@ function removeFilm(movieId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
         if (data.ok) {
             try {
                 document.getElementById(movieId + '_not_shortlisted').style.display = 'block'
@@ -169,44 +222,44 @@ function removeFilm(movieId) {
     });
 }
 
-function removeScreening(screeningId, screeningTitle) {
-    console.log('saveFilmAsFavourite screeningId ', screeningId)
-    console.log('saveFilmAsFavourite screeningTitle ', screeningTitle)
+function removeScreening(screeningId) {
+    // console.log('removeScreening ', screeningId)
 
-    // var myHeaders = new Headers();
+    var myHeaders = new Headers();
 
-    // myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
+    myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
-    // var requestOptions = {
-    //     method: 'DELETE',
-    //     headers: myHeaders,
-    //     redirect: 'follow'
-    // };
+    var requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
 
 
-    // fetch('https://api.poff.ee/favourite/' + movieId, requestOptions).then(function (response) {
-    //     if (response.ok) {
-    //         return response.json();
-    //     }
-    //     return Promise.reject(response);
-    // }).then(function (data) {
-    //     console.log(data)
-    //     if (data.ok) {
-    //         try {
-    //             document.getElementById(movieId + '_not_shortlisted').style.display = 'block'
-    //             document.getElementById(movieId + '_is_shortlisted').style.display = 'none'
-    //         }
-    //         catch (err) {
-    //             null
-    //         }
-    //         try {
-    //             document.getElementById(movieId + '_cassette_id').style.display = 'none'
-    //         }
-    //         catch (err) {
-    //             null
-    //         }
-    //     }
-    // }).catch(function (error) {
-    //     console.warn(error);
-    // });
+    fetch('https://api.poff.ee/favourite/' + 'screening_' + screeningId, requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        // console.log(data)
+        if (data.ok) {
+            try {
+                // console.log(screeningId + '_is_savedscreening')
+                document.getElementById(screeningId + '_is_savedscreening').style.display = 'none'
+                document.getElementById(screeningId + '_not_savedscreening').style.display = 'block'
+            }
+            catch (err) {
+                null
+            }
+            try {
+                document.getElementById(screeningId + '_screening_id').style.display = 'none'
+            }
+            catch (err) {
+                null
+            }
+        }
+    }).catch(function (error) {
+        console.warn(error);
+    });
 }

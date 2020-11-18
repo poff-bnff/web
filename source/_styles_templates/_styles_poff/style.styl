@@ -227,6 +227,7 @@ header
     height 100%
     display flex
     align-items center
+    z-index 999
 
 .main_menu_toggle_label span,
 .main_menu_toggle_label span::before,
@@ -381,6 +382,7 @@ footer
 
 
 .lang_menu
+    position static
     color white_96
     a
         color ghost_blue
@@ -2730,13 +2732,6 @@ a.btn_popover
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
-    // .grid_login
-    //     display grid
-    //     grid-template-columns 1fr 1fr 1fr
-    //     grid-template-rows auto
-    //     grid-gap 1rem
-    //     padding-top header_height
-
     .grid_ss
         display grid
         grid-template-columns 2
@@ -2819,13 +2814,6 @@ a.btn_popover
         // height full_height
         height calc(100vh - 97px)
 
-    // .hero_image
-    //     width 100vw
-    //     // height full_height
-    //     height calc(100vh - 97px)
-    //     object-fit cover
-    //     z-index -1
-
     .trio_block
         padding-left 2rem
         padding-right 2rem
@@ -2858,18 +2846,6 @@ a.btn_popover
     .viieka_item:nth-child(4)
     .viieka_item:nth-child(5)
         grid-column span 2
-
-    // .hero_headline_box
-    //     position absolute
-    //     bottom 0
-    //     right 0
-    //     width 100vw
-    //     background rgba(10,0,3,.6)
-    //     // background rgba(236,0,140,.6)
-    //     // background rgba(90,0,60,.7)
-    //     // background-color clr_primary
-    //     text-align left
-    //     padding 2rem 2rem 2rem 2rem
 
     .calendar
         display grid
@@ -2976,18 +2952,6 @@ a.btn_popover
         height 1rem
         // padding-top .1rem
 
-    // .user_menu
-    //     color clr_primary
-        // // display inline-block
-        // position absolute
-        // // display inline
-        // top 0
-        // left 0
-        // padding-left 1rem
-        // padding-bottom 0
-        // margin-bottom 0
-        // height 1rem
-
     .lang_menu
         position fixed
         // display inline
@@ -3023,15 +2987,6 @@ a.btn_popover
         a
             text-decoration none
             // font-size 14px
-
-    // .grid_footer_row
-    //     grid-area footer
-    //     border-top 1px solid rgba(255,255,255,.1)
-    //     margin 0
-    //     padding 0
-    //     // padding 10vw
-    //     padding 3rem 5rem 3rem 5rem
-    //     background-color bg_dark_1
 
     .grid_footer_row
         grid-area footer
