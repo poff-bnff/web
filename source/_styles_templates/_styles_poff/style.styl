@@ -842,7 +842,7 @@ a .dark:hover
     // padding-top calc(1.9rem + 1.5vw)
     // padding-bottom calc(1.9rem + 1.5vw)
     // padding-top 2rem
-    padding-bottom 2rem
+    // padding-bottom 2rem
     // justify-content center
     // align-content center
     // justify-items stretch
@@ -1558,8 +1558,8 @@ header
     grid-area header
 
 .poffi_banner_box
-    margin-top 0rem
-    margin-bottom 5rem
+    margin-top 2rem
+    margin-bottom 2rem
     padding 0
 
 .f_img_slider_box
@@ -1768,6 +1768,21 @@ header
     background bg_dark_4
 
 .container_contents_poffi_banner
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+
+.container_frame_sponsors_banner
+    position relative
+    height 0
+    overflow hidden
+    padding-top 5.2%
+    background white
+
+.container_contents_sponsors_banner
     position absolute
     top 0
     left 0
@@ -2828,7 +2843,7 @@ a.btn_popover
     .trio_block
         padding-left 2rem
         padding-right 2rem
-        margin-bottom 5rem
+        margin-bottom 0rem
         padding-top 6rem
 
     .viiekas
@@ -2842,7 +2857,7 @@ a.btn_popover
         padding-left 2rem
         padding-right 2rem
         // padding-top calc(1.9rem + 1.5vw)
-        padding-bottom 2rem
+        // padding-bottom 2rem
         justify-content center
         align-content center
         justify-items stretch
@@ -3163,9 +3178,9 @@ a.btn_popover
     .m_center_d_left
         text-align left
 
-    .poffi_banner_box
-        padding-left 2rem
-        padding-right 2rem
+    // .poffi_banner_box
+    //     padding-left 0rem
+    //     padding-right 0rem
 
 /* OVERRIDES */
 
