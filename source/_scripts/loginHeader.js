@@ -6,6 +6,7 @@ var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 
 document.addEventListener('userProfileLoaded', function (e) {
     useUserData(userProfile)
+    fetchMyPasses()
     console.log('User profile is loaded')
 })
 

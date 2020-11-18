@@ -47,7 +47,7 @@ block content
             each project in self.data.industryprojects
 
                 if project.title && project.title.length > 1 && project.slug
-                    a.card_film(id=project.id href=`/${lang_path}${project.slug}`)
+                    a.card_project(id=project.id href=`/${lang_path}${project.slug}`)
                         .container_frame_16_9
                             if project.images && project.images.length
                                 img.container_contents_16_9(src=`https://assets.poff.ee/img/${project.images[0].hash}${project.images[0].ext}`)
@@ -56,10 +56,10 @@ block content
 
 
                         .card_film_title
-                            .card_film_title
-                                h3.film_title_locale.dark_1= project.title
-                            if project.logline
-                                .str_info_value.dark_1.thin_300= project.logline
+                            h3.film_title_locale.dark_1= project.title
+                        if project.logline
+                            .card_film_info
+                                p.dark_1.thin_300= project.logline
 
                             //- if project.lookingFor
                             //-     .str_info_value.dark_1.thin_300= project.lookingFor
