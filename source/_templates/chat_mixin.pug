@@ -3,20 +3,19 @@ mixin chat(room_name, is_moderated=false)
 
     - var room_suffix = ''
     if is_moderated
-        pre ongi modereeritud
-        - console.log('is_moderated')
+        pre mod
         - room_suffix = '-moderated'
     else
-        pre polegi mod
+        pre not mod
 
-    div(id='chat-container-' + room_name + room_suffix class='chat-container')
+    div(id='chat-container-' + room_name + room_suffix class='chat-container' class='dark_1')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
         div(id='chat-message-template-' + room_name + room_suffix class='chat-message' style='display:none')
         div(id='chat-main-' + room_name + room_suffix class='chat-main')
             div(id='chat-sidebar-' + room_name + room_suffix  class='chat-sidebar')
                 h2(id='chat-room-name-'+ room_name + room_suffix)
                 ul(id='chat-user-list-'+ room_name + room_suffix)
-            div(id='chat-messages-'+ room_name + room_suffix class='chat-messages')
+            div(id='chat-messages-'+ room_name + room_suffix class='chat-messages' class='dark_1')
 
         div(id='chat-form-container-'+ room_name + room_suffix class='chat-form-container')
             form(id='chat-form-' + room_name + room_suffix)
@@ -27,146 +26,10 @@ mixin chat(room_name, is_moderated=false)
 
 
     style.
-
-        :root {
-            --dark-color-a: #949494;
-            --dark-color-b: #808080;
-            --light-color: #e6e9ff;
-            --success-color: #5cb85c;
-            --error-color: #d9534f;
-            --background-color: #adadb3;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        .main-chat-container,
-        .moderated-chat-container{
-            background: var(--background-color);
-
-        }
-
-        body {
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .btn {
-            cursor: pointer;
-            padding: 5px 15px;
-            background: var(--light-color);
-            color: var(--dark-color-a);
-            border: 0;
-            font-size: 17px;
-        }
-
-        /* Chat Page */
-
-        .chat-container {
-            max-width: 90%;
-            margin: 30px auto;
-            overflow: hidden;
-        }
-
-        .chat-header {
-            background: var(--dark-color-a);
-            color: #fff;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .chat-main {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-        }
-
-        .chat-sidebar {
-            background: var(--dark-color-b);
-            color: #fff;
-            padding: 20px 20px 60px;
-            overflow-y: scroll;
-        }
-
-        .chat-sidebar h2 {
-            font-size: 20px;
-            background: rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .chat-sidebar h3 {
-            margin-bottom: 15px;
-        }
-
-        .chat-sidebar ul li {
-            padding: 10px 0;
-        }
-
-        .chat-messages {
+        .chat-container{
             padding: 30px;
-            max-height: 500px;
-            overflow-y: scroll;
-            background-color: var(--light-color);
-            color: black;
+            background: lightblue;
         }
-
-        .chat-messages .message {
-            padding: 10px;
-            margin-bottom: 15px;
-            background-color: var(--background-color);
-            border-radius: 5px;
-            overflow-wrap: break-word;
-        }
-
-        .chat-messages .message .meta {
-            font-size: 15px;
-            font-weight: bold;
-            color: var(--dark-color-b);
-            opacity: 0.7;
-            margin-bottom: 7px;
-        }
-
-        .chat-messages .message .meta span {
-            color: #777;
-        }
-
-        .chat-form-container {
-            padding: 20px 30px;
-            background-color: var(--dark-color-a);
-        }
-
-        .chat-form-container form {
-            display: flex;
-        }
-
-        .chat-form-container input[type='text'] {
-            font-size: 16px;
-            padding: 5px;
-            height: 40px;
-            flex: 1;
-        }
-
-        @media (max-width: 700px) {
-            .chat-main {
-                display: block;
-            }
-
-            .chat-sidebar {
-                display: none;
-            }
-        }
-
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
@@ -185,7 +48,6 @@ mixin chat(room_name, is_moderated=false)
 
             const CHAT_SERVER = 'http://192.241.148.13'
             const socket = io(CHAT_SERVER)
-
 
             const chatFormElement = document.getElementById(['chat-form', room_name + room_suffix].join('-'))
             const chatMessagesElement = document.getElementById(['chat-messages', room_name + room_suffix].join('-'))
@@ -236,10 +98,27 @@ mixin chat(room_name, is_moderated=false)
                 })
             }
             socket.on('messageToClient', (message) => {
-                console.log('Got message:', message)
-                outputMessage(message)
-                // Scroll down
-                chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+                console.log({M: 'Got message', message, is_moderated})
+
+                if (!is_moderated){
+                    let myMessages = document.getElementById((['chat-messages', room_name + room_suffix].join('-'))).childNodes
+                    console.log(myMessages)
+                    outputMessage(message)
+                    // Scroll down
+                    chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+                }
+
+                if(is_moderated && message.is_moderated){
+                     outputMessage(message)
+                    // Scroll down
+                    chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+                }
+
+                //- if(message.is_moderated === is_moderated){
+                //-     outputMessage(message)
+                //-     // Scroll down
+                //-     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+                //- }
             })
 
             // Message submit
@@ -271,29 +150,28 @@ mixin chat(room_name, is_moderated=false)
             function outputMessage(message) {
 
                 var messageElement = messageTemplateElement.cloneNode(true)
-                messageElement.id = ''
+                messageElement.id = message.id+message
                 messageElement.style.display = 'block'
                 const messageMetaElement = document.createElement('div')
                 messageMetaElement.innerText = message.user_name + ' ' + message.time
                 const messageTextElement = document.createElement('span')
                 messageTextElement.innerText = message.text
-                const moderateButtonElement = document.createElement('button')
-                moderateButtonElement.innerText = "send to moderated"
 
                 chatMessagesElement.appendChild(messageElement)
                 messageElement.appendChild(messageMetaElement)
                 messageMetaElement.appendChild(messageTextElement)
-
-                moderateButtonElement.onclick = function() {moderateMessage(message.id)}
-                messageMetaElement.appendChild(moderateButtonElement)
+                if(!is_moderated){
+                    const moderateButtonElement = document.createElement('button')
+                    moderateButtonElement.innerText = "send to moderated"
+                    moderateButtonElement.onclick = function() {moderateMessage(message.id)}
+                    messageMetaElement.appendChild(moderateButtonElement)
+                }
 
             }
 
             function moderateMessage(id){
                 console.log("modereeri messsage id-ga: ", id)
-                socket.emit('moderate', {
-                    message_id: id,
-                })
+                socket.emit('moderate', id)
             }
 
 
