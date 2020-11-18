@@ -940,7 +940,7 @@ IndustryProject: &IndustryProject
     directorsNote: (Rich text)
     contactName: (text)
     contactCompany: *Organisation
-    contactAddess: (text)
+    contactAddress: (text)
     contactEmail: (Email)
     contactWeb: (text)
     images: #(Component (repeatable))

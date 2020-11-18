@@ -8,37 +8,36 @@ block content
     main.grid_film
         if self.title
 
-            if self.images
-                //- KARUSELL Industry projekti piltidega
-                section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
-                    ol.carousel-indicators
+            //- KARUSELL Industry projekti piltidega
+            section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+                ol.carousel-indicators
+                    if self.images && self.images[0]
                         each index in self.images
                             li(data-target='#carouselExampleIndicators' data-slide-to = index)
-                    .carousel-inner.container_frame_16_9
-
-                        each val, index in self.image
+                .carousel-inner.container_frame_16_9
+                    if self.images && self.images[0]
+                        each val, index in self.images
                             if index == 0
                                 .carousel-item.active.container_contents_16_9
                                     img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
                             else
                                 .carousel-item.container_contents_16_9
                                     img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-            else
-                .carousel-item.active.container_contents_16_9
-                    img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
 
-
-                    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-                        // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                            polyline(points='15 18 9 12 15 6')
-                        span.sr-only Previous
-                    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-                        // <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                            polyline(points='9 18 15 12 9 6')
-                        span.sr-only Next
-                            //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
+                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='15 18 9 12 15 6')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='9 18 15 12 9 6')
+                    span.sr-only Next
+                        //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
 
 
             section.f_title_box
@@ -112,6 +111,18 @@ block content
                                 if typeof synopsis_md === 'string'
                                     +format(synopsis_md)
 
+                if self.directorsNote
+                    .str_info_meta_gi
+                        .str_info_meta_item
+
+                            .str_info_meta_label.dark_semi= self.label.film.directorsNote
+
+                    if typeof self.directorsNote !== 'undefined'
+                        - var directors_note_md = self.directorsNote
+                        .synopsis_gi
+                            if self.directorsNote
+                                if typeof directors_note_md === 'string'
+                                    +format(directors_note_md)
 
             section.project_cred_box
                 .str_info_blokk_cred
@@ -144,6 +155,14 @@ block content
                             .str_info_label= self.label.industry.lookingFor
                             .str_info_value= self.lookingFor
 
+                    if self.attached_partners
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.partners
+                            -var partner_name = []
+                            each partner in self.attached_partners
+                                - partner_name.push(partner.name.en)
+                            .str_info_value= partner_name.join(', ')
+
             section.project_runtime_box
 
                 if self.contactName
@@ -161,42 +180,22 @@ block content
                         .str_info_label= self.label.industry.contactWeb
                         .str_info_value= self.contactWeb
 
+                if self.contactAddress
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.contactAddress
+                        .str_info_value= self.contactAddress
+
+                //- if self.contactCompany
+                //-     .str_info_grid_3
+                //-         .str_info_label= self.label.industry.contactCompany
+                //-         .str_info_value= self.contactCompany
+
+            if self.clipUrlCode
+                section#trailer.f_trailer_box
+                    .section_headline= self.label.film.trailer
+                    .embed-responsive.embed-responsive-16by9.m-0.p-0
+                        if trailer.videoCode
+                            +video(self.clipUrlCode)
 
 
 
-            //- if self.title && self.title.length > 1
-            //-     p.dark_1= self.title
-
-            //-     if self.images && self.images.length
-            //-         each image in self.images
-            //-             img(src=`https://assets.poff.ee/img/${image.hash}${image.ext}`)
-            //-     else
-            //-         img(src='/assets/img/static/placeholder_hd_1.jpg')
-
-
-            //-     if self.logline
-            //-         p.dark_1= self.logline
-
-            //-     if self.lookingFor
-            //-         p.dark_1= self.lookingFor
-
-            //-     if self.synopsis && typeof self.synopsis === 'string'
-            //-         p.dark_1
-            //-             +format(self.synopsis)
-
-            //-     if self.directorsNote && typeof self.directorsNote === 'string'
-            //-         p.dark_1
-            //-             +format(self.directorsNote)
-
-            //-     if self.contactCompany
-            //-         if self.contactCompany.homepageUrl
-
-            //-         if self.contactCompany.type
-            //-             p.dark_1= self.type
-            //-         if self.contactCompany.name
-            //-             p.dark_1= self.contactName
-
-
-            //-     if self.clipUrlCode
-            //-         p.dark_1
-            //-             +video(self.clipUrlCode)
