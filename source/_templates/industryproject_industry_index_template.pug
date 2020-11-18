@@ -14,13 +14,17 @@ block content
                     each index in self.images
                         li(data-target='#carouselExampleIndicators' data-slide-to = index)
                 .carousel-inner.container_frame_16_9
-                    each val, index in self.images
+
+                    each val, index in self.image
                         if index == 0
                             .carousel-item.active.container_contents_16_9
                                 img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
                         else
                             .carousel-item.container_contents_16_9
                                 img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+        else
+            .carousel-item.active.container_contents_16_9
+                img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
 
 
                 a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
@@ -45,7 +49,10 @@ block content
                         - types.push(p_type.type)
                     p.premiere_type= types.join(', ')
 
-            h1.film_title_detailed= self.title
+
+            if self.title && self.title.length > 1
+                h1.film_title_detailed= self.title
+
             .str_info_blokk_1
 
                 if self.countries && self.countries[0]
@@ -58,17 +65,25 @@ block content
 
                 if self.languages && self.languages[0]
                     .str_info_grid_3
-                        .str_info_label= self.label.film.languages.name
+                        .str_info_label= self.label.film.languages
                         - var languages = []
                         each language in self.languages
                             -languages.push(language.name)
-                        .str_info_value= self.languages.join(', ')
+                        .str_info_value= languages.join(', ')
 
 
                 if self.tag_genres && self.tag_genres[0]
                     .str_info_grid_3
                         .str_info_label= self.label.film.genre
                         .str_info_value= self.tag_genres.join(', ')
+
+                if self.project_statuses && self.project_statuses[0]
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.projectStatus
+                        - var project_statuses = []
+                        each p_status in self.project_statuses
+                            -project_statuses.push(p_status.status)
+                        .str_info_value= project_statuses.join(', ')
 
 
         section.f_synopsis_box
@@ -110,17 +125,19 @@ block content
                     .str_info_grid_3
                         .str_info_label= self.label.industry.completionDate
                         .str_info_value
-                            +localdate(self.completionDate)
+                            +screeningDate(self.completionDate)
 
                 if self.budget
                     .str_info_grid_3
                         .str_info_label= self.label.industry.projectBudget
-                        .str_info_value= self.budget
+                        .str_info_value
+                            +euro(self.budget)
 
                 if self.financed
                     .str_info_grid_3
                         .str_info_label= self.label.industry.projectFinanced
-                        .str_info_value= self.financed
+                        .str_info_value
+                            +euro(self.financed)
 
                 if self.lookingFor
                     .str_info_grid_3
@@ -183,49 +200,3 @@ block content
         //-     if self.clipUrlCode
         //-         p.dark_1
         //-             +video(self.clipUrlCode)
-
-
-    //-     if self.festival_edition && self.festival_edition.name
-    //-         h1.dark_1= self.festival_edition.name
-    //-         br
-    //-     if self.name && typeof self.name !== 'object'
-    //-         h1.dark_1= self.name
-    //-         br
-    //-     if self.description && typeof self.description !== 'object'
-    //-         h1.dark_1= self.description
-    //-         br
-    //-         br
-    //-         br
-    //-         br
-    //-         br
-    //-         br
-    //-         div.payment
-    //-             button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`) OSTA
-    //-             button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
-    //-             button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
-    //-             button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
-    //-             div#paymentLinks
-    //-             br
-    //-             div.dark_1#feedback
-    //-             br
-    //-             button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
-    //-             br
-    //- style.
-    //-     #buybutton {display: none}
-    //-     #directToaddPicture {display:none}
-    //-     #directToFillProfile {display:none}
-    //-     #paybutton {display: none}
-    //-     [type=radio]{
-    //-         position: absolute;
-    //-         opacity: 0;
-    //-         width: 0;
-    //-         height: 0;
-    //-     }
-    //-     [type=radio] + img {
-    //-         cursor: pointer;
-    //-     }
-    //-     [type=radio]:checked + img {
-    //-         outline: 4px solid #fd7e14;
-    //-     }
-
-
