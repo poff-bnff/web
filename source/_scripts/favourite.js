@@ -338,6 +338,6 @@ function changeToRemove(eventId){
 function revertRemove(eventId){
     console.log('changeToRemove ' + eventId)
     document.getElementById(eventId).innerHTML = 'In my calendar'
-    document.getElementById(eventId).style.color = 'gray'
+    document.getElementById(eventId).style.color = 'rgba(255, 255, 255, 0.96)'
 
 }

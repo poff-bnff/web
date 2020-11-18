@@ -4,6 +4,12 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 
+if(!validToken){
+    window.open(`${location.origin}/login`, '_self')
+    saveUrl()
+}
+
+
 function showMyEvents (){
     var allEvents = document.getElementsByClassName('add_to_calendar_button')
 }
