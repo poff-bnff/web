@@ -6,197 +6,197 @@ include /_templates/mixins.pug
 block content
 
     main.grid_film
+        if self.title
 
-        if self.images
-            //- KARUSELL Industry projekti piltidega
-            section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
-                ol.carousel-indicators
-                    each index in self.images
-                        li(data-target='#carouselExampleIndicators' data-slide-to = index)
-                .carousel-inner.container_frame_16_9
+            if self.images
+                //- KARUSELL Industry projekti piltidega
+                section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+                    ol.carousel-indicators
+                        each index in self.images
+                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
+                    .carousel-inner.container_frame_16_9
 
-                    each val, index in self.image
-                        if index == 0
-                            .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-                        else
-                            .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-        else
-            .carousel-item.active.container_contents_16_9
-                img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
-
-
-                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-                    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                        polyline(points='15 18 9 12 15 6')
-                    span.sr-only Previous
-                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-                    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
-                        polyline(points='9 18 15 12 9 6')
-                    span.sr-only Next
-                        //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
+                        each val, index in self.image
+                            if index == 0
+                                .carousel-item.active.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                            else
+                                .carousel-item.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+            else
+                .carousel-item.active.container_contents_16_9
+                    img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
 
 
-        section.f_title_box
-            .premiere_type
-                if self.project_types && self.project_types[0]
-                    //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
-                    -var types = []
-                    each p_type in self.project_types
-                        - types.push(p_type.type)
-                    p.premiere_type= types.join(', ')
+                    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                        // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            polyline(points='15 18 9 12 15 6')
+                        span.sr-only Previous
+                    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                        // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            polyline(points='9 18 15 12 9 6')
+                        span.sr-only Next
+                            //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
 
 
-            if self.title && self.title.length > 1
+            section.f_title_box
+                .premiere_type
+                    if self.project_types && self.project_types[0]
+                        //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                        -var types = []
+                        each p_type in self.project_types
+                            - types.push(p_type.type)
+                        p.premiere_type= types.join(', ')
+
+
                 h1.film_title_detailed= self.title
 
-            .str_info_blokk_1
+                .str_info_blokk_1
 
-                if self.countries && self.countries[0]
+                    if self.countries && self.countries[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.countries
+                            -var countries = []
+                            each country in self.countries
+                                - countries.push(country.name)
+                            .str_info_value= countries.join(', ')
+
+                    if self.languages && self.languages[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.languages
+                            - var languages = []
+                            each language in self.languages
+                                -languages.push(language.name)
+                            .str_info_value= languages.join(', ')
+
+
+                    if self.tag_genres && self.tag_genres[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.genre
+                            .str_info_value= self.tag_genres.join(', ')
+
+                    if self.project_statuses && self.project_statuses[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.projectStatus
+                            - var project_statuses = []
+                            each p_status in self.project_statuses
+                                -project_statuses.push(p_status.status)
+                            .str_info_value= project_statuses.join(', ')
+
+
+            section.f_synopsis_box
+                if self.logline
+                    .str_info_meta_gi
+                        .str_info_meta_item
+                            .str_info_meta_label.dark_semi= self.label.industry.logline
+
+                    if typeof self.logline !== 'undefined'
+                        - var logline_md = self.logline
+                        .synopsis_gi
+                            if self.logline
+                                if typeof logline_md === 'string'
+                                    +format(logline_md)
+
+                if self.synopsis
+                    .str_info_meta_gi
+                        .str_info_meta_item
+
+                            .str_info_meta_label.dark_semi= self.label.film.synopsis
+
+                    if typeof self.synopsis !== 'undefined'
+                        - var synopsis_md = self.synopsis
+                        .synopsis_gi
+                            if self.synopsis
+                                if typeof synopsis_md === 'string'
+                                    +format(synopsis_md)
+
+
+            section.project_cred_box
+                .str_info_blokk_cred
+
+                    if self.titleOriginal
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.titleOriginal
+                            .str_info_value= self.titleOriginal
+
+                    if self.completionDate
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.completionDate
+                            .str_info_value
+                                +screeningDate(self.completionDate)
+
+                    if self.budget
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.projectBudget
+                            .str_info_value
+                                +euro(self.budget)
+
+                    if self.financed
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.projectFinanced
+                            .str_info_value
+                                +euro(self.financed)
+
+                    if self.lookingFor
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.lookingFor
+                            .str_info_value= self.lookingFor
+
+            section.project_runtime_box
+
+                if self.contactName
                     .str_info_grid_3
-                        .str_info_label= self.label.film.countries
-                        -var countries = []
-                        each country in self.countries
-                            - countries.push(country.name)
-                        .str_info_value= countries.join(', ')
+                        .str_info_label= self.label.industry.contactName
+                        .str_info_value= self.contactName
 
-                if self.languages && self.languages[0]
+                if self.contactEmail
                     .str_info_grid_3
-                        .str_info_label= self.label.film.languages
-                        - var languages = []
-                        each language in self.languages
-                            -languages.push(language.name)
-                        .str_info_value= languages.join(', ')
+                        .str_info_label= self.label.industry.contactEmail
+                        .str_info_value= self.contactEmail
 
-
-                if self.tag_genres && self.tag_genres[0]
+                if self.contactWeb
                     .str_info_grid_3
-                        .str_info_label= self.label.film.genre
-                        .str_info_value= self.tag_genres.join(', ')
-
-                if self.project_statuses && self.project_statuses[0]
-                    .str_info_grid_3
-                        .str_info_label= self.label.industry.projectStatus
-                        - var project_statuses = []
-                        each p_status in self.project_statuses
-                            -project_statuses.push(p_status.status)
-                        .str_info_value= project_statuses.join(', ')
-
-
-        section.f_synopsis_box
-            if self.logline
-                .str_info_meta_gi
-                    .str_info_meta_item
-                        .str_info_meta_label.dark_semi= self.label.industry.logline
-
-                if typeof self.logline !== 'undefined'
-                    - var logline_md = self.logline
-                    .synopsis_gi
-                        if self.logline
-                            if typeof logline_md === 'string'
-                                +format(logline_md)
-
-            if self.synopsis
-                .str_info_meta_gi
-                    .str_info_meta_item
-
-                        .str_info_meta_label.dark_semi= self.label.film.synopsis
-
-                if typeof self.synopsis !== 'undefined'
-                    - var synopsis_md = self.synopsis
-                    .synopsis_gi
-                        if self.synopsis
-                            if typeof synopsis_md === 'string'
-                                +format(synopsis_md)
-
-
-        section.project_cred_box
-            .str_info_blokk_cred
-
-                if self.titleOriginal
-                    .str_info_grid_3
-                        .str_info_label= self.label.film.titleOriginal
-                        .str_info_value= self.titleOriginal
-
-                if self.completionDate
-                    .str_info_grid_3
-                        .str_info_label= self.label.industry.completionDate
-                        .str_info_value
-                            +screeningDate(self.completionDate)
-
-                if self.budget
-                    .str_info_grid_3
-                        .str_info_label= self.label.industry.projectBudget
-                        .str_info_value
-                            +euro(self.budget)
-
-                if self.financed
-                    .str_info_grid_3
-                        .str_info_label= self.label.industry.projectFinanced
-                        .str_info_value
-                            +euro(self.financed)
-
-                if self.lookingFor
-                    .str_info_grid_3
-                        .str_info_label= self.label.industry.lookingFor
-                        .str_info_value= self.lookingFor
-
-        section.project_runtime_box
-
-            if self.contactName
-                .str_info_grid_3
-                    .str_info_label= self.label.industry.contactName
-                    .str_info_value= self.contactName
-
-            if self.contactEmail
-                .str_info_grid_3
-                    .str_info_label= self.label.industry.contactEmail
-                    .str_info_value= self.contactEmail
-
-            if self.contactWeb
-                .str_info_grid_3
-                    .str_info_label= self.label.industry.contactWeb
-                    .str_info_value= self.contactWeb
+                        .str_info_label= self.label.industry.contactWeb
+                        .str_info_value= self.contactWeb
 
 
 
 
-        //- if self.title && self.title.length > 1
-        //-     p.dark_1= self.title
+            //- if self.title && self.title.length > 1
+            //-     p.dark_1= self.title
 
-        //-     if self.images && self.images.length
-        //-         each image in self.images
-        //-             img(src=`https://assets.poff.ee/img/${image.hash}${image.ext}`)
-        //-     else
-        //-         img(src='/assets/img/static/placeholder_hd_1.jpg')
-
-
-        //-     if self.logline
-        //-         p.dark_1= self.logline
-
-        //-     if self.lookingFor
-        //-         p.dark_1= self.lookingFor
-
-        //-     if self.synopsis && typeof self.synopsis === 'string'
-        //-         p.dark_1
-        //-             +format(self.synopsis)
-
-        //-     if self.directorsNote && typeof self.directorsNote === 'string'
-        //-         p.dark_1
-        //-             +format(self.directorsNote)
-
-        //-     if self.contactCompany
-        //-         if self.contactCompany.homepageUrl
-
-        //-         if self.contactCompany.type
-        //-             p.dark_1= self.type
-        //-         if self.contactCompany.name
-        //-             p.dark_1= self.contactName
+            //-     if self.images && self.images.length
+            //-         each image in self.images
+            //-             img(src=`https://assets.poff.ee/img/${image.hash}${image.ext}`)
+            //-     else
+            //-         img(src='/assets/img/static/placeholder_hd_1.jpg')
 
 
-        //-     if self.clipUrlCode
-        //-         p.dark_1
-        //-             +video(self.clipUrlCode)
+            //-     if self.logline
+            //-         p.dark_1= self.logline
+
+            //-     if self.lookingFor
+            //-         p.dark_1= self.lookingFor
+
+            //-     if self.synopsis && typeof self.synopsis === 'string'
+            //-         p.dark_1
+            //-             +format(self.synopsis)
+
+            //-     if self.directorsNote && typeof self.directorsNote === 'string'
+            //-         p.dark_1
+            //-             +format(self.directorsNote)
+
+            //-     if self.contactCompany
+            //-         if self.contactCompany.homepageUrl
+
+            //-         if self.contactCompany.type
+            //-             p.dark_1= self.type
+            //-         if self.contactCompany.name
+            //-             p.dark_1= self.contactName
+
+
+            //-     if self.clipUrlCode
+            //-         p.dark_1
+            //-             +video(self.clipUrlCode)
