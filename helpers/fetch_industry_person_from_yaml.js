@@ -118,6 +118,130 @@ for (const ix in languages) {
     if (allData.length) {
         const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
         fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+
+
+
+
+
+
+
+
+
+
+        let filters = {
+            types: {},
+            roleatfilms: {},
+            lookingfors: {},
+        }
+
+        const industry_persons_search = allData.map(persons => {
+
+            let types = []
+            let person = persons.person
+            if (typeof persons.industry_person_types !== 'undefined') {
+                let industry_person_types = persons.industry_person_types.map(type => type.type)
+                for (const type of industry_person_types) {
+                    types.push(type)
+                    filters.types[type] = type
+                }
+            }
+
+            let roleatfilms = []
+
+            for (const role of (persons.role_at_films || [])
+                .sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0) })
+                 || []) {
+                const roleName = role.roleName
+                roleatfilms.push(roleName)
+                filters.roleatfilms[roleName] = roleName
+            }
+
+            let lookingfors = []
+
+            if (persons.lookingFor) {
+                const lookingFor = persons.lookingFor
+                lookingfors.push(lookingFor)
+                filters.lookingfors[lookingFor] = lookingFor
+                console.log(lookingFor);
+            }
+
+            let filmographies = []
+            for (const filmography of persons.filmography || []) {
+                if (filmography && filmography.text) {
+                    filmographies.push(filmography.text)
+                }
+                if (filmography.film) {
+                    for (const film of filmography.film) {
+
+                        filmographies.push(`${film.title} ${film.title} ${film.synopsis}`)
+
+                    }
+                }
+            }
+
+
+            return {
+                id: persons.id,
+                text: [
+                    `${person.firstName} ${person.lastName}`,
+                    persons.emailAtInd,
+                    persons.phoneAtInd,
+                    persons.aboutText,
+                    persons.lookingFor,
+                    persons.website,
+                    filmographies,
+                ].join(' ').toLowerCase(),
+                types: types,
+                roleatfilms: roleatfilms,
+                lookingfors: lookingfors,
+            }
+        });
+
+        function mSort(to_sort) {
+            let sortable = []
+            for (var item in to_sort) {
+                sortable.push([item, to_sort[item]]);
+            }
+
+            sortable = sortable.sort(function(a, b) {
+                try {
+                    const locale_sort = a[1].localeCompare(b[1], lang)
+                    return locale_sort
+                } catch (error) {
+                    console.log('failed to sort', JSON.stringify({a, b}, null, 4));
+                    throw new Error(error)
+                }
+            });
+
+            var objSorted = {}
+            for (let index = 0; index < sortable.length; index++) {
+                const item = sortable[index];
+                objSorted[item[0]]=item[1]
+            }
+            return objSorted
+        }
+
+        let sorted_filters = {
+            types: mSort(filters.types),
+            roleatfilms: mSort(filters.roleatfilms),
+            lookingfors: mSort(filters.lookingfors),
+        }
+
+        let searchYAML = yaml.safeDump(industry_persons_search, { 'noRefs': true, 'indent': '4' })
+        fs.writeFileSync(path.join(fetchDir, `search_industry_persons.${lang}.yaml`), searchYAML, 'utf8')
+
+        let filtersYAML = yaml.safeDump(sorted_filters, { 'noRefs': true, 'indent': '4' })
+        fs.writeFileSync(path.join(fetchDir, `filters_industry_persons.${lang}.yaml`), filtersYAML, 'utf8')
+
+
+
+
+
+
+
+
+
+
     } else {
         console.log('No data for industry persons, creating empty YAML');
         fs.writeFileSync(yamlPath, '[]', 'utf8');
