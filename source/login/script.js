@@ -11,7 +11,7 @@ if([`${location.origin}/minupoff`, `${location.origin}/en/mypoff`, `${location.o
     // console.log(self.mypoff.path)
     document.getElementById('fromMyPoff').style.display = 'block'
 }
-if([`${location.origin}/favourite`, `${location.origin}/en/favourite`, `${location.origin}/ru/favourite`].includes(document.referrer)){
+if([`${location.origin}/shortlist`, `${location.origin}/en/shortlist`, `${location.origin}/ru/shortlist`].includes(document.referrer)){
     // console.log("tulid Lemmikutest")
     document.getElementById('fromFavo').style.display = 'block'
 }
