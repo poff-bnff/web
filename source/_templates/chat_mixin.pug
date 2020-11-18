@@ -28,7 +28,7 @@ mixin chat(room_name, is_moderated=false)
     style.
         .chat-container{
             padding: 30px;
-            background: lightblue;
+            background: #D3D3D3;
         }
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
@@ -103,6 +103,7 @@ mixin chat(room_name, is_moderated=false)
                 if (!is_moderated){
                     let myMessages = document.getElementById((['chat-messages', room_name + room_suffix].join('-'))).childNodes
                     console.log(myMessages)
+
                     outputMessage(message)
                     // Scroll down
                     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
@@ -150,7 +151,7 @@ mixin chat(room_name, is_moderated=false)
             function outputMessage(message) {
 
                 var messageElement = messageTemplateElement.cloneNode(true)
-                messageElement.id = message.id+message
+                messageElement.id = message.id+message.is_moderated
                 messageElement.style.display = 'block'
                 const messageMetaElement = document.createElement('div')
                 messageMetaElement.innerText = message.user_name + ' ' + message.time
