@@ -186,16 +186,33 @@ mixin chat(room_name, is_moderated=false)
             const CHAT_SERVER = 'http://192.241.148.13'
             const socket = io(CHAT_SERVER)
 
+
             const chatFormElement = document.getElementById(['chat-form', room_name + room_suffix].join('-'))
             const chatMessagesElement = document.getElementById(['chat-messages', room_name + room_suffix].join('-'))
             const roomNameElement = document.getElementById(['chat-room-name', room_name + room_suffix].join('-'))
             const userListElement = document.getElementById(['chat-user-list', room_name + room_suffix].join('-'))
             const messageInputElement = document.getElementById(['chat-message-input', room_name + room_suffix].join('-'))
             const messageTemplateElement = document.getElementById(['chat-message-template', room_name + room_suffix].join('-'))
+            let lastMessage
 
             console.log(roomNameElement)
             console.log(userListElement)
             roomNameElement.innerText = room_name
+
+            let now = function (){
+                let now = new Date()
+                return `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+            }
+
+            socket.on('ping', () =>{
+                console.log(now(), "=>PING", socket.id)
+                socket.emit('pong', {})
+            })
+
+            //- socket.on('pong', () =>{
+            //-     console.log(now(), "=>PONG", socket.id)
+            //- })
+
 
             // Join chatroom
             socket.emit('joinRoom', {
@@ -218,7 +235,6 @@ mixin chat(room_name, is_moderated=false)
                     userListElement.appendChild(li)
                 })
             }
-
             socket.on('messageToClient', (message) => {
                 console.log('Got message:', message)
                 outputMessage(message)
@@ -227,7 +243,6 @@ mixin chat(room_name, is_moderated=false)
             })
 
             // Message submit
-
             chatFormElement.addEventListener('submit', e => {
                 e.preventDefault()
 
@@ -236,6 +251,7 @@ mixin chat(room_name, is_moderated=false)
                 if (!message_text) {
                     return false
                 }
+                lastMessage = message_text
 
                 // Emit message to server
                 console.log('Send message', message_text)
@@ -279,6 +295,25 @@ mixin chat(room_name, is_moderated=false)
                     message_id: id,
                 })
             }
+
+
+            //REJOIN
+            socket.on('Rejoin, please', () => {
+                socket.emit('joinRoom', {
+                    user_id: userProfile.sub,
+                    user_name: userProfile.name,
+                    room_name: room_name,
+                    is_moderated: is_moderated,
+                    userProfile: userProfile
+                })
+
+                socket.emit('messageToServer', {
+                    user_id: userProfile.sub,
+                    room_name: room_name,
+                    message: lastMessage
+                })
+                console.log(lastMessage)
+            })
 
 
         }
