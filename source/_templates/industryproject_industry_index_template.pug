@@ -40,7 +40,10 @@ block content
             .premiere_type
                 if self.project_types && self.project_types[0]
                     //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
-                    p.premiere_type= self.project_types.join(', ')
+                    -var types = []
+                    each p_type in self.project_types
+                        - types.push(p_type.type)
+                    p.premiere_type= types.join(', ')
 
             h1.film_title_detailed= self.title
             .str_info_blokk_1
@@ -48,17 +51,98 @@ block content
                 if self.countries && self.countries[0]
                     .str_info_grid_3
                         .str_info_label= self.label.film.countries
-                        .str_info_value= self.countries.join(', ')
+                        -var countries = []
+                        each country in self.countries
+                            - countries.push(country.name)
+                        .str_info_value= countries.join(', ')
 
                 if self.languages && self.languages[0]
                     .str_info_grid_3
-                        .str_info_label= self.label.film.languages
+                        .str_info_label= self.label.film.languages.name
+                        - var languages = []
+                        each language in self.languages
+                            -languages.push(language.name)
                         .str_info_value= self.languages.join(', ')
+
 
                 if self.tag_genres && self.tag_genres[0]
                     .str_info_grid_3
                         .str_info_label= self.label.film.genre
                         .str_info_value= self.tag_genres.join(', ')
+
+
+        section.f_synopsis_box
+            if self.logline
+                .str_info_meta_gi
+                    .str_info_meta_item
+                        .str_info_meta_label.dark_semi= self.label.industry.logline
+
+                if typeof self.logline !== 'undefined'
+                    - var logline_md = self.logline
+                    .synopsis_gi
+                        if self.logline
+                            if typeof logline_md === 'string'
+                                +format(logline_md)
+
+            if self.synopsis
+                .str_info_meta_gi
+                    .str_info_meta_item
+
+                        .str_info_meta_label.dark_semi= self.label.film.synopsis
+
+                if typeof self.synopsis !== 'undefined'
+                    - var synopsis_md = self.synopsis
+                    .synopsis_gi
+                        if self.synopsis
+                            if typeof synopsis_md === 'string'
+                                +format(synopsis_md)
+
+
+        section.project_cred_box
+            .str_info_blokk_cred
+
+                if self.titleOriginal
+                    .str_info_grid_3
+                        .str_info_label= self.label.film.titleOriginal
+                        .str_info_value= self.titleOriginal
+
+                if self.completionDate
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.completionDate
+                        .str_info_value
+                            +localdate(self.completionDate)
+
+                if self.budget
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.projectBudget
+                        .str_info_value= self.budget
+
+                if self.financed
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.projectFinanced
+                        .str_info_value= self.financed
+
+                if self.lookingFor
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.lookingFor
+                        .str_info_value= self.lookingFor
+
+        section.project_runtime_box
+
+            if self.contactName
+                .str_info_grid_3
+                    .str_info_label= self.label.industry.contactName
+                    .str_info_value= self.contactName
+
+            if self.contactEmail
+                .str_info_grid_3
+                    .str_info_label= self.label.industry.contactEmail
+                    .str_info_value= self.contactEmail
+
+            if self.contactWeb
+                .str_info_grid_3
+                    .str_info_label= self.label.industry.contactWeb
+                    .str_info_value= self.contactWeb
 
 
 
