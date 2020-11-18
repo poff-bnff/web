@@ -116,6 +116,7 @@ for (const ix in languages) {
 
     const yamlPath = path.join(fetchDir, `industrypersons.${lang}.yaml`);
     if (allData.length) {
+        allData = allData.sort((a, b) => `${a.person.firstName} ${a.person.lastname}`.localeCompare(`${b.person.firstName} ${b.person.lastname}`, lang))
         const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
         fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
 
@@ -162,7 +163,6 @@ for (const ix in languages) {
                 const lookingFor = persons.lookingFor
                 lookingfors.push(lookingFor)
                 filters.lookingfors[lookingFor] = lookingFor
-                console.log(lookingFor);
             }
 
             let filmographies = []
