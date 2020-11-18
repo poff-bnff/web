@@ -18,21 +18,27 @@ mixin chat(room_name, is_moderated_room=false)
         div(id='chat-form-container-'+ room_name + room_suffix class='chat-form-container')
             form(id='chat-form-' + room_name + room_suffix)
                 input(id='chat-message-input-' + room_name + room_suffix class='chat-message-input' type='text' placeholder='Enter Message' required='' autocomplete='off')
-                button.btn
-                    i.chat-message-button
-                    | Send
+                //- button.btn
+                //-     i.chat-message-button
+                //-     | Send
 
 
     style.
-        .chat-container.moderated-false{
+        .chat-container.moderated-false {
             padding: 30px;
             background: #D3D3D3;
             border: blue solid 5px;
         }
-        .chat-container.moderated-true{
+        .chat-container.moderated-true {
             padding: 30px;
             background: #D3D366;
             border: red solid 5px;
+        }
+        .poff-chat-message-meta {
+            padding: 0 1em;
+        }
+        .poff-chat-button {
+            border-radius: 57% 43% 57% 43%;
         }
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
@@ -141,17 +147,31 @@ mixin chat(room_name, is_moderated_room=false)
                 messageElement.style.is_moderated = message.is_moderated
                 messageElement.is_moderated = message.is_moderated
                 messageElement.style.display = 'block'
-                const messageMetaElement = document.createElement('div')
-                messageMetaElement.innerText = message.user_name + ' ' + message.time
+
+                const messageTimeElement = document.createElement('span')
+                messageTimeElement.innerText = message.time
+                messageTimeElement.classList.add('poff-chat-message-meta', 'poff-chat-message-time');
+
+                const messageAuthorElement = document.createElement('span')
+                messageAuthorElement.innerText = message.user_name
+                messageAuthorElement.classList.add('poff-chat-message-meta', 'poff-chat-message-author');
+
                 const messageTextElement = document.createElement('span')
                 messageTextElement.innerText = message.text
+                messageTextElement.classList.add('poff-chat-message-meta', 'poff-chat-message-text');
+
+                const messageMetaElement = document.createElement('div')
+                messageMetaElement.appendChild(messageTimeElement)
+                messageMetaElement.appendChild(messageAuthorElement)
+                messageMetaElement.appendChild(messageTextElement)
 
                 chatMessagesElement.appendChild(messageElement)
                 messageElement.appendChild(messageMetaElement)
-                messageMetaElement.appendChild(messageTextElement)
+
                 if(!message.is_moderated && !is_moderated_room){
                     const moderateButtonElement = document.createElement('button')
-                    moderateButtonElement.innerText = "send to moderated"
+                    moderateButtonElement.classList.add('poff-chat-button', 'poff-chat-button-moderate')
+                    moderateButtonElement.innerText = '+'
                     moderateButtonElement.onclick = function() {moderateMessage(message.id); this.remove()}
                     messageMetaElement.appendChild(moderateButtonElement)
                 }
