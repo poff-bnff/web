@@ -152,7 +152,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         },
         id: s_cassette.id,
         films: distill_cassette_films(s_cassette, s_films, lang),
-        screenings: distill_cassette_screenings(s_cassette, s_screenings, lang)
+        screenings: distill_cassette_screenings(s_cassette, s_screenings, lang),
     }
     add_search_to_cassette(cassette, lang)
     return cassette
@@ -204,6 +204,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 'Cast': distill_credentials(s_film, 'Cast')
             }
             const countries = distill_ordered_countries(s_film, lang)
+
             return {
                 id: s_film.id,
                 titleBox: {
@@ -243,15 +244,32 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 },
                 runtime: s_film.runtime || null,
                 directors: distill_directors(s_film, lang),
-                presenters: distill_presenters(s_film, lang)
+                presenters: distill_presenters(s_film, lang),
+                presentersprogramme: remove_duplicates(distill_programmes_presenters(s_film, lang)),
             }
         })
+
+        function remove_duplicates(s_film, lang) {
+            try {
+                const remove_duplicates = s_film.filter((oneobject, index) => {
+                    const _oneobject = JSON.stringify(oneobject);
+                    return index === s_film.findIndex(obj => {
+                        return JSON.stringify(obj) === _oneobject;
+                    });
+                });
+
+                return remove_duplicates
+            } catch (error) {
+                timer.log(__filename, `INFO: no presentedBy text in ${lang}`)
+                return []
+            }
+        }
 
         function distill_presenters(s_film, lang) {
             try {
                 return {
                     text: distill_presented_by_text(s_film.presentedBy),
-                    logos: distill_logos(s_film.presentedBy)
+                    logos: distill_logos(s_film.presentedBy),
                 }
             } catch (error) {
                 timer.log(__filename, `INFO: no presenters for film ${s_film.id}, in ${lang}`)
@@ -444,6 +462,18 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 return (s_film.tags.programmes || []).map(s_programme => {
                     const d_programme = DISTILLED_PROGRAMMES.filter(d_programme => d_programme.id === s_programme.id)[0]
                     return d_programme.name[lang]
+                })
+            } catch (error) {
+                timer.log(__filename, {INFO: 'no programme names for film', 'film id': s_film.id, lang, error})
+                return []
+            }
+        }
+
+        function distill_programmes_presenters(s_film, lang) {
+            try {
+                return (s_film.tags.programmes || []).map(s_programme => {
+                    const d_programme = STRAPIDATA['Programme'].filter(d_programme => d_programme.id === s_programme.id)[0]
+                    return distill_presenters(d_programme, lang)
                 })
             } catch (error) {
                 timer.log(__filename, {INFO: 'no programme names for film', 'film id': s_film.id, lang, error})
