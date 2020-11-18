@@ -101,25 +101,26 @@ mixin chat(room_name, is_moderated=false)
                 console.log({M: 'Got message', message, is_moderated})
 
                 if (!is_moderated){
-                    let myMessages = document.getElementById((['chat-messages', room_name + room_suffix].join('-'))).childNodes
-                    console.log(myMessages)
+                    if(!document.getElementById(message.id + message.is_moderated)){
+                        outputMessage(message)
+                        // Scroll down
+                        chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+                    }
+                }
+
+                if(is_moderated && message.is_moderated){
 
                     outputMessage(message)
                     // Scroll down
                     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+
+                    //- if(!document.getElementById(message.id+message.is_moderated)){
+                    //-     outputMessage(message)
+                    //-     // Scroll down
+                    //-     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
+                    //- }
                 }
 
-                if(is_moderated && message.is_moderated){
-                     outputMessage(message)
-                    // Scroll down
-                    chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
-                }
-
-                //- if(message.is_moderated === is_moderated){
-                //-     outputMessage(message)
-                //-     // Scroll down
-                //-     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight
-                //- }
             })
 
             // Message submit
