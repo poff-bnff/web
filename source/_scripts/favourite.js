@@ -1,13 +1,21 @@
 function loadMyFavFilms() {
-    // console.log("FAVO: oled sisse loginud")
+    console.log("FAVO: oled sisse loginud")
     try {
         document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
     } catch (error) {
         null
     }
-
-    toggleFavButtons(userProfile.shortlist.map(function (item) { return item.cassette_id }))
+    try {
+        toggleFavButtons(userProfile.shortlist.map(function (item) { return item.cassette_id }))
+    } catch (error) {
+        null
+    }
+    try {
     toggleSavedScreeningsButtons(userProfile.savedscreenings)
+    } catch (error) {
+        null
+    }
+
 
 
 
@@ -49,18 +57,19 @@ function toggleFavButtons(shortlist_array) {
 }
 
 function toggleSavedScreeningsButtons(savedScreenings) {
+    // console.log('toggleSavedScreeningsButtons')
 
     var savedScreeningIds = []
     for (j = 0; j < savedScreenings.length; j++) {
         savedScreeningIds.push(savedScreenings[j].screeningId)
     }
 
-    console.log('savedScreeningIds ', savedScreeningIds)
-    console.log('toggleSavedScreeningsButtons')
-    console.log('savedScreenings ', savedScreenings)
+    // console.log('savedScreeningIds ', savedScreeningIds)
+    // console.log('toggleSavedScreeningsButtons')
+    // console.log('savedScreenings ', savedScreenings)
 
     var isSavedScreening_buttons = document.getElementsByClassName('issavedscreening')
-    console.log(isSavedScreening_buttons)
+    // console.log(isSavedScreening_buttons)
 
     for (i = 0; i < isSavedScreening_buttons.length; i++) {
         var screening_id = isSavedScreening_buttons[i].id.split('_')[0]
@@ -130,9 +139,9 @@ function saveFilmAsFavourite(movieId) {
 }
 
 function saveScreeningAsFavourite(screeningId, screeningTitle, screeningTime) {
-    console.log('screeningId ', screeningId)
-    console.log('screeningTitle ', screeningTitle)
-    console.log('screeningTime ', screeningTime)
+    // console.log('screeningId ', screeningId)
+    // console.log('screeningTitle ', screeningTitle)
+    // console.log('screeningTime ', screeningTime)
 
     var screening = {
         id: screeningId,
@@ -156,7 +165,7 @@ function saveScreeningAsFavourite(screeningId, screeningTitle, screeningTime) {
 
     };
 
-    console.log(requestOptions)
+    // console.log(requestOptions)
 
     fetch('https://api.poff.ee/favourite/' + screeningId, requestOptions).then(function (response) {
         if (response.ok) {
@@ -192,7 +201,7 @@ function removeFilm(movieId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
         if (data.ok) {
             try {
                 document.getElementById(movieId + '_not_shortlisted').style.display = 'block'
@@ -214,7 +223,7 @@ function removeFilm(movieId) {
 }
 
 function removeScreening(screeningId) {
-    console.log('removeScreening ', screeningId)
+    // console.log('removeScreening ', screeningId)
 
     var myHeaders = new Headers();
 
@@ -233,10 +242,10 @@ function removeScreening(screeningId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
         if (data.ok) {
             try {
-                console.log(screeningId + '_is_savedscreening')
+                // console.log(screeningId + '_is_savedscreening')
                 document.getElementById(screeningId + '_is_savedscreening').style.display = 'none'
                 document.getElementById(screeningId + '_not_savedscreening').style.display = 'block'
             }
