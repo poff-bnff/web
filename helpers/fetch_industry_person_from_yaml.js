@@ -26,6 +26,7 @@ for (const ix in languages) {
     for (const ix in STRAPIDATA_IN_PERSONS) {
         let element = JSON.parse(JSON.stringify(STRAPIDATA_IN_PERSONS[ix]));
 
+
         // if (DOMAIN === 'justfilm.ee') {
         //     var templateDomainName = 'justfilm';
         // } else if (DOMAIN === 'shorts.poff.ee') {
@@ -71,6 +72,9 @@ for (const ix in languages) {
             let personFirstName = element.person.firstName || ''
             let personLastName = element.person.lastName || ''
             var personNameWithID = `${personFirstName} ${personLastName} ${element.person.id}`
+        } else {
+            console.log(`ERROR! Industry person ID ${element.id} not linked to any person, skipped.`)
+            continue
         }
 
         if (personNameWithID && personNameWithID.length > 5) {
