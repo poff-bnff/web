@@ -94,6 +94,9 @@ for (const s_cassette of STRAPIDATA_CASSETTE) {
     if (CASSETTELIMIT && cassette_counter++ > CASSETTELIMIT) {
         break
     }
+    // if (s_cassette.id !== 14) {
+    //     continue
+    // }
     timer.log(__filename, `CASSETTE ${s_cassette.id}`)
 
     const cassette_path = path.join(cassettes_path, s_cassette.slug_en)
@@ -146,7 +149,7 @@ function tokenize(arr, id, lang) {
 
 function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
     const cassette = {
-        path: 'film/' + s_cassette[`slug_${lang}`] || null,
+        path: 'film/' + (s_cassette[`slug_${lang}`] || s_cassette.slug_en),
         data: {
             articles: `/_fetchdir/articles.${lang}.yaml`
         },
@@ -205,6 +208,10 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
             }
             const countries = distill_ordered_countries(s_film, lang)
 
+            let presenters = distill_presenters(s_film, lang)
+            if (!Object.keys(presenters).length) {
+                presenters = remove_duplicates(distill_programmes_presenters(s_film, lang))
+            }
             return {
                 id: s_film.id,
                 titleBox: {
@@ -221,7 +228,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 countryNames: countries.map(country => country.name),
                 _countryCodes: countries.map(country => country.code),
                 languageNames: distill_datapieces(s_film.languages, `name_${lang}`),
-                subtitle_languages: distill_datapieces(s_film.subtitles, `name_${lang}`),
+                subtitle_languages: distill_datapieces(s_film.subtitles, `name_${lang}`).sort(),
                 _languageCodes: distill_datapieces(s_film.languages, 'code'),
                 credentials: {
                     directorofphotography: credentials['Director of Photography'],
@@ -244,8 +251,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 },
                 runtime: s_film.runtime || null,
                 directors: distill_directors(s_film, lang),
-                presenters: distill_presenters(s_film, lang),
-                presentersprogramme: remove_duplicates(distill_programmes_presenters(s_film, lang)),
+                presenters: presenters
             }
         })
 
@@ -258,7 +264,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     });
                 });
 
-                return remove_duplicates
+                return remove_duplicates[0].logos ? remove_duplicates : []
             } catch (error) {
                 timer.log(__filename, `INFO: no presentedBy text in ${lang}`)
                 return []
@@ -267,9 +273,16 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
         function distill_presenters(s_film, lang) {
             try {
-                return {
-                    text: distill_presented_by_text(s_film.presentedBy),
-                    logos: distill_logos(s_film.presentedBy),
+
+                let text = distill_presented_by_text(s_film.presentedBy)
+                let logos = distill_logos(s_film.presentedBy)
+                if (logos.length) {
+                    return {
+                        text: text,
+                        logos: logos,
+                    }
+                } else {
+                    throw new Error()
                 }
             } catch (error) {
                 timer.log(__filename, `INFO: no presenters for film ${s_film.id}, in ${lang}`)
@@ -494,7 +507,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     name: s_cassette[`title_${lang}`] || s_cassette[`title_en`] || null,
                     codeAndTitle: s_screening.codeAndTitle,
                     duration: s_screening.durationTotal || null,
-                    subtitle_languages: distill_datapieces(s_screening.subtitles, `name_${lang}`),
+                    subtitle_languages: distill_datapieces(s_screening.subtitles, `name_${lang}`).sort(),
                     booking_url: s_screening.bookingUrl || null,
                     ticketing_url: s_screening.ticketingUrl || null,
                     location: {
