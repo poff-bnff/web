@@ -77,9 +77,14 @@ for (const lang of allLanguages) {
             element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
 
             if (element.industry_people) {
-                element.industry_people = element.industry_people.map(people => {
-                    return industryPersonsYaml.filter(a => a.id === people.id)[0]
+                let indPeopleFromYaml = element.industry_people.map(people => {
+                    return industryPersonsYaml.filter(a => a.id === people.id && a.person)[0]
                 })
+                if (indPeopleFromYaml !== undefined) {
+                    element.industry_people = industryPersonsYaml
+                } else {
+                    console.log('UNDEFINED', element.id);
+                }
             }
             if (element.industry_projects) {
                 element.industry_projects = element.industry_projects.map(projects => {
