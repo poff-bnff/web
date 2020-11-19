@@ -24,13 +24,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 26,
-      "firstname": "Andres",
-      "lastname": "Lestal",
+      "id": 31,
+      "firstname": "Will",
+      "lastname": "Smith",
       "username": null
     },
     "created_at": "2020-10-22T08:25:34.957Z",
-    "updated_at": "2020-10-27T11:31:07.943Z",
+    "updated_at": "2020-11-18T17:56:42.950Z",
     "socialGroup": {
       "id": 12,
       "namePrivate": "Socials",
@@ -136,19 +136,89 @@
       },
       {
         "id": 26,
-        "namePrivate": "Contacts",
+        "namePrivate": "EAS",
         "name": {
           "id": 10782,
-          "et": "Kontakt",
-          "en": "Contacts",
-          "ru": "Контакты"
+          "et": "",
+          "en": "",
+          "ru": ""
         },
         "button": [],
         "text": {
           "id": 7928,
-          "et": "Telliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609",
-          "en": "Telliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609",
-          "ru": "Telliskivi 60a, 10412 Tallinn \nТел: +372 5620 8308\nE-mail: info@poff.ee\nРег. код: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609"
+          "et": "Projekt EU53591 „Loomemajanduse arenduskeskus Creative Gate“. Creative Gate on loomemajanduse arenduskeskus, mille eesmärk on arendada Eesti audiovisuaalvaldkonna (fookusega teleproduktsioonil) ettevõtlus- ja ekspordipotentsiaali, pakkudes terviklikku tugiteenuste paketti nii filmivaldkonna ettevõtele kui ka sidusvaldkondade ettevõtetele. Projekti rahastab Euroopa Regionaalarengu Fond summas 200 000 eurot. \nProjekti tulemusena on Eesti audiovisuaaltööstus elujõulisem ja rahvusvaheliselt konkunrentsivõimelisem ning Eesti suudab senisest paremini kasutada oma potentsiaali rahvusvahelise võttepaigana.\nLoomemajanduse arendamise meedet rahastab Euroopa Regionaalarengu Fond. Rohkem ingo teavitamise kohta leiate siit: https://www.eas.ee/teavitamine/",
+          "en": "Projekt EU53591 „Loomemajanduse arenduskeskus Creative Gate“. Creative Gate on loomemajanduse arenduskeskus, mille eesmärk on arendada Eesti audiovisuaalvaldkonna (fookusega teleproduktsioonil) ettevõtlus- ja ekspordipotentsiaali, pakkudes terviklikku tugiteenuste paketti nii filmivaldkonna ettevõtele kui ka sidusvaldkondade ettevõtetele. Projekti rahastab Euroopa Regionaalarengu Fond summas 200 000 eurot. \nProjekti tulemusena on Eesti audiovisuaaltööstus elujõulisem ja rahvusvaheliselt konkunrentsivõimelisem ning Eesti suudab senisest paremini kasutada oma potentsiaali rahvusvahelise võttepaigana.\nLoomemajanduse arendamise meedet rahastab Euroopa Regionaalarengu Fond. Rohkem ingo teavitamise kohta leiate siit: https://www.eas.ee/teavitamine/",
+          "ru": "Projekt EU53591 „Loomemajanduse arenduskeskus Creative Gate“. Creative Gate on loomemajanduse arenduskeskus, mille eesmärk on arendada Eesti audiovisuaalvaldkonna (fookusega teleproduktsioonil) ettevõtlus- ja ekspordipotentsiaali, pakkudes terviklikku tugiteenuste paketti nii filmivaldkonna ettevõtele kui ka sidusvaldkondade ettevõtetele. Projekti rahastab Euroopa Regionaalarengu Fond summas 200 000 eurot. \nProjekti tulemusena on Eesti audiovisuaaltööstus elujõulisem ja rahvusvaheliselt konkunrentsivõimelisem ning Eesti suudab senisest paremini kasutada oma potentsiaali rahvusvahelise võttepaigana.\nLoomemajanduse arendamise meedet rahastab Euroopa Regionaalarengu Fond. Rohkem ingo teavitamise kohta leiate siit: https://www.eas.ee/teavitamine/"
+        },
+        "svgItem": [],
+        "image": {
+          "id": 3477,
+          "name": "EAS_SF_RGB_EST-1.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 1349,
+          "height": 393,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_EAS_SF_RGB_EST_1_3f3989261e.jpg",
+              "hash": "thumbnail_EAS_SF_RGB_EST_1_3f3989261e",
+              "mime": "image/jpeg",
+              "name": "thumbnail_EAS_SF_RGB_EST-1.jpg",
+              "path": null,
+              "size": 4.73,
+              "width": 245,
+              "height": 71
+            }
+          },
+          "hash": "EAS_SF_RGB_EST_1_3f3989261e",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 144.95,
+          "url": "/uploads/EAS_SF_RGB_EST_1_3f3989261e.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 31,
+          "updated_by": 31,
+          "created_at": "2020-11-18T17:27:41.210Z",
+          "updated_at": "2020-11-18T17:27:41.570Z"
+        }
+      },
+      {
+        "id": 27,
+        "namePrivate": "Black Nights contact",
+        "name": {
+          "id": 30085,
+          "et": null,
+          "en": "",
+          "ru": null
+        },
+        "button": [],
+        "text": {
+          "id": 8526,
+          "et": "BMO OÜ\nTelliskivi tn 60a/2\n10412 Tallinn\nReg. code 12142069\n\nMTÜ Pimedate Ööde Filmifestival\nTelliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609",
+          "en": "BMO OÜ\nTelliskivi tn 60a/2\n10412 Tallinn\nReg. code 12142069\n\nMTÜ Pimedate Ööde Filmifestival\nTelliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609",
+          "ru": "BMO OÜ\nTelliskivi tn 60a/2\n10412 Tallinn\nReg. code 12142069\n\nMTÜ Pimedate Ööde Filmifestival\nTelliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609"
+        },
+        "svgItem": [],
+        "image": null
+      },
+      {
+        "id": 28,
+        "namePrivate": null,
+        "name": {
+          "id": 30086,
+          "et": null,
+          "en": "",
+          "ru": null
+        },
+        "button": [],
+        "text": {
+          "id": 8527,
+          "et": "MTÜ BE\nNurme 45\n11621 Tallinn\nReg. code 80213483\nbalticevent@poff.ee\n",
+          "en": "MTÜ BE\nNurme 45\n11621 Tallinn\nReg. code 80213483\nbalticevent@poff.ee\n",
+          "ru": "MTÜ BE\nNurme 45\n11621 Tallinn\nReg. code 80213483\nbalticevent@poff.ee\n"
         },
         "svgItem": [],
         "image": null
@@ -156,13 +226,66 @@
     ],
     "supporters": [
       {
-        "id": 1,
+        "id": 7,
         "order": 1,
         "name": {
+          "id": 29320,
+          "et": null,
+          "en": "Supported by",
+          "ru": null
+        },
+        "supporter": [
+          {
+            "id": 48,
+            "name": "Creative Europe",
+            "customUrl": null,
+            "industry_article": null,
+            "logoWhite": {
+              "id": 3385,
+              "name": "creative europe white on black.png",
+              "alternativeText": "",
+              "caption": "",
+              "width": 910,
+              "height": 159,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_creative_europe_white_on_black_d2fee1c5a7.png",
+                  "hash": "thumbnail_creative_europe_white_on_black_d2fee1c5a7",
+                  "mime": "image/png",
+                  "name": "thumbnail_creative europe white on black.png",
+                  "path": null,
+                  "size": 14.83,
+                  "width": 245,
+                  "height": 43
+                }
+              },
+              "hash": "creative_europe_white_on_black_d2fee1c5a7",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 81.97,
+              "url": "/uploads/creative_europe_white_on_black_d2fee1c5a7.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 31,
+              "updated_by": 31,
+              "created_at": "2020-11-16T08:32:01.669Z",
+              "updated_at": "2020-11-16T08:32:02.005Z"
+            },
+            "logoColour": null,
+            "logoBlack": null
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "order": 2,
+        "name": {
           "id": 10783,
-          "et": "Esitlejad",
-          "en": "Presenters",
-          "ru": "Представляют"
+          "et": "",
+          "en": "Sponsors",
+          "ru": ""
         },
         "supporter": [
           {
@@ -195,30 +318,83 @@
             "logoBlack": null
           },
           {
-            "id": 6,
-            "name": "www.nordichotels.eu",
-            "customUrl": "https://www.nordichotels.eu/",
+            "id": 49,
+            "name": "Tallinn",
+            "customUrl": null,
             "industry_article": null,
             "logoWhite": {
-              "id": 250,
-              "name": "Nordic_Hotel_Forum_white.svg",
+              "id": 3378,
+              "name": "tallinn white.png",
               "alternativeText": "",
               "caption": "",
-              "width": 580,
-              "height": 68,
-              "formats": null,
-              "hash": "Nordic_Hotel_Forum_white_aebc3eaffe",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 5.07,
-              "url": "/uploads/Nordic_Hotel_Forum_white_aebc3eaffe.svg",
+              "width": 740,
+              "height": 190,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_tallinn_white_3166e372c9.png",
+                  "hash": "thumbnail_tallinn_white_3166e372c9",
+                  "mime": "image/png",
+                  "name": "thumbnail_tallinn white.png",
+                  "path": null,
+                  "size": 5.79,
+                  "width": 245,
+                  "height": 63
+                }
+              },
+              "hash": "tallinn_white_3166e372c9",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 6.56,
+              "url": "/uploads/tallinn_white_3166e372c9.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "created_by": 6,
-              "updated_by": 6,
-              "created_at": "2020-09-27T21:29:04.172Z",
-              "updated_at": "2020-09-27T21:29:04.497Z"
+              "created_by": 31,
+              "updated_by": 31,
+              "created_at": "2020-11-16T08:09:35.291Z",
+              "updated_at": "2020-11-16T08:09:37.875Z"
+            },
+            "logoColour": null,
+            "logoBlack": null
+          },
+          {
+            "id": 50,
+            "name": "Russia in Focus",
+            "customUrl": null,
+            "industry_article": null,
+            "logoWhite": {
+              "id": 3383,
+              "name": "IND_PARTNER_russia_roskino_combo.png",
+              "alternativeText": "",
+              "caption": "",
+              "width": 350,
+              "height": 274,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_IND_PARTNER_russia_roskino_combo_5ce5e0abcc.png",
+                  "hash": "thumbnail_IND_PARTNER_russia_roskino_combo_5ce5e0abcc",
+                  "mime": "image/png",
+                  "name": "thumbnail_IND_PARTNER_russia_roskino_combo.png",
+                  "path": null,
+                  "size": 26.5,
+                  "width": 199,
+                  "height": 156
+                }
+              },
+              "hash": "IND_PARTNER_russia_roskino_combo_5ce5e0abcc",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 40.88,
+              "url": "/uploads/IND_PARTNER_russia_roskino_combo_5ce5e0abcc.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 31,
+              "updated_by": 31,
+              "created_at": "2020-11-16T08:23:00.217Z",
+              "updated_at": "2020-11-16T08:23:00.742Z"
             },
             "logoColour": null,
             "logoBlack": null
@@ -227,126 +403,174 @@
       },
       {
         "id": 2,
-        "order": 2,
+        "order": 3,
         "name": {
           "id": 10784,
-          "et": "Ametlikud Partnerid",
-          "en": "Official Partners",
-          "ru": "Официальные партнеры"
+          "et": "",
+          "en": "Supporters",
+          "ru": ""
         },
         "supporter": [
           {
-            "id": 1,
-            "name": "Postimees",
-            "customUrl": "https://www.postimees.ee/",
+            "id": 51,
+            "name": "German Films",
+            "customUrl": null,
             "industry_article": null,
             "logoWhite": {
-              "id": 253,
-              "name": "Postimees_white.svg",
+              "id": 3377,
+              "name": "germanfilms.png",
               "alternativeText": "",
               "caption": "",
-              "width": 350,
-              "height": 68,
-              "formats": null,
-              "hash": "Postimees_white_3f389926f5",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 4.7,
-              "url": "/uploads/Postimees_white_3f389926f5.svg",
+              "width": 2000,
+              "height": 618,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_germanfilms_25a5d07480.png",
+                  "hash": "thumbnail_germanfilms_25a5d07480",
+                  "mime": "image/png",
+                  "name": "thumbnail_germanfilms.png",
+                  "path": null,
+                  "size": 8.54,
+                  "width": 245,
+                  "height": 76
+                }
+              },
+              "hash": "germanfilms_25a5d07480",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 34.97,
+              "url": "/uploads/germanfilms_25a5d07480.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "created_by": 6,
-              "updated_by": 6,
-              "created_at": "2020-09-27T21:41:45.637Z",
-              "updated_at": "2020-09-27T21:41:45.710Z"
+              "created_by": 31,
+              "updated_by": 31,
+              "created_at": "2020-11-16T08:06:47.203Z",
+              "updated_at": "2020-11-16T08:06:47.643Z"
             },
             "logoColour": null,
             "logoBlack": null
           },
           {
-            "id": 2,
-            "name": "Toyota",
-            "customUrl": "https://www.toyota.ee/",
+            "id": 52,
+            "name": "EFI",
+            "customUrl": null,
             "industry_article": null,
             "logoWhite": {
-              "id": 252,
-              "name": "toyota_ellips_2020_white.svg",
+              "id": 3380,
+              "name": "estonian-film-institute.png",
               "alternativeText": "",
               "caption": "",
-              "width": 1370,
-              "height": 890,
-              "formats": null,
-              "hash": "toyota_ellips_2020_white_97f3a0c6ec",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 1.38,
-              "url": "/uploads/toyota_ellips_2020_white_97f3a0c6ec.svg",
+              "width": 2504,
+              "height": 855,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_estonian_film_institute_b17c0aae47.png",
+                  "hash": "thumbnail_estonian_film_institute_b17c0aae47",
+                  "mime": "image/png",
+                  "name": "thumbnail_estonian-film-institute.png",
+                  "path": null,
+                  "size": 9.25,
+                  "width": 245,
+                  "height": 84
+                }
+              },
+              "hash": "estonian_film_institute_b17c0aae47",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 39.94,
+              "url": "/uploads/estonian_film_institute_b17c0aae47.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "created_by": 6,
-              "updated_by": 6,
-              "created_at": "2020-09-27T21:32:00.423Z",
-              "updated_at": "2020-09-27T21:32:00.516Z"
+              "created_by": 31,
+              "updated_by": 31,
+              "created_at": "2020-11-16T08:12:41.213Z",
+              "updated_at": "2020-11-16T08:12:41.745Z"
             },
             "logoColour": null,
             "logoBlack": null
           },
           {
-            "id": 3,
-            "name": "Reval Cafe",
-            "customUrl": " https://revalcafe.ee/",
+            "id": 53,
+            "name": "Estonian Cultural Fund",
+            "customUrl": null,
             "industry_article": null,
             "logoWhite": {
-              "id": 260,
-              "name": "revalcafe_white.svg",
+              "id": 3381,
+              "name": "kulka_logo.png",
               "alternativeText": "",
               "caption": "",
-              "width": 100,
-              "height": 100,
-              "formats": null,
-              "hash": "revalcafe_white_3688f7f537",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 5.79,
-              "url": "/uploads/revalcafe_white_3688f7f537.svg",
+              "width": 1218,
+              "height": 547,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_kulka_logo_3ae1284354.png",
+                  "hash": "thumbnail_kulka_logo_3ae1284354",
+                  "mime": "image/png",
+                  "name": "thumbnail_kulka_logo.png",
+                  "path": null,
+                  "size": 17.31,
+                  "width": 245,
+                  "height": 110
+                }
+              },
+              "hash": "kulka_logo_3ae1284354",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 94.17,
+              "url": "/uploads/kulka_logo_3ae1284354.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "created_by": 6,
-              "updated_by": 6,
-              "created_at": "2020-09-28T08:32:31.403Z",
-              "updated_at": "2020-09-28T08:32:31.472Z"
+              "created_by": 31,
+              "updated_by": 31,
+              "created_at": "2020-11-16T08:13:26.858Z",
+              "updated_at": "2020-11-16T08:13:27.651Z"
             },
             "logoColour": null,
             "logoBlack": null
           },
           {
-            "id": 4,
-            "name": "Cramo",
-            "customUrl": "https://www.cramo.ee/",
+            "id": 54,
+            "name": "Lithuanian Film Centre",
+            "customUrl": null,
             "industry_article": null,
             "logoWhite": {
-              "id": 261,
-              "name": "cramo_white.svg",
+              "id": 3382,
+              "name": "lithuanian-film-centre-vector-logo-white.png",
               "alternativeText": "",
               "caption": "",
-              "width": 160,
-              "height": 28,
-              "formats": null,
-              "hash": "cramo_white_9329c71c98",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 2.32,
-              "url": "/uploads/cramo_white_9329c71c98.svg",
+              "width": 1000,
+              "height": 988,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_lithuanian_film_centre_vector_logo_white_139f6d100b.png",
+                  "hash": "thumbnail_lithuanian_film_centre_vector_logo_white_139f6d100b",
+                  "mime": "image/png",
+                  "name": "thumbnail_lithuanian-film-centre-vector-logo-white.png",
+                  "path": null,
+                  "size": 7.06,
+                  "width": 158,
+                  "height": 156
+                }
+              },
+              "hash": "lithuanian_film_centre_vector_logo_white_139f6d100b",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 21.96,
+              "url": "/uploads/lithuanian_film_centre_vector_logo_white_139f6d100b.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "created_by": 6,
-              "updated_by": 6,
-              "created_at": "2020-09-28T08:37:35.187Z",
-              "updated_at": "2020-09-28T08:37:35.510Z"
+              "created_by": 31,
+              "updated_by": 31,
+              "created_at": "2020-11-16T08:15:30.742Z",
+              "updated_at": "2020-11-16T08:15:30.921Z"
             },
             "logoColour": null,
             "logoBlack": null

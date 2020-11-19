@@ -24,13 +24,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 15,
-      "firstname": "Epp",
-      "lastname": "Kõuhkna",
+      "id": 14,
+      "firstname": "Heleen",
+      "lastname": "Sutt",
       "username": null
     },
     "created_at": "2020-09-29T09:21:27.612Z",
-    "updated_at": "2020-11-03T15:07:07.398Z",
+    "updated_at": "2020-11-13T11:17:26.875Z",
     "title": {
       "id": 3931,
       "et": "Just Filmi toetajad",
@@ -1062,27 +1062,7 @@
             "customUrl": "https://www.eas.ee",
             "just_filmi_article": null,
             "logoWhite": null,
-            "logoColour": {
-              "id": 294,
-              "name": "EAS_RGB_logo_Paldiski blue.svg",
-              "alternativeText": "",
-              "caption": "",
-              "width": 424,
-              "height": 175,
-              "formats": null,
-              "hash": "EAS_RGB_logo_Paldiski_blue_ed6923f761",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 9.76,
-              "url": "/uploads/EAS_RGB_logo_Paldiski_blue_ed6923f761.svg",
-              "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
-              "created_by": 16,
-              "updated_by": 16,
-              "created_at": "2020-09-30T15:00:18.164Z",
-              "updated_at": "2020-09-30T15:00:18.253Z"
-            },
+            "logoColour": null,
             "logoBlack": null
           },
           {
@@ -1198,6 +1178,35 @@
               "updated_by": 15,
               "created_at": "2020-11-03T15:06:57.848Z",
               "updated_at": "2020-11-03T15:06:57.887Z"
+            },
+            "logoBlack": null
+          },
+          {
+            "id": 50,
+            "name": "Ülemiste Ärimaja",
+            "customUrl": "http://www.ulemistearimaja.ee/?lang=en",
+            "just_filmi_article": null,
+            "logoWhite": null,
+            "logoColour": {
+              "id": 3206,
+              "name": "Ulemiste_logo.svg",
+              "alternativeText": "",
+              "caption": "",
+              "width": 100,
+              "height": 30,
+              "formats": null,
+              "hash": "Ulemiste_logo_0b9557fb64",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 11.09,
+              "url": "/uploads/Ulemiste_logo_0b9557fb64.svg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 15,
+              "updated_by": 15,
+              "created_at": "2020-11-13T10:52:58.989Z",
+              "updated_at": "2020-11-13T10:52:59.462Z"
             },
             "logoBlack": null
           }
