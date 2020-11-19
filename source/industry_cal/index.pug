@@ -150,9 +150,15 @@ block content
 
                             .event_card_footer
                                 .grid_container_screening_time
-                                    span.screening_date.small_1.add_to_calendar_button(onclick=`calendarfile('${event.id}');return false`)= 'Add to calendar'
-                                    //- Selle peidetud inputi sees on data
-                                    span(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
+                                    div
+                                        svg.svg_icon_small_primary(viewBox='0 0 24 24' width='24' height='24' stroke='#4fc4bf' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                            rect(x='3' y='4' width='18' height='18' rx='2' ry='2')
+                                            line(x1='16' y1='2' x2='16' y2='6')
+                                            line(x1='8' y1='2' x2='8' y2='6')
+                                            line(x1='3' y1='10' x2='21' y2='10')
+                                        span.screening_date.small_1(onclick=`calendarfile('${event.id}');return false`)= 'Add to calendar'
+                                        //- Selle peidetud inputi sees on data
+                                        span(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
 
 
                                     .text-right
