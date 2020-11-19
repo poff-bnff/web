@@ -759,7 +759,40 @@
           "en": "Press Releases",
           "ru": "Пресс-релизы"
         }
-      },
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 18,
+      "firstname": "Jaana",
+      "lastname": "Kalinistova",
+      "username": null
+    },
+    "created_at": "2020-09-18T07:20:56.188Z",
+    "updated_at": "2020-11-09T08:42:01.880Z",
+    "poffi_article": null,
+    "order": 8,
+    "name": {
+      "id": 3898,
+      "et": "Press & Pro",
+      "en": "Press & Pro",
+      "ru": "Пресса"
+    },
+    "customUrl": {
+      "id": 3899,
+      "et": "press-ja-pro",
+      "en": "press-and-pro",
+      "ru": "press-i-pro"
+    },
+    "subMenuItem": [
       {
         "id": 7,
         "namePrivate": "Pressiakrediteering",
@@ -883,7 +916,7 @@
           "en": "programmes",
           "ru": "programmy"
         },
-        "order": 3,
+        "order": 4,
         "name": {
           "id": 11970,
           "et": "Programmid",
