@@ -9,9 +9,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
+      "id": 3,
+      "firstname": "Liis",
+      "lastname": "Käsper",
       "username": null
     },
     "created_at": "2020-10-07T13:51:09.120Z",
@@ -1480,58 +1480,8 @@
     ]
   },
   {
-    "id": 8,
-    "name": "industry",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-15T11:10:21.601Z",
-    "updated_at": "2020-11-15T11:11:02.090Z",
-    "label": [
-      {
-        "id": 392,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Date",
-        "value_en": "Date",
-        "value_ru": "Date",
-        "name": "eventDate"
-      },
-      {
-        "id": 393,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Time EET",
-        "value_en": "Time EET",
-        "value_ru": "Time EET",
-        "name": "eventTimeEet"
-      },
-      {
-        "id": 394,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "User time",
-        "value_en": "User time",
-        "value_ru": "User time",
-        "name": "eventTimeUser"
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "name": "filters",
+    "id": 2,
+    "name": "film",
     "created_by": {
       "id": 6,
       "firstname": "Jaan",
@@ -1548,107 +1498,107 @@
     "updated_at": "2020-11-17T11:45:46.392Z",
     "label": [
       {
-        "id": 353,
+        "id": 236,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Programmid",
-        "value_en": "Programmes",
-        "value_ru": "Программы",
-        "name": "programmes"
+        "value_et": "Pealkirja originaal",
+        "value_en": "Original title",
+        "value_ru": null,
+        "name": "titleOriginal"
       },
       {
-        "id": 354,
+        "id": 237,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Keeled",
-        "value_en": "Languages",
-        "value_ru": "Языки",
-        "name": "languages"
+        "value_et": "Pealkiri eesti keeles",
+        "value_en": "Local title",
+        "value_ru": null,
+        "name": "title_et"
       },
       {
-        "id": 355,
+        "id": 238,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Riigid",
-        "value_en": "Countries",
-        "value_ru": "Страны",
+        "value_et": "Ingliskeelne pealkiri",
+        "value_en": "Title in English",
+        "value_ru": null,
+        "name": "title_en"
+      },
+      {
+        "id": 239,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Venekeelne pealkiri",
+        "value_en": "Title in Russian",
+        "value_ru": null,
+        "name": "title_ru"
+      },
+      {
+        "id": 240,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Pealkiri inglise keeles",
+        "value_en": "Title in Estonian",
+        "value_ru": null,
+        "name": "titleSec"
+      },
+      {
+        "id": 241,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Riik",
+        "value_en": "Country",
+        "value_ru": null,
         "name": "countries"
       },
       {
-        "id": 356,
+        "id": 242,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Subtiitrid",
-        "value_en": "Subtitles",
-        "value_ru": "Субтитры",
-        "name": "subtitles"
+        "value_et": "Keel",
+        "value_en": "Language",
+        "value_ru": null,
+        "name": "languages"
       },
       {
-        "id": 357,
+        "id": 243,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Esilinastused",
-        "value_en": "Premieres",
-        "value_ru": "Премьеры",
-        "name": "premieres"
+        "value_et": "Aasta",
+        "value_en": "Year",
+        "value_ru": null,
+        "name": "year"
       },
       {
-        "id": 358,
+        "id": 244,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Linnad",
-        "value_en": "Towns",
-        "value_ru": "Города",
-        "name": "towns"
+        "value_et": "Anna filmile oma hääl",
+        "value_en": "Vote for the film",
+        "value_ru": null,
+        "name": "audienceVote"
       },
       {
-        "id": 359,
+        "id": 245,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Kinod",
-        "value_en": "Cinemas",
-        "value_ru": "Кинотеатры",
-        "name": "cinemas"
+        "value_et": "Kestus",
+        "value_en": "Runtime",
+        "value_ru": null,
+        "name": "runtime"
       },
       {
-        "id": 360,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Otsi",
-        "value_en": "Search",
-        "value_ru": "Ускать",
-        "name": "search"
-      },
-      {
-        "id": 361,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kuupäevad",
-        "value_en": "Dates",
-        "value_ru": "Дни",
-        "name": "dates"
-      },
-      {
-        "id": 362,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Kellaajad",
-        "value_en": "Times",
-        "value_ru": "Время",
-        "name": "times"
-      },
-      {
-        "id": 363,
+        "id": 246,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
@@ -1696,6 +1646,146 @@
         "value_en": "Genres",
         "value_ru": "Genres",
         "name": "genres"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "industry",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-15T11:10:21.601Z",
+    "updated_at": "2020-11-18T06:05:54.281Z",
+    "label": [
+      {
+        "id": 392,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Date",
+        "value_en": "Date",
+        "value_ru": "Date",
+        "name": "eventDate"
+      },
+      {
+        "id": 393,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Time EET",
+        "value_en": "Time EET",
+        "value_ru": "Time EET",
+        "name": "eventTimeEet"
+      },
+      {
+        "id": 394,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "User time",
+        "value_en": "User time",
+        "value_ru": "User time",
+        "name": "eventTimeUser"
+      },
+      {
+        "id": 399,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Project type",
+        "value_ru": null,
+        "name": "projectType"
+      },
+      {
+        "id": 400,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Project Status",
+        "value_ru": null,
+        "name": "projectStatus"
+      },
+      {
+        "id": 401,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Completion date",
+        "value_ru": null,
+        "name": "completionDate"
+      },
+      {
+        "id": 402,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Planned premiere",
+        "value_ru": null,
+        "name": "plannedPremiere"
+      },
+      {
+        "id": 403,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Country focus",
+        "value_ru": null,
+        "name": "countryFocus"
+      },
+      {
+        "id": 404,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Budget",
+        "value_ru": null,
+        "name": "projectBudget"
+      },
+      {
+        "id": 405,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Financed",
+        "value_ru": null,
+        "name": "projectFinanced"
+      },
+      {
+        "id": 406,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Partners",
+        "value_ru": null,
+        "name": "partners"
+      },
+      {
+        "id": 407,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Looking for",
+        "value_ru": null,
+        "name": "lookingFor"
       }
     ]
   },
