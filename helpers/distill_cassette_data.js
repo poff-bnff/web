@@ -94,9 +94,20 @@ for (const s_cassette of STRAPIDATA_CASSETTE) {
     if (CASSETTELIMIT && cassette_counter++ > CASSETTELIMIT) {
         break
     }
-    // if (s_cassette.id !== 14) {
-    //     continue
-    // }
+    if (
+        s_cassette.id === 14 ||
+        // s_cassette.id === 12 ||
+        s_cassette.id === 35 ||
+        s_cassette.id === 12 ||
+        s_cassette.id === 23
+        || s_cassette.id === 55
+        // || s_cassette.id === 1787
+        // || s_cassette.id === 48
+        ) {
+
+    }else {
+        continue
+    }
     timer.log(__filename, `CASSETTE ${s_cassette.id}`)
 
     const cassette_path = path.join(cassettes_path, s_cassette.slug_en)
@@ -149,6 +160,8 @@ function tokenize(arr, id, lang) {
 
 function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
     const cassette = {
+        title: s_cassette[`title_${lang}`] || null,
+        synopsis: distill_cassette_synopsis(s_cassette, lang),
         path: 'film/' + (s_cassette[`slug_${lang}`] || s_cassette.slug_en),
         data: {
             articles: `/_fetchdir/articles.${lang}.yaml`
@@ -164,7 +177,8 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         cassette.search = {
             text: tokenize(
                 cassette.films.map(film => {
-                    return [film.synopsisBox.synopsis_md,
+                    return [
+                            // film.synopsisBox.synopsis_md,
                             film.credentials.directorofphotography,
                             film.credentials.editor,
                             film.credentials.productioncompany,
@@ -190,11 +204,20 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         }
     }
 
+    function distill_cassette_synopsis(s_cassette, lang) {
+        try {
+            return s_cassette.synopsis[lang] || s_cassette.synopsis.en || null
+        } catch (error) {
+            timer.log(__filename, `INFO: no synopsis for cassette ${s_cassette.id}, in ${lang}`)
+            return null
+        }
+    }
+
     function distill_cassette_films(s_cassette, s_films, lang) {
         return s_films.map(s_film => {
             timer.log(__filename, `${lang}, CASSETTE ${s_cassette.id}, FILM ${s_film.id}`)
 
-            const synopsis_md = distill_film_synopsis(s_film, lang)
+            // const synopsis_md = distill_film_synopsis(s_film, lang)
             const credentials = {
                 'Director of Photography': distill_credentials(s_film, 'Director of Photography'),
                 'Editor': distill_credentials(s_film, 'Editor'),
@@ -208,10 +231,12 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
             }
             const countries = distill_ordered_countries(s_film, lang)
 
-            let presenters = distill_presenters(s_film, lang)
-            if (!Object.keys(presenters).length) {
+            let presenters = [distill_presenters(s_film, lang)]
+
+            if (!presenters.length || !presenters[0].logos) {
                 presenters = remove_duplicates(distill_programmes_presenters(s_film, lang))
             }
+            s_cassette.cassetteCarouselPicsFilms = distill_film_stills(s_film)
             return {
                 id: s_film.id,
                 titleBox: {
@@ -247,7 +272,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     programmeNames: distill_programmes(s_film, lang),
                     genres: distill_film_genres(s_film, lang),
                     keywords: distill_film_keywords(s_film, lang),
-                    synopsis_md: synopsis_md
+                    // synopsis_md: synopsis_md
                 },
                 runtime: s_film.runtime || null,
                 directors: distill_directors(s_film, lang),
@@ -261,10 +286,11 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     const _oneobject = JSON.stringify(oneobject);
                     return index === s_film.findIndex(obj => {
                         return JSON.stringify(obj) === _oneobject;
-                    });
+                    }) && Object.keys(oneobject).length
                 });
 
-                return remove_duplicates[0].logos ? remove_duplicates : []
+                return remove_duplicates
+                // [0].logos ? remove_duplicates : []
             } catch (error) {
                 timer.log(__filename, `INFO: no presentedBy text in ${lang}`)
                 return []
@@ -329,7 +355,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 return s_film.tags.keywords.map(kw => kw[lang])
             } catch (error) {
                 timer.log(__filename, `INFO: no keywords for film ${s_film.id}, in ${lang}`)
-                return null
+                return []
             }
         }
 
@@ -338,7 +364,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 return s_film.tags.genres.map(pt => pt[lang])
             } catch (error) {
                 timer.log(__filename, `INFO: no genres for film ${s_film.id}, in ${lang}`)
-                return null
+                return []
             }
         }
 
@@ -499,10 +525,36 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         moment.locale(lang)
         try {
             return s_screenings.map(s_screening => {
+                moment.updateLocale('en', {
+                    longDateFormat : {
+                        LT: "hh:mm A",
+                        L: "MM/DD/YYYY",
+                        l: "M/D/YYYY",
+                        LL: "MMMM Do YYYY",
+                        ll: "MMM D YYYY",
+                        LLL: "MMMM Do YYYY LT",
+                        lll: "MMM D YYYY LT",
+                        LLLL: "dddd, MMMM Do YYYY LT",
+                        llll: "ddd, MMM D YYYY LT"
+                    }
+                });
+
+                moment.updateLocale('et', {
+                    longDateFormat: {
+                        LT: 'HH:mm',
+                        LTS: 'H:mm:ss',
+                        L: 'DD.MM.YYYY',
+                        LL: 'D. MMMM YYYY',
+                        LLL: 'D. MMMM YYYY H:mm',
+                        LLLL: 'dddd, D. MMMM YYYY H:mm'
+                    }
+                });
+                moment.locale(lang);
                 const screening_moment = moment(s_screening.dateTime)
                 return {
+                    id: s_screening.id,
                     date: (screening_moment.format('Do MMM') + ', ' + screening_moment.format('dddd')) || null,
-                    time: screening_moment.format('HH:mm') || null,
+                    time: screening_moment.format('LT') || null,
                     datetime: s_screening.dateTime || null,
                     name: s_cassette[`title_${lang}`] || s_cassette[`title_en`] || null,
                     codeAndTitle: s_screening.codeAndTitle,
@@ -511,6 +563,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     booking_url: s_screening.bookingUrl || null,
                     ticketing_url: s_screening.ticketingUrl || null,
                     location: {
+                        id: s_screening.location.id,
                         hall_name: distill_hall_name(s_screening, lang),
                         cinema_name: distill_cinema_name(s_screening, lang),
                         town_name: distill_town_name(s_screening, lang)
@@ -528,7 +581,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
         function distill_town_name(s_screening, lang) {
             try {
-                return distill_datapiece(s_screening.location.town, `name_${lang}`)
+                return distill_datapiece(s_screening.location.hall.cinema.town, `name_${lang}`)
             } catch (error) {
                 timer.log(__filename, {INFO: 'no town name for screening', 'screening id': s_screening.id, lang})
                 return null
@@ -537,7 +590,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
 
         function distill_cinema_name(s_screening, lang) {
             try {
-                return distill_datapiece(s_screening.location.cinema, `name_${lang}`)
+                return distill_datapiece(s_screening.location.hall.cinema, `name_${lang}`)
             } catch (error) {
                 timer.log(__filename, {INFO: 'no cinema name for screening', 'screening id': s_screening.id, lang})
                 return null
@@ -559,7 +612,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     return iqc.type === type && iqc.yesNo === true
                 })
                 if (filtered_iqac.length === 0) {
-                    return []
+                    return null
                 }
                 return {
                     presenters: distill_participants(filtered_iqac[0], 'presenter'),
@@ -567,7 +620,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     duration: filtered_iqac[0].duration || null
                 }
             } catch {
-                return []
+                return null
             }
 
             function distill_participants(filtered_iqac, role) {

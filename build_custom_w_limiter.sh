@@ -224,6 +224,9 @@ fetch_data()
     echo 'fetch_industry_event_from_yaml'
     node ./helpers/fetch_industry_event_from_yaml.js
 
+    echo 'distill_cassette_data'
+    node ./helpers/distill_cassette_data.js
+
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
 }

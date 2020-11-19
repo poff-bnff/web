@@ -14,7 +14,7 @@
       "username": null
     },
     "created_at": "2020-11-09T14:35:28.921Z",
-    "updated_at": "2020-11-09T15:18:31.684Z",
+    "updated_at": "2020-11-18T15:41:57.810Z",
     "title_et": "Just Filmi veebilinastused",
     "slug_et": "just-filmi-veebilinastused",
     "title_en": null,
@@ -32,7 +32,51 @@
     "publish_et": true,
     "publish_en": null,
     "publish_ru": null,
-    "media": null,
+    "media": {
+      "id": 321,
+      "clipUrlDefault": null,
+      "clipUrl_et": null,
+      "clipUrl_en": null,
+      "clipUrl_ru": null,
+      "imageDefault": [
+        {
+          "id": 719,
+          "name": "F_2_My_life_as_a_Comedian.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 1920,
+          "height": 1080,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_F_2_My_life_as_a_Comedian_180b147115.jpg",
+              "hash": "thumbnail_F_2_My_life_as_a_Comedian_180b147115",
+              "mime": "image/jpeg",
+              "name": "thumbnail_F_2_My_life_as_a_Comedian.jpg",
+              "path": null,
+              "size": 9.09,
+              "width": 245,
+              "height": 138
+            }
+          },
+          "hash": "F_2_My_life_as_a_Comedian_180b147115",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 245.33,
+          "url": "/uploads/F_2_My_life_as_a_Comedian_180b147115.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 6,
+          "updated_by": 6,
+          "created_at": "2020-10-11T16:43:19.846Z",
+          "updated_at": "2020-10-11T16:43:20.141Z"
+        }
+      ],
+      "image_et": [],
+      "image_en": [],
+      "image_ru": []
+    },
     "button": [],
     "article_types": [
       {
@@ -302,6 +346,131 @@
         "url_ru": null
       }
     ],
+    "article_types": [
+      {
+        "id": 2,
+        "name": "news",
+        "created_by": 6,
+        "updated_by": 1,
+        "created_at": "2020-08-18T13:49:51.616Z",
+        "updated_at": "2020-09-21T10:57:52.599Z",
+        "article": null,
+        "et": "Uudised",
+        "en": "News",
+        "ru": "Новости",
+        "slug_et": "uudis",
+        "slug_en": "news",
+        "slug_ru": "novost",
+        "name_et": "Uudis",
+        "name_en": "News",
+        "name_ru": "Новость",
+        "label_et": "Uudis",
+        "label_en": "News",
+        "label_ru": "Новость",
+        "Description": null
+      }
+    ],
+    "tag_premiere_types": [],
+    "programmes": [],
+    "tag_genres": [],
+    "tag_keywords": [],
+    "web_authors": [
+      {
+        "id": 3,
+        "namePrivate": "Justi Hundu",
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-09-04T10:41:16.303Z",
+        "updated_at": "2020-09-04T10:41:16.384Z",
+        "name": {
+          "id": 3858,
+          "et": "Justi Hundu",
+          "en": "Wolfie",
+          "ru": "Волчонок"
+        }
+      }
+    ],
+    "organisations": []
+  },
+  {
+    "id": 23,
+    "created_by": {
+      "id": 15,
+      "firstname": "Epp",
+      "lastname": "Kõuhkna",
+      "username": null
+    },
+    "updated_by": {
+      "id": 15,
+      "firstname": "Epp",
+      "lastname": "Kõuhkna",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:20:28.108Z",
+    "updated_at": "2020-11-18T15:20:28.198Z",
+    "title_et": "Mamma ja Just Film",
+    "slug_et": "mamma-ja-just-film",
+    "title_en": null,
+    "slug_en": "just-filmi-article-10",
+    "title_ru": null,
+    "slug_ru": "just-filmi-article-11",
+    "lead_et": "**Hea toit ning kvaliteetne meelelahutus on alati käinud käsikäes!**",
+    "lead_en": null,
+    "lead_ru": null,
+    "contents_et": "Mamma ja Just Film teevad koostööd juba kolmandat aastat. Koostöö ja üheskoos läbiviidud tegevuste maht on ajaga aina suurenenud ning sarnaselt 2019. aastale jätkab Mamma ka tänavu Just Filmi ühe esitlejana. Kanname uhkusega Just Film 2020 festivali esitleja tiitlit.\n\n\nHindame ettevõttena Just Film festivali kõrgelt, kuna tegemist on noortele suunatud kvaliteetse kultuuriprogrammiga. Just seepärast soovime aidata kaasa, et vaatamata keerulisele majandusolukorrale festival ka sel aastal toimuks. Just Film on väga aktiivselt mõelnud ka alternatiivsetele lahendustele ning sel põhjusel toimub tänavu osa festivalist ka veebi vahendusel eesmärgiga tuua programm veelgi laiema vaatajaskonna ette. \n\n\nKoostöö raames pakume kõikidele Just Filmi avaseansi külastajatele maitsvaid Mamma pannkooke ning korraldame ühiselt eriürituse toreda filmiõhtu näol. Just Film pakub omakorda kõikidele Mamma töötajatele võimalust nautida head filmielamust otse kodust läbi veebivahenduse. \n\n\nSoovime edu Just Filmi korraldusmeekonnale!\n",
+    "contents_en": null,
+    "contents_ru": null,
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish_et": true,
+    "publish_en": null,
+    "publish_ru": null,
+    "media": {
+      "id": 320,
+      "clipUrlDefault": null,
+      "clipUrl_et": null,
+      "clipUrl_en": null,
+      "clipUrl_ru": null,
+      "imageDefault": [
+        {
+          "id": 3467,
+          "name": "50593071967_a330df461d_k.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 2048,
+          "height": 1365,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_50593071967_a330df461d_k_9e7795fab6.jpg",
+              "hash": "thumbnail_50593071967_a330df461d_k_9e7795fab6",
+              "mime": "image/jpeg",
+              "name": "thumbnail_50593071967_a330df461d_k.jpg",
+              "path": null,
+              "size": 9.76,
+              "width": 234,
+              "height": 156
+            }
+          },
+          "hash": "50593071967_a330df461d_k_9e7795fab6",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 804.85,
+          "url": "/uploads/50593071967_a330df461d_k_9e7795fab6.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 15,
+          "updated_by": 15,
+          "created_at": "2020-11-18T15:20:10.452Z",
+          "updated_at": "2020-11-18T15:20:10.777Z"
+        }
+      ],
+      "image_et": [],
+      "image_en": [],
+      "image_ru": []
+    },
+    "button": [],
     "article_types": [
       {
         "id": 2,
@@ -624,119 +793,6 @@
     "media": null,
     "button": [],
     "article_types": [
-      {
-        "id": 5,
-        "name": "about",
-        "created_by": 6,
-        "updated_by": 1,
-        "created_at": "2020-09-01T12:17:53.527Z",
-        "updated_at": "2020-09-21T10:54:13.651Z",
-        "article": null,
-        "et": "Artikkel",
-        "en": "About",
-        "ru": "Артикл",
-        "slug_et": "artikkel",
-        "slug_en": "about",
-        "slug_ru": "artikl",
-        "name_et": "Artikkel",
-        "name_en": "About",
-        "name_ru": "Артикл",
-        "label_et": "Artikkel",
-        "label_en": "About",
-        "label_ru": "Артикл",
-        "Description": null
-      }
-    ],
-    "tag_premiere_types": [],
-    "programmes": [],
-    "tag_genres": [],
-    "tag_keywords": [],
-    "web_authors": [
-      {
-        "id": 3,
-        "namePrivate": "Justi Hundu",
-        "created_by": 6,
-        "updated_by": 6,
-        "created_at": "2020-09-04T10:41:16.303Z",
-        "updated_at": "2020-09-04T10:41:16.384Z",
-        "name": {
-          "id": 3858,
-          "et": "Justi Hundu",
-          "en": "Wolfie",
-          "ru": "Волчонок"
-        }
-      }
-    ],
-    "organisations": []
-  },
-  {
-    "id": 21,
-    "created_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "created_at": "2020-11-14T11:53:46.873Z",
-    "updated_at": "2020-11-16T08:44:55.100Z",
-    "title_et": "Ajakava",
-    "slug_et": "ajakava",
-    "title_en": "Just Film Timetables",
-    "slug_en": "just-film-timetables",
-    "title_ru": "Just Filmi ajakavad",
-    "slug_ru": "just-filmi-ajakavad",
-    "lead_et": "Tutvu Just Filmi programmi Tallinna ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nTutvu Just Filmi programmi Tartu ajakavaga **[SIIN](https://www.piletilevi.ee/est/piletid/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
-    "lead_en": "Just Film Tallinn timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-2020-72478/)!**\n\nJust Film Tartu timetable can be found **[HERE](https://www.piletilevi.ee/eng/tickets/festival/film/poffi-noorte-ja-lastefilmide-festival-just-film-tartus-72828/)!**",
-    "lead_ru": "",
-    "contents_et": "",
-    "contents_en": null,
-    "contents_ru": "",
-    "publishFrom": null,
-    "publishUntil": null,
-    "publish_et": true,
-    "publish_en": true,
-    "publish_ru": false,
-    "media": {
-      "id": 277,
-      "clipUrlDefault": null,
-      "clipUrl_et": null,
-      "clipUrl_en": null,
-      "clipUrl_ru": null,
-      "imageDefault": [],
-      "image_et": [],
-      "image_en": [],
-      "image_ru": []
-    },
-    "button": [],
-    "article_types": [
-      {
-        "id": 2,
-        "name": "news",
-        "created_by": 6,
-        "updated_by": 1,
-        "created_at": "2020-08-18T13:49:51.616Z",
-        "updated_at": "2020-09-21T10:57:52.599Z",
-        "article": null,
-        "et": "Uudised",
-        "en": "News",
-        "ru": "Новости",
-        "slug_et": "uudis",
-        "slug_en": "news",
-        "slug_ru": "novost",
-        "name_et": "Uudis",
-        "name_en": "News",
-        "name_ru": "Новость",
-        "label_et": "Uudis",
-        "label_en": "News",
-        "label_ru": "Новость",
-        "Description": null
-      },
       {
         "id": 5,
         "name": "about",
@@ -1305,87 +1361,6 @@
     "organisations": []
   },
   {
-    "id": 13,
-    "created_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "created_at": "2020-10-02T08:03:26.243Z",
-    "updated_at": "2020-11-04T20:34:04.757Z",
-    "title_et": "Venekeelsed ja venekeelsete subtiitritega filmid Just Filmil",
-    "slug_et": "venekeelsed-ja-venekeelsete-subtiitritega-filmid-just-filmil",
-    "title_en": null,
-    "slug_en": "just-filmi-article-3",
-    "title_ru": "Фильмы Just Film на русском языке или с русскими субтитрами",
-    "slug_ru": "c-russkimi-subtitrami",
-    "lead_et": null,
-    "lead_en": null,
-    "lead_ru": "На Just Film состоится мировая премьера российского фильма",
-    "contents_et": "Sel aastal aasta linastub Just Filmis suur valik venekeelseid ja venekeelsete subtiitritega filme!\n\nNeli neist on 2020. aasta Venemaa filmid ning üheksa venekeelsete subtiitritega. Režissööri Pavel Mirzoevi teisel täispikal filmil “Kutsu mind mustaks linnuks” on Just Filmi raames maailma esilinastus. Filmidel “Ajavalvurid” (režissöör Alexey Telnov) ja “Ütle talle” (režissöör Aleksandr Molochnikov) on Just Filmi raames rahvusvahelised esilinastused. Teadus360° programmis linastub film “Greta Thunbergi lugu” (Rootsi 2020, režissöör Nathan Grossman), mis räägib noore kliimaaktivisti elust ja näitab, kuidas ta kriitikaga toime tuleb. Õudusfilmi fännidele on film “Läheb täide” (Kanada 2020, režissöör Anthony Scott Burns), mis toob ka kõige külmema närviga inimesel kananaha ihule.\n\nMitmed filmid nagu “Ütle talle”, “Süstlapargi laps”, “Slaalom”, “Wendy”, “Masha”ja “Kutsu mind mustaks linnuks” võistlevad ka rahvusvahelises noortefilmide võistlusprogrammis Just Filmi grand prix auhinnale. Rahvusvahelist noortefilmide võistlusprogrammi hindab lisaks Just Filmi noortežüriile kolmeliikmeline rahvusvaheline žürii.\n\n\nFilmid “Ajavalvurid”, “Sipsik”, “Berti päevik” ja “Kodutänava piraadid” võistlevad Just Filmi lastefilmide võistlusprogrammis.\n\n\nPimedate Ööde filmifestivali noorte- ja lastefilmide alafestival Just Film leiab tänavu aset 13. novembrist 29. novembrini ning pileteid saab osta veebilehelt www.piletilevi.ee\n\nVenekeelsed filmid:\n\n\n### [“Ajavalvurid”](https://justfilm.ee/film/ajavalvurid/)\nThe Time Guardians\nVenemaa 2020, 94 min\nR: Alexey Telnov\n\nRahvusvaheline esilinastus\n\nLastefilmide võistlusprogramm\n\nVäike tüdruk Ksyusha lapsendatakse tondilossilikust lastekodust toredasse perekonda – ta saab endale uue kunstnikust ema ja kirjanikust isa. Kõik kolm on äärmiselt õnnelikud ning õhtud veedetakse tihti pere keskel kodus, mil isa loeb tütrele lugusid oma mitmetest fantaasiaraamatutest. Idüllilisse ellu saabub aga järsk lõpp kui Ksyusha isa vanad tuttavad proovivad perekonda lõhki kiskuda ning kõigele tipuks satub tüdruk emaga autoõnnetusse. Ärgates leiab tüdruk end aga isa raamatutest tuttavast Pimeduse Linnast, mis küll sarnaneb kodulinnale Peterburile, kuid on kõvasti pimedam ja külmem. Pimeduse Linnas elavad äärmiselt veidrad tegelased, keda valitseb hirmuäratav Nõid, kes soovib kõigest väest ka Ksyushat vangistada. Tüdruku ainukeseks liitlaseks uues kõhedas maailmas saab lustakas maagiliste võimetega assistent nimega Paramon, kellega koos võetakse ette ohtlik rännak, et leida üles Ajavõti, millega saab aega tagasi keerata ja nõnda ära hoida hirmus autoõnnetus ja päästa Ksyusha perekond igavesest pimedusest...\n\nKui otsid tempokat ja lõbusat fantaasiafilmi, on “Ajavalvurid” just Sulle mõeldud. \n\n<iframe src=\"https://drive.google.com/file/d/1oHiQ52I32LZMeyglJ692TN9brBsF-EcR/preview\" width=\"640\" height=\"480\"></iframe>\n\n\n### [“Ütle talle”](https://justfilm.ee/film/uetle-talle/)\nTell Her\nVenemaa 2020, 95 min\nR: Aleksandr Molochnikov\n\nRahvusvaheline esilinastus\n\nRahvusvaheline noortefilmide võistlusprogramm ja lapse õiguste programm\n\nSaša vanemad tülitsevad pidevalt ning kui nad lõpuks otsustavad lahku minna ja ema soovib Saša ning uue elukaaslasega Ameerikasse kolida, kukub poisi maailm kokku. Järsku leiab Saša end olukorrast, kus peab valima ema ja isa vahel. Valikut tegema sunnivad nii vanemad kui ka vanavanemad. Ometi ei too poisi otsus emaga Ameerikasse minna loodetud õnne ning lapse igatsus isa järeleaina kasvab. Poiss teeb meeleheitlikke pingutusi, et säilitada head suhted mõlema vanemaga ning võita nende tähelepanu. See pole sugugi lihtne, sest vanemate omavaheline vägikaikavedu jätkub ka lahus elades ning Sašal on üha keerulisem end kuuldavaks teha. \n\n\n### [“Masha”](https://justfilm.ee/film/masha/)\nMasha\nVenemaa 2020, 95 min\nR: Anastasiya Palchikova\n\nRahvusvaheline noortefilmide võistlusprogramm\n\nAnastasiya Palchikova debüüt viib meid karmi 90ndate Vene gangsterite maailma. 13-aastasele Mashale on juba mõnda aega tundunud, et ta lapsepõlv on kuidagi teistsugune kui teistel eakaaslastel. Tüdrukul on raske uskuda, et tema väga tore ja sõbralik perekond on tegelikult röövlid ja mõrvarid, keda kõik teised linnaelanikud kardavad ja tema arust tehakse nii talle kui ka perele ülekohut. Oma mõttemullis elades jääb märkamata katastroof, mille suunas ta perekond liikumas on. Kui juba on hilja ja Masha üritab elus uue lehekülje pöörata, saab minevik ta kätte ja paneb proovile, kui tugevad on peresidemed tegelikult.\n\n\n### [“Kutsu mind mustaks linnuks”](https://justfilm.ee/film/kutsu-mind-mustaks-linnuks/)\nCall Me Blackbird\nVenemaa 2020, 93 min\nR: Pavel Mirzoev\n\nMaailma esilinastus\n\nRahvusvaheline noortefilmide võistlusprogramm\n\nKellelegi ei meeldi olla üksi. Eriti siis, kui oled energiat täis noor inimene. Esimesed tunded ja armastus on Kostja pea segamini ajanud, olla on kuidagi raske, samas ka väga meeldiv. Aga elu on vaja elada ja kõik vead tuleb ikka ise ära teha, kellegi teise nõuanded siin ei aita. Kui ise ei tee, siis teised ka mitte. Kostjat ootab kõik see ees. Heade osatäitjatega film näitab, kuidas selles tunnete virvarris hakkama saada.\n\n\n### Vene keelsete subtiitritega filmid:\n\n\n### [“Süstlapargi laps”](https://justfilm.ee/film/suestlapargi-laps/)\nNeedle Park Baby\nШвейцария 2020, 100 min\nR: Pierre Monnard\n\nRahvusvaheline noortefilmide võistlusprogramm ja lapse õiguste programm\n\n11-aastase Mia vanemad on narkomaanid. Kui kohalik süstlapark, kus Mia vanemad tavaliselt igapäevast doosi saamas käivad, kinni pannakse, ja vanemad lahutavad, on tüdruk sunnitud koos emaga kaugesse väikelinna kolima. Pikka aega on Mia ainuke sõber tema ukulelet tinistav väljamõeldud sõber, kuid ajapikku leiab ta koolist uusi tuttavaid, kelle kodused elud pole samuti kõige roosilisemad. “Süstlapargi laps” on väga maitsekalt üles võetud linateos, kus oivaliselt on balansseeritud narkomaailma tumedus koos üles kasvava lapse perspektiiviga, kust leiab ka palju fantaasiat, helgust ja positiivseid hetki. \n \nFilm on soovituslik alates 14. eluaastast\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IVpiUJ35Dg0\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Sipsik”](https://justfilm.ee/film/sipsik/)\nRaggie\nEesti/Taani 2020, 74min\nR: Meelis Arulepp, Karsten Kiilerich\n\nLastefilmide võistlusprogramm\n\nEesti lastekirjanduse üks armastatum kangelane, kaltsunukk Sipsik, on saanud oma filmi täis muusikat, seiklusi ja tõelisi tundeid. Anu saab 6-aastaseks ja tunneb elust rõõmu – tal on suur vend Mart, kes on tüdruku parim sõber ning kellega koos on imetore mängida. Armastusest väikese õe vastu on Mart õmmelnud Anule sünnipäevaks kaltsunuku. Paraku saab idüll läbi, kui saabub 1. september ja Mart läheb jälle kooli. Anu peab nüüd päevi ilma vennata veetma. Samuti on Mardile tekkinud uued sõbrad ja õe jaoks jääb aina vähem aega. Ühel hetkel, kui Anu tunneb end eriti üksiku ja õnnetuna, ärkab kaltsunukk Sipsik nagu võluväel ellu. Vähemalt Anule tundub nii. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/PYjjABpCz1s\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Läheb täide”](https://justfilm.ee/film/laeheb-taeide/)\nCome True\nKanada 2020, 95 min\nR: Anthony Scott Burns\n\nNoortefilmide programm\n\nNoor isepäine Sarah vaevleb meeletute unehäirete käes. Tüdruku hirm uinumise ees suureneb seda enam, et unenäod muutuvad üha kurjakuulutavamaks. Noor neiu kulistab tasside viisi kohvi, kuid sellest hoolimata saab uni ta ikkagi aeg-ajalt kätte. Kui Sarah leiab ülikoolist kuulutuse, kus uneuuringutel osalemiseks otsitakse vabatahtlikke, otsustab ta end kirja panna. Juba aga uuringute alguses hakkab Sarah kahtlema, kas tegi õige otsuse. Pealtnäha lihtsa uneuuringu käigus sukeldutakse sügavale tüdruku alateadvusse, aga tagajärgi, mida see endaga kaasa toob, ei osanud keegi ette näha. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VAxqsQ7PiAk\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Greta Thunbergi lugu”](https://justfilm.ee/film/greta-thunbergi-lugu/)\nI Am Greta\nRootsi 2020, 97 min\nR: Nathan Grossman\n\nTeadus360° programm\n\nKõmulise kliimaaktivisti Greta Thunbergi lugu, mis on vormitud läbi kaasahaaravate ja mitte kunagi varem ilmavalgust näinud kaadrite Rootsi režissööri Nathan Grossmanni intiimseks dokumentaalfilmiks. 2018. aastal alustas tollal 15-aastane Thunberg tähelendu aktivistina koolistreigiga Rootsi parlamendihoone juures, mille eesmärk oli tõmmata tähelepanu kliimamuutustele. Režissöör jälgib Greta – Aspergeri sündroomiga häbeliku teismelise tüdruku – teekonda ning mõju kogu maailmale. \n\nFilm kulmineerub Greta palju kriitikat pälvinud purjereisiga üle Atlandi ookeani New Yorki, kus ta astus üles läbi aegade noorima esinejana ÜRO kliimameetmete tippkohtumisel.  \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/z71LSeHp2sw\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Slaalom”](https://justfilm.ee/film/slaalom/)\nSlalom\nPrantsusmaa 2020, 92 min\nR: Charlène Favier\n\nRahvusvaheline noortefilmide võistlusprogramm\n\nLyz Lopez on 15-aastane lootustandev suusataja, kes võetakse vastu väga rangesse treeningakadeemiasse Prantsuse Alpides. Akadeemias, kus treenitakse tulevasi olümpialootusi, juhatab vägesid endine suusaäss Fred, kelle peamine treeningmeetod on psühholoogiline vägivald. Kord juba akadeemiasse vastu võetud poisid ja tüdrukud peavad tegema kasvõi võimatut, aga Fred peab tulemusi nägema. Kui Fred aga palub Lyz’il end tema kabinetis rasvaprotsendi mõõtmiseks lahti riietada, hakkab tüdrukule tunduma, et lisaks tulemustele peab Fred veel muudki näha saama. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/V2JavMmHoXM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Wendy”](https://justfilm.ee/film/wendy/)\nWendy\nUSA 2020, 111 min\nR: Benh Zeitlin\n\nRahvusvaheline noortefilmide võistlusprogramm ja lapse õiguste programm\n\nLapsepõlv on ilus aeg ning suurekasvamist tuleks välitida. Wendy on inspireeritud klassikalisest Peeter Paani loost. Tööliste peres kasvav Wendy ja tema vennad unistavad suurtest seikustest, kui korraga ilmub nende juurde poiss nimega Peeter, kes nad enda saarele viib. Saarel hakkab juhtuma palju põnevat. Lapsed tunnevad end vabana ning avastavad maailma ilu kogu selle täiuses. Meeldejääva pildikeelega koguperefilm on huvitav vaatamine nii suurtele kui ka väiksematele filmihuvilistele. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/KKktQFFcXL0\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Lase mul kukkuda”](https://justfilm.ee/film/lase-mul-kukkuda/)\nLet Me Fall\nIsland 2018, 136 min\nR: Baldvin Zophoníasson\n\nJF20 programm ja lapse õiguste programm\n\nJärgmise annuse saamiseks on sõltlane valmis absoluutselt kõigeks. Gregory David Roberts räägib raamatus “Shantaram”, kuidas esimeseks kaob heroiinisõltlase silmist valgus, seejärel iha ning viimaks armastus. Filmi peategelane Magnea kaotab need kõik juba viieteistkümnendaks eluaastaks. Kuna augus olemist mõistavad vaid ise põhjas käinud, pole abi modernselt mõistlikest vanematest ega võõrutusravist, kust ta pidevalt kõlavate Jeesuse laulude tõttu põgeneb. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/PO_-KcTMQnU\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Kodutänava piraadid”](https://justfilm.ee/film/kodutaenava-piraadid/)\nPirates Down the Street\nHolland 2020, 95 min\nR: Pim van Hoeve\n\nLastefilmide võistlusprogramm\n\nElu ontlikus rannalinnas pööratakse pea peale, kui sinna saabub elama perekond Blunderbuss – täiesti pesuehtne piraatide kamp, koos kõige selle juurde kuuluvaga, nagu mõõgavõitlused, silmaklapid, koduks olev piraadilaev, lemmikloomast kaheksajalg ja papagoi ning lõputu rummi rüüpamine. Linnakese lugupeetud elanikud on uutest naabritest ja nende elukommetest päris kohkunud, kuid Michael saab piraatide perepoeg Billy’ga peagi heaks sõbraks. Uutel sõpradel seisavad ees põnevad aardejahid ning ohtlikud seiklused, mis viivad nad vastamisi maailma kõige hirmuäratavama mereröövli Cornelius Konkskäega, kuid muretsemiseks pole põhjust – tõeline piraat ei tunne hirmu millegi ees, garr!\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/TvLQqwWDk2s\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Berti päevik”](https://justfilm.ee/film/berti-paeevik/)\nBert’s Diary\nRootsi 2020, 95 min\nR: Michael Lindgren\n\nTreb Walker alias Bert Ljung teeb midagi, mis on poistele absoluutselt keelatud. Ta kirjutab päevikut. Mõelda vaid, kui klassi kõige tugevam poiss Klimp sellest teada saab! Siis teab varsti kogu maailm, kuidas Bert end tunneb, kui ta oma uued prillid koolis ette peab panema, kui teda jälitab hauabatsill, kui ta teeb koos Akega teaduslikke eksperimente, suitsetab salaja ja kirjutab päevikusse punase pliiatsiga, kui on armunud. \"Berti päevik” on film, mis põhineb samanimelisel maailmakuulsal lasteraamatul. See on film poistele, kuid mida on huvitav vaadata ka tüdrukutel, kes tahavad teada, mida poisid tegelikult mõtlevad.  \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/WH2pX1QPrb4\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-    "contents_en": null,
-    "contents_ru": "В этом году на фестивале молодежного и детского кино Just Film будет представлен богатый выбор фильмов на русском языке или с русскими субтитрами. \n \nВ программе четыре фильма из России, вышедших в 2020 году, и еще девять фильмов покажут с русскими субтитрами. На Just Film состоится мировая премьера второй полнометражной картины Павла Мерзоева «Зови меня Дрозд». Фестиваль порадует и международными премьерами таких фильмов, как «Стражи времени» (реж. Алексей Тельнов) и «Скажи ей» (реж. Александр Молочников). Еще одна российская работа «Маша» (реж. Анастасия Пальчикова) входит в число самых ожидаемых лент этого года.\n \nПрограмма Наука360° включит шведский фильм «Я, Грета» (реж. Нэйтан Гроссман), раскрывающий историю молодой климатической активистки. Зритель сможет узнать и то, как она справляется с критикой. Любителей ужастиков порадует канадская картина «Исполняется» (реж. Энтони Скотт Бернс), от которой побегут мурашки по коже даже у людей с самыми крепкими нервами.\n\nРяд фильмов, например, «Cкажи ей», «Малышка из парка Плацшпиц», «Слалом», «Венди», «Маша» и «Зови меня Дрозд», претендуют на Гран-при Just Film в конкурсной программе молодежных фильмов. Участников этой программы будет оценивать как молодежное жюри Just Film, так и международное жюри из трех человек.\n\nФильмы «Стражи времени», «Сипсик», «Дневник Берта» и «Пираты на домашней улице» вошли в конкурсную программу детских фильмов.\n \nФестиваль молодежного и детского кино Just Film, проводимый под эгидой кинофестиваля «Тёмные ночи» (PÖFF), пройдет с 13 по 29 ноября. Билеты можно приобрести в Piletilevi (www.piletilevi.ee).\n\n\nФИЛЬМЫ JUST FILM НА РУССКОМ ЯЗЫКЕ:\n \n##### [«Стражи времени»](https://justfilm.ee/ru/film/hraniteli-vremeni/)\nРоссия, 2020, режиссер: Алексей Тельнов \nМеждународная премьера, конкурсная программа детских фильмов\n \nМаленькую Ксюшу удочеряет хорошая семья, забрав из похожего на дом с привидениями детского дома – у нее появляется мама художница и папа писатель. Все трое безумно счастливы, вечера часто проходят в кругу семьи, и папа читает дочери рассказы из своих фантастических книг. Однако идиллической жизни приходит конец, когда девочка попадает вместе с мамой в автокатастрофу. Проснувшись, она обнаруживает себя в знакомом по отцовским книгам Городе Тьмы.\n \n«Стражи времени» подойдут тем зрителям, которые ищут энергичный и веселый фантазийный фильм.\n \n##### [«Скажи ей»](https://justfilm.ee/ru/film/skazhi-ej/)\nРоссия, 2020, режиссер: Александр Молочников\nМеждународная премьера, конкурсная программа молодежных фильмов и программа по правам ребенка\n \nПочему родители не могут поладить друг с другом? И на этот вопрос нет ответа: мир отношений между взрослыми сложен. Часто в результате ссор между родителями достается и детям. Тогда детям предстоит выбирать между мамой и папой. Невозможный выбор.\n \n«Скажи ей» показывает нам проблемы родителей глазами мальчика раннего подросткового возраста. Честный и откровенный фильм, который местами больно смотреть и где расставание родителей показано без прикрас. Фильм с замечательными актерами (Алексей Серебряков, Светлана Ходченкова, Кай Гетц и др.), который показывает, что где-то в глубине души живет возможность примирения и нормального общения друг с другом.\n \n##### [«Маша»](https://justfilm.ee/ru/film/masha/)\nРоссия, 2020, режиссер: Анастасия Пальчикова\nКонкурсная программа молодежных фильмов\n \nДебют Анастасии Пальчиковой переносит нас в криминальный мир 90-х. 13-летней Маше уже какое-то время кажется, что ее детство чем-то отличается от детства других сверстников. Ей трудно поверить в то, что ее очень милая и дружная семья на самом деле грабители и убийцы, которых боятся все жители города, и она считает, что к ним относятся предвзято. Погруженная в свои мысли, она не замечает катастрофы, к которой приближается ее семья. Когда же Маша переезжает и пытается начать жизнь с чистого листа, прошлое настигает ее и проверяет семейные узы на прочность.\n \n##### [«Зови меня Дрозд»](https://justfilm.ee/ru/film/zovi-menya-drozd/)\nРоссия, 2020, режиссер: Павел Мирзоев\nМировая премьера, конкурсная программа молодежных фильмов\n \nЭто подростковая история любви на фоне семейной драмы – развода родителей. Костя впервые влюбляется, и из-за переполняющих его чувств все мысли в его голове путаются. Но жизнь продолжается, и все ошибки все равно придется делать самому, чужие советы здесь не помогут. В то же время оба родителя любят Костю и пытаются найти с ним контакт, что в итоге им удается. Фильм с сильным актерским составом (Кирилл Кяро, Юлия Марченко и др.), который показывает, как можно справиться с таким круговоротом чувств.\n \n \nФИЛЬМЫ JUST FILM С РУССКИМИ СУБТИТРАМИ:\n \n##### [«Малышка из парка Плацшпиц»](https://justfilm.ee/ru/film/malyshka-iz-parka-placzshpicz/)\nШвейцария, 2020, режиссер: Пьер Моннар\nКонкурсная программа молодежных фильмов и программа по правам ребенка\n \nВ основе фильма лежит реальная история девочки, чья мать была тяжелой наркозависимой. 11-летняя Мия переезжает с мамой в отдаленный городок после закрытия местного парка Плацшпиц, куда родители девочки ходили за ежедневной дозой наркотиков. Долгое время единственным другом Мии является вымышленный герой, тренькающий на гавайской гитаре, но со временем она находит друзей. Однако ребенок продолжает бороться за любовь родного человека. Фильм рекомендуется с 12 лет.\n \n##### [«Сипсик»](https://justfilm.ee/ru/film/sipsik/)\nЭстония/Дания, 2020, режиссеры: Меэлис Арулепп, Карстен Кийлерих\nКонкурсная программа детских фильмов\n \nТеперь и об одном из самых любимых героев эстонской детской литературы – тряпичной кукле Сипсик – есть фильм, полный музыки, приключений и истинных чувств. Это история об очень необычной и чрезвычайно милой живой кукле и о братской и сестринской любви, которая преодолевает даже самые серьезные испытания. Созданный Эно Раудом и Эдгаром Вальтером чудесный литературный персонаж, с которым выросли родители сегодняшних малышей, символизирует собой детскую непосредственность, любопытство ко всему окружающему, неуёмный характер, всепобеждающую дружбу и негасимую любовь.\n \n##### [«Исполняется»](https://justfilm.ee/ru/film/ispolnyaetsya/)\nКанада, 2020, режиссер: Энтони Скотт Бернс\nПрограмма молодежных фильмов\n \nЮная упрямая Сара страдает безумным расстройством сна. Ее страх перед сном увеличивается по мере того, как ее сны становятся более зловещими. Девушка пьет кружками кофе, но время от времени все равно засыпает. Когда в университете она видит объявление, в котором ищут добровольцев для участия в исследовании сна, она решает записаться. Но уже в самом начале исследования Сара начинает сомневаться в правильности своего решения. В ходе, казалось бы, простого исследования сна происходит глубокое погружение в подсознание девушки, но никто не может предвидеть последствий.\n \n##### [«Я, Грета»](https://justfilm.ee/ru/film/greta/)\nШвеция, 2020, режиссер: Нэйтан Гроссман\nНаука360°\n \nНашумевшая история экологической активистки Греты Тунберг, созданная на основе ранее не опубликованных захватывающих кадров, – это очень личный документальный фильм шведского режиссера Натана Гроссмана. В 2018 году Тунберг, которой на то время было 15 лет, прославилась в качестве активистки благодаря школьной забастовке у здания шведского парламента, целью которой было привлечь внимание к изменению климата. Режиссер наблюдает за путем застенчивого подростка с синдромом Аспергера и ее влиянием на весь мир. Кульминацией фильма становится подвергшееся критики путешествие Греты на парусном судне через Атлантику в Нью-Йорк, где она выступила в качестве самого юного докладчика на саммите ООН по климату.\n \nКульминацией фильма становится подвергшееся критики путешествие Греты на парусном судне через Атлантику в Нью-Йорк, где она выступила в качестве самого юного докладчика на саммите ООН по климату.\n \n##### [«Слалом»](https://justfilm.ee/ru/film/slalom/)\nФранция, 2020, режиссер: Шарлин Фавье\nКонкурсная программа молодежных фильмов\n \nЛиз Лопес – 15-летняя перспективная лыжница, которую приняли в расположенную во Французских Альпах тренировочную академию с очень строгими правилами. В академии, где тренируются будущие олимпийские надежды, заправляет бывший лыжный ас Фред, основной метод тренировок которого – психологическое насилие. Мальчики и девочки, которые уже поступили в академию, должны сделать все, даже невозможное, ведь Фреду нужен результат. Однако, когда Фред просит Лиз раздеться в его кабинете, чтобы измерить процент жира, девушке начинает казаться, что помимо результатов, Фреду нужно увидеть что-то еще.\n \n##### [«Венди»](https://justfilm.ee/ru/film/vendi/)\nСША, 2020, режиссер: Бен Зайтлин\nКонкурсная программа молодежных фильмов и программа по правам ребенка\n \nДетство – прекрасная пора. На создание «Венди» автора вдохновила классическая история Питера Пэна. Венди и ее братья каждый вечер мечтают о великих приключениях, когда неожиданно появляется мальчик по имени Питер и забирает их на свой остров. Там их ждет много приключений.\n \nКрасочный семейный фильм будет интересен для киноманов всех возрастов. Зрителю покажут, что самое мощное оружие, которое может быть у человека, – это любовь к семье.\n \n \n##### [«Дай мне упасть»](https://justfilm.ee/ru/film/daj-mne-upast/)\nИсландия, 2018, режиссер: Болдуин Зофониассон\nПрограмма JF20 и программа по правам ребенка\n \nРади очередной дозы наркоман готов абсолютно на все. В книге «Шантарам» Грегори Дэвид Робертс рассказывает о том, как сначала во взгляде героинового наркомана пропадает свет, затем желание и, наконец, любовь. Главная героиня фильма Магнеа теряет все это уже к пятнадцати годам. Поскольку только те, кто побывали на дне, понимают, что значит находиться в яме, нет никакой помощи ни от современных всепонимающих родителей, ни от лечения зависимости, с которого она сбегает из-за постоянно звучащих песен Иисуса.\n \n \n##### [«Пираты на домашней улице»](https://justfilm.ee/ru/film/piraty-na-domashnej-ulicze/)\nНидерланды, 2020, режиссер: Пим ван Хёве\nКонкурсная программа детских фильмов\n \nЖизнь в пляжном городке переворачивается с ног на голову, когда туда приезжает семья Бландербасс – настоящая шайка пиратов со всем причитающимся, таким как бои на мечах, наглазники, пиратский корабль, домашний питомец в виде осьминога и попугай.\n \nМайкл быстро завязывает дружбу с их сыном Билли. Им предстоит охота за сокровищами и опасные приключения, в которых они столкнутся с самим Корнелиусом Крюком. Но настоящие пираты ничего не боятся, арр!\n \n \n##### [«Дневник Берта»](https://justfilm.ee/ru/film/dnevnik-berta/)\nШвеция, 2020, режиссер: Микаэль Линдгрен\nКонкурсная программа детских фильмов\n \nТреб Уокер, он же Берт Люнг, делает то, что мальчикам категорически запрещено. Он ведет дневник. Подумать только, об этом узнает самый сильный мальчик в классе Климп! Тогда вскоре весь мир узнает, что чувствует Берт, когда надевает в школе свои новые очки, что его преследует могильная бацилла, что он проводит научные эксперименты с Аке, тайно курит и пишет в дневнике красным карандашом, когда влюблен. Дневник Берта – фильм, снятый по одноименной всемирно известной детской книге. Этот фильм предназначен для мальчиков, но будет интересен и девочкам, которые, наверняка, хотят знать, о чем на самом деле думают мальчики.",
-    "publishFrom": null,
-    "publishUntil": null,
-    "publish_et": true,
-    "publish_en": null,
-    "publish_ru": true,
-    "media": null,
-    "button": [],
-    "article_types": [
-      {
-        "id": 2,
-        "name": "news",
-        "created_by": 6,
-        "updated_by": 1,
-        "created_at": "2020-08-18T13:49:51.616Z",
-        "updated_at": "2020-09-21T10:57:52.599Z",
-        "article": null,
-        "et": "Uudised",
-        "en": "News",
-        "ru": "Новости",
-        "slug_et": "uudis",
-        "slug_en": "news",
-        "slug_ru": "novost",
-        "name_et": "Uudis",
-        "name_en": "News",
-        "name_ru": "Новость",
-        "label_et": "Uudis",
-        "label_en": "News",
-        "label_ru": "Новость",
-        "Description": null
-      }
-    ],
-    "tag_premiere_types": [],
-    "programmes": [],
-    "tag_genres": [],
-    "tag_keywords": [],
-    "web_authors": [
-      {
-        "id": 3,
-        "namePrivate": "Justi Hundu",
-        "created_by": 6,
-        "updated_by": 6,
-        "created_at": "2020-09-04T10:41:16.303Z",
-        "updated_at": "2020-09-04T10:41:16.384Z",
-        "name": {
-          "id": 3858,
-          "et": "Justi Hundu",
-          "en": "Wolfie",
-          "ru": "Волчонок"
-        }
-      }
-    ],
-    "organisations": []
-  },
-  {
     "id": 22,
     "created_by": {
       "id": 15,
@@ -1592,6 +1567,131 @@
     "organisations": []
   },
   {
+    "id": 13,
+    "created_by": {
+      "id": 14,
+      "firstname": "Heleen",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "updated_by": {
+      "id": 14,
+      "firstname": "Heleen",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "created_at": "2020-10-02T08:03:26.243Z",
+    "updated_at": "2020-11-18T15:44:03.119Z",
+    "title_et": "Venekeelsed ja venekeelsete subtiitritega filmid Just Filmil",
+    "slug_et": "venekeelsed-ja-venekeelsete-subtiitritega-filmid-just-filmil",
+    "title_en": null,
+    "slug_en": "just-filmi-article-3",
+    "title_ru": "Фильмы Just Film на русском языке или с русскими субтитрами",
+    "slug_ru": "c-russkimi-subtitrami",
+    "lead_et": null,
+    "lead_en": null,
+    "lead_ru": "На Just Film состоится мировая премьера российского фильма",
+    "contents_et": "Sel aastal aasta linastub Just Filmis suur valik venekeelseid ja venekeelsete subtiitritega filme!\n\nNeli neist on 2020. aasta Venemaa filmid ning üheksa venekeelsete subtiitritega. Režissööri Pavel Mirzoevi teisel täispikal filmil “Kutsu mind mustaks linnuks” on Just Filmi raames maailma esilinastus. Filmidel “Ajavalvurid” (režissöör Alexey Telnov) ja “Ütle talle” (režissöör Aleksandr Molochnikov) on Just Filmi raames rahvusvahelised esilinastused. Teadus360° programmis linastub film “Greta Thunbergi lugu” (Rootsi 2020, režissöör Nathan Grossman), mis räägib noore kliimaaktivisti elust ja näitab, kuidas ta kriitikaga toime tuleb. Õudusfilmi fännidele on film “Läheb täide” (Kanada 2020, režissöör Anthony Scott Burns), mis toob ka kõige külmema närviga inimesel kananaha ihule.\n\nMitmed filmid nagu “Ütle talle”, “Süstlapargi laps”, “Slaalom”, “Wendy”, “Masha”ja “Kutsu mind mustaks linnuks” võistlevad ka rahvusvahelises noortefilmide võistlusprogrammis Just Filmi grand prix auhinnale. Rahvusvahelist noortefilmide võistlusprogrammi hindab lisaks Just Filmi noortežüriile kolmeliikmeline rahvusvaheline žürii.\n\n\nFilmid “Ajavalvurid”, “Sipsik”, “Berti päevik” ja “Kodutänava piraadid” võistlevad Just Filmi lastefilmide võistlusprogrammis.\n\n\nPimedate Ööde filmifestivali noorte- ja lastefilmide alafestival Just Film leiab tänavu aset 13. novembrist 29. novembrini ning pileteid saab osta veebilehelt www.piletilevi.ee\n\nVenekeelsed filmid:\n\n\n### [“Ajavalvurid”](https://justfilm.ee/film/ajavalvurid/)\nThe Time Guardians\nVenemaa 2020, 94 min\nR: Alexey Telnov\n\nRahvusvaheline esilinastus\n\nLastefilmide võistlusprogramm\n\nVäike tüdruk Ksyusha lapsendatakse tondilossilikust lastekodust toredasse perekonda – ta saab endale uue kunstnikust ema ja kirjanikust isa. Kõik kolm on äärmiselt õnnelikud ning õhtud veedetakse tihti pere keskel kodus, mil isa loeb tütrele lugusid oma mitmetest fantaasiaraamatutest. Idüllilisse ellu saabub aga järsk lõpp kui Ksyusha isa vanad tuttavad proovivad perekonda lõhki kiskuda ning kõigele tipuks satub tüdruk emaga autoõnnetusse. Ärgates leiab tüdruk end aga isa raamatutest tuttavast Pimeduse Linnast, mis küll sarnaneb kodulinnale Peterburile, kuid on kõvasti pimedam ja külmem. Pimeduse Linnas elavad äärmiselt veidrad tegelased, keda valitseb hirmuäratav Nõid, kes soovib kõigest väest ka Ksyushat vangistada. Tüdruku ainukeseks liitlaseks uues kõhedas maailmas saab lustakas maagiliste võimetega assistent nimega Paramon, kellega koos võetakse ette ohtlik rännak, et leida üles Ajavõti, millega saab aega tagasi keerata ja nõnda ära hoida hirmus autoõnnetus ja päästa Ksyusha perekond igavesest pimedusest...\n\nKui otsid tempokat ja lõbusat fantaasiafilmi, on “Ajavalvurid” just Sulle mõeldud. \n\n<iframe src=\"https://drive.google.com/file/d/1oHiQ52I32LZMeyglJ692TN9brBsF-EcR/preview\" width=\"640\" height=\"480\"></iframe>\n\n\n### [“Ütle talle”](https://justfilm.ee/film/uetle-talle/)\nTell Her\nVenemaa 2020, 95 min\nR: Aleksandr Molochnikov\n\nRahvusvaheline esilinastus\n\nRahvusvaheline noortefilmide võistlusprogramm ja lapse õiguste programm\n\nSaša vanemad tülitsevad pidevalt ning kui nad lõpuks otsustavad lahku minna ja ema soovib Saša ning uue elukaaslasega Ameerikasse kolida, kukub poisi maailm kokku. Järsku leiab Saša end olukorrast, kus peab valima ema ja isa vahel. Valikut tegema sunnivad nii vanemad kui ka vanavanemad. Ometi ei too poisi otsus emaga Ameerikasse minna loodetud õnne ning lapse igatsus isa järeleaina kasvab. Poiss teeb meeleheitlikke pingutusi, et säilitada head suhted mõlema vanemaga ning võita nende tähelepanu. See pole sugugi lihtne, sest vanemate omavaheline vägikaikavedu jätkub ka lahus elades ning Sašal on üha keerulisem end kuuldavaks teha. \n\n\n### [“Masha”](https://justfilm.ee/film/masha/)\nMasha\nVenemaa 2020, 95 min\nR: Anastasiya Palchikova\n\nRahvusvaheline noortefilmide võistlusprogramm\n\nAnastasiya Palchikova debüüt viib meid karmi 90ndate Vene gangsterite maailma. 13-aastasele Mashale on juba mõnda aega tundunud, et ta lapsepõlv on kuidagi teistsugune kui teistel eakaaslastel. Tüdrukul on raske uskuda, et tema väga tore ja sõbralik perekond on tegelikult röövlid ja mõrvarid, keda kõik teised linnaelanikud kardavad ja tema arust tehakse nii talle kui ka perele ülekohut. Oma mõttemullis elades jääb märkamata katastroof, mille suunas ta perekond liikumas on. Kui juba on hilja ja Masha üritab elus uue lehekülje pöörata, saab minevik ta kätte ja paneb proovile, kui tugevad on peresidemed tegelikult.\n\n\n### [“Kutsu mind mustaks linnuks”](https://justfilm.ee/film/kutsu-mind-mustaks-linnuks/)\nCall Me Blackbird\nVenemaa 2020, 93 min\nR: Pavel Mirzoev\n\nMaailma esilinastus\n\nRahvusvaheline noortefilmide võistlusprogramm\n\nKellelegi ei meeldi olla üksi. Eriti siis, kui oled energiat täis noor inimene. Esimesed tunded ja armastus on Kostja pea segamini ajanud, olla on kuidagi raske, samas ka väga meeldiv. Aga elu on vaja elada ja kõik vead tuleb ikka ise ära teha, kellegi teise nõuanded siin ei aita. Kui ise ei tee, siis teised ka mitte. Kostjat ootab kõik see ees. Heade osatäitjatega film näitab, kuidas selles tunnete virvarris hakkama saada.\n\n\n### Vene keelsete subtiitritega filmid:\n\n\n### [“Süstlapargi laps”](https://justfilm.ee/film/suestlapargi-laps/)\nNeedle Park Baby\nШвейцария 2020, 100 min\nR: Pierre Monnard\n\nRahvusvaheline noortefilmide võistlusprogramm ja lapse õiguste programm\n\n11-aastase Mia vanemad on narkomaanid. Kui kohalik süstlapark, kus Mia vanemad tavaliselt igapäevast doosi saamas käivad, kinni pannakse, ja vanemad lahutavad, on tüdruk sunnitud koos emaga kaugesse väikelinna kolima. Pikka aega on Mia ainuke sõber tema ukulelet tinistav väljamõeldud sõber, kuid ajapikku leiab ta koolist uusi tuttavaid, kelle kodused elud pole samuti kõige roosilisemad. “Süstlapargi laps” on väga maitsekalt üles võetud linateos, kus oivaliselt on balansseeritud narkomaailma tumedus koos üles kasvava lapse perspektiiviga, kust leiab ka palju fantaasiat, helgust ja positiivseid hetki. \n \nFilm on soovituslik alates 14. eluaastast\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IVpiUJ35Dg0\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Sipsik”](https://justfilm.ee/film/sipsik/)\nRaggie\nEesti/Taani 2020, 74min\nR: Meelis Arulepp, Karsten Kiilerich\n\nLastefilmide võistlusprogramm\n\nEesti lastekirjanduse üks armastatum kangelane, kaltsunukk Sipsik, on saanud oma filmi täis muusikat, seiklusi ja tõelisi tundeid. Anu saab 6-aastaseks ja tunneb elust rõõmu – tal on suur vend Mart, kes on tüdruku parim sõber ning kellega koos on imetore mängida. Armastusest väikese õe vastu on Mart õmmelnud Anule sünnipäevaks kaltsunuku. Paraku saab idüll läbi, kui saabub 1. september ja Mart läheb jälle kooli. Anu peab nüüd päevi ilma vennata veetma. Samuti on Mardile tekkinud uued sõbrad ja õe jaoks jääb aina vähem aega. Ühel hetkel, kui Anu tunneb end eriti üksiku ja õnnetuna, ärkab kaltsunukk Sipsik nagu võluväel ellu. Vähemalt Anule tundub nii. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/PYjjABpCz1s\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Läheb täide”](https://justfilm.ee/film/laeheb-taeide/)\nCome True\nKanada 2020, 95 min\nR: Anthony Scott Burns\n\nNoortefilmide programm\n\nNoor isepäine Sarah vaevleb meeletute unehäirete käes. Tüdruku hirm uinumise ees suureneb seda enam, et unenäod muutuvad üha kurjakuulutavamaks. Noor neiu kulistab tasside viisi kohvi, kuid sellest hoolimata saab uni ta ikkagi aeg-ajalt kätte. Kui Sarah leiab ülikoolist kuulutuse, kus uneuuringutel osalemiseks otsitakse vabatahtlikke, otsustab ta end kirja panna. Juba aga uuringute alguses hakkab Sarah kahtlema, kas tegi õige otsuse. Pealtnäha lihtsa uneuuringu käigus sukeldutakse sügavale tüdruku alateadvusse, aga tagajärgi, mida see endaga kaasa toob, ei osanud keegi ette näha. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VAxqsQ7PiAk\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Greta Thunbergi lugu”](https://justfilm.ee/film/greta-thunbergi-lugu/)\nI Am Greta\nRootsi 2020, 97 min\nR: Nathan Grossman\n\nTeadus360° programm\n\nKõmulise kliimaaktivisti Greta Thunbergi lugu, mis on vormitud läbi kaasahaaravate ja mitte kunagi varem ilmavalgust näinud kaadrite Rootsi režissööri Nathan Grossmanni intiimseks dokumentaalfilmiks. 2018. aastal alustas tollal 15-aastane Thunberg tähelendu aktivistina koolistreigiga Rootsi parlamendihoone juures, mille eesmärk oli tõmmata tähelepanu kliimamuutustele. Režissöör jälgib Greta – Aspergeri sündroomiga häbeliku teismelise tüdruku – teekonda ning mõju kogu maailmale. \n\nFilm kulmineerub Greta palju kriitikat pälvinud purjereisiga üle Atlandi ookeani New Yorki, kus ta astus üles läbi aegade noorima esinejana ÜRO kliimameetmete tippkohtumisel.  \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/z71LSeHp2sw\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Slaalom”](https://justfilm.ee/film/slaalom/)\nSlalom\nPrantsusmaa 2020, 92 min\nR: Charlène Favier\n\nRahvusvaheline noortefilmide võistlusprogramm\n\nLyz Lopez on 15-aastane lootustandev suusataja, kes võetakse vastu väga rangesse treeningakadeemiasse Prantsuse Alpides. Akadeemias, kus treenitakse tulevasi olümpialootusi, juhatab vägesid endine suusaäss Fred, kelle peamine treeningmeetod on psühholoogiline vägivald. Kord juba akadeemiasse vastu võetud poisid ja tüdrukud peavad tegema kasvõi võimatut, aga Fred peab tulemusi nägema. Kui Fred aga palub Lyz’il end tema kabinetis rasvaprotsendi mõõtmiseks lahti riietada, hakkab tüdrukule tunduma, et lisaks tulemustele peab Fred veel muudki näha saama. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/V2JavMmHoXM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Wendy”](https://justfilm.ee/film/wendy/)\nWendy\nUSA 2020, 111 min\nR: Benh Zeitlin\n\nRahvusvaheline noortefilmide võistlusprogramm ja lapse õiguste programm\n\nLapsepõlv on ilus aeg ning suurekasvamist tuleks välitida. Wendy on inspireeritud klassikalisest Peeter Paani loost. Tööliste peres kasvav Wendy ja tema vennad unistavad suurtest seikustest, kui korraga ilmub nende juurde poiss nimega Peeter, kes nad enda saarele viib. Saarel hakkab juhtuma palju põnevat. Lapsed tunnevad end vabana ning avastavad maailma ilu kogu selle täiuses. Meeldejääva pildikeelega koguperefilm on huvitav vaatamine nii suurtele kui ka väiksematele filmihuvilistele. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/KKktQFFcXL0\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Lase mul kukkuda”](https://justfilm.ee/film/lase-mul-kukkuda/)\nLet Me Fall\nIsland 2018, 136 min\nR: Baldvin Zophoníasson\n\nJF20 programm ja lapse õiguste programm\n\nJärgmise annuse saamiseks on sõltlane valmis absoluutselt kõigeks. Gregory David Roberts räägib raamatus “Shantaram”, kuidas esimeseks kaob heroiinisõltlase silmist valgus, seejärel iha ning viimaks armastus. Filmi peategelane Magnea kaotab need kõik juba viieteistkümnendaks eluaastaks. Kuna augus olemist mõistavad vaid ise põhjas käinud, pole abi modernselt mõistlikest vanematest ega võõrutusravist, kust ta pidevalt kõlavate Jeesuse laulude tõttu põgeneb. \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/PO_-KcTMQnU\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Kodutänava piraadid”](https://justfilm.ee/film/kodutaenava-piraadid/)\nPirates Down the Street\nHolland 2020, 95 min\nR: Pim van Hoeve\n\nLastefilmide võistlusprogramm\n\nElu ontlikus rannalinnas pööratakse pea peale, kui sinna saabub elama perekond Blunderbuss – täiesti pesuehtne piraatide kamp, koos kõige selle juurde kuuluvaga, nagu mõõgavõitlused, silmaklapid, koduks olev piraadilaev, lemmikloomast kaheksajalg ja papagoi ning lõputu rummi rüüpamine. Linnakese lugupeetud elanikud on uutest naabritest ja nende elukommetest päris kohkunud, kuid Michael saab piraatide perepoeg Billy’ga peagi heaks sõbraks. Uutel sõpradel seisavad ees põnevad aardejahid ning ohtlikud seiklused, mis viivad nad vastamisi maailma kõige hirmuäratavama mereröövli Cornelius Konkskäega, kuid muretsemiseks pole põhjust – tõeline piraat ei tunne hirmu millegi ees, garr!\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/TvLQqwWDk2s\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n\n### [“Berti päevik”](https://justfilm.ee/film/berti-paeevik/)\nBert’s Diary\nRootsi 2020, 95 min\nR: Michael Lindgren\n\nTreb Walker alias Bert Ljung teeb midagi, mis on poistele absoluutselt keelatud. Ta kirjutab päevikut. Mõelda vaid, kui klassi kõige tugevam poiss Klimp sellest teada saab! Siis teab varsti kogu maailm, kuidas Bert end tunneb, kui ta oma uued prillid koolis ette peab panema, kui teda jälitab hauabatsill, kui ta teeb koos Akega teaduslikke eksperimente, suitsetab salaja ja kirjutab päevikusse punase pliiatsiga, kui on armunud. \"Berti päevik” on film, mis põhineb samanimelisel maailmakuulsal lasteraamatul. See on film poistele, kuid mida on huvitav vaadata ka tüdrukutel, kes tahavad teada, mida poisid tegelikult mõtlevad.  \n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/WH2pX1QPrb4\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+    "contents_en": null,
+    "contents_ru": "В этом году на фестивале молодежного и детского кино Just Film будет представлен богатый выбор фильмов на русском языке или с русскими субтитрами. \n \nВ программе четыре фильма из России, вышедших в 2020 году, и еще девять фильмов покажут с русскими субтитрами. На Just Film состоится мировая премьера второй полнометражной картины Павла Мерзоева «Зови меня Дрозд». Фестиваль порадует и международными премьерами таких фильмов, как «Стражи времени» (реж. Алексей Тельнов) и «Скажи ей» (реж. Александр Молочников). Еще одна российская работа «Маша» (реж. Анастасия Пальчикова) входит в число самых ожидаемых лент этого года.\n \nПрограмма Наука360° включит шведский фильм «Я, Грета» (реж. Нэйтан Гроссман), раскрывающий историю молодой климатической активистки. Зритель сможет узнать и то, как она справляется с критикой. Любителей ужастиков порадует канадская картина «Исполняется» (реж. Энтони Скотт Бернс), от которой побегут мурашки по коже даже у людей с самыми крепкими нервами.\n\nРяд фильмов, например, «Cкажи ей», «Малышка из парка Плацшпиц», «Слалом», «Венди», «Маша» и «Зови меня Дрозд», претендуют на Гран-при Just Film в конкурсной программе молодежных фильмов. Участников этой программы будет оценивать как молодежное жюри Just Film, так и международное жюри из трех человек.\n\nФильмы «Стражи времени», «Сипсик», «Дневник Берта» и «Пираты на домашней улице» вошли в конкурсную программу детских фильмов.\n \nФестиваль молодежного и детского кино Just Film, проводимый под эгидой кинофестиваля «Тёмные ночи» (PÖFF), пройдет с 13 по 29 ноября. Билеты можно приобрести в Piletilevi (www.piletilevi.ee).\n\n\nФИЛЬМЫ JUST FILM НА РУССКОМ ЯЗЫКЕ:\n \n##### [«Стражи времени»](https://justfilm.ee/ru/film/hraniteli-vremeni/)\nРоссия, 2020, режиссер: Алексей Тельнов \nМеждународная премьера, конкурсная программа детских фильмов\n \nМаленькую Ксюшу удочеряет хорошая семья, забрав из похожего на дом с привидениями детского дома – у нее появляется мама художница и папа писатель. Все трое безумно счастливы, вечера часто проходят в кругу семьи, и папа читает дочери рассказы из своих фантастических книг. Однако идиллической жизни приходит конец, когда девочка попадает вместе с мамой в автокатастрофу. Проснувшись, она обнаруживает себя в знакомом по отцовским книгам Городе Тьмы.\n \n«Стражи времени» подойдут тем зрителям, которые ищут энергичный и веселый фантазийный фильм.\n \n##### [«Скажи ей»](https://justfilm.ee/ru/film/skazhi-ej/)\nРоссия, 2020, режиссер: Александр Молочников\nМеждународная премьера, конкурсная программа молодежных фильмов и программа по правам ребенка\n \nПочему родители не могут поладить друг с другом? И на этот вопрос нет ответа: мир отношений между взрослыми сложен. Часто в результате ссор между родителями достается и детям. Тогда детям предстоит выбирать между мамой и папой. Невозможный выбор.\n \n«Скажи ей» показывает нам проблемы родителей глазами мальчика раннего подросткового возраста. Честный и откровенный фильм, который местами больно смотреть и где расставание родителей показано без прикрас. Фильм с замечательными актерами (Алексей Серебряков, Светлана Ходченкова, Кай Гетц и др.), который показывает, что где-то в глубине души живет возможность примирения и нормального общения друг с другом.\n \n##### [«Маша»](https://justfilm.ee/ru/film/masha/)\nРоссия, 2020, режиссер: Анастасия Пальчикова\nКонкурсная программа молодежных фильмов\n \nДебют Анастасии Пальчиковой переносит нас в криминальный мир 90-х. 13-летней Маше уже какое-то время кажется, что ее детство чем-то отличается от детства других сверстников. Ей трудно поверить в то, что ее очень милая и дружная семья на самом деле грабители и убийцы, которых боятся все жители города, и она считает, что к ним относятся предвзято. Погруженная в свои мысли, она не замечает катастрофы, к которой приближается ее семья. Когда же Маша переезжает и пытается начать жизнь с чистого листа, прошлое настигает ее и проверяет семейные узы на прочность.\n \n##### [«Зови меня Дрозд»](https://justfilm.ee/ru/film/zovi-menya-drozd/)\nРоссия, 2020, режиссер: Павел Мирзоев\nМировая премьера, конкурсная программа молодежных фильмов\n \nЭто подростковая история любви на фоне семейной драмы – развода родителей. Костя впервые влюбляется, и из-за переполняющих его чувств все мысли в его голове путаются. Но жизнь продолжается, и все ошибки все равно придется делать самому, чужие советы здесь не помогут. В то же время оба родителя любят Костю и пытаются найти с ним контакт, что в итоге им удается. Фильм с сильным актерским составом (Кирилл Кяро, Юлия Марченко и др.), который показывает, как можно справиться с таким круговоротом чувств.\n \n \nФИЛЬМЫ JUST FILM С РУССКИМИ СУБТИТРАМИ:\n \n##### [«Малышка из парка Плацшпиц»](https://justfilm.ee/ru/film/malyshka-iz-parka-placzshpicz/)\nШвейцария, 2020, режиссер: Пьер Моннар\nКонкурсная программа молодежных фильмов и программа по правам ребенка\n \nВ основе фильма лежит реальная история девочки, чья мать была тяжелой наркозависимой. 11-летняя Мия переезжает с мамой в отдаленный городок после закрытия местного парка Плацшпиц, куда родители девочки ходили за ежедневной дозой наркотиков. Долгое время единственным другом Мии является вымышленный герой, тренькающий на гавайской гитаре, но со временем она находит друзей. Однако ребенок продолжает бороться за любовь родного человека. Фильм рекомендуется с 12 лет.\n \n##### [«Сипсик»](https://justfilm.ee/ru/film/sipsik/)\nЭстония/Дания, 2020, режиссеры: Меэлис Арулепп, Карстен Кийлерих\nКонкурсная программа детских фильмов\n \nТеперь и об одном из самых любимых героев эстонской детской литературы – тряпичной кукле Сипсик – есть фильм, полный музыки, приключений и истинных чувств. Это история об очень необычной и чрезвычайно милой живой кукле и о братской и сестринской любви, которая преодолевает даже самые серьезные испытания. Созданный Эно Раудом и Эдгаром Вальтером чудесный литературный персонаж, с которым выросли родители сегодняшних малышей, символизирует собой детскую непосредственность, любопытство ко всему окружающему, неуёмный характер, всепобеждающую дружбу и негасимую любовь.\n \n##### [«Исполняется»](https://justfilm.ee/ru/film/ispolnyaetsya/)\nКанада, 2020, режиссер: Энтони Скотт Бернс\nПрограмма молодежных фильмов\n \nЮная упрямая Сара страдает безумным расстройством сна. Ее страх перед сном увеличивается по мере того, как ее сны становятся более зловещими. Девушка пьет кружками кофе, но время от времени все равно засыпает. Когда в университете она видит объявление, в котором ищут добровольцев для участия в исследовании сна, она решает записаться. Но уже в самом начале исследования Сара начинает сомневаться в правильности своего решения. В ходе, казалось бы, простого исследования сна происходит глубокое погружение в подсознание девушки, но никто не может предвидеть последствий.\n \n##### [«Я, Грета»](https://justfilm.ee/ru/film/greta/)\nШвеция, 2020, режиссер: Нэйтан Гроссман\nНаука360°\n \nНашумевшая история экологической активистки Греты Тунберг, созданная на основе ранее не опубликованных захватывающих кадров, – это очень личный документальный фильм шведского режиссера Натана Гроссмана. В 2018 году Тунберг, которой на то время было 15 лет, прославилась в качестве активистки благодаря школьной забастовке у здания шведского парламента, целью которой было привлечь внимание к изменению климата. Режиссер наблюдает за путем застенчивого подростка с синдромом Аспергера и ее влиянием на весь мир. Кульминацией фильма становится подвергшееся критики путешествие Греты на парусном судне через Атлантику в Нью-Йорк, где она выступила в качестве самого юного докладчика на саммите ООН по климату.\n \nКульминацией фильма становится подвергшееся критики путешествие Греты на парусном судне через Атлантику в Нью-Йорк, где она выступила в качестве самого юного докладчика на саммите ООН по климату.\n \n##### [«Слалом»](https://justfilm.ee/ru/film/slalom/)\nФранция, 2020, режиссер: Шарлин Фавье\nКонкурсная программа молодежных фильмов\n \nЛиз Лопес – 15-летняя перспективная лыжница, которую приняли в расположенную во Французских Альпах тренировочную академию с очень строгими правилами. В академии, где тренируются будущие олимпийские надежды, заправляет бывший лыжный ас Фред, основной метод тренировок которого – психологическое насилие. Мальчики и девочки, которые уже поступили в академию, должны сделать все, даже невозможное, ведь Фреду нужен результат. Однако, когда Фред просит Лиз раздеться в его кабинете, чтобы измерить процент жира, девушке начинает казаться, что помимо результатов, Фреду нужно увидеть что-то еще.\n \n##### [«Венди»](https://justfilm.ee/ru/film/vendi/)\nСША, 2020, режиссер: Бен Зайтлин\nКонкурсная программа молодежных фильмов и программа по правам ребенка\n \nДетство – прекрасная пора. На создание «Венди» автора вдохновила классическая история Питера Пэна. Венди и ее братья каждый вечер мечтают о великих приключениях, когда неожиданно появляется мальчик по имени Питер и забирает их на свой остров. Там их ждет много приключений.\n \nКрасочный семейный фильм будет интересен для киноманов всех возрастов. Зрителю покажут, что самое мощное оружие, которое может быть у человека, – это любовь к семье.\n \n \n##### [«Дай мне упасть»](https://justfilm.ee/ru/film/daj-mne-upast/)\nИсландия, 2018, режиссер: Болдуин Зофониассон\nПрограмма JF20 и программа по правам ребенка\n \nРади очередной дозы наркоман готов абсолютно на все. В книге «Шантарам» Грегори Дэвид Робертс рассказывает о том, как сначала во взгляде героинового наркомана пропадает свет, затем желание и, наконец, любовь. Главная героиня фильма Магнеа теряет все это уже к пятнадцати годам. Поскольку только те, кто побывали на дне, понимают, что значит находиться в яме, нет никакой помощи ни от современных всепонимающих родителей, ни от лечения зависимости, с которого она сбегает из-за постоянно звучащих песен Иисуса.\n \n \n##### [«Пираты на домашней улице»](https://justfilm.ee/ru/film/piraty-na-domashnej-ulicze/)\nНидерланды, 2020, режиссер: Пим ван Хёве\nКонкурсная программа детских фильмов\n \nЖизнь в пляжном городке переворачивается с ног на голову, когда туда приезжает семья Бландербасс – настоящая шайка пиратов со всем причитающимся, таким как бои на мечах, наглазники, пиратский корабль, домашний питомец в виде осьминога и попугай.\n \nМайкл быстро завязывает дружбу с их сыном Билли. Им предстоит охота за сокровищами и опасные приключения, в которых они столкнутся с самим Корнелиусом Крюком. Но настоящие пираты ничего не боятся, арр!\n \n \n##### [«Дневник Берта»](https://justfilm.ee/ru/film/dnevnik-berta/)\nШвеция, 2020, режиссер: Микаэль Линдгрен\nКонкурсная программа детских фильмов\n \nТреб Уокер, он же Берт Люнг, делает то, что мальчикам категорически запрещено. Он ведет дневник. Подумать только, об этом узнает самый сильный мальчик в классе Климп! Тогда вскоре весь мир узнает, что чувствует Берт, когда надевает в школе свои новые очки, что его преследует могильная бацилла, что он проводит научные эксперименты с Аке, тайно курит и пишет в дневнике красным карандашом, когда влюблен. Дневник Берта – фильм, снятый по одноименной всемирно известной детской книге. Этот фильм предназначен для мальчиков, но будет интересен и девочкам, которые, наверняка, хотят знать, о чем на самом деле думают мальчики.",
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish_et": true,
+    "publish_en": null,
+    "publish_ru": true,
+    "media": {
+      "id": 322,
+      "clipUrlDefault": null,
+      "clipUrl_et": null,
+      "clipUrl_en": null,
+      "clipUrl_ru": null,
+      "imageDefault": [
+        {
+          "id": 1560,
+          "name": "F_1_Time_guardians.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 1920,
+          "height": 1080,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_F_1_Time_guardians_cf9392f987.jpg",
+              "hash": "thumbnail_F_1_Time_guardians_cf9392f987",
+              "mime": "image/jpeg",
+              "name": "thumbnail_F_1_Time_guardians.jpg",
+              "path": null,
+              "size": 7.21,
+              "width": 245,
+              "height": 138
+            }
+          },
+          "hash": "F_1_Time_guardians_cf9392f987",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 196.31,
+          "url": "/uploads/F_1_Time_guardians_cf9392f987.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 9,
+          "updated_by": 14,
+          "created_at": "2020-10-26T12:42:04.150Z",
+          "updated_at": "2020-11-14T12:30:48.027Z"
+        }
+      ],
+      "image_et": [],
+      "image_en": [],
+      "image_ru": []
+    },
+    "button": [],
+    "article_types": [
+      {
+        "id": 2,
+        "name": "news",
+        "created_by": 6,
+        "updated_by": 1,
+        "created_at": "2020-08-18T13:49:51.616Z",
+        "updated_at": "2020-09-21T10:57:52.599Z",
+        "article": null,
+        "et": "Uudised",
+        "en": "News",
+        "ru": "Новости",
+        "slug_et": "uudis",
+        "slug_en": "news",
+        "slug_ru": "novost",
+        "name_et": "Uudis",
+        "name_en": "News",
+        "name_ru": "Новость",
+        "label_et": "Uudis",
+        "label_en": "News",
+        "label_ru": "Новость",
+        "Description": null
+      }
+    ],
+    "tag_premiere_types": [],
+    "programmes": [],
+    "tag_genres": [],
+    "tag_keywords": [],
+    "web_authors": [
+      {
+        "id": 3,
+        "namePrivate": "Justi Hundu",
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-09-04T10:41:16.303Z",
+        "updated_at": "2020-09-04T10:41:16.384Z",
+        "name": {
+          "id": 3858,
+          "et": "Justi Hundu",
+          "en": "Wolfie",
+          "ru": "Волчонок"
+        }
+      }
+    ],
+    "organisations": []
+  },
+  {
     "id": 16,
     "created_by": {
       "id": 14,
@@ -1606,7 +1706,7 @@
       "username": null
     },
     "created_at": "2020-10-14T16:57:03.662Z",
-    "updated_at": "2020-11-04T22:27:37.839Z",
+    "updated_at": "2020-11-18T15:59:27.343Z",
     "title_et": "Turvajuhised ja nõuanded",
     "slug_et": "turvajuhised-ja-nouanded",
     "title_en": "Safety instructions and tips",
@@ -1624,7 +1724,51 @@
     "publish_et": true,
     "publish_en": null,
     "publish_ru": true,
-    "media": null,
+    "media": {
+      "id": 323,
+      "clipUrlDefault": null,
+      "clipUrl_et": null,
+      "clipUrl_en": null,
+      "clipUrl_ru": null,
+      "imageDefault": [
+        {
+          "id": 3471,
+          "name": "Kratt_avamine.JPG",
+          "alternativeText": "",
+          "caption": "",
+          "width": 1536,
+          "height": 1024,
+          "formats": {
+            "thumbnail": {
+              "ext": ".JPG",
+              "url": "/uploads/thumbnail_Kratt_avamine_4ba7204465.JPG",
+              "hash": "thumbnail_Kratt_avamine_4ba7204465",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Kratt_avamine.JPG",
+              "path": null,
+              "size": 9.45,
+              "width": 234,
+              "height": 156
+            }
+          },
+          "hash": "Kratt_avamine_4ba7204465",
+          "ext": ".JPG",
+          "mime": "image/jpeg",
+          "size": 793.04,
+          "url": "/uploads/Kratt_avamine_4ba7204465.JPG",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 14,
+          "updated_by": 14,
+          "created_at": "2020-11-18T15:59:13.876Z",
+          "updated_at": "2020-11-18T15:59:14.479Z"
+        }
+      ],
+      "image_et": [],
+      "image_en": [],
+      "image_ru": []
+    },
     "button": [],
     "article_types": [
       {

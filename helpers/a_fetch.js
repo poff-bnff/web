@@ -8,7 +8,7 @@ const dirPath =  path.join(__dirname, '..', 'source', '_fetchdir')
 
 fs.mkdirSync(dirPath, { recursive: true })
 
-const DOMAIN = process.env['DOMAIN'] || false
+const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const modelFile = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(modelFile, 'utf8'))
 

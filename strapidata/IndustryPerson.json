@@ -788,6 +788,75 @@
     ]
   },
   {
+    "id": 74,
+    "person": {
+      "id": 4170,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:29:55.688Z",
+      "updated_at": "2020-11-18T15:29:55.715Z",
+      "firstName": "Helene ",
+      "lastName": "Granqvist",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Helene Granqvist",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Helene Granqvist is a prizewinning producer who has worked with film and television for more than 30 years. Her films has been represented at festivals all over the world - like Sundance, Cannes, Toronto, Tribeca and San Sebastian. She is also frequently being engaged as a pitch coach and a lecturer both in Sweden and internationally. Helene is since 2013 the president of the board of Women in Film & Television, Sweden, the founder of both WIFT Nordic and since 2018 also the president for Women in Film & Television International. She’s a member of European Film Academy.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:30:47.312Z",
+    "updated_at": "2020-11-18T15:31:18.804Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Helene Granqvist",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 2,
+        "type": "Mentor",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:29.943Z",
+        "updated_at": "2020-11-04T09:11:29.947Z"
+      },
+      {
+        "id": 8,
+        "type": "POWR Baltic Stories Exchange Participant",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:27.430Z",
+        "updated_at": "2020-11-04T09:37:27.441Z"
+      }
+    ]
+  },
+  {
     "id": 6,
     "person": {
       "id": 4092,
@@ -1167,15 +1236,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
         "id": 12,
         "type": "MIDPOINT Institute",
         "description": null,
@@ -1183,6 +1243,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T16:13:42.742Z",
         "updated_at": "2020-11-14T16:13:42.751Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -2531,15 +2600,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -2547,6 +2607,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -4379,15 +4448,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 8,
-        "type": "POWR Baltic Stories Exchange Participant",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:37:27.430Z",
-        "updated_at": "2020-11-04T09:37:27.441Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -4395,6 +4455,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 8,
+        "type": "POWR Baltic Stories Exchange Participant",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:27.430Z",
+        "updated_at": "2020-11-04T09:37:27.441Z"
       }
     ]
   },
@@ -8647,6 +8716,15 @@
     "role_at_films": [],
     "industry_person_types": [
       {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
         "id": 12,
         "type": "MIDPOINT Institute",
         "description": null,
@@ -8654,7 +8732,127 @@
         "updated_by": 28,
         "created_at": "2020-11-14T16:13:42.742Z",
         "updated_at": "2020-11-14T16:13:42.751Z"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "person": {
+      "id": 4171,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:38:02.109Z",
+      "updated_at": "2020-11-18T15:38:02.138Z",
+      "firstName": "Piotr ",
+      "lastName": "Bartuszek",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Casting Director",
+      "firstNameLastName": "Piotr Bartuszek",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Piotr Bartuszek (International Casting Directors ICDN Board Member, EFA) is a casting director based in Warsaw. He studied Art History at Warsaw University. After various life experiences, he has devoted his professional life to cinema. He worked with directors such as Claire Denis (𝘏𝘪𝘨𝘩 𝘓𝘪𝘧𝘦), Francois Girard (𝘛𝘩𝘦 𝘚𝘰𝘯𝘨 𝘰𝘧 𝘕𝘢𝘮𝘦𝘴), Michael Glawogger (𝘊𝘰𝘯𝘵𝘢𝘤𝘵 𝘏𝘪𝘨𝘩), Aleksandr Sokurov (𝘍𝘢𝘶𝘴𝘵), Emily Atef (𝘞𝘶𝘯𝘴𝘤𝘩𝘬𝘪𝘯𝘥𝘦𝘳), Tomasz Wasilewski (𝘜𝘯𝘪𝘵𝘦𝘥 𝘚𝘵𝘢𝘵𝘦𝘴 𝘰𝘧 𝘓𝘰𝘷𝘦) and Anna Jadowska (𝘋𝘻𝘪𝘬𝘪𝘦 𝘳óż𝘦/ 𝘞𝘪𝘭𝘥 𝘙𝘰𝘴𝘦𝘴). He considers himself a bit old-fashioned. He doesn't like compromises, and believes in real talents and hard work. An enthusiast of cinema in the 1930s and 1940s, especially actresses of the Golden Age. Hobbies: museum travel and gardening. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:39:36.066Z",
+    "updated_at": "2020-11-18T15:39:36.093Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Piotr Bartuszek",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       },
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "person": {
+      "id": 4167,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:19:42.376Z",
+      "updated_at": "2020-11-18T15:19:42.393Z",
+      "firstName": "Maciej ",
+      "lastName": "Jakubczyk",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Maciej Jakubczyk",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Maciej Jakubczyk is a member of Board and director of the educational department of the New Horizons\nAssociation. Expert for Polish Film Institute on the production of\nfilms for young audiences and for the Ministry of Culture and National Heritage on educational\nprojects. Co-creator of the New Horizons Film Education programme organised in several dozen\ncities and towns in Poland, Kids Kino International Film Festival and Kids Kino Lab (development\nprogram). Member of the European Children Film Association and the Advisory Board of Kids\nRegio 2019 (Germany). Workshop leader for Europa Cinemas, mentor at the international School of\nFilm Agents, and lecturer at the SWPS University in Warsaw. Nominated to the Man of The Year\naward in 2009 by a main cultural newspaper in Warsaw.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:20:32.137Z",
+    "updated_at": "2020-11-18T15:21:06.953Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Maciej Jakubczyk",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
       {
         "id": 11,
         "type": "Speaker",
@@ -8780,15 +8978,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -8796,6 +8985,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -9199,6 +9397,146 @@
     ]
   },
   {
+    "id": 80,
+    "person": null,
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "After notable acting career, Vesela Kazakova set her goals on creating socially and politically charged work at production company Activist38. Their internationally acclaimed documentaries with Mina Mileva have provoked an outcry in Bulgaria and put institutional pressure on the duo. As EAVE graduate Vesela received international support and the two of them managed to persevere and continue with fiction film work. Their first fiction film “Cat in the wall”, co-production between Bulgaria/UK/France world premiered in Locarno and it received FIPRESCI award at Warsaw IFF and other awards. The film was part of EFA Feature Film Selection 2020, available on HBO Europe and Amazon Prime USA. Their new project “Women Do Cry”, won Best project at WEMW 2020 and is supported by ARTE. \nVesela is one of the EFP Producers on the move 2020. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:11:59.936Z",
+    "updated_at": "2020-11-18T16:12:00.085Z",
+    "clipUrl": null,
+    "website": "http://www.activist38.com/",
+    "lookingFor": "o meet film industry people who I know and they are good friends as well new people and talk about films and life. ",
+    "contactAtEvent": null,
+    "fullNamePrivate": "Vesela Kazakova",
+    "filmography": [
+      {
+        "id": 18,
+        "text": null,
+        "film": [
+          {
+            "id": 36,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt8471116/",
+            "title_et": null,
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": "CAT IN TNE WALL",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "Southeast London council estate, riven by social and economic divisions. Irina, a Bulgarian woman lives there with her small son and her brother. The lift serves as a toilet, the multi-cultural residents exchange shouts rather than pleasantries, and an expensive refurbishment is undesired but must be paid for. And in the midst of this: an apparently owner-less cat, that has had enough of the heated atmosphere, barricades itself ‘in the wall’. ",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3472,
+                "name": "rsz_cat_poster-en_bgimdb_-_vesela_kazakova.jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 915,
+                "height": 1279,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_rsz_cat_poster_en_bgimdb_vesela_kazakova_1687f98b2b.jpg",
+                    "hash": "thumbnail_rsz_cat_poster_en_bgimdb_vesela_kazakova_1687f98b2b",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_rsz_cat_poster-en_bgimdb_-_vesela_kazakova.jpg",
+                    "path": null,
+                    "size": 6.11,
+                    "width": 112,
+                    "height": 156
+                  }
+                },
+                "hash": "rsz_cat_poster_en_bgimdb_vesela_kazakova_1687f98b2b",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 361.42,
+                "url": "/uploads/rsz_cat_poster_en_bgimdb_vesela_kazakova_1687f98b2b.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T16:10:10.141Z",
+                "updated_at": "2020-11-18T16:10:10.762Z"
+              }
+            ]
+          },
+          {
+            "id": 37,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt11873754",
+            "title_et": null,
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": "WOMEN DO CRY",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "In the Bulgarian society where the word gender doesn’t have a proper translation a family full of women opposes the notions of mother and woman. This film deals with the absurd circumstances around the ratification of the so-called Istanbul convention focused on the gender-based violence.",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3473,
+                "name": "WDC - Vesela Kazakova.jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 182,
+                "height": 268,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_WDC_Vesela_Kazakova_94265d160e.jpg",
+                    "hash": "thumbnail_WDC_Vesela_Kazakova_94265d160e",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_WDC - Vesela Kazakova.jpg",
+                    "path": null,
+                    "size": 5.38,
+                    "width": 106,
+                    "height": 156
+                  }
+                },
+                "hash": "WDC_Vesela_Kazakova_94265d160e",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 11.46,
+                "url": "/uploads/WDC_Vesela_Kazakova_94265d160e.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T16:11:24.526Z",
+                "updated_at": "2020-11-18T16:11:24.583Z"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": []
+  },
+  {
     "id": 28,
     "person": {
       "id": 4113,
@@ -9312,15 +9650,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 2,
         "type": "Mentor",
         "description": null,
@@ -9328,6 +9657,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:29.943Z",
         "updated_at": "2020-11-04T09:11:29.947Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -9578,15 +9916,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 2,
-        "type": "Mentor",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:11:29.943Z",
-        "updated_at": "2020-11-04T09:11:29.947Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -9594,6 +9923,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 2,
+        "type": "Mentor",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:29.943Z",
+        "updated_at": "2020-11-04T09:11:29.947Z"
       }
     ]
   },
@@ -9968,6 +10306,368 @@
     "role_at_films": [],
     "industry_person_types": [
       {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "person": {
+      "id": 4166,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:15:26.175Z",
+      "updated_at": "2020-11-18T15:15:26.204Z",
+      "firstName": "Rupert ",
+      "lastName": "Lloyd",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Rupert Lloyd",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Rupert is a BAFTA-winning film producer and the founder of Noor Pictures, a London based film production company with an international outlook.\nNoor’s debut feature Theeb premiered at the 71st Venice Film Festival in 2014 where the director Naji Abu Nowar won the Best Director lion (Orrizonti). The film went on to win a total of 23 awards internationally, culminating in nominations for an Academy Award and a BAFTA in the Foreign Language category, and winning a BAFTA for Outstanding Debut by a British Writer, Director and Producer.\nRecognising him as part of a new wave of ambitious and diverse UK production companies Rupert, under the banner of Noor Pictures, was the recipient of a BFI Vision Award in 2016.\nHe currently has films in development with Academy Award Nominee Naji Abu Nowar at Film4 and BBC Films. He is also developing films with BAFTA Nominee writer/director Billy Lumby (Samuel-613) at BBC Films and Fantastic Fest’s New Wave winner Nikias Chryssos (Der Bunker). \nPrior to founding Noor Rupert worked in post-production. During this time he worked as an assistant editor on the six-time Academy Award winner The Hurt Locker. He went on to edit Theeb as well as produce it.\nHe is a member of BAFTA, the European Film Academy and the Asia Pacific Screen Academy.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:18:05.223Z",
+    "updated_at": "2020-11-18T15:18:05.303Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": "Producers from Russia, Bulgaria",
+    "contactAtEvent": null,
+    "fullNamePrivate": "Rupert Lloyd",
+    "filmography": [
+      {
+        "id": 16,
+        "text": null,
+        "film": [
+          {
+            "id": 33,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://pro.imdb.com/name/nm2200380?ref_=hm_prof_name",
+            "title_et": null,
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": "Young Stalin",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "Josef Djugashvili, a devout Bolshevik revolutionary, struggles against insurmountable odds to overthrow the oppressive Tsarist Empire. When Lenin, the Prophet of the revolution, asks him to mastermind the world’s biggest bank heist, Josef crosses moral lines that will transform him into Josef Stalin.",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": []
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": []
+  },
+  {
+    "id": 72,
+    "person": {
+      "id": 4168,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:22:04.883Z",
+      "updated_at": "2020-11-18T15:22:04.901Z",
+      "firstName": "Kätriin ",
+      "lastName": "Huttunen",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Kätriin Huttunen",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Model, Fashion Photographer & Marketer, graduated from Estonia's Theatre & Drama School VHK, studying UX/UI & Front-End developing in Copenhagen. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:23:20.050Z",
+    "updated_at": "2020-11-18T15:23:20.070Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Kätriin Huttunen",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "person": {
+      "id": 4169,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:24:19.465Z",
+      "updated_at": "2020-11-18T15:24:19.487Z",
+      "firstName": "Andrea ",
+      "lastName": "Queralt",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Andrea Queralt",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Andrea Queralt has been working at the Paris-based company 4 A 4 Productions since 2015. Her first feature as a producer, Maryam Goormaghtigh's \"Before Summer Ends\", premiered in 2017 in the ACID Cannes section. In 2019, she co-produced Oliver Laxe's \"Fire Will Come\" which won Un Certain Regard's Jury Prize as well as two Goyas, among other awards. Andrea is currently producing Santiago Fillol's \"Matadero\" and has Laxe's next feature \"After\" in development. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:28:35.510Z",
+    "updated_at": "2020-11-18T15:28:35.685Z",
+    "clipUrl": null,
+    "website": "https://www.unifrance.org/annuaires/societe/88676/4-a-4-productions",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Andrea Queralt",
+    "filmography": [
+      {
+        "id": 17,
+        "text": null,
+        "film": [
+          {
+            "id": 34,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt8212958/",
+            "title_et": null,
+            "title_en": "FIRE WILL COME by Oliver Laxe",
+            "title_ru": null,
+            "titleOriginal": null,
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "Amador Coro has been condemned for having provoked a fire. When he gets out of prison, nobody is waiting for him. He returns to his home town, a small village hidden in the mountains of rural Galicia, to live with his mother, Benedicta, and their three cows. Life goes by, following the rhythm of nature. Until one night when a fire starts to devastate the region.",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3468,
+                "name": "FIRE WILL COME_filmstill2 - andrea queralt.jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 1920,
+                "height": 1035,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347.jpg",
+                    "hash": "thumbnail_FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_FIRE WILL COME_filmstill2 - andrea queralt.jpg",
+                    "path": null,
+                    "size": 10,
+                    "width": 245,
+                    "height": 132
+                  }
+                },
+                "hash": "FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 985.49,
+                "url": "/uploads/FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T15:27:03.627Z",
+                "updated_at": "2020-11-18T15:27:04.246Z"
+              }
+            ]
+          },
+          {
+            "id": 35,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt7028250/",
+            "title_et": null,
+            "title_en": "BEFORE SUMMER ENDS by Maryam Goormaghtigh",
+            "title_ru": null,
+            "titleOriginal": null,
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "\nAfter five years of study in Paris, Arash hasn't adapted to French life and decides to return home to Iran. Hoping to change his mind, two friends drag him away on a final trip across France. ",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3469,
+                "name": "Before summer ends - andrea queralt.jpeg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 1000,
+                "height": 415,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpeg",
+                    "url": "/uploads/thumbnail_Before_summer_ends_andrea_queralt_52c880bf08.jpeg",
+                    "hash": "thumbnail_Before_summer_ends_andrea_queralt_52c880bf08",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_Before summer ends - andrea queralt.jpeg",
+                    "path": null,
+                    "size": 7.53,
+                    "width": 245,
+                    "height": 102
+                  }
+                },
+                "hash": "Before_summer_ends_andrea_queralt_52c880bf08",
+                "ext": ".jpeg",
+                "mime": "image/jpeg",
+                "size": 109.87,
+                "url": "/uploads/Before_summer_ends_andrea_queralt_52c880bf08.jpeg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T15:28:08.735Z",
+                "updated_at": "2020-11-18T15:28:09.421Z"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": []
+  },
+  {
+    "id": 76,
+    "person": {
+      "id": 4172,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:41:11.859Z",
+      "updated_at": "2020-11-18T15:41:11.889Z",
+      "firstName": "Jonathan ",
+      "lastName": "Kesselman",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Director",
+      "firstNameLastName": "Jonathan Kesselman",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Jonathan launched his career writing and directing ‘The Hebrew Hammer’ in 2003 to international acclaim with its world premiere at the Sundance Film Festival. It later played a number of international festivals before being picked up for theatrical distribution (Hanukkah 2003) by Strand Releasing in conjunction with Comedy Central and Paramount Home Video.  Voted among the top holiday movies by the New York Times, Vanity Fair, Boston Globe and Time Magazine, and Moment Magazine included ‘Hebrew Hammer’ among its’ Top 100 Most Influential Films in the History of Jewish Cinema. \n\nJonathan’s second feature film ‘Jimmy Vestvood: Amerikan Hero’ starring Maz Jobrani and John Heard, had its world premiere at the 2014 Austin Film Festival, where it won the Comedy Vanguard award as well as the Audience Award. Jimmy was released theatrically in the US on May 13, 2016, and ran for five months across the country. To date, Jimmy has been picked up for distribution around the world.\n \nJonathan wrote and directed second Unit for Oscar-winning director Ang Lee on the film, ‘Billy Lynn’s Long Halftime Walk,’ most recently was Showrunner for ‘Gander,’ a fact-based comedy starring: Russell Peters, Lewis Black, Jay Mohr, Rachel Dratch, Oscar Nunez, Maz Jobrani, Adam Goldberg, Colton Dunn, John Fugelsang, and Bonnie McFarlane.\n\nJonathan has been a screenwriter for: Fox, Paramount, Nickelodeon, Disney, Disney XD, Sony, Blue Sky Animation, MTV, Comedy Central studios, the Irish Film Board, and WWE (yes, it’s fake). Jonathan also works as a commercial director with such clients as Nintendo, Renault, Red Mango, Canon, Irish Rail, DDB RX, American Media Inc., and the Mr. Olympia contest. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:42:09.223Z",
+    "updated_at": "2020-11-18T15:42:58.165Z",
+    "clipUrl": null,
+    "website": "http://www.theworldwidemediaconspiracy.com/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Jonathan Kesselman",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -9977,13 +10677,1747 @@
         "updated_at": "2020-11-14T14:07:08.671Z"
       },
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "person": {
+      "id": 4173,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:45:47.047Z",
+      "updated_at": "2020-11-18T15:45:47.070Z",
+      "firstName": "Raakel ",
+      "lastName": "Huikuri ",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Raakel Huikuri ",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Raakel Huikuri is a Talent Agent who has a background in both casting and acting, having trained in London. She heads the Nordic branch of The Lisa Richards Agency, Lisa Richards Nordic.\nRaakel started acting at a very young age which led to a love for film, television & theatre. \nLater Raakel discovered casting and worked as a freelance casting director for several years before moving across to work as an agent. The Lisa Richards Agency now has offices in Dublin, London, and in Helsinki, where Raakel is based.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:47:06.792Z",
+    "updated_at": "2020-11-18T15:47:06.822Z",
+    "clipUrl": null,
+    "website": "http://lrnordic.com/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Raakel Huikuri ",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 2,
+        "type": "Mentor",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:29.943Z",
+        "updated_at": "2020-11-04T09:11:29.947Z"
+      },
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "person": {
+      "id": 4122,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-14T20:55:11.857Z",
+      "updated_at": "2020-11-14T20:55:11.878Z",
+      "firstName": "Bonnie ",
+      "lastName": "Williams",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Consultant",
+      "firstNameLastName": "Bonnie Williams",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": {
+        "id": 3287,
+        "name": "Bonnie Williams_2020 - Bonnie Williams.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 500,
+        "height": 500,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_Bonnie_Williams_2020_Bonnie_Williams_9c7132ddb2.jpg",
+            "hash": "thumbnail_Bonnie_Williams_2020_Bonnie_Williams_9c7132ddb2",
+            "mime": "image/jpeg",
+            "name": "thumbnail_Bonnie Williams_2020 - Bonnie Williams.jpg",
+            "path": null,
+            "size": 5.54,
+            "width": 156,
+            "height": 156
+          }
+        },
+        "hash": "Bonnie_Williams_2020_Bonnie_Williams_9c7132ddb2",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 67.87,
+        "url": "/uploads/Bonnie_Williams_2020_Bonnie_Williams_9c7132ddb2.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T20:55:04.200Z",
+        "updated_at": "2020-11-14T20:55:04.542Z"
+      }
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Bonnie Williams is a Pitch & Public Speaking Coach for industry professionals. She specializes in supporting non-native English speakers in finding their own voice and speaking with impact.\nBonnie coaches and advises on pitching, presenting and interview techniques for filmmakers, producers and actors, writers and creatives, heads of industry, moderators, experts, etc. She is a senior TEDx speaker coach. A returning consultant at IDFA Forum and IFFR across various platforms including RotterdamLab, BoostNL, VR Pro, & IFFR ProHub. Recent experience: 2020 CEE Animation forum, B2B Docs, FilmarketHub UKOnlinePitchbox 2020, VondelCS, VersFilmFestival",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:55:58.893Z",
+    "updated_at": "2020-11-18T15:59:40.444Z",
+    "clipUrl": null,
+    "website": "https://www.speakingwithimpact.nl",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Bonnie Williams",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "person": {
+      "id": 4178,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:26:23.720Z",
+      "updated_at": "2020-11-18T16:26:23.747Z",
+      "firstName": "Reimo ",
+      "lastName": "Sagor",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Actor",
+      "firstNameLastName": "Reimo Sagor",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Reimo Sagor is considered as one of the most promising young talents of Estonia.\nAfter graduating from the Estonian Academy of Music and Theatre in 2014, Reimo has worked consistently in numerous film, TV and on stage productions, gathering multiple awards and nominations.\nIt was his astonishing performance as the young struggling single father in Liina Trishkina- Vanhatalo’s ”TAKE IT OR LEAVE IT”,  that brought Reimo to the attention of mainstream audiences in Estonia as well as to a wider global audience. The film was Estonia's foreign-language Oscar submission on its release year in 2018.\nReimo's recent works include Martti Helde’s feature “SCANDINAVIAN SILENCE” that made its European premiere at the Karlovy Vary International Film Festival, where it won the Europa Labels Prize. He was also recently seen in the international spy thriller “HAMILTON”, starring alongside Jakob Oftebro and Katia Winter. \nCurrently Reimo is working on Ove Musting’s feature ”KALEV” and the tv-series ”WITH ONE EYE OPEN,” a Swedish contemporary action thriller set in 1996.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:38:17.858Z",
+    "updated_at": "2020-11-18T16:38:17.995Z",
+    "clipUrl": null,
+    "website": "http://lrnordic.com/people/reimo-sagor/",
+    "lookingFor": "I'm looking to meet everyone who are interested to meet me, just for a chat or ideas of collaboration. Let's do it!",
+    "contactAtEvent": null,
+    "fullNamePrivate": "Reimo Sagor",
+    "filmography": [
+      {
+        "id": 20,
+        "text": null,
+        "film": [
+          {
+            "id": 41,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt6280368/",
+            "title_et": null,
+            "title_en": "Take It Or Leave It",
+            "title_ru": null,
+            "titleOriginal": null,
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": "One sleepy Saturday morning a 30-year-old construction worker Erik gets some earth shattering news: his ex-girlfriend Moonika who he hasn't even seen for the past six months is about to go into labor. She however is not ready for motherhood and if Erik doesn't want the kid either, the little girl will be put up for adoption. Take it or leave it!",
+            "synopsis_en": null,
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": []
+          },
+          {
+            "id": 42,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt5665630/?ref_=nv_sr_srsg_2",
+            "title_et": null,
+            "title_en": "Scandinavian Silence",
+            "title_ru": null,
+            "titleOriginal": null,
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "Film with three parts, two characters and one obsession: to prevent the past from taking over.\n",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": []
+          },
+          {
+            "id": 43,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt5534588/",
+            "title_et": null,
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": "Agent Hamilton",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "In the wake of a series of bombings and cyberattacks in Stockholm, agent Carl Hamilton soon finds himself on a life-threatening mission against an invisible enemy with traces leading to Russian, Swedish and US intelligence forces.",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": []
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "person": {
+      "id": 4177,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:14:08.240Z",
+      "updated_at": "2020-11-18T16:14:08.265Z",
+      "firstName": "Aaron ",
+      "lastName": "Hilmer",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Artist",
+      "firstNameLastName": "Aaron Hilmer",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "I was born in 1999 in the south of Germany, Freiburg, as the son of an australian painter and an art managing mother. Through a rough but lovely childhood, I got interest in acting. After being part of Stage Entertainment Musical \"Tarzan\" for one year, I entered my first acting agency and started to shoot first small movies. At the same time I went to a Waldorf School, which allowed me to get more deeply into acting. As I got older, I was allowed to shoot more bigger movies and tv-productions that helped me to get finally engaged into acting as a professional career.  I went to an acting school (\"New Talent Schauspielschule\") for two years, changed the agency, and continued my way. I just made the decision, and succeeded to be applied for 2021 to the highly profiled acting school, Hochschule für Musik und Theater Leipzig, to graduate as Master of Arts in four years. Besides acting, I can restore my energy and balance in traveling by myself, experiencing culture and sports. My favourite destination is a farm in Algarve, Potugal, where my godson lives. At least once a year I get engaged in the daily working life of farming, supporting the family and being part of an international community. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:20:51.833Z",
+    "updated_at": "2020-11-18T16:21:51.716Z",
+    "clipUrl": null,
+    "website": "https://www.schlag-agentur.de/index.php/de/actor/profile/aaron_hilmer",
+    "lookingFor": "I'm looking forward to meet inspiring people and to explore horizons. ",
+    "contactAtEvent": null,
+    "fullNamePrivate": "Aaron Hilmer",
+    "filmography": [
+      {
+        "id": 19,
+        "text": null,
+        "film": [
+          {
+            "id": 38,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt10506510/",
+            "title_et": null,
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": "The Last Word (Netflix Series)",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "While still working through her husband's recent death, a widow offers her services as an eulogy speaker. With her fresh personality, she is soon known as a fun alternative to the other typically somber German eulogy speakers. She works together with Ronnie Borowski and Andreas Borowski. ",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3474,
+                "name": "THE LAST WORD - aaron hilmer.jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 750,
+                "height": 629,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_THE_LAST_WORD_aaron_hilmer_4a781afa81.jpg",
+                    "hash": "thumbnail_THE_LAST_WORD_aaron_hilmer_4a781afa81",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_THE LAST WORD - aaron hilmer.jpg",
+                    "path": null,
+                    "size": 5.58,
+                    "width": 186,
+                    "height": 156
+                  }
+                },
+                "hash": "THE_LAST_WORD_aaron_hilmer_4a781afa81",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 109.48,
+                "url": "/uploads/THE_LAST_WORD_aaron_hilmer_4a781afa81.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T16:16:09.815Z",
+                "updated_at": "2020-11-18T16:16:10.316Z"
+              }
+            ]
+          },
+          {
+            "id": 39,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.dasschoenstemaedchenderwelttickets.de/home/",
+            "title_et": null,
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": "The Most Beautiful Girl In The World (Cinema)",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "A modern adaption of \"Cyrano de Bergerac\". ",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3475,
+                "name": "THE MOST BEAUTIFUL GIRL IN THE WORLD - aaron hilmer(1).jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 1039,
+                "height": 629,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_THE_MOST_BEAUTIFUL_GIRL_IN_THE_WORLD_aaron_hilmer_1_3487c7bcc3.jpg",
+                    "hash": "thumbnail_THE_MOST_BEAUTIFUL_GIRL_IN_THE_WORLD_aaron_hilmer_1_3487c7bcc3",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_THE MOST BEAUTIFUL GIRL IN THE WORLD - aaron hilmer(1).jpg",
+                    "path": null,
+                    "size": 6.96,
+                    "width": 245,
+                    "height": 148
+                  }
+                },
+                "hash": "THE_MOST_BEAUTIFUL_GIRL_IN_THE_WORLD_aaron_hilmer_1_3487c7bcc3",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 121.86,
+                "url": "/uploads/THE_MOST_BEAUTIFUL_GIRL_IN_THE_WORLD_aaron_hilmer_1_3487c7bcc3.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T16:19:07.762Z",
+                "updated_at": "2020-11-18T16:19:08.051Z"
+              }
+            ]
+          },
+          {
+            "id": 40,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.x-verleih.de/filme/einsamkeit-und-sex-und-mitleid/",
+            "title_et": null,
+            "title_en": "Loneliness & Sex & Pity (Cinema)",
+            "title_ru": null,
+            "titleOriginal": "Einsamkeit & Sex & Mitleid ",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "An episode movie which follows different people in their big city life. My role is a young boy, who grew up in an extreme christian sect, and is now confronted with his upcoming sexual interests",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3476,
+                "name": "Einsamkeit & Sex & Mitleid - aaron hilmer.jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 1521,
+                "height": 957,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_Einsamkeit_and_Sex_and_Mitleid_aaron_hilmer_a59f00b684.jpg",
+                    "hash": "thumbnail_Einsamkeit_and_Sex_and_Mitleid_aaron_hilmer_a59f00b684",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_Einsamkeit & Sex & Mitleid - aaron hilmer.jpg",
+                    "path": null,
+                    "size": 8.29,
+                    "width": 245,
+                    "height": 154
+                  }
+                },
+                "hash": "Einsamkeit_and_Sex_and_Mitleid_aaron_hilmer_a59f00b684",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 300.92,
+                "url": "/uploads/Einsamkeit_and_Sex_and_Mitleid_aaron_hilmer_a59f00b684.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T16:20:14.717Z",
+                "updated_at": "2020-11-18T16:20:14.830Z"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "person": {
+      "id": 4175,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T15:59:10.048Z",
+      "updated_at": "2020-11-18T16:02:40.386Z",
+      "firstName": "Vladislav",
+      "lastName": "Kulygin",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Actor",
+      "firstNameLastName": "Vladislav Kulygin",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:01:54.892Z",
+    "updated_at": "2020-11-18T16:03:05.107Z",
+    "clipUrl": null,
+    "website": "https://gm-production.ru/ru/actors/kulygin-vladislav/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Vladislav Kulygin",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "person": {
+      "id": 4179,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:39:58.109Z",
+      "updated_at": "2020-11-18T16:39:58.141Z",
+      "firstName": "Marina",
+      "lastName": " Lukashova",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Marina Lukashova",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Director of television from 1993 to 2017,since 2017 - head of the film commission of the Novgorod region.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:41:44.534Z",
+    "updated_at": "2020-11-18T16:42:16.215Z",
+    "clipUrl": null,
+    "website": "https://kinokomissiya-no.ru/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Marina Lukashova",
+    "filmography": [
+      {
+        "id": 21,
+        "text": null,
+        "film": [
+          {
+            "id": 44,
+            "order": null,
+            "film": null,
+            "foreignUrl": null,
+            "title_et": null,
+            "title_en": "https://www.youtube.com/watch?v=QE1Npqx40fs&feature=youtu.be",
+            "title_ru": null,
+            "titleOriginal": "Veliky Novgorod. © Rus Novogorodskaya",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": null,
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": []
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
         "description": null,
         "created_by": 28,
         "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "person": {
+      "id": 4180,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:43:03.985Z",
+      "updated_at": "2020-11-18T16:43:04.006Z",
+      "firstName": "Antoni ",
+      "lastName": "Sałaj",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Actor",
+      "firstNameLastName": "Antoni Sałaj",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "If someone were to be replaced in place of Werther, Antoni would be among the nominees.\nHis naive look at reality can attract the audience. He proved that as he played parts in Dywizjon 303 “Historia Prawdziwa” by Denis Delić, and “Legiony” by Dariusz Gajewski.\nRaised at the farm ploughing the field, he has been developing his skills (including acting) for years while doing his best at every production he took part in. Speaking of which, Antoni fluently speaks English and French. His language skills had an overtone in productions such as BREAKING THE BAND season II: GUNS’N’ROSES by Zoran Trajkovic; 7 GODZIN W POCIĄGU by Miguel Velez.\nOne of his adventures inspired him to learn Russian, and he managed to train figure ice skating at age 23 (with a little help of ballet). \nWorth mentioning is also his part in epic series “Korona Królów” where his creation of Skirgaila – Polish king’s brother met with the best reception. As important as attracting the audience, Antoni also did his best in preparation with history interview, medieval swordfight, and horse riding. \nIn his acting journey, he also met with Oscar-nominated direction Bartosz Konopka in Netflix Original series “The Woods”.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:43:55.949Z",
+    "updated_at": "2020-11-18T16:43:55.980Z",
+    "clipUrl": null,
+    "website": "http://coolkeyplay.pl/antoni-salaj/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Antoni Sałaj",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "person": {
+      "id": 4181,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:46:06.237Z",
+      "updated_at": "2020-11-18T16:46:06.264Z",
+      "firstName": " Monika",
+      "lastName": " Garbačiauskaitė-Budrienė",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": " Monika Garbačiauskaitė-Budrienė",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:46:50.644Z",
+    "updated_at": "2020-11-18T16:46:50.663Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": " Monika Garbačiauskaitė-Budrienė",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "person": {
+      "id": 4182,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:47:50.827Z",
+      "updated_at": "2020-11-18T16:47:50.844Z",
+      "firstName": "Madeline ",
+      "lastName": "Di Nonno",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "CEO",
+      "firstNameLastName": "Madeline Di Nonno",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:48:33.416Z",
+    "updated_at": "2020-11-18T16:48:33.443Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Madeline Di Nonno",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "person": {
+      "id": 4189,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:20:50.887Z",
+      "updated_at": "2020-11-18T17:20:50.978Z",
+      "firstName": "Svetlana ",
+      "lastName": " Maksimchenko",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Svetlana Maksimchenko",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Head of the Cinematography Department of the Russian Ministry of Culture\nBeing a Moscow native with media business background Svetlana started her career in the city administration in 2013 and has a vast experience as a senior officer. Since then Svetlana participated in many renovation and municipal improvement programs.\nIn December 2016 Svetlana took the lead at Moscow Cinema Organization (Moskino) - a city-owned cinema chain spread all around Moscow. Under her leadership the structure of the organization was updated - several cinemas were renovated and re-opened. Apart from that Moskino curates several cinema projects - film festivals, Moscow Film Festival, Cinema Night, special screenings and other events. \nFrom 2018 to 2020 Svetlana was the Executive officer of Moscow Film Commission, established by Moscow Government.\nToday Svetlana holds the position of the Head of the Cinematography Department of the Russian Ministry of Culture.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:21:56.247Z",
+    "updated_at": "2020-11-18T17:21:56.273Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Svetlana Maksimchenko",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "person": {
+      "id": 4183,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:49:49.208Z",
+      "updated_at": "2020-11-18T16:49:49.229Z",
+      "firstName": "Arta",
+      "lastName": " Ģiga",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Arta Ģiga",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:50:12.021Z",
+    "updated_at": "2020-11-18T16:50:29.284Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Arta Ģiga",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "person": {
+      "id": 4184,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T16:51:03.920Z",
+      "updated_at": "2020-11-18T16:51:03.937Z",
+      "firstName": "Irina ",
+      "lastName": "Sosnovaya",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Irina Sosnovaya",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:54:07.685Z",
+    "updated_at": "2020-11-18T16:54:07.710Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Irina Sosnovaya",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "person": {
+      "id": 4185,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:03:25.815Z",
+      "updated_at": "2020-11-18T17:03:25.844Z",
+      "firstName": "Filippa ",
+      "lastName": "Wallestam",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Filippa Wallestam",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:05:21.086Z",
+    "updated_at": "2020-11-18T17:05:21.112Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Filippa Wallestam",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "person": {
+      "id": 4186,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:06:41.736Z",
+      "updated_at": "2020-11-18T17:06:41.755Z",
+      "firstName": "Gareth ",
+      "lastName": "Ellis-Unwin ",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Gareth Ellis-Unwin ",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:07:31.166Z",
+    "updated_at": "2020-11-18T17:07:31.205Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Gareth Ellis-Unwin ",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "person": null,
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:08:59.816Z",
+    "updated_at": "2020-11-18T17:08:59.840Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Guy Bisson",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "person": null,
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Kaisa Rönkkö has been Executive Director of Music Finland since June 2018. She has a passion to deliver the message of the power of music and develop the international dialogue and innovation between premium content and new technologies and digital services.\nPrior to Music Finland Kaisa was employed as a head of orchestra department at the Finnish National Opera ballet. She was also the head of the music library and therefore responsible for copyright matters. Kaisa has been Finland’s project manager in large scale digital opera projects co-funded by Creative Europe Programme. Kaisa has also been employed as a senior intendant at the Public Information Division of the Defence Command Finland, as artist manager and partner at Finland’s largest artist management agency, Fazer Artist Management Inc and as assistant at the Finnish Cultural Institute in Copenhagen. \nKaisa is a Master of Music and Master of Arts Management who has studied at the Sibelius Academy, at the Liszt Academy in Budapest, at the University of Turku and at the Helsinki University of applied Sciences. She also holds a piano diploma and is a qualified piano teacher.\nKaisa is also a board member of NOMEX (Nordic Music Export), Boardman Management Study Group and Finland Promotion Board, coordinated by the Foreign Ministry of Finland.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:12:49.095Z",
+    "updated_at": "2020-11-18T17:12:49.114Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Kaisa Rönkkö",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 10,
+        "type": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-13T09:37:55.735Z",
+        "updated_at": "2020-11-13T09:37:55.746Z"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "person": {
+      "id": 4190,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:23:51.008Z",
+      "updated_at": "2020-11-18T17:23:51.030Z",
+      "firstName": "Kateryna",
+      "lastName": " Vyshnevska",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Kateryna Vyshnevska",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:24:19.932Z",
+    "updated_at": "2020-11-18T17:24:19.994Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Kateryna Vyshnevska",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "person": {
+      "id": 4191,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:25:20.551Z",
+      "updated_at": "2020-11-18T17:26:00.776Z",
+      "firstName": "Edith ",
+      "lastName": "Sepp",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Edith Sepp",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "CEO of Estonian Film Institute since 2013",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:26:35.331Z",
+    "updated_at": "2020-11-18T17:26:58.439Z",
+    "clipUrl": null,
+    "website": "https://filmi.ee/en",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Edith Sepp",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "person": {
+      "id": 4192,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:27:49.647Z",
+      "updated_at": "2020-11-18T17:27:49.669Z",
+      "firstName": "Jana ",
+      "lastName": "Burbach",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Screenwriter",
+      "firstNameLastName": "Jana Burbach",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:28:33.359Z",
+    "updated_at": "2020-11-18T17:28:33.384Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Jana Burbach",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "person": {
+      "id": 4193,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:30:08.400Z",
+      "updated_at": "2020-11-18T17:30:08.425Z",
+      "firstName": "Nikita ",
+      "lastName": "Trynkin",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Nikita Trynkin",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "irector for special projects at the Russian Association of film and television producers, Vice President of Innovation at Star Media. Formerly CEO and VP of leading Russian film production companies and media holdings (Bazelevs, National Media Group, Central Partnership).",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:31:00.210Z",
+    "updated_at": "2020-11-18T17:31:00.235Z",
+    "clipUrl": null,
+    "website": "https://www.rusproducers.com",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Nikita Trynkin",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "person": {
+      "id": 4194,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-18T17:31:54.219Z",
+      "updated_at": "2020-11-18T17:31:54.251Z",
+      "firstName": "Henessi ",
+      "lastName": "Schmidt",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Actor",
+      "firstNameLastName": "Henessi Schmidt",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "My name is Henessi, I live and work in Estonia as a freelancer, performing both in theatre and film. I studied theatre and acting in the University of Tartu Viljandi Culture Academy and graduated in 2019. ​\nBesides acting I have also studied yoga and herbal medicine and could also be found behind the DJ decks. ​ As an artist, I am into growth and progress. I would like to collaborate in projects that can open new perspectives and expand my experience and methods as an actress. It is important to me that the work I do has something to say and improve in our society and environment. I believe that a work of art can and should touch the audience, widen their perception, and make a difference in their heart and in their mind.\nBefore my studies as an actress, I was devoted to dancing for four years, which has made me fond of the idea of working on projects that are also connected with dance, choreography or martial arts. ​\nI think I am quite adventurous, love experimenting, facing challenges and making mistakes. I do my work with love and so it never feels like work to me.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:38:03.291Z",
+    "updated_at": "2020-11-18T17:38:03.431Z",
+    "clipUrl": null,
+    "website": "https://www.henessischmidt.com/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Henessi Schmidt",
+    "filmography": [
+      {
+        "id": 22,
+        "text": null,
+        "film": [
+          {
+            "id": 45,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.efis.ee/et/filmiliigid/film/id/20341",
+            "title_et": null,
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": "Talve",
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": null,
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3478,
+                "name": "rsz_screenshot_2020-10-26_at_024657_-_henessi_schmidt.png",
+                "alternativeText": "",
+                "caption": "",
+                "width": 1440,
+                "height": 900,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".png",
+                    "url": "/uploads/thumbnail_rsz_screenshot_2020_10_26_at_024657_henessi_schmidt_3a285c964c.png",
+                    "hash": "thumbnail_rsz_screenshot_2020_10_26_at_024657_henessi_schmidt_3a285c964c",
+                    "mime": "image/png",
+                    "name": "thumbnail_rsz_screenshot_2020-10-26_at_024657_-_henessi_schmidt.png",
+                    "path": null,
+                    "size": 37.84,
+                    "width": 245,
+                    "height": 153
+                  }
+                },
+                "hash": "rsz_screenshot_2020_10_26_at_024657_henessi_schmidt_3a285c964c",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 604.07,
+                "url": "/uploads/rsz_screenshot_2020_10_26_at_024657_henessi_schmidt_3a285c964c.png",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T17:34:35.614Z",
+                "updated_at": "2020-11-18T17:34:36.030Z"
+              }
+            ]
+          },
+          {
+            "id": 46,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://vimeo.com/438379368",
+            "title_et": "Descent",
+            "title_en": null,
+            "title_ru": null,
+            "titleOriginal": null,
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": null,
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3479,
+                "name": "rsz_descent_bts_kevin_kohjus-103_-_henessi_schmidt.jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 2718,
+                "height": 1525,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_rsz_descent_bts_kevin_kohjus_103_henessi_schmidt_c52b1add90.jpg",
+                    "hash": "thumbnail_rsz_descent_bts_kevin_kohjus_103_henessi_schmidt_c52b1add90",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_rsz_descent_bts_kevin_kohjus-103_-_henessi_schmidt.jpg",
+                    "path": null,
+                    "size": 8.77,
+                    "width": 245,
+                    "height": 137
+                  }
+                },
+                "hash": "rsz_descent_bts_kevin_kohjus_103_henessi_schmidt_c52b1add90",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 723.05,
+                "url": "/uploads/rsz_descent_bts_kevin_kohjus_103_henessi_schmidt_c52b1add90.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T17:36:26.127Z",
+                "updated_at": "2020-11-18T17:36:26.612Z"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": null,
+    "images": [
+      {
+        "id": 3480,
+        "name": "rsz_henessi_schmidt_-_henessi_schmidt.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1567,
+        "height": 2356,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_rsz_henessi_schmidt_henessi_schmidt_4b94d52a88.jpg",
+            "hash": "thumbnail_rsz_henessi_schmidt_henessi_schmidt_4b94d52a88",
+            "mime": "image/jpeg",
+            "name": "thumbnail_rsz_henessi_schmidt_-_henessi_schmidt.jpg",
+            "path": null,
+            "size": 2.84,
+            "width": 104,
+            "height": 156
+          }
+        },
+        "hash": "rsz_henessi_schmidt_henessi_schmidt_4b94d52a88",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 528.49,
+        "url": "/uploads/rsz_henessi_schmidt_henessi_schmidt_4b94d52a88.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-18T17:37:37.318Z",
+        "updated_at": "2020-11-18T17:37:37.763Z"
+      }
+    ],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "person": null,
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Olga Ivanovna Kaverzina - Director of the Festival Directorate, Head of the Cinematography Department, Deputy Chairman of the Film Commission of the Kaliningrad Region",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:41:44.725Z",
+    "updated_at": "2020-11-18T17:41:44.844Z",
+    "clipUrl": null,
+    "website": "https://cinema39.ru/en/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Olga Kaverzina",
+    "filmography": [],
+    "profilePicAtInd": null,
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   }
