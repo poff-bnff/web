@@ -486,9 +486,9 @@
     "titlePrivate": " Italian Independent Producers (AGICI) and Cineuropa present: Co-production opportunities between Italy and the Baltic countries",
     "startTime": "2020-11-25T13:00:00.000Z",
     "created_by": {
-      "id": 28,
-      "firstname": "Saara",
-      "lastname": "Huimerind",
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
       "username": null
     },
     "updated_by": {
@@ -525,14 +525,127 @@
     "publishUntil": null,
     "publish": true,
     "channel": null,
-    "durationTime": null,
+    "durationTime": "00:45:00",
     "industry_project": null,
     "videoUrl": null,
     "isLiveEvent": null,
     "isPublicEvent": null,
     "images": [],
-    "industry_categories": [],
-    "industry_people": [],
+    "industry_categories": [
+      {
+        "id": 4,
+        "name": "TV Beats Forum",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-08T18:31:39.808Z",
+        "updated_at": "2020-11-08T18:31:39.819Z"
+      }
+    ],
+    "industry_people": [
+      {
+        "id": 96,
+        "person": 4192,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": null,
+        "created_by": 35,
+        "updated_by": 34,
+        "created_at": "2020-11-18T17:28:33.359Z",
+        "updated_at": "2020-11-19T12:05:54.386Z",
+        "clipUrl": null,
+        "website": null,
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Jana Burbach",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3492,
+          "name": "Jana_Burbach - Jevgeni Supin.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Jana_Burbach_Jevgeni_Supin_da26bb2774.jpg",
+              "hash": "thumbnail_Jana_Burbach_Jevgeni_Supin_da26bb2774",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Jana_Burbach - Jevgeni Supin.jpg",
+              "path": null,
+              "size": 4.74,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Jana_Burbach_Jevgeni_Supin_da26bb2774",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 64.69,
+          "url": "/uploads/Jana_Burbach_Jevgeni_Supin_da26bb2774.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 34,
+          "updated_by": 34,
+          "created_at": "2020-11-19T12:05:50.786Z",
+          "updated_at": "2020-11-19T12:05:51.116Z"
+        },
+        "images": []
+      },
+      {
+        "id": 32,
+        "person": 4117,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Wendy Mitchell is the moderator and co-curator of TV Beats. She is a\ncontributing editor and Nordic Correspondent at Screen International\nand is the editor of the European Film Academy’s Close-up magazine.\nShe is the Nordic and UK delegate for the San Sebastian International\nFilm Festival, a consultant for the International Film Festival\nRotterdam, and Zurich Film Festival and Zurich Summit.",
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T19:58:13.084Z",
+        "updated_at": "2020-11-15T15:24:58.544Z",
+        "clipUrl": null,
+        "website": null,
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Wendy Mitchell",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3279,
+          "name": "Wendy Mitchell headshot copy 4 - Jevgeni Supin.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b.jpg",
+              "hash": "thumbnail_Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Wendy Mitchell headshot copy 4 - Jevgeni Supin.jpg",
+              "path": null,
+              "size": 5.75,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 668.21,
+          "url": "/uploads/Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-14T19:54:20.920Z",
+          "updated_at": "2020-11-14T19:54:21.263Z"
+        },
+        "images": []
+      }
+    ],
     "industry_projects": []
   },
   {
@@ -832,9 +945,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 28,
-      "firstname": "Saara",
-      "lastname": "Huimerind",
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
       "username": null
     },
     "created_at": "2020-11-11T17:08:49.004Z",
@@ -1284,15 +1397,15 @@
     "titlePrivate": "BNS: What casting directors can do for your project, securing cast and how to get the right actors for your project",
     "startTime": "2020-11-26T12:30:00.000Z",
     "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-17T14:10:04.042Z",
@@ -1395,13 +1508,23 @@
     "publishUntil": null,
     "publish": true,
     "channel": null,
-    "durationTime": "01:00:00",
+    "durationTime": "01:30:00",
     "industry_project": null,
     "videoUrl": null,
     "isLiveEvent": null,
     "isPublicEvent": null,
     "images": [],
-    "industry_categories": [],
+    "industry_categories": [
+      {
+        "id": 2,
+        "name": "Black Nights Stars",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-08T18:30:56.169Z",
+        "updated_at": "2020-11-08T18:30:56.177Z"
+      }
+    ],
     "industry_people": [],
     "industry_projects": []
   },
@@ -1410,9 +1533,9 @@
     "titlePrivate": "TV Beats: Case Study: STRANGER THINGS S4",
     "startTime": "2020-11-27T08:05:00.000Z",
     "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "updated_by": {
@@ -1526,9 +1649,9 @@
     "titlePrivate": "TV Beats: Ukraine Focus: Film.UA ",
     "startTime": "2020-11-27T12:00:00.000Z",
     "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "updated_by": {
@@ -1648,9 +1771,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-13T19:57:43.950Z",
@@ -1912,7 +2035,7 @@
     "publishUntil": null,
     "publish": true,
     "channel": null,
-    "durationTime": "00:45:00",
+    "durationTime": "01:30:00",
     "industry_project": null,
     "videoUrl": null,
     "isLiveEvent": null,
@@ -2114,6 +2237,195 @@
           "updated_by": 35,
           "created_at": "2020-11-14T15:57:10.541Z",
           "updated_at": "2020-11-14T15:57:10.667Z"
+        },
+        "images": []
+      }
+    ],
+    "industry_projects": []
+  },
+  {
+    "id": 8,
+    "titlePrivate": "CORTEX – Are you dreaming or just watching an amazing film?",
+    "startTime": "2020-11-20T12:00:00.000Z",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-11T16:17:46.601Z",
+    "updated_at": "2020-11-16T19:11:17.793Z",
+    "title_et": null,
+    "title_en": "CORTEX – Are you dreaming or just watching an amazing film?",
+    "slug_en": "cortex-are-you-dreaming-or-just-watching-an-amazing-film",
+    "duration": null,
+    "location": {
+      "id": 16,
+      "country": null,
+      "town": null,
+      "cinema": 18,
+      "hall": 21,
+      "created_by": 6,
+      "updated_by": 3,
+      "created_at": "2020-10-07T13:38:27.316Z",
+      "updated_at": "2020-10-13T18:11:26.416Z",
+      "Name": null,
+      "Name_private": null,
+      "name": "ONLINE, Virtuaalsaal",
+      "remoteId": "10170"
+    },
+    "lead": "",
+    "description": "Germany’s Moritz Bleibtreu directs and stars in Cortex, a multi-dimensional action piece screening as an Estonian premiere, part of Rebels with A Cause and PÖFF’s New German Cinema strand. A supermarket security guard struggles through nested elevated-genre plotlines and inventive set pieces.\n\n“The look of the film gives a sense of submersion, disorientation and of diving deep into the subconscious.”\n (Wendy Ide, Screen Daily) \n\nAfter watching and experiencing CORTEX in the dark on the big screen you will be reminded of why we will always need movie theaters in our lives. A place where dreams truly come true – almost.  \n\nDirector of photography Thomas W. Kiennast (THE DARK VALLEY, 3 DAYS IN QUIBERON) and Philipp Orgassa (Lead Colorist ARRI Media) discuss the magic and technique of creating a visually stunning and mind-bending psychological thriller with a little help from post production. \n\nIn collaboration with ARRI Media.\n\nSpeakers: Thomas W. Kiennast, Philipp Orgassa\nModerator:  Christoph Gröner \n",
+    "project_type": null,
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish": true,
+    "channel": null,
+    "durationTime": "01:00:00",
+    "industry_project": null,
+    "videoUrl": null,
+    "images": [],
+    "industry_categories": [],
+    "industry_people": [
+      {
+        "id": 63,
+        "person": 2163,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Thomas W. Kiennast, the Founder of the Austrian based film production companies DAS RUND FILMPRODUCTION, NOPITCH CONTENT HOUSE and CEO of Rundfilm GmbH won multiple Awards during his ongoing career.\nIn the past 25 years of working as a DoP Thomas shot 26 feature films and over 600 commercials.\nHe earned his first National TV Award (Romy) for best picture with his first TV-Movie „Mutig in die neuen Zeiten\". His second Romy was earned with the ALP-Western \"Das finstere Tal\", the movie also earned him a \"German Lola\" as well as his first \"German Best-Camera Award\". 2018 he won his second German Film Award for \"3 Days in Quiberon\".\nThe same year he worked on the Musical \"Ich war noch niemals in NewYork” with Philip Stölzl. The film will be released in theaters this October.\nThis year he directed the camera in Moritz Bleibtreu’s debut film Cortex as well as in te adaption of Stefan Zweig’s „Schachnovelle“ directed by Philipp Stölzl.",
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T23:45:30.127Z",
+        "updated_at": "2020-11-15T14:50:49.620Z",
+        "clipUrl": null,
+        "website": null,
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Thomas W. Kiennast",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3342,
+          "name": "Thomas W.png",
+          "alternativeText": "",
+          "caption": "",
+          "width": 300,
+          "height": 300,
+          "formats": {
+            "thumbnail": {
+              "ext": ".png",
+              "url": "/uploads/thumbnail_Thomas_W_a13a7735df.png",
+              "hash": "thumbnail_Thomas_W_a13a7735df",
+              "mime": "image/png",
+              "name": "thumbnail_Thomas W.png",
+              "path": null,
+              "size": 23.37,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Thomas_W_a13a7735df",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 24.77,
+          "url": "/uploads/Thomas_W_a13a7735df.png",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-15T14:47:41.563Z",
+          "updated_at": "2020-11-15T14:47:42.092Z"
+        },
+        "images": [
+          {
+            "id": 3319,
+            "name": "rsz_21_cortex_bts_-_ramona_sehr.jpg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 3000,
+            "height": 1688,
+            "formats": {
+              "thumbnail": {
+                "ext": ".jpg",
+                "url": "/uploads/thumbnail_rsz_21_cortex_bts_ramona_sehr_6a31ba7fa7.jpg",
+                "hash": "thumbnail_rsz_21_cortex_bts_ramona_sehr_6a31ba7fa7",
+                "mime": "image/jpeg",
+                "name": "thumbnail_rsz_21_cortex_bts_-_ramona_sehr.jpg",
+                "path": null,
+                "size": 6.95,
+                "width": 245,
+                "height": 138
+              }
+            },
+            "hash": "rsz_21_cortex_bts_ramona_sehr_6a31ba7fa7",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 799.92,
+            "url": "/uploads/rsz_21_cortex_bts_ramona_sehr_6a31ba7fa7.jpg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_by": 35,
+            "updated_by": 35,
+            "created_at": "2020-11-14T23:46:41.904Z",
+            "updated_at": "2020-11-14T23:46:42.019Z"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "person": 29,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Christoph Gröner is the artistic director of  FILMFEST MÜNCHEN and a programmer with Black Nights Festival since 2015. Also introduces films on french-german TV station ARTE.",
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T21:44:21.042Z",
+        "updated_at": "2020-11-15T15:27:48.541Z",
+        "clipUrl": null,
+        "website": null,
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Christoph Gröner",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3294,
+          "name": "105394430_2983253885092310_6569376253176347348_o - Christoph Gröner.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_105394430_2983253885092310_6569376253176347348_o_Christoph_Groener_fdee26b7c0.jpg",
+              "hash": "thumbnail_105394430_2983253885092310_6569376253176347348_o_Christoph_Groener_fdee26b7c0",
+              "mime": "image/jpeg",
+              "name": "thumbnail_105394430_2983253885092310_6569376253176347348_o - Christoph Gröner.jpg",
+              "path": null,
+              "size": 3.97,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "105394430_2983253885092310_6569376253176347348_o_Christoph_Groener_fdee26b7c0",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 45.5,
+          "url": "/uploads/105394430_2983253885092310_6569376253176347348_o_Christoph_Groener_fdee26b7c0.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-14T21:41:06.448Z",
+          "updated_at": "2020-11-14T21:41:06.776Z"
         },
         "images": []
       }
@@ -2353,9 +2665,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-17T14:11:13.470Z",
@@ -7746,6 +8058,60 @@
         "updated_at": "2020-11-08T18:30:56.177Z"
       }
     ],
+    "industry_people": [],
+    "industry_projects": []
+  },
+  {
+    "id": 79,
+    "titlePrivate": "Creative Virtual Reality Industry: Outcomes of the Pandemic",
+    "startTime": "2020-11-26T13:00:00.000Z",
+    "created_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-19T11:51:12.678Z",
+    "updated_at": "2020-11-19T12:17:30.147Z",
+    "title_et": null,
+    "title_en": "Creative Virtual Reality Industry: Outcomes of the Pandemic",
+    "slug_en": "creative-virtual-reality-industry-outcomes-of-the-pandemic",
+    "duration": null,
+    "location": {
+      "id": 16,
+      "country": null,
+      "town": null,
+      "cinema": 18,
+      "hall": 21,
+      "created_by": 6,
+      "updated_by": 3,
+      "created_at": "2020-10-07T13:38:27.316Z",
+      "updated_at": "2020-10-13T18:11:26.416Z",
+      "Name": null,
+      "Name_private": null,
+      "name": "ONLINE, Virtuaalsaal",
+      "remoteId": "10170"
+    },
+    "lead": "",
+    "description": "Panel with Georgy Molodtsov (curator, Open Frame Award @ goEast FF, Russian VR Seasons Initiative, Russia)\nRein Zobel (VR Creative Director,  Maru VR, Estonia)\nElena Malakhatka (VR_SciFest, Sweden)\n\n**Topics of discussion:**\nBrief introduction of each participant with the description of the highlights in VR projects produced before the pandemic\nDiscussion on side effects of the pandemic and the strategies to go through it with the ongoing projects\nOverview of international situation and XR market\nHow the pandemic affected the global entertainment industry and if XR gets some additional benefits over other media formats?\nFuture/perspectives: how XR creators and researchers should adapt to new event model and content distribution?",
+    "project_type": null,
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish": true,
+    "channel": null,
+    "durationTime": "01:00:00",
+    "industry_project": null,
+    "videoUrl": null,
+    "isLiveEvent": null,
+    "isPublicEvent": null,
+    "images": [],
+    "industry_categories": [],
     "industry_people": [],
     "industry_projects": []
   }

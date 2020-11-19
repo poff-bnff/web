@@ -31,6 +31,7 @@ head
     link(rel="gettext" type="application/x-po" href="/assets/languages/et/LC_MESSAGES/et.po")
     link(rel="gettext" type="application/x-po" href="/assets/languages/en/LC_MESSAGES/en.po")
     link(rel="gettext" type="application/x-po" href="/assets/languages/ru/LC_MESSAGES/ru.po")
+
     // Facebook Pixel Code
     script.
         !function(f,b,e,v,n,t,s)
@@ -42,7 +43,17 @@ head
         s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '141371263150471');
         fbq('track', 'PageView');
-    // End Facebook Pixel Code
+
+    //Google Analytics
+    script.
+        (function(i,s,o,g,r,a,m){
+            i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+                a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;
+                a.src=g;m.parentNode.insertBefore(a,m)
+            })
+        (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-75123940-1', 'auto'); ga('send', 'pageview');
 
 
     link(rel='shortcut icon' href='/assets/img/static/favicons/BNFF.ico')
