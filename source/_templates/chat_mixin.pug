@@ -10,7 +10,7 @@ mixin chat(room_name, is_moderated_room=false)
         script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
         div(id='chat-message-template-' + room_name + room_suffix class='chat-message' style='display:none')
         div(id='chat-main-' + room_name + room_suffix class='chat-main')
-            div(id='chat-sidebar-' + room_name + room_suffix  class='chat-sidebar')
+            //- div(id='chat-sidebar-' + room_name + room_suffix  class='chat-sidebar')
                 //- h2(id='chat-room-name-'+ room_name + room_suffix)
                 //- ul(id='chat-user-list-'+ room_name + room_suffix)
             div(id='chat-messages-'+ room_name + room_suffix class='chat-messages' class='dark_1')
@@ -47,6 +47,8 @@ mixin chat(room_name, is_moderated_room=false)
         })
 
         function main(userProfile, room_name, is_moderated_room) {
+            var i_am_moderator = false
+
             let room_suffix = '-plain'
             const chatFormElement = document.getElementById('chat-form-' + room_name + room_suffix)
 
@@ -75,10 +77,6 @@ mixin chat(room_name, is_moderated_room=false)
             const messageTemplateElement = document.getElementById('chat-message-template-' + room_name + room_suffix)
 
 
-            console.log(chatMessagesElement)
-            console.log(userListElement)
-
-
             // Join chatroom
             socket.emit('joinRoom', {
                 user_id: userProfile.sub,
@@ -100,6 +98,11 @@ mixin chat(room_name, is_moderated_room=false)
             //-         userListElement.appendChild(li)
             //-     })
             //- }
+
+            socket.on('YOU ARE MODERATOR', () => {
+                i_am_moderator = true
+            })
+
             socket.on('messageToClient', (message) => {
                 //- console.log({M: 'Got message', message, is_moderated_room})
                 if (is_moderated_room) {
@@ -178,7 +181,7 @@ mixin chat(room_name, is_moderated_room=false)
                 chatMessagesElement.appendChild(messageElement)
                 messageElement.appendChild(messageMetaElement)
 
-                if(!message.is_moderated && !is_moderated_room){
+                if(!message.is_moderated && !is_moderated_room && i_am_moderator) {
                     const moderateButtonElement = document.createElement('button')
                     //- moderateButtonElement.classList.add('poff-chat-button', 'poff-chat-button-moderate')
                     moderateButtonElement.classList.add('poff-chat-button1', 'btn', 'btn_moderate')
