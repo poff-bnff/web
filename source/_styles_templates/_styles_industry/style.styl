@@ -391,7 +391,7 @@ footer
 .logo
     margin 1rem
     padding 0
-    width 150px
+    width 170px
 
 .logo_img:hover,
 .logo_img:focus
@@ -2015,11 +2015,11 @@ p a
   line-height 1.618
 
 .str_info_meta_gi
-  font-family font_h
-  color white_96
-  font-size 1rem
-  text-align right
-  line-height 1.618
+    font-family font_h
+    color white_96
+    font-size 1rem
+    text-align left
+    line-height 1.618
 
 .synopsis_gi
 .dir_bio
@@ -2321,7 +2321,29 @@ a.btn_popover
     background-color white
     margin-bottom 1.618rem
     border .5px solid clr_grey_light
-    align-content space-between
+
+.card_event
+    // display flex
+    // flex-direction column
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    align-content end
+    // margin-top 2rem
+    background-color white
+    margin-bottom 1.618rem
+    border .5px solid clr_grey_light
+
+.card_project
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    align-content start
+    background-color white
+    margin-bottom 1.618rem
+    border .5px solid clr_grey_light
+    align-content start
+    padding-bottom 1rem
 
 .card_sponsor
     display grid
@@ -2334,7 +2356,8 @@ a.btn_popover
 
 .card_film:hover,
 .card_article:hover,
-.card_sponsor:hover
+.card_sponsor:hover,
+.card_project:hover
     // opacity 1.8
     transform scale(1.01, 1.01)
     // transform-origin left top
@@ -2351,7 +2374,7 @@ a.btn_popover
 
 .card_film_info
     padding-top: .5rem
-    padding-bottom: 1.618rem
+    // padding-bottom: 1.618rem
     padding-left: 1rem
     padding-right: 1rem
 
@@ -2581,9 +2604,9 @@ a.btn_popover
         text-align left
         aligh left
         margin-top -1.618rem
-    ul
-        padding 0
-        margin 0
+    // ul
+    //     padding 0
+    //     margin 0
         // list-style none
     li
         margin-top .5rem
@@ -2604,6 +2627,10 @@ a.btn_popover
         margin 0
         margin-top 1.618rem
         margin-bottom 1.618rem
+    padding 1rem
+
+.article_contents
+    padding 1rem
 
 .article_lead
     font-family font_p
@@ -2834,7 +2861,7 @@ a.btn_popover
     .grid_events
         display grid
         // grid-template-columns 1fr 1fr 1fr
-        grid-template-columns repeat(auto-fill, minmax(450px, 1fr))
+        grid-template-columns repeat(auto-fill, minmax(500px, 1fr))
         grid-template-rows auto
         grid-gap 1rem
         padding 2rem
@@ -3196,7 +3223,7 @@ a.btn_popover
         // display flex
         // justify-content flex-start
         // align-items flex-end
-        width 240px
+        width 400px
         // padding-left 1.2rem
         // padding-bottom .3rem
         // padding-top .4rem
@@ -3292,12 +3319,16 @@ a.btn_popover
         padding 2rem 5rem 2rem 5rem
 
     .article_meta
-        padding 0
+        padding-left 1rem
+        padding-right 1rem
         padding-bottom calc(2rem + 3vw)
         padding-left calc(1.618rem + 1.618vw)
 
     .article_contents
-        padding 0
+        padding-left 1rem
+        padding-right 1rem
+        padding-top 0
+        // padding 0
         // padding-top calc(2rem + 3vw)
         padding-bottom calc(2rem + 3vw)
         img
@@ -3321,6 +3352,13 @@ a.btn_popover
         height auto
         object-fit cover
         padding 3rem
+
+    .str_info_meta_gi
+        font-family font_h
+        color white_96
+        font-size 1rem
+        text-align right
+        line-height 1.618
 
     // TEXT ALIGNMENT DESKTOP
 
