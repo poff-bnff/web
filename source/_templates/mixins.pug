@@ -106,7 +106,7 @@ mixin screeningDateEET(dateStringUTC)
 
         })();
 
-//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET kuu ja aastaga, (nt 10th Nov, 2020)
+//- Sisend UTC (nt '2020-11-10T10:00:00.000Z'), väljund EET aasta, (2020)
 //- Industry events tarbeks peamiselt
 mixin completionDateEET(dateStringUTC)
     - var dom_id = Math.random()
@@ -118,9 +118,9 @@ mixin completionDateEET(dateStringUTC)
             moment.locale('#{self.locale}');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
 
-            var weekDay_EET = moment.parseZone(new Date('#{dateStringUTC}')).tz('Europe/Tallinn').format('MMM Do YYYY');
+            var year_EET = moment.parseZone(new Date('#{dateStringUTC}')).tz('Europe/Tallinn').format('YYYY');
 
-            eDisplayMoment1.innerHTML = weekDay_EET
+            eDisplayMoment1.innerHTML = year_EET
 
         })();
 
