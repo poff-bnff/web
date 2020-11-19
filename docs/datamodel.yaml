@@ -981,6 +981,8 @@ IndustryEvent: &IndustryEvent
         - *IndustryPerson
     industry_projects:
         - *IndustryProject
+    isLiveEvent: (Boolean)
+    isPublicEvent: (Boolean)
 
 # Supporters
 SupPoff: &SupPoff
