@@ -47,7 +47,7 @@ block content
             each project in self.data.industryprojects
 
                 if project.title && project.title.length > 1 && project.slug
-                    a.card_project(id=project.id href=`/${lang_path}${project.slug}`)
+                    a.card_project(id=project.id href=`/${lang_path}${project.path}`)
                         .container_frame_16_9
                             if project.images && project.images.length
                                 img.container_contents_16_9(src=`https://assets.poff.ee/img/${project.images[0].hash}${project.images[0].ext}`)
