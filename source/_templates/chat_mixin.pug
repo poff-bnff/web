@@ -47,6 +47,12 @@ mixin chat(room_name, is_moderated_room=false)
         })
 
         function main(userProfile, room_name, is_moderated_room) {
+            const CHAT_SERVER = 'https://chat.poff.ee'
+            const socket = io(CHAT_SERVER)
+            socket.on('ping', () =>{
+                socket.emit('pong', {})
+            })
+
             var i_am_moderator = false
 
             let room_suffix = '-plain'
@@ -64,12 +70,6 @@ mixin chat(room_name, is_moderated_room=false)
                 chatMessageInputElement.setAttribute('autocomplete', 'off')
                 chatFormElement.appendChild(chatMessageInputElement)
             }
-
-            const CHAT_SERVER = 'http://192.241.148.13'
-            const socket = io(CHAT_SERVER)
-            socket.on('ping', () =>{
-                socket.emit('pong', {})
-            })
 
             const chatMessagesElement = document.getElementById('chat-messages-' + room_name + room_suffix)
             const userListElement = document.getElementById('chat-user-list-' + room_name + room_suffix)
