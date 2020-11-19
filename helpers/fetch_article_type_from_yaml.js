@@ -11,8 +11,9 @@ const sourceDir =  path.join(rootDir, 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 
-const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const DOMAIN = process.env['DOMAIN'] || 'industry.poff.ee'
 const STRAPIDIR = '/uploads/'
 const STRAPIHOSTWITHDIR = `http://${process.env['StrapiHost']}${STRAPIDIR}`;
 const DEFAULTTEMPLATENAME = 'news'
@@ -24,8 +25,9 @@ const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
 const languages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} articles ${lang} data`)
-
-    allData = [];
+    const industryPersonsPath = path.join(fetchDir, `industrypersons.${lang}.yaml`)
+    const industryPersonsYaml = yaml.safeLoad(fs.readFileSync(industryPersonsPath, 'utf8'));
+    // allData = [];
     const dirPath = path.join(sourceDir, "_fetchdir" )
     const dataFrom = {
         screenings: `/film/screenings.${lang}.yaml`,
@@ -33,7 +35,7 @@ for (const lang of languages) {
     }
 
     for (const strapiElement of STRAPIDATA_ARTICLE) {
-        const element = JSON.parse(JSON.stringify(strapiElement))
+        let element = JSON.parse(JSON.stringify(strapiElement))
         let slugEn = element.slug_en || element.slug_et
         if (!slugEn) {
             // console.log(element)
@@ -103,14 +105,44 @@ for (const lang of languages) {
                         }
                     }
                 }
-                allData.push(element);
+                // allData.push(element);
                 element.data = dataFrom;
+
+                let article_template = `/_templates/article_${artType.name}_index_template.pug`
+
+                if (DOMAIN === 'industry.poff.ee' && artType.name === 'news') {
+
+                    if (element.industry_people && element.industry_people.length) {
+                        let indPeopleFromYaml = element.industry_people.filter(a => a.person).map(per => {
+                            return industryPersonsYaml.filter(indp => indp.person.id === per.person)[0]
+                        })
+                        if (typeof indPeopleFromYaml !== 'undefined') {
+                            element.industry_people = indPeopleFromYaml
+                        } else {
+                            element.industry_people = []
+                        }
+                    }
+
+                    if (element.people && element.people.length) {
+                        let peopleFromYaml = element.people.map(per => {
+                            return STRAPIDATA_PERSONS.filter(pers => pers.id === per.id)[0]
+                        })
+                        if (typeof peopleFromYaml !== 'undefined') {
+                            element.people = peopleFromYaml
+                        } else {
+                            element.people = []
+                        }
+                    }
+
+                    article_template  = `/_templates/article_industry_news_index_template.pug`
+                }
 
                 let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
                 fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-                if (fs.existsSync(`${sourceDir}/_templates/article_${artType.name}_index_template.pug`)) {
-                    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`)
+
+                if (fs.existsSync(`${sourceDir}${article_template}`)) {
+                    fs.writeFileSync(`${element.directory}/index.pug`, `include ${article_template}`)
                 } else {
                     fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${DEFAULTTEMPLATENAME}_index_template.pug`)
                 }
