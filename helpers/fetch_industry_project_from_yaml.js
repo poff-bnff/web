@@ -45,7 +45,7 @@ for (const ix in languages) {
         }
 
         element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
-        element.path = dirSlug;
+        element.path = `project/${dirSlug}`
 
         if (element.clipUrl) {
             if(element.clipUrl && element.clipUrl.length > 10) {
