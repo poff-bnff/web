@@ -70,7 +70,6 @@ function processData(data, lang, CreateYAML) {
     let allData = []
     if (data.length) {
         let screeningsMissingCassetteIDs = []
-        let screeningsMissingLocationIDs = []
 
         for (screeningIx in data) {
             let screening = data[screeningIx]
@@ -88,11 +87,8 @@ function processData(data, lang, CreateYAML) {
 
                 images(screening)
                 delete data[screeningIx].cassette.orderedFilms
-                if (!(screening.location && screening.location.hall && screening.location.hall.cinema && screening.location.hall.cinema.town)) {
-                    screeningsMissingLocationIDs.push(screening.id)
-                } else {
-                    allData.push(data[screeningIx])
-                }
+
+                allData.push(data[screeningIx])
 
             } else {
                 screeningsMissingCassetteIDs.push(screening.id)
@@ -111,9 +107,6 @@ function processData(data, lang, CreateYAML) {
 
         if (screeningsMissingCassetteIDs.length) {
             console.log('Screenings with IDs ', screeningsMissingCassetteIDs.join(', '), ' missing cassette');
-        }
-        if (screeningsMissingLocationIDs.length) {
-            console.log('ERROR! Screenings with IDs ', screeningsMissingLocationIDs.join(', '), ' missing location.hall.cinema.town');
         }
 
     }
