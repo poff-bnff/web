@@ -77,9 +77,15 @@ for (const lang of allLanguages) {
             element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
 
             if (element.industry_people) {
-                element.industry_people = element.industry_people.map(people => {
+                let indPeopleFromYaml = element.industry_people.filter(per => per.person).map(people => {
                     return industryPersonsYaml.filter(a => a.id === people.id)[0]
                 })
+                console.log(typeof indPeopleFromYaml);
+                if (typeof indPeopleFromYaml !== 'undefined') {
+                    element.industry_people = indPeopleFromYaml
+                } else {
+                    element.industry_people = []
+                }
             }
             if (element.industry_projects) {
                 element.industry_projects = element.industry_projects.map(projects => {
@@ -134,13 +140,36 @@ for (const lang of allLanguages) {
 
             allData.push(element)
         } else {
-            console.log(`ERROR! Industry event ID ${element.id} missing slug`);
+            if (lang === 'en' && DOMAIN === 'industry.poff.ee') {
+                console.log(`ERROR! Industry event ID ${element.id} missing slug`);
+            }
         }
     }
     let dataToYAML = []
 
     if (allData.length) {
         dataToYAML = allData.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+
+        // Date.prototype.addHours = function(hours) {
+        //     var date = new Date(this.valueOf());
+        //     date.setHours(date.getHours() + hours);
+        //     return date;
+        // }
+        // let newDataToYAML = {}
+        // let allDates = dataToYAML.map(event => {
+        //     let dateTimeUTC = convert_to_UTC(event.startTime)
+        //     let dateTimeUTCtoEET = dateTimeUTC.addHours(2)
+        //     let date = dateTimeUTCtoEET.getFullYear()+'-'+(dateTimeUTCtoEET.getMonth()+1)+'-'+(dateTimeUTCtoEET.getDate())
+        //     if (event.channel) {
+        //         newDataToYAML[date][event.channel.id] = event
+        //     }
+        //     // let dateNow = parseInt(`${dateTimeUTCtoEET.getFullYear()}${("0" + (dateTimeUTCtoEET.getMonth() + 1)).slice(-2)}${("0" + dateTimeUTCtoEET.getDate()).slice(-2)}`)
+        //     // console.log(event.startTime, ' - ', dateTimeUTC, ' - ', dateTimeUTCtoEET, ' - ', date);
+        // });
+        // // let uniqueDates =  [...new Set(allDates)]
+        // console.log(newDataToYAML);
+
+
         console.log(`${dataToYAML.length} Industry Events ready for building`);
     }
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });

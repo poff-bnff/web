@@ -6,87 +6,248 @@ include /_templates/mixins.pug
 block content
 
     main.grid_film
+        if self.title
+
+            //- KARUSELL Industry projekti piltidega
+            section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+                ol.carousel-indicators
+                    if self.images && self.images.length >1
+                        each index in self.images
+                            li(data-target='#carouselExampleIndicators' data-slide-to = index)
+                .carousel-inner.container_frame_16_9
+                    if self.images && self.images[0]
+                        each val, index in self.images
+                            if index == 0
+                                .carousel-item.active.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                            else
+                                .carousel-item.container_contents_16_9
+                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                    else
+                        .carousel-item.active.container_contents_16_9
+                            img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+
+                if self.images && self.images.length >1
+                    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                        // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            polyline(points='15 18 9 12 15 6')
+                        span.sr-only Previous
+                    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                        // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            polyline(points='9 18 15 12 9 6')
+                        span.sr-only Next
+                        //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
 
 
-        if self.title && self.title.length > 1
-            p.dark_1= self.title
-
-            if self.images && self.images.length
-                each image in self.images
-                    img(src=`https://assets.poff.ee/img/${image.hash}${image.ext}`)
-            else
-                img(src='/assets/img/static/placeholder_hd_1.jpg')
-
-
-            if self.logline
-                p.dark_1= self.logline
-
-            if self.lookingFor
-                p.dark_1= self.lookingFor
-
-            if self.synopsis && typeof self.synopsis === 'string'
-                p.dark_1
-                    +format(self.synopsis)
-
-            if self.directorsNote && typeof self.directorsNote === 'string'
-                p.dark_1
-                    +format(self.directorsNote)
-
-            if self.contactCompany
-                if self.contactCompany.homepageUrl
-
-                if self.contactCompany.type
-                    p.dark_1= self.type
-                if self.contactCompany.name
-                    p.dark_1= self.contactName
+            section.f_title_box
+                .premiere_type
+                    if self.project_types && self.project_types[0]
+                        //- Kui on mitu, eraldatakse komadega, kui vaid esimest ühte vaja, siis film.tags.premiere_types[0]
+                        -var types = []
+                        each p_type in self.project_types
+                            - types.push(p_type.type)
+                        p.premiere_type= types.join(', ')
 
 
-            if self.clipUrlCode
-                p.dark_1
-                    +video(self.clipUrlCode)
+                h1.film_title_detailed= self.title
+
+                .str_info_blokk_1
+
+                    if self.countries && self.countries[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.countries
+                            -var countries = []
+                            each country in self.countries
+                                - countries.push(country.name)
+                            .str_info_value= countries.join(', ')
+
+                    if self.languages && self.languages[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.languages
+                            - var languages = []
+                            each language in self.languages
+                                -languages.push(language.name)
+                            .str_info_value= languages.join(', ')
 
 
-    //-     if self.festival_edition && self.festival_edition.name
-    //-         h1.dark_1= self.festival_edition.name
-    //-         br
-    //-     if self.name && typeof self.name !== 'object'
-    //-         h1.dark_1= self.name
-    //-         br
-    //-     if self.description && typeof self.description !== 'object'
-    //-         h1.dark_1= self.description
-    //-         br
-    //-         br
-    //-         br
-    //-         br
-    //-         br
-    //-         br
-    //-         div.payment
-    //-             button#buybutton.btn.btn-primary(onclick=`checkIfPasswordBuyer()`) OSTA
-    //-             button#directToLoginButton.btn.btn-primary(onclick=`directToLogin(), saveUrl()`) Ostmiseks logi sisse
-    //-             button#directToaddPicture.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks lisa endast pilt
-    //-             button#directToFillProfile.btn.btn-primary(onclick=`directToUserProfile(), saveUrl()`) Ostmiseks täida profiil lõpuni
-    //-             div#paymentLinks
-    //-             br
-    //-             div.dark_1#feedback
-    //-             br
-    //-             button#paybutton.btn.btn-primary(onclick=`BuyProduct("${self.codePrefix}")`) MAKSMA
-    //-             br
-    //- style.
-    //-     #buybutton {display: none}
-    //-     #directToaddPicture {display:none}
-    //-     #directToFillProfile {display:none}
-    //-     #paybutton {display: none}
-    //-     [type=radio]{
-    //-         position: absolute;
-    //-         opacity: 0;
-    //-         width: 0;
-    //-         height: 0;
-    //-     }
-    //-     [type=radio] + img {
-    //-         cursor: pointer;
-    //-     }
-    //-     [type=radio]:checked + img {
-    //-         outline: 4px solid #fd7e14;
-    //-     }
+                    if self.tag_genres && self.tag_genres[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.genre
+                            .str_info_value= self.tag_genres.join(', ')
+
+                    if self.project_statuses && self.project_statuses[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.projectStatus
+                            - var project_statuses = []
+                            each p_status in self.project_statuses
+                                -project_statuses.push(p_status.status)
+                            .str_info_value= project_statuses.join(', ')
+
+
+            section.f_synopsis_box
+                if self.logline
+                    .str_info_meta_gi
+                        .str_info_meta_item
+                            .str_info_meta_label.dark_semi= self.label.industry.logline
+
+                    if typeof self.logline !== 'undefined'
+                        - var logline_md = self.logline
+                        .synopsis_gi
+                            if self.logline
+                                if typeof logline_md === 'string'
+                                    +format(logline_md)
+
+                if self.synopsis
+                    .str_info_meta_gi
+                        .str_info_meta_item
+
+                            .str_info_meta_label.dark_semi= self.label.film.synopsis
+
+                    if typeof self.synopsis !== 'undefined'
+                        - var synopsis_md = self.synopsis
+                        .synopsis_gi
+                            if self.synopsis
+                                if typeof synopsis_md === 'string'
+                                    +format(synopsis_md)
+
+                if self.directorsNote
+                    .str_info_meta_gi
+                        .str_info_meta_item
+
+                            .str_info_meta_label.dark_semi= self.label.industry.directorsNote
+
+                    if typeof self.directorsNote !== 'undefined'
+                        - var directors_note_md = self.directorsNote
+                        .synopsis_gi
+                            if self.directorsNote
+                                if typeof directors_note_md === 'string'
+                                    +format(directors_note_md)
+
+            section.project_cred_box
+                .str_info_blokk_cred
+
+                    if self.titleOriginal
+                        .str_info_grid_3
+                            .str_info_label= self.label.film.titleOriginal
+                            .str_info_value= self.titleOriginal
+
+                    if self.completionDate
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.completionDate
+                            .str_info_value
+                                +completionDateEET(self.completionDate)
+
+                    if self.plannedPremiere
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.plannedPremiere
+                            .str_info_value= self.plannedPremiere
+
+                    if self.budget
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.projectBudget
+                            .str_info_value
+                                +euro(self.budget)
+
+                    if self.financed
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.projectFinanced
+                            .str_info_value
+                                +euro(self.financed)
+
+                    if self.lookingFor
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.lookingFor
+                            .str_info_value= self.lookingFor
+
+                    if self.country_focus && self.country_focus[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.countryFocus
+                            -var country_focus_names = []
+                            each country in self.country_focus
+                                - country_focus_names.push(country.name)
+                            .str_info_value= country_focus_names.join(', ')
+
+                    if self.numOfSeasons
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.numOfSeasons
+                            .str_info_value= self.numOfSeasons
+
+                    if self.numOfEpisodes
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.numOfEpisodes
+                            .str_info_value= self.numOfEpisodes
+
+                    if self.episodeDuration
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.episodeDuration
+                            .str_info_value= self.episodeDuration
+
+                    if self.attached_partners
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.partners
+                            -var partner_name = []
+                            each partner in self.attached_partners
+                                - partner_name.push(partner.name)
+                            .str_info_value= partner_name.join(', ')
+
+                    if self.broadcasters
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.broadcaster
+                            -var broadcaster_name = []
+                            each broadcaster in self.broadcasters
+                                - broadcaster_name.push(broadcaster.name)
+                            .str_info_value= broadcaster_name.join(', ')
+
+                    //- if self.teamCredentials && self.teamCredentials[0]
+                    //-     .str_info_grid_3
+                    //-         .str_info_label= self.label.industry.teamCredentials
+                    //-         -var team_credentials_names = []
+                    //-         each role in self.teamCredentials
+                    //-             - country_focus_names.push(country.name)
+                    //-         .str_info_value= country_focus_names.join(', ')
+                    //-mida sellel on vaja kuvad
+
+
+            section.project_runtime_box
+
+                if self.contactName
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.contactName
+                        .str_info_value= self.contactName
+
+                if self.contactEmail
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.contactEmail
+                        .str_info_value= self.contactEmail
+
+                if self.contactWeb
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.contactWeb
+                        .str_info_value= self.contactWeb
+
+                if self.contactAddress
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.contactAddress
+                        .str_info_value= self.contactAddress
+
+                if self.contactCompany && self.contactCompany.name
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.contactCompany
+                        .str_info_value= self.contactCompany.name
+            if self.clipUrl
+                section#trailer.f_trailer_box
+                    .section_headline= self.label.film.trailer
+                    //- .embed-responsive.embed-responsive-16by9.m-0.p-0
+                    .videolevels_embed_container
+                        if self.clipUrlCode
+                            .embed-responsive.embed-responsive-16by9.m-0.p-0
+                                +video(self.clipUrlCode)
+
+
+
+
+
 
 

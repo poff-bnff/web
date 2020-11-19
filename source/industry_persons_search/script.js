@@ -6,10 +6,8 @@ const urlParams = new URLSearchParams(queryString);
 
 const selectors = {
     types: document.getElementById('types_select'),
-    languages: document.getElementById('languages_select'),
-    countries: document.getElementById('countries_select'),
-    statuses: document.getElementById('statuses_select'),
-    genres: document.getElementById('genres_select'),
+    roleatfilms: document.getElementById('roleatfilms_select'),
+    lookingfors: document.getElementById('lookingfors_select'),
 }
 
 function urlSelect() {
@@ -88,7 +86,7 @@ function toggleAll(exclude_selector_name) {
     }
 
     // kuva/peida kassette
-    let cards = document.querySelectorAll('[class="card_project"]')
+    let cards = document.querySelectorAll('[class="person"]')
     cards.forEach(card => {
         if (ids.includes(card.id)) {
             card.style.display = "grid"
@@ -122,20 +120,12 @@ function toggleFilters(exclude_selector_name) {
                     return compare_with === '' ? true : screening.types.includes(compare_with)
                 })
                 .filter(screening => {
-                    const compare_with = selector_name === 'languages' ? value : selectors.languages.value;
-                    return compare_with === '' ? true : screening.languages.includes(compare_with)
+                    const compare_with = selector_name === 'roleatfilms' ? value : selectors.roleatfilms.value;
+                    return compare_with === '' ? true : screening.roleatfilms.includes(compare_with)
                 })
                 .filter(screening => {
-                    const compare_with = selector_name === 'countries' ? value : selectors.countries.value;
-                    return compare_with === '' ? true : screening.countries.includes(compare_with)
-                })
-                .filter(screening => {
-                    const compare_with = selector_name === 'statuses' ? value : selectors.statuses.value;
-                    return compare_with === '' ? true : screening.statuses.includes(compare_with)
-                })
-                .filter(screening => {
-                    const compare_with = selector_name === 'genres' ? value : selectors.genres.value;
-                    return compare_with === '' ? true : screening.genres.includes(compare_with)
+                    const compare_with = selector_name === 'lookingfors' ? value : selectors.lookingfors.value;
+                    return compare_with === '' ? true : screening.lookingfors.includes(compare_with)
                 })
                 .filter((screening) => { return search_input.value ? screening.text.includes(search_input.value.toLowerCase()) : true })
                 .length
@@ -157,29 +147,19 @@ selectors.types.addEventListener('change', e => {
     toggleAll('types');
 });
 
-selectors.languages.addEventListener('change', e => {
-    toggleAll('languages');
+selectors.roleatfilms.addEventListener('change', e => {
+    toggleAll('roleatfilms');
 });
 
-selectors.countries.addEventListener('change', e => {
-    toggleAll('countries');
-});
-
-selectors.statuses.addEventListener('change', e => {
-    toggleAll('statuses');
-});
-
-selectors.genres.addEventListener('change', e => {
-    toggleAll('genres');
+selectors.lookingfors.addEventListener('change', e => {
+    toggleAll('lookingfors');
 });
 
 function unselect_all() {
     search_input.value = '';
     selectors.types.selectedIndex = 0;
-    selectors.languages.selectedIndex = 0;
-    selectors.countries.selectedIndex = 0;
-    selectors.statuses.selectedIndex = 0;
-    selectors.genres.selectedIndex = 0;
+    selectors.roleatfilms.selectedIndex = 0;
+    selectors.lookingfors.selectedIndex = 0;
     nonetoshow.selectedIndex = 0;
     toggleAll();
 }
@@ -194,29 +174,15 @@ function execute_filters() {
             }
         })
         .filter(screening => {
-            if (selectors.languages.value) {
-                return screening.languages.includes(selectors.languages.value)
+            if (selectors.roleatfilms.value) {
+                return screening.roleatfilms.includes(selectors.roleatfilms.value)
             } else {
                 return true
             }
         })
         .filter(screening => {
-            if (selectors.countries.value) {
-                return screening.countries.includes(selectors.countries.value)
-            } else {
-                return true
-            }
-        })
-        .filter(screening => {
-            if (selectors.statuses.value) {
-                return screening.statuses.includes(selectors.statuses.value)
-            } else {
-                return true
-            }
-        })
-        .filter(screening => {
-            if (selectors.genres.value) {
-                return screening.genres.includes(selectors.genres.value)
+            if (selectors.lookingfors.value) {
+                return screening.lookingfors.includes(selectors.lookingfors.value)
             } else {
                 return true
             }
