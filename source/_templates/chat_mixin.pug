@@ -17,7 +17,6 @@ mixin chat(room_name, is_moderated_room=false)
 
         div(id='chat-form-container-'+ room_name + room_suffix class='chat-form-container')
             form(id='chat-form-' + room_name + room_suffix)
-                input(id='chat-message-input-' + room_name + room_suffix class='chat-message-input' type='text' placeholder='Enter Message' required='' autocomplete='off')
                 //- button.btn
                 //-     i.chat-message-button
                 //-     | Send
@@ -49,8 +48,19 @@ mixin chat(room_name, is_moderated_room=false)
 
         function main(userProfile, room_name, is_moderated_room) {
             let room_suffix = '-plain'
+            const chatFormElement = document.getElementById('chat-form-' + room_name + room_suffix)
+
             if (is_moderated_room) {
                 room_suffix = '-moderated'
+            } else {
+                const chatMessageInputElement = document.createElement('input')
+                chatMessageInputElement.id = 'chat-message-input-' + room_name + room_suffix
+                chatMessageInputElement.classList.add('chat-message-input')
+                chatMessageInputElement.setAttribute('type', 'text')
+                chatMessageInputElement.setAttribute('placeholder', 'Enter message')
+                chatMessageInputElement.setAttribute('required', '')
+                chatMessageInputElement.setAttribute('autocomplete', 'off')
+                chatFormElement.appendChild(chatMessageInputElement)
             }
 
             const CHAT_SERVER = 'http://192.241.148.13'
@@ -59,11 +69,10 @@ mixin chat(room_name, is_moderated_room=false)
                 socket.emit('pong', {})
             })
 
-            const chatFormElement = document.getElementById(['chat-form', room_name + room_suffix].join('-'))
-            const chatMessagesElement = document.getElementById(['chat-messages', room_name + room_suffix].join('-'))
-            const userListElement = document.getElementById(['chat-user-list', room_name + room_suffix].join('-'))
-            const messageInputElement = document.getElementById(['chat-message-input', room_name + room_suffix].join('-'))
-            const messageTemplateElement = document.getElementById(['chat-message-template', room_name + room_suffix].join('-'))
+            const chatMessagesElement = document.getElementById('chat-messages-' + room_name + room_suffix)
+            const userListElement = document.getElementById('chat-user-list-' + room_name + room_suffix)
+            const messageInputElement = document.getElementById('chat-message-input-' + room_name + room_suffix)
+            const messageTemplateElement = document.getElementById('chat-message-template-' + room_name + room_suffix)
 
 
             console.log(chatMessagesElement)
@@ -79,18 +88,18 @@ mixin chat(room_name, is_moderated_room=false)
                 userProfile: userProfile
             })
 
-            socket.on('roomUsers', (users) => {
-                setUserList(users.users)
-            })
-            // Add users to DOM
-            function setUserList(users) {
-                userListElement.innerHTML = ''
-                users.forEach(user => {
-                    const li = document.createElement('li')
-                    li.innerText = user
-                    userListElement.appendChild(li)
-                })
-            }
+            //- socket.on('roomUsers', (users) => {
+            //-     setUserList(users.users)
+            //- })
+            //- // Add users to DOM
+            //- function setUserList(users) {
+            //-     userListElement.innerHTML = ''
+            //-     users.forEach(user => {
+            //-         const li = document.createElement('li')
+            //-         li.innerText = user
+            //-         userListElement.appendChild(li)
+            //-     })
+            //- }
             socket.on('messageToClient', (message) => {
                 //- console.log({M: 'Got message', message, is_moderated_room})
                 if (is_moderated_room) {
@@ -114,28 +123,30 @@ mixin chat(room_name, is_moderated_room=false)
                 chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
             })
 
-            // Message submit
             let latestMessage
-            chatFormElement.addEventListener('submit', e => {
-                e.preventDefault()
+            if (!is_moderated_room) {
+                // Message submit
+                chatFormElement.addEventListener('submit', e => {
+                    e.preventDefault()
 
-                // Get message text
-                let latestMessage = messageInputElement.value.trim()
-                if (!latestMessage) {
-                    return false
-                }
-                // Emit message to server
-                console.log('Send message', latestMessage)
-                socket.emit('messageToServer', {
-                    user_id: userProfile.sub,
-                    room_name: room_name,
-                    message: latestMessage
+                    // Get message text
+                    let latestMessage = messageInputElement.value.trim()
+                    if (!latestMessage) {
+                        return false
+                    }
+                    // Emit message to server
+                    console.log('Send message', latestMessage)
+                    socket.emit('messageToServer', {
+                        user_id: userProfile.sub,
+                        room_name: room_name,
+                        message: latestMessage
+                    })
+
+                    // Clear input
+                    messageInputElement.value = ''
+                    messageInputElement.focus()
                 })
-
-                // Clear input
-                messageInputElement.value = ''
-                messageInputElement.focus()
-            })
+            }
 
 
             // Output message to DOM
