@@ -476,9 +476,9 @@
     "titlePrivate": " Italian Independent Producers (AGICI) and Cineuropa present: Co-production opportunities between Italy and the Baltic countries",
     "startTime": "2020-11-25T13:00:00.000Z",
     "created_by": {
-      "id": 28,
-      "firstname": "Saara",
-      "lastname": "Huimerind",
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
       "username": null
     },
     "updated_by": {
@@ -515,12 +515,125 @@
     "publishUntil": null,
     "publish": true,
     "channel": null,
-    "durationTime": null,
+    "durationTime": "00:45:00",
     "industry_project": null,
     "videoUrl": null,
     "images": [],
-    "industry_categories": [],
-    "industry_people": [],
+    "industry_categories": [
+      {
+        "id": 4,
+        "name": "TV Beats Forum",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-08T18:31:39.808Z",
+        "updated_at": "2020-11-08T18:31:39.819Z"
+      }
+    ],
+    "industry_people": [
+      {
+        "id": 96,
+        "person": 4192,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": null,
+        "created_by": 35,
+        "updated_by": 34,
+        "created_at": "2020-11-18T17:28:33.359Z",
+        "updated_at": "2020-11-19T12:05:54.386Z",
+        "clipUrl": null,
+        "website": null,
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Jana Burbach",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3492,
+          "name": "Jana_Burbach - Jevgeni Supin.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Jana_Burbach_Jevgeni_Supin_da26bb2774.jpg",
+              "hash": "thumbnail_Jana_Burbach_Jevgeni_Supin_da26bb2774",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Jana_Burbach - Jevgeni Supin.jpg",
+              "path": null,
+              "size": 4.74,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Jana_Burbach_Jevgeni_Supin_da26bb2774",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 64.69,
+          "url": "/uploads/Jana_Burbach_Jevgeni_Supin_da26bb2774.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 34,
+          "updated_by": 34,
+          "created_at": "2020-11-19T12:05:50.786Z",
+          "updated_at": "2020-11-19T12:05:51.116Z"
+        },
+        "images": []
+      },
+      {
+        "id": 32,
+        "person": 4117,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Wendy Mitchell is the moderator and co-curator of TV Beats. She is a\ncontributing editor and Nordic Correspondent at Screen International\nand is the editor of the European Film Academy’s Close-up magazine.\nShe is the Nordic and UK delegate for the San Sebastian International\nFilm Festival, a consultant for the International Film Festival\nRotterdam, and Zurich Film Festival and Zurich Summit.",
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T19:58:13.084Z",
+        "updated_at": "2020-11-15T15:24:58.544Z",
+        "clipUrl": null,
+        "website": null,
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Wendy Mitchell",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3279,
+          "name": "Wendy Mitchell headshot copy 4 - Jevgeni Supin.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b.jpg",
+              "hash": "thumbnail_Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Wendy Mitchell headshot copy 4 - Jevgeni Supin.jpg",
+              "path": null,
+              "size": 5.75,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 668.21,
+          "url": "/uploads/Wendy_Mitchell_headshot_copy_4_Jevgeni_Supin_b33257c70b.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-14T19:54:20.920Z",
+          "updated_at": "2020-11-14T19:54:21.263Z"
+        },
+        "images": []
+      }
+    ],
     "industry_projects": []
   },
   {
@@ -814,9 +927,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 28,
-      "firstname": "Saara",
-      "lastname": "Huimerind",
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
       "username": null
     },
     "created_at": "2020-11-11T17:08:49.004Z",
@@ -1258,15 +1371,15 @@
     "titlePrivate": "BNS: What casting directors can do for your project, securing cast and how to get the right actors for your project",
     "startTime": "2020-11-26T12:30:00.000Z",
     "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-17T14:10:04.042Z",
@@ -1367,11 +1480,21 @@
     "publishUntil": null,
     "publish": true,
     "channel": null,
-    "durationTime": "01:00:00",
+    "durationTime": "01:30:00",
     "industry_project": null,
     "videoUrl": null,
     "images": [],
-    "industry_categories": [],
+    "industry_categories": [
+      {
+        "id": 2,
+        "name": "Black Nights Stars",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-08T18:30:56.169Z",
+        "updated_at": "2020-11-08T18:30:56.177Z"
+      }
+    ],
     "industry_people": [],
     "industry_projects": []
   },
@@ -1380,9 +1503,9 @@
     "titlePrivate": "TV Beats: Case Study: STRANGER THINGS S4",
     "startTime": "2020-11-27T08:05:00.000Z",
     "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "updated_by": {
@@ -1494,9 +1617,9 @@
     "titlePrivate": "TV Beats: Ukraine Focus: Film.UA ",
     "startTime": "2020-11-27T12:00:00.000Z",
     "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "updated_by": {
@@ -1614,9 +1737,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-13T19:57:43.950Z",
@@ -1874,7 +1997,7 @@
     "publishUntil": null,
     "publish": true,
     "channel": null,
-    "durationTime": "00:45:00",
+    "durationTime": "01:30:00",
     "industry_project": null,
     "videoUrl": null,
     "images": [],
@@ -2091,9 +2214,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-11T16:17:46.601Z",
@@ -2498,9 +2621,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-17T14:11:13.470Z",
@@ -3620,13 +3743,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-13T19:07:26.654Z",
-    "updated_at": "2020-11-16T19:32:44.140Z",
+    "updated_at": "2020-11-18T12:33:26.594Z",
     "title_et": null,
     "title_en": "French-Estonian film co-production: opportunities and case-studies. In the light of the new treaty",
     "slug_en": "french-estonian-film-co-production-opportunities-and-case-studies-in-the-light-of-the-new-treaty",
@@ -3647,7 +3770,7 @@
       "remoteId": "10170"
     },
     "lead": null,
-    "description": "Speakers: Edith Sepp, Michel Plazanet, Julien Ezanno, Elina Litvinova, Riho Västrik, Martin Meissonnier ",
+    "description": "Speakers: Edith Sepp, Eric Bultel, Michel Plazanet, Julien Ezanno, Elina Litvinova, Riho Västrik, Martin Meissonnier ",
     "project_type": null,
     "publishFrom": null,
     "publishUntil": null,
@@ -7608,6 +7731,60 @@
         "updated_at": "2020-11-08T18:30:56.177Z"
       }
     ],
+    "industry_people": [],
+    "industry_projects": []
+  },
+  {
+    "id": 79,
+    "titlePrivate": "Creative Virtual Reality Industry: Outcomes of the Pandemic",
+    "startTime": "2020-11-26T13:00:00.000Z",
+    "created_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-19T11:51:12.678Z",
+    "updated_at": "2020-11-19T12:17:30.147Z",
+    "title_et": null,
+    "title_en": "Creative Virtual Reality Industry: Outcomes of the Pandemic",
+    "slug_en": "creative-virtual-reality-industry-outcomes-of-the-pandemic",
+    "duration": null,
+    "location": {
+      "id": 16,
+      "country": null,
+      "town": null,
+      "cinema": 18,
+      "hall": 21,
+      "created_by": 6,
+      "updated_by": 3,
+      "created_at": "2020-10-07T13:38:27.316Z",
+      "updated_at": "2020-10-13T18:11:26.416Z",
+      "Name": null,
+      "Name_private": null,
+      "name": "ONLINE, Virtuaalsaal",
+      "remoteId": "10170"
+    },
+    "lead": "",
+    "description": "Panel with Georgy Molodtsov (curator, Open Frame Award @ goEast FF, Russian VR Seasons Initiative, Russia)\nRein Zobel (VR Creative Director,  Maru VR, Estonia)\nElena Malakhatka (VR_SciFest, Sweden)\n\n**Topics of discussion:**\nBrief introduction of each participant with the description of the highlights in VR projects produced before the pandemic\nDiscussion on side effects of the pandemic and the strategies to go through it with the ongoing projects\nOverview of international situation and XR market\nHow the pandemic affected the global entertainment industry and if XR gets some additional benefits over other media formats?\nFuture/perspectives: how XR creators and researchers should adapt to new event model and content distribution?",
+    "project_type": null,
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish": true,
+    "channel": null,
+    "durationTime": "01:00:00",
+    "industry_project": null,
+    "videoUrl": null,
+    "isLiveEvent": null,
+    "isPublicEvent": null,
+    "images": [],
+    "industry_categories": [],
     "industry_people": [],
     "industry_projects": []
   }

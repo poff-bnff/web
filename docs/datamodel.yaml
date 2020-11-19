@@ -369,46 +369,6 @@ ShortsiArticle: &ShortsiArticle
     web_authors: #(Component (repeatable))
         - *WebAuthor
 
-IndustryArticle: &IndustryArticle
-    _path: /industry-articles
-    created_by:
-        firstname: (text)
-        lastname: (text)
-    created_at: (datetime)
-    #titlePrivate: (text, private field)
-    title_et: (text)
-    title_en: (text)
-    title_ru: (text)
-    slug_et: (UID)
-    slug_en: (UID)
-    slug_ru: (UID)
-    lead_et: (Rich text)
-    lead_en: (Rich text)
-    lead_ru: (Rich text)
-    contents_et: (Rich text)
-    contents_en: (Rich text)
-    contents_ru: (Rich text)
-    media: *Media #(Component)
-    publishFrom: (Datetime)
-    publishUntil: (Datetime)
-    publish_et: (boolean)
-    publish_en: (boolean)
-    publish_ru: (boolean)
-    button: #(Component (repeatable))
-        - *Button
-    article_types: #(Component (repeatable))
-        - *ArticleType
-    tag_premiere_types: #(Component (repeatable))
-        - *TagPremiereType
-    programmes: #(Component (repeatable))
-        - *Programme
-    tag_genres: #(Component (repeatable))
-        - *TagGenre
-    tag_keywords: #(Component (repeatable))
-        - *TagKeyword
-    web_authors: #(Component (repeatable))
-        - *WebAuthor
-
 KinoffiArticle: &KinoffiArticle
     _path: /kinoffi-articles
     created_by:
@@ -550,23 +510,6 @@ ShortsiMenu: &ShortsiMenu
     order: (Number)
     subMenuItem: #(Component (repeatable))
         - *ShortsiSubMenuItem
-
-IndustrySubMenuItem: &IndustrySubMenuItem
-    name: *Translated #(Component)
-    industry_article: *IndustryArticle
-    order: (Number)
-    customUrl: *Translated #(Component)
-    namePrivate: (text)
-
-IndustryMenu: &IndustryMenu
-    _path: /industry-menus
-    #namePrivate: (text, private field)
-    name: *Translated #(Component)
-    industry_article: *IndustryArticle
-    customUrl: *Translated #(Component)
-    order: (Number)
-    subMenuItem: #(Component (repeatable))
-        - *IndustrySubMenuItem
 
 KinoffiSubMenuItem: &KinoffiSubMenuItem
     name: *Translated #(Component)
@@ -866,7 +809,7 @@ IndustryPerson: &IndustryPerson
     profilePicAtInd: *StrapiMedia
     role_at_films: #(Component (repeatable))
         - *RoleAtFilm
-    emaliAtInd: (Email)
+    emailAtInd: (Email)
     phoneAtInd: (text)
     aboutText: (Rich text) #kas peaks olema kolmes keeles
     images: #(Component (repeatable))
@@ -879,6 +822,50 @@ IndustryPerson: &IndustryPerson
         - *IndustryPersonType
     lookingFor: (text)
     contactAtEvent: (text)
+
+IndustryArticle: &IndustryArticle
+    _path: /industry-articles
+    created_by:
+        firstname: (text)
+        lastname: (text)
+    created_at: (datetime)
+    #titlePrivate: (text, private field)
+    title_et: (text)
+    title_en: (text)
+    title_ru: (text)
+    slug_et: (UID)
+    slug_en: (UID)
+    slug_ru: (UID)
+    lead_et: (Rich text)
+    lead_en: (Rich text)
+    lead_ru: (Rich text)
+    contents_et: (Rich text)
+    contents_en: (Rich text)
+    contents_ru: (Rich text)
+    media: *Media #(Component)
+    publishFrom: (Datetime)
+    publishUntil: (Datetime)
+    publish_et: (boolean)
+    publish_en: (boolean)
+    publish_ru: (boolean)
+    button: #(Component (repeatable))
+        - *Button
+    article_types: #(Component (repeatable))
+        - *ArticleType
+    tag_premiere_types: #(Component (repeatable))
+        - *TagPremiereType
+    programmes: #(Component (repeatable))
+        - *Programme
+    tag_genres: #(Component (repeatable))
+        - *TagGenre
+    tag_keywords: #(Component (repeatable))
+        - *TagKeyword
+    web_authors: #(Component (repeatable))
+        - *WebAuthor
+    industry_people:
+        - *IndustryPerson
+    people:
+        - *Person
 
 IndustryGroup: &IndustryGroup
     _path: /industry-groups
@@ -981,6 +968,25 @@ IndustryEvent: &IndustryEvent
         - *IndustryPerson
     industry_projects:
         - *IndustryProject
+    isLiveEvent: (Boolean)
+    isPublicEvent: (Boolean)
+
+IndustrySubMenuItem: &IndustrySubMenuItem
+    name: *Translated #(Component)
+    industry_article: *IndustryArticle
+    order: (Number)
+    customUrl: *Translated #(Component)
+    namePrivate: (text)
+
+IndustryMenu: &IndustryMenu
+    _path: /industry-menus
+    #namePrivate: (text, private field)
+    name: *Translated #(Component)
+    industry_article: *IndustryArticle
+    customUrl: *Translated #(Component)
+    order: (Number)
+    subMenuItem: #(Component (repeatable))
+        - *IndustrySubMenuItem
 
 # Supporters
 SupPoff: &SupPoff
