@@ -134,9 +134,7 @@ for (const lang of allLanguages) {
 
             allData.push(element)
         } else {
-            if (lang === 'en' && DOMAIN === 'industry.poff.ee') {
-                console.log(`ERROR! Industry event ID ${element.id} missing slug`);
-            }
+            console.log(`ERROR! Industry event ID ${element.id} missing slug`);
         }
     }
     let dataToYAML = []
