@@ -12,6 +12,8 @@ block content
             if (userProfile.industryAccessLevel) {
                 console.log('näitan')
                 document.getElementById('videolevels_video').style.display = 'block'
+                var videoFrameElement = document.getElementById('videoframe')
+                videoFrameElement.src = videoFrameElement.getAttribute('target_src')
             } else {
                 console.log('ei näita')
                 document.getElementById('videolevels_video').remove()
@@ -171,7 +173,7 @@ block content
     //-     +chat(self.title, false)
     //-     +chat(self.title, true)
 
-    section
+    section.f_interactive_box
         if self.industry_people
             //- h1.section_headline= 'SIIA NÄITEKS LABEL PERSOONIDE KOHTA'
             //- h1.sub_section_headline= 'Või veel midagi'

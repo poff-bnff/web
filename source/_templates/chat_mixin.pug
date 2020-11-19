@@ -11,8 +11,8 @@ mixin chat(room_name, is_moderated_room=false)
         div(id='chat-message-template-' + room_name + room_suffix class='chat-message' style='display:none')
         div(id='chat-main-' + room_name + room_suffix class='chat-main')
             div(id='chat-sidebar-' + room_name + room_suffix  class='chat-sidebar')
-                h2(id='chat-room-name-'+ room_name + room_suffix)
-                ul(id='chat-user-list-'+ room_name + room_suffix)
+                //- h2(id='chat-room-name-'+ room_name + room_suffix)
+                //- ul(id='chat-user-list-'+ room_name + room_suffix)
             div(id='chat-messages-'+ room_name + room_suffix class='chat-messages' class='dark_1')
 
         div(id='chat-form-container-'+ room_name + room_suffix class='chat-form-container')
@@ -25,20 +25,20 @@ mixin chat(room_name, is_moderated_room=false)
 
     style.
         .chat-container.moderated-false {
-            padding: 30px;
-            background: #D3D3D3;
-            border: blue solid 5px;
+            //- padding: 0px;
+            //- background: #ffffff;
+            //- border: blue solid 5px;
         }
         .chat-container.moderated-true {
-            padding: 30px;
-            background: #D3D366;
-            border: red solid 5px;
+            padding: 0px;
+            background: #ffffff;
+            //- border: red solid 5px;
         }
         .poff-chat-message-meta {
             padding: 0 1em;
         }
         .poff-chat-button {
-            border-radius: 57% 43% 57% 43%;
+            border-radius: 3%;
         }
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
@@ -61,7 +61,6 @@ mixin chat(room_name, is_moderated_room=false)
 
             const chatFormElement = document.getElementById(['chat-form', room_name + room_suffix].join('-'))
             const chatMessagesElement = document.getElementById(['chat-messages', room_name + room_suffix].join('-'))
-            const roomNameElement = document.getElementById(['chat-room-name', room_name + room_suffix].join('-'))
             const userListElement = document.getElementById(['chat-user-list', room_name + room_suffix].join('-'))
             const messageInputElement = document.getElementById(['chat-message-input', room_name + room_suffix].join('-'))
             const messageTemplateElement = document.getElementById(['chat-message-template', room_name + room_suffix].join('-'))
@@ -69,7 +68,6 @@ mixin chat(room_name, is_moderated_room=false)
 
             console.log(chatMessagesElement)
             console.log(userListElement)
-            roomNameElement.innerText = room_name
 
 
             // Join chatroom
@@ -113,6 +111,7 @@ mixin chat(room_name, is_moderated_room=false)
                         outputMessage(message)
                     }
                 }
+                chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
             })
 
             // Message submit
@@ -170,7 +169,8 @@ mixin chat(room_name, is_moderated_room=false)
 
                 if(!message.is_moderated && !is_moderated_room){
                     const moderateButtonElement = document.createElement('button')
-                    moderateButtonElement.classList.add('poff-chat-button', 'poff-chat-button-moderate')
+                    //- moderateButtonElement.classList.add('poff-chat-button', 'poff-chat-button-moderate')
+                    moderateButtonElement.classList.add('poff-chat-button1', 'btn', 'btn_moderate')
                     moderateButtonElement.innerText = 'M'
                     moderateButtonElement.onclick = function() {moderateMessage(message.id); this.remove()}
                     messageMetaElement.appendChild(moderateButtonElement)
