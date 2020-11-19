@@ -1,7 +1,5 @@
 
-if (validToken) {
-    // fetchMyPasses()
-} else {
+if (!validToken) {
     window.open(`${location.origin}/${langpath}login`, '_self')
     saveUrl()
 }
@@ -16,19 +14,8 @@ async function fetchMyPasses() {
     });
     let profilePicture = await res.json();
 
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer " + localStorage.getItem('ACCESS_TOKEN'));
-
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
-
-    var response = await fetch("https://api.poff.ee/product", requestOptions)
-
-    var my_passes = await response.json();
-
+    var my_passes = userProfile.userpasses
+    console.log('passes ', my_passes)
     var my_passes_element = document.getElementById('my_passes')
     var ix = 0
     for (my_pass of my_passes) {
