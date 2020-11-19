@@ -116,7 +116,7 @@ block content
                     .str_info_meta_gi
                         .str_info_meta_item
 
-                            .str_info_meta_label.dark_semi= self.label.film.directorsNote
+                            .str_info_meta_label.dark_semi= self.label.industry.directorsNote
 
                     if typeof self.directorsNote !== 'undefined'
                         - var directors_note_md = self.directorsNote
@@ -133,31 +133,16 @@ block content
                             .str_info_label= self.label.film.titleOriginal
                             .str_info_value= self.titleOriginal
 
-                    if self.plannedPremiere
-                        .str_info_grid_3
-                            .str_info_label= self.label.industry.plannedPremiere
-                            .str_info_value= self.plannedPremiere
-
                     if self.completionDate
                         .str_info_grid_3
                             .str_info_label= self.label.industry.completionDate
                             .str_info_value
                                 +completionDateEET(self.completionDate)
 
-                    if self.numOfSeasons
+                    if self.plannedPremiere
                         .str_info_grid_3
-                            .str_info_label= self.label.industry.numOfSeasons
-                            .str_info_value= self.numOfSeasons
-
-                    if self.numOfEpisodes
-                        .str_info_grid_3
-                            .str_info_label= self.label.industry.numOfEpisodes
-                            .str_info_value= self.numOfEpisodes
-
-                    if self.episodeDuration
-                        .str_info_grid_3
-                            .str_info_label= self.label.industry.episodeDuration
-                            .str_info_value= self.episodeDuration
+                            .str_info_label= self.label.industry.plannedPremiere
+                            .str_info_value= self.plannedPremiere
 
                     if self.budget
                         .str_info_grid_3
@@ -176,6 +161,29 @@ block content
                             .str_info_label= self.label.industry.lookingFor
                             .str_info_value= self.lookingFor
 
+                    if self.country_focus && self.country_focus[0]
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.countryFocus
+                            -var country_focus_names = []
+                            each country in self.country_focus
+                                - country_focus_names.push(country.name)
+                            .str_info_value= country_focus_names.join(', ')
+
+                    if self.numOfSeasons
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.numOfSeasons
+                            .str_info_value= self.numOfSeasons
+
+                    if self.numOfEpisodes
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.numOfEpisodes
+                            .str_info_value= self.numOfEpisodes
+
+                    if self.episodeDuration
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.episodeDuration
+                            .str_info_value= self.episodeDuration
+
                     if self.attached_partners
                         .str_info_grid_3
                             .str_info_label= self.label.industry.partners
@@ -191,6 +199,16 @@ block content
                             each broadcaster in self.broadcasters
                                 - broadcaster_name.push(broadcaster.name)
                             .str_info_value= broadcaster_name.join(', ')
+
+                    //- if self.teamCredentials && self.teamCredentials[0]
+                    //-     .str_info_grid_3
+                    //-         .str_info_label= self.label.industry.teamCredentials
+                    //-         -var team_credentials_names = []
+                    //-         each role in self.teamCredentials
+                    //-             - country_focus_names.push(country.name)
+                    //-         .str_info_value= country_focus_names.join(', ')
+                    //-mida sellel on vaja kuvad
+
 
             section.project_runtime_box
 
@@ -218,13 +236,18 @@ block content
                     .str_info_grid_3
                         .str_info_label= self.label.industry.contactCompany
                         .str_info_value= self.contactCompany.name
-
-            if self.clipUrlCode
+            if self.clipUrl
                 section#trailer.f_trailer_box
                     .section_headline= self.label.film.trailer
-                    .embed-responsive.embed-responsive-16by9.m-0.p-0
-                        if trailer.videoCode
-                            +video(self.clipUrlCode)
+                    //- .embed-responsive.embed-responsive-16by9.m-0.p-0
+                    .videolevels_embed_container
+                        if self.clipUrlCode
+                            .embed-responsive.embed-responsive-16by9.m-0.p-0
+                                +video(self.clipUrlCode)
+
+
+
+
 
 
 
