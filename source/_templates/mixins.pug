@@ -7,9 +7,11 @@ mixin rmOldScreeningButtons()
             var buttons = document.querySelectorAll('[btn-type="screening"]')
             if (buttons.length) {
                 for (button of buttons) {
-                    var screeningDate = new Date(button.getAttribute('scrn-datetime'))
-                    if (currentDate > screeningDate) {
-                        button.style.display = 'none'
+                    if (button.getAttribute('scrn-loc') !== '16') {
+                        var screeningDate = new Date(button.getAttribute('scrn-datetime'))
+                        if (currentDate > screeningDate) {
+                            button.style.display = 'none'
+                        }
                     }
                 }
             }
