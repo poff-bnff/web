@@ -6,38 +6,65 @@ block content
 
     if self.data.industryevents
 
-        main.grid_films
+        if self.data.channels
+            main.grid_films
+                each channel in self.data.channels
+                    p.dark_1= (channel.name)
+                    p.dark_1= (channel.description)
+                    p.dark_1= (channel.embedCode)
 
-            each event in self.data.industryevents
-                if event.title && event.title.length > 1
-                    a.card_film(href=`/${lang_path}events/${event.slug}`)
-                        .container_frame_16_9
-                            if event.images && event.images[0]
-                                img.container_contents_16_9(src=`https://assets.poff.ee/img/${event.images[0].hash}${event.images[0].ext}` alt = event.title)
-                            else
-                                img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
-                        .card_film_title
-                            h1.film_title_locale.dark_1= event.title
 
-                        .card_film_info
-                            .str_info_grid_3
-                                if event.project_type && event.project_type.type
-                                    .str_info_value.dark_1.thin_300= event.project_type.type
+        h3.sub_section_headline#date_bf_2= ''
+        h3.sub_section_headline#date_bf_1= ''
 
-                                if event.startTime && typeof event.startTime === 'string'
-                                    .str_info_value.dark_1.thin_300
-                                        +localdate(event.startTime)
+        h3.section_headline#selected_date= ''
 
-                                if event.location && event.location.hall && event.location.hall.name
-                                    if event.location.hall && event.location.hall.name
-                                        span.dark_1.screening_hall= event.location.hall.name
-                                        if event.location.hall.cinema && event.location.hall.cinema.name
-                                            span.dark_1.screening_venue= ` ${event.location.hall.cinema.name}`
-                                            if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
-                                                span.dark_1.city= ` ${event.location.hall.cinema.town.name}`
+        h3.sub_section_headline#date_af_1= ''
+        h3.sub_section_headline#date_af_2= ''
 
-                                //- section.f_synopsis_box
-                                //-     if event.lead && typeof event.lead === 'string'
-                                //-         p.dark_1
-                                //-             +format(event.lead)
+        h3.sub_section_headline
+            button(onclick='toggleDate(`-`, 1)')= `<`
+            button(onclick='toggleDate(`+`, 1)')= `>`
+
+        - var channels = self.data.channels.map(ch => ch.id)
+
+        each channel in channels
+            if self.data.industryevents.filter(ev => ev.channel && ev.channel.id === channel).length
+                main.grid_films
+                    h3.sub_section_headline= `Room/Channel ${channel}`
+                    each event in self.data.industryevents.filter(ev => ev.channel && ev.channel.id === channel)
+                        if event.title && event.title.length > 1
+                            a.card_film(id=event.startTime href=`/${lang_path}events/${event.slug}`)
+                                .date#event_date(style='display: none;')= event.startTime
+                                .container_frame_16_9
+                                    if event.images && event.images[0]
+                                        img.container_contents_16_9(src=`https://assets.poff.ee/img/${event.images[0].hash}${event.images[0].ext}` alt = event.title)
+                                    else
+                                        img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                                .card_film_title
+                                    h1.film_title_locale.dark_1= event.title
+
+                                .card_film_info
+                                    .str_info_grid_3
+                                        if event.project_type && event.project_type.type
+                                            .str_info_value.dark_1.thin_300= event.project_type.type
+
+                                        if event.startTime && typeof event.startTime === 'string'
+                                            .str_info_value.dark_1.thin_300
+                                                +localdate(event.startTime)
+
+                                        if event.location && event.location.hall && event.location.hall.name
+                                            if event.location.hall && event.location.hall.name
+                                                span.dark_1.screening_hall= event.location.hall.name
+                                                if event.location.hall.cinema && event.location.hall.cinema.name
+                                                    span.dark_1.screening_venue= ` ${event.location.hall.cinema.name}`
+                                                    if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
+                                                        span.dark_1.city= ` ${event.location.hall.cinema.town.name}`
+                                        if event.videoUrl
+                                            h1.film_title_locale.dark_1= event.videoUrl
+
+                                        //- section.f_synopsis_box
+                                        //-     if event.lead && typeof event.lead === 'string'
+                                        //-         p.dark_1
+                                        //-             +format(event.lead)
 

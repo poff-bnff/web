@@ -13,6 +13,7 @@ const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA_SCREENINGS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Screening']
 const STRAPIDATA_FILM = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Film']
 const STRAPIDATA_FESTIVALS = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['Festival']
+const STRAPIDATA_FE = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['FestivalEdition']
 
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee';
 
@@ -23,7 +24,40 @@ for (const lang of allLanguages) {
 }
 
 function LangSelect(lang) {
+    // Screeningu kuupäeva check
+    Date.prototype.addHours = function(hours) {
+        var date = new Date(this.valueOf());
+        date.setHours(date.getHours() + hours);
+        return date;
+    }
+    let dateTimeUTC = new Date().addHours(2)
+    let dateNow = parseInt(`${dateTimeUTC.getFullYear()}${("0" + (dateTimeUTC.getMonth() + 1)).slice(-2)}${("0" + dateTimeUTC.getDate()).slice(-2)}`)
+
+    let festival_editions = STRAPIDATA_FE.map(edition => edition.id)
     let data = STRAPIDATA_SCREENINGS
+        .filter(scrn => {
+            let scrnDateTimeUTC = new Date(scrn.dateTime).addHours(2)
+            let scrnDate = parseInt(`${scrnDateTimeUTC.getFullYear()}${("0" + (scrnDateTimeUTC.getMonth() + 1)).slice(-2)}${("0" + scrnDateTimeUTC.getDate()).slice(-2)}`)
+            // Kui pole online screening e Strapis ID 16, siis tänasest vanemad screeningud välja
+            // Online screeningud eemaldatakse screeningu lõppemisel Eventivali kaudu
+            return scrn.location && scrn.location.id !== 16 ? dateNow <= scrnDate : true
+        })
+        // Näita lehe screeninguid, PÖFFi puhul kõikide lehtede screeninguid.
+        .filter(scrning => {
+            if (DOMAIN !== 'poff.ee') {
+                if (scrning.cassette && scrning.cassette.festival_editions) {
+
+                    cassette_fested_ids = scrning.cassette.festival_editions.map(ed => ed.id)
+                    return cassette_fested_ids.filter(cfestid => festival_editions.includes(cfestid))[0] !== undefined
+
+                } else {
+                    return false
+                }
+            } else {
+                return true
+            }
+        })
+
     processData(data, lang, CreateYAML);
     console.log(`Fetching ${DOMAIN} screenings ${lang} data`);
 }
@@ -34,27 +68,31 @@ function processData(data, lang, CreateYAML) {
     const CASSETTES = yaml.safeLoad(fs.readFileSync(cassettesPath, 'utf8'))
 
     let allData = []
-    if (STRAPIDATA_SCREENINGS.length) {
+    if (data.length) {
         let screeningsMissingCassetteIDs = []
+        let screeningsMissingLocationIDs = []
 
-        for (screeningIx in STRAPIDATA_SCREENINGS) {
-            let screening = STRAPIDATA_SCREENINGS[screeningIx]
+        for (screeningIx in data) {
+            let screening = data[screeningIx]
 
             if (screening.cassette) {
                 let cassetteFromYAML = CASSETTES.filter( (a) => { return screening.cassette.id === a.id})
                 if (cassetteFromYAML.length) {
-                    STRAPIDATA_SCREENINGS[screeningIx].cassette = JSON.parse(JSON.stringify(cassetteFromYAML[0]))
+                    data[screeningIx].cassette = JSON.parse(JSON.stringify(cassetteFromYAML[0]))
                 }
 
                 for (filmIx in screening.cassette.orderedFilms) {
                     let oneFilm = screening.cassette.orderedFilms[filmIx].film
-                    STRAPIDATA_SCREENINGS[screeningIx].cassette.orderedFilms[filmIx].film = STRAPIDATA_FILM.filter((film) => { return oneFilm.id === film.id })[0]
+                    data[screeningIx].cassette.orderedFilms[filmIx].film = STRAPIDATA_FILM.filter((film) => { return oneFilm.id === film.id })[0]
                 }
 
                 images(screening)
-                delete STRAPIDATA_SCREENINGS[screeningIx].cassette.orderedFilms
-
-                allData.push(STRAPIDATA_SCREENINGS[screeningIx])
+                delete data[screeningIx].cassette.orderedFilms
+                if (!(screening.location && screening.location.hall && screening.location.hall.cinema && screening.location.hall.cinema.town)) {
+                    screeningsMissingLocationIDs.push(screening.id)
+                } else {
+                    allData.push(data[screeningIx])
+                }
 
             } else {
                 screeningsMissingCassetteIDs.push(screening.id)
@@ -74,6 +112,9 @@ function processData(data, lang, CreateYAML) {
         if (screeningsMissingCassetteIDs.length) {
             console.log('Screenings with IDs ', screeningsMissingCassetteIDs.join(', '), ' missing cassette');
         }
+        if (screeningsMissingLocationIDs.length) {
+            console.log('ERROR! Screenings with IDs ', screeningsMissingLocationIDs.join(', '), ' missing location.hall.cinema.town');
+        }
 
     }
     CreateYAML(allData, lang);
@@ -91,6 +132,7 @@ function CreateYAML(screenings, lang) {
     // // console.log(process.cwd());
     let allDataYAML = yaml.safeDump(screeningsCopy, { 'noRefs': true, 'indent': '4' });
     fs.writeFileSync(SCREENINGS_YAML_PATH, allDataYAML, 'utf8');
+    console.log(`Fetched ${screeningsCopy.length} screenings`);
 
 
     // FOR SEARCH BELOW

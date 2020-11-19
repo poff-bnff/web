@@ -30,6 +30,9 @@ header
                     span.org_item
                         a(href='https://kino.poff.ee')
                             | PÖFFi veebikino
+                    span.org_item
+                        a(href='https://poff.elisastage.ee')
+                            | PÖFF @ ELISA STAGE
 
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
 
@@ -84,15 +87,21 @@ header
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
 
                                 else
-                                    if subMenuItem.customUrl && subMenuItem.name && typeof subMenuItem.name !== 'object'
+                                    if subMenuItem.customUrl && subMenuItem.customUrl.length && subMenuItem.name && typeof subMenuItem.name !== 'object'
                                         li
-                                            a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
+                                            if subMenuItem.customUrl.substring(0, 4) === 'http'
+                                                a(href= `${subMenuItem.customUrl}`)= `${subMenuItem.name}`
+                                            else
+                                                a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
 
                 //- Kui peamenüü itemil pole artiklit, pole alammenüüsid ja on customUrl
                 else
-                    if mainMenuItem.customUrl && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
+                    if mainMenuItem.customUrl && mainMenuItem.customUrl.length && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
                         li
-                            a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
+                            if mainMenuItem.customUrl.substring(0, 4) === 'http'
+                                a(href= `${mainMenuItem.customUrl}`)= `${mainMenuItem.name}`
+                            else
+                                a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
 
             li

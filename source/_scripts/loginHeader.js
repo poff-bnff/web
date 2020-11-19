@@ -6,7 +6,7 @@ var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 
 document.addEventListener('userProfileLoaded', function (e) {
     useUserData(userProfile)
-    console.log('loaded')
+    console.log('User profile is loaded')
 })
 
 
@@ -77,6 +77,11 @@ if (validToken) {
     } catch (error) {
     }
     loadUserProfileH()
+
+    try {
+        document.getElementById('login_cond').style.display = 'none'
+    } catch (error) {
+    }
 }
 
 if (!validToken) {
@@ -137,7 +142,6 @@ function useUserData(userProf){
         }catch(err){
             null
         }
-
     }
     try{
         buyerCheck()
@@ -148,6 +152,11 @@ function useUserData(userProf){
         loadMyFavFilms()
     }catch(err){
         // console.log(err)
+        null
+    }
+    try{
+        fetchMyPasses()
+    }catch(err){
         null
     }
 }
@@ -165,6 +174,6 @@ function logOut() {
     // console.log('LOGITUD VÄLJA')
     location.reload()
 
-    window.open(location.origin, '_self')
+    // window.open(location.origin, '_self')
 }
 

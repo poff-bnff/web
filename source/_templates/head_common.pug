@@ -8,28 +8,49 @@ script(src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js')
 if self.title
     //- Facebook
     meta(property='og:title' content= self.title)
+else if self.name
+    meta(property='og:title' content= self.name)
 
-    if self.media && self.media.image && self.media.image[0]
-        - var featuredImg = `https://assets.poff.ee/img/${self.media.image[0].hash}${self.media.image[0].ext}`
-    else if self.media && self.media.imageDefault && self.media.imageDefault[0]
-        - var featuredImg = `https://assets.poff.ee/img/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
-    else if self.cassetteCarouselPicsFilms && self.cassetteCarouselPicsFilms.length > 0
-        - var featuredImg = self.cassetteCarouselPicsFilms[0]
-    else if self.cassetteCarouselPicsCassette && self.cassetteCarouselPicsCassette.length > 0
-        - var featuredImg = self.cassetteCarouselPicsCassette[0]
-    else
-        - var featuredImg = `https://poff.ee/assets/img/static/placeholder_hd_1.jpg`
+if self.media && self.media.image && self.media.image[0]
+    - var featuredImg = `https://assets.poff.ee/img/${self.media.image[0].hash}${self.media.image[0].ext}`
+else if self.media && self.media.imageDefault && self.media.imageDefault[0]
+    - var featuredImg = `https://assets.poff.ee/img/${self.media.imageDefault[0].hash}${self.media.imageDefault[0].ext}`
+else if self.cassetteCarouselPicsFilms && self.cassetteCarouselPicsFilms.length > 0
+    - var featuredImg = self.cassetteCarouselPicsFilms[0]
+else if self.cassetteCarouselPicsCassette && self.cassetteCarouselPicsCassette.length > 0
+    - var featuredImg = self.cassetteCarouselPicsCassette[0]
+else if self.images && self.images[0]
+    - var featuredImg = `https://assets.poff.ee/img/${self.images[0].hash}${self.images[0].ext}`
+else
+    - var featuredImg = `https://poff.ee/assets/img/static/placeholder_hd_1.jpg`
 
-    meta(property='og:image' content= featuredImg)
+meta(property='og:image' content= featuredImg)
 
     //- Twitter
-    meta(name="twitter:card" content="summary_large_image")
-    meta(name="twitter:site" content="@TallinnBNFF")
+if self.title
     meta(name="twitter:text:title" content=self.title)
-    meta(name="twitter:image" content=featuredImg)
     meta(name="twitter:image:alt" content=self.title)
     meta(name="twitter:title" content=self.title)
-    if self.lead
-        meta(name="twitter:description" content=self.lead)
-    else if self.synopsis
-        meta(name="twitter:description" content=self.synopsis)
+else if self.name
+    meta(name="twitter:text:title" content=self.name)
+    meta(name="twitter:image:alt" content=self.name)
+    meta(name="twitter:title" content=self.name)
+meta(name="twitter:card" content="summary_large_image")
+meta(name="twitter:site" content="@TallinnBNFF")
+meta(name="twitter:image" content=featuredImg)
+
+if self.lead
+    meta(name="twitter:description" content=self.lead)
+else if self.synopsis
+    meta(name="twitter:description" content=self.synopsis)
+
+    //- Google analytics
+script.
+    (function(i,s,o,g,r,a,m){
+        i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+            a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;
+            a.src=g;m.parentNode.insertBefore(a,m)
+        })
+    (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-75123940-1', 'auto'); ga('send', 'pageview');

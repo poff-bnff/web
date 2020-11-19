@@ -809,7 +809,7 @@ IndustryPerson: &IndustryPerson
     profilePicAtInd: *StrapiMedia
     role_at_films: #(Component (repeatable))
         - *RoleAtFilm
-    emaliAtInd: (Email)
+    emailAtInd: (Email)
     phoneAtInd: (text)
     aboutText: (Rich text) #kas peaks olema kolmes keeles
     images: #(Component (repeatable))
@@ -949,6 +949,7 @@ IndustryEvent: &IndustryEvent
     titlePrivate: (text)
     startTime: (Datetime)
     title_en: (text)
+    videoUrl: (text)
     slug_en: (UID)
     images: #(Component (repeatable))
         - *StrapiMedia
