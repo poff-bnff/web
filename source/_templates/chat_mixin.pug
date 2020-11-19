@@ -171,7 +171,7 @@ mixin chat(room_name, is_moderated_room=false)
                 if(!message.is_moderated && !is_moderated_room){
                     const moderateButtonElement = document.createElement('button')
                     moderateButtonElement.classList.add('poff-chat-button', 'poff-chat-button-moderate')
-                    moderateButtonElement.innerText = '+'
+                    moderateButtonElement.innerText = 'M'
                     moderateButtonElement.onclick = function() {moderateMessage(message.id); this.remove()}
                     messageMetaElement.appendChild(moderateButtonElement)
                 }

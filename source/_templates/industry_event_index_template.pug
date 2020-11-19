@@ -1,5 +1,6 @@
 extends /_templates/layout.pug
 include /_templates/mixins.pug
+include /_templates/chat_mixin.pug
 
 
 
@@ -139,7 +140,9 @@ block content
                             +format(self.description)
 
             section.f_cred_box
+                +chat(self.title, false)
             section.f_runtime_box
+                +chat(self.title, true)
 
 
                     //- iframe(src='https://videolevels.com/embed/Pn3hnm2lVrU') style='position: absolute; top:0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform'
@@ -162,6 +165,11 @@ block content
 
             //-                     if indProj.project_types
             //-                         h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
+
+
+    //- section.grid_chat
+    //-     +chat(self.title, false)
+    //-     +chat(self.title, true)
 
     section
         if self.industry_people
