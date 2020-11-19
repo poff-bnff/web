@@ -98,6 +98,11 @@ for (const lang of languages) {
                     if (key === "slug") {
                         element.path = path.join(artType.slug, element[key])
                         element.articleType = artType.label
+
+                        // see patch siin on tehtud, kuna reklaamis kasutati poff.ee/lemmikfilm, aga meil on artiklid ju poff.ee/artikkel/lemmikfilm
+                        if (element[key] === 'lemmikfilm') {
+                            element.alias = 'lemmikfilm'
+                        }
                     }
                 }
                 // allData.push(element);
