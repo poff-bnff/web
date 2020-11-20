@@ -94,20 +94,20 @@ for (const s_cassette of STRAPIDATA_CASSETTE) {
     if (CASSETTELIMIT && cassette_counter++ > CASSETTELIMIT) {
         break
     }
-    if (
-        s_cassette.id === 14 ||
-        // s_cassette.id === 12 ||
-        s_cassette.id === 35 ||
-        s_cassette.id === 12 ||
-        s_cassette.id === 23
-        || s_cassette.id === 55
-        // || s_cassette.id === 1787
-        // || s_cassette.id === 48
-        ) {
+    // if (
+    //     s_cassette.id === 14 ||
+    //     // s_cassette.id === 12 ||
+    //     s_cassette.id === 35 ||
+    //     s_cassette.id === 12 ||
+    //     s_cassette.id === 23 ||
+    //     s_cassette.id === 55
+    //     // || s_cassette.id === 1787
+    //     // || s_cassette.id === 48
+    //     ) {
 
-    }else {
-        continue
-    }
+    // }else {
+    //     continue
+    // }
     timer.log(__filename, `CASSETTE ${s_cassette.id}`)
 
     const cassette_path = path.join(cassettes_path, s_cassette.slug_en)
@@ -160,8 +160,6 @@ function tokenize(arr, id, lang) {
 
 function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
     const cassette = {
-        title: s_cassette[`title_${lang}`] || null,
-        synopsis: distill_cassette_synopsis(s_cassette, lang),
         path: 'film/' + (s_cassette[`slug_${lang}`] || s_cassette.slug_en),
         data: {
             articles: `/_fetchdir/articles.${lang}.yaml`
@@ -171,14 +169,29 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         screenings: distill_cassette_screenings(s_cassette, s_screenings, lang),
     }
     add_search_to_cassette(cassette, lang)
+    add_carousel_pics_to_cassette(cassette)
+    add_synopsis_to_cassette(cassette)
+    add_title_to_cassette(cassette)
     return cassette
+
+    function add_synopsis_to_cassette(cassette) {
+        cassette.synopsis = cassette.films[0].synopsisBox.synopsis_md
+    }
+
+    function add_title_to_cassette(cassette) {
+        cassette.title = cassette.films[0].titleBox.title
+    }
+
+    function add_carousel_pics_to_cassette(cassette) {
+        cassette.cassetteCarouselPicsFilms = cassette.films[0].cassetteCarouselPicsFilms || []
+    }
 
     function add_search_to_cassette(cassette, lang) {
         cassette.search = {
             text: tokenize(
                 cassette.films.map(film => {
                     return [
-                            // film.synopsisBox.synopsis_md,
+                            film.synopsisBox.synopsis_md,
                             film.credentials.directorofphotography,
                             film.credentials.editor,
                             film.credentials.productioncompany,
@@ -204,20 +217,19 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
         }
     }
 
-    function distill_cassette_synopsis(s_cassette, lang) {
-        try {
-            return s_cassette.synopsis[lang] || s_cassette.synopsis.en || null
-        } catch (error) {
-            timer.log(__filename, `INFO: no synopsis for cassette ${s_cassette.id}, in ${lang}`)
-            return null
-        }
-    }
+    // function distill_cassette_synopsis(s_cassette, lang) {
+    //     try {
+    //         return s_cassette.synopsis[lang] || s_cassette.synopsis.en || null
+    //     } catch (error) {
+    //         timer.log(__filename, `INFO: no synopsis for cassette ${s_cassette.id}, in ${lang}`)
+    //         return null
+    //     }
+    // }
 
     function distill_cassette_films(s_cassette, s_films, lang) {
         return s_films.map(s_film => {
             timer.log(__filename, `${lang}, CASSETTE ${s_cassette.id}, FILM ${s_film.id}`)
 
-            // const synopsis_md = distill_film_synopsis(s_film, lang)
             const credentials = {
                 'Director of Photography': distill_credentials(s_film, 'Director of Photography'),
                 'Editor': distill_credentials(s_film, 'Editor'),
@@ -236,7 +248,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
             if (!presenters.length || !presenters[0].logos) {
                 presenters = remove_duplicates(distill_programmes_presenters(s_film, lang))
             }
-            s_cassette.cassetteCarouselPicsFilms = distill_film_stills(s_film)
+
             return {
                 id: s_film.id,
                 titleBox: {
@@ -272,7 +284,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                     programmeNames: distill_programmes(s_film, lang),
                     genres: distill_film_genres(s_film, lang),
                     keywords: distill_film_keywords(s_film, lang),
-                    // synopsis_md: synopsis_md
+                    synopsis_md: distill_film_synopsis(s_film, lang)
                 },
                 runtime: s_film.runtime || null,
                 directors: distill_directors(s_film, lang),
@@ -303,9 +315,12 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                 let text = distill_presented_by_text(s_film.presentedBy)
                 let logos = distill_logos(s_film.presentedBy)
                 if (logos.length) {
+                    let logosorter = function(a, b){
+                        return (a.logoColour < b.logoColour || a.logoWhite < b.logoWhite || a.logoBlack < b.logoBlack) ? -1 : 1;
+                    }
                     return {
                         text: text,
-                        logos: logos,
+                        logos: logos.sort(logosorter),
                     }
                 } else {
                     throw new Error()
@@ -392,7 +407,7 @@ function distill_strapi_cassette(s_cassette, s_films, s_screenings, lang) {
                         portrait: create_asset_path(s_person.picture),
                         name: s_person.firstNameLastName || null,
                         biography: distill_datapiece(s_person.biography, lang),
-                        filmography: distill_datapiece(s_person.filmography, lang)
+                        filmography: distill_datapiece(s_person.filmography, lang) || distill_datapiece(s_person.filmography, 'en')
                     }
                 })
             } catch (error) {

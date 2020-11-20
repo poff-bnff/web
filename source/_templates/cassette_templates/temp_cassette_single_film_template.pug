@@ -10,21 +10,21 @@ block content
         //- KARUSELL filmi piltidega
         section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
             ol.carousel-indicators
-                if film.cassetteCarouselPicsFilms.length
-                    each val, index in film.cassetteCarouselPicsFilms
+                if self.cassetteCarouselPicsFilms.length
+                    each val, index in self.cassetteCarouselPicsFilms
                         li(data-target='#carouselExampleIndicators' data-slide-to = index)
             .carousel-inner.container_frame_16_9
-                if film.cassetteCarouselPicsFilms.length
-                    each val, index in film.cassetteCarouselPicsFilms
+                if self.cassetteCarouselPicsFilms.length
+                    each val, index in self.cassetteCarouselPicsFilms
                         if index == 0
                             .carousel-item.active.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=val alt = film.titleBox.title)
+                                img.d-block.container_contents_16_9(src=val alt = self.title)
                         else
                             .carousel-item.container_contents_16_9
-                                img.d-block.container_contents_16_9(src=val alt = film.titleBox.title)
+                                img.d-block.container_contents_16_9(src=val alt = self.title)
                 else
                     .carousel-item.active.container_contents_16_9
-                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = film.titleBox.title)
+                        img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
 
 
             a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
@@ -53,7 +53,7 @@ block content
                 .premiere_type
                     p.premiere_type= film.premierTypes.join(', ')
 
-            h1.film_title_detailed= film.titleBox.title
+            h1.film_title_detailed= self.title
             .str_info_blokk_1
 
                 each p, locale in self.otherLocalePaths
@@ -184,7 +184,7 @@ block content
             .f_interactive_item
                 p#loggedOutFavouriteStatus= self.label.film.shortlistHelp
 
-                a.btn.btn_primary.notshortlisted(id=self.id+'_not_shortlisted', style= {display: 'none'} onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK')= self.label.film.addShortlist
+                a.btn.btn_secondary.notshortlisted(id=self.id+'_not_shortlisted', style= {display: 'none'} onclick=`saveFilmAsFavourite(${self.id})` role='button' target='_BLANK')= self.label.film.addShortlist
                 a.btn.btn_secondary.isshortlisted(id=self.id+'_is_shortlisted', style= {display: 'none'} onclick=`removeFilm(${self.id})` role='button' target='_BLANK')= self.label.film.removeShortlist
 
         section.f_dir_box
@@ -193,14 +193,14 @@ block content
                 //- f_dir_box on nyyd container directorite boxidele
                 //- Iga Directori kohta nyyd täita see f_dir_bio_box.
                 .f_dir_bio_box
-                    if director
+                    if director.portrait || director.biography || director.filmography
                         .dir_img
                             if director.portrait
                                 img.img_dir(src=director.portrait alt=director.name)
-                                if director.name
-                                    .str_info_grid_3
-                                        .str_info_label.text_left.dark_semi= self.label.film.director
-                                        .str_info_value.text_right.dark_1= director.name
+                            if director.name
+                                .str_info_grid_3
+                                    .str_info_label.text_left.dark_semi= self.label.film.director
+                                    .str_info_value.text_right.dark_1= director.name
 
                         .dir_bio.dark_1
                             if director.biography && typeof director.biography !== 'object'
@@ -285,26 +285,23 @@ block content
                             //-             else if presenter.logoWhite
                             //-                 img.presenter_logo_item(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
                             //- KUI ARTIKLIT POLE VÕI POLE SEE PUBLISHED, AGA ON CUSTOM URL
-                            if presenter.url
+                            
+                            - var presenterLogoImg = null
+
+                            if presenter.logoColour
+                                - presenterLogoImg = presenter.logoColour
+                            else if presenter.logoBlack
+                                - presenterLogoImg = presenter.logoBlack
+                            else if presenter.logoWhite
+                                - presenterLogoImg = presenter.logoWhite
+
+                            if presenter.url && presenterLogoImg
                                 .presenter_logo_item_container
                                     a(href= presenter.url).presenter_logo_item
-                                        if presenter.logoColour
-                                            img.presenter_logo_item(alt=presenter.name data-src=presenter.logoColour src=presenter.logoColour)
-                                        else if presenter.logoBlack
-                                            img.presenter_logo_item(alt=presenter.name data-src=presenter.logoBlack src=presenter.logoBlack)
-                                        else if presenter.logoWhite
-                                            img.presenter_logo_item(alt=presenter.name data-src=presenter.logoWhite src=presenter.logoWhite)
-                            //- LOGO ILMA LINGITA
-                            else
-                                if presenter.logoColour
-                                    .presenter_logo_item_container
-                                        img.presenter_logo_item(alt=presenter.name data-src=presenter.logoColour src=presenter.logoColour)
-                                else if presenter.logoBlack
-                                    .presenter_logo_item_container
-                                        img.presenter_logo_item(alt=presenter.name data-src=presenter.logoBlack src=presenter.logoBlack)
-                                else if presenter.logoWhite
-                                    .presenter_logo_item_container
-                                        img.presenter_logo_itemx(alt=presenter.name data-src=presenter.logoWhite src=presenter.logoWhite)
+                                        img.presenter_logo_item(alt=presenter.name data-src=presenterLogoImg src=presenterLogoImg)
+                            else if presenterLogoImg
+                                img.presenter_logo_item(alt=presenter.name data-src=presenterLogoImg src=presenterLogoImg)
+
 
         section.f_screenings_box
             div
@@ -418,7 +415,7 @@ block content
                                 a.btn.btn_secondary.active.notsavedscreening(id=screening.id+'_not_savedscreening', style= {display: 'none'} onclick=`saveScreeningAsFavourite(${screening.id}, "${screening.codeAndTitle}", "${screening.datetime}")` role='button' target='_BLANK')= self.label.film.addSavedScreening
                                 a.btn.btn_secondary.active.issavedscreening(id=screening.id+'_is_savedscreening', style= {display: 'none'} onclick=`removeScreening(${screening.id})` role='button' target='_BLANK')= self.label.film.removeSavedScreening
                                 if screening.ticketing_url
-                                    a.btn.btn_primary.active(scrn-datetime=screening.datetime btn-type='screening' href= `${screening.ticketing_url}` role='button' target='_blank')= self.label.button.screeningBuyTicket
+                                    a.btn.btn_primary.active(scrn-datetime=screening.datetime scrn-loc=screening.location.id btn-type='screening' href= `${screening.ticketing_url}` role='button' target='_blank')= self.label.button.screeningBuyTicket
                     +rmOldScreeningButtons
 
         .f_vialog_box
