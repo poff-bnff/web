@@ -163,6 +163,9 @@ fetch_data()
     echo 'Fetch strapiData.yaml from Strapi'
     node ./helpers/a_fetch.js
 
+    echo 'fetch persons from eventival'
+    node ./eventival/scripts/personsFromEventival.js
+
     printf '\n\n---------- Creating separate YAML files from strapiData.yaml ----------\n\n'
     echo 'fetch_articles_from_yaml'
     node ./helpers/fetch_articles_from_yaml.js
