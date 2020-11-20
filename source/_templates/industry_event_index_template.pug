@@ -142,9 +142,15 @@ block content
                             +format(self.description)
 
             section.f_cred_box
-                +chat(self.title, false)
+                if self.isLiveEvent === true
+                    +chat(self.title, false)
+                    p.dark_5
+                        | Leave your questions and comments here
             section.f_runtime_box
-                +chat(self.title, true)
+                if self.isLiveEvent === true
+                    +chat(self.title, true)
+                    p.dark_5
+                        | Moderated questions and comments
 
 
                     //- iframe(src='https://videolevels.com/embed/Pn3hnm2lVrU') style='position: absolute; top:0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform'
