@@ -10,12 +10,10 @@ block content
             console.log({userProfile})
 
             if (userProfile.industryAccessLevel) {
-                console.log('näitan')
                 document.getElementById('videolevels_video').style.display = 'block'
                 var videoFrameElement = document.getElementById('videoframe')
                 videoFrameElement.src = videoFrameElement.getAttribute('target_src')
             } else {
-                console.log('ei näita')
                 document.getElementById('videolevels_video').remove()
             }
         })
