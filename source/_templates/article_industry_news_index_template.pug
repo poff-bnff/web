@@ -89,51 +89,51 @@ block content
                         section.article_extra
 
 
-        //- section.team
-        //-     if self.industry_people
-        //-         h1.sub_section_headline= 'Industry people'
-        //-         .sub_team
-        //-             each indPerson in self.industry_people
-        //-                 if indPerson.slug
-        //-                     .person
-        //-                         .person_head
-        //-                             a(href=`/${indPerson.slug}`)
-        //-                                 if indPerson.profilePicAtInd
-        //-                                     - var indPersonPic = assetsDir + indPerson.profilePicAtInd.hash + indPerson.profilePicAtInd.ext
-        //-                                 else if indPerson.person.picture
-        //-                                     - var indPersonPic = assetsDir + indPerson.person.picture.hash + indPerson.person.picture.ext
-        //-                                 else
-        //-                                     - var indPersonPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
-        //-                                 img.person_img(src=indPersonPic alt=`${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`)
+        section.team
+            if self.industry_people
+                h1.sub_section_headline= 'Industry people'
+                .sub_team
+                    each indPerson in self.industry_people
+                        if indPerson.slug
+                            .person
+                                .person_head
+                                    a(href=`/${indPerson.slug}`)
+                                        if indPerson.profilePicAtInd
+                                            - var indPersonPic = assetsDir + indPerson.profilePicAtInd.hash + indPerson.profilePicAtInd.ext
+                                        else if indPerson.person.picture
+                                            - var indPersonPic = assetsDir + indPerson.person.picture.hash + indPerson.person.picture.ext
+                                        else
+                                            - var indPersonPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
+                                        img.person_img(src=indPersonPic alt=`${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`)
 
-        //-                                 .person_body.text_center
-        //-                                     h4.text_center= `${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`
-        //-                                     p
-        //-                                         if indPerson.role_at_films
-        //-                                             span= indPerson.role_at_films.map(role => role.roleName).join(', ')
-        //-                                             br
-        //-                                         if indPerson.industry_person_types
-        //-                                             span= indPerson.industry_person_types.map(type => type.type).join(', ')
+                                        .person_body.text_center
+                                            h4.text_center= `${indPerson.person.firstName ? indPerson.person.firstName : ''} ${indPerson.person.lastName ? indPerson.person.lastName : ''}`
+                                            p
+                                                if indPerson.role_at_films
+                                                    span= indPerson.role_at_films.map(role => role.roleName).join(', ')
+                                                    br
+                                                if indPerson.industry_person_types
+                                                    span= indPerson.industry_person_types.map(type => type.type).join(', ')
 
 
 
-        //-     if self.people
-        //-         h1.sub_section_headline= 'People'
-        //-         .sub_team
-        //-             each person in self.people
-        //-                 .person
-        //-                     .person_head
-        //-                         if person.picture
-        //-                             - var personPic = assetsDir + person.picture.hash + person.picture.ext
-        //-                         else
-        //-                             - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
-        //-                         img.person_img(src=personPic alt=`${person.firstName ? person.firstName : ''} ${person.lastName ? person.lastName : ''}`)
+            if self.people
+                h1.sub_section_headline= 'People'
+                .sub_team
+                    each person in self.people
+                        .person
+                            .person_head
+                                if person.picture
+                                    - var personPic = assetsDir + person.picture.hash + person.picture.ext
+                                else
+                                    - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
+                                img.person_img(src=personPic alt=`${person.firstName ? person.firstName : ''} ${person.lastName ? person.lastName : ''}`)
 
-        //-                         .person_body.text_center
-        //-                             h4.text_center= `${person.firstName ? person.firstName : ''} ${person.lastName ? person.lastName : ''}`
-        //-                             p
-        //-                                 if person.role_at_films
-        //-                                     span= person.role_at_films.map(role => role.roleName).join(', ')
-        //-                                     br
-        //-                                 if person.industry_person_types
-        //-                                     span= person.industry_person_types.map(type => type.type).join(', ')
+                                .person_body.text_center
+                                    h4.text_center= `${person.firstName ? person.firstName : ''} ${person.lastName ? person.lastName : ''}`
+                                    p
+                                        if person.role_at_films
+                                            span= person.role_at_films.map(role => role.roleName).join(', ')
+                                            br
+                                        if person.industry_person_types
+                                            span= person.industry_person_types.map(type => type.type).join(', ')
