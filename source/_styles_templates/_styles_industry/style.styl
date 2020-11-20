@@ -439,6 +439,8 @@ footer
                             "f_trailer_box"\
                             "f_synopsis_box"\
                             "f_cred_box"\
+                            "f_runtime_box"\
+                            "f_interactive_box"\
 
 .grid_cassette
     display grid
@@ -466,6 +468,13 @@ footer
                             "f_synopsis_box"\
                             "f_cred_box"
 
+.grid_chat
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+    grid-template-rows auto
+    padding 2rem
+    grid-gap 2rem
+
 
 .grid_films
     display: grid
@@ -483,7 +492,7 @@ footer
 
 .grid_search
     display: grid
-    grid-template-columns: 1fr
+    // grid-template-columns: 1fr
     grid-template-columns: auto
     grid-template-rows: auto
     padding-top 150px
@@ -1572,8 +1581,20 @@ option
     height 1.5rem
     width 1.5rem
     margin-right .5rem
-    margin-top -.2rem
+    margin-top -.6rem
     stroke rgba(255, 255, 255, .5)
+
+.svg_icon_small_primary
+    // height calc(1.5rem + 0.1vw)
+    // width calc(1.5rem + 0.1vw)
+    // margin-right .5rem
+    // margin-top -.7rem
+    // stroke rgba(255, 255, 255, .5)
+    height 1.5rem
+    width 1.5rem
+    margin-right .5rem
+    margin-top -.6rem
+    stroke clr_primary
 
 .small_1
     font-size 1rem
@@ -1645,9 +1666,27 @@ header
     display grid
     grid-template-columns 1fr
 
+.project_cred_box
+    grid-area f_cred_box
+    background-color bg_dark_3
+    padding-left calc(2rem + 1vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+    display grid
+    grid-template-columns 1fr
+
 .f_runtime_box
     grid-area f_runtime_box
     background-color white
+    padding-left calc(2rem + 1vw)
+    padding-right calc(2rem + 1vw)
+    padding-top calc(1rem + 1vw)
+    padding-bottom calc(1rem + 1vw)
+
+.project_runtime_box
+    grid-area f_runtime_box
+    background-color bg_dark_4
     padding-left calc(2rem + 1vw)
     padding-right calc(2rem + 1vw)
     padding-top calc(1rem + 1vw)
@@ -1673,7 +1712,7 @@ header
     align-content center
     justify-items center
     align-items center
-    background-color bg_dark_2
+    background-color white
 
 .f_interactive_item
     align center
@@ -1995,7 +2034,16 @@ p a
 .str_info_meta_label
   font-family font_h
   color white_semi
-  font-size 1.2rem
+  font-size 1rem
+  text-align right
+  line-height 1.618
+  font-weight 300
+
+.str_project_info_label,
+.str_project_info_meta_label
+  font-family font_h
+  color white_semi
+  font-size 1rem
   text-align right
   line-height 1.618
   font-weight 300
@@ -2003,7 +2051,14 @@ p a
 .str_info_value
   font-family font_h
   color white_96
-  font-size 1.2rem
+  font-size 1rem
+  text-align left
+  line-height 1.618
+
+.str_project_info_value
+  font-family font_h
+  color white_96
+  font-size 1rem
   text-align left
   line-height 1.618
 
@@ -2131,9 +2186,15 @@ a.btn_popover
     margin-bottom 2rem!important
 
 .grid_container_screening_time
-  display grid
-  grid-template-columns 2fr 1fr
-  padding-top .6rem
+    display grid
+    grid-template-columns 1fr 1fr
+    padding-top .7rem
+
+.grid_container_screening_time_2
+    display grid
+    grid-template-columns 1fr 1fr
+    padding-top 0rem
+    padding-bottom .3rem
 
 .container_screening_location
   margin-top 1rem
@@ -2209,6 +2270,55 @@ a.btn_popover
     color white_96
     border-radius 0
     text-transform uppercase
+
+.btn_moderate
+    background-color clr_primary
+    color white_96
+    border-radius 0
+    text-transform uppercase
+    padding-top 0rem
+    padding-bottom 0rem
+    text-align center
+    border-radius 50%
+
+.chat-messages
+    min-height 2rem
+    max-height 15rem
+    overflow-y scroll
+    padding-top 1rem
+
+.chat-container
+    padding 0
+    margin 0
+    background white
+    border .5px solid #bbbbbb
+    border-radius 5px
+    margin-top 1.2rem
+
+.poff-chat-message-time
+    font-family font_h
+    font-size 1rem
+    font-weight 400
+    line-height 1.2rem
+    color #666666
+
+.poff-chat-message-author
+    font-family font_h
+    font-size 1rem
+    font-weight 400
+    line-height 1.2rem
+    color #666666
+
+.poff-chat-message-text
+    font-family font_p
+    font-size 1rem
+    font-weight 300
+    line-height 1.2rem
+    color #dark_3
+
+
+
+
 
 .btn_trio
     position absolute
@@ -2368,6 +2478,12 @@ a.btn_popover
 .card_film_info
     padding-top: .5rem
     // padding-bottom: 1.618rem
+    padding-left: 1rem
+    padding-right: 1rem
+
+.card_project_info
+    padding-top: .5rem
+    padding-bottom: 1.618rem
     padding-left: 1rem
     padding-right: 1rem
 
@@ -2799,6 +2915,20 @@ a.btn_popover
     height 100%
     z-index 500
 
+.container_frame_ind_banner
+    position relative
+    height 0
+    overflow hidden
+    padding-top 23.4%
+    background white
+
+.container_contents_ind_banner
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
 
 /* MEDIA query: for large screens */
 @media screen and (min-width: 800px)
@@ -3361,8 +3491,10 @@ a.btn_popover
         text-align left
 
     .poffi_banner_box
-        padding-left 2rem
-        padding-right 2rem
+        padding-left 1rem
+        padding-right 1rem
+        padding-top 3rem
+        padding-bottom 3rem
 
 /* OVERRIDES */
 
@@ -3411,6 +3543,9 @@ a.btn_popover
 
 .dark_4
     color dark_4
+
+.dark_5
+    color dark_5
 
 .dark_semi
     color clr_dark_semi
