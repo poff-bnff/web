@@ -80,7 +80,7 @@ async function sendUserProfile() {
         { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
     ];
 
-    console.log("kasutaja profiil mida saadan ", userToSend);
+    // console.log("kasutaja profiil mida saadan ", userToSend);
 
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
@@ -106,13 +106,13 @@ async function sendUserProfile() {
 
 function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    console.log(file)
+    // console.log(file)
     // Check if the file is an image.
     if (!file.type.includes("image")) {
         // console.log("File is not an image.", file.type, file);
         error.innerHTML = "File is not an image.";
-    } else if (file.size / 1024 / 1024 > 2) {
-        error.innerHTML = "Image can be max 2MB, uploaded image was " + (file.size/1024/1024).toFixed(2) + "MB"
+    } else if (file.size / 1024 / 1024 > 5) {
+        error.innerHTML = "Image can be max 5MB, uploaded image was " + (file.size/1024/1024).toFixed(2) + "MB"
     } else {
         error.innerHTML = "";
         //näitab pildi eelvaadet
@@ -143,11 +143,11 @@ async function uploadPic() {
 
 
     //saadab pildi
-    console.log('name ', profile_pic_to_send.name)
+    // console.log('name ', profile_pic_to_send.name)
 
     const fileExt = profile_pic_to_send.name.split('.').pop()
     let contentType = 'image/' + fileExt
-    console.log(contentType)
+    // console.log(contentType)
 
     let requestOptions = {
         method: 'PUT',
