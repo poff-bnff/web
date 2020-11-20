@@ -3,22 +3,32 @@
     "id": 1,
     "article_et": null,
     "article_en": {
-      "id": 91,
+      "id": 93,
       "title_et": null,
-      "title_en": "Join the masterclass by Simon Weisse",
+      "title_en": "Join the masterclass by award-winning production designer Maria Djurkovic",
       "title_ru": null,
-      "created_by": 30,
-      "updated_by": 30,
-      "created_at": "2020-11-18T07:15:56.174Z",
-      "updated_at": "2020-11-18T08:11:00.841Z",
+      "created_by": {
+        "id": 30,
+        "firstname": "Egle",
+        "lastname": "Loor",
+        "username": null
+      },
+      "updated_by": {
+        "id": 30,
+        "firstname": "Egle",
+        "lastname": "Loor",
+        "username": null
+      },
+      "created_at": "2020-11-20T08:16:21.639Z",
+      "updated_at": "2020-11-20T08:32:19.829Z",
       "slug_et": null,
-      "slug_en": "news-masterclass-simon-weisse",
+      "slug_en": "join-the-masterclass-by-award-winning-production-designer-maria-djurkovic",
       "slug_ru": null,
-      "lead_et": null,
-      "lead_en": "On Wednesday, at 11:00 AM (EET)  it is time to tune in for the PÖFF Black Room masterclass by modeler and propmaker Simon Weisse.",
+      "lead_et": "",
+      "lead_en": null,
       "lead_ru": null,
       "contents_et": null,
-      "contents_en": "At the masterclass, you are invited to explore the visual language of cinema and creative facets of production design. Simon Weisse is the master of props and miniature models for cinema. We know his work from *The Grand Budapest Hotel* and *The Isle of Dogs*. He is currently the prop making supervisor for anticipated *Matrix 4*.\n\nCreated in collaboration with European Film Academy.\n\n [Watch the masterclass here](https://industry.poff.ee/events/p-oe-ff-black-room-masterclass-by-simon-weisse/) at 11:00 (EET). Also, you can follow it up later. ",
+      "contents_en": "On Friday at 11 (EET) tune in to explore the visual language of cinema and creative facets of production design in a masterclass of award-winning production designer Maria Djurkovic. Maria is known for The Imitation Game and Tinker Tailor Soldier Spy among many others.\n\n[Watch the masterclass here](https://industry.poff.ee/events/p-oe-ff-black-room-masterclass-by-maria-djurkovic/)",
       "contents_ru": null,
       "publishFrom": null,
       "publishUntil": null,
@@ -26,51 +36,83 @@
       "publish_en": true,
       "publish_ru": null,
       "media": {
-        "id": 316,
+        "id": 329,
         "clipUrlDefault": null,
         "clipUrl_et": null,
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "imageDefault": [
           {
-            "id": 3435,
-            "name": "ind.weisse.png",
+            "id": 3541,
+            "name": "black room maria.jpg",
             "alternativeText": "",
             "caption": "",
-            "width": 960,
-            "height": 480,
+            "width": 1920,
+            "height": 960,
             "formats": {
               "thumbnail": {
-                "ext": ".png",
-                "url": "/uploads/thumbnail_Image_from_i_OS_8decf58b38.png",
-                "hash": "thumbnail_Image_from_i_OS_8decf58b38",
-                "mime": "image/png",
-                "name": "thumbnail_Image from iOS.png",
+                "ext": ".jpg",
+                "url": "/uploads/thumbnail_black_room_maria_6ca584d1c5.jpg",
+                "hash": "thumbnail_black_room_maria_6ca584d1c5",
+                "mime": "image/jpeg",
+                "name": "thumbnail_black room maria.jpg",
                 "path": null,
-                "size": 69.7,
+                "size": 5.6,
                 "width": 245,
-                "height": 122
+                "height": 123
               }
             },
-            "hash": "Image_from_i_OS_8decf58b38",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 770.88,
-            "url": "/uploads/Image_from_i_OS_8decf58b38.png",
+            "hash": "black_room_maria_6ca584d1c5",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 537.21,
+            "url": "/uploads/black_room_maria_6ca584d1c5.jpg",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
             "created_by": 30,
             "updated_by": 30,
-            "created_at": "2020-11-18T07:18:09.284Z",
-            "updated_at": "2020-11-18T07:18:22.115Z"
+            "created_at": "2020-11-20T08:25:11.007Z",
+            "updated_at": "2020-11-20T08:25:11.599Z"
           }
         ],
         "image_et": [],
         "image_en": [],
         "image_ru": []
       },
-      "button": []
+      "button": [],
+      "article_types": [
+        {
+          "id": 2,
+          "name": "news",
+          "created_by": 6,
+          "updated_by": 1,
+          "created_at": "2020-08-18T13:49:51.616Z",
+          "updated_at": "2020-09-21T10:57:52.599Z",
+          "article": null,
+          "et": "Uudised",
+          "en": "News",
+          "ru": "Новости",
+          "slug_et": "uudis",
+          "slug_en": "news",
+          "slug_ru": "novost",
+          "name_et": "Uudis",
+          "name_en": "News",
+          "name_ru": "Новость",
+          "label_et": "Uudis",
+          "label_en": "News",
+          "label_ru": "Новость",
+          "Description": null
+        }
+      ],
+      "tag_premiere_types": [],
+      "programmes": [],
+      "tag_genres": [],
+      "tag_keywords": [],
+      "web_authors": [],
+      "organisations": [],
+      "industry_people": [],
+      "people": []
     },
     "article_ru": null,
     "created_by": {
@@ -86,6 +128,6 @@
       "username": null
     },
     "created_at": "2020-10-26T09:35:33.861Z",
-    "updated_at": "2020-11-18T07:41:19.493Z"
+    "updated_at": "2020-11-20T08:33:42.987Z"
   }
 ]

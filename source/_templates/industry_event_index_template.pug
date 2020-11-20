@@ -1,5 +1,6 @@
 extends /_templates/layout.pug
 include /_templates/mixins.pug
+include /_templates/chat_mixin.pug
 
 
 
@@ -11,6 +12,8 @@ block content
             if (userProfile.industryAccessLevel) {
                 console.log('näitan')
                 document.getElementById('videolevels_video').style.display = 'block'
+                var videoFrameElement = document.getElementById('videoframe')
+                videoFrameElement.src = videoFrameElement.getAttribute('target_src')
             } else {
                 console.log('ei näita')
                 document.getElementById('videolevels_video').remove()
@@ -139,8 +142,15 @@ block content
                             +format(self.description)
 
             section.f_cred_box
+                if self.isLiveEvent === true
+                    +chat(self.title, false)
+                    p.dark_5
+                        | Leave your questions and comments here
             section.f_runtime_box
-
+                if self.isLiveEvent === true
+                    +chat(self.title, true)
+                    p.dark_5
+                        | Moderated questions and comments
 
                     //- iframe(src='https://videolevels.com/embed/Pn3hnm2lVrU') style='position: absolute; top:0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform'
 
@@ -163,7 +173,12 @@ block content
             //-                     if indProj.project_types
             //-                         h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
 
-    section
+
+    //- section.grid_chat
+    //-     +chat(self.title, false)
+    //-     +chat(self.title, true)
+
+    section.f_interactive_box
         if self.industry_people
             //- h1.section_headline= 'SIIA NÄITEKS LABEL PERSOONIDE KOHTA'
             //- h1.sub_section_headline= 'Või veel midagi'

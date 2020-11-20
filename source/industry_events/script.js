@@ -25,12 +25,26 @@ function toggleDate (updown, days) {
     date_af_1.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+1);
     date_af_2.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+2);
 
-    toggleCards()
+    if (updown) {
+        toggleCards()
+    } else {
+        toggleCards(true)
+    }
 }
 
-let cards = document.querySelectorAll('[class="card_film"]')
+let cards = document.querySelectorAll('[element-type="event"]')
 
-function toggleCards() {
+// If called with parameter show === true, then always displayed
+function toggleCards(show) {
+    let display = ''
+    let show_all_button = document.getElementById('show_all_button')
+    if (show) {
+        display = 'grid'
+        show_all_button.style.display = 'none'
+    } else {
+        display = 'none'
+        show_all_button.style.display = 'grid'
+    }
     cards.forEach(card => {
 
         let eventStart = new Date(card.id)
@@ -38,7 +52,7 @@ function toggleCards() {
         if (eventDate === selectedDate.innerHTML) {
             card.style.display = "grid"
         } else {
-            card.style.display = "none"
+            card.style.display = display
         }
 
     })

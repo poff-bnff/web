@@ -854,40 +854,7 @@
           "en": "Press Releases",
           "ru": "Пресс-релизы"
         }
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 18,
-      "firstname": "Jaana",
-      "lastname": "Kalinistova",
-      "username": null
-    },
-    "created_at": "2020-09-18T07:20:56.188Z",
-    "updated_at": "2020-11-09T08:42:01.880Z",
-    "poffi_article": null,
-    "order": 8,
-    "name": {
-      "id": 3898,
-      "et": "Press & Pro",
-      "en": "Press & Pro",
-      "ru": "Пресса"
-    },
-    "customUrl": {
-      "id": 3899,
-      "et": "press-ja-pro",
-      "en": "press-and-pro",
-      "ru": "press-i-pro"
-    },
-    "subMenuItem": [
+      },
       {
         "id": 7,
         "namePrivate": "Pressiakrediteering",
@@ -971,88 +938,6 @@
           "et": "Välisajakirjanike vastuvõtt & ohutus",
           "en": "Safety requirements",
           "ru": "Прием иностранных журналистов и меры безопасности"
-        }
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 3,
-      "firstname": "Liis",
-      "lastname": "Käsper",
-      "username": null
-    },
-    "created_at": "2020-10-15T06:16:01.931Z",
-    "updated_at": "2020-11-10T17:11:37.074Z",
-    "poffi_article": null,
-    "order": 2,
-    "name": {
-      "id": 4090,
-      "et": "Filmid",
-      "en": "FIlms",
-      "ru": "Фильмы"
-    },
-    "customUrl": null,
-    "subMenuItem": [
-      {
-        "id": 21,
-        "namePrivate": "Programmid",
-        "poffi_article": null,
-        "customUrl": {
-          "id": 11971,
-          "et": "programmid",
-          "en": "programmes",
-          "ru": "programmy"
-        },
-        "order": 4,
-        "name": {
-          "id": 11970,
-          "et": "Programmid",
-          "en": "Programmes",
-          "ru": "Программы"
-        }
-      },
-      {
-        "id": 22,
-        "namePrivate": "Filmid",
-        "poffi_article": null,
-        "customUrl": {
-          "id": 11973,
-          "et": "otsi_filmi",
-          "en": "search_film",
-          "ru": "iskat_film"
-        },
-        "order": 1,
-        "name": {
-          "id": 11972,
-          "et": "Filmid",
-          "en": "Films",
-          "ru": "Фильмы"
-        }
-      },
-      {
-        "id": 23,
-        "namePrivate": "Seansid ehk ajakava",
-        "poffi_article": null,
-        "customUrl": {
-          "id": 18216,
-          "et": "otsi_seanssi",
-          "en": "search_screening",
-          "ru": "iskat_seanss"
-        },
-        "order": 2,
-        "name": {
-          "id": 18215,
-          "et": "Kava",
-          "en": "Timetable",
-          "ru": "Сеансы"
         }
       }
     ]
