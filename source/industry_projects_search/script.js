@@ -88,7 +88,7 @@ function toggleAll(exclude_selector_name) {
     }
 
     // kuva/peida kassette
-    let cards = document.querySelectorAll('[class="card_film"]')
+    let cards = document.querySelectorAll('[class="card_project"]')
     cards.forEach(card => {
         if (ids.includes(card.id)) {
             card.style.display = "grid"
