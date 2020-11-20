@@ -47,12 +47,12 @@ block content
             each project in self.data.industryprojects
 
                 if project.title && project.title.length > 1 && project.slug
-                    a.card_project(id=project.id href=`/${lang_path}${project.slug}`)
+                    a.card_project(id=project.id href=`/project/${lang_path}${project.slug}`)
                         .container_frame_16_9
                             if project.images && project.images.length
                                 img.container_contents_16_9(src=`https://assets.poff.ee/img/${project.images[0].hash}${project.images[0].ext}`)
                             else
-                                img.container_contents_16_9(src='/assets/img/static/industry_placeholder_dark4.jpg')
+                                img.container_contents_16_9(src='/assets/img/static/industry_placeholder_blob.png')
 
 
                         .card_film_title
