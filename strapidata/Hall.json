@@ -7,10 +7,64 @@
     "cinema": {
       "id": 14,
       "Name": null,
-      "town": 5,
+      "town": {
+        "id": 5,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:35.381Z",
+        "updated_at": "2020-09-10T08:14:00.678Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tartu",
+        "name_en": "Tartu",
+        "name_ru": "Tartu"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T11:00:13.305Z",
       "updated_at": "2020-10-07T11:00:13.332Z",
       "Name_et": null,
@@ -58,10 +112,64 @@
     "cinema": {
       "id": 15,
       "Name": null,
-      "town": 6,
+      "town": {
+        "id": 6,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "created_at": "2020-10-07T10:49:34.705Z",
+        "updated_at": "2020-10-07T10:49:34.722Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Narva",
+        "name_en": "Narva",
+        "name_ru": "Нарва"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T11:01:05.873Z",
       "updated_at": "2020-10-07T11:01:05.894Z",
       "Name_et": null,
@@ -109,10 +217,64 @@
     "cinema": {
       "id": 16,
       "Name": null,
-      "town": 7,
+      "town": {
+        "id": 7,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "created_at": "2020-10-07T10:51:07.187Z",
+        "updated_at": "2020-10-07T10:51:07.212Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Kohtla-Järve",
+        "name_en": "Kohtla-Järve",
+        "name_ru": "Кохтла-Ярве"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T11:01:17.756Z",
       "updated_at": "2020-10-07T11:01:17.773Z",
       "Name_et": null,
@@ -160,10 +322,64 @@
     "cinema": {
       "id": 10,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:26.079Z",
       "updated_at": "2020-10-07T10:47:26.104Z",
       "Name_et": null,
@@ -211,10 +427,64 @@
     "cinema": {
       "id": 10,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:26.079Z",
       "updated_at": "2020-10-07T10:47:26.104Z",
       "Name_et": null,
@@ -262,10 +532,64 @@
     "cinema": {
       "id": 17,
       "Name": null,
-      "town": 8,
+      "town": {
+        "id": 8,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "created_at": "2020-10-07T10:54:47.798Z",
+        "updated_at": "2020-10-07T10:54:47.820Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Jõhvi",
+        "name_en": "Jõhvi",
+        "name_ru": "Иыхви"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T11:01:31.714Z",
       "updated_at": "2020-10-07T11:01:31.730Z",
       "Name_et": null,
@@ -313,10 +637,64 @@
     "cinema": {
       "id": 10,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:26.079Z",
       "updated_at": "2020-10-07T10:47:26.104Z",
       "Name_et": null,
@@ -364,10 +742,64 @@
     "cinema": {
       "id": 10,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:26.079Z",
       "updated_at": "2020-10-07T10:47:26.104Z",
       "Name_et": null,
@@ -415,10 +847,64 @@
     "cinema": {
       "id": 18,
       "Name": null,
-      "town": 9,
+      "town": {
+        "id": 9,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 1,
+          "firstname": "Mihkel",
+          "lastname": "Putrinš",
+          "username": null
+        },
+        "updated_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "created_at": "2020-11-04T18:18:10.816Z",
+        "updated_at": "2020-11-05T10:46:26.450Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Eesti",
+        "name_en": "Estonia",
+        "name_ru": "Эстония"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 1,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 1,
+        "firstname": "Mihkel",
+        "lastname": "Putrinš",
+        "username": null
+      },
       "created_at": "2020-10-07T11:01:55.537Z",
       "updated_at": "2020-11-04T18:19:22.182Z",
       "Name_et": null,
@@ -459,6 +945,111 @@
     "namePrivate": "Virtuaalsaal"
   },
   {
+    "id": 22,
+    "Name": null,
+    "Number": null,
+    "NumberOfSeats": null,
+    "cinema": {
+      "id": 19,
+      "Name": null,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
+      "Address": null,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "created_at": "2020-11-16T19:20:33.923Z",
+      "updated_at": "2020-11-16T19:20:33.937Z",
+      "Name_et": null,
+      "Name_en": null,
+      "Name_ru": null,
+      "name_et": "Fotografiska",
+      "name_en": "Fotografiska",
+      "name_ru": "Fotografiska",
+      "address": "Telliskivi 60",
+      "aadress": null
+    },
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-16T19:21:21.828Z",
+    "updated_at": "2020-11-16T19:21:21.859Z",
+    "Floor": null,
+    "Name_et": null,
+    "Name_en": null,
+    "Name_ru": null,
+    "name_et": "Kinosaal",
+    "number": null,
+    "numberOfSeats": null,
+    "floor": null,
+    "name_en": "Cinema hall",
+    "name_ru": "Cinema hall",
+    "test": null,
+    "hallId": null,
+    "namePrivate": "Saal"
+  },
+  {
     "id": 8,
     "Name": null,
     "Number": null,
@@ -466,10 +1057,64 @@
     "cinema": {
       "id": 10,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:26.079Z",
       "updated_at": "2020-10-07T10:47:26.104Z",
       "Name_et": null,
@@ -517,10 +1162,64 @@
     "cinema": {
       "id": 10,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:26.079Z",
       "updated_at": "2020-10-07T10:47:26.104Z",
       "Name_et": null,
@@ -568,10 +1267,64 @@
     "cinema": {
       "id": 10,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:26.079Z",
       "updated_at": "2020-10-07T10:47:26.104Z",
       "Name_et": null,
@@ -619,10 +1372,64 @@
     "cinema": {
       "id": 11,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:46.487Z",
       "updated_at": "2020-10-07T10:47:46.956Z",
       "Name_et": null,
@@ -670,10 +1477,64 @@
     "cinema": {
       "id": 11,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:46.487Z",
       "updated_at": "2020-10-07T10:47:46.956Z",
       "Name_et": null,
@@ -721,10 +1582,64 @@
     "cinema": {
       "id": 11,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:46.487Z",
       "updated_at": "2020-10-07T10:47:46.956Z",
       "Name_et": null,
@@ -772,10 +1687,64 @@
     "cinema": {
       "id": 12,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:58.915Z",
       "updated_at": "2020-10-07T10:47:58.967Z",
       "Name_et": null,
@@ -823,10 +1792,64 @@
     "cinema": {
       "id": 12,
       "Name": null,
-      "town": 4,
+      "town": {
+        "id": 4,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:19.665Z",
+        "updated_at": "2020-09-10T08:13:52.605Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tallinn",
+        "name_en": "Tallinn",
+        "name_ru": "Tallinn"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:47:58.915Z",
       "updated_at": "2020-10-07T10:47:58.967Z",
       "Name_et": null,
@@ -874,10 +1897,64 @@
     "cinema": {
       "id": 13,
       "Name": null,
-      "town": 5,
+      "town": {
+        "id": 5,
+        "Name": null,
+        "country": {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "created_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-09-10T08:06:35.381Z",
+        "updated_at": "2020-09-10T08:14:00.678Z",
+        "Value_et": null,
+        "Value_en": null,
+        "Value_ru": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Tartu",
+        "name_en": "Tartu",
+        "name_ru": "Tartu"
+      },
       "Address": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-10-07T10:48:17.843Z",
       "updated_at": "2020-10-07T10:48:17.856Z",
       "Name_et": null,

@@ -146,7 +146,6 @@ function useUserData(userProf){
         }catch(err){
             null
         }
-
     }
     try{
         buyerCheck()
@@ -157,6 +156,11 @@ function useUserData(userProf){
         loadMyFavFilms()
     }catch(err){
         // console.log(err)
+        null
+    }
+    try{
+        fetchMyPasses()
+    }catch(err){
         null
     }
 }

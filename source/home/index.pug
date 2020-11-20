@@ -64,6 +64,8 @@ block content
         section.viiekas
             include /_templates/home_templates/viiekas_industry.pug
 
+        include /_templates/home_templates/industry_banner.pug
+
     else
         //- POFF
         - var whichTypesToDisplay = ['news']
@@ -75,9 +77,13 @@ block content
         section.trio_block
             include /_templates/home_templates/trio_block_poff.pug
 
-        include /_templates/home_templates/poff_banner.pug
+        include /_templates/home_templates/poff_banner_toetajad.pug
 
-        section.sponsorriba
+        //- include /_templates/home_templates/sponsorriba_1.pug
 
         section.viiekas
             include /_templates/home_templates/viiekas_poff.pug
+
+        include /_templates/home_templates/poff_banner_partnerid.pug
+
+        include /_templates/home_templates/poff_banner.pug

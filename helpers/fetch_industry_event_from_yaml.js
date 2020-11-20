@@ -77,15 +77,56 @@ for (const lang of allLanguages) {
             element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
 
             if (element.industry_people) {
-                element.industry_people = element.industry_people.map(people => {
+                let indPeopleFromYaml = element.industry_people.filter(per => per.person).map(people => {
                     return industryPersonsYaml.filter(a => a.id === people.id)[0]
                 })
+                if (typeof indPeopleFromYaml !== 'undefined') {
+                    element.industry_people = indPeopleFromYaml
+                } else {
+                    element.industry_people = []
+                }
             }
             if (element.industry_projects) {
                 element.industry_projects = element.industry_projects.map(projects => {
                     return industryProjectsYaml.filter(a => a.id === projects.id)[0] || projects
                 })
             }
+
+            element = rueten(element, lang);
+
+
+            // https://github.com/sebbo2002/ical-generator#readme
+            let eventstart = convert_to_UTC(element.startTime)
+            let eventend = new Date(eventstart)
+            if(element.durationTime) {
+                if (element.durationTime.split(':')[1] !== '00') {
+                    eventend.setUTCMinutes(eventend.getUTCMinutes()+parseInt(element.durationTime.split(':')[1]))
+                }
+                if (element.durationTime.split(':')[0] !== '00') {
+                    eventend.setUTCHours(eventend.getUTCHours()+parseInt(element.durationTime.split(':')[0]))
+                }
+                // console.log(eventend, eventend.getUTCMinutes(), parseInt(element.durationTime.substring(3, 5)));
+            }
+            element.calendar_data = escape(ical({
+                domain: 'industry.poff.ee',
+                prodId: '//industry.poff.ee//Industry@Tallinn//EN',
+                events: [
+                    {
+                        start: convert_to_UTC(element.startTime),
+                        end: eventend,
+                        timestamp: convert_to_UTC(element.startTime),
+                        description: element.description,
+                        location: element.location && element.location.hall && element.location.hall.cinema ? element.location.hall.cinema.name + `: http://industry.poff.ee/events/${element.slug}` : undefined,
+                        summary: element.title,
+                        organizer: {
+                            name: 'Industry@Tallinn & Baltic Event',
+                            email: 'industry@poff.ee'
+                        }
+                    }
+                ]
+            }).toString())
+
+            // console.log(eventstart, ' - ', eventend, ' durtime:', element.durationTime, element.durationTime ? element.durationTime.substring(3, 5) : 'none');
 
             const oneYaml = yaml.safeDump(rueten(element, lang), { 'noRefs': true, 'indent': '4' });
             const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
@@ -96,41 +137,57 @@ for (const lang of allLanguages) {
             fs.writeFileSync(yamlPath, oneYaml, 'utf8');
             fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industry_event_index_template.pug`)
 
-            element = rueten(element, lang);
-
-
-            // https://github.com/sebbo2002/ical-generator#readme
-            element.calendar_data = escape(ical({
-                domain: 'industry.poff.ee',
-                prodId: '//industry.poff.ee//Industry@Tallinn//EN',
-                events: [
-                    {
-                        start: convert_to_UTC(element.startTime),
-                        timestamp: convert_to_UTC(element.startTime),
-                        description: element.description,
-                        location: element.location.hall.cinema.name + `: http://industry.poff.ee/events/${element.slug}`,
-                        summary: element.title,
-                        organizer: {
-                            name: 'Industry@Tallinn & Baltic Event',
-                            email: 'industry@poff.ee'
-                        }
-                    }
-                ]
-            }).toString())
-
             allData.push(element)
         } else {
-            console.log(`ERROR! Industry event ID ${element.id} missing slug`);
+            if (lang === 'en' && DOMAIN === 'industry.poff.ee') {
+                console.log(`ERROR! Industry event ID ${element.id} missing slug`);
+            }
         }
     }
     let dataToYAML = []
-
+    let newDataToYAML = {eventsByDate: {}}
     if (allData.length) {
         dataToYAML = allData.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+
+        Date.prototype.addHours = function(hours) {
+            var date = new Date(this.valueOf());
+            date.setHours(date.getHours() + hours);
+            return date;
+        }
+
+        let allDates = dataToYAML.map(event => {
+            let dateTimeUTC = convert_to_UTC(event.startTime)
+            let dateTimeUTCtoEET = dateTimeUTC.addHours(2)
+            let date = dateTimeUTCtoEET.getFullYear()+'-'+(dateTimeUTCtoEET.getMonth()+1)+'-'+(dateTimeUTCtoEET.getDate())
+            if (event.channel) {
+                if(!newDataToYAML.eventsByDate[date]) {
+                    newDataToYAML.eventsByDate[date] = {}
+                }
+                if(!newDataToYAML.eventsByDate[date][`Channel_${event.channel.id}`]) {
+                    newDataToYAML.eventsByDate[date][`Channel_${event.channel.id}`] = []
+                }
+                newDataToYAML.eventsByDate[date][`Channel_${event.channel.id}`].push(event)
+            }
+            return date
+            // let dateNow = parseInt(`${dateTimeUTCtoEET.getFullYear()}${("0" + (dateTimeUTCtoEET.getMonth() + 1)).slice(-2)}${("0" + dateTimeUTCtoEET.getDate()).slice(-2)}`)
+            // console.log(event.startTime, ' - ', dateTimeUTC, ' - ', dateTimeUTCtoEET, ' - ', date);
+        });
+        let uniqueDates =  [...new Set(allDates)]
+        // console.log(newDataToYAML);
+
+        newDataToYAML.allDates = uniqueDates
         console.log(`${dataToYAML.length} Industry Events ready for building`);
+
+        console.log(`${newDataToYAML.length} Industry Events have channel assigned`);
+
     }
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
-    const yamlPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
+    const yamlPath = path.join(fetchDir, `industryeventscalendar.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+    // console.log(allData);
+
+    const allNewDataYAML = yaml.safeDump(newDataToYAML, { 'noRefs': true, 'indent': '4' });
+    const yamlNewPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
+    fs.writeFileSync(yamlNewPath, allNewDataYAML, 'utf8');
     // console.log(allData);
 }
