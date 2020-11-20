@@ -110,8 +110,13 @@ for (const lang of languages) {
 
                 let article_template = `/_templates/article_${artType.name}_index_template.pug`
 
-                if (DOMAIN === 'industry.poff.ee' && artType.name === 'news') {
+                let industryArtTypeNames = ['news', 'about', 'virtual_booth']
+                let artTypeName = ''
+                if (industryArtTypeNames.includes(artType.name)){
+                    artTypeName = artType.name
+                }
 
+                if (DOMAIN === 'industry.poff.ee' && artTypeName.length > 1 ) {
                     if (element.industry_people && element.industry_people.length) {
                         let indPeopleFromYaml = element.industry_people.filter(a => a.person).map(per => {
                             return industryPersonsYaml.filter(indp => indp.person.id === per.person)[0]
@@ -134,7 +139,7 @@ for (const lang of languages) {
                         }
                     }
 
-                    article_template  = `/_templates/article_industry_news_index_template.pug`
+                    article_template  = `/_templates/article_industry_${artType.name}_index_template.pug`
                 }
 
                 let yamlStr = yaml.safeDump(element, { 'indent': '4' });
