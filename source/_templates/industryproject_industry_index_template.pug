@@ -270,7 +270,7 @@ block content
                             section.f_dir_box
                                 .f_dir_bio_box
                                     .dir_img
-                                        img.img_dir(src=`https://assets.poff.ee/img/${company.organisation.logoColour.hash}${company.organisation.logoColour.ext}` alt = company.organisation.namePrivate)
+                                        img.img_comp(src=`https://assets.poff.ee/img/${company.organisation.logoColour.hash}${company.organisation.logoColour.ext}` alt = company.organisation.namePrivate)
                                         .str_info_grid_3
                                             .str_info_label.text_left.dark_semi= company.organisation.type
                                             .str_info_value.text_right.dark_1= company.organisation.namePrivate
@@ -282,7 +282,7 @@ block content
 
             if self.clipUrl
                 section#trailer.f_trailer_box
-                    .section_headline= self.label.film.trailer
+                    //- .section_headline= self.label.film.trailer
                     //- .embed-responsive.embed-responsive-16by9.m-0.p-0
                     .videolevels_embed_container
                         if self.clipUrlCode
