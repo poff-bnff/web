@@ -17,12 +17,13 @@ block content
                 .carousel-inner.container_frame_16_9
                     if self.images && self.images[0]
                         each val, index in self.images
-                            if index == 0
-                                .carousel-item.active.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
-                            else
-                                .carousel-item.container_contents_16_9
-                                    img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                            if val
+                                if index == 0
+                                    .carousel-item.active.container_contents_16_9
+                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                                else
+                                    .carousel-item.container_contents_16_9
+                                        img.d-block.container_contents_16_9(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
                     else
                         .carousel-item.active.container_contents_16_9
                             img.d-block.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
@@ -251,33 +252,34 @@ block content
                                         .dir_img
                                             if person.person.picture
                                                 img.img_dir(src=`https://assets.poff.ee/img/${person.person.picture.hash}${person.person.picture.ext}` alt = person.person.firstNameLastName)
-                                                if person.person.firstName || person.person.lastName
-                                                    .str_info_grid_3
-                                                        .str_info_label.text_left.dark_semi= person.role_at_film.roleNamePrivate
-                                                        .str_info_value.text_right.dark_1= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
+                                            if person.person.firstName || person.person.lastName
+                                                .str_info_grid_3
+                                                    .str_info_label.text_left.dark_semi= person.role_at_film.roleNamePrivate
+                                                    .str_info_value.text_right.dark_1= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
 
-                                                    .dir_bio.dark_1
-                                                        if person.person.biography
-                                                            p.dark_1= person.person.biography
-                                                        if person.person.filmography
-                                                            p.dark_1= person.person.filmography
-                                                        else if person.person.filmography && person.person.filmography.en
-                                                            p.dark_1= person.person.filmography.en
+                                        .dir_bio.dark_1
+                                            if person.person.biography
+                                                p.dark_1= person.person.biography
+                                            if person.person.filmography
+                                                p.dark_1= person.person.filmography
+                                            else if person.person.filmography && person.person.filmography.en
+                                                p.dark_1= person.person.filmography.en
 
                 if self.teamCredentials.roleCompany
                     each company in self.teamCredentials.roleCompany
-                        if company.organisation && company.organisation.type && company.organisation.namePrivate && company.organisation.logoColour
+                        if company.organisation && company.organisation.type && company.organisation.namePrivate
                             section.f_dir_box
                                 .f_dir_bio_box
                                     .dir_img
-                                        img.img_comp(src=`https://assets.poff.ee/img/${company.organisation.logoColour.hash}${company.organisation.logoColour.ext}` alt = company.organisation.namePrivate)
+                                        if company.organisation.logoColour
+                                            img.img_comp(src=`https://assets.poff.ee/img/${company.organisation.logoColour.hash}${company.organisation.logoColour.ext}` alt = company.organisation.namePrivate)
                                         .str_info_grid_3
                                             .str_info_label.text_left.dark_semi= company.organisation.type
                                             .str_info_value.text_right.dark_1= company.organisation.namePrivate
 
-                                        .dir_bio.dark_1
-                                            if company.organisation.description
-                                                p.dark_1= company.organisation.description
+                                    .dir_bio.dark_1
+                                        if company.organisation.description
+                                            p.dark_1= company.organisation.description
 
 
             if self.clipUrl
