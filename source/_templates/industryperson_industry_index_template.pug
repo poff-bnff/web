@@ -3,61 +3,120 @@ include /_templates/mixins.pug
 
 block content
 
-        if self.person && `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`.length > 5
-            section.team
-                h1.section_headline INDUSTRY PERSON
-                    h1.sub_section_headline= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
-                    .sub_team
+    if self.person && `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`.length > 5
+        section.grid_ind_person
+            section.f_dir_box
+                .f_dir_bio_box
+                    .dir_img
+                        - var assetsDir = 'https://assets.poff.ee/img/'
+                        if self.profilePicAtInd
+                            - var personPic = assetsDir + self.profilePicAtInd.hash + self.profilePicAtInd.ext
+                        else if self.person.picture
+                            - var personPic = assetsDir + self.person.picture.hash + self.person.picture.ext
+                        else
+                            - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
+                        img.person_img(src=personPic alt=`${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`)
+                        .ind_person_name= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
+                    .dir_bio.dark_1
+                        if typeof self.aboutText !== 'undefined'
+                            - var about_md = self.aboutText
+                            if typeof about_md === 'string'
+                                +format(about_md)
+                        //- p.dark_1= self.aboutText
+            section.f_cred_box.bg_dark_3
+                .str_info_blokk_cred
+                    .str_info_grid_3
+                        .str_info_label= self.label.industry.roleAtFilms
+                        .str_info_value= self.person.profession
 
-                        .person
-                            .person_head
-                                - var assetsDir = 'https://assets.poff.ee/img/'
-                                if self.profilePicAtInd
-                                    - var personPic = assetsDir + self.profilePicAtInd.hash + self.profilePicAtInd.ext
-                                else if self.person.picture
-                                    - var personPic = assetsDir + self.person.picture.hash + self.person.picture.ext
-                                else
-                                    - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
-                                img.person_img(src=personPic alt=`${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`)
 
 
-                                .person_body.text_center
-                                    h4.text_center= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
-                                    p
-                                        span= (self.roleAtJury)
-                                        br
-                                        span= (self.person.profession)
-                                        br
-                                        if self.emailAtTeam
-                                            span= (self.emailAtTeam)
-                                        else
-                                            span= (self.person.eMail)
-                                        br
-                                        if self.phoneAtInd
-                                            span= (self.phoneAtInd)
-                                        else
-                                            span= (self.person.phoneNr)
-                                        br
-                                        span= (self.website)
-                                        br
-                                        span= (self.aboutText)
-                                        br
-                                        br
-                                        if self.filmography
-                                            each filmography in self.filmography
-                                                if filmography
-                                                    if filmography.text
-                                                        span
-                                                            +format(filmography.text)
-                                                        span.dark_1 FILMS
-                                                        br
-                                                        each film in filmography.film
-                                                            if film.film.title
-                                                                span
-                                                                    a(href=film.foreignUrl)= `${film.film.title} (${film.film.year}) - `
-                                                                    a(href=film.trailerUrl) Trailer
-                                        br
 
-                                        if self.clipUrlCode
-                                            span
-                                                +video(self.clipUrlCode)
+        section.team
+                //- h1.section_headline INDUSTRY PERSON
+                h1.sub_section_headline= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
+                .sub_team
+
+                    .person
+                        .person_head
+                            - var assetsDir = 'https://assets.poff.ee/img/'
+                            if self.profilePicAtInd
+                                - var personPic = assetsDir + self.profilePicAtInd.hash + self.profilePicAtInd.ext
+                            else if self.person.picture
+                                - var personPic = assetsDir + self.person.picture.hash + self.person.picture.ext
+                            else
+                                - var personPic ='/assets/img/static/Hunt_Kriimsilm_2708d753de.jpg'
+                            img.person_img(src=personPic alt=`${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`)
+
+
+                            .person_body.text_center
+                                h4.text_center= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
+                                p
+                                    span= (self.roleAtJury)
+                                    br
+                                    span= (self.person.profession)
+                                    br
+                                    if self.emailAtTeam
+                                        span= (self.emailAtTeam)
+                                    else
+                                        span= (self.person.eMail)
+                                    br
+                                    if self.phoneAtInd
+                                        span= (self.phoneAtInd)
+                                    else
+                                        span= (self.person.phoneNr)
+                                    br
+                                    span= (self.website)
+                                    br
+                                    span= (self.aboutText)
+                                    br
+                                    br
+                                    if self.filmography
+                                        each filmography in self.filmography
+                                            if filmography
+                                                if filmography.text
+                                                    span
+                                                        +format(filmography.text)
+                                                    span.dark_1 FILMS
+                                                    br
+                                                    each film in filmography.film
+                                                        if film.film.title
+                                                            span
+                                                                a(href=film.foreignUrl)= `${film.film.title} (${film.film.year}) - `
+                                                                a(href=film.trailerUrl) Trailer
+                                    br
+
+                                    if self.clipUrlCode
+                                        span
+                                            +video(self.clipUrlCode)
+        //- KARUSELL Industry projekti piltidega
+        section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
+            ol.carousel-indicators
+                if self.images && self.images.length >1
+                    each index in self.images
+                        li(data-target='#carouselExampleIndicators' data-slide-to = index)
+            .carousel-inner.container_frame_16_9
+                if self.images && self.images[0]
+                    each val, index in self.images
+                        if index == 0
+                            .carousel-item.active.container_contents_16_9_person
+                                img.d-block.container_contents_16_9_person(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                        else
+                            .carousel-item.container_contents_16_9_person
+                                img.d-block.container_contents_16_9_person(src=`https://assets.poff.ee/img/${val.hash}${val.ext}` alt = self.title)
+                else
+                    .carousel-item.active.container_contents_16_9_person
+                        img.d-block.container_contents_16_9_person(src='/assets/img/static/placeholder_hd_1.jpg' alt = self.title)
+
+            if self.images && self.images.length >1
+                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                    // <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='15 18 9 12 15 6')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                    // <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    svg.svg_icon_prev_next(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        polyline(points='9 18 15 12 9 6')
+                    span.sr-only Next
+                    //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
