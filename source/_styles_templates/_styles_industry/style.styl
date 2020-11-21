@@ -591,6 +591,17 @@ footer
     align-items center
     align-content center
 
+.login_ind_ev
+    display grid
+    repeat(auto-fill, minmax(100px, 1fr))
+    grid-template-rows auto
+    grid-gap 1rem
+    justify-content center
+    justify-items center
+    align-items center
+    align-content center
+    padding 1rem
+
 .login_label
     font-family font_p
     padding-bottom 0
@@ -2973,6 +2984,21 @@ a.btn_popover
 
 
     .grid_ind_event
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_dir_box         f_dir_box         f_extra_box"\
+                            "f_title_box       f_trailer_box     f_trailer_box"\
+                            "f_synopsis_box    f_synopsis_box    f_cred_box"\
+                            "f_synopsis_box    f_synopsis_box    f_runtime_box"\
+                            "f_interactive_box f_interactive_box f_interactive_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_vialog_box      f_vialog_box      f_vialog_box"\
+                            "f_img_slider_box  f_img_slider_box  f_img_slider_box"\
+                            "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
+    .grid_ind_person
         display grid
         grid-template-columns 1fr 1fr 1fr
         grid-template-rows auto

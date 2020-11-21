@@ -91,6 +91,11 @@ block content
                             .str_info_value
                                 +screeningTime(self.startTime)
 
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.duration
+                            .str_info_value= self.durationTime
+                                //- +dur(self.durationTime)
+
             section#trailer.f_trailer_box
                 //- .section_headline= self.label.film.trailer
                 //- .embed-responsive.embed-responsive-16by9.m-0.p-0
@@ -99,7 +104,7 @@ block content
                         .videolevels_embed_contents#videolevels_video(style="display:none;")
                             +videoVl(self.videoUrl)
                     .default_16_9_container
-                    .login_16_9_container.login_some#login_cond
+                    .login_16_9_container.login_ind_ev#login_cond
                         h4.login_headline#loginMessage Login via Eventival
                         a(href=`/login` onclick = 'saveUrl()')
                             img.eventival_logo_img(alt='PÖFF' data-src='/assets/img/static/eventival_logo.svg' src='/assets/img/static/eventival_logo.svg')
