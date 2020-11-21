@@ -1,5 +1,195 @@
 [
   {
+    "id": 5,
+    "name": "menu",
+    "created_by": {
+      "id": 4,
+      "firstname": "Siim",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "updated_by": {
+      "id": 5,
+      "firstname": "Martin",
+      "lastname": "Pennaste",
+      "username": null
+    },
+    "created_at": "2020-09-08T09:07:05.424Z",
+    "updated_at": "2020-11-20T12:39:01.686Z",
+    "label": [
+      {
+        "id": 292,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Uudised",
+        "value_en": "News",
+        "value_ru": "Новости",
+        "name": "mainNews"
+      },
+      {
+        "id": 293,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Filmid",
+        "value_en": "Films",
+        "value_ru": "Филмы",
+        "name": "mainFilms"
+      },
+      {
+        "id": 294,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Info",
+        "value_en": "Info",
+        "value_ru": "Инфо",
+        "name": "mainInfo"
+      },
+      {
+        "id": 295,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Covid",
+        "value_en": "Covid",
+        "value_ru": "Covid",
+        "name": "mainCovid"
+      },
+      {
+        "id": 296,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Festival",
+        "value_en": "Festival",
+        "value_ru": "Фестиваль",
+        "name": "mainFestival"
+      },
+      {
+        "id": 297,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Meeskond",
+        "value_en": "Team",
+        "value_ru": "Команда",
+        "name": "mainTeam"
+      },
+      {
+        "id": 298,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Ajakava",
+        "value_en": "Schedule",
+        "value_ru": "Расписание",
+        "name": "mainSchedule"
+      },
+      {
+        "id": 299,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Logi sisse",
+        "value_en": "Login",
+        "value_ru": null,
+        "name": "mainLogin"
+      },
+      {
+        "id": 300,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Logi välja",
+        "value_en": "Log Out",
+        "value_ru": null,
+        "name": "mainLogout"
+      },
+      {
+        "id": 301,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Registreeri",
+        "value_en": "Sign Up",
+        "value_ru": null,
+        "name": "mainSignup"
+      },
+      {
+        "id": 302,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Tere",
+        "value_en": "Hello",
+        "value_ru": null,
+        "name": "mainGreeting"
+      },
+      {
+        "id": 303,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu profiil",
+        "value_en": "My profile",
+        "value_ru": null,
+        "name": "mainProfile"
+      },
+      {
+        "id": 350,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu filmide Shortlist",
+        "value_en": "My Films Shortlist",
+        "value_ru": "Films Shortlist",
+        "name": "mainShortlist"
+      },
+      {
+        "id": 351,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu PÖFF",
+        "value_en": "My BNFF",
+        "value_ru": "",
+        "name": "mainUserMenu"
+      },
+      {
+        "id": 378,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu passid",
+        "value_en": "My  passes",
+        "value_ru": null,
+        "name": "mainPass"
+      },
+      {
+        "id": 379,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Pood",
+        "value_en": "Shop",
+        "value_ru": null,
+        "name": "mainShop"
+      },
+      {
+        "id": 391,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu Kava",
+        "value_en": "My Screenigns Schedule",
+        "value_ru": "My Screenigns",
+        "name": "mainMyScreenings"
+      }
+    ]
+  },
+  {
     "id": 8,
     "name": "industry",
     "created_by": {
@@ -9,13 +199,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 3,
-      "firstname": "Liis",
-      "lastname": "Käsper",
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
       "username": null
     },
     "created_at": "2020-11-15T11:10:21.601Z",
-    "updated_at": "2020-11-19T05:39:21.705Z",
+    "updated_at": "2020-11-21T07:52:36.041Z",
     "label": [
       {
         "id": 392,
@@ -236,196 +426,46 @@
         "value_en": "Episode duration",
         "value_ru": null,
         "name": "episodeDuration"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "name": "menu",
-    "created_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-09-08T09:07:05.424Z",
-    "updated_at": "2020-11-19T07:49:43.408Z",
-    "label": [
-      {
-        "id": 292,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Uudised",
-        "value_en": "News",
-        "value_ru": "Новости",
-        "name": "mainNews"
       },
       {
-        "id": 293,
+        "id": 418,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Filmid",
-        "value_en": "Films",
-        "value_ru": "Филмы",
-        "name": "mainFilms"
+        "value_et": "Roll",
+        "value_en": "Role",
+        "value_ru": "Role",
+        "name": "industryPersonTypes"
       },
       {
-        "id": 294,
+        "id": 419,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Info",
-        "value_en": "Info",
-        "value_ru": "Инфо",
-        "name": "mainInfo"
+        "value_et": "Profession",
+        "value_en": "Profession",
+        "value_ru": "Profession",
+        "name": "roleAtFilms"
       },
       {
-        "id": 295,
+        "id": 420,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Covid",
-        "value_en": "Covid",
-        "value_ru": "Covid",
-        "name": "mainCovid"
+        "value_et": "Looking for",
+        "value_en": "Looking for",
+        "value_ru": "Looking for",
+        "name": "lookingFors"
       },
       {
-        "id": 296,
+        "id": 421,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Festival",
-        "value_en": "Festival",
-        "value_ru": "Фестиваль",
-        "name": "mainFestival"
-      },
-      {
-        "id": 297,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Meeskond",
-        "value_en": "Team",
-        "value_ru": "Команда",
-        "name": "mainTeam"
-      },
-      {
-        "id": 298,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Ajakava",
-        "value_en": "Schedule",
-        "value_ru": "Расписание",
-        "name": "mainSchedule"
-      },
-      {
-        "id": 299,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "logi sisse",
-        "value_en": "login",
+        "value_et": null,
+        "value_en": "Duration",
         "value_ru": null,
-        "name": "mainLogin"
-      },
-      {
-        "id": 300,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Logi välja",
-        "value_en": "Log Out",
-        "value_ru": null,
-        "name": "mainLogout"
-      },
-      {
-        "id": 301,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Registreeri",
-        "value_en": "Sign Up",
-        "value_ru": null,
-        "name": "mainSignup"
-      },
-      {
-        "id": 302,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Tere",
-        "value_en": "Hello",
-        "value_ru": null,
-        "name": "mainGreeting"
-      },
-      {
-        "id": 303,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu profiil",
-        "value_en": "My profile",
-        "value_ru": null,
-        "name": "mainProfile"
-      },
-      {
-        "id": 350,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu filmide Shortlist",
-        "value_en": "My Films Shortlist",
-        "value_ru": "Films Shortlist",
-        "name": "mainShortlist"
-      },
-      {
-        "id": 351,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu PÖFF",
-        "value_en": "My BNFF",
-        "value_ru": "",
-        "name": "mainUserMenu"
-      },
-      {
-        "id": 378,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu passid",
-        "value_en": "My  passes",
-        "value_ru": null,
-        "name": "mainPass"
-      },
-      {
-        "id": 379,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Pood",
-        "value_en": "Shop",
-        "value_ru": null,
-        "name": "mainShop"
-      },
-      {
-        "id": 391,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu Kava",
-        "value_en": "My Screenigns Schedule",
-        "value_ru": "My Screenigns",
-        "name": "mainMyScreenings"
+        "name": "duration"
       }
     ]
   },

@@ -213,12 +213,24 @@ header
 .main_menu_toggle:checked~.main_menu
     display flex
     width 100vw
-    height calc(100vh - 100px)
+    height calc(90vh - 100px)
     max-height 100vh
     width 100vw
+    margin-top 4rem
     overflow-y scroll
     -webkit-overflow-scrolling:touch
-    padding-bottom 2rem
+    // padding-bottom 6rem
+    // margin-bottom 6rem
+    // background-color bg_dark_4
+
+.main_menu_toggle:checked~.main_menu .user_menu
+    padding-bottom 6rem
+    // background-color bg_dark_4
+    // margin-bottom 6rem
+    // font-size 2rem
+
+// li.user_menu
+//     padding-bottom 6rem
 
 .main_menu_toggle_label
     position absolute
@@ -262,7 +274,7 @@ header
     display none
 
 .ul_kaks li
-    padding-right 15vw
+    padding-right 10vw
 
 
 .ul_kaks a
@@ -392,8 +404,8 @@ footer
 .logo
     margin 1rem
     padding 0
-    width 170px
-    max-width 170px
+    width 240px
+    max-width 240px
 
 .logo_img:hover,
 .logo_img:focus
@@ -409,6 +421,11 @@ footer
     width 100%
     border-radius 57% 43% 57% 43%
     object-fit cover
+
+.img_comp
+    width 100%
+    border-radius 1%
+    object-fit contain
 
 /* GRID: MAIN & SECTIONS */
 /* Grid-areas .grid_film - mobile 1 column */
@@ -578,6 +595,17 @@ footer
     justify-items center
     align-items center
     align-content center
+
+.login_ind_ev
+    display grid
+    repeat(auto-fill, minmax(100px, 1fr))
+    grid-template-rows auto
+    grid-gap 1rem
+    justify-content center
+    justify-items center
+    align-items center
+    align-content center
+    padding 1rem
 
 .login_label
     font-family font_p
@@ -1479,6 +1507,16 @@ row:nth-child(15) > .supporter_logos
     h4
         color dark_1
 
+.ind_person_name
+    font-family font_h
+    font-size 2rem
+    line-height 2.4rem
+    padding-top 1.618rem
+    padding-left 1rem
+    padding-right 1rem
+    text-align center
+    color dark_4
+
 .shop_item_body
     // background-color bg_dark_3
     min-height min-content
@@ -1806,7 +1844,7 @@ header
     height 0
     overflow hidden
     padding-top 56.25%
-    background bg_dark_4
+    background bg_dark_2
 
 .container_contents_16_9
     position absolute
@@ -1815,6 +1853,14 @@ header
     width 100%
     height 100%
     object-fit cover
+
+.container_contents_16_9_person
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    object-fit contain
 
 .container_frame_square
     position relative
@@ -2951,6 +2997,7 @@ a.btn_popover
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
+
     .grid_ind_event
         display grid
         grid-template-columns 1fr 1fr 1fr
@@ -2962,6 +3009,22 @@ a.btn_popover
                             "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
                             "f_vialog_box      f_vialog_box      f_vialog_box"\
+                            "f_img_slider_box  f_img_slider_box  f_img_slider_box"\
+                            "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
+    .grid_ind_person
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_dir_box         f_dir_box         f_cred_box"\
+                            "f_title_box       f_trailer_box     f_trailer_box"\
+                            "f_synopsis_box    f_synopsis_box    f_extra_box"\
+                            "f_synopsis_box    f_synopsis_box    f_runtime_box"\
+                            "f_interactive_box f_interactive_box f_interactive_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_vialog_box      f_vialog_box      f_vialog_box"\
+                            "f_img_slider_box  f_img_slider_box  f_img_slider_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
@@ -3019,13 +3082,6 @@ a.btn_popover
         //                     "f_trailer_box     f_trailer_box     f_trailer_box"\
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
-
-    // .grid_login
-    //     display grid
-    //     grid-template-columns 1fr 1fr 1fr
-    //     grid-template-rows auto
-    //     grid-gap 1rem
-    //     padding-top header_height
 
     .grid_ss
         display grid
@@ -3109,13 +3165,6 @@ a.btn_popover
         // height full_height
         height calc(100vh - 97px)
 
-    // .hero_image
-    //     width 100vw
-    //     // height full_height
-    //     height calc(100vh - 97px)
-    //     object-fit cover
-    //     z-index -1
-
     .trio_block
         padding-left 2rem
         padding-right 2rem
@@ -3148,18 +3197,6 @@ a.btn_popover
     .viieka_item:nth-child(4)
     .viieka_item:nth-child(5)
         grid-column span 2
-
-    // .hero_headline_box
-    //     position absolute
-    //     bottom 0
-    //     right 0
-    //     width 100vw
-    //     background rgba(10,0,3,.6)
-    //     // background rgba(236,0,140,.6)
-    //     // background rgba(90,0,60,.7)
-    //     // background-color clr_primary
-    //     text-align left
-    //     padding 2rem 2rem 2rem 2rem
 
     .calendar
         display grid
@@ -3266,18 +3303,6 @@ a.btn_popover
         height 1rem
         // padding-top .1rem
 
-    // .user_menu
-    //     color clr_primary
-        // // display inline-block
-        // position absolute
-        // // display inline
-        // top 0
-        // left 0
-        // padding-left 1rem
-        // padding-bottom 0
-        // margin-bottom 0
-        // height 1rem
-
     .lang_menu
         position fixed
         // display inline
@@ -3313,15 +3338,6 @@ a.btn_popover
         a
             text-decoration none
             // font-size 14px
-
-    // .grid_footer_row
-    //     grid-area footer
-    //     border-top 1px solid rgba(255,255,255,.1)
-    //     margin 0
-    //     padding 0
-    //     // padding 10vw
-    //     padding 3rem 5rem 3rem 5rem
-    //     background-color bg_dark_1
 
     .grid_footer_row
         grid-area footer
@@ -3578,8 +3594,8 @@ strong
 .padding_bottom_2
     padding-bottom 2rem
 
-.padding_bottom_5
-    padding-bottom 6rem
+// .padding_bottom_5
+//     padding-bottom 6rem
 
 .padding_top_0
     padding-top 0px
@@ -3619,5 +3635,9 @@ strong
 
 .user_menu
     color clr_primary
+
+// .user_menu.dropdown
+//     padding-bottom 6rem
+
 .p_1
     margin 1rem
