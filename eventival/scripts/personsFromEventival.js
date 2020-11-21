@@ -60,7 +60,7 @@ async function fetch_badges() {
 const foo = async () => {
     const eventivalXML = await fetch_badges()
     const badges = my_parser(eventivalXML, 'badges').badge
-    const persons = []
+    const persons = {}
     for (const badge of badges) {
         if (badge.cancelled === 1) {
             continue
@@ -91,27 +91,30 @@ const foo = async () => {
             console.log({E: 'cant get an id on person', badge})
             continue
         }
-        // persons[person_id] = persons[person_id] || {}
-        const person = {}
+        persons[person_id] = persons[person_id] || {}
+        const person = persons[person_id]
 
         person.id = person_id
         person.name = person.name || badge.person.name || null
         person.surname = person.surname || badge.person.surname || null
         person.login_email = person.login_email || badge.person.login_email || null
         person.photo_link = person.photo_link || badge.person.photo_link || null
-
-        persons.push(person)
         // process.exit(1)
     }
     // fs.writeFileSync(E_PERSONS_FILE, JSON.stringify(persons, null, 4))
     // console.log(util.inspect(persons, null, 10))
 
-    let sorter = function(a, b) {
-        return `${a.name ? a.name : ''} ${a.surname ? a.surname : ''}`.localeCompare(`${b.name ? b.name : ''} ${b.surname ? b.surname : ''}`)
+    let persons_array = []
+    for (const person in persons) {
+        persons_array.push(persons[person])
     }
 
-    fs.writeFileSync(E_PERSONS_FILE, yaml.safeDump(persons.sort(sorter), { 'noRefs': true, 'indent': '4' }))
-    console.log(persons.length, ' persons from eventival');
+    persons_array.sort((a, b) => {
+        return `${a.name ? a.name : ''} ${a.surname ? a.surname : ''}`.localeCompare(`${b.name ? b.name : ''} ${b.surname ? b.surname : ''}`, 'en')
+    })
+
+    console.log(persons_array.length, 'Eventival persons fetched.');
+    fs.writeFileSync(E_PERSONS_FILE, yaml.safeDump(persons_array, { 'noRefs': true, 'indent': '4' }))
 }
 
 function my_parser(eventivalXML, root_node) {
