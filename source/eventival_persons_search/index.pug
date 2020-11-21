@@ -9,10 +9,27 @@ block content
             h1.section_headline EVENTIVAL PERSONS
             h1.sub_section_headline PERSONS
             .sub_team
-                each person of self.data.eventivalpersons
+                each person of self.data.eventivalpersons.sort((p1, p2) => (p1.FirstName + ' ' + p1.LastName) < (p2.FirstName + ' ' + p2.LastName) ? -1 : 0)
                     .person(id=person.EV_ID)
                         .person_head
                             - var person_name = `${person.FirstName} ${person.LastName}`
                             img.person_img(src=person.ProfilePic alt=person_name)
                             .person_body.text_center
-                                h4.text_center= person_name
+                                h4= person_name
+                            .person_body
+                                if person.AttendeeType
+                                    p Attendee Type:
+                                        span(style = "padding:0 0 0 1em")= person.AttendeeType
+                                if person.Company
+                                    p Company:
+                                        span(style = "padding:0 0 0 1em")= person.Company
+                                if person.Role
+                                    p Role:
+                                        span(style = "padding:0 0 0 1em")= person.Role
+                                if person.Project
+                                    p Project:
+                                        span(style = "padding:0 0 0 1em")= person.Project
+                                if person.Country
+                                    p Country:
+                                        span(style = "padding:0 0 0 1em")= person.Country
+
