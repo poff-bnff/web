@@ -5862,6 +5862,473 @@
     "industry_projects": []
   },
   {
+    "id": 7,
+    "titlePrivate": "Music Meets Film: Production processes affecting creativity",
+    "startTime": "2020-11-26T12:00:00.000Z",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-11T16:13:03.323Z",
+    "updated_at": "2020-11-21T11:13:54.391Z",
+    "title_et": null,
+    "title_en": "Music Meets Film: Production processes affecting creativity",
+    "slug_en": "production-processes-affecting-creativity",
+    "duration": null,
+    "location": {
+      "id": 16,
+      "country": null,
+      "town": null,
+      "cinema": {
+        "id": 18,
+        "Name": null,
+        "town": {
+          "id": 9,
+          "Name": null,
+          "country": {
+            "id": 899,
+            "Code": null,
+            "created_by": null,
+            "updated_by": null,
+            "created_at": "2020-08-17T14:20:47.018Z",
+            "updated_at": "2020-08-17T14:20:47.018Z",
+            "Value_et": null,
+            "Value_en": null,
+            "Value_ru": null,
+            "Name_et": null,
+            "Name_en": null,
+            "Name_ru": null,
+            "code": "EE",
+            "name_et": "Eesti",
+            "name_en": "Estonia",
+            "name_ru": "Эстония"
+          },
+          "created_by": {
+            "id": 1,
+            "firstname": "Mihkel",
+            "lastname": "Putrinš",
+            "username": null
+          },
+          "updated_by": {
+            "id": 6,
+            "firstname": "Jaan",
+            "lastname": "Leppik",
+            "username": null
+          },
+          "created_at": "2020-11-04T18:18:10.816Z",
+          "updated_at": "2020-11-05T10:46:26.450Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        },
+        "Address": null,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 1,
+          "firstname": "Mihkel",
+          "lastname": "Putrinš",
+          "username": null
+        },
+        "created_at": "2020-10-07T11:01:55.537Z",
+        "updated_at": "2020-11-04T18:19:22.182Z",
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Online",
+        "name_en": "Online",
+        "name_ru": "Online",
+        "address": null,
+        "aadress": null
+      },
+      "hall": {
+        "id": 21,
+        "Name": null,
+        "Number": null,
+        "NumberOfSeats": null,
+        "cinema": {
+          "id": 18,
+          "Name": null,
+          "town": {
+            "id": 9,
+            "Name": null,
+            "country": {
+              "id": 899,
+              "Code": null,
+              "created_by": null,
+              "updated_by": null,
+              "created_at": "2020-08-17T14:20:47.018Z",
+              "updated_at": "2020-08-17T14:20:47.018Z",
+              "Value_et": null,
+              "Value_en": null,
+              "Value_ru": null,
+              "Name_et": null,
+              "Name_en": null,
+              "Name_ru": null,
+              "code": "EE",
+              "name_et": "Eesti",
+              "name_en": "Estonia",
+              "name_ru": "Эстония"
+            },
+            "created_by": {
+              "id": 1,
+              "firstname": "Mihkel",
+              "lastname": "Putrinš",
+              "username": null
+            },
+            "updated_by": {
+              "id": 6,
+              "firstname": "Jaan",
+              "lastname": "Leppik",
+              "username": null
+            },
+            "created_at": "2020-11-04T18:18:10.816Z",
+            "updated_at": "2020-11-05T10:46:26.450Z",
+            "Value_et": null,
+            "Value_en": null,
+            "Value_ru": null,
+            "Name_et": null,
+            "Name_en": null,
+            "Name_ru": null,
+            "name_et": "Eesti",
+            "name_en": "Estonia",
+            "name_ru": "Эстония"
+          },
+          "Address": null,
+          "created_by": {
+            "id": 6,
+            "firstname": "Jaan",
+            "lastname": "Leppik",
+            "username": null
+          },
+          "updated_by": {
+            "id": 1,
+            "firstname": "Mihkel",
+            "lastname": "Putrinš",
+            "username": null
+          },
+          "created_at": "2020-10-07T11:01:55.537Z",
+          "updated_at": "2020-11-04T18:19:22.182Z",
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "name_et": "Online",
+          "name_en": "Online",
+          "name_ru": "Online",
+          "address": null,
+          "aadress": null
+        },
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "created_at": "2020-10-07T11:21:05.728Z",
+        "updated_at": "2020-10-07T13:26:26.906Z",
+        "Floor": null,
+        "Name_et": null,
+        "Name_en": null,
+        "Name_ru": null,
+        "name_et": "Virtuaalsaal",
+        "number": null,
+        "numberOfSeats": null,
+        "floor": null,
+        "name_en": "Virtual hall",
+        "name_ru": "Виртуалный зал",
+        "test": null,
+        "hallId": "10170",
+        "namePrivate": "Virtuaalsaal"
+      },
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 3,
+        "firstname": "Liis",
+        "lastname": "Käsper",
+        "username": null
+      },
+      "created_at": "2020-10-07T13:38:27.316Z",
+      "updated_at": "2020-10-13T18:11:26.416Z",
+      "Name": null,
+      "Name_private": null,
+      "name": "ONLINE, Virtuaalsaal",
+      "remoteId": "10170"
+    },
+    "lead": "",
+    "description": "At what point does the production process in music and film start to dictate creative decisions to aid efficiency, workflow and formats? We will hear how composer and conductor Gavin Greenaway and film director Andrey Tarkovsky approach this challenge in their work.",
+    "project_type": null,
+    "publishFrom": null,
+    "publishUntil": null,
+    "publish": true,
+    "channel": {
+      "id": 2,
+      "namePrivate": "Pro Channel 2",
+      "embedCode": "https://www.youtube.com/watch?v=6vHNDbq2XsI",
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "created_at": "2020-11-11T18:42:45.633Z",
+      "updated_at": "2020-11-20T10:14:26.881Z",
+      "name": {
+        "id": 28401,
+        "et": "Pro Channel 2",
+        "en": "Pro Channel 2",
+        "ru": null
+      },
+      "description": {
+        "id": 8508,
+        "et": "teine kanal  ",
+        "en": "second channel",
+        "ru": null
+      }
+    },
+    "durationTime": "00:45:00",
+    "industry_project": null,
+    "videoUrl": null,
+    "isLiveEvent": null,
+    "isPublicEvent": null,
+    "images": [],
+    "industry_categories": [
+      {
+        "id": 1,
+        "name": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-08T18:30:28.513Z",
+        "updated_at": "2020-11-08T18:30:28.524Z"
+      }
+    ],
+    "industry_people": [
+      {
+        "id": 19,
+        "person": 143,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Michael Pärt (1977) is a Music Producer and Music Editor working on film scores since 2000. His most recent film projects were Margus Paju's ‘O2’ (2020), Justin Chadwick's ‘Tulip Fever’ (2017) and Tom Hooper's ‘The Danish Girl’ (2015). Additionally, he contributed to award-winning projects such as the ‘The Hobbit: An Unexpected Journey’, BAFTA-winning ‘LazyTown’ and the Grammy-nominated albums ‘Volta’ and ‘Vulnicura’ by Björk and ‘Neon Bible’ by Arcade Fire. His experience spans from music conception, spotting and production through to dubbing as well as soundtracks and temp scoring. \nAway from production he co-founded the Arvo Pärt Centre in Laulasmaa, Estonia. He chairs the foundation which aim is to preserve and research the creative heritage of his father’s legacy. The new building of the Arvo Pärt Centre was completed in 2018 and is open to the public since then. It is home to a chamber concert hall, a library, an archive, classrooms and exhibition space. \nMichael holds a master’s degree with distinction in “Composing for Film and TV” from Kingston University in London.\nHe is the curator for the Music Meets Film programme, a part of Industry@Tallinn & Baltic Event and PÖFF, since 2017.  ",
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T18:00:10.967Z",
+        "updated_at": "2020-11-15T15:22:09.169Z",
+        "clipUrl": null,
+        "website": "http://paert.com/",
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Michael Pärt ",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3259,
+          "name": "Michael P - Svea Ideon.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Michael_P_Svea_Ideon_55fcafa00f.jpg",
+              "hash": "thumbnail_Michael_P_Svea_Ideon_55fcafa00f",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Michael P - Svea Ideon.jpg",
+              "path": null,
+              "size": 4.31,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Michael_P_Svea_Ideon_55fcafa00f",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 64.31,
+          "url": "/uploads/Michael_P_Svea_Ideon_55fcafa00f.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-14T17:58:07.807Z",
+          "updated_at": "2020-11-14T17:58:08.004Z"
+        },
+        "images": []
+      },
+      {
+        "id": 6,
+        "person": 4092,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Gavin Greenaway is an Emmy® award-winning composer, conductor, recording artist and pianist with an extensive catalogue of achievements: conducting over 100 feature film and television soundtracks, composing for major entertainment and cultural events, producing and songwriting with chart-topping artists and the release of 2 solo piano classical albums.\nIn 1999 he was commissioned to compose the score to accompany the nightly firework display at DisneyWorld’s EPCOT, Florida. His composition Reflections of Earth has played there every night for 20 years, and won an Emmy® Award as part of ABC network’s Millennium coverage. \nGreenaway has fostered long-standing relationships with many of the world’s eminent music creators, conducting scores for the likes of Hans Zimmer, Gabriel Yared, James Newton Howard, John Powell, Marc Shaiman, Henry Jackman, Lorne Balfe, and Daft Punk, and albums for artists including Luciano Pavarotti, Josh Groban, Diana Krall, George Michael and Andrea Bocelli.",
+        "created_by": 35,
+        "updated_by": 6,
+        "created_at": "2020-11-14T15:58:49.538Z",
+        "updated_at": "2020-11-15T09:57:16.195Z",
+        "clipUrl": null,
+        "website": "https://www.gavingreenaway.com/",
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Gavin Greenaw",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3246,
+          "name": "Gavin Greenaway_Dita Vollmond-1098 - Svea Ideon.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472.jpg",
+              "hash": "thumbnail_Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Gavin Greenaway_Dita Vollmond-1098 - Svea Ideon.jpg",
+              "path": null,
+              "size": 6.35,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 59.69,
+          "url": "/uploads/Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-14T15:57:10.541Z",
+          "updated_at": "2020-11-14T15:57:10.667Z"
+        },
+        "images": []
+      },
+      {
+        "id": 15,
+        "person": 4101,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Andrey A. Tarkovsky was born in Moscow on 8th of August 1970. The son of Andrey Tarkovsky, he has devoted his life and career to the preservation and promotion of his father’s work. He lives between Florence, Paris and Moscow. President of the Andrey Tarkovsky International Institute, he is a documentary filmmaker. He made his debut in 1996 with the TV documentary Andrey Tarkovsky. The reminiscence, on the life of his father; he has also made documentary portraits of artists and directed musical performances. He works with Russian and Italian television and with the German record label ECM. In 2006 he won the first prize at the festival of short films in Sabaudia with Bastignano. He organises photographic exhibitions, concerts, retrospectives and the publication of books all over the world.",
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T17:35:27.030Z",
+        "updated_at": "2020-11-15T15:21:28.848Z",
+        "clipUrl": null,
+        "website": null,
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Andrey A. Tarkovsky",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3255,
+          "name": "Andrey Tarkovsky - Svea Ideon.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 500,
+          "height": 500,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d.jpg",
+              "hash": "thumbnail_Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Andrey Tarkovsky - Svea Ideon.jpg",
+              "path": null,
+              "size": 3.63,
+              "width": 156,
+              "height": 156
+            }
+          },
+          "hash": "Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 37,
+          "url": "/uploads/Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-14T17:32:49.060Z",
+          "updated_at": "2020-11-14T17:32:49.328Z"
+        },
+        "images": [
+          {
+            "id": 3256,
+            "name": "Andrey Tarkovsky & Alexej Naidenov DOP©Peter Crupenin - Svea Ideon.jpg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 960,
+            "height": 1185,
+            "formats": {
+              "thumbnail": {
+                "ext": ".jpg",
+                "url": "/uploads/thumbnail_Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9.jpg",
+                "hash": "thumbnail_Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9",
+                "mime": "image/jpeg",
+                "name": "thumbnail_Andrey Tarkovsky & Alexej Naidenov DOP©Peter Crupenin - Svea Ideon.jpg",
+                "path": null,
+                "size": 6.52,
+                "width": 126,
+                "height": 156
+              }
+            },
+            "hash": "Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 241.16,
+            "url": "/uploads/Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9.jpg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_by": 35,
+            "updated_by": 35,
+            "created_at": "2020-11-14T17:34:41.092Z",
+            "updated_at": "2020-11-14T17:34:41.514Z"
+          }
+        ]
+      }
+    ],
+    "industry_projects": []
+  },
+  {
     "id": 75,
     "titlePrivate": "BNS: DEADLINE Talk with Tom Grater and the Tallinn Black Nights Stars. Q & A for the public",
     "startTime": "2020-11-26T15:00:00.000Z",
@@ -7610,473 +8077,6 @@
       }
     ],
     "industry_people": [],
-    "industry_projects": []
-  },
-  {
-    "id": 7,
-    "titlePrivate": "Music Meets Film: Production processes affecting creativity",
-    "startTime": "2020-11-26T12:00:00.000Z",
-    "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 28,
-      "firstname": "Saara",
-      "lastname": "Huimerind",
-      "username": null
-    },
-    "created_at": "2020-11-11T16:13:03.323Z",
-    "updated_at": "2020-11-20T18:00:16.105Z",
-    "title_et": null,
-    "title_en": "Music Meets Film: Production processes affecting creativity",
-    "slug_en": "production-processes-affecting-creativity",
-    "duration": null,
-    "location": {
-      "id": 16,
-      "country": null,
-      "town": null,
-      "cinema": {
-        "id": 18,
-        "Name": null,
-        "town": {
-          "id": 9,
-          "Name": null,
-          "country": {
-            "id": 899,
-            "Code": null,
-            "created_by": null,
-            "updated_by": null,
-            "created_at": "2020-08-17T14:20:47.018Z",
-            "updated_at": "2020-08-17T14:20:47.018Z",
-            "Value_et": null,
-            "Value_en": null,
-            "Value_ru": null,
-            "Name_et": null,
-            "Name_en": null,
-            "Name_ru": null,
-            "code": "EE",
-            "name_et": "Eesti",
-            "name_en": "Estonia",
-            "name_ru": "Эстония"
-          },
-          "created_by": {
-            "id": 1,
-            "firstname": "Mihkel",
-            "lastname": "Putrinš",
-            "username": null
-          },
-          "updated_by": {
-            "id": 6,
-            "firstname": "Jaan",
-            "lastname": "Leppik",
-            "username": null
-          },
-          "created_at": "2020-11-04T18:18:10.816Z",
-          "updated_at": "2020-11-05T10:46:26.450Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "name_et": "Eesti",
-          "name_en": "Estonia",
-          "name_ru": "Эстония"
-        },
-        "Address": null,
-        "created_by": {
-          "id": 6,
-          "firstname": "Jaan",
-          "lastname": "Leppik",
-          "username": null
-        },
-        "updated_by": {
-          "id": 1,
-          "firstname": "Mihkel",
-          "lastname": "Putrinš",
-          "username": null
-        },
-        "created_at": "2020-10-07T11:01:55.537Z",
-        "updated_at": "2020-11-04T18:19:22.182Z",
-        "Name_et": null,
-        "Name_en": null,
-        "Name_ru": null,
-        "name_et": "Online",
-        "name_en": "Online",
-        "name_ru": "Online",
-        "address": null,
-        "aadress": null
-      },
-      "hall": {
-        "id": 21,
-        "Name": null,
-        "Number": null,
-        "NumberOfSeats": null,
-        "cinema": {
-          "id": 18,
-          "Name": null,
-          "town": {
-            "id": 9,
-            "Name": null,
-            "country": {
-              "id": 899,
-              "Code": null,
-              "created_by": null,
-              "updated_by": null,
-              "created_at": "2020-08-17T14:20:47.018Z",
-              "updated_at": "2020-08-17T14:20:47.018Z",
-              "Value_et": null,
-              "Value_en": null,
-              "Value_ru": null,
-              "Name_et": null,
-              "Name_en": null,
-              "Name_ru": null,
-              "code": "EE",
-              "name_et": "Eesti",
-              "name_en": "Estonia",
-              "name_ru": "Эстония"
-            },
-            "created_by": {
-              "id": 1,
-              "firstname": "Mihkel",
-              "lastname": "Putrinš",
-              "username": null
-            },
-            "updated_by": {
-              "id": 6,
-              "firstname": "Jaan",
-              "lastname": "Leppik",
-              "username": null
-            },
-            "created_at": "2020-11-04T18:18:10.816Z",
-            "updated_at": "2020-11-05T10:46:26.450Z",
-            "Value_et": null,
-            "Value_en": null,
-            "Value_ru": null,
-            "Name_et": null,
-            "Name_en": null,
-            "Name_ru": null,
-            "name_et": "Eesti",
-            "name_en": "Estonia",
-            "name_ru": "Эстония"
-          },
-          "Address": null,
-          "created_by": {
-            "id": 6,
-            "firstname": "Jaan",
-            "lastname": "Leppik",
-            "username": null
-          },
-          "updated_by": {
-            "id": 1,
-            "firstname": "Mihkel",
-            "lastname": "Putrinš",
-            "username": null
-          },
-          "created_at": "2020-10-07T11:01:55.537Z",
-          "updated_at": "2020-11-04T18:19:22.182Z",
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "name_et": "Online",
-          "name_en": "Online",
-          "name_ru": "Online",
-          "address": null,
-          "aadress": null
-        },
-        "created_by": {
-          "id": 6,
-          "firstname": "Jaan",
-          "lastname": "Leppik",
-          "username": null
-        },
-        "updated_by": {
-          "id": 6,
-          "firstname": "Jaan",
-          "lastname": "Leppik",
-          "username": null
-        },
-        "created_at": "2020-10-07T11:21:05.728Z",
-        "updated_at": "2020-10-07T13:26:26.906Z",
-        "Floor": null,
-        "Name_et": null,
-        "Name_en": null,
-        "Name_ru": null,
-        "name_et": "Virtuaalsaal",
-        "number": null,
-        "numberOfSeats": null,
-        "floor": null,
-        "name_en": "Virtual hall",
-        "name_ru": "Виртуалный зал",
-        "test": null,
-        "hallId": "10170",
-        "namePrivate": "Virtuaalsaal"
-      },
-      "created_by": {
-        "id": 6,
-        "firstname": "Jaan",
-        "lastname": "Leppik",
-        "username": null
-      },
-      "updated_by": {
-        "id": 3,
-        "firstname": "Liis",
-        "lastname": "Käsper",
-        "username": null
-      },
-      "created_at": "2020-10-07T13:38:27.316Z",
-      "updated_at": "2020-10-13T18:11:26.416Z",
-      "Name": null,
-      "Name_private": null,
-      "name": "ONLINE, Virtuaalsaal",
-      "remoteId": "10170"
-    },
-    "lead": "",
-    "description": "At what point does the production process in music and film start to dictate creative decisions to aid efficiency, workflow and formats? We will hear how composer and conductor Gavin Greenaway and film director Andrey Tarkovsky approach this challenge in their work.",
-    "project_type": null,
-    "publishFrom": null,
-    "publishUntil": null,
-    "publish": true,
-    "channel": {
-      "id": 2,
-      "namePrivate": "Pro Channel 2",
-      "embedCode": "https://www.youtube.com/watch?v=6vHNDbq2XsI",
-      "created_by": {
-        "id": 6,
-        "firstname": "Jaan",
-        "lastname": "Leppik",
-        "username": null
-      },
-      "updated_by": {
-        "id": 6,
-        "firstname": "Jaan",
-        "lastname": "Leppik",
-        "username": null
-      },
-      "created_at": "2020-11-11T18:42:45.633Z",
-      "updated_at": "2020-11-20T10:14:26.881Z",
-      "name": {
-        "id": 28401,
-        "et": "Pro Channel 2",
-        "en": "Pro Channel 2",
-        "ru": null
-      },
-      "description": {
-        "id": 8508,
-        "et": "teine kanal  ",
-        "en": "second channel",
-        "ru": null
-      }
-    },
-    "durationTime": "00:45:00",
-    "industry_project": null,
-    "videoUrl": null,
-    "isLiveEvent": null,
-    "isPublicEvent": null,
-    "images": [],
-    "industry_categories": [
-      {
-        "id": 1,
-        "name": "Music Meets Film",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-08T18:30:28.513Z",
-        "updated_at": "2020-11-08T18:30:28.524Z"
-      }
-    ],
-    "industry_people": [
-      {
-        "id": 19,
-        "person": 143,
-        "emailAtInd": null,
-        "phoneAtInd": null,
-        "aboutText": "Michael Pärt (1977) is a Music Producer and Music Editor working on film scores since 2000. His most recent film projects were Margus Paju's ‘O2’ (2020), Justin Chadwick's ‘Tulip Fever’ (2017) and Tom Hooper's ‘The Danish Girl’ (2015). Additionally, he contributed to award-winning projects such as the ‘The Hobbit: An Unexpected Journey’, BAFTA-winning ‘LazyTown’ and the Grammy-nominated albums ‘Volta’ and ‘Vulnicura’ by Björk and ‘Neon Bible’ by Arcade Fire. His experience spans from music conception, spotting and production through to dubbing as well as soundtracks and temp scoring. \nAway from production he co-founded the Arvo Pärt Centre in Laulasmaa, Estonia. He chairs the foundation which aim is to preserve and research the creative heritage of his father’s legacy. The new building of the Arvo Pärt Centre was completed in 2018 and is open to the public since then. It is home to a chamber concert hall, a library, an archive, classrooms and exhibition space. \nMichael holds a master’s degree with distinction in “Composing for Film and TV” from Kingston University in London.\nHe is the curator for the Music Meets Film programme, a part of Industry@Tallinn & Baltic Event and PÖFF, since 2017.  ",
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-14T18:00:10.967Z",
-        "updated_at": "2020-11-15T15:22:09.169Z",
-        "clipUrl": null,
-        "website": "http://paert.com/",
-        "lookingFor": null,
-        "contactAtEvent": null,
-        "fullNamePrivate": "Michael Pärt ",
-        "filmography": [],
-        "profilePicAtInd": {
-          "id": 3259,
-          "name": "Michael P - Svea Ideon.jpg",
-          "alternativeText": "",
-          "caption": "",
-          "width": 500,
-          "height": 500,
-          "formats": {
-            "thumbnail": {
-              "ext": ".jpg",
-              "url": "/uploads/thumbnail_Michael_P_Svea_Ideon_55fcafa00f.jpg",
-              "hash": "thumbnail_Michael_P_Svea_Ideon_55fcafa00f",
-              "mime": "image/jpeg",
-              "name": "thumbnail_Michael P - Svea Ideon.jpg",
-              "path": null,
-              "size": 4.31,
-              "width": 156,
-              "height": 156
-            }
-          },
-          "hash": "Michael_P_Svea_Ideon_55fcafa00f",
-          "ext": ".jpg",
-          "mime": "image/jpeg",
-          "size": 64.31,
-          "url": "/uploads/Michael_P_Svea_Ideon_55fcafa00f.jpg",
-          "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
-          "created_by": 35,
-          "updated_by": 35,
-          "created_at": "2020-11-14T17:58:07.807Z",
-          "updated_at": "2020-11-14T17:58:08.004Z"
-        },
-        "images": []
-      },
-      {
-        "id": 6,
-        "person": 4092,
-        "emailAtInd": null,
-        "phoneAtInd": null,
-        "aboutText": "Gavin Greenaway is an Emmy® award-winning composer, conductor, recording artist and pianist with an extensive catalogue of achievements: conducting over 100 feature film and television soundtracks, composing for major entertainment and cultural events, producing and songwriting with chart-topping artists and the release of 2 solo piano classical albums.\nIn 1999 he was commissioned to compose the score to accompany the nightly firework display at DisneyWorld’s EPCOT, Florida. His composition Reflections of Earth has played there every night for 20 years, and won an Emmy® Award as part of ABC network’s Millennium coverage. \nGreenaway has fostered long-standing relationships with many of the world’s eminent music creators, conducting scores for the likes of Hans Zimmer, Gabriel Yared, James Newton Howard, John Powell, Marc Shaiman, Henry Jackman, Lorne Balfe, and Daft Punk, and albums for artists including Luciano Pavarotti, Josh Groban, Diana Krall, George Michael and Andrea Bocelli.",
-        "created_by": 35,
-        "updated_by": 6,
-        "created_at": "2020-11-14T15:58:49.538Z",
-        "updated_at": "2020-11-15T09:57:16.195Z",
-        "clipUrl": null,
-        "website": "https://www.gavingreenaway.com/",
-        "lookingFor": null,
-        "contactAtEvent": null,
-        "fullNamePrivate": "Gavin Greenaw",
-        "filmography": [],
-        "profilePicAtInd": {
-          "id": 3246,
-          "name": "Gavin Greenaway_Dita Vollmond-1098 - Svea Ideon.jpg",
-          "alternativeText": "",
-          "caption": "",
-          "width": 500,
-          "height": 500,
-          "formats": {
-            "thumbnail": {
-              "ext": ".jpg",
-              "url": "/uploads/thumbnail_Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472.jpg",
-              "hash": "thumbnail_Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472",
-              "mime": "image/jpeg",
-              "name": "thumbnail_Gavin Greenaway_Dita Vollmond-1098 - Svea Ideon.jpg",
-              "path": null,
-              "size": 6.35,
-              "width": 156,
-              "height": 156
-            }
-          },
-          "hash": "Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472",
-          "ext": ".jpg",
-          "mime": "image/jpeg",
-          "size": 59.69,
-          "url": "/uploads/Gavin_Greenaway_Dita_Vollmond_1098_Svea_Ideon_a4514de472.jpg",
-          "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
-          "created_by": 35,
-          "updated_by": 35,
-          "created_at": "2020-11-14T15:57:10.541Z",
-          "updated_at": "2020-11-14T15:57:10.667Z"
-        },
-        "images": []
-      },
-      {
-        "id": 15,
-        "person": 4101,
-        "emailAtInd": null,
-        "phoneAtInd": null,
-        "aboutText": "Andrey A. Tarkovsky was born in Moscow on 8th of August 1970. The son of Andrey Tarkovsky, he has devoted his life and career to the preservation and promotion of his father’s work. He lives between Florence, Paris and Moscow. President of the Andrey Tarkovsky International Institute, he is a documentary filmmaker. He made his debut in 1996 with the TV documentary Andrey Tarkovsky. The reminiscence, on the life of his father; he has also made documentary portraits of artists and directed musical performances. He works with Russian and Italian television and with the German record label ECM. In 2006 he won the first prize at the festival of short films in Sabaudia with Bastignano. He organises photographic exhibitions, concerts, retrospectives and the publication of books all over the world.",
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-14T17:35:27.030Z",
-        "updated_at": "2020-11-15T15:21:28.848Z",
-        "clipUrl": null,
-        "website": null,
-        "lookingFor": null,
-        "contactAtEvent": null,
-        "fullNamePrivate": "Andrey A. Tarkovsky",
-        "filmography": [],
-        "profilePicAtInd": {
-          "id": 3255,
-          "name": "Andrey Tarkovsky - Svea Ideon.jpg",
-          "alternativeText": "",
-          "caption": "",
-          "width": 500,
-          "height": 500,
-          "formats": {
-            "thumbnail": {
-              "ext": ".jpg",
-              "url": "/uploads/thumbnail_Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d.jpg",
-              "hash": "thumbnail_Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d",
-              "mime": "image/jpeg",
-              "name": "thumbnail_Andrey Tarkovsky - Svea Ideon.jpg",
-              "path": null,
-              "size": 3.63,
-              "width": 156,
-              "height": 156
-            }
-          },
-          "hash": "Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d",
-          "ext": ".jpg",
-          "mime": "image/jpeg",
-          "size": 37,
-          "url": "/uploads/Andrey_Tarkovsky_Svea_Ideon_8c3a5ad84d.jpg",
-          "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
-          "created_by": 35,
-          "updated_by": 35,
-          "created_at": "2020-11-14T17:32:49.060Z",
-          "updated_at": "2020-11-14T17:32:49.328Z"
-        },
-        "images": [
-          {
-            "id": 3256,
-            "name": "Andrey Tarkovsky & Alexej Naidenov DOP©Peter Crupenin - Svea Ideon.jpg",
-            "alternativeText": "",
-            "caption": "",
-            "width": 960,
-            "height": 1185,
-            "formats": {
-              "thumbnail": {
-                "ext": ".jpg",
-                "url": "/uploads/thumbnail_Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9.jpg",
-                "hash": "thumbnail_Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9",
-                "mime": "image/jpeg",
-                "name": "thumbnail_Andrey Tarkovsky & Alexej Naidenov DOP©Peter Crupenin - Svea Ideon.jpg",
-                "path": null,
-                "size": 6.52,
-                "width": 126,
-                "height": 156
-              }
-            },
-            "hash": "Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "size": 241.16,
-            "url": "/uploads/Andrey_Tarkovsky_and_Alexej_Naidenov_DOP_Peter_Crupenin_Svea_Ideon_728ff1b4a9.jpg",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "created_by": 35,
-            "updated_by": 35,
-            "created_at": "2020-11-14T17:34:41.092Z",
-            "updated_at": "2020-11-14T17:34:41.514Z"
-          }
-        ]
-      }
-    ],
     "industry_projects": []
   },
   {
@@ -18508,7 +18508,7 @@
       "username": null
     },
     "created_at": "2020-11-11T17:44:47.110Z",
-    "updated_at": "2020-11-20T18:23:53.148Z",
+    "updated_at": "2020-11-21T11:15:44.136Z",
     "title_et": null,
     "title_en": "Music Meets Film: Valuing local territory in global industry",
     "slug_en": "valuing-local-territory-in-global-industry",
@@ -18770,14 +18770,14 @@
     "industry_people": [
       {
         "id": 92,
-        "person": null,
+        "person": 4188,
         "emailAtInd": null,
         "phoneAtInd": null,
         "aboutText": "Kaisa Rönkkö has been Executive Director of Music Finland since June 2018. She has a passion to deliver the message of the power of music and develop the international dialogue and innovation between premium content and new technologies and digital services.\nPrior to Music Finland Kaisa was employed as a head of orchestra department at the Finnish National Opera ballet. She was also the head of the music library and therefore responsible for copyright matters. Kaisa has been Finland’s project manager in large scale digital opera projects co-funded by Creative Europe Programme. Kaisa has also been employed as a senior intendant at the Public Information Division of the Defence Command Finland, as artist manager and partner at Finland’s largest artist management agency, Fazer Artist Management Inc and as assistant at the Finnish Cultural Institute in Copenhagen. \nKaisa is a Master of Music and Master of Arts Management who has studied at the Sibelius Academy, at the Liszt Academy in Budapest, at the University of Turku and at the Helsinki University of applied Sciences. She also holds a piano diploma and is a qualified piano teacher.\nKaisa is also a board member of NOMEX (Nordic Music Export), Boardman Management Study Group and Finland Promotion Board, coordinated by the Foreign Ministry of Finland.",
         "created_by": 35,
-        "updated_by": 34,
+        "updated_by": 28,
         "created_at": "2020-11-18T17:12:49.095Z",
-        "updated_at": "2020-11-19T12:08:26.396Z",
+        "updated_at": "2020-11-21T11:14:45.117Z",
         "clipUrl": null,
         "website": null,
         "lookingFor": null,
@@ -18816,6 +18816,57 @@
           "updated_by": 34,
           "created_at": "2020-11-19T12:08:21.175Z",
           "updated_at": "2020-11-19T12:08:21.512Z"
+        },
+        "images": []
+      },
+      {
+        "id": 120,
+        "person": 4373,
+        "emailAtInd": null,
+        "phoneAtInd": null,
+        "aboutText": "Valgeir Sigurðsson is an Icelandic composer and producer. His music blends contemporary classical writing and esoteric electronic production, sometimes to a point where one is indistinguishable from the other.\nValgeir worked closely with fellow Icelander Björk, a collaboration which began with her Oscar-nominated score for Lars Von Trier’s Dancer In The Dark. He founded the Bedroom Community label in 2006 with Nico Muhly and Ben Frost, where he cemented his sonic signature with his own solo work on the label, in addition to albums with Muhly, Frost, Sam Amidon and Daníel Bjarnason, and an extensive collaboration with viola da gamba player, Liam Byrne. \nValgeir has composed orchestral and chamber music for the likes of the City of London Sinfonia, Winnipeg Symphony, Crash Ensemble, Alarm Will Sound, Nordic Affect and the British violinist, Daniel Pioro. His scores frequently incorporate the use of electronics and have also been performed by the Cincinnati Chamber Orchestra, BBC Symphony Orchestra, BBC Scottish Symphony Orchestra, Spokane Symphony, Indianapolis Symphony and many others. He has written music for stage, dance and screen. His film scores include An Acceptable Loss and the Icelandic feature The County, and his score for the environmental documentary Dreamland (Draumalandið) was nominated for best score at EDDA, the Icelandic Film Academy Awards. ",
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-20T18:20:04.370Z",
+        "updated_at": "2020-11-20T20:47:07.411Z",
+        "clipUrl": null,
+        "website": "https://valgeir.net/",
+        "lookingFor": null,
+        "contactAtEvent": null,
+        "fullNamePrivate": "Valgeir Sigurðsson ",
+        "filmography": [],
+        "profilePicAtInd": {
+          "id": 3598,
+          "name": "Valgeir Sigurdsson - Svea Ideon(1).jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 488,
+          "height": 416,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa.jpg",
+              "hash": "thumbnail_Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Valgeir Sigurdsson - Svea Ideon(1).jpg",
+              "path": null,
+              "size": 3.21,
+              "width": 183,
+              "height": 156
+            }
+          },
+          "hash": "Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 18.34,
+          "url": "/uploads/Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 35,
+          "updated_by": 35,
+          "created_at": "2020-11-20T20:47:04.804Z",
+          "updated_at": "2020-11-20T20:47:04.982Z"
         },
         "images": []
       },
@@ -22991,7 +23042,7 @@
   },
   {
     "id": 81,
-    "titlePrivate": "Writing for Virtual Reality (pre-registration only)",
+    "titlePrivate": "Writing for Virtual Reality workshop  (pre-registration only)",
     "startTime": "2020-11-27T12:00:00.000Z",
     "created_by": {
       "id": 28,
@@ -23006,14 +23057,14 @@
       "username": null
     },
     "created_at": "2020-11-20T10:26:21.961Z",
-    "updated_at": "2020-11-20T10:51:37.609Z",
+    "updated_at": "2020-11-21T11:40:45.014Z",
     "title_et": null,
-    "title_en": "Writing for Virtual Reality (pre-registration only)",
+    "title_en": "Writing for Virtual Reality workshop (pre-registration only)",
     "slug_en": "writing-for-virtual-reality-pre-registration-only",
     "duration": null,
     "location": null,
-    "lead": null,
-    "description": "\"Writing for Virtual Reality\" is a course aimed at film writers, narrative designers, and dramaturgs interested in Virtual Reality who have little or no experience with the medium. The final goal is to create a 1-page Virtual Reality script during the session, considering technical and narrative challenges.\n\n“Writing for Virtual Reality” is a practical workshop in which participants learn the challenges of writing for cinematic virtual reality and develop a 1-page script.\n\nThe aim of this workshop is to generate more awareness about the possibilities of the medium and to increase the number of screenwriters that are interested in creating stories for 360° media including VR, XR, and AR in the future. Although immersive media traces back to the last century, there is little practical literature for writers interested in participating in this medium.\n\nAna Falcon will be the moderator for this event. The workshop was created as part of her current research in Virtual Reality screenwriting methodologies. She was selected for the 2008 Fusion Arts Exchange in Screenwriting and Film Production hosted by the University of Southern California and the US State Department. In 2017, she was distinguished with a Young Creators FONCA grant from the Mexican Culture Ministry. In 2019, she was a screenwriting finalist in the Watersprite International Student Film Festival hosted by the University of Cambridge.\n\nIn addition to their 1-page, guests will be requested to participate in several practical activities designed to sensibilize them to the challenges of virtual reality including POV, cues, and technological limitations.\n\nThe duration of the workshop is 3 hours.",
+    "lead": "",
+    "description": "\"Writing for Virtual Reality\" is a course aimed at film writers, narrative designers, and dramaturgs interested in Virtual Reality who have little or no experience with the medium. The final goal is to create a 1-page Virtual Reality script during the session, considering technical and narrative challenges.\n\n“Writing for Virtual Reality” is a practical workshop in which participants learn the challenges of writing for cinematic virtual reality and develop a 1-page script.\n\nThe aim of this workshop is to generate more awareness about the possibilities of the medium and to increase the number of screenwriters that are interested in creating stories for 360° media including VR, XR, and AR in the future. Although immersive media traces back to the last century, there is little practical literature for writers interested in participating in this medium.\n\nAna Falcon will be the moderator for this event. The workshop was created as part of her current research in Virtual Reality screenwriting methodologies. She was selected for the 2008 Fusion Arts Exchange in Screenwriting and Film Production hosted by the University of Southern California and the US State Department. In 2017, she was distinguished with a Young Creators FONCA grant from the Mexican Culture Ministry. In 2019, she was a screenwriting finalist in the Watersprite International Student Film Festival hosted by the University of Cambridge.\n\nIn addition to their 1-page, guests will be requested to participate in several practical activities designed to sensibilize them to the challenges of virtual reality including POV, cues, and technological limitations.\n\nThe duration of the workshop is 3 hours.\n\n**To participate in the workshop, please sign up via email info.industry@poff.ee by Wednesday 25th of November.**",
     "project_type": null,
     "publishFrom": null,
     "publishUntil": null,

@@ -18,7 +18,11 @@ block content
                         img.person_img(src=personPic alt=`${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`)
                         .ind_person_name= `${self.person.firstName ? self.person.firstName : ''} ${self.person.lastName ? self.person.lastName : ''}`
                     .dir_bio.dark_1
-                        p.dark_1= self.aboutText
+                        if typeof self.aboutText !== 'undefined'
+                            - var about_md = self.aboutText
+                            if typeof about_md === 'string'
+                                +format(about_md)
+                        //- p.dark_1= self.aboutText
             section.f_cred_box.bg_dark_3
                 .str_info_blokk_cred
                     .str_info_grid_3
