@@ -213,12 +213,24 @@ header
 .main_menu_toggle:checked~.main_menu
     display flex
     width 100vw
-    height calc(100vh - 100px)
+    height calc(90vh - 100px)
     max-height 100vh
     width 100vw
+    margin-top 4rem
     overflow-y scroll
     -webkit-overflow-scrolling:touch
-    padding-bottom 2rem
+    // padding-bottom 6rem
+    // margin-bottom 6rem
+    // background-color bg_dark_4
+
+.main_menu_toggle:checked~.main_menu .user_menu
+    padding-bottom 6rem
+    // background-color bg_dark_4
+    // margin-bottom 6rem
+    // font-size 2rem
+
+// li.user_menu
+//     padding-bottom 6rem
 
 .main_menu_toggle_label
     position absolute
@@ -262,7 +274,7 @@ header
     display none
 
 .ul_kaks li
-    padding-right 15vw
+    padding-right 10vw
 
 
 .ul_kaks a
@@ -392,8 +404,8 @@ footer
 .logo
     margin 1rem
     padding 0
-    width 170px
-    max-width 170px
+    width 240px
+    max-width 240px
 
 .logo_img:hover,
 .logo_img:focus
@@ -3030,13 +3042,6 @@ a.btn_popover
         //                     "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
 
-    // .grid_login
-    //     display grid
-    //     grid-template-columns 1fr 1fr 1fr
-    //     grid-template-rows auto
-    //     grid-gap 1rem
-    //     padding-top header_height
-
     .grid_ss
         display grid
         grid-template-columns 2
@@ -3119,13 +3124,6 @@ a.btn_popover
         // height full_height
         height calc(100vh - 97px)
 
-    // .hero_image
-    //     width 100vw
-    //     // height full_height
-    //     height calc(100vh - 97px)
-    //     object-fit cover
-    //     z-index -1
-
     .trio_block
         padding-left 2rem
         padding-right 2rem
@@ -3158,18 +3156,6 @@ a.btn_popover
     .viieka_item:nth-child(4)
     .viieka_item:nth-child(5)
         grid-column span 2
-
-    // .hero_headline_box
-    //     position absolute
-    //     bottom 0
-    //     right 0
-    //     width 100vw
-    //     background rgba(10,0,3,.6)
-    //     // background rgba(236,0,140,.6)
-    //     // background rgba(90,0,60,.7)
-    //     // background-color clr_primary
-    //     text-align left
-    //     padding 2rem 2rem 2rem 2rem
 
     .calendar
         display grid
@@ -3276,18 +3262,6 @@ a.btn_popover
         height 1rem
         // padding-top .1rem
 
-    // .user_menu
-    //     color clr_primary
-        // // display inline-block
-        // position absolute
-        // // display inline
-        // top 0
-        // left 0
-        // padding-left 1rem
-        // padding-bottom 0
-        // margin-bottom 0
-        // height 1rem
-
     .lang_menu
         position fixed
         // display inline
@@ -3323,15 +3297,6 @@ a.btn_popover
         a
             text-decoration none
             // font-size 14px
-
-    // .grid_footer_row
-    //     grid-area footer
-    //     border-top 1px solid rgba(255,255,255,.1)
-    //     margin 0
-    //     padding 0
-    //     // padding 10vw
-    //     padding 3rem 5rem 3rem 5rem
-    //     background-color bg_dark_1
 
     .grid_footer_row
         grid-area footer
@@ -3588,8 +3553,8 @@ strong
 .padding_bottom_2
     padding-bottom 2rem
 
-.padding_bottom_5
-    padding-bottom 6rem
+// .padding_bottom_5
+//     padding-bottom 6rem
 
 .padding_top_0
     padding-top 0px
@@ -3630,8 +3595,8 @@ strong
 .user_menu
     color clr_primary
 
-.user_menu.dropdown
-    padding-bottom 6rem
+// .user_menu.dropdown
+//     padding-bottom 6rem
 
 .p_1
     margin 1rem
