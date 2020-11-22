@@ -48,7 +48,8 @@ block content
                     if self.website
                         .str_info_grid_3
                             .str_info_label= self.label.industry.website
-                            .str_info_value= self.label.industry.website
+                            //- .str_info_value= self.label.industry.website
+                            a.str_info_value(href= self.website)= self.label.industry.website
 
 
             if self.filmography
