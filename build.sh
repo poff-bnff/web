@@ -82,6 +82,8 @@ node ./helpers/fetch_channels_from_yaml.js
 echo 'fetch_industry_event_from_yaml'
 node ./helpers/fetch_industry_event_from_yaml.js
 
+echo 'fetch_eventival_persons_from_yaml.js'
+node ./helpers/fetch_eventival_persons_from_yaml.js
 
 printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
