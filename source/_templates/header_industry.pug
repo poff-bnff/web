@@ -33,8 +33,9 @@ header
                         a(href='https://kinoff.ee')
                             | Kinoff
                     span.org_item
-                        a(href='https://proscreen.poff.ee')
-                            | Pro Screen
+                        a(href='https://industrymeet.poff.ee')
+                            | Industrymeet
+
 
 
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
@@ -108,7 +109,7 @@ header
 
             li.user_menu.dropdown
                 a.user_menu My industry
-                    ul.ul_kaks
+                    ul.ul_kaks.padding_bottom_5
                         li#logIn(style={cursor: 'pointer', display: 'none'})
                             a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
                         li#logInName.dark_1(style={display: 'none'})
@@ -133,3 +134,6 @@ header
 
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
+
+include ../_templates/tracker_mixin.pug
++trackMe()
