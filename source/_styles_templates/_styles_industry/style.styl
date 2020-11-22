@@ -3004,7 +3004,7 @@ a.btn_popover
 .days_box
     // grid-area days_box
     display grid
-    grid-template-columns 1fr 1fr 1fr 1fr 1fr
+    grid-template-columns repeat(auto-fill, minmax(200px, 1fr))
     grid-template-rows auto
     grid-gap 2rem
     width 100vw
@@ -3038,7 +3038,7 @@ a.btn_popover
 
 .channels_box
     display grid
-    grid-template-columns 1fr 1fr 1fr
+    grid-template-columns repeat(auto-fill, minmax(300px, 1fr))
     grid-template-rows auto
     grid-gap 2rem
     width 100vw
