@@ -184,10 +184,128 @@ for (const lang of allLanguages) {
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `industryeventscalendar.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+    search_and_filters(dataToYAML)
     // console.log(allData);
 
     const allNewDataYAML = yaml.safeDump(newDataToYAML, { 'noRefs': true, 'indent': '4' });
     const yamlNewPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
     fs.writeFileSync(yamlNewPath, allNewDataYAML, 'utf8');
     // console.log(allData);
+}
+
+function search_and_filters(dataToYAML) {
+
+    let filters = {
+        types: {},
+        categories: {},
+        channels: {},
+        projects: {},
+        persons: {},
+        starttimes: {},
+    }
+
+    const events_search = dataToYAML.map(events => {
+
+        let event = events
+        let types = []
+        if (typeof event.project_type !== 'undefined') {
+            types.push(event.project_type.type)
+            filters.types[event.project_type.type] = event.project_type.type
+        }
+
+        let categories = []
+        if (typeof event.industry_categories !== 'undefined') {
+            let industry_categories = event.industry_categories.map(name => name.name)
+            for (const name of industry_categories) {
+                categories.push(name)
+                filters.categories[name] = name
+            }
+        }
+
+        let channels = []
+        if (typeof event.channel !== 'undefined') {
+            channels.push(event.channel.name)
+            filters.channels[event.channel.name] = event.channel.name
+        }
+
+        let projects = []
+        if (typeof event.industry_projects !== 'undefined') {
+            let industry_projects = event.industry_projects.map(proj => proj.title)
+            for (const title of industry_projects) {
+                projects.push(title)
+                filters.projects[title] = title
+            }
+        }
+
+        let persons = []
+        if (typeof event.industry_people !== 'undefined') {
+            let industry_people = event.industry_people.filter(p => p.person).map(pers => `${pers.person.firstName} ${pers.person.lastName}`)
+            for (const name of industry_people) {
+                persons.push(name)
+                filters.persons[name] = name
+            }
+        }
+
+        let starttimes = []
+        if (typeof event.startTime !== 'undefined') {
+            let startTime = event.startTime
+            starttimes.push(startTime)
+            filters.starttimes[startTime] = startTime
+        }
+
+
+        return {
+            id: events.id,
+            text: [
+                events.title,
+                events.description,
+            ].join(' ').toLowerCase(),
+            types: types,
+            categories: categories,
+            channels: channels,
+            projects: projects,
+            persons: persons,
+            starttimes: starttimes,
+        }
+    });
+
+    function mSort(to_sort) {
+        let sortable = []
+        for (var item in to_sort) {
+            sortable.push([item, to_sort[item]]);
+        }
+
+        sortable = sortable.sort(function(a, b) {
+            try {
+                const locale_sort = a[1].localeCompare(b[1], 'en')
+                return locale_sort
+            } catch (error) {
+                console.log('failed to sort', JSON.stringify({a, b}, null, 4));
+                throw new Error(error)
+            }
+        });
+
+        var objSorted = {}
+        for (let index = 0; index < sortable.length; index++) {
+            const item = sortable[index];
+            objSorted[item[0]]=item[1]
+        }
+        return objSorted
+    }
+
+    let sorted_filters = {
+        types: mSort(filters.types),
+        categories: mSort(filters.categories),
+        channels: mSort(filters.channels),
+        projects: mSort(filters.projects),
+        persons: mSort(filters.persons),
+        starttimes: mSort(filters.starttimes),
+    }
+
+    let searchYAML = yaml.safeDump(events_search, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `search_industryeventscalendar.yaml`), searchYAML, 'utf8')
+
+    let filtersYAML = yaml.safeDump(sorted_filters, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(path.join(fetchDir, `filters_industryeventscalendar.yaml`), filtersYAML, 'utf8')
+
 }
