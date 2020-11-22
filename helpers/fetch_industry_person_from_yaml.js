@@ -32,7 +32,6 @@ for (lang of languages) {
         // for the purpose of saving slug_en before it will be removed by rueten func.
 
 
-        // let dirSlug = industry_person.slug_en || industry_person.slug_et ? industry_person.slug_en || industry_person.slug_et : null ;
         industry_person = rueten(industry_person, lang);
         // industry_person.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
         // industry_person.path = industry_person.slug;
@@ -58,16 +57,8 @@ for (lang of languages) {
             console.log(`ERROR! Industry person ID ${industry_person.id} not linked to any person, skipped.`)
             continue
         }
-
-        if (personNameWithID && personNameWithID.length > 5) {
-            var dirSlug = slugify(personNameWithID)
-            industry_person.slug = dirSlug
-            industry_person.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
-            industry_person.path = industry_person.slug;
-        } else {
-            var dirSlug = null
-        }
-
+        industry_person.path = industry_person.slug;
+        industry_person.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
 
         if (industry_person.clipUrl) {
             if(industry_person.clipUrl && industry_person.clipUrl.length > 10) {
@@ -87,17 +78,21 @@ for (lang of languages) {
             }
         }
 
-        const oneYaml = yaml.safeDump(industry_person, { 'noRefs': true, 'indent': '4' });
-
-        if (dirSlug != null) {
-            const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
-            let saveDir = path.join(fetchDataDir, dirSlug);
-            fs.mkdirSync(saveDir, { recursive: true });
-
-            fs.writeFileSync(yamlPath, oneYaml, 'utf8');
-            fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industryperson_${templateDomainName}_index_template.pug`)
-            allData.push(industry_person);
+        let oneYaml = {}
+        try {
+            oneYaml = yaml.safeDump(industry_person, { 'noRefs': true, 'indent': '4' })
+        } catch (error) {
+            console.error({error, industry_person})
+            throw error
         }
+
+        const yamlPath = path.join(fetchDataDir, industry_person.slug, `data.${lang}.yaml`);
+        let saveDir = path.join(fetchDataDir, industry_person.slug);
+        fs.mkdirSync(saveDir, { recursive: true });
+
+        fs.writeFileSync(yamlPath, oneYaml, 'utf8');
+        fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industryperson_${templateDomainName}_index_template.pug`)
+        allData.push(industry_person);
     }
 
     const yamlPath = path.join(fetchDir, `industrypersons.${lang}.yaml`)
