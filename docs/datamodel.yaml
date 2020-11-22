@@ -816,8 +816,7 @@ IndustryPerson: &IndustryPerson
         - *StrapiMedia
     clipUrl: (text)
     website: (text)
-    filmography: #(Component (repeatable))
-        - *Filmography
+    filmography: *Filmography
     industry_person_types: #(Component (repeatable))
         - *IndustryPersonType
     lookingFor: (text)
