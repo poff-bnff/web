@@ -1,5 +1,195 @@
 [
   {
+    "id": 5,
+    "name": "menu",
+    "created_by": {
+      "id": 4,
+      "firstname": "Siim",
+      "lastname": "Sutt",
+      "username": null
+    },
+    "updated_by": {
+      "id": 5,
+      "firstname": "Martin",
+      "lastname": "Pennaste",
+      "username": null
+    },
+    "created_at": "2020-09-08T09:07:05.424Z",
+    "updated_at": "2020-11-20T12:39:01.686Z",
+    "label": [
+      {
+        "id": 292,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Uudised",
+        "value_en": "News",
+        "value_ru": "Новости",
+        "name": "mainNews"
+      },
+      {
+        "id": 293,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Filmid",
+        "value_en": "Films",
+        "value_ru": "Филмы",
+        "name": "mainFilms"
+      },
+      {
+        "id": 294,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Info",
+        "value_en": "Info",
+        "value_ru": "Инфо",
+        "name": "mainInfo"
+      },
+      {
+        "id": 295,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Covid",
+        "value_en": "Covid",
+        "value_ru": "Covid",
+        "name": "mainCovid"
+      },
+      {
+        "id": 296,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Festival",
+        "value_en": "Festival",
+        "value_ru": "Фестиваль",
+        "name": "mainFestival"
+      },
+      {
+        "id": 297,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Meeskond",
+        "value_en": "Team",
+        "value_ru": "Команда",
+        "name": "mainTeam"
+      },
+      {
+        "id": 298,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Ajakava",
+        "value_en": "Schedule",
+        "value_ru": "Расписание",
+        "name": "mainSchedule"
+      },
+      {
+        "id": 299,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Logi sisse",
+        "value_en": "Login",
+        "value_ru": null,
+        "name": "mainLogin"
+      },
+      {
+        "id": 300,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Logi välja",
+        "value_en": "Log Out",
+        "value_ru": null,
+        "name": "mainLogout"
+      },
+      {
+        "id": 301,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Registreeri",
+        "value_en": "Sign Up",
+        "value_ru": null,
+        "name": "mainSignup"
+      },
+      {
+        "id": 302,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Tere",
+        "value_en": "Hello",
+        "value_ru": null,
+        "name": "mainGreeting"
+      },
+      {
+        "id": 303,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu profiil",
+        "value_en": "My profile",
+        "value_ru": null,
+        "name": "mainProfile"
+      },
+      {
+        "id": 350,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu filmide Shortlist",
+        "value_en": "My Films Shortlist",
+        "value_ru": "Films Shortlist",
+        "name": "mainShortlist"
+      },
+      {
+        "id": 351,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu PÖFF",
+        "value_en": "My BNFF",
+        "value_ru": "",
+        "name": "mainUserMenu"
+      },
+      {
+        "id": 378,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu passid",
+        "value_en": "My  passes",
+        "value_ru": null,
+        "name": "mainPass"
+      },
+      {
+        "id": 379,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Pood",
+        "value_en": "Shop",
+        "value_ru": null,
+        "name": "mainShop"
+      },
+      {
+        "id": 391,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Minu Kava",
+        "value_en": "My Screenigns Schedule",
+        "value_ru": "My Screenigns",
+        "name": "mainMyScreenings"
+      }
+    ]
+  },
+  {
     "id": 6,
     "name": "userprofile",
     "created_by": {
@@ -9,9 +199,9 @@
       "username": null
     },
     "updated_by": {
-      "id": 3,
-      "firstname": "Liis",
-      "lastname": "Käsper",
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
       "username": null
     },
     "created_at": "2020-10-07T13:51:09.120Z",
@@ -770,6 +960,336 @@
     ]
   },
   {
+    "id": 8,
+    "name": "industry",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-15T11:10:21.601Z",
+    "updated_at": "2020-11-21T18:13:16.116Z",
+    "label": [
+      {
+        "id": 392,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Date",
+        "value_en": "Date",
+        "value_ru": "Date",
+        "name": "eventDate"
+      },
+      {
+        "id": 393,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Time EET",
+        "value_en": "Time EET",
+        "value_ru": "Time EET",
+        "name": "eventTimeEet"
+      },
+      {
+        "id": 394,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "User time",
+        "value_en": "User time",
+        "value_ru": "User time",
+        "name": "eventTimeUser"
+      },
+      {
+        "id": 399,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Project type",
+        "value_ru": null,
+        "name": "projectType"
+      },
+      {
+        "id": 400,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Project Status",
+        "value_ru": null,
+        "name": "projectStatus"
+      },
+      {
+        "id": 401,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Completion date",
+        "value_ru": null,
+        "name": "completionDate"
+      },
+      {
+        "id": 402,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Planned premiere",
+        "value_ru": null,
+        "name": "plannedPremiere"
+      },
+      {
+        "id": 403,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Country focus",
+        "value_ru": null,
+        "name": "countryFocus"
+      },
+      {
+        "id": 404,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Budget",
+        "value_ru": null,
+        "name": "projectBudget"
+      },
+      {
+        "id": 405,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Financed",
+        "value_ru": null,
+        "name": "projectFinanced"
+      },
+      {
+        "id": 406,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Partners",
+        "value_ru": null,
+        "name": "partners"
+      },
+      {
+        "id": 407,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Looking for",
+        "value_ru": null,
+        "name": "lookingFor"
+      },
+      {
+        "id": 408,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact name",
+        "value_ru": null,
+        "name": "contactName"
+      },
+      {
+        "id": 409,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact web",
+        "value_ru": null,
+        "name": "contactWeb"
+      },
+      {
+        "id": 410,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact email",
+        "value_ru": null,
+        "name": "contactEmail"
+      },
+      {
+        "id": 411,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Logline",
+        "value_ru": null,
+        "name": "logline"
+      },
+      {
+        "id": 412,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact address",
+        "value_ru": null,
+        "name": "contactAddress"
+      },
+      {
+        "id": 413,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact company",
+        "value_ru": null,
+        "name": "contactCompany"
+      },
+      {
+        "id": 414,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Directors note",
+        "value_ru": null,
+        "name": "directorsNote"
+      },
+      {
+        "id": 415,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Number of seasons",
+        "value_ru": null,
+        "name": "numOfSeasons"
+      },
+      {
+        "id": 416,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Number of episodes",
+        "value_ru": null,
+        "name": "numOfEpisodes"
+      },
+      {
+        "id": 417,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Episode duration",
+        "value_ru": null,
+        "name": "episodeDuration"
+      },
+      {
+        "id": 418,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Roll",
+        "value_en": "Role",
+        "value_ru": "Role",
+        "name": "industryPersonTypes"
+      },
+      {
+        "id": 419,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Profession",
+        "value_en": "Profession",
+        "value_ru": "Profession",
+        "name": "roleAtFilms"
+      },
+      {
+        "id": 420,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Looking for",
+        "value_en": "Looking for",
+        "value_ru": "Looking for",
+        "name": "lookingFors"
+      },
+      {
+        "id": 421,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Duration",
+        "value_ru": null,
+        "name": "duration"
+      },
+      {
+        "id": 422,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Koduleht",
+        "value_en": "Website",
+        "value_ru": "Website",
+        "name": "website"
+      },
+      {
+        "id": 423,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Tel nr",
+        "value_en": "Phone nr",
+        "value_ru": "Phone nr",
+        "name": "phone"
+      },
+      {
+        "id": 424,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "E-post",
+        "value_en": "E-mail",
+        "value_ru": "E-mail",
+        "name": "email"
+      },
+      {
+        "id": 425,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact",
+        "value_ru": null,
+        "name": "contact"
+      },
+      {
+        "id": 426,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Filmography",
+        "value_ru": null,
+        "name": "filmography"
+      }
+    ]
+  },
+  {
     "id": 3,
     "name": "all",
     "created_by": {
@@ -1290,198 +1810,8 @@
     ]
   },
   {
-    "id": 5,
-    "name": "menu",
-    "created_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "created_at": "2020-09-08T09:07:05.424Z",
-    "updated_at": "2020-11-14T16:10:21.721Z",
-    "label": [
-      {
-        "id": 292,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Uudised",
-        "value_en": "News",
-        "value_ru": "Новости",
-        "name": "mainNews"
-      },
-      {
-        "id": 293,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Filmid",
-        "value_en": "Films",
-        "value_ru": "Филмы",
-        "name": "mainFilms"
-      },
-      {
-        "id": 294,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Info",
-        "value_en": "Info",
-        "value_ru": "Инфо",
-        "name": "mainInfo"
-      },
-      {
-        "id": 295,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Covid",
-        "value_en": "Covid",
-        "value_ru": "Covid",
-        "name": "mainCovid"
-      },
-      {
-        "id": 296,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Festival",
-        "value_en": "Festival",
-        "value_ru": "Фестиваль",
-        "name": "mainFestival"
-      },
-      {
-        "id": 297,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Meeskond",
-        "value_en": "Team",
-        "value_ru": "Команда",
-        "name": "mainTeam"
-      },
-      {
-        "id": 298,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Ajakava",
-        "value_en": "Schedule",
-        "value_ru": "Расписание",
-        "name": "mainSchedule"
-      },
-      {
-        "id": 299,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "logi sisse",
-        "value_en": "login",
-        "value_ru": null,
-        "name": "mainLogin"
-      },
-      {
-        "id": 300,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Logi välja",
-        "value_en": "Log Out",
-        "value_ru": null,
-        "name": "mainLogout"
-      },
-      {
-        "id": 301,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Registreeri",
-        "value_en": "Sign Up",
-        "value_ru": null,
-        "name": "mainSignup"
-      },
-      {
-        "id": 302,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Tere",
-        "value_en": "Hello",
-        "value_ru": null,
-        "name": "mainGreeting"
-      },
-      {
-        "id": 303,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu profiil",
-        "value_en": "My profile",
-        "value_ru": null,
-        "name": "mainProfile"
-      },
-      {
-        "id": 350,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Shortlist",
-        "value_en": "Shortlist",
-        "value_ru": null,
-        "name": "mainShortlist"
-      },
-      {
-        "id": 351,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu PÖFF",
-        "value_en": "My BNFF",
-        "value_ru": "",
-        "name": "mainUserMenu"
-      },
-      {
-        "id": 378,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Minu passid",
-        "value_en": "My  passes",
-        "value_ru": null,
-        "name": "mainPass"
-      },
-      {
-        "id": 379,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Pood",
-        "value_en": "Shop",
-        "value_ru": null,
-        "name": "mainShop"
-      },
-      {
-        "id": 391,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "minu kava",
-        "value_en": "my screenings",
-        "value_ru": "moi seanss",
-        "name": "mainMyScreenings"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "film",
+    "id": 7,
+    "name": "filters",
     "created_by": {
       "id": 6,
       "firstname": "Jaan",
@@ -1498,107 +1828,107 @@
     "updated_at": "2020-11-17T11:45:46.392Z",
     "label": [
       {
-        "id": 236,
+        "id": 353,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Pealkirja originaal",
-        "value_en": "Original title",
-        "value_ru": null,
-        "name": "titleOriginal"
+        "value_et": "Programmid",
+        "value_en": "Programmes",
+        "value_ru": "Программы",
+        "name": "programmes"
       },
       {
-        "id": 237,
+        "id": 354,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Pealkiri eesti keeles",
-        "value_en": "Local title",
-        "value_ru": null,
-        "name": "title_et"
-      },
-      {
-        "id": 238,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Ingliskeelne pealkiri",
-        "value_en": "Title in English",
-        "value_ru": null,
-        "name": "title_en"
-      },
-      {
-        "id": 239,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Venekeelne pealkiri",
-        "value_en": "Title in Russian",
-        "value_ru": null,
-        "name": "title_ru"
-      },
-      {
-        "id": 240,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Pealkiri inglise keeles",
-        "value_en": "Title in Estonian",
-        "value_ru": null,
-        "name": "titleSec"
-      },
-      {
-        "id": 241,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Riik",
-        "value_en": "Country",
-        "value_ru": null,
-        "name": "countries"
-      },
-      {
-        "id": 242,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Keel",
-        "value_en": "Language",
-        "value_ru": null,
+        "value_et": "Keeled",
+        "value_en": "Languages",
+        "value_ru": "Языки",
         "name": "languages"
       },
       {
-        "id": 243,
+        "id": 355,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Aasta",
-        "value_en": "Year",
-        "value_ru": null,
-        "name": "year"
+        "value_et": "Riigid",
+        "value_en": "Countries",
+        "value_ru": "Страны",
+        "name": "countries"
       },
       {
-        "id": 244,
+        "id": 356,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Anna filmile oma hääl",
-        "value_en": "Vote for the film",
-        "value_ru": null,
-        "name": "audienceVote"
+        "value_et": "Subtiitrid",
+        "value_en": "Subtitles",
+        "value_ru": "Субтитры",
+        "name": "subtitles"
       },
       {
-        "id": 245,
+        "id": 357,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
-        "value_et": "Kestus",
-        "value_en": "Runtime",
-        "value_ru": null,
-        "name": "runtime"
+        "value_et": "Esilinastused",
+        "value_en": "Premieres",
+        "value_ru": "Премьеры",
+        "name": "premieres"
       },
       {
-        "id": 246,
+        "id": 358,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Linnad",
+        "value_en": "Towns",
+        "value_ru": "Города",
+        "name": "towns"
+      },
+      {
+        "id": 359,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kinod",
+        "value_en": "Cinemas",
+        "value_ru": "Кинотеатры",
+        "name": "cinemas"
+      },
+      {
+        "id": 360,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Otsi",
+        "value_en": "Search",
+        "value_ru": "Ускать",
+        "name": "search"
+      },
+      {
+        "id": 361,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kuupäevad",
+        "value_en": "Dates",
+        "value_ru": "Дни",
+        "name": "dates"
+      },
+      {
+        "id": 362,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Kellaajad",
+        "value_en": "Times",
+        "value_ru": "Время",
+        "name": "times"
+      },
+      {
+        "id": 363,
         "name_et": null,
         "name_en": null,
         "name_ru": null,
@@ -1646,146 +1976,6 @@
         "value_en": "Genres",
         "value_ru": "Genres",
         "name": "genres"
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "name": "industry",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-15T11:10:21.601Z",
-    "updated_at": "2020-11-18T06:05:54.281Z",
-    "label": [
-      {
-        "id": 392,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Date",
-        "value_en": "Date",
-        "value_ru": "Date",
-        "name": "eventDate"
-      },
-      {
-        "id": 393,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Time EET",
-        "value_en": "Time EET",
-        "value_ru": "Time EET",
-        "name": "eventTimeEet"
-      },
-      {
-        "id": 394,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "User time",
-        "value_en": "User time",
-        "value_ru": "User time",
-        "name": "eventTimeUser"
-      },
-      {
-        "id": 399,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Project type",
-        "value_ru": null,
-        "name": "projectType"
-      },
-      {
-        "id": 400,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Project Status",
-        "value_ru": null,
-        "name": "projectStatus"
-      },
-      {
-        "id": 401,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Completion date",
-        "value_ru": null,
-        "name": "completionDate"
-      },
-      {
-        "id": 402,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Planned premiere",
-        "value_ru": null,
-        "name": "plannedPremiere"
-      },
-      {
-        "id": 403,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Country focus",
-        "value_ru": null,
-        "name": "countryFocus"
-      },
-      {
-        "id": 404,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Budget",
-        "value_ru": null,
-        "name": "projectBudget"
-      },
-      {
-        "id": 405,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Financed",
-        "value_ru": null,
-        "name": "projectFinanced"
-      },
-      {
-        "id": 406,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Partners",
-        "value_ru": null,
-        "name": "partners"
-      },
-      {
-        "id": 407,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Looking for",
-        "value_ru": null,
-        "name": "lookingFor"
       }
     ]
   },

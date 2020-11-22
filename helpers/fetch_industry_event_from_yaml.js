@@ -77,13 +77,13 @@ for (const lang of allLanguages) {
             element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
 
             if (element.industry_people) {
-                let indPeopleFromYaml = element.industry_people.map(people => {
-                    return industryPersonsYaml.filter(a => a.id === people.id && a.person)[0]
+                let indPeopleFromYaml = element.industry_people.filter(per => per.person).map(people => {
+                    return industryPersonsYaml.filter(a => a.id === people.id)[0]
                 })
-                if (indPeopleFromYaml !== undefined) {
-                    element.industry_people = industryPersonsYaml
+                if (typeof indPeopleFromYaml !== 'undefined') {
+                    element.industry_people = indPeopleFromYaml
                 } else {
-                    console.log('UNDEFINED', element.id);
+                    element.industry_people = []
                 }
             }
             if (element.industry_projects) {
@@ -143,13 +143,49 @@ for (const lang of allLanguages) {
         }
     }
     let dataToYAML = []
-
+    let newDataToYAML = {eventsByDate: {}}
     if (allData.length) {
         dataToYAML = allData.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+
+        Date.prototype.addHours = function(hours) {
+            var date = new Date(this.valueOf());
+            date.setHours(date.getHours() + hours);
+            return date;
+        }
+
+        let allDates = dataToYAML.map(event => {
+            let dateTimeUTC = convert_to_UTC(event.startTime)
+            let dateTimeUTCtoEET = dateTimeUTC.addHours(2)
+            let date = dateTimeUTCtoEET.getFullYear()+'-'+(dateTimeUTCtoEET.getMonth()+1)+'-'+(dateTimeUTCtoEET.getDate())
+            if (event.channel) {
+                if(!newDataToYAML.eventsByDate[date]) {
+                    newDataToYAML.eventsByDate[date] = {}
+                }
+                if(!newDataToYAML.eventsByDate[date][`Channel_${event.channel.id}`]) {
+                    newDataToYAML.eventsByDate[date][`Channel_${event.channel.id}`] = []
+                }
+                newDataToYAML.eventsByDate[date][`Channel_${event.channel.id}`].push(event)
+            }
+            return date
+            // let dateNow = parseInt(`${dateTimeUTCtoEET.getFullYear()}${("0" + (dateTimeUTCtoEET.getMonth() + 1)).slice(-2)}${("0" + dateTimeUTCtoEET.getDate()).slice(-2)}`)
+            // console.log(event.startTime, ' - ', dateTimeUTC, ' - ', dateTimeUTCtoEET, ' - ', date);
+        });
+        let uniqueDates =  [...new Set(allDates)]
+        // console.log(newDataToYAML);
+
+        newDataToYAML.allDates = uniqueDates
         console.log(`${dataToYAML.length} Industry Events ready for building`);
+
+        console.log(`${newDataToYAML.length} Industry Events have channel assigned`);
+
     }
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
-    const yamlPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
+    const yamlPath = path.join(fetchDir, `industryeventscalendar.${lang}.yaml`);
     fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+    // console.log(allData);
+
+    const allNewDataYAML = yaml.safeDump(newDataToYAML, { 'noRefs': true, 'indent': '4' });
+    const yamlNewPath = path.join(fetchDir, `industryevents.${lang}.yaml`);
+    fs.writeFileSync(yamlNewPath, allNewDataYAML, 'utf8');
     // console.log(allData);
 }

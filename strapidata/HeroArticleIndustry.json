@@ -3,22 +3,32 @@
     "id": 1,
     "article_et": null,
     "article_en": {
-      "id": 91,
+      "id": 96,
       "title_et": null,
-      "title_en": "Join the masterclass by Simon Weisse",
+      "title_en": "Meet us today at the free panel: CORTEX – Are you dreaming or just watching an amazing film?",
       "title_ru": null,
-      "created_by": 30,
-      "updated_by": 30,
-      "created_at": "2020-11-18T07:15:56.174Z",
-      "updated_at": "2020-11-18T08:11:00.841Z",
+      "created_by": {
+        "id": 30,
+        "firstname": "Egle",
+        "lastname": "Loor",
+        "username": null
+      },
+      "updated_by": {
+        "id": 30,
+        "firstname": "Egle",
+        "lastname": "Loor",
+        "username": null
+      },
+      "created_at": "2020-11-20T12:03:36.268Z",
+      "updated_at": "2020-11-20T12:28:19.732Z",
       "slug_et": null,
-      "slug_en": "news-masterclass-simon-weisse",
+      "slug_en": "meet-us-today-at-the-free-workshop-cortex-are-you-dreaming-or-just-watching-an-amazing-film",
       "slug_ru": null,
       "lead_et": null,
-      "lead_en": "On Wednesday, at 11:00 AM (EET)  it is time to tune in for the PÖFF Black Room masterclass by modeler and propmaker Simon Weisse.",
+      "lead_en": "On Friday, please join us at a panel: CORTEX – Are you dreaming or just watching an amazing film?\n",
       "lead_ru": null,
       "contents_et": null,
-      "contents_en": "At the masterclass, you are invited to explore the visual language of cinema and creative facets of production design. Simon Weisse is the master of props and miniature models for cinema. We know his work from *The Grand Budapest Hotel* and *The Isle of Dogs*. He is currently the prop making supervisor for anticipated *Matrix 4*.\n\nCreated in collaboration with European Film Academy.\n\n [Watch the masterclass here](https://industry.poff.ee/events/p-oe-ff-black-room-masterclass-by-simon-weisse/) at 11:00 (EET). Also, you can follow it up later. ",
+      "contents_en": "Director of photography Thomas W. Kiennast (The Dark Valley, 3 Days in Quiberon) and postproduction producer Paul Andexel discuss the magic and technique of creating a visually stunning and mind-bending psychological thriller Cortex with a little help from post-production.\n\n\n[Watch the event here](https://industry.poff.ee/events/cortex-are-you-dreaming-or-just-watching-an-amazing-film/)",
       "contents_ru": null,
       "publishFrom": null,
       "publishUntil": null,
@@ -26,51 +36,83 @@
       "publish_en": true,
       "publish_ru": null,
       "media": {
-        "id": 316,
+        "id": 331,
         "clipUrlDefault": null,
         "clipUrl_et": null,
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "imageDefault": [
           {
-            "id": 3435,
-            "name": "ind.weisse.png",
+            "id": 3544,
+            "name": "cortex news hero.jpg",
             "alternativeText": "",
             "caption": "",
-            "width": 960,
-            "height": 480,
+            "width": 1920,
+            "height": 1080,
             "formats": {
               "thumbnail": {
-                "ext": ".png",
-                "url": "/uploads/thumbnail_Image_from_i_OS_8decf58b38.png",
-                "hash": "thumbnail_Image_from_i_OS_8decf58b38",
-                "mime": "image/png",
-                "name": "thumbnail_Image from iOS.png",
+                "ext": ".jpg",
+                "url": "/uploads/thumbnail_cortex_news_hero_2b1973b904.jpg",
+                "hash": "thumbnail_cortex_news_hero_2b1973b904",
+                "mime": "image/jpeg",
+                "name": "thumbnail_cortex news hero.jpg",
                 "path": null,
-                "size": 69.7,
+                "size": 8.46,
                 "width": 245,
-                "height": 122
+                "height": 138
               }
             },
-            "hash": "Image_from_i_OS_8decf58b38",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 770.88,
-            "url": "/uploads/Image_from_i_OS_8decf58b38.png",
+            "hash": "cortex_news_hero_2b1973b904",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 877.78,
+            "url": "/uploads/cortex_news_hero_2b1973b904.jpg",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
             "created_by": 30,
             "updated_by": 30,
-            "created_at": "2020-11-18T07:18:09.284Z",
-            "updated_at": "2020-11-18T07:18:22.115Z"
+            "created_at": "2020-11-20T12:03:01.411Z",
+            "updated_at": "2020-11-20T12:03:01.905Z"
           }
         ],
         "image_et": [],
         "image_en": [],
         "image_ru": []
       },
-      "button": []
+      "button": [],
+      "article_types": [
+        {
+          "id": 2,
+          "name": "news",
+          "created_by": 6,
+          "updated_by": 1,
+          "created_at": "2020-08-18T13:49:51.616Z",
+          "updated_at": "2020-09-21T10:57:52.599Z",
+          "article": null,
+          "et": "Uudised",
+          "en": "News",
+          "ru": "Новости",
+          "slug_et": "uudis",
+          "slug_en": "news",
+          "slug_ru": "novost",
+          "name_et": "Uudis",
+          "name_en": "News",
+          "name_ru": "Новость",
+          "label_et": "Uudis",
+          "label_en": "News",
+          "label_ru": "Новость",
+          "Description": null
+        }
+      ],
+      "tag_premiere_types": [],
+      "programmes": [],
+      "tag_genres": [],
+      "tag_keywords": [],
+      "web_authors": [],
+      "organisations": [],
+      "industry_people": [],
+      "people": []
     },
     "article_ru": null,
     "created_by": {
@@ -86,6 +128,6 @@
       "username": null
     },
     "created_at": "2020-10-26T09:35:33.861Z",
-    "updated_at": "2020-11-18T07:41:19.493Z"
+    "updated_at": "2020-11-20T12:04:05.248Z"
   }
 ]
