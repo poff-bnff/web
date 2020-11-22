@@ -1,0 +1,176 @@
+block content
+    if self.data.industryevents.allDates
+
+
+        section.days_box
+            .day_box
+                .day_date#date_bf_2= ''
+            .day_box
+                .day_date#date_bf_1= ''
+            .day_box
+                .day_date#selected_date= ''
+            .day_box
+                .day_date#date_af_1= ''
+            .day_box
+                .day_date#date_af_2= ''
+
+            .day_box(style = "display:none;")
+                h3.sub_section_headline
+                    button(onclick='toggleDate(`-`, 1)')= `<`
+                    button(onclick='toggleDate(`+`, 1)')= `>`
+                h3.sub_section_headline
+                    button(onclick='toggleDate()' style='display: none')#show_all_button= `SHOW ALL DATES`
+
+
+        each date of self.data.industryevents.allDates
+            //- Siit algab iga kuupäev
+            .day_result(id=date element-type='event')
+                H3.dark_1.text_center= (date)
+                .channels_box
+                    if self.data.industryevents.eventsByDate && self.data.industryevents.eventsByDate[date]
+                        - var eventDate = self.data.industryevents.eventsByDate[date]
+                        each channel of self.data.channels
+                            //- Siit algavad ühe kuupäeva kanalid ja kuvatakse kanali nimi
+                            .channel_box
+                                h3.dark_1= channel.name
+                                if eventDate[`Channel_${channel.id}`]
+                                    each event of eventDate[`Channel_${channel.id}`]
+                                        //- Siit eraldi selle kuupäeva selle kanali eventid
+                                        if event.title && event.title.length > 1
+                                            a.card_film(href=`/${lang_path}events/${event.slug}`)
+                                                .date#event_date(style='display: none;')= event.startTime
+                                                .container_frame_16_9
+                                                    if event.images && event.images[0]
+                                                        img.container_contents_16_9(src=`https://assets.poff.ee/img/${event.images[0].hash}${event.images[0].ext}` alt = event.title)
+                                                    else
+                                                        img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                                                .card_film_title
+                                                    h1.film_title_locale.dark_1= event.title
+
+                                                .card_film_info
+                                                    .str_info_grid_3
+                                                        if event.project_type && event.project_type.type
+                                                            .str_info_value.dark_1.thin_300= event.project_type.type
+
+                                                        if event.startTime && typeof event.startTime === 'string'
+                                                            .str_info_value.dark_1.thin_300
+                                                                +localdate(event.startTime)
+
+                                                        if event.location && event.location.hall && event.location.hall.name
+                                                            if event.location.hall && event.location.hall.name
+                                                                span.dark_1.screening_hall= event.location.hall.name
+                                                                if event.location.hall.cinema && event.location.hall.cinema.name
+                                                                    span.dark_1.screening_venue= ` ${event.location.hall.cinema.name}`
+                                                                    if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
+                                                                        span.dark_1.city= ` ${event.location.hall.cinema.town.name}`
+                                                        if event.videoUrl
+                                                            h1.film_title_locale.dark_1= event.videoUrl
+
+    script.
+        const selectedDate = document.getElementById('selected_date');
+
+        const date_bf_2 = document.getElementById('date_bf_2');
+        const date_bf_1 = document.getElementById('date_bf_1');
+        const date_af_1 = document.getElementById('date_af_1');
+        const date_af_2 = document.getElementById('date_af_2');
+
+
+        let today = new Date()
+
+        const calendarDate = function(datestring)
+        {
+            //- return datestring
+            return moment(datestring).format('dddd, D MMMM');
+        }
+
+        function toggleDate (updown, days) {
+            if (updown === '+') {
+                today.setDate(today.getDate()+days)
+            } else if (updown === '-') {
+                today.setDate(today.getDate()-days)
+            }
+            let yesterday = new Date()
+            yesterday.setDate(today.getDate() - 1)
+            let yesterday2 = new Date()
+            yesterday2.setDate(today.getDate() - 2)
+            let tomorrow = new Date()
+            tomorrow.setDate(today.getDate() + 1)
+            let tomorrow2 = new Date()
+            tomorrow2.setDate(today.getDate() + 2)
+
+            date_bf_2.innerHTML = calendarDate(yesterday2)
+            date_bf_1.innerHTML = calendarDate(yesterday)
+            selectedDate.innerHTML = calendarDate(today)
+            date_af_1.innerHTML = calendarDate(tomorrow)
+            date_af_2.innerHTML = calendarDate(tomorrow2)
+
+            if (updown) {
+                toggleCards()
+            } else {
+                toggleCards(true)
+            }
+        }
+
+        let cards = document.querySelectorAll('[element-type="event"]')
+
+        // If called with parameter show === true, then always displayed
+        function toggleCards(show) {
+            let display = ''
+            let show_all_button = document.getElementById('show_all_button')
+            if (show) {
+                display = 'grid'
+                show_all_button.style.display = 'none'
+            } else {
+                display = 'none'
+                show_all_button.style.display = 'grid'
+            }
+            cards.forEach(card => {
+
+                let eventStart = new Date(card.id)
+                let eventDate = calendarDate(eventStart.getFullYear()+'-'+(eventStart.getMonth()+1)+'-'+eventStart.getDate());
+                if (eventDate === selectedDate.innerHTML) {
+                    card.style.display = "grid"
+                } else {
+                    card.style.display = display
+                }
+
+            })
+        }
+
+        date_bf_2.addEventListener('click', e => { toggleDate('-', 2) } )
+        date_bf_1.addEventListener('click', e => { toggleDate('-', 1) } )
+        date_af_1.addEventListener('click', e => { toggleDate('+', 1) } )
+        date_af_2.addEventListener('click', e => { toggleDate('+', 2) } )
+
+        // filterFunc = function (iEvent) {
+        //     let eventStart = new Date(iEvent.startTime)
+        //     let eventDate = eventStart.getFullYear()+'-'+(eventStart.getMonth()+1)+'-'+eventStart.getDate();
+        //     if (eventDate === date) {
+        //         console.log('DA ', date, eventDate)
+
+        //         return true
+        //     } else {
+        //         return false
+        //     }
+        // }
+
+        toggleDate()
+        toggleCards()
+
+        function calendarfile(id) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(document.getElementById(`cal_${id}`).value));
+            // element.setAttribute('download', `IndustryEvent_${id}.ics`);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+
+
+        // Start file download.
+        //   download("hello.txt","This is the content of my file :)")
