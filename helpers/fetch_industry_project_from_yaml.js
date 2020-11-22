@@ -12,6 +12,9 @@ const STRAPIDATA_IND_PROJECT = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'ut
 const rootDir =  path.join(__dirname, '..')
 const domainSpecificsPath = path.join(rootDir, 'domain_specifics.yaml')
 const DOMAIN_SPECIFICS = yaml.safeLoad(fs.readFileSync(domainSpecificsPath, 'utf8'))
+const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const STRAPIDATA_PERSONS = STRAPIDATA['Person']
+const STRAPIDATA_COMPANIES = STRAPIDATA['Organisation']
 const DOMAIN = process.env['DOMAIN'] || 'industry.poff.ee';
 
 const languages = DOMAIN_SPECIFICS.locales[DOMAIN]
@@ -65,6 +68,36 @@ for (const ix in languages) {
             }
         }
 
+        if(element.teamCredentials && element.teamCredentials.rolePerson && element.teamCredentials.rolePerson[0]){
+
+            for (roleIx in element.teamCredentials.rolePerson) {
+                let rolePerson = element.teamCredentials.rolePerson[roleIx]
+
+                if (rolePerson === undefined) { continue }
+
+                if (rolePerson.person && rolePerson.person.id) {
+                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })[0]
+                    element.teamCredentials.rolePerson[roleIx].person = personFromYAML
+                }
+            }
+        }
+
+        if(element.teamCredentials && element.teamCredentials.roleCompany && element.teamCredentials.roleCompany[0]){
+
+            for (roleIx in element.teamCredentials.roleCompany) {
+                let roleCompany = element.teamCredentials.roleCompany[roleIx]
+                console.log("role compnay before: ", roleCompany)
+
+                if (roleCompany === undefined) { continue }
+
+                if (roleCompany.organisation && roleCompany.organisation.id) {
+                    let companyFromYAML = STRAPIDATA_COMPANIES.filter( (a) => { return roleCompany.organisation.id === a.id })[0]
+                    console.log("company from YAML", companyFromYAML)
+                    element.teamCredentials.roleCompany[roleIx].organisation = companyFromYAML
+                }
+            }
+        }
+
 
         const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
         const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
@@ -82,8 +115,6 @@ for (const ix in languages) {
         allData = allData.sort((a, b) => a.title.localeCompare(b.title, lang))
         const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
         fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
-
-
 
 
 
@@ -187,6 +218,10 @@ for (const ix in languages) {
             statuses: mSort(filters.statuses),
             genres: mSort(filters.genres),
         }
+
+
+
+
 
         let searchYAML = yaml.safeDump(projects_search, { 'noRefs': true, 'indent': '4' })
         fs.writeFileSync(path.join(fetchDir, `search_projects.${lang}.yaml`), searchYAML, 'utf8')
