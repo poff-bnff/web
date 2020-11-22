@@ -20,9 +20,7 @@ block content
                                 p(id= project.id+'nupp' style={color: 'red', display:'none'})
                         .card_project_info
                             .str_info_grid_3
-                                - var projectTypes = []
-                                each p_type in project.project_types
-                                    - projectTypes.push(p_type.type)
+                                - var projectTypes = (project.project_types || []).map(project_type => project_type.type)
                                 if projectTypes.length
                                     .str_project_info_label.dark_semi= self.label.industry.projectType
                                     .str_project_info_value.dark_1.thin_300= projectTypes.join(', ')
