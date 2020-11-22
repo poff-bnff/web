@@ -13406,142 +13406,6 @@
     ]
   },
   {
-    "id": 83,
-    "person": {
-      "id": 4179,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-18T16:39:58.109Z",
-      "updated_at": "2020-11-18T16:39:58.141Z",
-      "firstName": "Marina",
-      "lastName": " Lukashova",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": null,
-      "firstNameLastName": "Marina Lukashova",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Director of television from 1993 to 2017,since 2017 - head of the film commission of the Novgorod region.",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 1,
-      "firstname": "Mihkel",
-      "lastname": "Putrinš",
-      "username": null
-    },
-    "created_at": "2020-11-18T16:41:44.534Z",
-    "updated_at": "2020-11-22T11:10:24.809Z",
-    "clipUrl": null,
-    "website": "https://kinokomissiya-no.ru/",
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Marina Lukashova",
-    "slug": "marina-lukashova",
-    "filmography": {
-      "id": 21,
-      "text": null,
-      "film": [
-        {
-          "id": 44,
-          "order": null,
-          "film": null,
-          "foreignUrl": null,
-          "title_et": null,
-          "title_en": "https://www.youtube.com/watch?v=QE1Npqx40fs&feature=youtu.be",
-          "title_ru": null,
-          "titleOriginal": "Veliky Novgorod. © Rus Novogorodskaya",
-          "year": null,
-          "synopsis": null,
-          "synopsis_et": null,
-          "synopsis_en": null,
-          "synopsis_ru": null,
-          "trailerUrl": null,
-          "images": []
-        }
-      ]
-    },
-    "profilePicAtInd": {
-      "id": 3504,
-      "name": "pp - Марина Лукашова.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 500,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_pp_Marina_Lukashova_bcba508812.jpg",
-          "hash": "thumbnail_pp_Marina_Lukashova_bcba508812",
-          "mime": "image/jpeg",
-          "name": "thumbnail_pp - Марина Лукашова.jpg",
-          "path": null,
-          "size": 5.92,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "pp_Marina_Lukashova_bcba508812",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 61.11,
-      "url": "/uploads/pp_Marina_Lukashova_bcba508812.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-19T12:15:35.426Z",
-      "updated_at": "2020-11-19T12:15:35.551Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
-        "id": 7,
-        "type": "Russia in Focus 2020",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:37:07.621Z",
-        "updated_at": "2020-11-04T09:37:07.627Z"
-      }
-    ]
-  },
-  {
     "id": 78,
     "person": {
       "id": 4122,
@@ -14005,6 +13869,124 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:29.943Z",
         "updated_at": "2020-11-04T09:11:29.947Z"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "person": {
+      "id": 4179,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-18T16:39:58.109Z",
+      "updated_at": "2020-11-18T16:39:58.141Z",
+      "firstName": "Marina",
+      "lastName": " Lukashova",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Marina Lukashova",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Director of television from 1993 to 2017,since 2017 - head of the film commission of the Novgorod region.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-18T16:41:44.534Z",
+    "updated_at": "2020-11-22T23:15:48.190Z",
+    "clipUrl": null,
+    "website": "https://kinokomissiya-no.ru/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Marina Lukashova",
+    "slug": "marina-lukashova",
+    "filmography": {
+      "id": 21,
+      "text": null,
+      "film": []
+    },
+    "profilePicAtInd": {
+      "id": 3504,
+      "name": "pp - Марина Лукашова.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 500,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_pp_Marina_Lukashova_bcba508812.jpg",
+          "hash": "thumbnail_pp_Marina_Lukashova_bcba508812",
+          "mime": "image/jpeg",
+          "name": "thumbnail_pp - Марина Лукашова.jpg",
+          "path": null,
+          "size": 5.92,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "pp_Marina_Lukashova_bcba508812",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 61.11,
+      "url": "/uploads/pp_Marina_Lukashova_bcba508812.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-19T12:15:35.426Z",
+      "updated_at": "2020-11-19T12:15:35.551Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
       }
     ]
   },
