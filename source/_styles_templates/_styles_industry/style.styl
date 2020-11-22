@@ -3001,6 +3001,32 @@ a.btn_popover
     height 100%
     object-fit cover
 
+.days_box
+    grid-area fdays_box
+    display drid
+    grid-template-columns 1fr 1fr 1fr 1fr 1fr
+    grid-gap 2rem
+    width 100vw
+    padding 1rem
+    justify-content center
+    align-content center
+    justify-items center
+    align-items center
+
+.day_box
+    width 100%
+    height max-content
+    border .5px solid clr_grey_light
+    background-color white
+
+.day_date
+    color dark_5
+    text-align center
+    font-size 2rem
+    font-family font_h
+    font-weight 300
+
+
 /* MEDIA query: for large screens */
 @media screen and (min-width: 800px)
     .grid_film
@@ -3033,6 +3059,14 @@ a.btn_popover
                             "f_vialog_box      f_vialog_box      f_vialog_box"\
                             "f_img_slider_box  f_img_slider_box  f_img_slider_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
+    .grid_timetable
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "days_box          days_box          days_box"\
+                            "channel_1_box     channel_2_box     channel_3_box"\
         padding-top header_height
 
     .grid_ind_person

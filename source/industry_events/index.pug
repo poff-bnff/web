@@ -4,65 +4,64 @@ include /_templates/mixins.pug
 
 block content
     if self.data.industryevents.allDates
-        br
-        br
-        br
-        br
-        br
-        br
+        section.grid_timeable
 
-        h3.sub_section_headline#date_bf_2= ''
-        h3.sub_section_headline#date_bf_1= ''
+            .days_box
+                .day_box
+                    .day_date#date_bf_2= ''
+                .day_box
+                    .day_date#date_bf_1= ''
+                .day_box
+                    .day_date#selected_date= ''
+                .day_box
+                    .day_date#date_af_1= ''
+                .day_box
+                    .day_date#date_af_2= ''
 
-        h3.section_headline#selected_date= ''
+                    //- h3.sub_section_headline
+                    //-     button(onclick='toggleDate(`-`, 1)')= `<`
+                    //-     button(onclick='toggleDate(`+`, 1)')= `>`
+                    //- h3.sub_section_headline
+                    //-     button(onclick='toggleDate()' style='display: none')#show_all_button= `SHOW ALL DATES`
 
-        h3.sub_section_headline#date_af_1= ''
-        h3.sub_section_headline#date_af_2= ''
+            each date of self.data.industryevents.allDates
+                //- Siit algab iga kuupäev
+                main.grid_films(id=date element-type='event')
+                    p.dark_1= (date)
+                    if self.data.industryevents.eventsByDate && self.data.industryevents.eventsByDate[date]
+                        - var eventDate = self.data.industryevents.eventsByDate[date]
+                        each channel of self.data.channels
+                            //- Siit algavad ühe kuupäeva kanalid ja kuvatakse kanali nimi
+                            h3.dark_1= channel.name
+                            if eventDate[`Channel_${channel.id}`]
+                                each event of eventDate[`Channel_${channel.id}`]
+                                    //- Siit eraldi selle kuupäeva selle kanali eventid
+                                    if event.title && event.title.length > 1
+                                        a.card_film(href=`/${lang_path}events/${event.slug}`)
+                                            .date#event_date(style='display: none;')= event.startTime
+                                            .container_frame_16_9
+                                                if event.images && event.images[0]
+                                                    img.container_contents_16_9(src=`https://assets.poff.ee/img/${event.images[0].hash}${event.images[0].ext}` alt = event.title)
+                                                else
+                                                    img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                                            .card_film_title
+                                                h1.film_title_locale.dark_1= event.title
 
-        h3.sub_section_headline
-            button(onclick='toggleDate(`-`, 1)')= `<`
-            button(onclick='toggleDate(`+`, 1)')= `>`
-        h3.sub_section_headline
-            button(onclick='toggleDate()' style='display: none')#show_all_button= `SHOW ALL DATES`
+                                            .card_film_info
+                                                .str_info_grid_3
+                                                    if event.project_type && event.project_type.type
+                                                        .str_info_value.dark_1.thin_300= event.project_type.type
 
-        each date of self.data.industryevents.allDates
-            //- Siit algab iga kuupäev
-            main.grid_films(id=date element-type='event')
-                p.dark_1= (date)
-                if self.data.industryevents.eventsByDate && self.data.industryevents.eventsByDate[date]
-                    - var eventDate = self.data.industryevents.eventsByDate[date]
-                    each channel of self.data.channels
-                        //- Siit algavad ühe kuupäeva kanalid ja kuvatakse kanali nimi
-                        h3.dark_1= channel.name
-                        if eventDate[`Channel_${channel.id}`]
-                            each event of eventDate[`Channel_${channel.id}`]
-                                //- Siit eraldi selle kuupäeva selle kanali eventid
-                                if event.title && event.title.length > 1
-                                    a.card_film(href=`/${lang_path}events/${event.slug}`)
-                                        .date#event_date(style='display: none;')= event.startTime
-                                        .container_frame_16_9
-                                            if event.images && event.images[0]
-                                                img.container_contents_16_9(src=`https://assets.poff.ee/img/${event.images[0].hash}${event.images[0].ext}` alt = event.title)
-                                            else
-                                                img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
-                                        .card_film_title
-                                            h1.film_title_locale.dark_1= event.title
+                                                    if event.startTime && typeof event.startTime === 'string'
+                                                        .str_info_value.dark_1.thin_300
+                                                            +localdate(event.startTime)
 
-                                        .card_film_info
-                                            .str_info_grid_3
-                                                if event.project_type && event.project_type.type
-                                                    .str_info_value.dark_1.thin_300= event.project_type.type
-
-                                                if event.startTime && typeof event.startTime === 'string'
-                                                    .str_info_value.dark_1.thin_300
-                                                        +localdate(event.startTime)
-
-                                                if event.location && event.location.hall && event.location.hall.name
-                                                    if event.location.hall && event.location.hall.name
-                                                        span.dark_1.screening_hall= event.location.hall.name
-                                                        if event.location.hall.cinema && event.location.hall.cinema.name
-                                                            span.dark_1.screening_venue= ` ${event.location.hall.cinema.name}`
-                                                            if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
-                                                                span.dark_1.city= ` ${event.location.hall.cinema.town.name}`
-                                                if event.videoUrl
-                                                    h1.film_title_locale.dark_1= event.videoUrl
+                                                    if event.location && event.location.hall && event.location.hall.name
+                                                        if event.location.hall && event.location.hall.name
+                                                            span.dark_1.screening_hall= event.location.hall.name
+                                                            if event.location.hall.cinema && event.location.hall.cinema.name
+                                                                span.dark_1.screening_venue= ` ${event.location.hall.cinema.name}`
+                                                                if event.location.hall.cinema.town && event.location.hall.cinema.town.name && event.location.hall.cinema.town.country && event.location.hall.cinema.town.country.name
+                                                                    span.dark_1.city= ` ${event.location.hall.cinema.town.name}`
+                                                    if event.videoUrl
+                                                        h1.film_title_locale.dark_1= event.videoUrl
