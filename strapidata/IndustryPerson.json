@@ -271,6 +271,138 @@
     "industry_person_types": []
   },
   {
+    "id": 92,
+    "person": {
+      "id": 4188,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-18T17:12:09.918Z",
+      "updated_at": "2020-11-18T17:12:09.947Z",
+      "firstName": "Kaisa ",
+      "lastName": "Rönkkö",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Kaisa Rönkkö",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 908,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.900Z",
+          "updated_at": "2020-08-17T14:20:47.900Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "FI",
+          "name_et": "Soome",
+          "name_en": "Finland",
+          "name_ru": "Финляндия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Kaisa Rönkkö has been Executive Director of Music Finland since June 2018. She has a passion to deliver the message of the power of music and develop the international dialogue and innovation between premium content and new technologies and digital services.\nPrior to Music Finland Kaisa was employed as a head of orchestra department at the Finnish National Opera ballet. She was also the head of the music library and therefore responsible for copyright matters. Kaisa has been Finland’s project manager in large scale digital opera projects co-funded by Creative Europe Programme. Kaisa has also been employed as a senior intendant at the Public Information Division of the Defence Command Finland, as artist manager and partner at Finland’s largest artist management agency, Fazer Artist Management Inc and as assistant at the Finnish Cultural Institute in Copenhagen. \nKaisa is a Master of Music and Master of Arts Management who has studied at the Sibelius Academy, at the Liszt Academy in Budapest, at the University of Turku and at the Helsinki University of applied Sciences. She also holds a piano diploma and is a qualified piano teacher.\nKaisa is also a board member of NOMEX (Nordic Music Export), Boardman Management Study Group and Finland Promotion Board, coordinated by the Foreign Ministry of Finland.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:12:49.095Z",
+    "updated_at": "2020-11-21T11:14:45.117Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Kaisa Rönkkö",
+    "filmography": [],
+    "profilePicAtInd": {
+      "id": 3496,
+      "name": "Kaisa Rönkkö_2019 - Svea Ideon.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 500,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b.jpg",
+          "hash": "thumbnail_Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Kaisa Rönkkö_2019 - Svea Ideon.jpg",
+          "path": null,
+          "size": 5.99,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 72.68,
+      "url": "/uploads/Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-19T12:08:21.175Z",
+      "updated_at": "2020-11-19T12:08:21.512Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 10,
+        "type": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-13T09:37:55.735Z",
+        "updated_at": "2020-11-13T09:37:55.746Z"
+      }
+    ]
+  },
+  {
     "id": 74,
     "person": {
       "id": 4170,
@@ -14709,88 +14841,6 @@
     ]
   },
   {
-    "id": 92,
-    "person": null,
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Kaisa Rönkkö has been Executive Director of Music Finland since June 2018. She has a passion to deliver the message of the power of music and develop the international dialogue and innovation between premium content and new technologies and digital services.\nPrior to Music Finland Kaisa was employed as a head of orchestra department at the Finnish National Opera ballet. She was also the head of the music library and therefore responsible for copyright matters. Kaisa has been Finland’s project manager in large scale digital opera projects co-funded by Creative Europe Programme. Kaisa has also been employed as a senior intendant at the Public Information Division of the Defence Command Finland, as artist manager and partner at Finland’s largest artist management agency, Fazer Artist Management Inc and as assistant at the Finnish Cultural Institute in Copenhagen. \nKaisa is a Master of Music and Master of Arts Management who has studied at the Sibelius Academy, at the Liszt Academy in Budapest, at the University of Turku and at the Helsinki University of applied Sciences. She also holds a piano diploma and is a qualified piano teacher.\nKaisa is also a board member of NOMEX (Nordic Music Export), Boardman Management Study Group and Finland Promotion Board, coordinated by the Foreign Ministry of Finland.",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "created_at": "2020-11-18T17:12:49.095Z",
-    "updated_at": "2020-11-19T12:08:26.396Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Kaisa Rönkkö",
-    "filmography": [],
-    "profilePicAtInd": {
-      "id": 3496,
-      "name": "Kaisa Rönkkö_2019 - Svea Ideon.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 500,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b.jpg",
-          "hash": "thumbnail_Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b",
-          "mime": "image/jpeg",
-          "name": "thumbnail_Kaisa Rönkkö_2019 - Svea Ideon.jpg",
-          "path": null,
-          "size": 5.99,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 72.68,
-      "url": "/uploads/Kaisa_Roenkkoe_2019_Svea_Ideon_67fb17e47b.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-19T12:08:21.175Z",
-      "updated_at": "2020-11-19T12:08:21.512Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
-        "id": 10,
-        "type": "Music Meets Film",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-13T09:37:55.735Z",
-        "updated_at": "2020-11-13T09:37:55.746Z"
-      }
-    ]
-  },
-  {
     "id": 90,
     "person": {
       "id": 4186,
@@ -17137,228 +17187,6 @@
     ]
   },
   {
-    "id": 73,
-    "person": {
-      "id": 4169,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-18T15:24:19.465Z",
-      "updated_at": "2020-11-18T15:24:19.487Z",
-      "firstName": "Andrea ",
-      "lastName": "Queralt",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": "Producer",
-      "firstNameLastName": "Andrea Queralt",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [
-        {
-          "id": 890,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:46.374Z",
-          "updated_at": "2020-08-17T14:20:46.374Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "FR",
-          "name_et": "Prantsusmaa",
-          "name_en": "France",
-          "name_ru": "Франция"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Andrea Queralt has been working at the Paris-based company 4 A 4 Productions since 2015. Her first feature as a producer, Maryam Goormaghtigh's \"Before Summer Ends\", premiered in 2017 in the ACID Cannes section. In 2019, she co-produced Oliver Laxe's \"Fire Will Come\" which won Un Certain Regard's Jury Prize as well as two Goyas, among other awards. Andrea is currently producing Santiago Fillol's \"Matadero\" and has Laxe's next feature \"After\" in development. ",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "created_at": "2020-11-18T15:28:35.510Z",
-    "updated_at": "2020-11-19T12:23:51.372Z",
-    "clipUrl": null,
-    "website": "https://www.unifrance.org/annuaires/societe/88676/4-a-4-productions",
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Andrea Queralt",
-    "filmography": [
-      {
-        "id": 17,
-        "text": null,
-        "film": [
-          {
-            "id": 34,
-            "order": null,
-            "film": null,
-            "foreignUrl": "https://www.imdb.com/title/tt8212958/",
-            "title_et": null,
-            "title_en": "FIRE WILL COME by Oliver Laxe",
-            "title_ru": null,
-            "titleOriginal": null,
-            "year": null,
-            "synopsis": null,
-            "synopsis_et": null,
-            "synopsis_en": "Amador Coro has been condemned for having provoked a fire. When he gets out of prison, nobody is waiting for him. He returns to his home town, a small village hidden in the mountains of rural Galicia, to live with his mother, Benedicta, and their three cows. Life goes by, following the rhythm of nature. Until one night when a fire starts to devastate the region.",
-            "synopsis_ru": null,
-            "trailerUrl": null,
-            "images": [
-              {
-                "id": 3468,
-                "name": "FIRE WILL COME_filmstill2 - andrea queralt.jpg",
-                "alternativeText": "",
-                "caption": "",
-                "width": 1920,
-                "height": 1035,
-                "formats": {
-                  "thumbnail": {
-                    "ext": ".jpg",
-                    "url": "/uploads/thumbnail_FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347.jpg",
-                    "hash": "thumbnail_FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347",
-                    "mime": "image/jpeg",
-                    "name": "thumbnail_FIRE WILL COME_filmstill2 - andrea queralt.jpg",
-                    "path": null,
-                    "size": 10,
-                    "width": 245,
-                    "height": 132
-                  }
-                },
-                "hash": "FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "size": 985.49,
-                "url": "/uploads/FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347.jpg",
-                "previewUrl": null,
-                "provider": "local",
-                "provider_metadata": null,
-                "created_by": 35,
-                "updated_by": 35,
-                "created_at": "2020-11-18T15:27:03.627Z",
-                "updated_at": "2020-11-18T15:27:04.246Z"
-              }
-            ]
-          },
-          {
-            "id": 35,
-            "order": null,
-            "film": null,
-            "foreignUrl": "https://www.imdb.com/title/tt7028250/",
-            "title_et": null,
-            "title_en": "BEFORE SUMMER ENDS by Maryam Goormaghtigh",
-            "title_ru": null,
-            "titleOriginal": null,
-            "year": null,
-            "synopsis": null,
-            "synopsis_et": null,
-            "synopsis_en": "\nAfter five years of study in Paris, Arash hasn't adapted to French life and decides to return home to Iran. Hoping to change his mind, two friends drag him away on a final trip across France. ",
-            "synopsis_ru": null,
-            "trailerUrl": null,
-            "images": [
-              {
-                "id": 3469,
-                "name": "Before summer ends - andrea queralt.jpeg",
-                "alternativeText": "",
-                "caption": "",
-                "width": 1000,
-                "height": 415,
-                "formats": {
-                  "thumbnail": {
-                    "ext": ".jpeg",
-                    "url": "/uploads/thumbnail_Before_summer_ends_andrea_queralt_52c880bf08.jpeg",
-                    "hash": "thumbnail_Before_summer_ends_andrea_queralt_52c880bf08",
-                    "mime": "image/jpeg",
-                    "name": "thumbnail_Before summer ends - andrea queralt.jpeg",
-                    "path": null,
-                    "size": 7.53,
-                    "width": 245,
-                    "height": 102
-                  }
-                },
-                "hash": "Before_summer_ends_andrea_queralt_52c880bf08",
-                "ext": ".jpeg",
-                "mime": "image/jpeg",
-                "size": 109.87,
-                "url": "/uploads/Before_summer_ends_andrea_queralt_52c880bf08.jpeg",
-                "previewUrl": null,
-                "provider": "local",
-                "provider_metadata": null,
-                "created_by": 35,
-                "updated_by": 35,
-                "created_at": "2020-11-18T15:28:08.735Z",
-                "updated_at": "2020-11-18T15:28:09.421Z"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "profilePicAtInd": {
-      "id": 3515,
-      "name": "andreaqueralt2 - andrea queralt.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 500,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_andreaqueralt2_andrea_queralt_bd0e6d5d8c.jpg",
-          "hash": "thumbnail_andreaqueralt2_andrea_queralt_bd0e6d5d8c",
-          "mime": "image/jpeg",
-          "name": "thumbnail_andreaqueralt2 - andrea queralt.jpg",
-          "path": null,
-          "size": 4.63,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "andreaqueralt2_andrea_queralt_bd0e6d5d8c",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 50.64,
-      "url": "/uploads/andreaqueralt2_andrea_queralt_bd0e6d5d8c.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-19T12:23:20.054Z",
-      "updated_at": "2020-11-19T12:23:20.576Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": []
-  },
-  {
     "id": 70,
     "person": {
       "id": 4166,
@@ -18261,6 +18089,255 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "person": {
+      "id": 4169,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-18T15:24:19.465Z",
+      "updated_at": "2020-11-18T15:24:19.487Z",
+      "firstName": "Andrea ",
+      "lastName": "Queralt",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Andrea Queralt",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 890,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:46.374Z",
+          "updated_at": "2020-08-17T14:20:46.374Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "FR",
+          "name_et": "Prantsusmaa",
+          "name_en": "France",
+          "name_ru": "Франция"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": "andrea@franfe.fr",
+    "phoneAtInd": "+5563426",
+    "aboutText": "Andrea Queralt has been working at the Paris-based company 4 A 4 Productions since 2015. Her first feature as a producer, Maryam Goormaghtigh's \"Before Summer Ends\", premiered in 2017 in the ACID Cannes section. In 2019, she co-produced Oliver Laxe's \"Fire Will Come\" which won Un Certain Regard's Jury Prize as well as two Goyas, among other awards. Andrea is currently producing Santiago Fillol's \"Matadero\" and has Laxe's next feature \"After\" in development. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-18T15:28:35.510Z",
+    "updated_at": "2020-11-21T18:27:14.717Z",
+    "clipUrl": "https://www.youtube.com/watch?v=MfGKntocz1c",
+    "website": "https://www.unifrance.org/annuaires/societe/88676/4-a-4-productions",
+    "lookingFor": "looking for sisu",
+    "contactAtEvent": null,
+    "fullNamePrivate": "Andrea Queralt",
+    "filmography": [
+      {
+        "id": 17,
+        "text": null,
+        "film": [
+          {
+            "id": 34,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt8212958/",
+            "title_et": null,
+            "title_en": "FIRE WILL COME by Oliver Laxe",
+            "title_ru": null,
+            "titleOriginal": null,
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "Amador Coro has been condemned for having provoked a fire. When he gets out of prison, nobody is waiting for him. He returns to his home town, a small village hidden in the mountains of rural Galicia, to live with his mother, Benedicta, and their three cows. Life goes by, following the rhythm of nature. Until one night when a fire starts to devastate the region.",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3468,
+                "name": "FIRE WILL COME_filmstill2 - andrea queralt.jpg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 1920,
+                "height": 1035,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "/uploads/thumbnail_FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347.jpg",
+                    "hash": "thumbnail_FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_FIRE WILL COME_filmstill2 - andrea queralt.jpg",
+                    "path": null,
+                    "size": 10,
+                    "width": 245,
+                    "height": 132
+                  }
+                },
+                "hash": "FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 985.49,
+                "url": "/uploads/FIRE_WILL_COME_filmstill2_andrea_queralt_c2bfa47347.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T15:27:03.627Z",
+                "updated_at": "2020-11-18T15:27:04.246Z"
+              }
+            ]
+          },
+          {
+            "id": 35,
+            "order": null,
+            "film": null,
+            "foreignUrl": "https://www.imdb.com/title/tt7028250/",
+            "title_et": null,
+            "title_en": "BEFORE SUMMER ENDS by Maryam Goormaghtigh",
+            "title_ru": null,
+            "titleOriginal": null,
+            "year": null,
+            "synopsis": null,
+            "synopsis_et": null,
+            "synopsis_en": "\nAfter five years of study in Paris, Arash hasn't adapted to French life and decides to return home to Iran. Hoping to change his mind, two friends drag him away on a final trip across France. ",
+            "synopsis_ru": null,
+            "trailerUrl": null,
+            "images": [
+              {
+                "id": 3469,
+                "name": "Before summer ends - andrea queralt.jpeg",
+                "alternativeText": "",
+                "caption": "",
+                "width": 1000,
+                "height": 415,
+                "formats": {
+                  "thumbnail": {
+                    "ext": ".jpeg",
+                    "url": "/uploads/thumbnail_Before_summer_ends_andrea_queralt_52c880bf08.jpeg",
+                    "hash": "thumbnail_Before_summer_ends_andrea_queralt_52c880bf08",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_Before summer ends - andrea queralt.jpeg",
+                    "path": null,
+                    "size": 7.53,
+                    "width": 245,
+                    "height": 102
+                  }
+                },
+                "hash": "Before_summer_ends_andrea_queralt_52c880bf08",
+                "ext": ".jpeg",
+                "mime": "image/jpeg",
+                "size": 109.87,
+                "url": "/uploads/Before_summer_ends_andrea_queralt_52c880bf08.jpeg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "created_by": 35,
+                "updated_by": 35,
+                "created_at": "2020-11-18T15:28:08.735Z",
+                "updated_at": "2020-11-18T15:28:09.421Z"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "profilePicAtInd": {
+      "id": 3515,
+      "name": "andreaqueralt2 - andrea queralt.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 500,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_andreaqueralt2_andrea_queralt_bd0e6d5d8c.jpg",
+          "hash": "thumbnail_andreaqueralt2_andrea_queralt_bd0e6d5d8c",
+          "mime": "image/jpeg",
+          "name": "thumbnail_andreaqueralt2 - andrea queralt.jpg",
+          "path": null,
+          "size": 4.63,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "andreaqueralt2_andrea_queralt_bd0e6d5d8c",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 50.64,
+      "url": "/uploads/andreaqueralt2_andrea_queralt_bd0e6d5d8c.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-19T12:23:20.054Z",
+      "updated_at": "2020-11-19T12:23:20.576Z"
+    },
+    "images": [],
+    "role_at_films": [
+      {
+        "id": 7,
+        "roleNamePrivate": "Producer",
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-10-06T10:26:54.231Z",
+        "updated_at": "2020-10-06T10:38:46.540Z",
+        "order": 7,
+        "remoteId": null,
+        "roleName": {
+          "id": 4003,
+          "et": "Produtsent",
+          "en": "Producer",
+          "ru": "Продюсер"
+        }
+      }
+    ],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
       }
     ]
   },

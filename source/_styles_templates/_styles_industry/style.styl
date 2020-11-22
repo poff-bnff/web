@@ -422,6 +422,11 @@ footer
     border-radius 57% 43% 57% 43%
     object-fit cover
 
+.img_comp
+    width 100%
+    border-radius 1%
+    object-fit contain
+
 /* GRID: MAIN & SECTIONS */
 /* Grid-areas .grid_film - mobile 1 column */
 
@@ -438,6 +443,20 @@ footer
                         "f_interactive_box"\
                         "f_screenings_box"\
                         "f_dir_box"\
+                        "f_extra_box"\
+                        "f_qaclip_box"\
+                        "f_vialog_box"\
+                        "f_trailer_box"\
+                        "f_imgs_box"
+
+.grid_ind_person
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    padding-top header_height
+    grid-template-areas "f_dir_box"\
+                        "f_cred_box"\
+                        "f_img_slider_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
                         "f_vialog_box"\
@@ -590,6 +609,17 @@ footer
     justify-items center
     align-items center
     align-content center
+
+.login_ind_ev
+    display grid
+    repeat(auto-fill, minmax(100px, 1fr))
+    grid-template-rows auto
+    grid-gap 1rem
+    justify-content center
+    justify-items center
+    align-items center
+    align-content center
+    padding 1rem
 
 .login_label
     font-family font_p
@@ -1491,6 +1521,16 @@ row:nth-child(15) > .supporter_logos
     h4
         color dark_1
 
+.ind_person_name
+    font-family font_h
+    font-size 2rem
+    line-height 2.4rem
+    padding-top 1.618rem
+    padding-left 1rem
+    padding-right 1rem
+    text-align center
+    color dark_4
+
 .shop_item_body
     // background-color bg_dark_3
     min-height min-content
@@ -1922,12 +1962,13 @@ a .svg_icon_footer
   font-weight 300
 
 p
-  font-size 16px
-  line-height 1.618
-  font-family font_p
-  color white_96
-  font-weight 300
-  margin-bottom calc((1rem * 1.618) / 2)
+    font-size 16px
+    line-height 1.618
+    font-family font_p
+    // color white_96
+    color dark_1
+    font-weight 300
+    margin-bottom calc((1rem * 1.618) / 2)
 
 p a
     text-decoration none
@@ -2976,9 +3017,24 @@ a.btn_popover
         display grid
         grid-template-columns 1fr 1fr 1fr
         grid-template-rows auto
-        grid-template-areas "f_dir_box         f_dir_box         f_extra_box"\
-                            "f_title_box       f_trailer_box     f_trailer_box"\
+        grid-template-areas "f_title_box       f_trailer_box     f_trailer_box"\
                             "f_synopsis_box    f_synopsis_box    f_cred_box"\
+                            "f_synopsis_box    f_synopsis_box    f_runtime_box"\
+                            "f_interactive_box f_interactive_box f_interactive_box"\
+                            "f_dir_box         f_dir_box         f_extra_box"\
+                            "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_vialog_box      f_vialog_box      f_vialog_box"\
+                            "f_img_slider_box  f_img_slider_box  f_img_slider_box"\
+                            "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
+    .grid_ind_person
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "f_dir_box         f_dir_box         f_cred_box"\
+                            "f_title_box       f_trailer_box     f_trailer_box"\
+                            "f_synopsis_box    f_synopsis_box    f_extra_box"\
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
                             "f_interactive_box f_interactive_box f_interactive_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
