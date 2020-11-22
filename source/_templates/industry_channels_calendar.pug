@@ -77,22 +77,32 @@ block content
 
         let today = new Date()
 
+        const calendarDate = function(datestring)
+        {
+            //- return datestring
+            return moment(datestring).format('dddd, D MMMM');
+        }
 
         function toggleDate (updown, days) {
-
             if (updown === '+') {
                 today.setDate(today.getDate()+days)
             } else if (updown === '-') {
                 today.setDate(today.getDate()-days)
             }
+            let yesterday = new Date()
+            yesterday.setDate(today.getDate() - 1)
+            let yesterday2 = new Date()
+            yesterday2.setDate(today.getDate() - 2)
+            let tomorrow = new Date()
+            tomorrow.setDate(today.getDate() + 1)
+            let tomorrow2 = new Date()
+            tomorrow2.setDate(today.getDate() + 2)
 
-                let newDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-                selectedDate.innerHTML = newDate
-
-            date_bf_2.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()-2);
-            date_bf_1.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()-1);
-            date_af_1.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+1);
-            date_af_2.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+2);
+            date_bf_2.innerHTML = calendarDate(yesterday2)
+            date_bf_1.innerHTML = calendarDate(yesterday)
+            selectedDate.innerHTML = calendarDate(today)
+            date_af_1.innerHTML = calendarDate(tomorrow)
+            date_af_2.innerHTML = calendarDate(tomorrow2)
 
             if (updown) {
                 toggleCards()
@@ -117,7 +127,7 @@ block content
             cards.forEach(card => {
 
                 let eventStart = new Date(card.id)
-                let eventDate = eventStart.getFullYear()+'-'+(eventStart.getMonth()+1)+'-'+eventStart.getDate();
+                let eventDate = calendarDate(eventStart.getFullYear()+'-'+(eventStart.getMonth()+1)+'-'+eventStart.getDate());
                 if (eventDate === selectedDate.innerHTML) {
                     card.style.display = "grid"
                 } else {
