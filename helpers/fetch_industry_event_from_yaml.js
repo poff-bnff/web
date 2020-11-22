@@ -177,9 +177,6 @@ for (const lang of allLanguages) {
 
         newDataToYAML.allDates = uniqueDates
         console.log(`${dataToYAML.length} Industry Events ready for building`);
-
-        console.log(`${newDataToYAML.length} Industry Events have channel assigned`);
-
     }
     const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
     const yamlPath = path.join(fetchDir, `industryeventscalendar.${lang}.yaml`);
