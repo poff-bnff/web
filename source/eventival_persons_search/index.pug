@@ -42,8 +42,8 @@ block content
     if self.data.eventivalpersons
 
         section.team
-            h1.section_headline EVENTIVAL PERSONS
-            h1.sub_section_headline PERSONS
+            h1.section_headline Who's here
+            //- h1.sub_section_headline PERSONS
             .sub_team
                 each person of self.data.eventivalpersons.persons.sort((p1, p2) => (p1.FirstName + ' ' + p1.LastName) < (p2.FirstName + ' ' + p2.LastName) ? -1 : 0)
                     .person(id=person.EV_ID)
@@ -54,20 +54,15 @@ block content
                                 h4= person_name
                             .person_body
                                 if person.AttendeeType
-                                    p Attendee Type:
-                                        span(style = "padding:0 0 0 1em")= person.AttendeeType
+                                    p.text_center= person.AttendeeType
                                 if person.Company
-                                    p Company:
-                                        span(style = "padding:0 0 0 1em")= person.Company
+                                    p.text_center= person.Company
                                 if person.Role
-                                    p Role:
-                                        span(style = "padding:0 0 0 1em")= person.Role
+                                    p.text_center= person.Role
                                 if person.Project
-                                    p Project:
-                                        span(style = "padding:0 0 0 1em")= person.Project
+                                    p.text_center= person.Project
                                 if person.Country
-                                    p Country:
-                                        span(style = "padding:0 0 0 1em")= person.Country
+                                    p.text_center= person.Country
 
                 script.
                     var searcharray = !{JSON.stringify(self.data.eventivalpersons.search)}
