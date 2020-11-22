@@ -805,6 +805,7 @@ IndustryPersonType: &IndustryPersonType
 
 IndustryPerson: &IndustryPerson
     _path: /industry-people
+    slug: (UID)
     person: *Person
     profilePicAtInd: *StrapiMedia
     role_at_films: #(Component (repeatable))
