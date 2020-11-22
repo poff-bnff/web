@@ -1871,171 +1871,6 @@
     ]
   },
   {
-    "id": 10,
-    "person": {
-      "id": 4096,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-14T16:46:46.368Z",
-      "updated_at": "2020-11-14T16:46:46.402Z",
-      "firstName": "Vratislav ",
-      "lastName": "Slajer",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": "Producer",
-      "firstNameLastName": "Vratislav Slajer",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": {
-        "id": 3250,
-        "name": "2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
-        "alternativeText": "",
-        "caption": "",
-        "width": 500,
-        "height": 500,
-        "formats": {
-          "thumbnail": {
-            "ext": ".jpg",
-            "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
-            "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
-            "mime": "image/jpeg",
-            "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
-            "path": null,
-            "size": 6.1,
-            "width": 156,
-            "height": 156
-          }
-        },
-        "hash": "2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
-        "ext": ".jpg",
-        "mime": "image/jpeg",
-        "size": 103.99,
-        "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-14T16:31:42.442Z",
-        "updated_at": "2020-11-14T16:31:42.789Z"
-      },
-      "countries": [
-        {
-          "id": 873,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:43.734Z",
-          "updated_at": "2020-08-17T14:20:43.734Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "CZ",
-          "name_et": "Tšehhi",
-          "name_en": "Czechia",
-          "name_ru": "Чехия"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Graduate of the production department at Film and TV School of Academy of Performing Arts in Prague - FAMU. He is a producer of features, TV series, documentary and animated films at Bionaut - the company he founded in 1999. Nominated for International Emmy for series #martyisdead, winner of the Czech Lion and Czech Film Critics Award for the film Walking Too Fast and the Czech Lion for the HBO TV series Mammon and TV series Shadow of the Ferns. Member of European Film Academy, Czech Film Academy and head of the Audiovisual Producers' Association of Czech Republic. In 2002 he was awarded the Producer on the Move at the Cannes Film Festival, and in the same year he became a member of the prestigious ACE (Ateliers du Cinéma Europeén) network.",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "created_at": "2020-11-14T16:48:11.126Z",
-    "updated_at": "2020-11-22T11:53:40.733Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Vratislav Slayer",
-    "slug": "vratislav-slayer",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3250,
-      "name": "2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 500,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
-          "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
-          "mime": "image/jpeg",
-          "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
-          "path": null,
-          "size": 6.1,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 103.99,
-      "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 35,
-      "updated_by": 35,
-      "created_at": "2020-11-14T16:31:42.442Z",
-      "updated_at": "2020-11-14T16:31:42.789Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      }
-    ]
-  },
-  {
     "id": 6,
     "person": {
       "id": 4092,
@@ -2197,6 +2032,171 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "person": {
+      "id": 4096,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-14T16:46:46.368Z",
+      "updated_at": "2020-11-14T16:46:46.402Z",
+      "firstName": "Vratislav ",
+      "lastName": "Slajer",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Vratislav Slajer",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": {
+        "id": 3250,
+        "name": "2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 500,
+        "height": 500,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
+            "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
+            "mime": "image/jpeg",
+            "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
+            "path": null,
+            "size": 6.1,
+            "width": 156,
+            "height": 156
+          }
+        },
+        "hash": "2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 103.99,
+        "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T16:31:42.442Z",
+        "updated_at": "2020-11-14T16:31:42.789Z"
+      },
+      "countries": [
+        {
+          "id": 873,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:43.734Z",
+          "updated_at": "2020-08-17T14:20:43.734Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "CZ",
+          "name_et": "Tšehhi",
+          "name_en": "Czechia",
+          "name_ru": "Чехия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Graduate of the production department at Film and TV School of Academy of Performing Arts in Prague - FAMU. He is a producer of features, TV series, documentary and animated films at Bionaut - the company he founded in 1999. Nominated for International Emmy for series #martyisdead, winner of the Czech Lion and Czech Film Critics Award for the film Walking Too Fast and the Czech Lion for the HBO TV series Mammon and TV series Shadow of the Ferns. Member of European Film Academy, Czech Film Academy and head of the Audiovisual Producers' Association of Czech Republic. In 2002 he was awarded the Producer on the Move at the Cannes Film Festival, and in the same year he became a member of the prestigious ACE (Ateliers du Cinéma Europeén) network.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-14T16:48:11.126Z",
+    "updated_at": "2020-11-22T12:15:27.980Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Vratislav Slayer",
+    "slug": "vratislav-slayer",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3250,
+      "name": "2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 500,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
+          "hash": "thumbnail_2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
+          "mime": "image/jpeg",
+          "name": "thumbnail_2020_TVL_W3_IndustryProgram_Photo_VratislavSlajer - Petra Hrubosova.jpg",
+          "path": null,
+          "size": 6.1,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 103.99,
+      "url": "/uploads/2020_TVL_W3_Industry_Program_Photo_Vratislav_Slajer_Petra_Hrubosova_614a130d5e.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-14T16:31:42.442Z",
+      "updated_at": "2020-11-14T16:31:42.789Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
