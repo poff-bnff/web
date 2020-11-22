@@ -8,13 +8,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 16,
-      "firstname": "Rebecca",
-      "lastname": "Andreas",
+      "id": 9,
+      "firstname": "Elise",
+      "lastname": "Eimre",
       "username": null
     },
     "created_at": "2020-11-11T08:24:08.313Z",
-    "updated_at": "2020-11-16T10:45:20.263Z",
+    "updated_at": "2020-11-22T11:23:02.347Z",
     "domain": {
       "id": 1,
       "Url": null,
@@ -4851,6 +4851,82 @@
               "updated_by": 16,
               "created_at": "2020-11-02T15:58:34.998Z",
               "updated_at": "2020-11-02T15:58:35.158Z"
+            },
+            "logoBlack": null
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "order": null,
+        "name": {
+          "id": 30791,
+          "et": "Genelec",
+          "en": "Genelec",
+          "ru": "Genelec"
+        },
+        "supporter": [
+          {
+            "id": 319,
+            "name": "Genelec",
+            "customUrl": "https://www.genelec.com",
+            "poffi_article": {
+              "id": 220,
+              "created_by": 9,
+              "updated_by": 9,
+              "created_at": "2020-11-22T11:20:13.026Z",
+              "updated_at": "2020-11-22T11:20:13.155Z",
+              "title_et": "Genelec",
+              "slug_et": "genelec",
+              "title_en": null,
+              "slug_en": "pof-fi-article-81",
+              "title_ru": null,
+              "slug_ru": "pof-fi-article-146",
+              "lead_et": "**Genelec viib koduse kinoelamuse uuele tasemele!**\n\n",
+              "lead_ru": null,
+              "lead_en": null,
+              "contents_et": "PÖFF peab helikvaliteeti väga oluliseks. Tagamaks selge ning tõetruu heli taasesituse, valis PÖFF alates 2020. aastast festivali filmide kontrollkuulamiseks Genelec SAM™ kõlaritest koosneva 5.1 surround-süsteemi. Genelec SAM™ kõlarid on ruumi akustikast lähtuvalt kalibreeritavad ja pakuvad kvaliteetset helikogemust igas ruumis. Tutvu süsteemi üksikasjadega msonic Baltic kodulehel.  \n\nKes meist ei sooviks oma kodus diivanil filmi vaadates saada samasugust elamust kui kinos? Seejuures on kvaliteetne heli sama oluline kui suurepärane videopilt. Tänapäeva teleritootjad on selle arvelt aga sageli järeleandmisi teinud ja telerisse sisse ehitatud kõlaritega ei pruugi helipilt olla nii selge ja nüansirikas, kui filmilooja on ette näinud. Seetõttu polegi koduste kinoõhtute audiokogemus tihtipeale sugugi võrdväärne suures kinosaalis pakutavaga.\n\n",
+              "contents_en": null,
+              "contents_ru": null,
+              "publishFrom": null,
+              "publishUntil": null,
+              "publish_et": true,
+              "publish_en": null,
+              "publish_ru": null
+            },
+            "logoWhite": null,
+            "logoColour": {
+              "id": 3627,
+              "name": "1200px-Genelec_logo.png",
+              "alternativeText": "",
+              "caption": "",
+              "width": 1200,
+              "height": 206,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_1200px_Genelec_logo_8ef449f295.png",
+                  "hash": "thumbnail_1200px_Genelec_logo_8ef449f295",
+                  "mime": "image/png",
+                  "name": "thumbnail_1200px-Genelec_logo.png",
+                  "path": null,
+                  "size": 9.54,
+                  "width": 245,
+                  "height": 42
+                }
+              },
+              "hash": "1200px_Genelec_logo_8ef449f295",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 72.4,
+              "url": "/uploads/1200px_Genelec_logo_8ef449f295.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 9,
+              "updated_by": 9,
+              "created_at": "2020-11-22T11:21:10.769Z",
+              "updated_at": "2020-11-22T11:21:11.089Z"
             },
             "logoBlack": null
           }
