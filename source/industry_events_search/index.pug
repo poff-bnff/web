@@ -50,7 +50,7 @@ block content
             section.grid_events
                 -
                     var sortFunction = function(a, b) {
-                        return (a.startTime > b.startTime) ? 1 : ((b.startTime > a.startTime) ? -1 : 0)
+                        return a.title.localeCompare(b.title, 'en')
                     }
 
                 each event in self.data.industryevents.sort(sortFunction)

@@ -172,13 +172,19 @@ if (allData.length) {
     for (const date in newDataToYAML.eventsByDate) {
         newDataToYAML.allDates.push(date)
     }
-    const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
-    const yamlPath = path.join(fetchDir, `industryeventscalendar.en.yaml`);
-    fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
-    search_and_filters(dataToYAML)
+    console.log(`${dataToYAML.length} Industry Events ready for building`);
+}
+const allDataYAML = yaml.safeDump(dataToYAML, { 'noRefs': true, 'indent': '4' });
+const yamlPath = path.join(fetchDir, `industryeventscalendar.en.yaml`);
+fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+// console.log(allData);
+
+const allNewDataYAML = yaml.safeDump(newDataToYAML, { 'noRefs': true, 'indent': '4' });
+const yamlNewPath = path.join(fetchDir, `industryevents.en.yaml`);
+fs.writeFileSync(yamlNewPath, allNewDataYAML, 'utf8');
     // console.log(allData);
 
-}
+search_and_filters(dataToYAML)
 
 function search_and_filters(dataToYAML) {
 
@@ -235,20 +241,32 @@ function search_and_filters(dataToYAML) {
 
         let starttimes = []
         if (typeof event.startTime !== 'undefined') {
-            let startTime = event.startTime
-            if (event.id === 31) {
-                console.log(event.startTime, ' - ', new Date(event.startTime));
-            }
-            starttimes.push(startTime)
-            filters.starttimes[startTime] = startTime
-        }
 
+            Date.prototype.addHours = function(hours) {
+                var date = new Date(this.valueOf());
+                date.setHours(date.getHours() + hours);
+                return date;
+            }
+
+            let dateTimeUTC = convert_to_UTC(event.startTime)
+            let dateTimeUTCtoEET = dateTimeUTC.addHours(2)
+            let date = dateTimeUTCtoEET.getFullYear()+'-'+(dateTimeUTCtoEET.getMonth()+1)+'-'+(dateTimeUTCtoEET.getDate())
+            let dateKey = `_${date}`
+
+            starttimes.push(dateKey)
+            filters.starttimes[dateKey] = date
+        }
 
         return {
             id: events.id,
             text: [
                 events.title,
                 events.description,
+                types.join(' '),
+                categories.join(' '),
+                channels.join(' '),
+                projects.join(' '),
+                persons.join(' '),
             ].join(' ').toLowerCase(),
             types: types,
             categories: categories,
