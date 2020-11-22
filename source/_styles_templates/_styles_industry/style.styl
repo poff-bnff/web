@@ -1780,6 +1780,11 @@ header
     // grid-template-columns 1
     // grid-template-rows auto
 
+.filmography_box
+    grid-area filmography_box
+    display flex
+    flex-direction column
+
 .f_vialog_box
     grid-area f_vialog_box
     display flex
@@ -2089,6 +2094,8 @@ p a
     display grid
     grid-template-columns 1fr 2fr
     grid-gap 2rem
+    border none
+
 
 .str_info_grid_3_films
     display grid
@@ -3033,6 +3040,7 @@ a.btn_popover
         grid-template-columns 1fr 1fr 1fr
         grid-template-rows auto
         grid-template-areas "f_dir_box         f_dir_box         f_cred_box"\
+                            "filmography_box   filmography_box   filmography_box"\
                             "f_title_box       f_trailer_box     f_trailer_box"\
                             "f_synopsis_box    f_synopsis_box    f_extra_box"\
                             "f_synopsis_box    f_synopsis_box    f_runtime_box"\
@@ -3656,3 +3664,6 @@ strong
 
 .p_1
     margin 1rem
+
+.padding_2
+    padding 2rem

@@ -35,35 +35,64 @@ block content
                             .str_info_value= self.role_at_films.map(role_at_film => role_at_film.roleName).join(', ')
                     if self.emailAtInd
                         .str_info_grid_3
-                            .str_info_label= self.label.industry.roleAtFilms
-                            .str_info_value= self.person.profession
+                            .str_info_label= self.label.industry.email
+                            .str_info_value= self.emailAtInd
                     if self.phoneAtInd
                         .str_info_grid_3
-                            .str_info_label= self.label.industry.roleAtFilms
-                            .str_info_value= self.person.profession
+                            .str_info_label= self.label.industry.phone
+                            .str_info_value= self.phoneAtInd
+                    if self.lookingFor
+                        .str_info_grid_3
+                            .str_info_label= self.label.industry.lookingFor
+                            .str_info_value= self.lookingFor
                     if self.website
                         .str_info_grid_3
-                            .str_info_label= self.label.industry.roleAtFilms
-                            .str_info_value= self.person.profession
+                            .str_info_label= self.label.industry.website
+                            //- .str_info_value= self.label.industry.website
+                            a.str_info_value(href= self.website)= self.label.industry.website
+
+
+            if self.filmography
+                - var filmography = self.filmography
+                section.filmography_box
+                    .dir_bio.dark_1.padding_2
+                        if filmography.text
+                            p.dark_1
+                                +format(filmography.text)
+
+
+                    if filmography.film
+                        .grid_films
+                            each film in filmography.film
+                                a.card_film(href = film.foreignUrl || '#')
+                                    .container_frame_16_9
+                                        if film.images && film.images.length > 0
+                                            - var image = film.images[0]
+                                            img.container_contents_16_9(src= image.url)
+                                        else
+                                            img.container_contents_16_9(src='/assets/img/static/placeholder_hd_1.jpg')
+                                    if film.title
+                                        .card_film_title
+                                            h3.film_title_locale.dark_1= film.title
+                                    .card_film_info
+                                        if film.year
+                                            .str_info_grid_3
+                                                .str_info_label.dark_semi= self.label.film.year
+                                                .str_info_value.dark_1= film.year
+                                        //- if film.trailerUrl
+                                        //-     .str_info_grid_3
+                                        //-         .str_info_label.dark_semi= self.label.film.trailer
+                                        //-         a.str_info_value.dark_1(href= film.trailerUrl)= self.label.film.trailer
+                                        if film.synopsis
+                                            p.dark_1
+                                                +format(film.synopsis)
 
 
 
 
+                                    //- if film.
+                                    //- a(href=film.trailerUrl) Trailer
 
-                                    if self.filmography
-                                        each filmography in self.filmography
-                                            if filmography
-                                                if filmography.text
-                                                    span
-                                                        +format(filmography.text)
-                                                    span.dark_1 FILMS
-                                                    br
-                                                    each film in filmography.film
-                                                        if film.film.title
-                                                            span
-                                                                a(href=film.foreignUrl)= `${film.film.title} (${film.film.year}) - `
-                                                                a(href=film.trailerUrl) Trailer
-                                    br
 
         if self.clipUrlCode
             section#trailer.f_trailer_box
