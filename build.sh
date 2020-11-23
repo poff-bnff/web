@@ -4,7 +4,8 @@
 # node ./helpers/compile_article_pictures.js
 
 echo 'STARTING BUILD'
-[ -d "build/assets" ] && rm -r build/*
+[ -d "build" ] && rm -r build/*
+[ ! -d "build" ] && mkdir -p build
 [ ! -d "build/assets" ] && mkdir -p build/assets
 [ -d "source/_fetchdir" ] && rm -r source/_fetchdir/*
 [ ! -d "source/_fetchdir" ] && mkdir -p source/_fetchdir
@@ -21,7 +22,10 @@ printf '\n\n---------- Creating separate YAML files from strapiData.yaml -------
 echo 'fetch_articles_from_yaml'
 node ./helpers/fetch_articles_from_yaml.js
 
-echo 'fetch_article_types_from_yaml'
+echo 'fetch_industry_person_from_yaml'
+node ./helpers/fetch_industry_person_from_yaml.js
+
+echo 'fetch_article_type_from_yaml'
 node ./helpers/fetch_article_type_from_yaml.js
 
 echo 'fetch_heroarticle_from_yaml'
@@ -72,9 +76,14 @@ node ./helpers/fetch_industry_person_from_yaml.js
 echo 'fetch_industry_project_from_yaml'
 node ./helpers/fetch_industry_project_from_yaml.js
 
+echo 'fetch_industry_channels_from_yaml'
+node ./helpers/fetch_channels_from_yaml.js
+
 echo 'fetch_industry_event_from_yaml'
 node ./helpers/fetch_industry_event_from_yaml.js
 
+echo 'fetch_eventival_persons_from_yaml.js'
+node ./helpers/fetch_eventival_persons_from_yaml.js
 
 printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 
