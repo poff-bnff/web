@@ -82,6 +82,83 @@ for (const ix in languages) {
         fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industryproject_${templateDomainName}_index_template.pug`)
         allData.push(industry_project);
 
+
+
+        const credentials = industry_project.teamCredentials || {}
+
+        // persoonide blokk
+        const role_persons = credentials.rolePerson || []
+        industry_project.persons = {}
+        for (const role_person of role_persons) {
+            let person_id
+            try {
+                person_id = role_person.person.id
+            } catch (error) {
+                continue
+            }
+            industry_project.persons[person_id] = industry_project.persons[person_id] || {id: person_id, rolesAtFilm: []}
+            if (role_person.role_at_film){
+                industry_project.persons[person_id].rolesAtFilm.push(role_person.role_at_film.roleNamePrivate)
+            }
+        }
+        for (const ix in industry_project.persons) {
+            const industry_person = industry_project.persons[ix]
+            try {
+                industry_person.person = STRAPIDATA_PERSONS
+                .filter(strapi_person => (strapi_person.id === industry_person.id))[0]
+            } catch (error) {
+                console.log('Seda pole ette nähtud juhtuma: strapi_person.id !== industry_person.id', industry_person.id)
+            }
+            try {
+                if(industry_person.person.biography.en){
+                    industry_person.person.biography = industry_person.person.biography.en
+                }
+            } catch (error) {
+                null
+            }
+        }
+        industry_project.persons = Object.values(industry_project.persons)
+
+        // kompaniide blokk
+        const role_companies = credentials.roleCompany || []
+        industry_project.organisations = {}
+
+        for (const role_company of role_companies) {
+            let company_id
+            try {
+                company_id = role_company.organisation.id
+            } catch (error) {
+                continue
+            }
+            industry_project.organisations[company_id] = industry_project.organisations[company_id] || {id: company_id, rolesAtFilm: []}
+            if (role_company.roles_at_film){
+                industry_project.organisations[company_id].rolesAtFilm.push(role_company.roles_at_film.roleNamePrivate)
+
+            }
+        }
+        for (const ix in industry_project.organisations) {
+            const industry_company = industry_project.organisations[ix]
+            try {
+                industry_company.organisations = STRAPIDATA_COMPANIES
+                .filter(strapi_company => (strapi_company.id === industry_company.id))[0]
+            } catch (error) {
+                console.log('Seda pole ette nähtud juhtuma: strapi_company.id !== industry_company.id', industry_company.id)
+            }
+            try {
+                if(industry_company.organisations.description.en){
+                    industry_company.organisations.description = industry_company.organisations.description.en
+                }
+            } catch (error) {
+                null
+            }
+        }
+
+        industry_project.organisations = Object.values(industry_project.organisations)
+
+        // andmepuhastus
+
+        delete industry_project.teamCredentials
+
     }
 
     const yamlPath = path.join(fetchDir, `industryprojects.${lang}.yaml`);
@@ -89,6 +166,7 @@ for (const ix in languages) {
         allData = allData.sort((a, b) => a.title.localeCompare(b.title, lang))
         const allDataYAML = yaml.safeDump(allData, { 'noRefs': true, 'indent': '4' });
         fs.writeFileSync(yamlPath, allDataYAML, 'utf8');
+
 
 
 
@@ -205,76 +283,7 @@ for (const ix in languages) {
     }
 }
 
-
-for (const industry_project of STRAPIDATA_IND_PROJECT) {
-    // console.log(industry_project.teamCredentials.roleCompany);
-    const credentials = industry_project.teamCredentials || {}
-
-    // persoonide blokk
-    const role_persons = credentials.rolePerson || []
-    industry_project.persons = {}
-    for (const role_person of role_persons) {
-        let person_id
-        try {
-            person_id = role_person.person.id
-        } catch (error) {
-            continue
-        }
-        industry_project.persons[person_id] = industry_project.persons[person_id] || {id: person_id, rolesAtFilm: []}
-        if (role_person.role_at_film){
-            industry_project.persons[person_id].rolesAtFilm.push(role_person.role_at_film.roleNamePrivate)
-        }
-    }
-    for (const ix in industry_project.persons) {
-        const industry_person = industry_project.persons[ix]
-        try {
-            industry_person.person = STRAPIDATA_PERSONS
-            .filter(strapi_person => (strapi_person.id === industry_person.id))[0]
-        } catch (error) {
-            console.log('Seda pole ette nähtud juhtuma: strapi_person.id !== industry_person.id', industry_person.id)
-        }
-    }
-    industry_project.persons = Object.values(industry_project.persons)
-
-    // kompaniide blokk
-    const role_companies = credentials.roleCompany || []
-    industry_project.organisations = {}
-
-    for (const role_company of role_companies) {
-        let company_id
-        try {
-            company_id = role_company.organisation.id
-        } catch (error) {
-            continue
-        }
-        console.log(company_id)
-        industry_project.organisations[company_id] = industry_project.organisations[company_id] || {id: company_id, rolesAtFilm: []}
-        if (role_company.roles_at_film){
-            industry_project.organisations[company_id].rolesAtFilm.push(role_company.roles_at_film.roleNamePrivate)
-
-        }
-    }
-    for (const ix in industry_project.organisations) {
-        const industry_company = industry_project.organisations[ix]
-        try {
-            industry_company.organisations = STRAPIDATA_COMPANIES
-            .filter(strapi_company => (strapi_company.id === industry_company.id))[0]
-        } catch (error) {
-            console.log('Seda pole ette nähtud juhtuma: strapi_company.id !== industry_company.id', industry_company.id)
-        }
-    }
-
-    industry_project.organisations = Object.values(industry_project.organisations)
-
-    // andmepuhastus
-
-    // delete industry_project.teamCredentials
-
-
-}
-
-
-for (const industry_project of STRAPIDATA_IND_PROJECT) {
+for (const industry_project of allData) {
     const dirSlug = industry_project.slug || industry_project.id
     const saveDir = path.join(fetchDataDir, dirSlug);
     fs.mkdirSync(saveDir, { recursive: true });
