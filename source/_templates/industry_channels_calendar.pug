@@ -1,6 +1,7 @@
 block content
     if self.data.industryevents.allDates
 
+        h1.section_headline= 'Calendar'
 
         section.days_box
             .day_box
@@ -14,18 +15,18 @@ block content
             .day_box
                 .day_date#date_af_2= ''
 
-            .day_box(style = "display:none;")
-                h3.sub_section_headline
-                    button(onclick='toggleDate(`-`, 1)')= `<`
-                    button(onclick='toggleDate(`+`, 1)')= `>`
-                h3.sub_section_headline
-                    button(onclick='toggleDate()' style='display: none')#show_all_button= `SHOW ALL DATES`
+                .div(style = "display:none;")
+                    h3.sub_section_headline
+                        button(onclick='toggleDate(`-`, 1)')= `<`
+                        button(onclick='toggleDate(`+`, 1)')= `>`
+                    h3.sub_section_headline
+                        button(onclick='toggleDate()' style='display: none')#show_all_button= `SHOW ALL DATES`
 
 
         each date of self.data.industryevents.allDates
             //- Siit algab iga kuupäev
             .day_result(id=date element-type='event')
-                H3.dark_1.text_center= (date)
+                //- H3.dark_1.text_center= (date)
                 .channels_box
                     if self.data.industryevents.eventsByDate && self.data.industryevents.eventsByDate[date]
                         - var eventDate = self.data.industryevents.eventsByDate[date]
