@@ -207,9 +207,10 @@ block content
                     if self.persons
                         each person in self.persons
                             if person.rolesAtFilm && person.person
-                                .str_info_grid_3
-                                    .str_info_label= person.rolesAtFilm.join(', ')
-                                    .str_info_value= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
+                                each role in person.rolesAtFilm
+                                    .str_info_grid_3
+                                        .str_info_label= role
+                                        .str_info_value= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
 
                     if self.organisations
                         each company in self.organisations
