@@ -78,10 +78,12 @@ block content
                     .button.login_btn_social
                         | Google
 
+                a#loginE(href=`https://api.poff.ee/auth/eventival`)
+                    .button.login_btn_social
+                        | Eventival        
+
             a#loginE(href=`https://api.poff.ee/auth/eventival`)
                 img.eventival_logo_img(alt='PÖFF' data-src='/assets/img/static/eventival_logo.svg' src='/assets/img/static/eventival_logo.svg')
-                //- .button.login_btn_social
-                //-     | Eventival
 
         if process.env['DOMAIN'] !== 'industry.poff.ee'
             .login_register

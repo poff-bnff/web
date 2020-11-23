@@ -35,6 +35,9 @@ header
                     span.org_item
                         a(href='https://kino.poff.ee')
                             | PÖFFi veebikino
+                    span.org_item
+                        a(href='https://poff.elisastage.ee')
+                            | PÖFF @ ELISA STAGE
 
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
 
@@ -121,3 +124,6 @@ header
 
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
+
+include ../_templates/tracker_mixin.pug
++trackMe()

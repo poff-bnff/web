@@ -3,74 +3,116 @@
     "id": 1,
     "article_et": null,
     "article_en": {
-      "id": 85,
+      "id": 99,
       "title_et": null,
-      "title_en": "PÖFF Black Room kicks off with a masterclass of award-winning production designer Jacqueline Abrahams",
+      "title_en": "Location scouting for big productions: how do you pitch locations to international producers on projects like Tenet and Chernobyl?",
       "title_ru": null,
-      "created_by": 30,
-      "updated_by": 30,
-      "created_at": "2020-11-16T05:51:20.863Z",
-      "updated_at": "2020-11-16T08:59:12.998Z",
+      "created_by": {
+        "id": 30,
+        "firstname": "Egle",
+        "lastname": "Loor",
+        "username": null
+      },
+      "updated_by": {
+        "id": 30,
+        "firstname": "Egle",
+        "lastname": "Loor",
+        "username": null
+      },
+      "created_at": "2020-11-22T12:34:15.166Z",
+      "updated_at": "2020-11-22T12:43:50.887Z",
       "slug_et": null,
-      "slug_en": "poff-black-room-kicks-off-with-a-masterclass-of-award-winning-production-designer-jacqueline-abrahams",
+      "slug_en": "location-scouting-for-big-productions-how-do-you-pitch-locations-to-international-producers-on-projects-like-tenet-and-chernobyl",
       "slug_ru": null,
       "lead_et": null,
-      "lead_en": "Industry@Tallinn & Baltic Event takes off today, with PÖFF Black Room, a training programme that explores the visual language of cinema through the craft of production design.",
+      "lead_en": "Meet us on Sunday at 17:00 (EET) at the panel where Klaus Darrelmann, Jonas Spokas and Kristofer Piir discuss how to attract big film and TV productions to Europe, including how to photograph locations, so they look attractive, and provide information to show they make sense for the production. \n",
       "lead_ru": null,
       "contents_et": null,
-      "contents_en": "\nOn Monday, November 16 at 11:00 (EET) an award-winning production designer Jacqueline Abrahams, known for *Lady Macbeth* and *The Lobster* dissects creative limitations and the voice of objects in cinematic language. [Check the filmography]( https://www.imdb.com/name/nm0009008/?ref_=nv_sr_srsg_0).\n\nJoin the PÖFF Black Room masterclass created in collaboration with European Film Academy. Just login into Industry.poff.ee site (My industry menu item in the upper right corner), select the event from them calendar and enjoy! If you miss the live stream, you can also watch the masterclass later.\n\nWatch the masterclass [here](https://industry.poff.ee/events/p-oe-ff-black-room-masterclass-by-jacqueline-abrahams/).",
+      "contents_en": "The panel will present case studies on Christopher Nolan’s *Tenet* and HBO’s *Chernobyl*, looking at how the locations were first presented to their producers. \n\n[Read more about the speakers and join the event here](https://industry.poff.ee/events/location-scouting-for-big-productions-how-do-you-pitch-locations-to-international-producers-on-projects-like-tenet-and-chernobyl/)",
       "contents_ru": null,
-      "publishFrom": "2020-11-15T07:00:00.000Z",
+      "publishFrom": null,
       "publishUntil": null,
       "publish_et": null,
       "publish_en": true,
       "publish_ru": null,
       "media": {
-        "id": 294,
+        "id": 349,
         "clipUrlDefault": null,
         "clipUrl_et": null,
         "clipUrl_en": null,
         "clipUrl_ru": null,
         "imageDefault": [
           {
-            "id": 3386,
-            "name": "black room Jacqueline.png",
+            "id": 3642,
+            "name": "generic audience hero.jpg",
             "alternativeText": "",
             "caption": "",
-            "width": 2400,
-            "height": 1200,
+            "width": 1920,
+            "height": 1080,
             "formats": {
               "thumbnail": {
-                "ext": ".png",
-                "url": "/uploads/thumbnail_black_room_Jacqueline_b23ff6f4bb.png",
-                "hash": "thumbnail_black_room_Jacqueline_b23ff6f4bb",
-                "mime": "image/png",
-                "name": "thumbnail_black room Jacqueline.png",
+                "ext": ".jpg",
+                "url": "/uploads/thumbnail_generic_audience_hero_c2b026312a.jpg",
+                "hash": "thumbnail_generic_audience_hero_c2b026312a",
+                "mime": "image/jpeg",
+                "name": "thumbnail_generic audience hero.jpg",
                 "path": null,
-                "size": 31.68,
+                "size": 14.08,
                 "width": 245,
-                "height": 123
+                "height": 138
               }
             },
-            "hash": "black_room_Jacqueline_b23ff6f4bb",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 755.59,
-            "url": "/uploads/black_room_Jacqueline_b23ff6f4bb.png",
+            "hash": "generic_audience_hero_c2b026312a",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 948.97,
+            "url": "/uploads/generic_audience_hero_c2b026312a.jpg",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
             "created_by": 30,
             "updated_by": 30,
-            "created_at": "2020-11-16T08:44:24.722Z",
-            "updated_at": "2020-11-16T08:44:24.994Z"
+            "created_at": "2020-11-22T12:33:36.665Z",
+            "updated_at": "2020-11-22T12:33:37.132Z"
           }
         ],
         "image_et": [],
         "image_en": [],
         "image_ru": []
       },
-      "button": []
+      "button": [],
+      "article_types": [
+        {
+          "id": 2,
+          "name": "news",
+          "created_by": 6,
+          "updated_by": 1,
+          "created_at": "2020-08-18T13:49:51.616Z",
+          "updated_at": "2020-09-21T10:57:52.599Z",
+          "article": null,
+          "et": "Uudised",
+          "en": "News",
+          "ru": "Новости",
+          "slug_et": "uudis",
+          "slug_en": "news",
+          "slug_ru": "novost",
+          "name_et": "Uudis",
+          "name_en": "News",
+          "name_ru": "Новость",
+          "label_et": "Uudis",
+          "label_en": "News",
+          "label_ru": "Новость",
+          "Description": null
+        }
+      ],
+      "tag_premiere_types": [],
+      "programmes": [],
+      "tag_genres": [],
+      "tag_keywords": [],
+      "web_authors": [],
+      "organisations": [],
+      "industry_people": [],
+      "people": []
     },
     "article_ru": null,
     "created_by": {
@@ -86,6 +128,6 @@
       "username": null
     },
     "created_at": "2020-10-26T09:35:33.861Z",
-    "updated_at": "2020-11-16T07:25:35.619Z"
+    "updated_at": "2020-11-22T12:34:50.053Z"
   }
 ]
