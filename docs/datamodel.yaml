@@ -639,12 +639,12 @@ RoleAtFilm: &RoleAtFilm
 
 RolePerson: &RolePerson
     order: (Number)
-    role_at_film: *RoleAtFilm
+    roles_at_film: *RoleAtFilm
     person: *Person
 
 RoleCompany: &RoleCompany
     order: (Number)
-    role_at_film: *RoleAtFilm
+    roles_at_film: *RoleAtFilm
     organisation: *Organisation
 
 Credentials: &Credentials

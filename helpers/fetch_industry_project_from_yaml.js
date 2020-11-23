@@ -9,6 +9,7 @@ const fetchDataDir =  path.join(fetchDir, 'industryprojects');
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml');
 const STRAPIDATA_IND_PROJECT = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))['IndustryProject'];
 
+
 const rootDir =  path.join(__dirname, '..')
 const domainSpecificsPath = path.join(rootDir, 'domain_specifics.yaml')
 const DOMAIN_SPECIFICS = yaml.safeLoad(fs.readFileSync(domainSpecificsPath, 'utf8'))
@@ -16,6 +17,10 @@ const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_PERSONS = STRAPIDATA['Person']
 const STRAPIDATA_COMPANIES = STRAPIDATA['Organisation']
 const DOMAIN = process.env['DOMAIN'] || 'industry.poff.ee';
+
+
+
+
 
 const languages = DOMAIN_SPECIFICS.locales[DOMAIN]
 
@@ -25,88 +30,57 @@ for (const ix in languages) {
 
     allData = []
     for (const ix in STRAPIDATA_IND_PROJECT) {
-        let element = JSON.parse(JSON.stringify(STRAPIDATA_IND_PROJECT[ix]));
+        let industry_project = JSON.parse(JSON.stringify(STRAPIDATA_IND_PROJECT[ix]));
 
         var templateDomainName = 'industry';
 
-        // rueten func. is run for each element separately instead of whole data, that is
+        // rueten func. is run for each industry_project separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
-        element = rueten(element, lang);
-        let dirSlug = element.slug ? element.slug : null ;
+        industry_project = rueten(industry_project, lang);
+        let dirSlug = industry_project.slug ? industry_project.slug : null ;
 
         if (dirSlug === null) {
             if (lang === 'en' && DOMAIN === 'industry.poff.ee') {
-                console.log(`ERROR! Industry project ID ${element.id} missing slug ${lang}, skipped.`);
+                console.log(`ERROR! Industry project ID ${industry_project.id} missing slug ${lang}, skipped.`);
             }
             continue
         }
-        if (!element.title) {
+        if (!industry_project.title) {
             if (lang === 'en' && DOMAIN === 'industry.poff.ee') {
-                console.log(`ERROR! Industry project ID ${element.id} missing title ${lang}, skipped.`);
+                console.log(`ERROR! Industry project ID ${industry_project.id} missing title ${lang}, skipped.`);
             }
             continue
         }
 
-        element.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
-        element.path = `project/${dirSlug}`
+        industry_project.data = {'articles': '/_fetchdir/articles.' + lang + '.yaml'};
+        industry_project.path = `project/${dirSlug}`
 
-        if (element.clipUrl) {
-            if(element.clipUrl && element.clipUrl.length > 10) {
-                if (element.clipUrl.includes('vimeo')) {
-                    let splitVimeoLink = element.clipUrl.split('/')
+        if (industry_project.clipUrl) {
+            if(industry_project.clipUrl && industry_project.clipUrl.length > 10) {
+                if (industry_project.clipUrl.includes('vimeo')) {
+                    let splitVimeoLink = industry_project.clipUrl.split('/')
                     let videoCode = splitVimeoLink !== undefined ? splitVimeoLink[splitVimeoLink.length-1] : ''
                     if (videoCode.length === 9) {
-                        element.clipUrlCode = videoCode
+                        industry_project.clipUrlCode = videoCode
                     }
                 } else {
-                    let splitYouTubeLink = element.clipUrl.split('=')[1]
+                    let splitYouTubeLink = industry_project.clipUrl.split('=')[1]
                     let splitForVideoCode = splitYouTubeLink !== undefined ? splitYouTubeLink.split('&')[0] : ''
                     if (splitForVideoCode.length === 11) {
-                        element.clipUrlCode = splitForVideoCode
+                        industry_project.clipUrlCode = splitForVideoCode
                     }
                 }
             }
         }
 
-        if(element.teamCredentials && element.teamCredentials.rolePerson && element.teamCredentials.rolePerson[0]){
-
-            for (roleIx in element.teamCredentials.rolePerson) {
-                let rolePerson = element.teamCredentials.rolePerson[roleIx]
-
-                if (rolePerson === undefined) { continue }
-
-                if (rolePerson.person && rolePerson.person.id) {
-                    let personFromYAML = STRAPIDATA_PERSONS.filter( (a) => { return rolePerson.person.id === a.id })[0]
-                    element.teamCredentials.rolePerson[roleIx].person = personFromYAML
-                }
-            }
-        }
-
-        if(element.teamCredentials && element.teamCredentials.roleCompany && element.teamCredentials.roleCompany[0]){
-
-            for (roleIx in element.teamCredentials.roleCompany) {
-                let roleCompany = element.teamCredentials.roleCompany[roleIx]
-                console.log("role compnay before: ", roleCompany)
-
-                if (roleCompany === undefined) { continue }
-
-                if (roleCompany.organisation && roleCompany.organisation.id) {
-                    let companyFromYAML = STRAPIDATA_COMPANIES.filter( (a) => { return roleCompany.organisation.id === a.id })[0]
-                    console.log("company from YAML", companyFromYAML)
-                    element.teamCredentials.roleCompany[roleIx].organisation = companyFromYAML
-                }
-            }
-        }
-
-
-        const oneYaml = yaml.safeDump(element, { 'noRefs': true, 'indent': '4' });
+        const oneYaml = yaml.safeDump(industry_project, { 'noRefs': true, 'indent': '4' });
         const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
         let saveDir = path.join(fetchDataDir, dirSlug);
         fs.mkdirSync(saveDir, { recursive: true });
 
         fs.writeFileSync(yamlPath, oneYaml, 'utf8');
         fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industryproject_${templateDomainName}_index_template.pug`)
-        allData.push(element);
+        allData.push(industry_project);
 
     }
 
@@ -219,10 +193,6 @@ for (const ix in languages) {
             genres: mSort(filters.genres),
         }
 
-
-
-
-
         let searchYAML = yaml.safeDump(projects_search, { 'noRefs': true, 'indent': '4' })
         fs.writeFileSync(path.join(fetchDir, `search_projects.${lang}.yaml`), searchYAML, 'utf8')
 
@@ -233,4 +203,80 @@ for (const ix in languages) {
         console.log('No data for industry project, creating empty YAML');
         fs.writeFileSync(yamlPath, '[]', 'utf8');
     }
+}
+
+
+for (const industry_project of STRAPIDATA_IND_PROJECT) {
+    // console.log(industry_project.teamCredentials.roleCompany);
+    const credentials = industry_project.teamCredentials || {}
+
+    // persoonide blokk
+    const role_persons = credentials.rolePerson || []
+    industry_project.persons = {}
+    for (const role_person of role_persons) {
+        let person_id
+        try {
+            person_id = role_person.person.id
+        } catch (error) {
+            continue
+        }
+        industry_project.persons[person_id] = industry_project.persons[person_id] || {id: person_id, rolesAtFilm: []}
+        industry_project.persons[person_id].rolesAtFilm.push(role_person.role_at_film.roleNamePrivate)
+    }
+    for (const ix in industry_project.persons) {
+        const industry_person = industry_project.persons[ix]
+        try {
+            industry_person.person = STRAPIDATA_PERSONS
+            .filter(strapi_person => (strapi_person.id === industry_person.id))[0]
+        } catch (error) {
+            console.log('Seda pole ette nähtud juhtuma: strapi_person.id !== industry_person.id', industry_person.id)
+        }
+    }
+    industry_project.persons = Object.values(industry_project.persons)
+
+    // kompaniide blokk
+    const role_companies = credentials.roleCompany || []
+    industry_project.organisations = {}
+
+    for (const role_company of role_companies) {
+        let company_id
+        try {
+            company_id = role_company.organisation.id
+        } catch (error) {
+            continue
+        }
+        industry_project.organisations[company_id] = industry_project.organisations[company_id] || {id: company_id}
+    }
+    for (const ix in industry_project.organisations) {
+        const industry_company = industry_project.organisations[ix]
+        try {
+            const strapi_company = STRAPIDATA_COMPANIES
+                .filter(strapi_company => (strapi_company.id === industry_company.id))[0]
+            industry_project.organisations[ix] = strapi_company
+        } catch (error) {
+            console.log('Seda pole ette nähtud juhtuma: strapi_person.id !== industry_person.id', industry_person.id)
+        }
+    }
+    industry_project.organisations = Object.values(industry_project.organisations)
+
+    // andmepuhastus
+
+    // delete industry_project.teamCredentials
+
+
+}
+
+
+for (const industry_project of STRAPIDATA_IND_PROJECT) {
+    const dirSlug = industry_project.slug || industry_project.id
+    const saveDir = path.join(fetchDataDir, dirSlug);
+    fs.mkdirSync(saveDir, { recursive: true });
+
+    industry_project.data = {'articles': '/_fetchdir/articles.en.yaml'};
+    industry_project.path = `project/${dirSlug}`
+
+    const yamlPath = path.join(fetchDataDir, dirSlug, 'data.en.yaml')
+    const oneYaml = yaml.safeDump(industry_project, { 'noRefs': true, 'indent': '4' })
+    fs.writeFileSync(yamlPath, oneYaml, 'utf8')
+    fs.writeFileSync(path.join(saveDir,'index.pug'), 'include /_templates/industryproject_industry_index_template.pug')
 }
