@@ -221,7 +221,9 @@ for (const industry_project of STRAPIDATA_IND_PROJECT) {
             continue
         }
         industry_project.persons[person_id] = industry_project.persons[person_id] || {id: person_id, rolesAtFilm: []}
-        industry_project.persons[person_id].rolesAtFilm.push(role_person.role_at_film.roleNamePrivate)
+        if (role_person.role_at_film){
+            industry_project.persons[person_id].rolesAtFilm.push(role_person.role_at_film.roleNamePrivate)
+        }
     }
     for (const ix in industry_project.persons) {
         const industry_person = industry_project.persons[ix]
@@ -245,18 +247,23 @@ for (const industry_project of STRAPIDATA_IND_PROJECT) {
         } catch (error) {
             continue
         }
-        industry_project.organisations[company_id] = industry_project.organisations[company_id] || {id: company_id}
+        console.log(company_id)
+        industry_project.organisations[company_id] = industry_project.organisations[company_id] || {id: company_id, rolesAtFilm: []}
+        if (role_company.roles_at_film){
+            industry_project.organisations[company_id].rolesAtFilm.push(role_company.roles_at_film.roleNamePrivate)
+
+        }
     }
     for (const ix in industry_project.organisations) {
         const industry_company = industry_project.organisations[ix]
         try {
-            const strapi_company = STRAPIDATA_COMPANIES
-                .filter(strapi_company => (strapi_company.id === industry_company.id))[0]
-            industry_project.organisations[ix] = strapi_company
+            industry_company.organisations = STRAPIDATA_COMPANIES
+            .filter(strapi_company => (strapi_company.id === industry_company.id))[0]
         } catch (error) {
-            console.log('Seda pole ette nähtud juhtuma: strapi_person.id !== industry_person.id', industry_person.id)
+            console.log('Seda pole ette nähtud juhtuma: strapi_company.id !== industry_company.id', industry_company.id)
         }
     }
+
     industry_project.organisations = Object.values(industry_project.organisations)
 
     // andmepuhastus

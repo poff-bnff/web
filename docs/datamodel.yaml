@@ -639,7 +639,7 @@ RoleAtFilm: &RoleAtFilm
 
 RolePerson: &RolePerson
     order: (Number)
-    roles_at_film: *RoleAtFilm
+    role_at_film: *RoleAtFilm
     person: *Person
 
 RoleCompany: &RoleCompany
