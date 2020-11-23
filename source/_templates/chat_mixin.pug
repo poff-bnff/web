@@ -43,13 +43,13 @@ mixin chat(room_name, is_moderated_room=false)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
         document.addEventListener('userProfileLoaded', function (e) {
-            main(userProfile, '#{room_name}', #{is_moderated_room})
+            chat_main(userProfile, '#{room_name}', #{is_moderated_room})
         })
 
-        function main(userProfile, room_name, is_moderated_room) {
+        function chat_main(userProfile, room_name, is_moderated_room) {
             const CHAT_SERVER = 'https://chat.poff.ee'
             const socket = io(CHAT_SERVER)
-            socket.on('ping', () =>{
+            socket.on('ping', () => {
                 socket.emit('pong', {room_name: room_name})
             })
 
@@ -70,8 +70,8 @@ mixin chat(room_name, is_moderated_room=false)
                 chatMessageInputElement.setAttribute('autocomplete', 'off')
                 try {
                     chatFormElement.appendChild(chatMessageInputElement)
-                } catch (error) {
-                    console.log({E, room_name, room_suffix})
+                } catch (E) {
+                    console.log({E, chatFormElement, room_suffix})
                 }
             }
 
