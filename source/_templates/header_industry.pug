@@ -124,6 +124,8 @@ header
                             a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
                         li#logInName.dark_1(style={display: 'none'})
                             a#tervitus= self.label.menu.mainGreeting
+                        li#myCalendar(style={cursor: 'pointer'})
+                            a(href=`/${lang_path}mycalendar`) My calendar     
                         //- li#userProfile(style={cursor: 'pointer', display: 'none'})
                         //-     a(onclick = 'saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
                         li#logOut(style={cursor: 'pointer', display: 'none'} )
