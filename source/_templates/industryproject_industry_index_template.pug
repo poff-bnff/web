@@ -52,7 +52,7 @@ block content
                         p.premiere_type= types.join(', ')
 
 
-                h1.film_title_detailed= self.title
+                h1.film_title_detailed= self.title_en
 
                 .str_info_blokk_1
 
@@ -61,7 +61,7 @@ block content
                             .str_info_label= self.label.film.countries
                             -var countries = []
                             each country in self.countries
-                                - countries.push(country.name)
+                                - countries.push(country.name_en)
                             .str_info_value= countries.join(', ')
 
                     if self.languages && self.languages[0]
@@ -152,13 +152,13 @@ block content
                         .str_info_grid_3
                             .str_info_label= self.label.industry.projectBudget
                             .str_info_value
-                                +euro(self.budget)
+                                +bigMoney(self.budget)
 
                     if self.financed
                         .str_info_grid_3
                             .str_info_label= self.label.industry.projectFinanced
                             .str_info_value
-                                +euro(self.financed)
+                                +bigMoney(self.financed)
 
                     if self.lookingFor
                         .str_info_grid_3
@@ -206,14 +206,14 @@ block content
 
                     if self.persons
                         each person in self.persons
-                            if person.rolesAtFilm && person.person && !person.person.biography
+                            if person.rolesAtFilm && person.person
                                 .str_info_grid_3
                                     .str_info_label= person.rolesAtFilm.join(', ')
                                     .str_info_value= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
 
                     if self.organisations
                         each company in self.organisations
-                            if company.rolesAtFilm && company.organisations.namePrivate && !company.organisations.description
+                            if company.rolesAtFilm && company.organisations.namePrivate
                                 .str_info_grid_3
                                     .str_info_label= company.rolesAtFilm.join(', ')
                                     .str_info_value= company.organisations.namePrivate
