@@ -1,5 +1,6 @@
 
 function validateEmail(element_id) {
+    console.log('emailv')
     var email = document.getElementById(element_id)
     var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (!emailRe.test(String(email.value).toLowerCase())) {
@@ -114,6 +115,34 @@ function validateBDay(element_id) {
         dobHelp.classList.remove("valid")
         dobHelp.classList.add("invalid")
         return false
+    }
+}
+
+function validateDate(element_id) {
+    console.log('validateDate ', element_id);
+
+    var date = document.getElementById(element_id)
+    var dateRe = new RegExp(
+        '^(' +
+        '([0-9]{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01]))' + // 1977-11-23
+        '|((0[1-9]|1[012])[- \\/.](0[1-9]|[12][0-9]|3[01])[- \\/.](19|20)[0-9][0-9])' + // 11-19-2004 11/19/2004 11.19.2004
+        '|((0[1-9]|[12][0-9]|3[01])[- \\/.](0[1-9]|1[012])[- \\/.](19|20)[0-9][0-9])'+  // 19-11-2004 ...
+        ')$'
+        )
+    if (date.value === "") {
+        dateHelp.classList.remove("valid")
+        dateHelp.classList.add("invalid")
+        return false
+    }
+    if (!dateRe.test(String(date.value) )) {
+        dateHelp.classList.remove("valid")
+        dateHelp.classList.add("invalid")
+        return true
+    }
+    else {
+        dateHelp.classList.remove("invalid")
+        dateHelp.classList.add("valid")
+        return true
     }
 }
 

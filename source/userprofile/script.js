@@ -1,6 +1,13 @@
 let imgPreview = document.getElementById("imgPreview");
 let profile_pic_to_send = "empty"
 
+if (validToken) {
+    loadUserInfo();
+} else {
+    window.open(`${location.origin}/${langpath}login`, '_self')
+    saveUrl()
+}
+
 async function loadUserInfo() {
     let response = await fetch(`https://api.poff.ee/profile`, {
         method: "GET",
@@ -16,13 +23,13 @@ async function loadUserInfo() {
         document.getElementById('profileUnFilledMessage').style.display = 'block'
 
     }
-    console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
+    // console.log("täidan ankeedi " + userProfile.name + "-i cognitos olevate andmetega.....")
     email.innerHTML = userProfile.email
-    if(userProfile.name)firstName.value = userProfile.name
-    if(userProfile.family_name)lastName.value = userProfile.family_name
-    if(userProfile.gender)gender.value = userProfile.gender
-    if (userProfile.phone_number)phoneNr.value = userProfile.phone_number
-    if(userProfile.birthdate)dob.value = userProfile.birthdate
+    if (userProfile.name) firstName.value = userProfile.name
+    if (userProfile.family_name) lastName.value = userProfile.family_name
+    if (userProfile.gender) gender.value = userProfile.gender
+    if (userProfile.phone_number) phoneNr.value = userProfile.phone_number
+    if (userProfile.birthdate) dob.value = userProfile.birthdate
 
     if (userProfile.address) {
         let address = userProfile.address.split(", ")
@@ -32,8 +39,8 @@ async function loadUserInfo() {
         countrySelection.value = riik
     }
 
-    if(userProfile.picture){
-        if(userProfile.picture !=="no profile picture saved"){
+    if (userProfile.picture) {
+        if (userProfile.picture !== "no profile picture saved") {
             let res = await fetch(`https://api.poff.ee/profile/picture_down`, {
                 method: "GET",
                 headers: {
@@ -41,45 +48,39 @@ async function loadUserInfo() {
                 },
             });
             let profilePicture = await res.json();
-            imgPreview.src=profilePicture.url
+            imgPreview.src = profilePicture.url
         }
 
     }
 
 }
 
-if (validToken) {
-    loadUserInfo();
-}else{
-    window.open(`${location.origin}/login`, '_self')
-}
-
 async function sendUserProfile() {
-    console.log('updating user profile.....')
+    // console.log('updating user profile.....')
 
     //profile_pic_to_send= no profile picture saved
     //Kui pilt saadetakse siis profile_pic_to_send= this users picture is in S3
 
-    let pictureInfo ="no profile picture saved"
+    let pictureInfo = "no profile picture saved"
 
-    if(profile_pic_to_send !== "empty"){
-        pictureInfo ='this users picture is in S3'
+    if (profile_pic_to_send !== "empty") {
+        pictureInfo = 'this users picture is in S3'
         await uploadPic()
-    }else if(userProfile.picture === 'this users picture is in S3'){
+    } else if (userProfile.picture === 'this users picture is in S3') {
         pictureInfo = 'this users picture is in S3'
     }
 
     let userToSend = [
-        {Name: "picture",Value: pictureInfo },
-        {Name: "name",Value: firstName.value},
-        {Name: "family_name", Value: lastName.value },
-        {Name: "gender",Value: gender.value},
-        { Name: "birthdate",Value: dob.value},
-        {Name: "phone_number",Value: '+' + phoneNr.value},
-        {Name: "address",Value: `${countrySelection.value}, ${citySelection.value}`},
+        { Name: "picture", Value: pictureInfo },
+        { Name: "name", Value: firstName.value },
+        { Name: "family_name", Value: lastName.value },
+        { Name: "gender", Value: gender.value },
+        { Name: "birthdate", Value: dob.value },
+        { Name: "phone_number", Value: '+' + phoneNr.value },
+        { Name: "address", Value: `${countrySelection.value}, ${citySelection.value}` },
     ];
 
-    console.log("kasutaja profiil mida saadan ", userToSend);
+    // console.log("kasutaja profiil mida saadan ", userToSend);
 
     let response = await (await fetch(`https://api.poff.ee/profile`, {
         method: 'PUT',
@@ -105,11 +106,13 @@ async function sendUserProfile() {
 
 function validateaAndPreview(file) {
     let error = document.getElementById("imgError");
-    console.log(file)
+    // console.log(file)
     // Check if the file is an image.
     if (!file.type.includes("image")) {
-        console.log("File is not an image.", file.type, file);
+        // console.log("File is not an image.", file.type, file);
         error.innerHTML = "File is not an image.";
+    } else if (file.size / 1024 / 1024 > 5) {
+        error.innerHTML = "Image can be max 5MB, uploaded image was " + (file.size/1024/1024).toFixed(2) + "MB"
     } else {
         error.innerHTML = "";
         //näitab pildi eelvaadet
@@ -119,13 +122,14 @@ function validateaAndPreview(file) {
         };
         reader.readAsDataURL(file);
         profile_pic_to_send = file
+
     }
 }
 
 async function uploadPic() {
 
-    console.log("uploading this file to S3....")
-    console.log(profile_pic_to_send)
+    // console.log("uploading this file to S3....")
+    // console.log(profile_pic_to_send)
     //küsib lingi kuhu pilti postitada
     let linkResponse = await fetch(`https://api.poff.ee/profile/picture_up`, {
         method: 'GET',
@@ -134,15 +138,21 @@ async function uploadPic() {
         },
     });
     data = await linkResponse.json()
-    console.log("saadud link on: ")
-    console.log(data.link)
+    // console.log("saadud link on: ")
+    // console.log(data.link)
 
 
     //saadab pildi
+    // console.log('name ', profile_pic_to_send.name)
+
+    const fileExt = profile_pic_to_send.name.split('.').pop()
+    let contentType = 'image/' + fileExt
+    // console.log(contentType)
+
     let requestOptions = {
         method: 'PUT',
         headers: {
-            'Content-Type': "image/png",
+            'Content-Type': contentType,
             'ACL': 'private'
         },
         body: profile_pic_to_send,
@@ -180,6 +190,10 @@ function validateForm() {
         errors.push('Missing or invalid date of birth')
     }
 
+    if (!validateDate("dob")) {
+        errors.push('Missing or invalid date of birth wrong format')
+    }
+
     if (!validatePhoneNr("phoneNr")) {
         errors.push('Missing phonenumber')
     }
@@ -192,8 +206,15 @@ function validateForm() {
         errors.push('Missing city')
     }
 
-    console.log(errors)
+    // console.log(errors)
     if (errors.length === 0) {
         sendUserProfile()
     }
 }
+
+window.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        // console.log("ENTER")
+        validateForm()
+    }
+})

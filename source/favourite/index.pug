@@ -7,7 +7,7 @@ block content
     if self.data.cassettes
         main.grid_films
             each cassette in self.data.cassettes
-                a.card_film(id= cassette.id  style= {display:'none'} href= `/${lang_path}film/${cassette.slug}`)
+                a.card_film(id= cassette.id + '_cassette_id'  style= {display:'none'} href= `/${lang_path}film/${cassette.slug}`)
 
 
 
@@ -34,7 +34,8 @@ block content
                     .card_film_title
                         h3.film_title_locale.dark_1= cassette.title
                         .nupp
-                            p(style={color: 'red'} onclick=`removeFilm(${cassette.id});return false`) X
+                            p.btn.btn_secondary.isshortlisted(id=cassette.id+'_is_shortlisted', onclick=`removeFilm(${cassette.id});return false`)= self.label.film.removeShortlist
+                            //- a.btn.btn_secondary#removeFavBtn(style= {display: 'none'} onclick=`removeFilm(${self.id})` role='button' target='_BLANK')= self.label.film.removeShortlist
                     .card_film_info
                         each p, locale in self.otherLocalePaths
                             if cassette[`title_${locale}`]

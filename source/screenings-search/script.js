@@ -1,5 +1,9 @@
-
 const search_input = document.getElementById('search');
+const nonetoshow = document.getElementById('nonetoshow');
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+
 const selectors = {
     programmes: document.getElementById('programmes_select'),
     languages: document.getElementById('languages_select'),
@@ -12,13 +16,46 @@ const selectors = {
     times: document.getElementById('times_select')
 }
 
-const nonetoshow = document.getElementById('nonetoshow');
+function urlSelect() {
+    if (urlParams.getAll.length) {
+        for (const [ix, params] of urlParams) {
+            if (selectors[ix]) {
+                for (const option of selectors[ix].options) {
+                    if (option.innerHTML === params) {
+                        selectors[ix].value = option.value
+                    }
+                }
+            }
+        }
+        toggleAll();
+    }
+}
+
+function setSearchParams() {
+    let urlParameters = ''
+    let firstParamDone = false
+    for (const selector in selectors) {
+        if (selectors[selector].selectedIndex !== 0) {
+            let selectedText = selectors[selector].options[selectors[selector].selectedIndex].innerHTML
+            urlParameters += !firstParamDone ? `?${selector}=${selectedText}` : `&${selector}=${selectedText}`
+            firstParamDone = true
+        }
+    }
+
+    let page = `${window.location.protocol}//${window.location.host}${window.location.pathname}`
+    if (urlParameters.length) {
+        window.history.pushState('', '', `${page}${urlParameters}`);
+    } else {
+        window.history.pushState('', document.title, page);
+    }
+}
 
 document.onreadystatechange = () => {
     const loading = document.getElementById('loading');
     // const content = document.getElementById('content');
     const filters = document.getElementById('filters');
     if (document.readyState === 'complete') {
+        urlSelect()
         filters.style.display = "grid"
         loading.style.display = "none"
         // content.style.display = ""
@@ -43,6 +80,7 @@ function select_next_or_previous(which, id) {
 }
 
 function toggleAll(exclude_selector_name) {
+    setSearchParams()
 
     ids = execute_filters()
 
@@ -56,7 +94,6 @@ function toggleAll(exclude_selector_name) {
     // kuva/peida kassette
     let cards = document.querySelectorAll('[class="card_film"]')
     cards.forEach(card => {
-        // console.log(typeof ids[0], ' - ',typeof card.id);
         if (ids.includes(card.id)) {
             card.style.display = "grid"
         } else {
@@ -71,7 +108,6 @@ function toggleAll(exclude_selector_name) {
 function toggleFilters(exclude_selector_name) {
 
     for (selector_name in selectors) {
-        // console.log(exclude_selector_name, ' - ', selector_name);
 
         if (exclude_selector_name === selector_name) {
             continue
@@ -84,7 +120,6 @@ function toggleFilters(exclude_selector_name) {
                 continue
             }
 
-            // console.log(`value is this '${value}' - ${typeof value}`);
             let count = searcharray
                 .filter(screening => {
                     const compare_with = selector_name === 'programmes' ? value : selectors.programmes.value;
@@ -131,8 +166,6 @@ function toggleFilters(exclude_selector_name) {
         }
 
     }
-
-    // console.log(programmes.options.value);
 
 }
 

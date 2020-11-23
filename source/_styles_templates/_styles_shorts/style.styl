@@ -272,7 +272,7 @@ header
 
 
 .ul_kaks li
-    padding-right 30vw
+    padding-right 10vw
 
 
 .ul_kaks a
@@ -475,6 +475,7 @@ footer
                         "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
+                        "f_vialog_box"\
                         "f_trailer_box"\
                         "f_imgs_box"
 
@@ -1268,6 +1269,7 @@ header
     padding-bottom calc(1rem + 1vw)
     display grid
     grid-template-columns 1
+    grid-template-rows auto
     grid-gap 2rem
     background-color bg_color_1
     p
@@ -1322,6 +1324,14 @@ header
     display grid
     grid-template-columns 1
     grid-template-rows auto
+
+.f_vialog_box
+    grid-area f_vialog_box
+    display flex
+    flex-direction column
+    padding 2rem
+    // grid-template-columns 1
+    // grid-template-rows auto
 
 .f_dir_bio_box
     grid-area f_dir_bio_box
@@ -2007,6 +2017,20 @@ a.btn_popover
         text-decoration: none
         // color white_96
 
+#vialog
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 300
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
 .about_title_detailed span
     // background-color rgba(255,255,255,.9)
     background-color white
@@ -2229,6 +2253,7 @@ a.btn_popover
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
                             "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_vialog_box      f_vialog_box      f_vialog_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height

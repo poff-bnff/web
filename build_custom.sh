@@ -95,6 +95,11 @@ build()
         printf '\n----------             Finished processing styles            ----------\n'
 
         printf "\nBuilding...\n"
+
+        [ -d "build" ] && rm -r build/*
+        [ ! -d "build" ] && mkdir -p build
+        [ ! -d "build/assets" ] && mkdir -p build/assets
+
         cp -R assets/* build/assets/
         node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
 
@@ -129,6 +134,9 @@ fetch_data()
     printf '\n\n---------- Creating separate YAML files from strapiData.yaml ----------\n\n'
     echo 'fetch_articles_from_yaml'
     node ./helpers/fetch_articles_from_yaml.js
+
+    echo 'fetch_industry_person_from_yaml'
+    node ./helpers/fetch_industry_person_from_yaml.js
 
     echo 'fetch_article_types_from_yaml'
     node ./helpers/fetch_article_type_from_yaml.js
@@ -181,8 +189,14 @@ fetch_data()
     echo 'fetch_industry_project_from_yaml'
     node ./helpers/fetch_industry_project_from_yaml.js
 
+    echo 'fetch_industry_channels_from_yaml'
+    node ./helpers/fetch_channels_from_yaml.js
+
     echo 'fetch_industry_event_from_yaml'
     node ./helpers/fetch_industry_event_from_yaml.js
+
+    echo 'fetch_eventival_persons_from_yaml.js'
+    node ./helpers/fetch_eventival_persons_from_yaml.js
 
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 

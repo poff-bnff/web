@@ -2,6 +2,7 @@ const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
 const { create } = require('xmlbuilder2');
+const images = require('./images.js');
 const sourceDir = path.join(__dirname, '..', 'source')
 const fetchDir = path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
@@ -9,6 +10,9 @@ const assetsDirXML = path.join(sourceDir, '..', 'assets', 'xml')
 const XMLpath = path.join(assetsDirXML, 'xml.xml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 const STRAPIDATA_DOMAIN = STRAPIDATA['Domain']
+const STRAPIDATA_FILM = STRAPIDATA['Film']
+const SCREENINGS = STRAPIDATA['Screening']
+
 
 const domainMapping = {
     'poff.ee': 'https://poff.ee/',
@@ -18,17 +22,23 @@ const domainMapping = {
     'shorts.poff.ee': 'http://shorts.poff.ee/'
 }
 
-var languages = {'et': 'EST', 'ru': 'RUS', 'en': 'ENG'}
-
-const SCREENINGS_YAML = path.join(fetchDir, `screenings_for_xml.yaml`)
-const SCREENINGS = yaml.safeLoad(fs.readFileSync(SCREENINGS_YAML, 'utf8'))
+const languages = ['et', 'en', 'ru']
+const langs = {'et': 'EST', 'ru': 'RUS', 'en': 'ENG'}
 
 let data = {'info': {'concerts': {'concert': []}}}
 
 for (const screeningIx in SCREENINGS) {
     const screening = SCREENINGS[screeningIx]
-    var languages = ['et', 'en', 'ru']
-    var langs = {'et': 'EST', 'ru': 'RUS', 'en': 'ENG'}
+
+    if (screening.cassette && screening.cassette.orderedFilms) {
+        for (filmIx in screening.cassette.orderedFilms) {
+            let oneFilm = screening.cassette.orderedFilms[filmIx].film
+            screening.cassette.orderedFilms[filmIx].film = STRAPIDATA_FILM.filter((film) => { return oneFilm.id === film.id })[0]
+        }
+        images(screening)
+
+    }
+
 
 
     if (screening.ticketingId) {
@@ -36,13 +46,14 @@ for (const screeningIx in SCREENINGS) {
         let id = screening.ticketingId
         concert.ticketingId = id
         for (const lang of languages) {
+            let synopsis = undefined
             if (screening.cassette && screening.cassette.orderedFilms && screening.cassette.orderedFilms.length > 1) {
                 if (screening.cassette.synopsis && screening.cassette.synopsis[lang]) {
-                    var synopsis = screening.cassette.synopsis[lang] ? screening.cassette.synopsis[lang] : undefined
+                    synopsis = screening.cassette.synopsis[lang] ? screening.cassette.synopsis[lang] : undefined
                 }
             } else if (screening.cassette && screening.cassette.orderedFilms && screening.cassette.orderedFilms && screening.cassette.orderedFilms.length === 1) {
                 if (screening.cassette.orderedFilms[0] && screening.cassette.orderedFilms[0].film && screening.cassette.orderedFilms[0].film.synopsis && screening.cassette.orderedFilms[0].film.synopsis[lang]) {
-                    var synopsis = (screening.cassette.orderedFilms[0].film.synopsis[lang]) ? screening.cassette.orderedFilms[0].film.synopsis[lang] : undefined
+                    synopsis = (screening.cassette.orderedFilms[0].film.synopsis[lang]) ? screening.cassette.orderedFilms[0].film.synopsis[lang] : undefined
                 }
             }
             if (synopsis !== undefined) {

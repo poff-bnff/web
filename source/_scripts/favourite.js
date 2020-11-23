@@ -1,102 +1,117 @@
-var favFilms
-var favouritePages = [location.origin + '/favourite', location.origin + '/filmid/', location.origin + '/pohivoistlusprogramm/',]
-
-
 function loadMyFavFilms() {
     console.log("FAVO: oled sisse loginud")
-    document.getElementById('loginForFavo').style.display = 'none'
-    fetchFavFilmsFromDB()
-}
-
-function loadFavButtons(){
-    console.log('loadFavButtons')
-    document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
-    document.getElementById('notFavouriteStatus').style.display = 'block'
-    document.getElementById('nupp').style.display = 'block'
-}
-
-
-function fetchFavFilmsFromDB() {
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
-
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
-
-
-    fetch('https://api.poff.ee/favourite', requestOptions).then(function (response) {
-        if (response.ok) {
-            return response.json();
-        }
-        return Promise.reject(response);
-    }).then(function (data) {
-        console.log(data);
-        saveFavFilms(data)
-    }).catch(function (error) {
-        console.warn(error);
-    });
-}
-
-function saveFavFilms(data) {
-    favFilms = data
-    if (favouritePages.includes(window.location.href)) {
-        showFavFilms()
-        return
+    try {
+        document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
+    } catch (error) {
+        null
     }
-    if (window.location.href.indexOf('/film/') > -1) {
-        var filmCard = document.getElementsByClassName('grid_film')
-        console.log(filmCard)
-        console.log(filmCard[0].id)
-        console.log(favFilms)
+    try {
+        toggleFavButtons(userProfile.shortlist.map(function (item) { return item.cassette_id }))
+    } catch (error) {
+        null
+    }
+    try {
+    toggleSavedScreeningsButtons(userProfile.savedscreenings)
+    } catch (error) {
+        null
+    }
 
 
 
-        if (favFilms.includes(filmCard[0].id)) {
-            changeFavInfo('put')
-        } else {
-            changeFavInfo('delete')
+
+}
+
+function toggleFavButtons(shortlist_array) {
+    // console.log('toggleFavButtons')
+
+    var isshortlisted_buttons = document.getElementsByClassName('isshortlisted')
+    // console.log(isshortlisted_buttons)
+    // console.log(shortlist_array)
+
+    for (i = 0; i < isshortlisted_buttons.length; i++) {
+        var film_id = isshortlisted_buttons[i].id.split('_')[0]
+        // console.log(film_id, shortlist_array.includes(film_id));
+        if (shortlist_array.includes(film_id)) {
+            isshortlisted_buttons[i].style.display = 'block'
+            document.getElementById(film_id + '_cassette_id').style.display = 'block'
+
+        }
+        else {
+            isshortlisted_buttons[i].style.display = 'none'
         }
     }
+
+    var notshortlisted_buttons = document.getElementsByClassName('notshortlisted')
+    // console.log(notshortlisted_buttons);
+
+    for (i = 0; i < notshortlisted_buttons.length; i++) {
+        var film_id = notshortlisted_buttons[i].id.split('_')[0]
+        if (shortlist_array.includes(film_id)) {
+            notshortlisted_buttons[i].style.display = 'none'
+        }
+        else {
+            notshortlisted_buttons[i].style.display = 'block'
+        }
+    }
+
 }
 
-function showFavFilms() {
-    console.log('showFavFilms');
+function toggleSavedScreeningsButtons(savedScreenings) {
+    // console.log('toggleSavedScreeningsButtons')
 
-    var filmCards = document.getElementsByClassName('card_film')
+    var savedScreeningIds = []
+    for (j = 0; j < savedScreenings.length; j++) {
+        savedScreeningIds.push(savedScreenings[j].screeningId)
+    }
 
-    for (var i = 0; i < filmCards.length; i++) {
-        var filmId = filmCards[i].id
+    // console.log('savedScreeningIds ', savedScreeningIds)
+    // console.log('toggleSavedScreeningsButtons')
+    // console.log('savedScreenings ', savedScreenings)
 
-        if (window.location.href === location.origin + '/favourite' && favFilms.includes(filmId)) {
-            filmCards[i].style.display = 'block'
-        }
-        else if (window.location.href === location.origin + '/favourite' && favFilms.length === 0) {
-            document.getElementById('noFavouritesMessage').style.display = 'block'
-        }
-        if (window.location.href !== location.origin + '/favourite') {
-            document.getElementById(filmCards[i].id + 'nupp').style.display = 'block'
-            if (favFilms.includes(filmId)) {
-                console.log('fav');
-                document.getElementById(filmCards[i].id + 'nupp').innerHTML = 'FAVO'
+    var isSavedScreening_buttons = document.getElementsByClassName('issavedscreening')
+    // console.log(isSavedScreening_buttons)
+
+    for (i = 0; i < isSavedScreening_buttons.length; i++) {
+        var screening_id = isSavedScreening_buttons[i].id.split('_')[0]
+        if (savedScreeningIds.includes(screening_id)) {
+            isSavedScreening_buttons[i].style.display = 'block'
+            try{
+            document.getElementById(screening_id + '_screening_id').style.display = 'block'
             }
+            catch(err){null}
+        }
+        else {
+            isSavedScreening_buttons[i].style.display = 'none'
         }
     }
+
+    var notSavedScreening_buttons = document.getElementsByClassName('notsavedscreening')
+    // console.log(notshortlisted_buttons);
+
+    for (i = 0; i < notSavedScreening_buttons.length; i++) {
+        var screening_id = notSavedScreening_buttons[i].id.split('_')[0]
+        if (savedScreeningIds.includes(screening_id)) {
+            notSavedScreening_buttons[i].style.display = 'none'
+        }
+        else {
+            notSavedScreening_buttons[i].style.display = 'block'
+        }
+    }
+
 }
+
 
 function saveFilmAsFavourite(movieId) {
-    console.log('saveFilmAsFavourite')
+    // console.log('saveFilmAsFavourite')
 
-    var addBtnfilmCard = document.getElementById('nupp')
-    console.log(addBtnfilmCard);
+    // var addBtnfilmCard = document.getElementById('nupp')
+    // console.log(addBtnfilmCard);
 
     if (window.location.href === location.origin + '/filmid') {
-        addBtnfilmCard = document.getElementById(movieId + 'nupp')
+        // addBtnfilmCard = document.getElementById(movieId + 'nupp')
     }
 
-    if (addBtnfilmCard.innerHTML === '+') {
+    if (true) {
 
         var myHeaders = new Headers();
         myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
@@ -114,7 +129,8 @@ function saveFilmAsFavourite(movieId) {
             return Promise.reject(response);
         }).then(function (data) {
             if (data.ok) {
-                changeFavInfo('put', movieId)
+                document.getElementById(movieId + '_not_shortlisted').style.display = 'none'
+                document.getElementById(movieId + '_is_shortlisted').style.display = 'block'
             }
         }).catch(function (error) {
             console.warn(error);
@@ -122,30 +138,50 @@ function saveFilmAsFavourite(movieId) {
     }
 }
 
+function saveScreeningAsFavourite(screeningId, screeningTitle, screeningTime) {
+    // console.log('screeningId ', screeningId)
+    // console.log('screeningTitle ', screeningTitle)
+    // console.log('screeningTime ', screeningTime)
 
-
-function changeFavInfo(status, movieId) {
-
-
-    if (status === 'put' && favouritePages.includes(window.location.href)) {
-        document.getElementById(movieId + 'nupp').innerHTML = 'FAVO'
-        return
+    var screening = {
+        id: screeningId,
+        screeningTitle: screeningTitle,
+        screeningTime: screeningTime
     }
 
-    if (status === 'put') {
-        document.getElementById('notFavouriteStatus').style.display = 'none'
-        document.getElementById('favouriteStatus').style.display = 'block'
-        document.getElementById('nupp').style.display = 'none'
-        document.getElementById('removeFavBtn').style.display = 'block'
-    }
 
-    if (status === 'delete') {
-        document.getElementById('notFavouriteStatus').style.display = 'block'
-        document.getElementById('favouriteStatus').style.display = 'none'
-        document.getElementById('nupp').style.display = 'block'
-        document.getElementById('removeFavBtn').style.display = 'none'
-    }
+    // var myHeaders = new Headers();
+    // myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
+
+    var requestOptions = {
+        method: 'PUT',
+        // headers: myHeaders,
+        redirect: 'follow',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(screening)
+
+    };
+
+    // console.log(requestOptions)
+
+    fetch('https://api.poff.ee/favourite/' + screeningId, requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        if (data.ok) {
+            document.getElementById(screeningId + '_not_savedscreening').style.display = 'none'
+            document.getElementById(screeningId + '_is_savedscreening').style.display = 'block'
+        }
+    }).catch(function (error) {
+        console.warn(error);
+    });
 }
+
 
 function removeFilm(movieId) {
     var myHeaders = new Headers();
@@ -165,28 +201,62 @@ function removeFilm(movieId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
+        // console.log(data)
         if (data.ok) {
-            if (window.location.href.indexOf('/film/') > -1) {
-                changeFavInfo('delete')
-            } else {
-                console.log('else');
-                filmCard = document.getElementById(movieId)
-                filmCard.style.display = 'none'
+            try {
+                document.getElementById(movieId + '_not_shortlisted').style.display = 'block'
+                document.getElementById(movieId + '_is_shortlisted').style.display = 'none'
+            }
+            catch (err) {
+                null
+            }
+            try {
+                document.getElementById(movieId + '_cassette_id').style.display = 'none'
+            }
+            catch (err) {
+                null
+            }
+        }
+    }).catch(function (error) {
+        console.warn(error);
+    });
+}
 
-                console.log(favFilms);
+function removeScreening(screeningId) {
+    // console.log('removeScreening ', screeningId)
 
-                for (i = 0; i < favFilms.length; i++) {
-                    if (favFilms[i] === movieId.toString()) {
-                        favFilms.pop(favFilms[i])
-                        console.log(favFilms);
+    var myHeaders = new Headers();
 
-                    }
-                }
+    myHeaders.append("Authorization", 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
-                if (!favFilms.length) {
-                    document.getElementById('noFavouritesMessage').style.display = 'block'
-                }
+    var requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
 
+
+    fetch('https://api.poff.ee/favourite/' + 'screening_' + screeningId, requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        // console.log(data)
+        if (data.ok) {
+            try {
+                // console.log(screeningId + '_is_savedscreening')
+                document.getElementById(screeningId + '_is_savedscreening').style.display = 'none'
+                document.getElementById(screeningId + '_not_savedscreening').style.display = 'block'
+            }
+            catch (err) {
+                null
+            }
+            try {
+                document.getElementById(screeningId + '_screening_id').style.display = 'none'
+            }
+            catch (err) {
+                null
             }
         }
     }).catch(function (error) {

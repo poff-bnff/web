@@ -11,8 +11,9 @@ const sourceDir =  path.join(rootDir, 'source')
 const fetchDir =  path.join(sourceDir, '_fetchdir')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
+const STRAPIDATA_PERSONS = STRAPIDATA['Person'];
 
-const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
+const DOMAIN = process.env['DOMAIN'] || 'industry.poff.ee'
 const STRAPIDIR = '/uploads/'
 const STRAPIHOSTWITHDIR = `http://${process.env['StrapiHost']}${STRAPIDIR}`;
 const DEFAULTTEMPLATENAME = 'news'
@@ -24,8 +25,9 @@ const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
 const languages = DOMAIN_SPECIFICS.locales[DOMAIN]
 for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} articles ${lang} data`)
-
-    allData = [];
+    const industryPersonsPath = path.join(fetchDir, `industrypersons.${lang}.yaml`)
+    const industryPersonsYaml = yaml.safeLoad(fs.readFileSync(industryPersonsPath, 'utf8'));
+    // allData = [];
     const dirPath = path.join(sourceDir, "_fetchdir" )
     const dataFrom = {
         screenings: `/film/screenings.${lang}.yaml`,
@@ -33,35 +35,42 @@ for (const lang of languages) {
     }
 
     for (const strapiElement of STRAPIDATA_ARTICLE) {
-        const element = JSON.parse(JSON.stringify(strapiElement))
+        let element = JSON.parse(JSON.stringify(strapiElement))
         let slugEn = element.slug_en || element.slug_et
         if (!slugEn) {
             // console.log(element)
             throw new Error ("Artiklil on puudu nii eesti kui inglise keelne slug!", Error.ERR_MISSING_ARGS)
         }
 
+        let publishFrom = undefined
+        let publishUntil = undefined
+
         var currentTime = new Date()
         if (typeof(element.publishFrom) === 'undefined') {
-            var publishFrom= new Date(element.created_at)
+            publishFrom= new Date(element.created_at)
         } else {
-            var publishFrom= new Date(element.publishFrom)
+            publishFrom= new Date(element.publishFrom)
         }
         if (element.publishUntil) {
-            var publishUntil = new Date(element.publishUntil)
+            publishUntil = new Date(element.publishUntil)
         }
+
         if (currentTime < publishFrom) {
+            console.log(`Skipped article ID ${element.id} which publishFrom is ${publishFrom}, current time ${currentTime}`);
             continue;
         }
         if (publishUntil !== 'undefined' && publishUntil < currentTime) {
+            console.log(`Skipped article ID ${element.id} which publishUntil is ${publishUntil}, current time ${currentTime}`);
             continue;
         }
+
         if (element[`publish_${lang}`] === undefined || element[`publish_${lang}`] === false) {
             continue;
         }
         if (element[`title_${lang}`] < 1) {
+            console.log(`Skipped article ID ${element.id} which is missing title`);
             continue;
         }
-
 
         // rueten func. is run for each element separately instead of whole data, that is
         // for the purpose of saving slug_en before it will be removed by rueten func.
@@ -89,16 +98,56 @@ for (const lang of languages) {
                     if (key === "slug") {
                         element.path = path.join(artType.slug, element[key])
                         element.articleType = artType.label
+
+                        // see patch siin on tehtud, kuna reklaamis kasutati poff.ee/lemmikfilm, aga meil on artiklid ju poff.ee/artikkel/lemmikfilm
+                        if (element[key] === 'lemmikfilm') {
+                            element.aliases = ['lemmikfilm']
+                        }
                     }
                 }
-                allData.push(element);
+                // allData.push(element);
                 element.data = dataFrom;
+
+                let article_template = `/_templates/article_${artType.name}_index_template.pug`
+
+                let industryArtTypeNames = ['news', 'about', 'virtual_booth']
+                let artTypeName = ''
+                if (industryArtTypeNames.includes(artType.name)){
+                    artTypeName = artType.name
+                }
+
+                if (DOMAIN === 'industry.poff.ee' && artTypeName.length > 1 ) {
+                    if (element.industry_people && element.industry_people.length) {
+                        let indPeopleFromYaml = element.industry_people.filter(a => a.person).map(per => {
+                            return industryPersonsYaml.filter(indp => indp.person.id === per.person)[0]
+                        })
+                        if (typeof indPeopleFromYaml !== 'undefined') {
+                            element.industry_people = indPeopleFromYaml
+                        } else {
+                            element.industry_people = []
+                        }
+                    }
+
+                    if (element.people && element.people.length) {
+                        let peopleFromYaml = element.people.map(per => {
+                            return STRAPIDATA_PERSONS.filter(pers => pers.id === per.id)[0]
+                        })
+                        if (typeof peopleFromYaml !== 'undefined') {
+                            element.people = peopleFromYaml
+                        } else {
+                            element.people = []
+                        }
+                    }
+
+                    article_template  = `/_templates/article_industry_${artType.name}_index_template.pug`
+                }
 
                 let yamlStr = yaml.safeDump(element, { 'indent': '4' });
 
                 fs.writeFileSync(`${element.directory}/data.${lang}.yaml`, yamlStr, 'utf8');
-                if (fs.existsSync(`${sourceDir}/_templates/article_${artType.name}_index_template.pug`)) {
-                    fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${artType.name}_index_template.pug`)
+
+                if (fs.existsSync(`${sourceDir}${article_template}`)) {
+                    fs.writeFileSync(`${element.directory}/index.pug`, `include ${article_template}`)
                 } else {
                     fs.writeFileSync(`${element.directory}/index.pug`, `include /_templates/article_${DEFAULTTEMPLATENAME}_index_template.pug`)
                 }

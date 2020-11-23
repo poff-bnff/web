@@ -20,7 +20,7 @@ header
                             | PÖFF
                     span.org_item
                         a(href='https://industry.poff.ee')
-                            | Industry@Tallinn
+                            | !{`Industry@Tallinn & Baltic Event`}
                     span.org_item
                         a(href='https://shorts.poff.ee')
                             | PÖFF Shorts
@@ -29,7 +29,10 @@ header
                             | Kinoff
                     span.org_item
                         a(href='https://kino.poff.ee')
-                            | Kino@PÖFF
+                            | PÖFFi veebikino
+                    span.org_item
+                        a(href='https://poff.elisastage.ee')
+                            | PÖFF @ ELISA STAGE
 
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
 
@@ -84,15 +87,21 @@ header
                                                 a(href= `/${lang_path}${articleTypePath}/${subMenuItem[articleMenuItemDomain].slug}`)= subMenuItem.name
 
                                 else
-                                    if subMenuItem.customUrl && subMenuItem.name && typeof subMenuItem.name !== 'object'
+                                    if subMenuItem.customUrl && subMenuItem.customUrl.length && subMenuItem.name && typeof subMenuItem.name !== 'object'
                                         li
-                                            a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
+                                            if subMenuItem.customUrl.substring(0, 4) === 'http'
+                                                a(href= `${subMenuItem.customUrl}`)= `${subMenuItem.name}`
+                                            else
+                                                a(href= `/${lang_path}${subMenuItem.customUrl}/`)= `${subMenuItem.name}`
 
                 //- Kui peamenüü itemil pole artiklit, pole alammenüüsid ja on customUrl
                 else
-                    if mainMenuItem.customUrl && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
+                    if mainMenuItem.customUrl && mainMenuItem.customUrl.length && mainMenuItem.name && typeof mainMenuItem.name !== 'object'
                         li
-                            a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
+                            if mainMenuItem.customUrl.substring(0, 4) === 'http'
+                                a(href= `${mainMenuItem.customUrl}`)= `${mainMenuItem.name}`
+                            else
+                                a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
 
             li
@@ -194,3 +203,5 @@ header
     //- label.main_menu_toggle_label(for='main_menu_toggle')
     //-     span
 
+include ../_templates/tracker_mixin.pug
++trackMe()

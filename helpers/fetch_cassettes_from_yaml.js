@@ -20,7 +20,7 @@ const STRAPIDATA_PERSONS = STRAPIDATA['Person']
 const STRAPIDATA_PROGRAMMES = STRAPIDATA['Programme']
 const STRAPIDATA_FE = STRAPIDATA['FestivalEdition']
 const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening']
-const STRAPIDATA_FESTIVAL = STRAPIDATA['Festival']
+const STRAPIDATA_FESTIVALS = STRAPIDATA['Festival']
 const STRAPIDATA_FILMS = STRAPIDATA['Film']
 
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
@@ -106,7 +106,7 @@ for (const lang of allLanguages) {
         if (s_cassette_copy.festival_editions && s_cassette_copy.festival_editions.length) {
             for (const festEdIx in s_cassette_copy.festival_editions) {
                 var festEd = s_cassette_copy.festival_editions[festEdIx]
-                var festival = JSONcopy(STRAPIDATA_FESTIVAL.filter( (a) => { return festEd.festival === a.id })[0])
+                var festival = JSONcopy(STRAPIDATA_FESTIVALS.filter( (a) => { return festEd.festival === a.id })[0])
                 if (festival) {
                     s_cassette_copy.festivals = []
                     s_cassette_copy.festivals.push(festival)
@@ -174,16 +174,6 @@ for (const lang of allLanguages) {
             // for the purpose of saving slug_en before it will be removed by rueten func.
             rueten(s_cassette_copy, lang)
 
-            if(s_cassette_copy.films && s_cassette_copy.films.length) {
-                for (const filmIx in s_cassette_copy.films) {
-                    let oneFilm = s_cassette_copy.films[filmIx]
-                    let s_film = STRAPIDATA_FILMS.filter( (a) => { return oneFilm.id === a.id })
-                    if (s_film !== undefined && s_film[0]) {
-                        s_cassette_copy.films[filmIx] = JSONcopy(s_film[0])
-                    }
-                }
-            }
-
             // #379 put ordered films to cassette.film
             let ordered_films = s_cassette_copy.orderedFilms
                 .filter( (isFilm) => { if (isFilm.film) { return 1 } else { console.log(`ERROR! Empty film under cassette with ID ${s_cassette_copy.id}`) } })
@@ -206,6 +196,22 @@ for (const lang of allLanguages) {
             })
             if (ordered_films !== undefined && ordered_films[0]) {
                 s_cassette_copy.films = JSON.parse(JSON.stringify(ordered_films))
+            }
+
+            if (s_cassette_copy.films && s_cassette_copy.films.length) {
+                for (const onefilm of s_cassette_copy.films) {
+                    if (onefilm.orderedCountries) {
+                        let orderedCountries = onefilm.orderedCountries
+                            .sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
+                        onefilm.orderedCountries = orderedCountries
+                        if (orderedCountries.length) {
+                            onefilm.orderedCountriesDisplay = orderedCountries
+                                .map(country => country.country[`name_${lang}`])
+                                .join(', ')
+                        }
+
+                    }
+                }
             }
 
             // Screenings
@@ -233,7 +239,7 @@ for (const lang of allLanguages) {
             }
 
             if (screenings.length > 0) {
-                s_cassette_copy.screenings = screenings
+                s_cassette_copy.screenings = screenings.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime))
             }
 
             // let s_cassette_copy = JSONcopy(s_cassette_copy))
@@ -374,6 +380,9 @@ for (const lang of allLanguages) {
                             let rolePerson = scc_film.credentials.rolePerson[roleIx]
                             if (rolePerson === undefined) { continue }
                             if (rolePerson.person) {
+                                if (rolePerson.role_at_film.roleNamePrivate === 'Director') {
+                                    scc_film.credentials.rolePerson[roleIx].person = STRAPIDATA_PERSONS.filter(person => rolePerson.person.id === person.id)[0]
+                                }
                                 let searchRegExp = new RegExp(' ', 'g')
                                 const role_name_lc = rolePerson.role_at_film.roleNamePrivate.toLowerCase().replace(searchRegExp, '')
                                 rolePersonTypes[role_name_lc] = rolePersonTypes[role_name_lc] || []
@@ -484,9 +493,9 @@ function generateAllDataYAML(allData, lang){
                 if (typeof programme.festival_editions !== 'undefined') {
                     for (const fested of programme.festival_editions) {
                         const key = fested.festival + '_' + programme.id
-                        const festival = cassette.festivals.filter(festival => festival.id === fested.festival)
+                        const festival = STRAPIDATA_FESTIVALS.filter((a) => { return a.id === fested.festival })
                         if (festival[0]) {
-                            var festival_name = festival[0].name
+                            var festival_name = festival[0][`name_${lang}`]
                         }
                         programmes.push(key)
                         filters.programmes[key] = `${festival_name} ${programme.name}`

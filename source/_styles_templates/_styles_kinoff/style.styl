@@ -258,7 +258,7 @@ header
 
 
 .ul_kaks li
-    padding-right 30vw
+    padding-right 10vw
 
 
 .ul_kaks a
@@ -482,6 +482,7 @@ footer
                         "f_dir_box"\
                         "f_extra_box"\
                         "f_qaclip_box"\
+                        "f_vialog_box"\
                         "f_trailer_box"\
                         "f_imgs_box"
 
@@ -1450,6 +1451,7 @@ header
     padding-bottom calc(1rem + 1vw)
     display grid
     grid-template-columns 1
+    grid-template-rows auto
     grid-gap 2rem
     background-color bg_color_1
     p
@@ -1503,6 +1505,14 @@ header
     grid-area f_dir_box
     display flex
     flex-direction column
+    // grid-template-columns 1
+    // grid-template-rows auto
+
+.f_vialog_box
+    grid-area f_vialog_box
+    display flex
+    flex-direction column
+    padding 2rem
     // grid-template-columns 1
     // grid-template-rows auto
 
@@ -1910,10 +1920,11 @@ a.btn_popover
 /* SCREENINGS */
 
 .card_screening
-  max-width 100%
-  margin-left 0
-  margin-right 0
-//   margin-top calc(3rem + 1vw)
+    min-width 360px
+    max-width 100%
+    margin-left 0
+    margin-right 0
+    margin-bottom 2rem!important
 
 .grid_container_screening_time
   display grid
@@ -2261,6 +2272,20 @@ a.btn_popover
         text-decoration: none
         // color white_96
 
+#vialog
+    font-family font_h
+    font-size calc(1.9rem + 1.5vw)
+    text-decoration none
+    text-align left
+    font-weight 300
+    line-height 1.2
+    letter-spacing 0.04rem
+    padding-top 1rem
+    padding-bottom 1rem
+    a
+        text-decoration: none
+        // color white_96
+
 .ss_title_detailed
     font-family font_h
     font-size calc(1.9rem + 2.4vw)
@@ -2511,6 +2536,7 @@ a.btn_popover
                             "f_screenings_box  f_screenings_box  f_screenings_box"\
                             "f_dir_box         f_dir_box         f_extra_box"\
                             "f_qaclip_box      f_qaclip_box      f_qaclip_box"\
+                            "f_vialog_box      f_vialog_box      f_vialog_box"\
                             "f_trailer_box     f_trailer_box     f_trailer_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
         padding-top header_height
@@ -3020,10 +3046,11 @@ a.btn_popover
         margin 0
 
     .card_screening
-        min-width 300px
-        max-width 400px
+        min-width 400px
+        max-width 450px
         margin-left 1vw
         margin-right 1vw
+        margin-bottom 2rem
 
     .article_hero_head
         position relative
