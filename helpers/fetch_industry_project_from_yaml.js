@@ -73,6 +73,7 @@ for (const ix in languages) {
             }
         }
 
+
         const oneYaml = yaml.safeDump(industry_project, { 'noRefs': true, 'indent': '4' });
         const yamlPath = path.join(fetchDataDir, dirSlug, `data.${lang}.yaml`);
         let saveDir = path.join(fetchDataDir, dirSlug);
@@ -81,8 +82,6 @@ for (const ix in languages) {
         fs.writeFileSync(yamlPath, oneYaml, 'utf8');
         fs.writeFileSync(`${saveDir}/index.pug`, `include /_templates/industryproject_${templateDomainName}_index_template.pug`)
         allData.push(industry_project);
-
-
 
         const credentials = industry_project.teamCredentials || {}
 
@@ -158,6 +157,7 @@ for (const ix in languages) {
         // andmepuhastus
 
         delete industry_project.teamCredentials
+
 
     }
 
