@@ -50,7 +50,7 @@ mixin chat(room_name, is_moderated_room=false)
             const CHAT_SERVER = 'https://chat.poff.ee'
             const socket = io(CHAT_SERVER)
             socket.on('ping', () =>{
-                socket.emit('pong', {})
+                socket.emit('pong', {room_name: room_name})
             })
 
             var i_am_moderator = false
@@ -68,7 +68,11 @@ mixin chat(room_name, is_moderated_room=false)
                 chatMessageInputElement.setAttribute('placeholder', 'Enter message')
                 chatMessageInputElement.setAttribute('required', '')
                 chatMessageInputElement.setAttribute('autocomplete', 'off')
-                chatFormElement.appendChild(chatMessageInputElement)
+                try {
+                    chatFormElement.appendChild(chatMessageInputElement)
+                } catch (error) {
+                    console.log({E, room_name, room_suffix})
+                }
             }
 
             const chatMessagesElement = document.getElementById('chat-messages-' + room_name + room_suffix)
@@ -85,19 +89,6 @@ mixin chat(room_name, is_moderated_room=false)
                 is_moderated: is_moderated_room,
                 userProfile: userProfile
             })
-
-            //- socket.on('roomUsers', (users) => {
-            //-     setUserList(users.users)
-            //- })
-            //- // Add users to DOM
-            //- function setUserList(users) {
-            //-     userListElement.innerHTML = ''
-            //-     users.forEach(user => {
-            //-         const li = document.createElement('li')
-            //-         li.innerText = user
-            //-         userListElement.appendChild(li)
-            //-     })
-            //- }
 
             socket.on('YOU ARE MODERATOR', () => {
                 i_am_moderator = true
