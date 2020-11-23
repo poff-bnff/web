@@ -3,8 +3,18 @@
     "id": 1,
     "article_et": {
       "id": 9,
-      "created_by": 14,
-      "updated_by": 5,
+      "created_by": {
+        "id": 14,
+        "firstname": "Heleen",
+        "lastname": "Sutt",
+        "username": null
+      },
+      "updated_by": {
+        "id": 5,
+        "firstname": "Martin",
+        "lastname": "Pennaste",
+        "username": null
+      },
       "created_at": "2020-09-21T11:49:43.510Z",
       "updated_at": "2020-10-27T18:43:23.754Z",
       "title_et": " ",
@@ -69,12 +79,52 @@
         "image_en": [],
         "image_ru": []
       },
-      "button": []
+      "button": [],
+      "article_types": [
+        {
+          "id": 2,
+          "name": "news",
+          "created_by": 6,
+          "updated_by": 1,
+          "created_at": "2020-08-18T13:49:51.616Z",
+          "updated_at": "2020-09-21T10:57:52.599Z",
+          "article": null,
+          "et": "Uudised",
+          "en": "News",
+          "ru": "Новости",
+          "slug_et": "uudis",
+          "slug_en": "news",
+          "slug_ru": "novost",
+          "name_et": "Uudis",
+          "name_en": "News",
+          "name_ru": "Новость",
+          "label_et": "Uudis",
+          "label_en": "News",
+          "label_ru": "Новость",
+          "Description": null
+        }
+      ],
+      "tag_premiere_types": [],
+      "programmes": [],
+      "tag_genres": [],
+      "tag_keywords": [],
+      "web_authors": [],
+      "organisations": []
     },
     "article_en": {
       "id": 9,
-      "created_by": 14,
-      "updated_by": 5,
+      "created_by": {
+        "id": 14,
+        "firstname": "Heleen",
+        "lastname": "Sutt",
+        "username": null
+      },
+      "updated_by": {
+        "id": 5,
+        "firstname": "Martin",
+        "lastname": "Pennaste",
+        "username": null
+      },
       "created_at": "2020-09-21T11:49:43.510Z",
       "updated_at": "2020-10-27T18:43:23.754Z",
       "title_et": " ",
@@ -139,12 +189,52 @@
         "image_en": [],
         "image_ru": []
       },
-      "button": []
+      "button": [],
+      "article_types": [
+        {
+          "id": 2,
+          "name": "news",
+          "created_by": 6,
+          "updated_by": 1,
+          "created_at": "2020-08-18T13:49:51.616Z",
+          "updated_at": "2020-09-21T10:57:52.599Z",
+          "article": null,
+          "et": "Uudised",
+          "en": "News",
+          "ru": "Новости",
+          "slug_et": "uudis",
+          "slug_en": "news",
+          "slug_ru": "novost",
+          "name_et": "Uudis",
+          "name_en": "News",
+          "name_ru": "Новость",
+          "label_et": "Uudis",
+          "label_en": "News",
+          "label_ru": "Новость",
+          "Description": null
+        }
+      ],
+      "tag_premiere_types": [],
+      "programmes": [],
+      "tag_genres": [],
+      "tag_keywords": [],
+      "web_authors": [],
+      "organisations": []
     },
     "article_ru": {
       "id": 9,
-      "created_by": 14,
-      "updated_by": 5,
+      "created_by": {
+        "id": 14,
+        "firstname": "Heleen",
+        "lastname": "Sutt",
+        "username": null
+      },
+      "updated_by": {
+        "id": 5,
+        "firstname": "Martin",
+        "lastname": "Pennaste",
+        "username": null
+      },
       "created_at": "2020-09-21T11:49:43.510Z",
       "updated_at": "2020-10-27T18:43:23.754Z",
       "title_et": " ",
@@ -209,7 +299,37 @@
         "image_en": [],
         "image_ru": []
       },
-      "button": []
+      "button": [],
+      "article_types": [
+        {
+          "id": 2,
+          "name": "news",
+          "created_by": 6,
+          "updated_by": 1,
+          "created_at": "2020-08-18T13:49:51.616Z",
+          "updated_at": "2020-09-21T10:57:52.599Z",
+          "article": null,
+          "et": "Uudised",
+          "en": "News",
+          "ru": "Новости",
+          "slug_et": "uudis",
+          "slug_en": "news",
+          "slug_ru": "novost",
+          "name_et": "Uudis",
+          "name_en": "News",
+          "name_ru": "Новость",
+          "label_et": "Uudis",
+          "label_en": "News",
+          "label_ru": "Новость",
+          "Description": null
+        }
+      ],
+      "tag_premiere_types": [],
+      "programmes": [],
+      "tag_genres": [],
+      "tag_keywords": [],
+      "web_authors": [],
+      "organisations": []
     },
     "created_by": {
       "id": 14,

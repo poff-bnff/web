@@ -203,9 +203,19 @@ const foo = async () => {
                 }
 
                 // andmete varundamine GitHubi
-                let jsonStr = JSON.stringify(modelData, null, 2)
-                fs.writeFileSync(`${__dirname}/../strapidata/${modelName}.json`, jsonStr, 'utf8')
+                const { exec } = require('child_process')
+                exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
+                    if (err) {
+                        console.log('failing with git rev-parse');
+                    }
 
+                    if (typeof stdout === 'string' && (stdout.trim() === 'master')) {
+                        // console.log(`The branch is master and we are prepping json for backing up`);
+                        // Call your function here conditionally as per branch
+                        let jsonStr = JSON.stringify(modelData, null, 2)
+                        fs.writeFileSync(`${__dirname}/../strapidata/${modelName}.json`, jsonStr, 'utf8')
+                    }
+                });
 
                 modelData = modelData.filter(checkDomain)
 
@@ -239,7 +249,12 @@ const foo = async () => {
                 if (modelData.hasOwnProperty(ix)) {
                     let element = modelData[ix]
                     // 2. kustutame andmetest kõik propertid, mida mudelis pole
-                    TakeOutTrash(element, DATAMODEL[modelName], modelName)
+                    try {
+                        TakeOutTrash(element, DATAMODEL[modelName], modelName)
+                    } catch (error) {
+                        console.log({error, modelName, element, model: DATAMODEL[modelName]})
+                        process.exit(1)
+                    }
 
                     // 3. valideerime kõike, mis mudelis on kirjeldatud
                     // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)

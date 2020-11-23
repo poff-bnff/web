@@ -7,8 +7,18 @@
       "Url": null,
       "IpAdress": null,
       "Server": null,
-      "created_by": 6,
-      "updated_by": 6,
+      "created_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
+      "updated_by": {
+        "id": 6,
+        "firstname": "Jaan",
+        "lastname": "Leppik",
+        "username": null
+      },
       "created_at": "2020-08-31T09:03:45.908Z",
       "updated_at": "2020-08-31T09:03:45.928Z",
       "url": "industry.poff.ee",
@@ -24,13 +34,17 @@
       "username": null
     },
     "updated_by": {
-      "id": 31,
-      "firstname": "Will",
-      "lastname": "Smith",
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
       "username": null
     },
     "created_at": "2020-10-22T08:25:34.957Z",
+<<<<<<< HEAD
     "updated_at": "2020-11-16T09:28:44.666Z",
+=======
+    "updated_at": "2020-11-23T00:21:00.552Z",
+>>>>>>> 6e34bc0a18d0cc5bbeba5951c05e2c077a28d8c1
     "socialGroup": {
       "id": 12,
       "namePrivate": "Socials",
@@ -139,16 +153,79 @@
         "namePrivate": "Contacts",
         "name": {
           "id": 10782,
+<<<<<<< HEAD
           "et": "Kontakt",
           "en": "Contacts",
           "ru": "Контакты"
+=======
+          "et": "",
+          "en": "Projekt EU53591",
+          "ru": ""
+>>>>>>> 6e34bc0a18d0cc5bbeba5951c05e2c077a28d8c1
         },
         "button": [],
         "text": {
           "id": 7928,
+<<<<<<< HEAD
           "et": "Telliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609",
           "en": "Telliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609",
           "ru": "Telliskivi 60a, 10412 Tallinn \nТел: +372 5620 8308\nE-mail: info@poff.ee\nРег. код: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609"
+=======
+          "et": "Projekt EU53591 „Loomemajanduse arenduskeskus Creative Gate“. Creative Gate on loomemajanduse arenduskeskus, mille eesmärk on arendada Eesti audiovisuaalvaldkonna (fookusega teleproduktsioonil) ettevõtlus- ja ekspordipotentsiaali, pakkudes terviklikku tugiteenuste paketti nii filmivaldkonna ettevõtele kui ka sidusvaldkondade ettevõtetele. Projekti rahastab Euroopa Regionaalarengu Fond summas 200 000 eurot. \nProjekti tulemusena on Eesti audiovisuaaltööstus elujõulisem ja rahvusvaheliselt konkunrentsivõimelisem ning Eesti suudab senisest paremini kasutada oma potentsiaali rahvusvahelise võttepaigana.\nLoomemajanduse arendamise meedet rahastab Euroopa Regionaalarengu Fond. Rohkem ingo teavitamise kohta leiate siit: https://www.eas.ee/teavitamine/",
+          "en": "\nProjekt EU53591 „Loomemajanduse arenduskeskus Creative Gate“. Creative Gate on loomemajanduse arenduskeskus, mille eesmärk on arendada Eesti audiovisuaalvaldkonna (fookusega teleproduktsioonil) ettevõtlus- ja ekspordipotentsiaali, pakkudes terviklikku tugiteenuste paketti nii filmivaldkonna ettevõtele kui ka sidusvaldkondade ettevõtetele. Projekti rahastab Euroopa Regionaalarengu Fond summas 200 000 eurot. \nProjekti tulemusena on Eesti audiovisuaaltööstus elujõulisem ja rahvusvaheliselt konkunrentsivõimelisem ning Eesti suudab senisest paremini kasutada oma potentsiaali rahvusvahelise võttepaigana.\nLoomemajanduse arendamise meedet rahastab Euroopa Regionaalarengu Fond. Rohkem ingo teavitamise kohta leiate siit: https://www.eas.ee/teavitamine/",
+          "ru": "\nProjekt EU53591 „Loomemajanduse arenduskeskus Creative Gate“. Creative Gate on loomemajanduse arenduskeskus, mille eesmärk on arendada Eesti audiovisuaalvaldkonna (fookusega teleproduktsioonil) ettevõtlus- ja ekspordipotentsiaali, pakkudes terviklikku tugiteenuste paketti nii filmivaldkonna ettevõtele kui ka sidusvaldkondade ettevõtetele. Projekti rahastab Euroopa Regionaalarengu Fond summas 200 000 eurot. \nProjekti tulemusena on Eesti audiovisuaaltööstus elujõulisem ja rahvusvaheliselt konkunrentsivõimelisem ning Eesti suudab senisest paremini kasutada oma potentsiaali rahvusvahelise võttepaigana.\nLoomemajanduse arendamise meedet rahastab Euroopa Regionaalarengu Fond. Rohkem ingo teavitamise kohta leiate siit: https://www.eas.ee/teavitamine/"
+        },
+        "svgItem": [],
+        "image": {
+          "id": 3477,
+          "name": "EAS_SF_RGB_EST-1.jpg",
+          "alternativeText": "",
+          "caption": "",
+          "width": 1349,
+          "height": 393,
+          "formats": {
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_EAS_SF_RGB_EST_1_3f3989261e.jpg",
+              "hash": "thumbnail_EAS_SF_RGB_EST_1_3f3989261e",
+              "mime": "image/jpeg",
+              "name": "thumbnail_EAS_SF_RGB_EST-1.jpg",
+              "path": null,
+              "size": 4.73,
+              "width": 245,
+              "height": 71
+            }
+          },
+          "hash": "EAS_SF_RGB_EST_1_3f3989261e",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 144.95,
+          "url": "/uploads/EAS_SF_RGB_EST_1_3f3989261e.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 31,
+          "updated_by": 31,
+          "created_at": "2020-11-18T17:27:41.210Z",
+          "updated_at": "2020-11-18T17:27:41.570Z"
+        }
+      },
+      {
+        "id": 27,
+        "namePrivate": "Black Nights contact",
+        "name": {
+          "id": 30085,
+          "et": null,
+          "en": "Contacts",
+          "ru": null
+        },
+        "button": [],
+        "text": {
+          "id": 8526,
+          "et": "BMO OÜ\nTelliskivi tn 60a/2\n10412 Tallinn\nReg. code 12142069\n\nMTÜ Pimedate Ööde Filmifestival\nTelliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609\n\nMTÜ BE\nNurme 45\n11621 Tallinn\nReg. code 80213483\nbalticevent@poff.ee",
+          "en": "BMO OÜ\nTelliskivi tn 60a/2\n10412 Tallinn\nReg. code 12142069\n\nMTÜ Pimedate Ööde Filmifestival\nTelliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609\n\nMTÜ BE\nNurme 45\n11621 Tallinn\nReg. code 80213483\nbalticevent@poff.ee",
+          "ru": "BMO OÜ\nTelliskivi tn 60a/2\n10412 Tallinn\nReg. code 12142069\n\nMTÜ Pimedate Ööde Filmifestival\nTelliskivi 60a, 10412 Tallinn \nTel: +372 5620 8308\nE-mail: info@poff.ee\nRegistrikood: 80044767\nKMKR: EE100520914\nIBAN: EE791700017002751609\n\nMTÜ BE\nNurme 45\n11621 Tallinn\nReg. code 80213483\nbalticevent@poff.ee"
+>>>>>>> 6e34bc0a18d0cc5bbeba5951c05e2c077a28d8c1
         },
         "svgItem": [],
         "image": null
@@ -506,6 +583,23 @@
             "logoBlack": null
           }
         ]
+      }
+    ],
+    "domains": [
+      {
+        "id": 5,
+        "Url": null,
+        "IpAdress": null,
+        "Server": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-08-31T09:03:45.908Z",
+        "updated_at": "2020-08-31T09:03:45.928Z",
+        "url": "industry.poff.ee",
+        "ipAdress": null,
+        "server": null,
+        "festival_edition": null,
+        "name": "Industry"
       }
     ]
   }
