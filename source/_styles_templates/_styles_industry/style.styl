@@ -370,6 +370,8 @@ footer
     color white_96
     padding-left 2rem
     padding-right 2rem
+    p
+        color white_96
 
 .footer_h
     // display inline
@@ -3001,6 +3003,147 @@ a.btn_popover
     height 100%
     object-fit cover
 
+.calendar_headline
+    font-family font_h
+    font-size calc(1.618rem + 3vw)
+    line-height 1
+    font-weight 400
+    color dark_5
+    letter-spacing 0.04em
+    text-align center
+    margin 0
+    padding 0
+    padding-left calc(1rem + 1vw)
+    padding-right calc(1rem + 1vw)
+    margin-top 5rem
+
+.days_box
+    // grid-area days_box
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
+    grid-template-rows auto
+    grid-gap 1rem
+    width 100%
+    padding-top 5rem
+    padding-left 2rem
+    padding-right 2rem
+    padding-bottom 1rem
+    justify-content center
+    align-content center
+    justify-items center
+    align-items center
+    padding-top 20px
+    // background-color #bbbbbb
+
+.day_box
+    width 100%
+    // height max-content
+    // border .5px solid clr_grey_light
+    // background-color white
+    background-color dark_4
+    color clr_primary
+    border none
+    outline none
+    padding-top 1.1rem
+    padding-bottom 1rem
+    text-align center
+
+.day_box:hover
+    opacity 0.9
+    transform scale(1.01, 1.01)
+
+.day_date
+    color clr_primary
+    text-align center
+    font-size 1.2rem
+    font-family font_h
+    font-weight 300
+
+#selected_date
+    font-weight 500
+    color white_96
+
+.sel_date
+    background-color clr_primary
+
+.hidden
+    display none
+
+.chosen_date_box
+    width 100vw
+    height max-content
+    border 1px solid red
+
+.channels_box
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+    grid-template-rows auto
+    grid-gap 1rem
+    width 100vw
+    padding-left 2rem
+    padding-right 2rem
+    padding-bottom 3rem
+    padding-top 0
+    justify-content center
+    align-content center
+    justify-items center
+    align-items center
+    // padding-top 120px
+
+.channel_name
+    width 100%
+    background-color dark_4
+    color clr_primary
+    border none
+    outline none
+    padding-top 1.1rem
+    padding-bottom 1rem
+    font-size 1.2rem
+    font-family font_h
+    font-weight 300
+    text-align center
+    text-transform uppercase
+
+
+.channel_box
+    // display flex
+    // flex-direction column
+    // justify-content flex-start
+    // align-items flex-start
+    // background-color bg_dark_3
+    // border solid .5px bg_dark_4
+    width 100%
+    height 100%
+    // height auto
+    // min-height min-content
+    // max-height max-content
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    justify-content center
+    align-content start
+    justify-items center
+    align-items start
+    // background-color #dddddd
+
+.day_result
+    width 100vw
+    height auto
+
+.card_schedule
+    // display flex
+    // flex-direction column
+    width 100%
+    display grid
+    grid-template-columns 1fr
+    grid-template-rows auto
+    align-content start
+    // margin-top 2rem
+    background-color white
+    margin-top 1.618rem
+    border .5px solid clr_grey_light
+
+
 /* MEDIA query: for large screens */
 @media screen and (min-width: 800px)
     .grid_film
@@ -3033,6 +3176,15 @@ a.btn_popover
                             "f_vialog_box      f_vialog_box      f_vialog_box"\
                             "f_img_slider_box  f_img_slider_box  f_img_slider_box"\
                             "f_imgs_box        f_imgs_box        f_imgs_box"
+        padding-top header_height
+
+    .grid_timetable
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows auto
+        grid-template-areas "days_box          days_box          days_box"\
+                            "chosen_date_box   chosen_date_box   chosen_date_box"\
+                            "channel_box     channel_2_box     channel_3_box"
         padding-top header_height
 
     .grid_ind_person
