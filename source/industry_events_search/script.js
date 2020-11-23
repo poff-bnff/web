@@ -7,7 +7,7 @@ const selectors = {
     types: document.getElementById('types_select'),
     categories: document.getElementById('categories_select'),
     channels: document.getElementById('channels_select'),
-    projects: document.getElementById('projects_select'),
+    // projects: document.getElementById('projects_select'),
     persons: document.getElementById('persons_select'),
     starttimes: document.getElementById('starttimes_select'),
 }
@@ -129,10 +129,10 @@ function toggleFilters(exclude_selector_name) {
                     const compare_with = selector_name === 'channels' ? value : selectors.channels.value;
                     return compare_with === '' ? true : screening.channels.includes(compare_with)
                 })
-                .filter(screening => {
-                    const compare_with = selector_name === 'projects' ? value : selectors.projects.value;
-                    return compare_with === '' ? true : screening.projects.includes(compare_with)
-                })
+                // .filter(screening => {
+                //     const compare_with = selector_name === 'projects' ? value : selectors.projects.value;
+                //     return compare_with === '' ? true : screening.projects.includes(compare_with)
+                // })
                 .filter(screening => {
                     const compare_with = selector_name === 'persons' ? value : selectors.persons.value;
                     return compare_with === '' ? true : screening.persons.includes(compare_with)
@@ -169,9 +169,9 @@ selectors.channels.addEventListener('change', e => {
     toggleAll('channels');
 });
 
-selectors.projects.addEventListener('change', e => {
-    toggleAll('projects');
-});
+// selectors.projects.addEventListener('change', e => {
+//     toggleAll('projects');
+// });
 
 selectors.persons.addEventListener('change', e => {
     toggleAll('persons');
@@ -186,7 +186,7 @@ function unselect_all() {
     selectors.types.selectedIndex = 0;
     selectors.categories.selectedIndex = 0;
     selectors.channels.selectedIndex = 0;
-    selectors.projects.selectedIndex = 0;
+    // selectors.projects.selectedIndex = 0;
     selectors.persons.selectedIndex = 0;
     selectors.starttimes.selectedIndex = 0;
     nonetoshow.selectedIndex = 0;
@@ -216,13 +216,13 @@ function execute_filters() {
                 return true
             }
         })
-        .filter(screening => {
-            if (selectors.projects.value) {
-                return screening.projects.includes(selectors.projects.value)
-            } else {
-                return true
-            }
-        })
+        // .filter(screening => {
+        //     if (selectors.projects.value) {
+        //         return screening.projects.includes(selectors.projects.value)
+        //     } else {
+        //         return true
+        //     }
+        // })
         .filter(screening => {
             if (selectors.persons.value) {
                 return screening.persons.includes(selectors.persons.value)
