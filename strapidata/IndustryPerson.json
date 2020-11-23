@@ -974,15 +974,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 1,
-        "type": "Black Nights Star",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:11:17.255Z",
-        "updated_at": "2020-11-04T09:11:17.266Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -990,6 +981,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
       }
     ]
   },
@@ -2398,6 +2398,155 @@
     ]
   },
   {
+    "id": 146,
+    "person": {
+      "id": 4467,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:49:56.962Z",
+      "updated_at": "2020-11-23T12:49:57.024Z",
+      "firstName": "Tanja",
+      "lastName": "Georgieva-Waldhauer",
+      "gender": {
+        "id": 3,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:07:32.440Z",
+        "updated_at": "2020-09-14T06:44:23.811Z",
+        "Name_et": "Naine",
+        "Name_en": "Female",
+        "Name_ru": "Женщина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Naine",
+        "en": "Female",
+        "ru": "N"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Tanja Georgieva-Waldhauer",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 877,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:44.692Z",
+          "updated_at": "2020-08-17T14:20:44.692Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "DE",
+          "name_et": "Saksamaa",
+          "name_en": "Germany",
+          "name_ru": "Германия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Tanja Georgieva-Waldhauer had been producing feature-length documentaries such as the award-winning The Graveyard of the Illegals since 2009 before co-founding Elemag Pictures in late 2014. She has since co-produced Roman Bondarchuk's fiction debut Volcano and produced the documentary Another Reality, among others. Currently, she is serving as a co-producer on such projects as Sonia Liza Kentermann's Tailor,Vincent Cardona's Les Magnetiques, and Emre Kayis' The Anatolian Leopard.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:21:10.734Z",
+    "updated_at": "2020-11-23T13:21:10.755Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Tanja Georgieva-Waldhauer",
+    "slug": "tanja-georgieva-waldhauer",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3700,
+      "name": "15293_4_28197.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15293_4_28197_79696ff50b.jpg",
+          "hash": "thumbnail_15293_4_28197_79696ff50b",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15293_4_28197.jpg",
+          "path": null,
+          "size": 4.26,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15293_4_28197_79696ff50b",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 32.66,
+      "url": "/uploads/15293_4_28197_79696ff50b.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:20:47.159Z",
+      "updated_at": "2020-11-23T13:20:47.750Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
     "id": 81,
     "person": {
       "id": 4177,
@@ -3461,6 +3610,7 @@
     },
     "images": [
       {
+<<<<<<< HEAD
         "id": 3256,
         "name": "Andrey Tarkovsky & Alexej Naidenov DOP©Peter Crupenin - Svea Ideon.jpg",
         "alternativeText": "",
@@ -3506,6 +3656,8 @@
         "updated_at": "2020-11-13T09:37:55.746Z"
       },
       {
+=======
+>>>>>>> fbb82ab9ff78e785d65502657c8f977f7024e39d
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -3518,6 +3670,7 @@
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "id": 42,
     "person": {
       "id": 4127,
@@ -3528,6 +3681,157 @@
       "firstName": "Klaus ",
       "lastName": "Darrelmann",
 =======
+=======
+    "id": 147,
+    "person": {
+      "id": 4468,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:50:38.357Z",
+      "updated_at": "2020-11-23T12:50:38.379Z",
+      "firstName": "Mário",
+      "lastName": "Patrocínio",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Mário Patrocínio",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 1020,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:54.199Z",
+          "updated_at": "2020-08-17T14:20:54.199Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "PT",
+          "name_et": "Portugal",
+          "name_en": "Portugal",
+          "name_ru": "Португалия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Producer-director Mário Patrocínio co-founded BRO Cinema in 2012 with a focus on producing commercials, multi-platform content and cinema. He directed the documentaries Complex - Parallel Universe and I Love Kuduro and co-produced Richard Stanley's Color out of Space and Bernardo Barreto's The Seeker in 2019. Mário's development slate includes a TV crime series created in the company's Writer's Room as well as eto's Two Strangers, his debut as a fiction director.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:22:33.386Z",
+    "updated_at": "2020-11-23T13:22:33.418Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Mário Patrocínio",
+    "slug": "mario-patrocinio",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3701,
+      "name": "15283_4_18818.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15283_4_18818_aa9efc8c19.jpg",
+          "hash": "thumbnail_15283_4_18818_aa9efc8c19",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15283_4_18818.jpg",
+          "path": null,
+          "size": 4.92,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15283_4_18818_aa9efc8c19",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 35.56,
+      "url": "/uploads/15283_4_18818_aa9efc8c19.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:22:22.030Z",
+      "updated_at": "2020-11-23T13:22:22.374Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
+>>>>>>> fbb82ab9ff78e785d65502657c8f977f7024e39d
     "id": 24,
     "person": {
       "id": 4109,
@@ -5562,6 +5866,7 @@
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "id": 57,
     "person": {
       "id": 4142,
@@ -5572,6 +5877,114 @@
       "firstName": "Adrian ",
       "lastName": "Wootton",
 =======
+    "id": 23,
+=======
+    "id": 148,
+>>>>>>> fbb82ab9ff78e785d65502657c8f977f7024e39d
+    "person": {
+      "id": 4471,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T14:16:34.465Z",
+      "updated_at": "2020-11-23T14:16:34.485Z",
+      "firstName": "Luciano",
+      "lastName": "Sovena",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Luciano Sovena",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Luciano Sovena is a lawyer specialised in the law of cinema and produced and distributed more than 50 films. He has held several positions for the Italian Minister of Culture, in the 2003 he was nominated CEO fot Istituto Luce, whose historical archive is the most complete in the world. He is currently responsible of the LAZIO CINEMA INTERNATIONAL, a funding scheme endowed with 10 million euro per year to sustain international co-productions.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:18:09.876Z",
+    "updated_at": "2020-11-23T14:18:09.925Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Luciano Sovena",
+    "slug": "luciano-sovena",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3702,
+      "name": "Luciano-Sovena.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 250,
+      "height": 350,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Luciano_Sovena_6a0c1bf44d.jpg",
+          "hash": "thumbnail_Luciano_Sovena_6a0c1bf44d",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Luciano-Sovena.jpg",
+          "path": null,
+          "size": 5.03,
+          "width": 111,
+          "height": 156
+        }
+      },
+      "hash": "Luciano_Sovena_6a0c1bf44d",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 111.68,
+      "url": "/uploads/Luciano_Sovena_6a0c1bf44d.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:18:00.654Z",
+      "updated_at": "2020-11-23T14:18:00.850Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 23,
     "person": {
       "id": 4108,
@@ -7506,6 +7919,7 @@
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "id": 39,
     "person": {
       "id": 4124,
@@ -7516,6 +7930,157 @@
       "firstName": "Evrim ",
       "lastName": "Ersoy",
 =======
+=======
+    "id": 149,
+    "person": {
+      "id": 4459,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:41:03.999Z",
+      "updated_at": "2020-11-23T12:41:04.025Z",
+      "firstName": "Giovanni",
+      "lastName": "Pompili",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Giovanni Pompili",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 936,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.557Z",
+          "updated_at": "2020-08-17T14:20:49.557Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IT",
+          "name_et": "Itaalia",
+          "name_en": "Italy",
+          "name_ru": "Италия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Giovanni Pompili is part of Eave and Ace and in 2020 he was selected as Producer on the Move. He co-produced with Poland, France, Switzerland, Belgium, Spain and Argentina.\nand now he is co-producing new films byLaura Luchetti, Carla Simòn, Aga Woszczynska and Cristina Picchi.Sole, the debut film of Carlo Sironi nominated and EFA discovery 2020, is a co-production between Italy and Poland.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:19:01.651Z",
+    "updated_at": "2020-11-23T14:19:01.671Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Giovanni Pompili",
+    "slug": "giovanni-pompili-1",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3703,
+      "name": "Giovanni.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 780,
+      "height": 1080,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Giovanni_6a789933d3.jpg",
+          "hash": "thumbnail_Giovanni_6a789933d3",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Giovanni.jpg",
+          "path": null,
+          "size": 4.68,
+          "width": 113,
+          "height": 156
+        }
+      },
+      "hash": "Giovanni_6a789933d3",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 668.72,
+      "url": "/uploads/Giovanni_6a789933d3.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:18:27.689Z",
+      "updated_at": "2020-11-23T14:18:27.971Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+>>>>>>> fbb82ab9ff78e785d65502657c8f977f7024e39d
     "id": 74,
     "person": {
       "id": 4170,
@@ -8686,6 +9251,155 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "person": {
+      "id": 4455,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:37:46.880Z",
+      "updated_at": "2020-11-23T12:37:46.908Z",
+      "firstName": "Yll",
+      "lastName": "Uka",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Yll Uka",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 1080,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:56.208Z",
+          "updated_at": "2020-08-17T14:20:56.208Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "UNK",
+          "name_et": "Kosovo",
+          "name_en": "Kosovo",
+          "name_ru": "Косово"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Yll Uka co-founded the Pristina-based production and film rental company Ikonë Studio in 2011 with a focus on young film-makers and international co-production. He served as a co-producer on Genc Berisha's gangster drama Diamanti as well as Visar Morina's second feature Exile which first screened at the Sundance and Berlin festivals in 2020. Yll is set to co-produce Fisnik Maxhuni's upcoming fiction feature The Land Within Me.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T12:51:48.586Z",
+    "updated_at": "2020-11-23T12:51:48.700Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Yll Uka",
+    "slug": "yll-uka",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3686,
+      "name": "15294_4_28198.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15294_4_28198_638ba309a2.jpg",
+          "hash": "thumbnail_15294_4_28198_638ba309a2",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15294_4_28198.jpg",
+          "path": null,
+          "size": 4.61,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15294_4_28198_638ba309a2",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 31.58,
+      "url": "/uploads/15294_4_28198_638ba309a2.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T12:51:31.413Z",
+      "updated_at": "2020-11-23T12:51:32.030Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
       }
     ]
   },
@@ -10116,6 +10830,111 @@
     ]
   },
   {
+    "id": 134,
+    "person": {
+      "id": 4176,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-18T16:06:02.206Z",
+      "updated_at": "2020-11-18T16:06:02.226Z",
+      "firstName": "Vesela ",
+      "lastName": "Kazakova",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Vesela Kazakova",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Vesela Kazakova was an award-winning actress in Bulgaria before turning to producing and directing when she joined forces with animation director Mina Mileva to set up their company Activist38 in 2008. They gained the nickname of 'The Demonic Duo' with their political documentaries Uncle Tony, Three Fools and the Secret Service and The Beast is Still Alive. They made their fiction debut Cat in the Wall in 2019 and are now developing their second feature Women Do Cry.\n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T12:52:53.854Z",
+    "updated_at": "2020-11-23T12:52:53.876Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Vesela Kazakova",
+    "slug": "vesela-kazakova-1",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3687,
+      "name": "15300_4_9195.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15300_4_9195_db3bbcaf1c.jpg",
+          "hash": "thumbnail_15300_4_9195_db3bbcaf1c",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15300_4_9195.jpg",
+          "path": null,
+          "size": 4.68,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15300_4_9195_db3bbcaf1c",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 32.94,
+      "url": "/uploads/15300_4_9195_db3bbcaf1c.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T12:52:49.147Z",
+      "updated_at": "2020-11-23T12:52:49.782Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
     "id": 9,
     "person": {
       "id": 4095,
@@ -11423,6 +12242,130 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:29.943Z",
         "updated_at": "2020-11-04T09:11:29.947Z"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "person": {
+      "id": 4166,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-18T15:15:26.175Z",
+      "updated_at": "2020-11-18T15:15:26.204Z",
+      "firstName": "Rupert ",
+      "lastName": "Lloyd",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Producer",
+      "firstNameLastName": "Rupert Lloyd",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 893,
+          "Code": null,
+          "created_by": null,
+          "updated_by": 6,
+          "created_at": "2020-08-17T14:20:46.574Z",
+          "updated_at": "2020-11-07T17:03:21.338Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "GB",
+          "name_et": "Ühendkuningriik",
+          "name_en": "United Kingdom",
+          "name_ru": "Великобритания"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Rupert Lloyd initially focused on working as an editor before founding Noor Pictures, a London-based production company with an international outlook. Noor's debut feature Theeb by Naji Abu Nowar premiered in Venice in 2014 and went on to win a BAFTA and an Academy Award® nomination for Best Foreign Language Film in 2016. A recipient of the BFI Vision Award, Rupert currently has films by Nowar and Billy Lumby in development at Film4 and BBC Films.\n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T12:54:10.198Z",
+    "updated_at": "2020-11-23T12:54:10.221Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Rupert Lloyd",
+    "slug": "rupert-lloyd-1",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3688,
+      "name": "15297_4_28205.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15297_4_28205_41ca9548e7.jpg",
+          "hash": "thumbnail_15297_4_28205_41ca9548e7",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15297_4_28205.jpg",
+          "path": null,
+          "size": 4.54,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15297_4_28205_41ca9548e7",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 31.95,
+      "url": "/uploads/15297_4_28205_41ca9548e7.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T12:54:02.947Z",
+      "updated_at": "2020-11-23T12:54:03.326Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
       }
     ]
   },
@@ -13390,6 +14333,155 @@
     ]
   },
   {
+    "id": 136,
+    "person": {
+      "id": 4458,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:39:42.141Z",
+      "updated_at": "2020-11-23T12:40:36.731Z",
+      "firstName": "Danijel ",
+      "lastName": "Pek",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Danijel Pek",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 927,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.107Z",
+          "updated_at": "2020-08-17T14:20:49.107Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "HR",
+          "name_et": "Horvaatia",
+          "name_en": "Croatia",
+          "name_ru": "Хорватия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Danijel Pek founded his production company Antitalent in 2007 to focus on film, TV and online content and released his first feature film production, Nevio Marasovic's Vis-à-Vis, in 2013 after having previously worked on commercials and various TV formats. He launched the rental company CineCro in 2015 and produced Marasovic's next feature, Goran, in 2016. Danijel's development slate currently includes Rok Bicek's next feature Dark Mother Earth.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T12:56:00.497Z",
+    "updated_at": "2020-11-23T12:56:00.532Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Danijel Pek",
+    "slug": "danijel-pek",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3689,
+      "name": "15290_4_28193.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15290_4_28193_2d3de00859.jpg",
+          "hash": "thumbnail_15290_4_28193_2d3de00859",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15290_4_28193.jpg",
+          "path": null,
+          "size": 4.01,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15290_4_28193_2d3de00859",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 27.99,
+      "url": "/uploads/15290_4_28193_2d3de00859.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T12:55:47.453Z",
+      "updated_at": "2020-11-23T12:55:48.017Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
     "id": 63,
     "person": {
       "id": 2163,
@@ -14078,6 +15170,155 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "person": {
+      "id": 4459,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:41:03.999Z",
+      "updated_at": "2020-11-23T12:41:04.025Z",
+      "firstName": "Giovanni",
+      "lastName": "Pompili",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Giovanni Pompili",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 936,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.557Z",
+          "updated_at": "2020-08-17T14:20:49.557Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IT",
+          "name_et": "Itaalia",
+          "name_en": "Italy",
+          "name_ru": "Италия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Giovanni Pompili took over as head of Kino Produzioni in 2012, changing the company's core business from TV service production to cinema. He has worked with such emerging talents as Carlo Sironi, Laura Luchetti, Ali Asgari and Farnoosh Samadi. He is now co-producing new films by Carla Simòn, Aga Woszczynska and Cristina Picchi. As a main producer, Giovanni is currently raising financing for La Bella Estate by Laura Luchetti and Delta by Michele Vannucci.\n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T12:56:48.397Z",
+    "updated_at": "2020-11-23T12:56:48.415Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Giovanni Pompili ",
+    "slug": "giovanni-pompili",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3690,
+      "name": "15298_4_28207.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15298_4_28207_84a1369d45.jpg",
+          "hash": "thumbnail_15298_4_28207_84a1369d45",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15298_4_28207.jpg",
+          "path": null,
+          "size": 5.21,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15298_4_28207_84a1369d45",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 35.55,
+      "url": "/uploads/15298_4_28207_84a1369d45.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T12:56:38.829Z",
+      "updated_at": "2020-11-23T12:56:39.132Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
       }
     ]
   },
@@ -15276,6 +16517,304 @@
     ]
   },
   {
+    "id": 138,
+    "person": {
+      "id": 4460,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:41:44.770Z",
+      "updated_at": "2020-11-23T12:41:44.801Z",
+      "firstName": "Olmo Figueredo",
+      "lastName": "González-Quevedo",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Olmo Figueredo González-Quevedo",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 906,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.692Z",
+          "updated_at": "2020-08-17T14:20:47.692Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "ES",
+          "name_et": "Hispaania",
+          "name_en": "Spain",
+          "name_ru": "Испания"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Olmo Figueredo co-founded his production company, La Claqueta in 2002 and had concentrated on the production of documentary features, shorts and series before moving into fiction in 2018 with the horror thriller Animas by Laura Alvea and Jose F. Ortuño. Olmo has since produced the award-winning The Endless Trench and the 2019 box-office hit Goodbye. His development slate includes the thrillers Tin & Tina and Violeta Salama's debut feature Alegría.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:09:38.033Z",
+    "updated_at": "2020-11-23T13:09:38.070Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Olmo Figueredo González-Quevedo",
+    "slug": "olmo-figueredo-gonzalez-quevedo",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3691,
+      "name": "15282_4_7805.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15282_4_7805_0f82880372.jpg",
+          "hash": "thumbnail_15282_4_7805_0f82880372",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15282_4_7805.jpg",
+          "path": null,
+          "size": 3.66,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15282_4_7805_0f82880372",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 24.6,
+      "url": "/uploads/15282_4_7805_0f82880372.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:09:26.658Z",
+      "updated_at": "2020-11-23T13:09:27.050Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "person": {
+      "id": 4462,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:42:45.077Z",
+      "updated_at": "2020-11-23T12:42:45.098Z",
+      "firstName": "Alan R. ",
+      "lastName": "Milligan",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Alan R. Milligan",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 996,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:53.242Z",
+          "updated_at": "2020-08-17T14:20:53.242Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "NO",
+          "name_et": "Norra",
+          "name_en": "Norway",
+          "name_ru": "Норвегия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Alan R. Milligan has produced, executive or co-produced seven A-list festival nominated/winning films since 2014, including Flapping in the Middle of Nowhere, Valley of Shadows, Rams and by Laura Luchetti and The Body Remembers When the World Broke Open, from his production companies Film Farms and Tannhauser Gate. In addition, Alan is a software entrepreneur and founder of White Rabbit, a browser plug-in that identifies content streamed peer-to-peer allowing audiences to pay rightsholders directly.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:12:04.407Z",
+    "updated_at": "2020-11-23T13:12:04.444Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Alan R. Milligan",
+    "slug": "alan-r-milligan",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3693,
+      "name": "15284_4_23291.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15284_4_23291_799d76bb35.jpg",
+          "hash": "thumbnail_15284_4_23291_799d76bb35",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15284_4_23291.jpg",
+          "path": null,
+          "size": 4.64,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15284_4_23291_799d76bb35",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 33.98,
+      "url": "/uploads/15284_4_23291_799d76bb35.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:11:14.613Z",
+      "updated_at": "2020-11-23T13:11:15.068Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
     "id": 127,
     "person": {
       "id": 4451,
@@ -15606,6 +17145,155 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "person": {
+      "id": 4461,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:42:15.336Z",
+      "updated_at": "2020-11-23T12:42:15.363Z",
+      "firstName": "Aleksi",
+      "lastName": "Hyvärinen",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Aleksi Hyvärinen",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 908,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.900Z",
+          "updated_at": "2020-08-17T14:20:47.900Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "FI",
+          "name_et": "Soome",
+          "name_en": "Finland",
+          "name_ru": "Финляндия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "A co-founder of Don Films, Aleksi Hyvärinen produced and co-wrote Taneli Mustonen's 2016 hit horror film Lake Bodom as well as his latest feature, The Renovation, which became one of Finland's biggest ever openings before cinemas closed due to Covid-19. He co-produced Boris Khlebnikov's Arrythmia and Valery Todorovsky's forthcoming feature Hypnosis. Aleksi is now preparing the shoot of Mustonen's English-language horror film, The Twin, which he co-wrote.\n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:10:39.708Z",
+    "updated_at": "2020-11-23T13:10:39.731Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Aleksi Hyvärinen",
+    "slug": "aleksi-hyvaerinen",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3692,
+      "name": "15285_4_25411.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15285_4_25411_f93bc4cf51.jpg",
+          "hash": "thumbnail_15285_4_25411_f93bc4cf51",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15285_4_25411.jpg",
+          "path": null,
+          "size": 4.66,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15285_4_25411_f93bc4cf51",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 32.47,
+      "url": "/uploads/15285_4_25411_f93bc4cf51.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:10:28.266Z",
+      "updated_at": "2020-11-23T13:10:28.692Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
       }
     ]
   },
@@ -16362,6 +18050,155 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "person": {
+      "id": 4463,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:43:21.508Z",
+      "updated_at": "2020-11-23T12:43:21.535Z",
+      "firstName": "Mikuláš",
+      "lastName": "Novotný",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Mikuláš Novotný",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 873,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:43.734Z",
+          "updated_at": "2020-08-17T14:20:43.734Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "CZ",
+          "name_et": "Tšehhi",
+          "name_en": "Czechia",
+          "name_ru": "Чехия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Mikulás Novotný co-founded Background Films in 2012, debuting as a producer with Tomasz Mielnik's spiritual comedy Journey to Rome which premiered in Karlovy Vary in 2015. He has since produced Czech New Wave legend Karel Vachek's six-hour film essay Communism And The Net Or The End Of Representative Democracy. Mikulás will co-produce Jan P. Matuszynski's Leave No Traces and is also developing Mielnik's next feature, the comedy Gregorius, The Chosen One.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:13:32.394Z",
+    "updated_at": "2020-11-23T13:13:32.422Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Mikuláš Novotný",
+    "slug": "mikulas-novotny",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3694,
+      "name": "15299_4_28216.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15299_4_28216_e52fdf186f.jpg",
+          "hash": "thumbnail_15299_4_28216_e52fdf186f",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15299_4_28216.jpg",
+          "path": null,
+          "size": 4.1,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15299_4_28216_e52fdf186f",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 27.28,
+      "url": "/uploads/15299_4_28216_e52fdf186f.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:12:43.069Z",
+      "updated_at": "2020-11-23T13:12:44.531Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
       }
     ]
   },
@@ -17362,6 +19199,7 @@
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "id": 35,
     "person": {
       "id": 4120,
@@ -17372,6 +19210,157 @@
       "firstName": "Kristofer",
       "lastName": "Piir",
 =======
+=======
+    "id": 142,
+    "person": {
+      "id": 4464,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:43:52.634Z",
+      "updated_at": "2020-11-23T12:43:52.657Z",
+      "firstName": "Monica",
+      "lastName": "Hellström",
+      "gender": {
+        "id": 3,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:07:32.440Z",
+        "updated_at": "2020-09-14T06:44:23.811Z",
+        "Name_et": "Naine",
+        "Name_en": "Female",
+        "Name_ru": "Женщина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Naine",
+        "en": "Female",
+        "ru": "N"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Monica Hellström",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 920,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:48.642Z",
+          "updated_at": "2020-08-17T14:20:48.642Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "DK",
+          "name_et": "Taani",
+          "name_en": "Denmark",
+          "name_ru": "Дания"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Monica Hellström has been a producer at Final Cut for Real since 2010 after having previously worked at Upfront Films and The Danish Film Institute's Film Workshop. Her productions have included Simon Lereng Wilmont's 2013 short Chikara - The Sumo Wrestler's Son and his documentary The Distant Barking of Dogs. which was shortlisted for the 2019 Oscars. She is now serving as the delegate producer for Jonas Poher Rasmussen's animated documentary Flee.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:14:39.253Z",
+    "updated_at": "2020-11-23T13:14:39.277Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Monica Hellström",
+    "slug": "monica-hellstroem",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3695,
+      "name": "15288_4_27249.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15288_4_27249_09abff4b1f.jpg",
+          "hash": "thumbnail_15288_4_27249_09abff4b1f",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15288_4_27249.jpg",
+          "path": null,
+          "size": 4.6,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15288_4_27249_09abff4b1f",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 35.28,
+      "url": "/uploads/15288_4_27249_09abff4b1f.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:14:27.530Z",
+      "updated_at": "2020-11-23T13:14:27.749Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
+>>>>>>> fbb82ab9ff78e785d65502657c8f977f7024e39d
     "id": 84,
     "person": {
       "id": 4180,
@@ -19013,15 +21002,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 7,
-        "type": "Russia in Focus 2020",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:37:07.621Z",
-        "updated_at": "2020-11-04T09:37:07.627Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -19029,6 +21009,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
       }
     ]
   },
@@ -21869,6 +23858,155 @@
     ]
   },
   {
+    "id": 143,
+    "person": {
+      "id": 4465,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:48:52.921Z",
+      "updated_at": "2020-11-23T12:48:52.955Z",
+      "firstName": "John ",
+      "lastName": "Wallace",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "John Wallace",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 952,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:50.882Z",
+          "updated_at": "2020-08-17T14:20:50.882Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IE",
+          "name_et": "Iirimaa",
+          "name_en": "Ireland",
+          "name_ru": "Ирландия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "John Wallace was working as an assistant director when he co-founded the production company Black Sheep Productions in 2007. He produced his first feature film, Rewind by P.J. Dillon, in 2010 and worked on numerous fiction and documentary features between 2010-2018. He joined forces with producer Alan Maher in 2018 to launch Cowtown Pictures, with its first feature, Rialto, premiering in Venice in 2019, and new projects by Rebecca Daly and Malgorzata Szumowska now in development.\n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:18:04.100Z",
+    "updated_at": "2020-11-23T13:18:04.127Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "John Wallace",
+    "slug": "john-wallace",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3697,
+      "name": "15287_4_26205.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15287_4_26205_5a06c6e6bc.jpg",
+          "hash": "thumbnail_15287_4_26205_5a06c6e6bc",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15287_4_26205.jpg",
+          "path": null,
+          "size": 4.69,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15287_4_26205_5a06c6e6bc",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 31.97,
+      "url": "/uploads/15287_4_26205_5a06c6e6bc.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:17:37.027Z",
+      "updated_at": "2020-11-23T13:17:37.519Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
     "id": 120,
     "person": {
       "id": 4373,
@@ -23290,6 +25428,143 @@
     ]
   },
   {
+    "id": 144,
+    "person": {
+      "id": 4135,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-14T22:29:56.361Z",
+      "updated_at": "2020-11-14T22:29:56.392Z",
+      "firstName": "Marina ",
+      "lastName": "Gumzi",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Marina Gumzi",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": {
+        "id": 3306,
+        "name": "Marina_Gumzi_portrait - Marina.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 500,
+        "height": 500,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_Marina_Gumzi_portrait_Marina_620191410f.jpg",
+            "hash": "thumbnail_Marina_Gumzi_portrait_Marina_620191410f",
+            "mime": "image/jpeg",
+            "name": "thumbnail_Marina_Gumzi_portrait - Marina.jpg",
+            "path": null,
+            "size": 5.36,
+            "width": 156,
+            "height": 156
+          }
+        },
+        "hash": "Marina_Gumzi_portrait_Marina_620191410f",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 70.31,
+        "url": "/uploads/Marina_Gumzi_portrait_Marina_620191410f.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-14T22:29:09.765Z",
+        "updated_at": "2020-11-14T22:29:10.125Z"
+      },
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Producer-screenwriter Marina Gumzi joined the Ljubljana-based company Nosorogi as its managing director in 2012 to work with the younger generation of filmmakers. She produced Matjaz Ivanisin's creative documentary Playing Men and co-wrote Gregor Bozic's multi-award-winning first feature Stories From The Chestnut Woods. Marina is now in development on Urska Djukic's debut feature Little Trouble Girl as well as Bozic's Jungle Film Project.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:19:16.530Z",
+    "updated_at": "2020-11-23T13:19:16.550Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Marina Gumzi",
+    "slug": "marina-gumzi-1",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3698,
+      "name": "15321_4_28203.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15321_4_28203_549f1dfe85.jpg",
+          "hash": "thumbnail_15321_4_28203_549f1dfe85",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15321_4_28203.jpg",
+          "path": null,
+          "size": 6.41,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15321_4_28203_549f1dfe85",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 45.09,
+      "url": "/uploads/15321_4_28203_549f1dfe85.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:18:56.237Z",
+      "updated_at": "2020-11-23T13:18:56.573Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
     "id": 76,
     "person": {
       "id": 4172,
@@ -23952,6 +26227,155 @@
       "updated_by": 34,
       "created_at": "2020-11-19T12:18:24.793Z",
       "updated_at": "2020-11-19T12:18:24.966Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "person": {
+      "id": 4466,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:49:23.720Z",
+      "updated_at": "2020-11-23T12:49:23.740Z",
+      "firstName": "Marie",
+      "lastName": "Kjellson",
+      "gender": {
+        "id": 3,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:07:32.440Z",
+        "updated_at": "2020-09-14T06:44:23.811Z",
+        "Name_et": "Naine",
+        "Name_en": "Female",
+        "Name_ru": "Женщина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Naine",
+        "en": "Female",
+        "ru": "N"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Marie Kjellson",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 1048,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:55.256Z",
+          "updated_at": "2020-08-17T14:20:55.256Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "SE",
+          "name_et": "Rootsi",
+          "name_en": "Sweden",
+          "name_ru": "Швеция"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Marie Kjellson joined forces with director Katja Wik in 2013 to launch the Göteborg-based company Kjellson & Wik after having worked for Ruben Ostlund's Plattform Produktion for eight years on such films as his Golden Globe-nominated Force Majeur and the drama Play as well as co-producing Pirjo Honkasalo's Concrete Night. Marie is currently in development on Wik's second feature The Narcissistin after she produced her debut The Ex-Wife in 2016.\n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T13:20:16.732Z",
+    "updated_at": "2020-11-23T13:20:16.760Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Marie Kjellson",
+    "slug": "marie-kjellson",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3699,
+      "name": "15296_4_28204.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 400,
+      "height": 400,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_15296_4_28204_2e931fa5c5.jpg",
+          "hash": "thumbnail_15296_4_28204_2e931fa5c5",
+          "mime": "image/jpeg",
+          "name": "thumbnail_15296_4_28204.jpg",
+          "path": null,
+          "size": 5.97,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "15296_4_28204_2e931fa5c5",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 41.88,
+      "url": "/uploads/15296_4_28204_2e931fa5c5.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T13:19:57.841Z",
+      "updated_at": "2020-11-23T13:19:58.196Z"
     },
     "images": [],
     "role_at_films": [],
@@ -24852,6 +27276,7 @@
     "role_at_films": [],
     "industry_person_types": [
       {
+<<<<<<< HEAD
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -24870,6 +27295,8 @@
         "created_at": "2020-11-14T16:13:42.742Z",
         "updated_at": "2020-11-14T16:13:42.751Z"
 =======
+=======
+>>>>>>> fbb82ab9ff78e785d65502657c8f977f7024e39d
         "id": 7,
         "type": "Russia in Focus 2020",
         "description": null,
@@ -24877,7 +27304,19 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:37:07.621Z",
         "updated_at": "2020-11-04T09:37:07.627Z"
+<<<<<<< HEAD
 >>>>>>> 6e34bc0a18d0cc5bbeba5951c05e2c077a28d8c1
+=======
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+>>>>>>> fbb82ab9ff78e785d65502657c8f977f7024e39d
       }
     ]
   },
