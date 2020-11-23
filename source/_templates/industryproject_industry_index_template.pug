@@ -6,7 +6,7 @@ include /_templates/mixins.pug
 block content
 
     main.grid_film
-        if self.title
+        if self.title_en
 
             //- KARUSELL Industry projekti piltidega
             section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
@@ -52,7 +52,7 @@ block content
                         p.premiere_type= types.join(', ')
 
 
-                h1.film_title_detailed= self.title
+                h1.film_title_detailed= self.title_en
 
                 .str_info_blokk_1
 
@@ -61,7 +61,7 @@ block content
                             .str_info_label= self.label.film.countries
                             -var countries = []
                             each country in self.countries
-                                - countries.push(country.name)
+                                - countries.push(country.name_en)
                             .str_info_value= countries.join(', ')
 
                     if self.languages && self.languages[0]
@@ -69,14 +69,17 @@ block content
                             .str_info_label= self.label.film.languages
                             - var languages = []
                             each language in self.languages
-                                -languages.push(language.name)
+                                -languages.push(language.name_en)
                             .str_info_value= languages.join(', ')
 
 
-                    if self.tag_genres && self.tag_genres[0]
+                    if self.tag_genres && self.tag_genres.en && self.tag_genres[0].en
                         .str_info_grid_3
                             .str_info_label= self.label.film.genre
-                            .str_info_value= self.tag_genres.join(', ')
+                            - var genres = []
+                            each genre in self.tag_genres
+                                -genres.push(genre.tag_genres.en)
+                            .str_info_value= genres.join(', ')
 
                     if self.project_statuses && self.project_statuses[0]
                         .str_info_grid_3
@@ -149,13 +152,13 @@ block content
                         .str_info_grid_3
                             .str_info_label= self.label.industry.projectBudget
                             .str_info_value
-                                +euro(self.budget)
+                                +bigMoney(self.budget)
 
                     if self.financed
                         .str_info_grid_3
                             .str_info_label= self.label.industry.projectFinanced
                             .str_info_value
-                                +euro(self.financed)
+                                +bigMoney(self.financed)
 
                     if self.lookingFor
                         .str_info_grid_3
@@ -201,6 +204,21 @@ block content
                                 - broadcaster_name.push(broadcaster.name)
                             .str_info_value= broadcaster_name.join(', ')
 
+                    if self.persons
+                        each person in self.persons
+                            if person.rolesAtFilm && person.person
+                                each role in person.rolesAtFilm
+                                    .str_info_grid_3
+                                        .str_info_label= role
+                                        .str_info_value= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
+
+                    if self.organisations
+                        each company in self.organisations
+                            if company.rolesAtFilm && company.organisations.namePrivate
+                                .str_info_grid_3
+                                    .str_info_label= company.rolesAtFilm.join(', ')
+                                    .str_info_value= company.organisations.namePrivate
+
             section.project_runtime_box
 
                 if self.contactName
@@ -228,58 +246,42 @@ block content
                         .str_info_label= self.label.industry.contactCompany
                         .str_info_value= self.contactCompany.name
 
-                if self.teamCredentials && self.teamCredentials.rolePerson
-                    each person in  self.teamCredentials.rolePerson
-                        if person.person && !person.person.biography
-                            .str_info_grid_3
-                                .str_info_label= person.role_at_film.roleNamePrivate
-                                .str_info_value= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
+            section.f_dir_box
+                if self.persons
+                    each person in self.persons
+                        if person.rolesAtFilm && person.person && person.person.biography
+                            .f_dir_bio_box
+                                .dir_img
+                                    if person.person.picture
+                                        img.img_dir(src=`https://assets.poff.ee/img/${person.person.picture.hash}${person.person.picture.ext}` alt = person.person.firstNameLastName)
+                                    if person.person.firstName || person.person.lastName
+                                    .str_info_grid_3
+                                        .str_info_label.text_left.dark_semi= person.rolesAtFilm.join(', ')
+                                        .str_info_value.text_right.dark_1= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
 
-                if self.teamCredentials && self.teamCredentials.roleCompany
-                    each company in self.teamCredentials.roleCompany
-                        if company.organisation && company.organisation.type && company.organisation.namePrivate && !company.organisation.logoColour
-                            .str_info_grid_3
-                                .str_info_label= company.organisation.type
-                                .str_info_value= company.organisation.namePrivate
+                                .dir_bio.dark_1
+                                    if person.person.biography && person.person.biography.en
+                                        p.dark_1= person.person.biography.en
+                                    if person.person.filmography && person.person.filmography.en
+                                        p.dark_1= person.person.filmography.en
+                                    else if person.person.filmography && person.person.filmography.en && person.person.filmography.en
+                                        p.dark_1= person.person.filmography.en
 
-            if self.teamCredentials
-                if self.teamCredentials.rolePerson
-                    each person in  self.teamCredentials.rolePerson
-                        if person.person
-                            if person.role_at_film.roleNamePrivate && person.person.firstNameLastName && person.role_at_film.roleNamePrivate && person.person.biography
-                                section.f_dir_box
-                                    .f_dir_bio_box
-                                        .dir_img
-                                            if person.person.picture
-                                                img.img_dir(src=`https://assets.poff.ee/img/${person.person.picture.hash}${person.person.picture.ext}` alt = person.person.firstNameLastName)
-                                            if person.person.firstName || person.person.lastName
-                                                .str_info_grid_3
-                                                    .str_info_label.text_left.dark_semi= person.role_at_film.roleNamePrivate
-                                                    .str_info_value.text_right.dark_1= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
+                if self.organisations
+                    each company in self.organisations
+                        if company.rolesAtFilm && company.organisations.namePrivate && company.organisations.description
+                            .f_dir_bio_box
+                                .dir_img
+                                    if company.organisations.logoColour
+                                        img.img_comp(src=`https://assets.poff.ee/img/${company.organisations.logoColour.hash}${company.organisations.logoColour.ext}` alt = company.organisations.namePrivate)
 
-                                        .dir_bio.dark_1
-                                            if person.person.biography
-                                                p.dark_1= person.person.biography
-                                            if person.person.filmography
-                                                p.dark_1= person.person.filmography
-                                            else if person.person.filmography && person.person.filmography.en
-                                                p.dark_1= person.person.filmography.en
+                                    .str_info_grid_3
+                                        .str_info_label.text_left.dark_semi= company.rolesAtFilm.join(', ')
+                                        .str_info_value.text_right.dark_1= company.organisations.namePrivate
 
-                if self.teamCredentials.roleCompany
-                    each company in self.teamCredentials.roleCompany
-                        if company.organisation && company.organisation.type && company.organisation.namePrivate
-                            section.f_dir_box
-                                .f_dir_bio_box
-                                    .dir_img
-                                        if company.organisation.logoColour
-                                            img.img_comp(src=`https://assets.poff.ee/img/${company.organisation.logoColour.hash}${company.organisation.logoColour.ext}` alt = company.organisation.namePrivate)
-                                        .str_info_grid_3
-                                            .str_info_label.text_left.dark_semi= company.organisation.type
-                                            .str_info_value.text_right.dark_1= company.organisation.namePrivate
-
-                                    .dir_bio.dark_1
-                                        if company.organisation.description
-                                            p.dark_1= company.organisation.description
+                                .dir_bio.dark_1
+                                    if company.organisations.description.en
+                                        p.dark_1= company.organisations.description.en
 
 
             if self.clipUrl
