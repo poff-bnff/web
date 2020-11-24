@@ -116,7 +116,7 @@ build()
 
 runexit()
 {
-    echo 'EXITING'
+    echo '==== custom build ==== EXITING'
     exit
 }
 
@@ -128,72 +128,75 @@ fetch_data()
     [ -d "assets/xml" ] && rm -r assets/xml/*
 
 
-    echo 'Fetch strapiData.yaml from Strapi'
+    echo '==== custom build ==== Fetch strapiData.yaml from Strapi'
     node ./helpers/a_fetch.js
 
     printf '\n\n---------- Creating separate YAML files from strapiData.yaml ----------\n\n'
-    echo 'fetch_articles_from_yaml'
+    echo '==== custom build ==== fetch_articles_from_yaml'
     node ./helpers/fetch_articles_from_yaml.js
 
-    echo 'fetch_industry_person_from_yaml'
+    echo '==== custom build ==== fetch_industry_person_from_yaml'
     node ./helpers/fetch_industry_person_from_yaml.js
 
-    echo 'fetch_article_types_from_yaml'
+    echo '==== custom build ==== fetch_article_types_from_yaml'
     node ./helpers/fetch_article_type_from_yaml.js
 
-    echo 'fetch_heroarticle_from_yaml'
+    echo '==== custom build ==== fetch_heroarticle_from_yaml'
     node ./helpers/fetch_heroarticle_from_yaml.js
 
-    echo 'fetch_trioblock_from_yaml'
+    echo '==== custom build ==== fetch_trioblock_from_yaml'
     node ./helpers/fetch_trioblock_from_yaml.js
 
-    echo 'fetch_teams_from_yaml'
+    echo '==== custom build ==== fetch_teams_from_yaml'
     node ./helpers/fetch_teams_from_yaml.js
 
-    echo 'fetch_supporter_page_from_yaml'
+    echo '==== custom build ==== fetch_supporter_page_from_yaml'
     node ./helpers/fetch_supporter_page_from_yaml.js
 
     # labels, footer and menu are fetched to global
     # labels uses static global (first to fetch)
 
-    echo 'fetch_labels_from_yaml'
+    echo '==== custom build ==== fetch_labels_from_yaml'
     node ./helpers/fetch_labels_from_yaml.js
 
-    echo 'fetch_footer_from_yaml'
+    echo '==== custom build ==== fetch_footer_from_yaml'
     node ./helpers/fetch_footer_from_yaml.js
 
-    echo 'fetch_menu_from_yaml'
+    echo '==== custom build ==== fetch_menu_from_yaml'
     node ./helpers/fetch_menu_from_yaml.js
 
-    echo 'fetch_programmes_from_yaml'
+    echo '==== custom build ==== fetch_programmes_from_yaml'
     node ./helpers/fetch_programmes_from_yaml.js
 
-    echo 'fetch_cassettes_from_yaml'
+    echo '==== custom build ==== fetch_cassettes_from_yaml'
     node ./helpers/fetch_cassettes_from_yaml.js
 
-    echo 'fetch_six_film_block_from_yaml'
+    echo '==== custom build ==== fetch_six_film_block_from_yaml'
     node ./helpers/fetch_six_film_block_from_yaml.js
 
-    echo 'fetch_screenings_from_yaml'
+    echo '==== custom build ==== fetch_screenings_from_yaml'
     node ./helpers/fetch_screenings_from_yaml.js
 
-    echo 'assets/xml'
+    echo '==== custom build ==== assets/xml'
     node ./helpers/xml.js
 
-    echo 'fetch_shops_from_yaml'
+    echo '==== custom build ==== fetch_shops_from_yaml'
     node ./helpers/fetch_shops_from_yaml.js
 
-    echo 'fetch_industry_person_from_yaml'
+    echo '==== custom build ==== fetch_industry_person_from_yaml'
     node ./helpers/fetch_industry_person_from_yaml.js
 
-    echo 'fetch_industry_project_from_yaml'
+    echo '==== custom build ==== fetch_industry_project_from_yaml'
     node ./helpers/fetch_industry_project_from_yaml.js
 
-    echo 'fetch_industry_channels_from_yaml'
+    echo '==== custom build ==== fetch_industry_channels_from_yaml'
     node ./helpers/fetch_channels_from_yaml.js
 
-    echo 'fetch_industry_event_from_yaml'
+    echo '==== custom build ==== fetch_industry_event_from_yaml'
     node ./helpers/fetch_industry_event_from_yaml.js
+
+    echo '==== custom build ==== fetch_eventival_persons_from_yaml.js'
+    node ./helpers/fetch_eventival_persons_from_yaml.js
 
     printf '\n----------        FINISHED creating separate YAML files      ----------\n'
 

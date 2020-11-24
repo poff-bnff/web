@@ -19,6 +19,10 @@ header
             //-     #out(style={color: 'red', cursor: 'pointer'})
 
             li
+                nav.lang_menu
+                    a(href= 'https://industry.poff.ee/news/how-to-get-the-most-out-of-industry-tallinn/')= 'GET HELP'
+
+            li
                 nav.org_menu
                     span.org_item
                         a(href='https://poff.ee')
@@ -33,8 +37,15 @@ header
                         a(href='https://kinoff.ee')
                             | Kinoff
                     span.org_item
+                        a(href='https://industrymeet.poff.ee')
+                            | Industrymeet
+                    span.org_item
+                        a(href='https://spatial.chat/s/ITBESocialclub')
+                            | SpatialChat
+                    span.org_item
                         a(href='https://proscreen.poff.ee')
-                            | Pro Screen
+                            | See films on PROSCREEN
+
 
 
             each mainMenuItem in self.menu.sort(function(a, b){ return (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0); })
@@ -108,11 +119,13 @@ header
 
             li.user_menu.dropdown
                 a.user_menu My industry
-                    ul.ul_kaks
+                    ul.ul_kaks.padding_bottom_5
                         li#logIn(style={cursor: 'pointer', display: 'none'})
                             a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
                         li#logInName.dark_1(style={display: 'none'})
                             a#tervitus= self.label.menu.mainGreeting
+                        li#myCalendar(style={cursor: 'pointer'})
+                            a(href=`/${lang_path}mycalendar`) My calendar     
                         //- li#userProfile(style={cursor: 'pointer', display: 'none'})
                         //-     a(onclick = 'saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
                         li#logOut(style={cursor: 'pointer', display: 'none'} )

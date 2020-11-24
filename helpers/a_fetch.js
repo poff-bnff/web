@@ -249,7 +249,12 @@ const foo = async () => {
                 if (modelData.hasOwnProperty(ix)) {
                     let element = modelData[ix]
                     // 2. kustutame andmetest kõik propertid, mida mudelis pole
-                    TakeOutTrash(element, DATAMODEL[modelName], modelName)
+                    try {
+                        TakeOutTrash(element, DATAMODEL[modelName], modelName)
+                    } catch (error) {
+                        console.log({error, modelName, element, model: DATAMODEL[modelName]})
+                        process.exit(1)
+                    }
 
                     // 3. valideerime kõike, mis mudelis on kirjeldatud
                     // console.log('XXXX+X+X+X+X', DATAMODEL[modelName], element, modelName)

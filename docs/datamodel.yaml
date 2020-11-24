@@ -644,7 +644,7 @@ RolePerson: &RolePerson
 
 RoleCompany: &RoleCompany
     order: (Number)
-    role_at_film: *RoleAtFilm
+    roles_at_film: *RoleAtFilm
     organisation: *Organisation
 
 Credentials: &Credentials
@@ -805,6 +805,7 @@ IndustryPersonType: &IndustryPersonType
 
 IndustryPerson: &IndustryPerson
     _path: /industry-people
+    slug: (UID)
     person: *Person
     profilePicAtInd: *StrapiMedia
     role_at_films: #(Component (repeatable))
@@ -816,8 +817,7 @@ IndustryPerson: &IndustryPerson
         - *StrapiMedia
     clipUrl: (text)
     website: (text)
-    filmography: #(Component (repeatable))
-        - *Filmography
+    filmography: *Filmography
     industry_person_types: #(Component (repeatable))
         - *IndustryPersonType
     lookingFor: (text)
