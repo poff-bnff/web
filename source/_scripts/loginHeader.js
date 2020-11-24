@@ -138,7 +138,7 @@ function loadEmptyUserProfile() {
         console.log('data ', data);
         userProfile = {
             sub: data.ip, 
-            name: 'Wulf'
+            name: 'Wolf'
         }
         document.dispatchEvent(userProfileLoadedEvent)
         // console.log("cognitos olev profiil:")
