@@ -85,7 +85,8 @@ block content
                                                                 line(x1='16' y1='2' x2='16' y2='6')
                                                                 line(x1='8' y1='2' x2='8' y2='6')
                                                                 line(x1='3' y1='10' x2='21' y2='10')
-                                                            span.screening_date.small_1(onclick=`calendarfile('${event.id}');return false`)= 'Add to calendar'
+                                                            span.screening_date.small_1.add_to_calendar_button(id = event.id + '_notInMyCalendar' onclick=`addToMyCal('${event.id}');return false` style='display: none')= 'Add to calendar'
+                                                            span.screening_date.small_1.remove_from_calendar_button(id = event.id + '_inMyCalendar' onclick = `removeEvent('${event.id}');return false` onmouseover='changeToRemove(this.id);return false' onmouseout='revertRemove(this.id);return false' style='display: none')= 'In my calendar'
                                                             //- Selle peidetud inputi sees on data
                                                             span(id=`cal_${event.id}` style='display: none') #{event.calendar_data}
 
@@ -199,18 +200,18 @@ block content
         toggleDate()
         toggleCards()
 
-        function calendarfile(id) {
-            var element = document.createElement('a');
-            element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(document.getElementById(`cal_${id}`).value));
-            // element.setAttribute('download', `IndustryEvent_${id}.ics`);
+        //- function calendarfile(id) {
+        //-     var element = document.createElement('a');
+        //-     element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(document.getElementById(`cal_${id}`).value));
+        //-     // element.setAttribute('download', `IndustryEvent_${id}.ics`);
 
-            element.style.display = 'none';
-            document.body.appendChild(element);
+        //-     element.style.display = 'none';
+        //-     document.body.appendChild(element);
 
-            element.click();
+        //-     element.click();
 
-            document.body.removeChild(element);
-        }
+        //-     document.body.removeChild(element);
+        //- }
 
 
 

@@ -73,12 +73,12 @@ main.grid_cassette
                     .str_info_meta_label.dark_1= self.label.film.programme
                     .str_info_meta_festival= programmes
 
-            if self.tags && self.tags.genres && self.tags.genres[0] && typeof self.tags.genres !== 'object'
+            if self.tags && self.tags.genres && self.tags.genres[0]
                 .str_info_meta_label.dark_1= self.label.film.genre
                 .str_info_meta_festival= self.tags.genres.join(', ')
 
 
-            if self.tags && self.tags.keywords && self.tags.keywords[0] && typeof self.tags.keywords !== 'object'
+            if self.tags && self.tags.keywords && self.tags.keywords[0]
                 .str_info_meta_label.dark_1= self.label.film.keywords
                 .str_info_meta_festival= self.tags.keywords.join(', ')
 
