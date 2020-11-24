@@ -25,6 +25,8 @@ const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
 
 const allLanguages = DOMAIN_SPECIFICS.locales[DOMAIN]
 
+const stagingURL = DOMAIN_SPECIFICS.stagingURLs[DOMAIN]
+const pageURL = DOMAIN_SPECIFICS.pageURLs[DOMAIN]
 
 
 for (const lang of allLanguages) {
@@ -77,6 +79,13 @@ for (const lang of allLanguages) {
                 let replaceWith = `https://assets.poff.ee/img/`;
                 const replaceImgPath = element.contents.replace(searchRegExp, replaceWith);
                 element.contents = replaceImgPath;
+
+
+                // Replace Staging urls with correct webpage urls
+                let searchRegExpStaging = new RegExp(stagingURL, 'g');
+                const replaceLinkURL = element.contents.replace(searchRegExpStaging, pageURL);
+                element.contents = replaceLinkURL;
+
                 // timer.log(__filename, contentImgs);
                 element.contentsImg = contentImgs;
             }
@@ -100,6 +109,11 @@ for (const lang of allLanguages) {
                         i++;
                     }
                 }
+
+                // Replace Staging urls with correct webpage urls
+                let searchRegExpStaging = new RegExp(stagingURL, 'g');
+                const replaceLinkURL = element.lead.replace(searchRegExpStaging, pageURL);
+                element.lead = replaceLinkURL;
 
             }
 
