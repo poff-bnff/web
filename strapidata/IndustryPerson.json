@@ -145,15 +145,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -161,6 +152,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -773,13 +773,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-23T09:19:38.840Z",
-    "updated_at": "2020-11-23T09:21:52.109Z",
+    "updated_at": "2020-11-23T21:48:32.211Z",
     "clipUrl": null,
     "website": null,
     "lookingFor": null,
@@ -822,7 +822,17 @@
     },
     "images": [],
     "role_at_films": [],
-    "industry_person_types": []
+    "industry_person_types": [
+      {
+        "id": 4,
+        "type": "Moderator",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:12:53.512Z",
+        "updated_at": "2020-11-04T09:12:53.556Z"
+      }
+    ]
   },
   {
     "id": 42,
@@ -1868,15 +1878,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 10,
-        "type": "Music Meets Film",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-13T09:37:55.735Z",
-        "updated_at": "2020-11-13T09:37:55.746Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -1884,6 +1885,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 10,
+        "type": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-13T09:37:55.735Z",
+        "updated_at": "2020-11-13T09:37:55.746Z"
       }
     ]
   },
@@ -2033,15 +2043,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
         "id": 12,
         "type": "MIDPOINT Institute",
         "description": null,
@@ -2049,6 +2050,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T16:13:42.742Z",
         "updated_at": "2020-11-14T16:13:42.751Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -2303,6 +2313,111 @@
         "updated_by": 6,
         "created_at": "2020-11-21T17:29:24.217Z",
         "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "person": {
+      "id": 4476,
+      "created_by": {
+        "id": 28,
+        "firstname": "Saara",
+        "lastname": "Huimerind",
+        "username": null
+      },
+      "updated_by": {
+        "id": 28,
+        "firstname": "Saara",
+        "lastname": "Huimerind",
+        "username": null
+      },
+      "created_at": "2020-11-23T21:34:36.686Z",
+      "updated_at": "2020-11-23T21:34:36.706Z",
+      "firstName": "Nguyet",
+      "lastName": "Robbins",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Nguyet Robbins",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Nguyet serves as the Vice President Asia Pacific & Central Europe at Gruvi and has been in charge of the marketing campaigns of award winning titles such as Parasite, Pain & Glory, The Irishman, Marriage Story, The Two Popes, Hidden Life, Extremely Wicked, Shockingly Evil, and Vile, Midsommar and more. \n\nGruvi is technology platform and media company that develops digital marketing solutions for film and entertainment companies. It is Gruvi that launched Parasite across 6 European territories and found for the film its first foreign audiences. Gruvi's client base includes HBO, Disney, Viasat, Odeon as well as many independent film distributors like Shawn Theatres, Clover films, Gutek Film, Filmladen, Pandora Film, Piffl Medien and more.",
+    "created_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-23T21:36:14.714Z",
+    "updated_at": "2020-11-23T21:36:14.746Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Nguyet Robbins",
+    "slug": "nguyet-robbins",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3730,
+      "name": "0-5.jpeg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 200,
+      "height": 200,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpeg",
+          "url": "/uploads/thumbnail_0_5_1d467fcb71.jpeg",
+          "hash": "thumbnail_0_5_1d467fcb71",
+          "mime": "image/jpeg",
+          "name": "thumbnail_0-5.jpeg",
+          "path": null,
+          "size": 5.25,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "0_5_1d467fcb71",
+      "ext": ".jpeg",
+      "mime": "image/jpeg",
+      "size": 10.96,
+      "url": "/uploads/0_5_1d467fcb71.jpeg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 28,
+      "updated_by": 28,
+      "created_at": "2020-11-23T21:35:59.616Z",
+      "updated_at": "2020-11-23T21:35:59.795Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -2734,15 +2849,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 2,
         "type": "Mentor",
         "description": null,
@@ -2750,6 +2856,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:29.943Z",
         "updated_at": "2020-11-04T09:11:29.947Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -2914,15 +3029,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 10,
-        "type": "Music Meets Film",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-13T09:37:55.735Z",
-        "updated_at": "2020-11-13T09:37:55.746Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -2930,6 +3036,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 10,
+        "type": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-13T09:37:55.735Z",
+        "updated_at": "2020-11-13T09:37:55.746Z"
       }
     ]
   },
@@ -3252,6 +3367,130 @@
         "created_at": "2020-11-14T16:13:42.742Z",
         "updated_at": "2020-11-14T16:13:42.751Z"
       },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "person": {
+      "id": 4477,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-24T08:43:49.602Z",
+      "updated_at": "2020-11-24T08:43:49.634Z",
+      "firstName": "Inga ",
+      "lastName": "Blese",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Inga Blese",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 988,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:52.820Z",
+          "updated_at": "2020-08-17T14:20:52.820Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "LV",
+          "name_et": "Läti",
+          "name_en": "Latvia",
+          "name_ru": "Латвия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "I have education in Economics, Political Science, Philosophy and Cultural Planning. For more than 10 years I worked for State Culture Capital Foundation of Latvia, curating various support programmes for culture, among those also support programmes in Film sector. Since November 2018 I'm working as Head of Production and Development at National Film Centre of Latvia.\n",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-24T08:46:31.039Z",
+    "updated_at": "2020-11-24T08:46:31.079Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Inga Blese",
+    "slug": "inga-blese",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3731,
+      "name": "I.Blese_foto.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 480,
+      "height": 454,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_I_Blese_foto_8f91a4ab8e.jpg",
+          "hash": "thumbnail_I_Blese_foto_8f91a4ab8e",
+          "mime": "image/jpeg",
+          "name": "thumbnail_I.Blese_foto.jpg",
+          "path": null,
+          "size": 4.92,
+          "width": 165,
+          "height": 156
+        }
+      },
+      "hash": "I_Blese_foto_8f91a4ab8e",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 134.08,
+      "url": "/uploads/I_Blese_foto_8f91a4ab8e.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-24T08:46:03.233Z",
+      "updated_at": "2020-11-24T08:46:03.488Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
       {
         "id": 11,
         "type": "Speaker",
@@ -4514,111 +4753,6 @@
     ]
   },
   {
-    "id": 148,
-    "person": {
-      "id": 4471,
-      "created_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "updated_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "created_at": "2020-11-23T14:16:34.465Z",
-      "updated_at": "2020-11-23T14:16:34.485Z",
-      "firstName": "Luciano",
-      "lastName": "Sovena",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": null,
-      "firstNameLastName": "Luciano Sovena",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Luciano Sovena is a lawyer specialised in the law of cinema and produced and distributed more than 50 films. He has held several positions for the Italian Minister of Culture, in the 2003 he was nominated CEO fot Istituto Luce, whose historical archive is the most complete in the world. He is currently responsible of the LAZIO CINEMA INTERNATIONAL, a funding scheme endowed with 10 million euro per year to sustain international co-productions.",
-    "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "created_at": "2020-11-23T14:18:09.876Z",
-    "updated_at": "2020-11-23T14:18:09.925Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Luciano Sovena",
-    "slug": "luciano-sovena",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3702,
-      "name": "Luciano-Sovena.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 250,
-      "height": 350,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_Luciano_Sovena_6a0c1bf44d.jpg",
-          "hash": "thumbnail_Luciano_Sovena_6a0c1bf44d",
-          "mime": "image/jpeg",
-          "name": "thumbnail_Luciano-Sovena.jpg",
-          "path": null,
-          "size": 5.03,
-          "width": 111,
-          "height": 156
-        }
-      },
-      "hash": "Luciano_Sovena_6a0c1bf44d",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 111.68,
-      "url": "/uploads/Luciano_Sovena_6a0c1bf44d.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-23T14:18:00.654Z",
-      "updated_at": "2020-11-23T14:18:00.850Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      }
-    ]
-  },
-  {
     "id": 23,
     "person": {
       "id": 4108,
@@ -4764,15 +4898,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 2,
-        "type": "Mentor",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:11:29.943Z",
-        "updated_at": "2020-11-04T09:11:29.947Z"
-      },
-      {
         "id": 12,
         "type": "MIDPOINT Institute",
         "description": null,
@@ -4780,6 +4905,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T16:13:42.742Z",
         "updated_at": "2020-11-14T16:13:42.751Z"
+      },
+      {
+        "id": 2,
+        "type": "Mentor",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:29.943Z",
+        "updated_at": "2020-11-04T09:11:29.947Z"
       }
     ]
   },
@@ -5043,15 +5177,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
         "id": 12,
         "type": "MIDPOINT Institute",
         "description": null,
@@ -5059,6 +5184,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T16:13:42.742Z",
         "updated_at": "2020-11-14T16:13:42.751Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -5646,15 +5780,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 4,
         "type": "Moderator",
         "description": null,
@@ -5662,6 +5787,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:12:53.512Z",
         "updated_at": "2020-11-04T09:12:53.556Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -5822,155 +5956,6 @@
     ]
   },
   {
-    "id": 149,
-    "person": {
-      "id": 4459,
-      "created_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "updated_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "created_at": "2020-11-23T12:41:03.999Z",
-      "updated_at": "2020-11-23T12:41:04.025Z",
-      "firstName": "Giovanni",
-      "lastName": "Pompili",
-      "gender": {
-        "id": 2,
-        "created_by": {
-          "id": 6,
-          "firstname": "Jaan",
-          "lastname": "Leppik",
-          "username": null
-        },
-        "updated_by": {
-          "id": 3,
-          "firstname": "Liis",
-          "lastname": "Käsper",
-          "username": null
-        },
-        "created_at": "2020-08-18T13:06:53.315Z",
-        "updated_at": "2020-09-14T06:43:50.539Z",
-        "Name_et": "Mees",
-        "Name_en": "Male",
-        "Name_ru": "Мужчина",
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "et": "Mees",
-        "en": "Male",
-        "ru": "M"
-      },
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": null,
-      "firstNameLastName": "Giovanni Pompili",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [
-        {
-          "id": 936,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:49.557Z",
-          "updated_at": "2020-08-17T14:20:49.557Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "IT",
-          "name_et": "Itaalia",
-          "name_en": "Italy",
-          "name_ru": "Италия"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Giovanni Pompili is part of Eave and Ace and in 2020 he was selected as Producer on the Move. He co-produced with Poland, France, Switzerland, Belgium, Spain and Argentina.\nand now he is co-producing new films byLaura Luchetti, Carla Simòn, Aga Woszczynska and Cristina Picchi.Sole, the debut film of Carlo Sironi nominated and EFA discovery 2020, is a co-production between Italy and Poland.",
-    "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "created_at": "2020-11-23T14:19:01.651Z",
-    "updated_at": "2020-11-23T14:19:01.671Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Giovanni Pompili",
-    "slug": "giovanni-pompili-1",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3703,
-      "name": "Giovanni.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 780,
-      "height": 1080,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_Giovanni_6a789933d3.jpg",
-          "hash": "thumbnail_Giovanni_6a789933d3",
-          "mime": "image/jpeg",
-          "name": "thumbnail_Giovanni.jpg",
-          "path": null,
-          "size": 4.68,
-          "width": 113,
-          "height": 156
-        }
-      },
-      "hash": "Giovanni_6a789933d3",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 668.72,
-      "url": "/uploads/Giovanni_6a789933d3.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-23T14:18:27.689Z",
-      "updated_at": "2020-11-23T14:18:27.971Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      }
-    ]
-  },
-  {
     "id": 74,
     "person": {
       "id": 4170,
@@ -6102,6 +6087,120 @@
         "updated_at": "2020-11-23T08:34:27.100Z"
       }
     ]
+  },
+  {
+    "id": 157,
+    "person": {
+      "id": 4478,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-24T08:59:45.886Z",
+      "updated_at": "2020-11-24T08:59:45.917Z",
+      "firstName": "Jurate ",
+      "lastName": "Pazikaite",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Jurate Pazikaite",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 981,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:52.399Z",
+          "updated_at": "2020-08-17T14:20:52.399Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "LT",
+          "name_et": "Leedu",
+          "name_en": "Lithuania",
+          "name_ru": "Литва"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Jurate Pazikaite represents a film commission in Vilnius, Lithuania and runs the film office since its establishment in 2011. She holds a Film Commissioner Professional Certificate, issued by AFCI since 2013. One of the organizers of Vilnius event \"Book + Film\", which combines literature and filmmaking by encouraging partnership between film directors, script writers and book authors, publishing houses.  Her work includes close collaboration with both local and international producers as well as close partnership with film festivals and tourism representatives in Lithuania. Co-author of publication \"Vilnius on Screen\". She also initiated the first VR location database in Lithuania. \nJ. Pazikaite is a team member of Vilnius City Administration for EU projects related to Creative and Cultural Industries (CCI). Member of EUFCN and AFCI.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-24T09:01:55.722Z",
+    "updated_at": "2020-11-24T09:01:55.766Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Jurate Pazikaite",
+    "slug": "jurate-pazikaite",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3732,
+      "name": "vilnius film office jurate pazikaite.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 451,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_vilnius_film_office_jurate_pazikaite_1be1734e76.jpg",
+          "hash": "thumbnail_vilnius_film_office_jurate_pazikaite_1be1734e76",
+          "mime": "image/jpeg",
+          "name": "thumbnail_vilnius film office jurate pazikaite.jpg",
+          "path": null,
+          "size": 8.83,
+          "width": 173,
+          "height": 156
+        }
+      },
+      "hash": "vilnius_film_office_jurate_pazikaite_1be1734e76",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 263.65,
+      "url": "/uploads/vilnius_film_office_jurate_pazikaite_1be1734e76.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-24T09:01:50.960Z",
+      "updated_at": "2020-11-24T09:01:51.081Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": []
   },
   {
     "id": 132,
@@ -6586,6 +6685,111 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:12:53.512Z",
         "updated_at": "2020-11-04T09:12:53.556Z"
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "person": {
+      "id": 4469,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T14:15:32.822Z",
+      "updated_at": "2020-11-23T14:15:32.851Z",
+      "firstName": "Simona",
+      "lastName": "Banchi",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Simona Banchi",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Simona Banchi is a producer of more than 10 films, most of them in coproduction with countries from 3 continents. Simona produced 3 films with Eastern countries, namelyDespite the Fog by Goran Paksljievic (a coproduction between Italy, Serbia, North Macedonia and France),Andromeda Galaxy by More Raça (a coproduction between Italy and Kosovo) andNegative Numbers by Uta Beria (a coproduction between Italy, Georgia and France).",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:20:05.888Z",
+    "updated_at": "2020-11-23T14:40:47.376Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Simona Banchi",
+    "slug": "simona-banchi",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3708,
+      "name": "Simona copy.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 393,
+      "height": 393,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Simona_copy_470eecaf45.jpg",
+          "hash": "thumbnail_Simona_copy_470eecaf45",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Simona copy.jpg",
+          "path": null,
+          "size": 4.49,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Simona_copy_470eecaf45",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 19.5,
+      "url": "/uploads/Simona_copy_470eecaf45.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:40:44.374Z",
+      "updated_at": "2020-11-23T14:40:44.715Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -8832,15 +9036,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -8848,6 +9043,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -10772,6 +10976,111 @@
     ]
   },
   {
+    "id": 152,
+    "person": {
+      "id": 4473,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T14:36:47.982Z",
+      "updated_at": "2020-11-23T14:36:48.035Z",
+      "firstName": "Per",
+      "lastName": "Eriksson",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Per Eriksson",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Per Eriksson is the head of the Swedish Federation of Film Societies that organises screenings and film discussions through more than 100 film clubs all over Sweden and oversees the publication of the organisation's own film magazine. He is a former film policy adviser and head of education at the Swedish Film Institute. He has worked as a film festival producer, film consultant and film critic. He is also a board member of ECFA (European Children Film Association) and a past member of the panel for the European Parliament LUX film prize. \n ",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:39:27.037Z",
+    "updated_at": "2020-11-23T14:39:27.058Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Per Eriksson",
+    "slug": "per-eriksson",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3707,
+      "name": "Just WIP jury_Per Eriksson copy.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 679,
+      "height": 679,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Just_WIP_jury_Per_Eriksson_copy_154cffe2fd.jpg",
+          "hash": "thumbnail_Just_WIP_jury_Per_Eriksson_copy_154cffe2fd",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Just WIP jury_Per Eriksson copy.jpg",
+          "path": null,
+          "size": 5.31,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Just_WIP_jury_Per_Eriksson_copy_154cffe2fd",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 328.44,
+      "url": "/uploads/Just_WIP_jury_Per_Eriksson_copy_154cffe2fd.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:39:18.456Z",
+      "updated_at": "2020-11-23T14:39:18.709Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 4,
+        "type": "Moderator",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:12:53.512Z",
+        "updated_at": "2020-11-04T09:12:53.556Z"
+      }
+    ]
+  },
+  {
     "id": 60,
     "person": {
       "id": 3975,
@@ -12234,6 +12543,155 @@
     ]
   },
   {
+    "id": 149,
+    "person": {
+      "id": 4459,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:41:03.999Z",
+      "updated_at": "2020-11-23T12:41:04.025Z",
+      "firstName": "Giovanni",
+      "lastName": "Pompili",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Giovanni Pompili",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 936,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.557Z",
+          "updated_at": "2020-08-17T14:20:49.557Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IT",
+          "name_et": "Itaalia",
+          "name_en": "Italy",
+          "name_ru": "Италия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Giovanni Pompili is part of Eave and Ace and in 2020 he was selected as Producer on the Move. He co-produced with Poland, France, Switzerland, Belgium, Spain and Argentina.\nand now he is co-producing new films byLaura Luchetti, Carla Simòn, Aga Woszczynska and Cristina Picchi.Sole, the debut film of Carlo Sironi nominated and EFA discovery 2020, is a co-production between Italy and Poland.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:19:01.651Z",
+    "updated_at": "2020-11-23T14:45:34.693Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Giovanni Pompili",
+    "slug": "giovanni-pompili-1",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3709,
+      "name": "Giovanni copy.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 766,
+      "height": 768,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Giovanni_copy_ffea40f84d.jpg",
+          "hash": "thumbnail_Giovanni_copy_ffea40f84d",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Giovanni copy.jpg",
+          "path": null,
+          "size": 6.35,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Giovanni_copy_ffea40f84d",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 622.85,
+      "url": "/uploads/Giovanni_copy_ffea40f84d.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:45:29.413Z",
+      "updated_at": "2020-11-23T14:45:30.141Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 63,
     "person": {
       "id": 2163,
@@ -12770,162 +13228,6 @@
     ]
   },
   {
-    "id": 125,
-    "person": {
-      "id": 4143,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-14T23:09:32.034Z",
-      "updated_at": "2020-11-14T23:09:32.065Z",
-      "firstName": "Philippe ",
-      "lastName": "Rixhon",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": "Founder",
-      "firstNameLastName": "Philippe Rixhon",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": {
-        "id": 3314,
-        "name": "Philippe_20Rixhon_20-_20Picture_202 - Krista Rodima.jpg",
-        "alternativeText": "",
-        "caption": "",
-        "width": 500,
-        "height": 500,
-        "formats": {
-          "thumbnail": {
-            "ext": ".jpg",
-            "url": "/uploads/thumbnail_Philippe_20_Rixhon_20_20_Picture_202_Krista_Rodima_6bf9dc76b9.jpg",
-            "hash": "thumbnail_Philippe_20_Rixhon_20_20_Picture_202_Krista_Rodima_6bf9dc76b9",
-            "mime": "image/jpeg",
-            "name": "thumbnail_Philippe_20Rixhon_20-_20Picture_202 - Krista Rodima.jpg",
-            "path": null,
-            "size": 6.87,
-            "width": 156,
-            "height": 156
-          }
-        },
-        "hash": "Philippe_20_Rixhon_20_20_Picture_202_Krista_Rodima_6bf9dc76b9",
-        "ext": ".jpg",
-        "mime": "image/jpeg",
-        "size": 76.9,
-        "url": "/uploads/Philippe_20_Rixhon_20_20_Picture_202_Krista_Rodima_6bf9dc76b9.jpg",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-14T23:09:11.949Z",
-        "updated_at": "2020-11-14T23:09:12.243Z"
-      },
-      "countries": [
-        {
-          "id": 856,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:39.854Z",
-          "updated_at": "2020-08-17T14:20:39.854Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "BE",
-          "name_et": "Belgia",
-          "name_en": "Belgium",
-          "name_ru": "Бельгия"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Philippe is the Managing Director at Philippe Rixhon Associates – an engineering office working on digital rights and royalties with creative enterprises, digital service providers, industry trade bodies and government agencies; the Research & Innovation Director at Digiciti – a company creating digital infrastructures spearheading the convergence of media, entertainment, technology and copyright policy; and an Industry Associate at the Centre for Blockchain Technologies – a multi-disciplinary research centre at University College London focusing on the adoption and integration of distributed ledger technologies in our socio-economic system. Philippe holds degrees in philosophy, engineering, management, and theatre directing, and is an honorary Doctor of Arts in recognition of outstanding contributions to performing arts creation, production and technology.",
-    "created_by": {
-      "id": 28,
-      "firstname": "Saara",
-      "lastname": "Huimerind",
-      "username": null
-    },
-    "updated_by": {
-      "id": 28,
-      "firstname": "Saara",
-      "lastname": "Huimerind",
-      "username": null
-    },
-    "created_at": "2020-11-23T08:07:17.829Z",
-    "updated_at": "2020-11-23T08:07:17.854Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Philippe Rixhon",
-    "slug": "philippe-rixhon-1",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3667,
-      "name": "Philippe%20Rixhon%20-%20Picture%202.png",
-      "alternativeText": "",
-      "caption": "",
-      "width": 541,
-      "height": 666,
-      "formats": {
-        "thumbnail": {
-          "ext": ".png",
-          "url": "/uploads/thumbnail_Philippe_20_Rixhon_20_20_Picture_202_c65b904d89.png",
-          "hash": "thumbnail_Philippe_20_Rixhon_20_20_Picture_202_c65b904d89",
-          "mime": "image/png",
-          "name": "thumbnail_Philippe%20Rixhon%20-%20Picture%202.png",
-          "path": null,
-          "size": 60.31,
-          "width": 127,
-          "height": 156
-        }
-      },
-      "hash": "Philippe_20_Rixhon_20_20_Picture_202_c65b904d89",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": 954.11,
-      "url": "/uploads/Philippe_20_Rixhon_20_20_Picture_202_c65b904d89.png",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 28,
-      "updated_by": 28,
-      "created_at": "2020-11-23T08:07:00.224Z",
-      "updated_at": "2020-11-23T08:07:00.652Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      }
-    ]
-  },
-  {
     "id": 137,
     "person": {
       "id": 4459,
@@ -13075,6 +13377,111 @@
     ]
   },
   {
+    "id": 148,
+    "person": {
+      "id": 4471,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T14:16:34.465Z",
+      "updated_at": "2020-11-23T14:16:34.485Z",
+      "firstName": "Luciano",
+      "lastName": "Sovena",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Luciano Sovena",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Luciano Sovena is a lawyer specialised in the law of cinema and produced and distributed more than 50 films. He has held several positions for the Italian Minister of Culture, in the 2003 he was nominated CEO fot Istituto Luce, whose historical archive is the most complete in the world. He is currently responsible of the LAZIO CINEMA INTERNATIONAL, a funding scheme endowed with 10 million euro per year to sustain international co-productions.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:18:09.876Z",
+    "updated_at": "2020-11-23T14:47:06.862Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Luciano Sovena",
+    "slug": "luciano-sovena",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3710,
+      "name": "Luciano-Sovena copy.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 201,
+      "height": 201,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Luciano_Sovena_copy_8d7a2d0f11.jpg",
+          "hash": "thumbnail_Luciano_Sovena_copy_8d7a2d0f11",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Luciano-Sovena copy.jpg",
+          "path": null,
+          "size": 5.84,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Luciano_Sovena_copy_8d7a2d0f11",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 48.51,
+      "url": "/uploads/Luciano_Sovena_copy_8d7a2d0f11.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:47:01.585Z",
+      "updated_at": "2020-11-23T14:47:02.263Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 19,
     "person": {
       "id": 143,
@@ -13201,15 +13608,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 10,
-        "type": "Music Meets Film",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-13T09:37:55.735Z",
-        "updated_at": "2020-11-13T09:37:55.746Z"
-      },
-      {
         "id": 4,
         "type": "Moderator",
         "description": null,
@@ -13217,6 +13615,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:12:53.512Z",
         "updated_at": "2020-11-04T09:12:53.556Z"
+      },
+      {
+        "id": 10,
+        "type": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-13T09:37:55.735Z",
+        "updated_at": "2020-11-13T09:37:55.746Z"
       }
     ]
   },
@@ -13347,15 +13754,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -13363,6 +13761,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -15195,15 +15602,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 12,
-        "type": "MIDPOINT Institute",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T16:13:42.742Z",
-        "updated_at": "2020-11-14T16:13:42.751Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -15211,6 +15609,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 12,
+        "type": "MIDPOINT Institute",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T16:13:42.742Z",
+        "updated_at": "2020-11-14T16:13:42.751Z"
       }
     ]
   },
@@ -15360,15 +15767,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
         "id": 2,
         "type": "Mentor",
         "description": null,
@@ -15376,6 +15774,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:29.943Z",
         "updated_at": "2020-11-04T09:11:29.947Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -15806,6 +16213,111 @@
     ]
   },
   {
+    "id": 151,
+    "person": {
+      "id": 4472,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T14:25:53.885Z",
+      "updated_at": "2020-11-23T14:25:53.905Z",
+      "firstName": "Julien",
+      "lastName": "Ezanno",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Julien Ezanno",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Julien Ezanno, 51, was hired by the Centre national du cinéma et de l’image animée (CNC) in 2001 after a career in the airline industry. He was first appointed at the CEO’s cabinet to deal with general issues. In 2007, he was offered a new position, where he managed international co-production. His task was to develop bilateral relations with all the countries France has signed an Agreement with, encouraging foreign producers to work with French partners. He was in charge of negotiating new Agreements with countries willing to establish a privileged relation with France in the field of film. He was also the French delegate to the European co-production fund, Eurimages. Julien Ezanno was appointed as the communications director of the CNC on 1st October 2014. He was in charge of both internal and external communications issues except relations with the press. On 7 September 2015 he was appointed bilateral affairs advisor within the international policy unit, in charge of expertise and institutional bilateral relations.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:29:19.252Z",
+    "updated_at": "2020-11-23T14:58:54.757Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Julien Ezanno",
+    "slug": "julien-ezanno",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3712,
+      "name": "2020 Julien Ezanno Portrait-2.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": 800,
+      "height": 800,
+      "formats": {
+        "thumbnail": {
+          "ext": ".png",
+          "url": "/uploads/thumbnail_2020_Julien_Ezanno_Portrait_2_1790ddd089.png",
+          "hash": "thumbnail_2020_Julien_Ezanno_Portrait_2_1790ddd089",
+          "mime": "image/png",
+          "name": "thumbnail_2020 Julien Ezanno Portrait-2.png",
+          "path": null,
+          "size": 48.31,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "2020_Julien_Ezanno_Portrait_2_1790ddd089",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 1018.06,
+      "url": "/uploads/2020_Julien_Ezanno_Portrait_2_1790ddd089.png",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:58:30.872Z",
+      "updated_at": "2020-11-23T14:58:31.436Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 141,
     "person": {
       "id": 4463,
@@ -16122,15 +16634,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 8,
-        "type": "POWR Baltic Stories Exchange ",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 28,
-        "created_at": "2020-11-04T09:37:27.430Z",
-        "updated_at": "2020-11-23T08:34:27.100Z"
-      },
-      {
         "id": 2,
         "type": "Mentor",
         "description": null,
@@ -16138,6 +16641,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:29.943Z",
         "updated_at": "2020-11-04T09:11:29.947Z"
+      },
+      {
+        "id": 8,
+        "type": "POWR Baltic Stories Exchange ",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 28,
+        "created_at": "2020-11-04T09:37:27.430Z",
+        "updated_at": "2020-11-23T08:34:27.100Z"
       }
     ]
   },
@@ -16487,15 +16999,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 2,
-        "type": "Mentor",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:11:29.943Z",
-        "updated_at": "2020-11-04T09:11:29.947Z"
-      },
-      {
         "id": 1,
         "type": "Black Nights Star",
         "description": null,
@@ -16503,6 +17006,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:17.255Z",
         "updated_at": "2020-11-04T09:11:17.266Z"
+      },
+      {
+        "id": 2,
+        "type": "Mentor",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:29.943Z",
+        "updated_at": "2020-11-04T09:11:29.947Z"
       }
     ]
   },
@@ -16780,6 +17292,139 @@
     ]
   },
   {
+    "id": 120,
+    "person": {
+      "id": 4373,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-20T18:19:03.065Z",
+      "updated_at": "2020-11-20T18:19:03.109Z",
+      "firstName": "Valgeir ",
+      "lastName": "Sigurðsson ",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Composer",
+      "firstNameLastName": "Valgeir Sigurðsson ",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 934,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.477Z",
+          "updated_at": "2020-08-17T14:20:49.477Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IS",
+          "name_et": "Island",
+          "name_en": "Iceland",
+          "name_ru": "Исландия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Valgeir Sigurðsson is an Icelandic composer and producer. His music blends contemporary classical writing and esoteric electronic production, sometimes to a point where one is indistinguishable from the other.\nValgeir worked closely with fellow Icelander Björk, a collaboration which began with her Oscar-nominated score for Lars Von Trier’s Dancer In The Dark. He founded the Bedroom Community label in 2006 with Nico Muhly and Ben Frost, where he cemented his sonic signature with his own solo work on the label, in addition to albums with Muhly, Frost, Sam Amidon and Daníel Bjarnason, and an extensive collaboration with viola da gamba player, Liam Byrne. \nValgeir has composed orchestral and chamber music for the likes of the City of London Sinfonia, Winnipeg Symphony, Crash Ensemble, Alarm Will Sound, Nordic Affect and the British violinist, Daniel Pioro. His scores frequently incorporate the use of electronics and have also been performed by the Cincinnati Chamber Orchestra, BBC Symphony Orchestra, BBC Scottish Symphony Orchestra, Spokane Symphony, Indianapolis Symphony and many others. He has written music for stage, dance and screen. His film scores include An Acceptable Loss and the Icelandic feature The County, and his score for the environmental documentary Dreamland (Draumalandið) was nominated for best score at EDDA, the Icelandic Film Academy Awards. ",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-20T18:20:04.370Z",
+    "updated_at": "2020-11-23T15:00:36.580Z",
+    "clipUrl": null,
+    "website": "https://valgeir.net/",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Valgeir Sigurðsson ",
+    "slug": "valgeir-sigurdsson",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3713,
+      "name": "Valgeir Sigurdsson - Svea Ideon(1).jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 329,
+      "height": 329,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Valgeir_Sigurdsson_Svea_Ideon_1_f03f1f8c89.jpg",
+          "hash": "thumbnail_Valgeir_Sigurdsson_Svea_Ideon_1_f03f1f8c89",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Valgeir Sigurdsson - Svea Ideon(1).jpg",
+          "path": null,
+          "size": 3.37,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Valgeir_Sigurdsson_Svea_Ideon_1_f03f1f8c89",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 14.02,
+      "url": "/uploads/Valgeir_Sigurdsson_Svea_Ideon_1_f03f1f8c89.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T15:00:32.923Z",
+      "updated_at": "2020-11-23T15:00:33.511Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 10,
+        "type": "Music Meets Film",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-13T09:37:55.735Z",
+        "updated_at": "2020-11-13T09:37:55.746Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 84,
     "person": {
       "id": 4180,
@@ -16900,139 +17545,6 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:17.255Z",
         "updated_at": "2020-11-04T09:11:17.266Z"
-      }
-    ]
-  },
-  {
-    "id": 97,
-    "person": {
-      "id": 4193,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-18T17:30:08.400Z",
-      "updated_at": "2020-11-18T17:30:08.425Z",
-      "firstName": "Nikita ",
-      "lastName": "Trynkin",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": null,
-      "firstNameLastName": "Nikita Trynkin",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [
-        {
-          "id": 1030,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:54.589Z",
-          "updated_at": "2020-08-17T14:20:54.589Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "RU",
-          "name_et": "Venemaa",
-          "name_en": "Russian Federation",
-          "name_ru": "Российская Федерация"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "irector for special projects at the Russian Association of film and television producers, Vice President of Innovation at Star Media. Formerly CEO and VP of leading Russian film production companies and media holdings (Bazelevs, National Media Group, Central Partnership).",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 1,
-      "firstname": "Mihkel",
-      "lastname": "Putrinš",
-      "username": null
-    },
-    "created_at": "2020-11-18T17:31:00.210Z",
-    "updated_at": "2020-11-22T11:08:43.627Z",
-    "clipUrl": null,
-    "website": "https://www.rusproducers.com",
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Nikita Trynkin",
-    "slug": "nikita-trynkin",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3491,
-      "name": "10518600_10203185634829149_656104691835614293_o - Никита Трынкин.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 500,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c.jpg",
-          "hash": "thumbnail_10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c",
-          "mime": "image/jpeg",
-          "name": "thumbnail_10518600_10203185634829149_656104691835614293_o - Никита Трынкин.jpg",
-          "path": null,
-          "size": 5.8,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 80.81,
-      "url": "/uploads/10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-19T12:05:21.020Z",
-      "updated_at": "2020-11-19T12:05:21.315Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 7,
-        "type": "Russia in Focus 2020",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:37:07.621Z",
-        "updated_at": "2020-11-04T09:37:07.627Z"
-      },
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -17351,6 +17863,130 @@
     ]
   },
   {
+    "id": 91,
+    "person": {
+      "id": 4187,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-18T17:08:34.321Z",
+      "updated_at": "2020-11-18T17:08:34.344Z",
+      "firstName": "Guy ",
+      "lastName": "Bisson",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Expert",
+      "firstNameLastName": "Guy Bisson",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 893,
+          "Code": null,
+          "created_by": null,
+          "updated_by": 6,
+          "created_at": "2020-08-17T14:20:46.574Z",
+          "updated_at": "2020-11-07T17:03:21.338Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "GB",
+          "name_et": "Ühendkuningriik",
+          "name_en": "United Kingdom",
+          "name_ru": "Великобритания"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:08:59.816Z",
+    "updated_at": "2020-11-24T04:38:14.385Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Guy Bisson",
+    "slug": "guy-bisson",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3497,
+      "name": "Guy_Bisson - Jevgeni Supin.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 500,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Guy_Bisson_Jevgeni_Supin_53dad8b7da.jpg",
+          "hash": "thumbnail_Guy_Bisson_Jevgeni_Supin_53dad8b7da",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Guy_Bisson - Jevgeni Supin.jpg",
+          "path": null,
+          "size": 4.17,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Guy_Bisson_Jevgeni_Supin_53dad8b7da",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 62.1,
+      "url": "/uploads/Guy_Bisson_Jevgeni_Supin_53dad8b7da.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-19T12:08:47.525Z",
+      "updated_at": "2020-11-19T12:08:48.017Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 96,
     "person": {
       "id": 4192,
@@ -17463,6 +18099,139 @@
     "images": [],
     "role_at_films": [],
     "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "person": {
+      "id": 4193,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-18T17:30:08.400Z",
+      "updated_at": "2020-11-18T17:30:08.425Z",
+      "firstName": "Nikita ",
+      "lastName": "Trynkin",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Nikita Trynkin",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 1030,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:54.589Z",
+          "updated_at": "2020-08-17T14:20:54.589Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "RU",
+          "name_et": "Venemaa",
+          "name_en": "Russian Federation",
+          "name_ru": "Российская Федерация"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Director for special projects at the Russian Association of film and television producers, Vice President of Innovation at Star Media. Formerly CEO and VP of leading Russian film production companies and media holdings (Bazelevs, National Media Group, Central Partnership).",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-18T17:31:00.210Z",
+    "updated_at": "2020-11-23T18:05:55.032Z",
+    "clipUrl": null,
+    "website": "https://www.rusproducers.com",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Nikita Trynkin",
+    "slug": "nikita-trynkin",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3491,
+      "name": "10518600_10203185634829149_656104691835614293_o - Никита Трынкин.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 500,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c.jpg",
+          "hash": "thumbnail_10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c",
+          "mime": "image/jpeg",
+          "name": "thumbnail_10518600_10203185634829149_656104691835614293_o - Никита Трынкин.jpg",
+          "path": null,
+          "size": 5.8,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 80.81,
+      "url": "/uploads/10518600_10203185634829149_656104691835614293_o_Nikita_Trynkin_ed8400a42c.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-19T12:05:21.020Z",
+      "updated_at": "2020-11-19T12:05:21.315Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
+      },
       {
         "id": 11,
         "type": "Speaker",
@@ -17712,15 +18481,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
         "id": 7,
         "type": "Russia in Focus 2020",
         "description": null,
@@ -17728,72 +18488,7 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:37:07.621Z",
         "updated_at": "2020-11-04T09:37:07.627Z"
-      }
-    ]
-  },
-  {
-    "id": 91,
-    "person": null,
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": null,
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 1,
-      "firstname": "Mihkel",
-      "lastname": "Putrinš",
-      "username": null
-    },
-    "created_at": "2020-11-18T17:08:59.816Z",
-    "updated_at": "2020-11-22T11:08:58.290Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Guy Bisson",
-    "slug": "guy-bisson",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3497,
-      "name": "Guy_Bisson - Jevgeni Supin.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 500,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_Guy_Bisson_Jevgeni_Supin_53dad8b7da.jpg",
-          "hash": "thumbnail_Guy_Bisson_Jevgeni_Supin_53dad8b7da",
-          "mime": "image/jpeg",
-          "name": "thumbnail_Guy_Bisson - Jevgeni Supin.jpg",
-          "path": null,
-          "size": 4.17,
-          "width": 156,
-          "height": 156
-        }
       },
-      "hash": "Guy_Bisson_Jevgeni_Supin_53dad8b7da",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 62.1,
-      "url": "/uploads/Guy_Bisson_Jevgeni_Supin_53dad8b7da.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-19T12:08:47.525Z",
-      "updated_at": "2020-11-19T12:08:48.017Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
       {
         "id": 11,
         "type": "Speaker",
@@ -19182,6 +19877,111 @@
     ]
   },
   {
+    "id": 153,
+    "person": {
+      "id": 1983,
+      "created_by": {
+        "id": 10,
+        "firstname": "Maria",
+        "lastname": "Plees",
+        "username": null
+      },
+      "updated_by": {
+        "id": 10,
+        "firstname": "Maria",
+        "lastname": "Plees",
+        "username": null
+      },
+      "created_at": "2020-10-24T11:01:58.665Z",
+      "updated_at": "2020-10-24T11:01:58.701Z",
+      "firstName": "Inga",
+      "lastName": "Koppel",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Inga Koppel",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Inga Koppel is the International Projects Manager and Tartu Film Fund Projects Manager for the Tartu Centre for Creative Industries (TCCI).\nTCCI operates as the coordinator of creative industries in Tartu and South Estonia as well as a provider of business incubation services. TCCI runs the Tartu Film Fund founded in 2015.\nTCCI is targeting sectors like film, performing arts, fashion, music, visual arts and design by providing assistance to promote entrepreneurship and developing export capacities.\nTartu Film Fund is a member of the European Network of Regional Film Funds Cine-Regio and its sub-organisation Green-Regio. TCCI is the co-organizer of the Black Nights Film Festival (PÖFF) in Tartu as well as its side-festival TARTUFF. \nFrom 2014-2019 Inga Koppel was the Head of International Relations at the International Performing Arts Centre Vaba Lava (Open Space) in Tallinn. With its international curated programme Vaba Lava, with venues in Tallinn and Narva, was a new experimental model on the Estonian theatre landscape. \n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T15:04:44.720Z",
+    "updated_at": "2020-11-23T15:04:44.748Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Inga Koppel",
+    "slug": "inga-koppel",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3714,
+      "name": "DSC_0332 (1) copy.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 1798,
+      "height": 1798,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_DSC_0332_1_copy_56901eff0b.jpg",
+          "hash": "thumbnail_DSC_0332_1_copy_56901eff0b",
+          "mime": "image/jpeg",
+          "name": "thumbnail_DSC_0332 (1) copy.jpg",
+          "path": null,
+          "size": 4.33,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "DSC_0332_1_copy_56901eff0b",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 622.72,
+      "url": "/uploads/DSC_0332_1_copy_56901eff0b.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T15:04:35.089Z",
+      "updated_at": "2020-11-23T15:04:35.398Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 143,
     "person": {
       "id": 4465,
@@ -19327,139 +20127,6 @@
         "updated_by": 6,
         "created_at": "2020-11-21T17:29:24.217Z",
         "updated_at": "2020-11-21T17:29:24.228Z"
-      }
-    ]
-  },
-  {
-    "id": 120,
-    "person": {
-      "id": 4373,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-20T18:19:03.065Z",
-      "updated_at": "2020-11-20T18:19:03.109Z",
-      "firstName": "Valgeir ",
-      "lastName": "Sigurðsson ",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": "Composer",
-      "firstNameLastName": "Valgeir Sigurðsson ",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [
-        {
-          "id": 934,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:49.477Z",
-          "updated_at": "2020-08-17T14:20:49.477Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "IS",
-          "name_et": "Island",
-          "name_en": "Iceland",
-          "name_ru": "Исландия"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Valgeir Sigurðsson is an Icelandic composer and producer. His music blends contemporary classical writing and esoteric electronic production, sometimes to a point where one is indistinguishable from the other.\nValgeir worked closely with fellow Icelander Björk, a collaboration which began with her Oscar-nominated score for Lars Von Trier’s Dancer In The Dark. He founded the Bedroom Community label in 2006 with Nico Muhly and Ben Frost, where he cemented his sonic signature with his own solo work on the label, in addition to albums with Muhly, Frost, Sam Amidon and Daníel Bjarnason, and an extensive collaboration with viola da gamba player, Liam Byrne. \nValgeir has composed orchestral and chamber music for the likes of the City of London Sinfonia, Winnipeg Symphony, Crash Ensemble, Alarm Will Sound, Nordic Affect and the British violinist, Daniel Pioro. His scores frequently incorporate the use of electronics and have also been performed by the Cincinnati Chamber Orchestra, BBC Symphony Orchestra, BBC Scottish Symphony Orchestra, Spokane Symphony, Indianapolis Symphony and many others. He has written music for stage, dance and screen. His film scores include An Acceptable Loss and the Icelandic feature The County, and his score for the environmental documentary Dreamland (Draumalandið) was nominated for best score at EDDA, the Icelandic Film Academy Awards. ",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 1,
-      "firstname": "Mihkel",
-      "lastname": "Putrinš",
-      "username": null
-    },
-    "created_at": "2020-11-20T18:20:04.370Z",
-    "updated_at": "2020-11-22T11:08:35.852Z",
-    "clipUrl": null,
-    "website": "https://valgeir.net/",
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Valgeir Sigurðsson ",
-    "slug": "valgeir-sigurdsson",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3598,
-      "name": "Valgeir Sigurdsson - Svea Ideon(1).jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 488,
-      "height": 416,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa.jpg",
-          "hash": "thumbnail_Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa",
-          "mime": "image/jpeg",
-          "name": "thumbnail_Valgeir Sigurdsson - Svea Ideon(1).jpg",
-          "path": null,
-          "size": 3.21,
-          "width": 183,
-          "height": 156
-        }
-      },
-      "hash": "Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 18.34,
-      "url": "/uploads/Valgeir_Sigurdsson_Svea_Ideon_1_1e96f886aa.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 35,
-      "updated_by": 35,
-      "created_at": "2020-11-20T20:47:04.804Z",
-      "updated_at": "2020-11-20T20:47:04.982Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 10,
-        "type": "Music Meets Film",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-13T09:37:55.735Z",
-        "updated_at": "2020-11-13T09:37:55.746Z"
-      },
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -20252,15 +20919,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      },
-      {
         "id": 1,
         "type": "Black Nights Star",
         "description": null,
@@ -20268,6 +20926,120 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:11:17.255Z",
         "updated_at": "2020-11-04T09:11:17.266Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "person": {
+      "id": 4475,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T16:50:24.638Z",
+      "updated_at": "2020-11-23T16:57:22.542Z",
+      "firstName": "Michel",
+      "lastName": "Plazanet",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Michel Plazanet",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Michel Plazanet graduated in business and administrative affairs. After having worked long in the telecommunication sector, he joined the CNC (French national film centre) as head of the regional action department. In 2012, he was promoted deputy director of International and European affairs and has held this position ever since.\n",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "created_at": "2020-11-23T16:55:23.518Z",
+    "updated_at": "2020-11-23T16:57:39.373Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Michel Plazanet",
+    "slug": "michel-plazane",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3721,
+      "name": "5 fev 2020 copy.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": 800,
+      "height": 800,
+      "formats": {
+        "thumbnail": {
+          "ext": ".png",
+          "url": "/uploads/thumbnail_5_fev_2020_copy_c7cef2c39b.png",
+          "hash": "thumbnail_5_fev_2020_copy_c7cef2c39b",
+          "mime": "image/png",
+          "name": "thumbnail_5 fev 2020 copy.png",
+          "path": null,
+          "size": 58.02,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "5_fev_2020_copy_c7cef2c39b",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 988.75,
+      "url": "/uploads/5_fev_2020_copy_c7cef2c39b.png",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T16:54:44.530Z",
+      "updated_at": "2020-11-23T16:54:44.865Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -21109,15 +21881,6 @@
     "role_at_films": [],
     "industry_person_types": [
       {
-        "id": 7,
-        "type": "Russia in Focus 2020",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:37:07.621Z",
-        "updated_at": "2020-11-04T09:37:07.627Z"
-      },
-      {
         "id": 11,
         "type": "Speaker",
         "description": null,
@@ -21125,6 +21888,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 7,
+        "type": "Russia in Focus 2020",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:37:07.621Z",
+        "updated_at": "2020-11-04T09:37:07.627Z"
       }
     ]
   },
