@@ -93,8 +93,8 @@ block content
 
                         .str_info_grid_3
                             .str_info_label= self.label.industry.duration
-                            .str_info_value= self.durationTime
-                                //- +dur(self.durationTime)
+                            .str_info_value
+                                +indEvDur(self.durationTime)
 
             section#trailer.f_trailer_box
                 //- .section_headline= self.label.film.trailer
@@ -207,4 +207,10 @@ block content
                                                 br
                                             if indPerson.industry_person_types
                                                 span= indPerson.industry_person_types.map(type => type.type).join(', ')
-
+    //- section.event_card_footer
+    //-     .grid_container_screening_time_2
+    //-         .text-right
+    //-             p.screening_date.small_1.add_to_calendar_button(id = self.id + '_notInMyCalendar' onclick=`addToMyCal('${self.id}');return false` style='display: none')= 'Add to calendar'
+    //-             p.screening_date.small_1.remove_from_calendar_button(id = self.id + '_inMyCalendar' onclick = `removeEvent('${self.id}');return false` onmouseover='changeToRemove(this.id);return false' onmouseout='revertRemove(this.id);return false' style='display: none')= 'In my calendar'
+        
+    //-             p(id=`cal_${self.id}` style='display: none') #{self.calendar_data}

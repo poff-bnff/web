@@ -91,6 +91,7 @@ if (!validToken) {
     } catch (error) {
         null
     }
+    loadEmptyUserProfile()
 }
 
 function loadUserProfileH() {
@@ -111,6 +112,34 @@ function loadUserProfileH() {
         return Promise.reject(response);
     }).then(function (data) {
         userProfile = data
+        document.dispatchEvent(userProfileLoadedEvent)
+        // console.log("cognitos olev profiil:")
+        // console.log(userProfile);
+
+    }).catch(function (error) {
+        console.warn(error);
+    });
+}
+
+function loadEmptyUserProfile() {
+    console.log('loadEmptyUserProfile')
+
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    }
+
+    fetch('https://api.poff.ee/profile', requestOptions).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        console.log('data ', data);
+        userProfile = {
+            sub: data.ip, 
+            name: 'Wulf'
+        }
         document.dispatchEvent(userProfileLoadedEvent)
         // console.log("cognitos olev profiil:")
         // console.log(userProfile);
