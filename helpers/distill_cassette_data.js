@@ -20,9 +20,16 @@ const cassettes_path = path.join(fetchDir, 'cassettes')
 const strapiDataPath = path.join(fetchDir, 'strapiData.yaml')
 const STRAPIDATA = yaml.safeLoad(fs.readFileSync(strapiDataPath, 'utf8'))
 
+// Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
+const whichScreeningTypesToFetch = ['first screening', 'regular', 'online kino']
+
 const STRAPIDATA_PERSONS = STRAPIDATA['Person']
-const STRAPIDATA_CASSETTE = STRAPIDATA['Cassette']
-const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening']
+const STRAPIDATA_CASSETTE = STRAPIDATA['Cassette'].sort((a, b) => a.title-b.title)
+const STRAPIDATA_SCREENINGS = STRAPIDATA['Screening'].filter(scrn => {
+    if (scrn.cassette && scrn.screening_types && scrn.screening_types[0]) {
+        return scrn.screening_types.map(scrning => scrning.name).some(ai => whichScreeningTypesToFetch.includes(ai.toLowerCase()))
+    }
+})
 const STRAPIDATA_FILMS = STRAPIDATA['Film']
 const STRAPIDATA_FESTIVALS = STRAPIDATA['Festival']
 const STRAPIDATA_FESTIVALEDITIONS = STRAPIDATA['FestivalEdition']
@@ -70,9 +77,6 @@ const DISTILLED_PROGRAMMES = STRAPIDATA['Programme'].map(s_programme => {
 })
 
 const CASSETTELIMIT = parseInt(process.env['CASSETTELIMIT'])
-
-// Kõik Screening_types name mida soovitakse kasseti juurde lisada, VÄIKETÄHTEDES
-const whichScreeningTypesToFetch = ['first screening', 'regular', 'online kino']
 
 const DOMAIN = process.env['DOMAIN'] || 'poff.ee'
 const MAPPED_DOMAIN = DOMAIN_SPECIFICS.domain[DOMAIN]

@@ -96,7 +96,7 @@ for (const lang of allLanguages) {
     let slugMissingErrorIDs = []
     let limit = CASSETTELIMIT
     let counting = 0
-    for (const s_cassette of STRAPIDATA_CASSETTE) {
+    for (const s_cassette of STRAPIDATA_CASSETTE.sort((a, b) => a.title-b.title)) {
         var hasOneCorrectScreening = false
         if (limit !== 0 && counting === limit) break
         counting++
