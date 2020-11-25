@@ -53,6 +53,10 @@ block content
                             polyline(points='9 18 15 12 9 6')
                         span.sr-only Next
                         //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
+                if self.clipUrl
+                    a.play_link(href='#trailer')
+                        svg.svg_icon_play(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='white' stroke-linecap='round' stroke-linejoin='round')
+                            polygon(points='5 3 19 12 5 21 5 3')
 
 
             section.f_title_box
@@ -296,7 +300,7 @@ block content
 
             if self.clipUrl
                 section#trailer.f_trailer_box
-                    //- .section_headline= self.label.film.trailer
+                    .section_headline= self.label.industry.pitch
                     //- .embed-responsive.embed-responsive-16by9.m-0.p-0
                     .videolevels_embed_container
                         if self.clipUrl
