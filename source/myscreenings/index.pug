@@ -98,7 +98,7 @@ block content
                         if cassette.festival_editions
                             each edition in cassette.festival_editions
                                 - allFestivalEditions.push(edition.name)
-                        a.card_film(id=screening.id style= {display:'none'} href= `/${lang_path}film/${cassette.slug}`)
+                        a.card_film(id= screening.id + '_screening_id'  style= {display:'none'} href= `/${lang_path}film/${cassette.slug}`)
                             .container_frame_16_9
 
                                 //- PILDID
