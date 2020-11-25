@@ -1,5 +1,5 @@
 function loadMyFavFilms() {
-    console.log("FAVO: oled sisse loginud")
+    // console.log("FAVO: oled sisse loginud")
     try {
         document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
     } catch (error) {
@@ -15,24 +15,9 @@ function loadMyFavFilms() {
     } catch (error) {
         null
     } try{
-        // To do: Allolev toggleSavedScreeningsButtons oli enne sisse kommenteeritud, aga
-        // sealt tuleks välja korjata kõik mis tegeleb screeningu card'i kuvamise/mittekuvamisega,
-        // viimase teeb ära script.js
-        // toggleSavedScreeningsButtons(userProfile.savedscreenings)
+        toggleSavedScreeningsButtons(userProfile.savedscreenings)
 
-        // See tuleb pärast testimist kustutada, mul lihtsalt ei õnnestunud
-        // localis ega ka devis sisselogides oma seansse kätte saada
-        userProfile.savedscreenings = [
-            {screeningId: "1002", screeningTitle: "120403 / Head uued ilmad: ulme- ja fantaasiafilmid", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:15:00.000Z"},
-            {screeningId: "1004", screeningTitle: "120502 / Inglite klubi", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:00:00.000Z"},
-            {screeningId: "1007", screeningTitle: "121105 / Havel", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:00:00.000Z"},
-            {screeningId: "1013", screeningTitle: "121503 / Auk", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T17:15:00.000Z"},
-            {screeningId: "1014", screeningTitle: "121504 / Late Night Comedy", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:00:00.000Z"},
-            {screeningId: "1034", screeningTitle: "131202 / Vintpall", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-25T18:30:00.000Z"},
-            {screeningId: "1084", screeningTitle: "151602 / Kiht kihi haaval", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-27T17:15:00.000Z"},
-        ]
-
-        // Käivitab kaartide kuvamise vastavalt filtritele ja lemmikute olemasolul ka vastavalt nendele
+        // Käivitab kaartide kuvamise kontrolli vastavalt filtritele ja lemmikute olemasolul ka vastavalt nendele
         toggleAll()
     } catch (error) {
         null
@@ -128,7 +113,7 @@ function toggleSavedScreeningsButtons(savedScreenings) {
 
 
 function toggleMyCalButtons (myCalEvents){
-    console.log(myCalEvents)
+    // console.log(myCalEvents)
 
     var isMyEventBtns = document.getElementsByClassName('remove_from_calendar_button')
 
@@ -137,7 +122,7 @@ function toggleMyCalButtons (myCalEvents){
         var eventId = isMyEventBtns[i].id.split('_')[0]
 
         if (myCalEvents.includes(eventId)){
-            console.log(2)
+            // console.log(2)
             document.getElementById(eventId + '_inMyCalendar').style.display = ''
             try {
             document.getElementById(eventId).style.display = ''
@@ -251,7 +236,7 @@ function calendarfile(id) {
 
 function addToMyCal(eventId) {
     calendarfile(eventId)
-    console.log('eventId ', eventId)
+    // console.log('eventId ', eventId)
 
 
 
@@ -269,7 +254,7 @@ function addToMyCal(eventId) {
 
         };
 
-        console.log(requestOptions)
+        // console.log(requestOptions)
 
         fetch('https://api.poff.ee/favourite/' + 'event_' + eventId, requestOptions).then(function (response) {
             if (response.ok) {
@@ -357,7 +342,7 @@ function removeScreening(screeningId) {
                 null
             }
             try {
-                document.getElementById(screeningId + '_screening_id').style.display = 'none'
+                document.getElementById(screeningId).style.display = 'none'
             }
             catch (err) {
                 null
@@ -370,7 +355,7 @@ function removeScreening(screeningId) {
 
 
 function removeEvent(eventId) {
-    console.log('removeEvent eventId ', eventId)
+    // console.log('removeEvent eventId ', eventId)
 
     var myHeaders = new Headers();
 
@@ -389,12 +374,12 @@ function removeEvent(eventId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
         if (data.ok) {
             try {
-                console.log(2)
-                console.log(eventId)
-                console.log(document.getElementById(eventId + '_notInMyCalendar'))
+                // console.log(2)
+                // console.log(eventId)
+                // console.log(document.getElementById(eventId + '_notInMyCalendar'))
                 document.getElementById(eventId + '_notInMyCalendar').style.display = ''
                 document.getElementById(eventId + '_inMyCalendar').style.display = 'none'
             }
