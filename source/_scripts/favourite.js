@@ -19,6 +19,7 @@ function loadMyFavFilms() {
 
         // Käivitab kaartide kuvamise kontrolli vastavalt filtritele ja lemmikute olemasolul ka vastavalt nendele
         toggleAll()
+
     } catch (error) {
         null
     }
@@ -108,6 +109,7 @@ function toggleSavedScreeningsButtons(savedScreenings) {
             notSavedScreening_buttons[i].style.display = 'block'
         }
     }
+
 
 }
 

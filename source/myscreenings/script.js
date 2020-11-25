@@ -112,10 +112,10 @@ function toggleAll(exclude_selector_name) {
     })
 
     // filtreeri filtreid
-    toggleFilters(exclude_selector_name)
+    toggleFilters(exclude_selector_name, ids)
 }
 
-function toggleFilters(exclude_selector_name) {
+function toggleFilters(exclude_selector_name, ids) {
 
     for (selector_name in selectors) {
 
@@ -168,9 +168,8 @@ function toggleFilters(exclude_selector_name) {
                     return compare_with === '' ? true : screening.times.includes(compare_with)
                 })
                 .filter((screening) => { return search_input.value ? screening.text.includes(search_input.value.toLowerCase()) : true })
+                .filter((screening) => { return ids && ids.length ? ids.includes(screening.id.toString()) : false })
                 .length
-
-
             option.disabled = count ? false : true
 
         }
