@@ -1,6 +1,6 @@
 
 function validateEmail(element_id) {
-    console.log('emailv')
+    // console.log('emailv')
     var email = document.getElementById(element_id)
     var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (!emailRe.test(String(email.value).toLowerCase())) {
@@ -119,7 +119,7 @@ function validateBDay(element_id) {
 }
 
 function validateDate(element_id) {
-    console.log('validateDate ', element_id);
+    // console.log('validateDate ', element_id);
 
     var date = document.getElementById(element_id)
     var dateRe = new RegExp(
@@ -194,7 +194,7 @@ function validateCity(element_id) {
         city.classList.add("c_invalid")
         return false
     }
-    console.log(city.value);
+    // console.log(city.value);
     if (city.value) {
         city.classList.remove("c_invalid")
         city.classList.add("c_valid")

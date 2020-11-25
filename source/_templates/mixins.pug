@@ -266,7 +266,6 @@ mixin indEvDur(strapiTime='')
                 var min = time[1] !== '00' ? time[1] : 0
                 //- console.log(strapiTime, ' - ', hour, 'h', min, 'min')
                 var timeToShow = `${hour !== '0' ? hour + 'h' : ''}${hour !== '0' ? ' ' + min + 'm' : min + 'm'}`
-                console.log(timeToShow)
                 //- return timeToShow
                 var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
                 eDisplayMoment1.innerHTML = timeToShow;
