@@ -668,7 +668,6 @@ const remapEventival = async () => {
 
         // strapi_screening.is_first_screening = e_screening.type_of_screening.includes('First Screening')
 
-        let update_id = []
 
         strapi_screening.code = e_screening.code.toString().padStart(6, "0")
         strapi_screening.codeAndTitle = e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local
@@ -710,9 +709,6 @@ const remapEventival = async () => {
             }
         }).map(subLang => {return {id: subLang.id}})
 
-        if (strapi_screening.subtitles > 0 ){
-            update_id.push(strapi_screening.id)
-        }
 
         strapi_screening.cassette = strapi_cassettes.filter((s_cassette) => {
             if (e_screening.film && e_screening.film.id) {
@@ -738,6 +734,7 @@ const remapEventival = async () => {
         makeList(e_screening.qa, 'presenters', 'person')
         makeList(e_screening.qa, 'guests', 'person')
 
+        let QaA_length_before = strapi_screening.introQaConversation.length
 
         // introQaConversation saab algatuseks tühi arrey
         //
@@ -761,11 +758,9 @@ const remapEventival = async () => {
                 duration: e_screening.qa.duration
             })
         }
-        if (strapi_screening.introQaConversation.length > 0 ){
-            // console.log(strapi_screening.id);
-            update_id.push(strapi_screening.id)
-        }
 
+
+        let QaA_length_after = strapi_screening.introQaConversation.length
         // e_screening.is_first_screening = is_first_screening
 
         // ----   END update strapi screening properties
@@ -774,18 +769,18 @@ const remapEventival = async () => {
         const strapi_screening_after = JSON.parse(JSON.stringify(strapi_screening))
 
 
-        let new_screening_info = []
+        let new_screening = []
         if(isUpdateRequired(strapi_screening_before, strapi_screening_after)){
             // console.log(JSON.stringify({strapi_screening_before, strapi_screening_after}));
             // process.exit(0)
-            new_screening_info.push(strapi_screening.id)
+            new_screening.push(strapi_screening.id)
             to_strapi_screenings.push(strapi_screening)
         }
 
-        // reverse comparison for isUpdateRequired
-        if(isUpdateRequired( strapi_screening_after, strapi_screening_before ) && update_id.includes( strapi_screening.id ) && !new_screening_info.includes(strapi_screening.id)){
+        if (QaA_length_before > QaA_length_after && !new_screening.includes(strapi_screening.id)){
             to_strapi_screenings.push(strapi_screening)
         }
+
     }
 
     EVENTIVAL_REMAPPED['E_SCREENINGS'] = to_strapi_screenings
