@@ -773,23 +773,17 @@ const remapEventival = async () => {
 
         const strapi_screening_after = JSON.parse(JSON.stringify(strapi_screening))
 
-        // if ( update_id.includes( strapi_screening.id )) {
-        //     console.log('Screening before', strapi_screening_before)
-        //     console.log('Screening after', strapi_screening_after)
-        // }
 
         let new_screening_info = []
         if(isUpdateRequired(strapi_screening_before, strapi_screening_after)){
             // console.log(JSON.stringify({strapi_screening_before, strapi_screening_after}));
             // process.exit(0)
-            console.log('v6rdlus', strapi_screening.id)
             new_screening_info.push(strapi_screening.id)
             to_strapi_screenings.push(strapi_screening)
         }
 
         // reverse comparison for isUpdateRequired
         if(isUpdateRequired( strapi_screening_after, strapi_screening_before ) && update_id.includes( strapi_screening.id ) && !new_screening_info.includes(strapi_screening.id)){
-            console.log('tagurpidi v6rdlus', strapi_screening.id)
             to_strapi_screenings.push(strapi_screening)
         }
     }
@@ -898,19 +892,19 @@ const submitScreenings = async () => {
 }
 
 const main = async () => {
-    // timer.log(__filename, 'Check for missing films and screenings')
-    // await createMissingFilmsAndScreenings()
-    // timer.log(__filename, 'update Strapi')
-    // await updateStrapi()
+    timer.log(__filename, 'Check for missing films and screenings')
+    await createMissingFilmsAndScreenings()
+    timer.log(__filename, 'update Strapi')
+    await updateStrapi()
     timer.log(__filename, 'remap')
     await remapEventival()
-    // timer.log(__filename, 'submit films')
-    // await submitFilms()
-    // timer.log(__filename, 'submit cassettes')
-    // await submitCassettes()
-    // timer.log(__filename, 'submit screenings')
-    // await submitScreenings()
-    // timer.log(__filename, 'Eventival to Strapi finished')
+    timer.log(__filename, 'submit films')
+    await submitFilms()
+    timer.log(__filename, 'submit cassettes')
+    await submitCassettes()
+    timer.log(__filename, 'submit screenings')
+    await submitScreenings()
+    timer.log(__filename, 'Eventival to Strapi finished')
 }
 
 main()
