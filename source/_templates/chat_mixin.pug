@@ -15,7 +15,6 @@ mixin chat(room_name, is_moderated_room=false)
 
 
     div(id='chat-container-' + room_name + room_suffix class='chat-container moderated-' + is_moderated_room)
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
         div(id='chat-message-template-' + room_name + room_suffix class='chat-message' style='display:none')
         div(id='chat-main-' + room_name + room_suffix class='chat-main')
             //- div(id='chat-sidebar-' + room_name + room_suffix  class='chat-sidebar')
@@ -48,7 +47,6 @@ mixin chat(room_name, is_moderated_room=false)
             border-radius: 3%;
         }
 
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script.
         document.addEventListener('userProfileLoaded', function (e) {
             chat_main(userProfile, '#{room_name}', #{is_moderated_room})
