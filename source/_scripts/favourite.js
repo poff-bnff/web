@@ -16,7 +16,8 @@ function loadMyFavFilms() {
         null
     } try{
         // To do: Allolev toggleSavedScreeningsButtons oli enne sisse kommenteeritud, aga
-        // sealt tuleb välja korjata kõik mis tegeleb screeningu card'i kuvamise/mittekuvamisega
+        // sealt tuleks välja korjata kõik mis tegeleb screeningu card'i kuvamise/mittekuvamisega,
+        // viimase teeb ära script.js
         // toggleSavedScreeningsButtons(userProfile.savedscreenings)
 
         // See tuleb pärast testimist kustutada, mul lihtsalt ei õnnestunud
@@ -96,13 +97,17 @@ function toggleSavedScreeningsButtons(savedScreenings) {
         var screening_id = isSavedScreening_buttons[i].id.split('_')[0]
         if (savedScreeningIds.includes(screening_id)) {
             isSavedScreening_buttons[i].style.display = 'block'
-            try{
-            document.getElementById(screening_id + '_screening_id').style.display = 'block'
-            }
-            catch(err){null}
+            // try{
+            // document.getElementById(screening_id + '_screening_id').style.display = 'block'
+            // }
+            // catch(err){null}
         }
         else {
-            isSavedScreening_buttons[i].style.display = 'none'
+            try {
+                isSavedScreening_buttons[i].style.display = 'none'
+            } catch (error) {
+                null
+            }
         }
     }
 
