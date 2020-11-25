@@ -960,336 +960,6 @@
     ]
   },
   {
-    "id": 8,
-    "name": "industry",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "created_at": "2020-11-15T11:10:21.601Z",
-    "updated_at": "2020-11-21T18:13:16.116Z",
-    "label": [
-      {
-        "id": 392,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Date",
-        "value_en": "Date",
-        "value_ru": "Date",
-        "name": "eventDate"
-      },
-      {
-        "id": 393,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Time EET",
-        "value_en": "Time EET",
-        "value_ru": "Time EET",
-        "name": "eventTimeEet"
-      },
-      {
-        "id": 394,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "User time",
-        "value_en": "User time",
-        "value_ru": "User time",
-        "name": "eventTimeUser"
-      },
-      {
-        "id": 399,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Project type",
-        "value_ru": null,
-        "name": "projectType"
-      },
-      {
-        "id": 400,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Project Status",
-        "value_ru": null,
-        "name": "projectStatus"
-      },
-      {
-        "id": 401,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Completion date",
-        "value_ru": null,
-        "name": "completionDate"
-      },
-      {
-        "id": 402,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Planned premiere",
-        "value_ru": null,
-        "name": "plannedPremiere"
-      },
-      {
-        "id": 403,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Country focus",
-        "value_ru": null,
-        "name": "countryFocus"
-      },
-      {
-        "id": 404,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Budget",
-        "value_ru": null,
-        "name": "projectBudget"
-      },
-      {
-        "id": 405,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Financed",
-        "value_ru": null,
-        "name": "projectFinanced"
-      },
-      {
-        "id": 406,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Partners",
-        "value_ru": null,
-        "name": "partners"
-      },
-      {
-        "id": 407,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Looking for",
-        "value_ru": null,
-        "name": "lookingFor"
-      },
-      {
-        "id": 408,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Contact name",
-        "value_ru": null,
-        "name": "contactName"
-      },
-      {
-        "id": 409,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Contact web",
-        "value_ru": null,
-        "name": "contactWeb"
-      },
-      {
-        "id": 410,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Contact email",
-        "value_ru": null,
-        "name": "contactEmail"
-      },
-      {
-        "id": 411,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Logline",
-        "value_ru": null,
-        "name": "logline"
-      },
-      {
-        "id": 412,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Contact address",
-        "value_ru": null,
-        "name": "contactAddress"
-      },
-      {
-        "id": 413,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Contact company",
-        "value_ru": null,
-        "name": "contactCompany"
-      },
-      {
-        "id": 414,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Directors note",
-        "value_ru": null,
-        "name": "directorsNote"
-      },
-      {
-        "id": 415,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Number of seasons",
-        "value_ru": null,
-        "name": "numOfSeasons"
-      },
-      {
-        "id": 416,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Number of episodes",
-        "value_ru": null,
-        "name": "numOfEpisodes"
-      },
-      {
-        "id": 417,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Episode duration",
-        "value_ru": null,
-        "name": "episodeDuration"
-      },
-      {
-        "id": 418,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Roll",
-        "value_en": "Role",
-        "value_ru": "Role",
-        "name": "industryPersonTypes"
-      },
-      {
-        "id": 419,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Profession",
-        "value_en": "Profession",
-        "value_ru": "Profession",
-        "name": "roleAtFilms"
-      },
-      {
-        "id": 420,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Looking for",
-        "value_en": "Looking for",
-        "value_ru": "Looking for",
-        "name": "lookingFors"
-      },
-      {
-        "id": 421,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Duration",
-        "value_ru": null,
-        "name": "duration"
-      },
-      {
-        "id": 422,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Koduleht",
-        "value_en": "Website",
-        "value_ru": "Website",
-        "name": "website"
-      },
-      {
-        "id": 423,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "Tel nr",
-        "value_en": "Phone nr",
-        "value_ru": "Phone nr",
-        "name": "phone"
-      },
-      {
-        "id": 424,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": "E-post",
-        "value_en": "E-mail",
-        "value_ru": "E-mail",
-        "name": "email"
-      },
-      {
-        "id": 425,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Contact",
-        "value_ru": null,
-        "name": "contact"
-      },
-      {
-        "id": 426,
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "value_et": null,
-        "value_en": "Filmography",
-        "value_ru": null,
-        "name": "filmography"
-      }
-    ]
-  },
-  {
     "id": 3,
     "name": "all",
     "created_by": {
@@ -2066,6 +1736,346 @@
         "value_en": "Channels",
         "value_ru": "Channels",
         "name": "channels"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "industry",
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "created_at": "2020-11-15T11:10:21.601Z",
+    "updated_at": "2020-11-25T07:55:47.153Z",
+    "label": [
+      {
+        "id": 392,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Date",
+        "value_en": "Date",
+        "value_ru": "Date",
+        "name": "eventDate"
+      },
+      {
+        "id": 393,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Time EET",
+        "value_en": "Time EET",
+        "value_ru": "Time EET",
+        "name": "eventTimeEet"
+      },
+      {
+        "id": 394,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "User time",
+        "value_en": "User time",
+        "value_ru": "User time",
+        "name": "eventTimeUser"
+      },
+      {
+        "id": 399,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Project type",
+        "value_ru": null,
+        "name": "projectType"
+      },
+      {
+        "id": 400,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Project Status",
+        "value_ru": null,
+        "name": "projectStatus"
+      },
+      {
+        "id": 401,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Completion date",
+        "value_ru": null,
+        "name": "completionDate"
+      },
+      {
+        "id": 402,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Planned premiere",
+        "value_ru": null,
+        "name": "plannedPremiere"
+      },
+      {
+        "id": 403,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Country focus",
+        "value_ru": null,
+        "name": "countryFocus"
+      },
+      {
+        "id": 404,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Budget",
+        "value_ru": null,
+        "name": "projectBudget"
+      },
+      {
+        "id": 405,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Financed",
+        "value_ru": null,
+        "name": "projectFinanced"
+      },
+      {
+        "id": 406,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Partners",
+        "value_ru": null,
+        "name": "partners"
+      },
+      {
+        "id": 407,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Looking for",
+        "value_ru": null,
+        "name": "lookingFor"
+      },
+      {
+        "id": 408,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact name",
+        "value_ru": null,
+        "name": "contactName"
+      },
+      {
+        "id": 409,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact web",
+        "value_ru": null,
+        "name": "contactWeb"
+      },
+      {
+        "id": 410,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact email",
+        "value_ru": null,
+        "name": "contactEmail"
+      },
+      {
+        "id": 411,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Logline",
+        "value_ru": null,
+        "name": "logline"
+      },
+      {
+        "id": 412,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact address",
+        "value_ru": null,
+        "name": "contactAddress"
+      },
+      {
+        "id": 413,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact company",
+        "value_ru": null,
+        "name": "contactCompany"
+      },
+      {
+        "id": 414,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Directors note",
+        "value_ru": null,
+        "name": "directorsNote"
+      },
+      {
+        "id": 415,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Number of seasons",
+        "value_ru": null,
+        "name": "numOfSeasons"
+      },
+      {
+        "id": 416,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Number of episodes",
+        "value_ru": null,
+        "name": "numOfEpisodes"
+      },
+      {
+        "id": 417,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Episode duration",
+        "value_ru": null,
+        "name": "episodeDuration"
+      },
+      {
+        "id": 418,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Roll",
+        "value_en": "Role",
+        "value_ru": "Role",
+        "name": "industryPersonTypes"
+      },
+      {
+        "id": 419,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Profession",
+        "value_en": "Profession",
+        "value_ru": "Profession",
+        "name": "roleAtFilms"
+      },
+      {
+        "id": 420,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Looking for",
+        "value_en": "Looking for",
+        "value_ru": "Looking for",
+        "name": "lookingFors"
+      },
+      {
+        "id": 421,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Duration",
+        "value_ru": null,
+        "name": "duration"
+      },
+      {
+        "id": 422,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Koduleht",
+        "value_en": "Website",
+        "value_ru": "Website",
+        "name": "website"
+      },
+      {
+        "id": 423,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Tel nr",
+        "value_en": "Phone nr",
+        "value_ru": "Phone nr",
+        "name": "phone"
+      },
+      {
+        "id": 424,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "E-post",
+        "value_en": "E-mail",
+        "value_ru": "E-mail",
+        "name": "email"
+      },
+      {
+        "id": 425,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Contact",
+        "value_ru": null,
+        "name": "contact"
+      },
+      {
+        "id": 426,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": null,
+        "value_en": "Filmography",
+        "value_ru": null,
+        "name": "filmography"
+      },
+      {
+        "id": 436,
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "value_et": "Pitch",
+        "value_en": "Pitch",
+        "value_ru": "Pitch",
+        "name": "pitch"
       }
     ]
   },
