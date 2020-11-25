@@ -5,6 +5,19 @@ include /_templates/mixins.pug
 
 block content
 
+    script.
+        document.addEventListener('userProfileLoaded', function (e) {
+            console.log({userProfile})
+
+            if (userProfile.industryAccessLevel) {
+                document.getElementById('videolevels_video').style.display = 'block'
+                var videoFrameElement = document.getElementById('videoframe')
+                videoFrameElement.src = videoFrameElement.getAttribute('target_src')
+            } else {
+                document.getElementById('videolevels_video').remove()
+            }
+        })
+
     main.grid_film
         if self.title
 
@@ -40,6 +53,10 @@ block content
                             polyline(points='9 18 15 12 9 6')
                         span.sr-only Next
                         //- LÕPP! KARUSELL Industry projekti piltidega LÕPP
+                if self.clipUrl
+                    a.play_link(href='#trailer')
+                        svg.svg_icon_play(viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='#4fc4bf' stroke-linecap='round' stroke-linejoin='round')
+                            polygon(points='5 3 19 12 5 21 5 3')
 
 
             section.f_title_box
@@ -252,9 +269,15 @@ block content
                                     if person.person.picture
                                         img.img_dir(src=`https://assets.poff.ee/img/${person.person.picture.hash}${person.person.picture.ext}` alt = person.person.firstNameLastName)
                                     if person.person.firstName || person.person.lastName
-                                    .str_info_grid_3
-                                        .str_info_label.text_left.dark_semi= person.rolesAtFilm.join(', ')
-                                        .str_info_value.text_right.dark_1= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
+
+                                    .str_info_meta_gi
+                                        .str_info_meta_item
+                                            .str_info_meta_label.dark_semi= person.rolesAtFilm.join(', ')
+                                            .str_info_value.text_right.dark_1= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
+
+                                    //- .str_info_grid_3
+                                    //-     .str_info_label.text_left.dark_semi= person.rolesAtFilm.join(', ')
+                                    //-     .str_info_value.text_right.dark_1= `${person.person.firstName ? person.person.firstName : ''} ${person.person.lastName ? person.person.lastName : ''}`
 
                                 .dir_bio.dark_1
                                     if person.person.biography
@@ -272,9 +295,14 @@ block content
                                     if company.organisations.logoColour
                                         img.img_comp(src=`https://assets.poff.ee/img/${company.organisations.logoColour.hash}${company.organisations.logoColour.ext}` alt = company.organisations.namePrivate)
 
-                                    .str_info_grid_3
-                                        .str_info_label.text_left.dark_semi= company.rolesAtFilm.join(', ')
-                                        .str_info_value.text_right.dark_1= company.organisations.namePrivate
+                                    .str_info_meta_gi
+                                        .str_info_meta_item
+                                            .str_info_meta_label.dark_semi= company.rolesAtFilm.join(', ')
+                                            .str_info_value.text_right.dark_1= company.organisations.namePrivate
+
+                                    //- .str_info_grid_3
+                                    //-     .str_info_label.text_left.dark_semi= company.rolesAtFilm.join(', ')
+                                    //-     .str_info_value.text_right.dark_1= company.organisations.namePrivate
 
                                 .dir_bio.dark_1
                                     if company.organisations.description
@@ -283,13 +311,19 @@ block content
 
             if self.clipUrl
                 section#trailer.f_trailer_box
-                    //- .section_headline= self.label.film.trailer
+                    .section_headline= self.label.industry.pitch
                     //- .embed-responsive.embed-responsive-16by9.m-0.p-0
                     .videolevels_embed_container
-                        if self.clipUrlCode
-                            .embed-responsive.embed-responsive-16by9.m-0.p-0
-                                +video(self.clipUrlCode)
-
+                        if self.clipUrl
+                            .videolevels_embed_contents#videolevels_video(style="display:none;")
+                                +videoVl(self.clipUrl)
+                        .default_16_9_container
+                        .login_16_9_container.login_ind_ev#login_cond
+                            h4.login_headline#loginMessage Login via Eventival
+                            a(href=`/login` onclick = 'saveUrl()')
+                                img.eventival_logo_img(alt='PÖFF' data-src='/assets/img/static/eventival_logo.svg' src='/assets/img/static/eventival_logo.svg')
+                    .elisa_stage
+                        img.elisa_powered(src='https://assets.poff.ee/img/poff24_elisa_stage.svg')
 
 
 
