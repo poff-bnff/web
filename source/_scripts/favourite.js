@@ -15,7 +15,23 @@ function loadMyFavFilms() {
     } catch (error) {
         null
     } try{
-    toggleSavedScreeningsButtons(userProfile.savedscreenings)
+        // To do: Allolev toggleSavedScreeningsButtons oli enne sisse kommenteeritud, aga
+        // sealt tuleb välja korjata kõik mis tegeleb screeningu card'i kuvamise/mittekuvamisega
+        // toggleSavedScreeningsButtons(userProfile.savedscreenings)
+
+        // See tuleb kustutada, mul ei õnnestunud localis ega ka devis sisselogides oma seansse kätte saada
+        userProfile.savedscreenings = [
+            {screeningId: "1002", screeningTitle: "120403 / Head uued ilmad: ulme- ja fantaasiafilmid", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:15:00.000Z"},
+            {screeningId: "1004", screeningTitle: "120502 / Inglite klubi", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:00:00.000Z"},
+            {screeningId: "1007", screeningTitle: "121105 / Havel", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:00:00.000Z"},
+            {screeningId: "1013", screeningTitle: "121503 / Auk", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T17:15:00.000Z"},
+            {screeningId: "1014", screeningTitle: "121504 / Late Night Comedy", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:00:00.000Z"},
+            {screeningId: "1034", screeningTitle: "131202 / Vintpall", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-25T18:30:00.000Z"},
+            {screeningId: "1084", screeningTitle: "151602 / Kiht kihi haaval", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-27T17:15:00.000Z"},
+        ]
+
+        // Käivitab kaartide kuvamise vastavalt filtritele ja lemmikute olemasolul ka vastavalt nendele
+        toggleAll()
     } catch (error) {
         null
     }
@@ -109,11 +125,11 @@ function toggleMyCalButtons (myCalEvents){
     console.log(myCalEvents)
 
     var isMyEventBtns = document.getElementsByClassName('remove_from_calendar_button')
-    
+
 
     for (i=0; i<isMyEventBtns.length; i++){
         var eventId = isMyEventBtns[i].id.split('_')[0]
-     
+
         if (myCalEvents.includes(eventId)){
             console.log(2)
             document.getElementById(eventId + '_inMyCalendar').style.display = ''
@@ -121,13 +137,13 @@ function toggleMyCalButtons (myCalEvents){
             document.getElementById(eventId).style.display = ''
             }
             catch(err){null}
-        } 
+        }
         else {
             try{
             document.getElementById(eventId + '_notInMyCalendar').style.display = ''
             }
             catch(err){null}
-        } 
+        }
     }
 }
 
@@ -225,13 +241,13 @@ function calendarfile(id) {
     element.click();
 
     document.body.removeChild(element);
-} 
+}
 
 function addToMyCal(eventId) {
     calendarfile(eventId)
     console.log('eventId ', eventId)
 
-   
+
 
 
         // var myHeaders = new Headers();

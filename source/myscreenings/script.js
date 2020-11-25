@@ -87,7 +87,12 @@ function select_next_or_previous(which, id) {
 function toggleAll(exclude_selector_name) {
     setSearchParams()
 
-    ids = execute_filters()
+    // Kui on kasutaja profiilis lemmikseansid, siis kuvab pärast filtreid järelejäänud seansse nende alusel
+    if (userProfile && userProfile.savedscreenings && userProfile.savedscreenings.length) {
+        ids = execute_filters().filter(id => userProfile.savedscreenings.map(srnid => srnid.screeningId).includes(id))
+    } else {
+        ids = execute_filters()
+    }
 
     // kuva/peida 'pole vasteid'
     if (ids.length) {
