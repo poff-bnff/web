@@ -779,7 +779,7 @@
       "username": null
     },
     "created_at": "2020-11-23T09:19:38.840Z",
-    "updated_at": "2020-11-23T21:48:32.211Z",
+    "updated_at": "2020-11-24T16:15:48.353Z",
     "clipUrl": null,
     "website": null,
     "lookingFor": null,
@@ -831,6 +831,15 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:12:53.512Z",
         "updated_at": "2020-11-04T09:12:53.556Z"
+      },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -3982,300 +3991,6 @@
     ]
   },
   {
-    "id": 116,
-    "person": {
-      "id": 4369,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-20T17:59:38.904Z",
-      "updated_at": "2020-11-20T17:59:38.933Z",
-      "firstName": "Simonas ",
-      "lastName": "Mozūra",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": "Actor",
-      "firstNameLastName": "Simonas Mozūra",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Simonas Mozūra trained at East 15 Acting School in London and is a member of Vilnius Actor Studio. He was training to become a professional athlete, specializing in a long jump, but arts stole his passion when he began his career with a role in a stage play Fight Club in Lithuanian State Youth Theatre. He moved to the United Kingdom to study acting program that involved writing and directing, consequently, he was one of the founders of two theatre companies in the UK. Simonas landed his first feature film roles soon after graduation including Romas Zabarauskas’ The Lawyer, which was released earlier in 2020. He also worked with Richard Clemmow on BBC Radio 4 radio drama I’m A Slave. Soon he will be coming back as one of the leads in the third season of popular Lithuanian TV crime drama Cursed II.",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 1,
-      "firstname": "Mihkel",
-      "lastname": "Putrinš",
-      "username": null
-    },
-    "created_at": "2020-11-20T18:00:46.237Z",
-    "updated_at": "2020-11-22T11:14:56.764Z",
-    "clipUrl": null,
-    "website": "https://www.spotlight.com/profile/0930-5615-7835",
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Simonas Mozūra",
-    "slug": "simonas-mozura",
-    "filmography": {
-      "id": 26,
-      "text": null,
-      "film": [
-        {
-          "id": 53,
-          "order": null,
-          "film": null,
-          "foreignUrl": "https://www.imdb.com/title/tt11374498/?ref_=fn_al_tt_2",
-          "title_et": null,
-          "title_en": null,
-          "title_ru": null,
-          "titleOriginal": "The Lawyer",
-          "year": null,
-          "synopsis": null,
-          "synopsis_et": "ife drifts by for gay corporate lawyer Marius, his time spent teasing friends and chasing young lovers. One day, Marius' estranged father dies. Mourning turns to love as the lawyer finds an unanticipated connection with a sex-cam worker Ali - a Syrian refugee stuck in Belgrade.",
-          "synopsis_en": null,
-          "synopsis_ru": null,
-          "trailerUrl": null,
-          "images": [
-            {
-              "id": 3592,
-              "name": "rsz_the_lawyer_poster_-_simonas_mozūra(1).jpg",
-              "alternativeText": "",
-              "caption": "",
-              "width": 1235,
-              "height": 1786,
-              "formats": {
-                "thumbnail": {
-                  "ext": ".jpg",
-                  "url": "/uploads/thumbnail_rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d.jpg",
-                  "hash": "thumbnail_rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d",
-                  "mime": "image/jpeg",
-                  "name": "thumbnail_rsz_the_lawyer_poster_-_simonas_mozūra(1).jpg",
-                  "path": null,
-                  "size": 2.63,
-                  "width": 108,
-                  "height": 156
-                }
-              },
-              "hash": "rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d",
-              "ext": ".jpg",
-              "mime": "image/jpeg",
-              "size": 369.81,
-              "url": "/uploads/rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d.jpg",
-              "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
-              "created_by": 35,
-              "updated_by": 35,
-              "created_at": "2020-11-20T19:46:20.692Z",
-              "updated_at": "2020-11-20T19:46:20.803Z"
-            }
-          ]
-        }
-      ]
-    },
-    "profilePicAtInd": {
-      "id": 3599,
-      "name": "rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 496,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2.jpg",
-          "hash": "thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2",
-          "mime": "image/jpeg",
-          "name": "thumbnail_rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
-          "path": null,
-          "size": 3.93,
-          "width": 157,
-          "height": 156
-        }
-      },
-      "hash": "rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 42.24,
-      "url": "/uploads/rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 35,
-      "updated_by": 35,
-      "created_at": "2020-11-20T20:48:49.401Z",
-      "updated_at": "2020-11-20T20:48:49.877Z"
-    },
-    "images": [
-      {
-        "id": 3588,
-        "name": "rsz_simonas_mozūra_-_simonas_mozūra.png",
-        "alternativeText": "",
-        "caption": "",
-        "width": 737,
-        "height": 1104,
-        "formats": {
-          "thumbnail": {
-            "ext": ".png",
-            "url": "/uploads/thumbnail_rsz_simonas_mozura_simonas_mozura_e23e5ff91c.png",
-            "hash": "thumbnail_rsz_simonas_mozura_simonas_mozura_e23e5ff91c",
-            "mime": "image/png",
-            "name": "thumbnail_rsz_simonas_mozūra_-_simonas_mozūra.png",
-            "path": null,
-            "size": 17.69,
-            "width": 104,
-            "height": 156
-          }
-        },
-        "hash": "rsz_simonas_mozura_simonas_mozura_e23e5ff91c",
-        "ext": ".png",
-        "mime": "image/png",
-        "size": 535.8,
-        "url": "/uploads/rsz_simonas_mozura_simonas_mozura_e23e5ff91c.png",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-20T19:00:26.358Z",
-        "updated_at": "2020-11-20T19:00:26.613Z"
-      },
-      {
-        "id": 3589,
-        "name": "rsz_simonas_mozūra_headshot_2_ls_-_simonas_mozūra.jpg",
-        "alternativeText": "",
-        "caption": "",
-        "width": 1314,
-        "height": 2059,
-        "formats": {
-          "thumbnail": {
-            "ext": ".jpg",
-            "url": "/uploads/thumbnail_rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2.jpg",
-            "hash": "thumbnail_rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2",
-            "mime": "image/jpeg",
-            "name": "thumbnail_rsz_simonas_mozūra_headshot_2_ls_-_simonas_mozūra.jpg",
-            "path": null,
-            "size": 2.72,
-            "width": 100,
-            "height": 156
-          }
-        },
-        "hash": "rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2",
-        "ext": ".jpg",
-        "mime": "image/jpeg",
-        "size": 272.06,
-        "url": "/uploads/rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2.jpg",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-20T19:02:06.181Z",
-        "updated_at": "2020-11-20T19:02:06.637Z"
-      },
-      {
-        "id": 3590,
-        "name": "rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
-        "alternativeText": "",
-        "caption": "",
-        "width": 1181,
-        "height": 1746,
-        "formats": {
-          "thumbnail": {
-            "ext": ".jpg",
-            "url": "/uploads/thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142.jpg",
-            "hash": "thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142",
-            "mime": "image/jpeg",
-            "name": "thumbnail_rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
-            "path": null,
-            "size": 3.14,
-            "width": 106,
-            "height": 156
-          }
-        },
-        "hash": "rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142",
-        "ext": ".jpg",
-        "mime": "image/jpeg",
-        "size": 227.49,
-        "url": "/uploads/rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142.jpg",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-20T19:19:37.395Z",
-        "updated_at": "2020-11-20T19:19:37.616Z"
-      },
-      {
-        "id": 3591,
-        "name": "rsz_1simonas_mozūra_headshot_3_-_simonas_mozūra.jpg",
-        "alternativeText": "",
-        "caption": "",
-        "width": 992,
-        "height": 1267,
-        "formats": {
-          "thumbnail": {
-            "ext": ".jpg",
-            "url": "/uploads/thumbnail_rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b.jpg",
-            "hash": "thumbnail_rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b",
-            "mime": "image/jpeg",
-            "name": "thumbnail_rsz_1simonas_mozūra_headshot_3_-_simonas_mozūra.jpg",
-            "path": null,
-            "size": 3.78,
-            "width": 122,
-            "height": 156
-          }
-        },
-        "hash": "rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b",
-        "ext": ".jpg",
-        "mime": "image/jpeg",
-        "size": 290.52,
-        "url": "/uploads/rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b.jpg",
-        "previewUrl": null,
-        "provider": "local",
-        "provider_metadata": null,
-        "created_by": 35,
-        "updated_by": 35,
-        "created_at": "2020-11-20T19:21:19.836Z",
-        "updated_at": "2020-11-20T19:21:19.914Z"
-      }
-    ],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 1,
-        "type": "Black Nights Star",
-        "description": null,
-        "created_by": 31,
-        "updated_by": 31,
-        "created_at": "2020-11-04T09:11:17.255Z",
-        "updated_at": "2020-11-04T09:11:17.266Z"
-      }
-    ]
-  },
-  {
     "id": 21,
     "person": {
       "id": 4106,
@@ -6089,120 +5804,6 @@
     ]
   },
   {
-    "id": 157,
-    "person": {
-      "id": 4478,
-      "created_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "updated_by": {
-        "id": 35,
-        "firstname": "Marta",
-        "lastname": "Khrshanovskaya",
-        "username": null
-      },
-      "created_at": "2020-11-24T08:59:45.886Z",
-      "updated_at": "2020-11-24T08:59:45.917Z",
-      "firstName": "Jurate ",
-      "lastName": "Pazikaite",
-      "gender": null,
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": null,
-      "firstNameLastName": "Jurate Pazikaite",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [
-        {
-          "id": 981,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:52.399Z",
-          "updated_at": "2020-08-17T14:20:52.399Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "LT",
-          "name_et": "Leedu",
-          "name_en": "Lithuania",
-          "name_ru": "Литва"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Jurate Pazikaite represents a film commission in Vilnius, Lithuania and runs the film office since its establishment in 2011. She holds a Film Commissioner Professional Certificate, issued by AFCI since 2013. One of the organizers of Vilnius event \"Book + Film\", which combines literature and filmmaking by encouraging partnership between film directors, script writers and book authors, publishing houses.  Her work includes close collaboration with both local and international producers as well as close partnership with film festivals and tourism representatives in Lithuania. Co-author of publication \"Vilnius on Screen\". She also initiated the first VR location database in Lithuania. \nJ. Pazikaite is a team member of Vilnius City Administration for EU projects related to Creative and Cultural Industries (CCI). Member of EUFCN and AFCI.",
-    "created_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "updated_by": {
-      "id": 35,
-      "firstname": "Marta",
-      "lastname": "Khrshanovskaya",
-      "username": null
-    },
-    "created_at": "2020-11-24T09:01:55.722Z",
-    "updated_at": "2020-11-24T09:01:55.766Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Jurate Pazikaite",
-    "slug": "jurate-pazikaite",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3732,
-      "name": "vilnius film office jurate pazikaite.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 500,
-      "height": 451,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_vilnius_film_office_jurate_pazikaite_1be1734e76.jpg",
-          "hash": "thumbnail_vilnius_film_office_jurate_pazikaite_1be1734e76",
-          "mime": "image/jpeg",
-          "name": "thumbnail_vilnius film office jurate pazikaite.jpg",
-          "path": null,
-          "size": 8.83,
-          "width": 173,
-          "height": 156
-        }
-      },
-      "hash": "vilnius_film_office_jurate_pazikaite_1be1734e76",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 263.65,
-      "url": "/uploads/vilnius_film_office_jurate_pazikaite_1be1734e76.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 35,
-      "updated_by": 35,
-      "created_at": "2020-11-24T09:01:50.960Z",
-      "updated_at": "2020-11-24T09:01:51.081Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": []
-  },
-  {
     "id": 132,
     "person": {
       "id": 4454,
@@ -6529,6 +6130,130 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:37:07.621Z",
         "updated_at": "2020-11-04T09:37:07.627Z"
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "person": {
+      "id": 4484,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-24T16:17:02.237Z",
+      "updated_at": "2020-11-24T16:17:02.268Z",
+      "firstName": "Giulia ",
+      "lastName": "D’Agnolo Vallan",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Giulia D’Agnolo Vallan",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 936,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.557Z",
+          "updated_at": "2020-08-17T14:20:49.557Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IT",
+          "name_et": "Itaalia",
+          "name_en": "Italy",
+          "name_ru": "Италия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "A film writer and curator, Giulia’s writings have appeared in publications such as “il manifesto”, La Stampa, Cahiers du Cinema and Film Comment. Her retrospectives have featured in The Metrograph, Film Forum, the Museum of Moving Image, the American Cinematheque and the Cinématheque Française. Of her books on American directors, the latest volume, 'Altman', was published in 2014. From 2003 to 2006 she was the co-director of the Torino Film Festival. She is the US Programmer and a Selection Committee Member of the Venice Film Festival. As of July 2019 she also holds the position of Founding Artistic Director of the Sag Harbor Cinema.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-24T16:18:53.799Z",
+    "updated_at": "2020-11-24T16:18:53.820Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Giulia D’Agnolo Vallan",
+    "slug": "giulia-d-agnolo-vallan",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3744,
+      "name": "Screen Shot 2020-11-24 at 6.17.25 PM.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": 196,
+      "height": 200,
+      "formats": {
+        "thumbnail": {
+          "ext": ".png",
+          "url": "/uploads/thumbnail_Screen_Shot_2020_11_24_at_6_17_25_PM_743e780d5a.png",
+          "hash": "thumbnail_Screen_Shot_2020_11_24_at_6_17_25_PM_743e780d5a",
+          "mime": "image/png",
+          "name": "thumbnail_Screen Shot 2020-11-24 at 6.17.25 PM.png",
+          "path": null,
+          "size": 72.24,
+          "width": 153,
+          "height": 156
+        }
+      },
+      "hash": "Screen_Shot_2020_11_24_at_6_17_25_PM_743e780d5a",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 112.7,
+      "url": "/uploads/Screen_Shot_2020_11_24_at_6_17_25_PM_743e780d5a.png",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-24T16:18:28.238Z",
+      "updated_at": "2020-11-24T16:18:29.633Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -8383,6 +8108,130 @@
     ]
   },
   {
+    "id": 157,
+    "person": {
+      "id": 4478,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-24T08:59:45.886Z",
+      "updated_at": "2020-11-24T08:59:45.917Z",
+      "firstName": "Jurate ",
+      "lastName": "Pazikaite",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Jurate Pazikaite",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 981,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:52.399Z",
+          "updated_at": "2020-08-17T14:20:52.399Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "LT",
+          "name_et": "Leedu",
+          "name_en": "Lithuania",
+          "name_ru": "Литва"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Jurate Pazikaite represents a film commission in Vilnius, Lithuania and runs the film office since its establishment in 2011. She holds a Film Commissioner Professional Certificate, issued by AFCI since 2013. One of the organizers of Vilnius event \"Book + Film\", which combines literature and filmmaking by encouraging partnership between film directors, script writers and book authors, publishing houses.  Her work includes close collaboration with both local and international producers as well as close partnership with film festivals and tourism representatives in Lithuania. Co-author of publication \"Vilnius on Screen\". She also initiated the first VR location database in Lithuania. \nJ. Pazikaite is a team member of Vilnius City Administration for EU projects related to Creative and Cultural Industries (CCI). Member of EUFCN and AFCI.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-24T09:01:55.722Z",
+    "updated_at": "2020-11-24T12:16:52.973Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Jurate Pazikaite",
+    "slug": "jurate-pazikaite",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3732,
+      "name": "vilnius film office jurate pazikaite.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 451,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_vilnius_film_office_jurate_pazikaite_1be1734e76.jpg",
+          "hash": "thumbnail_vilnius_film_office_jurate_pazikaite_1be1734e76",
+          "mime": "image/jpeg",
+          "name": "thumbnail_vilnius film office jurate pazikaite.jpg",
+          "path": null,
+          "size": 8.83,
+          "width": 173,
+          "height": 156
+        }
+      },
+      "hash": "vilnius_film_office_jurate_pazikaite_1be1734e76",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 263.65,
+      "url": "/uploads/vilnius_film_office_jurate_pazikaite_1be1734e76.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-24T09:01:50.960Z",
+      "updated_at": "2020-11-24T09:01:51.081Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 43,
     "person": {
       "id": 29,
@@ -8617,6 +8466,130 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:12:53.512Z",
         "updated_at": "2020-11-04T09:12:53.556Z"
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "person": {
+      "id": 4487,
+      "created_by": {
+        "id": 28,
+        "firstname": "Saara",
+        "lastname": "Huimerind",
+        "username": null
+      },
+      "updated_by": {
+        "id": 28,
+        "firstname": "Saara",
+        "lastname": "Huimerind",
+        "username": null
+      },
+      "created_at": "2020-11-25T08:32:45.068Z",
+      "updated_at": "2020-11-25T08:32:59.195Z",
+      "firstName": "Alexey",
+      "lastName": "Kiselev",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Alexey Kiselev",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 1030,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:54.589Z",
+          "updated_at": "2020-08-17T14:20:54.589Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "RU",
+          "name_et": "Venemaa",
+          "name_en": "Russian Federation",
+          "name_ru": "Российская Федерация"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": null,
+    "created_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-25T08:33:56.589Z",
+    "updated_at": "2020-11-25T08:33:56.632Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Alexey Kiselev",
+    "slug": "alexey-kiselev",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3756,
+      "name": "c067bc39-8f3c-4bb3-b196-e0a4ddf2d69e.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 671,
+      "height": 635,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_c067bc39_8f3c_4bb3_b196_e0a4ddf2d69e_b4305cf9c4.jpg",
+          "hash": "thumbnail_c067bc39_8f3c_4bb3_b196_e0a4ddf2d69e_b4305cf9c4",
+          "mime": "image/jpeg",
+          "name": "thumbnail_c067bc39-8f3c-4bb3-b196-e0a4ddf2d69e.jpg",
+          "path": null,
+          "size": 6.55,
+          "width": 165,
+          "height": 156
+        }
+      },
+      "hash": "c067bc39_8f3c_4bb3_b196_e0a4ddf2d69e_b4305cf9c4",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 41.59,
+      "url": "/uploads/c067bc39_8f3c_4bb3_b196_e0a4ddf2d69e_b4305cf9c4.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 28,
+      "updated_by": 28,
+      "created_at": "2020-11-25T08:33:49.647Z",
+      "updated_at": "2020-11-25T08:33:49.750Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
@@ -9189,6 +9162,317 @@
         "updated_by": 6,
         "created_at": "2020-11-21T17:29:24.217Z",
         "updated_at": "2020-11-21T17:29:24.228Z"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "person": {
+      "id": 4369,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-20T17:59:38.904Z",
+      "updated_at": "2020-11-20T17:59:38.933Z",
+      "firstName": "Simonas ",
+      "lastName": "Mozūra",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": "Actor",
+      "firstNameLastName": "Simonas Mozūra",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Simonas Mozūra trained at East 15 Acting School in London and is a member of Vilnius Actor Studio. He was training to become a professional athlete, specializing in a long jump, but arts stole his passion when he began his career with a role in a stage play Fight Club in Lithuanian State Youth Theatre. He moved to the United Kingdom to study acting program that involved writing and directing, consequently, he was one of the founders of two theatre companies in the UK. Simonas landed his first feature film roles soon after graduation including Romas Zabarauskas’ The Lawyer, which was released earlier in 2020. He also worked with Richard Clemmow on BBC Radio 4 radio drama I’m A Slave. Soon he will be coming back as one of the leads in the third season of popular Lithuanian TV crime drama Cursed II.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-20T18:00:46.237Z",
+    "updated_at": "2020-11-24T13:10:23.272Z",
+    "clipUrl": "https://vimeo.com/481619154/4d0f927076",
+    "website": "https://www.spotlight.com/profile/0930-5615-7835",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Simonas Mozūra",
+    "slug": "simonas-mozura",
+    "filmography": {
+      "id": 26,
+      "text": null,
+      "film": [
+        {
+          "id": 53,
+          "order": null,
+          "film": null,
+          "foreignUrl": "https://www.imdb.com/title/tt11374498/?ref_=fn_al_tt_2",
+          "title_et": null,
+          "title_en": null,
+          "title_ru": null,
+          "titleOriginal": "The Lawyer",
+          "year": null,
+          "synopsis": null,
+          "synopsis_et": "ife drifts by for gay corporate lawyer Marius, his time spent teasing friends and chasing young lovers. One day, Marius' estranged father dies. Mourning turns to love as the lawyer finds an unanticipated connection with a sex-cam worker Ali - a Syrian refugee stuck in Belgrade.",
+          "synopsis_en": null,
+          "synopsis_ru": null,
+          "trailerUrl": null,
+          "images": [
+            {
+              "id": 3592,
+              "name": "rsz_the_lawyer_poster_-_simonas_mozūra(1).jpg",
+              "alternativeText": "",
+              "caption": "",
+              "width": 1235,
+              "height": 1786,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "/uploads/thumbnail_rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d.jpg",
+                  "hash": "thumbnail_rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_rsz_the_lawyer_poster_-_simonas_mozūra(1).jpg",
+                  "path": null,
+                  "size": 2.63,
+                  "width": 108,
+                  "height": 156
+                }
+              },
+              "hash": "rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 369.81,
+              "url": "/uploads/rsz_the_lawyer_poster_simonas_mozura_1_8d2bf28f6d.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 35,
+              "updated_by": 35,
+              "created_at": "2020-11-20T19:46:20.692Z",
+              "updated_at": "2020-11-20T19:46:20.803Z"
+            }
+          ]
+        },
+        {
+          "id": 54,
+          "order": null,
+          "film": null,
+          "foreignUrl": null,
+          "title_et": null,
+          "title_en": null,
+          "title_ru": null,
+          "titleOriginal": null,
+          "year": null,
+          "synopsis": null,
+          "synopsis_et": null,
+          "synopsis_en": null,
+          "synopsis_ru": null,
+          "trailerUrl": null,
+          "images": []
+        }
+      ]
+    },
+    "profilePicAtInd": {
+      "id": 3599,
+      "name": "rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 496,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2.jpg",
+          "hash": "thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2",
+          "mime": "image/jpeg",
+          "name": "thumbnail_rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
+          "path": null,
+          "size": 3.93,
+          "width": 157,
+          "height": 156
+        }
+      },
+      "hash": "rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 42.24,
+      "url": "/uploads/rsz_simonas_mozura_headshot_ls_simonas_mozura_a4821d97d2.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-20T20:48:49.401Z",
+      "updated_at": "2020-11-20T20:48:49.877Z"
+    },
+    "images": [
+      {
+        "id": 3588,
+        "name": "rsz_simonas_mozūra_-_simonas_mozūra.png",
+        "alternativeText": "",
+        "caption": "",
+        "width": 737,
+        "height": 1104,
+        "formats": {
+          "thumbnail": {
+            "ext": ".png",
+            "url": "/uploads/thumbnail_rsz_simonas_mozura_simonas_mozura_e23e5ff91c.png",
+            "hash": "thumbnail_rsz_simonas_mozura_simonas_mozura_e23e5ff91c",
+            "mime": "image/png",
+            "name": "thumbnail_rsz_simonas_mozūra_-_simonas_mozūra.png",
+            "path": null,
+            "size": 17.69,
+            "width": 104,
+            "height": 156
+          }
+        },
+        "hash": "rsz_simonas_mozura_simonas_mozura_e23e5ff91c",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 535.8,
+        "url": "/uploads/rsz_simonas_mozura_simonas_mozura_e23e5ff91c.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-20T19:00:26.358Z",
+        "updated_at": "2020-11-20T19:00:26.613Z"
+      },
+      {
+        "id": 3589,
+        "name": "rsz_simonas_mozūra_headshot_2_ls_-_simonas_mozūra.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1314,
+        "height": 2059,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2.jpg",
+            "hash": "thumbnail_rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2",
+            "mime": "image/jpeg",
+            "name": "thumbnail_rsz_simonas_mozūra_headshot_2_ls_-_simonas_mozūra.jpg",
+            "path": null,
+            "size": 2.72,
+            "width": 100,
+            "height": 156
+          }
+        },
+        "hash": "rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 272.06,
+        "url": "/uploads/rsz_simonas_mozura_headshot_2_ls_simonas_mozura_0b84b278c2.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-20T19:02:06.181Z",
+        "updated_at": "2020-11-20T19:02:06.637Z"
+      },
+      {
+        "id": 3590,
+        "name": "rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1181,
+        "height": 1746,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142.jpg",
+            "hash": "thumbnail_rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142",
+            "mime": "image/jpeg",
+            "name": "thumbnail_rsz_simonas_mozura_headshot_ls_-_simonas_mozūra.jpg",
+            "path": null,
+            "size": 3.14,
+            "width": 106,
+            "height": 156
+          }
+        },
+        "hash": "rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 227.49,
+        "url": "/uploads/rsz_simonas_mozura_headshot_ls_simonas_mozura_07e0e1d142.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-20T19:19:37.395Z",
+        "updated_at": "2020-11-20T19:19:37.616Z"
+      },
+      {
+        "id": 3591,
+        "name": "rsz_1simonas_mozūra_headshot_3_-_simonas_mozūra.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 992,
+        "height": 1267,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b.jpg",
+            "hash": "thumbnail_rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b",
+            "mime": "image/jpeg",
+            "name": "thumbnail_rsz_1simonas_mozūra_headshot_3_-_simonas_mozūra.jpg",
+            "path": null,
+            "size": 3.78,
+            "width": 122,
+            "height": 156
+          }
+        },
+        "hash": "rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 290.52,
+        "url": "/uploads/rsz_1simonas_mozura_headshot_3_simonas_mozura_e3ed708d1b.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_by": 35,
+        "updated_by": 35,
+        "created_at": "2020-11-20T19:21:19.836Z",
+        "updated_at": "2020-11-20T19:21:19.914Z"
+      }
+    ],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 1,
+        "type": "Black Nights Star",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:11:17.255Z",
+        "updated_at": "2020-11-04T09:11:17.266Z"
       }
     ]
   },
@@ -12543,155 +12827,6 @@
     ]
   },
   {
-    "id": 149,
-    "person": {
-      "id": 4459,
-      "created_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "updated_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "created_at": "2020-11-23T12:41:03.999Z",
-      "updated_at": "2020-11-23T12:41:04.025Z",
-      "firstName": "Giovanni",
-      "lastName": "Pompili",
-      "gender": {
-        "id": 2,
-        "created_by": {
-          "id": 6,
-          "firstname": "Jaan",
-          "lastname": "Leppik",
-          "username": null
-        },
-        "updated_by": {
-          "id": 3,
-          "firstname": "Liis",
-          "lastname": "Käsper",
-          "username": null
-        },
-        "created_at": "2020-08-18T13:06:53.315Z",
-        "updated_at": "2020-09-14T06:43:50.539Z",
-        "Name_et": "Mees",
-        "Name_en": "Male",
-        "Name_ru": "Мужчина",
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "et": "Mees",
-        "en": "Male",
-        "ru": "M"
-      },
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": null,
-      "firstNameLastName": "Giovanni Pompili",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [
-        {
-          "id": 936,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:49.557Z",
-          "updated_at": "2020-08-17T14:20:49.557Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "IT",
-          "name_et": "Itaalia",
-          "name_en": "Italy",
-          "name_ru": "Италия"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Giovanni Pompili is part of Eave and Ace and in 2020 he was selected as Producer on the Move. He co-produced with Poland, France, Switzerland, Belgium, Spain and Argentina.\nand now he is co-producing new films byLaura Luchetti, Carla Simòn, Aga Woszczynska and Cristina Picchi.Sole, the debut film of Carlo Sironi nominated and EFA discovery 2020, is a co-production between Italy and Poland.",
-    "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "created_at": "2020-11-23T14:19:01.651Z",
-    "updated_at": "2020-11-23T14:45:34.693Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Giovanni Pompili",
-    "slug": "giovanni-pompili-1",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3709,
-      "name": "Giovanni copy.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 766,
-      "height": 768,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_Giovanni_copy_ffea40f84d.jpg",
-          "hash": "thumbnail_Giovanni_copy_ffea40f84d",
-          "mime": "image/jpeg",
-          "name": "thumbnail_Giovanni copy.jpg",
-          "path": null,
-          "size": 6.35,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "Giovanni_copy_ffea40f84d",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 622.85,
-      "url": "/uploads/Giovanni_copy_ffea40f84d.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-23T14:45:29.413Z",
-      "updated_at": "2020-11-23T14:45:30.141Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 11,
-        "type": "Speaker",
-        "description": null,
-        "created_by": 28,
-        "updated_by": 28,
-        "created_at": "2020-11-14T14:07:08.663Z",
-        "updated_at": "2020-11-14T14:07:08.671Z"
-      }
-    ]
-  },
-  {
     "id": 63,
     "person": {
       "id": 2163,
@@ -12809,6 +12944,164 @@
     ],
     "role_at_films": [],
     "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "person": {
+      "id": 4459,
+      "created_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "updated_by": {
+        "id": 34,
+        "firstname": "Helena",
+        "lastname": "Möldre",
+        "username": null
+      },
+      "created_at": "2020-11-23T12:41:03.999Z",
+      "updated_at": "2020-11-23T12:41:04.025Z",
+      "firstName": "Giovanni",
+      "lastName": "Pompili",
+      "gender": {
+        "id": 2,
+        "created_by": {
+          "id": 6,
+          "firstname": "Jaan",
+          "lastname": "Leppik",
+          "username": null
+        },
+        "updated_by": {
+          "id": 3,
+          "firstname": "Liis",
+          "lastname": "Käsper",
+          "username": null
+        },
+        "created_at": "2020-08-18T13:06:53.315Z",
+        "updated_at": "2020-09-14T06:43:50.539Z",
+        "Name_et": "Mees",
+        "Name_en": "Male",
+        "Name_ru": "Мужчина",
+        "name_et": null,
+        "name_en": null,
+        "name_ru": null,
+        "et": "Mees",
+        "en": "Male",
+        "ru": "M"
+      },
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Giovanni Pompili",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 936,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.557Z",
+          "updated_at": "2020-08-17T14:20:49.557Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IT",
+          "name_et": "Itaalia",
+          "name_en": "Italy",
+          "name_ru": "Италия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Giovanni Pompili is part of Eave and Ace and in 2020 he was selected as Producer on the Move. He co-produced with Poland, France, Switzerland, Belgium, Spain and Argentina.\nand now he is co-producing new films byLaura Luchetti, Carla Simòn, Aga Woszczynska and Cristina Picchi.Sole, the debut film of Carlo Sironi nominated and EFA discovery 2020, is a co-production between Italy and Poland.",
+    "created_by": {
+      "id": 34,
+      "firstname": "Helena",
+      "lastname": "Möldre",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-23T14:19:01.651Z",
+    "updated_at": "2020-11-24T13:29:58.919Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Giovanni Pompili",
+    "slug": "giovanni-pompili-1",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3709,
+      "name": "Giovanni copy.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 766,
+      "height": 768,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Giovanni_copy_ffea40f84d.jpg",
+          "hash": "thumbnail_Giovanni_copy_ffea40f84d",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Giovanni copy.jpg",
+          "path": null,
+          "size": 6.35,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Giovanni_copy_ffea40f84d",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 622.85,
+      "url": "/uploads/Giovanni_copy_ffea40f84d.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 34,
+      "updated_by": 34,
+      "created_at": "2020-11-23T14:45:29.413Z",
+      "updated_at": "2020-11-23T14:45:30.141Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 13,
+        "type": "Producers on the Move",
+        "description": null,
+        "created_by": 6,
+        "updated_by": 6,
+        "created_at": "2020-11-21T17:29:24.217Z",
+        "updated_at": "2020-11-21T17:29:24.228Z"
+      },
       {
         "id": 11,
         "type": "Speaker",
@@ -13224,155 +13517,6 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
-      }
-    ]
-  },
-  {
-    "id": 137,
-    "person": {
-      "id": 4459,
-      "created_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "updated_by": {
-        "id": 34,
-        "firstname": "Helena",
-        "lastname": "Möldre",
-        "username": null
-      },
-      "created_at": "2020-11-23T12:41:03.999Z",
-      "updated_at": "2020-11-23T12:41:04.025Z",
-      "firstName": "Giovanni",
-      "lastName": "Pompili",
-      "gender": {
-        "id": 2,
-        "created_by": {
-          "id": 6,
-          "firstname": "Jaan",
-          "lastname": "Leppik",
-          "username": null
-        },
-        "updated_by": {
-          "id": 3,
-          "firstname": "Liis",
-          "lastname": "Käsper",
-          "username": null
-        },
-        "created_at": "2020-08-18T13:06:53.315Z",
-        "updated_at": "2020-09-14T06:43:50.539Z",
-        "Name_et": "Mees",
-        "Name_en": "Male",
-        "Name_ru": "Мужчина",
-        "name_et": null,
-        "name_en": null,
-        "name_ru": null,
-        "et": "Mees",
-        "en": "Male",
-        "ru": "M"
-      },
-      "phoneNr": null,
-      "eMail": null,
-      "dateOfBirth": null,
-      "biography": null,
-      "filmography": null,
-      "profession": null,
-      "firstNameLastName": "Giovanni Pompili",
-      "remoteId": null,
-      "pageUrl": null,
-      "picture": null,
-      "countries": [
-        {
-          "id": 936,
-          "Code": null,
-          "created_by": null,
-          "updated_by": null,
-          "created_at": "2020-08-17T14:20:49.557Z",
-          "updated_at": "2020-08-17T14:20:49.557Z",
-          "Value_et": null,
-          "Value_en": null,
-          "Value_ru": null,
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "code": "IT",
-          "name_et": "Itaalia",
-          "name_en": "Italy",
-          "name_ru": "Италия"
-        }
-      ],
-      "organisations": []
-    },
-    "emailAtInd": null,
-    "phoneAtInd": null,
-    "aboutText": "Giovanni Pompili took over as head of Kino Produzioni in 2012, changing the company's core business from TV service production to cinema. He has worked with such emerging talents as Carlo Sironi, Laura Luchetti, Ali Asgari and Farnoosh Samadi. He is now co-producing new films by Carla Simòn, Aga Woszczynska and Cristina Picchi. As a main producer, Giovanni is currently raising financing for La Bella Estate by Laura Luchetti and Delta by Michele Vannucci.\n",
-    "created_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 34,
-      "firstname": "Helena",
-      "lastname": "Möldre",
-      "username": null
-    },
-    "created_at": "2020-11-23T12:56:48.397Z",
-    "updated_at": "2020-11-23T12:56:48.415Z",
-    "clipUrl": null,
-    "website": null,
-    "lookingFor": null,
-    "contactAtEvent": null,
-    "fullNamePrivate": "Giovanni Pompili ",
-    "slug": "giovanni-pompili",
-    "filmography": null,
-    "profilePicAtInd": {
-      "id": 3690,
-      "name": "15298_4_28207.jpg",
-      "alternativeText": "",
-      "caption": "",
-      "width": 400,
-      "height": 400,
-      "formats": {
-        "thumbnail": {
-          "ext": ".jpg",
-          "url": "/uploads/thumbnail_15298_4_28207_84a1369d45.jpg",
-          "hash": "thumbnail_15298_4_28207_84a1369d45",
-          "mime": "image/jpeg",
-          "name": "thumbnail_15298_4_28207.jpg",
-          "path": null,
-          "size": 5.21,
-          "width": 156,
-          "height": 156
-        }
-      },
-      "hash": "15298_4_28207_84a1369d45",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 35.55,
-      "url": "/uploads/15298_4_28207_84a1369d45.jpg",
-      "previewUrl": null,
-      "provider": "local",
-      "provider_metadata": null,
-      "created_by": 34,
-      "updated_by": 34,
-      "created_at": "2020-11-23T12:56:38.829Z",
-      "updated_at": "2020-11-23T12:56:39.132Z"
-    },
-    "images": [],
-    "role_at_films": [],
-    "industry_person_types": [
-      {
-        "id": 13,
-        "type": "Producers on the Move",
-        "description": null,
-        "created_by": 6,
-        "updated_by": 6,
-        "created_at": "2020-11-21T17:29:24.217Z",
-        "updated_at": "2020-11-21T17:29:24.228Z"
       }
     ]
   },
@@ -16905,6 +17049,130 @@
     ]
   },
   {
+    "id": 158,
+    "person": {
+      "id": 4480,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-24T13:19:09.272Z",
+      "updated_at": "2020-11-24T13:19:09.300Z",
+      "firstName": "Marzia ",
+      "lastName": "dal Fabbro",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Marzia dal Fabbro",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 936,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.557Z",
+          "updated_at": "2020-08-17T14:20:49.557Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IT",
+          "name_et": "Itaalia",
+          "name_en": "Italy",
+          "name_ru": "Италия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Marzia is the international and market rep for AGICI, the Italian Independent Production Guild, an association gathering over 120 production companies, distributions and technical industries. Over the past 5 years Marzia has co-ordinated AGICI’s market and pitching activities supporting and helping develop dozens of successful audiovisual projects (including Extra Vergine - series for SKY; Malarazza - theatrical release; the animation serie East End and the animation movie “Trash\"). Marzia is also managing director of Sound Art 23, one of the leading post-production facilities in Italy and works as a script adaptor and dubbing director on high-end international projects (latest credits include Persian Lessions; Deux; Antigone; Sit Transit Gloria Mundi, etc). As a producer, she has worked on the short films \"Erminio Binto\", financed by Lazio Innova and \"The Milk of Human Kindness\" and co-produced Vittorio Moroni’s “Se chiudo gli occhi non sono più qui” with Rai Cinema. She is currently developing a co-production with Nigeria and co-producing an action thriller (Italy - Scotland). \n",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-24T13:23:47.089Z",
+    "updated_at": "2020-11-24T13:25:48.885Z",
+    "clipUrl": null,
+    "website": "www.soundart.it",
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Marzia dal Fabbro",
+    "slug": "marzia-dal-fabbro",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3739,
+      "name": "Marzia-dal-Fabbro-500jpg.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 500,
+      "height": 490,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Marzia_dal_Fabbro_500jpg_84c2e40bcb.jpg",
+          "hash": "thumbnail_Marzia_dal_Fabbro_500jpg_84c2e40bcb",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Marzia-dal-Fabbro-500jpg.jpg",
+          "path": null,
+          "size": 8.66,
+          "width": 159,
+          "height": 156
+        }
+      },
+      "hash": "Marzia_dal_Fabbro_500jpg_84c2e40bcb",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 253.34,
+      "url": "/uploads/Marzia_dal_Fabbro_500jpg_84c2e40bcb.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-24T13:22:26.199Z",
+      "updated_at": "2020-11-24T13:22:26.950Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 4,
+        "type": "Moderator",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:12:53.512Z",
+        "updated_at": "2020-11-04T09:12:53.556Z"
+      }
+    ]
+  },
+  {
     "id": 77,
     "person": {
       "id": 4173,
@@ -18306,13 +18574,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 1,
-      "firstname": "Mihkel",
-      "lastname": "Putrinš",
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
       "username": null
     },
     "created_at": "2020-11-18T17:26:35.331Z",
-    "updated_at": "2020-11-22T11:08:51.737Z",
+    "updated_at": "2020-11-24T14:32:19.165Z",
     "clipUrl": null,
     "website": "https://filmi.ee/en",
     "lookingFor": null,
@@ -18364,6 +18632,15 @@
         "updated_by": 28,
         "created_at": "2020-11-14T14:07:08.663Z",
         "updated_at": "2020-11-14T14:07:08.671Z"
+      },
+      {
+        "id": 4,
+        "type": "Moderator",
+        "description": null,
+        "created_by": 31,
+        "updated_by": 31,
+        "created_at": "2020-11-04T09:12:53.512Z",
+        "updated_at": "2020-11-04T09:12:53.556Z"
       }
     ]
   },
@@ -20131,6 +20408,130 @@
     ]
   },
   {
+    "id": 159,
+    "person": {
+      "id": 4481,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-24T14:04:02.533Z",
+      "updated_at": "2020-11-24T14:04:02.566Z",
+      "firstName": "Alberto",
+      "lastName": "Barbera",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Alberto Barbera",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 936,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:49.557Z",
+          "updated_at": "2020-08-17T14:20:49.557Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "IT",
+          "name_et": "Itaalia",
+          "name_en": "Italy",
+          "name_ru": "Италия"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "After graduating in Modern Literature with a thesis on Film History and Criticism from the University of Torino, Alberto Barbera began his collaboration with the A.I.A.C.E. (the Italian association of Friends of Art-House Films), of which he was president from 1977 to 1989. Since then he has held positions at La Gazzetta del Popolo, Torino Film Festival, RING! Festival of Film Criticism in Allessandria, and the Museo Nazionale del Cinema in Turin. Since 2012 he has served as Director of the Venice International Film Festival.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-24T14:06:02.095Z",
+    "updated_at": "2020-11-24T14:06:02.126Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Alberto Barbera",
+    "slug": "alberto-barbera",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3740,
+      "name": "Screen Shot 2020-11-24 at 4.05.06 PM.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": 280,
+      "height": 260,
+      "formats": {
+        "thumbnail": {
+          "ext": ".png",
+          "url": "/uploads/thumbnail_Screen_Shot_2020_11_24_at_4_05_06_PM_52b2d5feb8.png",
+          "hash": "thumbnail_Screen_Shot_2020_11_24_at_4_05_06_PM_52b2d5feb8",
+          "mime": "image/png",
+          "name": "thumbnail_Screen Shot 2020-11-24 at 4.05.06 PM.png",
+          "path": null,
+          "size": 71.23,
+          "width": 168,
+          "height": 156
+        }
+      },
+      "hash": "Screen_Shot_2020_11_24_at_4_05_06_PM_52b2d5feb8",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 149.77,
+      "url": "/uploads/Screen_Shot_2020_11_24_at_4_05_06_PM_52b2d5feb8.png",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-24T14:05:20.256Z",
+      "updated_at": "2020-11-24T14:05:20.478Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
     "id": 25,
     "person": {
       "id": 4110,
@@ -20927,6 +21328,130 @@
         "created_at": "2020-11-04T09:11:17.255Z",
         "updated_at": "2020-11-04T09:11:17.266Z"
       },
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "person": {
+      "id": 4482,
+      "created_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "updated_by": {
+        "id": 35,
+        "firstname": "Marta",
+        "lastname": "Khrshanovskaya",
+        "username": null
+      },
+      "created_at": "2020-11-24T14:08:04.152Z",
+      "updated_at": "2020-11-24T14:08:04.180Z",
+      "firstName": "Natalie",
+      "lastName": " Brenner",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": null,
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Natalie Brenner",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 893,
+          "Code": null,
+          "created_by": null,
+          "updated_by": 6,
+          "created_at": "2020-08-17T14:20:46.574Z",
+          "updated_at": "2020-11-07T17:03:21.338Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "GB",
+          "name_et": "Ühendkuningriik",
+          "name_en": "United Kingdom",
+          "name_ru": "Великобритания"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Natalie Brenner started her film career in 1987, initially working in PR where she handled press for a then newly created Channel 4. Since 1989 she has worked in film sales at companies such as J&M Entertainment, IAC Film, Film Four International, Element X and Ealing Studios. In 2013 she became a Partner and Head of Sales at Metro International Entertainment.",
+    "created_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "updated_by": {
+      "id": 35,
+      "firstname": "Marta",
+      "lastname": "Khrshanovskaya",
+      "username": null
+    },
+    "created_at": "2020-11-24T14:10:15.361Z",
+    "updated_at": "2020-11-24T14:10:15.398Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Natalie Brenner",
+    "slug": "natalie-brenner",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3741,
+      "name": "Screen Shot 2020-11-24 at 4.08.33 PM.png",
+      "alternativeText": "",
+      "caption": "",
+      "width": 278,
+      "height": 272,
+      "formats": {
+        "thumbnail": {
+          "ext": ".png",
+          "url": "/uploads/thumbnail_Screen_Shot_2020_11_24_at_4_08_33_PM_2b0a0c01b9.png",
+          "hash": "thumbnail_Screen_Shot_2020_11_24_at_4_08_33_PM_2b0a0c01b9",
+          "mime": "image/png",
+          "name": "thumbnail_Screen Shot 2020-11-24 at 4.08.33 PM.png",
+          "path": null,
+          "size": 74.29,
+          "width": 159,
+          "height": 156
+        }
+      },
+      "hash": "Screen_Shot_2020_11_24_at_4_08_33_PM_2b0a0c01b9",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 165.73,
+      "url": "/uploads/Screen_Shot_2020_11_24_at_4_08_33_PM_2b0a0c01b9.png",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 35,
+      "updated_by": 35,
+      "created_at": "2020-11-24T14:09:47.397Z",
+      "updated_at": "2020-11-24T14:09:48.099Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
       {
         "id": 11,
         "type": "Speaker",
@@ -21897,6 +22422,130 @@
         "updated_by": 31,
         "created_at": "2020-11-04T09:37:07.621Z",
         "updated_at": "2020-11-04T09:37:07.627Z"
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "person": {
+      "id": 4483,
+      "created_by": {
+        "id": 28,
+        "firstname": "Saara",
+        "lastname": "Huimerind",
+        "username": null
+      },
+      "updated_by": {
+        "id": 28,
+        "firstname": "Saara",
+        "lastname": "Huimerind",
+        "username": null
+      },
+      "created_at": "2020-11-24T15:18:10.487Z",
+      "updated_at": "2020-11-24T15:18:10.514Z",
+      "firstName": "Nele ",
+      "lastName": "Paves",
+      "gender": null,
+      "phoneNr": null,
+      "eMail": "nele@filmi.ee",
+      "dateOfBirth": null,
+      "biography": null,
+      "filmography": null,
+      "profession": null,
+      "firstNameLastName": "Nele Paves",
+      "remoteId": null,
+      "pageUrl": null,
+      "picture": null,
+      "countries": [
+        {
+          "id": 899,
+          "Code": null,
+          "created_by": null,
+          "updated_by": null,
+          "created_at": "2020-08-17T14:20:47.018Z",
+          "updated_at": "2020-08-17T14:20:47.018Z",
+          "Value_et": null,
+          "Value_en": null,
+          "Value_ru": null,
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "code": "EE",
+          "name_et": "Eesti",
+          "name_en": "Estonia",
+          "name_ru": "Эстония"
+        }
+      ],
+      "organisations": []
+    },
+    "emailAtInd": null,
+    "phoneAtInd": null,
+    "aboutText": "Nele Paves is the head of Film Estonia and the Film Commissioner for Estonia’s national production incentive, aimed at international production companies and supporting the creation of feature films, feature documentaries, animation films, animation series, high-end TV-drama and the post-production of all beforementioned works.",
+    "created_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "updated_by": {
+      "id": 28,
+      "firstname": "Saara",
+      "lastname": "Huimerind",
+      "username": null
+    },
+    "created_at": "2020-11-24T15:19:58.081Z",
+    "updated_at": "2020-11-24T15:19:58.113Z",
+    "clipUrl": null,
+    "website": null,
+    "lookingFor": null,
+    "contactAtEvent": null,
+    "fullNamePrivate": "Nele Paves",
+    "slug": "nele-paves",
+    "filmography": null,
+    "profilePicAtInd": {
+      "id": 3743,
+      "name": "Nele_Paves_P2020_VirgeViertek.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 1419,
+      "height": 1419,
+      "formats": {
+        "thumbnail": {
+          "ext": ".jpg",
+          "url": "/uploads/thumbnail_Nele_Paves_P2020_Virge_Viertek_4afeb3bba9.jpg",
+          "hash": "thumbnail_Nele_Paves_P2020_Virge_Viertek_4afeb3bba9",
+          "mime": "image/jpeg",
+          "name": "thumbnail_Nele_Paves_P2020_VirgeViertek.jpg",
+          "path": null,
+          "size": 4.83,
+          "width": 156,
+          "height": 156
+        }
+      },
+      "hash": "Nele_Paves_P2020_Virge_Viertek_4afeb3bba9",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 235.8,
+      "url": "/uploads/Nele_Paves_P2020_Virge_Viertek_4afeb3bba9.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_by": 28,
+      "updated_by": 28,
+      "created_at": "2020-11-24T15:19:51.296Z",
+      "updated_at": "2020-11-24T15:19:51.977Z"
+    },
+    "images": [],
+    "role_at_films": [],
+    "industry_person_types": [
+      {
+        "id": 11,
+        "type": "Speaker",
+        "description": null,
+        "created_by": 28,
+        "updated_by": 28,
+        "created_at": "2020-11-14T14:07:08.663Z",
+        "updated_at": "2020-11-14T14:07:08.671Z"
       }
     ]
   },
