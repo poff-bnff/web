@@ -5,7 +5,8 @@ html(lang= self.locale)
     //- POFF
     if process.env['DOMAIN'] === 'poff.ee'
         include ../_templates/head_poff.pug
-        body(onload='reloadImageOnError()')
+        // (onload='reloadImageOnError()')
+        body
             include ../_templates/header_poff.pug
             block content
             include ../_templates/footer.pug
@@ -13,7 +14,8 @@ html(lang= self.locale)
     //- JUSTFILM
     else if process.env['DOMAIN'] === 'justfilm.ee'
         include ../_templates/head_justfilm.pug
-        body(onload='reloadImageOnError()')
+        // (onload='reloadImageOnError()')
+        body
             include ../_templates/header_justfilm.pug
             block content
             include ../_templates/footer.pug
@@ -21,7 +23,8 @@ html(lang= self.locale)
     //- SHORTS
     else if process.env['DOMAIN'] === 'shorts.poff.ee'
         include ../_templates/head_shorts.pug
-        body(onload='reloadImageOnError()')
+        // (onload='reloadImageOnError()')
+        body
             include ../_templates/header_shorts.pug
             block content
             include ../_templates/footer.pug
@@ -29,7 +32,8 @@ html(lang= self.locale)
     //- KINOFF
     else if process.env['DOMAIN'] === 'kinoff.poff.ee'
         include ../_templates/head_kinoff.pug
-        body(onload='reloadImageOnError()')
+        // (onload='reloadImageOnError()')
+        body
             include ../_templates/header_kinoff.pug
             block content
             include ../_templates/footer.pug
@@ -37,7 +41,8 @@ html(lang= self.locale)
     //- INDUSTRY
     else if process.env['DOMAIN'] === 'industry.poff.ee'
         include ../_templates/head_industry.pug
-        body(onload='reloadImageOnError()')
+        // (onload='reloadImageOnError()')
+        body
             include ../_templates/header_industry.pug
             block content
             include ../_templates/footer.pug

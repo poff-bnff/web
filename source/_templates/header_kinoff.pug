@@ -1,7 +1,4 @@
 header
-    //- nav.lang-menu
-    //-     each p, locale in self.otherLocalePaths
-    //-         a(href=(p !== '/' ? p + '/' : '/'))= locale.toUpperCase()
     .logo
         //- Defining locale path for multilingual support
         - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
@@ -13,11 +10,6 @@ header
 
     nav.main_menu
         ul.ul_yx
-            //- li
-            //-     #hello(style='color: red')
-            //-     //- #out(style='color: red')
-            //-     #out(style={color: 'red', cursor: 'pointer'})
-
             li
                 nav.org_menu
                     span.org_item
@@ -108,19 +100,10 @@ header
                             else
                                 a(href= `/${lang_path}${mainMenuItem.customUrl}/`)= `${mainMenuItem.name}`
 
-
             li
                 nav.lang_menu
-                    //- | prefiks&nbsp;
-                    //- .clr_primary= self.label.film.languageSelect + 'rr'
                     each p, locale in self.otherLocalePaths
-                        //- span.clr_white_semi= self.label.film.languageSelect + ':  '
-                        //- if self.publish && (self[`publish_${locale}`] === false)
-                        //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
-                        //- a(href=(p !== '/' ? p + '/' : '/'))= locale
-
                         a(href=(p !== '/' ? p + '/' : '/'))= locale
-
 
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
