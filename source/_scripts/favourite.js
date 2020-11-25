@@ -19,7 +19,8 @@ function loadMyFavFilms() {
         // sealt tuleb välja korjata kõik mis tegeleb screeningu card'i kuvamise/mittekuvamisega
         // toggleSavedScreeningsButtons(userProfile.savedscreenings)
 
-        // See tuleb kustutada, mul ei õnnestunud localis ega ka devis sisselogides oma seansse kätte saada
+        // See tuleb pärast testimist kustutada, mul lihtsalt ei õnnestunud
+        // localis ega ka devis sisselogides oma seansse kätte saada
         userProfile.savedscreenings = [
             {screeningId: "1002", screeningTitle: "120403 / Head uued ilmad: ulme- ja fantaasiafilmid", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:15:00.000Z"},
             {screeningId: "1004", screeningTitle: "120502 / Inglite klubi", userId: "16bc8990-6ebf-459a-b6f8-9fe73653ad53", screeningTime: "2020-11-24T19:00:00.000Z"},
