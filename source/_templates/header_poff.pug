@@ -1,7 +1,4 @@
 header
-    //- nav.lang-menu
-    //-     each p, locale in self.otherLocalePaths
-    //-         a(href=(p !== '/' ? p + '/' : '/'))= locale.toUpperCase()
     .logo
         //- Defining locale path for multilingual support
         - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
@@ -11,59 +8,12 @@ header
 
     - var articleMenuItemDomain = 'poffi_article'
 
-    //- nav.user_menu.dropdown
-    //-             a= self.label.menu.mainUserMenu
-    //-                 ul.ul_kaks
-    //-                     li#logIn(style={cursor: 'pointer', display: 'none'})
-    //-                         a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
-    //-                     li#signUp(style={cursor: 'pointer', display: 'none'})
-    //-                         a(onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
-    //-                     li#logInName.dark_1(style={display: 'none'})
-    //-                         a#tervitus(onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
-    //-                     li#userProfile(style={cursor: 'pointer', display: 'none'})
-    //-                         a(onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
-    //-                     li#myFavouriteFilms(style={cursor: 'pointer'})
-    //-                         a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainShortlist
-    //-                     li#myPasses(style={cursor: 'pointer'} )
-    //-                         a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
-    //-                     li#Shop(style={cursor: 'pointer'} )
-    //-                         a(href=`/${lang_path}shop`)= self.label.menu.mainShop
-    //-                     li#logOut(style={cursor: 'pointer', display: 'none'} )
-    //-                         a(onclick='logOut()')= self.label.menu.mainLogout
-
     nav.main_menu
         ul.ul_yx
 
-            //- li.user_menu.dropdown
-            //-     a= self.label.menu.mainUserMenu
-            //-         ul.ul_kaks
-            //-             li#logIn(style={cursor: 'pointer', display: 'none'})
-            //-                 a(onclick = 'saveUrl()' href=`/${lang_path}login`)= self.label.menu.mainLogin
-            //-             li#signUp(style={cursor: 'pointer', display: 'none'})
-            //-                 a(onclick = 'saveUrl()' href=`/${lang_path}signup`)= self.label.menu.mainSignup
-            //-             li#logInName.dark_1(style={display: 'none'})
-            //-                 a#tervitus(onclick = 'loadUserProfileH()')= self.label.menu.mainGreeting
-            //-             li#userProfile(style={cursor: 'pointer', display: 'none'})
-            //-                 a(onclick = 'loadUserProfileH(), saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
-            //-             li#myFavouriteFilms(style={cursor: 'pointer'})
-            //-                 a(href=`/${lang_path}favourite` onclick = 'loadFavouriteFilms()')= self.label.menu.mainShortlist
-            //-             li#myPasses(style={cursor: 'pointer'} )
-            //-                 a(href=`/${lang_path}minupoff`)= self.label.menu.mainPass
-            //-             li#Shop(style={cursor: 'pointer'} )
-            //-                 a(href=`/${lang_path}shop`)= self.label.menu.mainShop
-            //-             li#logOut(style={cursor: 'pointer', display: 'none'} )
-            //-                 a(onclick='logOut()')= self.label.menu.mainLogout
-
             li
                 nav.lang_menu
-                    //- | prefiks&nbsp;
-                    //- .clr_primary= self.label.film.languageSelect + 'rr'
                     each p, locale in self.otherLocalePaths
-                        //- span.clr_white_semi= self.label.film.languageSelect + ':  '
-                        //- if self.publish && (self[`publish_${locale}`] === false)
-                        //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
-                        //- a(href=(p !== '/' ? p + '/' : '/'))= locale
-
                         a(href=(p !== '/' ? p + '/' : '/'))= locale
 
             li

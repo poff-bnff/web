@@ -2,8 +2,8 @@ extends /_templates/layout.pug
 include /_templates/mixins.pug
 
 
-
 block content
+    script(src='/assets/poffOmatic.js')
     script.
         document.addEventListener('userProfileLoaded', function (e) {
             //- console.log({userProfile})
@@ -21,9 +21,6 @@ block content
     - var assetsDir = 'https://assets.poff.ee/img/'
 
     main.grid_ind_event
-
-
-
         if self.title && self.title.length > 1
             //- KARUSELL piltidega
             //- section#carouselExampleIndicators.f_img_slider_box.carousel.slide(data-ride='carousel' data-interval='6000')
@@ -63,12 +60,8 @@ block content
 
                 .premiere_type
                     if self.industry_categories
-                        //- && self.project_type.type
                         p.premiere_type= self.industry_categories.map(cat => cat.name).join(', ')
-                //- .premiere_type
-                //-     if self.project_type
-                //-         //- && self.project_type.type
-                //-         p.premiere_type= self.project_type.type
+
                 h1.film_title_detailed= self.title
 
                 if self.startTime && typeof self.startTime === 'string'
@@ -110,28 +103,6 @@ block content
                 .elisa_stage
                     img.elisa_powered(src='https://assets.poff.ee/img/poff24_elisa_stage.svg')
 
-
-
-                //- if self.startTime && typeof self.startTime === 'string'
-                //-     p
-                //-         +screeningDate(self.startTime)
-                //-         //- +localdate(self.startTime)
-                //-     p
-                //-         +screeningTime(self.startTime)
-
-                //- if self.durationTime
-                //-     p
-                //-         +indEvDur(self.durationTime)
-
-                //- LOCATION
-                //- if self.location && self.location.hall && self.location.hall.name
-                //-     if self.location.hall && self.location.hall.name
-                //-         span.screening_hall= self.location.hall.name
-                //-         if self.location.hall.cinema && self.location.hall.cinema.name
-                //-             span.screening_venue= ` ${self.location.hall.cinema.name}`
-                //-             if self.location.hall.cinema.town && self.location.hall.cinema.town.name && self.location.hall.cinema.town.country && self.location.hall.cinema.town.country.name
-                //-                 span.city= ` ${self.location.hall.cinema.town.name}`
-
             section.f_synopsis_box
                 .str_info_meta_gi
                 .synopsis_gi
@@ -154,31 +125,6 @@ block content
                     p.dark_5
                         | Moderated questions and comments
 
-                    //- iframe(src='https://videolevels.com/embed/Pn3hnm2lVrU') style='position: absolute; top:0; left: 0; width: 100%; height: 100%;' frameborder='0' scrolling='no' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true' class='noTransform'
-
-
-                    //- if trailer.videoCode
-                    //-     +video(trailer.videoCode)
-
-
-
-            //- iga eventiga seotud projekti kohta sooviks lehele title_en, project_types, linki projekti lehele
-            //- main.grid_films
-
-            //-     if self.industry_projects
-            //-         each indProj in self.industry_projects
-            //-             if indProj.slug
-            //-                 a(href=`/${indProj.slug}`)
-            //-                     if indProj.title
-            //-                         h3.dark_1= indProj.title
-
-            //-                     if indProj.project_types
-            //-                         h3.dark_1= indProj.project_types.map(type => type.type).join(', ')
-
-
-    //- section.grid_chat
-    //-     +chat(self.title, false)
-    //-     +chat(self.title, true)
 
     section.f_interactive_box
         if self.industry_people

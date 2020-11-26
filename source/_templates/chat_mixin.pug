@@ -1,5 +1,4 @@
-
-mixin chat(room_name, is_moderated_room=false)
+mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
     -
         function slugify(text)
         {
@@ -10,24 +9,16 @@ mixin chat(room_name, is_moderated_room=false)
                 .replace(/^-+/, '')             // Trim - from start of text
                 .replace(/-+$/, '');            // Trim - from end of text
         }
-        var room_suffix = is_moderated_room ? '-moderated' : '-plain'
-        room_name = slugify(room_name)
+        var room_suffix = IS_MODERATED_ROOM ? 'moderated' : 'plain'
+        var room_name = slugify(ROOM_NAME)
+        var chat_name = room_name + '-' + room_suffix
 
-
-    div(id='chat-container-' + room_name + room_suffix class='chat-container moderated-' + is_moderated_room)
-        div(id='chat-message-template-' + room_name + room_suffix class='chat-message' style='display:none')
-        div(id='chat-main-' + room_name + room_suffix class='chat-main')
-            //- div(id='chat-sidebar-' + room_name + room_suffix  class='chat-sidebar')
-                //- h2(id='chat-room-name-'+ room_name + room_suffix)
-                //- ul(id='chat-user-list-'+ room_name + room_suffix)
-            div(id='chat-messages-'+ room_name + room_suffix class='chat-messages' class='dark_1')
-
-        div(id='chat-form-container-'+ room_name + room_suffix class='chat-form-container')
-            form(id='chat-form-' + room_name + room_suffix)
-                //- button.btn
-                //-     i.chat-message-button
-                //-     | Send
-
+    div(id='chat-container-' + chat_name class='chat-container chat-' + room_suffix)
+        div(id='chat-main-' + chat_name class='chat-main')
+            div(id='chat-messages-'+ chat_name class='chat-messages' class='dark_1')
+        //- if IS_MODERATED_ROOM
+        //-     div(id='chat-form-container-'+ chat_name class='chat-form-container')
+        //-     form(id='chat-form-' + room_name + room_suffix)
 
     style.
         .chat-container.moderated-false {
@@ -49,114 +40,90 @@ mixin chat(room_name, is_moderated_room=false)
 
     script.
         document.addEventListener('userProfileLoaded', function (e) {
-            chat_main(userProfile, '#{room_name}', #{is_moderated_room})
-        })
+            const IS_MODERATED_ROOM = #{IS_MODERATED_ROOM}
+            const ROOM_NAME = '#{room_name}'
+            const CHAT_NAME = '#{chat_name}'
+            const ROOM_TYPE = '#{room_suffix}'
+            const IS_PLAIN_ROOM = !IS_MODERATED_ROOM
 
-        function chat_main(userProfile, room_name, is_moderated_room) {
-            const CHAT_SERVER = 'https://chat.poff.ee'
-            const socket = io(CHAT_SERVER)
-            socket.on('ping', () => {
-                socket.emit('pong', {room_name: room_name})
-            })
+            const CHAT_FORM_ID = ['chat-form', CHAT_NAME].join('-')
+            const DOM_CHAT_MESSAGES = document.getElementById(['chat-messages', CHAT_NAME].join('-'))
+            const DOM_CHAT_CONTAINER = document.getElementById(['chat-container', CHAT_NAME].join('-'))
 
-            var i_am_moderator = false
+            //- console.log({RN: '#{ROOM_NAME}', ROOM_TYPE})
 
-            let room_suffix = '-plain'
-            const chatFormElement = document.getElementById('chat-form-' + room_name + room_suffix)
+            poff_o_matic.initSocket(userProfile.sub, ROOM_NAME)
 
-            if (is_moderated_room) {
-                room_suffix = '-moderated'
-            } else {
-                const chatMessageInputElement = document.createElement('input')
-                chatMessageInputElement.id = 'chat-message-input-' + room_name + room_suffix
-                chatMessageInputElement.classList.add('chat-message-input')
-                chatMessageInputElement.setAttribute('type', 'text')
-                chatMessageInputElement.setAttribute('placeholder', 'Enter message')
-                chatMessageInputElement.setAttribute('required', '')
-                chatMessageInputElement.setAttribute('autocomplete', 'off')
-                try {
-                    chatFormElement.appendChild(chatMessageInputElement)
-                } catch (E) {
-                    console.log({E, chatFormElement, room_suffix})
-                }
+            const message_input_id = ['chat-message-input', CHAT_NAME].join('-')
+            const chatMessageInputElement = document.createElement('input')
+            chatMessageInputElement.id = message_input_id
+            chatMessageInputElement.classList.add('chat-message-input')
+            chatMessageInputElement.setAttribute('type', 'text')
+            chatMessageInputElement.setAttribute('placeholder', 'Enter message')
+            chatMessageInputElement.setAttribute('required', '')
+            chatMessageInputElement.setAttribute('autocomplete', 'off')
+
+            // Thou shall only speak out through thy plain room
+            //- console.log({I: 'Thou shall only speak out through thy plain room', CHAT_NAME, IS_MODERATED_ROOM, IS_PLAIN_ROOM})
+            if (IS_PLAIN_ROOM) {
+                //- console.log({I: 'Thou shall speak with passion and love', CHAT_NAME})
+
+                const chatFormElement = document.createElement('form')
+                chatFormElement.id = CHAT_FORM_ID
+                chatFormElement.appendChild(chatMessageInputElement)
+
+                DOM_CHAT_CONTAINER.appendChild(chatFormElement)
             }
 
-            const chatMessagesElement = document.getElementById('chat-messages-' + room_name + room_suffix)
-            const userListElement = document.getElementById('chat-user-list-' + room_name + room_suffix)
-            const messageInputElement = document.getElementById('chat-message-input-' + room_name + room_suffix)
-            const messageTemplateElement = document.getElementById('chat-message-template-' + room_name + room_suffix)
+            poff_o_matic.send('joinRoom', { is_moderated: IS_MODERATED_ROOM })
+            let I_AM_MODERATOR = false
+            poff_o_matic.subscribe('ARE U MODERATOR', (message) => { I_AM_MODERATOR = message })
 
-
-            // Join chatroom
-            socket.emit('joinRoom', {
-                user_id: userProfile.sub,
-                user_name: userProfile.name,
-                room_name: room_name,
-                is_moderated: is_moderated_room,
-                userProfile: userProfile
-            })
-
-            socket.on('YOU ARE MODERATOR', () => {
-                i_am_moderator = true
-            })
-
-            socket.on('messageToClient', (message) => {
-                //- console.log({M: 'Got message', message, is_moderated_room})
-                if (is_moderated_room) {
-                    let moderatedMessageElement = document.getElementById('moderated-' + message.id)
-                    if (message.is_moderated) {
-                        if(moderatedMessageElement) {
-                            console.log('Allready displaying moderated message', message, 'in', room_name, moderatedMessageElement)
-                        } else {
-                            outputMessage(message)
-                        }
-                    }
-                } else {
-                    let plainMessageElement = document.getElementById('plain-' + message.id)
-                    if (plainMessageElement) {
-                        plainMessageElement.is_moderated = message.is_moderated
-                        plainMessageElement.style.is_moderated = message.is_moderated
-                    } else {
-                        outputMessage(message)
-                    }
+            poff_o_matic.subscribe('messageToClient', (message) => {
+                if (IS_MODERATED_ROOM && !message.is_moderated) {
+                    //- console.log({I: 'This chant is not for thee'})
+                    return
                 }
-                chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
+                //- console.log({I: 'praise the message', message})
+                const newMessageElement = DOMoutputMessage(message)
+                newMessageElement.is_moderated = message.is_moderated
+                newMessageElement.style.is_moderated = message.is_moderated
+                DOM_CHAT_MESSAGES.scrollTop = DOM_CHAT_MESSAGES.scrollHeight
             })
 
-            let latestMessage
-            if (!is_moderated_room) {
+            if (IS_PLAIN_ROOM) {
                 // Message submit
+                const chatFormElement = document.getElementById(CHAT_FORM_ID)
                 chatFormElement.addEventListener('submit', e => {
                     e.preventDefault()
 
                     // Get message text
-                    let latestMessage = messageInputElement.value.trim()
+                    let latestMessage = chatMessageInputElement.value.trim()
                     if (!latestMessage) {
                         return false
                     }
                     // Emit message to server
-                    console.log('Send message', latestMessage)
-                    socket.emit('messageToServer', {
-                        user_id: userProfile.sub,
-                        room_name: room_name,
-                        message: latestMessage
-                    })
+                    //- console.log('Send message', latestMessage)
+                    poff_o_matic.send('messageToServer', { message: latestMessage })
 
                     // Clear input
-                    messageInputElement.value = ''
-                    messageInputElement.focus()
+                    chatMessageInputElement.value = ''
+                    chatMessageInputElement.focus()
                 })
             }
 
 
             // Output message to DOM
-            function outputMessage(message) {
+            function DOMoutputMessage(message) {
+                const MESSAGE_ID = [ROOM_TYPE, message.id].join('-')
+                if(document.getElementById(MESSAGE_ID)) {
+                    //- console.log({I: 'Message allready in place', message, ROOM_NAME})
+                    return document.getElementById(MESSAGE_ID)
+                }
 
-                var messageElement = messageTemplateElement.cloneNode(true)
-                messageElement.id = (is_moderated_room ? 'moderated-' : 'plain-') + message.id
-                messageElement.style.is_moderated = message.is_moderated
-                messageElement.is_moderated = message.is_moderated
-                messageElement.style.display = 'block'
+                const newMessageElement = document.createElement('div')
+                newMessageElement.classList.add('poff-chat-message')
+                newMessageElement.id = MESSAGE_ID
 
                 const messageTimeElement = document.createElement('span')
                 messageTimeElement.innerText = message.time
@@ -175,38 +142,31 @@ mixin chat(room_name, is_moderated_room=false)
                 messageMetaElement.appendChild(messageAuthorElement)
                 messageMetaElement.appendChild(messageTextElement)
 
-                chatMessagesElement.appendChild(messageElement)
-                messageElement.appendChild(messageMetaElement)
+                newMessageElement.appendChild(messageMetaElement)
 
-                if(!message.is_moderated && !is_moderated_room && i_am_moderator) {
+                DOM_CHAT_MESSAGES.appendChild(newMessageElement)
+
+                if(IS_PLAIN_ROOM && !message.is_moderated && I_AM_MODERATOR) {
                     const moderateButtonElement = document.createElement('button')
-                    //- moderateButtonElement.classList.add('poff-chat-button', 'poff-chat-button-moderate')
                     moderateButtonElement.classList.add('poff-chat-button1', 'btn', 'btn_moderate')
                     moderateButtonElement.innerText = 'M'
-                    moderateButtonElement.onclick = function() {moderateMessage(message.id); this.remove()}
+                    moderateButtonElement.onclick = function() {
+                        poff_o_matic.send('moderate message', { message_id: message.id })
+                        this.remove()
+                    }
                     messageMetaElement.appendChild(moderateButtonElement)
                 }
-            }
-
-            function moderateMessage(id){
-                console.log('moderate message', id)
-                socket.emit('moderate', id)
+                return newMessageElement
             }
 
             //REJOIN
-            socket.on('Rejoin, please', () => {
-                socket.emit('joinRoom', {
-                    user_id: userProfile.sub,
-                    user_name: userProfile.name,
-                    room_name: room_name,
-                    is_moderated: is_moderated,
-                    userProfile: userProfile
-                })
+            poff_o_matic.subscribe('Rejoin, please', () => {
+                poff_o_matic.send('joinRoom', { is_moderated: IS_MODERATED_ROOM })
 
                 socket.emit('messageToServer', {
                     user_id: userProfile.sub,
-                    room_name: room_name,
+                    ROOM_NAME: ROOM_NAME,
                     message: latestMessage
                 })
             })
-        }
+        })
