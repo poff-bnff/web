@@ -57,19 +57,19 @@ mixin screeningTimeEET(dateStringUTC)
         (function()
         {
 
-            moment.updateLocale('en', {
-                longDateFormat : {
-                    LT: "hh:mm A",
-                    L: "MM/DD/YYYY",
-                    l: "M/D/YYYY",
-                    LL: "MMMM Do YYYY",
-                    ll: "MMM D YYYY",
-                    LLL: "MMMM Do YYYY LT",
-                    lll: "MMM D YYYY LT",
-                    LLLL: "dddd, MMMM Do YYYY LT",
-                    llll: "ddd, MMM D YYYY LT"
-                }
-            });
+            //- moment.updateLocale('en', {
+            //-     longDateFormat : {
+            //-         LT: "hh:mm A",
+            //-         L: "MM/DD/YYYY",
+            //-         l: "M/D/YYYY",
+            //-         LL: "MMMM Do YYYY",
+            //-         ll: "MMM D YYYY",
+            //-         LLL: "MMMM Do YYYY LT",
+            //-         lll: "MMM D YYYY LT",
+            //-         LLLL: "dddd, MMMM Do YYYY LT",
+            //-         llll: "ddd, MMM D YYYY LT"
+            //-     }
+            //- });
 
             moment.updateLocale('et', {
                 longDateFormat: {
@@ -82,7 +82,8 @@ mixin screeningTimeEET(dateStringUTC)
                 }
             });
 
-            moment.locale('#{self.locale}');
+            //- moment.locale('#{self.locale}');
+            moment.locale('et');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
             var time_EET = moment.parseZone('#{dateStringUTC}').tz('Europe/Tallinn').format('LT');
             eDisplayMoment1.innerHTML = time_EET;
@@ -138,7 +139,7 @@ mixin localdatetime(dateString)
         {
             moment.locale('#{self.locale}');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}');
-            var NowMoment1 = moment('#{dateString}').format('L LT');
+            var NowMoment1 = moment('#{dateString}').format('L HH:mm');
             var weekDay= moment('#{dateString}').format('ddd');
             eDisplayMoment1.innerHTML = weekDay + ' ' +  NowMoment1;
 
@@ -186,19 +187,19 @@ mixin screeningTime(dateString)
         (function()
         {
             //- todo: #506 Deprecation warning: moment.lang is deprecated. Use moment.locale instead.
-            moment.updateLocale('en', {
-                longDateFormat : {
-                    LT: "hh:mm A",
-                    L: "MM/DD/YYYY",
-                    l: "M/D/YYYY",
-                    LL: "MMMM Do YYYY",
-                    ll: "MMM D YYYY",
-                    LLL: "MMMM Do YYYY LT",
-                    lll: "MMM D YYYY LT",
-                    LLLL: "dddd, MMMM Do YYYY LT",
-                    llll: "ddd, MMM D YYYY LT"
-                }
-            });
+            //- moment.updateLocale('en', {
+            //-     longDateFormat : {
+            //-         LT: "hh:mm A",
+            //-         L: "MM/DD/YYYY",
+            //-         l: "M/D/YYYY",
+            //-         LL: "MMMM Do YYYY",
+            //-         ll: "MMM D YYYY",
+            //-         LLL: "MMMM Do YYYY LT",
+            //-         lll: "MMM D YYYY LT",
+            //-         LLLL: "dddd, MMMM Do YYYY LT",
+            //-         llll: "ddd, MMM D YYYY LT"
+            //-     }
+            //- });
 
             moment.updateLocale('et', {
                 longDateFormat: {
@@ -212,7 +213,8 @@ mixin screeningTime(dateString)
             });
 
 
-            moment.locale('#{self.locale}');
+            //- moment.locale('#{self.locale}');
+            moment.locale('et');
             var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
             var NowMoment1 = moment('#{dateString}').format('LT');
             eDisplayMoment1.innerHTML = NowMoment1;
@@ -266,7 +268,6 @@ mixin indEvDur(strapiTime='')
                 var min = time[1] !== '00' ? time[1] : 0
                 //- console.log(strapiTime, ' - ', hour, 'h', min, 'min')
                 var timeToShow = `${hour !== '0' ? hour + 'h' : ''}${hour !== '0' ? ' ' + min + 'm' : min + 'm'}`
-                console.log(timeToShow)
                 //- return timeToShow
                 var eDisplayMoment1 = document.getElementById('dt_' + '#{dom_id}').parentElement;
                 eDisplayMoment1.innerHTML = timeToShow;

@@ -1,5 +1,5 @@
 function loadMyFavFilms() {
-    console.log("FAVO: oled sisse loginud")
+    // console.log("FAVO: oled sisse loginud")
     try {
         document.getElementById('loggedOutFavouriteStatus').style.display = 'none'
     } catch (error) {
@@ -15,7 +15,11 @@ function loadMyFavFilms() {
     } catch (error) {
         null
     } try{
-    toggleSavedScreeningsButtons(userProfile.savedscreenings)
+        toggleSavedScreeningsButtons(userProfile.savedscreenings)
+
+        // Käivitab kaartide kuvamise kontrolli vastavalt filtritele ja lemmikute olemasolul ka vastavalt nendele
+        toggleAll()
+
     } catch (error) {
         null
     }
@@ -79,13 +83,17 @@ function toggleSavedScreeningsButtons(savedScreenings) {
         var screening_id = isSavedScreening_buttons[i].id.split('_')[0]
         if (savedScreeningIds.includes(screening_id)) {
             isSavedScreening_buttons[i].style.display = 'block'
-            try{
-            document.getElementById(screening_id + '_screening_id').style.display = 'block'
-            }
-            catch(err){null}
+            // try{
+            // document.getElementById(screening_id + '_screening_id').style.display = 'block'
+            // }
+            // catch(err){null}
         }
         else {
-            isSavedScreening_buttons[i].style.display = 'none'
+            try {
+                isSavedScreening_buttons[i].style.display = 'none'
+            } catch (error) {
+                null
+            }
         }
     }
 
@@ -102,32 +110,33 @@ function toggleSavedScreeningsButtons(savedScreenings) {
         }
     }
 
+
 }
 
 
 function toggleMyCalButtons (myCalEvents){
-    console.log(myCalEvents)
+    // console.log(myCalEvents)
 
     var isMyEventBtns = document.getElementsByClassName('remove_from_calendar_button')
-    
+
 
     for (i=0; i<isMyEventBtns.length; i++){
         var eventId = isMyEventBtns[i].id.split('_')[0]
-     
+
         if (myCalEvents.includes(eventId)){
-            console.log(2)
+            // console.log(2)
             document.getElementById(eventId + '_inMyCalendar').style.display = ''
             try {
             document.getElementById(eventId).style.display = ''
             }
             catch(err){null}
-        } 
+        }
         else {
             try{
             document.getElementById(eventId + '_notInMyCalendar').style.display = ''
             }
             catch(err){null}
-        } 
+        }
     }
 }
 
@@ -225,13 +234,13 @@ function calendarfile(id) {
     element.click();
 
     document.body.removeChild(element);
-} 
+}
 
 function addToMyCal(eventId) {
     calendarfile(eventId)
-    console.log('eventId ', eventId)
+    // console.log('eventId ', eventId)
 
-   
+
 
 
         // var myHeaders = new Headers();
@@ -247,7 +256,7 @@ function addToMyCal(eventId) {
 
         };
 
-        console.log(requestOptions)
+        // console.log(requestOptions)
 
         fetch('https://api.poff.ee/favourite/' + 'event_' + eventId, requestOptions).then(function (response) {
             if (response.ok) {
@@ -335,7 +344,7 @@ function removeScreening(screeningId) {
                 null
             }
             try {
-                document.getElementById(screeningId + '_screening_id').style.display = 'none'
+                document.getElementById(screeningId).style.display = 'none'
             }
             catch (err) {
                 null
@@ -348,7 +357,7 @@ function removeScreening(screeningId) {
 
 
 function removeEvent(eventId) {
-    console.log('removeEvent eventId ', eventId)
+    // console.log('removeEvent eventId ', eventId)
 
     var myHeaders = new Headers();
 
@@ -367,12 +376,12 @@ function removeEvent(eventId) {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
         if (data.ok) {
             try {
-                console.log(2)
-                console.log(eventId)
-                console.log(document.getElementById(eventId + '_notInMyCalendar'))
+                // console.log(2)
+                // console.log(eventId)
+                // console.log(document.getElementById(eventId + '_notInMyCalendar'))
                 document.getElementById(eventId + '_notInMyCalendar').style.display = ''
                 document.getElementById(eventId + '_inMyCalendar').style.display = 'none'
             }
