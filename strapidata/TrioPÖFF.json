@@ -1,80 +1,173 @@
 [
   {
     "id": 1,
+    "created_by": {
+      "id": 6,
+      "firstname": "Jaan",
+      "lastname": "Leppik",
+      "username": null
+    },
+    "updated_by": {
+      "id": 23,
+      "firstname": "Anna",
+      "lastname": "Lillioja",
+      "username": null
+    },
+    "created_at": "2020-09-24T06:24:58.668Z",
+    "updated_at": "2020-11-25T11:19:42.628Z",
     "trioPoff_et": {
       "id": 1,
       "name": "TRIO",
       "lead": "PÖFFI KAVA",
       "trioItem_1": {
         "id": 1,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
+        "poffi_article": null,
         "title": "FILMID",
+        "lead": "",
         "customUrl": "https://poff.ee/otsi_filmi/",
         "image": {
           "id": 3585,
           "name": "F_1_undergods_76409981af.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 1920,
           "height": 1080,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_F_1_undergods_76409981af_fefa74d0a8.jpg",
-              "name": "thumbnail_F_1_undergods_76409981af.jpg"
+              "hash": "thumbnail_F_1_undergods_76409981af_fefa74d0a8",
+              "mime": "image/jpeg",
+              "name": "thumbnail_F_1_undergods_76409981af.jpg",
+              "path": null,
+              "size": 7.5,
+              "width": 245,
+              "height": 138
             }
           },
           "hash": "F_1_undergods_76409981af_fefa74d0a8",
           "ext": ".jpg",
-          "url": "/uploads/F_1_undergods_76409981af_fefa74d0a8.jpg"
+          "mime": "image/jpeg",
+          "size": 259.87,
+          "url": "/uploads/F_1_undergods_76409981af_fefa74d0a8.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 9,
+          "updated_by": 9,
+          "created_at": "2020-11-20T18:14:05.610Z",
+          "updated_at": "2020-11-20T18:14:06.536Z"
         }
       },
       "trioItem_2": {
         "id": 2,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
+        "poffi_article": null,
         "title": "GALERII",
+        "lead": "",
         "customUrl": "https://www.flickr.com/photos/poffihunt/albums",
         "image": {
           "id": 3604,
           "name": "50604316516_18ff15fac9_k-2.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 2047,
           "height": 1365,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_50604316516_18ff15fac9_k_2_15166f0d6a.jpg",
-              "name": "thumbnail_50604316516_18ff15fac9_k-2.jpg"
+              "hash": "thumbnail_50604316516_18ff15fac9_k_2_15166f0d6a",
+              "mime": "image/jpeg",
+              "name": "thumbnail_50604316516_18ff15fac9_k-2.jpg",
+              "path": null,
+              "size": 10.82,
+              "width": 234,
+              "height": 156
             }
           },
           "hash": "50604316516_18ff15fac9_k_2_15166f0d6a",
           "ext": ".jpg",
-          "url": "/uploads/50604316516_18ff15fac9_k_2_15166f0d6a.jpg"
+          "mime": "image/jpeg",
+          "size": 954.25,
+          "url": "/uploads/50604316516_18ff15fac9_k_2_15166f0d6a.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 9,
+          "updated_by": 9,
+          "created_at": "2020-11-21T10:09:46.650Z",
+          "updated_at": "2020-11-21T10:09:47.135Z"
         }
       },
       "trioItem_3": {
         "id": 3,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
+        "poffi_article": null,
         "title": "VEEBIKINO",
+        "lead": "",
         "customUrl": "https://kino.poff.ee",
         "image": {
           "id": 3606,
           "name": "F_4_wishlist_f36e30190c.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 1920,
           "height": 1080,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_F_4_wishlist_f36e30190c_d75aa275e7.jpg",
-              "name": "thumbnail_F_4_wishlist_f36e30190c.jpg"
+              "hash": "thumbnail_F_4_wishlist_f36e30190c_d75aa275e7",
+              "mime": "image/jpeg",
+              "name": "thumbnail_F_4_wishlist_f36e30190c.jpg",
+              "path": null,
+              "size": 7.25,
+              "width": 245,
+              "height": 138
             }
           },
           "hash": "F_4_wishlist_f36e30190c_d75aa275e7",
           "ext": ".jpg",
-          "url": "/uploads/F_4_wishlist_f36e30190c_d75aa275e7.jpg"
+          "mime": "image/jpeg",
+          "size": 293.95,
+          "url": "/uploads/F_4_wishlist_f36e30190c_d75aa275e7.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 9,
+          "updated_by": 9,
+          "created_at": "2020-11-21T10:17:06.061Z",
+          "updated_at": "2020-11-21T10:17:06.643Z"
         }
       }
     },
     "trioPoff_en": {
       "id": 2,
       "name": "PÖFF today",
+      "lead": null,
       "trioItem_1": {
         "id": 4,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
         "poffi_article": {
           "id": 42,
           "created_by": 6,
+          "updated_by": 23,
           "created_at": "2020-09-19T18:50:26.498Z",
+          "updated_at": "2020-11-12T10:53:07.693Z",
           "title_et": "PÖFF laieneb üle terve Eesti",
           "slug_et": "p-oe-ff-laieneb-uele-terve-eesti",
           "title_en": "The 24th PÖFF is hybrid",
@@ -88,109 +181,220 @@
           "contents_en": "The 24th edition of Black Nights Film Festival is hybrid; ensuring the most safety for our local and foreign guests. You will find an overlook of all the measures and virtual possibilities at this year's festival below.\n\n**Accredited press and industry**\nSince foreign travel to Estonia is restricted, accredited foreign press and industry delegates will be granted access to the festival’s programme digitally via the Shift72 platform, no matter their geographic location. The industry strand, Industry@Tallinn & Baltic Event [has moved fully online this year](https://poff.ee/en/news/industry-tallinn-and-baltic-event-happens-fully-online-this-year-1/), using the Elisa Stage platform. \n\n**Foreign travel**\nTravel of foreign filmmakers and the press is subject to strict health and safety regulations and the [cooperation with three medical companies](https://poff.ee/en/news/safety-first-p-oe-ff-collaborates-with-three-medical-companies/). Read about safety for foreign guests [here](https://poff.ee/en/about/safety-for-foreign-guests/).\n\n**Physical screenings**\nThe [physical screenings](https://poff.ee/en/search_screening/), however, have not been cancelled. Extra safety measures do apply and wearing masks to all events is obligatory. As the festival has always hosted several hundred filmmakers to present their films every year, some might be forced to do so virtually this year. For this reason, the festival is preparing virtual video greeting and Q&A formats that would precede the film screenings. The number of films to be screened is lower than in previous editions.\n\n**Virtual screenings**\nFor the first time in the festival’s history viewers based in Estonia can now watch films from your home, at the time that suits best suits you. Read more on how to [watch the best of PÖFF at home](https://poff.ee/en/news/how-do-i-watch-the-best-of-p-oe-ff-at-home/)\n\n[APPLY FOR THE INDUSTRY ACCREDITATION! ](https://industry.poff.ee/accreditation-2-2/)\n[APPLY FOR THE PRESS ACCREDITATION!](https://vp.eventival.com/poff/24th)",
           "contents_ru": "Кинозалы откроют свои двери по-прежнему в Таллинне и Тарту, а также в Ида-Вирумаа в рамках KinoFF – фестиваля-спутника PÖFF. Онлайн-показы будут доступны зрителям на одной из самых безопасных платформ Shift72, которую используют и кинофестивали в Каннах, Копенгагене и Мельбурне.\n\n«Мы делаем всё, что в наших силах, чтобы фильмы были показаны, как и положено, на большим экранах, и к нам приехало как можно больше создателей кино, однако последнее слово останется за коронавирусом и департаментом здоровья. Мы будем выполнять все предписания в точности», – сказала директор PÖFF Тийна Локк.\n\nФестиваль будет соблюдать все меры предосторожности, в том числе выдаст всем посетителям бесплатные маски.\n\nФестиваль опубликует первые фильмы во второй половине сентября. Билеты на фильмы из конкурсной программы дебютных фильмов поступят в предварительную продажу 16 октября, а из основной конкурсной программы – 23 октября. Продажа на все фильмы фестиваля откроется 6 ноября.\n\nТаллиннский кинофестиваль «Тёмные ночи» пройдет в 24-й раз. Главные спонсоры фестиваля – Elisa, Nordic Hotel Forum ja Toyota.",
           "publishFrom": "2020-09-09T07:30:00.000Z",
+          "publishUntil": null,
           "publish_et": true,
           "publish_en": true,
           "publish_ru": true
         },
         "title": "The 24th PÖFF is hybrid ",
+        "lead": "",
+        "customUrl": null,
         "image": {
           "id": 1159,
           "name": "kolmik_blue.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 600,
           "height": 250,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_kolmik_blue_c0eed2afb9.jpg",
-              "name": "thumbnail_kolmik_blue.jpg"
+              "hash": "thumbnail_kolmik_blue_c0eed2afb9",
+              "mime": "image/jpeg",
+              "name": "thumbnail_kolmik_blue.jpg",
+              "path": null,
+              "size": 5.14,
+              "width": 245,
+              "height": 102
             }
           },
           "hash": "kolmik_blue_c0eed2afb9",
           "ext": ".jpg",
-          "url": "/uploads/kolmik_blue_c0eed2afb9.jpg"
+          "mime": "image/jpeg",
+          "size": 50.2,
+          "url": "/uploads/kolmik_blue_c0eed2afb9.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 6,
+          "updated_by": 6,
+          "created_at": "2020-10-18T19:02:44.488Z",
+          "updated_at": "2020-10-18T19:02:44.670Z"
         }
       },
       "trioItem_2": {
         "id": 5,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
         "poffi_article": {
           "id": 235,
           "created_by": 23,
+          "updated_by": 23,
           "created_at": "2020-11-25T10:20:58.315Z",
+          "updated_at": "2020-11-26T11:54:49.813Z",
+          "title_et": null,
           "slug_et": "pof-fi-article-41",
           "title_en": "Award Ceremony",
           "slug_en": "award-ceremony-1",
+          "title_ru": null,
           "slug_ru": "pof-fi-article-161",
+          "lead_et": null,
+          "lead_ru": null,
           "lead_en": "On the 27th of November, the 24th edition of Tallinn Black Nights Film Festival will have its festive finale during the award ceremony. Join us for the LIVE-stream and share in the excitement, as we enjoy several performances and announce this year's winning movies! ",
+          "contents_et": null,
           "contents_en": "**The Award Ceremony** will be **live** on **Friday the 27th at 19:00** [HERE](https://poff.elisastage.ee/landing/bc/mZ1D2CpUpk/ZMZxe84enMW)\n\nOn Friday, November 27th, the glorious Vene Teater will be the stage for PÖFF’s award ceremony. The ceremony will start at 19:00 and will host local as well as foreign guests from the film industry. The grand evening will be led by actor **Mait Malmsten**.\n\nThe special musical project **The Motown Sound** by **Robert Linna** and **Rita Ray** will get you wiggling in your chair, and warm you up for the rain of awards - getting the spirits really through the beautiful, chandeliered ceiling of the theatre.\n\nWith help of the festival’s honorable jury, we will count all the tears that have been shed into our face masks, the decibels of laughter that have filled the cinemas and homes, and the kilometers of broadened horizons.\nGet to know all competitions of PÖFF [here](https://poff.ee/en/programmes/) and meet the [juries](https://poff.ee/en/poff_jurys/).\n\nRead more about the Award Ceremony, and regulations when attending [here](https://poff.ee/en/about/award-ceremony/)",
-          "publish_en": true
+          "contents_ru": null,
+          "publishFrom": null,
+          "publishUntil": null,
+          "publish_et": null,
+          "publish_en": true,
+          "publish_ru": null
         },
         "title": "Award Ceremony Live",
         "lead": "Join us on Friday the 27th for the Award Ceremony of the 24th edition of Tallinn Black Nights Film Festival. Live from the magnificent Vene Theatre! ",
+        "customUrl": null,
         "image": {
           "id": 1161,
           "name": "kolmik_orange.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 600,
           "height": 250,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_kolmik_orange_8033ea3f72.jpg",
-              "name": "thumbnail_kolmik_orange.jpg"
+              "hash": "thumbnail_kolmik_orange_8033ea3f72",
+              "mime": "image/jpeg",
+              "name": "thumbnail_kolmik_orange.jpg",
+              "path": null,
+              "size": 6.64,
+              "width": 245,
+              "height": 102
             }
           },
           "hash": "kolmik_orange_8033ea3f72",
           "ext": ".jpg",
-          "url": "/uploads/kolmik_orange_8033ea3f72.jpg"
+          "mime": "image/jpeg",
+          "size": 61.41,
+          "url": "/uploads/kolmik_orange_8033ea3f72.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 6,
+          "updated_by": 6,
+          "created_at": "2020-10-18T19:02:44.569Z",
+          "updated_at": "2020-10-18T19:02:44.735Z"
         }
       },
       "trioItem_3": {
         "id": 10,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
+        "poffi_article": null,
         "title": "Gallery",
+        "lead": null,
         "customUrl": "https://www.flickr.com/photos/poffihunt/albums",
         "image": {
           "id": 1549,
           "name": "placeholder_hd_1.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 1920,
           "height": 1080,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_placeholder_hd_1_b5e26a6509.jpg",
-              "name": "thumbnail_placeholder_hd_1.jpg"
+              "hash": "thumbnail_placeholder_hd_1_b5e26a6509",
+              "mime": "image/jpeg",
+              "name": "thumbnail_placeholder_hd_1.jpg",
+              "path": null,
+              "size": 5.25,
+              "width": 245,
+              "height": 138
             }
           },
           "hash": "placeholder_hd_1_b5e26a6509",
           "ext": ".jpg",
-          "url": "/uploads/placeholder_hd_1_b5e26a6509.jpg"
+          "mime": "image/jpeg",
+          "size": 144.11,
+          "url": "/uploads/placeholder_hd_1_b5e26a6509.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 9,
+          "updated_by": 9,
+          "created_at": "2020-10-25T20:13:24.221Z",
+          "updated_at": "2020-10-25T20:13:24.272Z"
         }
       }
     },
     "trioPoff_ru": {
       "id": 3,
       "name": "PÖFF today",
+      "lead": null,
       "trioItem_1": {
         "id": 7,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
+        "poffi_article": null,
         "title": "Фильмы",
+        "lead": "",
         "customUrl": "ru/iskat_film/",
         "image": {
           "id": 1159,
           "name": "kolmik_blue.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 600,
           "height": 250,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_kolmik_blue_c0eed2afb9.jpg",
-              "name": "thumbnail_kolmik_blue.jpg"
+              "hash": "thumbnail_kolmik_blue_c0eed2afb9",
+              "mime": "image/jpeg",
+              "name": "thumbnail_kolmik_blue.jpg",
+              "path": null,
+              "size": 5.14,
+              "width": 245,
+              "height": 102
             }
           },
           "hash": "kolmik_blue_c0eed2afb9",
           "ext": ".jpg",
-          "url": "/uploads/kolmik_blue_c0eed2afb9.jpg"
+          "mime": "image/jpeg",
+          "size": 50.2,
+          "url": "/uploads/kolmik_blue_c0eed2afb9.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 6,
+          "updated_by": 6,
+          "created_at": "2020-10-18T19:02:44.488Z",
+          "updated_at": "2020-10-18T19:02:44.670Z"
         }
       },
       "trioItem_2": {
         "id": 8,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
         "poffi_article": {
           "id": 15,
           "created_by": 9,
+          "updated_by": 6,
           "created_at": "2020-09-13T18:20:06.791Z",
+          "updated_at": "2020-09-19T22:13:01.425Z",
           "title_et": "PÖFFi filmitööstusüritus toimub tänavu virtuaalselt",
           "slug_et": "p-oe-f-fi-filmitoeoestusueritus-toimub-taenavu-virtuaalselt-1",
           "title_en": "Industry@Tallinn & Baltic Event happens fully online this year",
@@ -204,45 +408,90 @@
           "contents_en": "Industry@Tallinn & Baltic Event, the industry strand of the Tallinn Black Nights Film Festival has decided to move online completely due to likely travel restrictions caused by the resurgence of COVID-19.\n\nThe preparations for the 24th edition of the Tallinn Black Nights Film Festival include the readiness to provide global industry and press access for the films and events, while preparations for holding a physical event are still underway.\n \nFollowing the first signs of the possible resurgence of COVID-19 in the country, the organisers of the festival and its affiliated industry event have followed the predictions of the Health Board of Estonia and made the decision to move the industry programs online, while continuing to accept project submissions. The global film industry representatives will still be able to apply for access to all events, project pitches and films regardless of their geographical location.\n\nMarge Liiske, Head of Industry@Tallinn & Baltic Event commented: „Following the discussions with Estonia’s health officials, it seems more than likely that there will be another outbreak in one form or another and that foreign travel will either be blocked or with restrictions. This would not enable for our guests to attend the events properly and thus, with a heavy heart, we have decided from early on to not to take any risks and move all our activities online this year.”\n\n“Having said that, I believe that moving online also presents us with some new opportunities and also for the audience – we hope that even more film industry professionals than before are able to benefit from our program, as they do not have to travel to Tallinn to attend the events and they can access the content from anywhere at their best convenience. Also, while preparing the programme we can play around with different engaging digital formats and involve speakers, who would not be able to visit us in Tallinn,” Liiske added.\n\nThe team is currently busy working on the programme and the first speakers will be announced in September. The programme will include seminars, workshops, masterclasses, panel discussions, as usual, covering the most burning topics of film and TV market as well as PÖFF Academy events directed towards actors, scouting agents, film music composers, costume designers and set photographers. \n\nCurrently, submissions are open for Baltic Event Co-production Market (projects seeking co-producers, financiers and sales agents), Script Pool Tallinn (film and series scripts worldwide competition) and POWR Baltic Stories Exchange (Nordic and Baltic scriptwriters seeking producers). The deadline for submitting the projects is September, 21 and the evaluation of the projects is carried out online. Everyone who has submitted the project has access to Industry @Tallinn & Baltic event online-program including workshops, masterclasses, panel discussions, meetings with industry professionals, etc. \n \nThe programme will be announced in various stages throughout September and October.\n\nBlack Nights Film Festival is making preparations for several scenarios.\n \nSince the first COVID-19-related lockdown in spring, Black Nights has been preparing for several possible scenarios, getting ready to take place physically while also upgrading the digital infrastructure that would enable to organise a hybrid or even a completely digital event. It looks likely that foreign travel to Estonia will be restricted, thus accredited foreign press and industry delegates will be granted access to the festival’s programme digitally via the Shift72 platform, no matter their geographic location. Travel of foreign filmmakers and the press will be decided upon according to the situation in October and November, depending on whether Estonia’s COVID restrictions allow movement from the country of their current residency or not.\n\nThe physical screenings, however, have not been cancelled, as the Health Board of Estonia currently remains optimistic that the complete lockdown of cinemas can be avoided this time around. As the festival has always hosted several hundred filmmakers to present their films every year, some might be forced to do so virtually this year. For this reason, the festival is preparing virtual video greeting and Q&A formats that would precede the film screenings. There is also a high probability that the festival will cut back on the size of its programme this year.\n\nTiina Lokk, the director and head of the programme of Black Nights commented: “Our off-season side events, the Haapsalu Horror Film Festival we organised completely online during the lockdown this spring, and the Tartu Love Film Festival which is currently taking place as a hybrid event, have provided us with the valuable experience of organising virtual screenings and Q&As and combining them with a physical event. We are doing everything in our power to hold physical screenings and bring over as many foreign guests as possible, but the virus and Estonia’s Health Board will have the final say in these matters.” \n\nThe festival’s plans for digital development goes further than this though, including plans to build, over the course of the next couple of years, a unique online environment that caters the festival’s needs in terms of organising public and closed screenings, conferences and an extensive online industry platform that includes a market place, virtual meeting and pitching rooms and a year-around project market to connect projects at all stages of their cycle with respective parties of interest – financiers, producers, distributors etc.\n \nAnother important aspect will be the year-around promotion of Estonia as a location for production and recruiting talent, including the introduction of locations of interest, a database of the country’s professionals, exhibiting the services they provide and the content they have produced. Estonia’s first two regional film funds – the Viru Film Fund and the Tartu Film Fund – will be in charge of keeping the locations and talent pools up to date.\n \nThe third fundamental element of the new platform is education, that will see the launch of PÖFF Academy aiming to provide high-quality audiovisual education with partners at the Estonian Film Institute, the Baltic Film, Media, Art and Communication School and the Pallas University of Applied Sciences. This will be based on the structure that has been laid out by the Creative Gate project, organised by the Industry@Tallinn & Baltic Event team, that has been holding events directed towards actors, scouting agents, film music composers, costume designers and set photographers over the last three years, and which added the European Film Academy Masterclasses into the mix last year.\n \nFestival director Tiina Lokk commented:  „Some of the changes that are being prepared will actually rewire the festival’s DNA, making it more digital, networked, ubiquitous and inclusive than ever before! But first and foremost, we are hoping to make the physical festival still happen this year!” she added.\n\nThe 24th Tallinn Black Nights Film Festival will run from the 13th until the 29th of November.\nIndustry@Tallinn & Baltic Event will run from the 23rd until the 27th of November.",
           "contents_ru": "После появления первых признаков возможной второй волны COVID-19 в стране организаторы учли прогнозы Департамента здоровья Эстонии и приняли решение перевести программу кинорынка в онлайн-режим, продолжив принимать проектные заявки. Представители мировой киноиндустрии по-прежнему смогут подавать заявки на получение доступа ко всем мероприятиям, презентациям проектов и фильмам независимо от их географического положения.\n\n«По итогам консультаций с представителями здравоохранения Эстонии представляется более чем вероятным, что в той или иной форме произойдет еще одна вспышка заболеваемости и что будет наложен запрет на зарубежные поездки либо введены ограничения. Это не позволило бы нашим гостям должным образом посещать мероприятия, и поэтому с тяжелым сердцем мы заблаговременно решили не рисковать и перенести в этом году все наши мероприятия в виртуальную среду», - прокомментировала директор Industry@Tallinn & Baltic Event Марге Лийске.\n\n«Я считаю, что переезд в Интернет также создаст для нас и для аудитории некоторые новые возможности: мы надеемся, что из нашей программы смогут извлечь пользу даже больше профессионалов киноиндустрии, чем раньше, поскольку им не нужно будет ехать в Таллинн и они смогут получить доступ к контенту из любой удобной для них географической точки. Кроме того, при подготовке программы мы можем поиграть с различными привлекательными цифровыми форматами и привлечь докладчиков, которые не смогли бы посетить нас в Таллинне», - добавила Лийске.\n\nВ настоящее время команда работает над программой, и первые докладчики будут объявлены в сентябре. Программа включит в себя, как обычно, семинары, мастерские, мастер-классы, панельные дискуссии, которые покроют все самые животрепещущие темы, а также пройдут мероприятия Академии PÖFF, ориентированные на актеров, агентов, кинокомпозиторов, художников по костюмам и фотографов-декораторов. \n\nВ настоящее время открыт прием заявок на участие в Baltic Event Co-production Market (проекты для сопродюсеров, инвесторов и торговых агентов), Script Pool Tallinn (всемирный конкурс сценариев фильмов и сериалов) и POWR Baltic Stories Exchange (для сценаристов из стран Северной Европы и Балтии, ищущих продюсеров). Срок подачи проектов – 21 сентября, и их оценивание проводится онлайн. Каждый участник, приславший проект, будет иметь доступ к онлайн-программе мероприятий Industry@Tallinn & Baltic Event, включающей семинары, мастер-классы, панельные дискуссии, встречи с профессионалами киноиндустрии и т. д. \n\nВ этом году впервые будет организована Академия PÖFF, целью которой является предоставление высококачественного аудиовизуального образования.\n\nIndustry@Tallinn & Baltic Event пройдет с 23 по 27 ноября 2020, и его программа будет объявлена поэтапно в течение сентября и октября.\n\nТаллиннский кинофестиваль «Тёмные ночи» пройдет в этом году с 13 по 29 ноября. Из-за распространения коронавируса организаторы готовятся к нескольким возможным сценариям, включая традиционную организацию на месте и готовность в случае необходимости провести мероприятия самого фестиваля частично или полностью онлайн.\n\nАккредитованные иностранные представители прессы и профессионалы киноиндустрии получат доступ к программе фестиваля в цифровом виде на платформе Shift72, независимо от их географического положения.",
           "publishFrom": "2020-08-17T09:00:00.000Z",
+          "publishUntil": null,
           "publish_et": true,
           "publish_en": true,
           "publish_ru": true
         },
         "title": "Industry@Tallinn пройдет онлайн",
+        "lead": "",
+        "customUrl": null,
         "image": {
           "id": 1161,
           "name": "kolmik_orange.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 600,
           "height": 250,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_kolmik_orange_8033ea3f72.jpg",
-              "name": "thumbnail_kolmik_orange.jpg"
+              "hash": "thumbnail_kolmik_orange_8033ea3f72",
+              "mime": "image/jpeg",
+              "name": "thumbnail_kolmik_orange.jpg",
+              "path": null,
+              "size": 6.64,
+              "width": 245,
+              "height": 102
             }
           },
           "hash": "kolmik_orange_8033ea3f72",
           "ext": ".jpg",
-          "url": "/uploads/kolmik_orange_8033ea3f72.jpg"
+          "mime": "image/jpeg",
+          "size": 61.41,
+          "url": "/uploads/kolmik_orange_8033ea3f72.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 6,
+          "updated_by": 6,
+          "created_at": "2020-10-18T19:02:44.569Z",
+          "updated_at": "2020-10-18T19:02:44.735Z"
         }
       },
       "trioItem_3": {
         "id": 9,
+        "poffi_article_et": null,
+        "title_et": null,
+        "lead_et": null,
+        "customUrl_et": null,
+        "poffi_article": null,
         "title": "ФОТОГАЛЕРЕЯ",
+        "lead": "",
         "customUrl": "https://www.flickr.com/photos/poffihunt/albums/with/72157716852994996",
         "image": {
           "id": 1162,
           "name": "kolmik_green.jpg",
+          "alternativeText": "",
+          "caption": "",
           "width": 600,
           "height": 250,
           "formats": {
             "thumbnail": {
+              "ext": ".jpg",
               "url": "/uploads/thumbnail_kolmik_green_438f97c8e5.jpg",
-              "name": "thumbnail_kolmik_green.jpg"
+              "hash": "thumbnail_kolmik_green_438f97c8e5",
+              "mime": "image/jpeg",
+              "name": "thumbnail_kolmik_green.jpg",
+              "path": null,
+              "size": 5.62,
+              "width": 245,
+              "height": 102
             }
           },
           "hash": "kolmik_green_438f97c8e5",
           "ext": ".jpg",
-          "url": "/uploads/kolmik_green_438f97c8e5.jpg"
+          "mime": "image/jpeg",
+          "size": 51.16,
+          "url": "/uploads/kolmik_green_438f97c8e5.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "created_by": 6,
+          "updated_by": 23,
+          "created_at": "2020-10-18T19:02:44.585Z",
+          "updated_at": "2020-10-20T08:36:24.829Z"
         }
       }
     }
