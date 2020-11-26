@@ -15,7 +15,7 @@ async function fetchMyPasses() {
     let profilePicture = await res.json();
 
     var my_passes = userProfile.userpasses
-    console.log('passes ', my_passes)
+    // console.log('passes ', my_passes)
     var my_passes_element = document.getElementById('my_passes')
     var ix = 0
     for (my_pass of my_passes) {
