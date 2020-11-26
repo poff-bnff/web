@@ -34,15 +34,15 @@ if self.data.heroArticle
 
                         //- +videoAp('R-1jQhGnDN0')
 
-                        .hero_headline_box
-                            .hero_headline_box_1
-                                .hero_headline
-                                    | !{self.data.heroArticle.title}
-                            .hero_headline_box_2
-                                .hero_p
-                                    | !{self.data.heroArticle.lead}
+                    .hero_headline_box
+                        .hero_headline_box_1
+                            .hero_headline
+                                | !{self.data.heroArticle.title}
+                        .hero_headline_box_2
+                            .hero_p
+                                | !{self.data.heroArticle.lead}
 
-                    - heroPlusTrioNews.push(self.data.heroArticle.id)
+                - heroPlusTrioNews.push(self.data.heroArticle.id)
 
 
                     //- if self.data.heroArticle.media.image[0]
