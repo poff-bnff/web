@@ -50,7 +50,7 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
             const DOM_CHAT_MESSAGES = document.getElementById(['chat-messages', CHAT_NAME].join('-'))
             const DOM_CHAT_CONTAINER = document.getElementById(['chat-container', CHAT_NAME].join('-'))
 
-            console.log({RN: '#{ROOM_NAME}', ROOM_TYPE})
+            //- console.log({RN: '#{ROOM_NAME}', ROOM_TYPE})
 
             poff_o_matic.initSocket(userProfile.sub, ROOM_NAME)
 
@@ -64,9 +64,9 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
             chatMessageInputElement.setAttribute('autocomplete', 'off')
 
             // Thou shall only speak out through thy plain room
-            console.log({I: 'Thou shall only speak out through thy plain room', CHAT_NAME, IS_MODERATED_ROOM, IS_PLAIN_ROOM})
+            //- console.log({I: 'Thou shall only speak out through thy plain room', CHAT_NAME, IS_MODERATED_ROOM, IS_PLAIN_ROOM})
             if (IS_PLAIN_ROOM) {
-                console.log({I: 'Thou shall speak with passion and love', CHAT_NAME})
+                //- console.log({I: 'Thou shall speak with passion and love', CHAT_NAME})
 
                 const chatFormElement = document.createElement('form')
                 chatFormElement.id = CHAT_FORM_ID
@@ -77,15 +77,14 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
 
             poff_o_matic.send('joinRoom', { is_moderated: IS_MODERATED_ROOM })
             let I_AM_MODERATOR = false
-            poff_o_matic.subscribe('YOU ARE MODERATOR', (message) => { I_AM_MODERATOR = true })
-            poff_o_matic.subscribe('YOU ARE NOT MODERATOR', (message) => { I_AM_MODERATOR = false })
+            poff_o_matic.subscribe('ARE U MODERATOR', (message) => { I_AM_MODERATOR = message })
 
             poff_o_matic.subscribe('messageToClient', (message) => {
                 if (IS_MODERATED_ROOM && !message.is_moderated) {
-                    console.log({I: 'This chant is not for thee'})
+                    //- console.log({I: 'This chant is not for thee'})
                     return
                 }
-                console.log({I: 'praise the message', message})
+                //- console.log({I: 'praise the message', message})
                 const newMessageElement = DOMoutputMessage(message)
                 newMessageElement.is_moderated = message.is_moderated
                 newMessageElement.style.is_moderated = message.is_moderated
@@ -104,7 +103,7 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
                         return false
                     }
                     // Emit message to server
-                    console.log('Send message', latestMessage)
+                    //- console.log('Send message', latestMessage)
                     poff_o_matic.send('messageToServer', { message: latestMessage })
 
                     // Clear input
@@ -118,7 +117,7 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
             function DOMoutputMessage(message) {
                 const MESSAGE_ID = [ROOM_TYPE, message.id].join('-')
                 if(document.getElementById(MESSAGE_ID)) {
-                    console.log({I: 'Message allready in place', message, ROOM_NAME})
+                    //- console.log({I: 'Message allready in place', message, ROOM_NAME})
                     return document.getElementById(MESSAGE_ID)
                 }
 
