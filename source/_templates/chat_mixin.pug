@@ -54,18 +54,19 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
 
             poff_o_matic.initSocket(userProfile.sub, ROOM_NAME)
 
+            const message_input_id = ['chat-message-input', CHAT_NAME].join('-')
+            const chatMessageInputElement = document.createElement('input')
+            chatMessageInputElement.id = message_input_id
+            chatMessageInputElement.classList.add('chat-message-input')
+            chatMessageInputElement.setAttribute('type', 'text')
+            chatMessageInputElement.setAttribute('placeholder', 'Enter message')
+            chatMessageInputElement.setAttribute('required', '')
+            chatMessageInputElement.setAttribute('autocomplete', 'off')
+
             // Thou shall only speak out through thy plain room
             console.log({I: 'Thou shall only speak out through thy plain room', CHAT_NAME, IS_MODERATED_ROOM, IS_PLAIN_ROOM})
             if (IS_PLAIN_ROOM) {
                 console.log({I: 'Thou shall speak with passion and love', CHAT_NAME})
-                const input_id = ['chat-message-input', CHAT_NAME].join('-')
-                const chatMessageInputElement = document.createElement('input')
-                chatMessageInputElement.id = input_id
-                chatMessageInputElement.classList.add('chat-message-input')
-                chatMessageInputElement.setAttribute('type', 'text')
-                chatMessageInputElement.setAttribute('placeholder', 'Enter message')
-                chatMessageInputElement.setAttribute('required', '')
-                chatMessageInputElement.setAttribute('autocomplete', 'off')
 
                 const chatFormElement = document.createElement('form')
                 chatFormElement.id = CHAT_FORM_ID
@@ -98,7 +99,7 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
                     e.preventDefault()
 
                     // Get message text
-                    let latestMessage = messageInputElement.value.trim()
+                    let latestMessage = chatMessageInputElement.value.trim()
                     if (!latestMessage) {
                         return false
                     }
@@ -107,8 +108,8 @@ mixin chat(ROOM_NAME, IS_MODERATED_ROOM=false)
                     poff_o_matic.send('messageToServer', { message: latestMessage })
 
                     // Clear input
-                    messageInputElement.value = ''
-                    messageInputElement.focus()
+                    chatMessageInputElement.value = ''
+                    chatMessageInputElement.focus()
                 })
             }
 
