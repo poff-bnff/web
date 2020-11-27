@@ -6,7 +6,7 @@ var userProfileLoadedEvent = new CustomEvent('userProfileLoaded')
 
 document.addEventListener('userProfileLoaded', function (e) {
     useUserData(userProfile)
-    console.log('User profile is loaded')
+    // console.log('User profile is loaded')
 })
 
 
@@ -122,7 +122,7 @@ function loadUserProfileH() {
 }
 
 function loadEmptyUserProfile() {
-    console.log('loadEmptyUserProfile')
+    // console.log('loadEmptyUserProfile')
 
     var requestOptions = {
         method: 'GET',
@@ -135,9 +135,9 @@ function loadEmptyUserProfile() {
         }
         return Promise.reject(response);
     }).then(function (data) {
-        console.log('data ', data);
+        // console.log('data ', data);
         userProfile = {
-            sub: data.ip, 
+            sub: data.ip,
             name: 'Wolf'
         }
         document.dispatchEvent(userProfileLoadedEvent)

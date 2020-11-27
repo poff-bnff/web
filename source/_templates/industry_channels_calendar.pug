@@ -117,21 +117,44 @@ block content
         const date_af_1 = document.getElementById('date_af_1');
         const date_af_2 = document.getElementById('date_af_2');
 
+        const event_start_date = new Date('2020-11-16')
+        const event_end_date = new Date('2020-11-27')
+
+        const event_start_day = event_start_date.getDate()
+        const event_end_day = event_end_date.getDate()
 
         let today = new Date()
 
+        if (today.getTime() <= event_start_date.getTime()) {
+            today = new Date(event_start_date.getTime())
+        } else if (today.getTime() >= event_end_date.getTime()) {
+            today = new Date(event_end_date.getTime())
+        }
+
         const calendarDate = function(datestring)
         {
+
+            moment.updateLocale('en', {});
+
             //- return datestring
             return moment(datestring).format('dddd, D MMMM');
         }
 
         function toggleDate (updown, days) {
+
+            //- let before_click_today = new Date(today.getTime())
             if (updown === '+') {
+                if (today.getDate() === event_end_day) {
+                    return false
+                }
                 today.setDate(today.getDate()+days)
             } else if (updown === '-') {
+                if (today.getDate() === event_start_day) {
+                    return false
+                }
                 today.setDate(today.getDate()-days)
             }
+
             let yesterday = new Date()
             yesterday.setDate(today.getDate() - 1)
             let yesterday2 = new Date()
@@ -141,11 +164,41 @@ block content
             let tomorrow2 = new Date()
             tomorrow2.setDate(today.getDate() + 2)
 
-            date_bf_2.innerHTML = calendarDate(yesterday2)
-            date_bf_1.innerHTML = calendarDate(yesterday)
+            if (today.getDate() === event_start_day) {
+                date_bf_2.innerHTML =  '&nbsp;'
+                date_bf_2.onclick = function() { return false };
+                date_bf_1.innerHTML =  '&nbsp;'
+                date_bf_2.onclick = function() { return false };
+            } else {
+                if (yesterday.getDate() === event_start_day) {
+                    date_bf_2.innerHTML = '&nbsp;'
+                    date_bf_2.onclick = function() { return false };
+                } else {
+                    date_bf_2.innerHTML = calendarDate(yesterday2)
+                    date_bf_2.onclick = function() { toggleDate('-', 2) };
+                }
+                date_bf_1.innerHTML = calendarDate(yesterday)
+                date_bf_1.onclick = function() { toggleDate('-', 1) };
+            }
+
             selectedDate.innerHTML = calendarDate(today)
-            date_af_1.innerHTML = calendarDate(tomorrow)
-            date_af_2.innerHTML = calendarDate(tomorrow2)
+
+            if (today.getDate() === event_end_day) {
+                date_af_1.innerHTML = '&nbsp;'
+                date_af_1.onclick = function() { return false };
+                date_af_2.innerHTML = '&nbsp;'
+                date_af_2.onclick = function() { return false };
+            } else {
+                if (tomorrow.getDate() === event_end_day) {
+                    date_af_2.innerHTML = '&nbsp;'
+                    date_af_2.onclick = function() { return false };
+                } else {
+                    date_af_2.innerHTML = calendarDate(tomorrow2)
+                    date_af_2.onclick = function() { toggleDate('+', 2) };
+                }
+                date_af_1.innerHTML = calendarDate(tomorrow)
+                date_af_1.onclick = function() { toggleDate('+', 1) };
+            }
 
             if (updown) {
                 toggleCards()
@@ -180,40 +233,10 @@ block content
             })
         }
 
-        date_bf_2.addEventListener('click', e => { toggleDate('-', 2) } )
-        date_bf_1.addEventListener('click', e => { toggleDate('-', 1) } )
-        date_af_1.addEventListener('click', e => { toggleDate('+', 1) } )
-        date_af_2.addEventListener('click', e => { toggleDate('+', 2) } )
-
-        // filterFunc = function (iEvent) {
-        //     let eventStart = new Date(iEvent.startTime)
-        //     let eventDate = eventStart.getFullYear()+'-'+(eventStart.getMonth()+1)+'-'+eventStart.getDate();
-        //     if (eventDate === date) {
-        //         console.log('DA ', date, eventDate)
-
-        //         return true
-        //     } else {
-        //         return false
-        //     }
-        // }
+        //- date_bf_2.addEventListener('click', e => { toggleDate('-', 2) } )
+        //- date_bf_1.addEventListener('click', e => { toggleDate('-', 1) } )
+        //- date_af_1.addEventListener('click', e => { toggleDate('+', 1) } )
+        //- date_af_2.addEventListener('click', e => { toggleDate('+', 2) } )
 
         toggleDate()
         toggleCards()
-
-        //- function calendarfile(id) {
-        //-     var element = document.createElement('a');
-        //-     element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(document.getElementById(`cal_${id}`).value));
-        //-     // element.setAttribute('download', `IndustryEvent_${id}.ics`);
-
-        //-     element.style.display = 'none';
-        //-     document.body.appendChild(element);
-
-        //-     element.click();
-
-        //-     document.body.removeChild(element);
-        //- }
-
-
-
-        // Start file download.
-        //   download("hello.txt","This is the content of my file :)")
