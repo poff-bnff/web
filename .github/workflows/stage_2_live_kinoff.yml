@@ -7,8 +7,10 @@ on:
     workflow_dispatch:
         inputs:
             slackUserId:
+                required: false
                 description: 'Person who pushed the button'
             privateChannel:
+                required: false
                 description: 'slackBot and users private channel'
 
 jobs:
