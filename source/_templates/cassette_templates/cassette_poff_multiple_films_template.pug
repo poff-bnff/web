@@ -336,15 +336,24 @@ main.grid_cassette
                                         img.presenter_logo_itemx(alt=presenter.name data-src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`  src=`https://assets.poff.ee/img/${presenter.logoWhite.hash}${presenter.logoWhite.ext}`)
 
 
-    if self.media && self.media.trailer && self.media.trailer[0] && self.media.trailer[0].videoCode
-        section#trailer.f_trailer_box
-            .section_headline= self.label.film.trailer
-            each trailer in self.media.trailer
-                .embed-responsive.embed-responsive-16by9.m-0.p-0
-                    if trailer.videoCode
-                        +video(trailer.videoCode)
-
-
+    if self.media && self.media
+        - let med = self.media
+        if (med.trailer && med.trailer[0] && med.trailer[0].videoCode) || (med && med.QaClip && med.QaClip[0].url)
+            section#trailer.f_trailer_box
+                if (med.trailer && med.trailer[0] && med.trailer[0].videoCode)
+                    .section_headline= self.label.film.trailer
+                    each trailer in med.trailer
+                        .embed-responsive.embed-responsive-16by9.m-0.p-0
+                            if trailer.videoCode
+                                +video(trailer.videoCode)
+                                - console.log(self.title)
+                if (med && med.QaClip && med.QaClip[0].url)
+                    - var filterQa = med.QaClip.filter(qa => qa.type === 'QandA' && qa.url)
+                    if filterQa.length
+                        .section_headline= self.label.film.qaClip
+                            each qaclip in filterQa
+                                .embed-responsive.embed-responsive-16by9.m-0.p-0
+                                    +videolQaClip(qaclip.url)
 
 
 //- SIIT ALGAB FILMIDE KUVAMINE
