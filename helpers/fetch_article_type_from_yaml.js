@@ -117,7 +117,7 @@ for (const lang of languages) {
 
                         // see patch siin on tehtud, kuna reklaamis kasutati poff.ee/lemmikfilm, aga meil on artiklid ju poff.ee/artikkel/lemmikfilm
                         if (element[key] === 'lemmikfilm') {
-                            element.aliases = ['lemmikfilm']
+                            element.aliases = ['lemmikfilm', 'publikulemmik']
                         }
                     }
                 }
