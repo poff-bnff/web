@@ -544,10 +544,11 @@ main.grid_film(id=self.id)
                                     if trailer.videoCode
                                         +video(trailer.videoCode)
                         if (med && med.QaClip && med.QaClip[0].url)
-                            .section_headline= self.label.film.qaClip
-                                each qaclip in med.QaClip
-                                    .embed-responsive.embed-responsive-16by9.m-0.p-0
-                                        if qaclip.url
+                            - var filterQa = med.QaClip.filter(qa => qa.type === 'QandA' && qa.url)
+                            if filterQa.length
+                                .section_headline= self.label.film.qaClip
+                                    each qaclip in filterQa
+                                        .embed-responsive.embed-responsive-16by9.m-0.p-0
                                             +videolQaClip(qaclip.url)
 
 
