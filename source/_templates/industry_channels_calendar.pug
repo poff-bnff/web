@@ -133,6 +133,9 @@ block content
 
         const calendarDate = function(datestring)
         {
+
+            moment.updateLocale('en', {});
+
             //- return datestring
             return moment(datestring).format('dddd, D MMMM');
         }
