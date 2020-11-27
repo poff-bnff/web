@@ -10,8 +10,10 @@ on:
     workflow_dispatch:
         inputs:
             slackUserId:
+                required: false
                 description: 'Person who pushed the button'
             privateChannel:
+                required: false
                 description: 'slackBot and users private channel'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -24,7 +26,7 @@ jobs:
 
     -   name: feedback to slack
         id: feedback
-        uses: marianntapfer/post-to-slack@master
+        uses: poff-bnff/post-to-slack@master
     #   with:
     #     slackUserId: ${{ github.event.inputs.slackUserId }}
     #     privateChannel: ${{ github.event.inputs.privateChannel  }}
