@@ -699,6 +699,7 @@ const remapEventival = async () => {
 
         // e_screening.screening_mode = ''
 
+        let sub_before = strapi_screening.subtitles.length
         strapi_screening.subtitles = []
         strapi_screening.subtitles = strapi_languages.filter((s_scrSubLang) => {
             if(e_screening.film && e_screening.film.subtitle_languages ) {
@@ -708,6 +709,7 @@ const remapEventival = async () => {
                 return languages.includes(s_scrSubLang.code)
             }
         }).map(subLang => {return {id: subLang.id}})
+        let sub_after = strapi_screening.subtitles.length
 
 
         strapi_screening.cassette = strapi_cassettes.filter((s_cassette) => {
@@ -769,15 +771,19 @@ const remapEventival = async () => {
         const strapi_screening_after = JSON.parse(JSON.stringify(strapi_screening))
 
 
-        let new_screening = []
+        let screening_to_change = []
         if(isUpdateRequired(strapi_screening_before, strapi_screening_after)){
             // console.log(JSON.stringify({strapi_screening_before, strapi_screening_after}));
             // process.exit(0)
-            new_screening.push(strapi_screening.id)
+            screening_to_change.push(strapi_screening.id)
             to_strapi_screenings.push(strapi_screening)
         }
 
-        if (QaA_length_before > QaA_length_after && !new_screening.includes(strapi_screening.id)){
+        if (QaA_length_before > QaA_length_after && !screening_to_change.includes(strapi_screening.id)){
+            screening_to_change.push(strapi_screening.id)
+            to_strapi_screenings.push(strapi_screening)
+        }
+        if (sub_before > sub_after && !screening_to_change.includes(strapi_screening.id)){
             to_strapi_screenings.push(strapi_screening)
         }
 
@@ -789,7 +795,6 @@ const remapEventival = async () => {
 
 
     fs.writeFileSync(scr_path, scr_yaml, "utf8")
-
 
 }
 
