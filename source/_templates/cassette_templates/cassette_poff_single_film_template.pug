@@ -533,14 +533,24 @@ main.grid_film(id=self.id)
                 //- <a name="chat"><iframe width="100%" height="540" src="https://my.vialog.app/poff.ee/241" frameborder="0" allow="microphone; camera"></iframe></a>
                 a(name='chat')
                     iframe(width='100%' height='540' src=`https://my.vialog.app/poff.ee/${film.id}` frameborder='0' allow='microphone; camera')
+            if film.media && film.media
+                - let med = film.media
+                if (med.trailer && med.trailer[0] && med.trailer[0].videoCode) || (med && med.QaClip && med.QaClip[0].url)
+                    section#trailer.f_trailer_box
+                        if (med.trailer && med.trailer[0] && med.trailer[0].videoCode)
+                            .section_headline= self.label.film.trailer
+                            each trailer in med.trailer
+                                .embed-responsive.embed-responsive-16by9.m-0.p-0
+                                    if trailer.videoCode
+                                        +video(trailer.videoCode)
+                        if (med && med.QaClip && med.QaClip[0].url)
+                            - var filterQa = med.QaClip.filter(qa => qa.type === 'QandA' && qa.url)
+                            if filterQa.length
+                                .section_headline= self.label.film.qaClip
+                                    each qaclip in filterQa
+                                        .embed-responsive.embed-responsive-16by9.m-0.p-0
+                                            +videolQaClip(qaclip.url)
 
-            if film.media && film.media.trailer && film.media.trailer[0] && film.media.trailer[0].videoCode
-                section#trailer.f_trailer_box
-                    .section_headline= self.label.film.trailer
-                    each trailer in film.media.trailer
-                        .embed-responsive.embed-responsive-16by9.m-0.p-0
-                            if trailer.videoCode
-                                +video(trailer.videoCode)
 
             //- section.f_imgs_box
 

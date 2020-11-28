@@ -23,6 +23,9 @@ const mapping = DOMAIN_SPECIFICS.article
 const modelName = mapping[DOMAIN]
 const STRAPIDATA_ARTICLE = STRAPIDATA[modelName]
 const languages = DOMAIN_SPECIFICS.locales[DOMAIN]
+const stagingURL = DOMAIN_SPECIFICS.stagingURLs[DOMAIN]
+const pageURL = DOMAIN_SPECIFICS.pageURLs[DOMAIN]
+
 for (const lang of languages) {
     console.log(`Fetching ${DOMAIN} articles ${lang} data`)
     const industryPersonsPath = path.join(fetchDir, `industrypersons.${lang}.yaml`)
@@ -78,10 +81,23 @@ for (const lang of languages) {
 
         //TODO #444
         if (element.contents && element.contents[0]) {
+            // Replace Strapi URL with assets URL for images
             let searchRegExp = new RegExp(STRAPIHOSTWITHDIR, 'g');
             let replaceWith = `https://assets.poff.ee/img/`;
             const replaceImgPath = element.contents.replace(searchRegExp, replaceWith);
             element.contents = replaceImgPath;
+
+            // Replace Staging urls with correct webpage urls
+            let searchRegExpStaging = new RegExp(stagingURL, 'g');
+            const replaceLinkURL = element.contents.replace(searchRegExpStaging, pageURL);
+            element.contents = replaceLinkURL;
+        }
+
+        if (element.lead && element.lead[0]) {
+            // Replace Staging urls with correct webpage urls
+            let searchRegExpStaging = new RegExp(stagingURL, 'g');
+            const replaceLinkURL = element.lead.replace(searchRegExpStaging, pageURL);
+            element.lead = replaceLinkURL;
         }
 
         // console.log(element)
@@ -101,7 +117,7 @@ for (const lang of languages) {
 
                         // see patch siin on tehtud, kuna reklaamis kasutati poff.ee/lemmikfilm, aga meil on artiklid ju poff.ee/artikkel/lemmikfilm
                         if (element[key] === 'lemmikfilm') {
-                            element.aliases = ['lemmikfilm']
+                            element.aliases = ['lemmikfilm', 'publikulemmik']
                         }
                     }
                 }

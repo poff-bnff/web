@@ -92,18 +92,18 @@ async function loginViaCognito() {
         });
 
         let response2 = await response.json()
-        console.log(response2)
+        // console.log(response2)
 
 
 
         if (response2.email && !response2.confirmed) {
-            console.log(1)
+            // console.log(1)
             document.getElementById('unConfirmed').style.display = 'block'
             return
         }
 
         if (response2.noUserEmail && !response2.user) {
-            console.log(2)
+            // console.log(2)
             document.getElementById('noSuchUser').style.display = 'block'
             return
         }
@@ -113,8 +113,8 @@ async function loginViaCognito() {
             return
         }
 
-        console.log(response2)
-        console.log('authResponse ', response2.AccessToken)
+        // console.log(response2)
+        // console.log('authResponse ', response2.AccessToken)
         access_token = response2.AccessToken
         id_token = response2.IdToken
 

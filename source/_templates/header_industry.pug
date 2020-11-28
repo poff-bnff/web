@@ -1,7 +1,4 @@
 header
-    //- nav.lang-menu
-    //-     each p, locale in self.otherLocalePaths
-    //-         a(href=(p !== '/' ? p + '/' : '/'))= locale.toUpperCase()
     .logo
         //- Defining locale path for multilingual support
         - var lang_path = self.locale === self.defaultLocale ? '' : `${self.locale}/`
@@ -13,11 +10,6 @@ header
 
     nav.main_menu
         ul.ul_yx
-            //- li
-            //-     #hello(style='color: red')
-            //-     //- #out(style='color: red')
-            //-     #out(style={color: 'red', cursor: 'pointer'})
-
             li
                 nav.lang_menu
                     a(href= 'https://industry.poff.ee/news/how-to-get-the-most-out-of-industry-tallinn/')= 'GET HELP'
@@ -125,27 +117,14 @@ header
                         li#logInName.dark_1(style={display: 'none'})
                             a#tervitus= self.label.menu.mainGreeting
                         li#myCalendar(style={cursor: 'pointer'})
-                            a(href=`/${lang_path}mycalendar`) My calendar     
+                            a(href=`/${lang_path}mycalendar`) My calendar
                         //- li#userProfile(style={cursor: 'pointer', display: 'none'})
                         //-     a(onclick = 'saveUrl()', href=`/${lang_path}userprofile`)= self.label.menu.mainProfile
                         li#logOut(style={cursor: 'pointer', display: 'none'} )
                             a(onclick='logOut()')= self.label.menu.mainLogout
 
-            //- li
-            //-     nav.lang_menu
-            //-         //- | prefiks&nbsp;
-            //-         //- .clr_primary= self.label.film.languageSelect + 'rr'
-            //-         each p, locale in self.otherLocalePaths
-            //-             //- span.clr_white_semi= self.label.film.languageSelect + ':  '
-            //-             //- if self.publish && (self[`publish_${locale}`] === false)
-            //-             //-     p= '<' + self.path.split('/').includes('article') + ' - ' + self.publish + '-' + p + '>'
-            //-             //- a(href=(p !== '/' ? p + '/' : '/'))= locale
-
-            //-             a(href=(p !== '/' ? p + '/' : '/'))= locale
-
-
     label.main_menu_toggle_label(for='main_menu_toggle')
         span
 
-include ../_templates/tracker_mixin.pug
-+trackMe()
+//- include ../_templates/tracker_mixin.pug
+//- +trackMe()
