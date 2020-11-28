@@ -151,24 +151,27 @@ function CreateYAML(screenings, lang) {
 
 
         let dateTimeUTC = new Date(screenings.dateTime)
-        let dateTime = dateTimeUTC.toLocaleString("et-ET"); // , {timeZone: "EET"}
+        // let dateTime = dateTimeUTC.toLocaleString("et-EE"); // , {timeZone: "EET"}
 
         Date.prototype.addHours = function(hours) {
             var date = new Date(this.valueOf());
             date.setHours(date.getHours() + hours);
             return date;
         }
-
-        let date = dateTimeUTC.addHours(2).toLocaleString("et-ET" , { timeZone: "UTC", year: "numeric", month: "2-digit", day: "2-digit" });
-        let dateKey = `_${date}`
-        let time = dateTimeUTC.addHours(2).toLocaleString("et-ET" , { timeZone: "UTC", hour: "2-digit", minute: "2-digit" });
-        let timeKey = `_${time}`
+        let dateTime = dateTimeUTC.addHours(2); // , {timeZone: "EET"}
 
 
-        // let date = dateTime.getFullYear() + '-' + ('0' + (dateTime.getMonth())).slice(-2) + '-' + ('0' + dateTime.getDate()).slice(-2)
+        // let date1 = dateTimeUTC.addHours(2)
+        // let date = date1.toLocaleString("et-EE", { timeZone: "UTC", year: "numeric", month: "2-digit", day: "2-digit" });
         // let dateKey = `_${date}`
-        // let time = ('0' + (dateTime.getHours())).slice(-2) + '-' + ('0' + dateTime.getMinutes()).slice(-2)
+        // let time = dateTimeUTC.addHours(2).toLocaleString("et-EE", { timeZone: "UTC", hour: "2-digit", minute: "2-digit" });
         // let timeKey = `_${time}`
+
+
+        let date = dateTime.getFullYear() + '-' + ('0' + (dateTime.getMonth())).slice(-2) + '-' + ('0' + dateTime.getDate()).slice(-2)
+        let dateKey = `_${date}`
+        let time = ('0' + (dateTime.getHours())).slice(-2) + ':' + ('0' + dateTime.getMinutes()).slice(-2)
+        let timeKey = `_${time}`
 
         dates.push(dateKey)
         filters.dates[dateKey] = date
