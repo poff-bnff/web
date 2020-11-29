@@ -168,7 +168,7 @@ function CreateYAML(screenings, lang) {
         // let timeKey = `_${time}`
 
 
-        let date = dateTime.getFullYear() + '-' + ('0' + (dateTime.getMonth())).slice(-2) + '-' + ('0' + dateTime.getDate()).slice(-2)
+        let date = dateTime.getFullYear() + '-' + ('0' + (dateTime.getMonth()+1)).slice(-2) + '-' + ('0' + dateTime.getDate()).slice(-2)
         let dateKey = `_${date}`
         let time = ('0' + (dateTime.getHours())).slice(-2) + ':' + ('0' + dateTime.getMinutes()).slice(-2)
         let timeKey = `_${time}`
