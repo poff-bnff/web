@@ -277,6 +277,7 @@ const updateStrapi = async () => {
         }
     }
 
+    // filmCredentials kirjutatakse Strapis üle (rida 323)
     const updateFilmCredentials = async () => {
         const s_persons = await getModel('Person')
         const s_roles = await getModel('RoleAtFilm')
@@ -505,6 +506,7 @@ const remapEventival = async () => {
             }
         }).map(e => { return {id: e.id} })
 
+        strapi_film.subtitles = []
         strapi_film.subtitles = strapi_languages.filter(s_subLang => {
             if(e_film.film_info && e_film.film_info.subtitle_languages) {
                 return e_film.film_info.subtitle_languages.map( item => { return item.code} ).includes(s_subLang.code)
@@ -645,6 +647,7 @@ const remapEventival = async () => {
     //
     let to_strapi_screenings = []
     // console.log('In E__SCREENINGS')
+
     for (const e_screening of EVENTIVAL_SCREENINGS) {
         // console.log('midagi', e_screening.id)
 
@@ -657,12 +660,14 @@ const remapEventival = async () => {
         if (!e_screening.film || !e_screening.film.id) {
             continue
         }
+
         // console.log('Update screening in Strapi:', JSON.stringify(e_screening.id))
         const strapi_screening_before = JSON.parse(JSON.stringify(strapi_screening))
 
         // ---- BEGIN update strapi screening properties
 
         // strapi_screening.is_first_screening = e_screening.type_of_screening.includes('First Screening')
+
 
         strapi_screening.code = e_screening.code.toString().padStart(6, "0")
         strapi_screening.codeAndTitle = e_screening.code.toString().padStart(6, "0") + ' / ' + e_screening.film.title_local
@@ -671,7 +676,6 @@ const remapEventival = async () => {
         let newD = new Date(e_screening.start + ET.utc2)
         strapi_screening.dateTime = newD
 
-        // e_screening.introQaConversation =
         strapi_screening.durationTotal = e_screening.complete_duration_minutes
 
         strapi_screening.location = strapi_location.filter((s_scrLocation) => {
@@ -695,6 +699,8 @@ const remapEventival = async () => {
 
         // e_screening.screening_mode = ''
 
+        let sub_before = strapi_screening.subtitles.length
+        strapi_screening.subtitles = []
         strapi_screening.subtitles = strapi_languages.filter((s_scrSubLang) => {
             if(e_screening.film && e_screening.film.subtitle_languages ) {
                 let languages = e_screening.film.subtitle_languages.print.language
@@ -703,6 +709,8 @@ const remapEventival = async () => {
                 return languages.includes(s_scrSubLang.code)
             }
         }).map(subLang => {return {id: subLang.id}})
+        let sub_after = strapi_screening.subtitles.length
+
 
         strapi_screening.cassette = strapi_cassettes.filter((s_cassette) => {
             if (e_screening.film && e_screening.film.id) {
@@ -728,7 +736,10 @@ const remapEventival = async () => {
         makeList(e_screening.qa, 'presenters', 'person')
         makeList(e_screening.qa, 'guests', 'person')
 
+        let QaA_length_before = strapi_screening.introQaConversation.length
 
+        // introQaConversation saab algatuseks tühi arrey
+        //
         strapi_screening.introQaConversation = []
         if (e_screening.presentation.available) {
             strapi_screening.introQaConversation.push({
@@ -750,14 +761,29 @@ const remapEventival = async () => {
             })
         }
 
+
+        let QaA_length_after = strapi_screening.introQaConversation.length
         // e_screening.is_first_screening = is_first_screening
 
         // ----   END update strapi screening properties
 
+
         const strapi_screening_after = JSON.parse(JSON.stringify(strapi_screening))
+
+
+        let screening_to_change = []
         if(isUpdateRequired(strapi_screening_before, strapi_screening_after)){
             // console.log(JSON.stringify({strapi_screening_before, strapi_screening_after}));
             // process.exit(0)
+            screening_to_change.push(strapi_screening.id)
+            to_strapi_screenings.push(strapi_screening)
+        }
+
+        if (QaA_length_before > QaA_length_after && !screening_to_change.includes(strapi_screening.id)){
+            screening_to_change.push(strapi_screening.id)
+            to_strapi_screenings.push(strapi_screening)
+        }
+        if (sub_before > sub_after && !screening_to_change.includes(strapi_screening.id)){
             to_strapi_screenings.push(strapi_screening)
         }
 
@@ -769,29 +795,6 @@ const remapEventival = async () => {
 
 
     fs.writeFileSync(scr_path, scr_yaml, "utf8")
-
-    // TODO #362
-    // introQaConversation: [{                // e-presentation -> intro, e-qa -> conversation
-    //     yesNo: e_screening.qa.available.toString(), e_screening.presentation.available.toString()
-    //     // type: (Enumeration), intro, conversation
-    //     // mode: j44b tyhjaks, kui qa klipp siis mode online
-    //     presenter: [{ //kas e_sreening.presenters on org name ?
-    //         et: e_screening.qa.presenters, e_screening.presentation.presenters
-    //         en: e_screening.qa.presenters,
-    //         ru: e_screening.qa.presenters
-    //     }],
-    //     guest:  [{
-    //         et: e_screening.qa.guests, e_screening.presentation.guests
-    //         en: e_screening.qa.guests,
-    //         ru: e_screening.qa.guests
-    //     }],
-    //     duration: e_screening.qa.duration.toString(), e_screening.presentation.duration.toString()
-    //     // clipUrl: (text)
-    // }],
-
-    // screening_mode: {
-    //     id: /screening-modes ei leia e infost saab info location j4rgi
-    // },
 
 }
 
