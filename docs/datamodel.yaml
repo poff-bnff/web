@@ -1284,7 +1284,7 @@ HOFFiFooter: &HOFFiFooter
     item: #(Component (repeatable))
         - *FooterItemNav
     supporters: #(Component (repeatable))
-        - *SupSecHOFF
+        - *SupSecHoff
 
 # Product & Payment
 Payment: &Payment
