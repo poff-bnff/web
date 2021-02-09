@@ -3,14 +3,13 @@ const https = require('https')
 
 async function strapiAuth() {
 
+    console.log(process.env['StrapiHostPoff2021'])
+
     return new Promise((resolve, reject) => {
         const postData = {
             identifier: process.env['StrapiUserName'],
             password: process.env['StrapiPassword']
         }
-        console.log(process.env['StrapiUserName'])
-
-        console.log(process.env['StrapiPassword'])
 
         const options = {
             hostname: process.env['StrapiHostPoff2021'],
