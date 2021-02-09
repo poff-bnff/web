@@ -3,7 +3,8 @@ const https = require('https')
 
 async function strapiAuth() {
 
-    console.log(process.env['StrapiHostPoff2021'])
+    console.log('Väikeste t', process.env['StrapiHostPoff2021'])
+    console.log('Suurte t', process.env['STRAPIHOSTPOFF2021'])
 
     return new Promise((resolve, reject) => {
         const postData = {
