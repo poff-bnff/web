@@ -1,22 +1,7 @@
-<<<<<<< HEAD
-[]
-=======
 [
   {
     "id": 10,
     "namePrivate": "PÖFFi Fookuses: uus Saksa film",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 5,
-      "firstname": "Martin",
-      "lastname": "Pennaste",
-      "username": null
-    },
     "created_at": "2020-10-08T18:09:33.340Z",
     "updated_at": "2020-11-12T08:45:00.831Z",
     "festival_edition": null,
@@ -48,55 +33,9 @@
       },
       "organisations": [
         {
-          "id": 29,
-          "Name": null,
-          "Description": null,
-          "created_by": 16,
-          "updated_by": 16,
-          "created_at": "2020-11-08T12:14:56.758Z",
-          "updated_at": "2020-11-08T12:14:56.796Z",
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "Name_original": null,
-          "Type": null,
-          "name": null,
-          "type": "Presenter",
-          "gender": null,
-          "person": null,
-          "namePrivate": "German Films",
-          "homepageUrl": "https://www.german-films.de/",
-          "images": [],
-          "logoWhite": {
-            "id": 1093,
-            "name": "German Films_logo-01.svg",
-            "alternativeText": "",
-            "caption": "",
-            "width": 1077,
-            "height": 306,
-            "formats": null,
-            "hash": "German_Films_logo_01_aa872e5dc8",
-            "ext": ".svg",
-            "mime": "image/svg+xml",
-            "size": 6.68,
-            "url": "/uploads/German_Films_logo_01_aa872e5dc8.svg",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "created_by": 16,
-            "updated_by": 16,
-            "created_at": "2020-10-14T18:50:21.317Z",
-            "updated_at": "2020-10-14T18:50:21.438Z"
-          },
-          "logoBlack": null,
-          "logoColour": null
-        },
-        {
           "id": 19,
           "Name": null,
           "Description": null,
-          "created_by": 14,
-          "updated_by": 14,
           "created_at": "2020-10-27T12:50:28.373Z",
           "updated_at": "2020-10-27T12:51:19.115Z",
           "Name_et": null,
@@ -129,11 +68,49 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 16,
-            "updated_by": 16,
             "created_at": "2020-10-12T08:05:42.542Z",
             "updated_at": "2020-10-12T08:05:42.649Z"
           }
+        },
+        {
+          "id": 29,
+          "Name": null,
+          "Description": null,
+          "created_at": "2020-11-08T12:14:56.758Z",
+          "updated_at": "2020-11-08T12:14:56.796Z",
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "Name_original": null,
+          "Type": null,
+          "name": null,
+          "type": "Presenter",
+          "gender": null,
+          "person": null,
+          "namePrivate": "German Films",
+          "homepageUrl": "https://www.german-films.de/",
+          "images": [],
+          "logoWhite": {
+            "id": 1093,
+            "name": "German Films_logo-01.svg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 1077,
+            "height": 306,
+            "formats": null,
+            "hash": "German_Films_logo_01_aa872e5dc8",
+            "ext": ".svg",
+            "mime": "image/svg+xml",
+            "size": 6.68,
+            "url": "/uploads/German_Films_logo_01_aa872e5dc8.svg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2020-10-14T18:50:21.317Z",
+            "updated_at": "2020-10-14T18:50:21.438Z"
+          },
+          "logoBlack": null,
+          "logoColour": null
         }
       ]
     },
@@ -166,8 +143,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-28T06:55:47.776Z",
         "updated_at": "2020-10-28T06:55:49.338Z"
       },
@@ -199,8 +174,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:06:44.670Z",
         "updated_at": "2020-10-29T06:06:44.737Z"
       },
@@ -232,8 +205,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 23,
-        "updated_by": 23,
         "created_at": "2020-10-28T21:52:21.113Z",
         "updated_at": "2020-10-28T21:52:21.210Z"
       },
@@ -265,8 +236,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-28T06:55:49.260Z",
         "updated_at": "2020-10-28T06:55:49.493Z"
       },
@@ -298,8 +267,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:02:05.809Z",
         "updated_at": "2020-10-29T06:02:06.473Z"
       },
@@ -331,8 +298,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 23,
-        "updated_by": 23,
         "created_at": "2020-10-28T21:52:21.118Z",
         "updated_at": "2020-10-28T21:52:21.211Z"
       },
@@ -364,8 +329,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-28T06:55:48.563Z",
         "updated_at": "2020-10-28T06:55:49.433Z"
       },
@@ -397,8 +360,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-28T06:55:49.330Z",
         "updated_at": "2020-10-28T06:55:49.511Z"
       },
@@ -430,8 +391,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:03:40.713Z",
         "updated_at": "2020-10-29T06:03:40.838Z"
       },
@@ -463,8 +422,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-28T06:55:49.312Z",
         "updated_at": "2020-10-28T06:55:49.508Z"
       },
@@ -496,8 +453,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:05:21.765Z",
         "updated_at": "2020-10-29T06:05:21.894Z"
       },
@@ -529,8 +484,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-28T06:55:49.159Z",
         "updated_at": "2020-10-28T06:55:49.485Z"
       }
@@ -539,8 +492,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -566,8 +517,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -581,18 +530,6 @@
   {
     "id": 42,
     "namePrivate": "PÖFF I Mälestades Zaza Urušadzet",
-    "created_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-11-03T20:15:20.221Z",
     "updated_at": "2020-11-06T09:16:57.660Z",
     "festival_edition": null,
@@ -649,8 +586,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:18:08.191Z",
         "updated_at": "2020-11-05T11:18:10.121Z"
       },
@@ -682,8 +617,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-06T08:09:14.155Z",
         "updated_at": "2020-11-06T08:09:14.407Z"
       },
@@ -715,8 +648,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-06T08:08:20.180Z",
         "updated_at": "2020-11-06T08:08:22.324Z"
       }
@@ -725,8 +656,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -752,8 +681,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -767,18 +694,6 @@
   {
     "id": 46,
     "namePrivate": "Shorts lasteanima",
-    "created_by": {
-      "id": 12,
-      "firstname": "Heinrich",
-      "lastname": "Sepp",
-      "username": "heinrich"
-    },
-    "updated_by": {
-      "id": 12,
-      "firstname": "Heinrich",
-      "lastname": "Sepp",
-      "username": "heinrich"
-    },
     "created_at": "2020-11-10T12:48:56.379Z",
     "updated_at": "2020-11-15T12:10:35.549Z",
     "festival_edition": null,
@@ -835,8 +750,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-11-02T09:36:45.514Z",
         "updated_at": "2020-11-02T09:36:46.090Z"
       }
@@ -845,8 +758,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -872,8 +783,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -887,8 +796,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -902,18 +809,6 @@
   {
     "id": 19,
     "namePrivate": "Shorts New Talents võistlusprogramm: lühifilm",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T06:52:11.519Z",
     "updated_at": "2020-11-03T21:24:16.902Z",
     "festival_edition": null,
@@ -953,8 +848,6 @@
           "id": 8,
           "Name": null,
           "Description": null,
-          "created_by": 21,
-          "updated_by": 18,
           "created_at": "2020-10-10T08:53:05.765Z",
           "updated_at": "2020-10-16T16:43:55.687Z",
           "Name_et": null,
@@ -985,8 +878,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-03T13:13:23.721Z",
             "updated_at": "2020-10-03T13:13:23.942Z"
           },
@@ -1006,8 +897,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-03T13:13:23.702Z",
             "updated_at": "2020-10-03T13:13:23.933Z"
           },
@@ -1027,8 +916,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-03T13:13:23.716Z",
             "updated_at": "2020-10-03T13:13:23.942Z"
           }
@@ -1064,8 +951,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:03.733Z",
         "updated_at": "2020-10-10T08:24:04.475Z"
       },
@@ -1097,8 +982,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:04.095Z",
         "updated_at": "2020-10-10T08:24:04.659Z"
       },
@@ -1130,8 +1013,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:04.062Z",
         "updated_at": "2020-10-10T08:24:04.658Z"
       },
@@ -1163,8 +1044,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:04.128Z",
         "updated_at": "2020-10-10T08:24:04.679Z"
       },
@@ -1196,8 +1075,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:04.226Z",
         "updated_at": "2020-10-10T08:24:04.799Z"
       },
@@ -1229,8 +1106,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:05.314Z",
         "updated_at": "2020-10-10T08:24:05.912Z"
       },
@@ -1262,8 +1137,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:05.782Z",
         "updated_at": "2020-10-10T08:24:06.256Z"
       },
@@ -1295,8 +1168,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:05.783Z",
         "updated_at": "2020-10-10T08:24:06.266Z"
       },
@@ -1328,8 +1199,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:05.837Z",
         "updated_at": "2020-10-10T08:24:06.331Z"
       },
@@ -1361,8 +1230,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:05.866Z",
         "updated_at": "2020-10-10T08:24:06.396Z"
       },
@@ -1394,8 +1261,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:05.889Z",
         "updated_at": "2020-10-10T08:24:06.407Z"
       },
@@ -1427,8 +1292,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:06.632Z",
         "updated_at": "2020-10-10T08:24:06.712Z"
       },
@@ -1460,8 +1323,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:07.268Z",
         "updated_at": "2020-10-10T08:24:07.894Z"
       },
@@ -1493,8 +1354,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:07.611Z",
         "updated_at": "2020-10-10T08:24:08.173Z"
       },
@@ -1526,8 +1385,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:07.612Z",
         "updated_at": "2020-10-10T08:24:08.173Z"
       },
@@ -1559,8 +1416,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:07.700Z",
         "updated_at": "2020-10-10T08:24:08.221Z"
       },
@@ -1592,8 +1447,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:07.709Z",
         "updated_at": "2020-10-10T08:24:08.221Z"
       },
@@ -1625,8 +1478,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:07.709Z",
         "updated_at": "2020-10-10T08:24:08.252Z"
       },
@@ -1658,8 +1509,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:08.519Z",
         "updated_at": "2020-10-10T08:24:08.645Z"
       },
@@ -1691,8 +1540,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:09.083Z",
         "updated_at": "2020-10-10T08:24:09.697Z"
       },
@@ -1724,8 +1571,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:09.446Z",
         "updated_at": "2020-10-10T08:24:09.921Z"
       },
@@ -1757,8 +1602,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:09.498Z",
         "updated_at": "2020-10-10T08:24:09.969Z"
       },
@@ -1790,8 +1633,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:09.520Z",
         "updated_at": "2020-10-10T08:24:10.015Z"
       },
@@ -1823,8 +1664,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:09.594Z",
         "updated_at": "2020-10-10T08:24:10.072Z"
       },
@@ -1856,8 +1695,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:09.572Z",
         "updated_at": "2020-10-10T08:24:10.057Z"
       },
@@ -1889,8 +1726,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:10.709Z",
         "updated_at": "2020-10-10T08:24:10.875Z"
       },
@@ -1922,8 +1757,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:24:10.612Z",
         "updated_at": "2020-10-10T08:24:10.777Z"
       }
@@ -1932,8 +1765,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -1959,8 +1790,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -1974,8 +1803,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -1989,18 +1816,6 @@
   {
     "id": 12,
     "namePrivate": "PÖFFi doc@PÖFF",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
     "created_at": "2020-10-08T18:24:22.567Z",
     "updated_at": "2020-11-12T12:41:13.246Z",
     "festival_edition": null,
@@ -2057,8 +1872,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:25.959Z",
         "updated_at": "2020-11-05T11:21:26.822Z"
       },
@@ -2090,8 +1903,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:42.596Z",
         "updated_at": "2020-11-05T11:21:42.776Z"
       },
@@ -2123,8 +1934,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:12.605Z",
         "updated_at": "2020-11-05T10:21:13.039Z"
       },
@@ -2156,8 +1965,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:27.762Z",
         "updated_at": "2020-11-05T11:21:28.429Z"
       },
@@ -2189,8 +1996,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:27.401Z",
         "updated_at": "2020-11-05T11:21:28.416Z"
       },
@@ -2222,8 +2027,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:26.671Z",
         "updated_at": "2020-11-05T11:21:27.369Z"
       },
@@ -2255,8 +2058,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:47.616Z",
         "updated_at": "2020-11-05T10:21:48.407Z"
       },
@@ -2288,8 +2089,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:49.854Z",
         "updated_at": "2020-11-05T10:21:49.934Z"
       },
@@ -2321,8 +2120,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:40.873Z",
         "updated_at": "2020-11-05T11:21:41.407Z"
       }
@@ -2331,8 +2128,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -2358,8 +2153,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -2373,18 +2166,6 @@
   {
     "id": 11,
     "namePrivate": "PÖFFi #PÖFFTRENDING",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 26,
-      "firstname": "Andres",
-      "lastname": "Lestal",
-      "username": null
-    },
     "created_at": "2020-10-08T18:21:50.699Z",
     "updated_at": "2020-11-14T11:58:25.324Z",
     "festival_edition": null,
@@ -2424,8 +2205,6 @@
           "id": 12,
           "Name": null,
           "Description": null,
-          "created_by": 9,
-          "updated_by": 9,
           "created_at": "2020-10-25T19:21:52.206Z",
           "updated_at": "2020-10-25T19:29:48.166Z",
           "Name_et": null,
@@ -2458,8 +2237,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 16,
-            "updated_by": 16,
             "created_at": "2020-10-05T10:53:39.857Z",
             "updated_at": "2020-10-05T10:53:40.051Z"
           }
@@ -2495,8 +2272,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:13.957Z",
         "updated_at": "2020-11-05T10:21:13.992Z"
       },
@@ -2528,8 +2303,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:21:01.788Z",
         "updated_at": "2020-11-05T14:21:01.834Z"
       },
@@ -2561,8 +2334,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:00:09.533Z",
         "updated_at": "2020-11-05T14:00:09.757Z"
       },
@@ -2594,8 +2365,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:40.040Z",
         "updated_at": "2020-11-05T10:21:40.742Z"
       },
@@ -2627,8 +2396,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-13T15:24:18.073Z",
         "updated_at": "2020-10-13T15:24:19.249Z"
       }
@@ -2637,8 +2404,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -2664,8 +2429,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -2679,18 +2442,6 @@
   {
     "id": 34,
     "namePrivate": "Shorts  Öökino",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 12,
-      "firstname": "Heinrich",
-      "lastname": "Sepp",
-      "username": "heinrich"
-    },
     "created_at": "2020-10-19T17:17:15.576Z",
     "updated_at": "2020-11-15T12:08:52.739Z",
     "festival_edition": null,
@@ -2747,8 +2498,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-08T06:56:08.094Z",
         "updated_at": "2020-11-08T06:56:08.983Z"
       }
@@ -2757,8 +2506,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -2784,8 +2531,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -2799,8 +2544,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -2814,18 +2557,6 @@
   {
     "id": 6,
     "namePrivate": "PÖFFi Balti filmi võistlusprogramm",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T17:35:06.042Z",
     "updated_at": "2020-11-06T08:14:25.978Z",
     "festival_edition": null,
@@ -2882,8 +2613,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:29:55.139Z",
         "updated_at": "2020-11-05T14:29:55.435Z"
       },
@@ -2915,8 +2644,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:44:11.612Z",
         "updated_at": "2020-11-05T14:44:12.190Z"
       },
@@ -2948,8 +2675,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:43:21.085Z",
         "updated_at": "2020-11-05T13:43:21.123Z"
       },
@@ -2981,8 +2706,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:00:09.513Z",
         "updated_at": "2020-11-05T15:00:10.226Z"
       },
@@ -3014,8 +2737,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:23.247Z",
         "updated_at": "2020-11-05T10:21:23.384Z"
       },
@@ -3047,8 +2768,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:46:19.896Z",
         "updated_at": "2020-11-05T13:46:20.620Z"
       },
@@ -3080,8 +2799,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:54:06.941Z",
         "updated_at": "2020-11-05T13:54:07.642Z"
       },
@@ -3113,8 +2830,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:03:01.453Z",
         "updated_at": "2020-11-05T15:03:01.638Z"
       },
@@ -3146,8 +2861,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:14:55.961Z",
         "updated_at": "2020-11-05T15:14:57.036Z"
       },
@@ -3179,8 +2892,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:11:54.582Z",
         "updated_at": "2020-11-05T15:11:55.226Z"
       },
@@ -3212,8 +2923,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:09:27.832Z",
         "updated_at": "2020-11-05T14:09:28.597Z"
       },
@@ -3245,8 +2954,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:16:56.176Z",
         "updated_at": "2020-11-05T14:16:56.816Z"
       },
@@ -3278,8 +2985,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:38:47.467Z",
         "updated_at": "2020-11-05T14:38:48.147Z"
       },
@@ -3311,8 +3016,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:14:53.362Z",
         "updated_at": "2020-11-05T14:14:54.095Z"
       }
@@ -3321,8 +3024,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -3348,8 +3049,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -3363,18 +3062,6 @@
   {
     "id": 14,
     "namePrivate": "PÖFFi Eesti Olümpiakomitee spordifilmide programm",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T18:33:09.373Z",
     "updated_at": "2020-11-06T08:28:02.672Z",
     "festival_edition": null,
@@ -3431,8 +3118,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:34.047Z",
         "updated_at": "2020-11-05T10:21:34.083Z"
       },
@@ -3464,8 +3149,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:30.032Z",
         "updated_at": "2020-11-05T10:21:30.092Z"
       },
@@ -3497,8 +3180,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:12.681Z",
         "updated_at": "2020-11-05T10:21:13.057Z"
       },
@@ -3530,8 +3211,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:47.627Z",
         "updated_at": "2020-11-05T10:21:48.413Z"
       },
@@ -3563,8 +3242,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:53.978Z",
         "updated_at": "2020-11-05T10:21:54.674Z"
       },
@@ -3596,8 +3273,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:54.605Z",
         "updated_at": "2020-11-05T10:21:54.711Z"
       }
@@ -3606,8 +3281,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -3633,8 +3306,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -3648,18 +3319,6 @@
   {
     "id": 9,
     "namePrivate": "PÖFFi Avafilm",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T17:47:27.131Z",
     "updated_at": "2020-11-06T08:06:26.651Z",
     "festival_edition": null,
@@ -3711,8 +3370,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 10,
-        "updated_by": 10,
         "created_at": "2020-11-03T16:37:43.255Z",
         "updated_at": "2020-11-03T16:37:43.294Z"
       }
@@ -3721,8 +3378,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -3748,8 +3403,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -3763,18 +3416,6 @@
   {
     "id": 29,
     "namePrivate": "JF Teadus360°",
-    "created_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T10:38:45.491Z",
     "updated_at": "2020-11-03T20:45:19.999Z",
     "festival_edition": null,
@@ -3814,8 +3455,6 @@
           "id": 17,
           "Name": null,
           "Description": null,
-          "created_by": 14,
-          "updated_by": 14,
           "created_at": "2020-10-26T08:10:14.483Z",
           "updated_at": "2020-10-26T08:10:14.520Z",
           "Name_et": null,
@@ -3848,8 +3487,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-01T09:21:55.614Z",
             "updated_at": "2020-10-01T09:21:55.707Z"
           }
@@ -3885,8 +3522,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:50.434Z",
         "updated_at": "2020-10-11T16:42:50.828Z"
       },
@@ -3918,8 +3553,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:02.449Z",
         "updated_at": "2020-10-11T16:43:02.960Z"
       },
@@ -3951,8 +3584,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-13T15:24:18.073Z",
         "updated_at": "2020-10-13T15:24:19.249Z"
       }
@@ -3961,8 +3592,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -3988,8 +3617,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -4003,8 +3630,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -4018,18 +3643,6 @@
   {
     "id": 7,
     "namePrivate": "PÖFFi Põhjusega mässajad",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T17:42:44.012Z",
     "updated_at": "2020-11-06T08:17:48.006Z",
     "festival_edition": null,
@@ -4086,8 +3699,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:02:05.809Z",
         "updated_at": "2020-10-29T06:02:06.473Z"
       },
@@ -4119,8 +3730,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:09.186Z",
         "updated_at": "2020-11-05T10:21:09.365Z"
       },
@@ -4152,8 +3761,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:12:27.911Z",
         "updated_at": "2020-11-05T14:12:28.161Z"
       },
@@ -4185,8 +3792,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:22.763Z",
         "updated_at": "2020-11-05T10:21:23.234Z"
       },
@@ -4218,8 +3823,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:26.018Z",
         "updated_at": "2020-11-05T10:21:26.103Z"
       },
@@ -4251,8 +3854,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:44:53.958Z",
         "updated_at": "2020-11-05T14:44:54.909Z"
       },
@@ -4284,8 +3885,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:22:15.842Z",
         "updated_at": "2020-11-05T14:22:17.001Z"
       },
@@ -4317,8 +3916,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:20.006Z",
         "updated_at": "2020-11-05T10:21:20.522Z"
       },
@@ -4350,8 +3947,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:54:16.587Z",
         "updated_at": "2020-11-05T14:54:17.206Z"
       },
@@ -4383,8 +3978,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 23,
-        "updated_by": 23,
         "created_at": "2020-11-03T16:38:50.832Z",
         "updated_at": "2020-11-03T16:38:50.986Z"
       },
@@ -4416,8 +4009,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:52.418Z",
         "updated_at": "2020-11-05T10:21:53.343Z"
       },
@@ -4449,8 +4040,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:53:05.929Z",
         "updated_at": "2020-11-05T13:53:06.333Z"
       },
@@ -4482,8 +4071,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:22:02.879Z",
         "updated_at": "2020-11-05T10:22:03.296Z"
       }
@@ -4492,8 +4079,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -4519,8 +4104,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -4534,18 +4117,6 @@
   {
     "id": 1,
     "namePrivate": "Shorts anima võistlusprogramm",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-05T11:32:04.845Z",
     "updated_at": "2020-11-03T21:21:45.570Z",
     "festival_edition": 2,
@@ -4585,8 +4156,6 @@
           "id": 3,
           "Name": null,
           "Description": null,
-          "created_by": 3,
-          "updated_by": 6,
           "created_at": "2020-08-26T09:52:26.012Z",
           "updated_at": "2020-10-06T13:43:39.685Z",
           "Name_et": null,
@@ -4617,8 +4186,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-04T06:12:51.177Z",
             "updated_at": "2020-10-04T06:12:51.258Z"
           },
@@ -4639,8 +4206,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 6,
-            "updated_by": 6,
             "created_at": "2020-09-28T12:24:49.457Z",
             "updated_at": "2020-09-28T12:24:49.534Z"
           }
@@ -4676,8 +4241,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:59.736Z",
         "updated_at": "2020-10-11T16:44:00.374Z"
       },
@@ -4709,8 +4272,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:59.943Z",
         "updated_at": "2020-10-11T16:44:00.506Z"
       },
@@ -4742,8 +4303,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:44:00.043Z",
         "updated_at": "2020-10-11T16:44:00.545Z"
       },
@@ -4775,8 +4334,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:44:00.243Z",
         "updated_at": "2020-10-11T16:44:00.582Z"
       },
@@ -4808,8 +4365,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:44:00.100Z",
         "updated_at": "2020-10-11T16:44:00.552Z"
       }
@@ -4818,8 +4373,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -4845,8 +4398,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -4860,8 +4411,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -4875,18 +4424,6 @@
   {
     "id": 13,
     "namePrivate": "PÖFFi  Öised värinad",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T18:27:11.211Z",
     "updated_at": "2020-11-06T08:29:14.033Z",
     "festival_edition": null,
@@ -4943,8 +4480,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:28.014Z",
         "updated_at": "2020-11-05T10:21:28.937Z"
       },
@@ -4976,8 +4511,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:40:10.803Z",
         "updated_at": "2020-11-05T14:40:12.121Z"
       },
@@ -5009,8 +4542,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:46:08.706Z",
         "updated_at": "2020-11-05T14:46:10.345Z"
       },
@@ -5042,8 +4573,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:44.470Z",
         "updated_at": "2020-11-05T10:21:44.874Z"
       }
@@ -5052,8 +4581,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -5079,8 +4606,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -5094,18 +4619,6 @@
   {
     "id": 36,
     "namePrivate": "Shorts Alternatives",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 12,
-      "firstname": "Heinrich",
-      "lastname": "Sepp",
-      "username": "heinrich"
-    },
     "created_at": "2020-10-19T17:21:48.244Z",
     "updated_at": "2020-11-10T11:27:02.963Z",
     "festival_edition": null,
@@ -5162,8 +4675,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 12,
-        "updated_by": 12,
         "created_at": "2020-11-10T11:26:56.991Z",
         "updated_at": "2020-11-10T11:26:57.219Z"
       }
@@ -5172,8 +4683,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -5199,8 +4708,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -5214,8 +4721,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -5229,18 +4734,6 @@
   {
     "id": 3,
     "namePrivate": "PÖFFi Debüütfilmide võistlusprogramm",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-07T20:16:47.544Z",
     "updated_at": "2020-11-03T19:50:11.232Z",
     "festival_edition": null,
@@ -5297,8 +4790,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:50.445Z",
         "updated_at": "2020-10-11T16:43:50.879Z"
       },
@@ -5330,8 +4821,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:48.311Z",
         "updated_at": "2020-10-11T16:43:48.386Z"
       },
@@ -5363,8 +4852,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:31.882Z",
         "updated_at": "2020-10-11T16:43:32.264Z"
       },
@@ -5396,8 +4883,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:45.173Z",
         "updated_at": "2020-10-11T16:43:45.549Z"
       },
@@ -5429,8 +4914,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:24.343Z",
         "updated_at": "2020-10-17T08:30:34.902Z"
       },
@@ -5462,8 +4945,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:42.270Z",
         "updated_at": "2020-10-11T16:43:42.516Z"
       },
@@ -5495,8 +4976,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:17.346Z",
         "updated_at": "2020-10-11T16:43:17.888Z"
       },
@@ -5528,8 +5007,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:39.242Z",
         "updated_at": "2020-10-11T16:43:39.643Z"
       },
@@ -5561,8 +5038,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:27.160Z",
         "updated_at": "2020-10-11T16:43:27.493Z"
       },
@@ -5594,8 +5069,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:51.331Z",
         "updated_at": "2020-10-11T16:43:51.839Z"
       },
@@ -5627,8 +5100,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:31.557Z",
         "updated_at": "2020-10-11T16:43:32.023Z"
       },
@@ -5660,8 +5131,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:53.417Z",
         "updated_at": "2020-10-11T16:43:53.776Z"
       },
@@ -5693,8 +5162,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:35.021Z",
         "updated_at": "2020-10-11T16:43:35.529Z"
       },
@@ -5726,8 +5193,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:22.207Z",
         "updated_at": "2020-10-11T16:43:22.603Z"
       },
@@ -5759,8 +5224,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:49.500Z",
         "updated_at": "2020-10-11T16:43:49.782Z"
       },
@@ -5792,8 +5255,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:43.057Z",
         "updated_at": "2020-10-11T16:43:43.489Z"
       },
@@ -5825,8 +5286,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:45.047Z",
         "updated_at": "2020-10-11T16:43:45.447Z"
       },
@@ -5858,8 +5317,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:28.682Z",
         "updated_at": "2020-10-11T16:43:28.948Z"
       }
@@ -5868,8 +5325,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -5895,8 +5350,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -5910,18 +5363,6 @@
   {
     "id": 15,
     "namePrivate": "PÖFFi Värsked hoovused",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T18:35:50.723Z",
     "updated_at": "2020-11-06T08:25:47.334Z",
     "festival_edition": null,
@@ -5978,8 +5419,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-06T08:19:12.779Z",
         "updated_at": "2020-11-06T08:19:12.923Z"
       },
@@ -6011,8 +5450,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:41:28.796Z",
         "updated_at": "2020-11-05T14:41:28.920Z"
       },
@@ -6044,8 +5481,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:13.319Z",
         "updated_at": "2020-11-05T10:21:13.679Z"
       },
@@ -6077,8 +5512,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:50:18.182Z",
         "updated_at": "2020-11-05T14:50:18.253Z"
       },
@@ -6110,8 +5543,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:26:20.324Z",
         "updated_at": "2020-11-05T14:26:21.221Z"
       },
@@ -6143,8 +5574,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:28.051Z",
         "updated_at": "2020-11-05T10:21:29.190Z"
       },
@@ -6176,8 +5605,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:42:12.618Z",
         "updated_at": "2020-11-05T14:42:13.138Z"
       },
@@ -6209,8 +5636,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:15:33.108Z",
         "updated_at": "2020-11-05T14:15:34.081Z"
       },
@@ -6242,8 +5667,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:16:12.590Z",
         "updated_at": "2020-11-05T14:16:13.345Z"
       },
@@ -6275,8 +5698,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:18:06.859Z",
         "updated_at": "2020-11-05T14:18:06.903Z"
       },
@@ -6308,8 +5729,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:20:01.412Z",
         "updated_at": "2020-11-05T14:20:01.502Z"
       },
@@ -6341,8 +5760,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:23:02.407Z",
         "updated_at": "2020-11-05T14:23:02.707Z"
       },
@@ -6374,8 +5791,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:37.958Z",
         "updated_at": "2020-11-05T10:21:38.728Z"
       },
@@ -6407,8 +5822,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:39.594Z",
         "updated_at": "2020-11-05T10:21:40.422Z"
       },
@@ -6440,8 +5853,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:40:53.910Z",
         "updated_at": "2020-11-05T14:40:54.207Z"
       },
@@ -6473,8 +5884,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:43:19.434Z",
         "updated_at": "2020-11-05T14:43:20.276Z"
       },
@@ -6506,8 +5915,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:38.646Z",
         "updated_at": "2020-11-05T10:21:39.704Z"
       },
@@ -6539,8 +5946,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:10:46.111Z",
         "updated_at": "2020-11-05T14:10:46.306Z"
       },
@@ -6572,8 +5977,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:28:05.888Z",
         "updated_at": "2020-11-05T14:28:05.956Z"
       },
@@ -6605,8 +6008,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:41:22.151Z",
         "updated_at": "2020-11-05T13:41:22.518Z"
       },
@@ -6638,8 +6039,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:55.322Z",
         "updated_at": "2020-11-05T10:21:55.600Z"
       },
@@ -6671,8 +6070,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:56.926Z",
         "updated_at": "2020-11-05T10:21:56.959Z"
       },
@@ -6704,8 +6101,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:45:29.819Z",
         "updated_at": "2020-11-05T14:45:30.214Z"
       },
@@ -6737,8 +6132,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:48.214Z",
         "updated_at": "2020-10-11T16:42:48.666Z"
       },
@@ -6770,8 +6163,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:14:09.856Z",
         "updated_at": "2020-11-05T14:14:10.420Z"
       },
@@ -6803,8 +6194,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:01:18.134Z",
         "updated_at": "2020-11-05T14:01:18.449Z"
       },
@@ -6836,8 +6225,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-06T08:07:36.892Z",
         "updated_at": "2020-11-06T08:07:37.021Z"
       },
@@ -6869,8 +6256,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:29.382Z",
         "updated_at": "2020-11-05T10:21:30.050Z"
       },
@@ -6902,8 +6287,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:05:03.533Z",
         "updated_at": "2020-11-05T15:05:03.741Z"
       },
@@ -6935,8 +6318,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:01:56.663Z",
         "updated_at": "2020-11-05T15:01:56.957Z"
       },
@@ -6968,8 +6349,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:59:00.430Z",
         "updated_at": "2020-11-05T13:59:00.542Z"
       },
@@ -7001,8 +6380,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:48.408Z",
         "updated_at": "2020-11-05T10:21:48.466Z"
       },
@@ -7034,8 +6411,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:48:53.265Z",
         "updated_at": "2020-11-05T13:48:53.335Z"
       },
@@ -7067,8 +6442,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:50:43.893Z",
         "updated_at": "2020-11-05T13:50:44.042Z"
       },
@@ -7100,8 +6473,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:56:52.498Z",
         "updated_at": "2020-11-05T13:56:52.680Z"
       },
@@ -7133,8 +6504,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:09:44.246Z",
         "updated_at": "2020-11-05T15:09:44.354Z"
       },
@@ -7166,8 +6535,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:04:55.988Z",
         "updated_at": "2020-11-05T14:04:56.941Z"
       },
@@ -7199,8 +6566,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:03:21.118Z",
         "updated_at": "2020-11-05T14:03:21.396Z"
       },
@@ -7232,8 +6597,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:57:55.371Z",
         "updated_at": "2020-11-05T13:57:56.054Z"
       },
@@ -7265,8 +6628,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:55:25.478Z",
         "updated_at": "2020-11-05T14:55:26.439Z"
       }
@@ -7275,8 +6636,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -7302,8 +6661,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -7317,18 +6674,6 @@
   {
     "id": 8,
     "namePrivate": "PÖFFi  Screen International kriitikute valik",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T17:46:22.018Z",
     "updated_at": "2020-11-06T08:18:58.394Z",
     "festival_edition": null,
@@ -7385,8 +6730,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T13:51:38.938Z",
         "updated_at": "2020-11-05T13:51:39.036Z"
       },
@@ -7418,8 +6761,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T10:21:47.627Z",
         "updated_at": "2020-11-05T10:21:48.413Z"
       },
@@ -7451,8 +6792,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:05:21.765Z",
         "updated_at": "2020-10-29T06:05:21.894Z"
       }
@@ -7461,8 +6800,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -7488,8 +6825,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -7503,18 +6838,6 @@
   {
     "id": 28,
     "namePrivate": "JF Lapse õiguste programm",
-    "created_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T10:38:32.419Z",
     "updated_at": "2020-11-03T20:42:28.304Z",
     "festival_edition": null,
@@ -7551,99 +6874,9 @@
       },
       "organisations": [
         {
-          "id": 21,
-          "Name": null,
-          "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
-          "created_at": "2020-11-02T19:03:10.105Z",
-          "updated_at": "2020-11-02T19:03:10.138Z",
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "Name_original": null,
-          "Type": null,
-          "name": null,
-          "type": null,
-          "gender": null,
-          "person": null,
-          "namePrivate": "Justiitsministeerium",
-          "homepageUrl": null,
-          "images": [],
-          "logoWhite": null,
-          "logoBlack": null,
-          "logoColour": {
-            "id": 1044,
-            "name": "Justiitsministeerium_logo_3lovi.svg",
-            "alternativeText": "",
-            "caption": "",
-            "width": 171,
-            "height": 68,
-            "formats": null,
-            "hash": "Justiitsministeerium_logo_3lovi_4034a888fe",
-            "ext": ".svg",
-            "mime": "image/svg+xml",
-            "size": 29.52,
-            "url": "/uploads/Justiitsministeerium_logo_3lovi_4034a888fe.svg",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "created_by": 16,
-            "updated_by": 16,
-            "created_at": "2020-10-12T09:13:01.562Z",
-            "updated_at": "2020-10-12T09:13:01.656Z"
-          }
-        },
-        {
-          "id": 22,
-          "Name": null,
-          "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
-          "created_at": "2020-11-02T19:03:41.758Z",
-          "updated_at": "2020-11-02T19:03:41.791Z",
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "Name_original": null,
-          "Type": null,
-          "name": null,
-          "type": null,
-          "gender": null,
-          "person": null,
-          "namePrivate": "Sotsiaalministeerium",
-          "homepageUrl": null,
-          "images": [],
-          "logoWhite": null,
-          "logoBlack": null,
-          "logoColour": {
-            "id": 330,
-            "name": "Sotsiaalministeerium_logo_pantone.svg",
-            "alternativeText": "",
-            "caption": "",
-            "width": 186,
-            "height": 91,
-            "formats": null,
-            "hash": "Sotsiaalministeerium_logo_pantone_484f9957ea",
-            "ext": ".svg",
-            "mime": "image/svg+xml",
-            "size": 46.22,
-            "url": "/uploads/Sotsiaalministeerium_logo_pantone_484f9957ea.svg",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
-            "created_at": "2020-10-01T09:21:57.733Z",
-            "updated_at": "2020-10-01T09:21:58.158Z"
-          }
-        },
-        {
           "id": 23,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:03:55.156Z",
           "updated_at": "2020-11-02T19:03:55.185Z",
           "Name_et": null,
@@ -7676,8 +6909,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-05T09:11:32.989Z",
             "updated_at": "2020-10-05T09:11:33.095Z"
           }
@@ -7686,8 +6917,6 @@
           "id": 25,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:14.452Z",
           "updated_at": "2020-11-02T19:05:14.474Z",
           "Name_et": null,
@@ -7720,18 +6949,94 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 16,
-            "updated_by": 16,
             "created_at": "2020-10-12T09:14:56.319Z",
             "updated_at": "2020-10-12T09:14:56.405Z"
+          }
+        },
+        {
+          "id": 21,
+          "Name": null,
+          "Description": null,
+          "created_at": "2020-11-02T19:03:10.105Z",
+          "updated_at": "2020-11-02T19:03:10.138Z",
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "Name_original": null,
+          "Type": null,
+          "name": null,
+          "type": null,
+          "gender": null,
+          "person": null,
+          "namePrivate": "Justiitsministeerium",
+          "homepageUrl": null,
+          "images": [],
+          "logoWhite": null,
+          "logoBlack": null,
+          "logoColour": {
+            "id": 1044,
+            "name": "Justiitsministeerium_logo_3lovi.svg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 171,
+            "height": 68,
+            "formats": null,
+            "hash": "Justiitsministeerium_logo_3lovi_4034a888fe",
+            "ext": ".svg",
+            "mime": "image/svg+xml",
+            "size": 29.52,
+            "url": "/uploads/Justiitsministeerium_logo_3lovi_4034a888fe.svg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2020-10-12T09:13:01.562Z",
+            "updated_at": "2020-10-12T09:13:01.656Z"
+          }
+        },
+        {
+          "id": 22,
+          "Name": null,
+          "Description": null,
+          "created_at": "2020-11-02T19:03:41.758Z",
+          "updated_at": "2020-11-02T19:03:41.791Z",
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "Name_original": null,
+          "Type": null,
+          "name": null,
+          "type": null,
+          "gender": null,
+          "person": null,
+          "namePrivate": "Sotsiaalministeerium",
+          "homepageUrl": null,
+          "images": [],
+          "logoWhite": null,
+          "logoBlack": null,
+          "logoColour": {
+            "id": 330,
+            "name": "Sotsiaalministeerium_logo_pantone.svg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 186,
+            "height": 91,
+            "formats": null,
+            "hash": "Sotsiaalministeerium_logo_pantone_484f9957ea",
+            "ext": ".svg",
+            "mime": "image/svg+xml",
+            "size": 46.22,
+            "url": "/uploads/Sotsiaalministeerium_logo_pantone_484f9957ea.svg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2020-10-01T09:21:57.733Z",
+            "updated_at": "2020-10-01T09:21:58.158Z"
           }
         },
         {
           "id": 24,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 14,
           "created_at": "2020-11-02T19:04:02.934Z",
           "updated_at": "2020-11-02T19:33:52.844Z",
           "Name_et": null,
@@ -7776,8 +7081,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-11-02T19:33:47.780Z",
             "updated_at": "2020-11-02T19:33:47.835Z"
           }
@@ -7813,8 +7116,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:52.067Z",
         "updated_at": "2020-10-11T16:42:52.550Z"
       },
@@ -7846,8 +7147,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:03.941Z",
         "updated_at": "2020-10-11T16:43:04.711Z"
       },
@@ -7879,8 +7178,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:05.554Z",
         "updated_at": "2020-10-11T16:43:06.196Z"
       },
@@ -7912,8 +7209,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:04.245Z",
         "updated_at": "2020-10-11T16:43:04.871Z"
       },
@@ -7945,8 +7240,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:04.415Z",
         "updated_at": "2020-10-11T16:43:04.981Z"
       },
@@ -7978,8 +7271,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.429Z",
         "updated_at": "2020-10-11T16:43:07.896Z"
       },
@@ -8011,8 +7302,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:09.392Z",
         "updated_at": "2020-10-11T16:43:09.847Z"
       },
@@ -8044,8 +7333,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:09.391Z",
         "updated_at": "2020-10-11T16:43:09.847Z"
       }
@@ -8054,8 +7341,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -8081,8 +7366,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -8096,8 +7379,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -8111,18 +7392,6 @@
   {
     "id": 2,
     "namePrivate": "PÖFFi Põhivõistlusprogramm",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-07T20:13:54.469Z",
     "updated_at": "2020-11-03T19:47:37.238Z",
     "festival_edition": null,
@@ -8183,8 +7452,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:48.191Z",
         "updated_at": "2020-10-21T10:25:48.276Z"
       },
@@ -8216,8 +7483,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:48.224Z",
         "updated_at": "2020-10-21T10:25:48.296Z"
       },
@@ -8249,8 +7514,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:48.450Z",
         "updated_at": "2020-10-21T10:25:48.523Z"
       },
@@ -8282,8 +7545,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:48.850Z",
         "updated_at": "2020-10-21T10:25:48.993Z"
       },
@@ -8315,8 +7576,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:51.488Z",
         "updated_at": "2020-10-21T10:25:51.539Z"
       },
@@ -8348,8 +7607,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:48.017Z",
         "updated_at": "2020-10-21T10:25:48.132Z"
       },
@@ -8381,8 +7638,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:49.853Z",
         "updated_at": "2020-10-21T10:25:49.886Z"
       },
@@ -8414,8 +7669,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:48.678Z",
         "updated_at": "2020-10-21T10:25:48.854Z"
       },
@@ -8447,8 +7700,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:49.255Z",
         "updated_at": "2020-10-21T10:25:49.344Z"
       },
@@ -8480,8 +7731,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:48.967Z",
         "updated_at": "2020-10-21T10:25:49.083Z"
       },
@@ -8513,8 +7762,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:49.272Z",
         "updated_at": "2020-10-21T10:25:49.430Z"
       },
@@ -8546,8 +7793,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:49.785Z",
         "updated_at": "2020-10-21T10:25:49.813Z"
       },
@@ -8579,8 +7824,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:54.558Z",
         "updated_at": "2020-10-21T10:25:54.823Z"
       },
@@ -8612,8 +7855,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:49.535Z",
         "updated_at": "2020-10-21T10:25:49.617Z"
       },
@@ -8645,8 +7886,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-21T10:25:50.326Z",
         "updated_at": "2020-10-21T10:25:50.358Z"
       }
@@ -8655,8 +7894,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -8682,8 +7919,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -8697,18 +7932,6 @@
   {
     "id": 27,
     "namePrivate": "JF Lastefilmide võistlusporgramm",
-    "created_by": {
-      "id": 3,
-      "firstname": "Liis",
-      "lastname": "Käsper",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T10:11:21.306Z",
     "updated_at": "2020-11-03T20:41:29.046Z",
     "festival_edition": null,
@@ -8748,8 +7971,6 @@
           "id": 27,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:52.094Z",
           "updated_at": "2020-11-02T19:05:52.120Z",
           "Name_et": null,
@@ -8794,8 +8015,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:19:03.619Z",
             "updated_at": "2020-10-07T09:19:03.782Z"
           }
@@ -8804,8 +8023,6 @@
           "id": 26,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:28.709Z",
           "updated_at": "2020-11-02T19:05:28.730Z",
           "Name_et": null,
@@ -8838,8 +8055,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:16:58.937Z",
             "updated_at": "2020-10-07T09:16:59.073Z"
           }
@@ -8875,8 +8090,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:52.031Z",
         "updated_at": "2020-10-11T16:42:52.485Z"
       },
@@ -8908,8 +8121,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:02.710Z",
         "updated_at": "2020-10-11T16:43:03.128Z"
       },
@@ -8941,8 +8152,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:03.849Z",
         "updated_at": "2020-10-11T16:43:04.338Z"
       },
@@ -8974,8 +8183,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:04.245Z",
         "updated_at": "2020-10-11T16:43:04.871Z"
       },
@@ -9007,8 +8214,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:06.304Z",
         "updated_at": "2020-10-11T16:43:06.764Z"
       },
@@ -9040,8 +8245,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:06.449Z",
         "updated_at": "2020-10-11T16:43:06.955Z"
       },
@@ -9073,8 +8276,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.193Z",
         "updated_at": "2020-10-11T16:43:07.752Z"
       },
@@ -9106,8 +8307,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:53.189Z",
         "updated_at": "2020-10-11T16:42:53.633Z"
       },
@@ -9139,8 +8338,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.783Z",
         "updated_at": "2020-10-11T16:43:08.090Z"
       },
@@ -9172,8 +8369,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:09.372Z",
         "updated_at": "2020-10-11T16:43:09.832Z"
       },
@@ -9205,8 +8400,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:11.370Z",
         "updated_at": "2020-10-11T16:43:11.836Z"
       }
@@ -9215,8 +8408,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -9242,8 +8433,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -9257,8 +8446,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -9272,18 +8459,6 @@
   {
     "id": 16,
     "namePrivate": "PÖFFi Erilinastused",
-    "created_by": {
-      "id": 19,
-      "firstname": "Anna-Liiza",
-      "lastname": "Izbaš",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-08T18:37:17.477Z",
     "updated_at": "2020-11-06T08:05:19.538Z",
     "festival_edition": null,
@@ -9340,8 +8515,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:14:58.903Z",
         "updated_at": "2020-10-29T06:14:59.894Z"
       }
@@ -9350,8 +8523,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -9377,8 +8548,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -9392,18 +8561,6 @@
   {
     "id": 31,
     "namePrivate": "JF Lastefilmide programm",
-    "created_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T10:40:36.172Z",
     "updated_at": "2020-11-03T20:44:26.179Z",
     "festival_edition": null,
@@ -9440,55 +8597,9 @@
       },
       "organisations": [
         {
-          "id": 26,
-          "Name": null,
-          "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
-          "created_at": "2020-11-02T19:05:28.709Z",
-          "updated_at": "2020-11-02T19:05:28.730Z",
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "Name_original": null,
-          "Type": null,
-          "name": null,
-          "type": null,
-          "gender": null,
-          "person": null,
-          "namePrivate": "Swedbank",
-          "homepageUrl": null,
-          "images": [],
-          "logoWhite": null,
-          "logoBlack": null,
-          "logoColour": {
-            "id": 409,
-            "name": "Swedbank_Vector_Logotype_Pos_RGB.svg",
-            "alternativeText": "",
-            "caption": "",
-            "width": 2073,
-            "height": 446,
-            "formats": null,
-            "hash": "Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461",
-            "ext": ".svg",
-            "mime": "image/svg+xml",
-            "size": 342.38,
-            "url": "/uploads/Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461.svg",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
-            "created_at": "2020-10-07T09:16:58.937Z",
-            "updated_at": "2020-10-07T09:16:59.073Z"
-          }
-        },
-        {
           "id": 27,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:52.094Z",
           "updated_at": "2020-11-02T19:05:52.120Z",
           "Name_et": null,
@@ -9533,10 +8644,48 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:19:03.619Z",
             "updated_at": "2020-10-07T09:19:03.782Z"
+          }
+        },
+        {
+          "id": 26,
+          "Name": null,
+          "Description": null,
+          "created_at": "2020-11-02T19:05:28.709Z",
+          "updated_at": "2020-11-02T19:05:28.730Z",
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "Name_original": null,
+          "Type": null,
+          "name": null,
+          "type": null,
+          "gender": null,
+          "person": null,
+          "namePrivate": "Swedbank",
+          "homepageUrl": null,
+          "images": [],
+          "logoWhite": null,
+          "logoBlack": null,
+          "logoColour": {
+            "id": 409,
+            "name": "Swedbank_Vector_Logotype_Pos_RGB.svg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 2073,
+            "height": 446,
+            "formats": null,
+            "hash": "Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461",
+            "ext": ".svg",
+            "mime": "image/svg+xml",
+            "size": 342.38,
+            "url": "/uploads/Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461.svg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2020-10-07T09:16:58.937Z",
+            "updated_at": "2020-10-07T09:16:59.073Z"
           }
         }
       ]
@@ -9570,8 +8719,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:48.345Z",
         "updated_at": "2020-10-11T16:42:48.789Z"
       },
@@ -9603,8 +8750,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:52.031Z",
         "updated_at": "2020-10-11T16:42:52.485Z"
       },
@@ -9636,8 +8781,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:01.401Z",
         "updated_at": "2020-10-11T16:43:01.726Z"
       },
@@ -9669,8 +8812,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:02.710Z",
         "updated_at": "2020-10-11T16:43:03.128Z"
       },
@@ -9702,8 +8843,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:03.849Z",
         "updated_at": "2020-10-11T16:43:04.338Z"
       },
@@ -9735,8 +8874,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:05.091Z",
         "updated_at": "2020-10-11T16:43:05.561Z"
       },
@@ -9768,8 +8905,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:04.245Z",
         "updated_at": "2020-10-11T16:43:04.871Z"
       },
@@ -9801,8 +8936,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:05.463Z",
         "updated_at": "2020-10-11T16:43:06.063Z"
       },
@@ -9834,8 +8967,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:06.304Z",
         "updated_at": "2020-10-11T16:43:06.764Z"
       },
@@ -9867,8 +8998,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:06.449Z",
         "updated_at": "2020-10-11T16:43:06.955Z"
       },
@@ -9900,8 +9029,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.193Z",
         "updated_at": "2020-10-11T16:43:07.752Z"
       },
@@ -9933,8 +9060,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:53.189Z",
         "updated_at": "2020-10-11T16:42:53.633Z"
       },
@@ -9966,8 +9091,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.546Z",
         "updated_at": "2020-10-11T16:43:07.970Z"
       },
@@ -9999,8 +9122,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.783Z",
         "updated_at": "2020-10-11T16:43:08.090Z"
       },
@@ -10032,8 +9153,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:09.372Z",
         "updated_at": "2020-10-11T16:43:09.832Z"
       },
@@ -10065,8 +9184,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:08.583Z",
         "updated_at": "2020-10-11T16:43:09.036Z"
       },
@@ -10098,8 +9215,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:09.413Z",
         "updated_at": "2020-10-11T16:43:09.889Z"
       },
@@ -10131,8 +9246,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:11.370Z",
         "updated_at": "2020-10-11T16:43:11.836Z"
       }
@@ -10141,8 +9254,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -10168,8 +9279,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -10183,8 +9292,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -10198,18 +9305,6 @@
   {
     "id": 32,
     "namePrivate": "JF Just Film 20",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-14T09:00:48.094Z",
     "updated_at": "2020-11-03T20:41:52.765Z",
     "festival_edition": null,
@@ -10249,8 +9344,6 @@
           "id": 26,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:28.709Z",
           "updated_at": "2020-11-02T19:05:28.730Z",
           "Name_et": null,
@@ -10283,8 +9376,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:16:58.937Z",
             "updated_at": "2020-10-07T09:16:59.073Z"
           }
@@ -10293,8 +9384,6 @@
           "id": 27,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:52.094Z",
           "updated_at": "2020-11-02T19:05:52.120Z",
           "Name_et": null,
@@ -10339,8 +9428,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:19:03.619Z",
             "updated_at": "2020-10-07T09:19:03.782Z"
           }
@@ -10376,8 +9463,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:48.289Z",
         "updated_at": "2020-10-11T16:42:48.726Z"
       },
@@ -10409,8 +9494,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:02.846Z",
         "updated_at": "2020-10-11T16:43:03.228Z"
       }
@@ -10419,8 +9502,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -10446,8 +9527,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -10461,8 +9540,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -10476,18 +9553,6 @@
   {
     "id": 44,
     "namePrivate": "PÖFF I TV BEATS ",
-    "created_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
     "created_at": "2020-11-03T20:20:23.065Z",
     "updated_at": "2020-11-06T09:07:10.394Z",
     "festival_edition": null,
@@ -10544,8 +9609,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T14:04:18.388Z",
         "updated_at": "2020-11-05T14:04:18.586Z"
       }
@@ -10554,8 +9617,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -10581,8 +9642,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -10596,18 +9655,6 @@
   {
     "id": 40,
     "namePrivate": "PÖFFi elutööauhind",
-    "created_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 4,
-      "firstname": "Siim",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-11-03T19:46:58.232Z",
     "updated_at": "2020-11-06T09:19:16.063Z",
     "festival_edition": null,
@@ -10659,8 +9706,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-29T06:14:58.217Z",
         "updated_at": "2020-10-29T06:14:59.591Z"
       }
@@ -10669,8 +9714,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -10696,8 +9739,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -10711,18 +9752,6 @@
   {
     "id": 38,
     "namePrivate": "Shorts Lühikesed mässajad",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
     "created_at": "2020-10-19T17:24:15.985Z",
     "updated_at": "2020-11-10T17:00:30.093Z",
     "festival_edition": null,
@@ -10779,8 +9808,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:47.979Z",
         "updated_at": "2020-10-11T16:42:48.504Z"
       },
@@ -10812,8 +9839,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:54.924Z",
         "updated_at": "2020-10-11T16:42:55.236Z"
       },
@@ -10845,8 +9870,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:59.547Z",
         "updated_at": "2020-10-11T16:42:59.994Z"
       },
@@ -10878,8 +9901,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:23.120Z",
         "updated_at": "2020-10-11T16:42:23.634Z"
       },
@@ -10911,8 +9932,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:19.334Z",
         "updated_at": "2020-10-11T16:42:19.747Z"
       },
@@ -10944,8 +9963,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T09:02:37.746Z",
         "updated_at": "2020-10-10T09:02:38.648Z"
       },
@@ -10977,8 +9994,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T09:02:39.372Z",
         "updated_at": "2020-10-10T09:02:40.091Z"
       },
@@ -11010,8 +10025,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:27.547Z",
         "updated_at": "2020-10-11T16:42:27.932Z"
       },
@@ -11043,8 +10056,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:32.551Z",
         "updated_at": "2020-10-11T16:42:33.069Z"
       },
@@ -11076,8 +10087,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:32.733Z",
         "updated_at": "2020-10-11T16:42:33.234Z"
       },
@@ -11109,8 +10118,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T09:02:39.834Z",
         "updated_at": "2020-10-10T09:02:40.335Z"
       },
@@ -11142,8 +10149,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T09:02:40.064Z",
         "updated_at": "2020-10-10T09:02:40.407Z"
       },
@@ -11175,8 +10180,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:44.598Z",
         "updated_at": "2020-10-11T16:42:45.072Z"
       }
@@ -11185,8 +10188,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -11212,8 +10213,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -11227,8 +10226,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -11242,18 +10239,6 @@
   {
     "id": 33,
     "namePrivate": "Debüütfilmide võistlusprogramm - Väljaspool võistlust",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-14T11:43:31.992Z",
     "updated_at": "2020-11-03T20:40:04.738Z",
     "festival_edition": null,
@@ -11305,8 +10290,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:36.704Z",
         "updated_at": "2020-10-11T16:43:37.168Z"
       },
@@ -11338,8 +10321,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 9,
-        "updated_by": 9,
         "created_at": "2020-10-15T08:53:47.094Z",
         "updated_at": "2020-10-15T08:53:47.133Z"
       },
@@ -11371,8 +10352,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:17.196Z",
         "updated_at": "2020-10-11T16:43:17.697Z"
       }
@@ -11381,8 +10360,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -11408,8 +10385,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -11423,18 +10398,6 @@
   {
     "id": 41,
     "namePrivate": "PÖFF I Keskkonnaagentuur esitleb",
-    "created_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
     "created_at": "2020-11-03T20:13:10.625Z",
     "updated_at": "2020-11-12T12:41:29.803Z",
     "festival_edition": null,
@@ -11474,8 +10437,6 @@
           "id": 13,
           "Name": null,
           "Description": null,
-          "created_by": 9,
-          "updated_by": 9,
           "created_at": "2020-10-25T19:22:39.269Z",
           "updated_at": "2020-10-25T19:29:28.731Z",
           "Name_et": null,
@@ -11508,8 +10469,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 16,
-            "updated_by": 16,
             "created_at": "2020-10-07T08:05:50.630Z",
             "updated_at": "2020-10-07T08:05:50.746Z"
           }
@@ -11545,8 +10504,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:02.449Z",
         "updated_at": "2020-10-11T16:43:02.960Z"
       },
@@ -11578,8 +10535,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:42.596Z",
         "updated_at": "2020-11-05T11:21:42.776Z"
       },
@@ -11611,8 +10566,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:50.434Z",
         "updated_at": "2020-10-11T16:42:50.828Z"
       },
@@ -11644,8 +10597,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-13T15:24:18.073Z",
         "updated_at": "2020-10-13T15:24:19.249Z"
       },
@@ -11677,8 +10628,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 26,
-        "updated_by": 26,
         "created_at": "2020-11-05T15:00:50.675Z",
         "updated_at": "2020-11-05T15:00:51.290Z"
       }
@@ -11687,8 +10636,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -11714,8 +10661,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -11729,18 +10674,6 @@
   {
     "id": 37,
     "namePrivate": "Shorts DOC@Shorts",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
     "created_at": "2020-10-19T17:22:38.695Z",
     "updated_at": "2020-11-10T22:18:28.740Z",
     "festival_edition": null,
@@ -11797,8 +10730,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-08T06:55:38.233Z",
         "updated_at": "2020-11-08T06:55:39.884Z"
       }
@@ -11807,8 +10738,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -11834,8 +10763,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -11849,8 +10776,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -11864,18 +10789,6 @@
   {
     "id": 45,
     "namePrivate": "JF ECFA võistlusprogramm",
-    "created_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
-    "updated_by": {
-      "id": 1,
-      "firstname": "Mihkel",
-      "lastname": "Putrinš",
-      "username": null
-    },
     "created_at": "2020-11-09T06:18:49.953Z",
     "updated_at": "2020-11-14T18:38:03.417Z",
     "festival_edition": null,
@@ -11932,8 +10845,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:15.551Z",
         "updated_at": "2020-10-11T16:43:16.100Z"
       }
@@ -11942,8 +10853,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -11969,8 +10878,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -11984,8 +10891,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -11999,18 +10904,6 @@
   {
     "id": 17,
     "namePrivate": "Shorts lühifilmi võistlusprogramm",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T06:21:57.867Z",
     "updated_at": "2020-11-03T21:22:33.059Z",
     "festival_edition": null,
@@ -12050,8 +10943,6 @@
           "id": 5,
           "Name": null,
           "Description": null,
-          "created_by": 21,
-          "updated_by": 21,
           "created_at": "2020-10-07T12:01:38.939Z",
           "updated_at": "2020-10-07T12:03:17.059Z",
           "Name_et": null,
@@ -12082,8 +10973,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-03T13:02:44.663Z",
             "updated_at": "2020-10-03T13:02:44.829Z"
           },
@@ -12103,8 +10992,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-03T13:02:44.639Z",
             "updated_at": "2020-10-03T13:02:44.819Z"
           },
@@ -12141,8 +11028,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:45.286Z",
         "updated_at": "2020-10-10T08:11:45.818Z"
       },
@@ -12174,8 +11059,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:45.123Z",
         "updated_at": "2020-10-10T08:11:45.676Z"
       },
@@ -12207,8 +11090,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:45.076Z",
         "updated_at": "2020-10-10T08:11:45.659Z"
       },
@@ -12240,8 +11121,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:45.336Z",
         "updated_at": "2020-10-10T08:11:45.866Z"
       },
@@ -12273,8 +11152,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:45.386Z",
         "updated_at": "2020-10-10T08:11:45.916Z"
       },
@@ -12306,8 +11183,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:45.386Z",
         "updated_at": "2020-10-10T08:11:45.915Z"
       },
@@ -12339,8 +11214,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:46.586Z",
         "updated_at": "2020-10-10T08:11:47.144Z"
       },
@@ -12372,8 +11245,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:46.642Z",
         "updated_at": "2020-10-10T08:11:47.270Z"
       },
@@ -12405,8 +11276,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:46.904Z",
         "updated_at": "2020-10-10T08:11:47.458Z"
       },
@@ -12438,8 +11307,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:46.954Z",
         "updated_at": "2020-10-10T08:11:47.482Z"
       },
@@ -12471,8 +11338,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:46.967Z",
         "updated_at": "2020-10-10T08:11:47.498Z"
       },
@@ -12504,8 +11369,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:46.997Z",
         "updated_at": "2020-10-10T08:11:47.568Z"
       },
@@ -12537,8 +11400,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:47.952Z",
         "updated_at": "2020-10-10T08:11:48.604Z"
       },
@@ -12570,8 +11431,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:48.035Z",
         "updated_at": "2020-10-10T08:11:48.778Z"
       },
@@ -12603,8 +11462,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:48.378Z",
         "updated_at": "2020-10-10T08:11:49.006Z"
       },
@@ -12636,8 +11493,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:48.669Z",
         "updated_at": "2020-10-10T08:11:49.259Z"
       },
@@ -12669,8 +11524,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:48.904Z",
         "updated_at": "2020-10-10T08:11:49.403Z"
       },
@@ -12702,8 +11555,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:48.975Z",
         "updated_at": "2020-10-10T08:11:49.544Z"
       },
@@ -12735,8 +11586,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:49.927Z",
         "updated_at": "2020-10-10T08:11:50.553Z"
       },
@@ -12768,8 +11617,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:49.943Z",
         "updated_at": "2020-10-10T08:11:50.565Z"
       },
@@ -12801,8 +11648,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:50.395Z",
         "updated_at": "2020-10-10T08:11:50.975Z"
       },
@@ -12834,8 +11679,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:50.491Z",
         "updated_at": "2020-10-10T08:11:51.009Z"
       },
@@ -12867,8 +11710,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:50.965Z",
         "updated_at": "2020-10-10T08:11:51.423Z"
       },
@@ -12900,8 +11741,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:51.012Z",
         "updated_at": "2020-10-10T08:11:51.522Z"
       },
@@ -12933,8 +11772,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:51.620Z",
         "updated_at": "2020-10-10T08:11:52.078Z"
       },
@@ -12966,8 +11803,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:51.754Z",
         "updated_at": "2020-10-10T08:11:52.203Z"
       },
@@ -12999,8 +11834,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:51.812Z",
         "updated_at": "2020-10-10T08:11:52.260Z"
       },
@@ -13032,8 +11865,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:51.880Z",
         "updated_at": "2020-10-10T08:11:52.355Z"
       },
@@ -13065,8 +11896,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:52.401Z",
         "updated_at": "2020-10-10T08:11:52.554Z"
       },
@@ -13098,8 +11927,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-10-10T08:11:52.427Z",
         "updated_at": "2020-10-10T08:11:52.559Z"
       }
@@ -13108,8 +11935,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -13135,8 +11960,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -13150,8 +11973,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -13165,18 +11986,6 @@
   {
     "id": 5,
     "namePrivate": "JF Noortefilmide programm",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-07T20:25:05.808Z",
     "updated_at": "2020-11-12T09:00:33.070Z",
     "festival_edition": null,
@@ -13213,11 +12022,49 @@
       },
       "organisations": [
         {
+          "id": 26,
+          "Name": null,
+          "Description": null,
+          "created_at": "2020-11-02T19:05:28.709Z",
+          "updated_at": "2020-11-02T19:05:28.730Z",
+          "Name_et": null,
+          "Name_en": null,
+          "Name_ru": null,
+          "Name_original": null,
+          "Type": null,
+          "name": null,
+          "type": null,
+          "gender": null,
+          "person": null,
+          "namePrivate": "Swedbank",
+          "homepageUrl": null,
+          "images": [],
+          "logoWhite": null,
+          "logoBlack": null,
+          "logoColour": {
+            "id": 409,
+            "name": "Swedbank_Vector_Logotype_Pos_RGB.svg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 2073,
+            "height": 446,
+            "formats": null,
+            "hash": "Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461",
+            "ext": ".svg",
+            "mime": "image/svg+xml",
+            "size": 342.38,
+            "url": "/uploads/Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461.svg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2020-10-07T09:16:58.937Z",
+            "updated_at": "2020-10-07T09:16:59.073Z"
+          }
+        },
+        {
           "id": 27,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:52.094Z",
           "updated_at": "2020-11-02T19:05:52.120Z",
           "Name_et": null,
@@ -13262,54 +12109,8 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:19:03.619Z",
             "updated_at": "2020-10-07T09:19:03.782Z"
-          }
-        },
-        {
-          "id": 26,
-          "Name": null,
-          "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
-          "created_at": "2020-11-02T19:05:28.709Z",
-          "updated_at": "2020-11-02T19:05:28.730Z",
-          "Name_et": null,
-          "Name_en": null,
-          "Name_ru": null,
-          "Name_original": null,
-          "Type": null,
-          "name": null,
-          "type": null,
-          "gender": null,
-          "person": null,
-          "namePrivate": "Swedbank",
-          "homepageUrl": null,
-          "images": [],
-          "logoWhite": null,
-          "logoBlack": null,
-          "logoColour": {
-            "id": 409,
-            "name": "Swedbank_Vector_Logotype_Pos_RGB.svg",
-            "alternativeText": "",
-            "caption": "",
-            "width": 2073,
-            "height": 446,
-            "formats": null,
-            "hash": "Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461",
-            "ext": ".svg",
-            "mime": "image/svg+xml",
-            "size": 342.38,
-            "url": "/uploads/Swedbank_Vector_Logotype_Pos_RGB_b8f7d31461.svg",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
-            "created_at": "2020-10-07T09:16:58.937Z",
-            "updated_at": "2020-10-07T09:16:59.073Z"
           }
         }
       ]
@@ -13343,8 +12144,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:53.614Z",
         "updated_at": "2020-10-11T16:42:53.922Z"
       },
@@ -13376,8 +12175,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 14,
         "created_at": "2020-10-11T16:42:56.923Z",
         "updated_at": "2020-11-12T09:00:21.518Z"
       },
@@ -13409,8 +12206,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:00.101Z",
         "updated_at": "2020-10-11T16:43:00.310Z"
       },
@@ -13442,8 +12237,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-13T15:24:12.622Z",
         "updated_at": "2020-10-13T15:24:14.326Z"
       },
@@ -13475,8 +12268,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:02.797Z",
         "updated_at": "2020-10-11T16:43:03.192Z"
       },
@@ -13508,8 +12299,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:03.856Z",
         "updated_at": "2020-10-11T16:43:04.339Z"
       },
@@ -13541,8 +12330,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-13T15:24:12.622Z",
         "updated_at": "2020-10-18T12:57:57.819Z"
       },
@@ -13574,8 +12361,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:03.941Z",
         "updated_at": "2020-10-11T16:43:04.711Z"
       },
@@ -13607,8 +12392,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:05.554Z",
         "updated_at": "2020-10-11T16:43:06.196Z"
       },
@@ -13640,8 +12423,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:05.941Z",
         "updated_at": "2020-10-11T16:43:06.416Z"
       },
@@ -13673,8 +12454,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:06.066Z",
         "updated_at": "2020-10-11T16:43:06.523Z"
       },
@@ -13706,8 +12485,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:06.997Z",
         "updated_at": "2020-10-11T16:43:07.584Z"
       },
@@ -13739,8 +12516,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.429Z",
         "updated_at": "2020-10-11T16:43:07.896Z"
       },
@@ -13772,8 +12547,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.938Z",
         "updated_at": "2020-10-11T16:43:08.170Z"
       },
@@ -13805,8 +12578,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:09.391Z",
         "updated_at": "2020-10-11T16:43:09.847Z"
       },
@@ -13838,8 +12609,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:10.987Z",
         "updated_at": "2020-10-11T16:43:11.585Z"
       }
@@ -13848,8 +12617,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -13875,8 +12642,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -13890,8 +12655,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -13905,18 +12668,6 @@
   {
     "id": 4,
     "namePrivate": "Just Film: Rahvusvaheline noortefilmide võistlusprogramm",
-    "created_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
-    "updated_by": {
-      "id": 14,
-      "firstname": "Heleen",
-      "lastname": "Sutt",
-      "username": null
-    },
     "created_at": "2020-10-07T20:24:11.677Z",
     "updated_at": "2020-11-12T09:00:54.069Z",
     "festival_edition": null,
@@ -13956,8 +12707,6 @@
           "id": 26,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:28.709Z",
           "updated_at": "2020-11-02T19:05:28.730Z",
           "Name_et": null,
@@ -13990,8 +12739,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:16:58.937Z",
             "updated_at": "2020-10-07T09:16:59.073Z"
           }
@@ -14000,8 +12747,6 @@
           "id": 27,
           "Name": null,
           "Description": null,
-          "created_by": 15,
-          "updated_by": 15,
           "created_at": "2020-11-02T19:05:52.094Z",
           "updated_at": "2020-11-02T19:05:52.120Z",
           "Name_et": null,
@@ -14046,8 +12791,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 14,
-            "updated_by": 14,
             "created_at": "2020-10-07T09:19:03.619Z",
             "updated_at": "2020-10-07T09:19:03.782Z"
           }
@@ -14083,8 +12826,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-13T15:24:12.622Z",
         "updated_at": "2020-10-13T15:24:14.326Z"
       },
@@ -14116,8 +12857,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-13T15:24:12.622Z",
         "updated_at": "2020-10-18T12:57:57.819Z"
       },
@@ -14149,8 +12888,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:03.941Z",
         "updated_at": "2020-10-11T16:43:04.711Z"
       },
@@ -14182,8 +12919,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:05.554Z",
         "updated_at": "2020-10-11T16:43:06.196Z"
       },
@@ -14215,8 +12950,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:05.941Z",
         "updated_at": "2020-10-11T16:43:06.416Z"
       },
@@ -14248,8 +12981,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:06.997Z",
         "updated_at": "2020-10-11T16:43:07.584Z"
       },
@@ -14281,8 +13012,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.429Z",
         "updated_at": "2020-10-11T16:43:07.896Z"
       },
@@ -14314,8 +13043,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.938Z",
         "updated_at": "2020-10-11T16:43:08.170Z"
       },
@@ -14347,8 +13074,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:09.391Z",
         "updated_at": "2020-10-11T16:43:09.847Z"
       },
@@ -14380,8 +13105,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:10.987Z",
         "updated_at": "2020-10-11T16:43:11.585Z"
       }
@@ -14390,8 +13113,6 @@
       {
         "id": 3,
         "festival": 3,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:06:00.297Z",
         "updated_at": "2020-10-12T08:13:37.082Z",
         "domain": 2,
@@ -14417,8 +13138,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:52.272Z",
         "updated_at": "2020-08-31T13:52:48.952Z",
         "url": "justfilm.ee",
@@ -14432,8 +13151,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -14447,18 +13164,6 @@
   {
     "id": 43,
     "namePrivate": "PÖFF I 101 EESTI FILMI ",
-    "created_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
     "created_at": "2020-11-03T20:18:34.275Z",
     "updated_at": "2020-11-06T17:53:49.631Z",
     "festival_edition": null,
@@ -14515,8 +13220,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:28.380Z",
         "updated_at": "2020-11-05T11:21:28.977Z"
       },
@@ -14548,8 +13251,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:31:21.048Z",
         "updated_at": "2020-11-05T11:31:21.104Z"
       },
@@ -14581,8 +13282,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:30.685Z",
         "updated_at": "2020-11-05T11:21:30.857Z"
       },
@@ -14614,8 +13313,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:20.857Z",
         "updated_at": "2020-11-05T11:21:21.661Z"
       },
@@ -14647,8 +13344,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:31:22.063Z",
         "updated_at": "2020-11-05T11:31:22.259Z"
       },
@@ -14680,8 +13375,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-11-05T11:21:39.714Z",
         "updated_at": "2020-11-05T11:21:40.487Z"
       }
@@ -14690,8 +13383,6 @@
       {
         "id": 1,
         "festival": 2,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-27T08:18:42.523Z",
         "updated_at": "2020-10-08T10:58:57.738Z",
         "domain": 1,
@@ -14717,8 +13408,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -14732,18 +13421,6 @@
   {
     "id": 18,
     "namePrivate": "Shorts New Talents võistlusprogramm: anima",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T06:50:59.677Z",
     "updated_at": "2020-11-03T21:23:20.520Z",
     "festival_edition": null,
@@ -14783,8 +13460,6 @@
           "id": 4,
           "Name": null,
           "Description": null,
-          "created_by": 21,
-          "updated_by": 18,
           "created_at": "2020-10-07T11:58:14.947Z",
           "updated_at": "2020-10-16T16:42:26.226Z",
           "Name_et": null,
@@ -14816,8 +13491,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 6,
-            "updated_by": 6,
             "created_at": "2020-10-03T15:47:16.888Z",
             "updated_at": "2020-10-03T15:47:17.024Z"
           },
@@ -14854,8 +13527,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:46.509Z",
         "updated_at": "2020-10-11T16:42:46.909Z"
       }
@@ -14864,8 +13535,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -14891,8 +13560,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -14906,8 +13573,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -14921,18 +13586,6 @@
   {
     "id": 35,
     "namePrivate": "Shorts Panoraam",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 12,
-      "firstname": "Heinrich",
-      "lastname": "Sepp",
-      "username": "heinrich"
-    },
     "created_at": "2020-10-19T17:18:21.947Z",
     "updated_at": "2020-11-08T10:35:42.509Z",
     "festival_edition": null,
@@ -14989,8 +13642,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 21,
-        "updated_by": 21,
         "created_at": "2020-11-02T09:29:50.916Z",
         "updated_at": "2020-11-02T09:29:50.966Z"
       }
@@ -14999,8 +13650,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -15026,8 +13675,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -15041,8 +13688,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -15056,18 +13701,6 @@
   {
     "id": 20,
     "namePrivate": "Shorts rahvuslik võistlusprogramm",
-    "created_by": {
-      "id": 21,
-      "firstname": "Greetel",
-      "lastname": "Kala",
-      "username": null
-    },
-    "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
-      "username": null
-    },
     "created_at": "2020-10-09T07:03:49.178Z",
     "updated_at": "2020-11-03T21:24:54.536Z",
     "festival_edition": null,
@@ -15107,8 +13740,6 @@
           "id": 9,
           "Name": null,
           "Description": null,
-          "created_by": 21,
-          "updated_by": 12,
           "created_at": "2020-10-10T18:54:35.387Z",
           "updated_at": "2020-10-12T08:24:50.017Z",
           "Name_et": null,
@@ -15139,8 +13770,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-10T18:54:05.912Z",
             "updated_at": "2020-10-10T18:54:06.029Z"
           },
@@ -15160,8 +13789,6 @@
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "created_by": 21,
-            "updated_by": 21,
             "created_at": "2020-10-10T18:54:19.675Z",
             "updated_at": "2020-10-10T18:54:19.767Z"
           },
@@ -15198,8 +13825,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:42:46.457Z",
         "updated_at": "2020-10-11T16:42:46.865Z"
       }
@@ -15208,8 +13833,6 @@
       {
         "id": 2,
         "festival": 4,
-        "created_by": 3,
-        "updated_by": 6,
         "created_at": "2020-08-31T14:05:48.224Z",
         "updated_at": "2020-10-08T10:59:14.378Z",
         "domain": 3,
@@ -15235,8 +13858,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-31T08:50:27.138Z",
         "updated_at": "2020-08-31T13:52:40.035Z",
         "url": "shorts.poff.ee",
@@ -15250,8 +13871,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -15265,18 +13884,6 @@
   {
     "id": 39,
     "namePrivate": "KinoFF põhiprogramm",
-    "created_by": {
-      "id": 25,
-      "firstname": "Maria",
-      "lastname": "Kullamägi",
-      "username": null
-    },
-    "updated_by": {
-      "id": 6,
-      "firstname": "Jaan",
-      "lastname": "Leppik",
-      "username": null
-    },
     "created_at": "2020-10-27T18:24:39.396Z",
     "updated_at": "2020-11-05T22:38:36.944Z",
     "festival_edition": null,
@@ -15333,8 +13940,6 @@
         "previewUrl": null,
         "provider": "local",
         "provider_metadata": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-11T16:43:07.429Z",
         "updated_at": "2020-10-11T16:43:07.896Z"
       }
@@ -15343,8 +13948,6 @@
       {
         "id": 4,
         "festival": 5,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-10-08T11:00:59.146Z",
         "updated_at": "2020-10-08T11:00:59.169Z",
         "domain": 4,
@@ -15370,8 +13973,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 6,
         "created_at": "2020-08-31T09:03:27.826Z",
         "updated_at": "2020-08-31T09:03:27.848Z",
         "url": "kinoff.poff.ee",
@@ -15385,8 +13986,6 @@
         "Url": null,
         "IpAdress": null,
         "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
         "created_at": "2020-08-19T10:43:32.378Z",
         "updated_at": "2020-08-31T13:52:31.385Z",
         "url": "poff.ee",
@@ -15398,4 +13997,3 @@
     ]
   }
 ]
->>>>>>> parent of b1922739... delete starpidata .json files
