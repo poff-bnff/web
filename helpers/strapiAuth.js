@@ -3,13 +3,6 @@ const https = require('https')
 
 async function strapiAuth() {
 
-    console.log('Suurte t', process.env['STRAPIHOSTPOFF2021'])
-    console.log('See on test', process.env['TEST'])
-    console.log('See on vana', process.env['FETCH_HOST'])
-    console.log('See on u', process.env['FETCH_USER'])
-    console.log('H', process.env['StrapiHostPoff2021'])
-    console.log('U', process.env['StrapiUserName'])
-
     return new Promise((resolve, reject) => {
         const postData = {
             identifier: process.env['StrapiUserName'],
@@ -38,8 +31,6 @@ async function strapiAuth() {
                 tokenStr = JSON.parse(tokenStr)['jwt']
                 resolve(tokenStr)
             })
-
-            console.log(tokenStr);
         })
 
         request.on('error', reject)

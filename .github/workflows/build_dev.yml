@@ -40,7 +40,6 @@ jobs:
           run: . ./build.sh
           env:
             StrapiHostPoff2021: ${{ secrets.STRAPIHOSTPOFF2021 }}
-            TEST: ${{ secrets.TEST }}
             StrapiUserName: ${{ secrets.FETCH_USER }}
             StrapiPassword: ${{ secrets.FETCH_KEY }}
             DOMAIN: poff.ee
