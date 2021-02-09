@@ -1,11 +1,11 @@
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
-const http = require('http')
+const https = require('https')
 const { strapiAuth } = require('./strapiAuth.js')
 const { spin } = require("./spinner")
 
-const STRAPI_URL = process.env['StrapiHost']
+const STRAPI_URL = process.env['StrapiHostPoff2021']
 const DATAMODEL_PATH = path.join(__dirname, '..', 'docs', 'datamodel.yaml')
 const DATAMODEL = yaml.safeLoad(fs.readFileSync(DATAMODEL_PATH, 'utf8'))
 
@@ -18,12 +18,12 @@ async function strapiQuery(options, dataObject = false) {
         // console.log('Bearer', TOKEN)
     }
     options.headers['Authorization'] = `Bearer ${TOKEN}`
-    options['host'] = process.env['StrapiHost']
+    options['host'] = process.env['StrapiHostPoff2021']
     // options.timeout = 30000
 
     // console.log(options, JSON.stringify((dataObject) || ''))
     return new Promise((resolve, reject) => {
-        const request = http.request(options, (response) => {
+        const request = https.request(options, (response) => {
             response.setEncoding('utf8')
             let allData = ''
             response.on('data', function (chunk) {
@@ -105,7 +105,7 @@ async function getModel(model, filters={}) {
         filter_str_a.push(key + '=' + encodeURIComponent(value).replace('%20','+'))
     }
 
-    const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
+    const _path = `https://${STRAPI_URL}${DATAMODEL[model]['_path']}`
 
     const options = {
         headers: { 'Content-Type': 'application/json' },
@@ -133,7 +133,7 @@ async function putModel(model, data) {
         return false
     }
 
-    const _path = `http://${STRAPI_URL}${DATAMODEL[model]['_path']}`
+    const _path = `https://${STRAPI_URL}${DATAMODEL[model]['_path']}`
     let results = []
     for (const element of data) {
         const options = {

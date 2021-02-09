@@ -155,13 +155,13 @@ block content
                 today.setDate(today.getDate()-days)
             }
 
-            let yesterday = new Date()
+            let yesterday = new Date(today)
             yesterday.setDate(today.getDate() - 1)
-            let yesterday2 = new Date()
+            let yesterday2 = new Date(today)
             yesterday2.setDate(today.getDate() - 2)
-            let tomorrow = new Date()
+            let tomorrow = new Date(today)
             tomorrow.setDate(today.getDate() + 1)
-            let tomorrow2 = new Date()
+            let tomorrow2 = new Date(today)
             tomorrow2.setDate(today.getDate() + 2)
 
             if (today.getDate() === event_start_day) {

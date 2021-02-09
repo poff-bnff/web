@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+[]
+=======
 [
   {
     "id": 2,
@@ -8,13 +11,13 @@
       "username": null
     },
     "updated_by": {
-      "id": 9,
-      "firstname": "Elise",
-      "lastname": "Eimre",
+      "id": 16,
+      "firstname": "Rebecca",
+      "lastname": "Andreas",
       "username": null
     },
     "created_at": "2020-11-11T08:24:08.313Z",
-    "updated_at": "2020-11-22T11:23:02.347Z",
+    "updated_at": "2020-12-02T10:22:59.546Z",
     "domain": {
       "id": 1,
       "Url": null,
@@ -1587,6 +1590,105 @@
         },
         "supporter": [
           {
+            "id": 236,
+            "name": "German Films",
+            "customUrl": "https://www.german-films.de/",
+            "poffi_article": null,
+            "logoWhite": null,
+            "logoColour": {
+              "id": 1093,
+              "name": "German Films_logo-01.svg",
+              "alternativeText": "",
+              "caption": "",
+              "width": 1077,
+              "height": 306,
+              "formats": null,
+              "hash": "German_Films_logo_01_aa872e5dc8",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 6.68,
+              "url": "/uploads/German_Films_logo_01_aa872e5dc8.svg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 16,
+              "updated_by": 16,
+              "created_at": "2020-10-14T18:50:21.317Z",
+              "updated_at": "2020-10-14T18:50:21.438Z"
+            },
+            "logoBlack": null
+          },
+          {
+            "id": 235,
+            "name": "Goethe Institut",
+            "customUrl": "https://www.goethe.de/",
+            "poffi_article": null,
+            "logoWhite": null,
+            "logoColour": {
+              "id": 1031,
+              "name": "Goethe Instituut_logo-01.svg",
+              "alternativeText": "",
+              "caption": "",
+              "width": 607,
+              "height": 286,
+              "formats": null,
+              "hash": "Goethe_Instituut_logo_01_497ca097a4",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 3.69,
+              "url": "/uploads/Goethe_Instituut_logo_01_497ca097a4.svg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 16,
+              "updated_by": 16,
+              "created_at": "2020-10-12T08:05:42.542Z",
+              "updated_at": "2020-10-12T08:05:42.649Z"
+            },
+            "logoBlack": null
+          },
+          {
+            "id": 237,
+            "name": "DKI",
+            "customUrl": "http://www.dki.ee/",
+            "poffi_article": null,
+            "logoWhite": null,
+            "logoColour": {
+              "id": 1045,
+              "name": "DKI Tartu_logo_must.png",
+              "alternativeText": "",
+              "caption": "",
+              "width": 339,
+              "height": 480,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "/uploads/thumbnail_DKI_Tartu_logo_must_fa15f18f90.png",
+                  "hash": "thumbnail_DKI_Tartu_logo_must_fa15f18f90",
+                  "mime": "image/png",
+                  "name": "thumbnail_DKI Tartu_logo_must.png",
+                  "path": null,
+                  "size": 5.71,
+                  "width": 110,
+                  "height": 156
+                }
+              },
+              "hash": "DKI_Tartu_logo_must_fa15f18f90",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 9.58,
+              "url": "/uploads/DKI_Tartu_logo_must_fa15f18f90.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "created_by": 16,
+              "updated_by": 16,
+              "created_at": "2020-10-12T09:13:28.896Z",
+              "updated_at": "2020-10-12T09:13:28.973Z"
+            },
+            "logoBlack": null
+          },
+          {
             "id": 223,
             "name": "Integratsiooni Sihtasutus",
             "customUrl": "https://www.integratsioon.ee/",
@@ -1943,105 +2045,6 @@
               "updated_by": 16,
               "created_at": "2020-10-02T07:02:56.183Z",
               "updated_at": "2020-10-02T07:02:56.301Z"
-            },
-            "logoBlack": null
-          },
-          {
-            "id": 235,
-            "name": "Goethe Institut",
-            "customUrl": "https://www.goethe.de/",
-            "poffi_article": null,
-            "logoWhite": null,
-            "logoColour": {
-              "id": 1031,
-              "name": "Goethe Instituut_logo-01.svg",
-              "alternativeText": "",
-              "caption": "",
-              "width": 607,
-              "height": 286,
-              "formats": null,
-              "hash": "Goethe_Instituut_logo_01_497ca097a4",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 3.69,
-              "url": "/uploads/Goethe_Instituut_logo_01_497ca097a4.svg",
-              "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
-              "created_by": 16,
-              "updated_by": 16,
-              "created_at": "2020-10-12T08:05:42.542Z",
-              "updated_at": "2020-10-12T08:05:42.649Z"
-            },
-            "logoBlack": null
-          },
-          {
-            "id": 236,
-            "name": "German Films",
-            "customUrl": "https://www.german-films.de/",
-            "poffi_article": null,
-            "logoWhite": null,
-            "logoColour": {
-              "id": 1093,
-              "name": "German Films_logo-01.svg",
-              "alternativeText": "",
-              "caption": "",
-              "width": 1077,
-              "height": 306,
-              "formats": null,
-              "hash": "German_Films_logo_01_aa872e5dc8",
-              "ext": ".svg",
-              "mime": "image/svg+xml",
-              "size": 6.68,
-              "url": "/uploads/German_Films_logo_01_aa872e5dc8.svg",
-              "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
-              "created_by": 16,
-              "updated_by": 16,
-              "created_at": "2020-10-14T18:50:21.317Z",
-              "updated_at": "2020-10-14T18:50:21.438Z"
-            },
-            "logoBlack": null
-          },
-          {
-            "id": 237,
-            "name": "DKI",
-            "customUrl": "http://www.dki.ee/",
-            "poffi_article": null,
-            "logoWhite": null,
-            "logoColour": {
-              "id": 1045,
-              "name": "DKI Tartu_logo_must.png",
-              "alternativeText": "",
-              "caption": "",
-              "width": 339,
-              "height": 480,
-              "formats": {
-                "thumbnail": {
-                  "ext": ".png",
-                  "url": "/uploads/thumbnail_DKI_Tartu_logo_must_fa15f18f90.png",
-                  "hash": "thumbnail_DKI_Tartu_logo_must_fa15f18f90",
-                  "mime": "image/png",
-                  "name": "thumbnail_DKI Tartu_logo_must.png",
-                  "path": null,
-                  "size": 5.71,
-                  "width": 110,
-                  "height": 156
-                }
-              },
-              "hash": "DKI_Tartu_logo_must_fa15f18f90",
-              "ext": ".png",
-              "mime": "image/png",
-              "size": 9.58,
-              "url": "/uploads/DKI_Tartu_logo_must_fa15f18f90.png",
-              "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
-              "created_by": 16,
-              "updated_by": 16,
-              "created_at": "2020-10-12T09:13:28.896Z",
-              "updated_at": "2020-10-12T09:13:28.973Z"
             },
             "logoBlack": null
           }
@@ -4932,23 +4935,7 @@
           }
         ]
       }
-    ],
-    "domains": [
-      {
-        "id": 1,
-        "Url": null,
-        "IpAdress": null,
-        "Server": null,
-        "created_by": 6,
-        "updated_by": 3,
-        "created_at": "2020-08-19T10:43:32.378Z",
-        "updated_at": "2020-08-31T13:52:31.385Z",
-        "url": "poff.ee",
-        "ipAdress": null,
-        "server": null,
-        "festival_edition": null,
-        "name": "PÖFF"
-      }
     ]
   }
 ]
+>>>>>>> parent of b1922739... delete starpidata .json files
