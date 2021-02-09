@@ -18,8 +18,6 @@ async function strapiAuth() {
             }
         }
 
-        console.log(options);
-
         const request = https.request(options, (response) => {
             response.setEncoding('utf8')
             let tokenStr = ''
