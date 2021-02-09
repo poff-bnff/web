@@ -39,7 +39,7 @@ jobs:
         #   run: node ./node_modules/entu-ssg/src/build.js ./entu-ssg.yaml full
           run: . ./build.sh
           env:
-            StrapiHost: ${{ secrets.FETCH_HOST }}
+            StrapiHost: ${{ secrets.STRAPIHOSTPOFF2021 }}
             StrapiUserName: ${{ secrets.FETCH_USER }}
             StrapiPassword: ${{ secrets.FETCH_KEY }}
             DOMAIN: poff.ee
