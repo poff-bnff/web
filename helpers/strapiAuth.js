@@ -5,6 +5,7 @@ async function strapiAuth() {
 
     console.log('Väikeste t', process.env['StrapiHostPoff2021'])
     console.log('Suurte t', process.env['STRAPIHOSTPOFF2021'])
+    console.log('See on test', process.env['TEST'])
 
     return new Promise((resolve, reject) => {
         const postData = {
